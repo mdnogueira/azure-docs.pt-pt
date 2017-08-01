@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-8-create-perspectives" class="xliff"></a>
-
-# Lição 8: Criar perspetivas
+# <a name="lesson-8-create-perspectives"></a>Lição 8: Criar perspetivas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -36,18 +34,12 @@ A finalidade desta lição é descrever como criar perspetivas e se familiarizar
   
 Tempo estimado para concluir esta lição: **5 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de realizar as tarefas desta lição, deve ter concluído a lição anterior: [Lição 7: Criar os principais indicadores-chave](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
   
-<a id="create-perspectives" class="xliff"></a>
-
-## Criar perspetivas  
+## <a name="create-perspectives"></a>Criar perspetivas  
   
-<a id="to-create-an-internet-sales-perspective" class="xliff"></a>
-
-#### Para criar uma perspetiva de vendas na Internet  
+#### <a name="to-create-an-internet-sales-perspective"></a>Para criar uma perspetiva de vendas na Internet  
   
 1.  Clique no menu **Modelo** > **Perspetivas** > **Criar e gerir**.  
   
@@ -61,9 +53,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
     Numa lição posterior, irá utilizar a funcionalidade Analyze em Excel para testar esta perspetiva. A lista de campos de tabela dinâmica do Excel inclui cada tabela, exceto a tabela DimCustomer.  
 
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 9: Criar hierarquias](../tutorials/aas-lesson-9-create-hierarchies.md).
   
   

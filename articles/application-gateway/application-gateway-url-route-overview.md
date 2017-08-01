@@ -22,9 +22,7 @@ ms.lasthandoff: 06/07/2017
 
 
 ---
-<a id="url-path-based-routing-overview" class="xliff"></a>
-
-# Descrição geral do Encaminhamento Baseado no Caminho do URL
+# <a name="url-path-based-routing-overview"></a>Descrição geral do Encaminhamento Baseado no Caminho do URL
 
 O Encaminhamento Baseado no Caminho do URL permite-lhe encaminhar o tráfego para agrupamentos de servidores de back-end com base nos Caminhos de URL. 
 
@@ -36,9 +34,7 @@ No exemplo seguinte, o Gateway de Aplicação está a enviar tráfego para conto
 
 Os pedidos para http://contoso.com/video* são encaminhados para VideoServerPool, e os pedidos http://contoso.com/images* são encaminhados para ImageServerPool. É selecionado o DefaultServerPool se nenhum dos padrões de caminho corresponder.
     
-<a id="urlpathmap-configuration-element" class="xliff"></a>
-
-## Elemento de configuração UrlPathMap
+## <a name="urlpathmap-configuration-element"></a>Elemento de configuração UrlPathMap
 
 O elemento urlPathMap é utilizado para especificar padrões de Caminho para mapeamentos de agrupamentos de servidores de back-end. O seguinte exemplo de código é o fragmento do elemento UrlPathMap do ficheiro de modelo.
 
@@ -76,9 +72,7 @@ O elemento urlPathMap é utilizado para especificar padrões de Caminho para map
 
 Pode dar saída a um [modelo do Resource Manager através do encaminhamento baseado em URL](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) para obter mais informações.
 
-<a id="pathbasedrouting-rule" class="xliff"></a>
-
-## Regra PathBasedRouting
+## <a name="pathbasedrouting-rule"></a>Regra PathBasedRouting
 
 A RequestRoutingRule do tipo PathBasedRouting é utilizada para vincular um serviço de escuta a um UrlPathMap. Todos os pedidos que são recebidos para este serviço de escuta são encaminhados com base na política especificada no urlPathMap.
 Fragmento da regra PathBasedRouting:
@@ -103,9 +97,7 @@ Fragmento da regra PathBasedRouting:
 ]
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Depois de saber mais sobre o encaminhamento de conteúdo baseado em URL, aceda a [Criar um gateway de aplicação com encaminhamento baseado em URL](application-gateway-create-url-route-portal.md) para criar um gateway de aplicação com regras de encaminhamento do URL.
 

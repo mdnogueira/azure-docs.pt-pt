@@ -22,8 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 07/06/2017
 
 ---
-# Criar uma aplicação Web Node.js no Azure
-<a id="create-a-nodejs-web-app-in-azure" class="xliff"></a>
+# <a name="create-a-nodejs-web-app-in-azure"></a>Criar uma aplicação Web Node.js no Azure
 
 [As Aplicações Web do Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) fornecem um serviço de alojamento na Web altamente dimensionável e com correção automática.  Este guia de início rápido mostra como implementar uma aplicação Node.js em aplicações Web do Azure. Crie a aplicação Web com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) e utilize o Git para implementar o código Node.js de exemplo para a aplicação Web.
 
@@ -31,8 +30,7 @@ ms.lasthandoff: 07/06/2017
 
 Pode seguir os passos abaixo num computador Mac, Windows ou Linux. Depois de instalados os pré-requisitos, demora cerca de cinco minutos a concluir todos os passos.
 
-## Pré-requisitos
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este guia de início rápido:
 
@@ -45,8 +43,7 @@ Para concluir este guia de início rápido:
 
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-## Transferir o exemplo
-<a id="download-the-sample" class="xliff"></a>
+## <a name="download-the-sample"></a>Transferir o exemplo
 
 Numa janela do terminal, execute o seguinte comando para clonar o repositório da aplicação de exemplo para o seu computador local.
 
@@ -62,8 +59,7 @@ Mude para o diretório que contém o código de exemplo.
 cd nodejs-docs-hello-world
 ```
 
-## Executar a aplicação localmente
-<a id="run-the-app-locally" class="xliff"></a>
+## <a name="run-the-app-locally"></a>Executar a aplicação localmente
 
 Execute a aplicação localmente ao abrir uma janela de terminal e utilizar o script `npm start` para iniciar o servidor HTTP Node.js incorporado.
 
@@ -131,8 +127,7 @@ To https://<app_name>.scm.azurewebsites.net:443/<app_name>.git
  * [new branch]      master -> master
 ```
 
-## Navegar para a aplicação
-<a id="browse-to-the-app" class="xliff"></a>
+## <a name="browse-to-the-app"></a>Navegar para a aplicação
 
 Utilize o browser para navegar para a aplicação implementada.
 
@@ -146,8 +141,7 @@ O código Node.js de exemplo está em execução numa aplicação Web do serviç
 
 **Parabéns!** Implementou a sua primeira aplicação Node.js no Serviço de Aplicações.
 
-## Atualizar e voltar a implementar o código
-<a id="update-and-redeploy-the-code" class="xliff"></a>
+## <a name="update-and-redeploy-the-code"></a>Atualizar e voltar a implementar o código
 
 Utilizando um editor de texto, abra o ficheiro `index.js` na aplicação Node.js e faça uma pequena alteração ao texto na chamada para `response.end`:
 
@@ -166,8 +160,7 @@ Depois de concluída a implementação, volte para a janela do browser aberta no
 
 ![Aplicação de exemplo atualizada em execução no Azure](media/app-service-web-get-started-nodejs-poc/hello-azure-in-browser.png)
 
-## Gerir a sua nova aplicação Web do Azure
-<a id="manage-your-new-azure-web-app" class="xliff"></a>
+## <a name="manage-your-new-azure-web-app"></a>Gerir a sua nova aplicação Web do Azure
 
 Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerir a aplicação Web que criou.
 
@@ -183,8 +176,7 @@ O menu à esquerda fornece diferentes páginas para configurar a sua aplicação
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 
 > [!div class="nextstepaction"]
 > [Node.js com MongoDB](app-service-web-tutorial-nodejs-mongodb-app.md)

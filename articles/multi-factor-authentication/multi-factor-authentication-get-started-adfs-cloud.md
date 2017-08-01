@@ -22,14 +22,10 @@ ms.lasthandoff: 06/08/2017
 
 ---
 
-<a id="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs" class="xliff"></a>
-
-# Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS
+# <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS
 Se a sua organização estiver federada no Azure Active Directory, utilize o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory (AD FS) para proteger os recursos acedidos pelo Azure AD. Utilize os procedimentos seguintes para proteger os recursos do Azure Active Directory com o Multi-Factor Authentication do Azure ou os Serviços de Federação do Active Directory (AD FS).
 
-<a id="secure-azure-ad-resources-using-ad-fs" class="xliff"></a>
-
-## Proteger recursos do Azure AD com o AD FS
+## <a name="secure-azure-ad-resources-using-ad-fs"></a>Proteger recursos do Azure AD com o AD FS
 Para proteger o recurso da cloud, configure uma regra de afirmações para que os Serviços de Federação do Active Directory emitam a afirmação de autenticação múltipla quando um utilizador executar uma verificação de dois passos com êxito. Esta afirmação é transmitida ao Azure AD. Siga este procedimento para percorrer os passos:
 
 
@@ -53,16 +49,12 @@ Para proteger o recurso da cloud, configure uma regra de afirmações para que o
     ![Assistente para Adicionar Regra de Afirmação de Transformação](./media/multi-factor-authentication-get-started-adfs-cloud/configurewizard.png)
 9. Clique em **Concluir**. Feche a consola de Gestão do AD FS.
 
-<a id="trusted-ips-for-federated-users" class="xliff"></a>
-
-## IPs Fidedignos para utilizadores federados
+## <a name="trusted-ips-for-federated-users"></a>IPs Fidedignos para utilizadores federados
 Os IPs Fidedignos permitem aos administradores ignorar a verificação em dois passos para endereços IP específicos ou para os utilizadores federados que tenham pedidos com origem na sua própria intranet. As secções seguintes descrevem como configurar IPs Fidedignos do Multi-Factor Authentication do Azure com utilizadores federados e ignorar a verificação em dois passos quando um pedido tem origem na intranet dos utilizadores federados. Isto é feito ao configurar o AD FS para utilizar uma passagem ou filtrar um modelo de afirmação de entrada com o tipo de afirmação Dentro da Rede da Empresa.
 
 Este exemplo utiliza o Office 365 para as Confianças de Entidades Confiadoras.
 
-<a id="configure-the-ad-fs-claims-rules" class="xliff"></a>
-
-### Configurar regras de afirmações do AD FS
+### <a name="configure-the-ad-fs-claims-rules"></a>Configurar regras de afirmações do AD FS
 A primeira coisa a fazer é configurar as afirmações do AD FS. Crie duas regras de afirmações, uma para o tipo de afirmação Dentro da Rede da Empresa e uma adicional para manter os utilizadores com sessão iniciada.
 
 1. Abra a Gestão do AD FS.
@@ -90,9 +82,7 @@ A primeira coisa a fazer é configurar as afirmações do AD FS. Crie duas regra
 15. Clique em **OK**.
 16. Feche a Gestão do AD FS.
 
-<a id="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users" class="xliff"></a>
-
-### Configurar IPs Fidedignos do Multi-Factor Authentication do Azure com Utilizadores Federados
+### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Configurar IPs Fidedignos do Multi-Factor Authentication do Azure com Utilizadores Federados
 Agora que as afirmações estão implementadas, podemos configurar os IPs fidedignos.
 
 1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).

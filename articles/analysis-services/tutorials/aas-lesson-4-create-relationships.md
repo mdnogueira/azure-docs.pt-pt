@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-4-create-relationships" class="xliff"></a>
-
-# Lição 4: Criar relações
+# <a name="lesson-4-create-relationships"></a>Lição 4: Criar relações
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -32,19 +30,13 @@ Nesta lição, vai verificar as relações que foram criadas automaticamente qua
   
 Tempo estimado para concluir esta lição: **dez minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela, que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a [Lição 3: Marcar como Tabela de Data](../tutorials/aas-lesson-3-mark-as-date-table.md). 
   
-<a id="review-existing-relationships-and-add-new-relationships" class="xliff"></a>
-
-## Rever relações existentes e adicionar novas  
+## <a name="review-existing-relationships-and-add-new-relationships"></a>Rever relações existentes e adicionar novas  
 Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dados AdventureWorksDW2014. Em geral, quando importa dados de uma origem relacional, as relações existentes são importadas automaticamente em conjunto com os dados. No entanto, antes de continuar a criar seu modelo, deve confirmar se as relações entre as tabelas foram criadas adequadamente. Neste tutorial, vai adicionar três relações novas.  
   
-<a id="to-review-existing-relationships" class="xliff"></a>
-
-#### Para rever relações existentes  
+#### <a name="to-review-existing-relationships"></a>Para rever relações existentes  
   
 1.  Clique no menu **Modelo** > **Vista de Modelo** > **Vista de Diagrama**.  
 
@@ -73,9 +65,7 @@ Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dad
   
     Se uma das relações estiver em falta, verifique se o seu modelo inclui as tabelas DimCustomer, DimDate, DimGeography, DimProduct, DimProductCategory, DimProductSubcategory e FactInternetSales. Se forem importadas em momentos diferentes tabelas da mesma ligação de origem de dados, as relações entre essas tabelas têm de ser criadas manualmente.  
 
-<a id="take-a-closer-look" class="xliff"></a>
-
-### Uma visão mais detalhada
+### <a name="take-a-closer-look"></a>Uma visão mais detalhada
 Na Vista de Diagrama, repare numa seta, num asterisco e num número nas linhas que mostram as relações entre as tabelas.
 
 ![aas-lesson4-line](../tutorials/media/aas-lesson4-line.png)
@@ -88,9 +78,7 @@ Estas funcionalidades destinam-se a modelação de dados avançada e não estão
 
 Em alguns casos, poderá ter de criar relações adicionais entre tabelas do seu modelo, de modo a suportar determinadas lógicas de negócio. Neste tutorial, tem de criar três relações adicionais entre as tabelas FactInternetSales e DimDate.  
   
-<a id="to-add-new-relationships-between-tables" class="xliff"></a>
-
-#### Para adicionar relações novas entre tabelas  
+#### <a name="to-add-new-relationships-between-tables"></a>Para adicionar relações novas entre tabelas  
   
 1.  No estruturador de modelos, na tabela **FactInternetSales**, clique sem soltar na coluna **OrderDate**, arraste o cursor para a coluna **Date** da tabela **DimDate** e largue.  
 
@@ -109,9 +97,7 @@ Em alguns casos, poderá ter de criar relações adicionais entre tabelas do seu
     
      ![aas-lesson4-newinactive](../tutorials/media/aas-lesson4-newinactive.png)
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 5: Criar colunas calculadas (Lesson 5: Create calculated columns)](../tutorials/aas-lesson-5-create-calculated-columns.md).
   
   

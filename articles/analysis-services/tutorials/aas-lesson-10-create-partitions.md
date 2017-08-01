@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-10-create-partitions" class="xliff"></a>
-
-# Lição 10: Criar partições
+# <a name="lesson-10-create-partitions"></a>Lição 10: Criar partições
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -32,18 +30,12 @@ Nesta lição, irá criar partições para dividir a tabela FactInternetSales em
   
 Tempo estimado para concluir esta lição: **15 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 9: Criar hierarquias](../tutorials/aas-lesson-9-create-hierarchies.md).  
   
-<a id="create-partitions" class="xliff"></a>
-
-## Criar partições  
+## <a name="create-partitions"></a>Criar partições  
   
-<a id="to-create-partitions-in-the-factinternetsales-table" class="xliff"></a>
-
-#### Para criar partições na tabela FactInternetSales  
+#### <a name="to-create-partitions-in-the-factinternetsales-table"></a>Para criar partições na tabela FactInternetSales  
   
 1.  No Explorador de modelos tabulares, expanda **Tabelas** e, em seguida, clique com botão direito do rato em **FactInternetSales** > **Partições**.  
   
@@ -72,9 +64,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
     Esta instrução especifica que essa partição deve incluir somente os dados nas linhas onde OrderDate se refere ao ano 2010, conforme especificado na cláusula sobre linhas filtradas.  
   
   
-<a id="to-create-a-partition-for-the-2011-year" class="xliff"></a>
-
-#### Para criar uma partição para o ano 2011  
+#### <a name="to-create-a-partition-for-the-2011-year"></a>Para criar uma partição para o ano 2011  
   
 1.  Na lista de partições, clique na partição **FactInternetSales2010** que criou e clique em **Copiar**.  Altere o nome da partição para **FactInternetSales2011**. 
 
@@ -93,33 +83,23 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
    
     ```  
   
-<a id="to-create-partitions-for-2012-2013-and-2014" class="xliff"></a>
-
-#### Para criar partições para 2012, 2013 e 2014.  
+#### <a name="to-create-partitions-for-2012-2013-and-2014"></a>Para criar partições para 2012, 2013 e 2014.  
   
 - Siga os passos anteriores ao criar as partições para 2012, 2013 e 2014 e alterar os anos na cláusula de linhas filtradas para incluir apenas as linhas para esse ano. 
   
 
-<a id="delete-the-factinternetsales-partition" class="xliff"></a>
-
-## Eliminar a partição FactInternetSales
+## <a name="delete-the-factinternetsales-partition"></a>Eliminar a partição FactInternetSales
 Agora que definiu as partições para cada ano, pode eliminar a partição FactInternetSales, evitando a sobreposição quando escolher Processar tudo no processamento das partições.
 
-<a id="to-delete-the-factinternetsales-partition" class="xliff"></a>
-
-#### Para eliminar a partição FactInternetSales
+#### <a name="to-delete-the-factinternetsales-partition"></a>Para eliminar a partição FactInternetSales
 -  Clique na partição FactInternetSales e, em seguida, clique em **Eliminar**.
 
 
 
-<a id="process-partitions" class="xliff"></a>
-
-## Processar partições  
+## <a name="process-partitions"></a>Processar partições  
 No Gestor de partições, observe a coluna **Última processada** para cada uma das novas partições que criou e verá as partições nunca foram processadas. Quando criar partições, deverá executar a operação Processar partições ou Processar tabelas para atualizar os dados nessas partições.  
   
-<a id="to-process-the-factinternetsales-partitions" class="xliff"></a>
-
-#### Para processar as partições FactInternetSales  
+#### <a name="to-process-the-factinternetsales-partitions"></a>Para processar as partições FactInternetSales  
   
 1.  Clique em **OK** para fechar o Gestor de partições.  
   
@@ -137,8 +117,6 @@ No Gestor de partições, observe a coluna **Última processada** para cada uma 
   
     ![aas-lesson10-process-complete](../tutorials/media/aas-lesson10-process-complete.png)
   
-<a id="whats-next" class="xliff"></a>
-
- ## Passos seguintes?
+ ## <a name="whats-next"></a>Passos seguintes?
 Avance para a próxima lição: [Lição 11: Criar funções](../tutorials/aas-lesson-11-create-roles.md). 
 

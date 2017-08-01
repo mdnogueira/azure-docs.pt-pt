@@ -22,9 +22,7 @@ ms.lasthandoff: 06/07/2017
 
 
 ---
-<a id="get-started-with-azure-data-lake-store-using-net-sdk" class="xliff"></a>
-
-# Introdução ao Azure Data Lake Store com SDK .NET
+# <a name="get-started-with-azure-data-lake-store-using-net-sdk"></a>Introdução ao Azure Data Lake Store com SDK .NET
 > [!div class="op_single_selector"]
 > * [Portal](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
@@ -39,9 +37,7 @@ ms.lasthandoff: 06/07/2017
 
 Saiba como utilizar o [SDK. NET do Azure Data Lake Store](https://msdn.microsoft.com/library/mt581387.aspx) para executar operações básicas, como criar pastas, carregar e transferir ficheiros de dados, etc. Para obter mais informações sobre o Data Lake, veja [Azure Data Lake Store](data-lake-store-overview.md).
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * **Visual Studio 2013, 2015 ou 2017**. As instruções abaixo utilizam o Visual Studio 2015 Atualização 2.
 
 * **Uma subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -50,9 +46,7 @@ Saiba como utilizar o [SDK. NET do Azure Data Lake Store](https://msdn.microsoft
 
 * **Criar uma Aplicação do Azure Active Directory**. A aplicação do Azure AD é utilizada para autenticar a aplicação do Data Lake Store no Azure AD. Existem abordagens diferentes para a autenticação no Azure AD, que são **autenticação do utilizador final** ou **autenticação de serviço para serviço**. Para obter instruções e obter mais informações sobre como autenticar, veja [End-user authentication](data-lake-store-end-user-authenticate-using-active-directory.md) (Autenticação de utilizador final) ou [Service-to-service authentication](data-lake-store-authenticate-using-active-directory.md) (Autenticação de serviço a serviço).
 
-<a id="create-a-net-application" class="xliff"></a>
-
-## Criar uma aplicação .NET
+## <a name="create-a-net-application"></a>Criar uma aplicação .NET
 1. Abra o Visual Studio e crie uma aplicação de consola.
 2. No menu **Ficheiro**, clique em **Novo** e, em seguida, clique em **Projeto**.
 3. A partir de **Novo Projeto**, escreva ou selecione os seguintes valores:
@@ -117,13 +111,9 @@ Saiba como utilizar o [SDK. NET do Azure Data Lake Store](https://msdn.microsoft
 
 Nas restantes secções do artigo, pode ver como utilizar os métodos .NET disponíveis para executar operações, como a autenticação, carregamento de ficheiros, etc.
 
-<a id="authentication" class="xliff"></a>
+## <a name="authentication"></a>Autenticação
 
-## Autenticação
-
-<a id="if-you-are-using-end-user-authentication-recommended-for-this-tutorial" class="xliff"></a>
-
-### Se estiver a utilizar autenticação de utilizador final (recomendada para este tutorial)
+### <a name="if-you-are-using-end-user-authentication-recommended-for-this-tutorial"></a>Se estiver a utilizar autenticação de utilizador final (recomendada para este tutorial)
 
 Utilize esta opção com uma aplicação nativa existente do Azure AD para autenticar a sua aplicação **interativamente**, o que significa que ser-lhe-á pedido que introduza as credenciais do Azure.
 
@@ -142,9 +132,7 @@ Algumas coisas que deve saber acerca do fragmento acima:
 * Para o ajudar a concluir o tutorial mais depressa, este fragmento utiliza um domínio do Azure AD e um ID de cliente que estão disponível por predefinição para todas as subscrições do Azure. Por isso, pode **utilizar este fragmento tal como está na sua aplicação**.
 * No entanto, se pretender utilizar o seu próprio domínio do Azure AD e o ID de cliente de aplicação, tem de criar uma aplicação nativa do Azure AD e, depois, utilizar o ID de inquilino do Azure AD, o ID de cliente e o URI de redirecionamento da aplicação que criou. Veja [Criar uma Aplicação do Active Directory para autenticação de utilizador final com o Data Lake Store](data-lake-store-end-user-authenticate-using-active-directory.md) para obter instruções.
 
-<a id="if-you-are-using-service-to-service-authentication-with-client-secret" class="xliff"></a>
-
-### Se estiver a utilizar a autenticação serviço para serviço com o segredo do cliente
+### <a name="if-you-are-using-service-to-service-authentication-with-client-secret"></a>Se estiver a utilizar a autenticação serviço para serviço com o segredo do cliente
 O fragmento seguinte pode ser utilizado para autenticar a aplicação de forma **não interativa** com o segredo/chave do cliente de uma aplicação/principal de serviço. Utilize esta opção com uma “Aplicação Web” do Azure AD. Para obter instruções sobre como criar a aplicação Web do Azure AD e como obter o ID de cliente e o segredo do cliente necessários no fragmento abaixo, veja [Criar uma Aplicação do Active Directory para autenticação serviço a serviço com o Data Lake Store](data-lake-store-authenticate-using-active-directory.md).
 
     // Service principal / appplication authentication with client secret / key
@@ -157,9 +145,7 @@ O fragmento seguinte pode ser utilizado para autenticar a aplicação de forma *
     var clientCredential = new ClientCredential(webApp_clientId, clientSecret);
     var creds = await ApplicationTokenProvider.LoginSilentAsync(domain, clientCredential);
 
-<a id="if-you-are-using-service-to-service-authentication-with-certificate" class="xliff"></a>
-
-### Se estiver a utilizar a autenticação serviço para serviço com certificado
+### <a name="if-you-are-using-service-to-service-authentication-with-certificate"></a>Se estiver a utilizar a autenticação serviço para serviço com certificado
 
 Como terceira opção, o fragmento seguinte pode ser utilizado para autenticar a aplicação de forma **não interativa** através do certificado de uma aplicação/principal de serviço do Azure Active Directory. Utilize esta opção com uma [Aplicação do Azure AD com certificados](../azure-resource-manager/resource-group-authenticate-service-principal.md) existente.
 
@@ -173,18 +159,14 @@ Como terceira opção, o fragmento seguinte pode ser utilizado para autenticar a
     var clientAssertionCertificate = new ClientAssertionCertificate(webApp_clientId, clientCert);
     var creds = await ApplicationTokenProvider.LoginSilentWithCertificateAsync(domain, clientAssertionCertificate);
 
-<a id="create-client-objects" class="xliff"></a>
-
-## Criar objetos de cliente
+## <a name="create-client-objects"></a>Criar objetos de cliente
 O fragmento seguinte cria a conta do Data Lake Store e os objetos de cliente do sistema de ficheiros, utilizados para emitir pedidos ao serviço.
 
     // Create client objects and set the subscription ID
     _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
     _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
 
-<a id="list-all-data-lake-store-accounts-within-a-subscription" class="xliff"></a>
-
-## Listar todas as contas do Data Lake Store numa subscrição
+## <a name="list-all-data-lake-store-accounts-within-a-subscription"></a>Listar todas as contas do Data Lake Store numa subscrição
 O fragmento seguinte lista todas as contas do Data Lake Store numa determinada subscrição do Azure.
 
     // List all ADLS accounts within the subscription
@@ -202,9 +184,7 @@ O fragmento seguinte lista todas as contas do Data Lake Store numa determinada s
         return accounts;
     }
 
-<a id="create-a-directory" class="xliff"></a>
-
-## Criar um diretório
+## <a name="create-a-directory"></a>Criar um diretório
 O fragmento seguinte mostra um método `CreateDirectory` que pode utilizar para criar um diretório numa conta do Data Lake Store.
 
     // Create a directory
@@ -213,9 +193,7 @@ O fragmento seguinte mostra um método `CreateDirectory` que pode utilizar para 
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, path);
     }
 
-<a id="upload-a-file" class="xliff"></a>
-
-## Carregar um ficheiro
+## <a name="upload-a-file"></a>Carregar um ficheiro
 O fragmento seguinte mostra um método `UploadFile` que pode utilizar para carregar ficheiros para uma conta do Data Lake Store.
 
     // Upload a file
@@ -226,9 +204,7 @@ O fragmento seguinte mostra um método `UploadFile` que pode utilizar para carre
 
 O SDK suporta carregamento e transferência recursivos entre um caminho de ficheiro local e um caminho de ficheiro do Data Lake Store.    
 
-<a id="get-file-or-directory-info" class="xliff"></a>
-
-## Obter as informações do ficheiro ou diretório
+## <a name="get-file-or-directory-info"></a>Obter as informações do ficheiro ou diretório
 O fragmento seguinte mostra um método `GetItemInfo` que pode utilizar para obter informações sobre um ficheiro ou diretório disponível no Data Lake Store.
 
     // Get file or directory info
@@ -237,9 +213,7 @@ O fragmento seguinte mostra um método `GetItemInfo` que pode utilizar para obte
         return await _adlsFileSystemClient.FileSystem.GetFileStatusAsync(_adlsAccountName, path).FileStatus;
     }
 
-<a id="list-file-or-directories" class="xliff"></a>
-
-## Listar o ficheiro ou os diretórios
+## <a name="list-file-or-directories"></a>Listar o ficheiro ou os diretórios
 O fragmento seguinte mostra um método `ListItem` que pode utilizar para listar o ficheiro e os diretórios numa conta do Data Lake Store.
 
     // List files and directories
@@ -248,9 +222,7 @@ O fragmento seguinte mostra um método `ListItem` que pode utilizar para listar 
         return _adlsFileSystemClient.FileSystem.ListFileStatus(_adlsAccountName, directoryPath).FileStatuses.FileStatus.ToList();
     }
 
-<a id="concatenate-files" class="xliff"></a>
-
-## Concatenar ficheiros
+## <a name="concatenate-files"></a>Concatenar ficheiros
 O fragmento seguinte mostra um método `ConcatenateFiles` que pode utilizar para concatenar ficheiros.
 
     // Concatenate files
@@ -259,9 +231,7 @@ O fragmento seguinte mostra um método `ConcatenateFiles` que pode utilizar para
         await _adlsFileSystemClient.FileSystem.ConcatAsync(_adlsAccountName, destFilePath, srcFilePaths);
     }
 
-<a id="append-to-a-file" class="xliff"></a>
-
-## Acrescentar a um ficheiro
+## <a name="append-to-a-file"></a>Acrescentar a um ficheiro
 O fragmento seguinte mostra um método `AppendToFile` que pode utilizar para acrescentar dados a um ficheiro já armazenado numa conta do Data Lake Store.
 
     // Append to file
@@ -273,9 +243,7 @@ O fragmento seguinte mostra um método `AppendToFile` que pode utilizar para acr
         }
     }
 
-<a id="download-a-file" class="xliff"></a>
-
-## Transferir um ficheiro
+## <a name="download-a-file"></a>Transferir um ficheiro
 O fragmento seguinte mostra um método `DownloadFile` que pode utilizar para transferir um ficheiro de uma conta do Data Lake Store.
 
     // Download file
@@ -284,9 +252,7 @@ O fragmento seguinte mostra um método `DownloadFile` que pode utilizar para tra
          _adlsFileSystemClient.FileSystem.DownloadFile(_adlsAccountName, srcFilePath, destFilePath);
     }
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Secure data in Data Lake Store (Proteger dados no Data Lake Store)](data-lake-store-secure-data.md)
 * [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 * [Use Azure HDInsight with Data Lake Store (Utilizar o Azure HDInsight com o Data Lake Store)](data-lake-store-hdinsight-hadoop-use-portal.md)

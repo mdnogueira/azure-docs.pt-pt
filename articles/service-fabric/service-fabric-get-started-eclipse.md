@@ -23,14 +23,10 @@ ms.lasthandoff: 06/30/2017
 
 ---
 
-<a id="service-fabric-plug-in-for-eclipse-java-application-development" class="xliff"></a>
-
-# Plug-in do Service Fabric para desenvolvimento de aplicações Java de Eclipse
+# <a name="service-fabric-plug-in-for-eclipse-java-application-development"></a>Plug-in do Service Fabric para desenvolvimento de aplicações Java de Eclipse
 O Eclipse é um dos ambientes de desenvolvimento integrados (IDEs) mais utilizados para programadores Java. Neste artigo, descrevemos como configurar o seu ambiente de desenvolvimento do Eclipse para funcionar com o Azure Service Fabric. Saiba como instalar o plug-in do Service Fabric e criar uma aplicação do Service Fabric e implementá-la num cluster do Service Fabric local ou remoto no Eclipse Neon.
 
-<a id="install-or-update-the-service-fabric-plug-in-in-eclipse-neon" class="xliff"></a>
-
-## Instalar ou atualizar o plug-in do Service Fabric no Eclipse Neon
+## <a name="install-or-update-the-service-fabric-plug-in-in-eclipse-neon"></a>Instalar ou atualizar o plug-in do Service Fabric no Eclipse Neon
 Pode instalar um plug-in do Service Fabric no Eclipse. O plug-in pode ajudar a simplificar o processo de criação e implementação de serviços Java.
 
 1.  Confirme que tem instaladas as versões mais recentes do Eclipse Neon e do Buildship (1.0.17 ou posterior):
@@ -51,9 +47,7 @@ Se já tiver o plug-in do Service Fabric instalado, confirme que tem a versão m
 > [!NOTE]
 > Se a instalação ou atualização do plug-in do Service Fabric estiver lenta, tal poderá dever-se a uma definição do Eclipse. O Eclipse recolhe metadados sobre todas as alterações para atualizar os sites que estão registados na sua instância do Eclipse. Para acelerar o processo de procurar e instalar uma atualização do plug-in do Service Fabric, aceda a **Sites de Software Disponíveis**. Desmarque as caixas de verificação de todos os sites, exceto daquele que aponta para a localização do plug-in do Service Fabric (http://dl.microsoft.com/eclipse/azure/servicefabric).
 
-<a id="create-a-service-fabric-application-in-eclipse" class="xliff"></a>
-
-## Criar uma aplicação do Service Fabric no Eclipse
+## <a name="create-a-service-fabric-application-in-eclipse"></a>Criar uma aplicação do Service Fabric no Eclipse
 
 1.  No Eclipse Neon, aceda a **File (Ficheiro)** > **New (Novo)** > **Other (Outro)**. Selecione **Service Fabric Project** (Projeto do Service Fabric) e clique em **Next** (Seguinte).
 
@@ -79,9 +73,7 @@ Se já tiver o plug-in do Service Fabric instalado, confirme que tem a versão m
 
     ![Página 6 de Novo Projeto do Service Fabric][create-application/p6]
 
-<a id="build-and-deploy-a-service-fabric-application-in-eclipse" class="xliff"></a>
-
-## Compilar e implementar uma aplicação do Service Fabric no Eclipse
+## <a name="build-and-deploy-a-service-fabric-application-in-eclipse"></a>Compilar e implementar uma aplicação do Service Fabric no Eclipse
 
 1.  Clique com o botão direito na aplicação do Service Fabric nova e selecione **Service Fabric**.
 
@@ -113,9 +105,7 @@ Outra forma de implementar a aplicação do Service Fabric é utilizar configura
 
 A sua aplicação é criada e implementada ao fim de alguns momentos. Pode monitorizar o estado da implementação no Service Fabric Explorer.  
 
-<a id="add-a-service-fabric-service-to-your-service-fabric-application" class="xliff"></a>
-
-## Adicionar um serviço do Service Fabric à sua aplicação do Service Fabric
+## <a name="add-a-service-fabric-service-to-your-service-fabric-application"></a>Adicionar um serviço do Service Fabric à sua aplicação do Service Fabric
 
 Para adicionar um serviço do Service Fabric a uma aplicação do Service Fabric já existente, faça o seguinte:
 
@@ -136,17 +126,13 @@ Para adicionar um serviço do Service Fabric a uma aplicação do Service Fabric
 
     ![Página 4 de Adicionar Serviço do Service Fabric][add-service/p4]
 
-<a id="edit-manifest-versions-of-your-service-fabric-java-application" class="xliff"></a>
-
-## Editar versões do Manifesto da sua aplicação Java do Service Fabric
+## <a name="edit-manifest-versions-of-your-service-fabric-java-application"></a>Editar versões do Manifesto da sua aplicação Java do Service Fabric
 
 Para editar versões do manifesto, clique com o botão direito do rato no projeto, entre no **Service Fabric** e selecione **Editar Versões do Manifesto...**  do menu suspenso. No assistente, pode atualizar as versões do manifesto para o manifesto de aplicação, o manifesto do serviço e as versões dos pacotes **Código**, **Config** e **Dados**.
 
 Se marcar a opção **Atualizar automaticamente as versões da aplicação e do serviço** e, em seguida, atualizar uma versão, as versões do manifesto serão atualizadas automaticamente. Por exemplo, primeiro selecione a caixa de verificação e atualize a versão do **Código** de 0.0.0 para 0.0.1 e clique em **Concluir**, em seguida, a versão do manifesto do serviço e a versão do manifesto de aplicação serão atualizadas automaticamente para 0.0.1.
 
-<a id="upgrade-your-service-fabric-java-application" class="xliff"></a>
-
-## Atualizar a sua aplicação Java do Service Fabric
+## <a name="upgrade-your-service-fabric-java-application"></a>Atualizar a sua aplicação Java do Service Fabric
 
 Num cenário de atualização, imaginemos que utilizou o plug-in do Service Fabric no Eclipse para criar o projeto **App1**. Para o implementar, utilizou o plug-in para criar uma aplicação com o nome **fabric:/App1Application**. O tipo de aplicação é **App1AppicationType** e a versão 1.0. Agora, quer atualizar a aplicação sem interromper a disponibilidade.
 

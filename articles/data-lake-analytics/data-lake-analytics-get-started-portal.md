@@ -22,22 +22,16 @@ ms.lasthandoff: 06/16/2017
 
 
 ---
-<a id="get-started-with-azure-data-lake-analytics-using-azure-portal" class="xliff"></a>
-
-# Introdução ao Azure Data Lake Analytics com o Portal do Azure
+# <a name="get-started-with-azure-data-lake-analytics-using-azure-portal"></a>Introdução ao Azure Data Lake Analytics com o Portal do Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Saiba como utilizar o portal do Azure para criar contas do Azure Data Lake Analytics, definir tarefas em [U-SQL](data-lake-analytics-u-sql-get-started.md) e submeter tarefas para o serviço Data Lake Analytics. Para mais informações sobre a Data Lake Analytics, consulte [Descrição geral da Análise do Azure Data Lake](data-lake-analytics-overview.md).
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Antes de começar este tutorial, tem de ter uma **subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-<a id="create-a-data-lake-analytics-account" class="xliff"></a>
-
-## Criar uma conta de Data Lake Analytics
+## <a name="create-a-data-lake-analytics-account"></a>Criar uma conta de Data Lake Analytics
 
 Agora, irá criar em simultâneo uma conta do Data Lake Analytics e uma conta do Data Lake Store.  Este passo é simples e leva apenas cerca de 60 segundos para concluir.
 
@@ -53,9 +47,7 @@ Agora, irá criar em simultâneo uma conta do Data Lake Analytics e uma conta do
 5. Clique em **Criar**. 
 
 
-<a id="your-first-u-sql-script" class="xliff"></a>
-
-## O seu primeiro script U-SQL
+## <a name="your-first-u-sql-script"></a>O seu primeiro script U-SQL
 
 O texto apresentado em seguida é um script U-SQL muito simples. Tudo o que faz é definir um pequeno conjunto de dados dentro do script e, em seguida, gravar esse conjunto de dados no Data Lake Store predefinido como um ficheiro denominado `/data.csv`.
 
@@ -72,9 +64,7 @@ OUTPUT @a
     USING Outputters.Csv();
 ```
 
-<a id="submit-a-u-sql-job" class="xliff"></a>
-
-## Submeter uma tarefa de U-SQL
+## <a name="submit-a-u-sql-job"></a>Submeter uma tarefa de U-SQL
 
 1. Na conta do Data Lake Analytics, clique em **Nova Tarefa**.
 2. Cole o texto do script U-SQL mostrado acima. 
@@ -83,9 +73,7 @@ OUTPUT @a
 5. Caso a tarefa tenha falhado, consulte [Monitor and troubleshoot Data Lake Analytics jobs](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md) (Monitorizar e resolver problemas de tarefas do Data Lake Analytics).
 6. Clique no separador **Saída** e, em seguida, clique em `SearchLog-from-Data-Lake.csv`. 
 
-<a id="see-also" class="xliff"></a>
-
-## Consultar também
+## <a name="see-also"></a>Consultar também
 
 * Para começar a desenvolver aplicações U-SQL, consulte [Desenvolver scripts SQL-U, utilizando as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
 * Para saber mais sobre U-SQL, consulte [Introdução à linguagem U-SQL da Análise do Azure Data Lake](data-lake-analytics-u-sql-get-started.md).

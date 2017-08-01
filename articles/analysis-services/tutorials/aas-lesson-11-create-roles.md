@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-11-create-roles" class="xliff"></a>
-
-# Lição 11: Criar funções
+# <a name="lesson-11-create-roles"></a>Lição 11: Criar funções
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -45,18 +43,12 @@ Uma vez que as contas de utilizador e grupo do Windows são exclusivas na sua or
   
 Tempo estimado para concluir esta lição: **15 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 10: Criar partições](../tutorials/aas-lesson-10-create-partitions.md).  
   
-<a id="create-roles" class="xliff"></a>
-
-## Criar funções  
+## <a name="create-roles"></a>Criar funções  
   
-<a id="to-create-a-sales-manager-user-role" class="xliff"></a>
-
-#### Para criar uma função de utilizador gestor de vendas  
+#### <a name="to-create-a-sales-manager-user-role"></a>Para criar uma função de utilizador gestor de vendas  
   
 1.  No Gestor de modelos tabulares, clique com botão direito do rato em **Funções** > **Funções**.  
   
@@ -70,9 +62,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 5.  Opcional: Clique no separador **Membros** e clique em **Adicionar**. Na caixa de diálogo **Selecionar utilizadores ou grupos**, introduza os utilizadores ou grupos do Windows pertencentes à sua organização e que pretende incluir na função.  
   
-<a id="to-create-a-sales-analyst-us-user-role" class="xliff"></a>
-
-#### Para criar uma função de utilizador analista de vendas dos EUA  
+#### <a name="to-create-a-sales-analyst-us-user-role"></a>Para criar uma função de utilizador analista de vendas dos EUA  
   
 1.  No Gestor de funções, clique em **Nova**.    
   
@@ -91,9 +81,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 6.  Opcional: Clique no separador **Membros** e clique em **Adicionar**. Na caixa de diálogo **Selecionar utilizadores ou grupos**, introduza os utilizadores ou grupos do Windows pertencentes à sua organização e que pretende incluir na função.  
   
-<a id="to-create-an-administrator-user-role" class="xliff"></a>
-
-#### Para criar uma função de utilizador administrador  
+#### <a name="to-create-an-administrator-user-role"></a>Para criar uma função de utilizador administrador  
   
 1.  Clique em **Novo**.  
   
@@ -104,9 +92,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
 4.  Opcional: Clique no separador **Membros** e clique em **Adicionar**. Na caixa de diálogo **Selecionar utilizadores ou grupos**, introduza os utilizadores ou grupos do Windows pertencentes à sua organização e que pretende incluir na função. 
   
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 12: Analyze no Excel](../tutorials/aas-lesson-12-analyze-in-excel.md)
 
   

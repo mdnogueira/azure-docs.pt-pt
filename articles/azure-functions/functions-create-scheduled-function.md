@@ -23,17 +23,13 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/07/2017
 
 ---
-<a id="create-a-function-in-azure-that-is-triggered-by-a-timer" class="xliff"></a>
-
-# Criar uma função no Azure que é acionada por um temporizador
+# <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Criar uma função no Azure que é acionada por um temporizador
 
 Saiba como utilizar as Funções do Azure para criar uma função que é executada com base numa agenda definida por si.
 
 ![Criar uma aplicação de função no portal do Azure](./media/functions-create-scheduled-function/function-app-in-portal-editor.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este tutorial:
 
@@ -41,9 +37,7 @@ Para concluir este tutorial:
 
 [!INCLUDE [functions-portal-favorite-function-apps](../../includes/functions-portal-favorite-function-apps.md)]
 
-<a id="create-an-azure-function-app" class="xliff"></a>
-
-## Criar uma aplicação de Funções do Azure
+## <a name="create-an-azure-function-app"></a>Criar uma aplicação de Funções do Azure
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
@@ -53,9 +47,7 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
 <a name="create-function"></a>
 
-<a id="create-a-timer-triggered-function" class="xliff"></a>
-
-## Criar uma função acionada por temporizador
+## <a name="create-a-timer-triggered-function"></a>Criar uma função acionada por temporizador
 
 1. Expanda a aplicação de funções e clique no botão **+**, junto a **Funções**. Se esta for a primeira função na sua aplicação de funções, selecione **Função personalizada**. É apresentado o conjunto completo de modelos de função.
 
@@ -78,9 +70,7 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
 Agora, pode alterar a agenda da função, para que seja executada menos vezes, como uma vez por hora. 
 
-<a id="update-the-timer-schedule" class="xliff"></a>
-
-## Atualizar a agenda do temporizador
+## <a name="update-the-timer-schedule"></a>Atualizar a agenda do temporizador
 
 1. Expanda a função e clique em **Integrar**. É aqui que vai definir os enlaces de entrada e saída para a função, bem como a agenda. 
 
@@ -90,15 +80,11 @@ Agora, pode alterar a agenda da função, para que seja executada menos vezes, c
 
 Tem agora uma função que é executada uma vez por hora. 
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Criou uma função que é executada com base numa agenda.
 

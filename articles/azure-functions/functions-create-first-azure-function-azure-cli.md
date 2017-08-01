@@ -20,17 +20,13 @@ ms.lasthandoff: 06/20/2017
 
 ---
 
-<a id="create-your-first-function-using-the-azure-cli" class="xliff"></a>
-
-# Criar a sua primeira função com a CLI do Azure
+# <a name="create-your-first-function-using-the-azure-cli"></a>Criar a sua primeira função com a CLI do Azure
 
 Este tutorial de guia de introdução mostra-lhe como utilizar as Funções do Azure para criar a sua primeira função. Vai utilizar a CLI do Azure para criar uma aplicação Function App, que é a infraestrutura sem servidor que aloja a sua função. O código da função propriamente dito é implementado a partir de um repositório de exemplos do GitHub.    
 
 Pode seguir os passos abaixo num computador Mac, Windows ou Linux. 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos 
+## <a name="prerequisites"></a>Pré-requisitos 
 
 Antes de executar este exemplo, tem de ter o seguinte:
 
@@ -44,9 +40,7 @@ Antes de executar este exemplo, tem de ter o seguinte:
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Um grupo de recursos do Azure é um contentor lógico no qual os recursos do Azure, como aplicações Function App, bases de dados e contas de armazenamento, são implementados e geridos.
 
@@ -55,9 +49,7 @@ O exemplo seguinte cria um grupo de recursos com o nome `myResourceGroup`:
 ```azurecli-interactive
 az group create --name myResourceGroup --location westeurope
 ```
-<a id="create-an-azure-storage-account" class="xliff"></a>
-
-## Criar uma conta de Armazenamento do Azure
+## <a name="create-an-azure-storage-account"></a>Criar uma conta de Armazenamento do Azure
 
 As Funções utilizam uma conta de Armazenamento do Azure para guardar as informações de estado das funções, entre outras. Utilize o comando [az storage account create](/cli/azure/storage/account#create) para criar uma conta de armazenamento no grupo de recursos que criou.
 
@@ -87,9 +79,7 @@ Depois de a conta de armazenamento ter sido criada, a CLI do Azure mostra inform
 }
 ```
 
-<a id="create-a-function-app" class="xliff"></a>
-
-## Criar uma aplicação de função
+## <a name="create-a-function-app"></a>Criar uma aplicação de função
 
 Precisa de uma aplicação Function App para alojar a execução das suas funções. A aplicação Function App proporciona um ambiente para a execução sem servidor do código da sua função. Permite-lhe agrupar funções como unidades lógicas para uma gestão, implementação e partilha de recursos mais fácil. Utilize o comando [az functionapp create](/cli/azure/functionapp#create) para criar uma aplicação Function App. 
 
@@ -122,9 +112,7 @@ Depois de a aplicação Function App ter sido criada, a CLI do Azure mostra info
 
 Agora que já tem uma aplicação Function App, pode implementar o código da função propriamente dito a partir do repositório de exemplos do GitHub.
 
-<a id="deploy-your-function-code" class="xliff"></a>
-
-## Implementar o código de função  
+## <a name="deploy-your-function-code"></a>Implementar o código de função  
 
 Existem várias formas de criar o código de função na sua aplicação Function App nova. Este tópico liga-se a um repositório de exemplos do GitHub. Tal como anteriormente, no código seguinte, substitua o marcador de posição `<app_name>` pelo nome da aplicação Function App que criou. 
 
@@ -148,9 +136,7 @@ Depois de definida a origem da implementação, a CLI do Azure mostra informaç�
 }
 ```
 
-<a id="test-the-function" class="xliff"></a>
-
-## Testar a função
+## <a name="test-the-function"></a>Testar a função
 
 Utilize cURL para testar a função implementada num computador Mac ou Linux ou utilize Bash no Windows. Execute o comando cURL seguinte, substituindo o marcador de posição `<app_name>` pelo nome da sua aplicação Function App. Anexe a cadeia de consulta `&name=<yourname>` ao URL.
 
@@ -166,9 +152,7 @@ Se não tiver cURL disponível na sua linha de comandos, introduza simplesmente 
    
 ![Resposta da função mostrada num browser.](./media/functions-create-first-azure-function-azure-cli/functions-azure-cli-function-test-browser.png)  
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Outros guias de introdução desta coleção têm por base este guia de introdução. Se pretender continuar a trabalhar com guias de introdução subsequentes ou com os tutoriais, não limpe os recursos criados neste guia de introdução. Se não quiser continuar, utilize os comandos seguintes para eliminar todos os recursos criados por este guia de introdução:
 
@@ -177,9 +161,7 @@ az group delete --name myResourceGroup
 ```
 Escreva `y` quando lhe for pedido.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]
 

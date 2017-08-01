@@ -1,6 +1,4 @@
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Nos passos anteriores, criou os recursos do Azure num grupo de recursos. Se provavelmente não necessitar desses recursos no futuro, pode eliminá-los ao eliminar o grupo de recursos.
  

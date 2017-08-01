@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-5-create-calculated-columns" class="xliff"></a>
-
-# Lição 5: Criar colunas calculadas
+# <a name="lesson-5-create-calculated-columns"></a>Lição 5: Criar colunas calculadas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -36,18 +34,12 @@ Nesta lição também usa pela primeira vez o Data Analysis Expressions (DAX). D
   
 Tempo estimado para concluir esta lição: **15 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 4: Criar relações](../tutorials/aas-lesson-4-create-relationships.md). 
   
-<a id="create-calculated-columns" class="xliff"></a>
-
-## Criar colunas calculadas  
+## <a name="create-calculated-columns"></a>Criar colunas calculadas  
   
-<a id="create-a-monthcalendar-calculated-column-in-the-dimdate-table" class="xliff"></a>
-
-#### Criar uma coluna calculada MonthCalendar na tabela DimDate  
+#### <a name="create-a-monthcalendar-calculated-column-in-the-dimdate-table"></a>Criar uma coluna calculada MonthCalendar na tabela DimDate  
   
 1.  Clique no menu **Modelo** > **Vista de modelo** > **Vista de diagrama**.  
   
@@ -73,9 +65,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 A coluna calculada MonthCalendar fornece um nome ordenável para o mês.  
   
-<a id="create-a-dayofweek-calculated-column-in-the-dimdate-table" class="xliff"></a>
-
-#### Criar uma coluna calculada DayOfWeek na tabela DimDate  
+#### <a name="create-a-dayofweek-calculated-column-in-the-dimdate-table"></a>Criar uma coluna calculada DayOfWeek na tabela DimDate  
   
 1.  Com a tabela **DimDate** ainda ativa, clique no menu **Coluna** e clique em **Adicionar coluna**.  
   
@@ -96,9 +86,7 @@ A coluna calculada MonthCalendar fornece um nome ordenável para o mês.
   
 A coluna calculada DayOfWeek fornece um nome ordenável para o dia da semana.  
   
-<a id="create-a-productsubcategoryname-calculated-column-in-the-dimproduct-table" class="xliff"></a>
-
-#### Criar uma coluna calculada ProductSubcategoryName na tabela DimProduct  
+#### <a name="create-a-productsubcategoryname-calculated-column-in-the-dimproduct-table"></a>Criar uma coluna calculada ProductSubcategoryName na tabela DimProduct  
   
   
 1.  Na tabela **DimProduct**, desloque-se até ao lado direito da tabela. Observe que a coluna mais à direita é denominada **Adicionar coluna** (em itálico), clique no cabeçalho da coluna.  
@@ -113,9 +101,7 @@ A coluna calculada DayOfWeek fornece um nome ordenável para o dia da semana.
   
 A coluna calculada ProductSubcategoryName é usada para criar uma hierarquia na tabela DimProduct, que inclui dados da coluna EnglishProductSubcategoryName na tabela DimProductSubcategory. Hierarquias não podem abranger mais de uma tabela. Na lição 9, irá criar hierarquias.  
   
-<a id="create-a-productcategoryname-calculated-column-in-the-dimproduct-table" class="xliff"></a>
-
-#### Criar uma coluna calculada ProductCategoryName na tabela DimProduct  
+#### <a name="create-a-productcategoryname-calculated-column-in-the-dimproduct-table"></a>Criar uma coluna calculada ProductCategoryName na tabela DimProduct  
   
 1.  Com a tabela **DimProduct** ainda ativa, clique no menu **Coluna** e clique em **Adicionar coluna**.  
   
@@ -129,9 +115,7 @@ A coluna calculada ProductSubcategoryName é usada para criar uma hierarquia na 
   
 A coluna calculada ProductCategoryName é usada para criar uma hierarquia na tabela DimProduct, que inclui dados da coluna EnglishProductCategoryName na tabela DimProductCategory. Hierarquias não podem abranger mais de uma tabela.  
   
-<a id="create-a-margin-calculated-column-in-the-factinternetsales-table" class="xliff"></a>
-
-#### Criar uma coluna calculada Margin na tabela FactInternetSales  
+#### <a name="create-a-margin-calculated-column-in-the-factinternetsales-table"></a>Criar uma coluna calculada Margin na tabela FactInternetSales  
   
 1.  No designer de modelo, selecione a tabela **FactInternetSales**.  
   
@@ -149,9 +133,7 @@ A coluna calculada ProductCategoryName é usada para criar uma hierarquia na tab
       
     A coluna calculada Margin é usada para analisar margens de lucro para cada venda.  
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 6: Criar medidas](../tutorials/aas-lesson-6-create-measures.md).
   
   

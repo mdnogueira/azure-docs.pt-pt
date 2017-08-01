@@ -22,25 +22,19 @@ ms.lasthandoff: 06/05/2017
 
 ---
 
-<a id="create-a-relay-namespace-using-the-azure-portal" class="xliff"></a>
-
-# Criar um espaço de nomes de Reencaminhamento com o Portal do Azure
+# <a name="create-a-relay-namespace-using-the-azure-portal"></a>Criar um espaço de nomes de Reencaminhamento com o Portal do Azure
 O espaço de nomes é um contentor comum para todos os componentes do reencaminhamento do Azure. Um único espaço de nomes pode conter vários reencaminhamentos, sendo que os espaços de nomes servem frequentemente de contentores da aplicação. Existem atualmente duas formas diferentes de criar um espaço de nomes do reencaminhamento.
 
 1. Portal do Azure (este artigo)
 2. Modelos do [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
 
-<a id="create-a-namespace-in-the-azure-portal" class="xliff"></a>
-
-## Criar um espaço de nomes no portal do Azure
+## <a name="create-a-namespace-in-the-azure-portal"></a>Criar um espaço de nomes no portal do Azure
 
 [!INCLUDE [relay-create-namespace-portal](../../includes/relay-create-namespace-portal.md)]
 
 Parabéns! Criou um espaço de nomes do reencaminhamento.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes:
+## <a name="next-steps"></a>Passos seguintes:
 * [FAQ de Reencaminhamento](relay-faq.md)
 * [Introdução ao .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Introdução ao Node](relay-hybrid-connections-node-get-started.md)

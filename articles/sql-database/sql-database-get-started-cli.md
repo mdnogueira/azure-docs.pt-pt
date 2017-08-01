@@ -24,9 +24,7 @@ ms.lasthandoff: 06/23/2017
 
 ---
 
-<a id="create-a-single-azure-sql-database-using-the-azure-cli" class="xliff"></a>
-
-# Criar uma única base de dados SQL do Azure com a CLI do Azure
+# <a name="create-a-single-azure-sql-database-using-the-azure-cli"></a>Criar uma única base de dados SQL do Azure com a CLI do Azure
 
 A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia detalha a utilização da CLI do Azure para implementar uma base de dados SQL do Azure num [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) num [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md).
 
@@ -36,9 +34,7 @@ Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure
 
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0.4 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-<a id="define-variables" class="xliff"></a>
-
-## Definir variáveis
+## <a name="define-variables"></a>Definir variáveis
 
 Defina variáveis para utilização nos scripts neste guia de introdução.
 
@@ -58,18 +54,14 @@ export endip = "0.0.0.0"
 export databasename = mySampleDatabase
 ```
 
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) com o comando [az group create](/cli/azure/group#create). Um grupo de recursos é um contentor lógico no qual os recursos do Azure são implementados e geridos como um grupo. O exemplo seguinte cria um grupo de recursos com o nome `myResourceGroup` na localização `westeurope`.
 
 ```azurecli-interactive
 az group create --name $resourcegroupname --location $location
 ```
-<a id="create-a-logical-server" class="xliff"></a>
-
-## Criar um servidor lógico
+## <a name="create-a-logical-server"></a>Criar um servidor lógico
 
 Crie um [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md) com o comando [az sql server create](/cli/azure/sql/server#create). Um servidor lógico contém um grupo de bases de dados geridas como um grupo. O exemplo seguinte cria um servidor com um nome aleatório no seu grupo de recursos com um início de sessão de administrador denominado `ServerAdmin` e uma palavra-passe de `ChangeYourAdminPassword1`. Substitua estes valores predefinidos conforme quiser.
 
@@ -78,9 +70,7 @@ az sql server create --name $servername --resource-group $resourcegroupname --lo
     --admin-user $adminlogin --admin-password $password
 ```
 
-<a id="configure-a-server-firewall-rule" class="xliff"></a>
-
-## Configurar uma regra de firewall do servidor
+## <a name="configure-a-server-firewall-rule"></a>Configurar uma regra de firewall do servidor
 
 Crie uma [regra de firewall ao nível do servidor da Base de Dados SQL do Azure](sql-database-firewall-configure.md) com o comando [az sql server firewall create](/cli/azure/sql/server/firewall-rule#create). Uma regra de firewall ao nível do servidor permite a uma aplicação externa, como o SQL Server Management Studio ou o utilitário SQLCMD, ligar a uma base de dados SQL através da firewall do serviço Base de Dados SQL. No exemplo seguinte, a firewall apenas é aberta para outros recursos do Azure. Para ativar a conectividade externa, altere o endereço IP para um endereço adequado para o seu ambiente. Para abrir todos os endereços IP, utilize 0.0.0.0 como o endereço IP inicial e 255.255.255.255 como o endereço final.  
 
@@ -93,9 +83,7 @@ az sql server firewall-rule create --resource-group $resourcegroupname --server 
 > A Base de Dados SQL comunica através da porta 1433. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 1433 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao seu servidor de Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 >
 
-<a id="create-a-database-in-the-server-with-sample-data" class="xliff"></a>
-
-## Criar uma base de dados no servidor com dados de exemplo
+## <a name="create-a-database-in-the-server-with-sample-data"></a>Criar uma base de dados no servidor com dados de exemplo
 
 Crie uma base de dados com um [nível de desempenho S0](sql-database-service-tiers.md) no servidor com o comando [az sql db create](/cli/azure/sql/db#create). O exemplo seguinte cria uma base de dados denominada `mySampleDatabase` e carrega os dados de exemplo AdventureWorksLT para esta base de dados. Substitua estes valores predefinidos conforme pretender (outros guias de introdução nesta coleção são criados mediante os valores neste guia de introdução).
 
@@ -104,9 +92,7 @@ az sql db create --resource-group $resourcegroupname --server $servername \
     --name $databasename --sample-name AdventureWorksLT --service-objective S0
 ```
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Outros guias de introdução nesta coleção são criados através deste guia de introdução. 
 
@@ -118,9 +104,7 @@ Outros guias de introdução nesta coleção são criados através deste guia de
 az group delete --name $resourcegroupname
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que tem uma base de dados, pode ligar e consultar com as suas ferramentas favoritas. Saiba mais ao selecionar a sua ferramenta abaixo:
 

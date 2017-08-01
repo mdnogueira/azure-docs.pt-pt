@@ -21,17 +21,13 @@ ms.lasthandoff: 05/19/2017
 
 
 ---
-<a id="manually-configure-application-insights-for-net-applications" class="xliff"></a>
-
-# Configurar manualmente o Application Insights para aplicações .NET
+# <a name="manually-configure-application-insights-for-net-applications"></a>Configurar manualmente o Application Insights para aplicações .NET
 
 Pode configurar o [Application Insights](app-insights-overview.md) para monitorizar uma vasta gama de aplicações ou funções de aplicação, componentes ou microsserviços. Para serviços e aplicações Web, o Visual Studio oferece [configuração de um passo](app-insights-asp-net.md). Para outros tipos de aplicações .NET, como funções de servidor de back-end ou aplicações de ambiente de trabalho, pode configurar o Application Insights manualmente.
 
 ![Gráficos de exemplo da monitorização do desempenho](./media/app-insights-windows-services/10-perf.png)
 
-<a id="before-you-start" class="xliff"></a>
-
-#### Antes de começar
+#### <a name="before-you-start"></a>Antes de começar
 
 É necessário:
 
@@ -42,9 +38,7 @@ Pode configurar o [Application Insights](app-insights-overview.md) para monitori
 
 O recurso é onde os dados são recolhidos e apresentados no portal do Azure. Tem de decidir se quer criar um novo ou partilhar um existente.
 
-<a id="part-of-a-larger-app-use-existing-resource" class="xliff"></a>
-
-### Parte de uma aplicação maior: utilizar um recurso existente
+### <a name="part-of-a-larger-app-use-existing-resource"></a>Parte de uma aplicação maior: utilizar um recurso existente
 
 Se a sua aplicação Web tiver vários componentes, por exemplo, uma aplicação Web de front-end e um ou mais serviços de back-end, deve enviar a telemetria de todos os componentes para o mesmo recurso. Isto permite apresentá-los num único Mapa de Aplicações e rastrear um pedido de um componente para outro.
 
@@ -52,9 +46,7 @@ Assim, se já estiver a monitorizar outros componentes desta aplicação, basta 
 
 Abra o recurso no [portal do Azure](https://portal.azure.com/). 
 
-<a id="self-contained-app-create-a-new-resource" class="xliff"></a>
-
-### Aplicação autónoma: criar um novo recurso
+### <a name="self-contained-app-create-a-new-resource"></a>Aplicação autónoma: criar um novo recurso
 
 Se a nova aplicação não estiver relacionada com outras aplicações, deve ter o seu próprio recurso.
 
@@ -64,9 +56,7 @@ Inicie sessão no [Portal do Azure](https://portal.azure.com/) e crie um novo re
 
 A escolha do tipo de aplicação define o conteúdo predefinido dos painéis de recursos.
 
-<a id="2-copy-the-instrumentation-key" class="xliff"></a>
-
-## 2. Copiar a Chave de Instrumentação
+## <a name="2-copy-the-instrumentation-key"></a>2. Copiar a Chave de Instrumentação
 A chave identifica o recurso. Deverá instalá-la logo no SDK para direcionar os dados para o recurso.
 
 ![Clicar em Propriedades, selecionar a chave e premir Ctrl+C](./media/app-insights-windows-services/02-props-asp.png)
@@ -89,18 +79,14 @@ A instalação e configuração do pacote do Application Insights varia consoant
    
     Sim. Selecione "Microsoft.ApplicationInsights" se quiser utilizar a API para enviar a sua própria telemetria. O pacote do Windows Server inclui a API, assim como outros pacotes, como a recolha de contadores de desempenho e a monitorização de dependência. 
 
-<a id="to-upgrade-to-future-package-versions" class="xliff"></a>
-
-### Para atualizar para versões futuras do pacote
+### <a name="to-upgrade-to-future-package-versions"></a>Para atualizar para versões futuras do pacote
 Lançamos novas versões do SDK, ocasionalmente.
 
 Para atualizar para uma [nova versão do pacote](https://github.com/Microsoft/ApplicationInsights-dotnet-server/releases/), abra o gestor de pacotes NuGet novamente e filtre os pacotes instalados. Selecione **Microsoft.ApplicationInsights.WindowsServer** e escolha **Atualizar**.
 
 Se tiver efetuado personalizações no ApplicationInsights.config, guarde uma cópia do mesmo antes de atualizar e, posteriormente, intercale as alterações na nova versão.
 
-<a id="4-send-telemetry" class="xliff"></a>
-
-## 4. Enviar telemetria
+## <a name="4-send-telemetry"></a>4. Enviar telemetria
 **Se instalou apenas o pacote de API:**
 
 * Defina a chave de instrumentação no código, por exemplo `main()`: 
@@ -133,31 +119,23 @@ Procure dados nos gráficos Descrição Geral. Inicialmente, verá apenas um ou 
 
 Clique em qualquer gráfico para ver métricas mais detalhadas. [Saiba mais sobre métricas.](app-insights-web-monitor-performance.md)
 
-<a id="no-data" class="xliff"></a>
-
-### Não existem dados?
+### <a name="no-data"></a>Não existem dados?
 * Utilize a aplicação, abrindo páginas diferentes, de modo a gerar alguma telemetria.
 * Abra o mosaico [Pesquisa](app-insights-diagnostic-search.md) para ver eventos individuais. Por vezes, os eventos demoram um pouco mais de tempo a chegar ao pipeline de métricas.
 * Aguarde alguns segundos e clique em **Atualizar**. Os gráficos atualizam-se periodicamente, mas pode atualizá-los manualmente se estiver à espera que apareçam alguns dados.
 * Veja [Resolução de Problemas](app-insights-troubleshoot-faq.md).
 
-<a id="publish-your-app" class="xliff"></a>
-
-## Publicar a aplicação
+## <a name="publish-your-app"></a>Publicar a aplicação
 Em seguida, implemente a aplicação no servidor ou no Azure e veja os dados a acumularem.
 
 ![Utilizar o Visual Studio para publicar a aplicação](./media/app-insights-windows-services/15-publish.png)
 
 Quando é executada em modo de depuração, a telemetria é emitida através do pipeline, pelo que deve ver os dados que aparecem em segundos. Ao implementar a aplicação na configuração da Versão, os dados acumulam-se mais lentamente.
 
-<a id="no-data-after-you-publish-to-your-server" class="xliff"></a>
-
-### Não existem dados depois de publicar no servidor?
+### <a name="no-data-after-you-publish-to-your-server"></a>Não existem dados depois de publicar no servidor?
 Abra portas para o tráfego de saída na firewall do servidor. Consulte [esta página](https://docs.microsoft.com/azure/application-insights/app-insights-ip-addresses) para ver a lista de endereços necessários 
 
-<a id="trouble-on-your-build-server" class="xliff"></a>
-
-### Problemas no servidor de compilação?
+### <a name="trouble-on-your-build-server"></a>Problemas no servidor de compilação?
 Veja [este item de Resolução de Problemas](app-insights-asp-net-troubleshoot-no-data.md#NuGetBuild).
 
 > [!NOTE]
@@ -166,15 +144,11 @@ Veja [este item de Resolução de Problemas](app-insights-asp-net-troubleshoot-n
 > 
 > 
 
-<a id="video" class="xliff"></a>
-
-## Vídeo
+## <a name="video"></a>Vídeo
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Adicione mais telemetria](app-insights-asp-net-more.md) para obter a vista completa em 360 graus da sua aplicação.
 
 

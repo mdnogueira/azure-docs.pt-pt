@@ -19,9 +19,7 @@ ms.lasthandoff: 06/16/2017
 
 ---
 
-<a id="get-started-with-batch-sdk-for-nodejs" class="xliff"></a>
-
-# Introdução ao SDK do Batch para Node.js
+# <a name="get-started-with-batch-sdk-for-nodejs"></a>Introdução ao SDK do Batch para Node.js
 
 > [!div class="op_single_selector"]
 > * [.NET](batch-dotnet-get-started.md)
@@ -32,21 +30,15 @@ ms.lasthandoff: 06/16/2017
 
 Aprenda as noções básicas da criação de clientes do Batch em Node.js com o [SDK do Azure Batch para Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/). Adotamos uma abordagem passo a passo para compreender um cenário para uma aplicação de lote e, depois, utilizar um cliente Node.js para a configurar.  
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Este artigo pressupõe que tem conhecimento do funcionamento de Node.js e que está familiarizado com o Linux. Também parte do princípio de que tem uma conta do Azure configurada com direitos de acesso para criar serviços do Batch e de Armazenamento.
 
 Antes de seguir os passos descritos neste artigo, recomendamos ler a [Descrição Geral Técnica do Azure Batch](batch-technical-overview.md).
 
-<a id="the-tutorial-scenario" class="xliff"></a>
-
-## O cenário de introdução
+## <a name="the-tutorial-scenario"></a>O cenário de introdução
 Comecemos por compreender o cenário dos fluxos de trabalho de lote. Temos um script simples escrito em Python que transfere todos os ficheiros csv de um contentor de armazenamento de Blobs do Azure e os converte em JSON. Para processar em paralelo vários contentores da conta de armazenamento, podemos implementar o script como uma tarefa do Azure Batch.
 
-<a id="azure-batch-architecture" class="xliff"></a>
-
-## Arquitetura do Azure Batch
+## <a name="azure-batch-architecture"></a>Arquitetura do Azure Batch
 O diagrama seguinte ilustra como podemos ampliar o script Python com o Azure Batch e um cliente Node.js.
 
 ![Cenário do Azure Batch](./media/batch-nodejs-get-started/BatchScenario.png)
@@ -64,15 +56,11 @@ O cliente de Node.js implementa uma tarefa de lote com uma tarefa de preparaçã
 >
 >
 
-<a id="build-the-application" class="xliff"></a>
-
-## Criar a aplicação
+## <a name="build-the-application"></a>Criar a aplicação
 
 Agora, vamos seguir o processo de criação do cliente Node.js passo a passo:
 
-<a id="step-1-install-azure-batch-sdk" class="xliff"></a>
-
-### Passo 1: Instalar o SDK do Azure Batch
+### <a name="step-1-install-azure-batch-sdk"></a>Passo 1: Instalar o SDK do Azure Batch
 
 Pode utilizar o comando npm install para instalar o SDK do Azure Batch para Node.js.
 
@@ -85,9 +73,7 @@ Este comando instala a versão mais recente do SDK do nó azure-batch.
 >
 >
 
-<a id="step-2-create-an-azure-batch-account" class="xliff"></a>
-
-### Passo 2: Criar uma conta do Azure Batch
+### <a name="step-2-create-an-azure-batch-account"></a>Passo 2: Criar uma conta do Azure Batch
 
 Pode criá-la no [portal do Azure](batch-account-create-portal.md) ou a partir da linha de comandos ([Powershell](batch-powershell-cmdlets-get-started.md) /[CLI do Azure](https://docs.microsoft.com/cli/azure/overview)).
 
@@ -107,9 +93,7 @@ Cada conta do Batch tem chaves de acesso correspondentes. Estas chaves são nece
 
 Copie e armazene a chave, para utilizá-la nos passos subsequentes.
 
-<a id="step-3-create-an-azure-batch-service-client" class="xliff"></a>
-
-### Passo 3: Criar um cliente do serviço Azure Batch
+### <a name="step-3-create-an-azure-batch-service-client"></a>Passo 3: Criar um cliente do serviço Azure Batch
 O fragmento de código seguinte começa por importar o módulo de Node.js azure-batch e, em seguida, cria um cliente do Serviço Batch. Em primeiro lugar, tem de criar um objeto SharedKeyCredentials com a chave da conta do Batch copiada do passo anterior.
 
 ```nodejs
@@ -143,9 +127,7 @@ Veja a captura de ecrã:
 
 
 
-<a id="step-4-create-an-azure-batch-pool" class="xliff"></a>
-
-### Passo 4: Criar um conjunto do Azure Batch
+### <a name="step-4-create-an-azure-batch-pool"></a>Passo 4: Criar um conjunto do Azure Batch
 Os conjuntos do Azure Batch consistem em várias VMs (também conhecidas como Nós do Batch). O serviço do Azure Batch implementa a tarefa nestes nós e gere-as. Pode definir os seguintes parâmetros de configuração para o conjunto.
 
 * Tipo de imagem das Máquinas Virtuais
@@ -280,9 +262,7 @@ Segue-se um objeto de resultado de exemplo devolvido pela função pool.get.
 ```
 
 
-<a id="step-4-submit-an-azure-batch-job" class="xliff"></a>
-
-### Passo 4: Submeter uma tarefa do Azure Batch
+### <a name="step-4-submit-an-azure-batch-job"></a>Passo 4: Submeter uma tarefa do Azure Batch
 As tarefas do Azure Batch são grupos lógicos de tarefas semelhantes. No nosso cenário, é "Processar csv para JSON". Cada tarefa neste cenário pode processar ficheiros csv presentes em cada contentor do Armazenamento do Azure.
 
 Estas tarefas serão executadas em paralelo e implementadas em vários nós, orquestradas pelo serviço Azure Batch.
@@ -292,9 +272,7 @@ Estas tarefas serão executadas em paralelo e implementadas em vários nós, orq
 >
 >
 
-<a id="preparation-task" class="xliff"></a>
-
-#### Tarefa de preparação
+#### <a name="preparation-task"></a>Tarefa de preparação
 
 Os nós de VMs criados são nós Ubuntu vazios. Muitas vezes, tem de instalar um conjunto de programas como pré-requisitos.
 Normalmente, relativamente a nós do Linux, pode ser um script de shell que instala os pré-requisitos antes de a tarefa em si ser executada. No entanto, pode ser qualquer executável programável.
@@ -341,9 +319,7 @@ Se não for necessário instalar pré-requisitos para que as tarefas sejam execu
 ```
 
 
-<a id="step-5-submit-azure-batch-tasks-for-a-job" class="xliff"></a>
-
-### Passo 5: Submeter tarefas do Azure Batch para trabalhos
+### <a name="step-5-submit-azure-batch-tasks-for-a-job"></a>Passo 5: Submeter tarefas do Azure Batch para trabalhos
 
 Agora que o trabalho “process csv” está criado, vamos criar tarefas para o mesmo. Partindo do princípio de que temos quatro contentores, temos de criar quatro tarefas, uma para cada contentor.
 
@@ -383,9 +359,7 @@ O código adiciona várias tarefas ao conjunto e cada uma das tarefas é executa
 
 O portal tem vistas detalhadas sobre as tarefas e os estados dos trabalhos. Também pode utilizar a lista para obter funções no SDK do Azure para Node. Estão disponíveis detalhes na [ligação](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html) da documentação.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - Reveja o artigo [Descrição geral das funcionalidades do Azure Batch](batch-api-basics.md), que recomendamos se não estiver familiarizado com o serviço.
 - Veja [Batch Node.js reference](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/) (Referência de Node.js do Batch) para explorar a API do Batch.

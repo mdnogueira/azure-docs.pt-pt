@@ -22,17 +22,11 @@ ms.lasthandoff: 06/30/2017
 
 
 ---
-<a id="create-or-select-a-virtual-network-for-azure-active-directory-domain-services" class="xliff"></a>
-
-# Criar ou selecionar uma rede virtual para o Azure Active Directory Domain Services
-<a id="before-you-begin" class="xliff"></a>
-
-## Antes de começar
+# <a name="create-or-select-a-virtual-network-for-azure-active-directory-domain-services"></a>Criar ou selecionar uma rede virtual para o Azure Active Directory Domain Services
+## <a name="before-you-begin"></a>Antes de começar
 Consulte [Networking considerations for Azure Active Directory Domain Services (Considerações sobre o funcionamento em rede do Azure Active Directory Domain Services)](active-directory-ds-networking.md).
 
-<a id="task-2-create-an-azure-virtual-network" class="xliff"></a>
-
-## Tarefa 2: Criar uma Azure Virtual Network
+## <a name="task-2-create-an-azure-virtual-network"></a>Tarefa 2: Criar uma Azure Virtual Network
 A tarefa de configuração seguinte é criar uma rede virtual do Azure e uma sub-rede dentro da mesma. O Azure Active Directory Domain Services é ativado nesta sub-rede dentro da sua rede virtual. Se tiver uma rede virtual existente que prefira utilizar, pode ignorar este passo.
 
 > [!NOTE]
@@ -74,8 +68,6 @@ Para criar uma rede virtual do Azure na qual pretende ativar o Azure Active Dire
 11. Para criar a sub-rede, clique em **Guardar**.
 
 
-<a id="next-step" class="xliff"></a>
-
-## Passo seguinte
+## <a name="next-step"></a>Passo seguinte
 [Tarefa 3: Ativar o Azure Active Directory Domain Services](active-directory-ds-getting-started-enableaadds.md)
 

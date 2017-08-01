@@ -18,21 +18,15 @@ ms.lasthandoff: 06/28/2017
 
 ---
 
-<a id="create-an-azure-database-for-mysql-server-using-azure-portal" class="xliff"></a>
-
-# Criar uma Base de Dados do Azure para o servidor MySQL com o portal do Azure
+# <a name="create-an-azure-database-for-mysql-server-using-azure-portal"></a>Criar uma Base de Dados do Azure para o servidor MySQL com o portal do Azure
 Este artigo mostra-lhe como utilizar o portal do Azure para criar uma Base de Dados do Azure para o servidor MySQL em cerca de cinco minutos. 
 
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-<a id="log-in-to-azure" class="xliff"></a>
-
-## Iniciar sessão no Azure
+## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 Abra o browser e navegue para o [portal do Microsoft Azure](https://portal.azure.com/). Introduza as suas credenciais para iniciar sessão no portal. A vista predefinida é o dashboard de serviço.
 
-<a id="create-azure-database-for-mysql-server" class="xliff"></a>
-
-## Criar Base de Dados do Azure para o servidor MySQL
+## <a name="create-azure-database-for-mysql-server"></a>Criar Base de Dados do Azure para o servidor MySQL
 1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
 2. Selecione **Bases de Dados** na página **Nova** e selecione **Base de Dados do Azure para o MySQL** na página **Bases de Dados**. Também pode escrever **MySQL** na caixa de pesquisa da página Nova para encontrar o serviço.
@@ -59,9 +53,7 @@ Abra o browser e navegue para o [portal do Microsoft Azure](https://portal.azure
 
    Em seguida, clique em **Criar**. Num ou dois minutos, uma nova Base de Dados do Azure para o servidor MySQL estará em execução na cloud. Clique no botão **Notificações** (ícone de sino) na barra de ferramentas para monitorizar o processo de implementação.
 
-<a id="configure-the-firewall" class="xliff"></a>
-
-## Configurar a firewall
+## <a name="configure-the-firewall"></a>Configurar a firewall
 Antes de ligar à Base de Dados do Azure para o MySQL pela primeira vez, configure a firewall e adicione o endereço IP de rede público do cliente (ou um intervalo) à lista de permissões.
 
 1. Depois de concluída a implementação, clique em **Todos os Recursos** no menu esquerdo e escreva o nome **myserver4demo** para procurar o servidor recentemente criado. Clique no nome do servidor listado no resultado da pesquisa. É apresentada a página Descrição Geral do servidor, que fornece opções para configuração adicional.
@@ -71,9 +63,7 @@ Antes de ligar à Base de Dados do Azure para o MySQL pela primeira vez, configu
 3. Clique em **Adicionar o meu IP** para adicionar o endereço IP do seu computador local ou configurar um intervalo de endereços IP. Não se esqueça de clicar em **Guardar** depois de criar a regras.
   ![Portal do Azure - adicionar regra de firewall e guardar](./media/quickstart-create-mysql-server-database-using-azure-portal/5_firewall-settings.png)
 
-<a id="get-connection-information" class="xliff"></a>
-
-## Obter informações da ligação
+## <a name="get-connection-information"></a>Obter informações da ligação
 Obtenha o nome de domínio completamente qualificado do servidor MySQL do Azure no portal do Azure. O nome de domínio completamente qualificado é utilizado para ligar ao seu servidor com a ferramenta de linha de comandos **mysql.exe**.
 
 1.  No [portal do Azure](https://portal.azure.com/), clique em **Todos os recursos**, no menu do lado esquerdo, e clique na sua Base de Dados do Azure para o servidor MySQL.
@@ -81,9 +71,7 @@ Obtenha o nome de domínio completamente qualificado do servidor MySQL do Azure 
 2.  Clique em **Propriedades**. Aponte **NOME DO SERVIDOR** e **INÍCIO DE SESSÃO DE ADMINISTRADOR DO SERVIDOR**.
 Neste exemplo, o nome do servidor é *myserver4demo.mysql.database.azure.com* e o início de sessão de administrador do servidor é *myadmin@myserver4demo*.
 
-<a id="connect-to-the-server-using-mysqlexe-command-line-tool" class="xliff"></a>
-
-## Ligar ao servidor com a ferramenta de linha de comandos mysqlexe
+## <a name="connect-to-the-server-using-mysqlexe-command-line-tool"></a>Ligar ao servidor com a ferramenta de linha de comandos mysqlexe
 Utilize a [ferramenta de linha de comandos do mysql](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) para estabelecer uma ligação à base de dados do Azure para o servidor MySQL. Pode executar a ferramenta de linha de comandos do mysql no navegador com o Azure Cloud Shell ou iniciá-la a partir do seu computador com as ferramentas do mysql instaladas localmente. Para iniciar o Azure Cloud Shell, clique no botão `Try It` num bloco de código neste artigo ou visite o [portal do Azure](https://portal.azure.com) e clique no ícone `>_` da barra de ferramentas superior à direita. 
 
 1. Escreva o comando para estabelecer a ligação:
@@ -115,9 +103,7 @@ status
    SHOW DATABASES;
    ```
 
-<a id="connect-to-the-server-using-the-mysql-workbench-gui-tool" class="xliff"></a>
-
-## Ligar ao servidor com a ferramenta Workbench GUI do MySQL
+## <a name="connect-to-the-server-using-the-mysql-workbench-gui-tool"></a>Ligar ao servidor com a ferramenta Workbench GUI do MySQL
 1.  Inicie a aplicação MySQL Workbench no computador cliente. Pode transferir e instalar o MySQL Workbench [aqui](https://dev.mysql.com/downloads/workbench/).
 
 2.  Na caixa de diálogo **Configurar Ligação Nova**, introduza as informações seguintes no separador **Parâmetros**:
@@ -138,9 +124,7 @@ Clique em **Testar Ligação** para testar se todos os parâmetros estão config
 > [!NOTE]
 > SSL é aplicado por predefinição no seu servidor e requer uma configuração extra, de modo a poder ligar com êxito. Veja [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (Configurar a conectividade SSL na sua aplicação para ligar em segurança à Base de Dados do Azure para o MySQL).  Se pretender desativar o SSL para este guia de introdução, visite o portal do Azure e clique na página de segurança da Ligação para desativar o botão para ativar/desativar Impor ligação SLL.
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 Limpe todos os recursos que criou no guia de introdução ao eliminar o [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
 > [!TIP]
@@ -155,9 +139,7 @@ Se pretender eliminar o servidor recentemente criado:
 3.  Confirme o nome do servidor que pretende eliminar e veja as bases de dados incluídas que são afetadas. Escreva **myserver4demo** na caixa de texto e, em seguida, clique em Eliminar.
 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 > [!div class="nextstepaction"]
 > [Design your first Azure Database for MySQL database](./tutorial-design-database-using-portal.md) (Conceber a sua primeira Base de Dados do Azure para a base de dados MySQL)

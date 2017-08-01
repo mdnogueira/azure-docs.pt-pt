@@ -23,9 +23,7 @@ ms.lasthandoff: 06/28/2017
 
 
 ---
-<a id="configure-a-point-to-site-connection-to-a-vnet-using-powershell" class="xliff"></a>
-
-# Configurar uma ligação de Ponto a Site a uma VNet com o PowerShell
+# <a name="configure-a-point-to-site-connection-to-a-vnet-using-powershell"></a>Configurar uma ligação de Ponto a Site a uma VNet com o PowerShell
 
 
 Este artigo mostra como criar uma VNet com uma ligação Ponto a Site no modelo de implementação Resource Manager com o PowerShell. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
@@ -51,9 +49,7 @@ As ligações de P2S requerem o seguinte:
 * Um pacote de configuração de cliente VPN tem de estar gerado e instalado em todos os computadores cliente que estabelece ligação. O pacote de configuração do cliente configura o cliente VPN nativo que já se encontra no sistema operativo com as informações necessárias para estabelecer uma ligação à VNet.
 
 
-<a id="before-beginning" class="xliff"></a>
-
-## Antes de começar
+## <a name="before-beginning"></a>Antes de começar
 
 * Verifique se tem uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial).
 * Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Para obter mais informações sobre como instalar os cmdlets PowerShell, consulte [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview).
@@ -264,9 +260,7 @@ Se estiver a ter problemas em ligar, verifique os seguintes itens:
 
 Pode adicionar e remover certificados de raiz fidedigna do Azure. Quando remove um certificado de raiz, os clientes que tenham um certificado gerado a partir dessa raiz não conseguirão autenticar-se e, por conseguinte, não conseguirão estabelecer ligação. Se quiser que um cliente faça a autenticação e estabeleça ligação, terá de instalar um novo certificado de cliente gerado a partir de um certificado de raiz considerado fidedigno (carregado) no Azure.
 
-<a id="to-add-a-trusted-root-certificate" class="xliff"></a>
-
-### Para adicionar um certificado de raiz fidedigna
+### <a name="to-add-a-trusted-root-certificate"></a>Para adicionar um certificado de raiz fidedigna
 
 Pode adicionar até 20 ficheiros .cer de certificado de raiz ao Azure. Os seguintes passos ajudam a adicionar um certificado de raiz:
 
@@ -297,9 +291,7 @@ Pode adicionar até 20 ficheiros .cer de certificado de raiz ao Azure. Os seguin
   -VirtualNetworkGatewayName "VNet1GW"
   ```
 
-<a id="to-remove-a-root-certificate" class="xliff"></a>
-
-### Para remover um certificado de raiz
+### <a name="to-remove-a-root-certificate"></a>Para remover um certificado de raiz
 
 1. Declare as variáveis.
 
@@ -327,9 +319,7 @@ Pode revogar certificados de cliente. A lista de revogação de certificado perm
 
 A prática comum é utilizar o certificado de raiz para gerir o acesso nos níveis de equipa ou organização e utilizar certificados de cliente revogados para controlo de acesso detalhado dos utilizadores individuais.
 
-<a id="to-revoke-a-client-certificate" class="xliff"></a>
-
-### Para revogar um certificado de cliente
+### <a name="to-revoke-a-client-certificate"></a>Para revogar um certificado de cliente
 
 1. Obtenha o thumbprint do certificado de cliente. Para obter mais informações, veja [Como obter o Thumbprint de um Certificado](https://msdn.microsoft.com/library/ms734695.aspx).
 2. Copie as informações para um editor de texto e remova todos os espaços, para que seja uma cadeia contínua. Isto está declarado como uma variável no próximo passo.
@@ -355,9 +345,7 @@ A prática comum é utilizar o certificado de raiz para gerir o acesso nos níve
   ```
 6. Depois de o thumbprint ser adicionado, o certificado já não pode ser utilizado para ligar. Os clientes que se tentarem ligar com este certificado irão receber uma mensagem a indicar que o certificado já não é válido.
 
-<a id="to-reinstate-a-client-certificate" class="xliff"></a>
-
-### Para restabelecer um certificado de cliente
+### <a name="to-reinstate-a-client-certificate"></a>Para restabelecer um certificado de cliente
 
 Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de certificados de cliente revogados.
 
@@ -385,8 +373,6 @@ Pode restabelecer um certificado de cliente, removendo o thumbprint da lista de 
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-point-to-site-faq-include.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute). Para compreender melhor o funcionamento em rede e as máquinas virtuais, veja [Descrição geral da rede VM do Azure e Linux](../virtual-machines/linux/azure-vm-network-overview.md).
 

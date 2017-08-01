@@ -22,16 +22,12 @@ ms.lasthandoff: 06/01/2017
 
 ---
 
-<a id="create-your-first-azure-resource-manager-template" class="xliff"></a>
-
-# Criar o primeiro modelo do Azure Resource Manager
+# <a name="create-your-first-azure-resource-manager-template"></a>Criar o primeiro modelo do Azure Resource Manager
 Este tópico explica os passos de criação do primeiro modelo do Azure Resource Manager. Os modelos do Resource Manager são ficheiros JSON que definem os recursos que precisa de implementar para a sua solução. Para compreender os conceitos associados à implementação e gestão das suas soluções do Azure, veja [Descrição geral do Azure Resource Manager](resource-group-overview.md). Se dispõe de recursos existentes e pretende obter um modelo para esses recursos, veja [Exportar um modelo do Azure Resource Manager a partir de recursos existentes](resource-manager-export-template.md).
 
 Para criar e rever modelos, é necessário um editor de JSON. O [Visual Studio Code](https://code.visualstudio.com/) é um editor de código simples, open source para várias plataformas. Suporta a criação e edição de modelos do Resource Manager através de um extensão. Este tópico parte do princípio de que está a utilizar o Código VS. No entanto, se tiver outro editor de JSON (por exemplo, o Visual Studio), pode utilizar esse editor.
 
-<a id="get-vs-code-and-extension" class="xliff"></a>
-
-## Obter o Código VS e a extensão
+## <a name="get-vs-code-and-extension"></a>Obter o Código VS e a extensão
 1. Se necessário, instale o Código VS a partir de [https://code.visualstudio.com/](https://code.visualstudio.com/).
 
 2. Instale a extensão [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools), acedendo a Quick Open (Ctrl+P) e executando: 
@@ -42,9 +38,7 @@ Para criar e rever modelos, é necessário um editor de JSON. O [Visual Studio C
 
 3. Reinicie o VS Code quando lhe for pedido para ativar a extensão.
 
-<a id="create-blank-template" class="xliff"></a>
-
-## Criar um modelo em branco
+## <a name="create-blank-template"></a>Criar um modelo em branco
 
 Vamos começar com um modelo em branco que inclui apenas as secções básicas de um modelo.
 
@@ -65,9 +59,7 @@ Vamos começar com um modelo em branco que inclui apenas as secções básicas d
 
 3. Guarde este ficheiro como **azuredeploy.json**. 
 
-<a id="add-storage-account" class="xliff"></a>
-
-## Adicionar conta de armazenamento
+## <a name="add-storage-account"></a>Adicionar conta de armazenamento
 1. Para definir uma conta de armazenamento para implementação, adicione essa conta de armazenamento à secção **resources** do seu modelo. Para localizar os valores que estão disponíveis para a conta de armazenamento, consulte a [referência de modelo de contas de armazenamento](/azure/templates/microsoft.storage/storageaccounts). Copie o JSON que é apresentado para a conta de armazenamento. 
 
 3. Cole esse JSON na secção **resources** do seu modelo, conforme apresentado no exemplo seguinte: 
@@ -114,9 +106,7 @@ Vamos começar com um modelo em branco que inclui apenas as secções básicas d
   
   O exemplo anterior inclui muitos valores de marcador de posição e algumas propriedades que poderão não ser necessárias na sua conta de armazenamento.
 
-<a id="set-values-for-storage-account" class="xliff"></a>
-
-## Definir valores para a conta de armazenamento
+## <a name="set-values-for-storage-account"></a>Definir valores para a conta de armazenamento
 
 Agora, está pronto para definir valores para a sua conta de armazenamento. 
 
@@ -183,9 +173,7 @@ Agora, o seu modelo tem este aspeto:
 }
 ```
 
-<a id="add-template-function" class="xliff"></a>
-
-## Adicionar funções ao modelo
+## <a name="add-template-function"></a>Adicionar funções ao modelo
 
 Utilize funções no seu modelo para simplificar a sintaxe do modelo e para obter valores que só estão disponíveis quando o modelo está a ser implementado. Para obter o conjunto completo de funções de modelo, veja o artigo [Funções de modelo do Azure Resource Manager](resource-group-template-functions.md).
 
@@ -228,9 +216,7 @@ Agora, o seu modelo tem este aspeto:
 }
 ```
 
-<a id="add-parameters-and-variables" class="xliff"></a>
-
-## Adicionar parâmetros e variáveis
+## <a name="add-parameters-and-variables"></a>Adicionar parâmetros e variáveis
 Só falta definir dois valores no seu modelo - **name** e **sku.name**. Para estas propriedades, adicione parâmetros que lhe permitem personalizar estes valores durante a implementação. 
 
 Os nomes das contas de armazenamento têm várias restrições que dificultam a respetiva definição. O nome tem de ter entre 3 e 24 carateres, utilizar apenas números e letras minúsculas e ser exclusivo. Em vez de tentar adivinhar um valor exclusivo que corresponda às restrições, utilize a função [uniqueString](resource-group-template-functions-string.md#uniquestring) para gerar um valor hash. Para atribuir mais significado a este valor hash, adicione um prefixo que o ajude a identificá-lo como uma conta de armazenamento após a implementação. 
@@ -305,9 +291,7 @@ Os nomes das contas de armazenamento têm várias restrições que dificultam a 
 
 4. Guarde o ficheiro.
 
-<a id="final-template" class="xliff"></a>
-
-## Modelo final
+## <a name="final-template"></a>Modelo final
 
 Depois de concluir os passos neste artigo, o modelo tem este aspeto:
 
@@ -361,9 +345,7 @@ Depois de concluir os passos neste artigo, o modelo tem este aspeto:
 }
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * O modelo está concluído e está preparado para ser implementado na sua subscrição. Para implementar, veja [Implementar recursos no Azure](resource-manager-quickstart-deploy.md).
 * Para saber mais sobre a estrutura de um modelo, consulte [Criação de modelos do Azure Resource Manager](resource-group-authoring-templates.md).
 * Para ver modelos completos para vários tipos de soluções, veja os [Modelos de Início Rápido do Azure](https://azure.microsoft.com/documentation/templates/).

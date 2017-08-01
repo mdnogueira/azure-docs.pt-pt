@@ -24,9 +24,7 @@ ms.lasthandoff: 06/20/2017
 
 ---
 
-<a id="create-a-linux-virtual-machine-with-the-azure-cli" class="xliff"></a>
-
-# Criar uma máquina virtual Linux com a CLI do Azure
+# <a name="create-a-linux-virtual-machine-with-the-azure-cli"></a>Criar uma máquina virtual Linux com a CLI do Azure
 
 A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia fornece detalhes utilizando a CLI do Azure para implementar uma virtual a executar o Ubuntu 16.04 LTS. Quando o servidor estiver implementado, uma ligação SSH é criada e um servidor NGINX Web é instalado.
 
@@ -36,9 +34,7 @@ Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure
 
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0.4 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Um grupo de recursos do Azure é um contentor lógico no qual os recursos do Azure são implementados e geridos. 
 
@@ -48,9 +44,7 @@ O exemplo seguinte cria um grupo de recursos com o nome *myResourceGroup* na loc
 az group create --name myResourceGroup --location eastus
 ```
 
-<a id="create-virtual-machine" class="xliff"></a>
-
-## Criar a máquina virtual
+## <a name="create-virtual-machine"></a>Criar a máquina virtual
 
 Crie uma VM com o comando [z vm create](/cli/azure/vm#create). 
 
@@ -75,9 +69,7 @@ Quando a VM tiver sido criada, a CLI do Azure mostra informações semelhantes a
 }
 ```
 
-<a id="open-port-80-for-web-traffic" class="xliff"></a>
-
-## Abrir a porta 80 para o tráfego da Web 
+## <a name="open-port-80-for-web-traffic"></a>Abrir a porta 80 para o tráfego da Web 
 
 Por predefinição, só são permitidas ligações SSH para máquinas virtuais do Linux implementadas no Azure. Se esta VM vier a ser um servidor Web, tem de abrir a porta 80 a partir da Internet. Utilize o comando [az vm open-port](/cli/azure/vm#open-port) para abrir a porta pretendida.  
  
@@ -85,9 +77,7 @@ Por predefinição, só são permitidas ligações SSH para máquinas virtuais d
 az vm open-port --port 80 --resource-group myResourceGroup --name myVM
 ```
 
-<a id="ssh-into-your-vm" class="xliff"></a>
-
-## Aceder através de SSH à VM
+## <a name="ssh-into-your-vm"></a>Aceder através de SSH à VM
 
 Utilize o seguinte comando para criar uma sessão SSH com a máquina virtual. Substitua o *<publicIpAddress>* pelo endereço IP público correto da sua máquina virtual.  No exemplo acima, o nosso endereço IP era *40.68.254.142*.
 
@@ -95,9 +85,7 @@ Utilize o seguinte comando para criar uma sessão SSH com a máquina virtual. Su
 ssh <publicIpAddress>
 ```
 
-<a id="install-nginx" class="xliff"></a>
-
-## Instalar o NGINX
+## <a name="install-nginx"></a>Instalar o NGINX
 
 Utilize o script de bash seguinte para atualizar as origens de pacotes e instalar o pacote NGINX mais recente. 
 
@@ -111,18 +99,14 @@ apt-get -y update
 apt-get -y install nginx
 ```
 
-<a id="view-the-nginx-welcome-page" class="xliff"></a>
-
-## Ver a página de boas-vindas do NGINX
+## <a name="view-the-nginx-welcome-page"></a>Ver a página de boas-vindas do NGINX
 
 Com o NGINX instalado e a porta 80 agora aberta na sua VM a partir da Internet, pode utilizar um browser à sua escolha para ver a página de boas-vindas do NGINX predefinida. Certifique-se de que utiliza o *publicIpAddress* que documentou acima para visitar a página predefinida. 
 
 ![Site predefinido do NGINX](./media/quick-create-cli/nginx.png) 
 
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Quando já não for necessário, pode utilizar o comando [az group delete](/cli/azure/group#delete) para remover o Grupo de Recursos, a VM e todos os recursos relacionados.
 
@@ -130,9 +114,7 @@ Quando já não for necessário, pode utilizar o comando [az group delete](/cli/
 az group delete --name myResourceGroup
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Neste guia de introdução, implementou uma máquina virtual simples, uma regra de grupo de segurança de rede e instalou um servidor Web. Para saber mais sobre as máquinas virtuais do Azure, continue para o tutorial das VMs do Linux.
 

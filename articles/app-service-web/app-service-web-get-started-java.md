@@ -22,17 +22,13 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/20/2017
 
 ---
-<a id="create-your-first-java-web-app-in-azure" class="xliff"></a>
-
-# Criar a primeira aplicação Web Java no Azure
+# <a name="create-your-first-java-web-app-in-azure"></a>Criar a primeira aplicação Web Java no Azure
 
 A funcionalidade [Aplicações Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) do [Serviço de Aplicações do Azure](../app-service/app-service-value-prop-what-is.md) fornece um serviço de alojamento Web altamente dimensionável e com correção automática. Este guia de introdução mostra como implementar uma aplicação Web Java no Serviço de Aplicações com o [IDE do Eclipse para Programadores de Java EE](http://www.eclipse.org/).
 
 !["Olá, Azure!” aplicação Web de exemplo](./media/app-service-web-get-started-java/browse-web-app-1.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este guia de introdução, instale:
 
@@ -41,9 +37,7 @@ Para concluir este guia de introdução, instale:
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-<a id="create-a-dynamic-web-project-in-eclipse" class="xliff"></a>
-
-## Criar um projeto Web dinâmico no Eclipse
+## <a name="create-a-dynamic-web-project-in-eclipse"></a>Criar um projeto Web dinâmico no Eclipse
 
 No Eclipse, selecione **Ficheiro** > **Novo** > **Projeto Web Dinâmico**.
 
@@ -51,9 +45,7 @@ Na caixa de diálogo **Novo Projeto Web Dinâmico**, dê o nome **MyFirstJavaOnA
    
 ![Caixa de diálogo Novo Projeto Web Dinâmico](./media/app-service-web-get-started-java/new-dynamic-web-project-dialog-box.png)
 
-<a id="add-a-jsp-page" class="xliff"></a>
-
-### Adicionar uma página JSP
+### <a name="add-a-jsp-page"></a>Adicionar uma página JSP
 
 Se o Explorador de Projeto não for apresentado, restaure-o.
 
@@ -81,9 +73,7 @@ No ficheiro index.jsp, substitua o elemento `<body></body>` pela seguinte marca�
 
 Guarde as alterações.
 
-<a id="publish-the-web-app-to-azure" class="xliff"></a>
-
-## Publicar a aplicação Web no Azure
+## <a name="publish-the-web-app-to-azure"></a>Publicar a aplicação Web no Azure
 
 No Explorador de Projeto, clique com o botão direito do rato no projeto e, em seguida, selecione **Azure** > **Publicar como Aplicação Web do Azure**.
 
@@ -93,9 +83,7 @@ Na caixa de diálogo **Início de Sessão do Azure**, mantenha a opção **Inter
 
 Siga as instruções de início de sessão.
 
-<a id="deploy-web-app-dialog-box" class="xliff"></a>
-
-### Caixa de diálogo Implementar Aplicação Web
+### <a name="deploy-web-app-dialog-box"></a>Caixa de diálogo Implementar Aplicação Web
 
 Depois de iniciar sessão na conta do Azure, é apresentada a caixa de diálogo **Implementar Aplicação Web**.
 
@@ -103,9 +91,7 @@ Selecione **Criar**.
 
 ![Caixa de diálogo Implementar Aplicação Web](./media/app-service-web-get-started-java/deploy-web-app-dialog-box.png)
 
-<a id="create-app-service-dialog-box" class="xliff"></a>
-
-### Caixa de diálogo Criar Serviço de Aplicações
+### <a name="create-app-service-dialog-box"></a>Caixa de diálogo Criar Serviço de Aplicações
 
 A caixa de diálogo **Criar Serviço de Aplicações** é apresentada, com os valores predefinidos. O número **170602185241** mostrado na seguinte imagem é diferente na sua caixa de diálogo.
 
@@ -126,9 +112,7 @@ Na caixa de diálogo **Criar Serviço de Aplicações**:
 
 [!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
 
-<a id="resource-group-tab" class="xliff"></a>
-
-### Separador grupo de recursos
+### <a name="resource-group-tab"></a>Separador grupo de recursos
 
 Selecione o separador **Grupo de recursos**. Mantenha o valor predefinido gerado para o grupo de recursos.
 
@@ -150,9 +134,7 @@ O Azure Toolkit cria a aplicação Web e apresenta uma caixa de diálogo de prog
 
 ![Caixa de diálogo Progresso de Criar Serviço de Aplicações](./media/app-service-web-get-started-java/create-app-service-progress-bar.png)
 
-<a id="deploy-web-app-dialog-box" class="xliff"></a>
-
-### Caixa de diálogo Implementar Aplicação Web
+### <a name="deploy-web-app-dialog-box"></a>Caixa de diálogo Implementar Aplicação Web
 
 Na caixa de diálogo **Implementar Aplicação Web**, selecione **Implementar na raiz**. Se tiver um serviço de aplicações em *wingtiptoys.azurewebsites.net* e não implementar na raiz, a sua aplicação Web chamada **MyFirstJavaOnAzureWebApp** é implementada em *wingtiptoys.azurewebsites.net/MyFirstJavaOnAzureWebApp*.
 
@@ -170,9 +152,7 @@ Parabéns! Implementou com êxito a sua aplicação Web no Azure.
 
 !["Olá, Azure!” aplicação Web de exemplo](./media/app-service-web-get-started-java/browse-web-app-1.png)
 
-<a id="update-the-web-app" class="xliff"></a>
-
-## Atualizar a aplicação Web
+## <a name="update-the-web-app"></a>Atualizar a aplicação Web
 
 Altere o código JSP de exemplo para uma mensagem diferente.
 
@@ -196,9 +176,7 @@ Selecione a aplicação Web e selecione **Implementar**, que publica as alteraç
 
 Quando a ligação **Publicação** for apresentada, selecione-a para navegar até à aplicação Web e ver as alterações.
 
-<a id="manage-the-web-app" class="xliff"></a>
-
-## Gerir a aplicação Web
+## <a name="manage-the-web-app"></a>Gerir a aplicação Web
 
 Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para ver a aplicação Web que criou.
 
@@ -218,9 +196,7 @@ Selecione a aplicação Web (**webapp-170602193915** na imagem anterior).
 
 [!INCLUDE [clean-up-section-portal-web-app](../../includes/clean-up-section-portal-web-app.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 > [!div class="nextstepaction"]
 > [Mapear domínio personalizado](app-service-web-tutorial-custom-domain.md)

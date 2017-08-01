@@ -21,9 +21,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/21/2017
 
 ---
-<a id="azure-active-directory-for-developers" class="xliff"></a>
-
-# Azure Active Directory para programadores
+# <a name="azure-active-directory-for-developers"></a>Azure Active Directory para programadores
 O Azure Active Directory é um serviço de identidade em cloud que permite que os programadores iniciem a sessão de qualquer utilizador de forma segura com uma conta profissional ou escolar ,segura pela Microsoft.  A documentação presente mostra-lhe como adicionar suporte do Azure AD à aplicação através de protocolos de autenticação padrão da indústria, o OAuth e o OpenID Connect.
 
 | | |
@@ -31,9 +29,7 @@ O Azure Active Directory é um serviço de identidade em cloud que permite que o
 |[Noções básicas da autenticação](active-directory-authentication-scenarios.md) | Introdução à autenticação com o Azure AD |
 |[Tipos de aplicações](active-directory-authentication-scenarios.md#application-types-and-scenarios) | Descrição geral dos cenários autenticação suportado pelo Azure AD |                                
                                                                               
-<a id="get-started" class="xliff"></a>
-
-## Introdução
+## <a name="get-started"></a>Introdução
 Estas configurações assistidas vão guiá-lo através da utilização das bibliotecas de autenticação para iniciar a sessão dos utilizadores do Azure Active Directory.
 
 |  |  |  |  |
@@ -44,9 +40,7 @@ Estas configurações assistidas vão guiá-lo através da utilização das bibl
 | <center>![APIs da Web](./media/active-directory-developers-guide/Web_API.png)<br />APIs da Web</center> | [Descrição geral](active-directory-authentication-scenarios.md#web-application-to-web-api)<br /><br />[ASP.NET](active-directory-devquickstarts-webapi-dotnet.md)<br /><br />[NodeJS](active-directory-devquickstarts-webapi-nodejs.md) | &nbsp; |
 | <center>![Serviço a serviço](./media/active-directory-developers-guide/Service_App.png)<br />Serviço a serviço</center> | [Descrição geral](active-directory-authentication-scenarios.md#daemon-or-server-application-to-web-api)<br /><br />[.NET](active-directory-code-samples.md#server-or-daemon-application-to-web-api)<br /><br />[Credenciais de Cliente OAuth 2.0](active-directory-protocols-oauth-service-to-service.md) |  |
 
-<a id="guides" class="xliff"></a>
-
-## Guias
+## <a name="guides"></a>Guias
 Estes artigos informam-no sobre como realizar tarefas comuns com o Azure Active Directory.
 
 |                                                                           |  |
@@ -56,9 +50,7 @@ Estes artigos informam-no sobre como realizar tarefas comuns com o Azure Active 
 |[OAuth e OpenID Connect](active-directory-protocols-openid-connect-code.md)| Como iniciar a sessão de utilizadores e chamar APIs Web utilizando protocolos de autenticação moderna |
 |[Mais guias...](active-directory-developers-guide-index.md#guides)        |     |
 
-<a id="reference" class="xliff"></a>
-
-## Referência
+## <a name="reference"></a>Referência
 Estes artigos fornecem informações detalhadas sobre APIs, mensagens de protocolo e termos utilizados no Azure Active Directory.
 
 |                                                                                   | |
@@ -68,9 +60,7 @@ Estes artigos fornecem informações detalhadas sobre APIs, mensagens de protoco
 | [Glossário](active-directory-dev-glossary.md)                                      | Terminologia e definições de palavras utilizadas nesta documentação |
 | [Mais m...](active-directory-developers-guide-index.md#reference)|     |
 
-<a id="help--support" class="xliff"></a>
-
-## Ajuda e Suporte
+## <a name="help--support"></a>Ajuda e Suporte
 Estes são os melhores locais para obter ajuda com o desenvolvimento do Azure Active Directory.
 
 |  |  

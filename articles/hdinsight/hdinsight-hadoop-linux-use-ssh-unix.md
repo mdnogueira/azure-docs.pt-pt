@@ -25,9 +25,7 @@ ms.lasthandoff: 05/16/2017
 
 
 ---
-<a id="connect-to-hdinsight-hadoop-using-ssh" class="xliff"></a>
-
-# Ligar ao HDInsight (Hadoop) através de SSH
+# <a name="connect-to-hdinsight-hadoop-using-ssh"></a>Ligar ao HDInsight (Hadoop) através de SSH
 
 Saiba como utilizar [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) para ligar de forma segura ao Hadoop no Azure HDInsight. 
 
@@ -49,9 +47,7 @@ O HDInsight pode utilizar o Linux (Ubuntu) como o sistema operativo dos nós den
 >
 > Para obter mais informações sobre a utilização de nós de extremidade, veja [Use edge nodes in HDInsight](hdinsight-apps-use-edge-node.md#access-an-edge-node) (Utilizar nós de extremidade no HDInsight).
 
-<a id="ssh-clients" class="xliff"></a>
-
-## Clientes SSH
+## <a name="ssh-clients"></a>Clientes SSH
 
 Os sistemas Linux, Unix e macOS fornecem os comandos `ssh` e `scp`. O cliente `ssh` é usado normalmente para criar uma sessão de linha de comandos remota com um sistema baseado em Unix ou Linux. O cliente `scp` é usado para copiar com segurança ficheiros entre o cliente e o sistema remoto.
 
@@ -88,9 +84,7 @@ Se a sua conta SSH for protegida com uma chave, o cliente tem de fornecer a chav
 >
 > Se proteger a chave privada com uma frase de acesso, tem de introduzi-la quando utilizar a chave. Utilitários como `ssh-agent` podem colocar em cache a palavra-passe, para sua comodidade.
 
-<a id="create-an-ssh-key-pair" class="xliff"></a>
-
-### Criar um par de chaves SSH
+### <a name="create-an-ssh-key-pair"></a>Criar um par de chaves SSH
 
 Utilize o comando `ssh-keygen` para criar ficheiros de chaves públicas e privadas. O comando seguinte gera um par de chaves RSA de 2048 bits que pode ser utilizado com o HDInsight:
 
@@ -105,9 +99,7 @@ São-lhe pedidas informações durante o processo de criação de chaves. Por ex
 > [!IMPORTANT]
 > Pode utilizar uma frase de acesso para proteger as chaves. Uma frase de acesso é efetivamente uma palavra-passe na sua chave privada. Mesmo se alguém obtiver a sua chave privada, essa pessoa tem de ter a frase de acesso para poder utilizá-la.
 
-<a id="create-hdinsight-using-the-public-key" class="xliff"></a>
-
-### Utilizar a chave pública para criar o HDInsight
+### <a name="create-hdinsight-using-the-public-key"></a>Utilizar a chave pública para criar o HDInsight
 
 | Método de criação | Como utilizar a chave pública |
 | ------- | ------- |
@@ -123,9 +115,7 @@ As contas SSH podem ser protegidas através de palavra-passe. Quando utiliza SSH
 > [!WARNING]
 > Não recomendamos utilizar a autenticação por palavra-passe para SSH. As palavras-passe podem ser descobertas e são vulneráveis a ataques de força bruta. Em vez disso, recomendamos que utilize [chaves SSH para a autenticação](#sshkey).
 
-<a id="create-hdinsight-using-a-password" class="xliff"></a>
-
-### Utilizar uma palavra-passe para criar o HDInsight
+### <a name="create-hdinsight-using-a-password"></a>Utilizar uma palavra-passe para criar o HDInsight
 
 | Método de criação | Como especificar a palavra-passe |
 | --------------- | ---------------- |
@@ -134,9 +124,7 @@ As contas SSH podem ser protegidas através de palavra-passe. Quando utiliza SSH
 | **CLI do Azure 1.0** | Utilize o parâmetro `--sshPassword` do comando `azure hdinsight cluster create` e indique o valor da palavra-passe. |
 | **Modelo do Resource Manager** | Para obter um exemplo de como utilizar a palavra-passe com um modelo, veja [Deploy HDInsight on Linux with SSH password](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/) (Implementar o HDInsight no Linux com uma palavra-passe SSH). O elemento `linuxOperatingSystemProfile` no ficheiro [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-password/azuredeploy.json) é utilizado para transmitir o nome e a palavra-passe da conta SSH ao Azure ao criar o cluster.|
 
-<a id="change-the-ssh-password" class="xliff"></a>
-
-### Alterar a palavra-passe SSH
+### <a name="change-the-ssh-password"></a>Alterar a palavra-passe SSH
 
 Para obter informações sobre como alterar a palavra-passe da conta do utilizador SSH, veja a secção __Change passwords__ (Alterar palavras-passe) do documento [Manage HDInsight](hdinsight-administer-use-portal-linux.md#change-passwords) (Gerir o HDInsight).
 
@@ -146,9 +134,7 @@ Se estiver a utilizar um __cluster do HDInsight associado a um domínio__, tem d
 
 Para obter mais informações, veja [Configure domain-joined HDInsight](hdinsight-domain-joined-configure.md) (Configurar o HDInsight associado a um domínio).
 
-<a id="connect-to-worker-and-zookeeper-nodes" class="xliff"></a>
-
-## Ligar a nós de trabalho e Zookeeper
+## <a name="connect-to-worker-and-zookeeper-nodes"></a>Ligar a nós de trabalho e Zookeeper
 
 Os nós de trabalho e Zookeeper não são acessíveis diretamente pela Internet. Podem ser acedidos a partir dos nós principais ou nós de extremidade do cluster. Seguem-se os passos gerais necessários para ligar a outros nós:
 
@@ -171,9 +157,7 @@ Se a conta SSH for protegida por __chaves SSH__, certifique-se de que o encaminh
 >
 > Para obter mais informações, veja [Use a virtual network with HDInsight](hdinsight-extend-hadoop-virtual-network.md) (Utilizar uma rede virtual com o HDInsight).
 
-<a id="configure-ssh-agent-forwarding" class="xliff"></a>
-
-### Configurar o reencaminhamento de agentes SSH
+### <a name="configure-ssh-agent-forwarding"></a>Configurar o reencaminhamento de agentes SSH
 
 > [!IMPORTANT]
 > Os passos seguintes pressupõem um sistema baseado em Linux ou UNIX e funcionam com o Bash no Windows 10. Se não funcionarem no seu sistema, poderá ter de ver a documentação do seu cliente SSH.
@@ -205,9 +189,7 @@ Se a conta SSH for protegida por __chaves SSH__, certifique-se de que o encaminh
 
 5. Utilize SSH para ligar aos nós de extremidade ou principais do cluster. Em seguida, utilize o comando SSH para ligar a um nó de trabalho ou zookeeper. A ligação é estabelecida com a chave reencaminhada.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * [Use SSH tunneling with HDInsight](hdinsight-linux-ambari-ssh-tunnel.md) (Utilizar túnel SSH com o HDInsight)
 * [Use a virtual network with HDInsight](hdinsight-extend-hadoop-virtual-network.md) (Utilizar uma rede virtual com o HDInsight)

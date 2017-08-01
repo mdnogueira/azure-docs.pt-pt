@@ -22,24 +22,16 @@ ms.lasthandoff: 06/23/2017
 
 
 ---
-<a id="agent-health-solution-in-oms" class="xliff"></a>
-
-#  Solução Funcionamento de Agente no OMS
+#  <a name="agent-health-solution-in-oms"></a>Solução Funcionamento de Agente no OMS
 A solução Funcionamento de Agente no OMS ajuda-o a determinar que agentes não respondem e que agentes estão a submeter dados operacionais, relativamente a todos os agentes que reportam diretamente à área de trabalho do OMS ou a um grupo de gestão do System Center Operations Manager ligado ao OMS.  Também pode controlar a quantidade de agentes que estão implementados, onde estão distribuídos geograficamente e fazer outras consultas, para estar a par da distribuição dos agentes implementados no Azure, noutros ambientes na cloud ou no local.    
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Antes de implementar esta solução, confirme que tem integrados na sua área de trabalho [agentes do Windows](../log-analytics/log-analytics-windows-agents.md) que reportam à área de trabalho do OMS ou a um [grupo de gestão do Operations Manager](../log-analytics/log-analytics-om-agents.md) atualmente suportados.    
 
-<a id="solution-components" class="xliff"></a>
-
-## Componentes da solução
+## <a name="solution-components"></a>Componentes da solução
 Esta solução consiste nos recursos seguintes que são adicionados à sua área de trabalho e a agentes ligados diretamente ou a grupos de gestão ligados do Operations Manager. 
 
-<a id="management-packs" class="xliff"></a>
-
-### Pacotes de gestão
+### <a name="management-packs"></a>Pacotes de gestão
 Se o seu grupo de gestão do System Center Operations Manager estiver ligado a uma área de trabalho do OMS, são instalados os pacotes de gestão seguintes no Operations Manager.  Estes pacotes de gestão também são instalados em computadores Windows ligados diretamente após adicionar esta solução. Estes pacotes de gestão não envolvem qualquer configuração ou gestão. 
 
 * Pacote de Informações de Canal Direto de HealthAssessment do Microsoft System Center Advisor (Microsoft.IntelligencePacks.HealthAssessmentDirect)
@@ -47,18 +39,12 @@ Se o seu grupo de gestão do System Center Operations Manager estiver ligado a u
 
 Para obter mais informações sobre como são atualizados os pacotes de gestão da solução, veja [Connect Operations Manager to Log Analytics (Ligar o Operations Manager ao Log Analytics)](../log-analytics/log-analytics-om-agents.md).
 
-<a id="configuration" class="xliff"></a>
-
-## Configuração
+## <a name="configuration"></a>Configuração
 Adicione a solução Funcionamento de Agente à sua área de trabalho do OMS através do processo descrito em [Add solutions](../log-analytics/log-analytics-add-solutions.md) (Adicionar soluções). Não há nenhuma configuração adicional.
 
 
-<a id="data-collection" class="xliff"></a>
-
-## Recolha de dados
-<a id="supported-agents" class="xliff"></a>
-
-### Agentes suportados
+## <a name="data-collection"></a>Recolha de dados
+### <a name="supported-agents"></a>Agentes suportados
 A tabela seguinte descreve as origens ligadas que são suportadas por esta solução.
 
 | Origem Ligada | Suportado | Descrição |
@@ -66,9 +52,7 @@ A tabela seguinte descreve as origens ligadas que são suportadas por esta solu�
 | Agentes do Windows | Sim | Os eventos de heartbeat são recolhidos de agentes do Windows diretos.|
 | Grupo de gestão do System Center Operations Manager | Sim | Os eventos de heartbeat são recolhidos de agentes que reportam ao grupo de gestão a cada 60 segundos e, depois, reencaminhados para o Log Analytics. Não é necessária uma ligação direta a partir dos agentes do Operations Manager ao Log Analytics. Os dados de eventos de heartbeat são reencaminhados do grupo de gestão para o repositório do Log Analytics.|
 
-<a id="using-the-solution" class="xliff"></a>
-
-## Utilizar a solução
+## <a name="using-the-solution"></a>Utilizar a solução
 Quando adiciona a solução à sua área de trabalho do OMS, é adicionado o mosaico **Funcionamento de Agente** ao dashboard do OMS. Esse mosaico mostra o número total de agentes e o número de agentes sem resposta nas últimas 24 horas.<br><br> ![Mosaico Solução Funcionamento de Agente no dashboard](./media/oms-solution-agenthealth/agenthealth-solution-tile-homepage.png)
 
 Clique no mosaico **Funcionamento de Agente** para abrir o dashboard **Funcionamento de Agente**.  O dashboard inclui as colunas da tabela seguinte. Cada coluna mostra os dez principais eventos por ocorrência que correspondem aos critérios dessa coluna relativamente ao intervalo de tempo especificado. Pode executar uma pesquisa de registos que forneça a lista completa ao selecionar **Ver tudo**, no canto inferior direito de cada coluna, ou ao clicar no cabeçalho das colunas.
@@ -86,14 +70,10 @@ Clique no mosaico **Funcionamento de Agente** para abrir o dashboard **Funcionam
 
 ![Exemplo de dashboard da Solução Funcionamento de Agente](./media/oms-solution-agenthealth/agenthealth-solution-dashboard.png)  
 
-<a id="log-analytics-records" class="xliff"></a>
-
-## Registos do Log Analytics
+## <a name="log-analytics-records"></a>Registos do Log Analytics
 A solução cria um tipo de registo no repositório do OMS.  
 
-<a id="heartbeat-records" class="xliff"></a>
-
-### Registos de heartbeats
+### <a name="heartbeat-records"></a>Registos de heartbeats
 É criado um registo com o tipo de **Heartbeat**.  Estes registos têm as propriedades da tabela seguinte.  
 
 | Propriedade | Descrição |
@@ -116,9 +96,7 @@ A solução cria um tipo de registo no repositório do OMS.
 
 Cada agente que reporta a um servidor de gestão do Operations Manager envia dois heartbeats e valor da propriedade SCAgentChannel vai incluir quer **Direct**, quer **SCManagementServer**, dependendo das origens de dados e das soluções do Log Analytics que ativou na sua subscrição do OMS. Se bem se lembra, os dados das soluções são enviados diretamente de um servidor de gestão do Operations Manager para o serviço Web do OMS ou, devido ao volume de dados recolhidos no agente, são enviados diretamente do agente para o serviço Web do OMS. Para eventos de heartbeat que têm o valor **SCManagementServer**, o valor de ComputerIP é o endereço IP do servidor de gestão, pois os dados são efetivamente carregados por este.  Relativamente a heatbeats em que SCAgentChannel está definido como **Direto**, é o endereço IP público do agente.  
 
-<a id="sample-log-searches" class="xliff"></a>
-
-## Pesquisas de registo de exemplo
+## <a name="sample-log-searches"></a>Pesquisas de registo de exemplo
 A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos que esta solução recolhe. 
 
 | Consulta | Descrição |
@@ -137,8 +115,6 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos q
 | Type=Heartbeat IsGatewayInstalled=true&#124;Distinct Computer |Número de Gateways do OMS Instalados | 
 
   
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * Veja o artigo [Alerts in Log Analytics](../log-analytics/log-analytics-alerts.md) (Alertas no Log Analytics) para obter detalhes sobre a geração de alertas do Log Analytics.

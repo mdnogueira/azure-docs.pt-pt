@@ -22,9 +22,7 @@ ms.lasthandoff: 06/16/2017
 
 
 ---
-<a id="migrate-to-azure-with-site-recovery" class="xliff"></a>
-
-# Migrar para o Azure com o Site Recovery
+# <a name="migrate-to-azure-with-site-recovery"></a>Migrar para o Azure com o Site Recovery
 
 Leia este artigo para obter uma descrição geral de como utilizar o serviço Azure Site Recovery para migrar máquinas virtuais e servidores físicos.
 
@@ -38,15 +36,11 @@ Este artigo descreve a implementação no [portal do Azure](https://portal.azure
 Publique os seus comentários na parte inferior do artigo. Coloque questões técnicas no [Fórum de Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
-<a id="what-do-we-mean-by-migration" class="xliff"></a>
-
-## O que queremos dizer com migração?
+## <a name="what-do-we-mean-by-migration"></a>O que queremos dizer com migração?
 
 Pode implementar o Site Recovery para a replicação de VMs no local e os servidores físicos para o Azure ou para um site secundário. Pode replicar máquinas, efetuar a ativação pós-falha desde o site primário quando ocorrerem falhas e reativar a ativação pós-falha para o site primário quando recuperar. Além disto, pode utilizar o Site Recovery para migrar VMs e servidores físicos para o Azure, para que os utilizadores possam aceder às mesmas a partir das VMs do Azure. A migração pressupõe a replicação e a ativação pós-falha do site primário para o Azure, e um gesto de migração completo.
 
-<a id="what-can-site-recovery-migrate" class="xliff"></a>
-
-## O que pode ser migrado com o Site Recovery?
+## <a name="what-can-site-recovery-migrate"></a>O que pode ser migrado com o Site Recovery?
 
 Pode:
 
@@ -54,9 +48,7 @@ Pode:
 - Migrar [VMs de IaaS do Azure](site-recovery-migrate-azure-to-azure.md) entre regiões do Azure. Atualmente, só a migração é suportada neste cenário, o que significa que a reativação pós-falha não o é.
 - Migrar [instâncias do Windows AWS](site-recovery-migrate-aws-to-azure.md) para VMs de IaaS do Azure. Atualmente, só a migração é suportada neste cenário, o que significa que a reativação pós-falha não o é.
 
-<a id="migrate-on-premises-vms-and-physical-servers" class="xliff"></a>
-
-## Migrar VMs no local e servidores físicos
+## <a name="migrate-on-premises-vms-and-physical-servers"></a>Migrar VMs no local e servidores físicos
 
 Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são seguidos quase os mesmo passos que os utilizados na replicação normal.
 
@@ -71,24 +63,18 @@ Para migrar VMs de Hyper-V no local, VMs VMware e servidores físicos, são segu
 
 ![completemigration](./media/site-recovery-hyper-v-site-to-azure/migrate.png)
 
-<a id="migrate-between-azure-regions" class="xliff"></a>
-
-## Migrar entre regiões do Azure
+## <a name="migrate-between-azure-regions"></a>Migrar entre regiões do Azure
 
 Pode utilizar o Site Recovery para migrar VMs do Azure entre regiões. Neste cenário, só a migração é suportada. Por outras palavras, pode replicar as VMs do Azure e fazer a ativação pós-falha das mesmas para outra região, mas não a reativação pós-falha. Neste cenário, configura um cofre dos Serviços de Recuperação, implementa um servidor de configuração no local para gerir a replicação, adiciona-o ao cofre e especifica as definições da replicação. Ativa a replicação nas máquinas que quer migrar e executa uma ativação pós-falha de teste rápida. Em seguida, executa uma ativação pós-falha não planeada com a opção **Concluir Migração**.
 
-<a id="migrate-aws-to-azure" class="xliff"></a>
-
-## Migrar o AWS para o Azure
+## <a name="migrate-aws-to-azure"></a>Migrar o AWS para o Azure
 
 Pode migrar instâncias do AWS para VMs do Azure. Neste cenário, só a migração é suportada. Por outras palavras, pode replicar as instâncias do AWS e fazer a ativação pós-falha das mesmas para o Azure, mas não a reativação pós-falha. Para fins de migração, as instâncias do AWS são tratadas da mesma forma que os servidores físicos. Configura um cofre dos Serviços de Recuperação, implementa um servidor de configuração no local para gerir a replicação, adiciona-o ao cofre e especifica as definições da replicação. Ativa a replicação nas máquinas que quer migrar e executa uma ativação pós-falha de teste rápida. Em seguida, executa uma ativação pós-falha não planeada com a opção **Concluir Migração**.
 
 
 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - [Migrar VMs VMware para o Azure](site-recovery-vmware-to-azure.md)
 - [Migrar VMs de Hyper-V em clouds do VMM para o Azure](site-recovery-vmm-to-azure.md)

@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-9-create-hierarchies" class="xliff"></a>
-
-# Lição 9: Criar hierarquias
+# <a name="lesson-9-create-hierarchies"></a>Lição 9: Criar hierarquias
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -34,18 +32,12 @@ Para criar hierarquias, use o designer de modelo da *vista de diagrama*. A cria�
   
 Tempo estimado para concluir esta lição: **20 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 8: Criar perspetivas](../tutorials/aas-lesson-8-create-perspectives.md).  
   
-<a id="create-hierarchies" class="xliff"></a>
-
-## Criar hierarquias  
+## <a name="create-hierarchies"></a>Criar hierarquias  
   
-<a id="to-create-a-category-hierarchy-in-the-dimproduct-table" class="xliff"></a>
-
-#### Para criar uma hierarquia de categoria na tabela DimProduct  
+#### <a name="to-create-a-category-hierarchy-in-the-dimproduct-table"></a>Para criar uma hierarquia de categoria na tabela DimProduct  
   
 1.  No designer de modelo (vista de diagrama), clique com botão direito do rato na tabela **DimProduct** > **Criar hierarquia**. Uma nova hierarquia aparece na parte inferior da janela da tabela. Mude o nome da hierarquia **Categoria**.  
   
@@ -64,9 +56,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
 
     ![aas-lesson9-category](../tutorials/media/aas-lesson9-category.png)
   
-<a id="to-create-hierarchies-in-the-dimdate-table" class="xliff"></a>
-
-#### Para criar hierarquias na tabela DimDate  
+#### <a name="to-create-hierarchies-in-the-dimdate-table"></a>Para criar hierarquias na tabela DimDate  
   
 1.  Na tabela **DimDate**, crie uma hierarquia com o nome **Calendário**.  
   
@@ -91,9 +81,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
     *  WeekNumberOfYear
     *  DayNumberOfWeek
   
-<a id="whats-next" class="xliff"></a>
-
- ## Passos seguintes?
+ ## <a name="whats-next"></a>Passos seguintes?
 [Lição 10: Criar partições](../tutorials/aas-lesson-10-create-partitions.md). 
   
   

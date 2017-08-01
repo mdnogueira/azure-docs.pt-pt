@@ -23,15 +23,11 @@ ms.lasthandoff: 07/01/2017
 
 ---
 
-<a id="create-an-event-source-for-your-time-series-insights-environment-using-the-ibiza-portal" class="xliff"></a>
-
-# Criar uma origem de evento para o seu ambiente Time Series Insights através do portal Ibiza
+# <a name="create-an-event-source-for-your-time-series-insights-environment-using-the-ibiza-portal"></a>Criar uma origem de evento para o seu ambiente Time Series Insights através do portal Ibiza
 
 A Origem de Eventos do Time Series Insights deriva de um mediador de eventos, como os Hubs de Eventos do Azure. O Time Series Insights liga-se diretamente às Origens de Eventos, ingerindo o fluxo de dados sem que os utilizadores tenham de escrever uma única linha de código. Atualmente, o Time Series Insights suporta Hubs de Eventos do Azure e Hubs IoT do Azure. No futuro, serão adicionadas mais Origens de Eventos.
 
-<a id="steps-to-add-an-event-source-to-your-environment" class="xliff"></a>
-
-## Passos para adicionar uma origem de eventos ao seu ambiente
+## <a name="steps-to-add-an-event-source-to-your-environment"></a>Passos para adicionar uma origem de eventos ao seu ambiente
 
 1.  Inicie sessão no [portal Azure](https://portal.azure.com).
 2.  Clique em "Todos os recursos" no menu do lado esquerdo do portal Ibiza.
@@ -55,9 +51,7 @@ A Origem de Eventos do Time Series Insights deriva de um mediador de eventos, co
 
 Depois de criar a origem de eventos, o Time Series Insights vai começar a transmitir dados para o seu ambiente automaticamente.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * [Enviar eventos](time-series-insights-send-events.md) para a origem de eventos
 * Ver o seu ambiente no [Portal do Time Series Insights](https://insights.timeseries.azure.com)

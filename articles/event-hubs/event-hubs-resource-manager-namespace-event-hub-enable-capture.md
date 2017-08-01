@@ -22,9 +22,7 @@ ms.lasthandoff: 06/28/2017
 
 
 ---
-<a id="create-an-event-hubs-namespace-with-an-event-hub-and-enable-capture-using-an-azure-resource-manager-template" class="xliff"></a>
-
-# Criar um espaço de nomes de Hubs de Eventos com o hub de um evento e ativar a Captura através de um modelo do Azure Resource Manager
+# <a name="create-an-event-hubs-namespace-with-an-event-hub-and-enable-capture-using-an-azure-resource-manager-template"></a>Criar um espaço de nomes de Hubs de Eventos com o hub de um evento e ativar a Captura através de um modelo do Azure Resource Manager
 Este artigo mostra como utiliza um modelo do Azure Resource Manager que cria um espaço de nomes de Hubs de Eventos com uma instância de hubs de eventos e também ativa a funcionalidade de Captura no hub de eventos. O artigo descreve como definir quais os recursos que são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades
 
 Para obter mais informações sobre a criação de modelos, consulte [Authoring Azure Resource Manager templates][Authoring Azure Resource Manager templates] (Criar modelos do Azure Resource Manager).
@@ -38,9 +36,7 @@ Para o modelo completo, consulte o [modelo Hub de Eventos e ativar captura][Even
 > 
 > 
 
-<a id="what-will-you-deploy" class="xliff"></a>
-
-## O que irá implementar?
+## <a name="what-will-you-deploy"></a>O que irá implementar?
 Com esTe modelo, implementa um espaço de nomes de Hubs de Eventos com o hub de um evento e também ativa a [Captura de Hubs de Eventos](event-hubs-capture-overview.md).
 
 O [Hub de Eventos](event-hubs-what-is-event-hubs.md) é um serviço de processamento de eventos que permite a entrada em grande escala de telemetria e eventos para o Azure, com baixa latência e alta fiabilidade. A Captura de Hubs de Eventos permite a transmissão automática de dados nos seus Hubs de Eventos para um armazenamento de Blobs do Azure à sua escolha e dentro de um tempo ou intervalo de tamanho especificado.
@@ -49,16 +45,12 @@ Para executar automaticamente a implementação, clique no seguinte botão:
 
 [![Implementar no Azure](./media/event-hubs-resource-manager-namespace-event-hub/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-eventhubs-create-namespace-and-enable-capture%2Fazuredeploy.json)
 
-<a id="parameters" class="xliff"></a>
-
-## Parâmetros
+## <a name="parameters"></a>Parâmetros
 Com o Azure Resource Manager, define parâmetros para os valores que pretende especificar quando o modelo é implementado. O modelo inclui uma secção denominada `Parameters` que contém todos os valores de parâmetro. Deverá definir um parâmetro para esses valores que variam com base no projeto ou no ambiente que está a implementar. Não defina parâmetros para valores que permanecem sempre iguais. Cada valor de parâmetro é utilizado no modelo para definir os recursos que são implementados.
 
 O modelo define os seguintes parâmetros.
 
-<a id="eventhubnamespacename" class="xliff"></a>
-
-### eventHubNamespaceName
+### <a name="eventhubnamespacename"></a>eventHubNamespaceName
 O nome do espaço de nomes dos Hubs de Eventos que serão criados.
 
 ```json
@@ -70,9 +62,7 @@ O nome do espaço de nomes dos Hubs de Eventos que serão criados.
 }
 ```
 
-<a id="eventhubname" class="xliff"></a>
-
-### eventHubName
+### <a name="eventhubname"></a>eventHubName
 O nome do hub de eventos no espaço de nomes dos Hubs de Eventos.
 
 ```json
@@ -84,9 +74,7 @@ O nome do hub de eventos no espaço de nomes dos Hubs de Eventos.
 }
 ```
 
-<a id="messageretentionindays" class="xliff"></a>
-
-### messageRetentionInDays
+### <a name="messageretentionindays"></a>messageRetentionInDays
 O número de dias para manter as mensagens no hub de eventos. 
 
 ```json
@@ -101,9 +89,7 @@ O número de dias para manter as mensagens no hub de eventos.
  }
 ```
 
-<a id="partitioncount" class="xliff"></a>
-
-### partitionCount
+### <a name="partitioncount"></a>partitionCount
 O número de partições a criar no hub de eventos.
 
 ```json
@@ -118,9 +104,7 @@ O número de partições a criar no hub de eventos.
  }
 ```
 
-<a id="captureenabled" class="xliff"></a>
-
-### captureEnabled
+### <a name="captureenabled"></a>captureEnabled
 Ative a Captura no hub de eventos.
 
 ```json
@@ -135,9 +119,7 @@ Ative a Captura no hub de eventos.
     }
  }
 ```
-<a id="captureencodingformat" class="xliff"></a>
-
-### captureEncodingFormat
+### <a name="captureencodingformat"></a>captureEncodingFormat
 O formato de codificação que especifica para serializar os dados do evento.
 
 ```json
@@ -152,9 +134,7 @@ O formato de codificação que especifica para serializar os dados do evento.
 }
 ```
 
-<a id="capturetime" class="xliff"></a>
-
-### captureTime
+### <a name="capturetime"></a>captureTime
 O intervalo de tempo no qual a Captura dos Hubs de Eventos inicia a captura de dados para o armazenamento de Blobs do Azure.
 
 ```json
@@ -169,9 +149,7 @@ O intervalo de tempo no qual a Captura dos Hubs de Eventos inicia a captura de d
 }
 ```
 
-<a id="capturesize" class="xliff"></a>
-
-### captureSize
+### <a name="capturesize"></a>captureSize
 O intervalo de tamanho no qual a Captura inicia a captura de dados para o armazenamento de Blobs do Azure.
 
 ```json
@@ -186,9 +164,7 @@ O intervalo de tamanho no qual a Captura inicia a captura de dados para o armaze
 }
 ```
 
-<a id="destinationstorageaccountresourceid" class="xliff"></a>
-
-### destinationStorageAccountResourceId
+### <a name="destinationstorageaccountresourceid"></a>destinationStorageAccountResourceId
 A Captura exige um ID de recurso da conta de Armazenamento do Azure para ativar a captura na conta de Armazenamento que pretender.
 
 ```json
@@ -200,9 +176,7 @@ A Captura exige um ID de recurso da conta de Armazenamento do Azure para ativar 
  }
 ```
 
-<a id="blobcontainername" class="xliff"></a>
-
-### blobContainerName
+### <a name="blobcontainername"></a>blobContainerName
 O contentor de blobs onde pretende capturar os dados do seu evento.
 
 ```json
@@ -215,9 +189,7 @@ O contentor de blobs onde pretende capturar os dados do seu evento.
 ```
 
 
-<a id="apiversion" class="xliff"></a>
-
-### apiVersion
+### <a name="apiversion"></a>apiVersion
 A versão da API do modelo.
 
 ```json
@@ -230,9 +202,7 @@ A versão da API do modelo.
  }
 ```
 
-<a id="resources-to-deploy" class="xliff"></a>
-
-## Recursos a implementar
+## <a name="resources-to-deploy"></a>Recursos a implementar
 Cria um espaço de nomes do tipo **EventHubs** com um hub de eventos e também ativa a Captura.
 
 ```json
@@ -280,29 +250,21 @@ Cria um espaço de nomes do tipo **EventHubs** com um hub de eventos e também a
    ]
 ```
 
-<a id="commands-to-run-deployment" class="xliff"></a>
-
-## Comandos para executar a implementação
+## <a name="commands-to-run-deployment"></a>Comandos para executar a implementação
 [!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
-<a id="powershell" class="xliff"></a>
-
-## PowerShell
+## <a name="powershell"></a>PowerShell
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json
 ```
 
-<a id="azure-cli" class="xliff"></a>
-
-## CLI do Azure
+## <a name="azure-cli"></a>CLI do Azure
 ```cli
 azure config mode arm
 
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json][]
 ```
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Também pode configurar a Captura de Hubs de Eventos através do [portal do Azure](https://portal.azure.com). Para mais informações, consulte [Enable Event Hubs Capture using the Azure portal](event-hubs-capture-enable-through-portal.md) (Ativar Captura de Hubs de Eventos no portal do Azure).
 

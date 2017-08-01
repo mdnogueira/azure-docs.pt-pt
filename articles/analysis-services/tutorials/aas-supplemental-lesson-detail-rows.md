@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="supplemental-lesson---detail-rows" class="xliff"></a>
-
-# Lição suplementar - Linhas Detalhadas
+# <a name="supplemental-lesson---detail-rows"></a>Lição suplementar - Linhas Detalhadas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -32,14 +30,10 @@ Nesta lição suplementar, irá usar o Editor do DAX para definir uma expressão
   
 Tempo estimado para concluir esta lição: **10 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico de lição suplementar faz parte de um tutorial de modelação em tabela. Antes de executar as tarefas nesta lição suplementar, deve concluir todas as lições anteriores ou ter concluído um projeto de modelo de exemplo de vendas na Internet Adventure Works.  
   
-<a id="what-do-we-need-to-solve" class="xliff"></a>
-
-## O que precisamos solucionar?
+## <a name="what-do-we-need-to-solve"></a>O que precisamos solucionar?
 Vamos examinar os detalhes da nossa medida InternetTotalSales antes de adicionar uma expressão de linhas detalhadas.
 
 1.  No SSDT, clique no menu **Modelo** > **Analyze em Excel** para abrir o Excel e criar uma tabela dinâmica em branco.
@@ -54,13 +48,9 @@ Vamos examinar os detalhes da nossa medida InternetTotalSales antes de adicionar
   
 Gostaríamos de ver aqui uma tabela com contém colunas e linhas de dados que contribuem para o resultado agregado da nossa medida InternetTotalSales. Para fazer isso, podemos adicionar uma expressão de linhas detalhadas como uma propriedade da medida.
 
-<a id="add-a-detail-rows-expression" class="xliff"></a>
+## <a name="add-a-detail-rows-expression"></a>Adicionar uma expressão de linhas detalhadas
 
-## Adicionar uma expressão de linhas detalhadas
-
-<a id="to-create-a-detail-rows-expression" class="xliff"></a>
-
-#### Para criar uma expressão de linhas detalhadas 
+#### <a name="to-create-a-detail-rows-expression"></a>Para criar uma expressão de linhas detalhadas 
   
 1. No SSDT, na grelha de medidas da tabela FactInternetSales, clique na medida **InternetTotalSales**. 
 
@@ -92,9 +82,7 @@ Gostaríamos de ver aqui uma tabela com contém colunas e linhas de dados que co
 5. Volte a implementar o modelo.
 
   
-<a id="see-also" class="xliff"></a>
-
-## Veja Também  
+## <a name="see-also"></a>Veja Também  
 [Função SELECTCOLUMNS (DAX)](https://msdn.microsoft.com/library/mt761759.aspx)   
 [Lição suplementar - Segurança dinâmica](../tutorials/aas-supplemental-lesson-dynamic-security.md)  
 [Lição suplementar - Hierarquias desbalanceadas](../tutorials/aas-supplemental-lesson-ragged-hierarchies.md)  

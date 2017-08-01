@@ -12,12 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/10/2016
+ms.date: 07/25/2017
 ms.author: cherylmc
-translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 9e74127e3140ec9973753fb5f29151c406326c36
-
+ms.translationtype: HT
+ms.sourcegitcommit: a678700884b612cad6281eb8f3b74ce63a0ebb69
+ms.openlocfilehash: c097a9ccba91f59b323215d42d37e6d85e0981ce
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="expressroute-qos-requirements"></a>Requisitos do QoS do ExpressRoute
@@ -35,7 +36,7 @@ A tabela seguinte fornece uma lista de marcações DSCP utilizadas pelo Skype pa
 | **Classe de Tráfego** | **Tratamento (Marcação DSCP)** | **Cargas de trabalho do Skype para Empresas** |
 | --- | --- | --- |
 | **Voz** |EF (46) |Voz do Skype/Lync |
-| **Interativo** |AF41 (34) |Vídeo |
+| **Interativo** |AF41 (34) |Video, VBSS |
 | AF21 (18) |Partilha de aplicações | |
 | **Predefinição** |AF11 (10) |Transferência de ficheiros |
 | CS0 (0) |Tudo o resto | |
@@ -51,10 +52,5 @@ A tabela seguinte fornece uma lista de marcações DSCP utilizadas pelo Skype pa
   * [Crie um circuito do ExpressRoute](expressroute-howto-circuit-classic.md)
   * [Configure o encaminhamento](expressroute-howto-routing-classic.md)
   * [Ligar uma VNet a um circuito do ExpressRoute](expressroute-howto-linkvnet-classic.md)
-
-
-
-
-<!--HONumber=Nov16_HO2-->
 
 

@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-1-create-a-new-tabular-model-project" class="xliff"></a>
-
-# Lição 1: Criar um novo projeto de modelo em tabela
+# <a name="lesson-1-create-a-new-tabular-model-project"></a>Lição 1: Criar um novo projeto de modelo em tabela
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -32,18 +30,12 @@ Nesta lição, vai utilizar o SQL Server Data Tools (SSDT) para criar um projeto
   
 Tempo estimado para concluir esta lição: **dez minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico é a primeira lição num tutorial de criação de modelo em tabela. Para concluir esta lição, tem de ter implementados vários pré-requisitos. Para saber mais, veja [Azure Analysis Services - Adventure Works tutorial](../tutorials/aas-adventure-works-tutorial.md) (Azure Analysis Services - Tutorial da Adventure Works).  
   
-<a id="create-a-new-tabular-model-project" class="xliff"></a>
-
-## Criar um novo projeto de modelo em tabela  
+## <a name="create-a-new-tabular-model-project"></a>Criar um novo projeto de modelo em tabela  
   
-<a id="to-create-a-new-tabular-model-project" class="xliff"></a>
-
-#### Para criar um novo projeto de modelo em tabela  
+#### <a name="to-create-a-new-tabular-model-project"></a>Para criar um novo projeto de modelo em tabela  
   
 1.  No SSDT, no menu **Ficheiro**, clique em **Novo** > **Projeto**.  
   
@@ -66,9 +58,7 @@ Este tópico é a primeira lição num tutorial de criação de modelo em tabela
     Se não vir SQL Server 2017 / Azure Analysis Services (1400) na caixa de listagem do Nível de compatibilidade, significa que não está a utilizar a mais recente versão do SQL Server Data Tools. Para obter esta versão, veja [Install SQL Server Data Tools](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) (Instalar o SQL Server Data Tools).  
       
   
-<a id="understanding-the-ssdt-tabular-model-authoring-environment" class="xliff"></a>
-
-## Compreender o ambiente de criação do modelo em tabela do SSDT  
+## <a name="understanding-the-ssdt-tabular-model-authoring-environment"></a>Compreender o ambiente de criação do modelo em tabela do SSDT  
 Agora que já criou um projeto de modelo em tabela novo, vamos aproveitar para explorar o ambiente de criação no SSDT.  
   
 Quando o projeto estiver criado, é aberto no SSDT. No lado direito, em **Explorador de Modelos em Tabela**, pode ver uma vista de árvore dos objetos no modelo. Uma vez que ainda não importou dados, as pastas estão vazias. Pode clicar com o botão direito do rato numa pasta de objetos para realizar ações, de forma semelhante à barra de menus. À medida que avança neste tutorial, vai utilizar o Explorador de Modelos em Tabela para navegar pelos diferentes objetos no projeto de modelo.
@@ -92,9 +82,7 @@ No momento em que instalou o SSDT, foram adicionados vários itens de menu novos
 Explore algumas das caixas de diálogo e localizações de várias funcionalidades específicas para a criação de modelos em tabela. Embora alguns itens ainda não estejam ativos, pode ficar com uma ideia clara do ambiente de criação de modelos em tabela.  
   
 
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 2: Obter dados (Lesson 2: Get data)](../tutorials/aas-lesson-2-get-data.md).
 
   

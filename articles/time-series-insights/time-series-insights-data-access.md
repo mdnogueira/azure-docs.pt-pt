@@ -23,9 +23,7 @@ ms.lasthandoff: 05/20/2017
 
 ---
 
-<a id="grant-data-access-to-a-time-series-insights-environment-using-azure-portal" class="xliff"></a>
-
-# Conceder acesso a dados a um ambiente do Time Series Insights com o portal do Azure
+# <a name="grant-data-access-to-a-time-series-insights-environment-using-azure-portal"></a>Conceder acesso a dados a um ambiente do Time Series Insights com o portal do Azure
 
 Os ambientes do Time Series Insights têm dois tipos de políticas de acesso independentes:
 
@@ -42,9 +40,7 @@ As políticas de acesso a dados concedem permissões para emitir consultas de da
 
 Ambos os tipos de políticas permitem uma clara separação entre o acesso à gestão do ambiente e o acesso aos dados dentro do ambiente. Por exemplo, é possível configurar um ambiente de forma a que o proprietário/criador do mesmo é removido do acesso a dados. Da mesma forma, pode não ser concedido acesso à configuração do ambiente aos utilizadores e serviços que têm permissão para ler dados do mesmo.
 
-<a id="grant-data-access" class="xliff"></a>
-
-## Conceder acesso a dados
+## <a name="grant-data-access"></a>Conceder acesso a dados
 Os passos seguintes mostram como pode conceder acesso a dados a um principal de utilizador:
 
 1.    Inicie sessão no [Portal do Azure](https://portal.azure.com).
@@ -74,9 +70,7 @@ Os passos seguintes mostram como pode conceder acesso a dados a um principal de 
 
   ![Gerir a origem do Time Series Insights - resultados](media/data-access/getstarted-grant-data-access5.png)
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * [Criar uma origem de eventos](time-series-insights-add-event-source.md)
 * [Enviar eventos](time-series-insights-send-events.md) para a origem de eventos

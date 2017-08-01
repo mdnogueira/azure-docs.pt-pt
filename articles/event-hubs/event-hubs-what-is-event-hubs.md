@@ -22,15 +22,11 @@ ms.lasthandoff: 06/28/2017
 
 
 ---
-<a id="what-is-event-hubs" class="xliff"></a>
-
-# O que são os Hubs de Eventos?
+# <a name="what-is-event-hubs"></a>O que são os Hubs de Eventos?
 
 Os Hubs de Eventos do Azure são uma plataforma de fluxo de dados altamente dimensionável e um serviço de ingestão de eventos capaz de receber e processar milhões de eventos por segundo. Os Hubs de Eventos podem processar e armazenar eventos, dados ou telemetria produzidos por dispositivos e software distribuído. Os dados enviados para um hub de eventos podem ser transformados e armazenados em qualquer fornecedor de análise em tempo real ou adaptadores de armazenamento/criação de batches. Com a possibilidade de oferecer [capacidades de publicação/subscrição](https://msdn.microsoft.com/library/aa560414.aspx) com baixa latência e em larga escala, os Hubs de Eventos servem de "rampa"para os macrodados.
 
-<a id="why-use-event-hubs" class="xliff"></a>
-
-## Por quê utilizar o Event Hubs?
+## <a name="why-use-event-hubs"></a>Por quê utilizar o Event Hubs?
 
 As capacidades de processamento de eventos e telemetria do Event Hubs são úteis sobretudo para:
 
@@ -40,9 +36,7 @@ As capacidades de processamento de eventos e telemetria do Event Hubs são útei
 
 Por exemplo, os Hubs de Eventos incluem o controlo do comportamento em aplicações móveis, informações de tráfego de web farms, captura de eventos nos jogos de consola ou telemetria recolhida a partir de máquinas industriais, veículos ligados ou outros dispositivos.
 
-<a id="azure-event-hubs-overview" class="xliff"></a>
-
-## Descrição geral dos Event Hubs do Azure
+## <a name="azure-event-hubs-overview"></a>Descrição geral dos Event Hubs do Azure
 
 Uma das funções comuns que o Event Hubs desempenha nas arquiteturas de solução é ser a "porta de entrada" para um pipeline de eventos, denominado frequentemente *ingestor de eventos*. Um ingestor de eventos é um componente ou serviço que se encontra entre os publicadores de eventos e os consumidores de eventos para desacoplar a produção de uma transmissão de eventos do consumo desses eventos. A imagem seguinte mostra esta arquitetura:
 
@@ -50,9 +44,7 @@ Uma das funções comuns que o Event Hubs desempenha nas arquiteturas de soluç�
 
 Os Hubs de Eventos oferecem uma capacidade de processamento da transmissão de mensagens, mas têm características diferentes das mensagens empresariais tradicionais. As capacidades do Event Hubs são criadas em torno dos cenários de alto débito e processamento de eventos. Como tal, os Hubs de Eventos são diferentes das mensagens do [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) e não implementam algumas das capacidades que estão disponíveis para as entidades de [mensagens do Service Bus](/azure/service-bus-messaging/), como os tópicos.
 
-<a id="event-hubs-features" class="xliff"></a>
-
-## Funcionalidades dos Hubs de Eventos
+## <a name="event-hubs-features"></a>Funcionalidades dos Hubs de Eventos
 
 Os Hubs de Eventos contêm os seguintes elementos principais:
 
@@ -66,9 +58,7 @@ Os Hubs de Eventos contêm os seguintes elementos principais:
 
 Para obter detalhes técnicos sobre estas e outras funcionalidades dos Hubs de Eventos, consulte a [Event Hubs features overview](event-hubs-features.md) (Descrição geral das funcionalidades dos Hubs de Eventos). 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Para obter informações detalhadas sobre os preços dos Hubs de Eventos, consulte [Preços de Hubs de Eventos](https://azure.microsoft.com/pricing/details/event-hubs/).
 

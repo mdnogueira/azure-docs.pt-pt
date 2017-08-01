@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-7-create-key-performance-indicators" class="xliff"></a>
-
-# Lição 7: Criar indicadores-chave de desempenho
+# <a name="lesson-7-create-key-performance-indicators"></a>Lição 7: Criar indicadores-chave de desempenho
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -32,18 +30,12 @@ Nesta lição, irá criar indicadores-chave de desempenho (KPI). KPI são usados
   
 Tempo estimado para concluir esta lição: **15 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 6: Criar medidas](../tutorials/aas-lesson-6-create-measures.md).   
   
-<a id="create-key-performance-indicators" class="xliff"></a>
-
-## Criar indicadores-chave de desempenho  
+## <a name="create-key-performance-indicators"></a>Criar indicadores-chave de desempenho  
   
-<a id="to-create-an-internetcurrentquartersalesperformance-kpi" class="xliff"></a>
-
-#### Para criar um KPI InternetCurrentQuarterSalesPerformance  
+#### <a name="to-create-an-internetcurrentquartersalesperformance-kpi"></a>Para criar um KPI InternetCurrentQuarterSalesPerformance  
   
 1.  No designer de modelo, selecione a tabela **FactInternetSales**.  
   
@@ -74,9 +66,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
     Na grelha de medidas, observe o ícone junto à medida **InternetCurrentQuarterSalesPerformance**. Este ícone indica que essa medida serve como um valor base para um KPI.  
   
-<a id="to-create-an-internetcurrentquartermarginperformance-kpi" class="xliff"></a>
-
-#### Para criar um KPI InternetCurrentQuarterMarginPerformance  
+#### <a name="to-create-an-internetcurrentquartermarginperformance-kpi"></a>Para criar um KPI InternetCurrentQuarterMarginPerformance  
   
 1.  Na grelha de medidas para a tabela **FactInternetSales**, clique numa célula vazia.  
   
@@ -94,9 +84,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 6.  Em **Selecionar estilo do ícone**, selecione o losango (vermelho), triângulo (amarelo), círculo (verde) e clique em **OK**.  
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 8: Criar perspetivas](../tutorials/aas-lesson-8-create-perspectives.md).
   
   

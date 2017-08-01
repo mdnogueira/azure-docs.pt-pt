@@ -15,10 +15,10 @@ ms.topic: hero-article
 ms.date: 06/14/2017
 ms.author: raynew
 ms.translationtype: HT
-ms.sourcegitcommit: 0425da20f3f0abcfa3ed5c04cec32184210546bb
-ms.openlocfilehash: 475b0cea9be58c9b6fa13645e3c19cc3b689aab2
+ms.sourcegitcommit: bfd49ea68c597b109a2c6823b7a8115608fa26c3
+ms.openlocfilehash: 8a03e28045019a4beb423d95a4fa00637cd66294
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 07/25/2017
 
 ---
 # <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-site-recovery-in-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o Site Recovery no portal do Azure
@@ -164,6 +164,11 @@ Instale o Fornecedor do Azure Site Recovery no servidor VMM e registe o servidor
 
      ![Internet](./media/site-recovery-vmm-to-azure/provider13.PNG)
 7. Aceite ou modifique a localização de um certificado SSL que é gerado automaticamente para a encriptação de dados. Este certificado é utilizado se ativar a encriptação de dados para uma nuvem protegida pelo Azure no portal do Azure Site Recovery. Mantenha este certificado num local seguro. Quando executar uma ativação pós-falha para o Azure, precisará das mesmas para desencriptar, caso a encriptação de dados esteja ativada.
+
+    > [!NOTE]
+    > Recomenda-se que utilize a capacidade de encriptação que o Azure fornece para encriptar os dados inativos, em vez de utilizar a opção de encriptação de dados disponibilizada pelo Azure Site Recovery. A capacidade de encriptação fornecida pelo Azure pode ser ativada numa conta de armazenamento e ajuda a obter um desempenho melhor, uma vez que é o armazenamento do Azure que trata da encriptação/desencriptação.
+    > [Saiba mais sobre a encriptação do serviço de Armazenamento do Azure](https://docs.microsoft.com/en-us/azure/storage/storage-service-encryption).
+    
 8. Em **Nome do servidor**, especifique um nome amigável para identificar o servidor VMM no cofre. Numa configuração de cluster, especifique o nome da função de cluster do VMM.
 9. Ative **Sincronizar metadados de nuvem** se pretender sincronizar os metadados de todas as nuvens no servidor VMM com o cofre. Esta ação só deverá ocorrer uma vez em cada servidor. Se não quiser sincronizar todas as nuvens, pode deixar esta definição desmarcada e sincronizar cada nuvem individualmente nas propriedades de nuvem na consola do VMM. Clique em **Registar** para concluir o processo.
 
@@ -425,6 +430,12 @@ Em que:
 * **/Credentials**: é o parâmetro obrigatório que especifica onde se encontra o ficheiro da chave de registo.  
 * **/ FriendlyName**: é o parâmetro obrigatório do nome do servidor anfitrião Hyper-V que é apresentado no portal do Azure Site Recovery.
 * * **/ /Encryptionenabled**: é o parâmetro opcional quando está a replicar VMs Hyper-V em nuvens VMM para o Azure. Especifique se pretende encriptar máquinas virtuais no Azure (encriptação de inativos). Certifique-se de que o nome do ficheiro tem uma extensão **.pfx**. A encriptação está desativada por predefinição.
+
+    > [!NOTE]
+    > Recomenda-se que utilize a capacidade de encriptação que o Azure fornece para encriptar os dados inativos, em vez de utilizar a opção de encriptação de dados (opção EncryptionEnabled) disponibilizada pelo Azure Site Recovery. A capacidade de encriptação fornecida pelo Azure pode ser ativada numa conta de armazenamento e ajuda a obter um desempenho melhor, uma vez que é o armazenamento do Azure que trata da encriptação/  
+    > desencriptação.
+    > [Saiba mais sobre a encriptação do Serviço de armazenamento no Azure](https://docs.microsoft.com/en-us/azure/storage/storage-service-encryption).
+    
 * **/proxyAddress**: é o parâmetro opcional que especifica o endereço do servidor proxy.
 * **/proxyport**: é o parâmetro opcional que especifica a porta do servidor proxy.
 * **/proxyUsername**: é o parâmetro opcional que especifica o nome de utilizador do proxy (caso o proxy necessite de autenticação).

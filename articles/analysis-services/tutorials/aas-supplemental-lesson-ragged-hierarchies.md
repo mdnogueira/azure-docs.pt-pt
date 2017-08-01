@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="supplemental-lesson---ragged-hierarchies" class="xliff"></a>
-
-# Lição suplementar - Hierarquias desbalanceadas
+# <a name="supplemental-lesson---ragged-hierarchies"></a>Lição suplementar - Hierarquias desbalanceadas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -36,20 +34,14 @@ Modelos de tabela no nível de compatibilidade 1400 têm uma propriedade adicion
   
 Tempo estimado para concluir esta lição: **20 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico de lição suplementar faz parte de um tutorial de modelação em tabela. Antes de executar as tarefas nesta lição suplementar, deve concluir todas as lições anteriores ou ter concluído um projeto de modelo de exemplo de vendas na Internet Adventure Works. 
 
 Se criou o projeto de vendas na Internet AW como parte do tutorial, o modelo ainda não contém dados ou hierarquias desbalanceadas. Para concluir esta lição suplementar, primeiro tem de criar o problema ao adicionar algumas tabelas adicionais, criar relações, colunas calculadas, uma medida e uma nova hierarquia da organização. Só demora cerca de 15 minutos. Em seguida, fica resolvido em apenas alguns minutos.  
 
-<a id="add-tables-and-objects" class="xliff"></a>
-
-## Adicionar tabelas e objetos
+## <a name="add-tables-and-objects"></a>Adicionar tabelas e objetos
   
-<a id="to-add-new-tables-to-your-model" class="xliff"></a>
-
-### Para adicionar novas tabelas ao seu modelo
+### <a name="to-add-new-tables-to-your-model"></a>Para adicionar novas tabelas ao seu modelo
   
 1.  No Explorador de Modelos em Tabela, expanda **Origens de Dados**, clique com o botão direito do rato na sua ligação > **Importar Tabelas Novas**.
   
@@ -120,9 +112,7 @@ Se criou o projeto de vendas na Internet AW como parte do tutorial, o modelo ain
 
     Como pode ver na tabela dinâmica, a hierarquia exibe linhas que são irregulares. Há muitas linhas em que os membros em branco são apresentados.
 
-<a id="to-fix-the-ragged-hierarchy-by-setting-the-hide-members-property" class="xliff"></a>
-
-## Para corrigir a hierarquia desbalanceada, definindo Ocultar propriedade dos membros
+## <a name="to-fix-the-ragged-hierarchy-by-setting-the-hide-members-property"></a>Para corrigir a hierarquia desbalanceada, definindo Ocultar propriedade dos membros
 
 1.  No **Explorador de modelos tabulares**, expanda **Tabelas** > **DimEmployee** > **Hierarquias** > **Organização**.
 
@@ -136,9 +126,7 @@ Se criou o projeto de vendas na Internet AW como parte do tutorial, o modelo ain
 
     Agora parece muito melhor!
 
-<a id="see-also" class="xliff"></a>
-
-## Veja Também   
+## <a name="see-also"></a>Veja Também   
 [Lição 9: Criar hierarquias](../tutorials/aas-lesson-9-create-hierarchies.md)  
 [Lição suplementar - Segurança dinâmica](../tutorials/aas-supplemental-lesson-dynamic-security.md)  
 [Lição suplementar - Linhas detalhadas](../tutorials/aas-supplemental-lesson-detail-rows.md)  

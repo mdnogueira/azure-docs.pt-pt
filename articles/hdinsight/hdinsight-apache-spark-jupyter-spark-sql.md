@@ -15,18 +15,18 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/20/2017
+ms.date: 07/21/2017
 ms.author: nitinme
 ms.translationtype: HT
-ms.sourcegitcommit: 2812039649f7d2fb0705220854e4d8d0a031d31e
-ms.openlocfilehash: 0625984bf10588fe50a2632285f565eb79b66ab7
+ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
+ms.openlocfilehash: ad4330a1fc7f8de154d9aaa8df3acc2ab59b9dc1
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/22/2017
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="create-an-apache-spark-cluster-in-azure-hdinsight"></a>Criar um cluster do Apache Spark no Azure HDInsight
 
-Neste artigo, vai aprender a criar um cluster do Apache Spark no Azure HDInsight.
+Neste artigo, vai aprender a criar um cluster do Apache Spark no Azure HDInsight. Para obter informações sobre o Spark no HDInsight, consulte [descrição geral: Apache Spark no Azure HDInsight](hdinsight-apache-spark-overview.md).
 
    ![Diagrama de início rápido que descreve os passos para criar um cluster do Apache Spark no Azure HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdinsight-spark-quickstart-interactive-spark-query-flow.png "Guia de introdução do Spark ao utilizar o Apache Spark no HDInsight. Passos ilustrados: criar um cluster; executar consulta interativa do Spark")
 
@@ -115,10 +115,17 @@ Quando utiliza um bloco de notas do Jupyter configurado para o seu cluster do HD
 
 7. Encerre o bloco de notas para libertar os recursos do cluster depois de terminar a execução da aplicação. Para o fazer, no menu **Ficheiro** do bloco de notas, clique em **Fechar e Parar**.
 
-## <a name="next-step"></a>Passo seguinte
+8. Se quiser concluir os passos seguintes mais tarde, não se esqueça de eliminar o cluster do HDInsight que criou neste artigo. 
 
-Neste artigo, aprendeu a criar um cluster do HDInsight Spark e a executar uma consulta de Spark SQL básica. Agora, saiba como [carregar dados para o HDInsight Spark e executar consultas interativas](hdinsight-apache-spark-load-data-run-query.md).
+    [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-Se quiser concluir os passos seguintes mais tarde, não se esqueça de eliminar o cluster do HDInsight. 
+## <a name="next-step"></a>Passo seguinte 
 
-[!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+Neste artigo, aprendeu a criar um cluster do HDInsight Spark e a executar uma consulta de Spark SQL básica. Avance para o artigo seguinte para saber como utilizar um cluster do HDInsight Spark para executar consultas interativas nos dados de exemplo.
+
+> [!div class="nextstepaction"]
+>[Executar consultas interativas num cluster do Spark do HDInsight](hdinsight-apache-spark-load-data-run-query.md)
+
+
+
+

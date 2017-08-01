@@ -22,25 +22,19 @@ ms.lasthandoff: 06/17/2017
 
 
 ---
-<a id="build-and-deploy-a-java-api-app-in-azure-app-service" class="xliff"></a>
-
-# Criar e implementar uma aplicação API Java no App Service do Azure
+# <a name="build-and-deploy-a-java-api-app-in-azure-app-service"></a>Criar e implementar uma aplicação API Java no App Service do Azure
 [!INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
 
 Este tutorial mostra como criar uma aplicação Java e como implementá-la nas API Apps do App Service do Azure utilizando o [Git]. As instruções deste tutorial podem ser seguidas em qualquer sistema operativo capaz de executar Java. O código neste tutorial é criado com o [Maven]. O [Jax-RS] é utilizado para criar o serviço RESTful e é gerado com base na especificação dos metadados [Swagger] utilizando o [Swagger Editor].
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 1. [Kit de Programação Java 8] \(ou posterior)
 2. [Maven] instalado no seu computador de desenvolvimento
 3. [Git] instalado no seu computador de desenvolvimento
 4. Uma subscrição paga ou [avaliação gratuita] do [Microsoft Azure]
 5. Um aplicação de teste HTTP como o [Postman]
 
-<a id="scaffold-the-api-using-swaggerio" class="xliff"></a>
-
-## Estruturar a API utilizando o Swagger.IO
+## <a name="scaffold-the-api-using-swaggerio"></a>Estruturar a API utilizando o Swagger.IO
 Utilizando o editor online swagger.io, pode introduzir código Swagger JSON ou YAML que represente a estrutura da sua API. Assim que tiver a área de superfície da API concebida, pode exportar código para uma variedade de plataformas e estruturas. Na secção seguinte, o código estruturado será modificado para que inclua a funcionalidade mock. 
 
 Esta demonstração irá começar com um corpo Swagger JSON irá colar no editor swagger.io, que em seguida será utilizado para gerar código utilizando o JAX RS para aceder a um ponto final de API REST. Em seguida, irá editar o código estruturado para devolver dados mock, simulando uma API REST incorporada visível num mecanismo de persistência de dados.  
@@ -154,9 +148,7 @@ Esta demonstração irá começar com um corpo Swagger JSON irá colar no editor
    
     Depois de o código ser gerado, receberá um ficheiro ZIP para transferir. Este ficheiro contém o código estruturado pelo gerador de código de Swagger e todos os scripts incorporados associados. Deszipe a biblioteca na totalidade para um diretório na sua estação de trabalho de desenvolvimento. 
 
-<a id="edit-the-code-to-add-api-implementation" class="xliff"></a>
-
-## Editar o Código para adicionar a Implementação de API
+## <a name="edit-the-code-to-add-api-implementation"></a>Editar o Código para adicionar a Implementação de API
 Nesta secção, irá substituir a implementação do lado do servidor do código gerado pelo Swagger pelo código personalizado. O novo código irá devolver uma ArrayList de entidades de contacto para o cliente que efetua a chamada. 
 
 1. Abra o ficheiro do modelo *Contact.java*, que está localizado na pasta *src/gen/java/io/swagger/model*, utilizando o [Visual Studio Code] ou o seu editor de texto preferido. 
@@ -247,9 +239,7 @@ Nesta secção, irá substituir a implementação do lado do servidor do código
           copy target\ROOT.war deploy\webapps
           cd deploy
 
-<a id="publish-the-output-to-azure-app-service" class="xliff"></a>
-
-## Publicar o resultado no App Service do Azure
+## <a name="publish-the-output-to-azure-app-service"></a>Publicar o resultado no App Service do Azure
 Nesta secção irá aprender como criar uma nova aplicação API através do Portal do Azure, preparar essa aplicação API para alojar aplicações Java e implementar o ficheiro WAR recentemente criado no App Service do Azure para executar a nova Aplicação. 
 
 1. Crie uma nova Aplicação API no [Portal do Azure], clicando no item de menu **Novo -> Web + Mobile -> Aplicação API**, introduzindo os detalhes da aplicação e, em seguida, clicando em **Criar**.
@@ -280,18 +270,14 @@ Nesta secção irá aprender como criar uma nova aplicação API através do Por
    
     ![Utilizar a API REST dos Contactos do Java em direto no Azure][postman-calling-azure-contacts]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste artigo, conseguiu iniciar com um ficheiro Swagger JSON e algum código Java estruturado obtido a partir do editor Swagger.io. A partir daí, as suas alterações simples e um processo de implementação de Git resultou numa aplicação API funcional escrita em Java. O próximo tutorial mostra como [consumir aplicações API a partir de clientes JavaScript, utilizando a CORS][App Service API CORS]. Tutoriais posteriores na série mostram como implementar a autenticação e a autorização.
 
 Para criar esta amostra, pode saber mais sobre o [SDK de Armazenamento para Java] para blobs JSON. Ou, pode utilizar o [Document DB Java SDK] para guardar os seus dados de contacto no Azure Document DB. 
 
 <a name="see-also"></a>
 
-<a id="see-also" class="xliff"></a>
-
-## Veja também
+## <a name="see-also"></a>Veja também
 Para obter mais informações sobre como utilizar o Azure com o Java, veja o [Centro de Programadores do Java do Azure].
 
 <!-- URL List -->

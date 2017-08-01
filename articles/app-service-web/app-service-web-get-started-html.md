@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/21/2017
 
 ---
-<a id="create-a-static-html-web-app-in-azure" class="xliff"></a>
-
-# Criar uma aplicação Web HTML estática no Azure
+# <a name="create-a-static-html-web-app-in-azure"></a>Criar uma aplicação Web HTML estática no Azure
 
 [As Aplicações Web do Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview) fornecem um serviço de alojamento na Web altamente dimensionável e com correção automática.  Este guia de início rápido mostra-lhe como implementar um site HTML+CSS básico nas aplicações Web do Azure. Crie a aplicação Web com a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) e utilize o Git para implementar o conteúdo HTML de exemplo na aplicação Web.
 
@@ -32,9 +30,7 @@ ms.lasthandoff: 06/21/2017
 
 Pode seguir os passos abaixo num computador Mac, Windows ou Linux. Depois de instalados os pré-requisitos, demora cerca de cinco minutos a concluir todos os passos.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este guia de início rápido:
 
@@ -45,9 +41,7 @@ Para concluir este guia de início rápido:
 
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-<a id="download-the-sample" class="xliff"></a>
-
-## Transferir o exemplo
+## <a name="download-the-sample"></a>Transferir o exemplo
 
 Numa janela do terminal, execute o seguinte comando para clonar o repositório da aplicação de exemplo para o seu computador local.
 
@@ -57,9 +51,7 @@ git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 
 Utilize essa janela do terminal para executar todos os comandos neste guia de início rápido.
 
-<a id="view-the-html" class="xliff"></a>
-
-## Ver o HTML
+## <a name="view-the-html"></a>Ver o HTML
 
 Navegue para o diretório que contém o HTML de exemplo. Abra o ficheiro *index.html* no browser.
 
@@ -109,9 +101,7 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
  * [new branch]      master -> master
 ```
 
-<a id="browse-to-the-app" class="xliff"></a>
-
-## Navegar para a aplicação
+## <a name="browse-to-the-app"></a>Navegar para a aplicação
 
 Num browser, aceda ao URL da aplicação Web do Azure:
 
@@ -125,9 +115,7 @@ A página está a ser executada como uma aplicação Web do Serviço de Aplicaç
 
 **Parabéns!** Implementou a sua primeira aplicação HTML no Serviço de Aplicações.
 
-<a id="update-and-redeploy-the-app" class="xliff"></a>
-
-## Atualizar e reimplementar a aplicação
+## <a name="update-and-redeploy-the-app"></a>Atualizar e reimplementar a aplicação
 
 Abra o ficheiro *index.html* num editor de texto e faça uma alteração da marcação. Por exemplo, altere o cabeçalho H1 "Serviço de aplicações do Azure – exemplo estático do site HTML" simplesmente para -"serviço de aplicações do Azure".
 
@@ -142,9 +130,7 @@ Depois de concluída a implementação, atualize o browser para ver as alteraç�
 
 ![Página inicial atualizada da aplicação de exemplo](media/app-service-web-get-started-html/hello-azure-in-browser-az.png)
 
-<a id="manage-your-new-azure-web-app" class="xliff"></a>
-
-## Gerir a sua nova aplicação Web do Azure
+## <a name="manage-your-new-azure-web-app"></a>Gerir a sua nova aplicação Web do Azure
 
 Aceda ao <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerir a aplicação Web que criou.
 
@@ -160,9 +146,7 @@ O menu à esquerda fornece diferentes páginas para configurar a sua aplicação
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 > [!div class="nextstepaction"]
 > [Mapear domínio personalizado](app-service-web-tutorial-custom-domain.md)

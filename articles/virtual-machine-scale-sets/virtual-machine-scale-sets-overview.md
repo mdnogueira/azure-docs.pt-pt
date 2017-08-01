@@ -24,9 +24,7 @@ ms.lasthandoff: 07/04/2017
 
 
 ---
-<a id="what-are-virtual-machine-scale-sets-in-azure" class="xliff"></a>
-
-# O que são os conjuntos de dimensionamento de máquinas virtuais do Azure?
+# <a name="what-are-virtual-machine-scale-sets-in-azure"></a>O que são os conjuntos de dimensionamento de máquinas virtuais do Azure?
 Os conjuntos de dimensionamento de máquinas virtuais são um recurso de computação do Azure que pode utilizar para implementar e gerir um conjunto de VMs idênticas. Com todas as VMs configuradas da mesma forma, os conjuntos de dimensionamento foram concebidos para suportar um autêntico dimensionamento automático, sem que seja necessário o pré-aprovisionamento de VMs. Assim, é mais fácil criar serviços em grande escala orientados para macrocomputação, macrodados e cargas de trabalho em contentores.
 
 Para aplicações que têm de aumentar e reduzir verticalmente os recursos de computação, as operações em escala são balanceadas, implicitamente, entre domínios de falha e de atualização. Para obter outra introdução aos conjuntos de dimensionamento de, veja o [anúncio no blogue do Azure](https://azure.microsoft.com/blog/azure-virtual-machine-scale-sets-ga/).
@@ -36,9 +34,7 @@ Para obter mais informações sobre os conjuntos de dimensionamento, veja estes 
 * [Mark Russinovich talks Azure Scale Sets (Mark Russinovich fala sobre os conjuntos de dimensionamento do Azure)](https://channel9.msdn.com/Blogs/Regular-IT-Guy/Mark-Russinovich-Talks-Azure-Scale-Sets/)  
 * [Virtual Machine Scale Sets with Guy Bowerman (Conjuntos de Dimensionamento de Máquinas Virtuais, com Guy Bowerman)](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman)
 
-<a id="creating-and-managing-scale-sets" class="xliff"></a>
-
-## Criar e gerir conjuntos de dimensionamento
+## <a name="creating-and-managing-scale-sets"></a>Criar e gerir conjuntos de dimensionamento
 Pode criar um conjunto de dimensionamento no [portal do Azure](https://portal.azure.com) ao selecionar **novo** e escrever **dimensionamento** na barra de pesquisa. É apresentado **Conjunto de dimensionamento de máquinas virtuais** nos resultados. A partir daí, pode preencher os campos necessários para personalizar e implementar o seu conjunto de dimensionamento. Também tem opções no portal para configurar regras de dimensionamento automático básicas com base na utilização da CPU.
 
 Pode utilizar modelos JSON e [APIs REST](https://msdn.microsoft.com/library/mt589023.aspx), tais como VMs do Azure Resource Manager individuais, para definir e implementar conjuntos de dimensionamento. Por conseguinte, pode utilizar qualquer método de implementação Azure Resource Manager padrão. Para obter mais informações sobre os modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md).
@@ -47,9 +43,7 @@ Está disponível uma gama de modelos de exemplos de conjuntos de dimensionament
 
 Para os exemplos de modelo de Início rápido, um botão "Implementar no Azure" no ficheiro Leia-me para cada modelo é ligado à funcionalidade Implementação do portal. Para implementar o conjunto de dimensionamento, clique no botão e preencha os parâmetros obrigatórios no portal. 
 
-<a id="scaling-a-scale-set-out-and-in" class="xliff"></a>
-
-## Aumentar e reduzir verticalmente um conjunto de dimensionamento
+## <a name="scaling-a-scale-set-out-and-in"></a>Aumentar e reduzir verticalmente um conjunto de dimensionamento
 Pode clicar na secção **Dimensionamento**, em **Definições**, para alterar a capacidade dos conjuntos de dimensionamento no portal do Azure. 
 
 Para alterar a capacidade dos conjuntos de dimensionamento na linha de comandos, utilize o comando **scale** na [CLI do Azure](https://github.com/Azure/azure-cli). Por exemplo, utilize este comando para definir um conjunto de dimensionamento com uma capacidade de dez VMs:
@@ -70,9 +64,7 @@ Para aumentar ou reduzir o número de máquinas virtuais num conjunto de dimensi
 
 Se estiver a reimplementar um modelo do Azure Resource Manager para alterar a capacidade, pode definir um modelo muito mais pequeno que inclua apenas o pacote da propriedade **SKU** e a capacidade atualizada. [Segue-se um exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing).
 
-<a id="autoscale" class="xliff"></a>
-
-## Dimensionamento Automático
+## <a name="autoscale"></a>Dimensionamento Automático
 
 Opcionalmente, é possível configurar um conjunto de dimensionamento com definições de dimensionamento automático, se for criado no portal do Azure. O número de VMs pode, depois, ser aumentado ou diminuído, com base na utilização média da CPU. 
 
@@ -93,18 +85,14 @@ Add-AzureRmAutoscaleSetting -Location $location -Name "autosetting1" -ResourceGr
 
 Pode encontrar uma lista de métricas válidas para dimensionar em [Supported metrics with Azure Monitor (Métricas suportadas com o Azure Monitor)](../monitoring-and-diagnostics/monitoring-supported-metrics.md), na secção "Microsoft.Compute/virtualMachineScaleSets". Também estão disponíveis opções de dimensionamento automático mais avançadas, incluindo o dimensionamento automático com base numa agenda e a utilização de webhooks para integrar em sistemas de alerta.
 
-<a id="monitoring-your-scale-set" class="xliff"></a>
-
-## Monitorizar o conjunto de dimensionamento
+## <a name="monitoring-your-scale-set"></a>Monitorizar o conjunto de dimensionamento
 O [portal do Azure](https://portal.azure.com) apresenta uma lista de conjuntos de dimensionamento e mostra as propriedades dos mesmos. Também suporta operações de gestão. Pode realizar operações de gestão em conjuntos de dimensionamento e em VMs individuais dentro de um conjunto de dimensionamento. O portal disponibiliza, igualmente, um gráfico de utilização de recursos personalizável. 
 
 Se precisar de ver ou editar a definição de JSON subjacente de um recurso do Azure, também pode utilizar o [Explorador de Recursos do Azure](https://resources.azure.com). Os conjuntos de dimensionamento são um recurso no fornecedor de recursos do Microsoft.Compute Azure. A partir deste site, pode expandir as ligações seguintes para vê-los:
 
 **Subscrições** > **a sua subscrição** > **resourceGroups** > **fornecedores** > **Microsoft.Compute** > **virtualMachineScaleSets** > **o seu conjunto de dimensionamento** > etc.
 
-<a id="scale-set-scenarios" class="xliff"></a>
-
-## Cenários de conjuntos de dimensionamento
+## <a name="scale-set-scenarios"></a>Cenários de conjuntos de dimensionamento
 Esta secção lista alguns cenários comuns de conjuntos de dimensionamento. Alguns serviços de nível superior do Azure (como o Batch, o Service Fabric e o Container Service) utilizam estes cenários.
 
 * **Aceder através de RDP ou SSH a instâncias de conjuntos de dimensionamento**: é criado um conjunto de dimensionamento dentro de uma rede virtual e não são alocados endereços IP públicos às VMs individuais no conjunto de dimensionamento por predefinição. Esta política evita a sobrecarga de despesas e de gestão inerentes à alocação de endereços IP públicos separados a todos os nós na sua grelha de computação. Se precisa de direcionar ligações externas às máquinas virtuais do conjunto de dimensionamento, pode configurar um conjunto de dimensionamento para atribuir automaticamente endereços IP públicos a novas VMs. Em alternativa, pode ligar a VMs a partir de outros recursos na sua rede virtual que podem ser endereços IP públicos alocados, como, por exemplo, balanceadores de carga e máquinas virtuais autónomas. 
@@ -134,17 +122,13 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento. Alg
   
    [Neste exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos) desta abordagem, o [Azure Container Service](https://azure.microsoft.com/services/container-service/) implementa um cluster com base em conjuntos de dimensionamento com um orquestrador de contentores.
 
-<a id="scale-set-performance-and-scale-guidance" class="xliff"></a>
-
-## Orientação de desempenho e dimensionamento dos conjuntos de dimensionamento
+## <a name="scale-set-performance-and-scale-guidance"></a>Orientação de desempenho e dimensionamento dos conjuntos de dimensionamento
 * Os conjuntos de dimensionamento suportam até mil VMs. Se criar e carregar as suas próprias imagens de VM personalizadas, o limite é cem. Para obter considerações sobre quando utilizar conjuntos de dimensionamento grandes, veja [Trabalhar com conjuntos de dimensionamento de máquinas virtuais de grande escala](virtual-machine-scale-sets-placement-groups.md).
 * Não é necessário criar previamente contas de armazenamento do Azure para utilizar os conjuntos de dimensionamento. Os conjuntos de dimensionamento suportam os discos geridos do Azure, o que elimina as preocupações de desempenho quanto ao número de discos por conta de armazenamento. Para obter mais informações, veja [Conjuntos de dimensionamento de VMs do Azure e discos e geridos](virtual-machine-scale-sets-managed-disks.md).
 * Considere utilizar o armazenamento Premium do Azure em vez do Armazenamento Standard, para beneficiar de tempos de aprovisionamento de VMs mais rápidos e previsíveis e um desempenho de E/S melhorado.
 * A quota de núcleos na região em que está a implementar limita o número de VMs que pode criar. Poderá ter de contactar o Suporte ao Cliente para aumentar o seu limite de quota de computação, mesmo que tenha atualmente um limite elevado de núcleos para utilizar com os Serviços Cloud do Azure. Para consultar a sua quota, execute este comando da CLI do Azure: `azure vm list-usage`. Ou execute este comando do PowerShell: `Get-AzureRmVMUsage`.
 
-<a id="frequently-asked-questions-for-scale-sets" class="xliff"></a>
-
-## Perguntas mais frequentes sobre os conjuntos de dimensionamento
+## <a name="frequently-asked-questions-for-scale-sets"></a>Perguntas mais frequentes sobre os conjuntos de dimensionamento
 **P.** Quantas VMs posso ter num conjunto de dimensionamento?
 
 **R.** Os conjuntos de dimensionamento podem ter entre zero e mil VMs com base nas imagens da plataforma ou entre zero e cem VMs com base em imagens personalizadas. 

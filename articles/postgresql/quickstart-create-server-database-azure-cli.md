@@ -17,9 +17,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/20/2017
 
 ---
-<a id="create-an-azure-database-for-postgresql-using-the-azure-cli" class="xliff"></a>
-
-# Criar uma Base de Dados do Azure para PostgreSQL com a CLI do Azure
+# <a name="create-an-azure-database-for-postgresql-using-the-azure-cli"></a>Criar uma Base de Dados do Azure para PostgreSQL com a CLI do Azure
 A Base de Dados do Azure para o PostgreSQL é um serviço gerido que lhe permite executar, gerir e dimensionar as bases de dados de alta disponibilidade do PostgreSQL na cloud. A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia de introdução mostra-lhe como criar uma Base de Dados do Azure para o servidor PostgreSQL num [grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) com a CLI do Azure.
 
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
@@ -33,18 +31,14 @@ Se tiver várias subscrições, escolha a subscrição adequada na qual o recurs
 az account set --subscription 00000000-0000-0000-0000-000000000000
 ```
 
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) com o comando [az group create](/cli/azure/group#create). Um grupo de recursos é um contentor lógico no qual os recursos do Azure são implementados e geridos como um grupo. O exemplo seguinte cria um grupo de recursos com o nome `myresourcegroup` na localização `westus`.
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
 ```
 
-<a id="create-an-azure-database-for-postgresql-server" class="xliff"></a>
-
-## Criar uma Base de Dados do Azure para o servidor PostgreSQL
+## <a name="create-an-azure-database-for-postgresql-server"></a>Criar uma Base de Dados do Azure para o servidor PostgreSQL
 
 Crie uma [Base de Dados do Azure para o servidor PostgreSQL](overview.md) com o comando [az postgres server create](/cli/azure/postgres/server#create). Os servidores contêm um grupo de bases de dados geridas como um grupo. 
 
@@ -59,9 +53,7 @@ az postgres server create --resource-group myresourcegroup --name mypgserver-201
 Por predefinição, é criada a base de dados **postgres** no seu servidor. A base de dados [postgres](https://www.postgresql.org/docs/9.6/static/app-initdb.html) é uma base de dados predefinida que se destina a ser utilizada por utilizadores, utilitários e aplicações de terceiros. 
 
 
-<a id="configure-a-server-level-firewall-rule" class="xliff"></a>
-
-## Configurar uma regra de firewall ao nível do servidor
+## <a name="configure-a-server-level-firewall-rule"></a>Configurar uma regra de firewall ao nível do servidor
 
 Crie uma regra de firewall ao nível do servidor do Azure PostgreSQL com o comando [az postgres server firewall-rule create](/cli/azure/postgres/server/firewall-rule#create). A regra de firewall ao nível do servidor permite que uma aplicação externa, como [psql](https://www.postgresql.org/docs/9.2/static/app-psql.html) ou [PgAdmin](https://www.pgadmin.org/), se ligue ao seu servidor através da firewall do serviço Azure PostgreSQL. 
 
@@ -73,9 +65,7 @@ az postgres server firewall-rule create --resource-group myresourcegroup --serve
 > [!NOTE]
 > O servidor PostgreSQL do Azure comunica através da porta 5432. Ao ligar a partir de uma rede empresarial, o tráfego de saída através da porta 5432 poderá não ser permitido pela firewall da rede. Peça ao departamento de TI para abrir a porta 5432, para ligar ao servidor da Base de Dados SQL do Azure.
 
-<a id="get-the-connection-information" class="xliff"></a>
-
-## Obter as informações da ligação
+## <a name="get-the-connection-information"></a>Obter as informações da ligação
 
 Para ligar ao seu servidor, terá de fornecer credenciais de acesso e informações de anfitrião.
 ```azurecli-interactive
@@ -107,9 +97,7 @@ O resultado está no formato JSON. Aponte o **administratorLogin** e o **fullyQu
 }
 ```
 
-<a id="connect-to-postgresql-database-using-psql" class="xliff"></a>
-
-## Ligar à base de dados do PostgreSQL com psql
+## <a name="connect-to-postgresql-database-using-psql"></a>Ligar à base de dados do PostgreSQL com psql
 
 Se o seu computador cliente tiver o PostgreSQL instalado, pode utilizar uma instância local de [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html) para ligar a um servidor PostgreSQL do Azure. Vamos utilizar agora o utilitário da linha de comandos psql para ligar ao servidor PostgreSQL do Azure.
 
@@ -134,9 +122,7 @@ CREATE DATABASE mypgsqldb;
 \c mypgsqldb
 ```
 
-<a id="connect-to-postgresql-database-using-pgadmin" class="xliff"></a>
-
-## Ligar-se à base de dados do PostgreSQL com pgAdmin
+## <a name="connect-to-postgresql-database-using-pgadmin"></a>Ligar-se à base de dados do PostgreSQL com pgAdmin
 
 Para ligar ao servidor PostgreSQL do Azure com a ferramenta _pgAdmin_ da GUI
 1.  Inicie a aplicação _pgAdmin_ no computador cliente. Pode instalar a _pgAdmin_ a partir do site http://www.pgadmin.org/.
@@ -160,9 +146,7 @@ Para ligar ao servidor PostgreSQL do Azure com a ferramenta _pgAdmin_ da GUI
  ![pgAdmin – Criar – Base de Dados](./media/quickstart-create-server-database-azure-cli/3-pgadmin-database.png)
 
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Limpe todos os recursos que criou no guia de introdução ao eliminar o [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
@@ -178,9 +162,7 @@ Se pretende eliminar o único servidor criado recentemente, pode executar o coma
 az postgres server delete --resource-group myresourcegroup --name mypgserver-20170401
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
 > [Migrar a base de dados com as opções Exportar e Importar](./howto-migrate-using-export-and-import.md)
 

@@ -23,9 +23,7 @@ ms.lasthandoff: 07/01/2017
 
 ---
 
-<a id="get-started-with-azure-data-lake-store-using-python" class="xliff"></a>
-
-# Introdução ao Azure Data Lake Store com Python
+# <a name="get-started-with-azure-data-lake-store-using-python"></a>Introdução ao Azure Data Lake Store com Python
 
 > [!div class="op_single_selector"]
 > * [Portal](data-lake-store-get-started-portal.md)
@@ -41,9 +39,7 @@ ms.lasthandoff: 07/01/2017
 
 Saiba como utilizar o Python SDK para o Azure e o Azure Data Lake Store para fazer operações básicas, como criar pastas, carregar e transferir ficheiros de dados, etc. Para obter mais informações sobre o Data Lake, veja [Azure Data Lake Store](data-lake-store-overview.md).
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 * **Python**. Pode transferir o Python [aqui](https://www.python.org/downloads/). Este artigo utiliza a versão Python 3.5.2
 
@@ -51,9 +47,7 @@ Saiba como utilizar o Python SDK para o Azure e o Azure Data Lake Store para faz
 
 * **Criar uma Aplicação do Azure Active Directory**. A aplicação do Azure AD é utilizada para autenticar a aplicação do Data Lake Store no Azure AD. Existem abordagens diferentes para a autenticação no Azure AD, que são **autenticação do utilizador final** ou **autenticação de serviço para serviço**. Para obter instruções e mais informações sobre como autenticar, consulte [End-user authentication](data-lake-store-end-user-authenticate-using-active-directory.md) (Autenticação de utilizador final) ou [Service-to-service authentication](data-lake-store-authenticate-using-active-directory.md) (Autenticação de serviço a serviço).
 
-<a id="install-the-modules" class="xliff"></a>
-
-## Instalar os módulos
+## <a name="install-the-modules"></a>Instalar os módulos
 
 Para trabalhar no Data Lake Store com Python, tem de instalar três módulos.
 
@@ -69,9 +63,7 @@ pip install azure-mgmt-datalake-store
 pip install azure-datalake-store
 ```
 
-<a id="create-a-new-python-application" class="xliff"></a>
-
-## Criar uma aplicação Python nova
+## <a name="create-a-new-python-application"></a>Criar uma aplicação Python nova
 
 1. No IDE à sua escolha, crie uma aplicação Python nova, como, por exemplo, **mysample.py**.
 
@@ -104,9 +96,7 @@ pip install azure-datalake-store
 
 3. Guarde as alterações a mysample.py.
 
-<a id="authentication" class="xliff"></a>
-
-## Autenticação
+## <a name="authentication"></a>Autenticação
 
 Nesta secção, vamos falar sobre as diferentes formas de autenticar com o Azure AD. As opções disponíveis são:
 
@@ -116,9 +106,7 @@ Nesta secção, vamos falar sobre as diferentes formas de autenticar com o Azure
 
 Tem de utilizar estas opções de autenticação para os módulos de gestão de contas e de gestão do sistema de ficheiros.
 
-<a id="end-user-authentication-for-account-management" class="xliff"></a>
-
-### Autenticação de utilizador final para gestão de conta
+### <a name="end-user-authentication-for-account-management"></a>Autenticação de utilizador final para gestão de conta
 
 Utilize este método para autenticar no Azure AD para operações de gestão de contas (criar/eliminar conta do Data Lake Store, etc.). Tem de indicar o nome de utilizador e a palavra-passe de um utilizador do Azure AD. Tenha em conta que o utilizador não deve ser configurado para a autenticação multifator.
 
@@ -127,9 +115,7 @@ Utilize este método para autenticar no Azure AD para operações de gestão de 
 
     credentials = UserPassCredentials(user, password)
 
-<a id="end-user-authentication-for-filesystem-operations" class="xliff"></a>
-
-### Autenticação do utilizador final para operações do sistema de ficheiros
+### <a name="end-user-authentication-for-filesystem-operations"></a>Autenticação do utilizador final para operações do sistema de ficheiros
 
 Utilize este método para autenticar no Azure AD para operações do sistema de ficheiros (criar pastas, carregar ficheiros, etc.). Utilize-o com uma aplicação de **cliente nativa** do Azure AD existente. O utilizador do Azure AD cujas credenciais indicar não deve ser configurado para a autenticação mulitfator.
 
@@ -140,25 +126,19 @@ Utilize este método para autenticar no Azure AD para operações do sistema de 
 
     token = lib.auth(tenant_id, user, password, client_id)
 
-<a id="service-to-service-authentication-with-client-secret-for-account-management" class="xliff"></a>
-
-### Autenticação serviço para serviço com segredo do cliente para gestão da conta
+### <a name="service-to-service-authentication-with-client-secret-for-account-management"></a>Autenticação serviço para serviço com segredo do cliente para gestão da conta
 
 Utilize este método para autenticar no Azure AD para operações de gestão de contas (criar/eliminar conta do Data Lake Store, etc.). O fragmento seguinte pode ser utilizado para autenticar a aplicação de forma não interativa com o segredo do cliente de uma aplicação/principal de serviço. Utilize esta opção com uma ”Aplicação Web“ do Azure AD existente.
 
     credentials = ServicePrincipalCredentials(client_id = 'FILL-IN-HERE', secret = 'FILL-IN-HERE', tenant = 'FILL-IN-HERE')
 
-<a id="service-to-service-authentication-with-client-secret-for-filesystem-operations" class="xliff"></a>
-
-### Autenticação de serviço para serviço com segredo do cliente para operações de sistema de ficheiros
+### <a name="service-to-service-authentication-with-client-secret-for-filesystem-operations"></a>Autenticação de serviço para serviço com segredo do cliente para operações de sistema de ficheiros
 
 Utilize este método para autenticar no Azure AD para operações do sistema de ficheiros (criar pastas, carregar ficheiros, etc.). O fragmento seguinte pode ser utilizado para autenticar a aplicação de forma não interativa com o segredo do cliente de uma aplicação/principal de serviço. Utilize esta opção com uma ”Aplicação Web“ do Azure AD existente.
 
     token = lib.auth(tenant_id = 'FILL-IN-HERE', client_secret = 'FILL-IN-HERE', client_id = 'FILL-IN-HERE')
 
-<a id="multi-factor-authentication-for-account-management" class="xliff"></a>
-
-### Autenticação mulftifator para gestão de conta
+### <a name="multi-factor-authentication-for-account-management"></a>Autenticação mulftifator para gestão de conta
 
 Utilize este método para autenticar no Azure AD para operações de gestão de contas (criar/eliminar conta do Data Lake Store, etc.). O fragmento seguinte pode ser utilizado para autenticar a sua aplicação com a autenticação multifator. Utilize esta opção com uma ”Aplicação Web“ do Azure AD existente.
 
@@ -175,17 +155,13 @@ Utilize este método para autenticar no Azure AD para operações de gestão de 
     mgmt_token = context.acquire_token_with_device_code(RESOURCE, code, client_id)
     credentials = AADTokenCredentials(mgmt_token, client_id)
 
-<a id="multi-factor-authentication-for-filesystem-management" class="xliff"></a>
-
-### Autenticação multifator para gestão do sistema de ficheiros
+### <a name="multi-factor-authentication-for-filesystem-management"></a>Autenticação multifator para gestão do sistema de ficheiros
 
 Utilize este método para autenticar no Azure AD para operações do sistema de ficheiros (criar pastas, carregar ficheiros, etc.). O fragmento seguinte pode ser utilizado para autenticar a sua aplicação com a autenticação multifator. Utilize esta opção com uma ”Aplicação Web“ do Azure AD existente.
 
     token = lib.auth(tenant_id='FILL-IN-HERE')
 
-<a id="create-an-azure-resource-group" class="xliff"></a>
-
-## Criar um Grupo de Recursos do Azure
+## <a name="create-an-azure-resource-group"></a>Criar um Grupo de Recursos do Azure
 
 Utilize o fragmento de código seguinte para criar um Grupo de Recursos do Azure:
 
@@ -208,9 +184,7 @@ Utilize o fragmento de código seguinte para criar um Grupo de Recursos do Azure
         )
     )
 
-<a id="create-clients-and-data-lake-store-account" class="xliff"></a>
-
-## Criar clientes e a conta do Data Lake Store
+## <a name="create-clients-and-data-lake-store-account"></a>Criar clientes e a conta do Data Lake Store
 
 O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. Utiliza o objeto de cliente para criar uma conta do Data Lake Store. Por fim, o fragmento cria um objeto de cliente do sistema de ficheiros.
 
@@ -233,9 +207,7 @@ O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. 
     ## Create a filesystem client object
     adlsFileSystemClient = core.AzureDLFileSystem(token, store_name=adlsAccountName)
 
-<a id="list-the-data-lake-store-accounts" class="xliff"></a>
-
-## Listar as contas do Data Lake Store
+## <a name="list-the-data-lake-store-accounts"></a>Listar as contas do Data Lake Store
 
     ## List the existing Data Lake Store accounts
     result_list_response = adlsAcctClient.account.list()
@@ -243,39 +215,29 @@ O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. 
     for items in result_list:
         print(items)
 
-<a id="create-a-directory" class="xliff"></a>
-
-## Criar um diretório
+## <a name="create-a-directory"></a>Criar um diretório
 
     ## Create a directory
     adlsFileSystemClient.mkdir('/mysampledirectory')
 
-<a id="upload-a-file" class="xliff"></a>
-
-## Carregar um ficheiro
+## <a name="upload-a-file"></a>Carregar um ficheiro
 
 
     ## Upload a file
     multithread.ADLUploader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt', rpath='/mysampledirectory/mysamplefile.txt', nthreads=64, overwrite=True, buffersize=4194304, blocksize=4194304)
 
 
-<a id="download-a-file" class="xliff"></a>
-
-## Transferir um ficheiro
+## <a name="download-a-file"></a>Transferir um ficheiro
 
     ## Download a file
     multithread.ADLDownloader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt.out', rpath='/mysampledirectory/mysamplefile.txt', nthreads=64, overwrite=True, buffersize=4194304, blocksize=4194304)
 
-<a id="delete-a-directory" class="xliff"></a>
-
-## Eliminar um diretório
+## <a name="delete-a-directory"></a>Eliminar um diretório
 
     ## Delete a directory
     adlsFileSystemClient.rm('/mysampledirectory', recursive=True)
 
-<a id="see-also" class="xliff"></a>
-
-## Consultar também
+## <a name="see-also"></a>Consultar também
 
 - [Secure data in Data Lake Store (Proteger dados no Data Lake Store)](data-lake-store-secure-data.md)
 - [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

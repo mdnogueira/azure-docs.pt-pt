@@ -22,32 +22,24 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/21/2017
 
 ---
-<a id="use-azure-vm-agents-for-continuous-integration-with-jenkins" class="xliff"></a>
-
-# Utilize os agentes de VM do Azure para uma integração contínua com o Jenkins.
+# <a name="use-azure-vm-agents-for-continuous-integration-with-jenkins"></a>Utilize os agentes de VM do Azure para uma integração contínua com o Jenkins.
 
 Este guia de início rápido mostra como usar o plugin do agente Jenkin de VM para criar um agente do Linux (Ubuntu) exigido pelo Azure.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este guia de início rápido:
 
 * Se ainda não tiver um Jenkins Master, pode começar com o [modelo de solução](install-jenkins-solution-template.md) 
 * Consulte [Criar um principal de serviço do Azure com CLI 2.0 do Azure](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) se ainda não tiver um principal de serviço do Azure.
 
-<a id="install-azure-vm-agents-plugin" class="xliff"></a>
-
-## Plugin dos agentes de VM do Azure para Jenkins
+## <a name="install-azure-vm-agents-plugin"></a>Plugin dos agentes de VM do Azure para Jenkins
 
 Se começar com o [Modelo de solução](install-jenkins-solution-template.md), o plugin do agente de VM do Azure está instalado no Jenkins Master.
 
 Caso contrário, instale o plugin dos **Agentes de VM do Azure** a partir do painel do Jenkins.
 
-<a id="configure-the-plugin" class="xliff"></a>
-
-## Configurar o plug-in
+## <a name="configure-the-plugin"></a>Configurar o plug-in
 
 * No painel Jenkins, clique em **Gerir Jenkins -> Configurar o sistema ->**. Desloque-se até à parte inferior da página e localize a secção com o menu pendente **Adicionar nova nuvem**. No menu, selecione **Agentes de VM do Microsoft Azure**
 * Selecione uma conta existente no menu pendente de credenciais do Azure.  Para adicionar um novo **Principal do serviço do Microsoft Azure,** insira os seguintes valores: ID de subscrição, ID do cliente, segredo de cliente e ponto final de Tokens de OAuth 2.0.
@@ -57,13 +49,9 @@ Caso contrário, instale o plugin dos **Agentes de VM do Azure** a partir do pai
 * Clique em **Verificar configuração** para se certificar de que a configuração do perfil está correta.
 * Guarde a configuração e avance para o passo seguinte.
 
-<a id="template-configuration" class="xliff"></a>
+## <a name="template-configuration"></a>Configuração do modelo
 
-## Configuração do modelo
-
-<a id="general-configuration" class="xliff"></a>
-
-### Configuração geral
+### <a name="general-configuration"></a>Configuração geral
 Em seguida, configure um modelo para ser usado na definição de um agente de VM do Azure. 
 
 * Clique em **Adicionar** para adicionar um modelo. 
@@ -76,9 +64,7 @@ Em seguida, configure um modelo para ser usado na definição de um agente de VM
 
 ![Configuração geral](./media/jenkins-azure-vm-agents/general-config.png)
 
-<a id="image-configuration" class="xliff"></a>
-
-### Configuração da imagem
+### <a name="image-configuration"></a>Configuração da imagem
 
 Para criar um agente do Linux (Ubuntu), selecione **Referência da imagem** e use a configuração seguinte como exemplo. Consulte [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/compute?subcategories=virtual-machine-images&page=1) para as imagens mais recentes suportadas pelo Azure.
 
@@ -102,9 +88,7 @@ sudo apt-get install -y openjdk-7-jdk
 * Clique em **Verificar modelo** para verificar a configuração.
 * Clique em **Guardar**.
 
-<a id="create-a-job-in-jenkins" class="xliff"></a>
-
-## Criar uma tarefa no Jenkins
+## <a name="create-a-job-in-jenkins"></a>Criar uma tarefa no Jenkins
 
 * No painel do Jenkins, clique em **Novo item**. 
 * Insira um nome e selecione **Projeto Freestyle** e clique em **OK**.
@@ -113,9 +97,7 @@ sudo apt-get install -y openjdk-7-jdk
 
 ![Configurar tarefa](./media/jenkins-azure-vm-agents/job-config.png)
 
-<a id="build-your-new-project" class="xliff"></a>
-
-## Criar novo projeto
+## <a name="build-your-new-project"></a>Criar novo projeto
 
 * Volte ao painel do Jenkins.
 * Clique com o botão direito do rato na nova tarefa criou e clique em **Compilar agora**. Uma compilação é iniciada. 
@@ -123,9 +105,7 @@ sudo apt-get install -y openjdk-7-jdk
 
 ![Saída da consola](./media/jenkins-azure-vm-agents/console-output.png)
 
-<a id="reference" class="xliff"></a>
-
-## Referência
+## <a name="reference"></a>Referência
 
 * Vídeo de sexta-feira do Azure: [Integração contínua com Jenkins usando agentes de VM do Azure](https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents)
 * Opções de configuração e informações de suporte: [Wiki de plugin do agente Jenkins de VM do Azure](https://wiki.jenkins-ci.org/display/JENKINS/Azure+VM+Agents+Plugin) 

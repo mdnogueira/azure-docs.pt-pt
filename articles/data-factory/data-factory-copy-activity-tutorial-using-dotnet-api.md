@@ -21,9 +21,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/14/2017
 
 ---
-<a id="tutorial-create-a-pipeline-with-copy-activity-using-net-api" class="xliff"></a>
-
-# Tutorial: Criar um pipeline com a Atividade de Cópia com a API .NET
+# <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Tutorial: Criar um pipeline com a Atividade de Cópia com a API .NET
 > [!div class="op_single_selector"]
 > * [Descrição geral e pré-requisitos](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Assistente de Cópia](data-factory-copy-data-wizard-tutorial.md)
@@ -45,17 +43,13 @@ Um pipeline pode ter mais de uma atividade. Além disso, pode encadear duas ativ
 > 
 > O pipeline de dados neste tutorial copia dados a partir de um arquivo de dados de origem para um arquivo de dados de destino. Para ver um tutorial sobre como transformar dados através do Azure Data Factory, consulte [Tutorial: Build a pipeline to transform data using Hadoop cluster (Tutorial: Criar um pipeline para transformar dados com o cluster do Hadoop)](data-factory-build-your-first-pipeline.md).
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * Leia a [Descrição Geral e Pré-requisitos do Tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) para obter uma descrição geral do tutorial e concluir os passos de **pré-requisitos**.
 * Visual Studio 2012 ou 2013 ou 2015
 * Transferir e instalar o [SDK .NET do Azure](http://azure.microsoft.com/downloads/)
 * Azure PowerShell. Siga as instruções do artigo [Como instalar e configurar o Azure PowerShell](../powershell-install-configure.md) para instalar o Azure PowerShell no seu computador. Utilize o Azure PowerShell para criar uma aplicação do Azure Active Directory.
 
-<a id="create-an-application-in-azure-active-directory" class="xliff"></a>
-
-### Criar uma Aplicação no Azure Active Directory
+### <a name="create-an-application-in-azure-active-directory"></a>Criar uma Aplicação no Azure Active Directory
 Crie uma aplicação no Azure Active Directory, crie um principal de serviço para a aplicação e atribua-a à função **Contribuinte do Data Factory**.
 
 1. Inicie o **Azure PowerShell**.
@@ -122,9 +116,7 @@ Deve obter os quatro valores seguintes destes passos:
 * ID da aplicação
 * Palavra-passe (especificada no primeiro comando)
 
-<a id="walkthrough" class="xliff"></a>
-
-## Instruções
+## <a name="walkthrough"></a>Instruções
 1. Com o Visual Studio 2012/2013/2015, crie uma aplicação de consola de C# .NET.
    1. Inicie o **Visual Studio** 2012/2013/2015.
    2. Clique em **Ficheiro**, aponte para **Novo** e, em seguida, clique em **Projeto**.
@@ -523,9 +515,7 @@ Deve obter os quatro valores seguintes destes passos:
    * Pipeline: **PipelineBlobSample**
 20. Verifique se os registos dos dois colaboradores são criados na tabela **emp** na base de dados SQL do Azure especificada.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para obter toda a documentação sobre a API .NET do Data Factory, veja [Data Factory .NET API Reference](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) (Referência da API .NET do Data Factory).
 
 Neste tutorial, utilizou o armazenamento de blobs do Azure como arquivo de dados de origem e uma base de dados SQL do Azure como arquivo de dados de destino numa operação de cópia. A tabela seguinte disponibiliza uma lista dos arquivos de dados que a atividade de cópia suporta como origens e destinos: 

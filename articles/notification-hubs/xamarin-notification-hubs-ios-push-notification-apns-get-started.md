@@ -23,12 +23,10 @@ ms.lasthandoff: 07/06/2017
 
 
 ---
-# Notificação Push de iOS com Notification Hubs para aplicações Xamarin
-<a id="ios-push-notifications-with-notification-hubs-for-xamarin-apps" class="xliff"></a>
+# <a name="ios-push-notifications-with-notification-hubs-for-xamarin-apps"></a>Notificação Push de iOS com Notification Hubs para aplicações Xamarin
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
-## Descrição geral
-<a id="overview" class="xliff"></a>
+## <a name="overview"></a>Descrição geral
 > [!IMPORTANT]
 > Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-ios-get-started).
 > 
@@ -39,8 +37,7 @@ Irá criar uma aplicação Xamarin.iOS em branco que recebe notificações push,
 
 Este tutorial demonstra o cenário de difusão simples de mensagens push com Notification Hubs.
 
-## Pré-requisitos
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Pré-requisitos
 Neste tutorial necessita do seguinte:
 
 * [Xcode 6.0][Install Xcode]
@@ -57,8 +54,7 @@ A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais 
 
 [!INCLUDE [Notification Hubs Enable Apple Push Notifications](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-## Configurar o Notification Hub
-<a id="configure-your-notification-hub" class="xliff"></a>
+## <a name="configure-your-notification-hub"></a>Configurar o Notification Hub
 Esta secção explica-lhe como criar um novo Notification Hub e configurar a autenticação com APNs através do certificado push **.p12** que criou. Se pretender utilizar um Notification Hub que já tenha criado, pode avançar para o passo 5.
 
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
@@ -78,10 +74,8 @@ Esta secção explica-lhe como criar um novo Notification Hub e configurar a aut
 
 O Notification Hub já está configurado para trabalhar com APNs e tem as cadeias de ligação para registar a sua aplicação e enviar notificações push.
 
-## Ligar a aplicação ao Notification Hub
-<a id="connect-your-app-to-the-notification-hub" class="xliff"></a>
-#### Criar um novo projeto
-<a id="create-a-new-project" class="xliff"></a>
+## <a name="connect-your-app-to-the-notification-hub"></a>Ligar a aplicação ao Notification Hub
+#### <a name="create-a-new-project"></a>Criar um novo projeto
 1. No Xamarin Studio, crie um novo projeto do iOS e selecione o modelo **API Unificada** > **Aplicação de Vista Única**.
    
      ![Xamarin Studio - Selecione o Tipo de Aplicação][31]
@@ -183,8 +177,7 @@ O Notification Hub já está configurado para trabalhar com APNs e tem as cadeia
    > 
 10. Execute o aplicativo no seu dispositivo.
 
-## Enviar Notificações Push
-<a id="sending-push-notifications" class="xliff"></a>
+## <a name="sending-push-notifications"></a>Enviar Notificações Push
 Pode testar a receção de notificações push na sua aplicação através do envio de notificações no [Portal do Azure] através da funcionalidade **Teste de Envio** no conjunto de ferramentas **Resolução de Problemas**, na página do Notification Hub, como mostrado no ecrã abaixo.
 
 ![](./media/notification-hubs-ios-get-started/notification-hubs-test-send.png)
@@ -201,8 +194,7 @@ Neste tutorial, vamos manter tudo simples e demonstrar apenas o modo de testar a
 
 * **Java/PHP**: para obter um exemplo sobre como enviar notificações push com as APIs REST, veja “How to use Notification Hubs from Java/PHP” (Como utilizar os Hubs de Notificação de Java/PHP) ([Java](notification-hubs-java-push-notification-tutorial.md) | [PHP](notification-hubs-php-push-notification-tutorial.md)).
 
-#### (Opcional) Enviar Notificações Push a partir de uma Aplicação da Consola .NET
-<a id="optional-send-push-notifications-from-a-net-console-app" class="xliff"></a>
+#### <a name="optional-send-push-notifications-from-a-net-console-app"></a>(Opcional) Enviar Notificações Push a partir de uma Aplicação da Consola .NET
 Nesta secção, iremos enviar notificações push através de uma aplicação simples da consola .NET Neste exemplo, vamos mudar para um ambiente de desenvolvimento do Windows com o Visual Studio já instalado.
 
 1. No Visual Studio, crie uma nova aplicação da consola Visual C#
@@ -237,8 +229,7 @@ Nesta secção, iremos enviar notificações push através de uma aplicação si
 
 Pode encontrar todos os payloads possíveis no [Guia de Programação de Notificação Push e Local] da Apple.
 
-#### (Opcional) Enviar Notificações através de um Serviço Móvel
-<a id="optional-send-notifications-from-a-mobile-service" class="xliff"></a>
+#### <a name="optional-send-notifications-from-a-mobile-service"></a>(Opcional) Enviar Notificações através de um Serviço Móvel
 Nesta secção, iremos enviar notificações push com um serviço móvel através de um script de nó.
 
 Para enviar uma notificação utilizando um serviço móvel, siga [Introdução aos Mobile Services] e, em seguida:
@@ -271,8 +262,7 @@ Para enviar uma notificação utilizando um serviço móvel, siga [Introdução 
         );
 6. Clique em **Executar Uma Vez** na barra inferior. Deverá receber um alerta no seu dispositivo.
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 Neste exemplo simples, difundiu notificações push para todos os seus dispositivos iOS. Para abordar utilizadores específicos, consulte o tutorial [Utilizar Notification Hubs para notificações push a utilizadores]. Se pretender segmentar os utilizadores por grupos de interesse, pode ler [Utilizar Notification Hubs para enviar notícias de última hora]. Saiba mais sobre como utilizar Notification Hubso em [Documentação de Orientação dos Notification Hubs] e em [Procedimentos de Notification Hubs para iOS].
 
 <!-- Images. -->

@@ -22,15 +22,11 @@ ms.lasthandoff: 07/01/2017
 
 
 ---
-<a id="get-started-with-service-bus-topics" class="xliff"></a>
-
-# Introdução aos tópicos do Service Bus
+# <a name="get-started-with-service-bus-topics"></a>Introdução aos tópicos do Service Bus
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-<a id="what-will-be-accomplished" class="xliff"></a>
-
-## O que será efetuado
+## <a name="what-will-be-accomplished"></a>O que será efetuado
 
 Este tutorial contém os seguintes passos:
 
@@ -40,26 +36,20 @@ Este tutorial contém os seguintes passos:
 4. Gravar uma aplicação de consola para enviar uma mensagem ao tópico.
 5. Gravar uma aplicação de consola para receber uma mensagem da subscrição.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 1. [Visual Studio 2015 ou superior](http://www.visualstudio.com). Os exemplos neste tutorial utilizam o Visual Studio 2017.
 2. Uma subscrição do Azure.
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-<a id="1-create-a-namespace-using-the-azure-portal" class="xliff"></a>
-
-## 1. Criar um espaço de nomes com o Portal do Azure
+## <a name="1-create-a-namespace-using-the-azure-portal"></a>1. Criar um espaço de nomes com o Portal do Azure
 
 Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance para a secção [Criar um tópico com o portal do Azure](#2-create-a-topic-using-the-azure-portal).
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-<a id="2-create-a-topic-using-the-azure-portal" class="xliff"></a>
-
-## 2. Criar um tópico com o portal do Azure
+## <a name="2-create-a-topic-using-the-azure-portal"></a>2. Criar um tópico com o portal do Azure
 
 1. Inicie sessão no [Portal do Azure][azure-portal].
 2. No painel de navegação à esquerda do portal, clique em **Service Bus** (se não vir **Service Bus**, clique em **Mais serviços**).
@@ -74,9 +64,7 @@ Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance par
     ![Selecionar Novo][createtopic3]
 6. Na parte inferior do painel, clique em **Criar**.
 
-<a id="3-create-a-subscription-to-the-topic" class="xliff"></a>
-
-## 3. Criar uma subscrição para o tópico
+## <a name="3-create-a-subscription-to-the-topic"></a>3. Criar uma subscrição para o tópico
 
 1. No painel de recursos do portal, clique no espaço de nomes que criou no passo 1 e clique no nome do tópico que criou no passo 2.
 2. Na parte superior do painel de descrição geral, clique no sinal «+» junto a **Subscrição** para adicionar uma subscrição para esse tópico.
@@ -85,30 +73,22 @@ Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance par
 
 3. Introduza um nome para a subscrição. Deixe as outras opções com os valores predefinidos.
 
-<a id="4-send-messages-to-the-topic" class="xliff"></a>
-
-## 4. Enviar mensagens para o tópico
+## <a name="4-send-messages-to-the-topic"></a>4. Enviar mensagens para o tópico
 
 Para enviar mensagens para o tópico, gravamos uma aplicação de consola C# com o Visual Studio.
 
-<a id="create-a-console-application" class="xliff"></a>
-
-### Criar uma aplicação de consola
+### <a name="create-a-console-application"></a>Criar uma aplicação de consola
 
 Abra o Visual Studio e crie um novo projeto de **aplicação de consola (.NET Framework)**.
 
-<a id="add-the-service-bus-nuget-package" class="xliff"></a>
-
-### Adicionar o pacote NuGet do Service Bus
+### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Service Bus
 
 1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
 2. Clique no separador **Procurar**, procure **Microsoft Azure Service Bus** e selecione o item **Microsoft Azure Service Bus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
    
     ![Selecionar um pacote NuGet][nuget-pkg]
 
-<a id="write-some-code-to-send-a-message-to-the-topic" class="xliff"></a>
-
-### Escreva um código para enviar uma mensagem para o tópico
+### <a name="write-some-code-to-send-a-message-to-the-topic"></a>Escreva um código para enviar uma mensagem para o tópico
 
 1. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
    
@@ -170,9 +150,7 @@ Abra o Visual Studio e crie um novo projeto de **aplicação de consola (.NET Fr
    
       ![Tamanho da mensagem][topic-message]
 
-<a id="5-receive-messages-from-the-subscription" class="xliff"></a>
-
-## 5. Receber mensagens da subscrição
+## <a name="5-receive-messages-from-the-subscription"></a>5. Receber mensagens da subscrição
 
 1. Para receber a mensagem ou as mensagens que acabou de enviar, crie uma nova aplicação de consola e adicione uma referência ao pacote NuGet do Service Bus, semelhante à aplicação do remetente anterior.
 2. Adicione a seguinte declaração `using` na parte superior do ficheiro Program.cs.
@@ -233,9 +211,7 @@ Abra o Visual Studio e crie um novo projeto de **aplicação de consola (.NET Fr
 
 Parabéns! Criou agora um tópico e uma subscrição, enviou uma mensagem e recebeu essa mensagem.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure/azure-service-bus/tree/master/samples) que demonstram algumas das funcionalidades mais avançadas das mensagens do Service Bus.
 

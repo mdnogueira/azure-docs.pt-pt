@@ -23,9 +23,7 @@ ms.lasthandoff: 06/28/2017
 
 
 ---
-<a id="connectors-list" class="xliff"></a>
-
-# Lista de conectores
+# <a name="connectors-list"></a>Lista de conectores
 > [!TIP]
 > A [lista completa de A a Z](#az) (neste tópico) inclui todos os conectores disponíveis que pode utilizar nas suas aplicações lógicas. Os [detalhes do conector](/connectors/) listam os acionadores e as ações definidas no swagger, bem como os limites para cada conector.
 
@@ -41,9 +39,7 @@ Os conectores fazem parte integral da criação de aplicações lógicas. Ao uti
 
 Os artigos [Preços de Aplicações Lógicas](https://azure.microsoft.com/pricing/details/logic-apps/) e [Pricing model](../logic-apps/logic-apps-pricing.md) (Modelo de preços) disponibilizam mais detalhes sobre os custos. 
 
-<a id="popular-connectors" class="xliff"></a>
-
-## Conectores populares
+## <a name="popular-connectors"></a>Conectores populares
 Existem milhares de aplicações e milhões de execuções que utilizam estes conectores para processar dados e informações com êxito. A tabela seguinte lista os mais populares e alguns dos preferidos dos nossos utilizadores:
 
 | |  |  |  |
@@ -56,9 +52,7 @@ Existem milhares de aplicações e milhões de execuções que utilizam estes co
 |  [![API Icon][SharePointicon]<br/>**SharePoint<br/>Online**][SharePointdoc] | Se fizer alguma coisa com o SharePoint e puder beneficiar de automatização, recomendamos ver este conector. Pode ser utilizado com o SharePoint no local e o SharePoint Online. | [![API Icon][SQL-Servericon]<br/>**SQL Server**][SQL-Serverdoc] | Um dos conectores mais utilizadores, pode ligar-se a ao SQL Server no local e a Bases de Dados SQL do Azure. | 
 | [![API Icon][Twittericon]<br/>**Twitter**][Twitterdoc] | Inicie sessão facilmente com uma conta do Twitter e inicie um fluxo de trabalho quando for publicado um tweet novo. Depois, guarde esses tweets numa base de dados SQL ou numa lista do SharePoint. | | | 
 
-<a id="integration-account-connectors" class="xliff"></a>
-
-## Conectores de conta de integração 
+## <a name="integration-account-connectors"></a>Conectores de conta de integração 
 
 O Enterprise Integration Pack (EIP) inclui conectores muito conhecidos junto da comunidade do BizTalk Server. Na compra de uma [conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md), também recebe os conectores seguintes: 
 
@@ -68,9 +62,7 @@ O Enterprise Integration Pack (EIP) inclui conectores muito conhecidos junto da 
 [![API Icon][flatfileicon]<br/>**Codificação de ficheiro</br>simples**][flatfiledoc] | [![API Icon][flatfiledecodeicon]<br/>**Codificação de ficheiro</br>simples**][flatfiledecodedoc] | [![API Icon][integrationaccounticon]<br/>**Conta de<br/>integração**][integrationaccountdoc] | [![API Icon][xmltransformicon]<br/>**Transform<br/>XML**][xmltransformdoc] |
 | [![API Icon][x12icon]<br/>**X12</br> descodificar**][x12decode] | [![API Icon][x12icon]<br/>**X12</br> codificar**][x12encode] | [![API Icon][xmlvalidateicon]<br/>**Validação de<br/>XML**][xmlvalidatedoc] | |
 
-<a id="enterprise-connectors" class="xliff"></a>
-
-## Conectores empresariais
+## <a name="enterprise-connectors"></a>Conectores empresariais
 
 Ligue às aplicações empresariais nas suas aplicações lógicas.
 
@@ -95,9 +87,7 @@ Os [detalhes do conector](/connectors/) listam os acionadores e as ações defin
 > [!TIP]
 > Para começar a utilizar o Azure Logic Apps antes de se inscrever numa conta do Azure, aceda a [Experimentar o Serviço de Aplicações Lógicas](https://tryappservice.azure.com/?appservice=logic). Pode criar de imediato uma aplicação lógica de arranque de curta duração. Sem cartões de crédito; sem compromissos.
 
-<a id="connectors-as-triggers-and-actions" class="xliff"></a>
-
-## Conectores como acionadores e ações
+## <a name="connectors-as-triggers-and-actions"></a>Conectores como acionadores e ações
 
 Os **acionadores** iniciam ou para instâncias da sua aplicação lógica. Alguns conectores disponibilizam acionadores que notificam a sua aplicação quando ocorrem eventos específicos. Por exemplo, o conector FTP tem o acionador `OnUpdatedFile`, que iniciar a aplicação lógica quando um ficheiro é atualizado. 
 
@@ -117,9 +107,7 @@ Os conectores também disponibilizam **ações** que pode utilizar no seu fluxo 
 > A[descrição geral dos conectores](connectors-overview.md) disponibiliza mais detalhes sobre os acionadores e as ações. 
 
 
-<a id="message-manipulation-actions" class="xliff"></a>
-
-## Ações de manipulação de mensagens
+## <a name="message-manipulation-actions"></a>Ações de manipulação de mensagens
 
 As aplicações lógicas incluem ações incorporadas que podem alterar ou manipular os dados do seu payload. O conector **Operações de Dados** incorporado inclui as ações seguintes: 
 
@@ -132,17 +120,13 @@ As aplicações lógicas incluem ações incorporadas que podem alterar ou manip
 | **Analisar JSON** | Analise e aceda a valores de objetos JSON no estruturador. Por exemplo, se a sua função das Funções do Azure devolver um payload JSON, pode analisá-lo para aceder às propriedades JSON mais à frente, noutro passo. A ação também verifica se o JSON corresponde a um esquema especificado no runtime. | 
 | **Selecionar** | Selecione determinadas propriedades de uma matriz para processamento adicional. Se "Listar registos" a partir do SQL e forem devolvidas 15 colunas, selecione apenas algumas destas para processamento adicional. A saída é uma matriz que só contém as propriedades que selecionar. |
 
-<a id="custom-connectors-and-azure-certification" class="xliff"></a>
-
-## Conectores personalizados e certificação do Azure 
+## <a name="custom-connectors-and-azure-certification"></a>Conectores personalizados e certificação do Azure 
 
 Para ligar para APIs que executam o código personalizado ou não estão disponíveis como conectores, pode expandir a plataforma do Logic Apps [através da criação de Aplicações API baseadas em REST como conectores personalizados](../logic-apps/logic-apps-create-api-app.md). 
 
 Se pretender tornar as Aplicações API personalizadas públicas e disponíveis para utilizar no Azure, submeta as suas nomeações para o [programa Microsoft Azure Certified](https://azure.microsoft.com/marketplace/programs/certified/logic-apps/).
 
-<a id="get-help" class="xliff"></a>
-
-## Obter ajuda
+## <a name="get-help"></a>Obter ajuda
 
 Para fazer perguntas, responder a perguntas e ver o que os outros utilizadores do Azure Logic Apps estão a fazer, aceda ao [fórum do Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 
@@ -150,9 +134,7 @@ Para ajudar a melhorar o Azure Logic Apps e os conectores, vote ou submeta ideia
 
 Falta um tópico do conector ou detalhes que considera importantes? Se for o caso, ajude-nos ao adicionar aos nossos tópicos existentes ou escreva os seus próprios. A nossa documentação é open source e está alojada no GitHub. Comece no nosso [repositório do GitHub](https://github.com/Microsoft/azure-docs). 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Criar a sua primeira aplicação lógica](../logic-apps/logic-apps-create-a-logic-app.md)
 * [Criar APIs personalizadas para aplicações lógicas](../logic-apps/logic-apps-create-api-app.md)
 * [Monitorizar as aplicações lógicas](../logic-apps/logic-apps-monitor-your-logic-apps.md)

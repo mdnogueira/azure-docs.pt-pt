@@ -24,9 +24,7 @@ ms.lasthandoff: 06/23/2017
 
 ---
 
-<a id="create-a-single-azure-sql-database-using-powershell" class="xliff"></a>
-
-# Criar uma única base de dados SQL do Azure com o PowerShell
+# <a name="create-a-single-azure-sql-database-using-powershell"></a>Criar uma única base de dados SQL do Azure com o PowerShell
 
 O PowerShell é utilizado para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia detalha a utilização do PowerShell para implementar uma base de dados SQL do Azure num [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) num [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md).
 
@@ -34,9 +32,7 @@ Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure
 
 Este tutorial requer a versão 4.0 ou posterior do módulo do Azure PowerShell. Executar ` Get-Module -ListAvailable AzureRM` para localizar a versão. Se precisar de instalar ou atualizar, veja [Install Azure PowerShell module](/powershell/azure/install-azurerm-ps)(Instalar o módulo do Azure PowerShell). 
 
-<a id="log-in-to-azure" class="xliff"></a>
-
-## Iniciar sessão no Azure
+## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
 Inicie sessão na sua subscrição do Azure com o comando [Add-AzureRmAccount](/powershell/module/azurerm.profile/add-azurermaccount) e siga as instruções no ecrã.
 
@@ -44,9 +40,7 @@ Inicie sessão na sua subscrição do Azure com o comando [Add-AzureRmAccount](/
 Add-AzureRmAccount
 ```
 
-<a id="create-variables" class="xliff"></a>
-
-## Criar variáveis
+## <a name="create-variables"></a>Criar variáveis
 
 Defina variáveis para utilização nos scripts neste guia de introdução.
 
@@ -67,18 +61,14 @@ $endip = "0.0.0.0"
 $databasename = "mySampleDatabase"
 ```
 
-<a id="create-a-resource-group" class="xliff"></a>
-
-## Criar um grupo de recursos
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
 Crie um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) com o comando [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup). Um grupo de recursos é um contentor lógico no qual os recursos do Azure são implementados e geridos como um grupo. O exemplo seguinte cria um grupo de recursos com o nome `myResourceGroup` na localização `westeurope`.
 
 ```powershell
 New-AzureRmResourceGroup -Name $resourcegroupname -Location $location
 ```
-<a id="create-a-logical-server" class="xliff"></a>
-
-## Criar um servidor lógico
+## <a name="create-a-logical-server"></a>Criar um servidor lógico
 
 Crie um [servidor lógico de Base de Dados SQL do Azure](sql-database-features.md) com o comando [New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver). Um servidor lógico contém um grupo de bases de dados geridas como um grupo. O exemplo seguinte cria um servidor com um nome aleatório no seu grupo de recursos com um início de sessão de administrador denominado `ServerAdmin` e uma palavra-passe de `ChangeYourAdminPassword1`. Substitua estes valores predefinidos conforme quiser.
 
@@ -89,9 +79,7 @@ New-AzureRmSqlServer -ResourceGroupName $resourcegroupname `
     -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminlogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
 ```
 
-<a id="configure-a-server-firewall-rule" class="xliff"></a>
-
-## Configurar uma regra de firewall do servidor
+## <a name="configure-a-server-firewall-rule"></a>Configurar uma regra de firewall do servidor
 
 Crie uma [regra de firewall ao nível do servidor da Base de Dados SQL do Azure](sql-database-firewall-configure.md) com o comando [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule). Uma regra de firewall ao nível do servidor permite a uma aplicação externa, como o SQL Server Management Studio ou o utilitário SQLCMD, ligar a uma base de dados SQL através da firewall do serviço Base de Dados SQL. No exemplo seguinte, a firewall apenas é aberta para outros recursos do Azure. Para ativar a conectividade externa, altere o endereço IP para um endereço adequado para o seu ambiente. Para abrir todos os endereços IP, utilize 0.0.0.0 como o endereço IP inicial e 255.255.255.255 como o endereço final.
 
@@ -105,9 +93,7 @@ New-AzureRmSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 > A Base de Dados SQL comunica através da porta 1433. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 1433 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao seu servidor de Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 >
 
-<a id="create-a-database-in-the-server-with-sample-data" class="xliff"></a>
-
-## Criar uma base de dados no servidor com dados de exemplo
+## <a name="create-a-database-in-the-server-with-sample-data"></a>Criar uma base de dados no servidor com dados de exemplo
 
 Crie uma base de dados com um [nível de desempenho S0](sql-database-service-tiers.md) no servidor com o comando [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase). O exemplo seguinte cria uma base de dados denominada `mySampleDatabase` e carrega os dados de exemplo AdventureWorksLT para esta base de dados. Substitua estes valores predefinidos conforme pretender (outros guias de introdução nesta coleção são criados mediante os valores neste guia de introdução).
 
@@ -119,9 +105,7 @@ New-AzureRmSqlDatabase  -ResourceGroupName $resourcegroupname `
     -RequestedServiceObjectiveName "S0"
 ```
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Outros guias de introdução nesta coleção são criados através deste guia de introdução. 
 
@@ -133,9 +117,7 @@ Outros guias de introdução nesta coleção são criados através deste guia de
 Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que tem uma base de dados, pode ligar e consultar com as suas ferramentas favoritas. Saiba mais ao selecionar a sua ferramenta abaixo:
 

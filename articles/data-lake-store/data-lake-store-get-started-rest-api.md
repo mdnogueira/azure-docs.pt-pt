@@ -22,9 +22,7 @@ ms.lasthandoff: 06/07/2017
 
 
 ---
-<a id="get-started-with-azure-data-lake-store-using-rest-apis" class="xliff"></a>
-
-# Introdução ao Azure Data Lake Store utilizando APIs REST
+# <a name="get-started-with-azure-data-lake-store-using-rest-apis"></a>Introdução ao Azure Data Lake Store utilizando APIs REST
 > [!div class="op_single_selector"]
 > * [Portal](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
@@ -44,21 +42,15 @@ Neste artigo, irá aprender a utilizar APIs REST WebHDFS e APIs REST do Data Lak
 > 
 > 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * **Uma subscrição do Azure**. Veja [Obter versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Criar uma Aplicação do Azure Active Directory**. A aplicação do Azure AD é utilizada para autenticar a aplicação do Data Lake Store no Azure AD. Existem abordagens diferentes para a autenticação no Azure AD, que são **autenticação do utilizador final** ou **autenticação de serviço para serviço**. Para obter instruções e obter mais informações sobre como autenticar, veja [End-user authentication](data-lake-store-end-user-authenticate-using-active-directory.md) (Autenticação de utilizador final) ou [Service-to-service authentication](data-lake-store-authenticate-using-active-directory.md) (Autenticação de serviço a serviço).
 * [cURL](http://curl.haxx.se/). Este artigo utiliza o cURL para demonstrar como fazer chamadas da API REST em relação a uma conta do Data Lake Store.
 
-<a id="how-do-i-authenticate-using-azure-active-directory" class="xliff"></a>
-
-## Como posso autenticar com o Azure Active Directory?
+## <a name="how-do-i-authenticate-using-azure-active-directory"></a>Como posso autenticar com o Azure Active Directory?
 Pode utilizar duas abordagens para autenticar com o Azure Active Directory.
 
-<a id="end-user-authentication-interactive" class="xliff"></a>
-
-### Autenticação de utilizador final (interativa)
+### <a name="end-user-authentication-interactive"></a>Autenticação de utilizador final (interativa)
 Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as operações são efetuadas no contexto do utilizador. Execute os passos seguintes para a autenticação interativa.
 
 1. Através da sua aplicação, redirecione o utilizador para o seguinte URL:
@@ -99,9 +91,7 @@ Neste cenário, a aplicação pede ao utilizador para iniciar sessão e todas as
 
 Para obter mais informações sobre a autenticação de utilizador interativa, veja [Fluxo de concessão de códigos de autorização](https://msdn.microsoft.com/library/azure/dn645542.aspx).
 
-<a id="service-to-service-authentication-non-interactive" class="xliff"></a>
-
-### Autenticação serviço a serviço (não interativa)
+### <a name="service-to-service-authentication-non-interactive"></a>Autenticação serviço a serviço (não interativa)
 Neste cenário, a aplicação fornece as suas próprias credenciais para efetuar as operações. Para tal, tem de emitir um pedido POST, como o mostrado abaixo. 
 
     curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
@@ -116,9 +106,7 @@ O resultado deste pedido irá incluir um token de autorização (denotado por `a
 
 Este artigo utiliza a abordagem **não interativa**. Para obter mais informações sobre a abordagem não interativa (chamadas serviço a serviço), veja [Chamadas serviço a serviço utilizando credenciais](https://msdn.microsoft.com/library/azure/dn645543.aspx).
 
-<a id="create-a-data-lake-store-account" class="xliff"></a>
-
-## Criar uma conta do Data Lake Store
+## <a name="create-a-data-lake-store-account"></a>Criar uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST definida [aqui](https://msdn.microsoft.com/library/mt694078.aspx).
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -135,9 +123,7 @@ No comando acima, substitua \<`REDACTED`\> pelo token de autorização obtido an
     "properties": {}
     }    
 
-<a id="create-folders-in-a-data-lake-store-account" class="xliff"></a>
-
-## Criar pastas numa conta do Data Lake Store
+## <a name="create-folders-in-a-data-lake-store-account"></a>Criar pastas numa conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Make_a_Directory).
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -150,9 +136,7 @@ Deverá ver uma resposta como esta se a operação for concluída com êxito:
 
     {"boolean":true}
 
-<a id="list-folders-in-a-data-lake-store-account" class="xliff"></a>
-
-## Listar pastas numa conta do Data Lake Store
+## <a name="list-folders-in-a-data-lake-store-account"></a>Listar pastas numa conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#List_a_Directory).
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -180,9 +164,7 @@ Deverá ver uma resposta como esta se a operação for concluída com êxito:
     }
     }
 
-<a id="upload-data-into-a-data-lake-store-account" class="xliff"></a>
-
-## Carregar dados para uma conta do Data Lake Store
+## <a name="upload-data-into-a-data-lake-store-account"></a>Carregar dados para uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Create_and_Write_to_a_File).
 
 Utilize o seguinte comando cURL. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -204,9 +186,7 @@ O resultado é semelhante ao seguinte:
     HTTP/1.1 201 Created
     ...
 
-<a id="read-data-from-a-data-lake-store-account" class="xliff"></a>
-
-## Ler dados de uma conta do Data Lake Store
+## <a name="read-data-from-a-data-lake-store-account"></a>Ler dados de uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Open_and_Read_a_File).
 
 Ler dados de uma conta do Data Lake Store é um processo de dois passos.
@@ -230,9 +210,7 @@ Deverá ver um resultado semelhante ao seguinte:
 
     Hello, Data Lake Store user!
 
-<a id="rename-a-file-in-a-data-lake-store-account" class="xliff"></a>
-
-## Mudar o nome de um ficheiro numa conta do Data Lake Store
+## <a name="rename-a-file-in-a-data-lake-store-account"></a>Mudar o nome de um ficheiro numa conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Rename_a_FileDirectory).
 
 Utilize o seguinte comando cURL para mudar o nome de um ficheiro. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -246,9 +224,7 @@ Deverá ver um resultado semelhante ao seguinte:
 
     {"boolean":true}
 
-<a id="delete-a-file-from-a-data-lake-store-account" class="xliff"></a>
-
-## Eliminar um ficheiro de uma conta do Data Lake Store
+## <a name="delete-a-file-from-a-data-lake-store-account"></a>Eliminar um ficheiro de uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST WebHDFS definida [aqui](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html#Delete_a_FileDirectory).
 
 Utilize o seguinte comando cURL para eliminar um ficheiro. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -262,9 +238,7 @@ Deve ver um resultado como o seguinte:
 
     {"boolean":true}
 
-<a id="delete-a-data-lake-store-account" class="xliff"></a>
-
-## Eliminar uma conta do Data Lake Store
+## <a name="delete-a-data-lake-store-account"></a>Eliminar uma conta do Data Lake Store
 Esta operação baseia-se na chamada da API REST definida [aqui](https://msdn.microsoft.com/library/mt694075.aspx).
 
 Utilize o seguinte comando cURL para eliminar uma conta do Data Lake Store. Substitua **\<nomedoarquivo>** pelo nome do Data Lake Store.
@@ -277,9 +251,7 @@ Deve ver um resultado como o seguinte:
     ...
     ...
 
-<a id="see-also" class="xliff"></a>
-
-## Consultar também
+## <a name="see-also"></a>Consultar também
 * [Open Source Big Data applications compatible with Azure Data Lake Store (Aplicações de Macrodados Open Source compatíveis com o Azure Data Lake Store)](data-lake-store-compatible-oss-other-applications.md)
 
 

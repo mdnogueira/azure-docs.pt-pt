@@ -22,13 +22,9 @@ ms.lasthandoff: 06/14/2017
 
 
 ---
-<a id="receive-events-from-azure-event-hubs-using-the-net-framework" class="xliff"></a>
+# <a name="receive-events-from-azure-event-hubs-using-the-net-framework"></a>Receber eventos de Hubs de Eventos do Azure com o .NET Framework
 
-# Receber eventos de Hubs de Eventos do Azure com o .NET Framework
-
-<a id="introduction" class="xliff"></a>
-
-## Introdução
+## <a name="introduction"></a>Introdução
 
 Os Event Hubs são um serviço que processa grandes quantidades de dados de eventos (telemetria) em aplicações e dispositivos ligados. Depois de recolher os dados para os Event Hubs, pode armazená-los utilizando um cluster de armazenamento ou transformá-los utilizando um fornecedor de análise em tempo real. Esta capacidade de processamento e recolha de eventos de grande escala é um componente importante das arquiteturas das aplicações modernas, incluindo a Internet das Coisas (IoT).
 
@@ -36,24 +32,18 @@ Este tutorial mostra como escrever uma aplicação de consola do .NET Framework 
 
 O [Anfitrião do Processador de Eventos][EventProcessorHost] é uma classe do .NET que simplifica a receção de eventos provenientes dos hubs de eventos ao gerir pontos de verificação persistentes e receções em paralelo desses hubs de eventos. Se utilizar o [Anfitrião do Processador de Eventos][Event Processor Host], pode dividir eventos por múltiplos recetores, mesmo se estiverem alojados em nós diferentes. Este exemplo mostra como utilizar o [Anfitrião do Processador de Eventos][EventProcessorHost] para um único recetor. O exemplo de [Processamento de eventos aumentados horizontalmente][Scale out Event Processing with Event Hubs] mostra como utilizar o [Anfitrião do Processador de Eventos][EventProcessorHost] com múltiplos recetores.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 
 * [Microsoft Visual Studio 2015 ou superior](http://visualstudio.com). As capturas de ecrã neste tutorial utilizam o Visual Studio 2017.
 * Uma conta ativa do Azure. Se não tiver uma, pode criar uma conta gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/free/).
 
-<a id="create-an-event-hubs-namespace-and-an-event-hub" class="xliff"></a>
-
-## Criar um espaço de nomes de Hubs de Eventos e um hub de eventos
+## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Criar um espaço de nomes de Hubs de Eventos e um hub de eventos
 
 O primeiro passo consiste em utilizar o [portal do Azure](https://portal.azure.com) para criar um espaço de nomes do tipo Hubs de Eventos e obter as credenciais de gestão de que a sua aplicação precisa para comunicar com o hub de eventos. Para criar um espaço de nomes e um hub de eventos, siga o procedimento descrito [neste artigo](event-hubs-create.md) e, em seguida, continue com os passos seguintes deste tutorial.
 
-<a id="create-an-azure-storage-account" class="xliff"></a>
-
-## Criar uma conta de Armazenamento do Azure
+## <a name="create-an-azure-storage-account"></a>Criar uma conta de Armazenamento do Azure
 
 Para utilizar o [Anfitrião do Processador de Eventos][EventProcessorHost], tem de ter uma [Conta de Armazenamento do Azure][Azure Storage account]:
 
@@ -69,9 +59,7 @@ Para utilizar o [Anfitrião do Processador de Eventos][EventProcessorHost], tem 
    
     ![](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage3.png)
 
-<a id="create-a-receiver-console-application" class="xliff"></a>
-
-## Criar uma aplicação de consola de recetor
+## <a name="create-a-receiver-console-application"></a>Criar uma aplicação de consola de recetor
 
 1. No Visual Studio, crie um novo projeto de Aplicação de Ambiente de Trabalho do Visual C# com o modelo de projeto **Aplicação de Consola**. Dê ao projeto o nome **Recetor**.
    
@@ -177,9 +165,7 @@ Parabéns! Recebeu agora mensagens de um hub de eventos com o Anfitrião do Proc
 > 
 > 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que compilou uma aplicação de trabalho que cria um hub de eventos e envia e recebe dados, pode saber mais ao visitar as seguintes ligações:
 

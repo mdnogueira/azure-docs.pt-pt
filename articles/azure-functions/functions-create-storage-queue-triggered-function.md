@@ -23,17 +23,13 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/01/2017
 
 ---
-<a id="create-a-function-triggered-by-azure-queue-storage" class="xliff"></a>
-
-# Criar uma função acionada pelo Armazenamento de filas do Azure
+# <a name="create-a-function-triggered-by-azure-queue-storage"></a>Criar uma função acionada pelo Armazenamento de filas do Azure
 
 Saiba como criar funções que são acionadas quando são submetidas mensagens para uma fila do Armazenamento do Azure.
 
 ![Ver mensagem nos registos.](./media/functions-create-storage-queue-triggered-function/function-app-in-portal-editor.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 - Transferir e instalar o [Microsoft Azure Storage Explorer](http://storageexplorer.com/).
 
@@ -41,9 +37,7 @@ Saiba como criar funções que são acionadas quando são submetidas mensagens p
 
 [!INCLUDE [functions-portal-favorite-function-apps](../../includes/functions-portal-favorite-function-apps.md)]
 
-<a id="create-an-azure-function-app" class="xliff"></a>
-
-## Criar uma aplicação de Funções do Azure
+## <a name="create-an-azure-function-app"></a>Criar uma aplicação de Funções do Azure
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
@@ -53,9 +47,7 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
 <a name="create-function"></a>
 
-<a id="create-a-queue-triggered-function" class="xliff"></a>
-
-## Criar uma função acionada por Fila
+## <a name="create-a-queue-triggered-function"></a>Criar uma função acionada por Fila
 
 1. Expanda a aplicação de funções e clique no botão **+**, junto a **Funções**. Se esta for a primeira função na sua aplicação de funções, selecione **Função personalizada**. É apresentado o conjunto completo de modelos de função.
 
@@ -75,9 +67,7 @@ Em seguida, vai criar uma função na aplicação Function App nova.
 
 Em seguida, vai ligar à sua conta de Armazenamento do Azure e criar a fila de armazenamento **myqueue-items**.
 
-<a id="create-the-queue" class="xliff"></a>
-
-## Criar a fila
+## <a name="create-the-queue"></a>Criar a fila
 
 1. Na sua função, clique em **Integrar**, expanda **Documentação** e copie **Nome da conta** e **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento. Se já tiver ligado a sua conta de armazenamento, avance para o passo 4.
 
@@ -97,9 +87,7 @@ Em seguida, vai ligar à sua conta de Armazenamento do Azure e criar a fila de a
 
 Agora que tem uma fila de armazenamento, pode adicionar uma mensagem à mesma para testar a função.
 
-<a id="test-the-function" class="xliff"></a>
-
-## Testar a função
+## <a name="test-the-function"></a>Testar a função
 
 1. Novamente no portal do Azure, navegue para a função, expanda os **Registos**, na parte inferior da página, e confirme que a transmissão de registos não está em pausa.
 
@@ -115,15 +103,11 @@ Agora que tem uma fila de armazenamento, pode adicionar uma mensagem à mesma pa
 
 1. Novamente no Storage Explorer, clique em **Atualizar** e verifique se a mensagem foi processada e já não está na fila.
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Criou uma função que é executada quando uma mensagem é adicionada a uma fila de armazenamento.
 

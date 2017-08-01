@@ -24,23 +24,17 @@ ms.lasthandoff: 06/15/2017
 
 
 ---
-<a id="create-an-azure-sql-database-in-the-azure-portal" class="xliff"></a>
-
-# Criar uma base de dados SQL do Azure no portal do Azure
+# <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Criar uma base de dados SQL do Azure no portal do Azure
 
 Este guia de introdução explica como criar uma base de dados SQL no Azure. A Base de Dados SQL do Azure é uma oferta de "Base de dados como Serviço" que lhe permite executar e dimensionar bases de dados do SQL Server altamente disponíveis na cloud. Este guia de introdução mostra-lhe como começar a criar uma base de dados SQL através do portal do Azure.
 
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-<a id="log-in-to-the-azure-portal" class="xliff"></a>
-
-## Iniciar sessão no portal do Azure
+## <a name="log-in-to-the-azure-portal"></a>Iniciar sessão no portal do Azure
 
 Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 
-<a id="create-a-sql-database" class="xliff"></a>
-
-## Criar uma base de dados SQL
+## <a name="create-a-sql-database"></a>Criar uma base de dados SQL
 
 É criada uma base de dados SQL do Azure com um conjunto definido de [recursos de armazenamento e computação](sql-database-service-tiers.md). A base de dados é criada num [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) e num [servidor lógico da Base de Dados SQL do Azure](sql-database-features.md). 
 
@@ -96,9 +90,7 @@ Siga estes passos para criar uma base de dados SQL com os dados de exemplo da Ad
 
    ![notificação](./media/sql-database-get-started-portal/notification.png)
 
-<a id="create-a-server-level-firewall-rule" class="xliff"></a>
-
-## Criar uma regra de firewall ao nível do servidor
+## <a name="create-a-server-level-firewall-rule"></a>Criar uma regra de firewall ao nível do servidor
 
 O serviço da Base de Dados SQL cria uma firewall ao nível do servidor, impedindo que as aplicações e ferramentas externas estabeleçam uma ligação ao servidor ou a quaisquer bases de dados no servidor, a menos que seja criada uma regra de firewall para abrir a firewall para endereços IP específicos. Siga estes passos para criar uma [regra de firewall ao nível do servidor da Base de Dados SQL](sql-database-firewall-configure.md) para o endereço IP do seu cliente, para permitir a conectividade externa através da firewall da Base de Dados SQL apenas para o seu endereço IP. 
 
@@ -132,9 +124,7 @@ Pode agora ligar ao servidor da Base de Dados SQL e às respetivas bases de dado
 > Por predefinição, o acesso através da firewall da Base de Dados SQL está ativado para todos os serviços do Azure. Clique em **DESATIVAR** nesta página para desativar todos os serviços do Azure.
 >
 
-<a id="query-the-sql-database" class="xliff"></a>
-
-## Consultar a base de dados SQL
+## <a name="query-the-sql-database"></a>Consultar a base de dados SQL
 
 Agora que criou uma base de dados de exemplo no Azure, vamos utilizar a ferramenta de consulta incorporada no portal do Azure para confirmar que se consegue ligar à base de dados e consultar os dados. 
 
@@ -165,9 +155,7 @@ Agora que criou uma base de dados de exemplo no Azure, vamos utilizar a ferramen
 
 7. Feche a página **Editor de consultas** e a página **Ferramentas**.
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 Se não precisa destes recursos para outro início rápido/tutorial (consulte [Passos seguintes](#next-steps)), pode eliminá-los ao realizar o seguinte procedimento:
 
@@ -175,9 +163,7 @@ Se não precisa destes recursos para outro início rápido/tutorial (consulte [P
 1. No menu do lado esquerdo no portal do Azure, clique em **Grupos de recursos** e, em seguida, clique em **myResourceGroup**. 
 2. Na página do grupo de recursos, clique em **Eliminar**, escreva **myResourceGroup** na caixa de texto e, em seguida, clique em **Eliminar**.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que tem uma base de dados, pode ligar e consultar com as suas ferramentas favoritas. Saiba mais ao selecionar a sua ferramenta abaixo:
 

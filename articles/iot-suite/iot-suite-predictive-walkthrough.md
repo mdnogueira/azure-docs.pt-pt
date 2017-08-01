@@ -13,20 +13,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/25/2017
+ms.date: 07/25/2017
 ms.author: dobett
-translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: 9b2947d9ce00083c168635811395bc86b3e60b78
-ms.lasthandoff: 04/25/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: bfd49ea68c597b109a2c6823b7a8115608fa26c3
+ms.openlocfilehash: a68a8fdc3976ade0d1036d5ed58c8b2eb6d32a5d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/25/2017
 
 ---
 # <a name="predictive-maintenance-preconfigured-solution-walkthrough"></a>Instruções sobre a solução pré-configurada de manutenção preditiva
 
-## <a name="introduction"></a>Introdução
-
-A solução pré-configurada de manutenção preditiva do IoT Suite é uma solução ponto-a-ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. A solução combina os serviços principais do Azure IoT Suite, como uma Hub IoT, Stream Analytics e uma área de trabalho do [Azure Machine Learning][lnk-machine-learning]. Esta área de trabalho contém um modelo, com base num conjunto de dados de exemplo público, para prever a Vida Útil Remanescente (RUL) de um motor de aeronave. A solução implementa completamente o cenário empresarial IoT como um ponto de partida para que possa planear e implementar uma solução que satisfaça os seus próprios requisitos de negócio.
+A solução pré-configurada de manutenção preditiva é uma solução ponto a ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. A solução combina os serviços principais do Azure IoT Suite, como uma Hub IoT, Stream Analytics e uma área de trabalho do [Azure Machine Learning][lnk-machine-learning]. Esta área de trabalho contém um modelo, com base num conjunto de dados de exemplo público, para prever a Vida Útil Remanescente (RUL) de um motor de aeronave. A solução implementa completamente o cenário empresarial IoT como um ponto de partida para que possa planear e implementar uma solução que satisfaça os seus próprios requisitos de negócio.
 
 ## <a name="logical-architecture"></a>Arquitetura lógica
 
@@ -34,7 +32,7 @@ O diagrama que se segue descreve os componentes lógicos da solução pré-confi
 
 ![][img-architecture]
 
-Os itens a azul são os serviços do Azure aprovisionados na região que selecionou aquando do aprovisionamento da solução pré-configurada. Apresenta a lista de regiões onde pode implementar a solução pré-configurada na [página aprovisionamento][lnk-azureiotsuite].
+Os itens a azul são os serviços do Azure aprovisionados na região em que implementou a solução pré-configurada. Apresenta a lista de regiões onde pode implementar a solução pré-configurada na [página aprovisionamento][lnk-azureiotsuite].
 
 O item a verde é um dispositivo simulado que representa o motor de uma aeronave. Pode saber mais sobre estes dispositivos simulados na secção seguinte.
 
@@ -58,13 +56,17 @@ Os dispositivos simulados podem processar os seguintes comandos enviados a parti
 O IoT Hub reconhece o comando do dispositivo.
 
 ## <a name="azure-stream-analytics-job"></a>Tarefa do Azure Stream Analytics
-**Tarefa: Telemetria** intervém no fluxo de telemetria de entrada do dispositivo utilizando duas instruções. A primeira seleciona todas as telemetrias dos dispositivos e envia esses dados ao Blob Storage, onde serão visualizados na aplicação Web. A segunda instrução calcula os valores médios do sensor numa janela deslizante e envia esses dados através do Event Hub a um **processador de eventos**.
+
+**Tarefa: Telemetria** intervém no fluxo de telemetria de entrada do dispositivo através de duas instruções:
+
+* A primeira seleciona toda a telemetria dos dispositivos e envia esses dados ao armazenamento de blobs. Aí, são visualizados na aplicação Web.
+* A segunda calcula os valores médios do sensor numa janela deslizante e envia esses dados através do Hub de Eventos a um **processador de eventos**.
 
 ## <a name="event-processor"></a>Processador de eventos
 O **anfitrião do processador de eventos** executa uma Tarefa Web do Azure. O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Em seguida, transmite esses valores para uma API que expõe o modelo formado para calcular a RUL de um motor. A API é exposta por uma área de trabalho do Machine Learning que está aprovisionada como parte da solução.
 
 ## <a name="machine-learning"></a>Machine Learning
-O componente de Machine Learning utiliza um modelo derivado dos dados recolhidos de motores de aeronave reais. Pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando a solução estiver no estado **Pronto**.
+O componente de Machine Learning utiliza um modelo derivado dos dados recolhidos de motores de aeronave reais. Pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] da sua solução aprovisionada. O mosaico está disponível quando a solução está no estado **Pronto**.
 
 
 ## <a name="next-steps"></a>Passos seguintes

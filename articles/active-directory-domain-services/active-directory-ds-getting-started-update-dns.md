@@ -22,12 +22,8 @@ ms.lasthandoff: 06/30/2017
 
 
 ---
-<a id="update-dns-settings-for-the-azure-virtual-network" class="xliff"></a>
-
-# Atualizar as definições de DNS para a Azure Virtual Network
-<a id="task-4-update-dns-settings-for-the-azure-virtual-network" class="xliff"></a>
-
-## Tarefa 4: Atualizar as definições de DNS para a Azure Virtual Network
+# <a name="update-dns-settings-for-the-azure-virtual-network"></a>Atualizar as definições de DNS para a Azure Virtual Network
+## <a name="task-4-update-dns-settings-for-the-azure-virtual-network"></a>Tarefa 4: Atualizar as definições de DNS para a Azure Virtual Network
 Nas tarefas de configuração anteriores, ativou com êxito o Azure Active Directory Domain Services no seu diretório. A tarefa seguinte é garantir que os computadores na rede virtual se conseguem ligar e consumir esses serviços. Neste artigo, atualiza as definições do servidor DNS da sua rede virtual para que apontem para os dois endereços IP nos quais o Azure Active Directory Domain Services está disponível na rede virtual.
 
 > [!NOTE]
@@ -56,8 +52,6 @@ Para atualizar a definição do servidor DNS para a rede virtual em que tenha at
 >
 >
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Tarefa 5: [Ativar a sincronização de palavras-passe para o Azure Active Directory Domain Services](active-directory-ds-getting-started-password-sync.md)
 

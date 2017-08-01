@@ -25,9 +25,7 @@ ms.lasthandoff: 05/12/2017
 
 
 ---
-<a id="connect-to-azure-hdinsight-and-run-hive-queries-using-data-lake-tools-for-visual-studio" class="xliff"></a>
-
-# Ligar ao Azure HDInsight e executar consultas do Hive com as Ferramentas do Data Lake para Visual Studio
+# <a name="connect-to-azure-hdinsight-and-run-hive-queries-using-data-lake-tools-for-visual-studio"></a>Ligar ao Azure HDInsight e executar consultas do Hive com as Ferramentas do Data Lake para Visual Studio
 
 Saiba como utilizar as Ferramentas do Data Lake para Visual Studio para se ligar a clusters do Hadoop no [Azure HDInsight](hdinsight-hadoop-introduction.md) e submeter consultas do Hive. Para obter mais informações sobre a utilização do HDInsight, veja [Introduction to HDInsight](hdinsight-hadoop-introduction.md) (Introdução ao HDInsight) e [Get started with HDInsight ](hdinsight-hadoop-linux-tutorial-get-started.md) (Começar a utilizar o HDInsight). Para obter mais informações sobre a ligação a um cluster do Storm, veja [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md) (Desenvolver topologias C# para o Apache Storm no HDInsight com o Visual Studio).
 
@@ -48,17 +46,13 @@ Para concluir este tutorial e utilizar as Ferramentas do Data Lake para Visual S
     > 
     > 
 
-<a id="install-data-lake-tools-for-visual-studio" class="xliff"></a>
-
-## Instalar as Ferramentas do Data Lake para Visual Studio
+## <a name="install-data-lake-tools-for-visual-studio"></a>Instalar as Ferramentas do Data Lake para Visual Studio
 
 O Data Lake Tools está instalado por predefinição no Visual Studio 2017. Para versões antigas, pode instalá-lo através do [Instalador de Plataforma Web](https://www.microsoft.com/web/downloads/). Tem de escolher aquele que corresponde à sua versão do Visual Studio. Se não tiver o Visual Studio instalado, pode instalar o mais recente Visual Studio Community e o SDK do Azure com o [Instalador de Plataforma Web](https://www.microsoft.com/web/downloads/):
 
 ![Instalador de Plataforma Web das Ferramentas do Data Lake para Visual Studio.](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.wpi.png "Utilizar o Instalador de Plataforma Web para instalar as Ferramentas do Data Lake para Visual Studio")
 
-<a id="connect-to-azure-subscriptions" class="xliff"></a>
-
-## Ligar a subscrições do Azure
+## <a name="connect-to-azure-subscriptions"></a>Ligar a subscrições do Azure
 As Ferramentas do Data Lake para Visual Studio permitem-lhe ligar-se aos seus clusters do HDInsight, realizar algumas operações de gestão básicas e executar consultas do Hive.
 
 > [!NOTE]
@@ -92,9 +86,7 @@ Depois de se ligar à sua subscrição do Azure, poderá fazer o seguinte:
 
 * No menu **Ferramentas**, clique em **HDInsight** e, em seguida, clique em **Fórum MSDN** para colocar questões ou clique em **Enviar Comentários**.
 
-<a id="navigate-the-linked-resources" class="xliff"></a>
-
-## Navegar nos recursos ligados
+## <a name="navigate-the-linked-resources"></a>Navegar nos recursos ligados
 No Explorador de Servidores, pode ver a conta do Storage predefinida e quaisquer contas do Storage ligadas. Se expandir a conta do Storage predefinida, pode ver os contentores incluídos na mesma. A conta do Storage predefinida e o contentor predefinido estão marcados. Também pode clicar com o botão direito do rato em qualquer um dos contentores para ver o respetivo conteúdo.
 
 ![Recursos associados da lista do explorador de servidores das Ferramentas do Data Lake para Visual Studio](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.linked.resources.png "recursos associados da lista")
@@ -103,18 +95,14 @@ Depois de abrir um contentor, pode utilizar os botões seguintes para carregar, 
 
 ![Operações de blobs do explorador de servidores das Ferramentas do Data Lake para Visual Studio](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.blob.operations.png "carregar, eliminar e transferir blobs")
 
-<a id="run-a-hive-query" class="xliff"></a>
-
-## Executar uma consulta do Hive
+## <a name="run-a-hive-query"></a>Executar uma consulta do Hive
 O [Apache Hive](http://hive.apache.org) é uma infraestrutura de armazém de dados baseada em Hadoop destinada a fornecer resumo de dados, consultas e análises. As Ferramentas do Data Lake para Visual Studio suportam a execução de consultas do Hive a partir do Visual Studio. Para obter mais informações sobre o Hive, veja [Use Hive with HDInsight](hdinsight-use-hive.md) (Utilizar o Hive com o HDInsight).
 
 O teste de scripts Hive contra um cluster do HDInsight é um processo demorado. Pode demorar vários minutos ou mais. As Ferramentas do Data Lake para Visual Studio são capazes de validar os scripts de Hive localmente, sem estabelecer ligação a um cluster ativo.
 
 Além disso, as Ferramentas do Data Lake para Visual Studio também permitem aos utilizadores ver o conteúdo da tarefa do Hive ao recolher e analisar os registos YARN de determinadas tarefas do Hive.
 
-<a id="view-the-hivesampletable" class="xliff"></a>
-
-### Ver a tabela **hivesampletable**
+### <a name="view-the-hivesampletable"></a>Ver a tabela **hivesampletable**
 Todos os clusters do HDInsight incluem uma tabela do Hive de exemplo denominada *hivesampletable*. Utilizaremos esta tabela para lhe mostrar como listar as tabelas do Hive, ver os esquemas de tabela e listar as linhas da tabela do Hive.
 
 **Para listar as tabelas do Hive e ver o esquema da tabela do Hive**
@@ -128,9 +116,7 @@ Todos os clusters do HDInsight incluem uma tabela do Hive de exemplo denominada 
    
    ![Ferramentas do Data Lake: consulta de esquema do Hive do HDinsight para Visual Studio](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.hive.schema.png "Resultados de consulta do Hive")
 
-<a id="create-hive-tables" class="xliff"></a>
-
-### Criar tabelas do Hive
+### <a name="create-hive-tables"></a>Criar tabelas do Hive
 Pode utilizar a GUI para criar uma tabela do Hive ou utilizar consultas do Hive. Para obter informações sobre a utilização de consultas do Hive, consulte [Executar consultas do Hive](#run.queries).
 
 **Para criar uma tabela do Hive**
@@ -183,9 +169,7 @@ Existem duas formas de criar e executar consultas do Hive:
 3. No **Explorador de Soluções**, faça duplo clique em **Script.hql** para o abrir.
 4. Para validar o script do Hive, pode clicar no botão **Validar Script** ou clicar com o botão direito do rato no script no editor do Hive e, em seguida, clicar em **Validar Script** no menu de contexto.
 
-<a id="view-hive-jobs" class="xliff"></a>
-
-### Ver tarefas do Hive
+### <a name="view-hive-jobs"></a>Ver tarefas do Hive
 Pode ver as consultas da tarefa, a saída da tarefa, os registos da tarefa e os registos Yarn para as tarefas do Hive. Para obter mais informações, consulte a captura de ecrã anterior.
 
 A versão mais recente das ferramentas permite-lhe ver o conteúdo das tarefas do Hive ao recolher e analisar registos YARN. Um registo YARN pode ajudar a investigar problemas de desempenho. Para obter mais informações sobre a forma como o HDInsight recolhe registos YARN, veja [Access HDInsight Application Logs Programmatically](hdinsight-hadoop-access-yarn-app-logs.md) (Aceder Programaticamente aos Registos de Aplicações do HDInsight).
@@ -198,9 +182,7 @@ A versão mais recente das ferramentas permite-lhe ver o conteúdo das tarefas d
    
     ![Ferramentas do Data Lake: ver tarefas do Hive no HDInsight Visual Studio Tools](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.view.hive.jobs.png "Ver tarefas do Hive")
 
-<a id="faster-path-hive-execution-via-hiveserver2" class="xliff"></a>
-
-### Execução do Hive de caminho mais rápido através do HiveServer2
+### <a name="faster-path-hive-execution-via-hiveserver2"></a>Execução do Hive de caminho mais rápido através do HiveServer2
 > [!NOTE]
 > Esta funcionalidade funciona apenas nos clusters do HDInsight versão 3.2 e mais recente.
 > 
@@ -229,9 +211,7 @@ Embora a execução de consultas através de HiveServer2 tenha várias vantagens
 | Ver histórico de tarefas |Se uma consulta for executada através de HiveServer2, o respetivo histórico de tarefas (registo da tarefa, resultado da tarefa) não é mantido. É possível ver a aplicação na IU do YARN com informações limitadas. |Se uma consulta for executada através de WebHCat, o respetivo histórico de tarefas (registo da tarefa, resultado da tarefa) é preservado e pode ser visualizado através do Visual Studio/SDK do HDInsight/PowerShell. |
 | Fechar janela |A execução através de HiveServer2 é realizada de forma “síncrona”, pelo que é necessário manter as janelas abertas. Se as janelas forem fechadas, a execução da consulta é cancelada. |A submissão através de WebHCat é realizada de forma “assíncrona”, pelo que pode submeter a consulta através de WebHCat e fechar o Visual Studio. Pode voltar atrás e ver os resultados em qualquer altura. |
 
-<a id="tez-hive-job-performance-graph" class="xliff"></a>
-
-### Gráfico de desempenho da tarefa do Hive no Tez
+### <a name="tez-hive-job-performance-graph"></a>Gráfico de desempenho da tarefa do Hive no Tez
 As ferramentas do Data Lake suportam a apresentação de gráficos de desempenho para as tarefas do Hive executadas pelo motor de execução Tez. Para obter informações sobre como ativar o Tez, veja [Use Hive in HDInsight](hdinsight-use-hive.md) (Utilizar o Hive no HDInsight). Depois de submeter uma tarefa do Hive no Visual Studio, o Visual Studio mostra-lhe o gráfico quando a tarefa estiver concluída.  Poderá ter de clicar no botão **Atualizar** para obter o estado mais recente da tarefa.
 
 > [!NOTE]
@@ -243,28 +223,20 @@ As ferramentas do Data Lake suportam a apresentação de gráficos de desempenho
 
 Para ajudar a compreender melhor a sua consulta do Hive, as ferramentas adicionam a vista Operador do Hive nesta versão. Basta fazer duplo clique nos vértices do gráfico da tarefa para ver todos os operadores dentro do vértice. Também pode pairar o rato sobre um operador específico para ver mais detalhes do mesmo.
 
-<a id="task-execution-view-for-hive-on-tez-jobs" class="xliff"></a>
-
-### Vista de execução de tarefas para tarefas do Hive no Tez
+### <a name="task-execution-view-for-hive-on-tez-jobs"></a>Vista de execução de tarefas para tarefas do Hive no Tez
 É possível utilizar a Vista de execução de tarefas para tarefas do Hive no Tez para obter informações estruturadas e visualizadas sobre tarefas do Hive, bem como para obter mais detalhes da tarefa. Caso existam problemas de desempenho, pode utilizar esta vista para obter mais detalhes. Por exemplo, pode obter dados sobre o funcionamento de cada tarefa e informações detalhadas sobre as mesmas (leitura/escrita de dados, hora de agendamento/início/fim, etc.), de modo a poder ajustar as configurações da tarefa ou a arquitetura do sistema com base nas informações visualizadas.
 
 ![Vista de execução de tarefas no Data Lake Visual Studio Tools](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png "Vista de execução de tarefas")
 
-<a id="run-pig-scripts" class="xliff"></a>
-
-## Executar scripts Pig
+## <a name="run-pig-scripts"></a>Executar scripts Pig
 As Ferramentas do Data Lake para Visual Studio suportam a criação e submissão de scripts Pig para clusters do HDInsight. Os utilizadores podem criar um projeto do Pig a partir de um modelo e, em seguida, submeter o script para os clusters do HDInsight.
 
-<a id="feedbacks--known-issues" class="xliff"></a>
-
-## Comentários e problemas conhecidos
+## <a name="feedbacks--known-issues"></a>Comentários e problemas conhecidos
 * Atualmente, os resultados do HiveServer2 são apresentados sob a forma de texto simples, o que não é ideal. Estamos a trabalhar para resolver este problema.
 * Se os resultados forem iniciados com valores NULL, os resultados não são apresentados atualmente. Resolvemos este problema. Contudo, se estiver bloqueado devido ao mesmo, não hesite em enviar-nos um e-mail ou contactar a equipa de suporte.
 * O script HQL criado pelo Visual Studio é codificado consoante a definição de região local do utilizador. Se o utilizador o carregar para o cluster como binário, este script pode não ser executado corretamente.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste artigo, aprendeu a ligar-se a clusters do HDInsight a partir do Visual Studio, com o pacote de Ferramentas do Data Lake, e a executar uma consulta do Hive. Para obter mais informações, consulte:
 
 * [Utilizar o Hive do Hadoop no HDInsight](hdinsight-use-hive.md)

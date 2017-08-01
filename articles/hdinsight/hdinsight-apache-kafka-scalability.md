@@ -22,8 +22,7 @@ ms.lasthandoff: 07/13/2017
 
 ---
 
-# Configurar o armazenamento e a escalabilidade para o Apache Kafka no HDInsight
-<a id="configure-storage-and-scalability-for-apache-kafka-on-hdinsight" class="xliff"></a>
+# <a name="configure-storage-and-scalability-for-apache-kafka-on-hdinsight"></a>Configurar o armazenamento e a escalabilidade para o Apache Kafka no HDInsight
 
 Saiba como configurar o número de discos geridos utilizados pelo Apache Kafka no HDInsight.
 
@@ -33,8 +32,7 @@ O diagrama seguinte estabelece uma comparação entre o Kafka no HDInsight antes
 
 ![Diagrama que mostra o Kafka no HDInsight com um único VHD por VM vs. vários discos geridos por VM](./media/hdinsight-apache-kafka-scalability/kafka-with-managed-disks-architecture.png)
 
-## Configurar discos geridos: portal do Azure
-<a id="configure-managed-disks-azure-portal" class="xliff"></a>
+## <a name="configure-managed-disks-azure-portal"></a>Configurar discos geridos: portal do Azure
 
 1. Siga os passos em [Create an HDInsight cluster](hdinsight-hadoop-create-linux-clusters-portal.md) (Criar um cluster no HDInsight) para compreender os passos comuns de criação de um cluster com o portal. Não conclua o processo de criação do portal.
 
@@ -45,8 +43,7 @@ O diagrama seguinte estabelece uma comparação entre o Kafka no HDInsight antes
 
     ![Imagem do painel do tamanho do cluster com os discos por nó de trabalho realçados](./media/hdinsight-apache-kafka-scalability/set-managed-disks-portal.png)
 
-## Configurar discos geridos: modelo do Resource Manager
-<a id="configure-managed-disks-resource-manager-template" class="xliff"></a>
+## <a name="configure-managed-disks-resource-manager-template"></a>Configurar discos geridos: modelo do Resource Manager
 
 Para controlar o número de discos utilizados por nós de trabalho num cluster do Kafka, utilize a seguinte secção do modelo:
 
@@ -60,8 +57,7 @@ Para controlar o número de discos utilizados por nós de trabalho num cluster d
 
 Em [https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json](https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-mirror-cluster-in-vnet-v2.1.json), pode encontrar um modelo completo que demonstra como configurar discos geridos.
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 
 Para obter mais informações sobre como trabalhar com o Kafka no HDInsight, consulte os documentos seguintes:
 

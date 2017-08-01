@@ -22,15 +22,11 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/17/2017
 
 ---
-<a id="introducing-apache-kafka-on-hdinsight-preview" class="xliff"></a>
-
-# Introdução ao Apache Kafka no HDInsight (pré-visualização)
+# <a name="introducing-apache-kafka-on-hdinsight-preview"></a>Introdução ao Apache Kafka no HDInsight (pré-visualização)
 
 O [Apache Kafka](https://kafka.apache.org) é uma plataforma de transmissão em fluxo distribuída de código aberto que pode ser utilizada para criar aplicações e pipelines de dados de transmissão em fluxo em tempo real. O Kafka também fornece a funcionalidade de mediador de mensagem semelhante a uma fila de mensagens, onde pode publicar e subscrever fluxos de dados nomeados. O Kafka no HDInsight fornece um serviço gerido, altamente escalável e disponível na cloud do Microsoft Azure.
 
-<a id="why-use-kafka-on-hdinsight" class="xliff"></a>
-
-## Porquê utilizar o Kaftka no HDInsight?
+## <a name="why-use-kafka-on-hdinsight"></a>Porquê utilizar o Kaftka no HDInsight?
 
 O Kafka oferece as seguintes funcionalidades:
 
@@ -50,9 +46,7 @@ O Kafka oferece as seguintes funcionalidades:
 
     Para obter mais informações sobre como configurar os discos geridos com o Kafka no HDInsight, consulte [Increase scalability of Kafka on HDInsight](hdinsight-apache-kafka-scalability.md) (Aumentar a escalabilidade do Kafka no HDInsight).
 
-<a id="use-cases" class="xliff"></a>
-
-## Casos de utilização
+## <a name="use-cases"></a>Casos de utilização
 
 * **Mensagens**: uma vez que suporta o padrão de mensagem de publicação-subscrição, o Kafka é frequentemente utilizado como um mediador de mensagem.
 
@@ -62,9 +56,7 @@ O Kafka oferece as seguintes funcionalidades:
 
 * **Transformação**: com o processamento de transmissão em fluxo, pode combinar e enriquecer os dados a partir de vários tópicos de entrada em um ou mais tópicos de saída.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Utilize as seguintes ligações para saber como utilizar o Apache Kafka no HDInsight:
 

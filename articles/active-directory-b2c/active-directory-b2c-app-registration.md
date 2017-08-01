@@ -23,25 +23,19 @@ ms.lasthandoff: 07/04/2017
 
 
 ---
-<a id="azure-active-directory-b2c-register-your-application" class="xliff"></a>
-
-# Azure Active Directory B2C : Registar a aplicação
+# <a name="azure-active-directory-b2c-register-your-application"></a>Azure Active Directory B2C : Registar a aplicação
 
 > [!IMPORTANT]
 > As aplicações criadas a partir do painel Azure AD B2C no portal do Azure têm de ser geridas a partir da mesma localização. Se utilizar o PowerShell ou outro portal para editar as aplicações B2C, estas deixam de ser suportadas e não irão funcionar com o Azure AD B2C. Saiba mais [abaixo](#faulted-apps).
 >
 
-<a id="prerequisite" class="xliff"></a>
-
-## Pré-requisito
+## <a name="prerequisite"></a>Pré-requisito
 
 Para criar uma aplicação que aceite a inscrição e o início de sessão do consumidor, terá primeiro de registar a aplicação com um inquilino do Azure Active Directory B2C. Obtenha o seu inquilino, utilizando os passos descritos em [Criar um inquilino do Azure AD B2C](active-directory-b2c-get-started.md). Depois de seguir todos os passos do respetivo artigo, terá o painel de funcionalidades do B2C afixado no seu Startboard.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
-<a id="navigate-to-the-b2c-features-blade" class="xliff"></a>
-
-## Navegar para o painel de funcionalidades do B2C
+## <a name="navigate-to-the-b2c-features-blade"></a>Navegar para o painel de funcionalidades do B2C
 
 Se tiver o painel de funcionalidades do B2C afixado no seu Startboard, irá vê-lo assim que iniciar sessão no [Portal do Azure](https://portal.azure.com/) como Administrador Global do inquilino do B2C.
 
@@ -52,9 +46,7 @@ Também pode aceder ao painel ao clicar em **Mais serviços** e depois pesquisar
 >
 >
 
-<a id="register-a-web-application" class="xliff"></a>
-
-## Registar uma aplicação Web
+## <a name="register-a-web-application"></a>Registar uma aplicação Web
 
 1. No painel de funcionalidades do B2C no Portal do Azure, clique em **Aplicações**.
 1. Clique em **+ Adicionar** na parte superior do painel.
@@ -71,9 +63,7 @@ Também pode aceder ao painel ao clicar em **Mais serviços** e depois pesquisar
 > Um **Segredo de Aplicação** é uma credencial de segurança importante e deve ser protegida devidamente.
 >
 
-<a id="register-a-web-api" class="xliff"></a>
-
-## Registar uma API Web
+## <a name="register-a-web-api"></a>Registar uma API Web
 
 1. No painel de funcionalidades do B2C no Portal do Azure, clique em **Aplicações**.
 1. Clique em **+ Adicionar** na parte superior do painel.
@@ -87,9 +77,7 @@ Também pode aceder ao painel ao clicar em **Mais serviços** e depois pesquisar
 1. Adicione mais âmbitos conforme necessário. Por predefinição, será definido o âmbito "user_impersonation". Esta ação fornece a outras aplicações a capacidade de aceder a esta api em nome do utilizador com sessão iniciada. Isto pode ser removido se desejar.
 1. Clique em **Guardar**.
 
-<a id="register-a-mobilenative-application" class="xliff"></a>
-
-## Registar uma aplicação móvel/nativa
+## <a name="register-a-mobilenative-application"></a>Registar uma aplicação móvel/nativa
 
 1. No painel de funcionalidades do B2C no Portal do Azure, clique em **Aplicações**.
 1. Clique em **+ Adicionar** na parte superior do painel.
@@ -106,13 +94,9 @@ Também pode aceder ao painel ao clicar em **Mais serviços** e depois pesquisar
 > Um **Segredo de Aplicação** é uma credencial de segurança importante e deve ser protegida devidamente.
 >
 
-<a id="limitations" class="xliff"></a>
+## <a name="limitations"></a>Limitações
 
-## Limitações
-
-<a id="choosing-a-web-appapi-reply-url" class="xliff"></a>
-
-### Escolher um URL de respostas de aplicação Web/api
+### <a name="choosing-a-web-appapi-reply-url"></a>Escolher um URL de respostas de aplicação Web/api
 
 Atualmente, as aplicações registadas com o Azure AD B2C estão restritas a um conjunto limitado de valores de URL de resposta. O URL de resposta para aplicações e serviços Web tem de começar com o esquema `https`, e todos os valores de URL de resposta têm de partilhar um único domínio de DNS. Por exemplo, não pode registar uma aplicação Web que tenha um destes URLs de resposta:
 
@@ -147,9 +131,7 @@ Neste caso, está a referir-se a um subdomínio de DNS de login.contoso.com. Se 
 
 Pode adicionar os dois últimos porque são subdomínios do primeiro URL de resposta, contoso.com.
 
-<a id="choosing-a-native-application-redirect-uri" class="xliff"></a>
-
-### Escolher um URI de redirecionamento da aplicação nativa
+### <a name="choosing-a-native-application-redirect-uri"></a>Escolher um URI de redirecionamento da aplicação nativa
 
 Existem duas considerações importantes sobre quando selecionar um URI de redirecionamento para aplicações móveis/nativas:
 
@@ -158,9 +140,7 @@ Existem duas considerações importantes sobre quando selecionar um URI de redir
 
 Certifique-se de que não existem carateres especiais, como carateres de sublinhado, no uri de redirecionamento.
 
-<a id="faulted-apps" class="xliff"></a>
-
-### Aplicações com falha
+### <a name="faulted-apps"></a>Aplicações com falha
 
 As aplicações B2C NÃO devem ser editadas:
 
@@ -171,9 +151,7 @@ Se editar a aplicação B2C, conforme descrito acima, e tentar editá-la novamen
 
 Para eliminar a aplicação, aceda ao [Portal de Registo da Aplicação](https://apps.dev.microsoft.com/) e elimine a aplicação. Para que a aplicação fique visível, tem de ser o proprietário da aplicação (e não apenas um administrador do inquilino).
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que tem uma aplicação registada no Azure AD B2C, pode concluir um dos nossos [guias de introdução](active-directory-b2c-overview.md#get-started) para começar a trabalhar.
 

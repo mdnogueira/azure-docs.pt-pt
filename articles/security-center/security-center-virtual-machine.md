@@ -21,14 +21,12 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 07/12/2017
 
 ---
-# Centro de Segurança do Azure e Máquinas Virtuais do Azure
-<a id="azure-security-center-and-azure-virtual-machines" class="xliff"></a>
+# <a name="azure-security-center-and-azure-virtual-machines"></a>Centro de Segurança do Azure e Máquinas Virtuais do Azure
 O [Centro de Segurança do Azure](https://azure.microsoft.com/services/security-center/) ajuda-o a evitar, detetar e responder a ameaças. Fornece gestão de políticas e monitorização de segurança integrada nas suas subscrições do Azure, ajuda a detetar ameaças que caso contrário podem passar despercebidas e funciona com um ecossistema abrangente de soluções de segurança.
 
 Este artigo mostra como o Centro de Segurança o pode ajudar a proteger as suas Máquinas Virtuais do Azure (VM).
 
-## Porquê utilizar o Centro de Segurança?
-<a id="why-use-security-center" class="xliff"></a>
+## <a name="why-use-security-center"></a>Porquê utilizar o Centro de Segurança?
 O Centro de Segurança ajuda-o a salvaguardar os dados da máquina virtual no Azure, oferecendo visibilidade sobre as definições de segurança da sua máquina virtual. Quando o Centro de Segurança salvaguarda as suas VMs, as seguintes funcionalidades estarão disponíveis:
 
 * Definições de segurança do Sistema Operativo (OS) com as regras de configuração recomendadas
@@ -45,16 +43,14 @@ Além de ajudar a proteger as VMs do Azure, o Centro de Segurança também ofere
 > 
 > 
 
-## Pré-requisitos
-<a id="prerequisites" class="xliff"></a>
+## <a name="prerequisites"></a>Pré-requisitos
 Para começar a utilizar o Centro de Segurança do Azure, terá de conhecer e considerar o seguinte:
 
 * Precisa de uma subscrição do Microsoft Azure. Consulte [Security Center Pricing (Preços do Centro de Segurança)](https://azure.microsoft.com/pricing/details/security-center/), para obter mais informações sobre as camadas gratuitas e standard do Centro de Segurança.
 * Planeie a adoção do Centro de Segurança, consulte [Azure Security Center planning and operations guide (Guia de planeamento e funcionamento do Centro de Segurança do Azure)](security-center-planning-and-operations-guide.md), para saber mais sobre as considerações de planeamento e funcionamento.
 * Para informações sobre a suportabilidade do sistema operativo, consulte [Azure Security Center frequently asked questions (FAQ) (Perguntas mais frequentes do Centro de Segurança do Azure (FAQ))](security-center-faq.md). 
 
-## Definir política de segurança
-<a id="set-security-policy" class="xliff"></a>
+## <a name="set-security-policy"></a>Definir política de segurança
 A recolha de dados tem de ser ativada para que o Centro de Segurança do Azure possa recolher as informações que necessita para fornecer recomendações e alertas que são gerados com base na política de segurança configurada por si. Na imagem abaixo, pode ver que a **Recolha de dados** foi **Ativada**.
 
 Uma política de segurança define o conjunto de controlos que são recomendados para recursos dentro da subscrição especificada ou do grupo de recursos. Antes de ativar a política de segurança, tem de ter a recolha de dados ativada, o Centro de Segurança recolhe dados de máquinas virtuais para avaliar o respetivo estado de segurança, fornecer recomendações de segurança e alertá-lo sobre ameaças. No Centro de Segurança, é possível definir políticas para as suas subscrições ou grupos de recursos do Azure, de acordo com as necessidades de segurança da empresa e do tipo de aplicações ou sensibilidade dos dados em cada subscrição. 
@@ -66,8 +62,7 @@ Uma política de segurança define o conjunto de controlos que são recomendados
 > 
 > 
 
-## Gerir recomendações de segurança
-<a id="manage-security-recommendations" class="xliff"></a>
+## <a name="manage-security-recommendations"></a>Gerir recomendações de segurança
 O Centro de Segurança analisa o estado de segurança dos seus recursos do Azure. Quando o Centro de Segurança identifica potenciais vulnerabilidades de segurança, cria recomendações. As recomendações orientam-no no processo de configuração de controlos necessários.
 
 Após definir uma política de segurança, o Centro de Segurança analisa o estado de segurança dos seus recursos para identificar potenciais vulnerabilidades. As recomendações são apresentadas num formato de tabela em que cada linha representa uma recomendação específica. A tabela abaixo fornece alguns exemplos de recomendações para VMs do Azure e o que cada um irá fazer se as aplicar. Ao selecionar uma recomendação, ser-lhe-ão fornecidas informações que lhe mostram como implementar a recomendação no Centro de Segurança.
@@ -90,22 +85,19 @@ Após definir uma política de segurança, o Centro de Segurança analisa o esta
 > 
 > 
 
-## Monitorizar o estado de funcionamento da segurança
-<a id="monitor-security-health" class="xliff"></a>
+## <a name="monitor-security-health"></a>Monitorizar o estado de funcionamento da segurança
 Depois de ativar [políticas de segurança](security-center-policies.md) para os recursos de uma subscrição, o Centro de Segurança irá analisar a segurança dos seus recursos para identificar potenciais vulnerabilidades.  Pode ver o estado de segurança dos seus recursos, juntamente com quaisquer problemas no painel **Estado de funcionamento de segurança de recursos**. Quando clica em **Máquinas virtuais** no mosaico de estado de funcionamento **Segurança de recursos**, o painel **Máquinas virtuais** será aberto com recomendações para as VMs. 
 
 ![Estado de funcionamento da segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig2.png)
 
-## Gerir e responder a alertas de segurança
-<a id="manage-and-respond-to-security-alerts" class="xliff"></a>
+## <a name="manage-and-respond-to-security-alerts"></a>Gerir e responder a alertas de segurança
 O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, (como soluções de proteção de ponto final e firewall), para detetar ameaças reais e reduzir os falsos positivos. Ao tirar partido de uma agregação diversa de [capacidades de deteção](security-center-detection-capabilities.md), o Centro de Segurança pode gerar alertas de segurança prioritários para o ajudar a investigar rapidamente o problema e fornecer recomendações para saber como corrigir possíveis ataques.
 
 ![Alertas de segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig3.png)
 
 Selecione um alerta de segurança para obter mais informações sobre o(s) evento(s) que acionaram o alerta e quais os passos (se existirem) necessários para remediar um ataque. Os alertas de segurança estão agrupados por [tipo](security-center-alerts-type.md) e data.
 
-## Consultar também
-<a id="see-also" class="xliff"></a>
+## <a name="see-also"></a>Consultar também
 Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
 * [Definir políticas de segurança no Centro de Segurança do Azure](security-center-policies.md) – Saiba como configurar políticas de segurança para as suas subscrições e grupos de recursos do Azure.

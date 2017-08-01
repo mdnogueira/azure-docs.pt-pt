@@ -23,9 +23,7 @@ ms.lasthandoff: 05/31/2017
 
 
 ---
-<a id="user-defined-routes-and-ip-forwarding" class="xliff"></a>
-
-# Rotas definidas pelo utilizador e reencaminhamento de IP
+# <a name="user-defined-routes-and-ip-forwarding"></a>Rotas definidas pelo utilizador e reencaminhamento de IP
 
 Quando adiciona máquinas virtuais (VM) a uma rede virtual (VNet) no Azure, repara que as VM conseguem comunicar entre si através da rede, automaticamente. Não é necessário especificar um gateway, apesar das VM estarem em sub-redes diferentes. O mesmo se verifica para a comunicação entre as VM e a Internet pública, e até mesmo na sua rede no local quando está presente uma ligação híbrida a partir do Azure para o seu centro de dados.
 
@@ -53,9 +51,7 @@ A figura abaixo mostra um exemplo de rotas definidas pelo utilizador e reencamin
 > 
 > 
 
-<a id="route-resource" class="xliff"></a>
-
-## Recurso da rota
+## <a name="route-resource"></a>Recurso da rota
 Os pacotes são reencaminhados através de uma rede TCP/IP com base numa tabela de rota definida em cada nó na rede física. Uma tabela de rota é uma coleção de rotas individuais utilizada para decidir onde pretende reencaminhar os pacotes com base no endereço IP de destino. Uma rota consiste no seguinte:
 
 | Propriedade | Descrição | Restrições | Considerações |
@@ -72,18 +68,14 @@ No Azure PowerShell alguns dos valores "NextHopType" têm nomes diferentes:
 * A Internet é Internet
 * Nenhuma é Nenhuma
 
-<a id="system-routes" class="xliff"></a>
-
-### Rotas de sistema
+### <a name="system-routes"></a>Rotas de sistema
 Cada sub-rede criada numa rede virtual é associada automaticamente a uma tabela de rota que contém as seguintes regras de rota de sistema:
 
 * **Regra de Vnet Local**: esta regra é criada automaticamente para cada sub-rede numa rede virtual. Especifica que existe uma ligação direta entre as VM na VNet e não existe qualquer passo seguinte intermédio.
 * **Regra no local**: esta regra aplica-se a todo o tráfego destinado ao intervalo de endereços no local e utiliza o gateway VPN como destino de salto seguinte.
 * **Regra de Internet**: esta regra processa todo o tráfego destinado à Internet pública (prefixo de endereço 0.0.0.0/0) e utiliza o gateway para a Internet da infraestrutura como salto seguinte para todo o tráfego destinado à Internet.
 
-<a id="user-defined-routes" class="xliff"></a>
-
-### Rotas definidas pelo utilizador
+### <a name="user-defined-routes"></a>Rotas definidas pelo utilizador
 Para a maior parte dos ambientes, só necessita das rotas de sistema já definidas pelo Azure. No entanto, poderá ter de criar uma tabela de rota e adicionar um ou mais rotas em casos específicos, tais como:
 
 * Forçar o túnel à Internet através da rede no local.
@@ -104,9 +96,7 @@ Para saber como criar rotas definidas pelo utilizador, veja [Como Criar Rotas e 
 > 
 > 
 
-<a id="bgp-routes" class="xliff"></a>
-
-### Rotas BGP
+### <a name="bgp-routes"></a>Rotas BGP
 Se tiver uma ligação ExpressRoute entre a rede no local e o Azure, pode ativar a BGP para propagar rotas da sua rede no local para o Azure. Estes rotas BGP são utilizadas da mesma forma que as rotas de sistema e as rotas definidas pelo utilizador em cada sub-rede do Azure. Para obter mais informações, consulte [Introdução ao ExpressRoute](../expressroute/expressroute-introduction.md).
 
 > [!IMPORTANT]
@@ -114,16 +104,12 @@ Se tiver uma ligação ExpressRoute entre a rede no local e o Azure, pode ativar
 > 
 > 
 
-<a id="ip-forwarding" class="xliff"></a>
-
-## Reencaminhamento IP
+## <a name="ip-forwarding"></a>Reencaminhamento IP
 Como descrito acima, uma das principais razões para criar uma rota definida de utilizador é reencaminhar tráfego para uma aplicação virtual. Uma aplicação virtual não é mais do que uma VM que executa uma aplicação utilizada para processar tráfego de rede de alguma forma, tal como uma firewall ou um dispositivo NAT.
 
 Este VM de aplicação virtual deve ser capaz de receber tráfego de entrada que não esteja endereçada a si mesma. Para permitir que uma VM receba tráfego endereçado a outros destinos, tem de ativar o Reencaminhamento IP para a VM. Isto é uma definição do Azure, não se trata de uma definição no sistema operativo convidado.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Saiba como [criar rotas no modelo de implementação do Gestor de recursos](virtual-network-create-udr-arm-template.md) e associá-las a sub-redes. 
 * Saiba como [criar rotas no modelo de implementação clássico](virtual-network-create-udr-classic-ps.md) e associá-las a sub-redes.
 

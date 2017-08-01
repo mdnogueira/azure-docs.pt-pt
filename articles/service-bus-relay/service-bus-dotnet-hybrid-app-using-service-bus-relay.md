@@ -22,12 +22,8 @@ ms.lasthandoff: 06/16/2017
 
 
 ---
-<a id="net-on-premisescloud-hybrid-application-using-azure-wcf-relay" class="xliff"></a>
-
-# Aplicação .NET híbrida no local/cloud com o Reencaminhamento de WCF do Azure
-<a id="introduction" class="xliff"></a>
-
-## Introdução
+# <a name="net-on-premisescloud-hybrid-application-using-azure-wcf-relay"></a>Aplicação .NET híbrida no local/cloud com o Reencaminhamento de WCF do Azure
+## <a name="introduction"></a>Introdução
 
 Este artigo mostra como compilar uma aplicação híbrida na cloud com o Microsoft Azure e o Visual Studio. O tutorial parte do princípio de que não tem experiência anterior na utilização do Azure. Em menos de 30 minutos, terá uma aplicação que utiliza vários recursos do Azure instalados e em execução na nuvem.
 
@@ -38,9 +34,7 @@ Aprenderá:
 
 [!INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-<a id="how-azure-relay-helps-with-hybrid-solutions" class="xliff"></a>
-
-## Como o Reencaminhamento do Azure ajuda com soluções híbridas
+## <a name="how-azure-relay-helps-with-hybrid-solutions"></a>Como o Reencaminhamento do Azure ajuda com soluções híbridas
 
 As soluções de negócio são normalmente compostas por um código personalizado escrito para lidar com requisitos comerciais novos e únicos e com funcionalidades existentes fornecidas por soluções e sistemas já aplicados.
 
@@ -48,18 +42,14 @@ Os arquitetos de soluções estão a começar a utilizar a nuvem para um process
 
 O [Reencaminhamento do Azure](https://azure.microsoft.com/services/service-bus/) foi concebido para o caso de utilização de processar serviços Web do Windows Communication Foundation (WCF) e tornar esses serviços acessíveis de forma segura para soluções que residem fora do perímetro empresarial sem exigir alterações intrusivas na infraestrutura da rede empresarial. Esses serviços de reencaminhamento continuam a ser alojados no seu ambiente existente, contudo, delegam a escuta de sessões e pedidos de entrada para o serviço de reencaminhamento alojado na cloud. O Reencaminhamento do Azure também protege esses serviços de acesso não autorizado utilizando a autenticação por [Assinatura de Acesso Partilhado (SAS)](../service-bus-messaging/service-bus-sas.md).
 
-<a id="solution-scenario" class="xliff"></a>
-
-## Cenário de solução
+## <a name="solution-scenario"></a>Cenário de solução
 Neste tutorial, criará um Web site ASP.NET que permite ver uma lista de produtos na página de inventário de produtos.
 
 ![][0]
 
 O tutorial parte do princípio de que tem informações do produto num sistema no local existente e utiliza o Reencaminhamento do Azure para chegar a esse sistema. Tal é simulado por um serviço Web executado numa aplicação de consola simples e está associado a um conjunto de produtos dentro da memória. Poderá executar esta aplicação de consola no seu próprio computador e implementar a função da Web no Azure. Deste modo, verá como a função da Web em execução no datacenter do Azure chamará, de facto, o seu computador, apesar de o computador encontrar-se muito certamente protegido por, no mínimo, uma firewall e uma camada de tradução de endereços de rede (NAT).
 
-<a id="set-up-the-development-environment" class="xliff"></a>
-
-## Configurar o ambiente de desenvolvimento
+## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
 
 Antes de poder começar a desenvolver aplicações do Azure, transfira as ferramentas e configure o ambiente de desenvolvimento:
 
@@ -69,23 +59,17 @@ Antes de poder começar a desenvolver aplicações do Azure, transfira as ferram
 4. No **Instalador de Plataforma Web**, clique em **Instalar** e continue com a instalação.
 5. Após a conclusão da instalação, terá tudo o que é necessário para começar a desenvolver a aplicação. O SDK inclui ferramentas que permitem desenvolver facilmente aplicações do Azure no Visual Studio.
 
-<a id="create-a-namespace" class="xliff"></a>
-
-## Criar um espaço de nomes
+## <a name="create-a-namespace"></a>Criar um espaço de nomes
 
 Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve criar, em primeiro lugar, um espaço de nomes de serviço. Um espaço de nomes fornece um contentor de âmbito para abordar os recursos do Azure na sua aplicação. Siga as [instruções aqui](relay-create-namespace-portal.md) para criar um espaço de nomes de Reencaminhamento.
 
-<a id="create-an-on-premises-server" class="xliff"></a>
-
-## Criar um servidor no local
+## <a name="create-an-on-premises-server"></a>Criar um servidor no local
 
 Em primeiro lugar, compilará um sistema de catálogo de produtos no local (mock). Tal será bastante simples; pode vê-lo como representando um sistema de catálogo de produtos no local real com uma superfície de serviço completo que estamos a tentar integrar.
 
 Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote NuGet do Service Bus do Azure](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) para incluir as bibliotecas e as definições de configuração do Service Bus.
 
-<a id="create-the-project" class="xliff"></a>
-
-### Criar o projeto
+### <a name="create-the-project"></a>Criar o projeto
 
 1. Inicie o Microsoft Visual Studio com privilégios de administrador. Para tal, clique com o botão direito do rato no ícone do programa do Visual Studio e, em seguida, clique em **Executar como administrador**.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
@@ -227,15 +211,11 @@ Este projeto é uma aplicação de consola do Visual Studio e utiliza o [Pacote 
     ```
 14. Prima **Ctrl+Shift+B** ou a partir do menu **Compilar**, clique em **Compilar Solução** para compilar a aplicação e verificar a precisão do seu trabalho até ao momento.
 
-<a id="create-an-aspnet-application" class="xliff"></a>
-
-## Criar uma aplicação ASP.NET
+## <a name="create-an-aspnet-application"></a>Criar uma aplicação ASP.NET
 
 Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados obtidos a partir do serviço de produtos.
 
-<a id="create-the-project" class="xliff"></a>
-
-### Criar o projeto
+### <a name="create-the-project"></a>Criar o projeto
 
 1. Certifique-se de que o Visual Studio está em execução com privilégios de administrador.
 2. No Visual Studio, no menu **Ficheiro**, clique em **Novo** e, de seguida, em **Projeto**.
@@ -257,9 +237,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
 
     ![][17]
 
-<a id="modify-the-web-application" class="xliff"></a>
-
-### Modificar a aplicação Web
+### <a name="modify-the-web-application"></a>Modificar a aplicação Web
 
 1. No ficheiro Product.cs no Visual Studio, substitua a definição de espaço de nomes existente pelo código seguinte.
 
@@ -340,9 +318,7 @@ Nesta secção, compilará uma aplicação ASP.NET simples que apresenta dados o
    ```
 8. Para verificar a precisão do seu trabalho até ao momento, pode premir **Ctrl+Shift+B** para compilar o projeto.
 
-<a id="run-the-app-locally" class="xliff"></a>
-
-### Executar a aplicação localmente
+### <a name="run-the-app-locally"></a>Executar a aplicação localmente
 
 Execute a aplicação para verificar se funciona.
 
@@ -352,9 +328,7 @@ Execute a aplicação para verificar se funciona.
 
    ![][21]
 
-<a id="put-the-pieces-together" class="xliff"></a>
-
-## Juntar as peças
+## <a name="put-the-pieces-together"></a>Juntar as peças
 
 O passo seguinte consiste em ligar o servidor de produtos no local à aplicação ASP.NET.
 
@@ -422,9 +396,7 @@ O passo seguinte consiste em ligar o servidor de produtos no local à aplicaçã
 
 14. Clique em **OK** na caixa de diálogo **Páginas de Propriedades**.
 
-<a id="run-the-project-locally" class="xliff"></a>
-
-## Executar localmente o projeto
+## <a name="run-the-project-locally"></a>Executar localmente o projeto
 
 Para testar a aplicação localmente, prima **F5** no Visual Studio. O servidor no local (**ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser. Neste momento, verá que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local.
 
@@ -434,9 +406,7 @@ Prima **Atualizar** na página **ProductsPortal**. Sempre que atualizar a págin
 
 Feche ambas as aplicações antes de prosseguir para o passo seguinte.
 
-<a id="deploy-the-productsportal-project-to-an-azure-web-app" class="xliff"></a>
-
-## Implementar o projeto ProductsPortal numa aplicação Web do Azure
+## <a name="deploy-the-productsportal-project-to-an-azure-web-app"></a>Implementar o projeto ProductsPortal numa aplicação Web do Azure
 
 O passo seguinte consiste em publicar novamente o frontend **ProductsPortal** da aplicação Web do Azure. Faça o seguinte:
 
@@ -453,9 +423,7 @@ O passo seguinte consiste em publicar novamente o frontend **ProductsPortal** da
 
 3. Feche a janela do navegador para interromper a aplicação em execução.
 
-<a id="set-productsportal-as-web-app" class="xliff"></a>
-
-### Configurar o ProductsPortal como uma aplicação Web
+### <a name="set-productsportal-as-web-app"></a>Configurar o ProductsPortal como uma aplicação Web
 
 Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal** é executado a partir do Visual Studio como uma aplicação Web.
 
@@ -468,9 +436,7 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
 4. A partir do menu **Ficheiro** no Visual Studio, clique em **Guardar Tudo**.
 5. A partir do menu Compilar no Visual Studio, clique em **Reconstruir Solução**.
 
-<a id="run-the-application" class="xliff"></a>
-
-## Executar a aplicação
+## <a name="run-the-application"></a>Executar a aplicação
 
 1. Prima F5 para compilar e executar a aplicação. O servidor no local (a aplicação de consola **ProductsServer**) deverá iniciar primeiro e, em seguida, a aplicação **ProductsPortal** deverá iniciar numa janela do browser, conforme mostrado na captura de ecrã seguinte. Tenha novamente em atenção que o inventário de produtos lista os dados obtidos a partir do sistema de serviço de produtos no local e apresenta esses dados na aplicação Web. Verifique o URL para certificar-se de que o **ProductsPortal** está em execução na nuvem, como uma aplicação Web do Azure.
 
@@ -486,9 +452,7 @@ Antes de executar a aplicação na nuvem, deve garantir que o **ProductsPortal**
 
     ![][38]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Para obter mais informações sobre o Reencaminhamento do Azure, veja os seguintes recursos:  
 

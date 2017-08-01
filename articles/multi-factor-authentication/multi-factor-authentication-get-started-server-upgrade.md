@@ -22,14 +22,10 @@ ms.lasthandoff: 06/08/2017
 
 
 ---
-<a id="upgrade-the-phonefactor-agent-to-azure-multi-factor-authentication-server" class="xliff"></a>
-
-# Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
+# <a name="upgrade-the-phonefactor-agent-to-azure-multi-factor-authentication-server"></a>Atualizar o PhoneFactor Agent para o Servidor Multi-Factor Authentication do Azure
 Para atualizar o PhoneFactor Agent v5.x ou o mais antigo para o Servidor Multi-Factor Authentication do Azure, desinstale o PhoneFactor Agent e os componentes afiliados primeiro. Em seguida, o Servidor Multi-Factor Authentication e os respetivos componentes afiliados podem ser instalados.
 
-<a id="uninstall-the-phonefactor-agent" class="xliff"></a>
-
-## Desinstalar o PhoneFactor Agent
+## <a name="uninstall-the-phonefactor-agent"></a>Desinstalar o PhoneFactor Agent
 
 1. Primeiro, faça uma cópia de segurança do ficheiro de dados do PhoneFactor. A localização de instalação predefinida é C:\Programas\PhoneFactor\Data\Phonefactor.pfdata.
 
@@ -50,9 +46,7 @@ Para atualizar o PhoneFactor Agent v5.x ou o mais antigo para o Servidor Multi-F
 
 5. Desinstale o PhoneFactor Agent através dos Programas e Funcionalidades do Windows.
 
-<a id="install-the-multi-factor-authentication-server" class="xliff"></a>
-
-## Instale o Servidor Multi-Factor Authentication
+## <a name="install-the-multi-factor-authentication-server"></a>Instale o Servidor Multi-Factor Authentication
 
 O caminho de instalação é escolhido a partir do registo da instalação do PhoneFactor Agent anterior, pelo que deve instalar na mesma localização (por exemplo, C:\Programas\PhoneFactor). As novas instalações têm um caminho de instalação predefinido diferente (por exemplo, C:\Programas\Multi-Factor Authentication Server). O ficheiro de dados deixado pelo PhoneFactor Agent anterior deve ser atualizado durante a instalação, pelo que os seus utilizadores e definições devem permanecer depois de instalar o novo Servidor Multi-Factor Authentication.
 
@@ -82,9 +76,7 @@ O caminho de instalação é escolhido a partir do registo da instalação do Ph
 
   5. Vá para a localização de instalação do Serviço Web da Aplicação Móvel (por exemplo, C:\inetpub\wwwroot\MultiFactorAuthMobileAppWebService) e edite o ficheiro web.config. Copie os valores nas secções appSettings e applicationSettings a partir do ficheiro web.config original cuja cópia de segurança foi feita antes da atualização para o novo ficheiro web.config. Se o novo nome do diretório virtual predefinido foi mantido quando instalou o SDK do Serviço Web, altere o URL na secção applicationSettings para apontar para a localização correta. Se quaisquer outras predefinições foram alteradas no ficheiro web.config anterior, aplique as mesmas alterações ao novo ficheiro web.config.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - [Instale o portal de utilizadores](multi-factor-authentication-get-started-portal.md) do Servidor Multi-Factor Authentication do Azure.
 

@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-6-create-measures" class="xliff"></a>
-
-# Lição 6: Criar medidas
+# <a name="lesson-6-create-measures"></a>Lição 6: Criar medidas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -38,18 +36,12 @@ Nesta lição, irá criar medidas ao inserir uma fórmula DAX na barra de fórmu
   
 Tempo estimado para concluir esta lição: **30 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 5: Criar colunas calculadas](../tutorials/aas-lesson-5-create-calculated-columns.md).  
   
-<a id="create-measures" class="xliff"></a>
-
-## Criar medidas  
+## <a name="create-measures"></a>Criar medidas  
   
-<a id="to-create-a-dayscurrentquartertodate-measure-in-the-dimdate-table" class="xliff"></a>
-
-#### Para criar uma medida de DaysCurrentQuarterToDate na tabela DimDate  
+#### <a name="to-create-a-dayscurrentquartertodate-measure-in-the-dimdate-table"></a>Para criar uma medida de DaysCurrentQuarterToDate na tabela DimDate  
   
 1.  No designer de modelo, clique na tabela **DimDate**.  
   
@@ -68,9 +60,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
     Ao contrário das colunas calculadas, com fórmulas de medida, pode digitar o nome da medida, seguido por dois-pontos, seguido pela expressão de fórmula.
 
   
-<a id="to-create-a-daysincurrentquarter-measure-in-the-dimdate-table" class="xliff"></a>
-
-#### Para criar uma medida de DaysInCurrentQuarter na tabela DimDate  
+#### <a name="to-create-a-daysincurrentquarter-measure-in-the-dimdate-table"></a>Para criar uma medida de DaysInCurrentQuarter na tabela DimDate  
   
 1.  Com a tabela **DimDate** ainda ativa no designer de modelo, na grelha de medidas, clique na célula vazia abaixo da medida que criou.  
   
@@ -82,9 +72,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
     Ao criar uma taxa de comparação entre um período incompleto e o período anterior. A fórmula deve calcular a proporção do período decorrido e compará-la à mesma proporção do período anterior. Nesse caso, [DaysCurrentQuarterToDate]/[DaysInCurrentQuarter] fornece a proporção decorrida no período atual.  
   
-<a id="to-create-an-internetdistinctcountsalesorder-measure-in-the-factinternetsales-table" class="xliff"></a>
-
-#### Para criar uma medida InternetDistinctCountSalesOrder na tabela FactInternetSales  
+#### <a name="to-create-an-internetdistinctcountsalesorder-measure-in-the-factinternetsales-table"></a>Para criar uma medida InternetDistinctCountSalesOrder na tabela FactInternetSales  
   
 1.  Clique a tabela **FactInternetSales**.   
   
@@ -99,9 +87,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
 4.  Na grelha de medidas, clique na nova medida e, em seguida, na janela **Propriedades**, no **Nome da medida**, mude o nome da medida para **InternetDistinctCountSalesOrder**. 
  
   
-<a id="to-create-additional-measures-in-the-factinternetsales-table" class="xliff"></a>
-
-#### Para criar medidas adicionais na tabela FactInternetSales  
+#### <a name="to-create-additional-measures-in-the-factinternetsales-table"></a>Para criar medidas adicionais na tabela FactInternetSales  
   
 1.  Através da funcionalidade AutoSum, crie e atribua um nome às seguintes medidas:  
 
@@ -144,9 +130,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 As medidas criadas para a tabela FactInternetSales podem ser usadas para analisar dados financeiros essenciais, como vendas, custos e margem de lucro para itens definidos pelo filtro selecionado pelo utilizador.  
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 7: Criar indicadores-chave de desempenho](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
 
   

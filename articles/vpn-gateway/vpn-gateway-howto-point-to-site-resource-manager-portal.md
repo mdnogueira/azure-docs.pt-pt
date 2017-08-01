@@ -23,9 +23,7 @@ ms.lasthandoff: 06/28/2017
 
 
 ---
-<a id="configure-a-point-to-site-connection-to-a-vnet-using-the-azure-portal" class="xliff"></a>
-
-# Configurar uma ligação Ponto a Site a uma VNet com o portal do Azure
+# <a name="configure-a-point-to-site-connection-to-a-vnet-using-the-azure-portal"></a>Configurar uma ligação Ponto a Site a uma VNet com o portal do Azure
 
 Este artigo mostra como criar uma VNet com uma ligação Ponto a Site no modelo de implementação Resource Manager com o portal do Azure. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
 
@@ -87,9 +85,7 @@ Antes de ligar a rede virtual a um gateway, primeiro tem de criar a sub-rede do 
 
 As capturas de ecrã nesta secção são fornecidas como um exemplo de referência. Certifique-se de que utiliza o intervalo de endereços GatewaySubnet correspondente aos valores necessários para a sua configuração.
 
-<a id="to-create-a-gateway-subnet" class="xliff"></a>
-
-### Para criar uma sub-rede do gateway
+### <a name="to-create-a-gateway-subnet"></a>Para criar uma sub-rede do gateway
 
 [!INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
 
@@ -106,9 +102,7 @@ As ligações ponto a site exigem as seguintes definições:
 * Tipo de gateway: VPN
 * Tipo de VPN: baseado na rota
 
-<a id="to-create-a-virtual-network-gateway" class="xliff"></a>
-
-### Para criar um gateway de rede virtual
+### <a name="to-create-a-virtual-network-gateway"></a>Para criar um gateway de rede virtual
 
 [!INCLUDE [create a vnet gateway](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
@@ -156,9 +150,7 @@ Para ligar a uma VNet com um VPN de Ponto a Site, cada cliente tem de instalar u
 
 Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador cliente, desde que a versão corresponda à arquitetura do cliente. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
 
-<a id="step-1---download-the-client-configuration-package" class="xliff"></a>
-
-### Passo 1 - transferir o pacote de configuração do cliente
+### <a name="step-1---download-the-client-configuration-package"></a>Passo 1 - transferir o pacote de configuração do cliente
 
 1. No painel **Configuração ponto a site**, clique em **Transferir cliente VPN** para abrir o painel **Transferir cliente VPN**. Demora um minuto ou dois para o pacote ser gerado.
 
@@ -167,9 +159,7 @@ Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador
 
   ![transferência do cliente VPN 2](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/vpnclient.png)
 
-<a id="step-2---install-the-client-configuration-package" class="xliff"></a>
-
-### Passo 2 - instalar o pacote de configuração do cliente
+### <a name="step-2---install-the-client-configuration-package"></a>Passo 2 - instalar o pacote de configuração do cliente
 
 1. Copie o ficheiro de configuração localmente para o computador que pretende ligar à rede virtual. 
 2. Faça duplo clique no ficheiro .exe para instalar o pacote no computador cliente. Como o pacote de configuração foi criado por si, o mesmo não está assinado, pelo que poderá ver um aviso. Se obtiver um pop-up SmartScreen do Windows, clique em **Mais informações** (no lado esquerdo) e, em seguida, em **Executar mesmo assim** para instalar o pacote.
@@ -225,15 +215,11 @@ Se estiver a ter problemas em ligar a uma máquina virtual através de P2S, util
 
 Pode adicionar e remover certificados de raiz fidedigna do Azure. Quando remove um certificado de raiz, os clientes que tenham um certificado gerado a partir dessa raiz não conseguirão autenticar-se e, por conseguinte, não conseguirão estabelecer ligação. Se quiser que um cliente faça a autenticação e estabeleça ligação, terá de instalar um novo certificado de cliente gerado a partir de um certificado de raiz considerado fidedigno (carregado) no Azure.
 
-<a id="to-add-a-trusted-root-certificate" class="xliff"></a>
-
-### Para adicionar um certificado de raiz fidedigna
+### <a name="to-add-a-trusted-root-certificate"></a>Para adicionar um certificado de raiz fidedigna
 
 Pode adicionar até 20 ficheiros .cer de certificado de raiz fidedigna ao Azure. Para obter instruções, veja a secção [Carregar um certificado de raiz fidedigna](#uploadfile) neste artigo.
 
-<a id="to-remove-a-trusted-root-certificate" class="xliff"></a>
-
-### Para remover um certificado de raiz fidedigna
+### <a name="to-remove-a-trusted-root-certificate"></a>Para remover um certificado de raiz fidedigna
 
 1. Para remover um certificado de raiz fidedigna, navegue para o painel **Configuração Ponto a Site** do gateway de rede virtual.
 2. Na secção **Certificado de raiz** do painel, localize o certificado que pretende remover.
@@ -245,9 +231,7 @@ Pode revogar certificados de cliente. A lista de revogação de certificado perm
 
 A prática comum é utilizar o certificado de raiz para gerir o acesso nos níveis de equipa ou organização e utilizar certificados de cliente revogados para controlo de acesso detalhado dos utilizadores individuais.
 
-<a id="to-revoke-a-client-certificate" class="xliff"></a>
-
-### Para revogar um certificado de cliente
+### <a name="to-revoke-a-client-certificate"></a>Para revogar um certificado de cliente
 
 Pode revogar um certificado de cliente, ao adicionar o thumbprint à lista de revogação.
 
@@ -263,8 +247,6 @@ Pode revogar um certificado de cliente, ao adicionar o thumbprint à lista de re
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-point-to-site-faq-include.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute). Para compreender melhor o funcionamento em rede e as máquinas virtuais, veja [Descrição geral da rede VM do Azure e Linux](../virtual-machines/linux/azure-vm-network-overview.md).
 

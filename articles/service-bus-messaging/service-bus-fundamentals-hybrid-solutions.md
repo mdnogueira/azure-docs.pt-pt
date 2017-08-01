@@ -22,15 +22,11 @@ ms.lasthandoff: 06/17/2017
 
 
 ---
-<a id="azure-service-bus" class="xliff"></a>
-
-# Service Bus do Azure
+# <a name="azure-service-bus"></a>Service Bus do Azure
 
 Se uma aplicação ou serviço é executado na nuvem ou de modo local, muitas vezes, tem de interagir com outros serviços ou aplicações. Para fornecer uma forma amplamente útil de efetuar este procedimento, o Microsoft Azure oferece o Service Bus. Este artigo analisa esta tecnologia, descreve o que é e por que razão poderá querer utilizá-la.
 
-<a id="service-bus-fundamentals" class="xliff"></a>
-
-## Noções básicas sobre o Service Bus
+## <a name="service-bus-fundamentals"></a>Noções básicas sobre o Service Bus
 
 Situações diferentes exigem estilos diferentes de comunicação. Por vezes, permitir às aplicações enviar e receber mensagens através de uma fila simples é a melhor solução. Noutras situações, uma fila comum não é suficiente e é melhor uma fila com um mecanismo de publicação e subscrição. Em alguns casos, o necessário é uma ligação entre as aplicações e não são precisas filas. O Service Bus fornece as três opções pelo que as suas aplicações podem interagir de várias maneiras diferentes.
 
@@ -52,9 +48,7 @@ Para utilizar qualquer um destes objetos no cenário de reencaminhamento, as apl
 
 É importante compreender que, apesar do Service Bus propriamente dito ser executado na nuvem (ou seja, nos datacenters de Azure da Microsoft), as aplicações que o utilizam podem ser executadas em qualquer lugar. Pode utilizar o Service Bus para ligar aplicações que se executam, por exemplo, no Azure, ou aplicações que se executam dentro do seu próprio datacenter. Também pode utilizá-lo para ligar uma aplicação em execução no Azure ou noutra plataforma na nuvem com uma aplicação no local ou com telemóveis e tablets. Também é possível ligar aparelhos domésticos, sensores e outros dispositivos a uma aplicação central ou entre si. O Service Bus é um mecanismo de comunicação na nuvem que é acessível em praticamente qualquer lugar. O modo como o utiliza depende do que tem de realizar a aplicação.
 
-<a id="queues" class="xliff"></a>
-
-## Filas
+## <a name="queues"></a>Filas
 
 Suponha que decide ligar duas aplicações com uma fila do Service Bus. A figura 2 ilustra esta situação.
 
@@ -78,9 +72,7 @@ Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entre
 
 As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações móveis. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
 
-<a id="topics" class="xliff"></a>
-
-## Tópicos
+## <a name="topics"></a>Tópicos
 
 Ainda que sejam úteis, as filas não sempre são a solução certa. Por vezes, os tópicos do Service Bus são melhores. A figura 3 ilustra a ideia.
 
@@ -96,9 +88,7 @@ Um *tópico* é semelhante em muitos aspetos a uma fila. Os remetentes submetem 
 
 Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de [ReceiveAndDelete ou de PeekLock](/dotnet/api/microsoft.servicebus.messaging.receivemode). No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
 
-<a id="relays" class="xliff"></a>
-
-## Reencaminhamentos
+## <a name="relays"></a>Reencaminhamentos
 
 Tanto as filas como os tópicos proporcionam comunicação assíncrona unidirecional através de um mediador. O tráfego flui numa única direção e não existe uma ligação direta entre os remetentes e os recetores. Mas e se não quiser esta ligação? Suponha que as suas aplicações precisam de enviar e receber mensagens ou talvez pretenda uma ligação direta entre elas e não precisa de um mediador para armazenar as mensagens. Para solucionar soluções como esta, o Service Bus proporciona *reencaminhamentos*, como mostra a Figura 4.
 
@@ -118,15 +108,11 @@ Ao contrário do que acontece com as filas e tópicos, as aplicações não cria
 
 Os reencaminhamentos são a solução certa quando precisa de comunicação direta entre aplicações. Por exemplo, imagine um sistema de reserva de uma companhia aérea que se executa num datacenter no local e que tem de ser acedido em quiosques de check-in, dispositivos móveis e outros computadores. As aplicações que se executam em todos estes sistemas poderiam depender dos reencaminhamentos do Service Bus na nuvem para comunicar, independentemente do local em que estão em execução.
 
-<a id="summary" class="xliff"></a>
-
-## Resumo
+## <a name="summary"></a>Resumo
 
 A ligação de aplicações sempre fez parte da criação de soluções completas e a variedade de cenários que precisam que as aplicações e os serviços comuniquem entre si aumentará logo que mais aplicações e dispositivos se liguem à Internet. Ao fornecer tecnologias baseadas na nuvem para comunicar através de filas, tópicos e reencaminhamentos, o Service Bus tem como objetivo tornar essa função essencial mais fácil de implementar e mais amplamente disponível.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Agora que aprendeu as noções básicas sobre o Service Bus do Azure, siga estas ligações para obter mais informação.
 

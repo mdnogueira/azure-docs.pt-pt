@@ -23,9 +23,7 @@ ms.lasthandoff: 06/03/2017
 
 ---
 
-<a id="lesson-2-get-data" class="xliff"></a>
-
-# Lição 2: Obter dados
+# <a name="lesson-2-get-data"></a>Lição 2: Obter dados
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -35,18 +33,12 @@ Através de Obter dados, pode importar dados de uma ampla variedade de origens: 
   
 Tempo estimado para concluir esta lição: **10 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 1: Criar um novo projeto de modelo de tabela](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md).  
   
-<a id="create-a-connection" class="xliff"></a>
-
-## Criar uma ligação  
+## <a name="create-a-connection"></a>Criar uma ligação  
   
-<a id="to-create-a-connection-to-the-adventureworksdw2014-database" class="xliff"></a>
-
-#### Para criar uma ligação à base de dados AdventureWorksDW2014  
+#### <a name="to-create-a-connection-to-the-adventureworksdw2014-database"></a>Para criar uma ligação à base de dados AdventureWorksDW2014  
   
 1.  No Explorador de modelos de tabela, clique com botão direito do rato em **Origens de dados** > **Importar a partir de origens de dados**.  
   
@@ -74,14 +66,10 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
 Depois de clicar em OK, é aberto o Editor de consultas. Na próxima secção, selecione somente os dados que pretende importar.
 
   
-<a id="filter-the-table-data" class="xliff"></a>
-
-## Filtrar os dados da tabela  
+## <a name="filter-the-table-data"></a>Filtrar os dados da tabela  
 AS tabelas na base de dados de exemplo AdventureWorksDW2014 possuem dados que é necessário incluir no seu modelo. Quando for possível, deverá filtrar os dados desnecessários para economizar espaço na memória usada pelo modelo. Irá filtrar algumas das colunas de tabelas para que não sejam importadas para a base de dados do espaço de trabalho ou para a base de dados do modelo após de este ter sido implementado. 
   
-<a id="to-filter-the-table-data-before-importing" class="xliff"></a>
-
-#### Para filtrar os dados da tabela antes de importar  
+#### <a name="to-filter-the-table-data-before-importing"></a>Para filtrar os dados da tabela antes de importar  
   
 1.  No Editor de consultas, selecione a tabela **DimCustomer**. É apresentada a tabela DimCustomer na origem de dados (a sua base de dados de exemplo AdventureWorksDWQ2014). 
   
@@ -151,9 +139,7 @@ AS tabelas na base de dados de exemplo AdventureWorksDW2014 possuem dados que é
 ## <a name="Import"></a>Importar os dados de coluna e as tabelas selecionadas  
 Agora que pré-visualizou e filtrou os dados desnecessários, pode importar os restante dos dados que pretende. O assistente importa os dados da tabela juntamente com as relações entre tabelas. Novas tabelas e colunas são criadas no modelo e não é possível importar os dados que filtrou.  
   
-<a id="to-import-the-selected-tables-and-column-data" class="xliff"></a>
-
-#### Para importar os dados de coluna e as tabelas selecionadas  
+#### <a name="to-import-the-selected-tables-and-column-data"></a>Para importar os dados de coluna e as tabelas selecionadas  
   
 1.  Examine as suas seleções. Se tudo estiver correto, clique em **Importar**. A caixa de diálogo de processamento de dados mostra o estado dos dados que estão a ser importados da origem de dados para a base de dados do eu espaço de trabalho.
   
@@ -162,20 +148,14 @@ Agora que pré-visualizou e filtrou os dados desnecessários, pode importar os r
 2.  Clique em **Fechar**.  
 
   
-<a id="save-your-model-project" class="xliff"></a>
-
-## Guardar o seu projeto de modelo  
+## <a name="save-your-model-project"></a>Guardar o seu projeto de modelo  
 É importante guardar frequentemente o seu projeto de modelo.  
   
-<a id="to-save-the-model-project" class="xliff"></a>
-
-#### Para guardar o seu projeto de modelo  
+#### <a name="to-save-the-model-project"></a>Para guardar o seu projeto de modelo  
   
 -   Clique em **Ficheiro** > **Guardar tudo**.  
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 3: Marcar como tabela de datas](../tutorials/aas-lesson-3-mark-as-date-table.md).
 
   

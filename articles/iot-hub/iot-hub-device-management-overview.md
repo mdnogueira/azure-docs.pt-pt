@@ -22,12 +22,8 @@ ms.lasthandoff: 05/31/2017
 
 
 ---
-<a id="overview-of-device-management-with-iot-hub" class="xliff"></a>
-
-# Descrição geral da gestão de dispositivos com o Hub IoT
-<a id="introduction" class="xliff"></a>
-
-## Introdução
+# <a name="overview-of-device-management-with-iot-hub"></a>Descrição geral da gestão de dispositivos com o Hub IoT
+## <a name="introduction"></a>Introdução
 O Hub IoT do Azure fornece as funcionalidades e um modelo de extensibilidade que permitem ao dispositivo e aos programadores de back-end criarem soluções de gestão de dispositivos robustas. Os dispositivos variam desde sensores restritos e microcontroladores com um objetivo único, a gateways poderosos que encaminham as comunicações para grupos de dispositivos.  Além disso, os casos de utilização e os requisitos para operadores de IoT variam significativamente entre os setores.  Apesar desta variação, a gestão de dispositivos com o Hub IoT fornece as capacidades, os padrões e as bibliotecas de código para atender um conjunto diverso de dispositivos e utilizadores finais.
 
 Uma parte fundamental da criação de uma solução de IoT empresarial bem-sucedida é fornecer uma estratégia para a forma como os operadores vão processar a gestão contínua da coleção de dispositivos. Os operadores de IoT requerem ferramentas simples e fiáveis e aplicações e que lhes permitam concentrar-se em aspetos mais estratégicos das funções deles. Este artigo fornece:
@@ -37,9 +33,7 @@ Uma parte fundamental da criação de uma solução de IoT empresarial bem-suced
 * Uma descrição do ciclo de vida do dispositivo.
 * Uma descrição geral dos padrões de gestão de dispositivos comuns.
 
-<a id="device-management-principles" class="xliff"></a>
-
-## Princípios da gestão de dispositivos
+## <a name="device-management-principles"></a>Princípios da gestão de dispositivos
 O IoT inclui uma série de desafios de gestão de dispositivos únicos e qualquer solução de classe empresarial tem de abordar os seguintes princípios:
 
 ![Gráfico dos princípios da gestão de dispositivos][img-dm_principles]
@@ -53,9 +47,7 @@ O IoT inclui uma série de desafios de gestão de dispositivos únicos e qualque
     * Geolocalização de dispositivos
 * **Dar assistência a muitas funções**: o suporte para os fluxos de trabalho e os processos exclusivos das funções de operações de IoT é crucial. A equipa de operações tem de trabalhar em harmonia com as restrições dadas de departamentos de TI internos.  Ela também tem de encontrar formas sustentáveis de fornecer informações de operações de dispositivos em tempo real a supervisores e outras funções de gestão empresarial.
 
-<a id="device-lifecycle" class="xliff"></a>
-
-## Ciclo de vida dos dispositivos
+## <a name="device-lifecycle"></a>Ciclo de vida dos dispositivos
 Existe um conjunto de fases de gestão de dispositivos geral que são comuns a todos os projetos de IoT empresarial. No Azure IoT, existem cinco fases do ciclo de vida dos dispositivos:
 
 ![As cinco fases do ciclo de vida de dispositivos do Azure IoT: planear, aprovisionar, configurar, monitorizar, extinguir][img-device_lifecycle]
@@ -78,9 +70,7 @@ Dentro de cada uma destas cinco fases, existem vários requisitos de operador de
   
     *Leitura adicional*: [Como utilizar as propriedades dos dispositivos duplos][lnk-twin-properties], [Gerir identidades dos dispositivos][lnk-identity-registry].
 
-<a id="device-management-patterns" class="xliff"></a>
-
-## Padrões da gestão de dispositivos
+## <a name="device-management-patterns"></a>Padrões da gestão de dispositivos
 O Hub IoT permite o conjunto de padrões de gestão de dispositivos seguinte.  Os [tutoriais da gestão de dispositivos][lnk-get-started] mostram-lhe mais detalhadamente como pode expandir estes padrões para se ajustarem ao seu cenário exato e como desenhar novos padrões com base nestes modelos de núcleo.
 
 * **Reiniciar** - a aplicação de back-end informa o dispositivo, através de um método que iniciou um reinício.  O dispositivo utiliza as propriedades reportadas no para atualizar o respetivo estado de reinício.
@@ -99,9 +89,7 @@ O Hub IoT permite o conjunto de padrões de gestão de dispositivos seguinte.  O
   
     ![Gráfico do padrão de estado e progresso dos relatórios de gestão de dispositivos][img-report_progress_pattern]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 As capacidades, padrões e bibliotecas de código que o Hub IoT fornece para gestão de dispositivos permitem criar aplicações IoT que satisfazem os requisitos do operador de IoT empresarial em cada fase do ciclo de vida do dispositivo.
 
 Para continuar a saber mais sobre as funcionalidades de gestão de dispositivos no Hub IoT, veja o tutorial [Get started with device management (Introdução à gestão de dispositivos)][lnk-get-started].

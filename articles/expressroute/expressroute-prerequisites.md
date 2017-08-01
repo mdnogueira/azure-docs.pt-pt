@@ -22,38 +22,28 @@ ms.lasthandoff: 07/04/2017
 
 
 ---
-<a id="expressroute-prerequisites--checklist" class="xliff"></a>
-
-# Pré-requisitos e lista de verificação do ExpressRoute
+# <a name="expressroute-prerequisites--checklist"></a>Pré-requisitos e lista de verificação do ExpressRoute
 Para ligar a serviços cloud da Microsoft com o ExpressRoute, terá de verificar se foram cumpridos os seguintes requisitos listados nas secções abaixo.
 
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
-<a id="azure-account" class="xliff"></a>
-
-## Conta do Azure
+## <a name="azure-account"></a>Conta do Azure
 * Uma conta ativa do Microsoft Azure. Esta conta é necessária para configurar o circuito do ExpressRoute. Os circuitos do ExpressRoute são recursos incluídos nas subscrições do Azure. Uma subscrição do Azure é um requisito, mesmo se a conectividade estiver limitada a serviços cloud não pertencentes ao Microsoft Azure, como serviços do Office 365 e do Dynamics 365.
 * Uma subscrição ativa do Office 365 (se utilizar os serviços do Office 365). Para obter mais informações, consulte a secção [Requisitos específicos do Office 365](#office-365-specific-requirements) deste artigo.
 
-<a id="connectivity-provider" class="xliff"></a>
-
-## Fornecedor de conectividade
+## <a name="connectivity-provider"></a>Fornecedor de conectividade
 
 * Pode trabalhar com um [Parceiro de conectividade do ExpressRoute](expressroute-locations.md#partners) para se ligar à nuvem da Microsoft. Pode configurar uma ligação entre a sua rede no local e a Microsoft de [três modos](expressroute-introduction.md).
 * Se o seu fornecedor não for um parceiro de conectividade do ExpressRoute, ainda pode ligar-se à nuvem da Microsoft através de um [fornecedor do Exchange na nuvem](expressroute-locations.md#connectivity-through-exchange-providers).
 
-<a id="network-requirements" class="xliff"></a>
-
-## Requisitos da rede
+## <a name="network-requirements"></a>Requisitos da rede
 * **Conectividade redundante**: não é necessário haver redundância na conectividade física entre o utilizador e o fornecedor. A Microsoft exige a configuração de sessões de BGP redundantes entre routers da Microsoft e routers de peering, mesmo se tiver apenas [uma ligação física a um Exchange de nuvem](expressroute-faqs.md#onep2plink).
 * **Encaminhamento**: dependendo do modo como se liga ao Microsoft Cloud, o utilizador ou o fornecedor precisa de configurar e gerir as sessões de BGP para [domínios de encaminhamento](expressroute-circuit-peerings.md). Alguns fornecedores de conectividade Ethernet ou fornecedores do Exchange na nuvem poderão oferecer gestão de BGP como um serviço de valor acrescentado.
 * **NAT**: a Microsoft só aceita endereços IP públicos através do peering da Microsoft. Se estiver a utilizar endereços IP privados na rede no local, o utilizador ou o fornecedor precisará de converter os endereços IP privados em endereços IP públicos [com o NAT](expressroute-nat.md).
 * **QoS**: o Skype para Empresas tem vários serviços (por exemplo, voz, vídeo, texto) que exigem um tratamento QoS diferenciado. O utilizador e o fornecedor devem cumprir os [Requisitos de QoS](expressroute-qos.md).
 * **Segurança de Rede**: tenha em conta a [segurança de rede](../best-practices-network-security.md) ao ligar à Microsoft Cloud através do ExpressRoute.
 
-<a id="office-365" class="xliff"></a>
-
-## Office 365
+## <a name="office-365"></a>Office 365
 Se planear ativar o Office 365 no ExpressRoute, reveja os seguintes documentos para obter mais informações acerca dos requisitos do Office 365.
 
 * [Descrição geral do ExpressRoute para o Office 365](https://support.office.com/en-us/article/Azure-ExpressRoute-for-Office-365-6d2534a2-c19c-4a99-be5e-33a0cee5d3bd)
@@ -64,17 +54,13 @@ Se planear ativar o Office 365 no ExpressRoute, reveja os seguintes documentos p
 * [Integração do Office 365 com ambientes no local](https://support.office.com/en-us/article/Office-365-integration-with-on-premises-environments-263faf8d-aa21-428b-aed3-2021837a4b65)
 * [Vídeos de formação de avançada do ExpressRoute no Office 365](https://channel9.msdn.com/series/aer/)
 
-<a id="dynamics-365" class="xliff"></a>
-
-## Dynamics 365
+## <a name="dynamics-365"></a>Dynamics 365
 Se planear ativar o Dynamics 365 no ExpressRoute, reveja os seguintes documentos para obter mais informações acerca do Dynamics 365
 
 * [Documento técnico do Dynamics 365 e ExpressRoute](http://download.microsoft.com/download/B/2/8/B2896B38-9832-417B-9836-9EF240C0A212/Microsoft%20Dynamics%20365%20and%20ExpressRoute.pdf)
 * [URL](https://support.microsoft.com/kb/2655102) e [intervalos de endereços de IP do Dynamics 365](https://support.microsoft.com/kb/2728473)
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Para obter mais informações acerca do ExpressRoute, veja as [FAQs do ExpressRoute](expressroute-faqs.md).
 * Localizar um fornecedor de conectividade do ExpressRoute. Veja [Parceiros e localizações de peering do ExpressRoute ](expressroute-locations.md).
 * Veja os requisitos de [Encaminhamento](expressroute-routing.md), [NAT](expressroute-nat.md) e [QoS](expressroute-qos.md).

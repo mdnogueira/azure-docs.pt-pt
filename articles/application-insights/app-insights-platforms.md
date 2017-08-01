@@ -21,30 +21,22 @@ ms.lasthandoff: 05/23/2017
 
 
 ---
-<a id="developer-analytics-languages-platforms-and-integrations" class="xliff"></a>
-
-# Análise do programador: idiomas, plataformas e integrações
+# <a name="developer-analytics-languages-platforms-and-integrations"></a>Análise do programador: idiomas, plataformas e integrações
 Estes itens são implementações do [Application Insights](app-insights-overview.md) que já conhecemos, incluindo alguns de terceiros.
 
-<a id="languages---officially-supported-by-application-insights-team" class="xliff"></a>
-
-## Idiomas - oficialmente suportados pela equipa do Application Insights
+## <a name="languages---officially-supported-by-application-insights-team"></a>Idiomas - oficialmente suportados pela equipa do Application Insights
 * [C#|VB (.NET)](app-insights-asp-net.md)
 * [Java](app-insights-java-get-started.md)
 * [Páginas Web JavaScript](app-insights-javascript.md)
 
-<a id="languages---community-supported" class="xliff"></a>
-
-## Idiomas - com suporte da comunidade
+## <a name="languages---community-supported"></a>Idiomas - com suporte da comunidade
 * [Node.JS](https://github.com/Microsoft/ApplicationInsights-node.js)
 * [PHP](https://github.com/Microsoft/ApplicationInsights-PHP)
 * [python](https://pypi.python.org/pypi/applicationinsights/0.1.0)
 * [Ruby](https://rubygems.org/gems/application_insights)
 * [Tudo o resto](#projects)
 
-<a id="platforms-and-frameworks" class="xliff"></a>
-
-## Plataformas e estruturas
+## <a name="platforms-and-frameworks"></a>Plataformas e estruturas
 * [Angular](https://www.npmjs.com/package/angular-applicationinsights)
 * [ASP.NET](app-insights-asp-net.md)
 * [ASP.NET – para aplicações que já estão em direto](app-insights-monitor-performance-live-website-now.md)
@@ -69,9 +61,7 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [Aplicações de ambiente de trabalho, serviços e funções de trabalho do Windows](app-insights-windows-desktop.md)
 * [Tudo o resto](#projects)
 
-<a id="logging-frameworks" class="xliff"></a>
-
-## Arquiteturas de registo
+## <a name="logging-frameworks"></a>Arquiteturas de registo
 * [Log4Net, NLog ou System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 * [Java, Log4J ou Logback](app-insights-java-trace-logs.md)
 * [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) -integra-se no [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
@@ -80,9 +70,7 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)
 * [Logary](https://www.nuget.org/packages/Logary.Targets.AppInsights/)
 
-<a id="content-management-systems" class="xliff"></a>
-
-## Sistemas de Gestão de Conteúdo
+## <a name="content-management-systems"></a>Sistemas de Gestão de Conteúdo
 * [Concrete](https://github.com/fidmor89/appInsights-Concrete)
 * [Drupal](https://github.com/fidmor89/AppInsights-Drupal)
 * [Joomla](https://github.com/fidmor89/AppInsights-Joomla)
@@ -90,9 +78,7 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [SharePoint](app-insights-sharepoint.md)
 * [WordPress](https://wordpress.org/plugins/application-insights/)
 
-<a id="export-and-data-analysis" class="xliff"></a>
-
-## Análise de Dados e Exportação
+## <a name="export-and-data-analysis"></a>Análise de Dados e Exportação
 * [Alooma](https://www.alooma.com/blog/application-insights-amazon-redshift)
 * [Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Stream Analytics](app-insights-export-power-bi.md)

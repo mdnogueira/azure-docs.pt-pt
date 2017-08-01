@@ -24,9 +24,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/07/2017
 
 ---
-<a id="create-a-private-docker-container-registry-using-the-azure-cli-20" class="xliff"></a>
-
-# Criar um registo privado de contentor Docker com a CLI 2.0 do Azure
+# <a name="create-a-private-docker-container-registry-using-the-azure-cli-20"></a>Criar um registo privado de contentor Docker com a CLI 2.0 do Azure
 Utilize os comandos da [CLI do Azure 2.0](https://github.com/Azure/azure-cli) para criar um registo de contentores e gerir as respetivas definições a partir do seu computador Linux, Mac ou Windows. Também pode criar e gerir registos de contentores com o [portal do Azure](container-registry-get-started-portal.md) ou programaticamente com a [API REST](https://go.microsoft.com/fwlink/p/?linkid=834376) do Registo de Contentores.
 
 
@@ -34,17 +32,13 @@ Utilize os comandos da [CLI do Azure 2.0](https://github.com/Azure/azure-cli) pa
 * Para obter ajuda com os comandos da CLI do Registo de Contentores (comandos `az acr`), transmita o parâmetro `-h` a cada comando.
 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 * **CLI 2.0 do Azure**: para instalar e começar a trabalhar com a CLI 2.0, veja as [instruções de instalação](/cli/azure/install-azure-cli). Execute `az login` para iniciar sessão na sua subscrição do Azure. Para obter mais informações, veja [Introdução à CLI 2.0](/cli/azure/get-started-with-azure-cli).
 * **Grupo de recursos**: crie um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) antes de criar um registo de contentores ou utilize um grupo de recursos existente. Confirme que o grupo de recursos está numa localização na qual o serviço do Registo de Contentores esteja [disponível](https://azure.microsoft.com/regions/services/). Para criar um grupo de recursos com a CLI 2.0, veja [a referência da CLI 2.0](/cli/azure/group).
 * **Conta de armazenamento** (opcional): crie uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure para colocar o registo de contentores na mesma localização. Se não especificar uma conta de armazenamento quando criar um registo com `az acr create`, o comando cria uma por si. Para criar uma conta de armazenamento com a CLI 2.0, veja [a referência da CLI 2.0](/cli/azure/storage/account). Atualmente, não há suporte para o Armazenamento Premium.
 * **Principal de serviço** (opcional): quando cria um registo com a CLI, este não está configurado para acesso, por predefinição. Consoante as suas necessidades, pode atribuir um principal de serviço existente do Azure Active Directory a um registo (ou criar e atribuir um novo) ou ativar a conta de utilizador administrador do registo. Veja as secções posteriores deste artigo. Para obter mais informações sobre o acesso ao registo, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
 
-<a id="create-a-container-registry" class="xliff"></a>
-
-## Criar um registo de contentores
+## <a name="create-a-container-registry"></a>Criar um registo de contentores
 Execute o comando `az acr create` para criar um registo de contentores.
 
 > [!TIP]
@@ -91,14 +85,10 @@ Tome especial atenção:
 * `id` - é identificador do registo na sua subscrição, do qual precisa se quiser atribuir um principal de serviço.
 * `loginServer` - o nome completamente qualificado que especificou para [iniciar sessão no registo](container-registry-authentication.md). Neste exemplo, o nome é `myregistry1.exp.azurecr.io` (em minúsculas).
 
-<a id="assign-a-service-principal" class="xliff"></a>
-
-## Atribuir um principal de serviço
+## <a name="assign-a-service-principal"></a>Atribuir um principal de serviço
 Utilize os comandos da CLI 2.0 para atribuir um principal de serviço do Azure Active Directory a um registo. É atribuída a função Proprietário ao principal de serviço destes exemplos, mas pode atribuir [outras funções](../active-directory/role-based-access-control-configure.md), se assim entender.
 
-<a id="create-a-service-principal-and-assign-access-to-the-registry" class="xliff"></a>
-
-### Criar um principal de serviço e atribuir acesso ao registo
+### <a name="create-a-service-principal-and-assign-access-to-the-registry"></a>Criar um principal de serviço e atribuir acesso ao registo
 No comando seguinte, é atribuído a um principal de serviço novo o acesso de função Proprietário ao identificador do registo transmitido com o parâmetro `--scopes`. Especifique uma palavra-passe forte com o parâmetro `--password`.
 
 ```azurecli
@@ -107,9 +97,7 @@ az ad sp create-for-rbac --scopes /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxx
 
 
 
-<a id="assign-an-existing-service-principal" class="xliff"></a>
-
-### Atribuir um principal de serviço existente
+### <a name="assign-an-existing-service-principal"></a>Atribuir um principal de serviço existente
 Se já tiver um principal de serviço e quiser atribuir-lhe o acesso de função Proprietário ao registo, execute um comando semelhante ao exemplo seguinte. O ID de aplicação do principal de serviço é transmitido com o parâmetro `--assignee`:
 
 ```azurecli
@@ -118,61 +106,45 @@ az role assignment create --scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxx
 
 
 
-<a id="manage-admin-credentials" class="xliff"></a>
-
-## Gerir credenciais de administrador
+## <a name="manage-admin-credentials"></a>Gerir credenciais de administrador
 É criada automaticamente uma conta de administrador para cada registo de contentores, que está desativada por predefinição. Os exemplos seguintes mostram comandos da CLI `az acr` para gerir as credenciais de administrador do registo de contentores.
 
-<a id="obtain-admin-user-credentials" class="xliff"></a>
-
-### Obter as credenciais de utilizador administrador
+### <a name="obtain-admin-user-credentials"></a>Obter as credenciais de utilizador administrador
 ```azurecli
 az acr credential show -n myRegistry1
 ```
 
-<a id="enable-admin-user-for-an-existing-registry" class="xliff"></a>
-
-### Ativar o utilizador administrador num registo existente
+### <a name="enable-admin-user-for-an-existing-registry"></a>Ativar o utilizador administrador num registo existente
 ```azurecli
 az acr update -n myRegistry1 --admin-enabled true
 ```
 
-<a id="disable-admin-user-for-an-existing-registry" class="xliff"></a>
-
-### Desativar o utilizador administrador num registo existente
+### <a name="disable-admin-user-for-an-existing-registry"></a>Desativar o utilizador administrador num registo existente
 ```azurecli
 az acr update -n myRegistry1 --admin-enabled false
 ```
 
-<a id="list-images-and-tags" class="xliff"></a>
-
-## Listar imagens e etiquetas
+## <a name="list-images-and-tags"></a>Listar imagens e etiquetas
 Utilize os comandos da CLI `az acr` para consultar as imagens e etiquetas num repositório.
 
 > [!NOTE]
 > Atualmente, o Registo de Contentores não suporta o comando `docker search` para consultar imagens e etiquetas.
 
 
-<a id="list-repositories" class="xliff"></a>
-
-### Listar repositórios
+### <a name="list-repositories"></a>Listar repositórios
 Os exemplos seguintes listam os repositórios num registo, no formato JSON (JavaScript Object Notation):
 
 ```azurecli
 az acr repository list -n myRegistry1 -o json
 ```
 
-<a id="list-tags" class="xliff"></a>
-
-### Listar etiquetas
+### <a name="list-tags"></a>Listar etiquetas
 O exemplo seguinte lista as etiquetas no repositório **samples/nginx**, no formato JSON:
 
 ```azurecli
 az acr repository show-tags -n myRegistry1 --repository samples/nginx -o json
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Push your first image using the Docker CLI (Enviar a sua primeira imagem com a CLI do Docker)](container-registry-get-started-docker-cli.md)
 

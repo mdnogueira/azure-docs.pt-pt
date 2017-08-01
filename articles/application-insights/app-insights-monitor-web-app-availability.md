@@ -21,9 +21,7 @@ ms.lasthandoff: 05/26/2017
 
 
 ---
-<a id="monitor-availability-and-responsiveness-of-any-web-site" class="xliff"></a>
-
-# Monitorizar a disponibilidade e a capacidade de resposta de qualquer site
+# <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Monitorizar a disponibilidade e a capacidade de resposta de qualquer site
 Depois de implementar a aplicação Web ou o Web site em qualquer servidor, pode configurar testes para monitorizar a respetiva disponibilidade e capacidade de resposta. O [Azure Application Insights](app-insights-overview.md) envia regularmente pedidos Web para a sua aplicação a partir de pontos em todo o mundo. Este ferramenta alerta-o se a aplicação não responder ou responder lentamente.
 
 Pode configurar testes de disponibilidade para qualquer ponto final HTTP ou HTTPS que seja acessível a partir da Internet pública. Não tem de adicionar nada ao Web site que está a testar. Nem sequer tem de estar no seu site. Pode testar um serviço de API REST do qual dependa.
@@ -68,9 +66,7 @@ Abra o painel Disponibilidade e adicione um teste.
 
     Pode configurar um [webhook](../monitoring-and-diagnostics/insights-webhooks-alerts.md) que será chamado sempre que for gerado um alerta. (Mas tenha em atenção que, atualmente, os parâmetros de consulta não são submetidos como Propriedades.)
 
-<a id="test-more-urls" class="xliff"></a>
-
-### Testar mais URLs
+### <a name="test-more-urls"></a>Testar mais URLs
 Adicionar mais testes. Por exemplo, para além de poder testar a sua home page, pode testar o URL de uma pesquisa para verificar se a sua base de dados está em execução.
 
 
@@ -117,9 +113,7 @@ A partir de um resultado de teste de disponibilidade, pode:
 
 *Não existem itens relacionados?* Se tiver o Application Insights configurado para a sua aplicação do lado do servidor, poderá dever-se ao facto de a [amostragem](app-insights-sampling.md) estar em curso. 
 
-<a id="multi-step-web-tests" class="xliff"></a>
-
-## Testes Web com vários passos
+## <a name="multi-step-web-tests"></a>Testes Web com vários passos
 Pode monitorizar um cenário que envolva uma sequência de URLs. Por exemplo, se estiver a monitorizar um site de vendas, pode testar se a adição de artigos no carrinho de compras funciona corretamente.
 
 > [!NOTE] 
@@ -132,9 +126,7 @@ Para criar um teste com vários passos, registe o cenário com o Visual Studio E
 > Não pode utilizar funções codificadas ou ciclos no seus testes. O teste tem de estar contido completamente no script .webtest. No entanto, pode utilizar plug-ins standard.
 >
 
-<a id="1-record-a-scenario" class="xliff"></a>
-
-#### 1. Registar um cenário
+#### <a name="1-record-a-scenario"></a>1. Registar um cenário
 Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
 1. Crie um projeto de teste de desempenho da Web.
@@ -163,9 +155,7 @@ Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
     ![No Visual Studio, abra o ficheiro .webtest e clique em Executar.](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
 
-<a id="2-upload-the-web-test-to-application-insights" class="xliff"></a>
-
-#### 2. Carregar o teste Web no Application Insights
+#### <a name="2-upload-the-web-test-to-application-insights"></a>2. Carregar o teste Web no Application Insights
 1. No portal do Application Insights, crie um teste novo.
 
     ![No painel de testes Web, selecione Adicionar.](./media/app-insights-monitor-web-app-availability/16-another-test.png)
@@ -175,17 +165,13 @@ Utilize o Visual Studio Enterprise para guardar uma sessão Web.
 
     Defina as localizações do teste, a frequência e os parâmetros de alerta da mesma forma como para os testes de ping.
 
-<a id="3-see-the-results" class="xliff"></a>
-
-#### 3. Veja os resultados
+#### <a name="3-see-the-results"></a>3. Veja os resultados
 
 Veja os resultados do teste e as eventuais falhas da mesma forma que os testes com URL único.
 
 Além disso, pode transferir os resultados do teste para visualizá-los no Visual Studio.
 
-<a id="too-many-failures" class="xliff"></a>
-
-#### Tem demasiadas falhas?
+#### <a name="too-many-failures"></a>Tem demasiadas falhas?
 
 * Um teste demasiado demorado é um motivo comum de falha. Não pode levar mais do dois minutos.
 
@@ -193,9 +179,7 @@ Além disso, pode transferir os resultados do teste para visualizá-los no Visua
 
 * O teste Web deve estar completamente contido no script .webtest: não pode utilizar funções codificadas no teste.
 
-<a id="plugging-time-and-random-numbers-into-your-multi-step-test" class="xliff"></a>
-
-### Ligar a hora e números aleatórios ao teste com vários passos
+### <a name="plugging-time-and-random-numbers-into-your-multi-step-test"></a>Ligar a hora e números aleatórios ao teste com vários passos
 Suponhamos que está a testar uma ferramenta que obtém dados dependentes da hora, tais como stocks de um feed externo. Ao gravar o teste Web, tem de utilizar horas específicas, embora sejam definidas como parâmetros do teste, StartTime e EndTime.
 
 ![Um teste Web com parâmetros.](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-parameters.png)
@@ -218,26 +202,18 @@ Os Plug-ins de Teste Web permitem-lhe parametrizar tempos.
 
 Agora, carregue o teste no portal. Os valores dinâmicos são utilizados sempre que o teste for executado.
 
-<a id="dealing-with-sign-in" class="xliff"></a>
-
-## Lidar com início de sessão
+## <a name="dealing-with-sign-in"></a>Lidar com início de sessão
 Se os seus utilizadores iniciarem sessão na sua aplicação, terá várias opções para simular o início de sessão, de modo a poder testar páginas depois do início de sessão. A abordagem que utiliza depende do tipo de segurança fornecida pela aplicação.
 
 Em todos os casos, deve criar uma conta na sua aplicação apenas para efeitos de teste. Se possível, restrinja as permissões da conta neste teste, para que não haja nenhuma possibilidade de os testes Web afetarem os utilizadores reais.
 
-<a id="simple-username-and-password" class="xliff"></a>
-
-### Nome de utilizador e palavra-passe simples
+### <a name="simple-username-and-password"></a>Nome de utilizador e palavra-passe simples
 Grave um teste Web como habitualmente. Elimine primeiro os cookies.
 
-<a id="saml-authentication" class="xliff"></a>
-
-### Autenticação SAML
+### <a name="saml-authentication"></a>Autenticação SAML
 Utilize o plug-in SAML disponível para testes Web.
 
-<a id="client-secret" class="xliff"></a>
-
-### Segredo do cliente
+### <a name="client-secret"></a>Segredo do cliente
 Se a sua aplicação tiver uma rota de início de sessão que envolva um segredo do cliente, utilize-a. O Azure Active Directory (AAD) é um exemplo de um serviço que fornece um início de sessão com segredo do cliente. No AAD, o segredo do cliente é a Chave da Aplicação.
 
 Eis um exemplo de teste Web de uma aplicação Web do Azure com uma chave de aplicação:
@@ -250,9 +226,7 @@ Eis um exemplo de teste Web de uma aplicação Web do Azure com uma chave de apl
 
 Certifique-se de que o teste Web é um cliente real: ou seja, tem a sua própria aplicação no AAD - e utilize o clientId + appkey. O serviço em teste tem também a sua própria aplicação no AAD: o URI appID desta aplicação é refletido no teste Web no campo “recurso”.
 
-<a id="open-authentication" class="xliff"></a>
-
-### Autenticação Aberta
+### <a name="open-authentication"></a>Autenticação Aberta
 Um exemplo de Autenticação Aberta é iniciar sessão com a conta Microsoft ou Google. Muitas aplicações que utilizam a OAuth fornecem uma alternativa ao segredo do cliente. Por isso, a primeira tática deve ser investigar essa possibilidade.
 
 Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
@@ -265,9 +239,7 @@ Se o teste tiver de iniciar sessão com a OAuth, a abordagem geral será:
   (O Visual Studio tenta parametrizar o teste, mas não parametriza corretamente os tokens.)
 
 
-<a id="performance-tests" class="xliff"></a>
-
-## Testes de desempenho
+## <a name="performance-tests"></a>Testes de desempenho
 Pode executar um teste de carga no seu Website. Como o teste de disponibilidade, pode enviar pedidos simples ou pedidos com vários passos a partir dos nossos pontos a nível mundial. Ao contrário de um teste de disponibilidade, são enviados muitos pedidos, simulando vários utilizadores em simultâneo.
 
 No painel Descrição geral, abra **Definições**, **Testes de desempenho**. Quando cria um teste, recebe um convite para ligar ou criar uma conta dos Serviços da Equipa do Visual Studio.
@@ -281,9 +253,7 @@ Quando o teste estiver concluído, são-lhe apresentados tempos de resposta e ta
 > Para observar os efeitos de um teste de desempenho, utilize o [Live Stream](app-insights-live-stream.md) e o [Gerador de perfis](app-insights-profiler.md).
 >
 
-<a id="automation" class="xliff"></a>
-
-## Automatização
+## <a name="automation"></a>Automatização
 * [Utilize scripts do PowerShell para configurar um teste de disponibilidade](app-insights-powershell.md#add-an-availability-test) automaticamente.
 * Configure um [webhook](../monitoring-and-diagnostics/insights-webhooks-alerts.md) que será chamado sempre que for gerado um alerta.
 

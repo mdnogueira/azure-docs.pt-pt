@@ -22,18 +22,14 @@ ms.lasthandoff: 06/01/2017
 
 
 ---
-<a id="filter-network-traffic-with-network-security-groups" class="xliff"></a>
-
-# Filtrar o tráfego de rede com grupos de segurança de rede
+# <a name="filter-network-traffic-with-network-security-groups"></a>Filtrar o tráfego de rede com grupos de segurança de rede
 
 Os grupos de segurança de rede (NSG) contêm uma lista de regras de segurança que permitem ou negam o tráfego de rede para recursos ligados a Redes Virtuais do Azure (VNet). Os NSGs podem ser associados a sub-redes, VMs individuais (clássicas) ou a interfaces de rede individuais (NIC) ligadas a VMs (Resource Manager). Quando um NSG é associado a uma sub-rede, as regras são aplicadas a todos os recursos ligados à mesma. É possível restringir ainda mais o tráfego ao associar também um NSG a uma VM ou a uma NIC.
 
 > [!NOTE]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com os recursos: [Resource Manager e clássico](../resource-manager-deployment-model.md). Este artigo inclui os dois modelos, mas a Microsoft recomenda que a maioria das implementações novas utilizem o modelo Resource Manager.
 
-<a id="nsg-resource" class="xliff"></a>
-
-## Recurso NSG
+## <a name="nsg-resource"></a>Recurso NSG
 Os NSGs contêm as propriedades seguintes:
 
 | Propriedade | Descrição | Restrições | Considerações |
@@ -47,9 +43,7 @@ Os NSGs contêm as propriedades seguintes:
 > As ACLs baseadas em ponto final e os grupos de segurança de rede não são suportados na mesma instância de VM. Se pretender utilizar um NSG e ter uma ACL de ponto final já implementada, remova primeiro a ACL de ponto final. Para saber como remover uma ACL, leia o artigo [Managing Access Control Lists (ACLs) for Endpoints by using PowerShell](virtual-networks-acl-powershell.md) (Utilizar o PowerShell para Gerir Listas de Controlo de Acesso [ACLs] para Pontos Finais).
 > 
 
-<a id="nsg-rules" class="xliff"></a>
-
-### Regras do NSG
+### <a name="nsg-rules"></a>Regras do NSG
 As regras do NSG contêm as seguintes propriedades:
 
 | Propriedade | Descrição | Restrições | Considerações |
@@ -70,18 +64,14 @@ Os NSGs contêm dois conjuntos de regras: de entrada e de saída. A prioridade p
 
 A figura anterior mostra como as regras do NSG são processadas.
 
-<a id="default-tags" class="xliff"></a>
-
-### Etiquetas Predefinidas
+### <a name="default-tags"></a>Etiquetas Predefinidas
 Etiquetas predefinidas são identificadores fornecidos pelo sistema para abordar uma categoria de endereços IP. Pode utilizar etiquetas predefinidas nas propriedades **prefixo do endereço de origem** e **prefixo do endereço de destino** de qualquer regra. Existem três etiquetas predefinidas que pode utilizar:
 
 * **Rede Virtual** (Resource Manager) (**VIRTUAL_NETWORK** para clássica): esta etiqueta inclui o espaço de endereços da rede virtual (intervalos CIDR definidos no Azure), todos os espaços de endereços no local ligados e as VNets do Azure ligadas (redes locais).
 * **AzureLoadBalancer** (Resource Manager) (**AZURE_LOADBALANCER** par clássica): esta etiqueta denota o balanceador de carga da infraestrutura do Azure. A etiqueta traduz-se num IP de datacenter do Azure onde as sondas de estado de funcionamento do Azure têm origem.
 * **Internet** (Resource Manager) (**INTERNET** para clássica): esta etiqueta denota o espaço de endereços IP que está fora da rede virtual e acessível pela Internet pública. O intervalo inclui o [espaço de IP público pertencente ao Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
-<a id="default-rules" class="xliff"></a>
-
-### Regras predefinidas
+### <a name="default-rules"></a>Regras predefinidas
 Todos os NSGs contêm um conjunto de regras predefinidas. As regras predefinidas não podem ser eliminadas, mas como lhes é atribuída a prioridade mais baixa, podem ser substituídas pelas regras que criar. 
 
 As regras predefinidas permitem e recusam o tráfego da seguinte forma:
@@ -105,9 +95,7 @@ As regras predefinidas permitem e recusam o tráfego da seguinte forma:
 | AllowInternetOutBound | 65001 | * | * | Internet | * | * | Permitir |
 | DenyAllOutBound | 65500 | * | * | * | * | * | Negar |
 
-<a id="associating-nsgs" class="xliff"></a>
-
-## Associar NSGs
+## <a name="associating-nsgs"></a>Associar NSGs
 Pode associar um NSG a VMs, NICs e sub-redes, dependendo do modelo de implementação que estiver a utilizar, da seguinte forma:
 
 * **VM (apenas clássica):** as regras de segurança são aplicadas a todo o tráfego para/da VM. 
@@ -132,9 +120,7 @@ Pode associar NSGs diferentes a uma VM (ou NIC, consoante o modelo de implementa
 > Embora só possa associar um único NSG a uma sub-rede, VM ou NIC, pode associar o mesmo NSG à quantidade de recursos que pretender.
 >
 
-<a id="implementation" class="xliff"></a>
-
-## Implementação
+## <a name="implementation"></a>Implementação
 Pode utilizar as ferramentas abaixo para implementar NSGs nos modelos de implementação Resource Manager ou clássica:
 
 | Ferramenta de implementação | Clássica | Resource Manager |
@@ -145,9 +131,7 @@ Pode utilizar as ferramentas abaixo para implementar NSGs nos modelos de impleme
 | CLI do Azure **V2**   | Não | [Sim](virtual-networks-create-nsg-arm-cli.md) |
 | Modelo Azure Resource Manager   | Não  | [Sim](virtual-networks-create-nsg-arm-template.md) |
 
-<a id="planning" class="xliff"></a>
-
-## Planeamento
+## <a name="planning"></a>Planeamento
 Antes de implementar os NSGs, tem de responder às perguntas seguintes:
 
 1. Para ou a partir de que tipos de recursos pretende filtrar o tráfego? Pode ligar recursos, como NICs (Resource Manager), VMs (clássica), Serviços Cloud, Ambientes de Serviço de Aplicações e Conjuntos de Dimensionamento de VMs. 
@@ -155,59 +139,41 @@ Antes de implementar os NSGs, tem de responder às perguntas seguintes:
 
 Para obter mais informações sobre o planeamento da segurança de rede no Azure, leia o artigo [Cloud services and network security](../best-practices-network-security.md) (Os serviços cloud e a segurança de rede). 
 
-<a id="design-considerations" class="xliff"></a>
-
-## Considerações de conceção
+## <a name="design-considerations"></a>Considerações de conceção
 Quando souber as respostas às perguntas da secção [Planeamento](#Planning), reveja as secções seguintes antes de definir os seus NSGs:
 
-<a id="limits" class="xliff"></a>
-
-### Limites
+### <a name="limits"></a>Limites
 Existem limites ao número de NSGs que pode ter numa subscrição e ao número de regras por NSG. Para saber mais sobre os limites, leia o artigo [Azure limites](../azure-subscription-service-limits.md#networking-limits) (Limites do artigo).
 
-<a id="vnet-and-subnet-design" class="xliff"></a>
-
-### Conceção de VNet e sub-rede
+### <a name="vnet-and-subnet-design"></a>Conceção de VNet e sub-rede
 Uma vez que os NSGs podem ser aplicados a sub-redes, pode minimizar o número de NSGs agrupando os recursos por sub-rede e aplicando os NSGs a sub-redes.  Se optar por aplicar NSGs a sub-redes, pode achar que as VNets e sub-redes existentes que tem não foram definidas a pensar nos NSGs. Poderá ter de definir VNets e sub-redes novas para suportar o design do seu VNet e implementar os recursos novos nas suas sub-redes novas. Em seguida, pode definir uma estratégia de migração para mover os recursos existentes para as novas sub-redes. 
 
-<a id="special-rules" class="xliff"></a>
-
-### Regras especiais
+### <a name="special-rules"></a>Regras especiais
 Se bloquear o tráfego permitido pelas regras seguintes, a sua infraestrutura não conseguirá comunicar com serviços do Azure essenciais:
 
 * **IP Virtual do nó de anfitrião:** os serviços de infraestrutura básica, tais como DHCP, DNS e monitorização do estado de funcionamento, são fornecidos através do endereço IP do anfitrião virtualizado 168.63.129.16. Este endereço IP público pertence à Microsoft e é o único endereço IP virtualizado utilizado em todas as regiões para este fim. Este endereço IP é mapeado para o endereço IP físico do computador servidor (nó de anfitrião) que está a alojar a VM. O nó de anfitrião funciona como o reencaminhamento DHCP, o resolvedor recursivo de DNS e a origem de sonda para a sonda de estado de funcionamento do balanceador de carga e a sonda de estado de funcionamento da máquina. A comunicação para este endereço IP não é um ataque.
 * **Licenciamento (Key Management Service):** as imagens do Windows em execução nas VMs têm de ser licenciadas. Para garantir o licenciamento, é enviado um pedido para os servidores de anfitrião do Key Management Service que processam estas consultas. O pedido é feito através da porta 1688 de saída.
 
-<a id="icmp-traffic" class="xliff"></a>
-
-### Tráfego ICMP
+### <a name="icmp-traffic"></a>Tráfego ICMP
 As atuais regras do NSG admitem apenas protocolos *TCP* ou *UDP*. Não existe uma etiqueta específica para *ICMP*. No entanto, o tráfego ICMP é permitido numa VNet pela regra predefinida AllowVNetInBound, que permite o tráfego de e para as portas e protocolos dentro da VNet.
 
-<a id="subnets" class="xliff"></a>
-
-### Sub-redes
+### <a name="subnets"></a>Sub-redes
 * Considere o número de camadas de que sua carga de trabalho necessita. Cada camada pode ser isolada através da utilização de uma sub-rede, com um NSG aplicado à sub-rede. 
 * Se precisar de implementar uma sub-rede para um gateway de VPN, ou circuito ExpressRoute, **NÃO** aplique um NSG a essa sub-rede. Se o fizer, a conectividade em várias VNets ou em vários locais poderá falhar. 
 * Se tiver de implementar uma aplicação virtual de rede (NVA), ligue-a à sua própria sub-rede e crie rotas definidas pelo utilizador (UDR) de e para a NVA. Pode implementar um NSG de nível de sub-rede para filtrar o tráfego que entra e sai desta sub-rede. Para saber mais sobre as rotas definidas pelo utilizador, leia o artigo [Rotas definidas pelo utilizador](virtual-networks-udr-overview.md).
 
-<a id="load-balancers" class="xliff"></a>
-
-### Balanceadores de carga
+### <a name="load-balancers"></a>Balanceadores de carga
 * Considere as regras de balanceamento de carga e de tradução de endereços de rede (NAT) para cada balanceador de carga utilizado por cada uma das suas cargas de trabalho. As regras NAT estão vinculadas a um conjunto de back-end que contém NICs (Resource Manager) ou a VMs/instâncias de função dos Serviços Cloud (clássica). Considere criar um NSG para cada conjunto de back-end, permitindo apenas tráfego mapeado através das regras implementadas nos balanceadores de carga. Criar um NSG para cada conjunto de back-end garante que o tráfego que vai diretamente para o mesmo (em vez de passar pelo balanceador de carga) também é filtrado.
 * Em implementações clássicas, o utilizador cria pontos finais que mapeiam portas num balanceador de carga para portas nas VMs ou instâncias de função. Também pode criar o seu próprio balanceador de carga individual destinado ao público através do Resource Manager. A porta de destino para o tráfego de entrada é a porta real na VM ou na instância de função, não a porta exposta por um balanceador de carga. A porta e o endereço de origem para a ligação à VM correspondem a uma porta e a um endereço no computador remoto na Internet e não à porta e ao endereço expostos pelo balanceador de carga.
 * Quando cria NSGs para filtrar o tráfego que vem de um balanceador de carga interno (ILB), a porta de origem e o intervalo de endereços aplicados são os do computador de origem, não do balanceador de carga. A porta de destino e o intervalo de endereços são os do computador de destino, não do balanceador de carga.
 
-<a id="other" class="xliff"></a>
-
-### Outros
+### <a name="other"></a>Outros
 * As listas de controlo de acesso baseadas em ponto final e os NSGs não são suportados na mesma instância de VM. Se pretender utilizar um NSG e ter uma ACL de ponto final já implementada, remova primeiro a ACL de ponto final. Para obter informações sobre como remover uma ACL de ponto final, veja o artigo [Manage endpoint ACLs](virtual-networks-acl-powershell.md) (Gerir ACLs de ponto final).
 * No Resource Manager, pode utilizar um NSG associado a uma NIC para VMs com várias NICs para ativar a gestão (acesso remoto) por NIC. Associar NSGs exclusivos a cada NIC permite a separação de tipos de tráfego entre NICs.
 * Tal como acontece com a utilização de balanceadores de carga, ao filtrar o tráfego de outras VNets, tem de utilizar o intervalo de endereços de origem do computador remoto e não o gateway que liga as VNets.
 * Muitos serviços do Azure não podem ser ligados a VNets. Se um recurso do Azure não estiver ligado a uma VNet, não pode utilizar um NSG para filtrar tráfego para esse recurso.  Leia a documentação relativa aos serviços que utilizar para determinar se podem ou não ser ligados a VNets.
 
-<a id="sample-deployment" class="xliff"></a>
-
-## Implementação de exemplo
+## <a name="sample-deployment"></a>Implementação de exemplo
 Para ilustrar a aplicação das informações neste artigo, considere um cenário típico de uma aplicação de duas camadas, mostrado na imagem seguinte:
 
 ![NSGs](./media/virtual-network-nsg-overview/figure1.png)
@@ -226,9 +192,7 @@ Tal como ilustrado no diagrama, as VMs *Web1* e *Web2* estão ligadas à sub-red
 
 Os requisitos 1 a 6 (exceto os 3 e 4) estão confinados a espaços de sub-rede. Os NSGs seguintes cumprem os requisitos anteriores, minimizando, ao mesmo tempo, o número de NSGs necessários:
 
-<a id="frontend" class="xliff"></a>
-
-### FrontEnd
+### <a name="frontend"></a>FrontEnd
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
@@ -243,9 +207,7 @@ Os requisitos 1 a 6 (exceto os 3 e 4) estão confinados a espaços de sub-rede. 
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Deny-Internet-All |Negar |100 | * | * | Internet | * | * |
 
-<a id="backend" class="xliff"></a>
-
-### BackEnd
+### <a name="backend"></a>BackEnd
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
@@ -260,9 +222,7 @@ Os requisitos 1 a 6 (exceto os 3 e 4) estão confinados a espaços de sub-rede. 
 
 São criados os NSGs seguintes e associados a NICS nas VMS abaixo:
 
-<a id="web1" class="xliff"></a>
-
-### WEB1
+### <a name="web1"></a>WEB1
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
@@ -275,9 +235,7 @@ São criados os NSGs seguintes e associados a NICS nas VMS abaixo:
 > 
 > 
 
-<a id="web2" class="xliff"></a>
-
-### WEB2
+### <a name="web2"></a>WEB2
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
@@ -285,18 +243,14 @@ São criados os NSGs seguintes e associados a NICS nas VMS abaixo:
 | Deny-Inbound-RDP-Internet | Negar | 100 | Internet | * | * | 3389 | TCP |
 | Allow-Inbound-HTTP-Internet | Permitir | 200 | Internet | * | * | 80 | TCP |
 
-<a id="db-servers-management-nic" class="xliff"></a>
-
-### Servidores DB (NIC de Gestão)
+### <a name="db-servers-management-nic"></a>Servidores DB (NIC de Gestão)
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Allow-Inbound-RDP-Front-end | Permitir | 100 | 192.168.1.0/24 | * | * | 3389 | TCP |
 
-<a id="db-servers-database-traffic-nic" class="xliff"></a>
-
-### Servidores DB (NIC de tráfego de base de dados)
+### <a name="db-servers-database-traffic-nic"></a>Servidores DB (NIC de tráfego de base de dados)
 **Regras de entrada**
 
 | Regra | Access | Prioridade | Intervalo de endereços de origem | Porta de origem | Intervalo de endereços de destino | Porta de destino | Protocolo |
@@ -305,9 +259,7 @@ São criados os NSGs seguintes e associados a NICS nas VMS abaixo:
 
 Uma vez que alguns dos NSGs estão associados a NICs individuais, as regras destinam-se a recursos implementados através do Resource Manager. As regras são combinadas para a sub-rede e a NIC, dependendo de como estão associadas. 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * [Deploy NSGs (Resource Manager)](virtual-networks-create-nsg-arm-pportal.md) (Implementar NSGs [Resource Manager]).
 * [Deploy NSGs (classic)](virtual-networks-create-nsg-classic-ps.md) (Implementar NSGs [clássica]).
 * [Manage NSG logs](virtual-network-nsg-manage-log.md) (Gerir registos de NSGs).

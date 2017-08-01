@@ -21,24 +21,18 @@ ms.lasthandoff: 06/20/2017
 
 
 ---
-<a id="get-started-with-azure-data-lake-analytics-using-azure-cli-20" class="xliff"></a>
-
-# Introdução ao Azure Data Lake Analytics com a CLI 2.0 do Azure
+# <a name="get-started-with-azure-data-lake-analytics-using-azure-cli-20"></a>Introdução ao Azure Data Lake Analytics com a CLI 2.0 do Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
 Neste tutorial, vai desenvolver uma tarefa que lê um ficheiro de valores separados por tabulações (TSV) e converte-o num ficheiro de valores separados por vírgulas (CSV). Para seguir o mesmo tutorial, utilizando outras ferramentas suportadas, utilize a lista pendente na parte superior desta secção.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Antes de começar este tutorial, tem de ter os seguintes itens:
 
 * **Uma subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **CLI 2.0 do Azure**. Consulte [instalar e configurar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-<a id="log-in-to-azure" class="xliff"></a>
-
-## Iniciar sessão no Azure
+## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
 Para iniciar sessão na subscrição do Azure:
 
@@ -57,9 +51,7 @@ Para utilizar uma subscrição específica:
 az account set --subscription <subscription id>
 ```
 
-<a id="create-data-lake-analytics-account" class="xliff"></a>
-
-## Criar conta de Data Lake Analytics
+## <a name="create-data-lake-analytics-account"></a>Criar conta de Data Lake Analytics
 Tem de ter uma conta de Data Lake Analytics antes de poder executar quaisquer tarefas. Para criar uma conta de Data Lake Analytics, tem de especificar os seguintes itens:
 
 * **Grupo de Recursos do Azure**. Uma conta do Data Lake Analytics tem de ser criada dentro de um grupo de recursos do Azure. O [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) permite trabalhar com os recursos na aplicação como um grupo. Pode implementar, atualizar ou eliminar todos os recursos da aplicação numa operação única e coordenada.  
@@ -105,9 +97,7 @@ az dla account list
 az dla account show --account "<Data Lake Analytics Account Name>"            
 ```
 
-<a id="upload-data-to-data-lake-store" class="xliff"></a>
-
-## Carregar dados para o Data Lake Store
+## <a name="upload-data-to-data-lake-store"></a>Carregar dados para o Data Lake Store
 Neste tutorial, vai processar alguns registos de pesquisa.  O registo de pesquisa pode ser armazenado no Data Lake Store ou no Armazenamento de Blobs do Azure.
 
 O portal do Azure fornece uma interface de utilizador para copiar alguns ficheiros de dados de exemplo para a conta predefinida do Data Lake Store, que incluem um ficheiro de registo de pesquisa. Consulte [Preparar dados de origem](data-lake-analytics-get-started-portal.md) para carregar os dados para a conta de Data Lake Store predefinida.
@@ -121,9 +111,7 @@ az dls fs list --account "<Data Lake Store Account Name>" --path "<Path>"
 
 A Data Lake Analytics também pode aceder ao armazenamento de Blobs do Azure.  Para carregar dados para o armazenamento de Blobs do Azure, consulte [Utilizar a CLI do Azure com o Armazenamento do Azure](../storage/storage-azure-cli.md).
 
-<a id="submit-data-lake-analytics-jobs" class="xliff"></a>
-
-## Submeter tarefas de Data Lake Analytics
+## <a name="submit-data-lake-analytics-jobs"></a>Submeter tarefas de Data Lake Analytics
 As tarefas de Data Lake Analytics são escritas em linguagem U-SQL. Para saber mais sobre U-SQL, consulte [Introdução à linguagem U-SQL](data-lake-analytics-u-sql-get-started.md) e [Referência de linguagem U-SQL](http://go.microsoft.com/fwlink/?LinkId=691348).
 
 **Para criar um script de tarefas do Data Lake Analytics**
@@ -192,9 +180,7 @@ az dla job show --account "<Data Lake Analytics Account Name>" --job-identity "<
 az dla job cancel --account "<Data Lake Analytics Account Name>" --job-identity "<Job Id>"
 ```
 
-<a id="retrieve-job-results" class="xliff"></a>
-
-##Obter resultados de tarefa
+##<a name="retrieve-job-results"></a>Obter resultados de tarefa
 
 Depois de uma tarefa ser concluída, pode utilizar os seguintes comandos para listar os ficheiros de saída e transferir os ficheiros:
 
@@ -211,9 +197,7 @@ Por exemplo:
 az dls fs downlod --account "myadlsaccount" --source-path "/Output/SearchLog-from-Data-Lake.csv" --destintion-path "C:\DLA\myfile.csv"
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * Para ver o documento de referência da CLI 2.0 do Data Lake Analytics, consulte [Data Lake Analytics](https://docs.microsoft.com/cli/azure/dla).
 * Para ver o documento de referência da CLI 2.0 do Data Lake Store, consulte [Data Lake Store](https://docs.microsoft.com/cli/azure/dls).

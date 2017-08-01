@@ -1,24 +1,24 @@
-1. To view the tags for a resource or resource group, select the **Tags** icon. 
+1. Para ver as etiquetas de um recurso ou grupo de recursos, selecione o ícone **Etiquetas**. 
    
-     ![Select tags on resource and resource group blades](./media/resource-manager-tag-resources/select-tag-icon.png)
-2. You see the existing tags for the resource. If you have not previously applied tags, the list is empty. 
+     ![Painel “Selecionar etiquetas num recurso ou grupo de recursos”](./media/resource-manager-tag-resources/select-tag-icon.png)
+2. São apresentadas as etiquetas existentes para o recurso. Se não tiver aplicado etiquetas anteriormente, a lista estará vazia. 
 
-     ![Show existing tags on resource and resource group blades](./media/resource-manager-tag-resources/existing-tags.png)
-3. To add a tag, type a name and value, or select an existing one from the dropdown menu. Select **Save**.
+     ![Painel “Mostrar etiquetas existentes num recurso e grupo de recursos”](./media/resource-manager-tag-resources/existing-tags.png)
+3. Para adicionar uma etiqueta, escreva um nome e um valor ou selecione um existente no menu pendente. Selecione **Guardar**.
 
-     ![Add new tag](./media/resource-manager-tag-resources/tag-resources.png)
-3. To view all the resources with a tag value, select **>** (More services), and enter the word **Tags** into the filter text box. Select **Tags** from the available options.
+     ![Adicionar etiqueta nova](./media/resource-manager-tag-resources/tag-resources.png)
+3. Para ver todos os recursos que tenham um valor de etiqueta, selecione **>** (**Mais serviços**) e introduza a palavra **Etiquetas** na caixa de texto do filtro. Selecione **Etiquetas**, nas opções disponíveis.
    
-     ![Find tags via the Browse hub](./media/resource-manager-tag-resources/browse-tags.png)
-4. You see a summary of the tags in your subscriptions.
+     ![Localizar etiquetas através do hub da Procura](./media/resource-manager-tag-resources/browse-tags.png)
+4. É apresentado um resumo das etiquetas nas suas subscrições.
    
-     ![Show all tags](./media/resource-manager-tag-resources/tag-taxonomy.png)
-5. Select any of the tags to display the resources and resource groups with that tag.
+     ![Mostrar todas as etiquetas](./media/resource-manager-tag-resources/tag-taxonomy.png)
+5. Selecione uma das etiquetas para apresentar os recursos e os grupos de recursos com essa etiqueta.
    
-     ![Show tagged resources](./media/resource-manager-tag-resources/show-tagged-resources.png)
-6. Select **Pin blade to dashboard** for quick access.
+     ![Mostrar recursos com etiquetas](./media/resource-manager-tag-resources/show-tagged-resources.png)
+6. Selecione **Afixar painel ao dashboard** para um acesso rápido.
    
-     ![Pin tags to the Dashboard](./media/resource-manager-tag-resources/pin-tag.png)
-7. You can select the pinned tag from the dashboard to see the resources with that tag.
+     ![Afixar etiquetas ao dashboard](./media/resource-manager-tag-resources/pin-tag.png)
+7. Pode selecionar a etiqueta afixada do dashboard para ver os recursos com a mesma.
 
-     ![Pin tags to the Dashboard](./media/resource-manager-tag-resources/show-pinned-tag.png)
+     ![Afixar etiquetas ao dashboard](./media/resource-manager-tag-resources/show-pinned-tag.png)

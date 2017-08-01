@@ -15,12 +15,11 @@ ms.workload: big-compute
 ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
-ms.openlocfilehash: 9776bd4f703227f49f83f563489cfa7c44604fb8
+ms.translationtype: HT
+ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
+ms.openlocfilehash: 1dc728cf6497d8ba0d35a7e41e51a52c5ca6d7df
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/08/2017
-
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="get-started-building-solutions-with-the-batch-client-library-for-net"></a>Comece a criar soluções com a biblioteca de cliente do Batch para .NET
@@ -45,7 +44,7 @@ Este artigo parte do princípio de que tem um conhecimento prático do C# e do V
 * **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 
 > [!IMPORTANT]
-> Atualmente, o Batch suporta *apenas* o tipo de conta de armazenamento **Fins gerais**, conforme descrito no passo n.º 5 [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
+> Atualmente, o Batch suporta *apenas* o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5, [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
 >
 >
 
@@ -105,7 +104,7 @@ private const string StorageAccountKey  = "";
 ```
 
 > [!IMPORTANT]
-> Tal como mencionado acima, atualmente tem de especificar as credenciais de uma conta de armazenamento **Fins gerais** no Armazenamento do Azure. As aplicações do Batch utilizam o armazenamento de blobs na conta de armazenamento **Fins gerais**. Não especifique as credenciais de uma conta de Armazenamento criada através da seleção do tipo de conta *Armazenamento de blobs*.
+> Tal como mencionado acima, atualmente, tem de especificar as credenciais de uma conta de armazenamento para **fins gerais** no Armazenamento do Azure. As aplicações do Batch utilizam o armazenamento de blobs na conta de armazenamento para **fins gerais**. Não especifique as credenciais de uma conta de Armazenamento criada através da seleção do tipo de conta *Armazenamento de blobs*.
 >
 >
 
@@ -363,7 +362,12 @@ private static async Task CreatePoolIfNotExistAsync(BatchClient batchClient, str
 }
 ```
 
-Quando cria um conjunto com [CreatePool][net_pool_create], especifica vários parâmetros, como o número de nós de computação, o [tamanho dos nós](../cloud-services/cloud-services-sizes-specs.md) e o sistema operativo dos nós. No *DotNetTutorial*, utilizamos [CloudServiceConfiguration][net_cloudserviceconfiguration] para especificar o Windows Server 2012 R2 a partir dos [Serviços Cloud](../cloud-services/cloud-services-guestos-update-matrix.md). No entanto, ao especificar [VirtualMachineConfiguration][net_virtualmachineconfiguration] em alternativa, poderá criar conjuntos de nós criados a partir de imagens do Marketplace, que inclui imagens do Windows e do Linux. Veja [Aprovisionar nós de computação do Linux em conjuntos do Azure Batch](batch-linux-nodes.md) para obter mais informações.
+Quando cria um conjunto com [CreatePool][net_pool_create], especifica vários parâmetros, como o número de nós de computação, o [tamanho dos nós](../cloud-services/cloud-services-sizes-specs.md) e o sistema operativo dos nós. No *DotNetTutorial*, utilizamos [CloudServiceConfiguration][net_cloudserviceconfiguration] para especificar o Windows Server 2012 R2 a partir dos [Serviços Cloud](../cloud-services/cloud-services-guestos-update-matrix.md). 
+
+Também pode criar conjuntos de nós de computação que sejam Máquinas Virtuais (VMs) do Azure ao especificar [VirtualMachineConfiguration][net_virtualmachineconfiguration] para o seu conjunto. Pode criar um conjunto de nós de computação de VM a partir de [imagens do Linux](batch-linux-nodes.md) ou do Windows. A origem das imagens de VMs podem ser:
+
+- O [Marketplace das Máquinas Virtuais do Azure][vm_marketplace], que disponibiliza imagens do Windows e do Linux prontas a utilizar. 
+- Uma imagem personalizada preparada e fornecida por si. Para obter mais informações sobre as imagens personalizadas, veja [Desenvolver soluções de computação paralela em grande escala com o Batch](batch-api-basics.md#pool).
 
 > [!IMPORTANT]
 > São-lhe cobrados os recursos de computação no Batch. Para minimizar os custos, pode reduzir `targetDedicatedComputeNodes` para 1 antes de executar e exemplo.
@@ -788,6 +792,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 [nuget_restore]: https://docs.nuget.org/consume/package-restore/msbuild-integrated#enabling-package-restore-during-build
 [storage_explorers]: http://storageexplorer.com/
 [visual_studio]: https://www.visualstudio.com/vs/
+[vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
 
 [1]: ./media/batch-dotnet-get-started/batch_workflow_01_sm.png "Criar contentores no Armazenamento do Azure"
 [2]: ./media/batch-dotnet-get-started/batch_workflow_02_sm.png "Carregar a aplicação de tarefa e os ficheiros de entrada (dados) para contentores"

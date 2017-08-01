@@ -22,9 +22,7 @@ ms.lasthandoff: 05/31/2017
 
 
 ---
-<a id="how-to-use-azure-redis-cache" class="xliff"></a>
-
-# Como Utilizar a Cache de Redis do Azure
+# <a name="how-to-use-azure-redis-cache"></a>Como Utilizar a Cache de Redis do Azure
 > [!div class="op_single_selector"]
 > * [.NET](cache-dotnet-how-to-use-azure-redis-cache.md)
 > * [ASP.NET](cache-web-app-howto.md)
@@ -48,9 +46,7 @@ Este guia mostra como utilizar o cliente [StackExchange.Redis][StackExchange.Red
 
 <a name="getting-started-cache-service"></a>
 
-<a id="get-started-with-azure-redis-cache" class="xliff"></a>
-
-## Introdução à Cache de Redis do Azure 
+## <a name="get-started-with-azure-redis-cache"></a>Introdução à Cache de Redis do Azure 
 É fácil começar a trabalhar com a Cache de Redis do Azure. Para começar, aprovisione e configure uma cache. Em seguida, configure os clientes de cache para que possam aceder à cache. Assim que tiver configurado os clientes de cache, poderá começar a trabalhar com eles.
 
 * [Criar a cache][Create the cache]
@@ -58,32 +54,24 @@ Este guia mostra como utilizar o cliente [StackExchange.Redis][StackExchange.Red
 
 <a name="create-cache"></a>
 
-<a id="create-a-cache" class="xliff"></a>
-
-## Criar uma cache
+## <a name="create-a-cache"></a>Criar uma cache
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-<a id="to-access-your-cache-after-its-created" class="xliff"></a>
-
-### Para aceder à cache depois de a criar
+### <a name="to-access-your-cache-after-its-created"></a>Para aceder à cache depois de a criar
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-browse.md)]
 
 Para obter mais informações sobre como configurar a cache, veja [How to configure Azure Redis Cache (Como configurar a Cache de Redis do Azure)](cache-configure.md).
 
 <a name="NuGet"></a>
 
-<a id="configure-the-cache-clients" class="xliff"></a>
-
-## Configurar os clientes de cache
+## <a name="configure-the-cache-clients"></a>Configurar os clientes de cache
 [!INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
 Depois de ter configurado o projeto do cliente para a colocação em cache, pode utilizar as técnicas descritas nas secções seguintes para trabalhar com a cache.
 
 <a name="working-with-caches"></a>
 
-<a id="working-with-caches" class="xliff"></a>
-
-## Trabalhar com Caches
+## <a name="working-with-caches"></a>Trabalhar com Caches
 Os passos desta secção descrevem como realizar tarefas comuns com a Cache.
 
 * [Ligar à cache][Connect to the cache]
@@ -92,9 +80,7 @@ Os passos desta secção descrevem como realizar tarefas comuns com a Cache.
 
 <a name="connect-to-cache"></a>
 
-<a id="connect-to-the-cache" class="xliff"></a>
-
-## Ligar à cache
+## <a name="connect-to-the-cache"></a>Ligar à cache
 Para trabalhar programaticamente com uma cache, precisa de uma referência para a cache. Adicione o seguinte na parte superior de qualquer ficheiro a partir do qual pretende utilizar o cliente StackExchange.Redis para aceder a uma Cache de Redis do Azure.
 
     using StackExchange.Redis;
@@ -162,9 +148,7 @@ Agora que sabe como ligar a uma instância da Cache de Redis do Azure e como dev
 
 <a name="add-object"></a>
 
-<a id="add-and-retrieve-objects-from-the-cache" class="xliff"></a>
-
-## Adicionar e obter objetos da cache
+## <a name="add-and-retrieve-objects-from-the-cache"></a>Adicionar e obter objetos da cache
 Pode armazenar e obter itens numa cache com os métodos `StringSet` e `StringGet`.
 
     // If key1 exists, it is overwritten.
@@ -190,9 +174,7 @@ Para especificar a expiração de um item na cache, utilize o parâmetro `TimeSp
 
     cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 
-<a id="work-with-net-objects-in-the-cache" class="xliff"></a>
-
-## Trabalhar com objetos .NET na cache
+## <a name="work-with-net-objects-in-the-cache"></a>Trabalhar com objetos .NET na cache
 A Cache de Redis do Azure pode colocar em cache objetos .NET e tipos de dados primitivos, mas para ser colocado em cache, o objeto .NET tem de ser serializado. Esta serialização do objeto .NET é da responsabilidade do programador da aplicação, podendo o programador escolher o serializador pretendido.
 
 Uma forma simples de serializar objetos passa por utilizar os métodos de serialização `JsonConvert` no [Newtonsoft.Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/8.0.1-beta1) e serializar de e para o JSON. O exemplo que se segue mostra os objetos obter e definir utilizando uma instância do objeto `Employee`.
@@ -217,9 +199,7 @@ Uma forma simples de serializar objetos passa por utilizar os métodos de serial
 
 <a name="next-steps"></a>
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos Seguintes
+## <a name="next-steps"></a>Passos Seguintes
 Agora que aprendeu as noções básicas, siga estas ligações para saber mais sobre a Cache de Redis do Azure.
 
 * Consulte os fornecedores do ASP.NET para a Cache de Redis do Azure.

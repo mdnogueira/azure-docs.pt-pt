@@ -19,14 +19,10 @@ ms.lasthandoff: 06/26/2017
 
 ---
 
-<a id="azure-database-for-postgresql-use-nodejs-to-connect-and-query-data" class="xliff"></a>
-
-# Base de Dados do Azure para PostgreSQL: utilizar o Node.js para se ligar e consultar dados
+# <a name="azure-database-for-postgresql-use-nodejs-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilizar o Node.js para se ligar e consultar dados
 Este guia de início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através do [Node.js](https://nodejs.org/) a partir de plataformas Windows, Ubuntu Linux e Mac. Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Os passos neste artigo pressupõem que está familiarizado com a programação com Node.js e que nunca trabalhou com a Base de Dados do Azure para PostgreSQL.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 Este guia de início rápido utiliza os recursos criados em qualquer um destes guias como ponto de partida:
 - [Criar BD - Portal](quickstart-create-server-database-portal.md)
 - [Criar BD - CLI](quickstart-create-server-database-azure-cli.md)
@@ -35,14 +31,10 @@ Também tem de:
 - Instalar o [Node. js](https://nodejs.org)
 - Instalar o pacote [pg](https://www.npmjs.com/package/pg). 
 
-<a id="install-nodejs" class="xliff"></a>
-
-## Instalar o Node.js 
+## <a name="install-nodejs"></a>Instalar o Node.js 
 Dependendo de sua plataforma, para instalar o Node.js:
 
-<a id="mac-os" class="xliff"></a>
-
-### **Mac OS**
+### <a name="mac-os"></a>**Mac OS**
 Introduza os seguintes comandos para instalar **brew**, um gestor de pacotes de fácil utilização para Mac OS X e **Node.js**.
 
 ```bash
@@ -50,23 +42,17 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install node
 ```
 
-<a id="linux-ubuntu" class="xliff"></a>
-
-### **Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
 Introduza os seguintes comandos para instalar **Node.js** e **npm**, um gestor de pacotes para Node.js.
 
 ```bash
 sudo apt-get install -y nodejs npm
 ```
 
-<a id="windows" class="xliff"></a>
-
-### **Windows**
+### <a name="windows"></a>**Windows**
 Visite a [página de transferências do Node. js](https://nodejs.org/en/download/) e selecione a opção de instalador Windows que pretende.
 
-<a id="install-pg-client" class="xliff"></a>
-
-## Instalar o cliente pg
+## <a name="install-pg-client"></a>Instalar o cliente pg
 A instalação do [pg](https://www.npmjs.com/package/pg), um cliente JavaScript puro e sem bloqueios, para Node.js é útil para se ligar e consultar PostgreSQL.
 
 Para isso, execute o gestor de pacotes de nós (npm) para JavaScript a partir da linha de comandos para instalar o cliente pg.
@@ -86,9 +72,7 @@ A saída do comando da lista confirma a versão de cada componente.
 etc...
 ```
 
-<a id="get-connection-information" class="xliff"></a>
-
-## Obter informações da ligação
+## <a name="get-connection-information"></a>Obter informações da ligação
 Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para PostgreSQL. Necessita do nome do servidor e das credenciais de início de sessão totalmente qualificados.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
@@ -98,14 +82,10 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
  ![Base de Dados do Azure para PostgreSQL – Início de sessão de administrador do servidor](./media/connect-nodejs/1-connection-string.png)
 5. Caso se tenha esquecido das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** para visualizar o nome de início de sessão de administrador do servidor e, se necessário, repor a palavra-passe.
 
-<a id="running-the-javascript-code-in-nodejs" class="xliff"></a>
-
-## Executar o código JavaScript no Node.js
+## <a name="running-the-javascript-code-in-nodejs"></a>Executar o código JavaScript no Node.js
 Pode iniciar o Node.js a partir do bash shell ou da linha de comandos do Windows ao introduzir `node` e, em seguida, executar o exemplo de código JavaScript, de forma interativa, copiando-o e colando-o na linha. Como alternativa, pode guardar o código JavaScript num ficheiro de texto e iniciar `node filename.js` com o nome do ficheiro como um parâmetro para o executar.
 
-<a id="connect-create-table-and-insert-data" class="xliff"></a>
-
-## Ligar, criar tabela e inserir dados
+## <a name="connect-create-table-and-insert-data"></a>Ligar, criar tabela e inserir dados
 Utilize o seguinte código para se ligar e carregar os dados com as instruções SQL **CREATE TABLE** e **INSERT INTO**.
 O objeto [pg.Client](https://github.com/brianc/node-postgres/wiki/Client) é utilizado para comunicar com o servidor PostgreSQL. A função [pg. Client.Connect()](https://github.com/brianc/node-postgres/wiki/Client#method-connect) é utilizada para estabelecer ligação com o servidor. A função [pg. Client.Query()](https://github.com/brianc/node-postgres/wiki/Query) é utilizada para executar a consulta SQL na base de dados PostgreSQL. 
 
@@ -170,9 +150,7 @@ function queryDatabase()
 }
 ```
 
-<a id="read-data" class="xliff"></a>
-
-## Ler dados
+## <a name="read-data"></a>Ler dados
 Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **SELECT**. O objeto [pg.Client](https://github.com/brianc/node-postgres/wiki/Client) é utilizado para comunicar com o servidor PostgreSQL. A função [pg. Client.Connect()](https://github.com/brianc/node-postgres/wiki/Client#method-connect) é utilizada para estabelecer ligação com o servidor. A função [pg. Client.Query()](https://github.com/brianc/node-postgres/wiki/Query) é utilizada para executar a consulta SQL na base de dados PostgreSQL. 
 
 Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
@@ -230,9 +208,7 @@ function queryDatabase()
 }
 ```
 
-<a id="update-data" class="xliff"></a>
-
-## Atualizar dados
+## <a name="update-data"></a>Atualizar dados
 Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **UPDATE**. O objeto [pg.Client](https://github.com/brianc/node-postgres/wiki/Client) é utilizado para comunicar com o servidor PostgreSQL. A função [pg. Client.Connect()](https://github.com/brianc/node-postgres/wiki/Client#method-connect) é utilizada para estabelecer ligação com o servidor. A função [pg. Client.Query()](https://github.com/brianc/node-postgres/wiki/Query) é utilizada para executar a consulta SQL na base de dados PostgreSQL. 
 
 Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
@@ -288,9 +264,7 @@ function queryDatabase()
 }
 ```
 
-<a id="delete-data" class="xliff"></a>
-
-## Eliminar dados
+## <a name="delete-data"></a>Eliminar dados
 Utilize o código seguinte para se ligar e ler os dados com a instrução SQL **DELETE**. O objeto [pg.Client](https://github.com/brianc/node-postgres/wiki/Client) é utilizado para comunicar com o servidor PostgreSQL. A função [pg. Client.Connect()](https://github.com/brianc/node-postgres/wiki/Client#method-connect) é utilizada para estabelecer ligação com o servidor. A função [pg. Client.Query()](https://github.com/brianc/node-postgres/wiki/Query) é utilizada para executar a consulta SQL na base de dados PostgreSQL. 
 
 Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
@@ -346,9 +320,7 @@ function queryDatabase()
 }
 ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
 > [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)
 

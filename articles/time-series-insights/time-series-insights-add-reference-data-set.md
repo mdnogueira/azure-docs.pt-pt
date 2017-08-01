@@ -23,15 +23,11 @@ ms.lasthandoff: 07/04/2017
 
 ---
 
-<a id="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-ibiza-portal" class="xliff"></a>
-
-# Criar um conjunto de dados de referência para o seu ambiente do Time Series Insights com o portal Ibiza
+# <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-ibiza-portal"></a>Criar um conjunto de dados de referência para o seu ambiente do Time Series Insights com o portal Ibiza
 
 Um conjunto de dados de referência é uma coleção de itens que são aumentados com os eventos da origem de evento. O mecanismo de entrada do Time Series Insights une um evento da origem de evento com um item no seu conjunto de dados de referência. Esse evento aumentado fica então disponível para consulta. Essa união baseia-se nas chaves definidas no conjunto de dados de referência.
 
-<a id="steps-to-add-a-reference-data-set-to-your-environment" class="xliff"></a>
-
-## Passos para adicionar um conjunto de dados de referência ao seu ambiente
+## <a name="steps-to-add-a-reference-data-set-to-your-environment"></a>Passos para adicionar um conjunto de dados de referência ao seu ambiente
 
 1. Inicie sessão no [portal Ibiza](https://portal.azure.com).
 2. Clique em "Todos os recursos" no menu do lado esquerdo do portal Ibiza.
@@ -50,9 +46,7 @@ Um conjunto de dados de referência é uma coleção de itens que são aumentado
 
 7. Clique em “Criar”.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 * [Gerir dados de referência](time-series-insights-manage-reference-data-csharp.md) através de programação.
 * Para obter a referência completa de API, consulte o documento [API de dados de referência](/rest/api/time-series-insights/time-series-insights-reference-reference-data-api).

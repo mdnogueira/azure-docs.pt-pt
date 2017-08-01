@@ -15,16 +15,14 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 05/26/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: cd74b0cb0d58036cc7b1198a58649ba38e386322
+ms.translationtype: HT
+ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
+ms.openlocfilehash: 4e97a558ae1a2601b5275a73164b483351f03857
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
+ms.lasthandoff: 07/26/2017
 
 ---
-<a id="supplemental-lesson---dynamic-security" class="xliff"></a>
-
-# Lição suplementar - Segurança dinâmica
+# <a name="supplemental-lesson---dynamic-security"></a>Lição suplementar - Segurança dinâmica
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -38,19 +36,13 @@ As tarefas que são exclusivas deste cenário de modelo em tabela da Adventure W
   
 Tempo estimado para concluir esta lição: **30 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico de lição suplementar faz parte de um tutorial de modelação em tabela, que deve ser concluído por ordem. Antes de executar as tarefas nesta lição suplementar, deverá ter concluído todas as lições anteriores.  
   
-<a id="add-the-dimsalesterritory-table-to-the-aw-internet-sales-tabular-model-project" class="xliff"></a>
-
-## Adicionar a tabela DimSalesTerritory ao Projeto de Modelo em Tabela AW Internet Sales  
+## <a name="add-the-dimsalesterritory-table-to-the-aw-internet-sales-tabular-model-project"></a>Adicionar a tabela DimSalesTerritory ao Projeto de Modelo em Tabela AW Internet Sales  
 Para implementar a segurança dinâmica neste cenário da Adventure Works, tem de acrescentar duas tabelas adicionais ao seu modelo. A primeira tabela a adicionar é DimSalesTerritory (como Sales Territory) a partir da mesma base de dados AdventureWorksDW. Posteriormente, vai aplicar um filtro de linha à tabela SalesTerritory que define os dados concretos que o utilizador com sessão iniciada pode procurar.  
   
-<a id="to-add-the-dimsalesterritory-table" class="xliff"></a>
-
-#### Para adicionar a tabela DimSalesTerritory  
+#### <a name="to-add-the-dimsalesterritory-table"></a>Para adicionar a tabela DimSalesTerritory  
   
 1.  No Explorador de Modelos em Tabela > **Origens de Dados**, clique com o botão direito do rato na sua ligação e clique em **Importar Tabelas Novas**.  
 
@@ -66,14 +58,10 @@ Para implementar a segurança dinâmica neste cenário da Adventure Works, tem d
   
 9. Após a importação bem-sucedida da tabela, clique em **Fechar**.  
 
-<a id="add-a-table-with-user-name-data" class="xliff"></a>
-
-## Adicionar tabela com dados de nome de utilizador  
+## <a name="add-a-table-with-user-name-data"></a>Adicionar tabela com dados de nome de utilizador  
 A tabela DimEmployee da base de dados de exemplo AdventureWorksDW contém utilizadores do domínio AdventureWorks. Estes nomes de utilizador não existem no seu ambiente. Tem de criar uma tabela no seu ambiente que contenha uma pequena amostra (pelo menos, três) de utilizadores reais da sua organização. Depois, adicione-os como membros à função nova. As palavras-passe dos nomes de utilizador de exemplo não são necessárias, mas precisa de nomes de utilizador do Windows reais do seu domínio.  
   
-<a id="to-add-an-employeesecurity-table" class="xliff"></a>
-
-#### Para adicionar uma tabela EmployeeSecurity  
+#### <a name="to-add-an-employeesecurity-table"></a>Para adicionar uma tabela EmployeeSecurity  
   
 1.  Abra o Microsoft Excel e crie uma folha de cálculo.  
   
@@ -106,14 +94,10 @@ A tabela DimEmployee da base de dados de exemplo AdventureWorksDW contém utiliz
   
     É criada uma tabela nova, chamada EmployeeSecurity, com os dados dos colaboradores copiados a partir da folha de cálculo SampleEmployee.  
   
-<a id="create-relationships-between-factinternetsales-dimgeography-and-dimsalesterritory-table" class="xliff"></a>
-
-## Criar relações entre as tabelas FactInternetSales, DimGeography e DimSalesTerritory  
+## <a name="create-relationships-between-factinternetsales-dimgeography-and-dimsalesterritory-table"></a>Criar relações entre as tabelas FactInternetSales, DimGeography e DimSalesTerritory  
 As tabelas FactInternetSales, DimGeography e DimSalesTerritory têm uma coluna em comum, SalesTerritoryId. A coluna SalesTerritoryId na tabela DimSalesTerritory contém valores com um Id diferente para cada região de vendas.  
   
-<a id="to-create-relationships-between-the-factinternetsales-dimgeography-and-the-dimsalesterritory-table" class="xliff"></a>
-
-#### Para criar relações entre as tabelas FactInternetSales, DimGeography e DimSalesTerritory  
+#### <a name="to-create-relationships-between-the-factinternetsales-dimgeography-and-the-dimsalesterritory-table"></a>Para criar relações entre as tabelas FactInternetSales, DimGeography e DimSalesTerritory  
   
 1.  Na Vista de Diagrama, na tabela **DimGeography**, clique sem soltar na coluna **SalesTerritoryId**, arraste o cursor para a coluna **SalesTerritoryId** da tabela **DimSalesTerritory** e largue.  
   
@@ -121,28 +105,20 @@ As tabelas FactInternetSales, DimGeography e DimSalesTerritory têm uma coluna e
   
     Repare que a propriedade Active desta relação é Falso, o que significa que está inativa. A tabela FactInternetSales já tem outra relação ativa.  
   
-<a id="hide-the-employeesecurity-table-from-client-applications" class="xliff"></a>
-
-## Ocultar a tabela EmployeeSecurity de aplicações cliente  
+## <a name="hide-the-employeesecurity-table-from-client-applications"></a>Ocultar a tabela EmployeeSecurity de aplicações cliente  
 Nesta tarefa, vai ocultar a tabela EmployeeSecurity, impedindo-a de aparecer na lista de campos de uma aplicação cliente. Tenha em conta que a ocultação de tabelas não as protege. Os utilizadores continuam a poder consultar os dados da tabela EmployeeSecurity, se souberem como fazê-lo. Para proteger os dados da tabela, impedindo os utilizadores de consultá-los, vai aplicar um filtro numa tarefa posterior.  
   
-<a id="to-hide-the-employeesecurity-table-from-client-applications" class="xliff"></a>
-
-#### Para ocultar a tabela EmployeeSecurity de aplicações cliente  
+#### <a name="to-hide-the-employeesecurity-table-from-client-applications"></a>Para ocultar a tabela EmployeeSecurity de aplicações cliente  
   
 -   No estruturador de modelos, na Vista de Diagrama, clique com o botão direito do rato no cabeçalho da tabela **Employee** e clique em **Ocultar das Ferramentas de Cliente**.  
   
-<a id="create-a-sales-employees-by-territory-user-role" class="xliff"></a>
-
-## Criar uma função de utilizador Colaboradores de Vendas por Região  
+## <a name="create-a-sales-employees-by-territory-user-role"></a>Criar uma função de utilizador Colaboradores de Vendas por Região  
 Nesta tarefa, vai criar uma função de utilizador. Esta função inclui um filtro de linha que define que linhas da tabela DimSalesTerritory estão visíveis para os utilizadores. O filtro é depois aplicado na direção de relação um para muitos a todas as outras tabelas relacionadas com DimSalesTerritory. Também pode aplicar um filtro que impeça que toda a tabela EmployeeSecurity seja consultável por qualquer utilizador que seja membro da função.  
   
 > [!NOTE]  
 > A função Colaboradores de Vendas por Região criada nesta lição só permite que os membros procurem (ou consultem) os dados de vendas relativos às regiões de vendas a que pertencem. Se adicionar um utilizador como membro da função Colaboradores de Vendas por Região que também seja membro de uma função criada em [Lição 11: Criar Funções](../tutorials/aas-lesson-11-create-roles.md), obtém uma combinação de permissões. Quando os utilizadores são membros de várias funções, as permissões e os filtros de linha definidos para cada função são cumulativos. Isto significa que o utilizador tem as permissões mais amplas determinadas pela combinação das funções.  
   
-<a id="to-create-a-sales-employees-by-territory-user-role" class="xliff"></a>
-
-#### Para criar uma função de utilizador Colaboradores de Vendas por Região  
+#### <a name="to-create-a-sales-employees-by-territory-user-role"></a>Para criar uma função de utilizador Colaboradores de Vendas por Região  
   
 1.  No SSDT, clique no menu **Modelo** e clique em **Funções**.  
   
@@ -185,14 +161,10 @@ Nesta tarefa, vai criar uma função de utilizador. Esta função inclui um filt
   
 10. No Gestor de Funções, clique em **Ok**.  
   
-<a id="test-the-sales-employees-by-territory-user-role" class="xliff"></a>
-
-## Testar a Função de Utilizador Colaboradores de Vendas por Região  
+## <a name="test-the-sales-employees-by-territory-user-role"></a>Testar a Função de Utilizador Colaboradores de Vendas por Região  
 Nesta tarefa, vai utilizar a funcionalidade Analisar no Excel no SSDT para testar a eficácia da função de utilizador Colaboradores de Vendas por Região. Especifique um dos nomes de utilizador que adicionou à tabela EmployeeSecurity e como membro desta função. Este nome é depois utilizado como o nome de utilizador efetivo na ligação criada entre o Excel e o modelo.  
   
-<a id="to-test-the-sales-employees-by-territory-user-role" class="xliff"></a>
-
-#### Para testar a função de utilizador Colaboradores de Vendas por Região  
+#### <a name="to-test-the-sales-employees-by-territory-user-role"></a>Para testar a função de utilizador Colaboradores de Vendas por Região  
   
 1.  No SSDT, clique no menu **Modelo** e clique em **Analisar no Excel**.  
   
@@ -214,9 +186,7 @@ Nesta tarefa, vai utilizar a funcionalidade Analisar no Excel no SSDT para testa
   
     Este utilizador não pode procurar nem consultar dados de vendas na Internet relativos a regiões das quais não faz parte. Esta limitação deve-se ao facto de o filtro de linha definido para a tabela DimSalesTerritory, na função de utilizador Colaboradores de Vendas por Região, proteger os dados de todas as informações relacionadas com outras regiões de vendas.  
   
-<a id="see-also" class="xliff"></a>
-
-## Veja Também  
+## <a name="see-also"></a>Veja Também  
 [Função USERNAME (DAX)](https://msdn.microsoft.com/library/hh230954.aspx)  
 [Função LOOKUPVALUE (DAX)](https://msdn.microsoft.com/library/gg492170.aspx)  
 [Função CUSTOMDATA (DAX)](https://msdn.microsoft.com/library/hh213140.aspx)  

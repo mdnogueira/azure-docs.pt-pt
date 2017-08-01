@@ -22,13 +22,9 @@ ms.lasthandoff: 06/30/2017
 
 
 ---
-<a id="enable-azure-active-directory-domain-services-using-the-azure-classic-portal" class="xliff"></a>
+# <a name="enable-azure-active-directory-domain-services-using-the-azure-classic-portal"></a>Ativar o Azure Active Directory Domain Services com o portal clássico do Azure
 
-# Ativar o Azure Active Directory Domain Services com o portal clássico do Azure
-
-<a id="task-3-enable-azure-active-directory-domain-services" class="xliff"></a>
-
-## Tarefa 3: ativar o Azure Active Directory Domain Services
+## <a name="task-3-enable-azure-active-directory-domain-services"></a>Tarefa 3: ativar o Azure Active Directory Domain Services
 Nesta tarefa, ativa o Azure Active Directory Domain Services (Azure AD DS) no seu diretório ao fazer as seguintes etapas:
 
 1. Aceda ao [portal clássico do Azure](https://manage.windowsazure.com).
@@ -99,8 +95,6 @@ Nesta tarefa, ativa o Azure Active Directory Domain Services (Azure AD DS) no se
 >
 >
 
-<a id="next-step" class="xliff"></a>
-
-## Passo seguinte
+## <a name="next-step"></a>Passo seguinte
 [Tarefa 4: atualizar as definições de DNS para a rede virtual do Azure](active-directory-ds-getting-started-update-dns.md)
 

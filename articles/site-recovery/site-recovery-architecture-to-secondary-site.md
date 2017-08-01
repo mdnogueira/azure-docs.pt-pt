@@ -22,9 +22,7 @@ ms.lasthandoff: 06/15/2017
 
 
 ---
-<a id="how-does-on-premises-machine-replication-to-a-secondary-site-work-in-site-recovery" class="xliff"></a>
-
-# De que forma funciona a replicação do computador no local para um site secundário no Site Recovery?
+# <a name="how-does-on-premises-machine-replication-to-a-secondary-site-work-in-site-recovery"></a>De que forma funciona a replicação do computador no local para um site secundário no Site Recovery?
 
 Este artigo descreve os componentes e os processos envolvidos ao replicar máquinas virtuais e servidores físicos no Azure com o serviço [Azure Site Recovery](site-recovery-overview.md).
 
@@ -34,14 +32,10 @@ Pode replicar o que se segue para um site no local secundário:
 
 Publique comentários na parte inferior deste artigo ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
-<a id="replicate-hyper-v-vms-to-a-secondary-on-premises-site" class="xliff"></a>
-
-## Replicar VMs Hyper-V para um site no local secundário
+## <a name="replicate-hyper-v-vms-to-a-secondary-on-premises-site"></a>Replicar VMs Hyper-V para um site no local secundário
 
 
-<a id="architectural-components" class="xliff"></a>
-
-### Componentes da arquitetura
+### <a name="architectural-components"></a>Componentes da arquitetura
 
 Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secundário.
 
@@ -52,9 +46,7 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secund�
 **Servidor Hyper-V** |  Um ou mais servidores de anfitriões Hyper-V nas clouds do VMM primárias e secundárias.<br/><br/> Os servidores devem estar ligados à Internet.<br/><br/> Os dados são replicados entre os servidores anfitrião primário e secundário Hyper-V através de LAN ou VPN mediante a utilização de Kerberos ou da autenticação de certificados.  
 **VMs de Hyper-V** | Localizadas no servidor de anfitrião Hyper-V de origem. | O servidor de anfitrião de origem deve ter, pelo menos, uma VM que queira replicar.
 
-<a id="replication-process" class="xliff"></a>
-
-### Processo de replicação
+### <a name="replication-process"></a>Processo de replicação
 
 1. É configurada a conta do Azure.
 2. Cria um cofre dos Serviços de Replicação para o Site Recovery e configura as definições do cofre, incluindo:
@@ -70,9 +62,7 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secund�
 
 ![Local para local](./media/site-recovery-components/arch-onprem-onprem.png)
 
-<a id="failover-and-failback-process" class="xliff"></a>
-
-### Processo de ativação pós-falha e de reativação pós-falha
+### <a name="failover-and-failback-process"></a>Processo de ativação pós-falha e de reativação pós-falha
 
 1. Executa uma [ativação pós-falha](site-recovery-failover.md) planeada ou não planeada entre os sites no local. Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.
 2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para orquestrar a ativação pós-falha de várias máquinas.
@@ -84,16 +74,12 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site secund�
 
 
 
-<a id="replicate-vmware-vmsphysical-servers-to-a-secondary-site" class="xliff"></a>
-
-## Replicar VMs de VMware/servidores físicos para um site secundário
+## <a name="replicate-vmware-vmsphysical-servers-to-a-secondary-site"></a>Replicar VMs de VMware/servidores físicos para um site secundário
 
 Pode replicar VMs de VMware ou servidores físicos para um site secundário com o InMage Scout, com estes componentes da arquitetura:
 
 
-<a id="architectural-components" class="xliff"></a>
-
-### Componentes da arquitetura
+### <a name="architectural-components"></a>Componentes da arquitetura
 
 **Componente** | **Localização** | **Detalhes**
 --- | --- | ---
@@ -106,9 +92,7 @@ Pode replicar VMs de VMware ou servidores físicos para um site secundário com 
 **VMs/servidores físicos** |  Agente Unificado instalado nas VMs VMware e servidores físicos que pretende replicar. | O agente atua como um fornecedor de comunicação entre todos os componentes.
 
 
-<a id="replication-process" class="xliff"></a>
-
-### Processo de replicação
+### <a name="replication-process"></a>Processo de replicação
 
 1. Configure servidores de componentes em cada site (configuração, processo, destino principal) e instale o agente Unified nas máquinas que pretende replicar.
 2. Após a replicação inicial, o agente em cada máquina envia alterações de replicação delta para o servidor de processos.
@@ -119,9 +103,7 @@ Pode replicar VMs de VMware ou servidores físicos para um site secundário com 
 ![VMware para VMware](./media/site-recovery-components/vmware-to-vmware.png)
 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Analise a [matriz de suporte](site-recovery-support-matrix-to-sec-site.md)
 

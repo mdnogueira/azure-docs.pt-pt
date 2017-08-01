@@ -12,15 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
-ms.date: 05/11/2017
+ms.date: 07/20/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
-ms.openlocfilehash: a818a41e2e11926c2dee27e081ae8ffc0a4a6298
+ms.translationtype: HT
+ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
+ms.openlocfilehash: 9bee0344ba70c50cda36a87ea617906283040ff9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/08/2017
-
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Gerir os recursos do Batch com a CLI do Azure
@@ -78,7 +77,7 @@ Para os objetivos deste artigo, vamos mostrar como iniciar sessão no Azure inte
 az login
 ```
 
-O comando `az login` devolve um token que é utilizado para se autenticar, conforme mostrado aqui. Siga as instruções fornecidas para abrir uma página Web e submeter o token para o Azure:
+O comando `az login` devolve um token que pode utilizar para se autenticar, conforme mostrado aqui. Siga as instruções fornecidas para abrir uma página Web e submeter o token para o Azure:
 
 ![Iniciar sessão no Azure](./media/batch-cli-get-started/az-login.png)
 
@@ -119,6 +118,10 @@ Tem duas opções para se autenticar na conta do Batch:
     ```
 
 Os exemplos listados na secção [Scripts de shell de exemplo](#sample-shell-scripts) mostra como iniciar sessão na conta do Batch com a CLI do Azure com o Azure AD e a Chave Partilhada.
+
+## <a name="use-azure-batch-cli-templates-and-file-transfer-preview"></a>Utilizar os Modelos da CLI do Batch e a Transferência de Ficheiros (Pré-visualização)
+
+Pode utilizar a CLI do Azure para executar tarefas do Batch ponto a ponto sem escrever código. Os ficheiros de modelos do Batch suportam a criação de conjuntos, trabalhos e tarefas com a CLI do Azure. Também pode utilizar a CLI do Azure para carregar ficheiros de entrada de trabalhos para a conta do Armazenamento do Azure associada à conta do Batch, bem como transferir ficheiros de saída de trabalhos a partir da mesma. Para obter mais informações, veja [Use Azure Batch CLI Templates and File Transfer (Preview)](batch-cli-templates.md) [Utilizar Modelos da CLI do Azure Batch e a Transferência de Ficheiros (Pré-visualização)].
 
 ## <a name="sample-shell-scripts"></a>Scripts de shell de exemplo
 
@@ -187,7 +190,7 @@ As sugestões seguintes podem ajudá-lo a resolver problemas da CLI do Azure:
 
 * Para obter mais informações sobre a CLI do Azure, veja a [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).
 * Para obter mais informações sobre os recursos do Batch, veja [Descrição geral do Azure Batch para programadores](batch-api-basics.md).
-* Veja [ Implementar aplicações em nós de computação com pacotes de aplicações do Batch](batch-application-packages.md) para saber como utilizar esta funcionalidade para gerir e implementar as aplicações que executa em nós de computação do Batch.
+* Para obter mais informações sobre como utilizar modelos do Batch para criar conjuntos, trabalhos e tarefas sem ter de escrever código, veja [Use Azure Batch CLI Templates and File Transfer (Preview)](batch-cli-templates.md) [Utilizar Modelos da CLI do Azure Batch e a Transferência de Ficheiros (Pré-visualização)].
 
 [batch_forum]: https://social.msdn.microsoft.com/forums/azure/home?forum=azurebatch
 [github_readme]: https://github.com/Azure/azure-xplat-cli/blob/dev/README.md

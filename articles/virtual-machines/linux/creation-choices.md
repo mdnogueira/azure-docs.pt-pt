@@ -23,9 +23,7 @@ ms.lasthandoff: 05/31/2017
 
 
 ---
-<a id="different-ways-to-create-a-linux-vm" class="xliff"></a>
-
-# Diferentes formas de criar uma VM com Linux
+# <a name="different-ways-to-create-a-linux-vm"></a>Diferentes formas de criar uma VM com Linux
 No Azure, tem a flexibilidade de criar máquinas virtuais (VMs) do Linux com ferramentas e fluxos de trabalho com os quais se sente confortável. Este artigo resume estas diferenças e mostra exemplos para criar as suas VMs do Linux. incluindo a CLI 2.0 do Azure. Também pode ver opções de criação, incluindo a [CLI 1.0 do Azure](creation-choices-nodejs.md).
 
 A [CLI 2.0 do Azure](/cli/azure/install-az-cli2) está disponível para todas as plataformas através de um pacote npm, pacotes fornecidos pela distro ou contentor Docker. Instale a compilação mais adequada para o seu ambiente e inicie sessão através de uma conta do Azure com [az login](/cli/azure/#login)
@@ -62,22 +60,16 @@ A [CLI 2.0 do Azure](/cli/azure/install-az-cli2) está disponível para todas as
 * [Criar uma aplicação com balanceamento de carga e elevada disponibilidade em várias VMs do Linux](tutorial-load-balancer.md)
 
 
-<a id="azure-portal" class="xliff"></a>
-
-## Portal do Azure
+## <a name="azure-portal"></a>Portal do Azure
 O [portal do Azure](https://portal.azure.com) permite-lhe criar rapidamente uma VM, uma vez que não existe nada para instalar no seu sistema. Utilize o Portal do Azure para criar a VM:
 
 * [Criar uma VM do Linux através do portal do Azure](quick-create-portal.md) 
 
 
-<a id="operating-system-and-image-choices" class="xliff"></a>
-
-## Opções de imagem e sistema operativo
+## <a name="operating-system-and-image-choices"></a>Opções de imagem e sistema operativo
 Quando cria uma VM; escolhe uma imagem com base no sistema operativo que pretende executar. O Azure e os respetivos parceiros oferecem várias imagens, algumas das quais incluem aplicações e ferramentas pré-instaladas. Ou então, carregue uma das suas próprias imagens (veja [a secção seguinte](#use-your-own-image)).
 
-<a id="azure-images" class="xliff"></a>
-
-### Imagens do Azure
+### <a name="azure-images"></a>Imagens do Azure
 Utilize os comandos [az vm image](/cli/azure/vm/image) para ver o que está disponível por publicador, versão distro e compilações.
 
 Listar publicadores disponíveis:
@@ -118,9 +110,7 @@ O comando [az vm create](/cli/azure/vm#create) tem aliases que pode utilizar par
 | SLES |SLES |SLES |12-SP1 |mais recente |
 | UbuntuLTS |Canónico |UbuntuServer |14.04.4-LTS |mais recente |
 
-<a id="use-your-own-image" class="xliff"></a>
-
-### Utilizar a sua própria imagem
+### <a name="use-your-own-image"></a>Utilizar a sua própria imagem
 Se precisar de personalizações específicas, pode utilizar uma imagem com base numa VM do Azure existente ao capturar essa VM. Também pode carregar uma imagem criada no local. Para obter mais informações sobre distros suportados e como utilizar as suas imagens, consulte os artigos seguintes:
 
 * [Distribuições aprovadas pelo Azure](endorsed-distros.md)
@@ -135,9 +125,7 @@ Se precisar de personalizações específicas, pode utilizar uma imagem com base
     az vm image create --resource-group myResourceGroup --source myVM --name myImage
     ```
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 * Crie uma VM do Linux com a [CLI](quick-create-cli.md), a partir do [portal](quick-create-portal.md) ou através de um [modelo do Azure Resource Manager](../windows/cli-deploy-templates.md).
 * Depois de criar uma VM do Linux, [saiba mais sobre os discos e o armazenamento do Azure](tutorial-manage-disks.md).
 * Passos rápidos para [repor uma palavra-passe ou chaves SSH e gerir utilizadores](using-vmaccess-extension.md).

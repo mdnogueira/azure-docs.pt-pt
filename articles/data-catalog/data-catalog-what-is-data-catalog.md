@@ -23,16 +23,12 @@ ms.lasthandoff: 06/05/2017
 
 
 ---
-<a id="what-is-azure-data-catalog" class="xliff"></a>
-
-# O que é o Catálogo de Dados do Azure?
+# <a name="what-is-azure-data-catalog"></a>O que é o Catálogo de Dados do Azure?
 O Catálogo de Dados do Azure é um serviço cloud totalmente gerido que permite aos respetivos utilizadores detetar as origens de dados de que precisam e compreender as origens de dados que encontram. Ao mesmo tempo, o Catálogo de Dados ajuda as organizações a obter mais valor dos investimentos existentes. 
 
 Com o Catálogo de Dados, qualquer utilizador (analista, cientista de dados ou programador) pode detetar, compreender e consumir origens de dados. O Catálogo de Dados inclui um modelo de crowdsourcing dos metadados e anotações. É um local central único onde todos os utilizadores de uma organização podem contribuir com o seu conhecimento e criar uma comunidade e cultura de dados.
 
-<a id="discovery-challenges-for-data-consumers" class="xliff"></a>
-
-## Desafios de deteção para os consumidores de dados
+## <a name="discovery-challenges-for-data-consumers"></a>Desafios de deteção para os consumidores de dados
 Tradicionalmente, detetar origens de dados empresariais era um processo orgânico com base em conhecimento tribal. Para as empresas que querem obter o máximo valor dos respetivos recursos de informações, esta abordagem coloca vários desafios:
 
 * Os utilizadores apenas poderão aperceber-se de que uma origem de dados existe quando entram em contacto com a mesma como resultado de outro processo. Não existe uma localização central onde as origens de dados estão registadas.
@@ -41,9 +37,7 @@ Tradicionalmente, detetar origens de dados empresariais era um processo orgânic
 * Se os utilizadores tiverem perguntas sobre um recurso de informações, têm de localizar o especialista ou equipa responsável pelos dados e contactá-lo offline. Não existe nenhuma ligação explícita entre os dados e as pessoas que têm perspetivas especializadas quanto à utilização dos mesmos.
 * A menos que os utilizadores compreendam o processo para pedir acesso à origem de dados, a deteção da origem de dados e a respetiva documentação continua a não ajudá-los a aceder aos dados.
 
-<a id="discovery-challenges-for-data-producers" class="xliff"></a>
-
-## Desafios de deteção para os produtores de dados
+## <a name="discovery-challenges-for-data-producers"></a>Desafios de deteção para os produtores de dados
 Embora os consumidores de dados enfrentem os desafios que apresentámos, os utilizadores responsáveis pela produção e manutenção dos recursos de informações enfrentam os seus próprios desafios:
 
 * Anotar origens de dados com metadados descritivos é, geralmente, um desperdício de esforço. As aplicações cliente tendem a ignorar descrições armazenadas na origem de dados.
@@ -53,9 +47,7 @@ Embora os consumidores de dados enfrentem os desafios que apresentámos, os util
 
 Quando estes desafios se sobrepõem, apresentam um barreira significativa para as empresas que querem encorajar e promover a utilização e a compreensão dos dados empresariais.
 
-<a id="azure-data-catalog-can-help" class="xliff"></a>
-
-## O Catálogo de Dados do Azure pode ajudar
+## <a name="azure-data-catalog-can-help"></a>O Catálogo de Dados do Azure pode ajudar
 O Catálogo de Dados foi concebido para resolver estes problemas e para ajudar as empresas a obter o máximo valor dos recursos de informações existentes. O Catálogo de Dados torna os dados facilmente detetáveis e compreensíveis pelos utilizadores que gerem os dados.
 
 O Catálogo de Dados fornece um serviço baseado na cloud, no qual uma origem de dados pode ser registada. Os dados permanecem na localização existente, mas uma cópia dos respetivos metadados é adicionada ao Catálogo de Dados, juntamente com uma referência à localização da origem de dados. Os metadados também são indexados para tornar cada origem de dados facilmente detetável através da pesquisa e compreensível para os utilizadores que a detetarem.
@@ -68,9 +60,7 @@ Ao mesmo tempo, os utilizadores podem contribuir para o catálogo ao identificar
 
 ![Capacidades do Catálogo de Dados](./media/data-catalog-what-is-data-catalog/data-catalog-capabilities.png)
 
-<a id="learn-more-about-data-catalog" class="xliff"></a>
-
-## Saiba mais sobre o Catálogo de Dados
+## <a name="learn-more-about-data-catalog"></a>Saiba mais sobre o Catálogo de Dados
 Para saber mais sobre as funcionalidades do Catálogo de Dados, veja:
 
 * [Como registar origens de dados](data-catalog-how-to-register.md)
@@ -83,9 +73,7 @@ Para saber mais sobre as funcionalidades do Catálogo de Dados, veja:
 * [Como configurar o Glossário Comercial](data-catalog-how-to-business-glossary.md)
 * [Perguntas mais frequentes](data-catalog-frequently-asked-questions.md)
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para começar a utilizar o Catálogo de Dados, vá a:
 * [Catálogo de Dados do Microsoft Azure](https://www.azuredatacatalog.com)
 * [Introdução ao Catálogo de Dados do Azure](data-catalog-get-started.md)

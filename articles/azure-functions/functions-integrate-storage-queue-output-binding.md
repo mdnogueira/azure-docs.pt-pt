@@ -23,17 +23,13 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/26/2017
 
 ---
-<a id="add-messages-to-an-azure-storage-queue-using-functions" class="xliff"></a>
-
-# Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
+# <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
 
 Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma declarativa para ligar aos dados do serviço externo a partir da sua função. Neste tópico, aprenda a atualizar funções existentes ao adicionar um enlace de saída que envia mensagens para o Armazenamento de filas do Azure.  
 
 ![Ver mensagem nos registos.](./media/functions-integrate-storage-queue-output-binding/functions-integrate-storage-binding-in-portal.png)
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos 
+## <a name="prerequisites"></a>Pré-requisitos 
 
 [!INCLUDE [Previous topics](../../includes/functions-quickstart-previous-topics.md)]
 
@@ -61,9 +57,7 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
 
 Agora que tem um enlace de saída definido, tem de atualizar o código para utilizar o enlace para adicionar mensagens a uma fila.  
 
-<a id="update-the-function-code" class="xliff"></a>
-
-## Atualizar o código da função
+## <a name="update-the-function-code"></a>Atualizar o código da função
 
 1. Selecione a sua função para apresentar o código da mesma no editor. 
 
@@ -92,9 +86,7 @@ Agora que tem um enlace de saída definido, tem de atualizar o código para util
 
 O valor transmitido ao acionador HTTP está incluído numa mensagem adicionada à fila.
  
-<a id="test-the-function" class="xliff"></a>
-
-## Testar a função 
+## <a name="test-the-function"></a>Testar a função 
 
 1. Depois de as alterações ao código serem guardadas, clique em **Executar**. 
 
@@ -104,9 +96,7 @@ O valor transmitido ao acionador HTTP está incluído numa mensagem adicionada �
 
 Em seguida, ligue à sua conta de armazenamento para verificar a fila nova e a mensagem que adicionou à mesma. 
 
-<a id="connect-to-the-queue" class="xliff"></a>
-
-## Ligar à fila
+## <a name="connect-to-the-queue"></a>Ligar à fila
 
 Ignore os três primeiros passos se já tiver instalado o Storage Explorer e ligado à sua conta de armazenamento.    
 
@@ -127,15 +117,11 @@ Ignore os três primeiros passos se já tiver instalado o Storage Explorer e lig
     ![Crie uma fila de armazenamento.](./media/functions-integrate-storage-queue-output-binding/function-queue-storage-output-view-queue.png)
  
 
-<a id="clean-up-resources" class="xliff"></a>
-
-## Limpar recursos
+## <a name="clean-up-resources"></a>Limpar recursos
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Adicionou um enlace de saída a uma função já existente. 
 

@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-12-analyze-in-excel" class="xliff"></a>
-
-# Lição 12: Analyze em Excel
+# <a name="lesson-12-analyze-in-excel"></a>Lição 12: Analyze em Excel
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -34,19 +32,13 @@ Para concluir esta lição, o Excel deve ser instalado no mesmo computador que o
   
 Tempo estimado para concluir esta lição: **5 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 11: Criar funções](../tutorials/aas-lesson-11-create-roles.md).  
   
-<a id="browse-using-the-default-and-internet-sales-perspectives" class="xliff"></a>
-
-## Procurar através das perspetivas predefinidas e das vendas na Internet  
+## <a name="browse-using-the-default-and-internet-sales-perspectives"></a>Procurar através das perspetivas predefinidas e das vendas na Internet  
 Nestas primeiras tarefas, procure o seu modelo ao utilizar a perspetiva predefinida, que inclui todos os objetos do modelo, e também ao utilizar a perspetiva de vendas na Internet que utilizou anteriormente. A perspetiva de vendas na Internet exclui o objeto de tabela do cliente.  
   
-<a id="to-browse-by-using-the-default-perspective" class="xliff"></a>
-
-#### Para procurar através da perspetiva predefinida  
+#### <a name="to-browse-by-using-the-default-perspective"></a>Para procurar através da perspetiva predefinida  
   
 1.  Clique no menu **Modelo** > **Analyze em Excel**.  
   
@@ -58,9 +50,7 @@ Nestas primeiras tarefas, procure o seu modelo ao utilizar a perspetiva predefin
   
 4.  Feche o Excel sem guardar o livro.  
   
-<a id="to-browse-by-using-the-internet-sales-perspective" class="xliff"></a>
-
-#### Para procurar através da perspetiva vendas na Internet  
+#### <a name="to-browse-by-using-the-internet-sales-perspective"></a>Para procurar através da perspetiva vendas na Internet  
   
 1.  Clique no menu **Modelo** e clique em **Analyze em Excel**.  
   
@@ -74,14 +64,10 @@ Nestas primeiras tarefas, procure o seu modelo ao utilizar a perspetiva predefin
     
 4.  Feche o Excel sem guardar o livro.  
   
-<a id="browse-by-using-roles" class="xliff"></a>
-
-## Procurar através das funções  
+## <a name="browse-by-using-roles"></a>Procurar através das funções  
 Funções são uma parte importante de qualquer modelo de tabela. Sem, pelo menos, uma função à qual os utilizadores são adicionados como membros, os utilizadores não podem aceder e analisar os dados com o seu modelo. A funcionalidade Analyze em Excel dispõe de uma forma de testar as funções que definiu.  
   
-<a id="to-browse-by-using-the-sales-manager-user-role" class="xliff"></a>
-
-#### Para procurar através da função de utilizador Gestor de vendas  
+#### <a name="to-browse-by-using-the-sales-manager-user-role"></a>Para procurar através da função de utilizador Gestor de vendas  
   
 1.  No SSDT, clique no menu **Modelo** e clique em **Analyze no Excel**.  
   
@@ -91,9 +77,7 @@ Funções são uma parte importante de qualquer modelo de tabela. Sem, pelo meno
       
 3.  Feche o Excel sem guardar o livro.  
   
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 Avance para a próxima lição: [Lição 13: Implementar](../tutorials/aas-lesson-13-deploy.md).
 
   

@@ -22,9 +22,7 @@ ms.contentlocale: pt-pt
 ms.lasthandoff: 06/03/2017
 
 ---
-<a id="lesson-3-mark-as-date-table" class="xliff"></a>
-
-# Lição 3: marcar como tabela de datas
+# <a name="lesson-3-mark-as-date-table"></a>Lição 3: marcar como tabela de datas
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
@@ -38,23 +36,17 @@ Antes de marcar a tabela de datas e a coluna de datas, este é um bom momento pa
   
 Tempo estimado para concluir esta lição: **3 minutos**  
   
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos  
+## <a name="prerequisites"></a>Pré-requisitos  
 Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 2: obter dados](../tutorials/aas-lesson-2-get-data.md). 
 
-<a id="to-rename-the-fulldatealternatekey-column" class="xliff"></a>
-
-### Para mudar o nome da coluna FullDateAlternateKey
+### <a name="to-rename-the-fulldatealternatekey-column"></a>Para mudar o nome da coluna FullDateAlternateKey
 
 1.  No designer de modelo, clique na tabela **DimDate**.
 
 2.  Clique duas vezes no cabeçalho da coluna **FullDateAlternateKey** e, em seguida, mude o nome para **Data**.
 
   
-<a id="to-set-mark-as-date-table" class="xliff"></a>
-
-### Para definir Marcar como tabela de datas  
+### <a name="to-set-mark-as-date-table"></a>Para definir Marcar como tabela de datas  
   
 1.  Selecione a coluna **Data** e, em seguida, na janela **Propriedades**, em **Tipo de dados**, confirme que **Data** está selecionado.  
   
@@ -65,9 +57,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
     ![aas-lesson3-date-table](../tutorials/media/aas-lesson3-date-table.png)
   
 
-<a id="whats-next" class="xliff"></a>
-
-## Passos seguintes?
+## <a name="whats-next"></a>Passos seguintes?
 [Lição 4: criar relações](../tutorials/aas-lesson-4-create-relationships.md)
   
 

@@ -13,36 +13,41 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/25/2017
+ms.date: 07/25/2017
 ms.author: dobett
-translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: e0e658fc392bf6a53f777f22a2e0b6e7bd742f97
-ms.lasthandoff: 04/25/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
+ms.openlocfilehash: 8bad198488c4940a83eb32ec02122a91d47ca86c
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="predictive-maintenance-preconfigured-solution-overview"></a>Descrição geral da solução pré-configurada de manutenção preditiva
 
 A *solução pré-configurada* de [manutenção preditiva][lnk_preconfigured_solutions] é uma das soluções pré-configuradas do [Microsoft Azure IoT Suite][lnk_iot_suite]. Esta solução integra a coleção de telemetria de dispositivos em tempo real com um modelo preditivo criado com o [Azure Machine Learning][lnk-machine-learning].
 
-Com o Azure IoT Suite, uma empresa pode rápida e facilmente estabelecer a ligação a e monitorizar recursos, bem como analisar dados em tempo real. A solução pré-configurada de manutenção preditiva assume esses dados e utiliza dashboards avançados e visualizações para lhe fornecer uma nova inteligência que pode conduzir a eficiências e melhorar as fontes de receitas.
+Com o Azure IoT Suite, pode ligar e monitorizar rápida e facilmente recursos e analisar telemetria em tempo real em dashboards e visualizações. Na solução de manutenção preditiva, os dashboards e as visualizações proporcionam-lhe informações novas que podem conduzir a eficiências e melhorar as fontes de receitas.
 
 ## <a name="the-scenario"></a>O Cenário
-A Fabrikam é uma companhia aérea regional que se concentra na satisfação do cliente a preços competitivos. Uma das causas dos atrasos dos voos está relacionada com problemas de manutenção, sendo a manutenção de motores de aeronaves uma tarefa particularmente difícil. Deve ser evitada, a todo o custo, qualquer falha do motor durante o voo. Por isso, a Fabrikam verifica frequentemente os seus motores e segue um programa de manutenção estabelecido. Contudo, o desgaste dos motores das aeronaves nem sempre é idêntico. É efetuada alguma manutenção desnecessária dos motores. Mais importante ainda, os problemas que surgirem podem manter uma aeronave em terra até ser efetuada a manutenção. Estas questões levam a atrasos dispendiosos, nomeadamente se não estiverem disponíveis técnicos ou peças sobressalentes corretas no local onde se encontrar a aeronave.
 
-Os motores das aeronaves da Fabrikam são equipados com sensores que controlam o estado do motor durante o voo. A Fabrikam utiliza a solução de manutenção preditiva pré-configurada para recolher os dados de sensor recolhidos durante o voo. Depois de ter acumulado anos de dados sobre as falhas e dados operacionais sobre o motor, os cientistas de dados da Fabrikam modelaram uma maneira de prever a Vida Útil Remanescente (RUL) do motor de uma aeronave. Assim, identificaram uma correlação entre os dados de quatro sensores do motor com o desgaste do motor que pode eventualmente levar a uma falha. Enquanto a Fabrikam continua a fazer inspeções frequentes para garantir a segurança, pode utilizar os modelos para calcular o RUL de cada motor depois de cada voo. O modelo utiliza a telemetria recolhida a partir de motores durante de voo. A Fabrikam pode agora prever futuros pontos de falha e planificar antecipadamente manutenções e reparações.
+A Fabrikam é uma companhia aérea regional que se concentra na satisfação do cliente a preços competitivos. Uma das causas dos atrasos dos voos está relacionada com problemas de manutenção, sendo a manutenção de motores de aeronaves uma tarefa particularmente difícil. A Fabrikam tem de evitar falhas de motores durante os voos custe o que custar, pelo que os inspeciona regularmente e agenda manutenções de acordo com um plano. Contudo, o desgaste dos motores das aeronaves nem sempre é idêntico. É efetuada alguma manutenção desnecessária dos motores. Mais importante ainda, os problemas que surgirem podem manter uma aeronave em terra até ser efetuada a manutenção. Se uma aeronave estiver numa localização em que não haja técnicos ou peças sobressalentes disponíveis, estes problemas podem ser particularmente dispendiosos.
+
+Os motores das aeronaves da Fabrikam são equipados com sensores que controlam o estado do motor durante o voo. A Fabrikam utiliza a solução de manutenção preditiva para recolher os dados de sensor recolhidos durante o voo. Depois de ter acumulado anos de dados sobre as falhas e dados operacionais sobre o motor, os cientistas de dados da Fabrikam modelaram uma maneira de prever a Vida Útil Remanescente (RUL) do motor de uma aeronave. O módulo utiliza uma correlação entre os dados de quatro sensores do motor com o desgaste do motor que pode eventualmente levar a uma falha. Enquanto a Fabrikam continua a fazer inspeções frequentes para garantir a segurança, pode utilizar os modelos para calcular o RUL de cada motor depois de cada voo. O modelo utiliza a telemetria recolhida a partir de motores durante de voo. A Fabrikam pode agora prever futuros pontos de falha e planificar antecipadamente manutenções e reparações.
 
 > [!NOTE]
 > O modelo de solução utiliza os dados atuais de desgaste do motor.
 
-Ao prever o momento em que é necessária a manutenção, a Fabrikam pode otimizar as suas operações para reduzir os custos. Os coordenadores de manutenção trabalham com programadores:
+Ao prever o momento em que é necessária a manutenção, a Fabrikam pode otimizar as suas operações para reduzir os custos.
 
-- Para planear a manutenção para coincidir com a paragem de uma aeronave numa localização específica.
-- Para garantir que existe tempo suficiente para a aeronave estar fora de serviço sem causar uma interrupção na agenda.
+Os coordenadores de manutenção trabalham com programadores para:
+
+- Planear a manutenção para coincidir com a paragem de uma aeronave numa localização específica.
+- Garantir que existe tempo suficiente para a aeronave estar fora de serviço sem causar uma interrupção na agenda.
 - Para agendar com os técnicos para assegurar que a manutenção das aeronaves é feita eficientemente sem tempo de espera.
 
-Os gestores de controlo de inventário recebem os planos de manutenção, para que possam otimizar o seu processo de encomenda e inventário de peças sobressalentes. Todos estes fatores permitem à Fabrikam minimizar o período da aeronave em terra e reduzir os custos operacionais, garantindo simultaneamente a segurança dos passageiros e da tripulação.
+Os gestores de controlo de inventário recebem os planos de manutenção, para que possam otimizar o seu processo de encomenda e inventário de peças sobressalentes.
+
+Estas atividades permitem à Fabrikam minimizar o período da aeronave em terra e reduzir os custos operacionais, garantindo, simultaneamente, a segurança dos passageiros e da tripulação.
 
 Para compreender como [Azure IoT Suite][lnk_iot_suite] fornece as capacidades de que os clientes precisam para realizar o potencial da manutenção preditiva, reveja este [gráfico informativo][lnk_infographic].
 
@@ -50,7 +55,7 @@ Para compreender como [Azure IoT Suite][lnk_iot_suite] fornece as capacidades de
 
 A solução utiliza um modelo existente do Azure Machine Learning, disponível como um modelo para mostrar estas capacidades de trabalhar a partir da telemetria do dispositivo recolhida através dos serviços do IoT Suite. A Microsoft criou um [modelo de regressão][lnk_regression_model] de um motor de aeronave baseado nos dados publicamente disponíveis<sup>\[1\]</sup> e a documentação de orientação passo a passo sobre a utilização do modelo.
 
-A solução de manutenção preditiva pré-configurada do Azure IoT utiliza o modelo de regressão criado a partir deste modelo. O modelo é implementado na sua subscrição do Azure e exposto através de uma API gerada automaticamente. A solução inclui um subconjunto dos dados de teste que representam 4 (em 100, no total) motores e os 4 (em 21, no total) fluxos de dados do sensor. Estes dados são suficientes para fornecer um resultado preciso do modelo treinado.
+A solução de manutenção preditiva do Azure IoT utiliza o modelo de regressão criado a partir deste modelo. O modelo é implementado na sua subscrição do Azure e exposto através de uma API gerada automaticamente. A solução inclui um subconjunto dos dados de teste que representam 4 (em 100, no total) motores e os 4 (em 21, no total) fluxos de dados do sensor. Estes dados são suficientes para fornecer um resultado preciso do modelo treinado.
 
 *\[1\] A. Saxena e K. Goebel (2008). "Turbofan Engine Degradation Simulation Data Set", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA*
 
@@ -86,17 +91,19 @@ Pretendia ver certos detalhes que não se encontram listados para a sua soluçã
 Esta secção orienta-o ao longo da IU da solução.
 
 ### <a name="predictive-maintenance-dashboard"></a>Dashboard de Manutenção Preventiva
+
 Esta página na aplicação Web utiliza os controlos do PowerBI JavaScript (consulte o [repositório PowerBI-visuals][lnk-powerbi]) para visualizar:
 
 * Os dados de saída das tarefas do Stream Analytics no Blob Storage.
 * A RUL e contagem de ciclo por motor de aeronave.
 
 ### <a name="observing-the-behavior-of-the-cloud-solution"></a>Observar o comportamento da solução na nuvem
+
 No Portal do Azure, navegue para o grupo de recursos com o nome da solução que escolheu para ver os recursos aprovisionados.
 
 ![][img-resource-group]
 
-Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Também pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] para a sua solução aprovisionada quando a solução estiver no estado **Pronto**.
+Quando aprovisiona a solução pré-configurada, recebe um e-mail com uma ligação para a área de trabalho do Machine Learning. Também pode navegar para a área de trabalho do Machine Learning a partir da página [azureiotsuite.com][lnk-azureiotsuite] da sua solução aprovisionada. Quando a solução estiver no estado **Pronto**, estará disponível um mosaico nesta página.
 
 ![][img-machine-learning]
 
@@ -104,11 +111,11 @@ No portal de solução, pode ver que o exemplo é aprovisionado com quatro dispo
 
 ![][img-simulation-stopped]
 
-Clique em **Iniciar simulação** para começar a simulação onde verá o histórico do sensor, a RUL, os Ciclos e o histórico da RUL a preencher o dashboard.
+Clique em **Iniciar simulação** para começar a simulação. O dashboard é preenchido pelo histórico dos sensores, pela RUL, pelos Ciclos e pelo histórico da RUL.
 
 ![][img-simulation-running]
 
-Quando a RUL for inferior a 160 (limiar arbitrário escolhido para fins de demonstração), o portal de solução apresentará um símbolo de aviso junto da apresentação da RUL e o motor da aeronave aparecerá realçado a amarelo. Repare como os valores da RUL têm uma tendência descendente geral, tendendo no entanto a saltar para cima e para baixo. Este comportamento decorre das durações variáveis dos ciclos e da precisão do modelo.
+Quando a RUL for inferior a 160 (limiar arbitrário escolhido para fins de demonstração), o portal de solução apresenta um símbolo de aviso junto da apresentação da RU. O portal da solução também realça o motor de aeronave a amarelo. Repare como os valores da RUL têm uma tendência descendente geral, tendendo no entanto a saltar para cima e para baixo. Este comportamento decorre das durações variáveis dos ciclos e da precisão do modelo.
 
 ![][img-simulation-warning]
 
@@ -122,7 +129,7 @@ Pode parar a simulação a qualquer momento mas, se clicar em **Iniciar Simulaç
 
 Para saber mais sobre como o Azure IoT permite cenários de manutenção preditiva, leia o artigo [Capture value from the Internet of Things (Valor de captura da Internet das Coisas)][lnk_capture_value].
 
-Siga as [instruções][lnk-predictive-walkthrough] sobre a solução pré-configurada de manutenção preditiva.
+Siga as [instruções][lnk-predictive-walkthrough] da solução de manutenção preditiva.
 
 Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
 

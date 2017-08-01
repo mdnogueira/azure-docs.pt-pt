@@ -23,32 +23,24 @@ ms.lasthandoff: 06/14/2017
 
 
 ---
-<a id="get-started-with-sql-data-warehouse" class="xliff"></a>
-
-# Introdução ao SQL Data Warehouse
+# <a name="get-started-with-sql-data-warehouse"></a>Introdução ao SQL Data Warehouse
 
 Este tutorial mostra-lhe como aprovisionar e carregar dados para o Azure SQL Data Warehouse. Também vai aprender as noções básicas sobre o dimensionamento, a colocação em pausa e a otimização. Quando tiver terminado, estará pronto para consultar e explorar o seu armazém de dados.
 
 **Tempo de conclusão previsto:** este é um tutorial completo com código de exemplo que demora cerca de 30 minutos a concluir depois de cumprir os pré-requisitos. 
 
-<a id="prerequisites" class="xliff"></a>
-
-## Pré-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 O tutorial parte do princípio de que está familiarizado com os conceitos básicos do SQL Data Warehouse. Se precisar de uma introdução, veja [O que é o Azure SQL Data Warehouse?](sql-data-warehouse-overview-what-is.md). 
 
-<a id="sign-up-for-microsoft-azure" class="xliff"></a>
-
-### Inscrever-se no Microsoft Azure
+### <a name="sign-up-for-microsoft-azure"></a>Inscrever-se no Microsoft Azure
 Se ainda não tem uma conta do Microsoft Azure, tem de se inscrever numa para utilizar este serviço. Se já tiver uma conta, pode ignorar este passo. 
 
 1. Navegue para as páginas de conta, [https://azure.microsoft.com/account/](https://azure.microsoft.com/account/)
 2. Crie uma conta do Azure gratuita ou compre uma.
 3. Siga as instruções
 
-<a id="install-appropriate-sql-client-drivers-and-tools" class="xliff"></a>
-
-### Instalar o controlador e as ferramentas de cliente SQL adequadas
+### <a name="install-appropriate-sql-client-drivers-and-tools"></a>Instalar o controlador e as ferramentas de cliente SQL adequadas
 
 A maioria das ferramentas de cliente SQL podem ligar-se ao SQL Data Warehouse através de JDBC, ODBC ou ADO.NET. Devido ao grande número de funcionalidades T-SQL que o SQL Data Warehouse suporta, algumas aplicações cliente não são totalmente compatíveis com o mesmo.
 
@@ -58,9 +50,7 @@ Se estiver a executar um sistema operativo Windows, recomendamos a utilização 
 
 [!INCLUDE [SQL Database create server](../../includes/sql-database-create-new-server-firewall-portal.md)]
 
-<a id="create-a-sql-data-warehouse" class="xliff"></a>
-
-## Criar um SQL Data Warehouse
+## <a name="create-a-sql-data-warehouse"></a>Criar um SQL Data Warehouse
 
 O SQL Data Warehouse é um tipo especial de base de dados concebido para processamento em paralelo em massa. A base de dados é distribuída em vários nós e processa consultas em paralelo. O SQL Data Warehouse tem um nó de controlo que orquestra as atividades de todos os nós. Os nós em si utilizam a Base de Dados SQL para gerir os seus dados.  
 
@@ -68,9 +58,7 @@ O SQL Data Warehouse é um tipo especial de base de dados concebido para process
 > A criação de um SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Para obter mais informações, veja [Preços do SQL Data Warehouse](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 >
 
-<a id="create-a-data-warehouse" class="xliff"></a>
-
-### Criar um armazém de dados
+### <a name="create-a-data-warehouse"></a>Criar um armazém de dados
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 2. Clique em **Novo** > **Bases de dados** > **SQL Data Warehouse**.
@@ -101,16 +89,12 @@ O SQL Data Warehouse é um tipo especial de base de dados concebido para process
 
 5. Relaxe e aguarde pela implementação do seu armazém de dados! É normal que este processo demore alguns minutos. O portal notifica-o quando o armazém de dados estiver pronto para utilização. 
 
-<a id="connect-to-sql-data-warehouse" class="xliff"></a>
-
-## Ligar ao SQL Data Warehouse
+## <a name="connect-to-sql-data-warehouse"></a>Ligar ao SQL Data Warehouse
 
 Este tutorial utiliza o SQL Server Management Studio (SSMS) para ligar ao armazém de dados. Pode ligar ao SQL Data Warehouse com estes conectores suportados: ADO.NET, JDBC, ODBC e PHP. Não se esqueça de que a funcionalidade das ferramentas que não são suportadas pela Microsoft pode ser limitada.
 
 
-<a id="get-connection-information" class="xliff"></a>
-
-### Obter informações da ligação
+### <a name="get-connection-information"></a>Obter informações da ligação
 
 Para ligar ao seu armazém de dados, tem de se ligar através do servidor SQL lógico que criou em [Pré-requisitos].
 
@@ -135,15 +119,11 @@ Também pode ter uma conta de administrador do Azure Active Directory. Não disp
 Em seguida, vamos explorar a criação de inícios de sessão e utilizadores adicionais.
 
 
-<a id="create-a-database-user" class="xliff"></a>
-
-## Criar um utilizador de base de dados
+## <a name="create-a-database-user"></a>Criar um utilizador de base de dados
 
 Neste passo, vai criar uma conta de utilizador para aceder ao seu armazém de dados. Também lhe mostramos como dar a esse utilizador a possibilidade de executar consultas com uma grande quantidade de memória e recursos da CPU.
 
-<a id="notes-about-resource-classes-for-allocating-resources-to-queries" class="xliff"></a>
-
-### Notas sobre as classes de recursos para alocar recursos a consultas
+### <a name="notes-about-resource-classes-for-allocating-resources-to-queries"></a>Notas sobre as classes de recursos para alocar recursos a consultas
 
 - Para manter os seus dados seguros, não utilize o administrador de servidor para executar consultas nas suas bases de dados de produção. Este tem muito mais privilégios do que os outros utilizadores e utilizá-lo para realizar operações nos dados do utilizador compromete os seus dados. Além disso, uma vez que o administrador do servidor se destina a fazer operações de gestão, executa-as apenas com uma pequena alocação de memória e recursos da CPU. 
 
@@ -151,9 +131,7 @@ Neste passo, vai criar uma conta de utilizador para aceder ao seu armazém de da
 
 - Para uma compressão de dados otimizada, o utilizador pode precisar de carregamento com alocações de recursos grandes ou muito grandes. Leia mais sobre as classes de recursos [aqui](./sql-data-warehouse-develop-concurrency.md#resource-classes).
 
-<a id="create-an-account-that-can-control-a-database" class="xliff"></a>
-
-### Criar uma conta que pode controlar uma base de dados
+### <a name="create-an-account-that-can-control-a-database"></a>Criar uma conta que pode controlar uma base de dados
 
 Uma vez que tem sessão iniciada como o administrador do servidor, tem permissões para criar inícios de sessão e utilizadores.
 
@@ -185,9 +163,7 @@ Uma vez que tem sessão iniciada como o administrador do servidor, tem permissõ
     > Se o seu nome de base de dados tiver hífenes, confirme que os coloca entre parêntesis. 
     >
 
-<a id="give-the-user-medium-resource-allocations" class="xliff"></a>
-
-### Dar ao utilizador alocações de recursos médios
+### <a name="give-the-user-medium-resource-allocations"></a>Dar ao utilizador alocações de recursos médios
 
 1. Execute este comando T-SQL para torná-lo membro da classe de recursos médios, que tem o nome mediumrc. 
 
@@ -203,9 +179,7 @@ Uma vez que tem sessão iniciada como o administrador do servidor, tem permissõ
     ![Inicie Sessão com o Início de Sessão Novo](./media/sql-data-warehouse-get-started-tutorial/new-login.png)
 
 
-<a id="load-data-from-azure-blob-storage" class="xliff"></a>
-
-## Carregar dados a partir do Armazenamento de Blobs do Azure
+## <a name="load-data-from-azure-blob-storage"></a>Carregar dados a partir do Armazenamento de Blobs do Azure
 
 Está agora pronto para carregar dados para o seu armazém de dados. Este passo mostra-lhe como carregar os dados de táxis da cidade de Nova Iorque a partir de um blob de armazenamento do Azure. 
 
@@ -214,9 +188,7 @@ Está agora pronto para carregar dados para o seu armazém de dados. Este passo 
 - Para referência futura e para saber como colocar os seus dados no armazenamento de blobs do Azure ou carregá-los diretamente da sua origem para o SQL Data Warehouse,veja a [descrição geral do carregamento](sql-data-warehouse-overview-load.md).
 
 
-<a id="define-external-data" class="xliff"></a>
-
-### Definir dados externos
+### <a name="define-external-data"></a>Definir dados externos
 
 1. Crie uma chave mestra. Só tem de criar uma chave mestra uma vez por base de dados. 
 
@@ -447,9 +419,7 @@ Está agora pronto para carregar dados para o seu armazém de dados. Este passo 
     ;
 ```
 
-<a id="import-the-data-from-azure-blob-storage" class="xliff"></a>
-
-### Importe os dados do armazenamento de blobs do Azure.
+### <a name="import-the-data-from-azure-blob-storage"></a>Importe os dados do armazenamento de blobs do Azure.
 
 O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS SELECT (CTAS). Esta instrução cria uma nova tabela com base nos resultados de uma instrução select. A nova tabela tem as mesmas colunas e tipos de dados dos resultados da instrução select.  Esta é uma forma elegante de importar dados do armazenamento de blobs do Azure para o SQL Data Warehouse.
 
@@ -571,15 +541,11 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     ![Ver os Dados Carregados](./media/sql-data-warehouse-get-started-tutorial/see-data-loaded.png)
 
 
-<a id="improve-query-performance" class="xliff"></a>
-
-## Melhorar o desempenho das consultas
+## <a name="improve-query-performance"></a>Melhorar o desempenho das consultas
 
 Existem várias formas de melhorar o desempenho das consultas e alcançar o desempenho de alta velocidade que o SQL Data Warehouse foi concebido para fornecer.  
 
-<a id="see-the-effect-of-scaling-on-query-performance" class="xliff"></a>
-
-### Ver o efeito do dimensionamento no desempenho das consultas 
+### <a name="see-the-effect-of-scaling-on-query-performance"></a>Ver o efeito do dimensionamento no desempenho das consultas 
 
 Uma forma de melhorar o desempenho das consultas é dimensionar os recursos ao alterar o nível de serviço DWU para o seu armazém de dados. Cada nível de serviço custa mais, mas pode reduzir ou colocar recursos em pausa em qualquer altura. 
 
@@ -619,9 +585,7 @@ Primeiro, vamos reduzir para 100 DWUs, para termos uma ideia de como o nó de co
 > O SQL Data Warehouse utiliza um processamento paralelo em massa. As consultas que analisam ou efetuam funções de análise em milhões de linhas comprovam o verdadeiro poder do Azure SQL Data Warehouse.
 >
 
-<a id="see-the-effect-of-statistics-on-query-performance" class="xliff"></a>
-
-### Ver o efeito das estatísticas no desempenho das consultas
+### <a name="see-the-effect-of-statistics-on-query-performance"></a>Ver o efeito das estatísticas no desempenho das consultas
 
 1. Execute uma consulta que associada a tabela Dados à tabela Viagem
 
@@ -673,9 +637,7 @@ Primeiro, vamos reduzir para 100 DWUs, para termos uma ideia de como o nó de co
 
 3. Execute novamente a consulta dos Pré-requisitos e repare nas diferenças no desempenho. Embora as diferenças no desempenho da consulta não sejam tão significativas como no aumento vertical, deverá notar uma aceleração. 
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Está agora pronto para consultar e explorar. Veja as nossas melhores práticas ou sugestões.
 
@@ -683,9 +645,7 @@ Se já tiver explorado tudo por hoje, não se esqueça de colocar a sua instânc
 
 ![Colocar em pausa](./media/sql-data-warehouse-get-started-tutorial/pause.png)
 
-<a id="useful-readings" class="xliff"></a>
-
-## Leituras úteis
+## <a name="useful-readings"></a>Leituras úteis
 
 [Concurrency and Workload Management (Simultaneidade e Gestão de Cargas de Trabalho)][]
 
