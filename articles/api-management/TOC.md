@@ -85,6 +85,7 @@
 ## [Consumir serviços WCF SOAP sobre o HTTP](http://mostlydotnetdev.blogspot.nl/2015/03/azure-api-management-apim-consuming.html)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureapimgmt)
 ## [Preços](https://azure.microsoft.com/pricing/details/api-management/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Fornecer acesso semelhante ao RBAC com a API REST](http://blogs.msdn.com/b/katriend/archive/2015/12/21/using-the-azure-api-management-rest-api-as-workaround-to-rbac-functionality.aspx)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=api-management)
 ## [Configurar o PostMan para chamar as APIs de Gestão de API](http://www.bizbert.com/bizbert/2015/07/08/Setting+Up+PostMan+To+Call+The+Azure+Management+APIs.aspx)

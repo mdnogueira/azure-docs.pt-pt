@@ -24,10 +24,6 @@
 # Procedimento
 ## Planear e conceber
 ### [Compreender a arquitetura do Azure AD](active-directory-architecture.md)
-### [Políticas e configurações de segurança recomendadas](secure-email-introduction.md)
-#### [Políticas recomendadas de proteção de e-mail](secure-email-recommended-policies.md)
-##### [Implementar políticas recomendadas de proteção de e-mail](secure-email-deploy-recommended-policies.md)
-#### [Descrição geral dos serviços EMS e do Office 365](secure-email-ems-office365-service-descriptions.md)
 ### [Implementar uma solução de identidade híbrida](active-directory-hybrid-identity-design-considerations-overview.md)
 ### [Mapeamento de afirmações no Azure Active Directory](active-directory-claims-mapping.md)
 #### Determinar os requisitos
@@ -167,7 +163,6 @@
 ## Gerir aplicações
 ### [Descrição geral](active-directory-enable-sso-scenario.md)
 ### [Introdução](active-directory-integrating-applications-getting-started.md)
-
 ### [Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md)
 #### [Atualizar definições de registo](active-directory-cloudappdiscovery-registry-settings-for-proxy-services.md)
 #### [Compreender a segurança e privacidade](active-directory-cloudappdiscovery-security-and-privacy-considerations.md)
@@ -178,7 +173,7 @@
 ##### [Ativar Proxy de aplicações](active-directory-application-proxy-enable.md)
 ##### [Publicar aplicações](application-proxy-publish-azure-portal.md)
 ##### [Domínios personalizados](active-directory-application-proxy-custom-domains.md)
-#### [Acesso SSO](active-directory-appssoaccess-whatis.md)
+#### [Início de sessão único](application-proxy-sso-overview.md)
 ##### [SSO com KCD](active-directory-application-proxy-sso-using-kcd.md)
 ##### [SSO com cabeçalhos](application-proxy-ping-access.md)
 ##### [SSO com colocação de palavras-passe em cofres](application-proxy-sso-azure-portal.md)
@@ -219,6 +214,7 @@
 
 ### [Gerir o acesso a aplicações](active-directory-managing-access-to-apps.md)
 #### [Acesso ao Self-service](active-directory-self-service-application-access.md)
+#### [Acesso SSO](active-directory-appssoaccess-whatis.md)
 #### [Certificados para SSO](active-directory-sso-certs.md)
 #### [Restrições de inquilino](active-directory-tenant-restrictions.md)
 #### [Utilizar utilizadores de aprovisionamento SCIM](active-directory-scim-provisioning.md)
@@ -370,6 +366,7 @@
 
 
 # Referência
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=active-directory)
 ## [Cmdlets do PowerShell](/powershell/azure/overview)
 ## [Referência de Java API](/java/api)
 ## [API .NET](/active-directory/adal/microsoft.identitymodel.clients.activedirectory)
@@ -387,6 +384,7 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD)
 ## [Preços](https://azure.microsoft.com/pricing/details/active-directory/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=active-directory)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-active-directory)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=active-directory)

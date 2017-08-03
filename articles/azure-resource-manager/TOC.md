@@ -7,10 +7,11 @@
 
 # Introdução
 ## [Exportar modelo](resource-manager-export-template.md)
-## [Criar o seu primeiro modelo](resource-manager-create-first-template.md)
+## [Criar e implementar modelo](resource-manager-create-first-template.md)
 ## [Visual Studio com o Resource Manager](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
 
 # Amostras
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=azure-resource-manager)
 ## PowerShell
 ### [Implementar modelo](resource-manager-samples-powershell-deploy.md)
 
@@ -102,6 +103,7 @@
 ### [Funções de matriz e objeto](resource-group-template-functions-array.md)
 ### [Funções de comparação](resource-group-template-functions-comparison.md)
 ### [Funções de implementação](resource-group-template-functions-deployment.md)
+### [Funções lógicas](resource-group-template-functions-logical.md)
 ### [Funções numéricas](resource-group-template-functions-numeric.md)
 ### [Funções de recursos](resource-group-template-functions-resource.md)
 ### [Funções de cadeia](resource-group-template-functions-string.md)
@@ -129,6 +131,7 @@
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=monitoring-management)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=azure-resource-manager)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-resource-manager)
 ## [Limitar pedidos](resource-manager-request-limits.md)

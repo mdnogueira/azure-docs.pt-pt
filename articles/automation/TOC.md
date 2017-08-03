@@ -28,7 +28,6 @@
 ## Automatizar
 ### [Iniciar um runbook](automation-starting-a-runbook.md)
 ### [Iniciar um runbook a partir de um webhook](automation-webhooks.md)
-### [Executar runbooks na Função de Trabalho de Runbook Híbrida](automation-hybrid-runbook-worker.md)
 ### [Configurar parâmetros de entrada do runbook](automation-runbook-input-parameters.md)
 ### [Erro ao processar em runbooks gráficos](automation-runbook-graphical-error-handling.md)
 ### [Controlar um trabalho de runbook](automation-runbook-execution.md)
@@ -36,6 +35,9 @@
 ### [Gerir os dados da Automatização do Azure](automation-managing-data.md)
 ### [Invocar Runbook da Automatização do Azure a partir de um alerta do Log Analytics](automation-invoke-runbook-from-omsla-alert.md)
 ### [Passar um objeto JSON para um runbook da Automatização do Azure](automation-pass-json-string.md)
+## Função de Trabalho de Runbook Híbrida
+### [Implementar Função de Trabalho de Runbook Híbrida](automation-hybrid-runbook-worker.md)
+### [Executar runbooks na função de trabalho](automation-hrw-run-runbooks.md)
 ## Implementar gestão de configuração (DSC)
 ### [Descrição geral da Configuração do Estado Pretendido (DSC)](automation-dsc-overview.md)
 ### [Introdução](automation-dsc-getting-started.md)
@@ -87,6 +89,7 @@
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/automation/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation)  
 ## [Preços](https://azure.microsoft.com/pricing/details/automation/)  
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Notas de versão](https://azure.microsoft.com/updates/?product=automation)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=automation)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-automation)

@@ -4,7 +4,7 @@
 
 # Introdução
 ## [Fazer cópia de segurança de VMs do Azure](backup-azure-vms-first-look-arm.md)
-## [Fazer uma cópia de segurança de ficheiros e pastas](backup-try-azure-backup-in-10-mins.md)
+## [Faça uma Cópia de Segurança do Windows Server ou de computadores Windows](backup-try-azure-backup-in-10-mins.md)
 ## [Fazer cópia de segurança dos servidores VMware](backup-azure-backup-server-vmware.md)
 
 # Procedimento
@@ -27,16 +27,19 @@
 #### [Restaurar VMs implementadas pelo Azure Resource Manager no Portal do Azure](backup-azure-arm-restore-vms.md)
 #### [Restaurar máquinas virtuais encriptadas](backup-azure-vms-encryption.md)
 #### [Restaurar máquinas virtuais no Azure](backup-azure-restore-vms.md)
-#### [Restaurar a chave do Key Vault e o segredo para VMs encriptadas utilizando o Azure Backup](backup-azure-restore-key-secret.md)
+#### [Restaurar a chave do Key Vault e o segredo para VMs encriptadas](backup-azure-restore-key-secret.md)
 
 
-## Ficheiros e pastas do Windows
-### [Windows Server com o modelo de implementação do Resource Manager](backup-configure-vault.md)
-### [Windows Server com o modelo de implementação clássico](backup-configure-vault-classic.md)
+## Windows Server
+### [Fazer cópia de segurança de ficheiros e pastas do Windows Server](backup-configure-vault.md)
+### [Fazer uma cópia de segurança do Estado do Sistema Windows Server](backup-azure-system-state.md)
+### [Recuperar ficheiros a partir do Azure para o Windows Server](backup-azure-restore-windows-server.md)
+### [Restaurar o Estado do Sistema Windows Server](backup-azure-restore-system-state.md)
 ### [Monitorizar e gerir cofres dos Serviços de Recuperação](backup-azure-manage-windows-server.md)
-### [Gerir cofres de Cópia de Segurança com o modelo de implementação clássica](backup-azure-manage-windows-server-classic.md)
-### [Recuperar ficheiros para um Windows Server com o modelo de implementação Resource Manager](backup-azure-restore-windows-server.md)
-### [Recuperar ficheiros para um Windows Server com o modelo de implementação clássico](backup-azure-restore-windows-server-classic.md)
+### Faça uma cópia de segurança e restauro com o portal clássico
+#### [Windows Server com o modelo de implementação clássico](backup-configure-vault-classic.md)
+#### [Gerir cofres de Cópia de Segurança com o modelo de implementação clássica](backup-azure-manage-windows-server-classic.md)
+#### [Recuperar ficheiros para um Windows Server com o modelo de implementação clássico](backup-azure-restore-windows-server-classic.md)
 
 ## Servidor do Backup do Azure
 ### [Matriz de proteção do Azure Backup Server](backup-mabs-protection-matrix.md)
@@ -108,5 +111,6 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazureonlinebackup)
 ## [Preços](https://azure.microsoft.com/pricing/details/backup/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=backup)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=backup)

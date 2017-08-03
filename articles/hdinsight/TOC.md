@@ -99,7 +99,6 @@
 #### [Processar eventos com topologias Java](hdinsight-storm-develop-java-event-hub-topology.md)
 #### [Utilizar o Power BI com uma topologia](hdinsight-storm-power-bi-topology.md)
 #### [Analisar dados de sensor em tempo real](hdinsight-storm-sensor-data-analysis.md)
-#### [Processar dados de sensores de veículos](hdinsight-storm-iot-eventhub-documentdb.md)
 #### [Correlacionar eventos ao longo do tempo](hdinsight-storm-correlation-topology.md)
 #### [Desenvolver topologias com Python](hdinsight-storm-develop-python-topology.md)
 ## Utilizar o HDInsight associado a um domínio (Pré-visualização)
@@ -137,6 +136,7 @@
 ### [Analisar registos de Web sites com o Hive](hdinsight-hive-analyze-website-log.md)
 ### [Analisar registos de telemetria do Application Insights](hdinsight-spark-analyze-application-insight-logs.md)
 ## Expandir clusters
+### [Utilizar a conta de armazenamento com segurança ativadada](hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md)
 ### [Personalizar clusters com o Programa de Arranque do Sistema](hdinsight-hadoop-customize-cluster-bootstrap.md)
 ### [Personalizar clusters com Ação de Script](hdinsight-hadoop-customize-cluster-linux.md)
 ### [Ligar o HDInsight à sua rede no local](connect-on-premises-network.md)
@@ -207,6 +207,7 @@
 #### [Otimizar as consultas do Hive](hdinsight-hadoop-optimize-hive-query.md)
 
 # Referência
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=hdinsight)
 ## [PowerShell](/powershell/module/azurerm.hdinsight)
 ## [.NET (Hadoop)](https://docs.microsoft.com/dotnet/api/overview/azure/hd-insight?view=azure-dotnet)
 ## [.NET (HBase)](https://www.nuget.org/packages/Microsoft.HBase.Client/)
@@ -240,4 +241,5 @@
 ## [Obter ajuda no fórum](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=hdinsight)
 ## [Percurso de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 ## [Microsoft Professional Program para Macrodados](https://academy.microsoft.com/en-us/professional-program/big-data/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Ferramentas do Windows para HDInsight](hdinsight-hadoop-windows-tools.md)

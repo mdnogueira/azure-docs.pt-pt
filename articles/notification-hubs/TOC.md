@@ -60,6 +60,7 @@
 ### [Diretrizes de diagnóstico](notification-hubs-push-notification-fixer.md)
 
 # Referência
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=notification-hubs)
 ## [PowerShell](/powershell/module/azurerm.notificationhubs)
 ## [.NET](/dotnet/api/microsoft.azure.notificationhubs)
 ## [REST](/rest/api/notificationhubs)
@@ -68,6 +69,7 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs)
 ## [Preços](https://azure.microsoft.com/pricing/details/notification-hubs/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=notification-hubs)
 ## [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-notificationhub)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=notification-hubs)

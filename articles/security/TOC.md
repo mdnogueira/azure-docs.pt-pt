@@ -3,6 +3,7 @@
 ## [Segurança de bases de dados](azure-database-security-overview.md)
 ## [Segurança de armazenamento](security-storage-overview.md)
 ## [Segurança da computação](security-virtual-machines-overview.md)
+## [Segurança operacional](azure-operational-security-overview.md)
 ## [Gestão e monitorização de segurança](security-management-and-monitoring-overview.md)
 ## [Gestão de identidades](security-identity-management-overview.md)
 ## [Segurança de IoT](../iot-suite/iot-security-architecture.md#security-in-iot)
@@ -35,6 +36,8 @@
 ### [Melhores práticas para cargas de trabalho de IaaS](azure-security-iaas.md)
 ### [Microsoft Antimalware](azure-security-antimalware.md)
 ### [Encriptação de disco para VMs IaaS](azure-security-disk-encryption.md)
+#### [FAQ de encriptação de discos](azure-security-disk-encryption-faq.md)
+#### [Resolução de problemas de encriptação de discos](azure-security-disk-encryption-tsg.md)
 ### [Encriptar uma VM do Azure](../security-center/security-center-disk-encryption.md?toc=%2fazure%2fsecurity%2ftoc.json)
 
 ## Gestão e monitorização de segurança
@@ -53,8 +56,10 @@
 ## Serviços PaaS
 ### [Proteger implementações PaaS](security-paas-deployments.md)
 #### [Proteger aplicações Web e móveis PaaS através de SQL](security-paas-applications-using-sql.md)
-#### [Melhores práticas da Base de Dados SQL](azure-database-security-best-practices.md)
+#### [Melhores práticas de segurança de Bases de Dados SQL](azure-database-security-best-practices.md)
+#### [Lista de verificação de segurança da Base de Dados SQL](azure-database-security-checklist.md)
 #### [Proteger aplicações Web e móveis PaaS através dos Serviços Aplicacionais](security-paas-applications-using-app-services.md)
+####[Lista de verificação de segurança operacional](azure-operational-security-checklist.md)
 
 ## Internet das Coisas
 ### [Proteger a sua implementação de IoT](../iot-suite/iot-suite-security-deployment.md)
@@ -79,6 +84,7 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=monitoring-management)
 ## [Programa MVP de segurança do Azure](azure-security-mvp.md)
 ## [Consultoria de cibersegurança](azure-security-cyber-services.md)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Blogue de Segurança e Conformidade](http://blogs.msdn.com/b/azuresecurity/)
 ## [Cursos de segurança da Virtual Academy](security-microsoft-virtual-academy.md)
 ## [Vídeos de segurança no Canal 9](security-channel-nine.md)

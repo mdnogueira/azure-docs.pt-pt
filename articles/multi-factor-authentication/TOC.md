@@ -51,3 +51,4 @@
 ### [Erros da extensão NPS](multi-factor-authentication-nps-errors.md)
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)

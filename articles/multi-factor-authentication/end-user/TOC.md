@@ -15,3 +15,4 @@
 ### [FAQs](microsoft-authenticator-app-faq.md)
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)

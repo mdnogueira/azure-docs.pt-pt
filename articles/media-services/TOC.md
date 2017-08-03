@@ -215,6 +215,7 @@
 ### [Repetir a lógica](media-services-retry-logic-in-dotnet-sdk.md)
 
 # Referência
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=media-services)
 ## [PowerShell (Resource Manager)](/powershell/module/azurerm.media)
 ## [PowerShell (Gestão de Serviços)](/powershell/module/azure/?view=azuresmps-3.7.0)
 ## [.NET](/dotnet/api/microsoft.windowsazure.mediaservices.client)
@@ -224,5 +225,6 @@
 ## [Comunidade dos Serviços de Multimédia do Azure](media-services-community.md)
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=web-mobile)
 ## [Preços](https://azure.microsoft.com/pricing/details/media-services/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Notas de versão](media-services-release-notes.md)
 ## [Vídeos](https://azure.microsoft.com/resources/videos/index/?services=media-services)

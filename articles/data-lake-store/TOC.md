@@ -58,6 +58,7 @@
 ### [Plano para elevada disponibilidade](data-lake-store-troubleshooting-guidance.md)
 
 # Referência
+## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=data-lake-store)
 ## [PowerShell](/powershell/module/azurerm.datalakestore)
 ## [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 ## [Java](/java/api/com.microsoft.azure.datalake.store)
@@ -73,6 +74,7 @@
 ## [Enviar comentários sobre o UserVoice](https://feedback.azure.com/forums/327234-data-lake)
 ## [Fórum do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataLake)
 ## [Preços](https://azure.microsoft.com/pricing/details/data-lake-store/)
+## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=data-lake-store)
 ## [Fórum do Stack Overflow](http://stackoverflow.com/questions/tagged/azure-data-lake)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=data-lake-store)
