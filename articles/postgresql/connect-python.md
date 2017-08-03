@@ -12,10 +12,10 @@ ms.devlang: python
 ms.topic: hero-article
 ms.date: 07/07/2017
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: 3cd090b02887857a68271f021e3580e05660d1dc
+ms.sourcegitcommit: fff84ee45818e4699df380e1536f71b2a4003c71
+ms.openlocfilehash: f6ae1ef3855711a86333857f26400f29dfd7c54e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="azure-database-for-postgresql-use-python-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilizar o Python para se ligar e consultar dados
@@ -50,7 +50,7 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
 
 ## <a name="how-to-run-python-code"></a>Como executar o código do Python
 - Com o seu editor de texto favorito, crie um novo ficheiro com o nome postgres.py e guarde-o numa pasta do projeto. Copie e cole um dos exemplos de código abaixo para o ficheiro de texto e guarde-o. Certifique-se de que seleciona a codificação UTF-8 ao guardar o ficheiro no SO do Windows. 
-- Para executar o código, inicie a linha de comandos ou a shell de bash. Altere o diretório para a pasta do projeto, como `cd postgresql`. Em seguida, escreva o comando do Python seguido do nome de ficheiro, como `python postgresql.py`.
+- Para executar o código, inicie a linha de comandos ou a shell de bash. Altere o diretório para a pasta do projeto, como `cd postgresql`. Em seguida, escreva o comando do Python seguido do nome de ficheiro, como `python postgres.py`.
 
 > [!NOTE]
 > A partir da versão 3 do Python, poderá ser apresentado o erro `SyntaxError: Missing parentheses in call to 'print'` ao executar os blocos de código abaixo. Se isso acontecer, substitua cada chamada para o comando `print "string"` por uma chamada de função utilizando parênteses, como `print("string")`.
