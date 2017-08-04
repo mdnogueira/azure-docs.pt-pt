@@ -12,14 +12,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/16/2017
+ms.date: 08/02/2017
 ms.author: markvi
 ms.translationtype: Human Translation
 ms.sourcegitcommit: 07635b0eb4650f0c30898ea1600697dacb33477c
 ms.openlocfilehash: 5c60fa737c0133482af8b653f795bf9086c39969
 ms.contentlocale: pt-pt
 ms.lasthandoff: 03/28/2017
-
 
 ---
 # <a name="understand-azure-active-directory-architecture"></a>Compreender a arquitetura do Azure Active Directory
@@ -31,10 +30,10 @@ Com o Azure AD, pode criar e gerir utilizadores e grupos e ativar permissões pa
 A arquitetura geograficamente distribuída do Azure AD combina extensas capacidades de monitorização, redirecionamento automatizado, ativação pós-falha e recuperação, o que nos permite proporcionar aos nossos clientes disponibilidade e desempenho de nível empresarial.
 
 Este artigo cobre os elementos da arquitetura seguintes:
- *    Design da arquitetura do serviço
- *    Escalabilidade 
- *    Disponibilidade contínua
- *    Datacenters
+ *  Design da arquitetura do serviço
+ *  Escalabilidade 
+ *  Disponibilidade contínua
+ *  Datacenters
 
 ### <a name="service-architecture-design"></a>Design da arquitetura do serviço
 A forma mais comum de criar um sistema dimensionável, de elevada disponibilidade e rico em dados é utilizar blocos modulares independentes ou unidades de escala para a camada de dados do Azure AD. As unidades de escala são denominadas *partições*. 
@@ -87,7 +86,7 @@ O Azure AD funciona em datacenters que têm as características seguintes:
 
  * Os serviços de Autenticação, Graph e outros serviços do AD residem por detrás do serviço Gateway. O Gateway gere o balanceamento de carga destes serviços. Se forem detetados servidores em mau estado de funcionamento, através de sondas de estado de funcionamento transacionais, é feita a ativação pós-falha do mesmo automaticamente. Com base nestas sondas de estado de funcionamento, o Gateway encaminha dinamicamente o tráfego para os datacenters em bom estado de funcionamento.
  * Relativamente a *leituras*, o diretório tem réplicas secundárias e serviços front-end correspondentes numa configuração ativo-ativo e em funcionamento em vários datacenters. Em caso de falha de um datacenter inteiro, o tráfego é encaminhado automaticamente para outro datacenter.
- *    Relativamente a *escritas*, o diretório faz a ativação pós-falha da réplica primária (principal) nos datacenters através de procedimentos de ativação pós-falha planeada (a réplica primária nova é sincronizada com a primária antiga) ou de emergência. A durabilidade dos dados é obtida mediante a replicação de uma consolidação com, pelo menos, dois datacenters.
+ *  Relativamente a *escritas*, o diretório faz a ativação pós-falha da réplica primária (principal) nos datacenters através de procedimentos de ativação pós-falha planeada (a réplica primária nova é sincronizada com a primária antiga) ou de emergência. A durabilidade dos dados é obtida mediante a replicação de uma consolidação com, pelo menos, dois datacenters.
 
 **Consistência de dados**
 
