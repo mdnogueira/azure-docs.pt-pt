@@ -197,8 +197,8 @@ A saída é semelhante ao seguinte.
   - Do domínio de implementação de raiz que configurou para mapear para o endereço IP externo de entrada do Kubernetes (neste caso, `squillace.io`)
 
   De chamar `draft init` e o processo de configuração pede-lhe os valores anteriores. Da primeira vez que o executa, o processo é parecido com o seguinte.
-    ```
-    draft init
+ ```bash
+    $ draft init
     Creating pack ruby...
     Creating pack node...
     Creating pack gradle...
