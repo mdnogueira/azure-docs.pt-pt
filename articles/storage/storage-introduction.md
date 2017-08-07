@@ -12,14 +12,13 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/24/2017
+ms.date: 07/26/2017
 ms.author: marsma
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a643f139be40b9b11f865d528622bafbe7dec939
-ms.openlocfilehash: 1cab34785d6e4f7751245ebf77b29fa8dc3c685b
+ms.translationtype: HT
+ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
+ms.openlocfilehash: 98670b60daca7091e09ce2ab03cf2eaff015070e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
+ms.lasthandoff: 07/27/2017
 
 ---
 # <a name="introduction-to-microsoft-azure-storage"></a>Introdução ao Storage do Microsoft Azure
@@ -110,13 +109,19 @@ Ao conceber aplicações para o dimensionamento, os componentes da aplicação, 
 Uma conta do Storage pode conter qualquer número de filas. Uma fila pode conter qualquer número de mensagens, até ao limite de capacidade da conta do Storage. As mensagens individuais podem ter até 64 KB de tamanho.
 
 ## <a name="file-storage"></a>Armazenamento de ficheiros
-O File Storage do Azure oferece partilhas de ficheiros SMB com base na nuvem para que possa migrar aplicações antigas que se baseiam em partilhas de ficheiros para o Azure rapidamente e sem reescritas dispendiosas. Com o File Storage do Azure, as aplicações em execução nos Virtual Machines ou nos Cloud Services do Azure podem montar uma partilha de ficheiros na nuvem, tal como uma aplicação de ambiente de trabalho monta uma partilha SMB típica. Em seguida, quaisquer componentes da aplicação podem montar e aceder à partilha do File Storage em simultâneo.
+O serviço Ficheiros do Azure permite configurar partilhas de ficheiros de rede de elevada disponibilidade que podem ser acedidas através do protocolo Server Message Block (SMB) padrão. Isto significa que múltiplas VMs podem partilhar os mesmos ficheiros com acesso de leitura e de escrita. Também pode ler os ficheiros através da interface REST ou das bibliotecas de cliente de armazenamento.
 
-Uma vez que as partilhas do Armazenamento de ficheiros são partilhas de ficheiros SMB padrão, as aplicações em execução no Azure podem aceder a dados na partilha através das APIs de E/S do sistema de ficheiros. Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Os profissionais de TI podem utilizar os cmdlets do PowerShell para criar, montar e gerir partilhas de File Storage como parte da administração de aplicações Azure.
+A única coisa que distingue o armazenamento de Ficheiros do Azure dos ficheiros numa partilha de ficheiros empresarial é o facto de poder aceder aos ficheiros a partir de qualquer parte no mundo através de um URL que aponta para o ficheiro e inclui um token de assinatura de acesso partilhado (SAS). Pode gerar tokens SAS; estes permitem o acesso específico a um recurso privado durante um período de tempo específico.
 
-Tal como os outros serviços do Storage do Azure, o File Storage expõe uma API REST para aceder aos dados numa partilha. As aplicações no local podem chamar a API REST do Armazenamento de Ficheiros para aceder aos dados numa partilha de ficheiros. Desta forma, uma empresa pode optar por migrar algumas aplicações antigas para o Azure e continuar a executar outras dentro da própria organização. Tenha em atenção que montar uma partilha de ficheiros só é possível para aplicações em execução no Azure; uma aplicação no local só pode aceder à partilha de ficheiros através da API REST.
+As partilhas de ficheiros podem ser utilizadas para inúmeros cenários comuns:
 
-As aplicações distribuídas também podem utilizar o File Storage para armazenar e partilhar dados da aplicação úteis e ferramentas de testes e de desenvolvimento. Por exemplo, uma aplicação pode armazenar ficheiros de configuração e dados de diagnóstico, tais como registos, métricas e informações de falhas de sistema numa partilha do File Storage para que fiquem disponíveis para várias funções e computadores virtuais. Os programadores e os administradores podem armazenar utilitários de que necessitam para criar ou gerir uma aplicação numa partilha do File Storage que está disponível para todos os componentes, em vez de os instalar em cada computador virtual ou instância de função.
+* Muitas aplicações no local utilizam partilhas de ficheiros. Esta funcionalidade facilita a migração dessas aplicações que partilham dados no Azure. Se montar a partilha de ficheiros na mesma letra de unidade utilizada pela aplicação no local, a parte da sua aplicação que acede à partilha de ficheiros deve funcionar com alterações mínimas, se existirem.
+
+* Os ficheiros de configuração podem ser armazenados numa partilha de ficheiros e acedidos a partir de múltiplas VMs. As ferramentas e os utilitários utilizados pelos múltiplos programadores num grupo podem ser armazenados numa partilha de ficheiros, o que garante que todos podem encontrá-los e que utilizam a mesma versão.
+
+* Os registos de diagnóstico, métricas e informações de falha são apenas três exemplos de dados que podem ser escritos numa partilha de ficheiros e processados ou analisados mais tarde.
+
+Neste momento, a autenticação baseada no Active Directory e as listas de controlo de acesso (ACLs) não são suportadas, mas vão ser futuramente. As credenciais da conta de armazenamento são utilizadas para fornecer à autenticação o acesso à partilha de ficheiros. Isto significa que qualquer pessoa com a partilha montada terá total acesso de leitura/escrita à partilha.
 
 ## <a name="access-to-blob-table-queue-and-file-resources"></a>Aceder aos recursos de Blob, Tabela, Fila e Ficheiro
 Por predefinição, apenas o proprietário da conta do Storage pode aceder a recursos na conta do Storage. Para garantir a segurança dos seus dados, cada pedido efetuado relativamente aos recursos na sua conta tem de ser autenticado. A autenticação depende de num modelo de Chave partilhada. Os blobs também podem ser configurados para suportar a autenticação anónima.

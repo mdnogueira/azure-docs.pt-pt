@@ -3,7 +3,7 @@ title: "Proteger a sua API com a Gestão de API do Azure | Microsoft Docs"
 description: "Saiba como proteger a sua API com quotas e políticas de limitação (limitação de taxas)."
 services: api-management
 documentationcenter: 
-author: steved0x
+author: vladvino
 manager: erikre
 editor: 
 ms.assetid: 450dc368-d005-401d-ae64-3e1a2229b12f
@@ -14,10 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 12/15/2016
 ms.author: apimpm
-translationtype: Human Translation
-ms.sourcegitcommit: 30ec6f45da114b6c7bc081f8a2df46f037de61fd
-ms.openlocfilehash: 73c9675490f95f68450716cd67e58df9c84daef8
-
+ms.translationtype: HT
+ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
+ms.openlocfilehash: 9dba928b78c11213d4b0098986561b09678444eb
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/27/2017
 
 ---
 # <a name="protect-your-api-with-rate-limits-using-azure-api-management"></a>Proteger a sua API com limites de taxa utilizando a API Management do Azure
@@ -53,7 +54,7 @@ Clique em **Adicionar produto** para apresentar a caixa de diálogo **Adicionar 
 
 Na caixa **Título**, escreva **Avaliação Gratuita**.
 
-Na caixa **Descrição**, escreva o seguinte texto:  **Os subscritores poderão efetuar 10 chamadas/minuto até um máximo de 200 chamadas/semana, após o qual o acesso é negado.**
+Na caixa **Descrição**, escreva o seguinte texto: **Os subscritores poderão efetuar 10 chamadas/minuto até um máximo de 200 chamadas/semana, após o qual o acesso é negado.**
 
 Os produtos da API Management podem ser protegidos ou abertos. Os produtos protegidos têm de ser subscritos antes de poderem ser utilizados. Os produtos abertos podem ser utilizados sem uma subscrição. Certifique-se de que **Exigir subscrição** está selecionado para criar um produto protegido que necessita de uma subscrição. Esta é a predefinição.
 
@@ -95,7 +96,9 @@ Selecione **API Eco** e, em seguida, clique em **Guardar**.
 ![Adicionar API Eco][api-management-add-echo-api]
 
 ## <a name="policies"> </a>Para configurar as políticas de limite de taxa de chamadas e quota
-Os limites de taxa e as quotas são configurados no editor de políticas. Clique em **Políticas** no menu **API Management** à esquerda. Na lista **Produto**, clique em **Avaliação Gratuita**.
+Os limites de taxa e as quotas são configurados no editor de políticas. As duas políticas que vamos adicionar neste tutorial são as políticas [Limitar taxa de chamadas por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) e [Definir quota de utilização por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota). Estas políticas têm de ser aplicadas no âmbito do produto.
+
+Clique em **Políticas** no menu **API Management** à esquerda. Na lista **Produto**, clique em **Avaliação Gratuita**.
 
 ![Política do produto][api-management-product-policy]
 
@@ -103,11 +106,11 @@ Clique em **Adicionar política** para importar o modelo de política e começar
 
 ![Adicionar política][api-management-add-policy]
 
-Para inserir políticas, posicione o cursor na secção **inbound** ou **outbound** do modelo de política. As políticas de limite de taxa e quota são políticas de entrada, por isso posicione o cursor no elemento inbound.
+As políticas de limite de taxa e quota são políticas de entrada, por isso posicione o cursor no elemento inbound.
 
 ![Editor de políticas][api-management-policy-editor-inbound]
 
-As duas políticas que estamos a adicionar neste tutorial são as políticas [Limitar taxa de chamadas por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) e [Definir quota de utilização por subscrição](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota).
+Percorra a lista de políticas e localize a entrada **Limitar taxa de chamadas por subscrição**.
 
 ![Instruções de política][api-management-limit-policies]
 
@@ -121,7 +124,7 @@ Depois de o cursor estar posicionado no elemento da política **inbound**, cliqu
 </rate-limit>
 ```
 
-A política **Limitar taxa de chamadas por subscrição** pode ser utilizada ao nível do produto, bem como ao nível da API e do nome da operação individual. Neste tutorial, são utilizadas apenas políticas ao nível do produto, por isso elimine os elementos **api** e **operation** do elemento **rate-limit**, de modo a que permaneça apenas o elemento exterior **rate-limit**, conforme mostrado no exemplo seguinte.
+Como pode ver no fragmento, a política permite definir limites para as APIs e as operações do produto. Neste tutorial, não utilizaremos essa capacidade, por isso elimine os elementos **api** e **operation** do elemento **rate-limit**, de modo a que permaneça apenas o elemento exterior **rate-limit**, conforme mostrado no exemplo seguinte.
 
 ```xml
 <rate-limit calls="number" renewal-period="seconds">
@@ -135,7 +138,7 @@ No produto de Avaliação Gratuita, a taxa de chamadas permitida máxima é de 1
 </rate-limit>
 ```
 
-Para configurar a política **Definir quota de utilização por subscrição**, posicione o cursor imediatamente abaixo do elemento recém-adicionado **rate-limit** no elemento **inbound** e, em seguida, clique na seta à esquerda de **Definir quota de utilização por subscrição**.
+Para configurar a política **Definir quota de utilização por subscrição**, posicione o cursor imediatamente abaixo do elemento recém-adicionado **rate-limit** no elemento **inbound** e, em seguida, localize e clique na seta à esquerda de **Definir quota de utilização por subscrição**.
 
 ```xml
 <quota calls="number" bandwidth="kilobytes" renewal-period="seconds">
@@ -145,7 +148,7 @@ Para configurar a política **Definir quota de utilização por subscrição**, 
 </quota>
 ```
 
-Uma vez que esta política também se destina a existir ao nível do produto, elimine os elementos de nome **api** e **operation**, conforme mostrado no exemplo seguinte.
+Semelhante à política **Definir quota de utilização por subscrição**, a política **Definir quota de utilização por subscrição** permite definir limites para as APIs e as operações do produto. Neste tutorial, não utilizaremos essa capacidade, por isso elimine os elementos **api** e **operation** do elemento **quota**, conforme mostrado no exemplo seguinte.
 
 ```xml
 <quota calls="number" bandwidth="kilobytes" renewal-period="seconds">
@@ -323,9 +326,4 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 
 [Limit call rate]: https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate
 [Set usage quota]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

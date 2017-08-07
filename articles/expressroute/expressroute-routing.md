@@ -12,18 +12,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/12/2017
+ms.date: 07/31/2017
 ms.author: osamam
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9568210d4df6cfcf5b89ba8154a11ad9322fa9cc
-ms.openlocfilehash: 0bb4999aa511e002d6088d69400ba4eececd8cf1
+ms.translationtype: HT
+ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
+ms.openlocfilehash: e6e2009717430a692528cd3ec3a2c6e46a12fe03
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/15/2017
-
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="expressroute-routing-requirements"></a>Requisitos de encaminhamento do ExpressRoute
-Para ligar aos serviços em nuvem da Microsoft com o ExpressRoute, terá de configurar e gerir o encaminhamento. Alguns fornecedores de conectividade oferecem a configuração e a gestão do encaminhamento como um serviço gerido. Contacte o seu fornecedor de conectividade para ver se oferece este serviço. Caso contrário, terá de cumprir os seguintes requisitos. 
+Para ligar aos serviços em nuvem da Microsoft com o ExpressRoute, terá de configurar e gerir o encaminhamento. Alguns fornecedores de conectividade oferecem a configuração e a gestão do encaminhamento como um serviço gerido. Contacte o seu fornecedor de conectividade para ver se oferece este serviço. Caso contrário, terá de cumprir os seguintes requisitos:
 
 Veja o artigo [Circuits and routing domains (Circuitos e domínios de encaminhamento)](expressroute-circuit-peerings.md) para obter uma descrição das sessões de encaminhamento que têm de ser configuradas para facilitar a conectividade.
 
@@ -42,12 +41,12 @@ Pode utilizar endereços IP privados ou endereços IP públicos para configurar 
 * As sub-redes utilizadas para encaminhamento podem ser endereços IP privados ou endereços IP públicos.
 * As sub-redes não podem estar em conflito com o intervalo reservado pelo cliente para utilização no Microsoft Cloud.
 * Se for utilizada uma sub-rede /29, será dividida em duas sub-redes /30. 
-  * A primeira sub-rede /30 será utilizada para a ligação primária e a segunda sub-rede /30 será utilizada para a ligação secundária.
-  * Para cada uma das sub-redes /30, tem de utilizar o primeiro endereço IP da sub-rede /30 do router. A Microsoft utilizará o segundo endereço IP da sub-rede /30 para configurar uma sessão de BGP.
+  * A primeira sub-rede /30 é utilizada para a ligação primária e a segunda sub-rede /30 é utilizada para a ligação secundária.
+  * Para cada uma das sub-redes /30, tem de utilizar o primeiro endereço IP da sub-rede /30 do router. A Microsoft utiliza o segundo endereço IP da sub-rede /30 para configurar uma sessão de BGP.
   * É necessário configurar as duas sessões de BGP para que o nosso [SLA de disponibilidade](https://azure.microsoft.com/support/legal/sla/) seja válido.  
 
 #### <a name="example-for-private-peering"></a>Exemplo de peering privado
-Se optar por utilizar a.b.c.d/29 para configurar o peering, este será dividido em duas sub-redes /30. No exemplo abaixo,veremos como é utilizada a sub-rede a.b.c.d/29. 
+Se optar por utilizar a.b.c.d/29 para configurar o peering, este será dividido em duas sub-redes /30. No exemplo abaixo, vemos como é utilizada a sub-rede a.b.c.d/29. 
 
 A a.b.c.d/29 será dividida em a.b.c.d/30 e a.b.c.d+4/30 e transmitida à Microsoft através de APIs de aprovisionamento. Utilizará a a.b.c.d+1 como IP VRF do PE primário e a Microsoft consumirá a a.b.c.d+2 como IP VRF do MSEE primário. Utilizará a a.b.c.d+5 como IP VRF do PE secundário e a Microsoft consumirá a a.b.c.d+6 como IP VRF do MSEE secundário.
 
@@ -61,21 +60,23 @@ Tem de utilizar endereços IP públicos da sua propriedade para configurar as se
 
 * Tem de utilizar uma sub-rede /29 exclusiva ou duas sub-redes /30 para configurar o peering de BGP para cada peering por circuito do ExpressRoute (se tiver mais do que um). 
 * Se for utilizada uma sub-rede /29, será dividida em duas sub-redes /30. 
-  * A primeira sub-rede /30 será utilizada para a ligação primária e a segunda sub-rede /30 será utilizada para a ligação secundária.
-  * Para cada uma das sub-redes /30, tem de utilizar o primeiro endereço IP da sub-rede /30 do router. A Microsoft utilizará o segundo endereço IP da sub-rede /30 para configurar uma sessão de BGP.
+  * A primeira sub-rede /30 será utilizada para a ligação primária e a segunda sub-rede /30 é utilizada para a ligação secundária.
+  * Para cada uma das sub-redes /30, tem de utilizar o primeiro endereço IP da sub-rede /30 do router. A Microsoft utiliza o segundo endereço IP da sub-rede /30 para configurar uma sessão de BGP.
   * É necessário configurar as duas sessões de BGP para que o nosso [SLA de disponibilidade](https://azure.microsoft.com/support/legal/sla/) seja válido.
 
 ## <a name="public-ip-address-requirement"></a>Requisito de endereço IP público
-### <a name="private-peering"></a>Peering Privado
-Pode optar por utilizar endereços IPv4 públicos ou privados para o peering privado. Fornecemos um isolamento do tráfego ponto-a-ponto, de modo a que a sobreposição de endereços com outros clientes não seja possível em caso de peering privado. Estes endereços não são anunciados na Internet. 
 
-### <a name="public-peering"></a>Peering Público
+### <a name="private-peering"></a>Peering privado
+Pode optar por utilizar endereços IPv4 públicos ou privados para o peering privado. Oferecemos um isolamento do tráfego ponto a ponto, de modo a que a sobreposição de endereços com outros clientes não seja possível em caso de peering privado. Estes endereços não são anunciados na Internet. 
+
+
+### <a name="public-peering"></a>Peering público
 O caminho de peering público Azure permite-lhe ligar a todos os serviços alojados no Azure ao longo dos respetivos endereços IP públicos. Estes incluem os serviços listados nas [FAQ do ExpressRoute](expressroute-faqs.md) e quaisquer serviços alojados pelos ISVs no Microsoft Azure. A conectividade aos serviços do Microsoft Azure em peering público é sempre iniciada a partir da sua rede para a rede da Microsoft. Tem de utilizar endereços IP Públicos para o tráfego destinado à rede da Microsoft.
 
 ### <a name="microsoft-peering"></a>Peering da Microsoft
 O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Microsoft que não são suportados através do caminho de peering público do Azure. A lista de serviços inclui os serviços do Office 365, como o Exchange Online, SharePoint Online, Skype para Empresas e o Dynamics 365. A Microsoft suporta a conetividade bidirecional no peering da Microsoft. O tráfego destinado aos serviços em nuvem da Microsoft tem de utilizar endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft.
 
-Certifique-se de que o endereço IP e o número AS estão registados em seu nome num dos registos listados abaixo.
+Certifique-se de que o endereço IP e o número AS estão registados em seu nome num dos registos seguintes:
 
 * [ARIN](https://www.arin.net/)
 * [APNIC](https://www.apnic.net/)
@@ -119,7 +120,7 @@ As rotas predefinidas só são permitidas em sessões do peering privado do Azur
 > 
 > 
 
-## <a name="support-for-bgp-communities"></a>Suporte para comunidades de BGP
+## <a name="bgp"></a>Suporte para comunidades de BGP
 Esta secção apresenta uma descrição geral de como as comunidades de BGP serão utilizadas com o ExpressRoute. A Microsoft anuncia as rotas nos caminhos do peering público e do peering da Microsoft com rotas etiquetadas com valores de comunidade apropriados. A lógica por detrás disto e os detalhes sobre os valores das comunidades são descritos abaixo. A Microsoft não irá, no entanto, honrar os valores das comunidades marcadas em rotas anunciadas para a Microsoft.
 
 Se estiver a ligar à Microsoft através do ExpressRoute numa localização de peering dentro de uma região geopolítica, terá acesso a todos os serviços em nuvem da Microsoft em todas as regiões dentro dos limites geopolíticos. 

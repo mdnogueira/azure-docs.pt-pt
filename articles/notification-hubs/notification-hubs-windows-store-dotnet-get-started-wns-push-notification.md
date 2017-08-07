@@ -14,12 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/03/2016
 ms.author: yuaxu
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b1d56fcfb472e5eae9d2f01a820f72f8eab9ef08
-ms.openlocfilehash: 9353ad6df121ebd2e92a5d34214c32e852ed60a3
+ms.translationtype: HT
+ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
+ms.openlocfilehash: 9b50f1cca81348b69f7ff2d702c6c72871afe0a0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/06/2017
-
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="getting-started-with-notification-hubs-for-windows-universal-platform-apps"></a>Introdução aos Hubs de Notificação do Azure para Aplicações da Plataforma Universal do Windows
@@ -49,33 +48,30 @@ A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais 
 Para enviar notificações push para aplicações UWP, tem de associar a aplicação à Loja Windows. Em seguida, tem de configurar o Notification Hub para se integrar ao WNS.
 
 1. Se ainda não registou a aplicação, navegue para o [Windows Dev Center](https://dev.windows.com/overview), inicie sessão com a conta Microsoft e clique em **Criar uma nova aplicação**.
-2. Escreva um nome para a aplicação e clique em **Reservar nome da aplicação**.
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hubs-win8-app-name.png)
-   
-   Este procedimento cria um novo registo para a aplicação na Loja Windows.
-3. No Visual Studio, crie um novo projeto Aplicações da Loja Visual C# com o modelo **Aplicação Vazia** e clique em **OK**.
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-create-windows-universal-app.png)
+
+2. Escreva um nome para a aplicação e clique em **Reservar nome da aplicação**. Este procedimento cria um novo registo para a aplicação na Loja Windows.
+
+3. No Visual Studio, crie um novo projeto Aplicações da Loja Visual C# com o modelo **Aplicação Vazia** Universal do Windows e clique em **OK**.
+
 4. Aceite as predefinições para as versões de destino e mínimas da plataforma.
-5. No Explorador de Soluções, clique com o botão direito do rato no projeto de aplicação da Loja Windows, clique em **Loja** e, em seguida, em **Associar Aplicação à Loja…**
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-associate-win8-app.png)
 
-   É apresentado o assistente **Associar aplicação à Loja Windows**.
+5. No Explorador de Soluções, clique com o botão direito do rato no projeto de aplicação da Loja Windows, clique em **Loja** e, em seguida, em **Associar Aplicação à Loja…** É apresentado o assistente **Associar aplicação à Loja Windows**.
 
-1. No assistente, clique em **Iniciar sessão** e inicie sessão com a conta Microsoft.
-2. Clique na aplicação que registou no passo 2, clique em **Seguinte** e em **Associar**.
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-associate-app-name.png)
-   
-   Esta ação adiciona ao manifesto da aplicação as informações de registo da Loja Windows necessárias.
-3. De volta à página do [Windows Dev Center](http://go.microsoft.com/fwlink/p/?LinkID=266582) da sua nova aplicação, clique em **Serviços**, em **Notificações push** e em **Site dos Serviços Live** em **Serviços de Notificação Push do Windows (WNS) e Aplicações Móveis do Microsoft Azure**.
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hubs-uwp-app-live-services.png)
-4. Na página de registo da sua aplicação, aponte a palavra-passe do **Segredo da Aplicação** e o **Identificador de Segurança do Pacote (SID)** localizados nas definições da plataforma da **Loja Windows**.
-   
-    ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hubs-uwp-app-push-auth.png)
+6. No assistente, inicie sessão com a sua conta Microsoft.
+
+7. Clique na aplicação que registou no passo 2, clique em **Seguinte** e em **Associar**. Esta ação adiciona ao manifesto da aplicação as informações de registo da Loja Windows necessárias.
+
+8. Novamente na página [Windows Dev Center](http://dev.windows.com/overview) da nova aplicação, clique em **Serviços**, **Notificações push** e, em seguida, em **WNS/MPNS**.
+
+9. Clique em **Nova Notificação**.
+
+10. Clique no modelo **Espaço vazio (Alerta)** e, em seguida, em **OK**.
+
+11. Introduza um **Nome** da notificação e mensagem de **Contexto** Visual. Em seguida, clique em **Guardar como rascunho**.
+
+12. Navegue para o [Portal de Registo da Aplicação](http://apps.dev.microsoft.com) e inicie sessão.
+
+13. Clique no nome da sua aplicação. Aponte a palavra-passe do **Segredo da Aplicação** e o **Identificador de Segurança do Pacote (SID)** localizados nas definições da plataforma da **Loja Windows**.
 
      > [AZURE.WARNING]
     O segredo da aplicação e o SID do pacote são credenciais de segurança importantes. Não partilhe estes valores com ninguém e não os distribua com a aplicação.
@@ -137,8 +133,6 @@ O Notification Hub já está configurado para trabalhar com WNS e tem as cadeias
    
     Esta ação garante que o URI do canal é registado no Notification Hub sempre que a aplicação for iniciada.
 6. Prima a tecla **F5** para executar a aplicação. É apresentada uma caixa de diálogo de pop-up que contém a chave de registo.
-   
-     ![][19]
 
 A aplicação já está pronta para receber notificações de alerta.
 
@@ -162,9 +156,8 @@ Para enviar notificações através da utilização de uma aplicação de consol
 
 1. Clique com o botão direito do rato na solução, selecione **Adicionar** e **Novo Projeto…**, e, em seguida, em **Visual C#**, clique em **Windows** e **Aplicação de Consola** e, em seguida, clique em **OK**.
    
-     ![][13]
-   
     Esta ação adiciona uma nova aplicação da consola Visual C# à solução. Também pode fazer isto numa solução separada.
+
 2. No Visual Studio, clique em **Ferramentas**, clique no **Gestor de Pacotes NuGet** e, em seguida, em **Consola do Gestor de Pacotes**.
    
     É apresentada a Consola do Gestor de Pacotes no Visual Studio.
@@ -199,8 +192,6 @@ Para enviar notificações através da utilização de uma aplicação de consol
          SendNotificationAsync();
          Console.ReadLine();
 7. No Visual Studio, clique com o botão direito do rato no projeto de aplicação de consola e clique em **Definir como Projeto de Arranque** para o configurar como o projeto de arranque. Em seguida, prima a tecla **F5** para executar a aplicação.
-   
-     ![][14]
    
     Receberá uma notificação de alerta em todos os dispositivos registados. Clicar ou tocar na faixa do alerta carrega a aplicação.
 

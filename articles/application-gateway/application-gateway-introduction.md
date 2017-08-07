@@ -16,15 +16,15 @@ ms.workload: infrastructure-services
 ms.date: 07/10/2017
 ms.author: gwallace
 ms.translationtype: HT
-ms.sourcegitcommit: bde1bc7e140f9eb7bb864c1c0a1387b9da5d4d22
-ms.openlocfilehash: c9aafa13ebdeeb84a35e55e25650f334ddc71af5
+ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
+ms.openlocfilehash: 396d8b9532eb55341670ad61bd4c2a16882b35e4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 07/27/2017
 
 ---
 # <a name="overview-of-application-gateway"></a>Descrição geral do Gateway de Aplicação
 
-O Gateway de Aplicação do Microsoft Azure é uma aplicação virtual dedicada, que disponibiliza um controlador de entrega de aplicação (ADC) como um serviço e oferece várias capacidades de balanceamento de carga de camada 7 para a sua aplicação. Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação. Proporciona também outras capacidades de encaminhamento de camada 7, incluindo a distribuição round robin de tráfego de entrada, a afinidade de sessão com base em cookies, o encaminhamento baseado no caminho do URL e a capacidade de alojar vários Web sites atrás de um Gateway de Aplicação individual. Também é fornecida uma firewall de aplicações Web (WAF) como parte do WAF SKU do gateway de aplicação, que proporciona proteção às aplicações Web contra vulnerabilidades e exploits da Web comuns. O Gateway de Aplicação pode ser configurado como um gateway com acesso à Internet, gateway só interno ou uma combinação de ambos. 
+O Gateway de Aplicação do Microsoft Azure é uma aplicação virtual dedicada, que disponibiliza um controlador de entrega de aplicação (ADC) como um serviço. Oferece várias capacidades de balanceamento de carga de camada 7 para a sua aplicação. Permite que os clientes otimizem a produtividade do Web farm ao descarregar a terminação de SSL com utilização intensiva da CPU para o gateway de aplicação. Proporciona também outras capacidades de encaminhamento de camada 7, incluindo a distribuição round robin de tráfego de entrada, a afinidade de sessão com base em cookies, o encaminhamento baseado no caminho do URL e a capacidade de alojar vários Web sites atrás de um Gateway de Aplicação individual. Também é fornecida uma firewall de aplicações Web (WAF) como parte do SKU da WAF do gateway de aplicação. Fornece proteção para as aplicações Web contra vulnerabilidades e explorações Web comuns. O Gateway de Aplicação pode ser configurado como um gateway com acesso à Internet, gateway só interno ou uma combinação de ambos. 
 
 ![cenário](./media/application-gateway-introduction/scenario.png)
 
@@ -35,14 +35,15 @@ O Gateway de Aplicação, atualmente, fornece as seguintes capacidades:
 
 * **[Firewall de aplicações web](application-gateway-webapplicationfirewall-overview.md)** - a firewall de aplicações Web (WAF) no Gateway de Aplicação do Azure protege aplicações Web contra ataques baseados na Web comuns, como injeção SQL, ataques de scripts entre sites e assunção do controlo de sessão sem autorização.
 * **Balanceamento de carga HTTP** - O Gateway de Aplicação fornece a opção de balanceamento de carga round robin. O balanceamento de carga é feito na Camada 7 e serve apenas para tráfego HTTP(S).
-* **Afinidade de sessão com base no cookie** - Esta funcionalidade é útil quando pretender manter uma sessão de utilizador no mesmo back-end. Ao utilizar cookies geridos por gateway, o Gateway de Aplicação pode direcionar tráfego subsequente de uma sessão de utilizador para o mesmo back-end para processamento. Esta funcionalidade é importante em casos em que o estado da sessão é guardado localmente no servidor de back-end para uma sessão de utilizador.
+* **Afinidade de sessão com base no cookie** - Esta funcionalidade é útil quando quiser manter uma sessão de utilizador no mesmo back-end. Ao utilizar cookies geridos por gateway, o Gateway de Aplicação pode direcionar o tráfego subsequente de uma sessão de utilizador para o mesmo back-end para processamento. Esta funcionalidade é importante em casos em que o estado da sessão é guardado localmente no servidor de back-end para uma sessão de utilizador.
 * **[Descarga do SSL (Secure Sockets Layer)](application-gateway-ssl-arm.md)** - Esta funcionalidade elimina a tarefa dispendiosa de desencriptação de tráfego HTTPS para os servidores Web. Ao terminar a ligação SSL no Gateway de Aplicação e reencaminhar o pedido para o servidor não encriptado, o servidor Web é aliviado pela desencriptação.  O Gateway de Aplicação encripta novamente a resposta antes de a enviar para o cliente. Esta funcionalidade é útil em cenários onde o back-end está localizado na mesma rede virtual protegida que o Gateway de Aplicação no Azure.
 * **[SSL de Ponta a Ponta](application-gateway-backend-ssl.md)** - O Gateway de Aplicação suporta a encriptação de ponta a ponta do tráfego. O Gateway de Aplicação realiza esta ação ao terminar a ligação SSL no gateway de aplicação. O gateway, em seguida, aplica as regras de encaminhamento para o tráfego, encripta novamente o pacote e reencaminha o pacote para o back-end adequado, com base nas regras de encaminhamento definidas. Qualquer resposta do servidor Web atravessa o mesmo processo para o utilizador final.
-* **[Encaminhamento de conteúdo baseado em URL](application-gateway-url-route-overview.md)** - Esta funcionalidade fornece a capacidade para utilizar diferentes servidores de back-end para tráfego diferentes. O tráfego de uma pasta no servidor Web ou de um CDN poderia ser encaminhado para um back-end diferente, reduzindo a carga desnecessária nos back-ends que não atendem conteúdo específico do servidor.
+* **[Encaminhamento de conteúdo baseado em URL](application-gateway-url-route-overview.md)** - Esta funcionalidade fornece a capacidade para utilizar diferentes servidores de back-end para tráfego diferentes. O tráfego para uma pasta no servidor Web ou uma CDN pode ser encaminhado para um back-end diferente. Esta capacidade reduz a carga desnecessária nos back-ends que não servem conteúdo específico.
 * **[Encaminhamento multilocal](application-gateway-multi-site-overview.md)** - O gateway de aplicação permite-lhe consolidar até 20 Web sites num gateway de aplicação único.
 * **[Suporte de Websocket](application-gateway-websocket.md)** - Outra funcionalidade excelente de Gateway de Aplicação é o suporte nativo para Websocket.
 * **[Monitorização de estado de funcionamento](application-gateway-probe-overview.md)** - O gateway de aplicação fornece monitorização do estado de funcionamento predefinido e sondas personalizadas para monitorizar cenários mais específicos.
 * **[Redirecionamento de pedidos](application-gateway-redirect-overview.md)** - esta funcionalidade proporciona a capacidade de redirecionar pedidos HTTP para um serviço de escuta de HTTPS.
+* **[Suporte de back-end multi-inquilino](application-gateway-web-app-overview.md)**  - O Gateway de Aplicação suporta a configuração de serviços de back-end multi-inquilino, como as Aplicações Web do Azure e o Gateway da API, como membros do conjunto de back-end. 
 * **[Diagnóstico avançado](application-gateway-diagnostics.md)** - o gateway de aplicação fornece o diagnóstico completo e registos de acesso. Os registos de firewall estão disponíveis para recursos de gateway de aplicações que tenham a WAF ativada.
 
 ## <a name="benefits"></a>Benefícios
@@ -86,13 +87,13 @@ O Gateway de Aplicação do Azure monitoriza automaticamente o estado de funcion
 
 ## <a name="configuring-and-managing"></a>Configurar e gerir
 
-Para o ponto final, o gateway de aplicação pode ter um IP público, um IP privado ou ambos, quando está configurado. O Gateway de Aplicação é configurado no interior de uma rede virtual na sua própria sub-rede. A sub-rede criada ou utilizada para o gateway de aplicação não pode conter quaisquer outros tipos de recursos, os únicos recursos que são permitidos na sub-rede são outros gateways de aplicação. Para proteger os recursos de back-end, os servidores de back-end podem ser contidos numa sub-rede diferente na mesma rede virtual que o gateway de aplicação. Esta sub-rede adicional não é necessária para as aplicações de back-end, desde que o gateway de aplicação possa alcançar o endereço IP, o gateway de aplicação pode fornecer capacidades de ADC para os servidores de back-end. 
+Para o ponto final, o gateway de aplicação pode ter um IP público, um IP privado ou ambos, quando está configurado. O Gateway de Aplicação é configurado no interior de uma rede virtual na sua própria sub-rede. A sub-rede criada ou utilizada para o gateway de aplicação não pode conter quaisquer outros tipos de recursos, os únicos recursos que são permitidos na sub-rede são outros gateways de aplicação. Para proteger os recursos de back-end, os servidores de back-end podem ser contidos numa sub-rede diferente na mesma rede virtual que o gateway de aplicação. Esta sub-rede não é necessária para as aplicações de back-end. Desde que o gateway de aplicação possa alcançar o endereço IP, o gateway de aplicação pode fornecer capacidades de ADC para os servidores de back-end. 
 
 Pode criar e gerir um gateway de aplicação com APIs REST, cmdlets do PowerShell, CLI do Azure ou [portal do Azure](https://portal.azure.com/). Para ver perguntas adicionais sobre o Gateway de Aplicação, visite [Application Gateway FAQ](application-gateway-faq.md) (FAQ do Gateway de Aplicação) para obter uma lista das perguntas mais frequentes.
 
 ## <a name="pricing"></a>Preços
 
-O preço baseia-se no custo de instância de gateway por hora e no custo do processamento de dados. O preço de gateway por hora do WAF SKU é diferente dos custos do SKU Standard e está disponível em [Detalhes dos preços do Gateway de Aplicação](https://azure.microsoft.com/pricing/details/application-gateway/). Os custos de processamento permanecem iguais.
+O preço baseia-se no custo de instância de gateway por hora e no custo do processamento de dados. Os preços dos gateways por hora para o SKU da WAF são diferentes dos custos do SKU Standard. Estas informações de preços podem ser encontradas nos [Detalhes de preços do Gateway de Aplicação](https://azure.microsoft.com/pricing/details/application-gateway/). Os custos de processamento permanecem iguais.
 
 ## <a name="faq"></a>FAQ
 

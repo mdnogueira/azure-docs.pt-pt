@@ -15,36 +15,36 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: yushwang;cherylmc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db18dd24a1d10a836d07c3ab1925a8e59371051f
-ms.openlocfilehash: 8a7419c7a759060dc91f11ec94085ff0afd4a457
+ms.translationtype: HT
+ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
+ms.openlocfilehash: c8e1db0a5488b1296206a4d557e47599edc59a88
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/15/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>Acerca dos dispositivos de VPN e dos parâmetros IPsec/IKE para ligações do Gateway da Rede de VPNs
 
-Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S) entre locais através de um gateway de VPN. As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender ligações seguras entre redes no local e redes virtuais. Este artigo fornece a lista de parâmetros de IPsec/IKE para gateways de VPN do Azure e uma lista de dispositivos de VPN validados que ligam aos gateways de VPN do Azure.
-
+Precisa de um dispositivo VPN para configurar uma ligação de rede de VPNs (S2S) entre locais através de um gateway de VPN. As ligações Site a Site podem ser utilizadas para criar uma solução híbrida ou sempre que pretender ligações seguras entre redes no local e redes virtuais. Este artigo fornece uma lista de dispositivos VPN validados e uma lista de parâmetros de IPsec/IKE para gateways de VPN.
 
 > [!IMPORTANT]
-> Se ocorrerem problemas de conectividade entre os dispositivos VPN no local e gateways de VPN do Azure, consulte [Problemas de compatibilidade de dispositivos conhecidos](#known). 
+> Se ocorrerem problemas de conectividade entre os dispositivos VPN no local e gateways de VPN, veja [Problemas de compatibilidade de dispositivos conhecidos](#known).
+>
+>
 
+### <a name="items-to-note-when-viewing-the-tables"></a>Itens a ter em atenção quando visualizar as tabelas:
 
-###<a name="items-to-note-when-viewing-the-tables"></a>Itens a ter em atenção quando visualizar as tabelas:
-
-* A terminologia para os gateways de VPN do Azure foi alterada. Não há qualquer alteração de funcionalidade. Apenas os nomes estão a ser alterados.
+* A terminologia para os gateways de VPN do Azure foi alterada. Apenas os nomes foram alterados. Não há qualquer alteração de funcionalidade.
   * Encaminhamento Estático = PolicyBased
   * Encaminhamento Dinâmico = RouteBased
-* As especificações para o gateway de VPN de Elevado Desempenho e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN de Elevado Desempenho do Azure.
+* As especificações para o gateway de VPN HighPerformance e para o gateway de VPN RouteBased são as mesmas, salvo indicação em contrário. Por exemplo, os dispositivos VPN validados compatíveis com os gateways de VPN RouteBased também são compatíveis com o gateway de VPN HighPerformance.
+
+## <a name="devicetable"></a>Dispositivos VPN validados e guias de configuração de dispositivo
 
 > [!NOTE]
 > Ao configurar uma ligação Site a Site, é preciso um endereço IP IPv4 destinado ao público para o dispositivo VPN.
->                
+>
 
-## <a name="devicetable"></a>Dispositivos VPN validados e guias de configuração de dispositivo
-Validámos uma série de dispositivos VPN padrão em parceria com os fornecedores dos dispositivos. Todos os dispositivos nas famílias de dispositivos contidas na lista seguinte deverão funcionar com gateways de VPN do Azure. Veja o artigo [Acerca do VPN Gateway](vpn-gateway-about-vpngateways.md) para verificar o tipo de gateway que tem de criar para a solução que pretende configurar.
+Em parceria com os fornecedores dos dispositivos, validámos uma série de dispositivos VPN padrão. Todos os dispositivos nas famílias de dispositivos na lista seguinte deverão funcionar com gateways de VPN. Veja [Acerca das definições do Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md#vpntype) para compreender a utilização do tipo de VPN (PolicyBased ou RouteBased) para a solução do Gateway de VPN que quer configurar.
 
 Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações que correspondem à família de dispositivos adequada. As ligações para as instruções de configuração são fornecidas numa base de melhor esforço. Para obter suporte para dispositivos VPN, contacte o fabricante do dispositivo.
 
@@ -77,9 +77,11 @@ Para obter ajuda na configuração do seu dispositivo VPN, veja as ligações qu
 (*) Os routers da série ISR 7200 só suportam VPNs PolicyBased.
 
 ## <a name="additionaldevices"></a>Dispositivos VPN não validados
+
 Se não vir o seu dispositivo listado na tabela de Dispositivos VPN Validados, o seu dispositivo poderá, mesmo assim, funcionar com uma ligação Site a Site. Contacte o fabricante do dispositivo para obter instruções adicionais de suporte e de configuração.
 
 ## <a name="editing"></a>Editar os exemplos de configuração do dispositivo
+
 Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, terá de substituir alguns dos valores para que reflitam as definições do seu ambiente.
 
 ### <a name="to-edit-a-sample"></a>Para editar um exemplo:
@@ -102,8 +104,9 @@ Depois de transferir o exemplo de configuração do dispositivo VPN fornecido, t
 | &lt;SP_PresharedKey&gt; |Esta informação é específicas da sua rede virtual e encontra-se no Portal de Gestão como Gerir Chave. |
 
 ## <a name="ipsec"></a>Parâmetros de IPsec/IKE
+
 > [!NOTE]
-> Apesar de os valores apresentados na tabela seguinte serem suportados pelo Gateway de VPN do Azure, não existe atualmente um mecanismo para especificar ou selecionar uma combinação de algoritmos ou parâmetros a partir do Gateway de VPN do Azure. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar **MSS** em **1350**.
+> Apesar de os valores apresentados na tabela seguinte serem suportados pelo gateway de VPN, não existe atualmente um mecanismo para especificar ou selecionar uma combinação de algoritmos ou parâmetros a partir do gateway de VPN. Tem de especificar as eventuais restrições no dispositivo VPN no local. Além disso, tem de fixar **MSS** em **1350**.
 > 
 >
 
@@ -114,6 +117,7 @@ Nas seguintes tabelas:
 * IKE Fase 2 também é denominado "Modo Rápido"
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parâmetros de IKE Fase 1 (Modo Principal)
+
 | **Propriedade**          |**PolicyBased**    | **RouteBased**    |
 | ---                   | ---               | ---               |
 | Versão do IKE           |IKEv1              |IKEv2              |
@@ -123,6 +127,7 @@ Nas seguintes tabelas:
 | Duração de SA           |28 800 segundos     |28 800 segundos     |
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parâmetros de IKE Fase 2 (Modo Rápido)
+
 | **Propriedade**                  |**PolicyBased**| **RouteBased**                              |
 | ---                           | ---           | ---                                         |
 | Versão do IKE                   |IKEv1          |IKEv2                                        |
@@ -134,9 +139,11 @@ Nas seguintes tabelas:
 
 
 ### <a name ="RouteBasedOffers"></a>Ofertas de RouteBased VPN IPsec Security Association (SA do Modo Rápido de IKE)
+
 A tabela seguinte apresenta as Ofertas de SA IPsec (Modo Rápido de IKE). As ofertas estão listadas pela ordem de preferência com que a oferta é apresentada ou aceite.
 
 #### <a name="azure-gateway-as-initiator"></a>Gateway do Azure como iniciador
+
 |-  |**Encriptação**|**Autenticação**|**Grupo PFS**|
 |---| ---          |---               |---          |
 | 1 |GCM AES256    |GCM (AES256)      |Nenhuma         |
@@ -147,6 +154,7 @@ A tabela seguinte apresenta as Ofertas de SA IPsec (Modo Rápido de IKE). As ofe
 | 6 |3DES          |SHA256            |Nenhuma         |
 
 #### <a name="azure-gateway-as-responder"></a>Gateway do Azure como dispositivo de resposta
+
 |-  |**Encriptação**|**Autenticação**|**Grupo PFS**|
 |---| ---          | ---              |---          |
 | 1 |GCM AES256    |GCM (AES256)      |Nenhuma         |
@@ -176,7 +184,7 @@ A tabela seguinte apresenta as Ofertas de SA IPsec (Modo Rápido de IKE). As ofe
 | 25|AES128        |SHA256            |14           |
 | 26|3DES          |SHA1              |14           |
 
-* Pode especificar a encriptação IPsec ESP NULL com gateways de VPN de Elevado Desempenho e RouteBased. A encriptação baseada em Nulo não proporciona proteção aos dados em trânsito e só deve ser utilizada quando é preciso ter débito máximo e latência mínima.  Os clientes podem optar por utilizar esta opção em cenários de comunicação de VNet a VNet ou quando a encriptação está a ser aplicada noutro ponto da solução.
+* Pode especificar a encriptação IPsec ESP NULL com gateways de VPN RouteBased e HighPerformance. A encriptação baseada em Nulo não proporciona proteção aos dados em trânsito e só deve ser utilizada quando é preciso ter débito máximo e latência mínima. Os clientes podem optar por utilizar esta opção em cenários de comunicação de VNet a VNet ou quando a encriptação está a ser aplicada noutro ponto da solução.
 * Para a conectividade em vários locais através da Internet, utilize as predefinições do gateway de VPN do Azure com a encriptação e os algoritmos hash listados nas tabelas acima, para garantir a segurança da sua comunicação crítica.
 
 ## <a name="known"></a>Problemas de compatibilidade de dispositivos conhecidos
@@ -193,4 +201,3 @@ A tabela seguinte apresenta as Ofertas de SA IPsec (Modo Rápido de IKE). As ofe
 1. Verifique a versão de firmware do seu dispositivo da Palo Alto Networks. Se a sua versão do SO PAN for anterior à 7.1.4, atualize para 7.1.4.
 2. No dispositivo da Palo Alto Networks, altere a duração da Fase 2 SA (ou SA de Modo Rápido) para 28,800 segundos (8 horas) quando ligar ao gateway de VPN do Azure.
 3. Se ainda ocorrerem problemas de conectividade, abra um pedido de suporte a partir do portal do Azure.
-

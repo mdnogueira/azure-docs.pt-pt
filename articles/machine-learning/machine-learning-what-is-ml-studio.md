@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/20/2017
 ms.author: garye
-translationtype: Human Translation
-ms.sourcegitcommit: 9e738c4e5f43ae6c939f7c6da90c258498943e73
-ms.openlocfilehash: b8115f1fb72b0ba89fd0c8afa3358878a0fab92b
-ms.lasthandoff: 12/14/2016
-
+ms.translationtype: HT
+ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
+ms.openlocfilehash: 70a1d0acb8ec9bbb591f696281ea5e975b443a15
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/31/2017
 
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>O que é o Azure Machine Learning Studio?
@@ -78,7 +78,7 @@ Uma experimentação é constituída por conjuntos de dados que fornecem dados a
 * Todas as portas de entrada de módulos têm de ter alguma ligação ao fluxo de dados
 * Devem ser definidos todos os parâmetros necessários para cada módulo
 
-Pode criar uma experimentação de raiz, ou pode utilizar uma experimentação de exemplo existente como um modelo. Para mais informações, consulte [Utilizar experimentações de exemplo para criar novas experimentações](machine-learning-sample-experiments.md).
+Pode criar uma experimentação de raiz, ou pode utilizar uma experimentação de exemplo existente como um modelo. Para obter mais informações, veja [Copy example experiments to create new machine learning experiments](machine-learning-sample-experiments.md) (Copiar experimentações de exemplo para criar novas experimentações de aprendizagem automática).
 
 Para obter um exemplo de criação de uma experimentação simples, consulte o artigo [Criar uma experimentação simples no Azure Machine Learning Studio](machine-learning-create-experiment.md).
 

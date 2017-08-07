@@ -14,7 +14,7 @@ Devido a diferenças nos SLA e nos conjuntos de funcionalidades, é recomendáve
 | **Dev-test ou prova de conceito**   | Básica                  |
 |                                    |                        |
 
-Se estiver a usar os SKU antigos, as recomendações de SKU de produção são SKU Standard e de alto desempenho. Para obter informações sobre os SKU antigos, consulte [SKU de Gateway (antigos)](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md).
+Se estiver a usar os SKU antigos, as recomendações de SKU de produção são SKU Standard e de alto desempenho. Para obter informações sobre os SKU antigos, veja [Gateway SKUs (legacy SKUs)](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md) (SKU de Gateway (SKUs antigos)).
 
 ###  <a name="feature"></a>Conjuntos de funcionalidades do SKU de gateway
 

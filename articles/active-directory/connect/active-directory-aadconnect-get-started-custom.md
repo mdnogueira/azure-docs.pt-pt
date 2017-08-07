@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/12/2017
+ms.date: 08/02/2017
 ms.author: billmath
 ms.translationtype: HT
-ms.sourcegitcommit: 8021f8641ff3f009104082093143ec8eb087279e
-ms.openlocfilehash: 82e8d7e0ea975f140eaf73a625d181a4ec68eaa7
+ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
+ms.openlocfilehash: 1580e2841790b7c1b6c9540da4940eef2c487256
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Instalação personalizada do Azure AD Connect
@@ -318,6 +318,15 @@ Para obter mais informações, consulte [Modo de teste](active-directory-aadconn
 
 ### <a name="verify-your-federation-configuration"></a>Verificar a configuração de federação
 O Azure AD Connect verifica as definições de DNS quando clica no botão Verificar.
+
+**Verificações de conectividade de intranet**
+
+* Resolver FQDN de federação: o Azure AD Connect verifica se o FQDN de federação pode ser resolvido pelo DNS para garantir a conectividade. Se o Azure AD Connect não conseguir resolver o FQDN, a verificação irá falhar. Certifique-se de que um registo DNS está presente no FQDN de serviço de federação para concluir a verificação com êxito.
+* Registo A de DNS: o Azure AD Connect verifica se existe um registo A para o seu serviço de federação. Na ausência de um registo A, a verificação irá falhar. Crie um registo A, em vez de um registo CNAME, para o seu FQDN de federação, para que seja concluído com êxito.
+
+**Verificações de conectividade de extranet**
+
+* Resolver FQDN de federação: o Azure AD Connect verifica se o FQDN de federação pode ser resolvido pelo DNS para garantir a conectividade.
 
 ![Concluir](./media/active-directory-aadconnect-get-started-custom/completed.png)
 

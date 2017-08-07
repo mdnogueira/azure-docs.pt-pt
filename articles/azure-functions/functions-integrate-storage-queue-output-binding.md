@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 05/02/2017
 ms.author: glenga
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: cb4d075d283059d613e3e9d8f0a6f9448310d96b
-ms.openlocfilehash: d1ddfbe9a0a0c7c7e0a060776938bd68a87e1ba5
+ms.translationtype: HT
+ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
+ms.openlocfilehash: 3eae02f7cf756e8e24d4f1952d12c37f2ad4b400
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
@@ -35,8 +35,6 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
 
 * Instale o [Explorador de Armazenamento do Microsoft Azure](http://storageexplorer.com/).
 
-[!INCLUDE [functions-portal-favorite-function-apps](../../includes/functions-portal-favorite-function-apps.md)] 
-
 ## <a name="add-binding"></a>Adicionar um enlace de saída
  
 1. Expanda a aplicação Function App e a função.
@@ -45,7 +43,7 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
     
     ![Adicione um enlace de saída do Armazenamento de filas a uma função no portal do Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding.png)
 
-3. Utilize as definições especificadas na tabela e selecione **Guardar**: 
+3. Utilize as definições especificadas na tabela: 
 
     ![Adicione um enlace de saída do Armazenamento de filas a uma função no portal do Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding-2.png)
 
@@ -55,6 +53,8 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
     | **Ligação da conta de armazenamento** | AzureWebJobStorage | Pode utilizar a ligação da conta de armazenamento que já está a ser utilizada pela sua aplicação Function App ou criar uma nova.  |
     | **Nome do parâmetro da mensagem** | outQueueItem | O nome do parâmetro de enlace de saída. | 
 
+4. Clique em **Guardar** para adicionar o enlace.
+ 
 Agora que tem um enlace de saída definido, tem de atualizar o código para utilizar o enlace para adicionar mensagens a uma fila.  
 
 ## <a name="update-the-function-code"></a>Atualizar o código da função

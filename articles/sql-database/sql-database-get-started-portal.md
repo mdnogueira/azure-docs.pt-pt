@@ -16,12 +16,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 05/30/2017
 ms.author: carlrab
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db18dd24a1d10a836d07c3ab1925a8e59371051f
-ms.openlocfilehash: 1571d30890a428fb73d31861c4f1ae395f9de374
+ms.translationtype: HT
+ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
+ms.openlocfilehash: a863cf3ad08040906850f64db6505f30bcfa72eb
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/15/2017
-
+ms.lasthandoff: 07/31/2017
 
 ---
 # <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Criar uma base de dados SQL do Azure no portal do Azure
@@ -59,7 +58,7 @@ Siga estes passos para criar uma base de dados SQL com os dados de exemplo da Ad
    > Tem de selecionar a base de dados de exemplo neste formulário porque é utilizada no resto deste guia de introdução.
    > 
 
-4. Preencha o formulário do servidor SQL (servidor lógico) com as informações seguintes, conforme mostrado na imagem anterior:   
+4. No **Servidor**, clique em **Configurar definições necessárias** e preencha o formulário do servidor SQL (servidor lógico) com as informações seguintes, conforme mostrado na imagem anterior:   
 
    | Definição       | Valor sugerido | Descrição | 
    | ------------ | ------------------ | ------------------------------------------------- | 

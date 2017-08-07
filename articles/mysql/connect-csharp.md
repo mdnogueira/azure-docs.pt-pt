@@ -1,6 +1,6 @@
 ---
 title: "Ligar à Base de Dados do Azure para MySQL a partir de C# | Microsoft Docs"
-description: "Este guia de introdução disponibiliza um código de exemplo de C# (.Net) que pode utilizar para se ligar e consultar dados da Base de Dados do Azure para MySQL."
+description: "Este guia de introdução disponibiliza um código de exemplo de C# (.NET) que pode utilizar para se ligar e consultar dados da Base de Dados do Azure para MySQL."
 services: MySQL
 author: seanli1988
 ms.author: seal
@@ -12,10 +12,10 @@ ms.devlang: csharp
 ms.topic: hero-article
 ms.date: 07/10/2017
 ms.translationtype: HT
-ms.sourcegitcommit: 9afd12380926d4e16b7384ff07d229735ca94aaa
-ms.openlocfilehash: ffe3ae320a61031cf314cc1d70e0c093b033f85c
+ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
+ms.openlocfilehash: e0db2d0a59d62eebbb624a3ad32f19fa634ad5db
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/15/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 
@@ -28,43 +28,9 @@ Este guia de início rápido utiliza os recursos criados em qualquer um desTes g
 - [Criar uma Base de Dados do Azure para o servidor MySQL com a CLI do Azure](./quickstart-create-mysql-server-database-using-azure-cli.md)
 
 Também tem de:
-- Instalar o [.NET Framework](https://www.microsoft.com/net/download)
-- Instalar o [Visual Studio](https://www.visualstudio.com/downloads/)
-- Instalar o [Controlador ODBC para MySQL](https://dev.mysql.com/downloads/connector/odbc/) 
-
-## <a name="install-visual-studio-and-net"></a>Instalar o Visual Studio e .NET
-Os passos nesta secção partem do princípio que está familiarizado com a programação com .NET.
-
-### <a name="windows-net-framework-and-net-core"></a>**Windows .NET framework e .NET core**
-O Visual Studio 2017 Community é um IDE gratuito, extensível e repleto de funcionalidades para criar aplicações modernas para Android, iOS e Windows, bem como aplicações Web e de bases de dados e serviços cloud. Pode instalar o .NET framework completo ou o apenas o .NET core. Os fragmentos de código no início rápido funcionam com ambos. Se já tiver o Visual Studio instalado no seu computador, ignore os passos seguintes.
-
-1. Transferir o [instalador do Visual Studio 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15). 
-2. Execute o instalador e siga as instruções de instalação, para concluí-la.
-
-### <a name="mac-os"></a>**Mac OS**
-Abra o terminal e navegue para um diretório no qual pretenda criar o seu projeto .NET Core. Introduza os comandos seguintes para instalar **brew**, **OpenSSL** e **.NET Core**. 
-
-```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update
-brew install openssl
-mkdir -p /usr/local/lib
-ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
-ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
-```
-
-Instale o .NET Core em macOS. Transfira o [instalador oficial](https://go.microsoft.com/fwlink/?linkid=843444). Este instalador instala as ferramentas e coloca-as no seu CAMINHO, para que possa executar .net na Consola
-
-### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
-Abra o terminal e navegue para um diretório no qual pretenda criar o seu projeto .NET Core. Utilize os comandos seguintes para instalar o **.NET Core**.
-
-```bash
-sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-sudo apt-get update
-sudo apt-get install dotnet-dev-1.0.1
-```
-
+- Instalar o [.NET](https://www.microsoft.com/net/download). Siga os passos no artigo ligado para instalar o .NET especificamente para a sua plataforma (Windows, Ubuntu Linux ou macOS). 
+- Instalar o [Visual Studio](https://www.visualstudio.com/downloads/).
+- Instalar o [Controlador ODBC para MySQL](https://dev.mysql.com/downloads/connector/odbc/).
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
 Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para MySQL. Necessita do nome do servidor e das credenciais de início de sessão totalmente qualificados.

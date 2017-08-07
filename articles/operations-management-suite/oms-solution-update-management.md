@@ -12,14 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/09/2017
+ms.date: 07/27/2017
 ms.author: magoedte
 ms.translationtype: HT
-ms.sourcegitcommit: d941879aee6042b38b7f5569cd4e31cb78b4ad33
-ms.openlocfilehash: 8f83f5d13cb61709653f255c756dc78453073626
+ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
+ms.openlocfilehash: e463102a4b21253e28b01d6d149aba55bab18674
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.lasthandoff: 07/31/2017
 
 ---
 # <a name="update-management-solution-in-oms"></a>Solução de Gestão de Atualizações no OMS
@@ -65,10 +64,10 @@ Na data e na hora especificadas na implementação de atualização, os computad
     > [!NOTE]
     > O agente do Windows não pode ser gerido em simultâneo pelo System Center Configuration Manager.  
     >
-* CentOS 6 (x86/x64) e 7 (x64)
-* Red Hat Enterprise 6 (x86/x64) e 7 (x64)
-* SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)
-* Ubuntu 12.04 LTS e mais recente x86/x64  
+* CentOS 6 (x86/x64) e 7 (x64)  
+* Red Hat Enterprise 6 (x86/x64) e 7 (x64)  
+* SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)  
+* Ubuntu 12.04 LTS e mais recente x86/x64   
     > [!NOTE]  
     > Para evitar que as atualizações sejam aplicadas fora da janela de manutenção no Ubuntu, reconfigure o pacote Unattended-Upgrade para desativar as atualizações automáticas. Para obter informações sobre como configurar, veja [Automatic Updates topic in the Ubuntu Server Guide](https://help.ubuntu.com/lts/serverguide/automatic-updates.html) (Tópico de Atualizações Automáticas no Guia do Ubuntu Server).
 
@@ -79,6 +78,9 @@ Na data e na hora especificadas na implementação de atualização, os computad
     >
 
 Para obter mais informações sobre como instalar o Agente do OMS para Linux e transferir a versão mais recente, consulte [Operations Management Suite Agent for Linux](https://github.com/microsoft/oms-agent-for-linux) (Agente do Operations Management Suite para Linux).  Para obter informações sobre como instalar o Agente do OMS para Windows, consultar [Operations Management Suite Agent for Windows](../log-analytics/log-analytics-windows-agents.md) (Agente do Operations Management Suite para Windows).  
+
+### <a name="permissions"></a>Permissões
+Para criar implementações de atualização, tem de lhe ser concedida a função de contribuidor na Conta de Automatização e na área de trabalho do Log Analytics.  
 
 ## <a name="solution-components"></a>Componentes da solução
 Esta solução consiste nos recursos seguintes que são adicionados à sua conta de Automatização e a agentes ligados diretamente ou a grupos de gestão ligados do Operations Manager.
@@ -156,7 +158,7 @@ Quando adiciona a solução de Gestão de Atualizações à sua área de trabalh
 ## <a name="viewing-update-assessments"></a>Ver avaliações de atualizações
 Clique no mosaico **Gestão de Atualizações** para abrir o dashboard **Gestão de Atualizações**.<br><br> ![Dashboard de Resumo de Gestão de Atualizações](./media/oms-solution-update-management/update-management-dashboard.png)<br>
 
-Este dashboard mostra uma análise detalhada dos estados de atualizações categorizados por tipo de sistema operativo e classificação de atualização - crítica, segurança ou outra (como uma atualização de definição). O mosaico **Implementações de Atualização**, quando selecionado, redireciona-o para a página Implementações de Atualização, onde pode ver agendas, implementações que estão a ser executadas, implementações concluídas ou agendar implementações novas.  
+Este dashboard mostra uma análise detalhada dos estados de atualizações categorizados por tipo de sistema operativo e classificação de atualização - crítica, segurança ou outra (como uma atualização de definição). Os resultados em cada mosaico neste dashboard refletem apenas as atualizações aprovadas para implementação, com base na origem de sincronização dos computadores.   O mosaico **Implementações de Atualização**, quando selecionado, redireciona-o para a página Implementações de Atualização, onde pode ver agendas, implementações que estão a ser executadas, implementações concluídas ou agendar implementações novas.  
 
 Pode executar uma pesquisa de registos que devolve todos os registos, clicando no mosaico específico, ou, para executar uma consulta de uma categoria específica e com critérios predefinidos, selecione uma da lista disponível na coluna **Consultas de Atualização Comuns**.    
 
@@ -310,6 +312,17 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 ## <a name="troubleshooting"></a>Resolução de problemas
 
 Esta secção disponibiliza informações para ajudar a resolver problemas com a solução Gestão de Atualizações.  
+
+### <a name="how-do-i-troubleshoot-onboarding-issues"></a>Como posso resolver problemas de integração?
+Se ocorrerem problemas ao tentar integrar a solução ou uma máquina virtual, consulte o registo de eventos **Registos de Aplicações e Serviços\Operations Manager** para eventos com o ID 4502 e mensagens de evento com **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent**.  A tabela seguinte realça as mensagens de erro específicas e uma resolução possível para cada uma.  
+
+| Mensagem | Razão | Solução |   
+|----------|----------|----------|  
+| Não É Possível Registar a Máquina para Gestão de Patches,<br>O Registo Falhou com a Exceção<br>System.InvalidOperationException: {"Message":"a máquina já está<br>registada numa conta diferente. "} | A máquina já está integrada noutra área de trabalho para Gestão de Atualizações | Efetue uma limpeza dos artefactos antigos ao [eliminar o grupo de runbooks híbridos](../automation/automation-hybrid-runbook-worker.md#remove-hybrid-worker-groups)|  
+| Não É Possível Registar a Máquina para Gestão de Patches,<br>O Registo Falhou com a Exceção<br>System.Net.Http.HttpRequestException: Ocorreu um erro ao enviar o pedido. ---><br>System.Net.WebException: A ligação subjacente<br>foi fechada: Ocorreu um erro inesperado<br>ao receber. ---> System.ComponentModel.Win32Exception:<br>O cliente e o servidor não conseguem comunicar,<br>porque não possuem um algoritmo comum | Proxy/Gateway/Firewall a bloquear a comunicação | [Rever os requisitos de rede](../automation/automation-offering-get-started.md#network-planning)|  
+| Não É Possível Registar a Máquina para Gestão de Patches,<br>O Registo Falhou com a Exceção<br>Newtonsoft.Json.JsonReaderException: Erro ao analisar o valor infinito positivo. | Proxy/Gateway/Firewall a bloquear a comunicação | [Rever os requisitos de rede](../automation/automation-offering-get-started.md#network-planning)| 
+| O certificado apresentado pelo <wsid>.oms.opinsights.azure.com do serviço<br>não foi emitido por uma autoridade de certificação<br>utilizada para os Serviços Microsoft. Contacte<br>o administrador da rede para ver se estão a executar um proxy que intercepte<br>a comunicação TLS/SSL. |Proxy/Gateway/Firewall a bloquear a comunicação | [Rever os requisitos de rede](../automation/automation-offering-get-started.md#network-planning)|  
+| Não É Possível Registar a Máquina para Gestão de Patches,<br>O Registo Falhou com a Exceção<br>AgentService.HybridRegistration.<br>PowerShell.Certificates.CertificateCreationException:<br>Falha ao criar um certificado autoassinado. ---><br>System. unauthorizedaccessexception: O acesso é negado. | Falha de geração do certificado autoassinado | Verifique se a conta do sistema tem<br>acesso de leitura à pasta:<br>**C:\ProgramData\Microsoft\**<br>**Crypto\RSA**|  
 
 ### <a name="how-do-i-troubleshoot-update-deployments"></a>Como posso resolver problemas com as implementações de atualizações?
 Pode ver os resultados do runbook responsável pela implementação das atualizações incluídas na implementação de atualizações agendada no painel Tarefas da sua conta de Automatização que esteja associada à área de trabalho do OMS que suporte esta solução.  O runbook **Patch-MicrosoftOMSComputer** é um runbook subordinado que segmenta um computador gerido específico e rever o Fluxo verboso apresentará informações detalhadas relativas a essa implementação.  O resultado apresentará que atualizações são aplicáveis, o estado da transferência, o estado da instalação e detalhes adicionais.<br><br> ![Estado da tarefa de Implementação de Atualizações](media/oms-solution-update-management/update-la-patchrunbook-outputstream.png)<br>

@@ -1,6 +1,7 @@
 ---
-title: "Copiar experimentações de exemplo no Machine Learning | Microsoft Docs"
-description: "Saiba como utilizar experimentações de exemplo do Machine Learning para criar novas experimentações com o Cortana Intelligence Gallery e com o Microsoft Azure Machine Learning."
+title: "Copiar experimentações de exemplo de machine learning - Azure | Microsoft Docs"
+description: "Saiba como utilizar experimentações de exemplo de machine learning para criar novas experimentações com o Cortana Intelligence Gallery e com o Microsoft Azure Machine Learning."
+keywords: "exemplos machine learning, experimentação de exemplo, machine learning exemplo"
 services: machine-learning
 documentationcenter: 
 author: cjgronlund
@@ -12,18 +13,19 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 02/13/2017
+ms.date: 07/28/2017
 ms.author: cgronlun;olgali
-translationtype: Human Translation
-ms.sourcegitcommit: 25e1def880dbb8431e1a0cae9d8b84c6f5906315
-ms.openlocfilehash: 7b2bca108770a79a693a408a628ccc6370c36b7c
-
+ms.translationtype: HT
+ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
+ms.openlocfilehash: a6c8ca83e3a4020cb1ea0f1c14299f1aee3bdca5
+ms.contentlocale: pt-pt
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="copy-sample-experiments-to-create-new-machine-learning-experiments"></a>Copiar experimentações de exemplo para criar novas experimentações no Machine Learning
-Saiba como iniciar experimentações de exemplo a partir do [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/) em vez de criar experimentações do zero no Machine Learning. Pode utilizar os exemplos para criar a sua própria solução de Machine Learning.
+# <a name="copy-example-experiments-to-create-new-machine-learning-experiments"></a>Copiar experimentações de exemplo para criar novas experimentações de machine learning
+Saiba como iniciar experimentações de exemplo a partir do [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/) em vez de criar experimentações de machine learning do zero. Pode utilizar os exemplos para criar a sua própria solução de machine learning.
 
-Na galeria são apresentados exemplos de experimentações da equipa do Microsoft Azure Machine Learning, bem como exemplos partilhados pela Comunidade do Machine Learning. Também pode colocar questões ou publicar comentários sobre experimentações.
+A galeria apresenta exemplos de experimentações da equipa do Microsoft Azure Machine Learning, bem como exemplos partilhados pela Comunidade do Machine Learning. Também pode colocar questões ou publicar comentários sobre experimentações.
 
 Para saber como utilizar a galeria, veja o vídeo de 3 minutos [Copy other people's work to do data science (Copiar o trabalho de outras pessoas para efetuar ciência de dados)](machine-learning-data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) da série [Data Science for Beginners (Ciência de Dados para Principiantes)](machine-learning-data-science-for-beginners-the-5-questions-data-science-answers.md).
 
@@ -39,9 +41,9 @@ Nesta página, pode ver as experimentações **Recentemente adicionadas** ou des
 Para procurar todas as experimentações:
 
 1. Clique em **Procurar tudo** na parte superior da página.
-2. Em **Refinar por** na secção **Categorias**, selecione **Experimentação** para ver todas as experimentações na Galeria.
+2. No lado esquerdo, em **Refinar por** na secção **Categorias**, selecione **Experimentação** para ver todas as experimentações na Galeria.
 3. Pode encontrar experimentações que cumprem os requisitos de duas formas diferentes:
-   * **Selecione filtros no lado esquerdo.** Por exemplo, para procurar experimentações que utilizem um algoritmo de deteção de anomalias baseado em PCA, selecione **Experimentação** em **Categorias** e **Deteção de Anomalias com Base em PCA** em **Algoritmos Utilizados**. (Se não vir esse algoritmo, clique em **Mostrar tudo** na parte inferior da lista.)<br></br>
+   * **Selecione filtros no lado esquerdo.** Por exemplo, para procurar experimentações que utilizem um algoritmo de deteção de anomalias baseado em PCA: com a opção **Experimentação** selecionada em **Categorias**, clique em **Mostrar tudo**. Em seguida, em **Algoritmos Utilizados**, selecione **Deteção de Anomalias Baseada em PCA**. <br></br>
      ![Selecionar filtros](./media/machine-learning-sample-experiments/refine-the-view.png)
    * **Utilize a caixa de pesquisa.** Por exemplo, para procurar experimentações que tenham feito parte da Microsoft e estejam relacionadas com o reconhecimento de dígitos que utilizam um algoritmo da máquina de vetor com suporte de classe dois, introduza "reconhecimento de dígitos" na caixa de pesquisa. Em seguida, selecione os filtros **Experimentação**, **Apenas conteúdos da Microsoft** e **Máquina de Vetor com Suporte de Classe Dois**:<br></br>
      ![Utilize a caixa de pesquisa](./media/machine-learning-sample-experiments/search-for-experiments.png)
@@ -55,21 +57,16 @@ Para procurar todas as experimentações:
     >
     >
 
-## <a name="use-a-template-in-machine-learning-studio"></a>Utilizar um modelo no Machine Learning Studio
-Também pode criar uma nova experimentação no Machine Learning Studio, utilizando um exemplo da galeria como um modelo.
+## <a name="create-a-new-experiment-using-an-example-as-a-template"></a>Criar uma nova experimentação com um exemplo como modelo
+Também pode criar uma nova experimentação no Machine Learning Studio através de um exemplo da Galeria como modelo.
 
 1. Inicie sessão com as credenciais da sua conta Microsoft no [Studio](https://studio.azureml.net) e, em seguida, clique em **Novo** para criar uma experimentação.
-2. Navegue no conteúdo de exemplos e clique num exemplo.
+2. Navegue no conteúdo de exemplos e clique num deles.
 
-É criada uma nova experimentação na sua área de trabalho, utilizando a experimentação de exemplo como um modelo.
+É criada uma nova experimentação na sua área de trabalho do Machine Learning Studio através da experimentação de exemplo como modelo.
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Importar dados de várias origens](machine-learning-data-science-import-data.md)
 * [Tutorial de início rápido para a linguagem R no Machine Learning](machine-learning-r-quickstart.md)
 * [Implementar um serviço Web Machine Learning](machine-learning-publish-a-machine-learning-web-service.md)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

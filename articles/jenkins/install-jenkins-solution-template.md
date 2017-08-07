@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 6/7/2017
 ms.author: mlearned
-ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1500c02fa1e6876b47e3896c40c7f3356f8f1eed
-ms.openlocfilehash: 748f1994d0ee5b6c6a988bca8e5b694b29c0b8c5
+ms.custom: Jenkins
+ms.translationtype: HT
+ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
+ms.openlocfilehash: f892ec7bd61124f7958a50ebdfb49c7310d4ee18
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 
@@ -66,7 +66,7 @@ No separador **Configurar as definições básicas**:
 * Tipo de autenticação: crie uma instância que é protegida por uma palavra-passe ou [chave pública SSH](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows). A palavra-passe tem de cumprir, pelo menos 3 dos seguintes requisitos: uma letra minúscula, uma letra maiúscula, um número e um caráter especial.
 * Mantenha o tipo de versão do Jenkins como **LTS**
 * Selecione uma subscrição.
-* Crie um grupo de recursos ou utilize um existente.
+* Crie um grupo de recursos ou utilize um já existente que esteja vazio. 
 * Selecione uma localização.
 
 No separador **Configurar opções adicionais**:

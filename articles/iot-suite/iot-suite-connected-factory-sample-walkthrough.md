@@ -13,14 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/08/2017
+ms.date: 07/27/2017
 ms.author: dobett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c785ad8dbfa427d69501f5f142ef40a2d3530f9e
-ms.openlocfilehash: 3011fd608ba83561c319e57c8a7b5a4f3c4c2284
+ms.translationtype: HT
+ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
+ms.openlocfilehash: 81ecd5771be544e250ea0df31aa274f0850527ad
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/26/2017
-
+ms.lasthandoff: 07/27/2017
 
 ---
 # <a name="connected-factory-preconfigured-solution-walkthrough"></a>Instruções da solução pré-configurada de fábrica ligada
@@ -47,6 +46,13 @@ Este artigo acompanha-o através de alguns dos elementos-chave da solução de f
 O diagrama que se segue descreve os componentes lógicos da solução pré-configurada:
 
 ![Arquitetura lógica da fábrica ligada][connected-factory-logical]
+
+## <a name="communication-patterns"></a>Padrões de comunicação
+
+A solução utiliza a [Especificação OPC UA Pub/Sub](https://opcfoundation.org/news/opc-foundation-news/opc-foundation-announces-support-of-publish-subscribe-for-opc-ua/) para enviar dados de telemetria de OPC UA para o Hub IoT no formato JSON. A solução utiliza o módulo do IoT Edge do [Publicador OPC](https://github.com/Azure/iot-edge-opc-publisher) para esta finalidade.
+
+A solução também tem um cliente de OPC UA integrado numa aplicação Web que pode estabelecer ligações com servidores OPC UA no local. O cliente utiliza um [proxy inverso](https://wikipedia.org/wiki/Reverse_proxy) e recebe ajuda a partir do Hub IoT para fazer a ligação sem necessidade de abrir portas na firewall no local. Este padrão de comunicação é denominado [comunicação auxiliada](https://blogs.msdn.microsoft.com/clemensv/2014/02/09/service-assisted-communication-for-connected-devices/). A solução utiliza o módulo de IoT Edge do [OPC Proxy](https://github.com/Azure/iot-edge-opc-proxy/) para esta finalidade.
+
 
 ## <a name="simulation"></a>Simulação
 

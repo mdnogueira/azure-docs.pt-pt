@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/28/2017
+ms.date: 07/28/2017
 ms.author: kgremban
 ms.reviewer: yossib
 ms.custom: it-pro
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3716c7699732ad31970778fdfa116f8aee3da70b
-ms.openlocfilehash: 977640041f4b58a751848c96e2aa48eb2b284154
+ms.translationtype: HT
+ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
+ms.openlocfilehash: ed14a5a762bab20a1ccde699504dd21f25009b52
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 
@@ -31,7 +31,7 @@ A verificação de dois passos está disponível por predefinição para os admi
 Para transferir o SDK, é preciso um fornecedor do Multi-Factor Auth do Azure.
 
 > [!IMPORTANT]
-> Para transferir o SDK, crie um Fornecedor do Multi-Factor Auth do Azure, mesmo que tenha licenças MFA do Azure, AAD Premium ou EMS.  Se criar um fornecedor do Multi-Factor Auth do Azure para esta finalidade e já tiver licenças, verifique se cria o Fornecedor com o modelo **Por Utilizador Ativado**. Em seguida, associe o Fornecedor ao diretório que contém o MFA do Azure, o Azure AD Premium ou as licenças EMS. Esta configuração garante que só lhe será cobrado qualquer valor se tiver mais utilizadores exclusivos a efetuarem a verificação em dois passos do que o número de licenças.
+> Para transferir o SDK, tem de criar um Fornecedor do Multi-Factor Auth do Azure, mesmo que tenha licenças MFA do Azure, AAD Premium ou EMS.  Se criar um fornecedor do Multi-Factor Auth do Azure para esta finalidade e já tiver licenças, verifique se cria o Fornecedor com o modelo **Por Utilizador Ativado**. Em seguida, associe o Fornecedor ao diretório que contém o MFA do Azure, o Azure AD Premium ou as licenças EMS. Esta configuração garante que só lhe será cobrado qualquer valor se tiver mais utilizadores exclusivos a efetuarem a verificação em dois passos do que o número de licenças.
 
 ## <a name="what-is-an-azure-multi-factor-auth-provider"></a>O que é um fornecedor de autenticação multifatores do Azure?
 
@@ -40,7 +40,7 @@ Se não tiver licenças para a autenticação multifatores do Azure, pode criar 
 Existem dois tipos de fornecedores de autenticação e a diferença reside no facto de a subscrição do Azure ser paga. A opção por autenticação calcula o número de autenticações executadas num mês relativamente ao seu inquilino. Esta é a melhor opção no caso de existirem vários utilizadores que são ocasionalmente autenticados, tal como se exigisse uma MFA para uma aplicação personalizada. A opção por utilizador calcula o número de indivíduos no seu inquilino que executam a verificação de dois passos num mês. Esta é a melhor opção caso existam alguns utilizadores com licenças, mas tem de alargar a MFA a mais utilizadores para além dos limites da sua licença.
 
 ## <a name="create-a-multi-factor-auth-provider"></a>Criar um Fornecedor do Multi-Factor Auth
-Utilize os passos seguintes para criar um Fornecedor do Multi-Factor Auth do Azure.
+Utilize os passos seguintes para criar um Fornecedor do Multi-Factor Auth do Azure. Os Fornecedores do Multi-Factor Auth do Azure só podem ser criados no portal clássico do Azure. Se não conseguir iniciar sessão no portal clássico do Azure, certifique-se de que o inquilino do Azure AD está [associado a uma subscrição do Azure](../active-directory/active-directory-how-subscriptions-associated-directory.md). 
 
 1. Inicie sessão no [portal clássico do Azure](https://manage.windowsazure.com) como administrador.
 2. No lado esquerdo, selecione **Active Directory**.
@@ -66,13 +66,26 @@ Utilize os passos seguintes para criar um Fornecedor do Multi-Factor Auth do Azu
       * Por Autenticação – Modelo de compra que cobra por autenticação. Normalmente utilizado para cenários que utilizam o Multi-Factor Authentication do Azure numa aplicação direcionada para o consumidor.
       * Por Utilizador Ativado – Modelo de compra que cobra por utilizador ativado. Normalmente utilizado para acesso dos empregados a aplicações, como o Office 365. Escolha esta opção se tiver alguns utilizadores licenciados do MFA do Azure.
    3. **Diretório** – O inquilino do Azure Active Directory ao qual o Fornecedor do Multi-Factor Authentication está associado. Tenha em atenção o seguinte:
-      * Não é necessário um diretório do Azure AD para criar um Fornecedor do Multi-Factor Auth. Deixe a caixa em branco se estiver apenas a planear utilizar o Servidor Multi-Factor Authentication do Azure ou o SDK.
+      * Não é necessário um diretório do Azure AD para criar um Fornecedor do Multi-Factor Auth. Deixe esta caixa em branco se estiver apenas a planear transferir o Servidor Multi-Factor Authentication do Azure ou o SDK.
       * O Fornecedor do Multi-Factor Auth tem de estar associado a um diretório do Azure AD para tirar partido das funcionalidades avançadas.
-      * O Azure AD Connect, AAD Sync ou DirSync são apenas um requisito se estiver a sincronizar o seu ambiente do Active Directory no local com um diretório do Azure AD.  Se utilizar apenas um diretório do Azure AD que não está sincronizado, não é necessário.
-        
-        ![Criar um Fornecedor de MFA](./media/multi-factor-authentication-get-started-auth-provider/authprovider5.png)
+      * Só pode estar associado um Fornecedor do Multi-Factor Auth a qualquer diretório do Azure AD.  
+      ![Criar um Fornecedor de MFA](./media/multi-factor-authentication-get-started-auth-provider/authprovider5.png)
 
-8. Assim que clicar em Criar, o Fornecedor do Multi-Factor Auth é criado e deverá ver uma mensagem a indicar: **Fornecedor do Multi-Factor Auth criado com êxito**. Clique em **OK**.
+8. Assim que clicar em Criar, o Fornecedor do Multi-Factor Auth é criado e deverá ver uma mensagem a indicar: **Fornecedor do Multi-Factor Auth criado com êxito**. Clique em **OK**.  
    
    ![Criar um Fornecedor de MFA](./media/multi-factor-authentication-get-started-auth-provider/authprovider6.png)  
+
+## <a name="manage-your-multi-factor-auth-provider"></a>Gerir o Fornecedor do Multi-Factor Auth
+
+Não pode alterar o modelo de utilização (por utilizador ativado ou por autenticação) após a criação de um fornecedor do MFA. No entanto, pode eliminar o fornecedor do MFA e, em seguida, criar um com um modelo de utilização diferente.
+
+Se o Fornecedor do Multi-Factor Auth atual estiver associado a um diretório do Azure AD (também conhecido como inquilino do Azure AD), pode eliminar o fornecedor do MFA com segurança e criar um que esteja associado ao mesmo inquilino do Azure AD. Em alternativa, se comprou licenças suficientes do MFA, Azure AD Premium ou Enterprise Mobility + Security (EMS) para abranger todos os utilizadores ativados para o MFA, pode eliminar totalmente o fornecedor do MFA.
+
+Se o fornecedor do MFA não estiver associado a um inquilino do Azure AD ou associar o novo fornecedor do MFA a um inquilino diferente do Azure AD, as definições do utilizador e as opções de configuração não são transferidas. Além disso, os Servidores MFA do Azure existentes têm de ser reativados com as credenciais de ativação geradas através do novo Fornecedor do MFA. Reativar os Servidores MFA para associá-los ao novo Fornecedor do MFA não afeta a autenticação por chamada telefónica e mensagem de texto, mas as notificações da aplicação móvel deixarão de funcionar para todos os utilizadores até que reativem a aplicação móvel.
+
+## <a name="next-steps"></a>Passos seguintes
+
+[Transferir o SDK do Multi-Factor Authentication](multi-factor-authentication-sdk.md)
+
+[Configurar as Definições do Multi-Factor Authentication](multi-factor-authentication-whats-next.md)
 

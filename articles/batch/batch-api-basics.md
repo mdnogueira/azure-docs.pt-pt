@@ -16,10 +16,10 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
-ms.openlocfilehash: 346e7abf862330afe64dc5685737a9301d7d861a
+ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
+ms.openlocfilehash: 824f900545136428f6e377c52e2dda7e3ab97cfe
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
@@ -177,10 +177,14 @@ Veja a secção [Conta](#account) para obter mais informações sobre como defin
 
 Para utilizar uma imagem personalizada para aprovisionar os seus conjuntos de Máquinas Virtuais, crie a sua conta do Batch com o modo de alocação de conjuntos Subscrição de Utilizador. Com este modo, os conjuntos do Batch são alocados à subscrição na qual a conta reside. Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
 
-Para utilizar uma imagem personalizada, terá de generalizar a imagem para prepará-la. Para obter informações sobre como preparar imagens do Linux personalizadas a partir de VMs do Azure, veja [Capture an Azure Linux VM to use as a template](../virtual-machines/linux/capture-image-nodejs.md) (Capturar uma VM do Azure do Linux e utilizá-la como modelo). Para obter informações sobre como preparar imagens do Windows personalizadas a partir de VMs do Azure, veja [Create custom VM images with Azure PowerShell](../virtual-machines/windows/tutorial-custom-images.md) (Criar imagens de VM personalizadas com o Azure PowerShell). Quando preparar a imagem, tenha em atenção o seguinte:
+Para utilizar uma imagem personalizada, terá de generalizar a imagem para prepará-la. Para obter informações sobre como preparar imagens do Linux personalizadas a partir de VMs do Azure, veja [Capture an Azure Linux VM to use as a template](../virtual-machines/linux/capture-image-nodejs.md) (Capturar uma VM do Azure do Linux e utilizá-la como modelo). Para obter informações sobre como preparar imagens do Windows personalizadas a partir de VMs do Azure, veja [Create custom VM images with Azure PowerShell](../virtual-machines/windows/tutorial-custom-images.md) (Criar imagens de VM personalizadas com o Azure PowerShell). 
 
-- Confirme que a imagem de SO base que vai utilizar para aprovisionar o conjunto do Batch não tem nenhuma extensão do Azure pré-instalada, como a extensão Custom Script. Se a imagem tiver uma extensão pré-instalada, o Azure poderá encontrar problemas durante a implementação da VM.
-- Certifique-se de que a imagem de SO base que indicar utiliza a unidade temp predefinida, pois o agente de nós do Batch espera, atualmente, a unidade temp.
+> [!IMPORTANT]
+> Quando preparar a imagem personalizada, tenha em atenção o seguinte:
+> - Confirme que a imagem de SO base que vai utilizar para aprovisionar o conjunto do Batch não tem nenhuma extensão do Azure pré-instalada, como a extensão Custom Script. Se a imagem tiver uma extensão pré-instalada, o Azure poderá encontrar problemas durante a implementação da VM.
+> - Certifique-se de que a imagem de SO base que indicar utiliza a unidade temp predefinida, pois o agente de nós do Batch espera, atualmente, a unidade temp.
+>
+>
 
 Para criar um agrupamento de Configuração de Máquina Virtual com uma imagem personalizada, precisa de uma ou mais contas do Armazenamento do Azure standard, para armazenar as imagens VHD personalizadas. As imagens personalizadas são armazenadas como blobs. Para fazer referência às imagens personalizadas quando cria um agrupamento, especifique os URIs dos blobs de VHD da imagem personalizada para a propriedade [osDisk](https://docs.microsoft.com/rest/api/batchservice/add-a-pool-to-an-account#bk_osdisk) da propriedade [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/add-a-pool-to-an-account#bk_vmconf).
 
