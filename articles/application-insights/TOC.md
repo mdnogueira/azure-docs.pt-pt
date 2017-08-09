@@ -92,6 +92,7 @@
 
 ### Utilização
 #### [Descrição geral](app-insights-usage-overview.md)
+#### [Enviar o contexto de utilizador](app-insights-usage-send-user-context.md)
 #### [Utilizadores, Sessões, Eventos](app-insights-usage-segmentation.md)
 #### [Funis](usage-funnels.md)
 #### [Retenção](app-insights-usage-retention.md)

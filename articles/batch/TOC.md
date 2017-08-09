@@ -18,6 +18,7 @@
 #### [Azure AD com a Gestão do Batch](batch-aad-auth-management.md)
 ### [VMs de computação intensiva](batch-pool-compute-intensive-sizes.md)
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
+### [Contagem de tarefas por estado](batch-get-task-counts.md)
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
 ### [Nós de computação do Linux](batch-linux-nodes.md)
