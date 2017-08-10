@@ -71,6 +71,9 @@ ACU: 210-250
 <br>
 
 ## <a name="ds-series"></a>Série DS
+
+ACU: 160
+
 | Tamanho | vCPU | Memória: GiB | Armazenamento (SSD) temporário GiB | Discos de dados máximos | Débito máximo do armazenamento temporário e em cache: IOPS/MBps (tamanho da cache em GiB) | Débito máximo do disco não colocado em cache: IOPS/MBps | NICs. Máx. / Desempenho de rede esperado (Mbps) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Standard_DS1 |1 |3.5 |7 |2 |4,000 / 32 (43) |3,200 / 32 |2 / 500 |
@@ -79,6 +82,7 @@ ACU: 210-250
 | Standard_DS4 |8 |28 |56 |16 |32,000 / 256 (344) |25,600 / 256 |8 / 4000 |
 
 <br>
+
 ## <a name="d-series"></a>Série D 
 
 ACU: 160

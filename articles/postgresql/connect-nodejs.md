@@ -11,11 +11,11 @@ ms.custom: mvc
 ms.devlang: nodejs
 ms.topic: hero-article
 ms.date: 06/23/2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: cb4d075d283059d613e3e9d8f0a6f9448310d96b
-ms.openlocfilehash: 6a51fcf4f4494e5b32ccf6dabb19f8d004bb20d4
+ms.translationtype: HT
+ms.sourcegitcommit: 14915593f7bfce70d7bf692a15d11f02d107706b
+ms.openlocfilehash: ddc364f2a0b8a8bb0a4a2c3a563c007470415991
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 08/10/2017
 
 ---
 
@@ -29,28 +29,6 @@ Este guia de início rápido utiliza os recursos criados em qualquer um destes g
 
 Também tem de:
 - Instalar o [Node. js](https://nodejs.org)
-- Instalar o pacote [pg](https://www.npmjs.com/package/pg). 
-
-## <a name="install-nodejs"></a>Instalar o Node.js 
-Dependendo de sua plataforma, para instalar o Node.js:
-
-### <a name="mac-os"></a>**Mac OS**
-Introduza os seguintes comandos para instalar **brew**, um gestor de pacotes de fácil utilização para Mac OS X e **Node.js**.
-
-```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install node
-```
-
-### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
-Introduza os seguintes comandos para instalar **Node.js** e **npm**, um gestor de pacotes para Node.js.
-
-```bash
-sudo apt-get install -y nodejs npm
-```
-
-### <a name="windows"></a>**Windows**
-Visite a [página de transferências do Node. js](https://nodejs.org/en/download/) e selecione a opção de instalador Windows que pretende.
 
 ## <a name="install-pg-client"></a>Instalar o cliente pg
 A instalação do [pg](https://www.npmjs.com/package/pg), um cliente JavaScript puro e sem bloqueios, para Node.js é útil para se ligar e consultar PostgreSQL.
@@ -79,7 +57,7 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
 2. No menu esquerdo do portal do Azure, clique em **Todos os recursos** e procure o servidor que acabou de criar **mypgserver-20170401**.
 3. Clique no nome do servidor **mypgserver 20170401**.
 4. Selecione a página **Descrição Geral** do servidor. Anote o **Nome do servidor** e **Nome de início de sessão de administrador do servidor**.
- ![Base de Dados do Azure para PostgreSQL – Início de sessão de administrador do servidor](./media/connect-nodejs/1-connection-string.png)
+ ![Base de Dados do Azure para o PostgreSQL – Início de sessão de administrador do servidor](./media/connect-nodejs/1-connection-string.png)
 5. Caso se tenha esquecido das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** para visualizar o nome de início de sessão de administrador do servidor e, se necessário, repor a palavra-passe.
 
 ## <a name="running-the-javascript-code-in-nodejs"></a>Executar o código JavaScript no Node.js
@@ -89,64 +67,49 @@ Pode iniciar o Node.js a partir do bash shell ou da linha de comandos do Windows
 Utilize o seguinte código para se ligar e carregar os dados com as instruções SQL **CREATE TABLE** e **INSERT INTO**.
 O objeto [pg.Client](https://github.com/brianc/node-postgres/wiki/Client) é utilizado para comunicar com o servidor PostgreSQL. A função [pg. Client.Connect()](https://github.com/brianc/node-postgres/wiki/Client#method-connect) é utilizada para estabelecer ligação com o servidor. A função [pg. Client.Query()](https://github.com/brianc/node-postgres/wiki/Query) é utilizada para executar a consulta SQL na base de dados PostgreSQL. 
 
-Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
+Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados.
 
 ```javascript
 const pg = require('pg');
 
-var config =
-{
+const config = {
     host: 'mypgserver-20170401.postgres.database.azure.com',
     user: 'mylogin@mypgserver-20170401',
     password: '<server_admin_password>',
-    database: 'mypgsqldb',
+    database: '<name_of_database>',
     port: 5432,
     ssl: true
 };
 
 const client = new pg.Client(config);
 
-client.connect(function (err)
-{
-    if (err)
-        throw err;
-    else
-    {
+client.connect(err => {
+    if (err) throw err;
+    else {
         queryDatabase();
     }
 });
 
-function queryDatabase()
-{
-    client.query(
-        ' \
-            DROP TABLE IF EXISTS inventory; \
-            CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER); \
-            INSERT INTO inventory (name, quantity) VALUES (\'banana\', 150); \
-            INSERT INTO inventory (name, quantity) VALUES (\'orange\', 154); \
-            INSERT INTO inventory (name, quantity) VALUES (\'apple\', 100); \
-        ',
-        function (err)
-    {
-        console.log("Connection established");
+function queryDatabase() {
+    const query = `
+        DROP TABLE IF EXISTS inventory;
+        CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);
+        INSERT INTO inventory (name, quantity) VALUES ('banana', 150);
+        INSERT INTO inventory (name, quantity) VALUES ('orange', 154);
+        INSERT INTO inventory (name, quantity) VALUES ('apple', 100);
+    `;
 
-        if (err)
-            throw err;
-        else
-        {
-            client.end(function (err)
-            {
-                if (err)
-                    throw err;
-
-                // Else closing connection finished without error
-                console.log("Closed client connection");
-            });
-
-            console.log("Finished execution, exiting now");
-            process.exit()
-        }
-    });
+    client
+        .query(query)
+        .then(() => {
+            console.log('Table created successfully!');
+            client.end(console.log('Closed client connection'));
+        })
+        .catch(err => console.log(err))
+        .then(() => {
+            console.log('Finished execution, exiting now');
+            process.exit();
+        });
 }
 ```
 
@@ -158,53 +121,41 @@ Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizado
 ```javascript
 const pg = require('pg');
 
-var config =
-{
+const config = {
     host: 'mypgserver-20170401.postgres.database.azure.com',
     user: 'mylogin@mypgserver-20170401',
     password: '<server_admin_password>',
-    database: 'mypgsqldb',
+    database: '<name_of_database>',
     port: 5432,
     ssl: true
 };
 
-
 const client = new pg.Client(config);
 
-client.connect(function (err)
-{
-    if (err)
-        throw err;
-
-    else
-    {
-        console.log("Connected to Azure Database for PostgreSQL server:" + config.host);
-        queryDatabase();
-    }
+client.connect(err => {
+    if (err) throw err;
+    else { queryDatabase(); }
 });
 
-function queryDatabase()
-{
-    // Declare array to hold query result set
-    const results = [];
+function queryDatabase() {
+  
+    console.log(`Running query to PostgreSQL server: ${config.host}`);
 
-    console.log("Running query to PostgreSQL server:" + config.host);
+    const query = 'SELECT * FROM inventory;';
 
-    // Perform query
-    var query = client.query('SELECT * FROM inventory;');
+    client.query(query)
+        .then(res => {
+            const rows = res.rows;
 
-    // Print result set
-    query.on('row', function(row)
-    {
-        console.log("Read " + JSON.stringify(row));
-    });
+            rows.map(row => {
+                console.log(`Read: ${JSON.stringify(row)}`);
+            });
 
-    // Exit program after execution
-    query.on('end', function(row)
-    {
-        console.log("Finished execution, exiting now");
-        process.exit()
-    });
+            process.exit();
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 ```
 
@@ -216,51 +167,39 @@ Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizado
 ```javascript
 const pg = require('pg');
 
-var config =
-{
+const config = {
     host: 'mypgserver-20170401.postgres.database.azure.com',
     user: 'mylogin@mypgserver-20170401',
     password: '<server_admin_password>',
-    database: 'mypgsqldb',
+    database: '<name_of_database>',
     port: 5432,
     ssl: true
 };
 
 const client = new pg.Client(config);
 
-client.connect(function (err)
-{
-    if (err)
-        throw err;
-    else
-    {
+client.connect(err => {
+    if (err) throw err;
+    else {
         queryDatabase();
-    }   
+    }
 });
 
-function queryDatabase()
-{
-    client.query('UPDATE inventory SET quantity= 1000 WHERE name=\'banana\';', function (err, result)
-    {
-        console.log("Connection established");
+function queryDatabase() {
+    const query = `UPDATE inventory 
+                   SET quantity= 1000 WHERE name='banana';`;
 
-        if (err)
-            throw err;
-        else
-        {
-            client.end(function (err)
-            {
-                if (err)
-                    throw err;
-                
-                // Else closing connection finished without error
-                console.log("Closed client connection");
-            });             
-        }
-
-        console.log("Finished execution, exiting now");
-        process.exit()
-    });
+    client
+        .query(query)
+        .then(() => {
+            console.log('Update completed succesfully!');
+            client.end(console.log('Closed client connection'));
+        })
+        .catch(err => console.log(err))
+        .then(() => {
+            console.log('Finished execution, exiting now');
+            process.exit();
+        });
 }
 ```
 

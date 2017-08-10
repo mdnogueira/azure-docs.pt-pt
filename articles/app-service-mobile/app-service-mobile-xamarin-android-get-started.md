@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: glenga
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
-ms.openlocfilehash: 4d34bb29df95ae83952d8f421f3f2a9118ad5e1d
+ms.translationtype: HT
+ms.sourcegitcommit: 99523f27fe43f07081bd43f5d563e554bda4426f
+ms.openlocfilehash: 6b41fd8090dd771fc40769c134bad258b3d4bd36
 ms.contentlocale: pt-pt
-ms.lasthandoff: 01/20/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="create-a-xamarinandroid-app"></a>Criar uma Aplicação Xamarin.Android
@@ -38,11 +38,6 @@ Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 
 * Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se para uma versão de avaliação do Azure e obtenha até 10 Aplicações Móveis gratuitas. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
-
-> [!NOTE]
-> Se pretender começar com o Serviço de Aplicações do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o Serviço de Aplicações](https://azure.microsoft.com/try/app-service/mobile/).  Pode criar de imediato uma Aplicação Móvel de arranque de curta duração no Serviço de Aplicações. Sem cartões de crédito; sem compromissos.
->
->
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
 Siga estes passos para criar um back-end da Aplicação Móvel.

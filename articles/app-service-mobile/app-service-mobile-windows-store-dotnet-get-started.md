@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: glenga
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
-ms.openlocfilehash: 1a031c4858bcbc75ee807ba520e1b22c89471498
+ms.translationtype: HT
+ms.sourcegitcommit: 99523f27fe43f07081bd43f5d563e554bda4426f
+ms.openlocfilehash: 5408e032670dda7f149c442e08f52b02abe23f05
 ms.contentlocale: pt-pt
-ms.lasthandoff: 02/16/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="create-a-windows-app"></a>Criar uma aplicação do Windows
@@ -40,11 +40,6 @@ Para concluir este tutorial, precisa do seguinte:
 
 * Uma conta ativa do Azure. Se não tiver uma conta, pode inscrever-se para uma versão de avaliação do Azure e obter até 10 Mobile Apps gratuitas, que pode continuar a utilizar mesmo após o final do período de avaliação. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * [Visual Studio Community 2015] ou uma versão posterior.
-
-> [!NOTE]
-> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/mobile/). Aqui, pode criar imediatamente uma aplicação móvel de arranque de curta duração no App Service: sem cartões de crédito, sem compromissos.
->
->
 
 ## <a name="create-a-new-azure-mobile-app-backend"></a>Criar um novo back-end da Aplicação Móvel do Azure
 Siga estes passos para criar um novo back-end da Aplicação Móvel.

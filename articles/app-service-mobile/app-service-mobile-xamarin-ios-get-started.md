@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: syntaxc4
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b1a633a86bd1b5997d5cbf66b16ec351f1043901
-ms.openlocfilehash: ed289d0755bbad08de01b0f311d14f5514ce0631
+ms.translationtype: HT
+ms.sourcegitcommit: 99523f27fe43f07081bd43f5d563e554bda4426f
+ms.openlocfilehash: 8dc965df2cd45366970effb29f246b0045a94717
 ms.contentlocale: pt-pt
-ms.lasthandoff: 01/20/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="create-a-xamarinios-app"></a>Criar uma aplicação Xamarin.iOS
@@ -35,11 +35,6 @@ Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 * Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se para uma versão de avaliação do Azure e obtenha até 10 aplicações móveis gratuitas, que pode continuar a utilizar mesmo após o final do período de avaliação. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
 * Um Mac com Xcode v7.0 ou posterior e Xamarin Studio Community instalado. Consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx) e [Configuração, instalação e verificações para utilizadores Mac](https://msdn.microsoft.com/library/mt488770.aspx) (MSDN).
-
-> [!NOTE]
-> Se pretender começar com o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/mobile/). Pode criar imediatamente uma aplicação móvel de arranque de curta duração no Serviço de Aplicações: sem cartões de crédito, sem compromissos.
->
->
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
 Siga estes passos para criar um back-end da Aplicação Móvel.
