@@ -19,6 +19,7 @@
 ### [VMs de computação intensiva](batch-pool-compute-intensive-sizes.md)
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
 ### [Contagem de tarefas por estado](batch-get-task-counts.md)
+### [Criar um conjunto com uma imagem personalizada](batch-custom-images.md)
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
 ### [Nós de computação do Linux](batch-linux-nodes.md)
