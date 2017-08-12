@@ -12,7 +12,7 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 7/27/2017
+ms.date: 8/10/2017
 ms.author: subramar
 ms.translationtype: HT
 ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
@@ -63,6 +63,7 @@ Para instalar o SDK e o pacote de runtime associado através da ferramenta de li
 5. Adicione a chave de GPG oficial do Docker ao porta-chaves do APT.
 
     ```bash
+    sudo apt-get install curl
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     ```
 

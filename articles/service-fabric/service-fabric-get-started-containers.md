@@ -35,14 +35,14 @@ Um computador de programação com:
 * [SDK e ferramentas do Service Fabric](service-fabric-get-started.md).
 *  Docker para Windows.  [Obtenha o Docker CE para Windows (estável)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). Depois de instalar e iniciar o Docker, clique com o botão direito do rato no ícone de tabuleiro e selecione **Mudar para os contentores do Windows**. Esta ação é necessária para executar imagens do Docker baseadas no Windows.
 
-Um cluster do Windows com três ou mais nós em execução no Windows Server 2016 com Contentores - [Criar um cluster](service-fabric-cluster-creation-via-portal.md) ou [experimentar o Service Fabric gratuitamente](https://aka.ms/tryservicefabric). 
+Um cluster do Windows com três ou mais nós em execução no Windows Server 2016 com Contentores - [Criar um cluster](service-fabric-cluster-creation-via-portal.md) ou [experimentar o Service Fabric gratuitamente](https://aka.ms/tryservicefabric).
 
-Um registo no Azure Container Registry - [Criar um registo de contentor](../container-registry/container-registry-get-started-portal.md) na sua subscrição do Azure. 
+Um registo no Azure Container Registry - [Criar um registo de contentor](../container-registry/container-registry-get-started-portal.md) na sua subscrição do Azure.
 
 ## <a name="define-the-docker-container"></a>Definir o contentor do Docker
-Crie uma imagem com base na [imagem de Python](https://hub.docker.com/_/python/) que se encontra no Docker Hub. 
+Crie uma imagem com base na [imagem de Python](https://hub.docker.com/_/python/) que se encontra no Docker Hub.
 
-Defina o contentor do Docker num Dockerfile. O Dockerfile contém instruções para configurar o ambiente no interior do contentor, para carregar a aplicação que pretende executar e para mapear as portas. O Dockerfile é a entrada para o comando `docker build`, o que cria a imagem. 
+Defina o contentor do Docker num Dockerfile. O Dockerfile contém instruções para configurar o ambiente no interior do contentor, para carregar a aplicação que pretende executar e para mapear as portas. O Dockerfile é a entrada para o comando `docker build`, o que cria a imagem.
 
 Crie um diretório vazio e crie o ficheiro *Dockerfile* (sem extensão de ficheiro). Adicione o seguinte ao *Dockerfile* e guarde as alterações:
 
@@ -86,13 +86,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    
+
     return 'Hello World!'
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
 
+<a id="Build-Containers"></a>
 ## <a name="build-the-image"></a>Criar a imagem
 Execute o comando `docker build` para criar a imagem que executa a sua aplicação Web. Abra uma janela do PowerShell e navegue para o diretório que contém o Dockerfile. Execute o seguinte comando:
 
@@ -106,7 +107,7 @@ Quando o comando de criação concluir, execute o comando `docker images` para v
 
 ```
 $ docker images
-    
+
 REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
 helloworldapp                 latest              8ce25f5d6a79        2 minutes ago       10.4 GB
 ```
@@ -141,6 +142,7 @@ Elimine o contentor do seu computador de programação:
 docker rm my-web-site
 ```
 
+<a id="Push-Containers"></a>
 ## <a name="push-the-image-to-the-container-registry"></a>Enviar a imagem para o registo de contentor
 Depois de confirmar que o contentor é executado no seu computador de programação, envie a imagem para o seu registo no Azure Container Registry.
 
@@ -170,7 +172,7 @@ O SDK e as ferramentas do Service Fabric fornecem um modelo de serviço para o a
 1. Inicie o Visual Studio.  Selecione **Ficheiro** > **Novo** > **Projeto**.
 2. Selecione **Aplicação do Service Fabric**, dê-lhe o nome "MyFirstContainer" e clique em **OK**.
 3. Selecione **Contentor Convidado** da lista de **modelos de serviço**.
-4. Em **Nome da Imagem**, introduza "myregistry.azurecr.io/samples/helloworldapp", a imagem que enviou para o repositório do seu contentor. 
+4. Em **Nome da Imagem**, introduza "myregistry.azurecr.io/samples/helloworldapp", a imagem que enviou para o repositório do seu contentor.
 5. Dê um nome ao serviço e clique em **OK**.
 
 ## <a name="configure-communication"></a>Configurar a comunicação
@@ -183,8 +185,8 @@ O serviço de contentor precisa de um ponto final para comunicação. Adicione u
   </Endpoints>
 </Resources>
 ```
-    
-Ao definir um ponto final, o Service Fabric publica o ponto final no serviço de Nomes.  Este contentor pode ser resolvido por outros serviços em execução no cluster.  Também pode realizar comunicação de contentor para contentor através do [proxy inverso](service-fabric-reverseproxy.md).  Para realizar a comunicação, forneça a porta de escuta HTTP do proxy inverso e o nome dos serviços com os quais quer comunicar como variáveis de ambiente. 
+
+Ao definir um ponto final, o Service Fabric publica o ponto final no serviço de Nomes.  Este contentor pode ser resolvido por outros serviços em execução no cluster.  Também pode realizar comunicação de contentor para contentor através do [proxy inverso](service-fabric-reverseproxy.md).  Para realizar a comunicação, forneça a porta de escuta HTTP do proxy inverso e o nome dos serviços com os quais quer comunicar como variáveis de ambiente.
 
 ## <a name="configure-and-set-environment-variables"></a>Configurar e definir variáveis de ambiente
 Pode especificar as variáveis de ambiente para cada pacote do código no manifesto do serviço. Esta funcionalidade está disponível para todos os serviços, independentemente de estarem implementados como contentores ou processos ou como executáveis convidados. Pode substituir os valores das variáveis de ambiente no manifesto de aplicação ou especificá-los durante a implementação como parâmetros de aplicação.
@@ -211,7 +213,7 @@ Estas variáveis de ambiente podem ser substituídas no manifesto de aplicação
 ```
 
 ## <a name="configure-container-port-to-host-port-mapping-and-container-to-container-discovery"></a>Configurar o mapeamento de portas porta-a-anfitrião e deteção de contentor para contentor
-Configure uma porta de anfitrião utilizada para comunicar com o contentor. O enlace da porta mapeia a porta em que o serviço está a escutar no interior do contentor para uma porta no anfitrião. Adicione um elemento `PortBinding` no elemento `ContainerHostPolicies` do ficheiro ApplicationManifest.xml.  Neste artigo, `ContainerPort` é 80 (o contentor expõe a porta 80, conforme especificado no Dockerfile) e `EndpointRef` é "Guest1TypeEndpoint" (o ponto final definido anteriormente no manifesto do serviço).  Os pedidos de entrada para o serviço na porta 8081 são mapeados para a porta 80 no contentor. 
+Configure uma porta de anfitrião utilizada para comunicar com o contentor. O enlace da porta mapeia a porta em que o serviço está a escutar no interior do contentor para uma porta no anfitrião. Adicione um elemento `PortBinding` no elemento `ContainerHostPolicies` do ficheiro ApplicationManifest.xml.  Neste artigo, `ContainerPort` é 80 (o contentor expõe a porta 80, conforme especificado no Dockerfile) e `EndpointRef` é "Guest1TypeEndpoint" (o ponto final definido anteriormente no manifesto do serviço).  Os pedidos de entrada para o serviço na porta 8081 são mapeados para a porta 80 no contentor.
 
 ```xml
 <Policies>
@@ -312,7 +314,7 @@ Guarde todas as alterações e crie a aplicação. Para publicar a sua aplicaç�
 
 No **Ponto Final da Ligação**, introduza o ponto final de gestão para o cluster.  Por exemplo, "containercluster.westus2.cloudapp.azure.com:19000". Pode encontrar o ponto final de ligação do cliente no painel Descrição Geral do seu cluster no [portal do Azure](https://portal.azure.com).
 
-Clique em **Publicar**. 
+Clique em **Publicar**.
 
 O [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) é uma ferramenta baseada na Web utilizada para inspecionar e gerir aplicações e nós num cluster do Service Fabric. Abra um browser e navegue para http://containercluster.westus2.cloudapp.azure.com:19080/Explorer/ e siga a implementação da aplicação.  A aplicação é implementada, mas fica em estado de erro até que a imagem seja transferida nos nós do cluster (o que pode demorar algum tempo, consoante o tamanho da imagem): ![Erro][1]
 
@@ -360,17 +362,17 @@ Seguem-se os manifestos completos do serviço e da aplicação utilizados neste 
       <EnvironmentVariable Name="HttpGatewayPort" Value=""/>
       <EnvironmentVariable Name="BackendServiceName" Value=""/>
     </EnvironmentVariables>
-    
+
   </CodePackage>
 
-  <!-- Config package is the contents of the Config directoy under PackageRoot that contains an 
+  <!-- Config package is the contents of the Config directoy under PackageRoot that contains an
        independently-updateable and versioned set of custom configuration settings for your service. -->
   <ConfigPackage Name="Config" Version="1.0.0" />
 
   <Resources>
     <Endpoints>
-      <!-- This endpoint is used by the communication listener to obtain the port on which to 
-           listen. Please note that if your service is partitioned, this port is shared with 
+      <!-- This endpoint is used by the communication listener to obtain the port on which to
+           listen. Please note that if your service is partitioned, this port is shared with
            replicas of different partitions that are placed in your code. -->
       <Endpoint Name="Guest1TypeEndpoint" UriScheme="http" Port="8081" Protocol="http"/>
     </Endpoints>
@@ -388,8 +390,8 @@ Seguem-se os manifestos completos do serviço e da aplicação utilizados neste 
   <Parameters>
     <Parameter Name="Guest1_InstanceCount" DefaultValue="-1" />
   </Parameters>
-  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
-       should match the Name and Version attributes of the ServiceManifest element defined in the 
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion
+       should match the Name and Version attributes of the ServiceManifest element defined in the
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="Guest1Pkg" ServiceManifestVersion="1.0.0" />
@@ -411,10 +413,10 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
     </Policies>
   </ServiceManifestImport>
   <DefaultServices>
-    <!-- The section below creates instances of service types, when an instance of this 
-         application type is created. You can also create one or more instances of service type using the 
+    <!-- The section below creates instances of service types, when an instance of this
+         application type is created. You can also create one or more instances of service type using the
          ServiceFabric PowerShell module.
-         
+
          The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
     <Service Name="Guest1">
       <StatelessService ServiceTypeName="Guest1Type" InstanceCount="[Guest1_InstanceCount]">
