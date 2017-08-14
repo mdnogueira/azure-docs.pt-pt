@@ -16,18 +16,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2017
 ms.author: nepeters
-ms.custom: H1Hack27Feb2017
+ms.custom: H1Hack27Feb2017, mvc
 ms.translationtype: HT
-ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
-ms.openlocfilehash: a278f76fc0ac2aa42633ed0ce2ad4fbc4e7290da
+ms.sourcegitcommit: 14915593f7bfce70d7bf692a15d11f02d107706b
+ms.openlocfilehash: 7c96a5b9bc2cb6cea60b200c22e4e4e1d49d8d08
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 08/10/2017
 
 ---
 
 # <a name="deploy-kubernetes-cluster-for-linux-containers"></a>Implementar o cluster do Kubernetes para contentores do Linux
 
-Neste guia rápido, é implementado um cluster do Kubernetes com a CLI do Azure. Depois, é implementada e executada no cluster uma aplicação de vários contentores que consiste num front-end da Web e numa instância de Redis. Depois de concluída, a aplicação está acessível através da Internet.
+Neste guia rápido, é implementado um cluster do Kubernetes com a CLI do Azure. Depois, é implementada e executada no cluster uma aplicação de vários contentores que consiste num front-end da Web e numa instância de Redis. Depois de concluída, a aplicação está acessível através da Internet. 
+
+A aplicação de exemplo utilizada neste documento está escrita em Python. Os conceitos e os passos detalhados aqui podem ser utilizados para implementar qualquer imagem de contentor num cluster de Kubernetes. O código, o Dockerfile e os ficheiros de manifesto do Kubernetes pré-criados relacionados com este projeto estão disponíveis no [GitHub](https://github.com/Azure-Samples/azure-voting-app-redis.git).
 
 ![Imagem de navegação para o Azure Vote](media/container-service-kubernetes-walkthrough/azure-vote.png)
 
@@ -69,7 +71,7 @@ Saída:
 Crie um cluster do Kubernetes no Azure Container Service com o comando [az acs create](/cli/azure/acs#create). O exemplo seguinte cria um cluster com o nome *myK8sCluster* com um nó principal do Linux e três nós de agente do Linux.
 
 ```azurecli-interactive 
-az acs create --orchestrator-type=kubernetes --resource-group myResourceGroup --name=myK8sCluster --generate-ssh-keys 
+az acs create --orchestrator-type kubernetes --resource-group myResourceGroup --name myK8sCluster --generate-ssh-keys 
 ```
 
 Ao fim de vários minutos, o comando é concluído e devolve informações sobre o cluster no formato json. 
@@ -104,9 +106,9 @@ k8s-master-14ad53a1-0   Ready,SchedulingDisabled   10m       v1.6.6
 
 ## <a name="run-the-application"></a>Executar a aplicação
 
-Um ficheiro de manifesto do Kubernetes define um estado pretendido para o cluster, incluindo coisas como, por exemplo, que imagens de contentor devem estar em execução. Neste exemplo, é utilizado um manifesto para criar todos os objetos necessários para executar a aplicação Azure Vote. 
+Um ficheiro de manifesto do Kubernetes define um estado pretendido para o cluster, incluindo que imagens de contentor devem estar em execução. Neste exemplo, é utilizado um manifesto para criar todos os objetos necessários para executar a aplicação Azure Vote. 
 
-Crie um ficheiro com o nome `azure-vote.yaml` e copie-o para o YAML seguinte.
+Crie um ficheiro com o nome `azure-vote.yaml` e copie-o para o YAML seguinte. Se estiver a trabalhar no Azure Cloud Shell, este ficheiro pode ser criado através de vi ou Nano, como se estivesse a trabalhar num sistema físico ou virtual.
 
 ```yaml
 apiVersion: apps/v1beta1
@@ -226,3 +228,4 @@ Para saber mais sobre o Azure Container Service e ver um exemplo completo de có
 
 > [!div class="nextstepaction"]
 > [Gerir um cluster do ACS Kubernetes](./container-service-tutorial-kubernetes-prepare-app.md)
+

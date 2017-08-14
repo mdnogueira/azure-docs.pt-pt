@@ -13,17 +13,20 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/17/2017
+ms.date: 08/07/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b1d56fcfb472e5eae9d2f01a820f72f8eab9ef08
-ms.openlocfilehash: 52f89520fef8fc9ddb6e8e10a59ec35600affb2a
+ms.translationtype: HT
+ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
+ms.openlocfilehash: c41a16a3c43064a094b0980bc1a8294b093c6130
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 08/08/2017
 
 ---
-# <a name="quick-start-azure-ad-self-service-password-reset"></a>Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
+# <a name="quickstart-azure-ad-self-service-password-reset"></a>Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
+
+> [!IMPORTANT]
+> **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
 
 ## <a name="rapidly-deploy-self-service-password-reset"></a>Implementar rapidamente a reposição de palavras-passe self-service
 
@@ -74,9 +77,15 @@ Para ativar a sincronização de identidades no local com o Azure AD, tem de ins
 
 ## <a name="disabling-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
 
-Para desativar a reposição personalizada de palavra-passe basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe > Propriedades** > escolher **Ninguém**, em **Reposição Personalizada de Palavra-passe Ativada**
+Para desativar a reposição de palavras-passe self-service, basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe > Propriedades** > escolher **Nenhuma**, em **Reposição de Palavras-passe Self-service Ativada**
 
 ## <a name="next-steps"></a>Passos seguintes
+
+Neste guia de início rápido, aprendeu a configurar a reposição de palavras-passe self-service para os seus utilizadores. Para continuar para o portal do Azure para concluir estes passos, siga a ligação abaixo para o portal.
+
+> [!div class="nextstepaction"]
+> [Ativar a reposição de palavras-passe self-service](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset)
+
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
 * [**Licensing**](active-directory-passwords-licensing.md) - Configure your Azure AD Licensing (Licenciamento - Configurar o Licenciamento do Azure AD)

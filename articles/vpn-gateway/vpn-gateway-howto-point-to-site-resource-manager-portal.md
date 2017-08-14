@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/27/2017
+ms.date: 08/03/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
-ms.openlocfilehash: 171159fece2e3927458aff6e6185b96c792e17c8
+ms.sourcegitcommit: 8b857b4a629618d84f66da28d46f79c2b74171df
+ms.openlocfilehash: 28bc587204be30b1b29da7c2235e347d778b908e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/31/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-certificate-authentication-azure-portal"></a>Configurar uma ligação de Ponto a Site a uma VNet com a autenticação de certificado: Portal do Azure
@@ -91,7 +91,7 @@ As capturas de ecrã nesta secção são fornecidas como um exemplo de referênc
 
 ## <a name="dns"></a>4 - Especificar um servidor DNS (opcional)
 
-Depois de criar a rede virtual, pode adicionar o endereço IP de um servidor DNS, para lidar com a resolução de nomes. O servidor DNS especificado deve ser um servidor DNS que possa resolver os nomes dos recursos a que se está a ligar. O pacote de configuração de cliente VPN que irá gerar num passo mais à frente irá conter os endereços IP dos servidores DNS que especificar nesta definição. Se precisar de atualizar a lista de servidores DNS no futuro, pode gerar e instalar novos pacotes de configuração de cliente VPN que reflitam a nova lista.
+Depois de criar a rede virtual, pode adicionar o endereço IP de um servidor DNS, para lidar com a resolução de nomes. O servidor DNS especificado deve ser um servidor DNS que possa resolver os nomes dos recursos a que se está a ligar.
 
 [!INCLUDE [vpn-gateway-add-dns-rm-portal](../../includes/vpn-gateway-add-dns-rm-portal-include.md)]
 
@@ -146,7 +146,7 @@ Após o gateway ser criado, pode carregar o ficheiro .cer (que contém as inform
 
 ## <a name="clientconfig"></a>9 - Instalar o pacote de configuração do cliente VPN
 
-Para ligar a uma VNet com um VPN de Ponto a Site, cada cliente tem de instalar um pacote para configurar o cliente de VPN do Windows nativo. O pacote de configuração configura o cliente VPN do Windows nativo com as definições necessárias para estabelecer ligação à rede virtual e, se especificou um servidor DNS para a sua VNet, contém o endereço IP do servidor DNS que o cliente irá utilizar para a resolução de nomes. Se alterar o servidor DNS especificado mais tarde, depois de gerar o pacote de configuração de cliente, certifique-se de que gera um novo pacote de configuração de cliente para instalar nos seus computadores cliente.
+Para ligar a uma VNet com um VPN de Ponto a Site, cada cliente tem de instalar um pacote para configurar o cliente de VPN do Windows nativo. O pacote de configuração configura o cliente VPN do Windows nativo com as definições necessárias para ligar à rede virtual.
 
 Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador cliente, desde que a versão corresponda à arquitetura do cliente. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
 

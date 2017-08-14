@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 08/02/2017
 ms.author: billmath
 ms.translationtype: HT
-ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
-ms.openlocfilehash: 1580e2841790b7c1b6c9540da4940eef2c487256
+ms.sourcegitcommit: 8b857b4a629618d84f66da28d46f79c2b74171df
+ms.openlocfilehash: 51906e8d68b5f951a75b8141644bbaf4cf6a43ce
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Instalação personalizada do Azure AD Connect
@@ -279,6 +279,9 @@ O serviço do AD FS requer uma conta de serviço de domínio para autenticar uti
 * **Conta de Utilizador de Domínio** – este tipo de conta requer uma palavra-passe e a atualização regular da palavra-passe, quando a palavra-passe é alterada ou expira. Utilize esta opção apenas se não tiver controladores de domínio do Windows Server 2012 no domínio a que pertencem os servidores do AD FS.
 
 Se tiver selecionado a Conta de Serviço Gerida de Grupo e esta funcionalidade nunca tiver sido utilizada no Active Directory, ser-lhe-ão pedidas as credenciais de Administrador de Empresa. Estas credenciais são utilizadas para iniciar o armazenamento de chaves e ativar a funcionalidade no Active Directory.
+
+> [!NOTE]
+> O Azure AD Connect efetua uma verificação para detetar se o serviço AD FS já está registado como um SPN no domínio.  O AD DS não permitirá o registo de SPNs duplicados em simultâneo.  Se for encontrado um SPN duplicado, não poderá continuar até o SPN ser removido.
 
 ![Conta de Serviço do AD FS](./media/active-directory-aadconnect-get-started-custom/adfs5.png)
 

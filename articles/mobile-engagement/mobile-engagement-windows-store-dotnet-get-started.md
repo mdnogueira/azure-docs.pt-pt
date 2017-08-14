@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/12/2016
 ms.author: piyushjo;ricksal
-translationtype: Human Translation
-ms.sourcegitcommit: 06e16033435ed0a37d5688055743875827d3aec2
-ms.openlocfilehash: 939d6adc548d5d6ef66909bcf52f11a4106c3be9
-ms.lasthandoff: 02/28/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
+ms.openlocfilehash: 40db7e4dd151ec391c754dc6d4145aeeb8058eca
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/08/2017
 
 ---
 # <a name="get-started-with-azure-mobile-engagement-for-windows-universal-apps"></a>Introdução ao Azure Mobile Engagement para Aplicações Universais do Windows
@@ -26,6 +26,9 @@ ms.lasthandoff: 02/28/2017
 
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados de uma aplicação Universal do Windows.
 Este tutorial demonstra o cenário de difusão simples utilizando o Mobile Engagement. Irá criar uma Aplicação Universal do Windows em branco que recolhe dados de utilização de aplicação básicas e recebe notificações push através do Serviço de Notificações do Windows (WNS).
+
+> [!NOTE]
+> O serviço Azure Mobile Engagement será extinto em março de 2018 e, atualmente, apenas está disponível para os clientes existentes. Para obter mais informações, veja [Mobile Engagement](https://azure.microsoft.com/en-us/services/mobile-engagement/).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 [!INCLUDE [Prereqs](../../includes/mobile-engagement-windows-store-prereqs.md)]
@@ -42,7 +45,7 @@ Irá criar uma aplicação básica com o Visual Studio para demonstrar a integra
 Os seguintes passos assumem a utilização do Visual Studio 2015, apesar de os passos serem semelhantes em versões anteriores do Visual Studio.
 
 1. Inicie o Visual Studio e, no ecrã **Base**, selecione **Novo Projeto**.
-2. No pop-up, selecione **Windows** -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
+2. No pop-up, selecione **Windows**  -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
 
     ![][1]
 

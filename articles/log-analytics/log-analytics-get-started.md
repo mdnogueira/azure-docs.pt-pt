@@ -12,14 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/12/2017
+ms.date: 08/08/2017
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
-ms.openlocfilehash: 9147d2f349f59417e44e288ef057e5857a266815
+ms.translationtype: HT
+ms.sourcegitcommit: f5c887487ab74934cb65f9f3fa512baeb5dcaf2f
+ms.openlocfilehash: 7bdbdf8654ae22ba143d5f87384e04fe4a11d10e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/16/2017
-
+ms.lasthandoff: 08/08/2017
 
 ---
 # <a name="get-started-with-a-log-analytics-workspace"></a>Começar a utilizar uma área de trabalho do Log Analytics
@@ -59,7 +58,12 @@ O passo seguinte é criar uma área de trabalho.
 4. Selecione uma área de trabalho para ver os respetivos detalhes no portal do Azure.       
     ![detalhes da área de trabalho](./media/log-analytics-get-started/oms-onboard-workspace-details.png)         
 
-## <a name="3-add-solutions-and-solution-offerings"></a>3 Adicionar soluções e ofertas de solução
+## <a name="3-upgrade-workspace-to-new-log-search"></a>3 Atualizar a área de trabalho para a nova pesquisa de registos
+Foi lançada uma nova linguagem de consulta do Log Analytics e, para tirar partido da mesma, tem de converter a sua área de trabalho.  Se a região onde a sua área de trabalho está alojada tiver sido atualizada, deverá ver uma faixa roxa na parte superior da área de trabalho a convidá-lo a converter. A atualização é completamente voluntária e não afeta a sua experiência de utilização do Log Analytics e quaisquer soluções que adicionar.  
+
+Para obter mais informações para compreender as vantagens, as considerações e o processo de atualização, veja [Atualizar o Azure Log Analytics para a nova pesquisa de registos](log-analytics-log-search-upgrade.md).  
+
+## <a name="4-add-solutions-and-solution-offerings"></a>4 Adicionar soluções e ofertas de solução
 
 Em seguida, adicione soluções de gestão e ofertas de solução. As soluções de gestão são uma coleção de regras de lógica, visualização e aquisição de dados que fornecem métricas que giram em torno de uma área de problemas específica. Uma oferta de solução é um pacote de soluções de gestão.
 
@@ -95,11 +99,11 @@ Em seguida, crie uma máquina virtual simples no Azure. Depois de criar uma VM, 
 
 - Siga as instruções apresentadas em [Ligar máquinas virtuais do Azure ao Log Analytics](log-analytics-azure-vm-extension.md) para ligar a VM ao Log Analytics com o portal do Azure.
 
-## <a name="5-view-and-act-on-data"></a>5 Ver e tomar medidas relacionadas com os dados
+## <a name="6-view-and-act-on-data"></a>6 Ver e tomar medidas relacionadas com os dados
 
 Há pouco, ativou a solução Log Analytics da Atividade e as ofertas de serviço Segurança e Compatibilidade e Automatização e Controlo. A seguir, vamos dar início à análise dos dados recolhidos pelas soluções e dos resultados apresentados nas pesquisas de registos.
 
-Para começar, olhe para os dados apresentados dentro das próprias soluções. A seguir, olhe para algumas das pesquisas de registos que são acedidas a partir das pesquisas de registos. As pesquisas de registos permitem combinar e relacionar quaisquer dados do computador provenientes de várias origens no seu ambiente. Para obter mais informações, consulte [Pesquisas de registos no Log Analytics](log-analytics-log-searches.md). Por último, tome medidas relacionadas com os dados encontrados através do portal do OMS, que é externo ao portal do Azure.
+Para começar, olhe para os dados apresentados dentro das próprias soluções. A seguir, olhe para algumas das pesquisas de registos que são acedidas a partir das pesquisas de registos. As pesquisas de registos permitem combinar e relacionar quaisquer dados do computador provenientes de várias origens no seu ambiente. Para obter mais informações, veja [Pesquisas de registos no Log Analytics](log-analytics-log-searches.md) ou, se tiver convertido a área de trabalho para a nova linguagem de consulta, veja [Compreender a pesquisa de registos no Log Analytics](log-analytics-log-search-new.md). 
 
 ### <a name="to-view-antimalware-data"></a>Para ver os dados Antimalware
 

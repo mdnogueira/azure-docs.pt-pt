@@ -1,4 +1,4 @@
-Agora, pode utilizar o Data Explorer para criar uma coleção e adicionar dados à sua base de dados. 
+Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar uma base de dados e uma coleção. 
 
 1. No portal do Azure, no menu de navegação à esquerda, clique em **Data Explorer (Pré-visualização)**. 
 
@@ -8,10 +8,12 @@ Agora, pode utilizar o Data Explorer para criar uma coleção e adicionar dados 
 
     Definição|Valor sugerido|Descrição
     ---|---|---
-    Id da base de dados|Tarefas|O ID da base de dados nova. Os nomes das bases de dados devem conter de 1 a 255 carateres e não podem conter /, \\, #, ?, ou um espaço à direita.
-    ID da coleção|Itens|O ID da coleção nova. Os nomes das coleções têm os mesmos requisitos em termos de carateres do que os ID das bases de dados.
-    Capacidade de armazenamento| Fixa (10 GB)|Utilize o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
+    Id da base de dados|Tarefas|O nome da base de dados nova. Os nomes das bases de dados devem conter de 1 a 255 carateres e não podem conter /, \\, #, ?, ou um espaço à direita.
+    ID da coleção|Itens|O nome da coleção nova. Os nomes das coleções têm os mesmos requisitos em termos de carateres do que os ID das bases de dados.
+    Capacidade de armazenamento| Fixa (10 GB)|Utilize o valor predefinido. Este valor é a capacidade de armazenamento da base de dados.
     Débito|400 RU|Utilize o valor predefinido. Se pretender reduzir a latência, pode aumentar o débito mais tarde.
     RU/m|Desativado|Deixe o valor predefinido. Se tiver de lidar mais tarde com grandes cargas de trabalho, pode ativar a funcionalidade [RU/m](../articles/cosmos-db/request-units-per-minute.md) nesse momento.
     Chave de partição|/categoria|Uma chave de partição que distribui uniformemente os dados para cada partição. É importante selecionar a chave de partição correta para criar coleções com bom desempenho. Para obter mais informações, consulte [Designing for partitioning](../articles/cosmos-db/partition-data.md#designing-for-partitioning) (Criação de partições).    
 3. Quando concluir o formulário, clique em **OK**.
+
+O Data Explorer mostra a base de dados e a coleção novas. 

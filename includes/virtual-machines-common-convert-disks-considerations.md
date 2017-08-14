@@ -1,11 +1,10 @@
-* If the unmanaged disk is in a storage account previously encrypted through Azure Storage Service Encryption, you can't convert it to a managed disk. For steps to copy and use these virtual hard disks (VHDs) in managed disks, see the [Managed disks and Azure Storage Service Encryption](#managed-disks-and-azure-storage-service-encryption) section later in this article.
 
-* The conversion requires a restart of the VM, so schedule the migration of your VMs during a pre-existing maintenance window. 
+* A conversão necessita de um reinício da VM, por isso, agende a migração das VMs durante uma janela de manutenção pré-existente. 
 
-* The conversion is not reversible. 
+* A conversão não é reversível. 
 
-* Be sure to test the conversion. Migrate a test virtual machine before you perform the migration in production.
+* Certifique-se de que testa a conversão. Migre uma máquina virtual de teste antes de efetuar a migração na produção.
 
-* During the conversion, you deallocate the VM. The VM receives a new IP address when it is started after the conversion. If needed, you can [assign a static IP address](../articles/virtual-network/virtual-network-ip-addresses-overview-arm.md) to the VM.
+* Durante a conversão, deve desalocar a VM. A VM recebe um novo endereço IP quando é iniciada após a conversão. Se necessário, pode [atribuir um endereço IP estático](../articles/virtual-network/virtual-network-ip-addresses-overview-arm.md) à VM.
 
-* The original VHDs and the storage account used by the VM before conversion are not deleted. They continue to incur charges. To avoid being billed for these artifacts, delete the original VHD blobs after you verify that the conversion is complete.
+* Os VHDs originais e a conta de armazenamento utilizada pela VM antes da conversão não são eliminados. Continuam a incorrer em custos. Para evitar a cobrança destes artefactos, elimine os blobs de VHD originais depois de verificar que a conversão está concluída.

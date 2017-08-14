@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: glenga
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db034a8151495fbb431f3f6969c08cb3677daa3e
-ms.openlocfilehash: 8ce0a0e7b06f85090c07052056ddd67b97b2ee8b
+ms.translationtype: HT
+ms.sourcegitcommit: 99523f27fe43f07081bd43f5d563e554bda4426f
+ms.openlocfilehash: dd405eefbd69e1ed2268152017bc1f9992619c5f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 # <a name="getting-started"> </a>O que são as Aplicações Móveis?
@@ -30,7 +30,7 @@ O Serviço de Aplicações do Azure é uma [Plataforma como Serviço](https://az
 As *Mobile Apps* no *App Service do Azure* oferecem uma plataforma de desenvolvimento de aplicações móveis altamente dimensionável e globalmente disponíveis para Programadores Empresariais e Integradores de Sistemas que fornece um conjunto avançado de capacidades para programadores móveis. As Mobile Apps permitem:
 
 * **Compilação de aplicações de plataformas nativas e cruzadas** – esteja a compilar aplicações nativas Windows, Android e iOS ou aplicações de plataformas cruzadas Xamarin ou Cordova (Phonegap), pode tirar partido do App Service utilizando SDKs nativos.
-* **Ligação aos seus sistemas empresariais** – com as Mobile Apps, é possível adicionar um início de sessão empresarial em minutos e ligar-se à sua empresa no local ou aos recursos na nuvem.
+* **Ligação aos seus sistemas empresariais** – com as Aplicações Móveis, é possível adicionar um início de sessão empresarial em minutos e ligar-se à sua empresa no local ou aos recursos na nuvem.
 * **Compilação de aplicações preparadas para trabalho offline com sincronização de dados** – torne a sua mão-de-obra móvel produtiva através da compilação de aplicações que funcionam offline e utilize Mobile Apps para sincronizar dados em segundo plano quando existe conectividade com qualquer uma das suas fontes de dados empresariais ou APIs SaaS.
 * **Notificações Push para milhões em segundos** – interaja com os seus clientes com notificações push instantâneas em qualquer dispositivo, personalizadas para as suas necessidades, enviadas no momento ideal.
 
@@ -40,7 +40,7 @@ As seguintes funcionalidades são importantes para o desenvolvimento móvel prep
 * **Autenticação e Autorização** - Selecione a partir de uma lista crescente de fornecedores de identidade, incluindo o Azure Active Directory, uma autenticação empresarial e fornecedores de rede sociais, como o Facebook, Google, Twitter e uma Conta Microsoft.  As Mobile Apps do Azure fornecem um serviço OAuth 2.0 para cada fornecedor.  Também é possível integrar o SDK para o fornecedor de identidade para funcionalidades específicas do fornecedor.
 
   Saiba mais sobre as nossas [funcionalidades de autenticação].
-* **Acesso a Dados** – As Aplicações Móveis do Azure fornecem uma origem de dados OData v3 compatível com dispositivos móveis, ligada ao SQL Azure ou a um SQL Server no local.  Este serviço pode ser baseado em Entity Framework, permitindo uma fácil integração com outros fornecedores de dados NoSQL e SQL, incluindo [Table Storage do Azure], MongoDB, [DocumentDB] e fornecedores de API SaaS, como o Office 365 e Salesforce.com.
+* **Acesso a Dados** – As Aplicações Móveis do Azure fornecem uma origem de dados OData v3 compatível com dispositivos móveis, ligada ao SQL Azure ou a um SQL Server no local.  Este serviço pode ser baseado em Entity Framework, permitindo uma fácil integração com outros fornecedores de dados NoSQL e SQL, incluindo [Armazenamento de Tabelas do Azure], MongoDB, [DocumentDB] e fornecedores de API SaaS, como o Office 365 e Salesforce.com.
 * **Sincronização Offline** - Os nossos SDKs do Cliente tornam mais fácil a compilação de aplicações robustas e reativas que funcionam com um conjunto de dados offline, que podem ser sincronizados automaticamente com os dados de back-end, incluindo suporte para resolução de conflitos.
 
   Saiba mais sobre as nossas [funcionalidades de dados].
@@ -50,7 +50,7 @@ As seguintes funcionalidades são importantes para o desenvolvimento móvel prep
 * **SDKs do Cliente** - Fornecemos um conjunto completo de SDKs do Cliente que abrangem o desenvolvimento nativo ([iOS], [Android] e [Windows]), desenvolvimento de plataformas cruzadas ([Xamarin para iOS e Android], [Formulários Xamarin]) e desenvolvimento de aplicações híbridas ([Apache Cordova]).  Cada SDK do Cliente está disponível com uma licença MIT e é open source.
 
 ## <a name="azure-app-service-features"></a>Funcionalidades do App Service do Azure.
-As seguintes funcionalidades da plataforma são geralmente úteis para sites de produção móveis.
+As seguintes funcionalidades da plataforma são úteis para sites de produção móveis.
 
 * **Escala automática** - O App Service permite um rápido aumento vertical ou horizontal de forma a lidar com qualquer carga de cliente a receber. Selecione manualmente o número e tamanho das VMs ou configure a escala automática de forma a dimensionar o back-end da sua aplicação móvel com base na carga ou na agenda.
 
@@ -64,7 +64,7 @@ As seguintes funcionalidades da plataforma são geralmente úteis para sites de 
 * **Redes Virtuais** - O Serviço de Aplicações pode ligar-se a recursos no local através de uma rede virtual, ExpressRoute ou ligações híbridas.
 
   Saiba mais sobre [ligações híbridas], [redes virtuais] e [ExpressRoute].
-* **Ambientes Isolados/Dedicados** – O App Service pode ser executado num ambiente completamente isolado e dedicado para uma execução segura de aplicações do App Service do Azure numa escala elevada.  Este sistema é ideal para cargas de trabalho de aplicações que exijam uma escala, isolamento ou um acesso de rede muito elevados.
+* **Ambientes Isolados/Dedicados** – O App Service pode ser executado num ambiente completamente isolado e dedicado para uma execução segura de aplicações do App Service do Azure numa escala elevada.  Este sistema é ideal para cargas de trabalho de aplicações que exijam uma escala, isolamento ou um acesso de rede elevados.
 
   Saiba mais sobre os [Ambientes do App Service].
 
@@ -74,16 +74,11 @@ Para começar a utilizar as Mobile Apps, siga o tutorial [Introdução].  Este i
 Para obter mais informações sobre as Mobile Apps do Azure, consulte o nosso [mapa de aprendizagem].
 Para obter mais informações sobre a plataforma do App Service do Azure, consulte [App Service do Azure].
 
-> [!NOTE]
-> Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/mobile/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
->
->
-
 <!-- URLs. -->
 [Migrate your Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
 [App Service do Azure]: ../app-service/app-service-value-prop-what-is.md
 [Introdução]: app-service-mobile-ios-get-started.md
-[Table Storage do Azure]: ../storage/storage-dotnet-how-to-use-tables.md
+[Armazenamento de Tabelas do Azure]: ../storage/storage-dotnet-how-to-use-tables.md
 [DocumentDB]: ../documentdb/documentdb-get-started.md
 [funcionalidades de autenticação]: ./app-service-mobile-auth.md
 [funcionalidades de dados]: ./app-service-mobile-offline-data-sync.md

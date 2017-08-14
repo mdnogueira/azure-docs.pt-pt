@@ -15,12 +15,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 05/10/2017
 ms.author: mimig
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
-ms.openlocfilehash: d17f90d5ed5440dc336d1e3ae890a13077e33c4d
+ms.translationtype: HT
+ms.sourcegitcommit: 1dbb1d5aae55a4c926b9d8632b416a740a375684
+ms.openlocfilehash: 9bb863261da64c97f99757d4a0cb3474a7755591
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
-
+ms.lasthandoff: 08/07/2017
 
 ---
 # <a name="azure-cosmos-db-build-a-documentdb-api-web-app-with-net-and-the-azure-portal"></a>Azure Cosmos DB: criar uma aplicação Web da DocumentDB API com .NET e o portal do Azure
@@ -56,7 +55,7 @@ Pode agora utilizar o Data Explorer para adicionar dados à sua coleção nova.
 
    ![Criar documentos novos no Data Explorer no portal do Azure](./media/create-documentdb-dotnet/azure-cosmosdb-data-explorer-new-document.png)
   
-2. Agora, adicione alguns documentos à coleção com a estrutura seguinte, em que vai inserir valores exclusivos para o ID de cada documento e alterar as outras propriedades, conforme ache necessário. Agora, os documentos podem ter qualquer estrutura que queira criar, uma vez que o Azure Cosmos DB não impõe qualquer esquema aos seus dados.
+2. Agora, adicione um documento à coleção com a seguinte estrutura.
 
      ```json
      {
@@ -72,13 +71,15 @@ Pode agora utilizar o Data Explorer para adicionar dados à sua coleção nova.
 
     ![Copie os dados json e clique em Guardar no Data Explorer no portal do Azure](./media/create-documentdb-dotnet/azure-cosmosdb-data-explorer-save-document.png)
 
-     Pode utilizar agora consultas no Data Explorer para obter os seus dados. Por predefinição, o Data Explorer utiliza `SELECT * FROM c` para obter todos os documentos da coleção, mas pode alterar para `SELECT * FROM c ORDER BY c.name ASC`, de modo a devolver todos os documentos por ordem alfabética crescente da propriedade do nome. 
+4.  Crie e guarde mais um documento onde insere um valor exclusivo para a propriedade `id` e altere as outras propriedades conforme necessário. Agora, os documentos podem ter qualquer estrutura que queira criar, uma vez que o Azure Cosmos DB não impõe qualquer esquema aos seus dados.
+
+     Pode utilizar agora consultas no Data Explorer para obter os seus dados. Por predefinição, o Data Explorer utiliza `SELECT * FROM c` para obter todos os documentos da coleção, mas pode alterar para uma [consulta SQL](documentdb-sql-query.md) diferente, como `SELECT * FROM c ORDER BY c._ts DESC`, de modo a devolver todos os documentos por ordem descendente com base no carimbo de data/hora.
  
      Também pode utilizar o Data Explorer para criar procedimentos armazenados, UDFs e acionadores, para realizar lógica empresarial do lado do servidor, bem como débito de escala. O Data Explorer expõe todos os acessos a dados programáticos incorporados que estão disponíveis nas APIs, mas disponibiliza acesso fácil aos seus dados no portal do Azure.
 
 ## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
 
-Agora, vamos clonar uma aplicação de DocumentDB a partir do GitHub, definir a cadeia de ligação e executá-la. Vai ver como é fácil trabalhar com dados programaticamente. 
+Agora, vamos trabalhar com código. Vamos clonar uma aplicação de DocumentDB API a partir do GitHub, definir a cadeia de ligação e executá-la. Vai ver como é fácil trabalhar com dados programaticamente. 
 
 1. Abra uma janela de terminal do git, tal como git bash, e `CD` para um diretório de trabalho.  
 

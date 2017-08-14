@@ -1,6 +1,6 @@
 ---
-title: "Introdução ao Azure Active Directory Premium"
-description: "Explica como se inscrever na edição Azure Active Directory Premium através do Web site Licenciamento em Volume."
+title: Inscrever-se no Azure Active Directory Premium
+description: "Explica como se inscrever na edição Azure Active Directory Premium."
 services: active-directory
 documentationcenter: 
 author: curtand
@@ -11,44 +11,50 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/24/2017
+ms.date: 08/09/2017
 ms.author: curtand
-ms.custom: oldportal;it-pro;
+ms.custom: it-pro;
 ms.translationtype: HT
-ms.sourcegitcommit: bfd49ea68c597b109a2c6823b7a8115608fa26c3
-ms.openlocfilehash: fac41a05c97088b55f07455133d960687227af0e
+ms.sourcegitcommit: 14915593f7bfce70d7bf692a15d11f02d107706b
+ms.openlocfilehash: fe9f4fa6f776a0c2edb572d0526c7520d1c1c7a0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/10/2017
 
 ---
-# <a name="getting-started-with-azure-active-directory-premium"></a>Introdução ao Azure Active Directory Premium
-Este artigo mostra-lhe como começar com o Azure Active Directory Premium que adquiriu através do programa de Licenciamento em Volume. Se não estiver familiarizado com as várias edições do Azure Active Directory, consulte [Edições do Azure Active Directory](active-directory-editions.md).  
+# <a name="quickstart-sign-up-for-azure-active-directory-premium"></a>Início Rápido: inscrever-se no Azure Active Directory Premium
+Para começar a utilizar o Azure Active Directory (Azure AD) Premium, tem de comprar licenças e associá-las à sua subscrição do Azure. Se criar uma subscrição nova do Azure, também tem de ativar o plano de licenciamento e o acesso ao serviço Azure AD, conforme descrito nas secções seguintes. 
 
-> [!IMPORTANT]
-> A Microsoft recomenda que faça a gestão do Azure AD com o [centro de administração do Azure AD](https://aad.portal.azure.com) no portal do Azure em vez de utilizar o portal clássico do Azure referenciado neste artigo. 
-
+## <a name="sign-up-for-active-directory-premium"></a>Inscrever-se no Active Directory Premium
 Tem várias opções para se inscrever no Active Directory Premium: 
 
-**Azure ou Office 365** – na qualidade de subscritor do Azure ou do Office 365, pode comprar o Active Directory Premium online. Para obter os passos detalhados, consulte [Como Comprar o Azure Active Directory Premium – Clientes Existentes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-Existing-Customer) ou [Como Comprar o Azure Active Directory Premium – Novos Clientes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).  
+### <a name="azure-or-office-365"></a>Azure ou Office 365 
+Na qualidade de subscritor do Azure ou do Office 365, pode comprar o Azure Active Directory Premium online. 
 
-**Enterprise Mobility + Security** – o Enterprise Mobility + Security (anteriormente, Enterprise Mobility Suite) é uma forma económica de as organizações utilizarem os seguintes serviços sob um único plano de licenciamento: Active Directory Premium, Azure Rights Management, Microsoft Intune. Para obter mais informações, veja o site do [Enterprise Mobility + Security](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx). Para obter a avaliação gratuita de 30 dias, clique [aqui](https://portal.office.com/Signup/Signup.aspx?OfferId=2E63A04D-BE0B-4A0F-A8CF-407C1C299221&dl=EMS&ali=1#0).
+Para obter os passos detalhados, consulte [Como Comprar o Azure Active Directory Premium – Clientes Existentes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-Existing-Customer) ou [Como Comprar o Azure Active Directory Premium – Novos Clientes](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/How-to-Purchase-Azure-Active-Directory-Premium-New-Customers).  
 
-**Licenciamento em Volume da Microsoft** – o Azure Active Directory Premium está disponível através de um [Contrato Enterprise da Microsoft](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx) (250 licenças ou mais) ou do programa [Licenciamento em Volume Aberto](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx) (5 a 250 licenças).
+### <a name="enterprise-mobility--security"></a>Enterprise Mobility + Security
+O Enterprise Mobility + Security (EMS) é uma forma económica de as organizações utilizarem os seguintes serviços sob um único plano de licenciamento: Azure Active Directory Premium, Azure Information Protection e Microsoft Intune. Pode saber mais sobre o EMS no [Web site do Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security) e sobre os tipos de licenças do EMS disponíveis para compra na página [Opções de Preços do Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security-pricing).  
+
+Pode utilizar uma das opções de licenciamento abaixo para começar a utilizar o Azure AD com licenças do EMS:
+
+- Experimentar o EMS com uma [subscrição de avaliação gratuita do Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1)
+- Comprar [licenças do Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1)
+- Comprar [licenças do Enterprise Mobility + Security E3](https://signup.microsoft.com/Signup?OfferId=4BBA281F-95E8-4136-8B0F-037D6062F54C&ali=1)
+
+### <a name="microsoft-volume-licensing"></a>Licenciamento em Volume da Microsoft
+O Azure Active Directory Premium está disponível através de um [Contrato Enterprise da Microsoft](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx) (250 licenças ou mais) ou do programa [Licenciamento em Volume Aberto](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx) (5 a 250 licenças).
+
+Pode saber mais sobre as opções de compra do licenciamento em volume na página [How to purchase through Volume Licensing](https://www.microsoft.com/licensing/how-to-buy/how-to-buy.aspx) (Como comprar através do Licenciamento em Volume).
 
 > [!NOTE]
 > As edições Premium e Basic do Azure Active Directory estão disponíveis para clientes na China que utilizem a instância mundial do Azure Active Directory. As edições Basic e Premium do Azure Active Directory não são atualmente suportadas pelo serviço Microsoft Azure operado pela 21Vianet na China. Para mais informações, contacte-nos através do [Fórum do Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
 > 
 > 
 
-## <a name="step-1-sign-up-for-active-directory-premium"></a>Passo 1: Inscrever-se no Active Directory Premium
-Para se inscrever, consulte [Como comprar através do Licenciamento em Volume](http://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx).
+Se já tiver comprado e ativado licenças do Azure AD para a mesma subscrição do Azure que utilizou nos passos anteriores, as licenças são ativadas automaticamente no mesmo diretório. E não tem de continuar com os passos descritos no resto do artigo.
 
-## <a name="step-2-activate-your-license-plan"></a>Passo 2: Ativar o plano de licenciamento
-Esta é a sua primeira compra de plano através do programa de Licenciamento em Volume para Empresas da Microsoft?
-Neste caso, receberá um e-mail de confirmação quando a compra for concluída.
-Esse e-mail será necessário para ativar o primeiro plano de licenciamento.
-
-Em qualquer compra subsequente deste diretório, as licenças serão automaticamente ativadas no mesmo diretório.
+## <a name="activate-your-license-plan"></a>Ativar o plano de licenciamento
+É o primeiro plano de licenciamento do Azure AD que compra junto da Microsoft? Se assim for, é gerado um e-mail de confirmação, que lhe é enviado quando a compra estiver concluída. Esse e-mail será necessário para ativar o primeiro plano de licenciamento.
 
 **Para ativar o plano de licenciamento, efetue um dos seguintes passos:**
 
@@ -56,77 +62,42 @@ Em qualquer compra subsequente deste diretório, as licenças serão automaticam
    
     ![Iniciar sessão][1]
 
-    - Se tiver um inquilino existente, clique em **Iniciar sessão** para iniciar sessão com a conta de administrador existente. Tem de iniciar sessão com as credenciais de administrador global do diretório onde as licenças devem ser ativadas.
+    - Se tiver um inquilino existente, clique em **Iniciar sessão** para iniciar sessão com a conta de administrador existente. Inicie sessão com as credenciais de administrador global do diretório onde as licenças devem ser ativadas.
 
-    - Se pretender criar um novo inquilino do Azure Active Directory para utilizar com o plano de licenciamento, clique em **Inscrever-se** para abrir a caixa de diálogo **Criar Perfil de Conta**.
+    - Se pretender criar um novo inquilino do Azure AD para utilizar com o plano de licenciamento, clique em **Inscrever-se** para abrir a caixa de diálogo **Criar Perfil de Conta**.
 
         ![Criar perfil de conta][2]
 
-Quando tiver terminado, aparece a seguinte caixa de diálogo como confirmação da ativação do plano de licença do inquilino.
+Quando tiver terminado, aparece a seguinte caixa de diálogo como confirmação da ativação do plano de licença do inquilino:
 
 ![Confirmação][3]
 
-## <a name="step-3-activate-your-azure-active-directory-access"></a>Passo 3: Ativar o acesso ao Azure Active Directory
-Se já tiver utilizado o Microsoft Azure, pode avançar para o [Passo 4](#step-4-assign-license-to-user-accounts). 
+## <a name="activate-your-azure-active-directory-access"></a>Ativar o acesso ao Azure Active Directory
+Se adicionar licenças do Azure AD Premium novas a uma subscrição já existente, o acesso ao Azure AD já deverá estar ativado. Caso contrário, tem de ativar o acesso do Azure AD depois de receber o **E-mail de boas-vindas**.  
 
-Ser-lhe-á enviado um **e-mail de boas-vindas** quando forem aprovisionadas licenças ao diretório. O e-mail confirma que pode começar a gerir as licenças e funcionalidades do Azure Active Directory Premium ou do Enterprise Mobility Suite. 
+Quando as licenças compradas tiverem sido aprovisionadas no diretório, é-lhe enviado um **E-mail de boas-vindas**. O e-mail confirma que pode começar a gerir as licenças e funcionalidades do Azure Active Directory Premium ou do Enterprise Mobility + Security. 
 
-Se tentar ativar o acesso ao Azure Active Directory sem ter recebido o e-mail de boas-vindas, será apresentada a seguinte mensagem de erro. 
+> [!TIP]
+> Não pode aceder ao Azure AD para o seu inquilino novo enquanto não ativar o acesso ao diretório do Azure AD com o e-mail de boas-vindas que lhe foi enviado automaticamente após a conclusão do aprovisionamento das licenças. 
 
-![Acesso não disponível][9]
-
-Tente novamente dentro de alguns minutos quando tiver recebido o e-mail.
-
-Os novos administradores da subscrição também podem ativar o respetivo acesso ao Portal Clássico do Azure através desta ligação.
-
-**Para ativar o acesso ao Azure Active Directory, siga os seguintes passos:**
+**Para ativar o acesso ao Azure AD, siga os seguintes passos:**
 
 1. No **e-mail de boas-vindas**, clique em **Iniciar Sessão**. 
    
     ![E-mail de boas-vindas][4]
-2. Quando tiver iniciado a sessão com êxito, terá de concluir uma segunda autenticação de fator sob forma de verificação móvel:
+2. Depois de iniciar sessão com êxito, também tem de concluir uma autenticação de segundo fator com um dispositivo móvel:
    
     ![Verificação móvel][5]
 
-A ativação pode demorar alguns minutos. Assim que o acesso estiver ativo, a barra castanha desaparece e poderá clicar em **Portal**.
+A ativação deverá demorar apenas alguns minutos e, em seguida, terá acesso para gerir o seu Azure AD. 
 
-![Aguarde durante a configuração][6]
+## <a name="next-steps"></a>Passos seguintes
+Neste início rápido, aprendeu a inscrever-se no Azure AD Premium e a ativar o acesso ao seu Azure Active Directory. 
 
-Neste caso, o acesso ao Azure está limitado ao Azure Active Directory.
+Se já tiver uma subscrição do Azure, pode utilizar a ligação seguinte para começar uma versão de avaliação ou comprar licenças do Azure AD Premium a partir do portal do Azure.
 
-![Capacidades do Azure][7]
-
-É provável que já tenha acedido ao Azure a partir de uma utilização anterior; além disso, pode atualizar o acesso ao Azure Active Directory para o acesso completo ao Azure ativando subscrições do Azure adicionais. Nestes casos, o Portal Clássico do Azure tem mais funcionalidades.
-
-![Capacidades do Azure][8]
-
-## <a name="step-4-assign-license-to-user-accounts"></a>Passo 4: Atribuir licenças a contas de utilizador
-Antes de começar a utilizar o plano que comprou, terá de atribuir manualmente licenças às contas de utilizador da sua organização para que possam utilizar as funcionalidades avançadas disponibilizadas pela conta Premium. Utilize os seguintes passos para atribuir licenças aos utilizadores para que possam utilizar as funcionalidades do Azure Active Directory Premium.
-
-**Para atribuir licenças aos utilizadores, execute os seguintes passos:**
-
-1. Inicie sessão no Portal Clássico do Azure como administrador global do diretório que pretende personalizar.
-2. Clique em **Active Directory** e selecione o diretório onde pretende atribuir licenças.
-3. Selecione o separador **Licenças**, selecione **Active Directory Premium** ou **Enterprise Mobility Suite** e clique em **Atribuir**.
-   
-    ![Planos de licença][10]
-4. Na caixa de diálogo, selecione os utilizadores a quem pretende atribuir as licenças e clique no ícone de marca de verificação para guardar as alterações.
-   
-    ![Atribuir licenças][11]
-
-### <a name="license-restrictions"></a>Restrições de licença
-Alguns planos de licença são subconjuntos ou conjuntos mais amplos de outros planos de licença. Normalmente, não é possível atribuir uma licença que já tenha sido atribuída ao utilizador. Se pretender atribuir um plano de licença que for um conjunto mais amplo, terá primeiro de remover o plano de licença do conjunto mais amplo.
-
-### <a name="license-requirements"></a>Requisitos de licença
-Quando atribui uma licença a um utilizador, pode especificar uma localização principal de utilização nas propriedades da respetiva conta. Se não for especificada uma localização de utilização, a localização do inquilino é automaticamente atribuída ao utilizador.
-
-![Localização do utilizador][12]
-
-A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da Microsoft varia consoante o país ou a região. Um serviço, como o Voice over Internet Protocol (VoIP), poderá estar disponível num país ou numa região e não estar disponível noutro. Por motivos legais, as funcionalidades dentro de um serviço poderão ser restringidas em determinados países ou regiões. Para ver se um serviço ou funcionalidade está disponível com ou sem restrições, procure o seu país ou a sua região no site de restrições de licença de um serviço.
-
-## <a name="whats-next"></a>Passos seguintes
-* [Adicionar a imagem corporativa às suas páginas de Início de Sessão e Painel de Acesso](active-directory-add-company-branding.md)
-* [Ver os relatórios de acesso e utilização](active-directory-view-access-usage-reports.md)
+> [!div class="nextstepaction"]
+> [Ativar as licenças do Azure AD Premium](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/TryBuyProductBlade) 
 
 <!--Image references-->
 [1]: ./media/active-directory-get-started-premium/MOLSEmail.png
@@ -141,4 +112,3 @@ A disponibilidade dos serviços e funcionalidades para um serviço em nuvem da M
 [10]: ./media/active-directory-get-started-premium/contosolicenseplan.png
 [11]: ./media/active-directory-get-started-premium/Assignlicensespicker.png
 [12]: ./media/active-directory-get-started-premium/Usagelocation.png
-

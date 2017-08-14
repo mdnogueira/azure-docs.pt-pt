@@ -16,10 +16,10 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
-ms.openlocfilehash: 1dc728cf6497d8ba0d35a7e41e51a52c5ca6d7df
+ms.sourcegitcommit: 9633e79929329470c2def2b1d06d95994ab66e38
+ms.openlocfilehash: 3c7a6ac092854bc2d78ac23079d168cf8b5a2201
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/24/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 # <a name="get-started-building-solutions-with-the-batch-client-library-for-net"></a>Comece a criar soluções com a biblioteca de cliente do Batch para .NET
@@ -745,6 +745,7 @@ Agora que está familiarizado com o fluxo de trabalho básico de uma solução d
 * Reveja o artigo [Descrição geral das funcionalidades do Azure Batch](batch-api-basics.md), que recomendamos se não estiver familiarizado com o serviço.
 * Comece pelos outros artigos de desenvolvimento do Batch em **Desenvolvimento aprofundado** no [percurso de aprendizagem do Batch][batch_learning_path].
 * Veja uma implementação diferente de processamento da carga de trabalho "N palavras principais" através do Batch no exemplo [TopNWords][github_topnwords].
+* Reveja as [notas de versão](https://github.com/Azure/azure-sdk-for-net/blob/psSdkJson6/src/SDKs/Batch/DataPlane/changelog.md#azurebatch-release-notes) do .NET do Batch para obter as alterações mais recentes da biblioteca.
 
 [azure_batch]: https://azure.microsoft.com/services/batch/
 [azure_free_account]: https://azure.microsoft.com/free/

@@ -13,13 +13,13 @@ ms.workload: drivers
 ms.tgt_pltfrm: na
 ms.devlang: php
 ms.topic: hero-article
-ms.date: 07/10/2017
+ms.date: 08/08/2017
 ms.author: carlrab
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: 01418c00f94edcb810b23e828273a7e749925177
+ms.sourcegitcommit: 0aae2acfbf30a77f57ddfbaabdb17f51b6938fd6
+ms.openlocfilehash: 3a43472ad2be4a0fd6f7126f72433acd8b5f25fd
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/09/2017
 
 ---
 # <a name="use-php-to-query-an-azure-sql-database"></a>Utilizar o PHP para consultar uma base de dados SQL do Azure
@@ -41,8 +41,8 @@ Para concluir este tutorial de início rápido, certifique-se de que tem o segui
 - Ter instalado o PHP e software relacionado para o seu sistema operativo.
 
     - **MacOS**: instale o Homebrew e o PHP, instale o controlador ODBC e o SQLCMD e, em seguida, instale o Controlador PHP para SQL Server. Veja os [Passos 1.2, 1.3 e 2.1](https://www.microsoft.com/en-us/sql-server/developer-get-started/php/mac/).
-    - **Ubuntu**: instale o PHP e outros pacotes necessários e, em seguida, instale o Controlador do PHP para SQL Server. Veja os [Passos 1.2 e 2.1](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu/).
-    - **Windows**: instale a mais recente versão do PHP para IIS Express, a versão mais recente do Microsoft Drivers for SQL Server no IIS Express, o Chocolatey, o controlador ODBC e o SQLCMD. Veja os [Passos 1.2 e 1.3](https://www.microsoft.com/sql-server/developer-get-started/node/windows/).    
+    - **Ubuntu**: instale o PHP e outros pacotes necessários e, em seguida, instale o Controlador do PHP para SQL Server. Veja os [Passos 1.2 e 2.1](https://www.microsoft.com/sql-server/developer-get-started/php/ubuntu/).
+    - **Windows**: instale a mais recente versão do PHP para IIS Express, a versão mais recente do Microsoft Drivers for SQL Server no IIS Express, o Chocolatey, o controlador ODBC e o SQLCMD. Veja os [Passos 1.2 e 1.3](https://www.microsoft.com/sql-server/developer-get-started/php/windows/).    
 
 ## <a name="sql-server-connection-information"></a>Informações de ligação do servidor SQL
 

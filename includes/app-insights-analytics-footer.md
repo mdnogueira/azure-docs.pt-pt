@@ -1,17 +1,17 @@
 
-## <a name="analytics"></a>Analytics
-* [Overview](../articles/application-insights/app-insights-analytics.md)
-* [Tour of Analytics](../articles/application-insights/app-insights-analytics-tour.md)
-  * Start here. A tutorial covering the main features.
-* [Queries](../articles/application-insights/app-insights-analytics-reference.md#queries-and-operators)
-  * Use operators such as `where` and `count` to build queries.
-* [Aggregation](../articles/application-insights/app-insights-analytics-reference.md#aggregations)
-  * Used to compute statistics over groups of records
-* [Scalars](../articles/application-insights/app-insights-analytics-reference.md#scalars)
-  * Numbers, strings, and other expressions used to form query parameters.
-* [Using Analytics](../articles/application-insights/app-insights-analytics-using.md)
-  * Using Analytics.
-* [Language Reference](../articles/application-insights/app-insights-analytics-reference.md)
-  * One-page reference.
-* [Troubleshooting](../articles/application-insights/app-insights-analytics-troubleshooting.md)
+## <a name="analytics"></a>Análise
+* [Descrição geral](../articles/application-insights/app-insights-analytics.md)
+* [Visita guiada da Análise](../articles/application-insights/app-insights-analytics-tour.md)
+  * Comece aqui. Um tutorial que abrange as principais funcionalidades.
+* [Consultas](../articles/application-insights/app-insights-analytics-reference.md)
+  * Utilize operadores como `where` e `count` para criar consultas.
+* [Agregação](../articles/application-insights/app-insights-analytics-reference.md)
+  * Utilizado para calcular estatísticas de grupos de registos
+* [Escalares](../articles/application-insights/app-insights-analytics-reference.md)
+  * Números, cadeias e outras expressões utilizadas utilizados para parâmetros de consulta de formulários.
+* [Utilizar a Análise](../articles/application-insights/app-insights-analytics-using.md)
+  * Utilizar a Análise.
+* [Referência de Linguagem](../articles/application-insights/app-insights-analytics-reference.md)
+  * Referência de uma página.
+* [Resolução de problemas](../articles/application-insights/app-insights-analytics-troubleshooting.md)
 

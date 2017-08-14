@@ -1,6 +1,6 @@
 ---
 title: "Ligar-se à Base de Dados do Azure para PostgreSQL a partir de Python | Microsoft Docs"
-description: "Proporciona um código de exemplo de Python que pode utilizar para se ligar e consultar dados da Base de Dados do Azure para PostgreSQL."
+description: "Este guia de início rápido fornece um código de exemplo Python que pode utilizar para se ligar e consultar dados da Base de Dados do Azure para PostgreSQL."
 services: postgresql
 author: SaloniSonpal
 ms.author: salonis
@@ -10,12 +10,12 @@ ms.service: postgresql-database
 ms.custom: mvc
 ms.devlang: python
 ms.topic: hero-article
-ms.date: 07/07/2017
+ms.date: 08/10/2017
 ms.translationtype: HT
-ms.sourcegitcommit: fff84ee45818e4699df380e1536f71b2a4003c71
-ms.openlocfilehash: f6ae1ef3855711a86333857f26400f29dfd7c54e
+ms.sourcegitcommit: 14915593f7bfce70d7bf692a15d11f02d107706b
+ms.openlocfilehash: 0d52a7728e2292946e9328065b973ca7ad37b4f5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/10/2017
 
 ---
 # <a name="azure-database-for-postgresql-use-python-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilizar o Python para se ligar e consultar dados
@@ -49,7 +49,7 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
 5. Caso se tenha esquecido das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** para visualizar o nome de início de sessão de administrador do servidor e, se necessário, repor a palavra-passe.
 
 ## <a name="how-to-run-python-code"></a>Como executar o código do Python
-- Com o seu editor de texto favorito, crie um novo ficheiro com o nome postgres.py e guarde-o numa pasta do projeto. Copie e cole um dos exemplos de código abaixo para o ficheiro de texto e guarde-o. Certifique-se de que seleciona a codificação UTF-8 ao guardar o ficheiro no SO do Windows. 
+- Com o seu editor de texto favorito, crie um novo ficheiro com o nome postgres.py e guarde-o numa pasta do projeto. Copie e cole um dos exemplos de código abaixo no ficheiro de texto. Substitua os parâmetros do sistema anfitrião, nome da base de dados, utilizador e palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. Em seguida, guarde o ficheiro. Certifique-se de que seleciona a codificação UTF-8 ao guardar o ficheiro no SO do Windows. 
 - Para executar o código, inicie a linha de comandos ou a shell de bash. Altere o diretório para a pasta do projeto, como `cd postgresql`. Em seguida, escreva o comando do Python seguido do nome de ficheiro, como `python postgres.py`.
 
 > [!NOTE]

@@ -16,10 +16,10 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
-ms.openlocfilehash: 824f900545136428f6e377c52e2dda7e3ab97cfe
+ms.sourcegitcommit: f9003c65d1818952c6a019f81080d595791f63bf
+ms.openlocfilehash: 233965bf54cbca79c7ff059aaccfa5780d672cab
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/09/2017
 
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
@@ -98,17 +98,18 @@ Para decidir que modo de alocação de conjuntos utilizar, considere qual destes
 
 A tabela seguinte compara os modos de alocação de conjuntos Serviço Batch e Subscrição de Utilizador.
 
-| **Modo de alocação de conjuntos:**                 | **Serviço Batch**                                                                                       | **Subscrição de Utilizador**                                                              |
+| **Modo de alocação de conjuntos**                 | **Serviço Batch**                                                                                       | **Subscrição de Utilizador**                                                              |
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **Os conjuntos são alocados:**               | Numa subscrição do Azure gerida                                                                           | Na subscrição do utilizador na qual a conta do Batch é criada                        |
-| **Configurações suportadas:**             | <ul><li>Configuração do Serviço Cloud</li><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul> | <ul><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul>                |
-| **Imagens de VM suportadas:**                  | <ul><li>Imagens do Azure Marketplace</li></ul>                                                              | <ul><li>Imagens do Azure Marketplace</li><li>Imagens personalizadas</li></ul>                   |
-| **Tipos de nós de computação suportados:**         | <ul><li>Nós dedicados</li><li>Nós de baixa prioridade</li></ul>                                            | <ul><li>Nós dedicados</li></ul>                                                  |
-| **Autenticação suportada:**             | <ul><li>Chave Partilhada</li><li>Azure AD</li></ul>                                                           | <ul><li>Azure AD</li></ul>                                                         |
-| **Azure Key Vault necessário:**             | Não                                                                                                      | Sim                                                                                |
-| **Quota de núcleos:**                           | Determinada pela quota de núcleos do Batch                                                                          | Determinada pela quota de núcleos da subscrição                                              |
-| **Suporte de Rede Virtual do Azure (Vnet):** | Conjuntos criados com a Configuração Serviço Cloud                                                      | Conjuntos criados com a Configuração de Máquina Virtual                               |
-| **Modelo de implementação de Vnet suportado:**      | Vnets criadas com o modelo de implementação clássica                                                             | Não são suportadas VNets criadas com o modelo de implementação clássica ou Azure Resource Manager |
+| **Os conjuntos são alocados**               | Numa subscrição do Azure gerida                                                                           | Na subscrição do utilizador na qual a conta do Batch é criada                        |
+| **Configurações suportadas**             | <ul><li>Configuração do Serviço Cloud</li><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul> | <ul><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul>                |
+| **Imagens de VM suportadas**                  | <ul><li>Imagens do Azure Marketplace</li></ul>                                                              | <ul><li>Imagens do Azure Marketplace</li><li>Imagens personalizadas</li></ul>                   |
+| **Tipos de nós de computação suportados**         | <ul><li>Nós dedicados</li><li>Nós de baixa prioridade</li></ul>                                            | <ul><li>Nós dedicados</li></ul>                                                  |
+| **Autenticação suportada**             | <ul><li>Chave Partilhada</li><li>Azure AD</li></ul>                                                           | <ul><li>Azure AD</li></ul>                                                         |
+| **Azure Key Vault necessário**             | Não                                                                                                      | Sim                                                                                |
+| **Quota de núcleos**                           | Determinada pela quota de núcleos do Batch                                                                          | Determinada pela quota de núcleos da subscrição                                              |
+| **Suporte da Rede Virtual do Azure (Vnet)** | Conjuntos criados com a Configuração Serviço Cloud                                                      | Conjuntos criados com a Configuração de Máquina Virtual                               |
+| **Modelo de implementação de Vnet suportado**      | Vnets criadas com o modelo de implementação clássica                                                             | Não são suportadas VNets criadas com o modelo de implementação clássica ou Azure Resource Manager |
+
 ## <a name="azure-storage-account"></a>Conta de armazenamento do Azure
 
 A maioria das soluções do Batch utilizam o Armazenamento do Azure para armazenar ficheiros de recursos e ficheiros de saída.  
@@ -171,6 +172,8 @@ Quando cria um agrupamento do Batch, pode especificar a configuração da máqui
     * Tal como acontece com as funções de trabalho nos Serviços Cloud, pode especificar uma *Versão de SO* (para obter mais informações sobre as funções de trabalho, veja a secção [Tell me about cloud services (Saber mais sobre os serviços em nuvem)](../cloud-services/cloud-services-choose-me.md#tell-me-about-cloud-services), na [Descrição geral dos Serviços Cloud](../cloud-services/cloud-services-choose-me.md)).
     * Tal como com as funções de trabalho, recomendamos que especifique `*` para a *Versão do SO*, para que os nós sejam atualizados automaticamente e não seja necessário fazer nada para fornecer versões lançadas recentemente. O principal motivo para selecionar uma versão de SO específica é garantir a compatibilidade da aplicação, o que permite fazer testes de retrocompatibilidade antes de permitir a atualização da versão. Após a validação, a *Versão do SO* do conjunto pode ser atualizada e a nova imagem do SO instalada. As tarefas que estejam em execução são interrompidas e colocadas novamente em fila.
 
+Quando cria um agrupamento, tem de selecionar o **nodeAgentSkuId** adequado, consoante o SO da imagem de base do VHD. Pode chamar a operação [List Supported Node Agent SKUs](https://docs.microsoft.com/rest/api/batchservice/list-supported-node-agent-skus) para ver um mapeamento dos IDs de SKUs de agente de nós disponíveis para as respetivas referências de Imagem do SO.
+
 Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
 
 #### <a name="custom-images-for-virtual-machine-pools"></a>Imagens personalizadas para agrupamentos de Máquinas Virtuais
@@ -195,8 +198,6 @@ Certifique-se de que as suas contas de armazenamento cumprem os critérios segui
 - Atualmente, só são suportadas as contas de armazenamento para fins gerais. O Armazenamento premium do Azure será suportado no futuro.
 - Pode especificar uma conta de armazenamento com vários blobs de VHD personalizados ou múltiplas contas de armazenamento, contendo cada uma um único blob. Para obter um desempenho melhor, recomendamos utilizar várias contas de armazenamento.
 - Um blob de VHD de imagem personalizada individual pode suportar até 40 instâncias de VMs do Linux ou 20 instâncias de VM do Windows. Para criar agrupamentos com mais VMs, tem de criar cópias do blob de VHD. Por exemplo, um agrupamento com 200 VMs do Windows precisa de dez blobs de VHD individuais especificados na propriedade **osDisk**.
-
-Quando cria um agrupamento, tem de selecionar o **nodeAgentSkuId** adequado, consoante o SO da imagem de base do VHD. Pode chamar a operação [List Supported Node Agent SKUs](https://docs.microsoft.com/rest/api/batchservice/list-supported-node-agent-skus) para ver um mapeamento dos IDs de SKUs de agente de nós disponíveis para as respetivas referências de Imagem do SO.
 
 Para criar um agrupamento a partir de uma imagem personalizada através do portal do Azure:
 

@@ -14,10 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/19/2016
 ms.author: piyushjo
-translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
-ms.openlocfilehash: 300403fb483818e5eb1851968ef7f36ff0507fb8
-
+ms.translationtype: HT
+ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
+ms.openlocfilehash: 9938c3e994acf31244825b1afb347f8c9f90ebe3
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/08/2017
 
 ---
 # <a name="get-started-with-azure-mobile-engagement-for-xamarinios-apps"></a>Introdução ao Azure Mobile Engagement para Aplicações Xamarin.iOS
@@ -26,7 +27,10 @@ ms.openlocfilehash: 300403fb483818e5eb1851968ef7f36ff0507fb8
 Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados numa aplicação Xamarin.iOS.
 Neste tutorial, crie uma aplicação Xamarin.iOS em branco que recolhe dados básicos e recebe as notificações push através do Sistema Apple Push Notification (APNS).
 
-Neste tutorial necessita do seguinte:
+> [!NOTE]
+> O serviço Azure Mobile Engagement será extinto em março de 2018 e, atualmente, apenas está disponível para os clientes existentes. Para obter mais informações, veja [Mobile Engagement](https://azure.microsoft.com/en-us/services/mobile-engagement/).
+
+Para este tutorial, necessita do seguinte:
 
 * [Xamarin Studio](http://xamarin.com/studio). Também pode utilizar o Visual Studio com Xamarin, mas este tutorial utiliza o Xamarin Studio. Para obter instruções de instalação, consulte [Configuração e Instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx). 
 * [SDK Xamarin do Mobile Engagement](https://www.nuget.org/packages/Microsoft.Azure.Engagement.Xamarin/)
@@ -36,10 +40,10 @@ Neste tutorial necessita do seguinte:
 > 
 > 
 
-## <a name="a-idsetupazmeasetup-mobile-engagement-for-your-ios-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
+## <a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação iOS
 [!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a name="a-idconnectingappaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 Este tutorial apresenta uma “integração básica”, o conjunto mínimo necessário para recolher dados e enviar uma notificação push.
 
 Iremos criar uma aplicação básica com o Xamarin para demonstrar a integração:
@@ -83,7 +87,7 @@ O Xamarin Studio criará a aplicação de demonstração na qual iremos integrar
                     };
         EngagementAgent.Init (config);
 
-## <a name="a-idmonitoraenabling-realtime-monitoring"></a><a id="monitor"></a>Ativar a monitorização em tempo real
+## <a id="monitor"></a>Ativar a monitorização em tempo real
 Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã para o back-end do Mobile Engagement.
 
 1. Abra **ViewController.cs** e adicione o seguinte ao utilizar a instrução:
@@ -91,10 +95,10 @@ Para iniciar o envio de dados e garantir que os utilizadores estão ativos, ter�
         using Microsoft.Azure.Engagement.Xamarin;
 2. Substitua a classe a partir da qual `ViewController` herda de `UIViewController` para `EngagementViewController`. 
 
-## <a name="a-idmonitoraconnect-app-with-realtime-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a name="a-idintegratepushaenable-push-notifications-and-inapp-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 O Mobile Engagement permite interagir com os seus utilizadores e ALCANÇAR com notificações push e mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
 As secções seguintes configuram a aplicação para as receber.
 
@@ -158,9 +162,4 @@ As secções seguintes configuram a aplicação para as receber.
 [6]: ./media/mobile-engagement-xamarin-ios-get-started/add-nuget-azme.png
 [7]: ./media/mobile-engagement-xamarin-ios-get-started/info-plist-confirm-bundle.png
 [8]: ./media/mobile-engagement-xamarin-ios-get-started/info-plist-configure-push.png
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

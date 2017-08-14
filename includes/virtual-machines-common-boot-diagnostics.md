@@ -1,28 +1,43 @@
+Está agora disponível o suporte de duas funcionalidades de depuração no Azure: Saída da Consola e Captura de Ecrã para o modelo de implementação das Máquinas Virtuais do Azure (Resource Manager). 
 
-Support for two debugging features is now available in Azure: Console Output and Screenshot support for Azure Virtual Machines Resource Manager deployment model. 
+Quando colocar a sua própria imagem no Azure ou mesmo arrancar uma das imagens da plataforma, podem existir muitos motivos pelos quais uma Máquina Virtual entra num estado de não arranque. Estas funcionalidades permitem-lhe diagnosticar e recuperar facilmente Máquinas Virtuais de falhas de arranque.
 
-When bringing your own image to Azure or even booting one of the platform images, there can be many reasons why a Virtual Machine gets into a non-bootable state. These features enable you to easily diagnose and recover your Virtual Machines from boot failures.
+Para Máquinas Virtuais do Linux, pode visualizar facilmente a saída do registo da consola a partir do Portal:
 
-For Linux Virtual Machines, you can easily view the output of your console log from the Portal:
-
-![Azure portal](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
+![Portal do Azure](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
  
-However, for both Windows and Linux Virtual Machines, Azure also enables you to see a screenshot of the VM from the hypervisor:
+No entanto, para Máquinas Virtuais do Windows e do Linux, o Azure também permite ver uma captura de ecrã da VM a partir do hipervisor:
 
-![Error](./media/virtual-machines-common-boot-diagnostics/screenshot2.png)
+![Erro](./media/virtual-machines-common-boot-diagnostics/screenshot2.png)
 
-Both of these features are supported for Azure Virtual Machines in all regions. Note, screenshots, and output can take up to 10 minutes to appear in your storage account.
+Estas duas funcionalidades são suportadas para Máquinas Virtuais do Azure em todas as regiões. Tenha em atenção que as capturas de ecrã e a saída podem demorar até 10 minutos a aparecer na sua conta de armazenamento.
 
-## <a name="enable-diagnostics-on-a-new-virtual-machine"></a>Enable diagnostics on a new virtual machine
-1. When creating a new Virtual Machine from the Preview Portal, select the **Azure Resource Manager** from the deployment model dropdown:
+## <a name="common-boot-errors"></a>Erros de arranque comuns
+
+- [0xC000000E](https://support.microsoft.com/help/4010129)
+- [0xC000000F](https://support.microsoft.com/help/4010130)
+- [0xC0000011](https://support.microsoft.com/help/4010134)
+- [0xC0000034](https://support.microsoft.com/help/4010140)
+- [0xC0000098](https://support.microsoft.com/help/4010137)
+- [0xC00000BA](https://support.microsoft.com/help/4010136)
+- [0xC000014C](https://support.microsoft.com/help/4010141)
+- [0xC0000221](https://support.microsoft.com/help/4010132)
+- [0xC0000225](https://support.microsoft.com/help/4010138)
+- [0xC0000359](https://support.microsoft.com/help/4010135)
+- [0xC0000605](https://support.microsoft.com/help/4010131)
+- [Não foi encontrado nenhum sistema operativo](https://support.microsoft.com/help/4010142)
+- [Falha de arranque ou INACCESSIBLE_BOOT_DEVICE](https://support.microsoft.com/help/4010143)
+
+## <a name="enable-diagnostics-on-a-new-virtual-machine"></a>Ativar o diagnóstico numa máquina virtual nova
+1. Quando criar uma nova Máquina Virtual a partir do Portal de Pré-visualização, selecione **Azure Resource Manager** na lista pendente do modelo de implementação:
  
     ![Resource Manager](./media/virtual-machines-common-boot-diagnostics/screenshot3.jpg)
 
-2. Configure the Monitoring option to select the storage account where you would like to place these diagnostic files.
+2. Configure a opção de Monitorização para selecionar a conta de armazenamento onde quer colocar estes ficheiros de diagnóstico.
  
-    ![Create VM](./media/virtual-machines-common-boot-diagnostics/screenshot4.jpg)
+    ![Criar VM](./media/virtual-machines-common-boot-diagnostics/screenshot4.jpg)
 
-3. If you are deploying from an Azure Resource Manager template, navigate to your Virtual Machine resource and append the diagnostics profile section. Remember to use the “2015-06-15” API version header.
+3. Se estiver a implementar a partir de um modelo do Azure Resource Manager, navegue para o recurso da Máquina Virtual e acrescente a secção do perfil de diagnóstico. Não se esqueça de utilizar o cabeçalho da versão da API "2015-06-15".
 
     ```json
     {
@@ -31,7 +46,7 @@ Both of these features are supported for Azure Virtual Machines in all regions. 
           … 
     ```
 
-4. The diagnostics profile enables you to select the storage account where you want to put these logs.
+4. O perfil de diagnóstico permite-lhe selecionar a conta de armazenamento onde quer colocar estes registos.
 
     ```json
             "diagnosticsProfile": {
@@ -44,11 +59,11 @@ Both of these features are supported for Azure Virtual Machines in all regions. 
         }
     ```
 
-To deploy a sample Virtual Machine with boot diagnostics enabled, check out our repo here.
+Para implementar uma Máquina Virtual de exemplo com o diagnóstico de arranque ativado, consulte o nosso repositório aqui.
 
-## <a name="update-an-existing-virtual-machine"></a>Update an existing virtual machine ##
+## <a name="update-an-existing-virtual-machine"></a>Atualizar uma máquina virtual existente ##
 
-To enable boot diagnostics through the Portal, you can also update an existing Virtual Machine through the Portal. Select the Boot Diagnostics option and Save. Restart the VM to take effect.
+Para ativar o diagnóstico de arranque através do Portal, também pode atualizar uma Máquina Virtual existente através do Portal. Selecione as opções Diagnóstico de Arranque e Guardar. Reinicie a VM para entrar em vigor.
 
-![Update Existing VM](./media/virtual-machines-common-boot-diagnostics/screenshot5.png)
+![Atualizar VM Existente](./media/virtual-machines-common-boot-diagnostics/screenshot5.png)
 
