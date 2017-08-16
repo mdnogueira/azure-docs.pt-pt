@@ -46,6 +46,7 @@
 ### [Portais de pesquisa de registos](log-analytics-log-search-portals.md)
 #### [Utilizar o portal de pesquisa de registos](log-analytics-log-search-log-search-portal.md)
 ### [A transicionar do idioma legado](log-analytics-log-search-transition.md)
+### [Conector de fluxo](log-analytics-flow-tutorial.md)
 
 ## Analisar dados
 ### [Dashboards](log-analytics-dashboards.md)

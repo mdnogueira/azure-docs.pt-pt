@@ -1,35 +1,37 @@
-- name: QnAMaker API Documentation
+- name: Documentação da API do QnAMaker
   href: ../index.md
-- name: Overview
+- name: Descrição geral
   items:
-  - name: Learn about QnAMaker
-    href: Home.md
-- name: Quickstarts
+    - name: Saiba mais sobre o QnAMaker
+      href: Home.md
+- name: Inícios rápidos
   expanded: true
-  items: 
-  - name: Get started with QnAMaker
-    href: Quickstart.md
-- name: How to Guides
-  items: 
-  - name: Create a knowledge base
-    href: Guides/CreateKB.md
-  - name: Train a knowledge base
-    href: Guides/TrainKB.md
-  - name: Share a knowledge base
-    href: Guides/share-knowledgebase-qnamaker.md
-  - name: Update a knowledge base
-    href: Guides/UpdateKB.md
-  - name: Publish a knowledge base
-    href: Guides/PublishKB.md
-  - name: Authentication
-    href: SubscriptionKeys.md
-- name: Reference
-  items: 
-  - name: API Reference
-    href: HTTPEndPoint.md
-  - name: FAQ
-    href: FAQs.md
-- name: Resources
   items:
-  - name: Azure Roadmap
-    href: https://azure.microsoft.com/roadmap/
+    - name: Introdução ao QnAMaker
+      href: Quickstart.md
+- name: Guias de Procedimentos
+  items:
+    - name: Criar uma base de dados de conhecimento
+      href: Guides/CreateKB.md
+    - name: Preparar uma base de dados de conhecimento
+      href: Guides/TrainKB.md
+    - name: Partilhar uma base de dados de conhecimento
+      href: Guides/share-knowledgebase-qnamaker.md
+    - name: Atualizar uma base de dados de conhecimento
+      href: Guides/UpdateKB.md
+    - name: Publicar uma base de dados de conhecimento
+      href: Guides/PublishKB.md
+    - name: Formação Ativa
+      href: Guides/active-learning-qnamaker.md
+    - name: Autenticação
+      href: SubscriptionKeys.md
+- name: Referência
+  items:
+    - name: Referência da API
+      href: HTTPEndPoint.md
+    - name: FAQ
+      href: FAQs.md
+- name: Recursos
+  items:
+    - name: Mapa do Azure
+      href: 'https://azure.microsoft.com/roadmap/'

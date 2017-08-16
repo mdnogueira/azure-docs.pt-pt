@@ -96,6 +96,7 @@
 #### [Utilizadores, Sessões, Eventos](app-insights-usage-segmentation.md)
 #### [Funis](usage-funnels.md)
 #### [Retenção](app-insights-usage-retention.md)
+#### [Fluxos](app-insights-usage-flows.md)
 #### [Livros](app-insights-usage-workbooks.md)
 
 ### Análise

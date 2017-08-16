@@ -5,10 +5,11 @@
 ## [Segurança da computação](security-virtual-machines-overview.md)
 ## [Segurança operacional](azure-operational-security-overview.md)
 ## [Gestão e monitorização de segurança](security-management-and-monitoring-overview.md)
+## [Segurança do Service Fabric](azure-service-fabric-security-overview.md)
 ## [Gestão de identidades](security-identity-management-overview.md)
 ## [Segurança de IoT](../iot-suite/iot-security-architecture.md#security-in-iot)
 ## [Arquitetura de segurança](azure-security-architecture-overview.md)
-### [Segurança operacional](azure-operational-security.md)
+### [Ativar a segurança operacional](azure-operational-security.md)
 ### [Deteção avançada de ameaças](azure-threat-detection.md)
 ### [Registo e auditoria](azure-log-audit.md)
 ### [Isolamento na cloud pública](azure-isolation.md)
@@ -40,6 +41,9 @@
 #### [Resolução de problemas de encriptação de discos](azure-security-disk-encryption-tsg.md)
 ### [Encriptar uma VM do Azure](../security-center/security-center-disk-encryption.md?toc=%2fazure%2fsecurity%2ftoc.json)
 
+## Segurança operacional
+### [Melhores práticas da segurança operacional](azure-operational-security-best-practices.md)
+
 ## Gestão e monitorização de segurança
 ### [Gestão de segurança](azure-security-management.md)
 ### [Centro de Segurança do Azure](../security-center/security-center-intro.md?toc=%2fazure%2fsecurity%2ftoc.json)
@@ -49,6 +53,10 @@
 #### [Integrar alertas do Centro de Segurança](security-azure-log-integration-security-center.md)
 #### [Integrar registos do Key Vault através dos Hubs de Eventos](security-azure-log-integration-keyvault-eventhub.md)
 #### [FAQ](security-azure-log-integration-faq.md)
+
+## Service Fabric
+### [Melhores práticas do Service Fabric](azure-service-fabric-security-best-practices.md)
+### [Lista de verificação do Service Fabric](azure-service-fabric-security-checklist.md)
 
 ## Gestão de identidades
 ### [Melhoras práticas da segurança da gestão de identidades](azure-security-identity-management-best-practices.md)
