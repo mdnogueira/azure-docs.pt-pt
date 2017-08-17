@@ -7,6 +7,7 @@
 ## [Encaminhamento do URL](application-gateway-url-route-overview.md)
 ## [Multilocal](application-gateway-multi-site-overview.md)
 ## [SSL Ponto a Ponto](application-gateway-backend-ssl.md)
+## [Política SSL](application-gateway-ssl-policy-overview.md)
 ## [Redirecionamento](application-gateway-redirect-overview.md)
 ## [Suporte multi-inquilino](application-gateway-web-app-overview.md)
 ## [WebSocket](application-gateway-websocket.md)
@@ -31,12 +32,13 @@
 ## Personalizar regras de firewall de aplicações Web
 ### [Portal](application-gateway-customize-waf-rules-portal.md)
 ### [CLI 2.0 do Azure](application-gateway-customize-waf-rules-cli.md)
-## Configurar para descarga de SSL
+## Configurar o SSL
 ### [Portal](application-gateway-ssl-portal.md)
 ### [PowerShell](application-gateway-ssl-arm.md)
 ### [PowerShell (Clássico)](application-gateway-ssl.md)
 ### [CLI 2.0 do Azure](application-gateway-ssl.md)
-### [Política e de ponto a ponto](application-gateway-end-to-end-ssl-powershell.md)
+### [Ponto a ponto](application-gateway-end-to-end-ssl-powershell.md)
+### [Política SSL](application-gateway-configure-ssl-policy-powershell.md)
 ## Configurar o encaminhamento baseado no caminho do URL
 ### [Portal](application-gateway-create-url-route-portal.md)
 ### [PowerShell](application-gateway-create-url-route-arm-ps.md)

@@ -59,8 +59,6 @@
       href: azure-vm-network-overview.md
     - name: Conjuntos de Dimensionamento de VMs
       href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md
-    - name: Serviço de Metadados de Instância
-      href: ../virtual-machines-instancemetadataservice-overview.md
     - name: Contentores
       href: containers.md
     - name: Resource Manager
@@ -167,6 +165,10 @@
               href: agent-user-guide.md
             - name: Atualização do agente
               href: update-agent.md
+        - name: Eventos agendados
+          href: scheduled-events.md
+        - name: Monitorizar metadados
+          href: instance-metadata-service.md
     - name: Utilizar Imagens
       items:
         - name: Localizar e utilizar imagens

@@ -7,6 +7,8 @@
 - name: Inícios rápidos
   expanded: true
   items:
+    - name: Docker Swarm Linux
+      href: container-service-swarm-walkthrough.md
     - name: DC/OS Linux
       href: container-service-dcos-quickstart.md
 - name: Tutoriais
@@ -29,7 +31,7 @@
       href: container-service-connect.md
     - name: Dimensionar um cluster ACS
       href: container-service-scale.md
-    - name: Gerir com o DC/OS
+    - name: DC/OS
       items:
         - name: Gestão de contentores – IU do DC/OS
           href: container-service-mesos-marathon-ui.md
@@ -55,8 +57,10 @@
               href: container-service-monitoring-sysdig.md
             - name: Monitorizar com o Dynatrace
               href: container-service-monitoring-dynatrace.md
-    - name: Gerir com Docker Swarm
+    - name: Docker Swarm
       items:
+        - name: Início rápido do Modo Swarm
+          href: container-service-swarm-mode-walkthrough.md
         - name: Docker e Docker Compose
           href: container-service-docker-swarm.md
         - name: CI/CD com Docker Swarm e VSTS
