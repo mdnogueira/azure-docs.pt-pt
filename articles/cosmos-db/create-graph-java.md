@@ -16,10 +16,10 @@ ms.topic: hero-article
 ms.date: 08/07/2017
 ms.author: denlee
 ms.translationtype: HT
-ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
-ms.openlocfilehash: afa4fe6cdef298e4504ddcf3e344ee6a5c181653
+ms.sourcegitcommit: 398efef3efd6b47c76967563251613381ee547e9
+ms.openlocfilehash: f29e9dcc2bed968937627d48f1a98e3b084853b9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="azure-cosmos-db-create-a-graph-database-using-java-and-the-azure-portal"></a>Azure Cosmos DB: Criar uma base de dados de gráficos com Java e o portal do Azure
@@ -61,7 +61,7 @@ Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar um
     ID do Graph|gráfico de exemplo|O ID do seu novo gráfico. Os nomes dos gráficos têm os mesmos requisitos de carateres que os IDs das bases de dados.
     Capacidade de Armazenamento| 10 GB|Deixe o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
     Débito|400 RUs|Deixe o valor predefinido. Pode aumentar verticalmente o débito mais tarde, se quiser reduzir a latência.
-    RU/m|Desativado|Deixe o valor predefinido. Se tiver de lidar mais tarde com grandes cargas de trabalho, pode ativar a funcionalidade [RU/m](request-units-per-minute.md) nesse momento.
+    RU/m|Desativado|Deixe o valor predefinido.
     Chave de partição|Deixar em branco|Para fins deste guia de início rápido, deixe a chave de partição em branco.
 
 3. Assim que o formulário estiver preenchido, clique em **OK**.

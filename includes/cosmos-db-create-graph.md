@@ -11,7 +11,7 @@ Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar um
     ID do gráfico|gráfico de exemplo|O ID do seu novo gráfico. Os nomes dos gráficos têm os mesmos requisitos de carateres que os IDs das bases de dados.
     Capacidade de Armazenamento| 10 GB|Deixe o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
     Débito|400 RUs|Deixe o valor predefinido. Pode aumentar verticalmente o débito mais tarde, se quiser reduzir a latência.
-    RU/m|Desativado|Deixe o valor predefinido. Se tiver de lidar mais tarde com grandes cargas de trabalho, pode ativar a funcionalidade [RU/m](../articles/cosmos-db/request-units-per-minute.md) nesse momento.
+    RU/m|Desativado|Deixe o valor predefinido. 
     Chave de partição|/userid|Uma chave de partição que irá distribuir uniformemente os dados para cada partição. É importante selecionar a chave de partição correta para criar gráficos com bom desempenho. Leia mais em [Designing for partitioning](../articles/cosmos-db/partition-data.md#designing-for-partitioning) (Criação de partições).
 
 3. Assim que o formulário estiver preenchido, clique em **OK**.

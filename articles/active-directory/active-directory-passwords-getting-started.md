@@ -17,10 +17,10 @@ ms.date: 08/07/2017
 ms.author: joflore
 ms.custom: it-pro
 ms.translationtype: HT
-ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
-ms.openlocfilehash: c41a16a3c43064a094b0980bc1a8294b093c6130
+ms.sourcegitcommit: 398efef3efd6b47c76967563251613381ee547e9
+ms.openlocfilehash: 07c7f3ad066c735054cb339f6e09aa4d7d23f23a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="quickstart-azure-ad-self-service-password-reset"></a>Guia de Início Rápido: reposição de palavras-passe self-service do Azure AD
@@ -79,13 +79,7 @@ Para ativar a sincronização de identidades no local com o Azure AD, tem de ins
 
 Para desativar a reposição de palavras-passe self-service, basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe > Propriedades** > escolher **Nenhuma**, em **Reposição de Palavras-passe Self-service Ativada**
 
-## <a name="next-steps"></a>Passos seguintes
-
-Neste guia de início rápido, aprendeu a configurar a reposição de palavras-passe self-service para os seus utilizadores. Para continuar para o portal do Azure para concluir estes passos, siga a ligação abaixo para o portal.
-
-> [!div class="nextstepaction"]
-> [Ativar a reposição de palavras-passe self-service](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset)
-
+### <a name="learn-more"></a>Saiba mais
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
 * [**Licensing**](active-directory-passwords-licensing.md) - Configure your Azure AD Licensing (Licenciamento - Configurar o Licenciamento do Azure AD)
@@ -97,4 +91,12 @@ As ligações seguintes disponibilizam informações adicionais relativamente à
 * [**Technical Deep Dive**](active-directory-passwords-how-it-works.md) - Go behind the curtain to understand how it works (Análise Técnica - veja por detrás dos bastidores para saber como funciona)
 * [**Frequently Asked Questions**](active-directory-passwords-faq.md) - How? Porquê? What? Where? Who? When? - Answers to questions you always wanted to ask (Perguntas Mais Frequentes - Como? Porquê? O quê? Onde? Quem? - Respostas para as perguntas que sempre quis saber)
 * [**Troubleshoot**](active-directory-passwords-troubleshoot.md) - Learn how to resolve common issues that we see with SSPR (Resolução de Problemas - Saiba como resolver problemas comuns do SSPR)
+
+## <a name="next-steps"></a>Passos seguintes
+
+Neste guia de início rápido, aprendeu a configurar a reposição de palavras-passe self-service para os seus utilizadores. Para continuar para o portal do Azure para concluir estes passos, siga a ligação abaixo para o portal.
+
+> [!div class="nextstepaction"]
+> [Ativar a reposição de palavras-passe self-service](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset)
+
 

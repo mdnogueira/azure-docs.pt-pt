@@ -10,6 +10,6 @@ Agora, pode utilizar o Data Explorer para criar uma tabela e adicionar dados à 
     ID da tabela|tabela de exemplo|O ID da sua nova tabela. Os nomes das tabelas têm os mesmos requisitos de carateres que os IDs das bases de dados. Os nomes das bases de dados têm de ter entre um e 255 carateres e não podem conter `/ \ # ?` nem espaços à direita.
     Capacidade de armazenamento| 10 GB|Deixe o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
     Débito|400 RUs|Deixe o valor predefinido. Se pretender reduzir a latência, pode aumentar o [débito](../articles/cosmos-db/request-units.md) mais tarde.
-    RU/m|Desativado|Utilize o valor predefinido. Se tiver de lidar com grandes cargas de trabalho, pode ativar a funcionalidade [RU/m](../articles/cosmos-db/request-units-per-minute.md) mais tarde.
+    RU/m|Desativado|Utilize o valor predefinido.
 
 3. Assim que o formulário estiver preenchido, clique em **OK**.

@@ -16,10 +16,10 @@ ms.date: 6/7/2017
 ms.author: mlearned
 ms.custom: Jenkins
 ms.translationtype: HT
-ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
-ms.openlocfilehash: f892ec7bd61124f7958a50ebdfb49c7310d4ee18
+ms.sourcegitcommit: 80fd9ee9b9de5c7547b9f840ac78a60d52153a5a
+ms.openlocfilehash: 06d6d305eb9711768dc62a04726359e6280d1b69
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 
@@ -48,7 +48,7 @@ Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure
 
 Os modelos de início rápido do Azure permitem a implementação rápida e fiável de tecnologia complexa no Azure.  O Azure Resource Manager permite-lhe utilizar as suas aplicações com um [modelo declarativo.](https://azure.microsoft.com/en-us/resources/templates/?term=jenkins) Num único modelo, pode implementar vários serviços, bem como as respetivas dependências. Pode utilizar o mesmo modelo para implementar repetidamente a sua aplicação durante cada fase do ciclo de vida da aplicação.
 
-Consulte a informação sobre os [planos e preços](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.jenkins?tab=PlansAndPrice) deste modelo para compreender as opções de custo.
+Consulte a informação sobre os [planos e preços](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/azure-oss.jenkins?tab=Overview) deste modelo para compreender as opções de custo.
 
 Aceda a [A imagem do Jenkins no mercado](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/azure-oss.jenkins?tab=Overview), clique em **OBTER AGORA**  
 

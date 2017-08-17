@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/19/2017
 ms.author: tomfitz
 ms.translationtype: HT
-ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
-ms.openlocfilehash: b382225b9e355148279181fbf6238eb1e08f382d
+ms.sourcegitcommit: 398efef3efd6b47c76967563251613381ee547e9
+ms.openlocfilehash: f539931e0704f904f4b942f185f086a790caf4da
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="azure-resource-manager-overview"></a>Descrição geral do Azure Resource Manager
@@ -139,8 +139,6 @@ Se imaginar as suas camadas com ciclos de vida separados, pode implementar as tr
 ![modelo de camadas](./media/resource-group-overview/tier-templates.png)
 
 Para obter mais sugestões sobre a criação dos seus modelos, veja [Padrões para criar modelos do Azure Resource Manager](best-practices-resource-manager-design-templates.md). Para obter mais informações sobre modelos aninhados, veja [Utilizar modelos ligados com o Azure Resource Manager](resource-group-linked-templates.md).
-
-Para uma série de quatro partes sobre automatizar a implementação, consulte [Automating application deployments to Azure Virtual Machines (Automatizar implementações de aplicações para Máquinas Virtuais do Azure)](../virtual-machines/windows/dotnet-core-1-landing.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Esta série abrange arquitetura de aplicação, acesso e segurança, disponibilidade e dimensionamento, e implementação de aplicação.
 
 O Azure Resource Manager analisa as dependências para garantir que os recursos são criados pela ordem correta. Se um recurso depende de um valor de outro recurso (como uma máquina virtual necessita de uma conta de armazenamento para discos), pode definir uma dependência. Para obter mais informações, consulte [Definir dependências nos modelos do Azure Resource Manager](resource-group-define-dependencies.md).
 

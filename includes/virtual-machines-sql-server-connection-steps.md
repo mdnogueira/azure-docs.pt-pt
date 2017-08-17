@@ -1,5 +1,4 @@
-### Abrir portas TCP na firewall do Windows para a instância predefinida do Motor de Base de Dados
-<a id="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine" class="xliff"></a>
+### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a>Abrir portas TCP na firewall do Windows para a instância predefinida do Motor de Base de Dados
 1. Ligue-se à máquina virtual com o Ambiente de Trabalho Remoto. Para obter instruções detalhadas sobre como ligar à VM, veja [Abrir uma VM do SQL com o Ambiente de Trabalho Remoto](../articles/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md#open-the-vm-with-remote-desktop).
 2. Depois de iniciar sessão, no ecrã Inicial, escreva **WF.msc** e, em seguida, prima ENTER.
    
@@ -28,24 +27,11 @@
 
 Abra portas adicionais para outros componentes conforme necessário. Para obter mais informações, veja [Configurar a Firewall do Windows para Permitir o Acesso do SQL Server](http://msdn.microsoft.com/library/cc646023.aspx).
 
-### Configurar o SQL Server para escutar o protocolo TCP
-<a id="configure-sql-server-to-listen-on-the-tcp-protocol" class="xliff"></a>
-1. Enquanto estiver ligado à máquina virtual, na página Início, escreva **Gestor de Configuração do SQL Server** e prima ENTER.
-   
-    ![Abrir o SSCM](./media/virtual-machines-sql-server-connection-steps/9Click-SSCM.png)
-2. No Gestor de Configuração do SQL Server, no painel da consola, expanda **Configuração de Rede do SQL Server**.
-3. No painel da consola, clique em **Protocolos para MSSQLSERVER** (o nome da instância predefinida). No painel de detalhes, clique com o botão direito do rato em **TCP** e clique em **Ativar** caso não esteja ainda ativado.
-   
-    ![Ativar TCP](./media/virtual-machines-sql-server-connection-steps/10Enable-TCP.png)
-4. No painel da consola, clique em **Serviços do SQL Server**. No painel de detalhes, clique com o botão direito do rato em **SQL Server (*nome da instância*)** (a instância predefinida é **SQL Server (MSSQLSERVER)**) e, em seguida, clique em **Reiniciar** para parar e reiniciar a instância do SQL Server.
-   
-    ![Reiniciar o Motor de Base de Dados](./media/virtual-machines-sql-server-connection-steps/11Restart.png)
-5. Feche o Gestor de Configuração do SQL Server.
+### <a name="configure-sql-server-to-listen-on-the-tcp-protocol"></a>Configurar o SQL Server para escutar o protocolo TCP
 
-Para obter mais informações sobre como ativar protocolos para o Motor de Base de Dados do SQL Server, veja [Ativar ou Desativar um Protocolo de Rede do Servidor](http://msdn.microsoft.com/library/ms191294.aspx).
+[!INCLUDE [Enable TCP](virtual-machines-sql-server-connection-tcp-protocol.md)]
 
-### Configurar o SQL Server para autenticação em modo misto
-<a id="configure-sql-server-for-mixed-mode-authentication" class="xliff"></a>
+### <a name="configure-sql-server-for-mixed-mode-authentication"></a>Configurar o SQL Server para autenticação em modo misto
 O Motor de Base de Dados do SQL Server não pode utilizar a Autenticação do Windows sem um ambiente de domínio. Para ligar ao Motor de Base de Dados a partir de outro computador, configure o SQL Server para autenticação em modo misto. A autenticação em modo misto permite a Autenticação do SQL Server e a Autenticação do Windows.
 
 > [!NOTE]
@@ -71,8 +57,7 @@ O Motor de Base de Dados do SQL Server não pode utilizar a Autenticação do Wi
     ![Reiniciar](./media/virtual-machines-sql-server-connection-steps/22Restart2.png)
 7. Na caixa de diálogo do SQL Server Management Studio, clique em **Sim** para confirmar que quer reiniciar o SQL Server.
 
-### Criar inícios de sessão de autenticação do SQL Server
-<a id="create-sql-server-authentication-logins" class="xliff"></a>
+### <a name="create-sql-server-authentication-logins"></a>Criar inícios de sessão de autenticação do SQL Server
 Para ligar ao Motor de Base de Dados a partir de outro computador, tem de criar pelo menos um início de sessão de autenticação do SQL Server.
 
 1. No Object Explorer do SQL Server Management Studio, expanda a pasta da instância de servidor na qual quer criar o novo início de sessão.
