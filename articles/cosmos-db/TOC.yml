@@ -4,8 +4,6 @@
   items:
     - name: Acerca da BD do Cosmos para o Azure
       href: introduction.md
-    - name: Boas-vindas aos clientes do DocumentDB
-      href: 'https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/'
 - name: Inícios rápidos
   expanded: true
   items:

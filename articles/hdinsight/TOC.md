@@ -199,7 +199,6 @@
 #### [Memória e desempenho do Hadoop](hdinsight-hadoop-stack-trace-error-messages.md)
 #### [Aceder a registos de aplicações do YARN do Hadoop no HDInsight baseado no Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 #### [Ativar captura de área dinâmica para dados de serviços do Hadoop](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
-#### [Analisar registos do HDInsight](hdinsight-debug-jobs.md)
 #### [Compreender e resolver erros do WebHCat](hdinsight-hadoop-templeton-webhcat-debug-errors.md)
 #### [As definições do Hive corrigem o erro Sem Memória](hdinsight-hadoop-hive-out-of-memory-error-oom.md)
 #### [Utiliza as vistas Ambari para depurar Tarefas do Tez](hdinsight-debug-ambari-tez-view.md)
