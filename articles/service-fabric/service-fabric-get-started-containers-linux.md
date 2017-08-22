@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/28/2017
 ms.author: ryanwi
 ms.translationtype: HT
-ms.sourcegitcommit: 9afd12380926d4e16b7384ff07d229735ca94aaa
-ms.openlocfilehash: e4ca1e8df8337e578e014cedec68553e6fc56299
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: 35b7e0a730d73f646462b9cde3c8bbabac4d7c67
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/15/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 
@@ -321,6 +321,54 @@ Seguem-se os manifestos completos do serviço e da aplicação utilizados neste 
   </DefaultServices>
 </ApplicationManifest>
 ```
+## <a name="adding-more-services-to-an-existing-application"></a>Adicionar mais serviços a uma aplicação existente
+
+Para adicionar outro serviço de contentor a uma aplicação já criada com o yeoman, execute os seguintes passos:
+
+1. Altere o diretório para a raiz da aplicação existente.  Por exemplo, `cd ~/YeomanSamples/MyApplication`, se `MyApplication` é a aplicação criada por Yeoman.
+2. Execute `yo azuresfcontainer:AddService`
+
+<a id="manually"></a>
+
+
+## <a name="configure-time-interval-before-container-is-force-terminated"></a>Configurar o intervalo de tempo antes do contentor ser forçado a terminar
+
+Pode configurar um intervalo de tempo para o tempo de execução para aguardar antes do contentor ser removido após a eliminação do serviço (ou uma mudança para outro nó) ser iniciada. Configurar o intervalo de tempo envia o comando `docker stop <time in seconds>` para o contentor.   Para obter mais detalhes, veja [paragem do docker](https://docs.docker.com/engine/reference/commandline/stop/). O intervalo de tempo de espera é especificado na secção `Hosting`. O fragmento do manifesto do cluster seguinte mostra como definir o intervalo de espera:
+
+```xml
+{
+        "name": "Hosting",
+        "parameters": [
+          {
+            "ContainerDeactivationTimeout": "10",
+          ...
+          }
+        ]
+}
+```
+O intervalo de tempo predefinido está definido para 10 segundos. Uma vez que esta configuração é dinâmica, uma configuração apenas de atualização no cluster atualiza tempo limite. 
+
+
+## <a name="configure-the-runtime-to-remove-unused-container-images"></a>Configurar o tempo de execução para remover as imagens do contentor não utilizadas
+
+Pode configurar o cluster do Service Fabric para remover as imagens do contentor não utilizadas do nó. Esta configuração permite que o espaço em disco seja recapturado se existirem demasiadas imagens do contentor no nó.  Para ativar esta funcionalidade, atualize a secção `Hosting` do manifesto do cluster, conforme apresentado no seguinte fragmento: 
+
+
+```xml
+{
+        "name": "Hosting",
+        "parameters": [
+          {
+            "PruneContainerImages": “True”,
+            "ContainerImagesToSkip": "microsoft/windowsservercore|microsoft/nanoserver|…",
+          ...
+          }
+        ]
+} 
+```
+
+Para imagens que não devem ser eliminadas, pode especificá-las no parâmetro `ContainerImagesToSkip`. 
+
 
 ## <a name="next-steps"></a>Passos seguintes
 * Saiba mais sobre como executar [contentores no Service Fabric](service-fabric-containers-overview.md).

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 04/23/2017
 ms.author: kgremban
-translationtype: Human Translation
-ms.sourcegitcommit: be3ac7755934bca00190db6e21b6527c91a77ec2
-ms.openlocfilehash: 8c3cc27f1fa708371d415d00cdff59f77712cd41
-ms.lasthandoff: 05/03/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 540180e7d6cd02dfa1f3cac8ccd343e965ded91b
+ms.openlocfilehash: 6f8ee3449244b12d2c8b5714e6ad893e2f0b10ee
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="choose-the-azure-multi-factor-authentication-solution-for-you"></a>Escolher a solução do Servidor Multi-Factor Authentication para si
@@ -39,7 +39,7 @@ Para determinar a solução de verificação de dois passos correta, primeiro é
 | Aplicações SaaS na galeria de aplicações |● |  |
 | Aplicações Web publicadas através do Proxy de Aplicação do Azure AD |● |  |
 | Aplicações IIS não publicadas através do Proxy de Aplicação do Azure AD | |● |
-| Acesso remoto, tais como VPN, RDG | |● |
+| Acesso remoto, tais como VPN, RDG | ● | ● |
 
 ## <a name="where-are-the-users-located"></a>Onde estão localizados os utilizadores
 Em seguida, verificar onde estão localizados os nossos utilizadores ajuda a determinar a solução correta a utilizar, seja na nuvem ou no local através do Servidor MFA.
@@ -53,7 +53,7 @@ Em seguida, verificar onde estão localizados os nossos utilizadores ajuda a det
 | Active Directory no local | |● |
 
 ## <a name="what-features-do-i-need"></a>Que funcionalidades preciso?
-A tabela seguinte é uma comparação das funcionalidades disponíveis do Multi-Factor Authentication na nuvem e do Servidor Multi-Factor Authentication.
+A tabela seguinte compara as funcionalidades disponíveis do Multi-Factor Authentication na nuvem e do Servidor Multi-Factor Authentication.
 
 | Funcionalidade | MFA na nuvem | Servidor MFA |
 | --- |:---:|:---:|
@@ -76,13 +76,14 @@ A tabela seguinte é uma comparação das funcionalidades disponíveis do Multi-
 | Acesso condicional | ● | ● |
 | Cache |  | ● |
 
-Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou o Servidor MFA no local, podemos começar a configurar e a utilizar o Multi-Factor Authentication do Azure. **Selecione o ícone que representa o seu cenário!**
+## <a name="next-steps"></a>Passos seguintes
+
+Agora que determinámos se deve utilizar a autenticação multifator na nuvem ou o Servidor MFA no local, podemos começar a configurar e a utilizar o Multi-Factor Authentication do Azure. **Selecione o ícone que representa o seu cenário**
 
 <center>
 
 
 
 
-[![Nuvem](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</center>
+[![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Servidor](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center>
 

@@ -13,13 +13,13 @@ ms.devlang:
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 06/23/2017
+ms.date: 08/14/2017
 ms.author: larryfr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
-ms.openlocfilehash: 80d4aced5e4f4b053b3b5f30a6fc383f1c4d6d27
+ms.translationtype: HT
+ms.sourcegitcommit: b309108b4edaf5d1b198393aa44f55fc6aca231e
+ms.openlocfilehash: 03e6996f0f44e04978080b3bd267e924f342b7fc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/04/2017
+ms.lasthandoff: 08/15/2017
 
 ---
 # <a name="start-with-apache-kafka-preview-on-hdinsight"></a>Começar com o Apache Kafka (pré-visualização) no HDInsight
@@ -27,15 +27,9 @@ ms.lasthandoff: 07/04/2017
 Saiba como criar e utilizar um cluster do [Apache Kafka](https://kafka.apache.org) no Azure HDInsight. O Kafka é uma plataforma open source de transmissão em fluxo distribuída, disponível com o HDInsight. É frequentemente utilizado como mediador de mensagens, uma vez que fornece funcionalidades semelhantes a uma fila de mensagens de publicação-subscrição.
 
 > [!NOTE]
-> Atualmente, existem duas versões do Kafka disponíveis com o HDInsight; 0.9.0 (HDInsight 3.4) e 0.10.0 (HDInsight 3.5). Os passos neste documento partem do princípio de que está a utilizar o Kafka no HDInsight 3.5.
+> Atualmente, existem duas versões do Kafka disponíveis com o HDInsight: 0.9.0 (HDInsight 3.4) e 0.10.0 (HDInsight 3.5 e 3.6). Os passos neste documento partem do princípio de que está a utilizar o Kafka no HDInsight 3.6.
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
-
-## <a name="prerequisites"></a>Pré-requisitos
-
-* [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ou equivalente, como OpenJDK.
-
-* [Apache Maven](http://maven.apache.org/) 
 
 ## <a name="create-a-kafka-cluster"></a>Criar um cluster Kafka
 
@@ -45,7 +39,7 @@ Utilize os seguintes passos para criar um Kafka num cluster HDInsight:
    
     ![Criar um cluster HDInsight](./media/hdinsight-apache-kafka-get-started/create-hdinsight.png)
 
-2. No painel **Noções Básicas**, introduza as seguintes informações:
+2. Em **Informações Básicas**, introduza as seguintes informações:
 
     * **Nome do Cluster**: o nome do cluster HDInsight.
     * **Subscrição**: selecione a subscrição que pretende utilizar.
@@ -54,29 +48,29 @@ Utilize os seguintes passos para criar um Kafka num cluster HDInsight:
     * **Grupo de Recursos**: o grupo de recursos em que o cluster é criado.
     * **Localização**: a região do Azure em que o cluster é criado.
    
-    ![Selecionar subscrição](./media/hdinsight-apache-kafka-get-started/hdinsight-basic-configuration.png)
+ ![Selecionar subscrição](./media/hdinsight-apache-kafka-get-started/hdinsight-basic-configuration.png)
 
-3. Selecione **Tipo de cluster**e, em seguida, defina os seguintes valores no painel **Configuração de cluster**:
+3. Selecione **Tipo de cluster** e, em seguida, defina os seguintes valores em **Configuração de cluster**:
    
     * **Tipo de Cluster**: Kafka
 
-    * **Versão**: Kafka 0.10.0 (HDI 3.5)
+    * **Versão**: Kafka 0.10.0 (HDI 3.6)
 
     * **Escalão do Cluster**: Standard
      
-    Por fim, utilize o botão **Selecionar** para guardar as definições.
+ Por fim, utilize o botão **Selecionar** para guardar as definições.
      
-    ![Selecionar tipo de cluster](./media/hdinsight-apache-kafka-get-started/set-hdinsight-cluster-type.png)
+ ![Selecionar tipo de cluster](./media/hdinsight-apache-kafka-get-started/set-hdinsight-cluster-type.png)
 
 4. Depois de selecionar o tipo de cluster, utilize o botão __Selecionar__ para definir o tipo de cluster. Em seguida, utilize o botão __Seguinte__ para concluir a configuração básica.
 
-5. No painel **Armazenamento**, selecione ou crie uma Conta de armazenamento. Para seguir os passos neste documento, deixe os outros campos neste painel com os valores predefinidos. Utilize o botão __Seguinte__ para guardar a configuração do armazenamento.
+5. Em **Armazenamento**, selecione ou crie uma Conta de armazenamento. Para seguir os passos neste documento, deixe os outros campos com os valores predefinidos. Utilize o botão __Seguinte__ para guardar a configuração do armazenamento.
 
     ![Configurar as definições de conta de armazenamento do HDInsight](./media/hdinsight-apache-kafka-get-started/set-hdinsight-storage-account.png)
 
-6. No painel __Aplicações (opcionais)__, selecione __Seguinte__ para continuar. Não são necessárias aplicações para este exemplo.
+6. Em __Aplicações (opcional)__, selecione __Seguinte__ para continuar. Não são necessárias aplicações para este exemplo.
 
-7. No painel __Tamanho do cluster__ , selecione __Seguinte__ para continuar.
+7. Em __Tamanho do cluster__ , selecione __Seguinte__ para continuar.
 
     > [!WARNING]
     > Para garantir a disponibilidade do Kafka no HDInsight, o cluster tem de conter pelo menos três nós de trabalho.
@@ -84,11 +78,11 @@ Utilize os seguintes passos para criar um Kafka num cluster HDInsight:
     ![Definir o tamanho do cluster do Kafka](./media/hdinsight-apache-kafka-get-started/kafka-cluster-size.png)
 
     > [!NOTE]
-    > Os discos por entrada de nó de trabalho controla a escalabilidade do Kafka no HDInsight. Para obter mais informações, veja [Configure storage and scalability of Kafka on HDInsight](hdinsight-apache-kafka-scalability.md) (Configurar o armazenamento e a escalabilidade do Kafka no HDInsight).
+    > A entrada **discos por nó de trabalho** controla a escalabilidade do Kafka no HDInsight. Para obter mais informações, veja [Configure storage and scalability of Kafka on HDInsight](hdinsight-apache-kafka-scalability.md) (Configurar o armazenamento e a escalabilidade do Kafka no HDInsight).
 
-8. No painel __Definições avançadas__, selecione __Seguinte__ para continuar.
+8. Em __Definições avançadas__, selecione __Seguinte__ para continuar.
 
-9. No painel **Resumo**, reveja a configuração do cluster. Utilize as ligações __Editar__ para alterar quaisquer definições que estejam incorretas. Por fim, utilize o botão the__Create__ para criar o cluster.
+9. Em **Resumo**, reveja a configuração do cluster. Utilize as ligações __Editar__ para alterar quaisquer definições que estejam incorretas. Por fim, utilize o botão the__Create__ para criar o cluster.
    
     ![Resumo da configuração do cluster](./media/hdinsight-apache-kafka-get-started/hdinsight-configuration-summary.png)
    
@@ -96,6 +90,9 @@ Utilize os seguintes passos para criar um Kafka num cluster HDInsight:
     > A criação do cluster pode demorar até 20 minutos.
 
 ## <a name="connect-to-the-cluster"></a>Ligar ao cluster
+
+> [!IMPORTANT]
+> Quando realizar os passos seguintes, tem de utilizar um cliente SSH. Para obter mais informações, veja o documento [Utilizar SSH com o HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 A partir do seu cliente, utilize SSH para ligar ao cluster:
 
@@ -119,24 +116,32 @@ Utilize os seguintes passos para criar variáveis de ambiente que contêm as inf
     sudo apt -y install jq
     ```
 
-2. utilize os seguintes comandos para definir as variáveis de ambiente com informações obtidas a partir do Ambari. Substitua __CLUSTERNAME__ pelo nome do cluster do Kafka. Substitua __PASSWORD__ pela palavra-passe de início de sessão (admin) que utilizou quando criou o cluster.
+2. Para definir as variáveis de ambiente com informações obtidas a partir do Ambari, utilize os seguintes comandos:
 
     ```bash
-    export KAFKAZKHOSTS=`curl --silent -u admin:'PASSWORD' -G https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")'`
+    CLUSTERNAME='your cluster name'
+    PASSWORD='your cluster password'
+    export KAFKAZKHOSTS=`curl -sS -u admin:$PASSWORD -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
 
-    export KAFKABROKERS=`curl --silent -u admin:'PASSWORD' -G https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")'`
+    export KAFKABROKERS=`curl -sS -u admin:$PASSWORD -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
 
     echo '$KAFKAZKHOSTS='$KAFKAZKHOSTS
     echo '$KAFKABROKERS='$KAFKABROKERS
     ```
 
+    > [!IMPORTANT]
+    > Defina `CLUSTERNAME=` com o nome do cluster do Kafka. Defina `PASSWORD=` com a palavra-passe de início de sessão (admin) que utilizou quando criou o cluster.
+
     O texto seguinte é um exemplo dos conteúdos dos `$KAFKAZKHOSTS`:
    
-    `zk0-kafka.eahjefxxp1netdbyklgqj5y1ud.ex.internal.cloudapp.net:2181,zk2-kafka.eahjefxxp1netdbyklgqj5y1ud.ex.internal.cloudapp.net:2181,zk3-kafka.eahjefxxp1netdbyklgqj5y1ud.ex.internal.cloudapp.net:2181`
+    `zk0-kafka.eahjefxxp1netdbyklgqj5y1ud.ex.internal.cloudapp.net:2181,zk2-kafka.eahjefxxp1netdbyklgqj5y1ud.ex.internal.cloudapp.net:2181`
    
     O texto seguinte é um exemplo dos conteúdos dos `$KAFKABROKERS`:
    
     `wn1-kafka.eahjefxxp1netdbyklgqj5y1ud.cx.internal.cloudapp.net:9092,wn0-kafka.eahjefxxp1netdbyklgqj5y1ud.cx.internal.cloudapp.net:9092`
+
+    > [!NOTE]
+    > O comando `cut` é utilizado para limitar a lista de anfitriões a duas entradas de anfitrião. Não precisa de fornecer a lista completa de anfitriões quando cria um consumidor ou produtor do Kafka.
    
     > [!WARNING]
     > As informações devolvidas nesta sessão poderão não ser sempre precisas. Se dimensionar o cluster, novos mediadores serão adicionados ou removidos. Se ocorrer uma falha e um nó for substituído, o nome do anfitrião do nó poderá mudar.
@@ -185,7 +190,16 @@ Utilize os seguintes passos para armazenar registos no tópico de teste que crio
 
 ## <a name="producer-and-consumer-api"></a>API de produtor e de consumidor
 
-Pode também produzir e consumir registos através de programação, utilizando as [APIs Kafka](http://kafka.apache.org/documentation#api). Utilize os seguintes passos para transferir e criar um produtor e consumidor baseado em Java:
+Pode também produzir e consumir registos através de programação, utilizando as [APIs Kafka](http://kafka.apache.org/documentation#api). Para criar um produtor e consumidor de Java, utilize os seguintes passos a partir do seu ambiente de desenvolvimento.
+
+> [!IMPORTANT]
+> Tem de ter os seguintes componentes instalados no seu ambiente de desenvolvimento:
+>
+> * [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ou equivalente, como OpenJDK.
+>
+> * [Apache Maven](http://maven.apache.org/)
+>
+> * Um cliente SSH e o comando `scp`. Para obter mais informações, veja o documento [Utilizar SSH com o HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 1. Transfira os exemplos de [https://github.com/Azure-Samples/hdinsight-kafka-java-get-started](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started). Para o exemplo produtor/consumidor, utilize o projeto no diretório `Producer-Consumer`. Este exemplo contém as seguintes classes:
    
@@ -195,7 +209,7 @@ Pode também produzir e consumir registos através de programação, utilizando 
 
     * **Consumidor** - lê registos do tópico.
 
-2. Altere os diretórios para a localização do diretório `Producer-Consumer` do exemplo e, em seguida, utilize o seguinte comando para criar um pacote de jar:
+2. Para criar um pacote de jar, mude os diretórios para a localização do diretório `Producer-Consumer` e utilize o seguinte comando:
 
     ```
     mvn clean package
@@ -214,18 +228,13 @@ Pode também produzir e consumir registos através de programação, utilizando 
 4. Quando o comando `scp` terminar de copiar o ficheiro, ligue-se ao cluster através de SSH. Utilize o seguinte comando para escrever os registos no tópico de teste:
 
     ```bash
-    ./kafka-producer-consumer.jar producer $KAFKABROKERS
+    java -jar kafka-producer-consumer.jar producer $KAFKABROKERS
     ```
-
-    Um contador é apresentado, para que possa ver quantos registos foram escritos.
-
-    > [!NOTE]
-    > Se receber um erro de permissão negada, utilize o seguinte comando para tornar o ficheiro executável: ```chmod +x kafka-producer-consumer.jar```
 
 5. Depois de o processo estar concluído, utilize o seguinte comando para ler a partir do tópico:
    
     ```bash
-    ./kafka-producer-consumer.jar consumer $KAFKABROKERS
+    java -jar kafka-producer-consumer.jar consumer $KAFKABROKERS
     ```
    
     A leitura dos registos, juntamente com uma contagem de registos, é apresentada. Poderá ver um pouco mais do que 1 000 000 registos, uma vez que enviou vários registos para o tópico utilizando um script num passo anterior.
@@ -234,13 +243,15 @@ Pode também produzir e consumir registos através de programação, utilizando 
 
 ### <a name="multiple-consumers"></a>Vários consumidores
 
-Um conceito importantes do Kafka é que os consumidores utilizam um grupo de consumidores (definido por um id de grupo) ao ler registos. Utilizar o mesmo grupo com vários consumidores resulta em leituras com balanceamento de carga de um tópico. Cada consumidor no grupo recebe uma parte dos registos. Para ver este processo em ação, utilize os seguintes passos:
+Os consumidores de Kafka utilizam um grupo de consumidores quando leem os registos. Utilizar o mesmo grupo com vários consumidores resulta em leituras com balanceamento de carga de um tópico. Cada consumidor no grupo recebe uma parte dos registos. Para ver este processo em ação, utilize os seguintes passos:
 
-1. Abra uma nova sessão SSH para o cluster, para ter duas sessões. Em cada sessão, utilize o seguinte procedimento para iniciar um consumidor com o mesmo id de grupo de consumidores:
+1. Abra uma nova sessão SSH para o cluster, para ter duas sessões. Em cada sessão, utilize o seguinte procedimento para iniciar um consumidor com o mesmo ID de grupo de consumidores:
    
     ```bash
-    ./kafka-producer-consumer.jar consumer $KAFKABROKERS mygroup
+    java -jar kafka-producer-consumer.jar consumer $KAFKABROKERS mygroup
     ```
+
+    Este comando inicia um consumidor com o ID de grupo `mygroup`.
 
     > [!NOTE]
     > Utilize os comandos na secção [Obter as informações dos anfitriões Zookeeper e Mediador](#getkafkainfo) para definir os `$KAFKABROKERS` para esta sessão SSH.
@@ -250,7 +261,7 @@ Um conceito importantes do Kafka é que os consumidores utilizam um grupo de con
 O consumo pelos clientes dentro do mesmo grupo é processado pelas partições do tópico. Para o tópico `test` criado anteriormente, tem oito partições. Se abrir oito sessões SSH e iniciar um consumidor em todas as sessões, cada consumidor lê registos de uma única partição do tópico.
 
 > [!IMPORTANT]
-> Não podem existir mais instâncias de consumidor num grupo de consumidores do que partições. Neste exemplo, um grupo de consumidores pode conter até 8 consumidores, pois esse é o número de partições no tópico. Também pode ter vários grupos de consumidores, em que cada grupo não tem mais do que 8 consumidores.
+> Não podem existir mais instâncias de consumidor num grupo de consumidores do que partições. Neste exemplo, um grupo de consumidores pode incluir até oito consumidores, pois esse é o número de partições no tópico. Também pode ter vários grupos de consumidores, em que cada grupo não tem mais do que oito consumidores.
 
 Os registos armazenados no Kafka são armazenados pela ordem em que são recebidos dentro de uma partição. Para obter uma entrega por ordem dos registos *dentro de uma partição*, crie um grupo de consumidores em que o número de instâncias de consumidor corresponde ao número de partições. Para obter uma entrega por ordem dos registos *dentro do tópico*, crie um grupo de consumidores com apenas uma instância de consumidor.
 
@@ -287,7 +298,7 @@ A API de transmissão em fluxo foi adicionada ao Kafka na versão 0.10.0; as ver
 5. Em seguida, inicie o processo de transmissão em fluxo através do seguinte comando:
    
     ```bash
-    ./kafka-streaming.jar $KAFKABROKERS $KAFKAZKHOSTS 2>/dev/null &
+    java -jar kafka-streaming.jar $KAFKABROKERS $KAFKAZKHOSTS 2>/dev/null &
     ```
    
     Este comando inicia o processo de transmissão em fluxo em segundo plano.
@@ -295,13 +306,13 @@ A API de transmissão em fluxo foi adicionada ao Kafka na versão 0.10.0; as ver
 6. Utilize o comando seguinte para enviar mensagens para o tópico `test`. Estas mensagens são processadas pelo exemplo de transmissão em fluxo:
    
     ```bash
-    ./kafka-producer-consumer.jar producer $KAFKABROKERS &>/dev/null &
+    java -jar kafka-producer-consumer.jar producer $KAFKABROKERS &>/dev/null &
     ```
 
 7. Utilize o seguinte comando para ver o resultado que é escrito no tópico `wordcounts` pelo processo de transmissão em fluxo:
    
     ```bash
-    /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper $KAFKAZKHOSTS --topic wordcounts --from-beginning --formatter kafka.tools.DefaultMessageFormatter --property print.key=true --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
+    /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server $KAFKABROKERS --topic wordcounts --from-beginning --formatter kafka.tools.DefaultMessageFormatter --property print.key=true --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
     ```
    
     > [!NOTE]

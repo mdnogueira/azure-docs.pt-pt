@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/05/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
-ms.openlocfilehash: 0f26a9b62a376daf2b1314ff5972293a2bc7f379
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: db280ff801c6e501e7ab7890f67d22ae16444491
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="about-vpn-gateway"></a>Acerca do VPN Gateway
@@ -28,7 +28,7 @@ Um gateway de VPN é um tipo de gateway de rede virtual que envia o tráfego enc
 
 Cada rede virtual apenas pode ter um gateway de VPN. No entanto, pode criar várias ligações ao mesmo gateway de VPN. Um exemplo disto é uma configuração de ligação multilocal. Quando cria várias ligações para o mesmo gateway de VPN, todos os túneis de VPN, incluindo as VPNs Ponto a Site, partilham a largura de banda que está disponível para o gateway.
 
-### <a name="what-is-a-virtual-network-gateway"></a>O que é um gateway de rede virtual?
+### <a name="whatis"></a>O que é um gateway de rede virtual?
 
 Um gateway de rede virtual é composto por duas ou mais máquinas virtuais implementadas numa sub-rede específica denominada GatewaySubnet. As VMs localizadas no GatewaySubnet são criadas quando criar o gateway de rede virtual. As VMs do gateway de rede virtual são configuradas para conter tabelas de encaminhamento e serviços de gateway específicos do gateway. Não pode configurar diretamente as VMs que fazem parte do gateway de rede virtual e nunca deve implementar recursos adicionais no GatewaySubnet.
 
@@ -38,7 +38,7 @@ Quando criar um gateway de rede virtual com o tipo de gateway 'Vpn', é criado u
 
 [!INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
-## <a name="configuring-a-vpn-gateway"></a>Configurar um Gateway de VPN
+## <a name="configuring"></a>Configurar um Gateway de VPN
 
 Uma ligação de gateway de VPN depende de vários recursos que estão configurados com definições específicas. A maior parte dos recursos podem ser configurados em separado, embora estes, em alguns casos, devam ser configurados numa determinada ordem.
 
@@ -46,11 +46,11 @@ Uma ligação de gateway de VPN depende de vários recursos que estão configura
 
 As definições que escolheu para cada recurso são essenciais para a criação de uma ligação com êxito. Para obter informações sobre recursos individuais e sobre definições para o Gateway de VPN, consulte [definições sobre o Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md). O artigo contém informações para ajudar a compreender os tipos de gateways, os tipos de VPN, os tipos de ligação, as sub-redes de gateways, os gateways de rede local e várias outras definições de recursos que poderá querer considerar.
 
-### <a name="deployment-tools"></a>Ferramentas de implementação
+### <a name="tools"></a>Ferramentas de implementação
 
 Pode começar por criar e configurar recursos utilizando uma ferramenta de configuração, como o portal do Azure. Mais tarde, pode decidir mudar para outra ferramenta, como o PowerShell, para configurar recursos adicionais ou modificar os recursos existentes, quando aplicável. Atualmente, não pode configurar todos os recursos e definições de recursos no portal do Azure. As instruções nos artigos para cada topologia de ligação especificam quando uma ferramenta de configuração especifica é necessária. 
 
-### <a name="deployment-model"></a>Modelo de implementação
+### <a name="models"></a>Modelo de implementação
 
 Ao configurar um gateway de VPN, os passos seguidos dependem do modelo de implementação que utilizou para criar a rede virtual. Por exemplo, se tiver criado a VNet com o modelo de implementação clássica, utilize as diretrizes e as instruções do modelo de implementação clássica para criar e configurar as definições do gateway de VPN. Para mais informações sobre os modelos de implementação, consulte [Compreender o Gestor de Recursos e modelos de implementação clássicos](../azure-resource-manager/resource-manager-deployment-model.md).
 
@@ -64,7 +64,7 @@ Ao configurar um gateway de VPN, os passos seguidos dependem do modelo de implem
 
 Utilize os diagramas e as descrições para ajudar a selecionar a topologia de ligação para corresponder aos requisitos. Os diagramas mostram as principais topologias de linha de base, mas é possível criar configurações mais complexas utilizando os diagramas como orientação.
 
-## <a name="site-to-site-and-multi-site-ipsecike-vpn-tunnel"></a>Rede Site a Site e Multilocal (túnel VPN IPsec/IKE)
+## <a name="s2smulti"></a>Rede Site a Site e Multilocal (túnel VPN IPsec/IKE)
 
 ### <a name="S2S"></a>Rede de VPN
 

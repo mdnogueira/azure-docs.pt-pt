@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/13/2017
 ms.author: magoedte
-translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: 0092496ea13c862a1717f4fdcb882139cbd8a177
-ms.lasthandoff: 04/15/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: b309108b4edaf5d1b198393aa44f55fc6aca231e
+ms.openlocfilehash: 4eaa3e36ededddeb5268ec4f49b9daee2f824cee
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/15/2017
 
 ---
 # <a name="authenticate-runbooks-with-azure-classic-deployment-and-resource-manager"></a>Autenticar Runbooks com a implementação clássica do Azure e o Resource Manager
@@ -68,7 +68,7 @@ Nesta secção, executa os seguintes passos para criar uma conta de Automatizaç
 3. No painel Contas de Automatização, clique em **Adicionar**.<br><br>![Adicionar Conta de Automatização](media/automation-create-aduser-account/add-automation-acct-properties.png)
 4. No painel **Adicionar Conta de Automatização**, no tipo de caixa **Nome**, escreva um nome para a sua nova conta de Automatização.
 5. Se tiver mais do que uma subscrição, especifique a subscrição para a nova conta, bem como um **Grupo de recursos** novo ou existente e uma **localização** do datacenter do Azure.
-6. Selecione o valor **Não** para a opção **Criar conta Run As do Azure** e clique no botão **Criar**.  
+6. Selecione o valor **Sim** para a opção **Criar conta Run As do Azure** e clique no botão **Criar**.  
    
     > [!NOTE]
     > Se optar por não criar a conta Run As, selecionando a opção **Não**, será apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**.  Enquanto a conta é criada e atribuída à função **Contribuidor** na subscrição, não terá uma identidade de autenticação correspondente dentro do seu serviço de diretório de subscrições e, por isso, sem recursos de acesso na sua subscrição.  Isto irá impedir que todos os runbooks que referenciam esta conta a partir da capacidade autenticar e executar tarefas relativamente aos recursos do Azure Resource Manager.

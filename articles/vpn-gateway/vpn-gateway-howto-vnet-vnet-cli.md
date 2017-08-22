@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
-ms.openlocfilehash: 85d89568f5022dafd44ae7f8578e0bebb22d472d
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: ae42f661b39e8b6170fd415d758404fb33009ccc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Configurar uma ligação de gateway de VPN de VNet a VNet com a CLI do Azure
@@ -44,7 +44,7 @@ A comunicação VNet a VNet pode ser combinada com configurações multilocal. D
 
 ![Acerca das ligações](./media/vpn-gateway-howto-vnet-vnet-cli/aboutconnections.png)
 
-### <a name="why-connect-virtual-networks"></a>Por que motivo ligar redes virtuais?
+### <a name="why"></a>Por que motivo ligar redes virtuais?
 
 Poderá pretender ligar redes virtuais pelos seguintes motivos:
 
@@ -185,11 +185,11 @@ Utilizamos os seguintes valores nos exemplos:
   az network vnet-gateway create -n VNet4GW -l westus --public-ip-address VNet4GWIP -g TestRG4 --vnet TestVNet4 --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --no-wait
   ```
 
-### <a name="step-4---create-the-connections"></a>Passo 4 - Criar as ligações
+### <a name="createconnect"></a>Passo 4 - Criar as ligações
 
 Agora, tem duas VNets com gateways de VPN. O passo seguinte é criar ligações do gateway de VPN entre os gateways das redes virtuais. Se tiver seguido os exemplos anteriores, os gateways de VNet estão em grupos de recursos diferentes. Quando os gateways estão em diferentes grupos de recursos, tem de identificar e especificar os IDs dos recurso de cada gateway durante a criação das ligações. Se as VNets estiverem no mesmo grupo de recursos, pode utilizar o [segundo conjunto de instruções](#samerg), porque não é necessário especificar os IDs dos recursos.
 
-### <a name="to-connect-vnets-that-reside-in-different-resource-groups"></a>Para ligar VNets que residem em diferentes grupos de recursos
+### <a name="diffrg"></a>Para ligar VNets que residem em diferentes grupos de recursos
 
 1. Obtenha o ID de Recurso de VNet1GW a partir da saída do comando seguinte:
 
@@ -322,7 +322,7 @@ Este passo tem de ser realizado no contexto da subscrição nova, a Subscrição
   az network vnet-gateway create -n VNet5GW -l japaneast --public-ip-address VNet5GWIP -g TestRG5 --vnet TestVNet5 --gateway-type Vpn --sku VpnGw1 --vpn-type RouteBased --no-wait
   ```
 
-### <a name="step-8---create-the-connections"></a>Passo 8 - Criar as ligações
+### <a name="connections5"></a>Passo 8 - Criar as ligações
 
 Dividimos este passo em duas sessões da CLI marcadas como **[Subscrição 1]** e **[Subscrição 5]**, porque os gateways estão nestas duas subscrições diferentes. Para mudar de subscrições, utilize “az account list --all” para listar todas as subscrições disponíveis para a sua conta e, em seguida, utilize “az account set --subscription <subscriptionID>“ para mudar para a que pretende utilizar.
 

@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/30/2017
 ms.author: cherylmc,yushwang
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
-ms.openlocfilehash: 3627b3dfa5067883625b9a714645164ec99c8a51
+ms.translationtype: HT
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: 27e5dbff8d4a9a2ed82ab6691aa82c2668fec958
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="vpn-gateway-faq"></a>FAQ do VPN Gateway
@@ -58,7 +57,7 @@ As configurações **Ponto a Site** (VPN sobre SSTP) permitem ligar a partir de 
 
 Pode configurar a rede virtual para utilizar o Site a Site e o Ponto a Site em simultâneo, desde que crie a ligação Site a Site através de um tipo de VPN baseado na rota do seu gateway. Os tipos de VPN com base na rota são denominados gateways dinâmicos no modelo de implementação clássica.
 
-## <a name="virtual-network-gateways"></a>Gateways de rede virtual
+## <a name="gateways"></a>Gateways de rede virtual
 
 ### <a name="is-a-vpn-gateway-a-virtual-network-gateway"></a>Um gateway de VPN é um gateway de rede virtual?
 
@@ -132,7 +131,7 @@ Um gateway de VPN é, essencialmente, um dispositivo do tipo multi-homed com uma
 
 Para obter mais informações, veja [About VPN Gateway configuration settings (Acerca das definições de configuração dos gateway de VPN)](vpn-gateway-about-vpn-gateway-settings.md).
 
-## <a name="site-to-site-connections-and-vpn-devices"></a>Ligações Site a Site e dispositivos VPN
+## <a name="s2s"></a>Ligações Site a Site e dispositivos VPN
 
 ### <a name="what-should-i-consider-when-selecting-a-vpn-device"></a>O que devo considerar ao selecionar um dispositivo VPN?
 
@@ -196,7 +195,7 @@ Sim, as VPNs Ponto a Site (P2S) podem ser utilizadas com os gateways de VPN a li
 
 Sim, esta ação é suportada. Para obter mais informações, veja [Configurar as ligações de Rede de VPNs e o ExpressRoute que coexistem](../expressroute/expressroute-howto-coexist-classic.md).
 
-## <a name="ipsecike-policy"></a>IPsec/política IKE
+## <a name="ipsecike"></a>IPsec/política IKE
 
 [!INCLUDE [vpn-gateway-ipsecikepolicy-faq-include](../../includes/vpn-gateway-ipsecikepolicy-faq-include.md)]
 
@@ -205,7 +204,7 @@ Sim, esta ação é suportada. Para obter mais informações, veja [Configurar a
 
 [!INCLUDE [vpn-gateway-bgp-faq-include](../../includes/vpn-gateway-bpg-faq-include.md)]
 
-## <a name="cross-premises-connectivity-and-vms"></a>VMs e conectividade em vários locais
+## <a name="vms"></a>VMs e conectividade em vários locais
 
 ### <a name="if-my-virtual-machine-is-in-a-virtual-network-and-i-have-a-cross-premises-connection-how-should-i-connect-to-the-vm"></a>Se a minha máquina virtual estiver numa rede virtual e tiver uma ligação em vários locais, como devo estabelecer ligação à VM?
 
@@ -222,7 +221,7 @@ Não. Apenas o tráfego que tem um IP de destino contido nos intervalos de ender
 [!INCLUDE [Troubleshoot VM connection](../../includes/vpn-gateway-connect-vm-troubleshoot-include.md)]
 
 
-## <a name="virtual-network-faq"></a>FAQ da Rede Virtual
+## <a name="faq"></a>FAQ da Rede Virtual
 
 Pode ver informações adicionais sobre a rede virtual nas [FAQ da Rede Virtual](../virtual-network/virtual-networks-faq.md).
 

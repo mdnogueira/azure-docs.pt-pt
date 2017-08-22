@@ -76,8 +76,9 @@ Nesta secção, vai criar uma aplicação de consola do Node.js que cria uma ide
 6. Adicione o seguinte código para criar uma definição de dispositivo no registo de identidade do dispositivo do seu hub IoT. Este código cria um dispositivo se o ID de dispositivo não existir no registo de identidade. Caso contrário, irá devolver a chave do dispositivo existente:
    
     ```
-    var device = new iothub.Device(null);
-    device.deviceId = 'myFirstNodeDevice';
+    var device = {
+      deviceId: 'myFirstNodeDevice'
+    }
     registry.create(device, function(err, deviceInfo, res) {
       if (err) {
         registry.get(device.deviceId, printDeviceInfo);

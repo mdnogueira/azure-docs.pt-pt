@@ -13,13 +13,13 @@ ms.devlang: R
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 07/13/2017
+ms.date: 08/14/2017
 ms.author: bradsev
 ms.translationtype: HT
-ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
-ms.openlocfilehash: f0ee0d23f28df2824ea41f7c9f7490e1ec62d041
+ms.sourcegitcommit: b309108b4edaf5d1b198393aa44f55fc6aca231e
+ms.openlocfilehash: 14e2a14c74e00709e18a80325fbdd3cbcd71da37
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/15/2017
 
 ---
 # <a name="get-started-using-r-server-on-hdinsight"></a>Introdução à utilização do R Server no HDInsight
@@ -670,6 +670,26 @@ Como passo opcional, pode executar um teste de diagnóstico, conforme mostrado a
 6. Saia do SSH
 
 ![Diagnóstico de operacionalização](./media/hdinsight-hadoop-r-server-get-started/admin-util-diagnostics.png)
+
+
+>[!NOTE]
+>**Grandes atrasos ao consumir o serviço Web no Spark**
+>
+>Se ocorrerem atrasos longos quando tentar consumir um serviço Web criado com funções mrsdeploy num contexto de computação Spark, poderá ter de adicionar algumas pastas em falta. A aplicação Spark pertence a um utilizador chamado "*rserve2*" sempre que é invocado a partir de um serviço Web utilizando funções mrsdeploy. Para contornar este problema:
+
+    # Create these required folders for user 'rserve2' in local and hdfs:
+
+    hadoop fs -mkdir /user/RevoShare/rserve2
+    hadoop fs -chmod 777 /user/RevoShare/rserve2
+
+    mkdir /var/RevoShare/rserve2
+    chmod 777 /var/RevoShare/rserve2
+
+
+    # Next, create a new Spark compute context:
+ 
+    rxSparkConnect(reset = TRUE)
+
 
 Nesta fase, a configuração da operacionalização está concluída. Agora, pode utilizar o pacote “mrsdeploy” no seu RClient para se ligar à Operacionalização no nó de extremidade e começar a utilizar as funcionalidades do mesmo, como a [execução remota](https://msdn.microsoft.com/microsoft-r/operationalize/remote-execution) e os [serviços Web](https://msdn.microsoft.com/microsoft-r/mrsdeploy/mrsdeploy-websrv-vignette). Consoante o seu cluster estar ou não configurado numa rede virtual, poderá ter de configurar o túnel de encaminhamento de portas através do início de sessão SSH. As secções a seguir explicam como configurar este túnel.
 

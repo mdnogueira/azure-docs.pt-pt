@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/09/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 9afd12380926d4e16b7384ff07d229735ca94aaa
-ms.openlocfilehash: 9edaa81111d9439bfbad4775e49c3e29454ad31f
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: 27f4a8fb9a83b98e99df635bf4c80f6048ce348c
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/15/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Criar uma VNet com uma ligação de Rede de VPNs com o PowerShell
@@ -40,7 +40,7 @@ Uma ligação de gateway de VPN de Site para Site é utilizada para ligar a sua 
 
 ![Diagrama da ligação de Gateway de Rede de VPNs em vários sites](./media/vpn-gateway-create-site-to-site-rm-powershell/site-to-site-diagram.png)
 
-## <a name="before-you-begin"></a>Antes de começar
+## <a name="before"></a>Antes de começar
 
 Antes de iniciar a configuração, verifique se cumpre os seguintes critérios:
 
@@ -49,7 +49,7 @@ Antes de iniciar a configuração, verifique se cumpre os seguintes critérios:
 * Se não estiver familiarizado com os intervalos de endereços IP localizados na configuração de rede no local, tem de se coordenar com alguém que consiga fornecer esses detalhes. Ao criar esta configuração, tem de especificar prefixos de intervalo de endereços IP que o Azure irá encaminhar para a sua localização no local. Nenhuma das sub-redes da rede local pode sobrepor as sub-redes de rede virtual a que pretende ligar.
 * Instale a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Os cmdlets do PowerShell são atualizados frequentemente e, regra geral, tem de os atualizar para poder tirar partido das últimas funcionalidades. Se não os atualizar, os valores especificados poderão falhar. Veja [How to install and configure Azure PowerShell](/powershell/azure/overview) (Como instalar e configurar o Azure PowerShell) para obter mais informações sobre como transferir e instalar os cmdlets do PowerShell.
 
-### <a name="example-values"></a>Valores de exemplo
+### <a name="example"></a>Valores de exemplo
 
 Os exemplos neste artigo utilizam os seguintes valores. Pode utilizar estes valores para criar um ambiente de teste ou consultá-los para compreender melhor os exemplos neste artigo.
 
@@ -88,7 +88,7 @@ Se ainda não tiver uma rede virtual, crie uma. Quando criar uma rede virtual, c
 
 [!INCLUDE [No NSG warning](../../includes/vpn-gateway-no-nsg-include.md)]
 
-### <a name="to-create-a-virtual-network-and-a-gateway-subnet"></a>Para criar uma rede virtual e uma sub-rede de gateway
+### <a name="vnet"></a>Para criar uma rede virtual e uma sub-rede de gateway
 
 Este exemplo cria uma rede virtual e uma sub-rede de gateway. Se já tiver uma rede virtual à qual precisa de adicionar uma sub-rede de gateway, veja [Para adicionar uma sub-rede de gateway a uma rede virtual que já criou](#gatewaysubnet).
 

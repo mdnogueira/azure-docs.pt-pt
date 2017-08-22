@@ -3,7 +3,7 @@ title: "Descrição geral do Azure CDN | Microsoft Docs"
 description: "Saiba o que é a Rede de Entrega de Conteúdos (CDN) do Azure e como utilizá-la para fornecer conteúdo de largura de banda alta ao colocar em cache blobs e conteúdo estático."
 services: cdn
 documentationcenter: 
-author: lichard
+author: smcevoy
 manager: akucer
 editor: 
 ms.assetid: 866e0c30-1f33-43a5-91f0-d22f033b16c6
@@ -13,13 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
 ms.date: 02/08/2017
-ms.author: rli
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
-ms.openlocfilehash: 299e55e095ac323ed0ded7c7844d7cd103174af2
+ms.author: v-semcev
+ms.translationtype: HT
+ms.sourcegitcommit: a9cfd6052b58fe7a800f1b58113aec47a74095e3
+ms.openlocfilehash: 0517f35a43e99181075dc5a6836e406c2c06824e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="overview-of-the-azure-content-delivery-network-cdn"></a>Descrição geral da Rede de Entrega de Conteúdos (CDN) do Azure
@@ -51,28 +50,37 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 
 |  | Standard da Akamai | Standard da Verizon | Premium da Verizon |
 | --- | --- | --- | --- |
-| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service-web/app-service-web-tutorial-content-delivery-network.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| Gestão através da [API REST](https://msdn.microsoft.com/library/mt634456.aspx), do [.NET](cdn-app-dev-net.md), do [Node.js](cdn-app-dev-node.md) ou do [PowerShell](cdn-manage-powershell.md). |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| Suporta HTTPS com ponto final CDN |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| HTTPS de domínio personalizado | |**&#x2713;** |**&#x2713;** |
-| Balanceamento de carga |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| Proteção contra [DDOS](https://www.us-cert.gov/ncas/tips/ST04-015) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| Pilha dupla de IPv4/IPv6 |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Suporte de nomes de domínio personalizado](cdn-map-content-to-custom-domain.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Colocação em cache de cadeias de consulta](cdn-query-string.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| [Filtro geográfico](cdn-restrict-access-by-country.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Funções e Otimizações de Desempenho__ |
+| [Aceleração de Site Dinâmico](https://docs.microsoft.com/azure/cdn/cdn-dynamic-site-acceleration) | **&#x2713;**  | **&#x2713;** | **&#x2713;** |
+| [Otimização da Transmissão em fluxo de Vídeo](https://docs.microsoft.com/azure/cdn/cdn-media-streaming-optimization) | **&#x2713;**  | \* |  \* |
+| [Otimização de Ficheiros Grandes](https://docs.microsoft.com/azure/cdn/cdn-large-file-optimization) | **&#x2713;**  | \* |  \* |
+| [Balanceamento de carga de Servidor Global (GSLB)](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-load-balancing-azure) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Remoção rápida](cdn-purge-endpoint.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Pré-carregamento de recursos](cdn-preload-endpoint.md) | |**&#x2713;** |**&#x2713;** |
-| [Análise principal](cdn-analyze-usage-patterns.md) | |**&#x2713;** |**&#x2713;** |
+| [Colocação em cache de cadeias de consulta](cdn-query-string.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Pilha dupla de IPv4/IPv6 |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Suporte HTTP/2](cdn-http2.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Segurança__ |
+| Suporta HTTPS com ponto final CDN |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| HTTPS de domínio personalizado | |**&#x2713;** |**&#x2713;** |
+| [Suporte de nomes de domínio personalizado](cdn-map-content-to-custom-domain.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| [Filtro geográfico](cdn-restrict-access-by-country.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| [Autenticação de tokens](cdn-token-auth.md)|  |  |**&#x2713;**| 
+| [Proteção contra DDOS](https://www.us-cert.gov/ncas/tips/ST04-015) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Análises e Relatórios__ |
+| [Análise principal](cdn-analyze-usage-patterns.md) | **&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Relatórios HTTP avançados](cdn-advanced-http-reports.md) | | |**&#x2713;** |
 | [Estatísticas em tempo real](cdn-real-time-stats.md) | | |**&#x2713;** |
 | [Alertas em tempo real](cdn-real-time-alerts.md) | | |**&#x2713;** |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Facilidade de Utilização__ |
+| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service-web/app-service-web-tutorial-content-delivery-network.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Gestão através da [API REST](https://msdn.microsoft.com/library/mt634456.aspx), do [.NET](cdn-app-dev-net.md), do [Node.js](cdn-app-dev-node.md) ou do [PowerShell](cdn-manage-powershell.md). |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Motor de entrega de conteúdo personalizável com base em regras](cdn-rules-engine.md) | | |**&#x2713;** |
 | Definições de cache/cabeçalho (utilizando o [motor de regras](cdn-rules-engine.md)) | | |**&#x2713;** |
 | Redirecionar/reescrever URL (utilizando o [motor de regras](cdn-rules-engine.md)) | | |**&#x2713;** |
 | Regras de dispositivos móveis (utilizando o [motor de regras](cdn-rules-engine.md)) | | |**&#x2713;** |
-| [Autenticação de tokens](cdn-token-auth.md)|  |  |**&#x2713;**| 
+
+\*A Verizon suporta o fornecimento de ficheiros grandes e multimédia diretamente através do General Web Delivery.
 
 
 > [!TIP]

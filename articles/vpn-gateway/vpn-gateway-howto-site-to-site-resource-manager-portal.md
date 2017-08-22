@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
-ms.openlocfilehash: 690aa3ddc6ec0889936565ea732cd714734abecb
+ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
+ms.openlocfilehash: 0dec0d3744f76a06313928197f3a5229290ba32b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Criar uma ligação Site a Site no portal do Azure
@@ -118,11 +118,11 @@ Crie a ligação de Rede de VPNs entre o gateway de rede virtual e o dispositivo
 
 [!INCLUDE [Connect to a VM](../../includes/vpn-gateway-connect-vm-s2s-include.md)]
 
-## <a name="how-to-reset-a-vpn-gateway"></a>Como repor um gateway de VPN
+## <a name="reset"></a>Como repor um gateway de VPN
 
 Repor o gateway de VPN do Azure é útil se perder a conectividade VPN em vários locais num ou mais túneis de rede de VPNs. Nesta situação, os dispositivos VPN no local estão todos a funcionar corretamente, mas não podem estabelecer túneis IPsec com os gateways de VPN do Azure. Para obter os passos, veja [Reset a VPN gateway](vpn-gateway-resetgw-classic.md) (Repor um gateway de VPN).
 
-## <a name="how-to-change-a-gateway-sku-resize-a-gateway"></a>Como alterar um SKU de gateway (redimensionar um gateway)
+## <a name="resize"></a>Como alterar um SKU de gateway (redimensionar um gateway)
 
 Para obter os passos para alterar um SKU de gateway, veja [Gateway SKUs](vpn-gateway-about-vpn-gateway-settings.md#gwsku) (SKUs de gateway).
 

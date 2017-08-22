@@ -1,5 +1,3 @@
-Utilize os seguintes passos para ligar à máquina virtual do SQL Server com o Ambiente de Trabalho Remoto:
-
 1. Depois de a máquina virtual do Azure ser criada e estar em execução, clique no ícone Máquinas Virtuais no portal do Azure para ver as VMs.
 
 1. Clique nas reticências, **...** , da nova VM.
@@ -16,6 +14,4 @@ Utilize os seguintes passos para ligar à máquina virtual do SQL Server com o A
 
    ![Autenticação de ambiente de trabalho remoto](./media/virtual-machines-sql-server-remote-desktop-connect/remote-desktop-connect.png)
 
-Depois de ligar à máquina virtual do SQL Server, pode iniciar o SQL Server Management Studio e estabelecer ligação à Autenticação do Windows com as suas credenciais de administrador local. Se ativou a Autenticação do SQL Server, também pode ligar com Autenticação do SQL Server com o início de sessão do SQL e a palavra-passe que configurou durante o aprovisionamento.
-
-O acesso ao computador permite-lhe alterar diretamente as definições do SQL Server e da máquina com base nos seus requisitos. Por exemplo, pode configurar as definições da firewall ou alterar as definições de configuração do SQL Server.
+1. Clique em **OK** para ligar.
