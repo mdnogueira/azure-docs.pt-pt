@@ -144,8 +144,14 @@
 
 ## Gerir dispositivos
 ### [Introdução](device-management-introduction.md)
-### [Registar dispositivos](active-directory-device-registration-overview.md)
-#### [Configurar](active-directory-conditional-access-automatic-device-registration-setup.md)
+### [FAQs](device-management-faq.md)
+### Tarefas
+#### [Configurar dispositivos híbridos associados do Azure AD](device-management-hybrid-azuread-joined-devices-setup.md) 
+#### Resolução de problemas
+##### [O Azure AD híbrido associou-se a dispositivos do Windows 10 e do Windows Server 2016](device-management-troubleshoot-hybrid-join-windows-current.md)
+##### [O Azure AD híbrido associou-se a dispositivos legados do Windows](device-management-troubleshoot-hybrid-join-windows-legacy.md)
+
+### Registar dispositivos
 #### [Implementar no local](active-directory-device-registration-on-premises-setup.md)
 #### [FAQs](active-directory-device-registration-faq.md)
 #### Resolução de problemas
