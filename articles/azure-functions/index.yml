@@ -8,7 +8,7 @@ metadata:
   services: functions
   author: czeumault
   manager: carolz
-  ms.service: virtual-machines\linux
+  ms.service: functions
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
@@ -18,76 +18,75 @@ abstract:
   description: 'As Funções do Azure são um serviço de computação sem servidor lhe que permite executar código a pedido sem ter de aprovisionar ou gerir explicitamente uma infraestrutura. Utilize as Funções do Azure para executar um script ou fragmento de código em resposta a uma variedade de eventos. Saiba como utilizar as Funções do Azure com os nossos guias de introdução, tutoriais e amostras.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: media/index/video-thumb-get-started.png
-      width: 250  
+      width: 250
     title: 'Introdução às Funções do Azure. (2:39)'
-    href: https://azure.microsoft.com/en-us/resources/videos/get-started-with-azure-functions/
+    href: 'https://azure.microsoft.com/en-us/resources/videos/get-started-with-azure-functions/'
     width: 250
 sections:
-- title: Inícios rápidos de cinco minutos
-  items:
-  - type: paragraph
-    text: 'Aprenda a criar funções que executam com base nos eventos criados através de:'
-  - type: list
-    style: icon48
-    items: 
-    - image: 
-        src: media/index/http.svg
-      text: HTTP
-      href: /azure/azure-functions/functions-create-first-azure-function
-    - image: 
-        src: media/index/stopwatch.svg
-      text: Temporizador
-      href: /azure/azure-functions/functions-create-scheduled-function
-    - image: 
-        src: media/index/octokitty.svg
-      text: Webhook do GitHub
-      href: /azure/azure-functions/functions-create-github-webhook-triggered-function
-    - image: 
-        src: media/index/blob.svg
-      text: Blobs
-      href: /azure/azure-functions/functions-create-storage-blob-triggered-function
-    - image: 
-        src: media/index/storage.svg
-      text: Filas
-      href: /azure/azure-functions/functions-create-storage-queue-triggered-function
-  - type: paragraph
-    text: 'Saiba como programar e depurar localmente:'
-  - type: list
-    style: icon48
-    items: 
-    - image: 
-        src: /media/logos/logo_visual-studio.svg
-      text: Visual Studio
-      href: /azure/azure-functions/functions-create-your-first-function-visual-studio
-- title: Tutoriais Passo-a-Passo
-  items:
-  - type: paragraph
-    text: 'Saiba como criar e gerir as Funções do Azure:'
-  - type: list
-    style: ordered
+  - title: Inícios rápidos de cinco minutos
     items:
-    - html: <a href="/azure/azure-functions/functions-twitter-email">Criar uma função que se integra nas Azure Logic Apps</a>
-    - html: <a href="/azure/azure-functions/functions-create-serverless-api">Criar uma API sem servidor com as Funções do Azure</a>
-- title: Amostras
-  items:
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: paragraph
+        text: 'Aprenda a criar funções que executam com base nos eventos criados através de:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/http.svg
+            text: HTTP
+            href: /azure/azure-functions/functions-create-first-azure-function
+          - image:
+              src: media/index/stopwatch.svg
+            text: Temporizador
+            href: /azure/azure-functions/functions-create-scheduled-function
+          - image:
+              src: media/index/octokitty.svg
+            text: Webhook do GitHub
+            href: /azure/azure-functions/functions-create-github-webhook-triggered-function
+          - image:
+              src: media/index/blob.svg
+            text: Blobs
+            href: /azure/azure-functions/functions-create-storage-blob-triggered-function
+          - image:
+              src: media/index/storage.svg
+            text: Filas
+            href: /azure/azure-functions/functions-create-storage-queue-triggered-function
+      - type: paragraph
+        text: 'Saiba como programar e depurar localmente:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /media/logos/logo_visual-studio.svg
+            text: Visual Studio
+            href: /azure/azure-functions/functions-create-your-first-function-visual-studio
+  - title: Tutoriais Passo-a-Passo
     items:
-    - html: <a href="/azure/azure-functions/functions-cli-samples">CLI do Azure</a>
-- title: Referência
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Saiba como criar e gerir as Funções do Azure:'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/azure-functions/functions-twitter-email">Criar uma função que se integra nas Azure Logic Apps</a>
+          - html: <a href="/azure/azure-functions/functions-create-serverless-api">Criar uma API sem servidor com as Funções do Azure</a>
+  - title: Amostras
     items:
-    - title: Linha de Comandos
-      html: <p><a href="/cli/azure">CLI do Azure</a></p>
-    - title: REST
-      html: <p><a href="/azure/azure-functions/functions-api-definition">OpenAPI</a></p>
-    - title: Enlaces
- 
-      html: <p><a href="/azure/azure-functions/functions-bindings-storage-blob">Armazenamento de blobs</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">BD do Cosmos</a></p><p><a href="/azure/azure-functions/functions-bindings-event-hubs">Hub de Eventos</a></p><p><a href="/azure/azure-functions/functions-bindings-external-file">Ficheiro externo</a></p><p><a href="/azure/azure-functions/functions-bindings-http-webhook">HTTP e webhooks</a></p><p><a href="/azure/azure-functions/functions-bindings-mobile-apps">Aplicações Móveis</a></p><p><a href="/azure/azure-functions/functions-bindings-notification-hubs">Hubs de Notificação</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-queue">Armazenamento de filas</a></p><p><a href="/azure/azure-functions/functions-bindings-sendgrid">SendGrid</a></p><p><a href="/azure/azure-functions/functions-bindings-service-bus">Service Bus</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-table">Armazenamento de tabelas</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">Temporizador</a></p><p><a href="/azure/azure-functions/functions-bindings-twilio">Enlace de saída do Twilio</a></p>
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/azure-functions/functions-cli-samples">CLI do Azure</a>
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Linha de Comandos
+            html: <p><a href="/cli/azure">CLI do Azure</a></p>
+          - title: REST
+            html: <p><a href="/azure/azure-functions/functions-api-definition">OpenAPI</a></p>
+          - title: Enlaces
+            html: <p><a href="/azure/azure-functions/functions-bindings-storage-blob">Armazenamento de blobs</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">BD do Cosmos</a></p><p><a href="/azure/azure-functions/functions-bindings-event-hubs">Hub de Eventos</a></p><p><a href="/azure/azure-functions/functions-bindings-external-file">Ficheiro externo</a></p><p><a href="/azure/azure-functions/functions-bindings-http-webhook">HTTP e webhooks</a></p><p><a href="/azure/azure-functions/functions-bindings-mobile-apps">Aplicações Móveis</a></p><p><a href="/azure/azure-functions/functions-bindings-notification-hubs">Hubs de Notificação</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-queue">Armazenamento de filas</a></p><p><a href="/azure/azure-functions/functions-bindings-sendgrid">SendGrid</a></p><p><a href="/azure/azure-functions/functions-bindings-service-bus">Service Bus</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-table">Armazenamento de tabelas</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">Temporizador</a></p><p><a href="/azure/azure-functions/functions-bindings-twilio">Enlace de saída do Twilio</a></p>
