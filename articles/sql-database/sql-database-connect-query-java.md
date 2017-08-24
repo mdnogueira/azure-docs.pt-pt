@@ -135,7 +135,8 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
                                System.out.println(resultSet.getString(1) + " "
                                    + resultSet.getString(2));
                            }
-                   }
+                    connection.close();
+                   }                   
            }
            catch (Exception e) {
                    e.printStackTrace();
