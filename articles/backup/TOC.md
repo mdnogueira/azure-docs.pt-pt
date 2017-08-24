@@ -55,6 +55,7 @@
 #### [Utilizar o Azure Backup Server para fazer cópias de segurança de um farm do SharePoint](backup-azure-backup-sharepoint-mabs.md)
 #### [Utilizar o Azure Backup Server para fazer cópias de segurança do SQL](backup-azure-sql-mabs.md)
 #### [Proteger o estado do sistema e a recuperação bare-metal](backup-mabs-system-state-and-bmr.md)
+### [Recuperar dados do Azure Backup Server](backup-azure-alternate-dpm-server.md)
 
 ## Data Protection Manager
 ### [Preparar as cargas de trabalho do DPM no portal do Azure](backup-azure-dpm-introduction.md)

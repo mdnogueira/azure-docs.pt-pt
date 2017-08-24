@@ -8,6 +8,7 @@
 ## [Segurança do Service Fabric](azure-service-fabric-security-overview.md)
 ## [Gestão de identidades](security-identity-management-overview.md)
 ## [Segurança de IoT](../iot-suite/iot-security-architecture.md#security-in-iot)
+## [Descrição geral da encriptação do Azure](security-azure-encryption-overview.md)
 ## [Arquitetura de segurança](azure-security-architecture-overview.md)
 ### [Ativar a segurança operacional](azure-operational-security.md)
 ### [Deteção avançada de ameaças](azure-threat-detection.md)
@@ -30,7 +31,7 @@
 
 ## Segurança de armazenamento
 ### [Melhores práticas de segurança e encriptação de dados](azure-security-data-encryption-best-practices.md)
-### [Guia da segurança do armazenamento](../storage/storage-security-guide.md?toc=%2fazure%2fsecurity%2ftoc.json)
+### [Guia da segurança do armazenamento](../storage/common/storage-security-guide.md?toc=%2fazure%2fsecurity%2ftoc.json)
 
 ## Segurança da computação
 ### [Melhores práticas para as VMs do Azure](azure-security-best-practices-vms.md)
@@ -63,11 +64,12 @@
 
 ## Serviços PaaS
 ### [Proteger implementações PaaS](security-paas-deployments.md)
-#### [Proteger aplicações Web e móveis PaaS através de SQL](security-paas-applications-using-sql.md)
-#### [Melhores práticas de segurança de Bases de Dados SQL](azure-database-security-best-practices.md)
-#### [Lista de verificação de segurança da Base de Dados SQL](azure-database-security-checklist.md)
 #### [Proteger aplicações Web e móveis PaaS através dos Serviços Aplicacionais](security-paas-applications-using-app-services.md)
+#### [Proteger aplicações Web e móveis PaaS através de SQL](security-paas-applications-using-sql.md)
+##### [Melhores práticas de segurança de Bases de Dados SQL](azure-database-security-best-practices.md)
+##### [Lista de verificação de segurança da Base de Dados SQL](azure-database-security-checklist.md)
 ####[Lista de verificação de segurança operacional](azure-operational-security-checklist.md)
+#### [Proteger aplicações Web e móveis PaaS com o Armazenamento do Azure](security-paas-applications-using-storage.md)
 
 ## Internet das Coisas
 ### [Proteger a sua implementação de IoT](../iot-suite/iot-suite-security-deployment.md)

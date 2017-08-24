@@ -33,17 +33,15 @@
   items:
     - name: Proteger contentores
       href: container-service-security.md
-    - name: Principal de serviço - Kubernetes
-      href: container-service-kubernetes-service-principal.md
 - name: Guias de procedimentos
   items:
-    - name: Kubernetes com o Início Rápido do Windows
+    - name: Kubernetes com Windows
       href: container-service-kubernetes-windows-walkthrough.md
-    - name: Gestão de contentores - IU do Kubernetes
+    - name: Interface web do Kubernetes
       href: container-service-kubernetes-ui.md
     - name: Implementar gráficos Helm
       href: container-service-kubernetes-helm.md
-    - name: CI/CD com Kubernetes e Jenkins
+    - name: Jenkins e ACS Kubernetes
       href: container-service-kubernetes-jenkins.md
     - name: Utilizar o Draft com o ACR e o ACS
       href: container-service-draft-up.md

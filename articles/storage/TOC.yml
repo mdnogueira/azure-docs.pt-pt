@@ -1,0 +1,12 @@
+- name: Descrição geral
+  items:
+    - name: Introdução
+      href: ./common/storage-introduction.md
+    - name: 'Escolha Blobs, Ficheiros ou Discos de Dados'
+      href: ./common/storage-decide-blobs-files-disks.md
+- name: Blobs
+  href: ./blobs/storage-blobs-introduction.md
+- name: Ficheiros
+  href: ./files/storage-files-introduction.md
+- name: Filas
+  href: ./queues/storage-queues-introduction.md
