@@ -1,23 +1,23 @@
 
-Para obter mais informações sobre discos, veja [About Disks and VHDs for Virtual Machines (Acerca de Discos e VHDs para Máquinas Virtuais)](../articles/storage/storage-about-disks-and-vhds-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+For more information about disks, see [About Disks and VHDs for Virtual Machines](../articles/virtual-machines/linux/about-disks-and-vhds.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 <a id="attachempty"></a>
 
-## <a name="attach-an-empty-disk"></a>Anexar um disco vazio
-1. Abra o CLI do Azure 1.0 e [ligue-se à sua subscrição do Azure](../articles/xplat-cli-connect.md). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
-2. Introduza `azure vm disk attach-new` para criar e anexar um disco novo, conforme mostrado no exemplo seguinte. Substitua *myVM* pelo nome da sua Máquina Virtual do Linux e especifique o tamanho do disco em GB, que é *100* GB neste exemplo:
+## <a name="attach-an-empty-disk"></a>Attach an empty disk
+1. Open Azure CLI 1.0 and [connect to your Azure subscription](../articles/xplat-cli-connect.md). Make sure you are in Azure Service Management mode (`azure config mode asm`).
+2. Enter `azure vm disk attach-new` to create and attach a new disk as shown in the following example. Replace *myVM* with the name of your Linux Virtual Machine and specify the size of the disk in GB, which is *100GB* in this example:
 
     ```azurecli
     azure vm disk attach-new myVM 100
     ```
 
-3. Depois de ser criado e anexado, o disco de dados é listado nos resultados de `azure vm disk list <virtual-machine-name>`, conforme mostrado no exemplo seguinte:
+3. After the data disk is created and attached, it's listed in the output of `azure vm disk list <virtual-machine-name>` as shown in the following example:
    
     ```azurecli
     azure vm disk list TestVM
     ```
 
-    O resultado é semelhante ao seguinte exemplo:
+    The output is similar to the following example:
 
     ```bash
     info:    Executing command vm disk list
@@ -34,17 +34,17 @@ Para obter mais informações sobre discos, veja [About Disks and VHDs for Virtu
 
 <a id="attachexisting"></a>
 
-## <a name="attach-an-existing-disk"></a>Anexar um disco existente
-Para anexar um disco existente, tem de ter um .vhd disponível numa conta de armazenamento.
+## <a name="attach-an-existing-disk"></a>Attach an existing disk
+Attaching an existing disk requires that you have a .vhd available in a storage account.
 
-1. Abra o CLI do Azure 1.0 e [ligue-se à sua subscrição do Azure](../articles/xplat-cli-connect.md). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
-2. Verifique se o VHD que pretende anexar já está carregado para a sua subscrição do Azure:
+1. Open Azure CLI 1.0 and [connect to your Azure subscription](../articles/xplat-cli-connect.md). Make sure you are in Azure Service Management mode (`azure config mode asm`).
+2. Check if the VHD you want to attach is already uploaded to your Azure subscription:
    
     ```azurecli
     azure vm disk list
     ```
 
-    O resultado é semelhante ao seguinte exemplo:
+    The output is similar to the following example:
 
     ```azurecli
      info:    Executing command vm disk list
@@ -58,13 +58,13 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
      info:    vm disk list command OK
     ```
 
-3. Se não encontrar o disco que quer utilizar, pode carregar um VHD local para a sua subscrição com `azure vm disk create` ou `azure vm disk upload`. Um exemplo de `disk create` seria igual ao seguinte:
+3. If you don't find the disk that you want to use, you may upload a local VHD to your subscription by using `azure vm disk create` or `azure vm disk upload`. An example of `disk create` would be as in the following example:
    
     ```azurecli
     azure vm disk create myVhd .\TempDisk\test.VHD -l "East US" -o Linux
     ```
 
-    O resultado é semelhante ao seguinte exemplo:
+    The output is similar to the following example:
 
     ```azurecli
     info:    Executing command vm disk create
@@ -78,23 +78,23 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
     info:    vm disk create command OK
     ```
    
-   Também pode utilizar `azure vm disk upload` para carregar um VHD para uma conta de armazenamento específica. Leia mais sobre os comandos para gerir os discos de dados de máquinas virtuais do Azure [aqui](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
+   You may also use `azure vm disk upload` to upload a VHD to a specific storage account. Read more about the commands to manage your Azure virtual machine data disks [over here](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
 
-4. Agora, vai anexar o VHD pretendido para a sua máquina virtual:
+4. Now you attach the desired VHD to your virtual machine:
    
     ```azurecli
     azure vm disk attach myVM myVhd
     ```
    
-   Confirme que substitui *myVM* pelo nome da sua máquina virtual e *myVHD* pelo VHD pretendido.
+   Make sure to replace *myVM* with the name of your virtual machine, and *myVHD* with your desired VHD.
 
-5. Pode utilizar `azure vm disk list <virtual-machine-name>` para verificar se o disco está anexado à máquina virtual.
+5. You can verify the disk is attached to the virtual machine with `azure vm disk list <virtual-machine-name>`:
    
     ```azurecli
     azure vm disk list myVM
     ```
 
-    O resultado é semelhante ao seguinte exemplo:
+    The output is similar to the following example:
 
     ```azurecli
      info:    Executing command vm disk list
@@ -111,12 +111,7 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
     ```
 
 > [!NOTE]
-> Depois de adicionar um disco de dados, terá de iniciar sessão na máquina virtual e inicializar o disco, para que esta possa utilizar o disco para armazenamento (veja os passos seguintes para obter mais informações sobre como inicializar o disco).
+> After you add a data disk, you'll need to log on to the virtual machine and initialize the disk so the virtual machine can use the disk for storage (see the following steps for more information on how to do initialize the disk).
 > 
 > 
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

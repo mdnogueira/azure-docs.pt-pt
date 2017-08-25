@@ -14,12 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 05/15/2017
 ms.author: adegeo
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8f987d079b8658d591994ce678f4a09239270181
-ms.openlocfilehash: 3c7f97b72f3813abe2357ae3202eaba285583bb8
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: d2c197db73477d06d86d1c4faa8c4a2f58c7b391
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/18/2017
-
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Introdução ao Cloud Services do Azure e ao ASP.NET
@@ -172,7 +171,7 @@ Numa aplicação real, normalmente criaria contas separadas para os dados da apl
 
 4. Defina a lista pendente **Replicação** para **Armazenamento localmente redundante**.
 
-    Quando a georreplicação está ativada para uma conta de armazenamento, o conteúdo armazenado é replicado para um datacenter secundário para ativar a ativação pós-falha, se ocorrer um desastre grave na localização primária. A georreplicação pode implicar custos adicionais. Para contas de teste e de desenvolvimento, normalmente não deseja pagar a georreplicação. Para obter mais informações, consulte [Criar, gerir ou eliminar uma conta de armazenamento](../storage/storage-create-storage-account.md).
+    Quando a georreplicação está ativada para uma conta de armazenamento, o conteúdo armazenado é replicado para um datacenter secundário para ativar a ativação pós-falha, se ocorrer um desastre grave na localização primária. A georreplicação pode implicar custos adicionais. Para contas de teste e de desenvolvimento, normalmente não deseja pagar a georreplicação. Para obter mais informações, consulte [Criar, gerir ou eliminar uma conta de armazenamento](../storage/common/storage-create-storage-account.md).
 
 5. No **grupo de Recursos**, clique em **Utilizar existente** e selecione o grupo de recursos utilizado para o serviço cloud.
 6. Defina a **Localização** na lista pendente para a mesma região que selecionou para o serviço cloud.

@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2016
 ms.author: jdial
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 1156135200e05f8a2585467f37805a72d67279ba
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 144f4ea213b8ed0a3530495e185f489155c474c9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
-
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Tipos de endereços IP e métodos de alocação no Azure
@@ -36,7 +35,7 @@ Pode atribuir endereços IP a recursos do Azure para comunicar com outros recurs
 Se estiver familiarizado com o modelo de implementação clássica, veja as [diferenças dos endereços IP entre a implementação Clássica e Resource Manager](virtual-network-ip-addresses-overview-classic.md#differences-between-resource-manager-and-classic-deployments).
 
 ## <a name="public-ip-addresses"></a>Endereços IP públicos
-Os endereços IP públicos permitem aos recursos do Azure comunicar com a Internet e com serviços destinados ao cliente do Azure, como a [Azure Redis Cache](https://azure.microsoft.com/services/cache/), os [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/), as [Bases de Dados SQL](../sql-database/sql-database-technical-overview.md) e o [Armazenamento do Azure](../storage/storage-introduction.md).
+Os endereços IP públicos permitem aos recursos do Azure comunicar com a Internet e com serviços destinados ao cliente do Azure, como a [Azure Redis Cache](https://azure.microsoft.com/services/cache/), os [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/), as [Bases de Dados SQL](../sql-database/sql-database-technical-overview.md) e o [Armazenamento do Azure](../storage/common/storage-introduction.md).
 
 No Azure Resource Manager, os endereços [IP públicos](resource-groups-networking.md#public-ip-address) são recursos que tem as suas próprias propriedades. Pode associar um recurso de endereço IP público a qualquer um dos seguintes recursos:
 

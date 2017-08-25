@@ -14,7 +14,7 @@ O serviço Blob contém os seguintes componentes:
 
 ![Arquitetura de blob](./media/storage-blob-concepts-include/blob1.png)
 
-* **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Esta conta de armazenamento pode ser uma **Conta de armazenamento para fins gerais** ou uma **Conta de armazenamento de Blobs**, que é especializada para armazenar objetos/blobs. Consulte [About Azure storage accounts (Acerca das contas de armazenamento do Azure)](../articles/storage/storage-create-storage-account.md) para obter mais informações.
+* **Conta de Armazenamento:** todos os acessos ao Storage do Azure são efetuados através de uma conta de armazenamento. Esta conta de armazenamento pode ser uma **Conta de armazenamento para fins gerais** ou uma **Conta de armazenamento de Blobs**, que é especializada para armazenar objetos/blobs. Consulte [About Azure storage accounts (Acerca das contas de armazenamento do Azure)](../articles/storage/common/storage-create-storage-account.md) para obter mais informações.
 * **Contentor:** um contentor fornece um agrupamento de um conjunto de blobs. Todos os blobs tem de estar num contentor. Uma conta pode conter um número ilimitado de contentores. Um contentor pode armazenar um número ilimitado de blobs. Tenha em atenção que o nome do contentor tem de ser em minúsculas.
 * **Blob:** um ficheiro de qualquer tipo e tamanho. O Storage do Azure oferece três tipos de blobs: blobs de blocos, blobs de páginas e blobs de acréscimo.
   

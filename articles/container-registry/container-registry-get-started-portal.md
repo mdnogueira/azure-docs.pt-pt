@@ -18,10 +18,10 @@ ms.date: 03/24/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
-ms.openlocfilehash: 2cd5a08cc74473be594fc3c7a4fb934d65ffe0ab
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 7fbbb56d775ee96c9a44363a4e41d4fc3c630582
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/12/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -52,7 +52,7 @@ Para explicações e conceitos, veja [a descrição geral](container-registry-in
       > Para além de proporcionarem acesso através de uma conta de utilizador administrador, os registos de contentores suportam autenticação com base em principais de serviço do Azure Active Directory. Para obter mais informações e considerações, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
       >
 
-    e. **Conta de armazenamento**: utilize a predefinição para criar uma [conta de armazenamento](../storage/storage-introduction.md) ou selecione uma já existente na mesma localização. Atualmente, não há suporte para o Armazenamento Premium.
+    e. **Conta de armazenamento**: utilize a predefinição para criar uma [conta de armazenamento](../storage/common/storage-introduction.md) ou selecione uma já existente na mesma localização. Atualmente, não há suporte para o Armazenamento Premium.
 
 ## <a name="manage-registry-settings"></a>Gerir as definições do registo
 Depois de criar o registo, encontre as definições do mesmo, começando no painel **Registos de Contentores** do portal. Por exemplo, poderá precisar das definições para iniciar sessão no seu registo ou poderá querer ativar ou desativar o utilizador administrador.

@@ -14,10 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: alkohli
-translationtype: Human Translation
-ms.sourcegitcommit: aaef3322fc98b0874222e4a3728d54a38a34b602
-ms.openlocfilehash: f71c7e080b2c0b382f241d55b9ca0c7507c24a88
-
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 3286db40856c9f0eb2564c01f1483870952a19e6
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-2"></a>Implementar no local o dispositivo StorSimple (Atualização 2)
@@ -177,7 +178,7 @@ Pode efetuar uma cópia de segurança manual em qualquer altura. Para obter os p
 ## <a name="configure-a-new-storage-account-for-the-service"></a>Configurar uma nova conta do Storage para o serviço
 Este passo é opcional e só precisa de o executar se não tiver ativado a criação automática de uma conta do Storage com o serviço. É obrigatória uma conta do Storage do Microsoft Azure para criar um contentor de volume do StorSimple.
 
-Se precisar de criar uma conta do Storage do Azure numa região diferente, consulte [Acerca das Contas do Storage do Azure](../storage/storage-create-storage-account.md) para obter instruções passo-a-passo.
+Se precisar de criar uma conta do Storage do Azure numa região diferente, consulte [Acerca das Contas do Storage do Azure](../storage/common/storage-create-storage-account.md) para obter instruções passo-a-passo.
 
 Execute os seguintes passos no portal de gestão, na página **Serviço do StorSimple Manager**.
 
@@ -220,10 +221,5 @@ Execute os seguintes passos no portal de gestão para criar uma cópia de segura
 ## <a name="next-steps"></a>Passos seguintes
 * Configurar um [dispositivo virtual](storsimple-virtual-device-u2.md).
 * Utilizar o [serviço StorSimple Manager](storsimple-manager-service-administration.md) para gerir o dispositivo StorSimple.
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

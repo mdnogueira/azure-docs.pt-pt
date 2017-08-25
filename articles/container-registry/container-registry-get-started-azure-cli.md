@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 06/06/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 80be19618bd02895d953f80e5236d1a69d0811af
-ms.openlocfilehash: 99bb3db7cc80e8426e1dca14bc3d733ee6c7342c
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 2875f4089231ed12a0312b2c2e077938440365c6
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/07/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="create-a-private-docker-container-registry-using-the-azure-cli-20"></a>Criar um registo privado de contentor Docker com a CLI 2.0 do Azure
@@ -35,7 +35,7 @@ Utilize os comandos da [CLI do Azure 2.0](https://github.com/Azure/azure-cli) pa
 ## <a name="prerequisites"></a>Pré-requisitos
 * **CLI 2.0 do Azure**: para instalar e começar a trabalhar com a CLI 2.0, veja as [instruções de instalação](/cli/azure/install-azure-cli). Execute `az login` para iniciar sessão na sua subscrição do Azure. Para obter mais informações, veja [Introdução à CLI 2.0](/cli/azure/get-started-with-azure-cli).
 * **Grupo de recursos**: crie um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) antes de criar um registo de contentores ou utilize um grupo de recursos existente. Confirme que o grupo de recursos está numa localização na qual o serviço do Registo de Contentores esteja [disponível](https://azure.microsoft.com/regions/services/). Para criar um grupo de recursos com a CLI 2.0, veja [a referência da CLI 2.0](/cli/azure/group).
-* **Conta de armazenamento** (opcional): crie uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure para colocar o registo de contentores na mesma localização. Se não especificar uma conta de armazenamento quando criar um registo com `az acr create`, o comando cria uma por si. Para criar uma conta de armazenamento com a CLI 2.0, veja [a referência da CLI 2.0](/cli/azure/storage/account). Atualmente, não há suporte para o Armazenamento Premium.
+* **Conta de armazenamento** (opcional): crie uma [conta de armazenamento](../storage/common/storage-introduction.md) standard do Azure para colocar o registo de contentores na mesma localização. Se não especificar uma conta de armazenamento quando criar um registo com `az acr create`, o comando cria uma por si. Para criar uma conta de armazenamento com a CLI 2.0, veja [a referência da CLI 2.0](/cli/azure/storage/account). Atualmente, não há suporte para o Armazenamento Premium.
 * **Principal de serviço** (opcional): quando cria um registo com a CLI, este não está configurado para acesso, por predefinição. Consoante as suas necessidades, pode atribuir um principal de serviço existente do Azure Active Directory a um registo (ou criar e atribuir um novo) ou ativar a conta de utilizador administrador do registo. Veja as secções posteriores deste artigo. Para obter mais informações sobre o acesso ao registo, veja [Authenticate with a container registry (Autenticar num registo de contentores)](container-registry-authentication.md).
 
 ## <a name="create-a-container-registry"></a>Criar um registo de contentores

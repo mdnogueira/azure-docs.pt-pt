@@ -14,27 +14,24 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/07/2017
+ms.date: 08/21/2017
 ms.author: jgao
 ms.translationtype: HT
-ms.sourcegitcommit: 1dbb1d5aae55a4c926b9d8632b416a740a375684
-ms.openlocfilehash: 5e9cae224e5a36e1529c962ad8cbab77176dda8c
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 370b2f081930fe88527436a1a127309aed6681f0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="create-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Criar clusters Hadoop com contas de armazenamento de transferência segura no Azure HDInsight
 
-A funcionalidade [Transferência segura necessária](../storage/storage-require-secure-transfer.md) melhora a segurança da sua conta da Armazenamento do Azure ao impor todos os pedidos à sua conta através de uma ligação segura. Esta funcionalidade e o esquema wasbs só são suportados pelo clusters do HDInsight versão 3.6 ou mais recente. 
-
->[!NOTE] 
-> A criação de clusters com uma conta de armazenamento com transferência segura ativada através do SDK .NET não é atualmente suportada. A solução é definir "wasbs" na propriedade "fs.defaultFS" na configuração do site principal como parte de ClusterCreateParametersExtended.
+A funcionalidade [Transferência segura necessária](../storage/common/storage-require-secure-transfer.md) melhora a segurança da sua conta da Armazenamento do Azure ao impor todos os pedidos à sua conta através de uma ligação segura. Esta funcionalidade e o esquema wasbs só são suportados pelo clusters do HDInsight versão 3.6 ou mais recente. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Antes de começar este tutorial, tem de ter os seguintes elementos:
 
 * **Subscrição do Azure**: para criar uma conta de avaliação gratuita de um mês, aceda a [azure.microsoft.com/free](https://azure.microsoft.com/free).
-* **Conta de Armazenamento do Azure com transferência segura ativada**. Para obter instruções, veja [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) e [Requer transferência segura](../storage/storage-require-secure-transfer.md).
+* **Conta de Armazenamento do Azure com transferência segura ativada**. Para obter instruções, veja [Criar uma conta de armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account) e [Requer transferência segura](../storage/common/storage-require-secure-transfer.md).
 * **Contentor de blobs na conta de armazenamento**. 
 ## <a name="create-cluster"></a>Criar cluster
 

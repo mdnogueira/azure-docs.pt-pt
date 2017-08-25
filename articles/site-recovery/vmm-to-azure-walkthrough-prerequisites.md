@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 07/24/2017
 ms.author: raynew
 ms.translationtype: HT
-ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
-ms.openlocfilehash: 87a5d721ca785329b407d31126bd0b211b17ccf3
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 47c178c66ec98fe5d333edd725b64465026e73ed
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -33,7 +33,7 @@ Depois de rever a [arquitetura do cenário](vmm-to-azure-walkthrough-architectur
 **Requisito** | **Detalhes**
 --- | ---
 **Conta do Azure** | Precisa de uma [conta do Microsoft Azure](http://azure.microsoft.com/).
-**Armazenamento do Azure** | Precisa de uma conta de armazenamento do Azure para armazenar dados replicados.<br/><br/> A conta de armazenamento tem de estar na mesma região que o cofre dos Serviços de Recuperação do Azure.<br/><br/>Pode utilizar o [armazenamento georredundante](../storage/storage-redundancy.md#geo-redundant-storage) ou o armazenamento localmente redundante. Recomendamos o armazenamento georredundante. Com o armazenamento georredundante, os dados são resilientes se ocorrer uma falha regional ou se a região primária não puder ser recuperada.<br/><br/> Pode utilizar uma conta de armazenamento do Azure standard ou utilizar o [armazenamento premium](../storage/storage-premium-storage.md) do Azure. O armazenamento premium pode alojar cargas de trabalho de E/S intensivo e é, geralmente, utilizado em VMs que precisam de um desempenho de E/S consistentemente alto e baixa latência. Se utilizar o armazenamento premium para os dados replicados, também vai precisar de uma conta de armazenamento standard. Esta conta armazena os registos de replicação que capturam alterações contínuas aos dados no local.
+**Armazenamento do Azure** | Precisa de uma conta de armazenamento do Azure para armazenar dados replicados.<br/><br/> A conta de armazenamento tem de estar na mesma região que o cofre dos Serviços de Recuperação do Azure.<br/><br/>Pode utilizar o [armazenamento georredundante](../storage/common/storage-redundancy.md#geo-redundant-storage) ou o armazenamento localmente redundante. Recomendamos o armazenamento georredundante. Com o armazenamento georredundante, os dados são resilientes se ocorrer uma falha regional ou se a região primária não puder ser recuperada.<br/><br/> Pode utilizar uma conta de armazenamento do Azure standard ou utilizar o [armazenamento premium](../storage/common/storage-premium-storage.md) do Azure. O armazenamento premium pode alojar cargas de trabalho de E/S intensivo e é, geralmente, utilizado em VMs que precisam de um desempenho de E/S consistentemente alto e baixa latência. Se utilizar o armazenamento premium para os dados replicados, também vai precisar de uma conta de armazenamento standard. Esta conta armazena os registos de replicação que capturam alterações contínuas aos dados no local.
 **Rede do Azure** | Precisa de uma [rede do Azure](../virtual-network/virtual-network-get-started-vnet-subnet.md) à qual as VMs do Azure se possam ligar após a ativação pós-falha. A rede do Azure tem de estar na mesma região que o cofre dos Serviços de Recuperação.
 **Servidores VMM no local** | Precisa de um ou mais servidores VMM em execução no System Center 2012 R2 ou posterior.<br/><br/> Cada servidor VMM tem de ter uma ou mais clouds privadas. Cada cloud precisa de um ou mais grupos de anfitriões.<br/><br/> O servidor VMM precisa de acesso à Internet.
 **Hyper-V no local** | Os servidores anfitriões de Hyper-V têm de executar, pelo menos, o Windows Server 2012 R2 com a função Hyper-V ativada ou o Microsoft Hyper-V Server 2012 R2. Têm de estar instaladas as atualizações mais recentes.<br/><br/> O anfitrião Hyper-V tem de estar localizado num grupo de anfitriões do VMM (localizado numa cloud do VMM).<br/><br/> Um anfitrião tem de ter uma ou mais VMs que pretende replicar.<br/><br/> Os anfitriões Hyper-V têm de estar ligados à Internet para replicação no Azure, diretamente ou com um proxy. Os servidores Hyper-V têm de ter as correções descritas no artigo [2961977](https://support.microsoft.com/kb/2961977).

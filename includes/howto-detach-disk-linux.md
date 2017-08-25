@@ -1,19 +1,19 @@
-Quando já não precisar de um disco de dados que esteja ligado a uma máquina virtual (VM), pode desligá-lo facilmente. Quando desligar um disco da VM, o disco não é removido do armazenamento. Se pretender voltar a utilizar os dados existentes no disco, pode voltar a ligá-lo à mesma VM ou a outra.  
+When you no longer need a data disk that's attached to a virtual machine (VM), you can easily detach it. When you detach a disk from the VM, the disk is not removed it from storage. If you want to use the existing data on the disk again, you can reattach it to the same VM, or another one.  
 
 > [!NOTE]
-> Uma VM no Azure utiliza diferentes tipos de discos - um disco de sistema operativo, um disco local temporário e discos de dados opcionais. Para obter detalhes, veja [Acerca dos Discos e VHDs para Máquinas Virtuais](../articles/storage/storage-about-disks-and-vhds-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Não é possível desligar um disco de sistema operativo, a menos que elimine também a VM.
+> A VM in Azure uses different types of disks - an operating system disk, a local temporary disk, and optional data disks. For details, see [About Disks and VHDs for Virtual Machines](../articles/virtual-machines/linux/about-disks-and-vhds.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). You cannot detach an operating system disk unless you also delete the VM.
 
-## <a name="find-the-disk"></a>Localizar o disco
-Para poder desligar um disco de uma VM, precisa de saber o número do LUN, que é um identificador para o disco que vai ser ligado. Para tal, siga estes passos:
+## <a name="find-the-disk"></a>Find the disk
+Before you can detach a disk from a VM you need to find out the LUN number, which is an identifier for the disk to be detached. To do that, follow these steps:
 
-1. Abra a CLI do Azure e [ligue-se à sua subscrição do Azure](../articles/xplat-cli-connect.md). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
-2. Descubra que discos estão ligados à sua VM. O exemplo seguinte lista os discos para a VM com o nome `myVM`:
+1. Open Azure CLI and [connect to your Azure subscription](../articles/xplat-cli-connect.md). Make sure you are in Azure Service Management mode (`azure config mode asm`).
+2. Find out which disks are attached to your VM. The following example lists disks for the VM named `myVM`:
 
     ```azurecli
     azure vm disk list myVM
     ```
 
-    O resultado é semelhante ao seguinte exemplo:
+    The output is similar to the following example:
 
     ```azurecli
     * Fetching disk images
@@ -26,12 +26,12 @@ Para poder desligar um disco de uma VM, precisa de saber o número do LUN, que �
       info:    vm disk list command OK
     ```
 
-3. Tome nota do LUN ou do **número de unidade lógica** para o disco que pretende desligar.
+3. Note the LUN or the **logical unit number** for the disk that you want to detach.
 
-## <a name="remove-operating-system-references-to-the-disk"></a>Remover referências do sistema operativo ao disco
-Antes de desligar o disco do convidado Linux, certifique-se de que todas as partições no disco não estão a ser utilizadas. Certifique-se de que o sistema operativo não tenta voltar a montá-las após um reinício. Estes passos anulam a configuração que provavelmente criou quando [ligou](../articles/virtual-machines/linux/classic/attach-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json) o disco.
+## <a name="remove-operating-system-references-to-the-disk"></a>Remove operating system references to the disk
+Before detaching the disk from the Linux guest, you should make sure that all partitions on the disk are not in use. Ensure that the operating system does not attempt to remount them after a reboot. These steps undo the configuration you likely created when [attaching](../articles/virtual-machines/linux/classic/attach-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json) the disk.
 
-1. Utilize o comando `lsscsi` para detetar o identificador do disco. `lsscsi` pode ser instalado através de `yum install lsscsi` (em distribuições baseadas no Red Hat) ou de `apt-get install lsscsi` (em distribuições baseadas no Debian). Pode localizar o identificador do disco que está a procurar através do número do LUN. O último número na cadeia de identificação em cada linha é o LUN. No exemplo seguinte de `lsscsi`, o LUN 0 é mapeado para */dev/sdc*
+1. Use the `lsscsi` command to discover the disk identifier. `lsscsi` can be installed by either `yum install lsscsi` (on Red Hat based distributions) or `apt-get install lsscsi` (on Debian based distributions). You can find the disk identifier you are looking for by using the LUN number. The last number in the tuple in each row is the LUN. In the following example from `lsscsi`, LUN 0 maps to */dev/sdc*
 
     ```bash
     [1:0:0:0]    cd/dvd  Msft     Virtual CD/ROM   1.0   /dev/sr0
@@ -40,7 +40,7 @@ Antes de desligar o disco do convidado Linux, certifique-se de que todas as part
     [5:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sdc
     ```
 
-2. Utilize `fdisk -l <disk>` para detetar as partições associadas ao disco que vai ser ligado. O exemplo seguinte mostra a saída de `/dev/sdc`:
+2. Use `fdisk -l <disk>` to discover the partitions associated with the disk to be detached. The following example shows the output for `/dev/sdc`:
 
     ```bash
     Disk /dev/sdc: 1098.4 GB, 1098437885952 bytes, 2145386496 sectors
@@ -54,13 +54,13 @@ Antes de desligar o disco do convidado Linux, certifique-se de que todas as part
     /dev/sdc1            2048  2145386495  1072692224   83  Linux
     ```
 
-3. Desmonte cada uma das partições listadas para o disco. O exemplo seguinte desmonta `/dev/sdc1`:
+3. Unmount each partition listed for the disk. The following example unmounts `/dev/sdc1`:
 
     ```bash
     sudo umount /dev/sdc1
     ```
 
-4. Utilize o comando `blkid` para detetar os UUIDs para todas as partições. O resultado é semelhante ao seguinte exemplo:
+4. Use the `blkid` command to discovery the UUIDs for all partitions. The output is similar to the following example:
 
     ```bash
     /dev/sda1: UUID="11111111-1b1b-1c1c-1d1d-1e1e1e1e1e1e" TYPE="ext4"
@@ -68,35 +68,35 @@ Antes de desligar o disco do convidado Linux, certifique-se de que todas as part
     /dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"
     ```
 
-5. Remova as entradas no ficheiro **/etc/fstab** associado a cada um dos caminhos de dispositivo ou UUIDs para todas as partições do disco que vai ser desligado.  As entradas para este exemplo poderão ser:
+5. Remove entries in the **/etc/fstab** file associated with either the device paths or UUIDs for all partitions for the disk to be detached.  Entries for this example might be:
 
     ```sh  
    UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults   1   2
    ```
 
-    ou
+    or
    
    ```sh   
    /dev/sdc1   /datadrive   ext4   defaults   1   2
    ```
 
-## <a name="detach-the-disk"></a>Desligar o disco
-Depois de encontrar o número do LUN do disco e remover as referências de sistema operativo, está pronto para desligá-lo:
+## <a name="detach-the-disk"></a>Detach the disk
+After you find the LUN number of the disk and removed the operating system references, you're ready to detach it:
 
-1. Desligue o disco selecionado da máquina virtual, executando o comando `azure vm disk detach
-   <virtual-machine-name> <LUN>`. O exemplo seguinte desliga o LUN `0` da VM com o nome `myVM`:
+1. Detach the selected disk from the virtual machine by running the command `azure vm disk detach
+   <virtual-machine-name> <LUN>`. The following example detaches LUN `0` from the VM named `myVM`:
    
     ```azurecli
     azure vm disk detach myVM 0
     ```
 
-2. Pode verificar se o disco foi desligado, executando o comando `azure vm disk list` novamente. O exemplo seguinte verifica a VM com o nome `myVM`:
+2. You can check if the disk got detached by running `azure vm disk list` again. The following example checks the VM named `myVM`:
    
     ```azurecli
     azure vm disk list myVM
     ```
 
-    A saída é semelhante ao seguinte exemplo, o qual mostra que o disco de dados já não está ligado:
+    The output is similar to the following example, which shows the data disk is no longer attached:
 
     ```azurecli
     info:    Executing command vm disk list
@@ -110,5 +110,5 @@ Depois de encontrar o número do LUN do disco e remover as referências de siste
      info:    vm disk list command OK
     ```
 
-O disco desligado permanece no armazenamento, mas já não está ligado a uma máquina virtual.
+The detached disk remains in storage but is no longer attached to a virtual machine.
 

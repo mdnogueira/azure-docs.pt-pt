@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: compute
 ms.date: 04/26/2017
 ms.author: mbaldwin
-translationtype: Human Translation
-ms.sourcegitcommit: 5cce99eff6ed75636399153a846654f56fb64a68
-ms.openlocfilehash: d32d91f7bbfcea61caba6ccc3033929d307f14be
-ms.lasthandoff: 03/31/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 348e154f8398b5e60ad5a698cd319fa381de2fa5
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="run-any-windows-app-on-any-device-with-azure-remoteapp"></a>Executar qualquer aplicação do Windows em qualquer dispositivo com o Azure RemoteApp
@@ -88,7 +88,7 @@ Na primeira parte tem que fazer como administrador. Em seguida, temos alguns pas
 1. Comece por publicar a interface de linha de comandos (cmd.exe). No separador **Publicação** , selecione **cmd**, e, em seguida, clique em **Publicar > Publicar programa utilizando caminho**.
 2. Introduza o nome da aplicação e o caminho. Para o nosso objetivo, utilize "Explorador de Ficheiros" como nome e "% SYSTEMDRIVE%\windows\explorer.exe" como caminho.
    ![Publique o ficheiro cmd.exe.](./media/remoteapp-anyapp/ra-publishcmd.png)
-3. Agora tem de criar uma [Conta do Storage](../storage/storage-create-storage-account.md) de Azure. Chamámos à nossa "accessstorage", por isso, escolha um nome que faça sentido. (Citando incorretamente Highlander, só pode haver uma "accessstorage.") ![A nossa conta de armazenamento do Azure](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
+3. Agora tem de criar uma [Conta do Storage](../storage/common/storage-create-storage-account.md) de Azure. Chamámos à nossa "accessstorage", por isso, escolha um nome que faça sentido. (Citando incorretamente Highlander, só pode haver uma "accessstorage.") ![A nossa conta de armazenamento do Azure](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
 4. Agora, regresse ao seu dashboard para obter o caminho para o armazenamento (localização de ponto final). Voltará a utilizá-lo dentro de pouco, por isso, certifique-se de que o copie para algum lado.
    ![O caminho da conta de armazenamento](./media/remoteapp-anyapp/ra-anyappstoragelocation.png)
 5. Em seguida, uma vez criada a conta do Storage, precisa da chave de acesso primária. Clique em **Gerir teclas de acesso** e depois copie a chave de acesso primária.

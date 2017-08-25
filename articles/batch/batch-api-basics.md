@@ -16,10 +16,10 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: f9003c65d1818952c6a019f81080d595791f63bf
-ms.openlocfilehash: 233965bf54cbca79c7ff059aaccfa5780d672cab
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: c2f2a878414e4efd626d674ef9a182ae52eeb1ff
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
@@ -46,7 +46,7 @@ O fluxo de trabalho detalhado que se segue é típico de quase todos os serviço
 As secções seguintes abordam estes e os outros recursos do Batch permitem o seu cenário computacional distribuído.
 
 > [!NOTE]
-> Precisa de uma [conta do Batch](#account) para utilizar o serviço. Quase todas as soluções do Batch utilizam também uma conta de [Armazenamento do Azure][azure_storage] para armazenamento e obtenção de ficheiros. Atualmente, o Batch só suporta o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5 de [Criar uma conta de Armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de Armazenamento do Azure](../storage/storage-create-storage-account.md).
+> Precisa de uma [conta do Batch](#account) para utilizar o serviço. Quase todas as soluções do Batch utilizam também uma conta de [Armazenamento do Azure][azure_storage] para armazenamento e obtenção de ficheiros. Atualmente, o Batch só suporta o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5 de [Criar uma conta de Armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de Armazenamento do Azure](../storage/common/storage-create-storage-account.md).
 >
 >
 
@@ -114,7 +114,7 @@ A tabela seguinte compara os modos de alocação de conjuntos Serviço Batch e S
 
 A maioria das soluções do Batch utilizam o Armazenamento do Azure para armazenar ficheiros de recursos e ficheiros de saída.  
 
-Atualmente, o Batch só suporta o tipo de conta de armazenamento para fins gerais, conforme descrito no passo 5 de [Criar uma conta de Armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de Armazenamento do Azure](../storage/storage-create-storage-account.md). As suas tarefas do Batch (incluindo tarefas standard, tarefas de início, tarefas de preparação de trabalhos e tarefas de lançamento de trabalhos) têm de especificar os ficheiros de recursos que residem apenas nas contas de armazenamento para fins gerais.
+Atualmente, o Batch só suporta o tipo de conta de armazenamento para fins gerais, conforme descrito no passo 5 de [Criar uma conta de Armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de Armazenamento do Azure](../storage/common/storage-create-storage-account.md). As suas tarefas do Batch (incluindo tarefas standard, tarefas de início, tarefas de preparação de trabalhos e tarefas de lançamento de trabalhos) têm de especificar os ficheiros de recursos que residem apenas nas contas de armazenamento para fins gerais.
 
 
 ## <a name="compute-node"></a>Nó de computação

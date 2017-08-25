@@ -14,12 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/07/2017
 ms.author: alkohli
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
-ms.openlocfilehash: ead9fcc5ec582420d731faccb7abba0dc815ed84
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: f9a9ff81913dda1457123525fe509d194798db14
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
-
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="deploy-and-manage-a-storsimple-virtual-device-in-azure"></a>Implementar e gerir um dispositivo virtual StorSimple no Azure
@@ -35,7 +34,7 @@ O dispositivo virtual StorSimple está disponível em dois modelos, um 8010 conv
 | **VM do Azure** |Standard_A3 (4 núcleos, 7 GB de memória) |Standard_DS3 (4 núcleos, 14 GB de memória) |
 | **Compatibilidade de versões** |Versões em execução anteriores ou posteriores à Atualização 2 |Versões em execução da Atualização 2 ou posteriores |
 | **Disponibilidade por regiões** |Todas as regiões do Azure |Todas as regiões do Azure que suportam o Armazenamento Premium e VMs DS3 do Azure<br></br> Utilize [esta lista](https://azure.microsoft.com/en-us/regions/services) para ver se ambas as *Máquinas Virtuais > série DS* e o *Armazenamento > Armazenamento em Disco* estão disponíveis na sua região. |
-| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../storage/storage-premium-storage.md) |
+| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/common/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../storage/common/storage-premium-storage.md) |
 | **Orientações para a carga de trabalho** |Obtenção ao nível de item dos ficheiros a partir de cópias de segurança |Cenários de Cloud dev e test, baixa latência, cargas de trabalho de desempenho superior <br></br>Dispositivo secundário para a recuperação após desastre |
 
 <sup>1</sup> *Anteriormente conhecido como 1100*.
@@ -84,7 +83,7 @@ Antes de aprovisionar o dispositivo virtual, terá de efetuar os seguintes prepa
 Efetue as seguintes atualizações no serviço Azure StorSimple antes de criar um dispositivo virtual:
 
 * Adicionar [registos de controlo de acesso](storsimple-manage-acrs.md) para as VMs que serão servidores de anfitrião para o dispositivo virtual.
-* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/storage-create-storage-account.md) ou uma [conta do Premium Storage](../storage/storage-premium-storage.md)
+* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/common/storage-create-storage-account.md) ou uma [conta do Premium Storage](../storage/common/storage-premium-storage.md)
 * Utilize uma conta do Storage diferente para a criação do dispositivo virtual a partir da conta utilizada para os seus dados. Com a mesma conta do Storage, poderá obter um fraco desempenho.
 
 Certifique-se de que tem as seguintes informações antes de começar:

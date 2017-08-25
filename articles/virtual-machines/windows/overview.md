@@ -17,10 +17,10 @@ ms.date: 07/17/2017
 ms.author: davidmu
 ms.custom: mvc
 ms.translationtype: HT
-ms.sourcegitcommit: 398efef3efd6b47c76967563251613381ee547e9
-ms.openlocfilehash: 4d8e3f1252bc71cbf4bbbd30a16897bf4a0444d7
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 52113e1240b81299ae3338f35b2934891017adbf
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Descrição Geral das Máquinas Virtuais do Windows no Azure
@@ -73,7 +73,7 @@ O Azure cobra um [preço por hora](https://azure.microsoft.com/pricing/details/v
 A subscrição tem [limites de quota](../../azure-subscription-service-limits.md) predefinidos num local que pode afetar a implementação de muitas VMs para o seu projeto. O limite atual numa base por subscrição é de 20 VMs por região. Os limites podem ser aumentados ao preencher um pedido de suporte a pedir um aumento.
 
 ### <a name="operating-system-disks-and-images"></a>Discos do sistema operativo e imagens
-As máquinas virtuais utilizam [discos rígidos virtuais (VHDs)](../../storage/storage-about-disks-and-vhds-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para armazenar o respetivo sistema operativo (SO) e dados. Os VHDs também são utilizados para as imagens que pode escolher para instalar um SO. 
+As máquinas virtuais utilizam [discos rígidos virtuais (VHDs)](about-disks-and-vhds.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) para armazenar o respetivo sistema operativo (SO) e dados. Os VHDs também são utilizados para as imagens que pode escolher para instalar um SO. 
 
 O Azure oferece muitas [imagens do marketplace](https://azure.microsoft.com/marketplace/virtual-machines/) para utilizar com diversas versões e tipos de sistemas operativos do Windows Server. A imagens do marketplace são identificadas pelo publicador da imagem, oferta, sku e versão (normalmente, a versão especificada é a mais recente). 
 
@@ -102,7 +102,7 @@ Os recursos nesta tabela são utilizados pela VM e têm de existir ou ser criado
 | Recurso | Necessário | Descrição |
 | --- | --- | --- |
 | [Grupo de recursos](../../azure-resource-manager/resource-group-overview.md) |Sim |A VM tem de estar contida num grupo de recursos. |
-| [Conta de armazenamento](../../storage/storage-create-storage-account.md) |Sim |A VM precisa da conta de armazenamento para armazenar os respetivos discos rígidos virtuais. |
+| [Conta de armazenamento](../../storage/common/storage-create-storage-account.md) |Sim |A VM precisa da conta de armazenamento para armazenar os respetivos discos rígidos virtuais. |
 | [Rede virtual](../../virtual-network/virtual-networks-overview.md) |Sim |A VM tem de ser um membro de uma rede virtual. |
 | [Endereço IP público](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) |Não |A VM pode ter um endereço IP público atribuído para aceder ao mesmo remotamente. |
 | [Interface de rede](../../virtual-network/virtual-network-network-interface.md) |Sim |A VM precisa da interface de rede para comunicar na rede. |

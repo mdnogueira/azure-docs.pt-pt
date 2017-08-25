@@ -16,10 +16,10 @@ ms.date: 06/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: 9633e79929329470c2def2b1d06d95994ab66e38
-ms.openlocfilehash: 3c7a6ac092854bc2d78ac23079d168cf8b5a2201
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: cf8fdca51a6a4ad1b7cd4fe6980543199f6b36e0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="get-started-building-solutions-with-the-batch-client-library-for-net"></a>Comece a criar soluções com a biblioteca de cliente do Batch para .NET
@@ -31,7 +31,7 @@ ms.lasthandoff: 08/04/2017
 >
 >
 
-Conheça as informações básicas do [Azure Batch][azure_batch] e da biblioteca [Batch .NET][net_api] neste artigo, à medida que debatemos um exemplo de aplicação C# passo a passo. Observamos como o exemplo de aplicação tira partido do serviço Batch para processar uma carga de trabalho paralela na cloud e de que forma interage com o [Armazenamento do Azure](../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
+Conheça as informações básicas do [Azure Batch][azure_batch] e da biblioteca [Batch .NET][net_api] neste artigo, à medida que debatemos um exemplo de aplicação C# passo a passo. Observamos como o exemplo de aplicação tira partido do serviço Batch para processar uma carga de trabalho paralela na cloud e de que forma interage com o [Armazenamento do Azure](../storage/common/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
 
 ![Fluxo de trabalho da solução Batch (básico)][11]<br/>
 
@@ -41,10 +41,10 @@ Este artigo parte do princípio de que tem um conhecimento prático do C# e do V
 ### <a name="accounts"></a>Contas
 * **Conta do Azure**: se ainda não tiver uma subscrição do Azure, [crie uma conta do Azure gratuita][azure_free_account].
 * **Conta do Batch**: assim que tiver uma subscrição do Azure, [crie uma conta do Azure Batch](batch-account-create-portal.md).
-* **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
+* **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/common/storage-create-storage-account.md).
 
 > [!IMPORTANT]
-> Atualmente, o Batch suporta *apenas* o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5, [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
+> Atualmente, o Batch suporta *apenas* o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5, [Criar uma conta de armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de armazenamento do Azure](../storage/common/storage-create-storage-account.md).
 >
 >
 
@@ -128,7 +128,7 @@ Navegue até ao início do método `MainAsync` no ficheiro `Program.cs` do proje
 ![Criar contentores no Armazenamento do Azure][1]
 <br/>
 
-O Batch inclui suporte incorporado para interagir com o Armazenamento do Azure. Os contentores na sua conta de Armazenamento fornecerão os ficheiros necessários para as tarefas que são executadas na sua conta do Batch. Os contentores fornecem também um local para armazenar os dados de saída que as tarefas produzem. A primeira coisa que a aplicação cliente *DotNetTutorial* faz é criar três contentores no [Armazenamento de Blobs do Azure](../storage/storage-introduction.md):
+O Batch inclui suporte incorporado para interagir com o Armazenamento do Azure. Os contentores na sua conta de Armazenamento fornecerão os ficheiros necessários para as tarefas que são executadas na sua conta do Batch. Os contentores fornecem também um local para armazenar os dados de saída que as tarefas produzem. A primeira coisa que a aplicação cliente *DotNetTutorial* faz é criar três contentores no [Armazenamento de Blobs do Azure](../storage/common/storage-introduction.md):
 
 * **aplicação**: este contentor armazenará a aplicação executada pelas tarefas, bem como qualquer uma das respetivas dependências, tal como DLL.
 * **entrada**: as tarefas irão transferir os ficheiros de dados a processar a partir do contentor de *entrada*.
@@ -188,7 +188,7 @@ private static async Task CreateContainerIfNotExistAsync(
 Depois de os contentores estarem criados, a aplicação pode agora carregar os ficheiros que serão utilizados pelas tarefas.
 
 > [!TIP]
-> O artigo [Como utilizar o Armazenamento de Blobs a partir do .NET](../storage/storage-dotnet-how-to-use-blobs.md) fornece uma boa descrição geral de como trabalhar com blobs e contentores de Armazenamento do Azure. Deve estar perto do topo da sua lista de leitura à medida que começa a trabalhar com o Batch.
+> O artigo [Como utilizar o Armazenamento de Blobs a partir do .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md) fornece uma boa descrição geral de como trabalhar com blobs e contentores de Armazenamento do Azure. Deve estar perto do topo da sua lista de leitura à medida que começa a trabalhar com o Batch.
 >
 >
 
@@ -286,7 +286,7 @@ As assinaturas de acesso partilhado são cadeias que, quando incluídas como par
 * **Assinaturas de acesso partilhado de contentor**: à medida que cada tarefa conclui o respetivo trabalho no nó de computação, carrega o respetivo ficheiro de saída para o contentor de *saída* no Armazenamento do Azure. Para fazê-lo, o TaskApplication utiliza uma assinatura de acesso partilhado de contentor, que fornece acesso de escrita ao contentor como parte do caminho quando carrega o ficheiro. A obtenção da assinatura de acesso partilhado do contentor é feita de forma semelhante à obtenção da assinatura de acesso partilhado do blob. No DotNetTutorial, irá descobrir que o método de ajuda `GetContainerSasUrl` chama [CloudBlobContainer.GetSharedAccessSignature][net_sas_container] para fazê-lo. Irá ler mais sobre como o TaskApplication utiliza a assinatura de acesso partilhado do contentor no "Passo 6: monitorizar tarefas".
 
 > [!TIP]
-> Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo de assinatura de acesso partilhado (SAS)](../storage/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar uma assinatura de acesso partilhado (SAS) com o armazenamento de Blobs](../storage/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
+> Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo de assinatura de acesso partilhado (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar uma assinatura de acesso partilhado (SAS) com o armazenamento de Blobs](../storage/blobs/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
 >
 >
 

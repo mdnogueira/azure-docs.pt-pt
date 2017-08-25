@@ -15,12 +15,11 @@ ms.workload: big-compute
 ms.date: 02/27/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bb794ba3b78881c967f0bb8687b1f70e5dd69c71
-ms.openlocfilehash: 8de3df11a59178b782d50b7662aa5d8cab11a260
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: bd5a977c10d3955639beb893cd7a37581b14f7c0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/06/2017
-
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="get-started-with-the-batch-sdk-for-python"></a>Introdução ao Batch SDK para Python
@@ -32,7 +31,7 @@ ms.lasthandoff: 07/06/2017
 >
 >
 
-Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batch Python][py_azure_sdk]; à medida que debatemos uma pequena aplicação Batch escrita em Python. Vemos como dois scripts de exemplo utilizam o serviço Batch para processar uma carga de trabalho paralela em máquinas virtuais do Linux na nuvem, e como eles interagem com o [Armazenamento do Azure](../storage/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
+Conheça os princípios básicos do [Azure Batch][azure_batch] e o cliente [Batch Python][py_azure_sdk]; à medida que debatemos uma pequena aplicação Batch escrita em Python. Vemos como dois scripts de exemplo utilizam o serviço Batch para processar uma carga de trabalho paralela em máquinas virtuais do Linux na nuvem, e como eles interagem com o [Armazenamento do Azure](../storage/common/storage-introduction.md) para teste e obtenção de ficheiros. Irá conhecer um fluxo de trabalho de aplicações Batch comuns e obter uma compreensão base dos componentes principais do Batch, como trabalhos, conjuntos e nós de computação.
 
 ![Fluxo de trabalho da solução Batch (básico)][11]<br/>
 
@@ -42,7 +41,7 @@ Este artigo pressupõe que tem um conhecimento de trabalho do Python e familiari
 ### <a name="accounts"></a>Contas
 * **Conta do Azure**: se ainda não tiver uma subscrição do Azure, [crie uma conta do Azure gratuita][azure_free_account].
 * **Conta do Batch**: assim que tiver uma subscrição do Azure, [crie uma conta do Azure Batch](batch-account-create-portal.md).
-* **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/storage-create-storage-account.md).
+* **Conta de Armazenamento**: veja [Criar uma conta de armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account) em [Sobre as contas de armazenamento do Azure](../storage/common/storage-create-storage-account.md).
 
 ### <a name="code-sample"></a>Exemplo de código
 O [exemplo de código ][github_article_samples] do tutorial do Python é um dos muito exemplos de código do Batch encontrados no repositório [azure-batch-samples][github_samples] do GitHub. Pode transferir todos os exemplos ao clicar em **Clonar ou transferir > Transferir ZIP** na home page do repositório ou ao clicar na ligação de transferência direta [azure-batch-samples-master.zip][github_samples_zip]. Assim que tiver extraído o conteúdo do ficheiro ZIP, os dois scripts deste tutorial encontram-se no diretório `article_samples`:
@@ -153,7 +152,7 @@ if __name__ == '__main__':
 ![Criar contentores no Armazenamento do Azure][1]
 <br/>
 
-O Batch inclui suporte incorporado para interagir com o Armazenamento do Azure. Os contentores na sua conta de Armazenamento fornecerão os ficheiros necessários para as tarefas que são executadas na sua conta do Batch. Os contentores fornecem também um local para armazenar os dados de saída que as tarefas produzem. A primeira coisa que o script *python_tutorial_client.py* faz é criar três contentores no [Armazenamento de Blobs do Azure](../storage/storage-introduction.md#blob-storage):
+O Batch inclui suporte incorporado para interagir com o Armazenamento do Azure. Os contentores na sua conta de Armazenamento fornecerão os ficheiros necessários para as tarefas que são executadas na sua conta do Batch. Os contentores fornecem também um local para armazenar os dados de saída que as tarefas produzem. A primeira coisa que o script *python_tutorial_client.py* faz é criar três contentores no [Armazenamento de Blobs do Azure](../storage/common/storage-introduction.md#blob-storage):
 
 * **aplicação**: este contentor irá armazenar o script do Python executado pelas tarefas, *python_tutorial_task.py*.
 * **entrada**: as tarefas irão transferir os ficheiros de dados a processar a partir do contentor de *entrada*.
@@ -183,7 +182,7 @@ blob_client.create_container(OUTPUT_CONTAINER_NAME, fail_on_exist=False)
 Depois de os contentores estarem criados, a aplicação pode agora carregar os ficheiros que serão utilizados pelas tarefas.
 
 > [!TIP]
-> [Como utilizar o armazenamento de Blobs do Azure a partir do Python](../storage/storage-python-how-to-use-blob-storage.md) fornece uma boa descrição geral e como trabalhar com blobs e contentores de Armazenamento do Azure. Deve estar perto do topo da sua lista de leitura à medida que começa a trabalhar com o Batch.
+> [Como utilizar o armazenamento de Blobs do Azure a partir do Python](../storage/blobs/storage-python-how-to-use-blob-storage.md) fornece uma boa descrição geral e como trabalhar com blobs e contentores de Armazenamento do Azure. Deve estar perto do topo da sua lista de leitura à medida que começa a trabalhar com o Batch.
 >
 >
 
@@ -277,7 +276,7 @@ As assinaturas de acesso partilhado são cadeias que fornecem acesso seguro aos 
 * **Assinatura de acesso partilhado do contentor**: à medida que cada tarefa conclui o respetivo trabalho no nó de computação, carrega o ficheiro de saída para o contentor de *saída* no Armazenamento do Azure. Para fazê-lo, o *python_tutorial_task.py* utiliza uma assinatura de acesso partilhado do contentor, que fornece acesso de escrita ao contentor. A função `get_container_sas_token` em *python_tutorial_client.py* obtém a assinatura de acesso partilhado do contentor, que é então transmitida como um argumento da linha de comandos para as tarefas. O Passo 5, [Adicionar tarefas a um trabalho](#step-5-add-tasks-to-job), aborda a utilização do SAS do contentor.
 
 > [!TIP]
-> Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo SAS](../storage/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar um SAS com o serviço Blob](../storage/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
+> Consulte a série de duas partes sobre assinaturas de acesso partilhado, [Parte 1: compreender o modelo SAS](../storage/common/storage-dotnet-shared-access-signature-part-1.md) e [Parte 2: criar e utilizar um SAS com o serviço Blob](../storage/blobs/storage-dotnet-shared-access-signature-part-2.md), para saber mais sobre como fornecer acesso seguro aos dados da sua conta de Armazenamento.
 >
 >
 

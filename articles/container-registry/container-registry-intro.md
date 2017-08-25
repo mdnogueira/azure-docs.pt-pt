@@ -18,10 +18,10 @@ ms.date: 03/24/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: bfd49ea68c597b109a2c6823b7a8115608fa26c3
-ms.openlocfilehash: 4eb32dd18c57af8d46e7afb63047c0985458705d
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: fd0356286be46f99fd9ab8eabc53256103038407
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="introduction-to-private-docker-container-registries"></a>Introdução aos registos privados de contentores Docker
@@ -49,7 +49,7 @@ Os programadores também podem enviar para um registo de contentores como parte 
 
 
 ## <a name="key-concepts"></a>Conceitos-chave
-* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Cada registo tem por base uma [conta de armazenamento](../storage/storage-introduction.md) standard do Azure na mesma localização. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações. Os nomes de registo completamente qualificados têm o formato `myregistry.azurecr.io`.
+* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Cada registo tem por base uma [conta de armazenamento](../storage/common/storage-introduction.md) standard do Azure na mesma localização. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações. Os nomes de registo completamente qualificados têm o formato `myregistry.azurecr.io`.
 
   Para [controlar o acesso](container-registry-authentication.md) a um registo de contentores, utilize um [principal de serviço](../active-directory/active-directory-application-objects.md) baseado no Azure Active Directory ou uma conta de administrador fornecida. Execute o comando `docker login` padrão para se autenticar num registo.
 

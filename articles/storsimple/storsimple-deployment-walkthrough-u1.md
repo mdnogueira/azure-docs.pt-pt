@@ -14,10 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/17/2016
 ms.author: alkohli
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 8a3f389250920dcdb49a5f88812d2e3b88bfd6c6
-
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 4d568fb2eca418ca939f7a76ac24197a0457fe47
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-1"></a>Implementar o dispositivo StorSimple no local (Atualização 1)
@@ -213,7 +214,7 @@ Pode efetuar uma cópia de segurança manual em qualquer altura. Para obter os p
 ## <a name="configure-a-new-storage-account-for-the-service"></a>Configurar uma nova conta do Storage para o serviço
 Este passo é opcional e só precisa de o executar se não tiver ativado a criação automática de uma conta do Storage com o serviço. É obrigatória uma conta do Storage do Microsoft Azure para criar um contentor de volume do StorSimple.
 
-Se precisar de criar uma conta do Storage do Azure numa região diferente, consulte [Acerca das Contas do Storage do Azure](../storage/storage-create-storage-account.md) para obter instruções passo-a-passo.
+Se precisar de criar uma conta do Storage do Azure numa região diferente, consulte [Acerca das Contas do Storage do Azure](../storage/common/storage-create-storage-account.md) para obter instruções passo-a-passo.
 
 Execute os seguintes passos no Portal Clássico do Azure, na página **Serviço StorSimple Manager**.
 
@@ -266,10 +267,5 @@ Para obter as instruções de instalação do MPIO para o dispositivo StorSimple
 ## <a name="next-steps"></a>Passos seguintes
 * Configurar um [dispositivo virtual](storsimple-virtual-device-u2.md).
 * Utilizar o [serviço StorSimple Manager](storsimple-manager-service-administration.md) para gerir o dispositivo StorSimple.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

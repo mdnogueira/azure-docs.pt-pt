@@ -15,10 +15,10 @@ ms.topic: hero-article
 ms.date: 06/14/2017
 ms.author: raynew
 ms.translationtype: HT
-ms.sourcegitcommit: bfd49ea68c597b109a2c6823b7a8115608fa26c3
-ms.openlocfilehash: 8a03e28045019a4beb423d95a4fa00637cd66294
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 958b61f5de732a882e0a2682b8dd4e18504a6ae7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/25/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-site-recovery-in-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o Site Recovery no portal do Azure
@@ -81,8 +81,8 @@ Necessita de uma rede do Azure à qual as VMs do Azure criadas depois da ativaç
 As redes Azure utilizadas pelo Site Recovery não podem ser [movidas](../azure-resource-manager/resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
 ### <a name="set-up-an-azure-storage-account"></a>Configurar uma conta de armazenamento do Azure
-* Precisa de uma conta de armazenamento do Azure standard/premium para guardar os dados replicados no Azure. O [Armazenamento premium](../storage/storage-premium-storage.md) é utilizado para máquinas virtuais que precisam de um desempenho de E/S elevado consistentemente e baixa latência para alojar cargas de trabalho de E/S intensivo. Se quiser utilizar uma conta de armazenamento premium para armazenar os dados replicados, também precisa de uma conta de armazenamento standard para armazenar os registos de replicações que capturam as alterações que são feitas continuamente aos dados no local. A conta tem de ser na mesma região que o cofre de Serviços de Recuperação.
-* Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure uma conta no [modo Resource Manager](../storage/storage-create-storage-account.md) ou no [modo clássico](../storage/storage-create-storage-account-classic-portal.md).
+* Precisa de uma conta de armazenamento do Azure standard/premium para guardar os dados replicados no Azure. O [Armazenamento premium](../storage/common/storage-premium-storage.md) é utilizado para máquinas virtuais que precisam de um desempenho de E/S elevado consistentemente e baixa latência para alojar cargas de trabalho de E/S intensivo. Se quiser utilizar uma conta de armazenamento premium para armazenar os dados replicados, também precisa de uma conta de armazenamento standard para armazenar os registos de replicações que capturam as alterações que são feitas continuamente aos dados no local. A conta tem de ser na mesma região que o cofre de Serviços de Recuperação.
+* Consoante o modelo de recursos que pretende utilizar para efetuar a ativação pós-falha nas VMs do Azure, configure uma conta no [modo Resource Manager](../storage/common/storage-create-storage-account.md) ou no [modo clássico](../storage/common/storage-create-storage-account.md).
 * Recomendamos que configure uma conta antes de começar. Caso contrário, terá de fazê-lo durante a implementação da Recuperação de Sites.
 - Tenha em consideração que as contas de armazenamento utilizadas do Site Recovery não podem ser [movidas](../azure-resource-manager/resource-group-move-resources.md) dentro de grupos de recursos nas mesmas ou em diferentes subscrições.
 
@@ -221,7 +221,7 @@ Especifique a conta de armazenamento do Azure a ser utilizada para replicação 
    ![Armazenamento](./media/site-recovery-vmm-to-azure/gs-createstorage.png)
 
 
-   * Se quiser criar uma conta de armazenamento com o modelo clássico, pode fazê-lo no portal do Azure. [Saiba mais](../storage/storage-create-storage-account-classic-portal.md)
+   * Se quiser criar uma conta de armazenamento com o modelo clássico, pode fazê-lo no portal do Azure. [Saiba mais](../storage/common/storage-create-storage-account.md)
    * Se estiver a utilizar uma conta de armazenamento premium para os dados replicados, configure uma conta de armazenamento standard adicional para armazenar os registos de replicação que capturam as alterações em curso dos dados no local.
 5. Se ainda não criou uma rede do Azure e pretende criar uma com o Resource Manager, clique em **+Rede**, para fazê-lo inline. No painel **Criar rede virtual**, especifique um nome de rede, o intervalo de endereços, os detalhes da sub-rede, a subscrição e a localização. A rede tem de ter a mesma localização que o cofre de Serviços de Recuperação.
 
@@ -261,7 +261,7 @@ Veja a seguir o que acontece quando começa o mapeamento da rede:
 3. Em **Frequência de cópia**, especifique a frequência com que pretende replicar dados delta após a replicação inicial (a cada 30 segundos, 5 ou 15 minutos).
 
     > [!NOTE]
-    >  Ao replicar para o armazenamento premium, a frequência de 30 segundos não é suportada. A limitação é determinada pelo número de instantâneos por blob (cem) que o armazenamento premium suporta. [Saiba mais](../storage/storage-premium-storage.md#snapshots-and-copy-blob)
+    >  Ao replicar para o armazenamento premium, a frequência de 30 segundos não é suportada. A limitação é determinada pelo número de instantâneos por blob (cem) que o armazenamento premium suporta. [Saiba mais](../storage/common/storage-premium-storage.md#snapshots-and-copy-blob)
 
 4. Em **Retenção do ponto de recuperação**, especifique, em horas, qual será a duração da janela de retenção para cada ponto de recuperação. As máquinas protegidas podem ser recuperadas para qualquer ponto nessa janela.
 5. Em **Frequência de instantâneos consistentes com a aplicação**, especifique a frequência (1 a 12 horas) com que os pontos de recuperação que contêm os instantâneos consistentes com aplicações serão criados. O Hyper-V utiliza dois tipos de instantâneos – um instantâneo padrão que fornece um instantâneo incremental de toda a máquina virtual e um instantâneo consistente com aplicações que cria um instantâneo pontual dos dados de aplicação no interior da máquina virtual. Os instantâneos consistentes com aplicações utilizam o Serviço de Cópia de Sombra de Volumes (VSS) para se certificar de que as aplicações estão num estado consistente quando se obtém o instantâneo. Tenha em atenção que se ativar instantâneos consistentes com aplicações, afetará o desempenho das aplicações em execução nas máquinas virtuais de origem. Certifique-se de que o valor que define é menor que o número de pontos de recuperação adicionais que está a configurar.
@@ -307,7 +307,7 @@ Agora, ative a replicação da seguinte forma:
 3. Em **Destino**, selecione a subscrição, o modelo de implementação de ativação pós-falha e a conta de armazenamento que está a utilizar para os dados replicados.
 
     ![Ativar a replicação](./media/site-recovery-vmm-to-azure/enable-replication-target.png)
-4. Clique na conta de armazenamento que pretende utilizar. Se quiser utilizar uma conta de armazenamento diferente das que tem, pode [criar uma](#set-up-an-azure-storage-account). Se estiver a utilizar uma conta de armazenamento premium para os dados replicados, tem de selecionar uma conta de armazenamento standard adicional para armazenar os registos de replicações que capturam as alterações que são feitas continuamente aos dados no local. Para criar uma conta de armazenamento com o modelo do Resource Manager, clique em **Criar nova**. Se quiser criar uma conta de armazenamento com o modelo clássico, pode fazê-lo [no portal do Azure](../storage/storage-create-storage-account-classic-portal.md). Em seguida, clique em **OK**.
+4. Clique na conta de armazenamento que pretende utilizar. Se quiser utilizar uma conta de armazenamento diferente das que tem, pode [criar uma](#set-up-an-azure-storage-account). Se estiver a utilizar uma conta de armazenamento premium para os dados replicados, tem de selecionar uma conta de armazenamento standard adicional para armazenar os registos de replicações que capturam as alterações que são feitas continuamente aos dados no local. Para criar uma conta de armazenamento com o modelo do Resource Manager, clique em **Criar nova**. Se quiser criar uma conta de armazenamento com o modelo clássico, pode fazê-lo [no portal do Azure](../storage/common/storage-create-storage-account.md). Em seguida, clique em **OK**.
 5. Selecione a rede e a sub-rede do Azure às quais as VMs do Azure se vão ligar quando forem criadas após a ativação pós-falha. Selecione **Configurar agora para as máquinas selecionadas** para aplicar a definição de rede a todas as máquinas selecionadas para proteção. Selecione **Configurar mais tarde** para selecionar a rede do Azure por máquina. Se quiser utilizar uma rede de armazenamento diferente das que tem, pode [criar uma](#set-up-an-azure-network). Para criar uma rede com o modelo do Resource Manager, clique em **Criar nova**. Se quiser criar uma rede com o modelo clássico, pode fazê-lo no [portal do Azure](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). Selecione uma sub-rede, se aplicável. Em seguida, clique em **OK**.
 6. Em **Máquinas Virtuais** > **Selecionar máquinas virtuais**, clique e selecione cada máquina que pretende replicar. Só pode selecionar máquinas para as quais a replicação pode ser ativada. Em seguida, clique em **OK**.
 

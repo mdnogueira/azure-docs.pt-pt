@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-translationtype: Human Translation
-ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
-ms.openlocfilehash: c344941c59c52d260999c29f448bb94df24fba1d
-ms.lasthandoff: 04/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: b81791f0bce7e6f57782dfe7bc5fb5fc21369e7d
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="secure-your-key-vault"></a>Proteger o seu cofre de chaves
@@ -197,7 +197,7 @@ A função personalizada definida só é atribuível à subscrição na qual foi
 
 O âmbito da atribuição de funções personalizadas a programadores/operadores para a permissão “implementar/ação” é o grupo de recursos. Desta forma, apenas as VMs criadas no grupo de recursos “ContosoAppRG” obterão os segredos (certificado SSL e certificado do programa de arranque do sistema). Qualquer VM que um membro da equipa de programadores/operadores crie noutro grupo de recursos não conseguirá obter estes segredos, mesmo que conheça os respetivos URIs.
 
-Este exemplo mostra um cenário simples. Os cenários da vida real podem ser mais complexos e poderá ter de ajustar as permissões para o cofre de chaves com base nas suas necessidades. No nosso exemplo, partimos do princípio de que a equipa de segurança vai disponibilizar as referências da chave e do segredo (URIs e thumbprints) que a equipa de programadores/operadores tem de referenciar nas respetivas aplicações. Assim, não tem de conceder aos programadores/operadores nenhum acesso do plano de dados. Note também que este exemplo se foca em proteger o seu cofre de chaves. Devem ser igualmente tidas considerações semelhantes ao proteger [as VMs](https://azure.microsoft.com/services/virtual-machines/security/), as [contas de armazenamento](../storage/storage-security-guide.md) e outros recursos do Azure.
+Este exemplo mostra um cenário simples. Os cenários da vida real podem ser mais complexos e poderá ter de ajustar as permissões para o cofre de chaves com base nas suas necessidades. No nosso exemplo, partimos do princípio de que a equipa de segurança vai disponibilizar as referências da chave e do segredo (URIs e thumbprints) que a equipa de programadores/operadores tem de referenciar nas respetivas aplicações. Assim, não tem de conceder aos programadores/operadores nenhum acesso do plano de dados. Note também que este exemplo se foca em proteger o seu cofre de chaves. Devem ser igualmente tidas considerações semelhantes ao proteger [as VMs](https://azure.microsoft.com/services/virtual-machines/security/), as [contas de armazenamento](../storage/common/storage-security-guide.md) e outros recursos do Azure.
 
 > [!NOTE]
 > Nota: este exemplo mostra como o acesso do cofre de chaves estará bloqueado na produção. Os programadores devem ter a sua própria subscrição ou grupo de recursos nos quais tenham permissões completas para gerir os cofres, as VMs e a conta de armazenamento em que desenvolveram a aplicação.

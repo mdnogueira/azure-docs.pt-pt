@@ -39,9 +39,9 @@ Pode utilizar o NuGet para obter ambos os pacotes. Siga estes passos.
 Tem duas opções de ambiente para executar os exemplos neste guia:
 
 * Pode executar o código numa conta de armazenamento do Azure na nuvem. 
-* Pode executar o código no emulador de armazenamento do Azure. O emulador de armazenamento é um ambiente local que emula uma conta de armazenamento do Azure na nuvem. O emulador é uma opção gratuita para testar e depurar o seu código enquanto a aplicação está em desenvolvimento. O emulador utiliza uma conta e chave bem conhecidas. Para obter mais informações, veja [Use the Azure Storage Emulator for Development and Testing (Utilizar o Emulador de Armazenamento do Azure para Programação e Teste)](../articles/storage/storage-use-emulator.md)
+* Pode executar o código no emulador de armazenamento do Azure. O emulador de armazenamento é um ambiente local que emula uma conta de armazenamento do Azure na nuvem. O emulador é uma opção gratuita para testar e depurar o seu código enquanto a aplicação está em desenvolvimento. O emulador utiliza uma conta e chave bem conhecidas. Para obter mais informações, veja [Use the Azure Storage Emulator for Development and Testing (Utilizar o Emulador de Armazenamento do Azure para Programação e Teste)](../articles/storage/common/storage-use-emulator.md)
 
-Se estiver a filtrar uma conta de armazenamento na cloud, copie a chave de acesso primária para a sua conta de armazenamento a partir do portal do Azure. Para obter mais informações, veja [Ver e copiar chaves de acesso do armazenamento](../articles/storage/storage-create-storage-account.md#view-and-copy-storage-access-keys).
+Se estiver a filtrar uma conta de armazenamento na cloud, copie a chave de acesso primária para a sua conta de armazenamento a partir do portal do Azure. Para obter mais informações, veja [Ver e copiar chaves de acesso do armazenamento](../articles/storage/common/storage-create-storage-account.md#view-and-copy-storage-access-keys).
 
 > [!NOTE]
 > Pode filtrar o emulador de armazenamento para evitar incorrer em custos associados ao Storage do Azure. No entanto, se optar por filtrar uma conta de armazenamento do Azure na nuvem, os custos para efetuar este tutorial serão negligenciável.
@@ -51,7 +51,7 @@ Se estiver a filtrar uma conta de armazenamento na cloud, copie a chave de acess
 ### <a name="configure-your-storage-connection-string"></a>Configurar a cadeia de ligação de armazenamento
 A Biblioteca de Clientes de Armazenamento do Azure para .NET suporta a utilização de uma cadeia de ligação de armazenamento para configurar pontos finais e credenciais para aceder aos serviços de armazenamento. A melhor forma para manter a cadeia de ligação de armazenamento é num ficheiro de configuração. 
 
-Para obter mais informações sobre as cadeias de ligação, veja [Configurar uma Cadeia de Ligação para o Storage do Azure](../articles/storage/storage-configure-connection-string.md).
+Para obter mais informações sobre as cadeias de ligação, veja [Configurar uma Cadeia de Ligação para o Storage do Azure](../articles/storage/common/storage-configure-connection-string.md).
 
 > [!NOTE]
 > A chave da conta de armazenamento é semelhante à palavra-passe de raiz da conta de armazenamento. Tenha sempre o cuidado de proteger a chave da conta de armazenamento. Evite distribui-la a outros utilizadores, pré-programá-la ou guardá-la num ficheiro de texto simples que seja acessível a outras pessoas. Regenere a sua chave através do portal do Azure se considerar que poderá ter sido comprometida.

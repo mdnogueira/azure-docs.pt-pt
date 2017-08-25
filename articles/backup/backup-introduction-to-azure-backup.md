@@ -17,10 +17,10 @@ ms.date: 8/11/2017
 ms.author: markgal;trinadhk;anuragm
 ms.custom: H1Hack27Feb2017
 ms.translationtype: HT
-ms.sourcegitcommit: a9cfd6052b58fe7a800f1b58113aec47a74095e3
-ms.openlocfilehash: 7cc29feaf7411bac1d081f7f7aa3daf92fae88d1
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 5a6aad672ddaa43f993daf4cf48975e91d2657da
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="overview-of-the-features-in-azure-backup"></a>Descrição geral das funcionalidades do Azure Backup
@@ -35,7 +35,7 @@ As soluções de cópia de segurança tradicionais evoluíram para tratar a nuve
 
 **Dimensionamento ilimitado** - o Azure Backup utiliza o poder subjacente e o dimensionamento ilimitado da nuvem do Azure para fornecer elevada disponibilidade - sem qualquer overhead de manutenção ou monitorização. Pode configurar alertas para fornecer informações sobre eventos, mas não precisa de se preocupar com a elevada disponibilidade dos seus dados na nuvem.
 
-**Várias opções de armazenamento** - um aspeto de elevada disponibilidade é a replicação do armazenamento. O Azure Backup oferece dois tipos de replicação: [armazenamento localmente redundante](../storage/storage-redundancy.md#locally-redundant-storage) e [armazenamento georredundante](../storage/storage-redundancy.md#geo-redundant-storage). Escolha a opção de armazenamento de cópia de segurança com base na necessidade:
+**Várias opções de armazenamento** - um aspeto de elevada disponibilidade é a replicação do armazenamento. O Azure Backup oferece dois tipos de replicação: [armazenamento localmente redundante](../storage/common/storage-redundancy.md#locally-redundant-storage) e [armazenamento georredundante](../storage/common/storage-redundancy.md#geo-redundant-storage). Escolha a opção de armazenamento de cópia de segurança com base na necessidade:
 
 * O armazenamento localmente redundante (LRS) replica os seus dados três vezes (cria três cópias dos dados) num datacenter emparelhado na mesma região. O LRS é uma opção de baixo custo para proteger os dados contra falhas de hardware locais.
 
@@ -95,10 +95,10 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 | Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](backup-azure-linux-app-consistent.md)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](backup-azure-arm-restore-vms.md#restore-backed-up-disks)<br/> [Restauro da VM](backup-azure-arm-restore-vms.md#create-a-new-vm-from-restore-point) |
 
 ## <a name="using-premium-storage-vms-with-azure-backup"></a>Utilizar VMs de Armazenamento Premium com o Azure Backup
-O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/storage-premium-storage.md).
+O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/common/storage-premium-storage.md).
 
 ### <a name="back-up-premium-storage-vms"></a>Criar cópia de segurança das VMs do Premium Storage
-Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. O tamanho da localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que a conta de Armazenamento Premium tem espaço livre para acomodar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/storage-premium-storage.md#scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/storage-premium-storage.md#pricing-and-billing).
+Durante a cópia de segurança das VMs do Armazenamento Premium, o serviço de Cópia de Segurança cria uma localização de transição temporária, com o nome "AzureBackup-", na conta do Armazenamento Premium. O tamanho da localização de transição é igual ao tamanho do instantâneo do ponto de recuperação. Certifique-se de que a conta de Armazenamento Premium tem espaço livre para acomodar a localização de transição temporária. Para obter mais informações, veja o artigo [Premium Storage Limitations (Limitações do Armazenamento Premium)](../storage/common/storage-premium-storage.md#scalability-and-performance-targets). Depois de a tarefa de cópia de segurança estar concluída, a localização de transição é eliminada. O preço do armazenamento utilizado para a localização de transição é consistente com todos os [Preços do Premium Storage](../storage/common/storage-premium-storage.md#pricing-and-billing).
 
 > [!NOTE]
 > Não modifique ou edite a localização de transição.
