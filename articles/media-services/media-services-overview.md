@@ -4,7 +4,7 @@ description: "Este tópico fornece uma descrição geral dos Media Services do A
 services: media-services
 documentationcenter: 
 author: Juliako
-manager: erikre
+manager: SyntaxC4
 editor: 
 ms.assetid: 7a5e9723-c379-446b-b4d6-d0e41bd7d31f
 ms.service: media-services
@@ -19,7 +19,6 @@ ms.sourcegitcommit: bb794ba3b78881c967f0bb8687b1f70e5dd69c71
 ms.openlocfilehash: 38c3637cc477e24ac8d056611e7fda9a4d693cdb
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/06/2017
-
 
 ---
 # <a name="azure-media-services-overview"></a>Descrição geral dos Serviços de Multimédia do Azure 
