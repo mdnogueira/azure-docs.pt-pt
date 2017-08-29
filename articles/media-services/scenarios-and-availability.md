@@ -4,7 +4,7 @@ description: "Este tópico disponibiliza uma descrição geral dos cenários e d
 services: media-services
 documentationcenter: 
 author: Juliako
-manager: SyntaxC4
+manager: cfowler
 editor: 
 ms.service: media-services
 ms.workload: media
