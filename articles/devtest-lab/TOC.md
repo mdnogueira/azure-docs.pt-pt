@@ -42,8 +42,11 @@
 ## Gerir modelos reutilizáveis
 ### [Adicionar um repositório de Git de artefactos e modelos](devtest-lab-add-artifact-repo.md)
 ### [Utilizar um modelo do gestor de recursos](devtest-lab-use-resource-manager-template.md)
-### [Criar artefacto personalizado](devtest-lab-artifact-author.md)
 ### [Gerir fórmulas](devtest-lab-manage-formulas.md)
+
+## Gerir artefactos
+### [Criar artefacto personalizado](devtest-lab-artifact-author.md)
+### [Diagnosticar falhas de artefactos](devtest-lab-troubleshoot-artifact-failure.md)
 
 ## Gerir redes virtuais
 ### [Configurar redes virtuais](devtest-lab-configure-vnet.md)

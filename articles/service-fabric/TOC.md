@@ -18,7 +18,9 @@
 # Amostras
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=service-fabric)
 ## [PowerShell](service-fabric-powershell-samples.md)
-## [CLI do Azure](samples-cli.md)
+## [CLI do Service Fabric](samples-cli.md)
+### [Exemplo de implementação](scripts/cli-deploy-application.md)
+### [Exemplo de remoção](scripts/cli-remove-application.md)
 # Conceitos
 ## [Compreender os microsserviços](service-fabric-overview-microservices.md)
 ## [Panorama geral](service-fabric-content-roadmap.md)
@@ -221,7 +223,7 @@
 ### Implementar ou remover aplicações
 #### [Implementar aplicações num cluster local](service-fabric-get-started-with-a-local-cluster.md)
 #### [PowerShell](service-fabric-deploy-remove-applications.md)
-#### [CLI 2.0 do Azure](service-fabric-application-lifecycle-azure-cli-2-0.md)
+#### [CLI do Service Fabric](service-fabric-application-lifecycle-sfctl.md)
 #### [Visual Studio](service-fabric-publish-app-remote-cluster.md)
 #### [APIs FabricClient](service-fabric-deploy-remove-applications-fabricclient.md)
 
@@ -256,6 +258,7 @@
 #### [Atualizar](service-fabric-cluster-upgrade.md)
 #### [Definir controlo de acesso](service-fabric-cluster-security-roles.md)
 #### [Configurar](service-fabric-cluster-fabric-settings.md)
+#### [Abrir uma porta no balanceador de carga](create-load-balancer-rule.md)
 #### [Gerir certificados de cluster](service-fabric-cluster-security-update-certs-azure.md)
 #### [Eliminar](service-fabric-cluster-delete.md)
 
@@ -275,8 +278,7 @@
 ### [Visualizar um cluster](service-fabric-visualizing-your-cluster.md)
 ### [Ligar a um cluster seguro](service-fabric-connect-to-secure-cluster.md)
 
-### [Gerir um cluster com a CLI do XPlat](service-fabric-azure-cli.md)
-### [Gerir um cluster com os comandos da CLI 2.0 do Azure](service-fabric-azure-cli-2-0.md)
+### [Gerir um cluster com a CLI do Service Fabric](service-fabric-cli.md)
 ### [Aplicar o patch em nós de cluster](service-fabric-patch-orchestration-application.md)
 
 ### Gerir e organizar recursos do cluster

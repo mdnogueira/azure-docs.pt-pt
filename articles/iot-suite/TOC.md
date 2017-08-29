@@ -53,6 +53,7 @@
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [FAQ](iot-suite-faq.md)
+## [FAQ de fábrica ligada](iot-suite-faq-cf.md)
 ## [Percurso de aprendizagem do IoT Suite](https://azure.microsoft.com/documentation/learning-paths/iot-suite/)
 ## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 

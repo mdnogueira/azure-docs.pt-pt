@@ -32,7 +32,9 @@
 ### [Portal do Azure](expressroute-howto-add-gateway-portal-resource-manager.md)
 ### [PowerShell](expressroute-howto-add-gateway-resource-manager.md)
 ## [Configurar ligações coexistentes do ExpressRoute e de Site a Site](expressroute-howto-coexist-resource-manager.md)
-## [Configurar filtros de rota para o peering da Microsoft](how-to-routefilter-powershell.md)
+## Configurar filtros de rota para o peering da Microsoft
+### [Portal do Azure](how-to-routefilter-portal.md)
+### [PowerShell](how-to-routefilter-powershell.md)
 ## [Mover um circuito de clássico para o Resource Manager](expressroute-howto-move-arm.md)
 ## [Migrar redes virtuais associadas do clássico para o Resource Manager](expressroute-migration-classic-resource-manager.md)
 ## Configurar um router para o ExpressRoute

@@ -1,16 +1,21 @@
-# [Descrição geral](../azure-portal-overview.md)
+# Descrição geral
+## [Acerca do portal do Azure](../azure-portal-overview.md)
+# Tutoriais
+## [DevOps com o portal do Azure](tutorial-azureportal-devops.md)
+# Conceitos
 ## [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
-
-# Introdução
-## [Implementar com o modelo do Resource Manager](../azure-resource-manager/resource-group-template-deploy.md)
-
-# Procedimento
+## [Atalhos de teclado](azure-portal-keyboard-shortcuts.md)
+## [Dispositivos e browsers suportados](../azure-preview-portal-supported-browsers-devices.md)
+# Guias de procedimentos
 ## Implementação
 ### [Create Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md)
-
+### [Implementar com o modelo do Resource Manager](../azure-resource-manager/resource-group-template-deploy.md)
+### [Criar e partilhar dashboards do Azure](azure-portal-dashboards.md)
 ## Gerir
-### [Utilizar o portal de pré-visualização para gerir recursos](../azure-resource-manager/resource-group-portal.md)
-### [Gerir o acesso com RBAC](../active-directory/role-based-access-control-configure.md)
+### [Ativar o alto contraste ou a alteração de tema](azure-portal-change-theme-high-contrast.md)
+### [Utilizar o portal para gerir recursos](../azure-resource-manager/resource-group-portal.md)
+### [Gerir o acesso com o Controlo de Acesso Baseado em Funções](../active-directory/role-based-access-control-configure.md)
+### [Partilhar dashboards com o Controlo de Acesso Baseado em Funções](azure-portal-dashboard-share-access.md)
 ### [Utilizar etiquetas para organizar recursos](../azure-resource-manager/resource-group-using-tags.md)
 ### [Dimensionar os recursos](../monitoring-and-diagnostics/insights-how-to-scale.md)
 ### [Criar novo principal de serviço do Azure](../azure-resource-manager/resource-group-create-service-principal-portal.md)

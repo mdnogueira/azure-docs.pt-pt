@@ -29,6 +29,8 @@
           href: connect-cpp.md
         - name: Ir
           href: connect-go.md
+        - name: MySQL Workbench
+          href: connect-workbench.md
 - name: Tutoriais
   items:
     - name: 1 - Estruturar uma Base de Dados

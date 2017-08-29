@@ -8,9 +8,27 @@
 ## [Fazer cópia de segurança dos servidores VMware](backup-azure-backup-server-vmware.md)
 
 # Procedimento
+
+## Servidor do Backup do Azure
+### [Matriz de proteção do Azure Backup Server](backup-mabs-protection-matrix.md)
+### Instalar ou atualizar
+#### [Preparar as cargas de trabalho do Azure Backup Server no Portal do Azure](backup-azure-microsoft-azure-backup.md)
+#### [Preparar as cargas de trabalho do Azure Backup Server no portal clássico](backup-azure-microsoft-azure-backup-classic.md)
+#### [Adicionar armazenamento ao Azure Backup Server](backup-mabs-add-storage.md)
+#### [Atualizar o Azure Backup Server para v.2](backup-mabs-upgrade-to-v2.md)
+#### [Instalação autónoma do Azure Backup Server](backup-mabs-unattended-install.md)
+### Proteger cargas de trabalho
+#### [Utilizar o Azure Backup Server para fazer cópias de segurança de um servidor VMware](backup-azure-backup-server-vmware.md)
+#### [Utilizar o Azure Backup Server para fazer cópias de segurança do Exchange](backup-azure-exchange-mabs.md)
+#### [Utilizar o Azure Backup Server para fazer cópias de segurança de um farm do SharePoint](backup-azure-backup-sharepoint-mabs.md)
+#### [Utilizar o Azure Backup Server para fazer cópias de segurança do SQL](backup-azure-sql-mabs.md)
+#### [Proteger o estado do sistema e a recuperação bare-metal](backup-mabs-system-state-and-bmr.md)
+### [Recuperar dados do Azure Backup Server](backup-azure-alternate-dpm-server.md)
+
 ## VMs do Azure
 ### Preparar a VM
 #### [Preparar máquinas virtuais implementadas com o Resource Manager](backup-azure-arm-vms-prepare.md)
+#### [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
 #### [Preparar as máquinas virtuais do Azure](backup-azure-vms-prepare.md)
 ### Planear o ambiente
 #### [Planear a infraestrutura de cópia de segurança da VM](backup-azure-vms-introduction.md)
@@ -29,6 +47,32 @@
 #### [Restaurar máquinas virtuais no Azure](backup-azure-restore-vms.md)
 #### [Restaurar a chave do Key Vault e o segredo para VMs encriptadas](backup-azure-restore-key-secret.md)
 
+## Configurar relatórios do Azure Backup
+### [Configurar relatórios do Azure Backup](backup-azure-configure-reports.md)
+### [Modelo de dados para relatórios do Azure Backup](backup-azure-reports-data-model.md)
+### [Modelo de dados do Log Analytics para o Azure Backup](backup-azure-log-analytics-data-model.md)
+
+## Data Protection Manager
+### [Preparar as cargas de trabalho do DPM no portal do Azure](backup-azure-dpm-introduction.md)
+### [Preparar as cargas de trabalho do DPM no portal clássico](backup-azure-dpm-introduction-classic.md)
+### [Utilizar o DPM do System Center para fazer a cópia de segurança do servidor do Exchange](backup-azure-backup-exchange-server.md)
+### [Recuperar dados para um servidor DPM alternativo](backup-azure-alternate-dpm-server.md)
+### [Utilizar o DPM para efetuar cópias de segurança de cargas de trabalho do SQL Server](backup-azure-backup-sql.md)
+### [Utilizar o DPM para fazer cópia de segurança de um farm do SharePoint](backup-azure-backup-sharepoint.md)
+
+## Utilizar o PowerShell
+### [VMs do Azure no Portal do Azure](backup-azure-vms-automation.md)
+### [VMs do Azure no portal clássico](backup-azure-vms-classic-automation.md)
+### [DPM no Portal do Azure](backup-dpm-automation.md)
+### [DPM no portal clássico](backup-dpm-automation-classic.md)
+### [Windows Server no Portal do Azure](backup-client-automation.md)
+### [Windows Server no portal clássico](backup-client-automation-classic.md)
+
+## Base de Dados SQL do Azure
+### [Configurar retenção de cópia de segurança de longa duração](../sql-database/sql-database-configure-long-term-retention.md?toc=%2fazure%2fbackup%2ftoc.json)
+### [Ver cópias de segurança num cofre dos Serviços de Recuperação](../sql-database/sql-database-view-backups-in-vault.md?toc=%2fazure%2fbackup%2ftoc.json)
+### [Restaurar a partir de retenção de cópia de segurança de longa duração](../sql-database/sql-database-restore-from-long-term-retention.md?toc=%2fazure%2fbackup%2ftoc.json)
+### [Eliminar cópias de segurança SQL do Azure de longa duração](../sql-database/sql-database-long-term-retention-delete.md?toc=%2fazure%2fbackup%2ftoc.json)
 
 ## Windows Server
 ### [Fazer cópia de segurança de ficheiros e pastas do Windows Server](backup-configure-vault.md)
@@ -41,48 +85,10 @@
 #### [Gerir cofres de Cópia de Segurança com o modelo de implementação clássica](backup-azure-manage-windows-server-classic.md)
 #### [Recuperar ficheiros para um Windows Server com o modelo de implementação clássico](backup-azure-restore-windows-server-classic.md)
 
-## Servidor do Backup do Azure
-### [Matriz de proteção do Azure Backup Server](backup-mabs-protection-matrix.md)
-### Instalar ou atualizar
-#### [Preparar as cargas de trabalho do Azure Backup Server no Portal do Azure](backup-azure-microsoft-azure-backup.md)
-#### [Preparar as cargas de trabalho do Azure Backup Server no portal clássico](backup-azure-microsoft-azure-backup-classic.md)
-#### [Adicionar armazenamento ao Azure Backup Server](backup-mabs-add-storage.md)
-#### [Atualizar o Azure Backup Server para v.2](backup-mabs-upgrade-to-v2.md)
-#### [Instalação autónoma do Azure Backup Server](backup-mabs-unattended-install.md)
-### Proteger cargas de trabalho
-#### [Utilizar o Azure Backup Server para fazer cópias de segurança de um servidor VMware](backup-azure-backup-server-vmware.md)
-#### [Utilizar o Azure Backup Server para fazer cópias de segurança do Exchange](backup-azure-exchange-mabs.md)
-#### [Utilizar o Azure Backup Server para fazer cópias de segurança de um farm do SharePoint](backup-azure-backup-sharepoint-mabs.md)
-#### [Utilizar o Azure Backup Server para fazer cópias de segurança do SQL](backup-azure-sql-mabs.md)
-#### [Proteger o estado do sistema e a recuperação bare-metal](backup-mabs-system-state-and-bmr.md)
-### [Recuperar dados do Azure Backup Server](backup-azure-alternate-dpm-server.md)
-
-## Data Protection Manager
-### [Preparar as cargas de trabalho do DPM no portal do Azure](backup-azure-dpm-introduction.md)
-### [Preparar as cargas de trabalho do DPM no portal clássico](backup-azure-dpm-introduction-classic.md)
-### [Utilizar o DPM do System Center para fazer a cópia de segurança do servidor do Exchange](backup-azure-backup-exchange-server.md)
-### [Recuperar dados para um servidor DPM alternativo](backup-azure-alternate-dpm-server.md)
-### [Utilizar o DPM para efetuar cópias de segurança de cargas de trabalho do SQL Server](backup-azure-backup-sql.md)
-### [Utilizar o DPM para fazer cópia de segurança de um farm do SharePoint](backup-azure-backup-sharepoint.md)
-
-## Base de Dados SQL do Azure
-### [Configurar retenção de cópia de segurança de longa duração](../sql-database/sql-database-configure-long-term-retention.md?toc=%2fazure%2fbackup%2ftoc.json)
-### [Ver cópias de segurança num cofre dos Serviços de Recuperação](../sql-database/sql-database-view-backups-in-vault.md?toc=%2fazure%2fbackup%2ftoc.json)
-### [Restaurar a partir de retenção de cópia de segurança de longa duração](../sql-database/sql-database-restore-from-long-term-retention.md?toc=%2fazure%2fbackup%2ftoc.json)
-### [Eliminar cópias de segurança SQL do Azure de longa duração](../sql-database/sql-database-long-term-retention-delete.md?toc=%2fazure%2fbackup%2ftoc.json)
-
-## Utilizar o PowerShell
-### [VMs do Azure no Portal do Azure](backup-azure-vms-automation.md)
-### [VMs do Azure no portal clássico](backup-azure-vms-classic-automation.md)
-### [DPM no Portal do Azure](backup-dpm-automation.md)
-### [DPM no portal clássico](backup-dpm-automation-classic.md)
-### [Windows Server no Portal do Azure](backup-client-automation.md)
-### [Windows Server no portal clássico](backup-client-automation-classic.md)
-
-## FAQ
-### [FAQ sobre cofre dos Serviços de Recuperação](backup-azure-backup-faq.md)
-### [FAQ sobre cópia de segurança de VMs do Azure](backup-azure-vm-backup-faq.md)
-### [FAQ sobre cópia de segurança de pasta de ficheiros utilizando o agente do Backup do Azure](backup-azure-file-folder-backup-faq.md)
+## Cofre dos Serviços de Recuperação
+### [Descrição geral dos cofres dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md)
+### [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md)
+### [Eliminar um cofre dos Serviços de Recuperação](backup-azure-delete-vault.md)
 
 ## Resolução de problemas
 ### [Problemas de cópia de segurança da VM do Azure no Portal do Azure](backup-azure-vms-troubleshoot.md)
@@ -92,17 +98,17 @@
 ### [Resolução de problemas do Azure Backup Server](backup-azure-mabs-troubleshoot.md)
 
 # Conceitos
-## [Descrição geral dos cofres dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md)
-## [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md)
-## [Eliminar um cofre dos Serviços de Recuperação](backup-azure-delete-vault.md)
+
+## FAQ
+### [FAQ sobre cofre dos Serviços de Recuperação](backup-azure-backup-faq.md)
+### [FAQ sobre cópia de segurança de VMs do Azure](backup-azure-vm-backup-faq.md)
+### [FAQ sobre cópia de segurança de pasta de ficheiros utilizando o agente do Backup do Azure](backup-azure-file-folder-backup-faq.md)
+
 ## [Controlo de Acesso Baseado em Funções](backup-rbac-rs-vault.md)
 ## [Segurança para cópias de segurança híbridas](backup-azure-security-feature.md)
-## [Configurar relatórios do Azure Backup](backup-azure-configure-reports.md)
-## [Modelo de dados para relatórios do Azure Backup](backup-azure-reports-data-model.md)
-## [Modelo de dados do Log Analytics para o Azure Backup](backup-azure-log-analytics-data-model.md)
 ## [Configurar a cópia de segurança offline](backup-azure-backup-import-export.md)
 ## [Substituir a sua biblioteca de unidades de banda](backup-azure-backup-cloud-as-tape.md)
-## [Cópias de segurança de VMs do Linux consistentes com a aplicação](backup-azure-linux-app-consistent.md)
+
 
 # Referência
 ## [PowerShell](/powershell/module/azurerm.recoveryservices.backup)
