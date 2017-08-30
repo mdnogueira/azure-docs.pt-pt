@@ -65,6 +65,10 @@
           href: sql-database-servers-databases.md
         - name: Escalões de serviço
           href: sql-database-service-tiers.md
+        - name: Limites de recursos
+          href: sql-database-resource-limits.md
+        - name: Bases de dados individuais
+          href: sql-database-single-database-resources.md
         - name: Conjuntos elásticos
           href: sql-database-elastic-pool.md
         - name: Arquitetura de conectividade
@@ -75,8 +79,6 @@
           href: sql-database-what-is-a-dtu.md
         - name: Referência da DTU
           href: sql-database-benchmark-overview.md
-        - name: Limites
-          href: sql-database-resource-limits.md
         - name: PaaS ou IaaS
           href: sql-database-paas-vs-sql-server-iaas.md
         - name: Auditoria

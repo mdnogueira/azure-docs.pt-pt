@@ -162,7 +162,6 @@
 ##### [Criar Pacote de suporte](storsimple-8000-create-manage-support-package.md)
 
 ### Migrar
-#### [Da série 5000-7000](https://gallery.technet.microsoft.com/Azure-StorSimple-50007000-c1a0460b)
 #### [A partir de outros dispositivos de armazenamento](http://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating Data to StorSimple Volumes_09-02-15.pdf)
 
 ### Atualizar
@@ -301,16 +300,17 @@
 ##### [Criar Pacote de suporte](storsimple-create-manage-support-package.md)
 
 ### Migrar
-#### [Da série 5000-7000](https://gallery.technet.microsoft.com/Azure-StorSimple-50007000-c1a0460b)
 #### [A partir de outros dispositivos de armazenamento](http://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating Data to StorSimple Volumes_09-02-15.pdf)
 
 ### Atualizar
+#### [Instalar Atualização 5 - atual](storsimple-install-update-5.md)
 #### [Instalar Atualização 4](storsimple-install-update-4.md)
 #### [Instalar Atualização 3](storsimple-install-update-3.md)
 #### [Atualizar o seu dispositivo](storsimple-update-device.md)
 
 ## Notas de versão
-### [Atualização 4 - atual](storsimple-update4-release-notes.md)
+### [Atualização 5 - atual](storsimple-update5-release-notes.md)
+### [Atualização 4](storsimple-update4-release-notes.md)
 ### [Atualização 3](storsimple-update3-release-notes.md)
 ### [Atualização 2.2](storsimple-update21-release-notes.md)
 
