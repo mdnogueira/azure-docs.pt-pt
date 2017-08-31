@@ -3,7 +3,7 @@ title: "Lição 12 do tutorial do Azure Analysis Services: Analyze em Excel | Mi
 description: Descreve como utilizar o Analyze em Excel num projeto do tutorial do Azure Analysis Services.
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

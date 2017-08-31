@@ -2,7 +2,7 @@
 title: "Documentação de Segurança do Azure - Tutoriais | Microsoft Docs"
 description: "Saiba como personalizar as opções de segurança nos serviços do Azure para cumprir os requisitos das implementações dos serviços e os dados na cloud."
 services: security
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

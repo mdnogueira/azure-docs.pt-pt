@@ -5,7 +5,7 @@ metadata:
   title: Documentação do Azure Container Instances - Tutoriais | Microsoft Docs
   description: 'O Azure Container Instances é a forma mais rápida e simples de executar um contentor no Azure, sem que tenha de aprovisionar máquinas virtuais e sem que tenha de adotar um serviço de nível mais elevado.'
   services: container-instances
-  author: carolz
+  author: czeumault
   manager: carolz
   ms.service: container-instances
   ms.tgt_pltfrm: na

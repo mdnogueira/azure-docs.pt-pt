@@ -1,7 +1,17 @@
 ---
-layout: LandingPage
 title: "Documentação das Mensagens do Service Bus"
 description: "Saiba como configurar mensagens que estabelecem ligação a aplicações e serviços entre ambientes no local e na cloud."
+services: service-bus
+author: czeumault
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: service-bus
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 03/14/2017
+ms.author: carolz
 ms.translationtype: HT
 ms.sourcegitcommit: 9633e79929329470c2def2b1d06d95994ab66e38
 ms.openlocfilehash: 559bbabe07ae50b2cc83fad5e867c23c9272d6ab

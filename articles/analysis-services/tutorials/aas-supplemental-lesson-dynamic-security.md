@@ -3,7 +3,7 @@ title: "Lição suplementar do tutorial do Azure Analysis Services: Segurança d
 description: "Descreve como utilizar a segurança dinâmica com filtros de linha no tutorial do Azure Analysis Services."
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

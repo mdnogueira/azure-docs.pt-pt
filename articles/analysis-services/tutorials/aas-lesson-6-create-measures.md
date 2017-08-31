@@ -3,7 +3,7 @@ title: "Lição 6 do tutorial do Azure Analysis Services: Criar medidas | Micros
 description: Descreve como criar medidas no projeto de tutorial do Azure Analysis Services.
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

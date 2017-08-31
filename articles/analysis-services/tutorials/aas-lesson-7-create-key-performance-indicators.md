@@ -3,7 +3,7 @@ title: "Lição 7 do tutorial do Azure Analysis Services: criar indicadores-chav
 description: Descreve como criar indicadores-chave de desempenho no projeto de tutorial do Azure Analysis Services.
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

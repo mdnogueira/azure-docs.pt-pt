@@ -6,7 +6,7 @@ metadata:
   title: 'Documentação da BD do Cosmos para o Azure - Tutoriais, Referência da API'
   description: 'Saiba como utilizar a BD do Cosmos para o Azure para criar bases de dados com vários modelos distribuídas globalmente. Os tutoriais mostram-lhe como criar e consultar bases de dados de gráficos, de chave/valor e de documentos.'
   services: cosmos-db
-  author: carolz
+  author: czeumault
   manager: carolz
   ms.service: cosmos-db
   ms.tgt_pltfrm: na

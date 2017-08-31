@@ -2,7 +2,7 @@
 title: "Documentação da CDN do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar a Rede de Entrega de Conteúdos (CDN) para fornecer conteúdo a partir de centros de dados globais para qualquer dispositivo. Tutoriais, referências de API e outra documentação."
 services: cdn
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

@@ -2,7 +2,7 @@
 title: "Documentação do Azure ExpressRoute - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como configurar e gerir uma ligação de ExpressRoute privada para serviços cloud da Microsoft a partir da sua infraestrutura no local ou instalações de colocação."
 services: expressroute
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

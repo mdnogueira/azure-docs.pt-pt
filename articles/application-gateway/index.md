@@ -2,7 +2,7 @@
 title: "Documentação do Gateway de Aplicação do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como implementar um controlador de entrega de aplicações na cloud. A documentação mostra como configurar o encaminhamento ao nível da aplicação e para um balanceamento de carga para um front-end da Web."
 services: application-gateway
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,9 +12,10 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a087df444c5c88ee1dbcf8eb18abf883549a9024
 ms.openlocfilehash: 535364a9da46b137c4d32e1c3049a5be3496e5d2
+ms.contentlocale: pt-pt
 ms.lasthandoff: 03/15/2017
 
 ---
@@ -161,7 +162,7 @@ Saiba como implementar o Gateway de Aplicação um controlador de entrega de apl
             </div>
         </div>
     </li>
-</ul>    
+</ul>   
 
 
 

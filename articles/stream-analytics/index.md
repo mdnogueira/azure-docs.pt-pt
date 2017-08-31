@@ -2,7 +2,7 @@
 title: "Documentação do Azure Stream Analytics - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
 services: stream-analytics
-author: samacha
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -11,7 +11,7 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/23/2017
-ms.author: samacha
+ms.author: carolz
 ms.translationtype: Human Translation
 ms.sourcegitcommit: ef74361c7a15b0eb7dad1f6ee03f8df707a7c05e
 ms.openlocfilehash: f82be4ff7bd0839be4f826f9a04ba0876f4ec91d

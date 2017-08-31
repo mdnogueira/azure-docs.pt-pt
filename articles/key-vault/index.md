@@ -2,7 +2,7 @@
 title: "Documentação do Azure Key Vault - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar o Cofre de Chaves para criar e manter as chaves que acedem e encriptam os recursos, as aplicações e as soluções na cloud. Tutoriais, referências de API e muito mais."
 services: key-vault
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

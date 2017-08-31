@@ -2,7 +2,7 @@
 title: "Documentação do Azure Mobile Engagement - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como obter informações sobre a utilização de aplicações móveis e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação."
 services: mobile-engagement
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,9 +12,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3de3024e93aee7ace0e243eef0beb4008dc50db5
 ms.openlocfilehash: 738cc1fc5b5cca411c08fda4229950f481cd0aa6
+ms.contentlocale: pt-pt
+ms.lasthandoff: 02/09/2017
 
 ---
 
@@ -207,10 +209,5 @@ Saiba como aumentar a utilização, a retenção e a monetização de aplicaçõ
 
 ---
 
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

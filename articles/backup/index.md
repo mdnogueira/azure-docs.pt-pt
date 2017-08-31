@@ -2,7 +2,7 @@
 title: "Documentação do Azure Backup - Tutoriais, Referência da API | Microsoft Docs"
 description: "Utilize a documentação do Backup para aprender a efetuar uma cópia de segurança para a cloud. Veja tutoriais e vídeos da aplicação, do Windows server e da máquina virtual do Azure."
 services: backup
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

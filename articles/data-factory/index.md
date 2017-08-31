@@ -2,7 +2,7 @@
 title: "Documentação do Azure Data Factory - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar o Data Factory para configurar pipelines de dados automatizados para origens no local e na a cloud de modo a mover e a processar dados para análise."
 services: data-factory
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

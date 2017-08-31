@@ -1,13 +1,24 @@
 ---
-layout: LandingPage
 title: "Documentação do Reencaminhamento do Service Bus"
 description: "Saiba como o serviço de Reencaminhamento do Azure funciona num ambiente híbrido de cloud e no local, completo com procedimentos, tutoriais, vídeos, referências de API e muito mais."
+services: service-bus
+author: czeumault
+manager: carolz
+layout: LandingPage
+ms.assetid: 
+ms.service: service-bus
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: landing-page
+ms.date: 03/14/2017
+ms.author: carolz
 ms.translationtype: HT
 ms.sourcegitcommit: 8b857b4a629618d84f66da28d46f79c2b74171df
 ms.openlocfilehash: 43d2c5ca34e4903a41160496fdb4d975cb665de7
 ms.contentlocale: pt-pt
 ms.lasthandoff: 08/04/2017
 
+---
 ---
 # <a name="service-bus-relay-documentation"></a>Documentação do Reencaminhamento do Service Bus
 Saiba como o serviço de Reencaminhamento do Azure facilita as aplicações híbridas entre ambientes no local e na cloud numa rede empresarial e a cloud pública, sem ter de abrir uma ligação de firewall ou sem ter de fazer alterações intrusivas na infraestrutura da rede empresarial.

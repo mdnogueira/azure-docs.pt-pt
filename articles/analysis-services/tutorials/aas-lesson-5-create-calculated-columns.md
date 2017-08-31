@@ -3,7 +3,7 @@ title: "Lição 5 do tutorial do Azure Analysis Services: Criar colunas calculad
 description: Descreve como criar colunas calculadas no projeto de tutorial do Azure Analysis Services.
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

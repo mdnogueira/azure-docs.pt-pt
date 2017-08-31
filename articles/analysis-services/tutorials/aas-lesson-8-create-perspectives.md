@@ -3,7 +3,7 @@ title: "Lição 8 do tutorial do Azure Analysis Services: Criar perspetivas | Mi
 description: Descreve como criar perspetivas no projeto de tutorial do Azure Analysis Services.
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

@@ -2,7 +2,7 @@
 title: "Documentação dos Conjuntos de Dimensionamento de Máquinas Virtuais do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar Conjuntos de Dimensionamento de Máquina Virtual para criar o dimensionamento automático de VMs Windows ou Linux para soluções computação grande, macrodados e de contentor."
 services: virtual-machine-scale-sets
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,9 +12,10 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 785d3a8920d48e11e80048665e9866f16c514cf7
 ms.openlocfilehash: c03fc321082b8be9044faf0e57e2f26ddc22c243
+ms.contentlocale: pt-pt
 ms.lasthandoff: 04/12/2017
 
 ---

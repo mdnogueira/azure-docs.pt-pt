@@ -3,7 +3,7 @@ title: "Lição 11 do tutorial do Azure Analysis Services: Criar funções | Mic
 description: "Descreve como criar funções no projeto de tutorial do Azure Analysis Services."
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

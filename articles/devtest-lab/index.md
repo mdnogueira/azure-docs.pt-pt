@@ -2,7 +2,7 @@
 title: "Documentação do Azure DevTest Labs - Tutoriais | Microsoft Docs"
 description: "Saiba como criar rapidamente ambientes de teste de aplicações através de artefactos reutilizáveis. Tutoriais, vídeos e muito mais mostram-lhe como criar, gerir e proteger laboratórios."
 services: devtest-lab
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

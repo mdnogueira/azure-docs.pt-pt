@@ -3,7 +3,7 @@ title: "Lição 4 do tutorial do Azure Analysis Services: Criar relações | Mic
 description: "Descreve como criar relações no projeto de tutorial do Azure Analysis Services."
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 

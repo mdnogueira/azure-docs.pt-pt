@@ -8,7 +8,7 @@ author: op-ravi
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 
-ms.service: time-series-insights
+ms.service: tsi
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
@@ -33,8 +33,8 @@ Os ambientes do Time Series Insights têm dois tipos de políticas de acesso ind
 Ambas as políticas concedem aos principais (utilizadores e aplicações) do Azure Active Directory várias permissões num determinado ambiente. Os principais (utilizadores e aplicações) têm de pertencer ao Active Directory (ou “inquilino do Azure”) associado à subscrição que contém o ambiente.
 
 As políticas de acesso de gestão concedem permissões relacionadas com a configuração do ambiente, como a:
-*    Criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
-*    Gestão das políticas de acesso a dados.
+*   Criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
+*   Gestão das políticas de acesso a dados.
 
 As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e partilhar consultas guardadas e perspetivas associadas ao ambiente.
 
@@ -43,30 +43,30 @@ Ambos os tipos de políticas permitem uma clara separação entre o acesso à ge
 ## <a name="grant-data-access"></a>Conceder acesso a dados
 Os passos seguintes mostram como pode conceder acesso a dados a um principal de utilizador:
 
-1.    Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2.    Clique em "Todos os recursos" no menu no lado esquerdo do Portal do Azure.
-3.    Selecione o seu ambiente do Time Series Insights.
+1.  Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2.  Clique em "Todos os recursos" no menu no lado esquerdo do Portal do Azure.
+3.  Selecione o seu ambiente do Time Series Insights.
 
   ![Gerir a origem do Time Series Insights - ambiente](media/data-access/getstarted-grant-data-access1.png)
 
-4.    Selecione "Acesso do Plano de Dados", clique em "Adicionar"
+4.  Selecione "Acesso do Plano de Dados", clique em "Adicionar"
 
   ![Gerir a origem do Time Series Insights - adicionar](media/data-access/getstarted-grant-data-access2.png)
 
-5.    Clique em "Selecionar utilizador".
-6.    Procure e selecione o utilizador por e-mail.
-7.    Clique em “Selecionar”, no painel “Selecionar Utilizador”.
+5.  Clique em "Selecionar utilizador".
+6.  Procure e selecione o utilizador por e-mail.
+7.  Clique em “Selecionar”, no painel “Selecionar Utilizador”.
 
   ![Gerir a origem do Time Series Insights - selecionar utilizador](media/data-access/getstarted-grant-data-access3.png)
 
-8.    Clique em “Selecionar função”.
-9.    Selecione “Contribuidor” se quiser permitir que o utilizador altere os dados de referência e partilhe consultas guardadas e perspetivas com outros utilizadores do ambiente. Caso contrário, selecione “Utilizador” para permitir ao utilizador consultar dados no ambiente e guardar consultas pessoais (não partilhadas) no ambiente.
-10.    Clique em "Ok", no painel "Selecionar função".
+8.  Clique em “Selecionar função”.
+9.  Selecione “Contribuidor” se quiser permitir que o utilizador altere os dados de referência e partilhe consultas guardadas e perspetivas com outros utilizadores do ambiente. Caso contrário, selecione “Utilizador” para permitir ao utilizador consultar dados no ambiente e guardar consultas pessoais (não partilhadas) no ambiente.
+10. Clique em "Ok", no painel "Selecionar função".
 
   ![Gerir a origem do Time Series Insights - selecionar função](media/data-access/getstarted-grant-data-access4.png)
 
-11.    Clique em "Ok", no painel "Selecionar Função do Utilizador".
-12.    Deverá ver:
+11. Clique em "Ok", no painel "Selecionar Função do Utilizador".
+12. Deverá ver:
 
   ![Gerir a origem do Time Series Insights - resultados](media/data-access/getstarted-grant-data-access5.png)
 

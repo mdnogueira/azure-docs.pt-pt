@@ -2,7 +2,7 @@
 title: "Documentação do Azure Monitor - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar serviços de monitorização e diagnósticos para monitorizar o desempenho, manter a segurança e identificar tendências. Referências de API, melhores práticas e mais."
 services: monitoring-and-diagnostics
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

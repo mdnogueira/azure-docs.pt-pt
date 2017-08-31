@@ -2,7 +2,7 @@
 title: "Documentação da Faturação do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como compreender a faturação do Azure, bem como gerir e monitorizar utilização e custos. Tutoriais, FAQs, referências de API e outra documentação."
 services: billing
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 

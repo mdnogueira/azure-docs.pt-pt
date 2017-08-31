@@ -2,7 +2,7 @@
 title: "Documentação do Azure SQL Server Stretch Database - Tutoriais | Microsoft Docs"
 description: "Saiba como utilizar a SQL Server Stretch Database para migrar dados de acesso esporádico em segurança para o Azure sem alterar consultas ou aplicações. Tutoriais e outra documentação."
 services: sql-server-stretch-database
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,9 +12,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 91c1cb9713d087982dc68f2511b72ef86a050616
 ms.openlocfilehash: bb5e0fa9981133a77c235a42be369b3bbacb4ac0
+ms.contentlocale: pt-pt
+ms.lasthandoff: 02/09/2017
 
 ---
 #<a name="sql-server-stretch-database-documentation"></a>Documentação do SQL Server Stretch Database
@@ -99,10 +101,5 @@ Saiba como utilizar a SQL Server Stretch Database par migrar dados de acesso esp
 
 ---
 
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

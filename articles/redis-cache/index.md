@@ -2,7 +2,7 @@
 title: "Documentação da Cache de Redis do Azure - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como utilizar a Cache de Redis do Azure, uma cache de dados mediador de mensagens que lhe dá às aplicações acesso rápido aos dados. Tutoriais, referências de API e muito mais."
 services: redis-cache
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,9 +12,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: ba5cba11b7b5ba142094e9d2c0b027386266e83a
 ms.openlocfilehash: 19756171a8831eef9ac25cfa619a815d17140257
+ms.contentlocale: pt-pt
+ms.lasthandoff: 02/09/2017
 
 ---
 #<a name="redis-cache-documentation"></a>Documentação da Cache de Redis
@@ -195,10 +197,5 @@ Saiba como utilizar a Cache de Redis do Azure, uma cache de dados seguros e medi
     </li>
 </ul>
 
-
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 
