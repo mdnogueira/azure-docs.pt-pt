@@ -4,7 +4,7 @@ description: "Saiba mais sobre o Stream Analytics, um serviço gerido que o ajud
 keywords: "análise como um serviço, serviços geridos, processamento de fluxo, stream analytics, o que é o stream analytics"
 services: stream-analytics
 documentationcenter: 
-author: jenniehubbard
+author: samacha
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 613c9b01-d103-46e0-b0ca-0839fee94ca8
@@ -14,12 +14,12 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 08/08/2017
-ms.author: jhubbard
+ms.author: samacha
 ms.translationtype: HT
-ms.sourcegitcommit: 398efef3efd6b47c76967563251613381ee547e9
-ms.openlocfilehash: 5081ecaf569aef9e2f99cc27e91c4b64a25b0deb
+ms.sourcegitcommit: 8351217a29af20a10c64feba8ccd015702ff1b4e
+ms.openlocfilehash: 6bb70ba7588b8c6e9261fca097403e7fccb041eb
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/29/2017
 
 ---
 
@@ -98,6 +98,6 @@ Enquanto serviço gerido na cloud, o Stream Analytics ajuda a evitar perdas de d
 * Saiba mais sobre a linguagem de consultas do tipo SQL para o Stream Analytics e sobre conceitos exclusivos, como as [funções de janela](stream-analytics-window-functions.md).
 * Saiba como [dimensionar tarefas do Stream Analytics](stream-analytics-scale-jobs.md). 
 * Saiba como [integrar o Stream Analytics e o Azure Machine Learning](stream-analytics-machine-learning-integration-tutorial.md).
-* Encontre respostas para as perguntas sobre o Stream Analytics no [fórum do Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics).
+* Encontre respostas para as perguntas sobre o Stream Analytics no [fórum do Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 

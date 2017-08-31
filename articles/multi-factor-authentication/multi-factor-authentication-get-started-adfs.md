@@ -12,18 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/23/2017
+ms.date: 08/25/2017
 ms.author: kgremban
 ms.translationtype: HT
-ms.sourcegitcommit: 54b5b8d0040dc30651a98b3f0d02f5374bf2f873
-ms.openlocfilehash: 28aede545c738137ff04257214e4a3f42792d85c
+ms.sourcegitcommit: a0b98d400db31e9bb85611b3029616cc7b2b4b3f
+ms.openlocfilehash: 564e98a4b6b9bd8bf9b58f06cee0027bfdf84458
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/12/2017
+ms.lasthandoff: 08/29/2017
 
 ---
-<a id="getting-started-with-azure-multi-factor-authentication-and-active-directory-federation-services" class="xliff"></a>
-
-# Introdução ao Multi-Factor Authentication do Azure e aos Serviços de Federação do Active Directory
+# <a name="getting-started-with-azure-multi-factor-authentication-and-active-directory-federation-services"></a>Introdução ao Multi-Factor Authentication do Azure e aos Serviços de Federação do Active Directory
 <center>![Nuvem](./media/multi-factor-authentication-get-started-adfs/adfs.png)</center>
 
 Se a sua organização tiver federado o seu Active Directory no local com o Azure Active Directory através do AD FS, existem duas opções para utilizar o Multi-Factor Authentication do Azure.
@@ -45,9 +43,6 @@ Advertências com palavras-passe de aplicação para utilizadores federados:
 * Perde a capacidade de registos de autenticação no local para as palavras-passe de aplicações.
 * A desativação/eliminação da conta pode demorar até três horas para a sincronização do diretório, atrasando a desativação/eliminação das palavras-passe das aplicações na identidade da nuvem.
 
-<a id="next-steps" class="xliff"></a>
-
-## Passos seguintes
 Para obter informações sobre como configurar o Multi-Factor Authentication do Azure ou o Servidor Multi-Factor Authentication do Azure com o AD FS, veja os seguintes artigos:
 
 * [Proteger recursos da nuvem com o Multi-Factor Authentication do Azure e o AD FS](multi-factor-authentication-get-started-adfs-cloud.md)

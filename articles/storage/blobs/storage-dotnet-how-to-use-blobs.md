@@ -15,10 +15,10 @@ ms.topic: hero-article
 ms.date: 03/27/2017
 ms.author: marsma
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 8b4b62c834d7b1a2e56a8a098c26b0aadb434976
+ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
+ms.openlocfilehash: 70c7d6a5e1b9aa9a13481893e0baa56538be097c
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="get-started-with-azure-blob-storage-using-net"></a>Introdução ao Blob Storage do Azure através do .NET
@@ -400,6 +400,6 @@ Agora que aprendeu as noções básicas do Blob Storage, siga estas ligações p
 
 ### <a name="conceptual-guides"></a>Guias conceptuais
 * [Transferir dados com o utilitário de linha de comandos AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
-* [Introdução ao Armazenamento de ficheiros do .NET](../files/storage-dotnet-how-to-use-files.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+* [Introdução ao Armazenamento de ficheiros do .NET](../files/storage-dotnet-how-to-use-files.md)
 * [Como utilizar o armazenamento de blobs do Azure com o SDK de WebJobs](../../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)
 

@@ -13,24 +13,20 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 07/14/2017
+ms.date: 08/29/2017
 ms.author: denlee
 ms.translationtype: HT
-ms.sourcegitcommit: 79bebd10784ec74b4800e19576cbec253acf1be7
-ms.openlocfilehash: 6d14719938af0ce825955389824441e111024869
+ms.sourcegitcommit: 1c730c65194e169121e3ad1d1423963ee3ced8da
+ms.openlocfilehash: 60cb187cf40f72fce86c421891bea02d3d6d708a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/30/2017
 
 ---
 # <a name="azure-cosmos-db-build-a-nodejs-application-by-using-graph-api"></a>Azure Cosmos DB: Criar uma aplicação Node.js com o Graph API
 
 O Azure Cosmos DB é um serviço de bases de dados da Microsoft com vários modelos e distribuído globalmente. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
 
-Este guia de introdução rápida demonstra como criar uma conta do Azure Cosmos DB para o Graph API (pré-visualização), bases de dados e gráficos com o portal do Azure. Em seguida, irá criar e executar uma aplicação de consola com o controlador [Gremlin Node.js](https://www.npmjs.com/package/gremlin-secure) «open-source».  
-
-> [!NOTE]
-> O módulo de npm `gremlin-secure` é uma versão modificada do módulo `gremlin`, com suporte para SSL e SASL exigidos para a ligação ao Azure Cosmos DB. O código de origem está disponível no [GitHub](https://github.com/CosmosDB/gremlin-javascript).
->
+Este guia de introdução rápida demonstra como criar uma conta do Azure Cosmos DB para o Graph API (pré-visualização), bases de dados e gráficos com o portal do Azure. Em seguida, irá criar e executar uma aplicação de consola com o controlador [Gremlin Node.js](https://www.npmjs.com/package/gremlin) «open-source».  
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -133,7 +129,7 @@ module.exports = config;
 
 1. Abra uma janela do terminal e mude (como o comando `cd`) para o diretório de instalação, para o ficheiro package.json que está incluído no projeto.  
 
-2. Execute `npm install` para instalar os módulos npm necessários, incluindo `gremlin-secure`.
+2. Execute `npm install` para instalar os módulos npm necessários, incluindo `gremlin`.
 
 3. Execute `node app.js` num terminal para iniciar a aplicação Node.js.
 
