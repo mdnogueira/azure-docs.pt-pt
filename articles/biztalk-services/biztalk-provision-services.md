@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
-ms.openlocfilehash: 299a6fb23cd0fa725324bbdbdc669ff125a99d1b
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: eca77b4a82eb67e1755717bb4429f8d450a64dc5
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="create-biztalk-services-using-the-azure-portal"></a>Criar os BizTalk Services com o Portal do Azure
@@ -31,7 +30,7 @@ ms.lasthandoff: 05/31/2017
 > Para iniciar sessão no Portal do Azure, deve ter uma conta e uma subscrição do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Veja [Avaliação Gratuita do Azure](http://go.microsoft.com/fwlink/p/?LinkID=239738).
 
 
-## <a name="create-a-biztalk-service"></a>Criar um BizTalk Service
+## <a name="CreateService"></a>Criar um Serviço BizTalk
 Nem todas as definições do BizTalk Service estarão disponíveis, consoante a Edição que escolher.
 
 1. Inicie sessão no [Portal do Azure](http://go.microsoft.com/fwlink/p/?LinkID=213885).
@@ -233,13 +232,14 @@ Quando cria um BizTalk Service do Azure, também é criado um URL HTTPS com o no
 
 <ul>
 <li><strong>Utilização de Chave Avançada</strong>: no mínimo, os Serviços BizTalk do Azure requerem a Autenticação do Servidor.</li>
-<li><strong>Nome Comum</strong>: introduza o nome de domínio completamente qualificado (FQDN) do URL do seu Serviço BizTalk do Azure. Veja <a HREF="#BizTalk">Criar um BizTalk Service</a> neste artigo.</li>
+<li><strong>Nome Comum</strong>: introduza o nome de domínio completamente qualificado (FQDN) do URL do seu Serviço BizTalk do Azure. Veja <a HREF="#CreateService">Criar um BizTalk Service</a> neste artigo.</li>
 </ul>
 <br/>
 Após criar o BizTalk Service, pode adicionar um novo certificado ou outro diferente.
 </td>
 </tr>
 </table>
+<!---Loc Comment: Please, check link [Create a BizTalk Service] since it is not redirecting to any location.--->
 
 
 

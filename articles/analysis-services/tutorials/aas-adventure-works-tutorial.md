@@ -3,7 +3,7 @@ title: Tutorial do Azure Analysis Services da Adventure Works | Microsoft Docs
 description: "Introdução ao tutorial da Adventure Works para o Azure Analysis Services"
 services: analysis-services
 documentationcenter: 
-author: minewiskan
+author: Minewiskan
 manager: erikre
 editor: 
 tags: 
@@ -15,11 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 06/01/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: a613bbe84a3834ab4fb237779248c7ad8d75b563
+ms.translationtype: HT
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 257e0bc442f29bfe6683fb0511deac50d92c1720
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="azure-analysis-services---adventure-works-tutorial"></a>Azure Analysis Services- tutorial da Adventure Works
@@ -53,7 +53,7 @@ Para concluir este tutorial, precisa de:
   
 -   Uma instância do Azure Analysis Services ou SQL Server 2017 Analysis Services para implementar o seu modelo. Inscreva-se para uma [avaliação gratuita do Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) e [crie um servidor](../analysis-services-create-server.md). Ou inscreva-se e transfira o [SQL Server 2017 Community Technology Preview](https://www.microsoft.com/evalcenter/evaluate-sql-server-vnext-ctp). 
 
--   O SQL Server ou a Base de Dados SQL Azure com a [base de dados de exemplo AdventureWorksDW2014](http://go.microsoft.com/fwlink/?LinkID=335807). Esta base de dados de exemplo inclui os dados necessários para concluir este tutorial. Transfira [edições gratuitas do SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads). Ou inscreva-se para uma [avaliação gratuita da Base de Dados do Azure SQL](https://azure.microsoft.com/services/sql-database/). 
+-   Um Armazém de Dados do SQL Server ou o Azure SQL Data Warehouse com a [base de dados de exemplo AdventureWorksDW2014](http://go.microsoft.com/fwlink/?LinkID=335807). Esta base de dados de exemplo inclui os dados necessários para concluir este tutorial. Transfira [edições gratuitas do SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads). Ou inscreva-se para uma [avaliação gratuita da Base de Dados do Azure SQL](https://azure.microsoft.com/services/sql-database/). 
 
     **Importante:** Se tiver instalado a base de dados de exemplo AdventureWorksDW2014 num SQL Server local e se estiver a implementar o seu modelo num servidorAzure Analysis Services, é necessário um [gateway de dados no local](../analysis-services-gateway.md).
 
@@ -64,7 +64,7 @@ Para concluir este tutorial, precisa de:
 -   Uma aplicação de cliente como [Power BI Desktop](https://powerbi.microsoft.com/desktop/) ou Excel. 
 
 ## <a name="scenario"></a>Cenário  
-Este tutorial baseia-se em Adventure Works Cycles, uma empresa fictícia. A Adventure Works é uma grande empresa multinacional de fabrico que produz e distribui bicicletas de metal e compostas para mercados comerciais na América do Norte, Europa e Ásia. A empresa emprega 500 funcionários. Além disso, a Adventure Works emprega várias equipas regionais de vendas em toda a sua base de mercado. O projeto é criar um modelo de tabela para que os utilizadores de vendas e marketing analisem os dados de vendas pela Internet na base de dados AdventureWorksDW.  
+Este tutorial baseia-se em Adventure Works Cycles, uma empresa fictícia. A Adventure Works é uma grande empresa multinacional de fabrico que produz e distribui bicicletas, peças e acessórios para mercados comerciais na América do Norte, Europa e Ásia. A empresa emprega 500 funcionários. Além disso, a Adventure Works emprega várias equipas regionais de vendas em toda a sua base de mercado. O projeto é criar um modelo de tabela para que os utilizadores de vendas e marketing analisem os dados de vendas pela Internet na base de dados AdventureWorksDW.  
   
 Para concluir o tutorial, deve concluir várias lições. Em cada lição, há tarefas. A conclusão de cada tarefa por ordem é necessária para concluir a lição. Numa lição específica podem existir várias tarefas que geram um resultado semelhante, mas a forma como conclui cada tarefa é ligeiramente diferente. Este método mostra que existe mais de uma forma para concluir uma tarefa e desafiamo-lo a usar as capacidades que assimilou nas lições e tarefas anteriores.  
   
@@ -78,19 +78,19 @@ Este tutorial inclui as seguintes lições:
   
 |Lição|Tempo estimado para concluir|  
 |----------|------------------------------|  
-|[Lição 1: Criar um novo projeto de modelo em tabela](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md)|10 minutos|  
-|[Lição 2: Obter dados](../tutorials/aas-lesson-2-get-data.md)|10 minutos|  
-|[Lição 3: Marcar como Tabela de Datas](../tutorials/aas-lesson-3-mark-as-date-table.md)|3 minutos|  
-|[Lição 4: Criar relações](../tutorials/aas-lesson-4-create-relationships.md)|10 minutos|  
-|[Lição 5: Criar colunas calculadas](../tutorials/aas-lesson-5-create-calculated-columns.md)|15 minutos|
-|[Lição 6: Criar medidas](../tutorials/aas-lesson-6-create-measures.md)|30 minutos|  
-|[Lição 7: Criar Indicadores Chave de Desempenho](../tutorials/aas-lesson-7-create-key-performance-indicators.md)|15 minutos|  
-|[Lição 8: Criar perspetivas](../tutorials/aas-lesson-8-create-perspectives.md)|5 minutos|  
-|[Lição 9: Criar hierarquias](../tutorials/aas-lesson-9-create-hierarchies.md)|20 minutos|  
-|[Lição 10: Criar partições](../tutorials/aas-lesson-10-create-partitions.md)|15 minutos|  
-|[Lição 11: Criar funções](../tutorials/aas-lesson-11-create-roles.md)|15 minutos|  
-|[Lição 12: Analisar no Excel](../tutorials/aas-lesson-12-analyze-in-excel.md)|5 minutos| 
-|[Lição 13: Implementar](../tutorials/aas-lesson-13-deploy.md)|5 minutos|  
+|[1 - Criar um novo projeto de modelo em tabela](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md)|10 minutos|  
+|[2 - Obter dados](../tutorials/aas-lesson-2-get-data.md)|10 minutos|  
+|[3 - Marcar como Tabela de Datas](../tutorials/aas-lesson-3-mark-as-date-table.md)|3 minutos|  
+|[4 - Criar relações](../tutorials/aas-lesson-4-create-relationships.md)|10 minutos|  
+|[5 - Criar colunas calculadas](../tutorials/aas-lesson-5-create-calculated-columns.md)|15 minutos|
+|[6 - Criar medidas](../tutorials/aas-lesson-6-create-measures.md)|30 minutos|  
+|[7 - Criar Indicadores Chave de Desempenho (KPI)](../tutorials/aas-lesson-7-create-key-performance-indicators.md)|15 minutos|  
+|[8 - Criar perspetivas](../tutorials/aas-lesson-8-create-perspectives.md)|5 minutos|  
+|[9 - Criar hierarquias](../tutorials/aas-lesson-9-create-hierarchies.md)|20 minutos|  
+|[10 - Criar partições](../tutorials/aas-lesson-10-create-partitions.md)|15 minutos|  
+|[11 - Criar funções](../tutorials/aas-lesson-11-create-roles.md)|15 minutos|  
+|[12 - Analisar no Excel](../tutorials/aas-lesson-12-analyze-in-excel.md)|5 minutos| 
+|[13 - Implementar](../tutorials/aas-lesson-13-deploy.md)|5 minutos|  
   
 ## <a name="supplemental-lessons"></a>Lições suplementares  
 Estas lições não são necessárias para concluir o tutorial, mas podem ser úteis para compreender melhor a criação de modelos de tabelas avançados.  

@@ -463,7 +463,7 @@ Neste exemplo, uma vez que os gateways estão em subscrições diferentes, divid
 
 ## <a name="faq"></a>FAQ da ligação VNet a VNet
 
-[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 

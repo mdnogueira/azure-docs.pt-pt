@@ -12,12 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 04/14/2017
+ms.date: 08/18/2017
 ms.author: magoedte
-translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: 97b863748dd726e19217e360645b8e6189c010b3
-ms.lasthandoff: 04/15/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
+ms.openlocfilehash: 6eadfb0c3f91c1f2c7783d70604b45d5dc9912a3
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/19/2017
 
 ---
 
@@ -31,15 +32,16 @@ Quando cria uma conta de Automatização no portal do Azure, este cria automatic
 
 Isto simplifica o processo para si e ajuda-o a começar rapidamente a criar e implementar runbooks para suportar as suas necessidades de automatização.  
 
+## <a name="permissions-required-to-create-automation-account"></a>Permissões necessárias para criar uma conta de Automatização
+Para criar ou atualizar uma conta de Automatização, tem de ter os seguintes privilégios específicos e as permissões necessárias para concluir este tópico.   
+ 
+* Para criar uma conta de Automatização, a sua conta de utilizador do AD tem de ser adicionada a uma função com permissões equivalentes à função de Proprietário para recursos Microsoft.Automation, conforme descrito no artigo [Controlo de acesso baseado em funções na Automatização do Azure](automation-role-based-access-control.md).  
+* Se a definição dos registos da Aplicação for **Sim**, os utilizadores não administradores no inquilino do Azure AD podem [registar aplicações do AD](../azure-resource-manager/resource-group-create-service-principal-portal.md#check-azure-subscription-permissions).  Se a definição dos registos da aplicação for **Não**, o utilizador que executa esta ação tem de ser um administrador global no Azure AD. 
+
+Se não for membro da instância do Active Directory da subscrição antes de ser adicionado à função de administrador global/coadministrador da mesma, é adicionado ao Active Directory como convidado. Nesta situação, recebe o aviso "Não tem permissões para criar..." no painel **Adicionar Conta de Automatização**. Os utilizadores que foram adicionados primeiro à função de administrador global/coadministrador podem ser removidos da instância do Active Directory da subscrição e adicionados novamente, para que se tornem em Utilizadores completos no Active Directory. Para verificar esta situação, no painel **Azure Active Directory**, no portal do Azure, selecione **Utilizadores e grupos**, **Todos os utilizadores** e, depois de selecionar o utilizador específico, selecione **Perfil**. O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.
+
 ## <a name="create-a-new-automation-account-from-the-azure-portal"></a>Criar uma nova Conta de Automatização a partir do portal do Azure
 Nesta secção, executa os seguintes passos para criar uma conta de Automatização do Azure no portal do Azure.    
-
->[!NOTE]
->Para criar uma conta de Automatização, tem de ser membro da função Administradores de Serviço ou o coadministrador da subscrição que está a conceder acesso à subscrição. Também tem de ser adicionado como utilizador à instância predefinida do Active Directory dessa subscrição. Não é necessário atribuir uma função privilegiada à conta.
->
->Se não for membro da instância do Active Directory da subscrição antes de ser adicionado à função de coadministrador da mesma, é adicionado ao Active Directory como convidado. Neste caso, recebe o aviso "Não tem permissões para criar..." no painel **Adicionar Conta de Automatização**.
->
->Os utilizadores que foram adicionados primeiro à função de coadministrador podem ser removidos da instância do Active Directory da subscrição e adicionados novamente, para que se tornem em Utilizadores completos no Active Directory. Esta situação pode ser verificada a partir do painel **Azure Active Directory**, no portal do Azure, ao selecionar **Utilizadores e grupos**, **Todos os utilizadores** e, depois de selecionar o utilizador específico, selecionar **Perfil**. O valor do atributo **Tipo de utilizador** sob o perfil de utilizadores não deve ser igual a **Convidado**.
 
 1. Inicie sessão no portal do Azure com uma conta que seja membro da função Administradores da Subscrição e coadministrador da subscrição.
 2. Clique em **Novo**.<br><br> ![Selecione a Nova opção no portal do Azure](media/automation-offering-get-started/automation-portal-martketplacestart.png)<br>  
@@ -55,10 +57,10 @@ Nesta secção, executa os seguintes passos para criar uma conta de Automatizaç
 6. Verifique se valor **Sim** está selecionado para a opção **Criar conta Run As do Azure** e clique no botão **Criar**.  
    
    > [!NOTE]
-   > Se optar por não criar a conta Run As, selecionando a opção **Não**, é apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**.  Enquanto a conta é criada no portal do Azure, não terá uma identidade de autenticação correspondente no seu serviço de diretório de subscrições clássico ou do Gestor de Recursos e, por isso, não terá acesso a recursos na sua subscrição.  Isto impede que todos os runbooks relacionados com esta conta tenham capacidade para autenticar e executar tarefas relativamente no que respeita a recursos nesses modelos de implementação.
+   > Se optar por não criar a conta Run As, selecionando a opção **Não**, é apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**.  Enquanto a conta é criada no portal do Azure, não tem uma identidade de autenticação correspondente no seu serviço de diretório de subscrições clássico ou do Gestor de Recursos e, por isso, não terá acesso a recursos na sua subscrição.  Isto impede que todos os runbooks relacionados com esta conta tenham capacidade para autenticar e executar tarefas relativamente no que respeita a recursos nesses modelos de implementação.
    > 
    > ![Adicionar Aviso de Conta de Automatização](media/automation-create-standalone-account/create-account-decline-create-runas-msg.png)<br>
-   > Se o principal de serviço não for criado, a função Contribuidor não será atribuída.
+   > Se o principal de serviço não for criado, a função Contribuidor não é atribuída.
    > 
 
 7. Enquanto o Azure cria a conta de automatização, pode acompanhar o progresso em **Notificações** a partir do menu.
@@ -86,4 +88,4 @@ A tabela seguinte resume os recursos da conta Run As clássica.<br>
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter mais informações sobre a Criação de Gráficos, consulte [Graphical authoring in Azure Automation (Criação de gráficos na Automatização do Azure)](automation-graphical-authoring-intro.md).
 * Para começar com runbooks do PowerShell, consulte [My first PowerShell runbook (O meu primeiro runbook do PowerShell)](automation-first-runbook-textual-powershell.md).
-* Para começar com runbooks do fluxo de trabalho do PowerShell, consulte o artigo [O meu primeiro runbook do fluxo de trabalho do PowerShell(automation-first-runbook-textual.md).
+* Para começar com runbooks do fluxo de trabalho do PowerShell, veja [O meu primeiro runbook do fluxo de trabalho do PowerShell](automation-first-runbook-textual.md).

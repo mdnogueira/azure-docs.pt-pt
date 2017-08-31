@@ -187,7 +187,7 @@ Pode fazer duplo clique em cada ligação em separado para ver mais informaçõe
 ## <a name="faq"></a>FAQ da ligação VNet a VNet
 Veja os detalhes das FAQ para obter informações adicionais sobre ligações VNet a VNet.
 
-[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja a documentação das [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute) para obter mais informações.

@@ -1,5 +1,5 @@
 ---
-title: Configurar o ambiente de desenvolvimento no Mac OS X | Microsoft Docs
+title: Configurar o ambiente de desenvolvimento no Mac OS X para trabalhar com o Azure Service Fabric | Microsoft Docs
 description: "Instale o runtime, o SDK e as ferramentas e crie um cluster de desenvolvimento local. Depois de concluir esta configuração, estará pronto para criar aplicações no Mac OS X."
 services: service-fabric
 documentationcenter: java
@@ -12,13 +12,13 @@ ms.devlang: java
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/06/2017
+ms.date: 08/21/2017
 ms.author: saysa
-translationtype: Human Translation
-ms.sourcegitcommit: 503f5151047870aaf87e9bb7ebf2c7e4afa27b83
-ms.openlocfilehash: e5d14eb0a656d67030f4c0d3d510aec0e9cafae7
-ms.lasthandoff: 03/28/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: cf381b43b174a104e5709ff7ce27d248a0dfdbea
+ms.openlocfilehash: 8b4fc0ab9034263418cac42ced203035e0a8fcad
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Configurar o ambiente de desenvolvimento no Mac OS X
@@ -51,7 +51,6 @@ Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, e
     ```
     Estes passos trazem o ficheiro `Vagrantfile` que contém a configuração da VM, juntamente com a localização de onde a VM foi transferida.
 
-
 2. Navegue para o clone local do repositório
 
     ```bash
@@ -75,24 +74,46 @@ Para criar a VM local que contenha um cluster do Service Fabric de cinco nós, e
 
     ![Início da configuração do cluster a seguir ao aprovisionamento da VM][cluster-setup-script]
 
->[!TIP]
-> Se a transferência da VM estiver a demorar muito tempo, pode transferi-la com o wget ou o curl, ou através de um browser ao navegar até à ligação especificada por **config.vm.box_url** no ficheiro `Vagrantfile`. Depois de transferi-la localmente, edite `Vagrantfile` para apontar para o caminho local onde transferiu a imagem. Por exemplo, se transferiu a imagem para /home/users/test/azureservicefabric.tp8.box, defina **config.vm.box_url** para esse caminho.
->
+    >[!TIP]
+    > Se a transferência da VM estiver a demorar muito tempo, pode transferi-la com o wget ou o curl, ou através de um browser ao navegar até à ligação especificada por **config.vm.box_url** no ficheiro `Vagrantfile`. Depois de transferi-la localmente, edite `Vagrantfile` para apontar para o caminho local onde transferiu a imagem. Por exemplo, se transferiu a imagem para /home/users/test/azureservicefabric.tp8.box, defina **config.vm.box_url** para esse caminho.
+    >
 
 5. Teste se o cluster foi configurado corretamente ao navegar para o Service Fabric Explorer, em http://192.168.50.50:19080/Explorer (partindo do princípio de que manteve o IP de rede privado predefinido).
 
     ![Service Fabric Explorer visto no Mac anfitrião][sfx-mac]
 
+
+## <a name="create-application-on-mac-using-yeoman"></a>Criar aplicação no Mac com o Yeoman
+O Service Fabric fornece ferramentas estruturais que irão ajudá-lo a criar uma aplicação do Service Fabric a partir do terminal, através do gerador de modelos Yeoman. Siga os passos abaixo para certificar-se de que tem o gerador de modelos yeoman do Service Fabric operacional no seu computador.
+
+1. Tem de ter o Node.js e NPM instalados no mac. Se não for possível instalar o Node.js e NPM através do Homebrew, utilize o seguinte. Para verificar as versões do Node.js e NPM instaladas no Mac, utilize a opção ``-v``.
+
+  ```bash
+  brew install node
+  node -v
+  npm -v
+  ```
+2. Instalar o gerador de modelos [Yeoman](http://yeoman.io/) no seu computador a partir do NPM
+
+  ```bash
+  npm install -g yo
+  ```
+3. Instale o gerador Yeoman que pretende utilizar, seguindo os passos na [documentação](service-fabric-get-started-linux.md) da introdução. Para criar Aplicações do Service Fabric com o Yeoman, siga os passos -
+
+  ```bash
+  npm install -g generator-azuresfjava       # for Service Fabric Java Applications
+  npm install -g generator-azuresfguest      # for Service Fabric Guest executables
+  npm install -g generator-azuresfcontainer  # for Service Fabric Container Applications
+  ```
+4. Para criar uma aplicação Java do Service Fabric no Mac, terá de ter - JDK 1.8 e Gradle instalados no computador.
+
+
 ## <a name="install-the-service-fabric-plugin-for-eclipse-neon"></a>Instalar o plug-in do Service Fabric para Eclipse Neon
 
 O Service Fabric fornece um plug-in para o **IDE Eclipse Neon para Java** que pode simplificar o processo de criação e implementação de serviços Java. Pode seguir os passos de instalação mencionados nesta [documentação](service-fabric-get-started-eclipse.md#install-or-update-the-service-fabric-plug-in-in-eclipse-neon) geral sobre a instalação ou atualização do plug-in do Eclipse para o Service Fabric.
 
-## <a name="using-service-fabric-eclipse-plugin-on-mac"></a>Utilizar o plug-in do Eclipse para o Service Fabric no Mac
-
-Certifique-se de que seguiu os passos mencionados na [documentação do plug-in do Eclipse para o Service Fabric](service-fabric-get-started-eclipse.md). Os passos para criar e implementar a aplicação Java do Service Fabric com o contentor de convidado vagrant num anfitrião Mac, são praticamente os mesmos da documentação geral, exceto alguns itens seguintes:
-
-* Uma vez que as bibliotecas do Service Fabric são requeridas pela aplicação Java do Service Fabric, o projeto eclipse tem de ser criado num caminho partilhado. Por predefinição, o conteúdo no caminho no anfitrião onde o ``Vagrantfile`` existe, é partilhado com o ``/vagrant`` caminho no convidado.
-* Se tiver o ``Vagrantfile`` num caminho, por exemplo, ``~/home/john/allprojects/``, tem de criar o seu projeto Service Fabric ``MyActor`` numa localização ``~/home/john/allprojects/MyActor`` e o caminho para a área de trabalho eclipse seria ``~/home/john/allprojects``.
+>[!TIP]
+> Por predefinição, suportamos o IP predefinido, conforme mencionado no ``Vagrantfile``, no ``Local.json`` da aplicação gerada. No caso de o alterar e implementar o Vagrant com um IP diferente, atualize também o IP correspondente no ``Local.json`` da sua aplicação.
 
 ## <a name="next-steps"></a>Passos seguintes
 <!-- Links -->

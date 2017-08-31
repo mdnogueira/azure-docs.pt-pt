@@ -12,14 +12,13 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/23/2017
+ms.date: 08/18/2017
 ms.author: yurid
 ms.translationtype: HT
-ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
-ms.openlocfilehash: 4d0909e926de14a0cbe9799b969ac7a1946d69d1
+ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
+ms.openlocfilehash: 44beafeff5cbe58ac8ca37632879f6ffc2b67e53
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.lasthandoff: 08/19/2017
 
 ---
 # <a name="partner-integration-in-azure-security-center"></a>Integração de parceiros no Centro de Segurança do Azure
@@ -62,9 +61,9 @@ Com base na configuração do seu ambiente do Azure e a política de segurança 
 
 ## <a name="manage-partner-solutions"></a>Gerir soluções de parceiros
 
-Após a implementação, para ver informações sobre o estado de funcionamento da solução e realizar tarefas de gestão básicas, selecione o mosaico **Soluções de parceiros**, no painel **Centro de Segurança**. Para obter mais informações sobre como gerir soluções de parceiros no Centro de Segurança, veja [Monitoring partner solutions with Azure Security Center (Monitorizar soluções de parceiros com o Centro de Segurança do Azure)](security-center-partner-solutions.md).
+Após a implementação, para ver informações sobre o estado de funcionamento da solução e realizar tarefas de gestão básicas, no painel **Centro de Segurança**, selecione a opção **Soluções de parceiros**. Para obter mais informações sobre como gerir soluções de parceiros no Centro de Segurança, veja [Monitoring partner solutions with Azure Security Center (Monitorizar soluções de parceiros com o Centro de Segurança do Azure)](security-center-partner-solutions.md).
 
-![Integração de parceiros](./media/security-center-partner-integration/security-center-partner-integration-fig1-1-newUI.png)
+![Integração de parceiros](./media/security-center-partner-integration/security-center-partner-integration-fig1-new2.png)
 
 > [!NOTE]
 > O suporte à proteção de ponto final da Symantec está limitado à deteção. Não estão disponíveis alertas de estado de funcionamento.

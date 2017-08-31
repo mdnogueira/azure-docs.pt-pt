@@ -12,25 +12,23 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/12/2017
+ms.date: 08/16/2017
 ms.author: markvi
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7c4d5e161c9f7af33609be53e7b82f156bb0e33f
-ms.openlocfilehash: 899a45d59099dec147c96e4cd175536e859e88f8
+ms.translationtype: HT
+ms.sourcegitcommit: 2d978248c78b84fe4ad37ecf7429e827a25d896f
+ms.openlocfilehash: 8d4460b3059558de2253c6f6a2d2fc8e7564d6d9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 08/18/2017
 
 ---
-# FAQ do Azure Active Directory
-<a id="azure-active-directory-faq" class="xliff"></a>
+# <a name="azure-active-directory-faq"></a>FAQ do Azure Active Directory
 O Azure Active Directory (Azure AD) é uma solução identidade como um Serviço (IDaaS) completa que abrange todos os aspetos relativos à identidade, gestão de acesso e segurança.
 
 Para obter mais informações, consulte [What is Azure Active Directory? (O que é o Azure Active Directory?)](active-directory-whatis.md).
 
 
-## Aceder ao Azure e Azure Active Directory
-<a id="access-azure-and-azure-active-directory" class="xliff"></a>
-**P: Por que motivo recebo “Não foram encontradas subscrições” ao tentar aceder ao Azure AD no Portal Clássico do Azure (https://manage.windowsazure.com)?**
+## <a name="access-azure-and-azure-active-directory"></a>Aceder ao Azure e Azure Active Directory
+**P: Por que motivo recebo “Não foram encontradas subscrições” ao tentar aceder ao Azure AD no portal clássico do Azure?**
 
 **R:** Para aceder ao portal clássico do Azure, cada utilizador precisa de permissões com uma subscrição do Azure. Se tiver uma subscrição paga do Office 365 ou do Azure AD, aceda a [http://aka.ms/accessAAD](http://aka.ms/accessAAD) com apenas um passo único de ativação. Caso contrário, terá de ativar uma [conta do Azure](https://azure.microsoft.com/pricing/free-trial/) gratuita ou uma subscrição paga.
 
@@ -70,8 +68,7 @@ Além disso, os serviços pagos do Azure AD, como o Enterprise Mobility + Securi
 
 - - -
 
-## Introdução ao Azure AD Híbrido
-<a id="get-started-with-hybrid-azure-ad" class="xliff"></a>
+## <a name="get-started-with-hybrid-azure-ad"></a>Introdução ao Azure AD Híbrido
 
 
 **P: Como deixo um inquilino quando estou adicionado como um colaborador?**
@@ -108,8 +105,7 @@ Para mais informações, consulte [Introduction to the Access Panel (Introduçã
 Para obter mais informações, consulte [Monitor your on-premises identity infrastructure and synchronization services in the cloud (Monitorizar os serviços de infraestrutura de identidade no local e sincronização na cloud)](active-directory-aadconnect-health.md).  
 
 - - -
-## Gestão de palavras-passe
-<a id="password-management" class="xliff"></a>
+## <a name="password-management"></a>Gestão de palavras-passe
 **P: Posso utilizar a repetição de escrita de palavras-passe do Azure AD sem sincronizar a palavra-passe? (Neste cenário, é possível utilizar a reposição de palavra-passe self-service do Azure AD (SSPR) com a repetição de escrita de palavras-passe e não armazenar palavras-passe na cloud?)**
 
 **R:** Não tem de sincronizar as palavras-passe do Active Directory no Azure AD para ativar a repetição de escrita de palavras-passe. Num ambiente federado, o início de sessão único (SSO) do Azure AD depende do diretório no local para autenticar o utilizador. Este cenário não requer que a palavra-passe no local seja controlada no Azure AD.
@@ -142,8 +138,7 @@ Para contas do Azure AD, os administradores podem repor as palavras-passe atrav�
 
 
 - - -
-## Segurança
-<a id="security" class="xliff"></a>
+## <a name="security"></a>Segurança
 **P: As contas são bloqueadas ao fim de um determinado número de tentativas falhadas ou é utilizada outra estratégia mais sofisticada?**</br>
 Utilizamos uma estratégia mais sofisticada para bloquear as contas.  Baseia-se no IP do pedido e nas palavras-passe introduzidas. A duração do bloqueio também aumenta com base na probabilidade de se tratar de um ataque.  
 
@@ -153,8 +148,7 @@ Refere-se a palavras-passe que são globalmente comuns, como as variantes de “
 **P: Os pedidos de início de sessão de origens duvidosas (botnets, pontos finais de tor) vão ser bloqueados em inquilinos B2C ou é necessário para tal um inquilino da edição Básica ou Premium?**</br>
 Temos um gateway que filtra os pedidos e que oferece alguma proteção contra botnets, que é aplicado a todos os inquilinos B2C.
 
-## Acesso à aplicação
-<a id="application-access" class="xliff"></a>
+## <a name="application-access"></a>Acesso à aplicação
 **P: Onde posso encontrar uma lista das aplicações previamente integradas ao Azure AD e as respetivas funcionalidades?**
 
 **R:** O Azure AD tem mais de 2.600 aplicações previamente integradas da Microsoft, de fornecedores de serviços de aplicações e parceiros. Todas as aplicações previamente integradas suportam o início de sessão único (SSO). O SSO permite-lhe utilizar as credenciais organizacionais para aceder às suas aplicações. Algumas das aplicações também suportam o aprovisionamento e cancelamento de aprovisionamento automatizados.
@@ -218,5 +212,5 @@ Para obter mais informações, consulte [Automate user provisioning and deprovis
 - - -
 **P: Posso configurar uma ligação LDAP segura ao Azure AD?** 
 
-**R:** Não.  O Azure AD não suporta o protocolo LDAP.
+**R:** Não. O Azure AD não suporta o protocolo LDAP.
 

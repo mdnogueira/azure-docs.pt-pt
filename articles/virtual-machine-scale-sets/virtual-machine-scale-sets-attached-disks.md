@@ -16,10 +16,10 @@ ms.topic: get-started-article
 ms.date: 4/25/2017
 ms.author: guybo
 ms.translationtype: HT
-ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
-ms.openlocfilehash: 451d3c956b863ab90f86509fd80a5c96e27525ce
+ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
+ms.openlocfilehash: 22c7e589efa9a9f401549ec9b95c58c4eaf07b94
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 # <a name="azure-vm-scale-sets-and-attached-data-disks"></a>Conjuntos de dimensionamento de VMs do Azure e discos de dados anexados
@@ -99,10 +99,21 @@ Também pode adicionar um disco ao criar uma nova entrada na propriedade _dataDi
     }          
 ]
 ```
+
 Em seguida, selecione _PUT_ para aplicar as alterações ao seu conjunto de dimensionamento. Este exemplo funciona desde que utilize um tamanho de VM que suporte mais do que dois discos de dados anexados.
 
 > [!NOTE]
 > Quando altera uma definição do conjunto de dimensionamento, como adicionar ou remover um disco de dados, a alteração é aplicada a todas as VMs criadas recentemente, mas apenas afeta as VMs existentes se a propriedade _upgradePolicy_ estiver definida como "Automático". Se estiver definida como "Manual", tem de aplicar manualmente o novo modelo às VMs existentes. Pode fazer isto no portal, através do comando _Update-AzureRmVmssInstance_ do PowerShell ou do comando _az vmss update-instances_ da CLI.
+
+## <a name="adding-pre-populated-data-disks-to-an-existent-scale-set"></a>Adicionar discos de dados pré-preenchidos a um conjunto de dimensionamento existente 
+> Quando adicionar discos a um modelo de conjunto de dimensionamento existente, por predefinição, o disco será sempre criado vazio. Este cenário também inclui novas instâncias criadas pelo conjunto de dimensionamento. Este comportamento acontece porque a definição do conjunto de dimensionamento tem um disco de dados vazio. Para criar unidades de dados pré-preenchidas para um modelo de conjunto de dimensionamento existente, pode escolher entre duas opções:
+
+* Copie dados da VM 0 da instância para o(s) disco(s) de dados nas outras VMs, executando um script personalizado.
+* Crie uma imagem gerida com o disco do SO e o disco de dados (com os dados necessários) e crie um novo conjunto de dimensionamento com a imagem. Desta forma, cada nova VM criada terá um disco de dados que é fornecido na definição do conjunto de dimensionamento. Uma vez que esta definição irá referir-se a uma imagem com um disco de dados que tem dados personalizados, cada máquina virtual no conjunto de dimensionamento irá surgir automaticamente com estas alterações.
+
+> A forma de criar uma imagem personalizada pode ser encontrada aqui: [Criar uma imagem gerida de uma VM generalizada no Azure](/azure/virtual-machines/windows/capture-image-resource/) 
+
+> O utilizador tem de capturar a VM 0 da instância que tem os dados requeridos e, em seguida, utilizar o vhd dessa definição de imagem.
 
 ## <a name="removing-a-data-disk-from-a-scale-set"></a>Remover um disco de dados de um conjunto de dimensionamento
 Pode remover um disco de dados de um conjunto de dimensionamento de VM com o comando _az vmss disk detach_ da CLI do Azure. Por exemplo, o seguinte comando remove o disco definido no lun 2:

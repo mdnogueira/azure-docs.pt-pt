@@ -16,27 +16,28 @@ ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.author: cgronlun
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: a9b47429779417afa664156cd824aa044f7bf04c
+ms.sourcegitcommit: cf381b43b174a104e5709ff7ce27d248a0dfdbea
+ms.openlocfilehash: 179a0d3696c6044ffb5b9e377effa30dda54ba7f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="introduction-to-machine-learning-in-the-azure-cloud"></a>Introdução ao Machine Learning na cloud do Azure
 
 ## <a name="what-is-machine-learning"></a>O que é o Machine Learning?
-A aprendizagem automática é uma técnica da ciência de dados que permite aos computadores utilizar dados existentes para prever futuros comportamentos, resultados e tendências. Ao utilizarem a aprendizagem automática, os computadores aprendem sem serem explicitamente programados.
+A aprendizagem automática é uma técnica da ciência de dados que permite aos computadores utilizar dados existentes para prever futuros comportamentos, resultados e tendências. Ao utilizarem a aprendizagem automática, os computadores aprendem sem serem explicitamente programados. 
 
-As previsões ou predições da aprendizagem automática podem tornar as aplicações e os dispositivos mais inteligentes. Quando faz compras online, o Machine Learning recomenda outros produtos que poderá gostar com base nos que já comprou. Quando o seu cartão de crédito é usado, o machine learning compara a transação com uma base de dados de transações e ajuda a detetar fraudes. Quando o robô aspirador limpa uma sala, o machine learning ajuda-o a decidir se a tarefa está concluída.
+A aprendizagem automática é considerada uma subcategoria da inteligência artificial (IA). As previsões ou predições da aprendizagem automática podem tornar as aplicações e os dispositivos mais inteligentes. Quando faz compras online, o Machine Learning recomenda outros produtos que poderá gostar com base nos que já comprou. Quando o seu cartão de crédito é usado, o machine learning compara a transação com uma base de dados de transações e ajuda a detetar fraudes. Quando o robô aspirador limpa uma sala, o machine learning ajuda-o a decidir se a tarefa está concluída.
 
 Para obter uma descrição resumida, experimente a série de vídeos [Ciência de Dados para Principiantes](machine-learning-data-science-for-beginners-the-5-questions-data-science-answers.md). Sem utilizar jargão ou matemática, a Ciência de Dados para Principiantes introduz a machine learning e orienta-o através de um modelo preditivo simples.
 
 ## <a name="what-is-machine-learning-in-the-microsoft-azure-cloud"></a>O que é o Machine Learning na nuvem do Microsoft Azure?
+
+![O que é o Machine Learning? Fluxo de trabalho básico para operacionalizar a análise preditiva no Azure Machine Learning.](./media/machine-learning-what-is-machine-learning/machine-learning-service-parts-and-workflow.png)
+
 O Azure Machine Learning é um serviço de análise preditiva baseado na cloud e que torna possível a criação e implementação rápidas de modelos preditivos como soluções de análise.
 
 Pode trabalhar a partir de uma biblioteca de algoritmos prontos a serem utilizados, utilizá-los para criar modelos num PC ligado à Internet e implementar a sua solução preditiva rapidamente. Comece com exemplos e soluções prontos a utilizar na [Galeria do Cortana Intelligence](https://gallery.cortanaintelligence.com/).
-
-![O que é o Machine Learning? Fluxo de trabalho básico para operacionalizar a análise preditiva no Azure Machine Learning.](./media/machine-learning-what-is-machine-learning/machine-learning-service-parts-and-workflow.png)
 
 O Azure Machine Learning não só fornece ferramentas para a análise preditiva dos modelos, como também presta um serviço totalmente gerido que pode utilizar para implementar os seus modelos preditivos como serviços Web prontos a consumir.
 

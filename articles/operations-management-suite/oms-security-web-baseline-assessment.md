@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/28/2017
+ms.date: 08/18/2017
 ms.author: yurid
 ms.translationtype: HT
-ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
-ms.openlocfilehash: 8be49b182df675fe3235d148b87379e1dff3a384
+ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
+ms.openlocfilehash: 40b0c6ca933ea02ac9f5fe3bfaaf87a310542a8d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/19/2017
 
 ---
 # <a name="web-baseline-assessment-in-operations-management-suite-security-and-audit-solution"></a>Avaliação da Linha de Base Web em Solução de Segurança e Auditoria do Operations Management Suite
@@ -29,6 +29,9 @@ Este documento ajuda-o a utilizar as capacidades de avaliação da linha de base
 Atualmente, a Segurança OMS fornece avaliação de linha de base de segurança para sistemas operativos. Esta solução analisa as definições de SO dos servidores a cada 24 horas e oferece uma perspetiva das definições potencialmente vulneráveis. Leia [Avaliação da Linha de Base em Solução de Segurança e Auditoria do Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/oms-security-baseline) para obter mais informações sobre este tema.
 
 A Avaliação da Linha de Base Web tem por objetivo localizar definições de servidor Web potencialmente vulneráveis. As três origens primárias para as configurações de linha de base Web são: configuração de .NET, ASP.NET e IIS.  Tal como a avaliação de linha de base do sistema operativo, a Segurança OMS vai analisar os servidores Web cada 24 horas e fornecer uma vista de estado de segurança dos mesmos.  No Serviço de Informação Internet (IIS), as configurações são altamente personalizáveis, o que permite a substituição de vários níveis de aplicação e site. O scanner verifica as definições em cada nível de aplicação/site para além do nível de raiz predefinido. Isto ajuda a identificar definições potencialmente vulneráveis e a corrigi-las sem demora, além de fornecer as nossas recomendações para essas definições.
+
+>[!NOTE] 
+>Pode transferir os Identificadores de Configuração Comuns e as Regras de Linha de Base utilizados pela Segurança do OMS nesta [página](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335?redir=0).
 
 
 ## <a name="web-security-baseline-assessment"></a>Avaliação da linha de base de segurança Web

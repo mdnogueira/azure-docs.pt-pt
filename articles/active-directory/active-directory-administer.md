@@ -1,36 +1,33 @@
 ---
-title: "Administrar o diretório do Azure AD | Microsoft Docs"
-description: "Explica o que é um inquilino do Azure AD e como gerir o Azure através do Azure Active Directory"
+title: "Descrição geral de como utilizar um diretório de inquilinos do Azure Active Directory | Microsoft Docs"
+description: "Explica o que é um inquilino do Azure AD e como gerir o Azure com o Azure Active Directory"
 services: active-directory
 documentationcenter: 
 author: curtand
 manager: femila
 ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
-ms.workload: infrastructure-services
+ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/25/2017
+ms.date: 08/23/2017
 ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro;oldportal
 ms.translationtype: HT
-ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
-ms.openlocfilehash: d68b641ac934c3930366be3dbf89a86e9611c7b7
+ms.sourcegitcommit: 25e4506cc2331ee016b8b365c2e1677424cf4992
+ms.openlocfilehash: b1390ba45f52473129dce6b904690b040af8f7e2
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 08/24/2017
 
 ---
-# <a name="administer-your-azure-ad-directory"></a>Administrar o diretório do Azure AD
+# <a name="manage-your-azure-ad-directory"></a>Gerir o seu diretório do Azure AD
+
 ## <a name="what-is-an-azure-ad-tenant"></a>O que é um inquilino do Azure AD?
-Na área de trabalho física, o termo inquilino pode ser definido como um grupo ou uma empresa que ocupa um edifício. Por exemplo, a sua organização poderá ser a proprietária de um escritório num edifício. Esse edifício poderá encontrar-se numa rua com várias outras organizações. A sua organização será considerada como inquilino desse edifício. Esse edifício é um recurso da sua organização que fornece segurança e garante-lhe a possibilidade de fazer negócios em segurança. Está também separado dos outros negócios na sua rua. Tal garante que a organização e respetivos recursos estão isolados de outras organizações.
+No Azure Active Directory (Azure AD), um inquilino é uma instância dedicada de um diretório do Azure AD que a sua organização recebe quando se inscreve num serviço cloud da Microsoft, como o Azure ou o Office 365. Cada diretório do Azure AD é distinto e separado de outros diretórios do Azure AD. Tal como um edifício de escritórios empresariais é um recurso seguro específico apenas para a sua organização, um diretório do Azure AD também foi concebido para ser um recurso com utilização segura apenas para a sua organização. A arquitetura do Azure AD isola os dados do cliente e as informações de identidade para que os utilizadores e administradores de um diretório do Azure AD não possa aceder aos dados de outro diretório de forma acidental ou intencional.
 
-Na área de trabalho ativada na nuvem, um inquilino pode ser definido com um cliente ou uma organização que possui e gere uma instância específica do referido serviço em nuvem. Com a plataforma de identidade fornecida pelo Microsoft Azure, um inquilino não é mais do que uma instância dedicada do Azure Active Directory (Azure AD) que a sua organização recebe e possui quando se inscreve num serviço em nuvem da Microsoft, como o Azure ou o Office 365.
-
-Cada diretório do Azure AD é distinto e separado de outros diretórios do Azure AD. Tal como um edifício de escritórios empresariais é um recurso seguro específico apenas para a sua organização, um diretório do Azure AD também foi concebido para ser um recurso com utilização segura apenas para a sua organização. A arquitetura do Azure AD impede que os dados do cliente e as informações de identidade se misturem. Isto significa que os utilizadores e administradores de um diretório do Azure AD não podem, acidental ou intencionalmente, aceder aos dados de outro diretório.
-
-![Gerir o Azure Active Directory][1]
+![Gerir o Azure Active Directory](./media/active-directory-administer/aad_portals.png)
 
 ## <a name="how-can-i-get-an-azure-ad-directory"></a>Como posso obter um diretório do Azure AD?
 O Azure AD oferece as principais funcionalidades de gestão de diretórios e de identidades por detrás da maioria dos Cloud Services da Microsoft, incluindo:
@@ -42,110 +39,86 @@ O Azure AD oferece as principais funcionalidades de gestão de diretórios e de 
 
 Pode obter um diretório do Azure AD quando se inscreve para qualquer um destes serviços cloud da Microsoft. Pode criar diretórios adicionais, conforme necessário. Por exemplo, poderá manter o primeiro diretório como um diretório de produção e criar posteriormente outro diretório para o processo de teste e transição.
 
-> [!NOTE]
-> Depois de se inscrever no primeiro serviço, recomendamos que utilize a mesma conta de administrador associada à sua organização sempre que se inscrever noutros Cloud Services da Microsoft.
-> 
-> 
+### <a name="using-the-azure-ad-directory-that-comes-with-a-new-azure-subscription"></a>Utilizar o diretório do Azure AD que vem incluído com as subscrições do Azure novas
 
-Na primeira vez que se inscrever num serviço em nuvem da Microsoft, ser-lhe-á pedido que faculte os detalhes da sua organização, bem como o nome de registo do domínio na Internet. Estas informações são posteriormente utilizadas para criar uma nova instância do diretório do Azure AD para a sua organização. Esse mesmo diretório é utilizado para autenticar as tentativas de início de sessão, caso subscreva vários Cloud Services da Microsoft.
+Recomendamos que utilize a conta de administrador que utilizou no seu primeiro serviço quando se inscreveu noutros serviços Microsoft. As informações que indicar da primeira vez que se inscrever num serviço Microsoft são utilizadas para criar uma instância de diretório do Azure AD nova para a sua organização. Se utilizar este diretório para autenticar as tentativas de início de sessão quando subscrever outros serviços Microsoft, estes podem utilizar as contas de utilizador, as políticas, as definições ou a integração de diretórios no local que já tenha configurado no diretório predefinido.
 
-Os serviços adicionais permitem-lhe tirar o maior partido de quaisquer contas de utilizador, políticas, definições existentes ou integração de diretórios no local que configurou para ajudar a melhorar a eficiência entre a infraestrutura da identidade no local da organização e o Azure AD.
+Por exemplo, se se inscrever numa subscrição do Microsoft Intune e, posteriormente, sincronizar o seu Active Directory no local com o seu diretório do Azure Directory, pode inscrever-se noutro serviço Microsoft, como o Office 365, e beneficiar, facilmente, das mesmas vantagens de integração de diretórios que já tem com o Microsoft Intune.
 
-Por exemplo, se inicialmente tiver assinado uma subscrição do Microsoft Intune e concluído os passos necessários para integrar o Active Directory no local ao diretório do Azure AD através da implementação da sincronização de diretórios e/ou servidores de início de sessão único, poderá subscrever outro serviço em nuvem da Microsoft, como o Office 365, que também pode potenciar a integração do mesmo diretório que utiliza com o Microsoft Intune.
+Para obter mais informações acerca da integração do seu diretório no local com o Azure AD, veja [Integração de diretórios com o Azure AD Connect](active-directory-aadconnect.md).
 
-Para obter mais informações acerca da integração do diretório no local com o Azure AD, consulte o artigo [Integração de diretórios](active-directory-aadconnect.md).
-
-### <a name="associate-an-azure-ad-directory-with-a-new-azure-subscription"></a>Associar um diretório do Azure AD a uma nova subscrição do Azure
-Pode associar uma nova subscrição do Azure ao mesmo diretório que autentica o início de sessão de uma subscrição existente do Office 365 ou do Microsoft Intune. Inicie sessão no portal do Azure com a sua conta escolar ou profissional. O portal devolve uma mensagem a indicar que não foi encontrada uma subscrição para essa conta. Selecione **Iniciar Sessão no Azure**. O diretório ficará disponível para a administração no portal. Para obter mais informações, consulte [Gerir o diretório da subscrição do Office 365 no Azure](active-directory-how-subscriptions-associated-directory.md#manage-the-directory-for-your-office-365-subscription-in-azure).
-
-Para obter um vídeo com as perguntas comuns de utilização do Azure AD, consulte [Azure Active Directory – perguntas comuns sobre a utilização da inscrição e do início de sessão](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).
+### <a name="associate-an-existing-azure-ad-directory-with-a-new-azure-subscription"></a>Associar um diretório do Azure AD existente a uma nova subscrição do Azure
+Pode associar uma nova subscrição do Azure ao mesmo diretório que autentica o início de sessão de uma subscrição já existente do Office 365 ou do Microsoft Intune. Para obter mais informações sobre este cenário, veja [Transfer ownership of an Azure subscription to another account](../billing/billing-subscription-transfer.md) (Transferir a propriedade de uma subscrição do Azure para outra conta)
 
 ### <a name="create-an-azure-ad-directory-by-signing-up-for-a-microsoft-cloud-service-as-an-organization"></a>Criar um diretório do Azure AD ao inscrever-se num serviço em nuvem da Microsoft como uma organização
-Se ainda não tiver uma subscrição do serviço em nuvem da Microsoft, utilize uma das ligações abaixo para se inscrever. Aquando da inscrição ao primeiro serviço, será automaticamente criado um diretório do Azure AD.
+Se ainda não tiver uma subscrição de um serviço cloud da Microsoft, pode utilizar uma das ligações abaixo para se inscrever. A inscrição no primeiro serviço cria automaticamente um diretório do Azure AD.
 
-* [Microsoft Azure](https://account.windowsazure.com/organization)
+* [Microsoft Azure](https://account.azure.com/organization)
 * [Office 365](http://products.office.com/business/compare-office-365-for-business-plans/)
 * [Microsoft Intune](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0%20)
 
-### <a name="manage-an-azure-provisioned-default-directory"></a>Gerir um diretório Predefinido aprovisionado pelo Azure
-Hoje em dia, um diretório é automaticamente criado quando se inscreve no Azure, sendo a subscrição associada a esse diretório. No entanto, não foi automaticamente criado nenhum diretório se se inscreveu no Azure antes de outubro de 2013. Nesse caso, o Azure pode ter “preenchido” a sua conta, facultando um diretório Predefinido. Em seguida, a subscrição foi associada a esse diretório Predefinido.
+### <a name="how-to-change-the-default-directory-for-a-subscription"></a>Como alterar o diretório predefinido de uma subscrição
 
-O preenchimento dos diretórios foi realizado em outubro de 2013, como parte de uma melhoria geral do modelo de segurança do Azure. Isso ajuda a oferecer funcionalidades de identidade organizacional a todos os clientes do Azure, garantindo ainda que todos os recursos do Azure são acedidos no contexto de um utilizador no diretório. Não pode utilizar o Azure sem um diretório. Para tal, qualquer utilizador que se tenha inscrito antes do 7 de julho de 2013 e não possui um diretório, terá de criar um. Se já tiver criado um diretório, a subscrição foi associada a esse diretório.
+1. Inicie sessão no [Centro de Contas do Azure](https://account.windowsazure.com/Home/Index) com uma conta que seja o Administrador de Conta da subscrição para transferir a propriedade da subscrição.
+2. Confirme que o utilizador que pretende que seja o proprietário da subscrição está no diretório segmentado.
+3. Clique em **Transferir subscrição**.
+4. Especifique o destinatário. O destinatário recebe automaticamente um e-mail com uma ligação de aceitação.
+5. O destinatário clica na ligação e segue as instruções, o que inclui a introdução das respetivas informações de pagamento. Quando o destinatário concluir o processo com êxito, a subscrição é transferida. 
+6. O diretório predefinido da subscrição é alterado para o diretório em que o utilizador se encontra, caso a transferência de propriedade de subscrição tenha sido efetuada com êxito.
 
-A utilização do Azure AD é gratuita. O diretório é um recurso gratuito. Está disponível um escalão adicional, o Azure Active Directory Premium, licenciado à parte e que fornece funcionalidades adicionais, tais como imagem corporativa e reposição personalizada de palavra-passe.
+### <a name="manage-the-default-directory-in-azure"></a>Gerir o diretório predefinido no Azure
+Quando se inscreve no Azure, é associado à sua subscrição um diretório predefinido do Azure AD. A utilização do Azure AD não tem custos e os seus diretórios são um recurso gratuito. Existem serviços pagos do Azure AD, os quais estão licenciados em separado e oferecem funcionalidades adicionais, como imagem corporativa da empresa no início de sessão e a reposição de palavras-passe personalizada. Também pode criar um domínio personalizado com um nome DNS de que é proprietário em vez do domínio *.com predefinido.
 
-Para alterar o nome a apresentar do diretório, clique no diretório no portal e, em seguida, em **Configurar**. Conforme explicado posteriormente neste tópico, pode adicionar um novo diretório ou eliminar um diretório que já não necessita. Para associar a sua subscrição a um diretório diferente, clique na extensão **Definições** no painel de navegação esquerdo e, na parte inferior da página **Subscrições**, clique em **Editar Diretório**. Em vez do domínio predefinido *.onmicrosoft.com, pode criar um domínio personalizado com um nome DNS que registou, o que poderá ser preferível com um serviço como o SharePoint Online.
+## <a name="how-can-i-manage-directory-data"></a>Como posso gerir os dados do diretório?
+Para administrar de uma ou mais subscrições do serviço cloud da Microsoft, pode utilizar o [centro de administração do Azure AD](https://aad.portal.azure.com), o portal de contas do Microsoft Intune ou o [Centro de Administração do Office 365](https://portal.office.com/) para gerir os dados dos diretórios da sua organização. Também pode utilizar os [cmdlets do PowerShell do Azure Active Directory](https://docs.microsoft.com/powershell/azure/active-directory)para o ajudar a gerir os dados armazenados no Azure AD.
 
-## <a name="how-can-i-manage-directory-data"></a>Como posso gerir os dados do diretório
-Como administrador de uma ou mais subscrições do serviço cloud da Microsoft, pode utilizar o [centro de administração do Azure AD](https://aad.portal.azure.com), o portal de contas do Microsoft Intune ou o Centro de Administração do Office 365 para gerir os dados do diretório das suas organizações. Também pode transferir e executar os cmdlets do [Módulo Microsoft Azure Active Directory para Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx) para ajudar a gerir os dados armazenados no Azure AD.
-
-utilizando um destes portais (ou cmdlets), pode:
+Num dos portais seguintes (ou cmdlets), pode:
 
 * Criar e gerir contas de utilizador e de grupo
-* Gerir Cloud Services associados subscritos pela sua organização
-* Configurar a integração no local com o serviço de diretório
+* Gerir serviços cloud associados às subscrições da sua organização
+* Configurar a integração no local com os serviços de identidade e autenticação do Azure AD
 
-O [centro de administração do Azure AD](https://aad.portal.azure.com), o Centro de Administração do Office 365, o portal de contas do Microsoft Intune e os cmdlets do Azure AD leem e escrevem numa única instância partilhada do Azure AD associada ao diretório da sua organização, conforme ilustrado a seguir. Desta forma, os portais (ou cmdlets) agem como uma interface de front-end que extrai ou modifica os dados do diretório.
+O centro de administração do Azure AD, o Centro de Administração do Office 365, o portal de contas do Microsoft Intune e os cmdlets do Azure AD leem e escrevem numa única instância partilhada do Azure AD que está associada ao diretório da sua organização. Cada uma destas ferramentas funciona como uma interface de front-end que extrai ou altera os dados do diretório.
 
-![][2]
+Quando utiliza um dos portais ou dos cmdlets para alterar os dados da sua organização enquanto tem sessão iniciada no contexto de um destes serviços, as alterações também aparecem nos outros portais da próxima vez que iniciar sessão. Estes dados são partilhados entre os serviços cloud da Microsoft que tem subscritos.
 
-Estes portais de conta e cmdlets do Azure AD PowerShell associados utilizados para gerir utilizadores e grupos são criados sobre a plataforma do Azure AD.
-
-Quando alterar os dados das organizações através de um dos portais (ou cmdlets) enquanto tiver sessão iniciada no âmbito de um desses serviços, a alteração também será mostrada nos outros portais da próxima vez que iniciar sessão no âmbito daquele serviço uma vez que esses dados são partilhados entre os Cloud Services da Microsoft que tiver subscrito.
-Por exemplo, se tiver utilizado o Centro de Administração do Office 365 para impedir um utilizador de iniciar sessão, a ação irá bloquear o utilizador de iniciar sessão em qualquer outro serviço subscrito pela sua organização. Se tiver de parar a conta desse mesmo utilizador no âmbito do portal de contas do Microsoft Intune, poderá ver que o utilizador está bloqueado.
+Por exemplo, se utilizar o Centro de Administração do Office 365 para impedir um utilizador de iniciar sessão, a ação impede-o de iniciar sessão em qualquer outro serviço que a sua organização tenha subscrito. Se vir a mesma conta de utilizador no portal de contas do Microsoft Intune, verá também que o utilizador está bloqueado.
 
 ## <a name="how-can-i-add-and-manage-multiple-directories"></a>Como posso adicionar e gerir múltiplos diretórios?
-Pode adicionar um diretório do Azure AD no [portal clássico do Azure AD](https://manage.windowsazure.com). No painel **Descrição Geral**, selecione a extensão **Active Directory**, à esquerda, e clique em **Novo**.
+Pode [adicionar um diretório do Azure AD no portal do Azure](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory). Preencha as informações e selecione **Criar**.
 
 Pode gerir cada diretório como um recurso totalmente independente: cada diretório é um par, completo e logicamente independente dos outros diretórios que gere; não existe nenhuma relação principal-subordinado entre diretórios. Esta independência entre diretórios inclui independência de recursos, independência administrativa e independência de sincronização.
 
-* **Independência de recursos**. Se criar ou eliminar um recurso num diretório, isso não terá impacto em nenhum outro recurso de nenhum outro diretório, com a exceção parcial dos utilizadores externos, descritos abaixo. Se utilizar um domínio personalizado “contoso.com” com um diretório, não o poderá utilizar com qualquer outro diretório.
-* **Independência administrativa**.  Se um utilizador não administrativo do diretório “Contoso” criar um diretório de “Teste”, então:
+* **Independência de recursos**. Se criar ou eliminar um recurso num diretório, isso não tem impacto em nenhum outro recurso de nenhum outro diretório, com a exceção parcial dos utilizadores externos. Se utilizar um domínio personalizado “contoso.com” com um diretório, não o poderá utilizar com qualquer outro diretório.
+* **Independência administrativa**.  Se um utilizador que não seja administrador do diretório “Contoso” criar um diretório de “Teste”, então:
   
-  * A ferramenta de sincronização de diretórios, para sincronizar dados com uma floresta única do AD.
-  * Os administradores do diretório “Contoso” não têm privilégios administrativos diretos para o diretório de “Teste”, exceto se um administrador de “Teste” lhes conceder esses privilégios. Os administradores da “Contoso” podem controlar o acesso ao diretório de “Teste” controlando a conta de utilizador que tiver criado o “Teste”.
+  * Os administradores do diretório “Contoso” não têm privilégios administrativos diretos para o diretório de “Teste”, exceto se um administrador de “Teste” lhes conceder esses privilégios. Os administradores de “Contoso” podem controlar o acesso ao diretório “Teste”, uma vez que têm controlo sobre a conta de utilizador que criou “Teste”.
     
-    E, se alterar (adicionar ou remover) uma função de administrador de um utilizador num diretório, a alteração não afetará nenhuma função de administrador que o utilizador possa ter em qualquer outro diretório.
-* **Independência de sincronização**. Pode configurar cada Azure AD independentemente para a sincronização dos dados a partir de uma única instância:
-  
-  * Da ferramenta de sincronização de diretórios, para sincronizar dados com uma floresta única do AD ou
-  * Do Conector Azure Active Directory para Forefront Identity Manager, para sincronizar dados com uma ou mais florestas no local e/ou fontes de dados não AD.
+  * Se atribuir ou remover uma função de administrador de um utilizador num diretório, a alteração não afeta nenhuma função de administrador que o utilizador possa ter em qualquer outro diretório.
+* **Independência de sincronização**. Pode configurar cada inquilino do Azure AD de forma independente para que os dados se sincronizem a partir de uma instância única com a ferramenta de sincronização de diretórios do Azure AD Connect.
 
-Tenha também em atenção que, ao contrário de outros recursos do Azure, os diretórios não são recursos subordinados de uma subscrição do Azure. Por isso, se cancelar ou deixar que a subscrição do Azure expire, pode continuar a aceder aos dados do diretório através do Azure AD PowerShell, da Graph API do Azure ou de outras interfaces, como o Centro de Administração do Office 365. Também pode associar outra subscrição ao diretório.
+Ao contrário de outros recursos do Azure, os seus diretórios não são recursos subordinados de uma subscrição do Azure. Por isso, se cancelar ou deixar que a subscrição do Azure expire, pode continuar a aceder aos dados do diretório através do Azure AD PowerShell, da Graph API do Azure ou de outras interfaces, como o Centro de Administração do Office 365. Também pode associar outra subscrição ao diretório.
 
-## <a name="how-can-i-delete-an-azure-ad-directory"></a>Como posso eliminar um diretório do Azure AD?
-Um administrador global pode eliminar um diretório do Azure AD a partir do portal. Quando um diretório é eliminado, também são eliminados todos os recursos contidos no diretório; por isso, certifique-se de que não precisa do diretório antes de o eliminar.
+## <a name="how-to-prepare-to-delete-an-azure-ad-directory"></a>Como preparar a eliminação de um diretório do Azure AD
+Um administrador global pode eliminar um diretório do Azure AD a partir do portal. Quando um diretório é eliminado, todos os recursos contidos no mesmo também o são. Confirme que não precisa do diretório antes de o eliminar.
 
 > [!NOTE]
-> Se o utilizador tiver iniciado sessão com uma conta profissional ou escolar, o utilizador não deverá tentar eliminar o diretório raiz. Por exemplo, se o utilizador tiver iniciado sessão como joe@contoso.onmicrosoft.com, esse utilizador não poderá eliminar o diretório contoso.onmicrosoft.com, uma vez que se trata do domínio predefinido.
-> 
-> 
+> Se o utilizador tiver iniciado sessão com uma conta profissional ou escolar, não deverá tentar eliminar o diretório raiz dele. Por exemplo, se o utilizador tiver iniciado sessão como joe@contoso.onmicrosoft.com, esse utilizador não poderá eliminar o diretório contoso.onmicrosoft.com, uma vez que se trata do domínio predefinido.
 
-### <a name="conditions-that-must-be-met-to-delete-an-azure-ad-directory"></a>Condições que devem cumprir para eliminar um diretório do Azure AD
-O Azure AD requer que certas condições sejam cumpridas para eliminar um diretório. Isso reduz o risco de eliminar um diretório que poderia ter um impacto negativo sobre os utilizadores ou aplicações, como a capacidade de os utilizadores iniciarem sessão no Office 365 ou acederem a recursos no Azure. Por exemplo, se um diretório de uma subscrição tiver sido eliminado involuntariamente, os utilizadores não poderão aceder aos recursos do Azure daquela subscrição.
+O Azure AD requer que certas condições sejam cumpridas para eliminar um diretório. Isto reduz o risco de eliminar um diretório que poderia ter um impacto negativo sobre os utilizadores ou aplicações, como a capacidade de os utilizadores iniciarem sessão no Office 365 ou acederem a recursos no Azure. Por exemplo, se um diretório de uma subscrição for eliminado involuntariamente, os utilizadores não poderão aceder aos recursos do Azure dessa subscrição.
 
 Verificam-se as seguintes condições:
 
-* O único utilizador no diretório é o administrador global que irá eliminar o diretório. Deverão ser eliminados todos os outros utilizadores antes de eliminar o diretório. Se os utilizadores forem sincronizados no local, a sincronização terá de ser desativada e os utilizadores eliminados do diretório em nuvem através do Portal de Gestão ou do módulo do Azure para Windows PowerShell. Não é necessário eliminar grupos ou contactos, tais como contactos adicionados a partir do Centro de Administração do Office 365.
+* O único utilizador no diretório deve ser o administrador global que o vai eliminar. Deverão ser eliminados todos os outros utilizadores antes de eliminar o diretório. Se os utilizadores forem sincronizados no local, a sincronização tem de ser desativada e os utilizadores têm de ser eliminados do diretório na cloud através do portal do Azure ou dos cmdlets do Azure PowerShell. Não é necessário eliminar grupos ou contactos, tais como contactos adicionados a partir do Centro de Administração do Office 365.
 * Não podem existir aplicações no diretório. As aplicações devem ser eliminadas antes de eliminar o diretório.
-* Não podem existir subscrições para quaisquer Serviços Online da Microsoft, como o Microsoft Azure, o Office 365 ou o Azure AD Premium, associadas ao diretório. Por exemplo, se tiver criado um diretório predefinido no Azure, não o poderá eliminar se a sua subscrição do Azure ainda depender desse diretório para a autenticação. Do mesmo modo, não pode eliminar um diretório se outro utilizador tiver uma subscrição associada. Para associar a subscrição a um diretório diferente, inicie sessão no Portal de Gestão do Azure e clique em **Definições** no painel de navegação esquerdo. Em seguida, na parte inferior da página **Subscrições**, clique em **Editar Diretório**. Para obter mais informações sobre as subscrições do Azure, consulte [Como estão associadas as subscrições do Azure ao Azure AD](active-directory-how-subscriptions-associated-directory.md).
+* Não podem ser associados ao diretório nenhuns fornecedores multi-factor authentication.
+* Não podem existir subscrições para quaisquer Serviços Online da Microsoft, como o Microsoft Azure, o Office 365 ou o Azure AD Premium, associadas ao diretório. Por exemplo, se tiver criado um diretório predefinido no Azure, não o poderá eliminar se a sua subscrição do Azure ainda depender desse diretório para a autenticação. Do mesmo modo, não pode eliminar um diretório se outro utilizador tiver associado uma subscrição ao mesmo. 
 
-> [!NOTE]
-> Se o utilizador tiver iniciado sessão com uma conta profissional ou escolar, o utilizador não deverá tentar eliminar o diretório raiz. Por exemplo, se o utilizador tiver iniciado sessão como joe@contoso.onmicrosoft.com, esse utilizador não poderá eliminar o diretório contoso.onmicrosoft.com, uma vez que se trata do domínio predefinido.
-> 
-> 
 
-* Não podem ser associados ao diretório nenhuns fornecedores Multi-Factor Authentication.
-
-## <a name="additional-resources"></a>Recursos Adicionais
+## <a name="next-steps"></a>Passos seguintes
 * [Fórum do Azure AD](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 * [Fórum do Multi-Factor Authentication do Azure](https://social.msdn.microsoft.com/Forums/home?forum=windowsazureactiveauthentication)
-* [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
-* [Inscrever-se no Azure como uma organização](sign-up-organization.md)
-* [Gerir o Azure AD com o Windows PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx)
+* [Stack Overflow for Azure questions](http://stackoverflow.com/questions/tagged/azure) (Perguntas do Stack Overflow para Azure)
+* [Azure Active Directory do PowerShell](https://docs.microsoft.com/powershell/azure/active-directory)
 * [Atribuir funções de administrador no Azure AD](active-directory-assign-admin-roles.md)
-
-<!--Image references-->
-[1]: ./media/active-directory-administer/aad_portals.png
-[2]: ./media/active-directory-administer/azure_tenants.png
 

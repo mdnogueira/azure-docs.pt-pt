@@ -15,19 +15,18 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 05/12/2017
+ms.date: 08/23/2017
 ms.author: jgao
-ms.translationtype: Human Translation
-ms.sourcegitcommit: afa23b1395b8275e72048bd47fffcf38f9dcd334
-ms.openlocfilehash: f2a97c32e9f1a286102e0800db57107e041d1990
+ms.translationtype: HT
+ms.sourcegitcommit: 25e4506cc2331ee016b8b365c2e1677424cf4992
+ms.openlocfilehash: fd9e6dcea6524f55c1bd06da35f02be5670bf95f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/12/2017
-
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="hadoop-tutorial-get-started-using-hadoop-in-hdinsight"></a>Tutorial do Hadoop: Introdução ao Hadoop no HDInsight
 
-Saiba como criar clusters do [Hadoop](http://hadoop.apache.org/) no HDInsight e como executar tarefas do Hive no HDInsight. O [Apache Hive](https://hive.apache.org/) é o componente mais popular do ecossistema Hadoop. Atualmente o HDInsight vem com seis tipos de clusters diferentes: [Hadoop](hdinsight-hadoop-introduction.md), [Spark](hdinsight-apache-spark-overview.md), [HBase](hdinsight-hbase-overview.md), [Storm](hdinsight-storm-overview.md), [Hive Interativo (Pré-visualização)](hdinsight-hadoop-use-interactive-hive.md) e [R Server](hdinsight-hadoop-r-server-overview.md).  Cada tipo de cluster suporta um conjunto diferente de componentes. Todos os seis tipos de cluster suportam o Hive. Para obter uma lista dos componentes suportados no HDInsight, consulte [Quais são as novidades nas versões de cluster do Hadoop fornecidas pelo HDInsight?](hdinsight-component-versioning.md)  
+Saiba como criar clusters do [Hadoop](http://hadoop.apache.org/) no HDInsight e como executar tarefas do Hive no HDInsight. O [Apache Hive](https://hive.apache.org/) é o componente mais popular do ecossistema Hadoop. Atualmente, o HDInsight inclui [sete tipos diferentes de cluster](hdinsight-hadoop-introduction.md#overview). Cada tipo de cluster suporta um conjunto diferente de componentes. Todos os tipos de cluster suportam o Hive. Para obter uma lista dos componentes suportados no HDInsight, consulte [Quais são as novidades nas versões de cluster do Hadoop fornecidas pelo HDInsight?](hdinsight-component-versioning.md)  
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -64,7 +63,7 @@ O modelo do Resource Manager utilizado neste tutorial está localizado no [GitHu
     * **Tipo de SO**: Linux
     * **Número de nós de trabalho**: 2
 
-     Cada cluster tem uma dependência de conta do Armazenamento do Azure. É designada de conta de armazenamento predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. 
+     Cada cluster tem uma dependência de [conta do Armazenamento do Azure](hdinsight-hadoop-use-blob-storage.md) ou de [conta do Azure Data Lake](hdinsight-hadoop-use-data-lake-store.md). É designada de conta de armazenamento predefinida. O cluster do HDInsight e a respetiva conta do Storage predefinida devem estar colocalizados na mesma região do Azure. A eliminação dos clusters não elimina a conta de armazenamento. 
      
      Para obter mais explicações sobre estas propriedades, veja [Criar clusters Hadoop no HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -78,7 +77,7 @@ O modelo do Resource Manager utilizado neste tutorial está localizado no [GitHu
 
 
 ## <a name="run-hive-queries"></a>Executar consultas do Hive
-O [Apache Hive](hdinsight-use-hive.md) é o componente mais popular utilizado no HDInsight. Existem várias formas de executar tarefas do Hive no HDInsight. Neste tutorial, vai utilizar a vista Ambari Hive do portal para executar algumas tarefas do Hive. Para conhecer outros métodos de submissão de tarefas do Hive, consulte [Utilizar o Hive no HDInsight](hdinsight-use-hive.md).
+O [Apache Hive](hdinsight-use-hive.md) é o componente mais popular utilizado no HDInsight. Existem várias formas de executar tarefas do Hive no HDInsight. Neste tutorial, vai utilizar a vista Ambari Hive do portal. Para conhecer outros métodos de submissão de tarefas do Hive, consulte [Utilizar o Hive no HDInsight](hdinsight-use-hive.md).
 
 1. Na captura de ecrã anterior, clique em **Dashboard do Cluster** e, em seguida, clique em **Dashboard do Cluster do HDInsight**.  Também pode procurar em **https://&lt;ClusterName >. azurehdinsight.net**, onde &lt;ClusterName > é o cluster que criou na secção anterior para abrir o Ambari.
 2. Introduza o nome de utilizador e a palavra-passe do Hadoop que especificou na secção anterior. O nome de utilizador predefinido é **admin**.
