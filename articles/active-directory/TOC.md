@@ -44,7 +44,6 @@
 #### [Cenários adicionais para licenciamento baseado no grupo](active-directory-licensing-group-advanced.md)
 #### [Exemplos do PowerShell para licenciamento baseado no grupo](active-directory-licensing-ps-examples.md)
 ### [Adicionar utilizadores de outros diretórios (portal clássico)](active-directory-create-users-external.md)
-### [Eliminar utilizadores](active-directory-users-delete-user-azure-portal.md)
 ### [Gerir perfis de utilizador](active-directory-users-profile-azure-portal.md)
 ### [Repor uma palavra-passe](active-directory-users-reset-password-azure-portal.md)
 ### [Gerir as informações de trabalho do utilizador](active-directory-users-work-info-azure-portal.md)
@@ -132,6 +131,7 @@
 
 ## Gerir dispositivos
 ### [Introdução](device-management-introduction.md)
+### [Com o Portal do Azure](device-management-azure-portal.md)
 ### [FAQs](device-management-faq.md)
 ### Tarefas
 #### [Configurar dispositivos híbridos associados do Azure AD](device-management-hybrid-azuread-joined-devices-setup.md) 

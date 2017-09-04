@@ -66,7 +66,7 @@
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
 ## [Blogue](http://blogs.msdn.com/b/streamanalytics/)
 ## [Fórum de comentários](http://feedback.azure.com/forums/270577-azure-stream-analytics)
-## [Fórum](https://social.msdn.microsoft.com/Forums/home?forum=AzureStreamAnalytics)
+## [Fórum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)
 ## [Preços](https://azure.microsoft.com/pricing/details/stream-analytics/)
 ## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
 ## [Notas de versão](stream-analytics-release-notes.md)
