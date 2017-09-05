@@ -134,8 +134,11 @@
 ### [Com o Portal do Azure](device-management-azure-portal.md)
 ### [FAQs](device-management-faq.md)
 ### Tarefas
+#### [Configurar dispositivos Windows 10 registados no Azure AD](device-management-azuread-registered-devices-windows10-setup.md)
+#### [Configurar dispositivos associados do Azure AD](device-management-azuread-joined-devices-setup.md)
 #### [Configurar dispositivos híbridos associados do Azure AD](device-management-hybrid-azuread-joined-devices-setup.md) 
 #### [Implementar no local](active-directory-device-registration-on-premises-setup.md)
+#### [Associação ao Azure AD durante a experiência de primeira execução do Windows 10](device-management-azuread-joined-devices-frx.md)
 ### Resolução de problemas
 #### [O Azure AD híbrido associou-se a dispositivos do Windows 10 e do Windows Server 2016](device-management-troubleshoot-hybrid-join-windows-current.md)
 #### [O Azure AD híbrido associou-se a dispositivos legados do Windows](device-management-troubleshoot-hybrid-join-windows-legacy.md)
@@ -297,7 +300,6 @@
 #### [Introdução](active-directory-conditional-access-azure-portal-get-started.md)
 #### [Melhores práticas](active-directory-conditional-access-best-practices.md)
 #### [Referência técnica](active-directory-conditional-access-technical-reference.md)
-#### [Aplicações suportadas](active-directory-conditional-access-supported-apps.md)
 #### [Compreender políticas dos dispositivos](active-directory-conditional-access-device-policies.md)
 #### [Configurar o acesso às aplicações ligadas](active-directory-conditional-access-policy-connected-applications.md)
 #### [Remediação](active-directory-conditional-access-device-remediation.md)

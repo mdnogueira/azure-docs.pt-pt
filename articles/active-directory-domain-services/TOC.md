@@ -7,17 +7,17 @@
 ## [Software compatível de terceiros](active-directory-ds-compatible-software.md)
 
 # Introdução
-## Portal Clássico do Azure
-### [Tarefa 1: criar o grupo de administrador](active-directory-ds-getting-started-create-group.md)
-### [Tarefa 2: criar ou selecionar uma rede virtual](active-directory-ds-getting-started-vnet.md)
-### [Tarefa 3: ativar os Azure AD Domain Services](active-directory-ds-getting-started-enableaadds.md)
-### [Tarefa 4: atualizar as definições de DNS para a rede virtual](active-directory-ds-getting-started-update-dns.md)
-### [Tarefa 5: ativar a sincronização de palavras-passe](active-directory-ds-getting-started-password-sync.md)
 ## Portal do Azure (Pré-visualização)
 ### [Tarefa 1: configurar as definições básicas](active-directory-ds-getting-started.md)
 ### [Tarefa 2: configurar as definições de rede](active-directory-ds-getting-started-network.md)
 ### [Tarefa 3: configurar o grupo de administrador e ativar os Azure AD Domain Services](active-directory-ds-getting-started-admingroup.md)
 ### [Tarefa 4: atualizar as definições de DNS para a rede virtual](active-directory-ds-getting-started-dns.md)
+### [Tarefa 5: ativar a sincronização de palavras-passe](active-directory-ds-getting-started-password-sync.md)
+## Portal clássico do Azure (preterido)
+### [Tarefa 1: criar o grupo de administrador](active-directory-ds-getting-started-create-group.md)
+### [Tarefa 2: criar ou selecionar uma rede virtual](active-directory-ds-getting-started-vnet.md)
+### [Tarefa 3: ativar os Azure AD Domain Services](active-directory-ds-getting-started-enableaadds.md)
+### [Tarefa 4: atualizar as definições de DNS para a rede virtual](active-directory-ds-getting-started-update-dns.md)
 ### [Tarefa 5: ativar a sincronização de palavras-passe](active-directory-ds-getting-started-password-sync.md)
 
 # Procedimento

@@ -13,6 +13,7 @@
 ### [Comunicação social](stream-analytics-twitter-sentiment-analysis-trends.md)
 ### [Classificação em tempo real com o Machine Learning](stream-analytics-machine-learning-integration-tutorial.md)
 ### [Processamento de eventos em tempo real](stream-analytics-real-time-event-processing-reference-architecture.md)
+### [Deteção de anomalias no guia de utilização do Azure (pré-visualização)](stream-analytics-machine-learning-anomaly-detection.md)
 
 ## Criar tarefas
 ### [Criar entradas](stream-analytics-define-inputs.md)
