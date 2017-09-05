@@ -1,25 +1,31 @@
 
-1. Clique em **Serviços Aplicacionais** > selecione o back-end da sua Aplicação Móvel > clique em **Início rápido** > plataforma cliente (iOS, Android, Xamarin, Cordova).
+1. Clique no botão **Serviços Aplicacionais**, selecione o back-end das Aplicações Móveis, selecione **Início Rápido**e, em seguida, selecione a plataforma de cliente (iOS, Android, Xamarin, Cordova).
 
-![Portal do Azure com Início Rápido de Aplicações Móveis realçado][quickstart]
+    ![Portal do Azure com Início Rápido de Aplicações Móveis realçado][quickstart]
 
-2. Se a ligação à base de dados não estiver configurada, tem de criar uma Ligação de Dados.
+2. Se não estiver configurada uma ligação de base de dados, crie uma efetuando o seguinte procedimento:
 
-![Portal do Azure com Aplicações Móveis Ligar a DB][connect]
+    ![Portal do Azure com Aplicações Móveis Ligar a base de dados][connect]
 
-  * Crie a Base de Dados SQL e o servidor novos.
+    a. Crie uma base de dados SQL e o servidor novos.
 
-  ![Portal do Azure com Aplicações Móveis criar DB e servidor novos][server]
+    ![Portal do Azure com Aplicações Móveis criar base de dados e servidor novos][server]
 
-  * Aguarde pela conclusão bem-sucedida da ligação de dados.
+    b. Aguarde pela conclusão bem-sucedida da ligação de dados.
 
-  ![Portal do Azure com Aplicações Móveis notificação sobre criação de ligação de dados][notification]
+    ![Notificação do portal do Azure de criação com êxito de ligação de dados][notification]
 
-  * A ligação de dados tem de ser bem-sucedida.
+    c. A ligação de dados tem de ser bem-sucedida.
 
-  ![Portal do Azure com Aplicações Móveis notificação sobre criação de ligação de dados][already-connection]
+    ![Notificação do portal do Azure, "Já tem uma ligação de dados"][already-connection]
 
-3. Em **2. Criar uma API de tabela**, selecione Node.js em **Linguagem do back-end**. Aceite a confirmação e clique em **Criar tabela TodoItem**. Esta ação cria uma nova tabela *TodoItem* na base de dados. Tenha em atenção que se alterar um back-end existente para o Node.js, todo o conteúdo será substituído! Para criar um back-end .NET como alternativa, [siga estas instruções][instructions].
+3. Em **2. Criar uma API de tabela**, selecione Node.js em **Linguagem do back-end**. 
+ 
+4. Aceite a confirmação e, em seguida, selecione **Criar tabela TodoItem**.  
+    Esta ação cria uma nova tabela de itens pendentes na base de dados. 
+
+    >[!IMPORTANT]
+    > Mudar de um back-end existente para Node.js substitui todos os conteúdos. Para criar um back-end de .NET em, veja [Trabalhar com o servidor SDK de back-end .NET para Aplicações Móveis][instructions].
 
 <!-- Images. -->
 [quickstart]: ./media/app-service-mobile-configure-new-backend/quickstart.png

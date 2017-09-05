@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/07/2017
 ms.author: darosa;sethm
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5e92b1b234e4ceea5e0dd5d09ab3203c4a86f633
-ms.openlocfilehash: a916f643c7e6727d6053865d1c0bd2f683a53b3f
+ms.translationtype: HT
+ms.sourcegitcommit: 1c730c65194e169121e3ad1d1423963ee3ced8da
+ms.openlocfilehash: a0c169e0580468e83a07c077f8c60e83d3fb52f2
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 08/30/2017
 
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Escalões de mensagens Standard e Premium do Service Bus
@@ -47,7 +47,7 @@ As seguintes secções abordam as diferenças entre as camadas de mensagens Stan
 
 ### <a name="partitioned-queues-and-topics"></a>Filas e tópicos particionados
 
-As filas e tópicos particionados são suportados nas Mensagens Premium; na realidade, estas entidades são sempre particionadas (e não podem ser desativadas). No entanto, as filas e tópicos particionados não funcionam da mesma forma que nos escalões de mensagens Standard e Basic do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições para melhorar o desempenho. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. 
+As filas e tópicos particionados são suportados nas Mensagens Premium; na realidade, estas entidades são sempre particionadas (e não podem ser desativadas). No entanto, as filas e tópicos particionados não funcionam da mesma forma que no escalão de mensagens Standard do Service Bus. As mensagens Premium não utilizam SQL como armazém de dados e já não tem a possível concorrência de recursos associada a uma plataforma partilhada. Como resultado, não é necessário criar partições para melhorar o desempenho. Além disso, a quantidade de partições foi alterada de 16 partições nas Mensagens Standard para 2 partições nas Premium. Ter duas partições garante a disponibilidade e é um número mais adequado para o ambiente de tempo de execução Premium. 
 
 Com as mensagens Premium, quando especificar o tamanho de uma entidade com [MaxSizeInMegabytes](/dotnet/api/microsoft.servicebus.messaging.queuedescription.maxsizeinmegabytes#Microsoft_ServiceBus_Messaging_QueueDescription_MaxSizeInMegabytes), esse tamanho é dividido igualmente em duas partições, ao contrário das [entidades de partições Standard](service-bus-partitioning.md#standard) no qual o tamanho total é 16 vezes o tamanho especificado. 
 

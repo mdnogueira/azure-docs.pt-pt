@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/15/2017
+ms.date: 08/24/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.translationtype: HT
-ms.sourcegitcommit: 540180e7d6cd02dfa1f3cac8ccd343e965ded91b
-ms.openlocfilehash: 76413d6e9c619a66ae34f032eb0b8f9d42c27c9d
+ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
+ms.openlocfilehash: 04f15384a7cd0fa03300acdf159d371569ecf9fc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="users-flagged-for-risk-security-report-in-the-azure-active-directory-portal"></a>Utilizadores sinalizados no relatório de segurança de risco no portal do Azure Active Directory
@@ -62,6 +62,16 @@ Selecionar um utilizador abre o painel de dados do utilizador relacionado.
 Para os utilizadores que estão em risco, pode rever o histórico de início de sessão do utilizador e repor a palavra-passe, se necessário.
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/46.png)
+
+
+Esta caixa de diálogo disponibiliza uma opção para:
+
+- Transferir o relatório
+
+- Procurar utilizadores
+
+![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/16.png)
+
 
 ## <a name="azure-active-directory-premium-editions"></a>Edições premium do Azure Active Directory
 

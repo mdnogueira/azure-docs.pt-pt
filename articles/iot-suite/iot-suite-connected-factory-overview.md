@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/27/2017
 ms.author: dobett
 ms.translationtype: HT
-ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
-ms.openlocfilehash: a7d31be48ef06064b01cdb2dfd0331b34adbec4d
+ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
+ms.openlocfilehash: d502c8e2e2715899279f6ebcf7ed89c19a1bb9a6
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="get-started-with-the-connected-factory-preconfigured-solution"></a>Introdução à solução pré-configurada de fábrica ligada
@@ -53,7 +53,7 @@ Para concluir este tutorial, precisa de uma subscrição ativa do Azure.
 4. Clique no mosaico para ver os detalhes da sua solução no painel da direita.
 
 > [!NOTE]
-> Se tiver problemas com a implementação da solução pré-configurada, consulte [Permissions on the azureiotsuite.com site (Permissões no site azureiotsuite.com)][lnk-permissions] e as [FAQ][lnk-faq]. Se os problemas persistirem, crie um pedido de serviço no [portal][lnk-portal].
+> Se tiver problemas com a implementação da solução pré-configurada, consulte [Permissions on the azureiotsuite.com site (Permissões no site azureiotsuite.com)][lnk-permissions] e as [FAQ sobre fábrica ligada](iot-suite-faq-cf.md). Se os problemas persistirem, crie um pedido de serviço no [portal][lnk-portal].
 
 Pretendia ver certos detalhes que não se encontram listados para a sua solução? Dê-nos a suas sugestões de funcionalidades através de [A Voz do Utilizador](https://feedback.azure.com/forums/321918-azure-iot).
 
@@ -81,7 +81,7 @@ O dashboard de solução permite-lhe gerir a solução implementada. É uma repr
 
 O dashboard apresenta as seguintes informações:
 
-* Um painel **Lista de fábricas** que mostra o estado, a localização e a configuração de produção atual da solução. Quando executar a solução pela primeira vez, existem vários dispositivos simulados. A simulação de linha de produção é composta por três servidores OPC UA reais por linha de produção que realizam tarefas simuladas e partilham dados. Para obter mais informações sobre OPC UA, veja as [FAQ][lnk-faq].
+* Um painel **Lista de fábricas** que mostra o estado, a localização e a configuração de produção atual da solução. Quando executar a solução pela primeira vez, existem vários dispositivos simulados. A simulação de linha de produção é composta por três servidores OPC UA reais por linha de produção que realizam tarefas simuladas e partilham dados. Para obter mais informações sobre OPC UA, veja as [FAQ sobre a fábrica ligada](iot-suite-faq-cf.md).
 * Um **mapa** que apresenta a localização de cada dispositivo ligado à solução. A solução pode utilizar a API dos Mapas Bing para desenhar informações no mapa. Se a sua subscrição estiver ativada para a API dos Mapas Bing para Empresas, esta funcionalidade é utilizada automaticamente. Se não estiver, veja as [FAQ][lnk-faq] para saber como tornar o mapa dinâmico.
 * Um painel **Alertas** que apresenta alertas gerados quando um valor de telemetria ou OEE/KPI excede um limiar específico.
 * Um painel **Eficiência Geral de Equipamentos** que mostra os valores de OEE de toda a empresa ou da fábrica/linha de produção/estação que está a ver. Este valor é agregado da vista de estação para o nível de empresa. O número de OEE e os elementos que o constituem podem ser ainda mais analisados.

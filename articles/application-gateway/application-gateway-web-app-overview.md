@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/26/2017
 ms.author: gwallace
 ms.translationtype: HT
-ms.sourcegitcommit: 54774252780bd4c7627681d805f498909f171857
-ms.openlocfilehash: fe2d13fd18de28864a4b3f00b0eb2e02c0867616
+ms.sourcegitcommit: 5b6c261c3439e33f4d16750e73618c72db4bcd7d
+ms.openlocfilehash: d944904db5b0bf176b214249ad59611e2b794ae0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 
@@ -41,3 +41,4 @@ Com esta capacidade, os clientes especificam as opções nas definições de HTT
 ## <a name="next-steps"></a>Passos seguintes
 
 Para saber como configurar um gateway de aplicação com uma aplicação Web como um membro do conjunto de back-end, visite a página [Configurar Aplicações Web do Serviço de Aplicações com o Gateway de Aplicação](application-gateway-web-app-powershell.md)
+

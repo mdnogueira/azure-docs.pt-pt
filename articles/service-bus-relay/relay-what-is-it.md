@@ -12,14 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: get-started-article
-ms.date: 06/14/2017
+ms.date: 08/23/2017
 ms.author: sethm
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ef1e603ea7759af76db595d95171cdbe1c995598
-ms.openlocfilehash: 74a0837b7149236faa45ef2cda0a0aee7c46a31b
+ms.translationtype: HT
+ms.sourcegitcommit: 5b6c261c3439e33f4d16750e73618c72db4bcd7d
+ms.openlocfilehash: 77ee85db0bcc701514a1a98da9405a79d658d49d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/16/2017
-
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="what-is-azure-relay"></a>O que é o Reencaminhamento do Azure?
@@ -52,15 +51,22 @@ Tanto as Ligações Híbridas, como os Reencaminhamentos do WCF, permitem ligaç
 
 A capacidade de [Ligações Híbridas do Reencaminhamento do Azure](relay-hybrid-connections-protocol.md) é uma evolução segura e de protocolo aberto das funcionalidades atuais do Reencaminhamento, que pode ser implementada em qualquer plataforma e em qualquer idioma que tenha capacidade básica para WebSocket, que inclua explicitamente a API WebSocket em browsers comuns. As Ligações Híbridas baseiam-se em HTTP e WebSockets.
 
+### <a name="service-history"></a>Histórico do Serviço
+
+As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento do Azure. Partilham um gateway comum, mas, de resto, são implementações diferentes.
+
 ## <a name="wcf-relays"></a>Reencaminhamentos do WCF
 
 O Reencaminhamento do WCF funciona para o .NET Framework (NETFX) completo e para o WCF. A ligação entre o serviço no local e o serviço de reencaminhamento é iniciada através de um conjunto de enlaces de "reencaminhamento" do WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para novos elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem.
 
-## <a name="service-history"></a>Histórico do Serviço
+## <a name="architecture-processing-of-incoming-relay-requests"></a>Arquitetura: processamento de pedidos de reencaminhamento recebidos
+Quando um cliente envia um pedido para o serviço de [reencaminhamento do Azure](/azure/service-bus-relay/), o Azure Load Balancer encaminha o mesmo para qualquer um dos nós de gateway. Caso o pedido seja um pedido de escuta, o nó de gateway cria um novo reencaminhamento. Se o pedido for um pedido de ligação para um reencaminhamento específico, o nó de gateway reencaminha o pedido de ligação para o nó de gateway que detém o reencaminhamento.  O nó de gateway que detém o reencaminhamento envia um pedido de encontro para o cliente de escuta, pedindo para o serviço de escuta criar um canal temporário para o nó de gateway que recebeu o pedido de ligação.
 
-As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento do Azure num futuro próximo. Partilham um gateway comum, mas, de resto, são implementações diferentes.
+Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar mensagens através do nó de gateway utilizado para o encontro.
 
-## <a name="next-steps"></a>Passos seguintes:
+![Processamento de Pedidos de Reencaminhamento de WCF Recebidos](./media/relay-what-is-it/ic690645.png)
+
+## <a name="next-steps"></a>Passos seguintes
 
 * [FAQ de Reencaminhamento](relay-faq.md)
 * [Criar um espaço de nomes](relay-create-namespace-portal.md)

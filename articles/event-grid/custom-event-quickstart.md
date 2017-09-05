@@ -9,16 +9,19 @@ ms.date: 08/15/2017
 ms.topic: hero-article
 ms.service: event-grid
 ms.translationtype: HT
-ms.sourcegitcommit: b6c65c53d96f4adb8719c27ed270e973b5a7ff23
-ms.openlocfilehash: 5bfe08c249d01f5e01cd4cd82f609201da7eccbc
+ms.sourcegitcommit: 5b6c261c3439e33f4d16750e73618c72db4bcd7d
+ms.openlocfilehash: 0290836bebadb20085a3ce84dddc088c3af385da
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 
 # <a name="create-and-route-custom-events-with-azure-event-grid"></a>Criar e encaminhar eventos personalizados com o Azure Event Grid
 
 O Azure Event Grid é um serviço de eventos para a cloud. Neste artigo, a CLI do Azure é utilizada para criar um tópico personalizado, subscrever o tópico e acionar o evento para ver o resultado. Normalmente, os eventos são enviados para um ponto final que responde ao evento, como um webhook ou uma Função do Azure. No entanto, para simplificar este artigo, irá enviar eventos para um URL que apenas recolhe as mensagens. Este URL é criado através de uma ferramenta de terceiros open source chamada [RequestBin](https://requestb.in/).
+
+>[!NOTE]
+>**RequestBin** é uma ferramenta open source que não se destina a uma utilização de débito elevado. A utilização da ferramenta aqui é puramente demonstrativa. Se emitir mais do que um evento simultaneamente, não poderá ver todos os eventos na ferramenta.
 
 Quando tiver terminado, verá que os dados do evento foram enviados para um ponto final.
 
@@ -117,3 +120,4 @@ Agora que sabe como criar tópicos e subscrições de eventos, saiba mais sobre 
 
 - [Sobre o Event Grid](overview.md)
 - [Monitorizar alterações de máquina virtual com o Azure Event Grid e Logic Apps](monitor-virtual-machine-changes-event-grid-logic-app.md)
+

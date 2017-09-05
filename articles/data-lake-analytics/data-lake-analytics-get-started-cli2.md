@@ -14,10 +14,10 @@ ms.workload: big-data
 ms.date: 06/18/2017
 ms.author: jgao
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: cb5872a93bbff99161cd5f61e6e26bdb0d322587
+ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
+ms.openlocfilehash: fe2b84aac718ff5eddd4d73b5dc2120362952c1e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli-20"></a>Introdução ao Azure Data Lake Analytics com a CLI 2.0 do Azure
@@ -179,7 +179,7 @@ az dla job show --account "<Data Lake Analytics Account Name>" --job-identity "<
 az dla job cancel --account "<Data Lake Analytics Account Name>" --job-identity "<Job Id>"
 ```
 
-##<a name="retrieve-job-results"></a>Obter resultados de tarefa
+## <a name="retrieve-job-results"></a>Obter resultados de tarefa
 
 Depois de uma tarefa ser concluída, pode utilizar os seguintes comandos para listar os ficheiros de saída e transferir os ficheiros:
 
@@ -194,6 +194,26 @@ Por exemplo:
 
 ```
 az dls fs downlod --account "myadlsaccount" --source-path "/Output/SearchLog-from-Data-Lake.csv" --destintion-path "C:\DLA\myfile.csv"
+```
+
+## <a name="pipelines-and-recurrences"></a>Pipelines e recorrências
+
+**Obter informações sobre pipelines e recorrências**
+
+Utilize os comandos `az dla job pipeline` para ver as informações de pipeline de tarefas previamente submetidas.
+
+```
+az dla job pipeline list --account "<Data Lake Analytics Account Name>"
+
+az dla job pipeline show --account "<Data Lake Analytics Account Name>" --pipeline-identity "<Pipeline ID>"
+```
+
+Utilize os comandos `az dla job recurrence` para ver as informações de recorrência para tarefas previamente submetidas.
+
+```
+az dla job recurrence list --account "<Data Lake Analytics Account Name>"
+
+az dla job recurrence show --account "<Data Lake Analytics Account Name>" --recurrence-identity "<Recurrence ID>"
 ```
 
 ## <a name="next-steps"></a>Passos seguintes

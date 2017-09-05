@@ -5,20 +5,21 @@ services: multi-factor-authentication
 documentationcenter: 
 author: kgremban
 manager: femila
-editor: yossib
 ms.assetid: 57208068-1e55-45b6-840f-fdcd13723074
 ms.service: multi-factor-authentication
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/29/2017
+ms.date: 08/25/2017
 ms.author: kgremban
+ms.reviewer: 
 ms.custom: H1Hack27Feb2017
-translationtype: Human Translation
-ms.sourcegitcommit: eeb56316b337c90cc83455be11917674eba898a3
-ms.openlocfilehash: f2481c18f12d74a90938ffb0353dd000fe73f440
-ms.lasthandoff: 04/03/2017
+ms.translationtype: HT
+ms.sourcegitcommit: a0b98d400db31e9bb85611b3029616cc7b2b4b3f
+ms.openlocfilehash: 7fc6ad052e4e873be6a3e7009e9739e4a1c9ce03
+ms.contentlocale: pt-pt
+ms.lasthandoff: 08/29/2017
 
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Configurar o Servidor Multi-Factor Authentication do Azure para trabalhar com o AD FS no Windows Server
@@ -34,11 +35,11 @@ Quando instala o Servidor Multi-Factor Authentication do Azure, tem as seguintes
 
 Antes de começar, tenha em atenção as seguintes informações:
 
-* Não é necessário instalar o Servidor Multi-Factor Authentication do Azure no seu servidor AD FS. No entanto, tem de instalar o adaptador do Multi-Factor Authentication para AD FS num Windows Server 2012 R2 ou Windows Server 2016 que esteja a executar o AD FS. Pode instalar o servidor num computador diferente se for uma versão suportada e instalar o adaptador AD FS separadamente no seu servidor de federação do AD FS. Consulte os seguintes procedimentos para saber como instalar o adaptador em separado.
+* Não é necessário instalar o Servidor Multi-Factor Authentication do Azure no seu servidor AD FS. No entanto, tem de instalar o adaptador do Multi-Factor Authentication para AD FS num Windows Server 2012 R2 ou Windows Server 2016 que esteja a executar o AD FS. Pode instalar o servidor num computador diferente se instalar o adaptador AD FS separadamente no seu servidor de federação do AD FS. Consulte os seguintes procedimentos para saber como instalar o adaptador em separado.
 * Se a sua organização utilizar os métodos de verificação por mensagem de texto ou por aplicação móvel, as cadeias definidas nas Definições da Empresa incluirão um marcador de posição <$*application_name*$>. No servidor do MFA v7.1, pode fornecer um nome de aplicação que substitui este marcador de posição. Na versão v7.0 e anteriores, este marcador de posição não é substituído automaticamente quando utiliza o adaptador AD FS. Nestas versões mais antigas, remova o marcador de posição das cadeias adequadas quando proteger o AD FS.
 * A conta que utiliza para iniciar sessão tem de ter direitos de utilizador para criar grupos de segurança no seu serviço do Active Directory.
-* O assistente de instalação do adaptador AD FS do Multi-Factor Authentication cria um grupo de segurança chamado PhoneFactor Admins na sua instância do Active Directory. Este adiciona, em seguida, a conta de serviço do AD FS do seu serviço de federação a este grupo. Verifique, no seu controlador de domínio, se o grupo PhoneFactor Admins é efetivamente criado e se a conta de serviço do AD FS faz parte deste grupo. Se necessário, adicione manualmente a conta de serviço do AD FS ao grupo PhoneFactor Admins no seu controlador de domínio.
-* Para obter informações sobre como instalar o SDK do Serviço Web com o portal de utilizador, leia sobre como [implementar o portal de utilizador do Servidor Multi-Factor Authentication do Azure.](multi-factor-authentication-get-started-portal.md)
+* O assistente de instalação do adaptador AD FS do Multi-Factor Authentication cria um grupo de segurança chamado PhoneFactor Admins na sua instância do Active Directory. Este adiciona, em seguida, a conta de serviço do AD FS do seu serviço de federação a este grupo. Verifique se o grupo PhoneFactor Admins foi criado no controlador de domínio e se a conta de serviço do AD FS faz parte deste grupo. Se necessário, adicione manualmente a conta de serviço do AD FS ao grupo PhoneFactor Admins no seu controlador de domínio.
+* Para obter informações sobre como instalar o SDK do Serviço Web com o portal de utilizador, veja [implementar o portal de utilizador do Servidor Multi-Factor Authentication do Azure.](multi-factor-authentication-get-started-portal.md)
 
 ### <a name="install-azure-multi-factor-authentication-server-locally-on-the-ad-fs-server"></a>Instalar o Servidor Multi-Factor Authentication do Azure localmente no servidor AD FS
 1. Transfira e instale o Servidor Multi-Factor Authentication do Azure no seu servidor AD FS. Para obter informações de instalação, consulte a [introdução ao Servidor Multi-Factor Authentication do Azure](multi-factor-authentication-get-started-server.md).
@@ -80,7 +81,7 @@ Siga estes passos para editar o ficheiro MultiFactorAuthenticationAdfsAdapter.co
 
 1. Defina o nó **UseWebServiceSdk** como **true**.  
 2. Defina o valor de **WebServiceSdkUrl** para o URL do SDK do Serviço Web do Multi-Factor Authentication. Por exemplo,  *https://contoso.com/&lt;certificatename&gt;/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*, em que *certificatename* é o nome do seu certificado  
-3. Edite o ficheiro Register-MultiFactorAuthenticationAdfsAdapter.ps1 ao adicionar *-ConfigurationFilePath &lt;path&gt;* ao final do comando `Register-AdfsAuthenticationProvider`, em que *&lt;path&gt;* é o caminho completo para o ficheiro MultiFactorAuthenticationAdfsAdapter.config.
+3. Edite o ficheiro Register-MultiFactorAuthenticationAdfsAdapter.ps1 ao adicionar `-ConfigurationFilePath &lt;path&gt;` ao final do `Register-AdfsAuthenticationProvider` comando, em que *&lt;path&gt;* é o caminho completo para o ficheiro MultiFactorAuthenticationAdfsAdapter.config.
 
 ### <a name="configure-the-web-service-sdk-with-a-username-and-password"></a>Configurar o SDK do Serviço Web com um nome de utilizador e uma palavra-passe
 Existem duas opções para configurar o SDK do serviço Web. A primeira consiste em utilizar um nome de utilizador e uma palavra-passe e a segunda um certificado de cliente. Siga estes passos para a primeira opção ou ignore-os para ir para a segunda.  

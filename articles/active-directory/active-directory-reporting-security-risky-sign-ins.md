@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/15/2017
+ms.date: 08/24/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.translationtype: HT
-ms.sourcegitcommit: 540180e7d6cd02dfa1f3cac8ccd343e965ded91b
-ms.openlocfilehash: f31482a8b37858b93391afc561223a1b1110a1a9
+ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
+ms.openlocfilehash: 45a6f63bd920c9a70c25b8dfae084ea030256cf4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 08/24/2017
 
 ---
 # <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Relatório de inícios de sessão de risco no portal do Azure Active Directory
@@ -52,7 +52,7 @@ No entanto, o nível de granularidade dos relatórios varia entre as edições:
 
 ## <a name="azure-active-directory-free-and-basic-edition"></a>Edição gratuita e básica do Azure Active Directory
 
-As edições gratuita e básica do Azure Active Directory fornecem uma lista de inícios de sessão de risco detetados para os seus utilizadores. O relatório de eventos de risco fornece o seguinte:
+As edições gratuita e básica do Azure Active Directory fornecem uma lista de inícios de sessão de risco detetados para os seus utilizadores. Este relatório lista:
 
 - **Utilizador** – O nome do utilizador que foi utilizado durante a operação de início de sessão
 - **IP** – O endereço IP do dispositivo que foi utilizado para ligar ao Azure Active Directory
@@ -60,7 +60,6 @@ As edições gratuita e básica do Azure Active Directory fornecem uma lista de 
 - **Hora de início de sessão** – A hora quando o início de sessão foi efetuado
 - **Estado** – O estado do início de sessão
 
-Este relatório fornece uma opção para transferir os dados do relatório.
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-risky-sign-ins/01.png)
 
@@ -74,6 +73,15 @@ Com base na sua investigação do início de sessão de risco, pode fornecer com
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-risky-sign-ins/21.png)
 
 Para obter mais detalhes, veja [Fechar eventos de risco manualmente](active-directory-identityprotection.md#closing-risk-events-manually).
+
+Este relatório disponibiliza uma opção para:
+
+- Pesquisar recursos
+- Transferir os dados do relatório
+
+
+![Inícios de Sessão de Risco](./media/active-directory-reporting-security-risky-sign-ins/93.png)
+
 
 ## <a name="azure-active-directory-premium-editions"></a>Edições premium do Azure Active Directory
 

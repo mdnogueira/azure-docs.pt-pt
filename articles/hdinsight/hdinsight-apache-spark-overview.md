@@ -15,19 +15,18 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/12/2017
+ms.date: 08/28/2017
 ms.author: nitinme
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 80be19618bd02895d953f80e5236d1a69d0811af
-ms.openlocfilehash: acb80aa98cc978a906ccd6e4b4132a439e505bc8
+ms.translationtype: HT
+ms.sourcegitcommit: a0b98d400db31e9bb85611b3029616cc7b2b4b3f
+ms.openlocfilehash: b8955acc83b0fbb0612e7042d62170ae8078b9ad
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/07/2017
-
+ms.lasthandoff: 08/29/2017
 
 ---
 # <a name="introduction-to-spark-on-hdinsight"></a>Introdução ao Spark no HDInsight
 
-Este artigo fornece uma introdução ao Spark no HDInsight. O <a href="http://spark.apache.org/" target="_blank">Apache Spark</a> é uma arquitetura de processamento paralelo open source que suporta o processamento dentro da memória para melhorar o desempenho de aplicações de análise de macrodados. O cluster do Spark no HDInsight é compatível com o Armazenamento do Azure (WASB), bem como com o Azure Data Lake Store, para que os dados existentes armazenados no Azure possam ser facilmente processados através de um cluster do Spark.
+Este artigo fornece uma introdução ao Spark no HDInsight. O <a href="http://spark.apache.org/" target="_blank">Apache Spark</a> é uma arquitetura de processamento paralelo open source que suporta o processamento dentro da memória para melhorar o desempenho de aplicações de análise de macrodados. O cluster do Spark no HDInsight é compatível com o Armazenamento do Azure (WASB), bem como com o Azure Data Lake Store. Por conseguinte, os dados existentes armazenados no Azure podem ser facilmente processados através de um cluster do Spark.
 
 Quando cria um cluster do Spark no HDInsight, está a criar recursos de computação do Azure com o Spark instalado e configurado. Demora apenas cerca de dez minutos para criar um cluster do Spark no HDInsight. Os dados a serem processados são armazenados no Armazenamento do Azure ou no Azure Data Lake Store. Veja [Use Azure Blob Storage with HDInsight (Utilizar o Armazenamento de Blobs do Azure com o HDInsight)](hdinsight-hadoop-use-blob-storage.md).
 
@@ -39,8 +38,8 @@ Os clusters do Spark no HDInsight oferecem um serviço Spark completamente gerid
 
 | Funcionalidade | Descrição |
 | --- | --- |
-| Facilidade de criação de clusters do Spark |Pode criar um novo cluster do Spark no HDInsight em apenas alguns minutos com o Portal do Azure, o Azure PowerShell ou o SDK .NET do HDInsight. Consulte [Introdução ao cluster do Spark no HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md) |
-| Facilidade de utilização |O cluster do Spark no HDInsight inclui blocos de notas do Jupyter e Zeppelin. Pode utilizá-los para o processamento e a visualização de dados interativos.|
+| Facilidade de criação de clusters do Spark |Pode criar um novo cluster do Spark no HDInsight em apenas alguns minutos com o portal do Azure, o Azure PowerShell ou o SDK .NET do HDInsight. Consulte [Introdução ao cluster do Spark no HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md) |
+| Facilidade de utilização |O cluster do Spark no HDInsight inclui blocos de notas do Jupyter e Zeppelin. Pode utilizar estes blocos de notas para o processamento e a visualização de dados interativos.|
 | APIs REST |Os clusters do Spark no HDInsight incluem o [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), um servidor de tarefas do Spark baseado na API REST para submeter e monitorizar remotamente tarefas. |
 | Suporte para o Data Lake Store do Azure | O cluster do Spark no HDInsight pode ser configurado para utilizar o Azure Data Lake Store como armazenamento adicional, bem como armazenamento primário (apenas com clusters do HDInsight 3.5). Para obter mais informações sobre o Data Lake Store, consulte [Descrição geral do Data Lake Store do Azure](../data-lake-store/data-lake-store-overview.md). |
 | Integração com os serviços do Azure |O cluster do Spark no HDInsight é fornecido com um conector para Hubs de Eventos do Azure. Os clientes podem criar aplicações de transmissão em fluxo com os Event Hubs, para além do [Kafka](http://kafka.apache.org/), que já se encontra disponível como parte do Spark. |
