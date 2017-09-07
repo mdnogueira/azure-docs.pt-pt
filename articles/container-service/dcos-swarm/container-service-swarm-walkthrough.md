@@ -76,7 +76,7 @@ Ao longo deste guia de início rápido, precisará do endereço IP do conjunto p
 
 
 ```bash
-az network public-ip list --resource-group myResourceGroup --query '[*].{Name:name,IPAddress:ipAddress}' -o table
+az network public-ip list --resource-group myResourceGroup --query "[*].{Name:name,IPAddress:ipAddress}" -o table
 ```
 
 Saída:

@@ -43,11 +43,7 @@
       href: sql-database-migrate-your-sql-server-database.md
     - name: 3 - Proteger a sua BD SQL
       href: sql-database-security-tutorial.md
-    - name: 4 - Melhorar o desempenho da BD SQL
-      href: sql-database-performance-tutorial.md
-    - name: 5 - Implementar aplicação multi-inquilino
-      href: sql-database-multi-tenant-application.md
-    - name: 6 - implementar uma base de dados distribuída geograficamente
+    - name: 4 - Implementar uma base de dados distribuída geograficamente
       href: sql-database-implement-geo-distributed-database.md
 - name: Amostras
   items:
