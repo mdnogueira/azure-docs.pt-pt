@@ -1,21 +1,21 @@
-Clique no botão **Novo**. No campo **Procurar no Marketplace**, escreva `Azure Active Directory B2C`.
+Click the **New** button. In the **Search the marketplace** field, enter `Azure Active Directory B2C`.
 
-![Botão Adicionar realçado e o texto do Azure Active Directory B2C no campo Procurar no Marketplace](./media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
+![Add button highlighted and the text Azure Active Directory B2C in the search the marketplace field](./media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
 
-Na lista de resultados, selecione **Azure Active Directory B2C**.
+In the results list, select **Azure Active Directory B2C**.
 
-![Azure Active Directory B2C selecionado na lista de resultados](./media/active-directory-b2c-create-tenant/find-azure-ad-b2c-result.png)
+![Azure Active Directory B2C selected in the results list](./media/active-directory-b2c-create-tenant/find-azure-ad-b2c-result.png)
 
-São apresentados os detalhes sobre o Azure Active Directory B2C. Para começar a configurar o seu novo inquilino do Azure Active Directory B2C, clique no botão **Criar**.
+Details about Azure Active Directory B2C are shown. To begin configuring your new Azure Active Directory B2C tenant, click the **Create** button.
 
-Selecione **Criar um novo inquilino do Azure AD B2C**. Em seguida, utilize as definições especificadas na tabela.
+Select **Create a new Azure AD B2C Tenant**. The settings specified in the following table use the company name Contoso as an example. You will need to provide your own organization name and a unique tenant name when creating your tenant.  
 
-![Criação do inquilino do Azure AD B2C com texto de exemplo nos campos disponíveis](./media/active-directory-b2c-create-tenant/create-new-b2c-tenant.png)
+![Azure AD B2C create tenant with sample text in the available fields](./media/active-directory-b2c-create-tenant/create-new-b2c-tenant.png)
 
-| Definição      | Valor da amostra  | Descrição                                        |
+| Setting      | Sample value  | Description                                        |
 | ------------ | ------- | -------------------------------------------------- |
-| **Nome da organização** | Contoso | Nome da organização. | 
-| **Nome de domínio inicial** |  ContosoB2CTenant | Nome de domínio do inquilino do B2C. Por predefinição, o nome de domínio inicial incluirá .microsoft.com. Pode adicionar um nome de domínio que sua organização utilizará mais tarde. Não pode criar um inquilino com o mesmo nome do inquilino eliminado anteriormente. Se se tratar de um inquilino de teste, escolha um nome de não produção, como ContosoB2CTesting. |
-| **País ou região** | Estados Unidos | Escolha o país ou a região do diretório. O diretório será criado nesta localização e não pode ser alterado posteriormente.  |
+| **Organization name** | Contoso | Name of the organization. | 
+| **Initial domain name** |  ContosoB2CTenant | Domain name for the B2C tenant. By default, the initial domain name includes .onmicrosoft.com. If you are creating a test tenant, choose a non-production name such as ContosoB2CTesting. |
+| **Country or region** | United States | Choose the country or region for the directory. The directory will be created in this location and cannot be changed later.  |
 
-Clique no botão **Criar** para criar o inquilino. A criação do inquilino pode demorar alguns minutos. Será alertado nas notificações quando estiver concluída.
+Click the **Create** button to create your tenant. Creating the tenant may take a few minutes. You are alerted in your notifications when it is complete.

@@ -1,5 +1,6 @@
-| Recurso | Limite Máximo |
+| Resource | Maximum Limit |
 | --- | --- |
-| Número máximo de VMs num conjunto de dimensionamento |1000 |
-| Número máximo de conjuntos de dimensionamento numa região |2000 |
+| Maximum number of VMs in a scale set |1000 |
+| Maximum number of VMs based on a custom VM image in a scale set|300 |
+| Maximum number of scale sets in a region |2000 |
 
