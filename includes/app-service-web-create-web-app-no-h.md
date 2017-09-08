@@ -5,7 +5,7 @@ A aplicação Web fornece um espaço de alojamento para o código e um URL para 
 No comando a seguir, substitua  *\<app_name>* com um nome exclusivo (os carateres válidos são `a-z`, `0-9` e `-`). Se `<app_name>` não for exclusivo, obtém a mensagem de erro “O Website com o nome <nome_da_aplicação> já existe". O URL predefinido da aplicação Web é `https://<app_name>.azurewebsites.net`. 
 
 ```azurecli-interactive
-az webapp create --name <app_name> --resource-group myResourceGroup --plan myAppServicePlan
+az webapp create --name <app_name> --resource-group myResourceGroup --plan myAppServicePlan --deployment-local-git
 ```
 
 Quando a aplicação Web tiver sido criada, a CLI do Azure mostra informações semelhantes ao seguinte exemplo:
