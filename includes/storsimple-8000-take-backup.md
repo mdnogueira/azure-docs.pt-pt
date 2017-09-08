@@ -1,8 +1,6 @@
 <!--author=alkohli last changed: 01/12/17-->
 
-<a id="to-take-a-backup" class="xliff"></a>
-
-### Para efetuar uma cópia de segurança
+### <a name="to-take-a-backup"></a>Para efetuar uma cópia de segurança
 
 1. Aceda ao seu serviço Gestor de Dispositivos do StorSimple. A partir da lista tabular de dispositivos, selecione e clique no seu dispositivo e, em seguida, clique em **Todas as definições**. No painel **Definições**, aceda a **Definições > Gerir > Política de cópias de segurança**.
 

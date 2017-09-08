@@ -26,8 +26,3 @@
      > 
 7. Clique em **Abrir** para iniciar uma sessão de série.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

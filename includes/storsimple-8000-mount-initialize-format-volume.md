@@ -1,7 +1,6 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### Para montar, inicializar e formatar um volume
-<a id="to-mount-initialize-and-format-a-volume" class="xliff"></a>
+#### <a name="to-mount-initialize-and-format-a-volume"></a>Para montar, inicializar e formatar um volume
 1. Inicie o iniciador do Microsoft iSCSI.
 2. Na janela **Propriedades do Iniciador iSCSI**, no separador **Deteção**, clique em **Detetar Portal**.
 3. Na caixa de diálogo **Detetar Portal de Destino**, forneça o endereço IP da sua interface de rede ativada com permissão para iSCSI e clique em **OK**. 
