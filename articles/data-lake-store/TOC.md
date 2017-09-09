@@ -57,7 +57,7 @@
 
 ## Gerir
 ### [Aceder aos registos de diagnósticos](data-lake-store-diagnostic-logs.md)
-### [Plano para elevada disponibilidade](data-lake-store-troubleshooting-guidance.md)
+### [Plano para elevada disponibilidade](data-lake-store-disaster-recovery-guidance.md)
 
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=data-lake-store)

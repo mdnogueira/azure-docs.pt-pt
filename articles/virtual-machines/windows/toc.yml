@@ -120,6 +120,8 @@
           href: connect-logon.md
         - name: Utilizar o licenciamento AHUB
           href: hybrid-use-benefit-licensing.md
+        - name: Utilizar os Direitos de Alojamento Multi-inquilino para o Windows 10
+          href: windows-desktop-multitenant-hosting-deployment.md
     - name: Proteger VMs
       items:
         - name: Encriptar

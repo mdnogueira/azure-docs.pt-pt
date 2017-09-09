@@ -49,7 +49,7 @@
       href: functions-cli-samples.md
 - name: Conceitos
   items:
-    - name: Consumo e planos do Serviço de Aplicações
+    - name: Comparação de planos de alojamento
       href: functions-scale.md
     - name: Acionadores e enlaces
       href: functions-triggers-bindings.md
