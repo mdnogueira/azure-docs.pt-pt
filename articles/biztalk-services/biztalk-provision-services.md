@@ -152,7 +152,7 @@ Clique em **Gerir** para abrir o Portal de Gestão do Controlo de Acesso. No Por
 A identidade do Serviço do Controlo de Acesso é um conjunto de credenciais que permite a autenticação direta das aplicações ou dos clientes com o Controlo de Acesso e a receção de um token.
 
 > [!IMPORTANT]
-> O BizTalk Service utiliza **Proprietário** para a identidade predefinida do serviço e o valor **Palavra-passe**. Se utilizar o valor Chave Simétrica em vez do valor Palavra-passe, poderá ocorrer o seguinte erro.<br/><br/>*Não foi possível ligar à conta do Serviço de Gestão do Controlo de Acesso com as credenciais especificadas*
+> O BizTalk Service utiliza **Proprietário** para a identidade predefinida do serviço e o valor **Palavra-passe**. Se utilizar o valor Chave Simétrica em vez do valor Palavra-passe, poderá ocorrer o seguinte erro.<br/><br/>*Could not connect to the Access Control Management Service account with the specified credentials*
 > 
 > 
 
