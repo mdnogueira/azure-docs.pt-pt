@@ -13,15 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/03/2017
+ms.date: 09/01/2017
 ms.author: guybo
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
-ms.openlocfilehash: 8b2fbc230faf01797109114d6ebdffe5ec50e48b
+ms.translationtype: HT
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: bdd0fd0d1919f61fe586f495adadaf4eabde2dae
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/04/2017
-
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="what-are-virtual-machine-scale-sets-in-azure"></a>O que são os conjuntos de dimensionamento de máquinas virtuais do Azure?
@@ -123,7 +122,7 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento. Alg
    [Neste exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos) desta abordagem, o [Azure Container Service](https://azure.microsoft.com/services/container-service/) implementa um cluster com base em conjuntos de dimensionamento com um orquestrador de contentores.
 
 ## <a name="scale-set-performance-and-scale-guidance"></a>Orientação de desempenho e dimensionamento dos conjuntos de dimensionamento
-* Os conjuntos de dimensionamento suportam até mil VMs. Se criar e carregar as suas próprias imagens de VM personalizadas, o limite é cem. Para obter considerações sobre quando utilizar conjuntos de dimensionamento grandes, veja [Trabalhar com conjuntos de dimensionamento de máquinas virtuais de grande escala](virtual-machine-scale-sets-placement-groups.md).
+* Os conjuntos de dimensionamento suportam até mil VMs. Se criar e carregar as suas próprias imagens de VM personalizadas, o limite é 300. Para obter considerações sobre quando utilizar conjuntos de dimensionamento grandes, veja [Trabalhar com conjuntos de dimensionamento de máquinas virtuais de grande escala](virtual-machine-scale-sets-placement-groups.md).
 * Não é necessário criar previamente contas de armazenamento do Azure para utilizar os conjuntos de dimensionamento. Os conjuntos de dimensionamento suportam os discos geridos do Azure, o que elimina as preocupações de desempenho quanto ao número de discos por conta de armazenamento. Para obter mais informações, veja [Conjuntos de dimensionamento de VMs do Azure e discos e geridos](virtual-machine-scale-sets-managed-disks.md).
 * Considere utilizar o armazenamento Premium do Azure em vez do Armazenamento Standard, para beneficiar de tempos de aprovisionamento de VMs mais rápidos e previsíveis e um desempenho de E/S melhorado.
 * A quota de núcleos na região em que está a implementar limita o número de VMs que pode criar. Poderá ter de contactar o Suporte ao Cliente para aumentar o seu limite de quota de computação, mesmo que tenha atualmente um limite elevado de núcleos para utilizar com os Serviços Cloud do Azure. Para consultar a sua quota, execute este comando da CLI do Azure: `azure vm list-usage`. Ou execute este comando do PowerShell: `Get-AzureRmVMUsage`.
@@ -131,7 +130,7 @@ Esta secção lista alguns cenários comuns de conjuntos de dimensionamento. Alg
 ## <a name="frequently-asked-questions-for-scale-sets"></a>Perguntas mais frequentes sobre os conjuntos de dimensionamento
 **P.** Quantas VMs posso ter num conjunto de dimensionamento?
 
-**R.** Os conjuntos de dimensionamento podem ter entre zero e mil VMs com base nas imagens da plataforma ou entre zero e cem VMs com base em imagens personalizadas. 
+**R.** Os conjuntos de dimensionamento podem ter entre zero e mil VMs com base nas imagens da plataforma ou entre zero e 300 VMs com base em imagens personalizadas. 
 
 **P.** Os conjuntos de dimensionamento suportam discos de dados?
 

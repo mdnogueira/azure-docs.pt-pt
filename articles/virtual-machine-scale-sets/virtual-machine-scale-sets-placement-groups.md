@@ -13,13 +13,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/7/2017
+ms.date: 9/1/2017
 ms.author: guybo
 ms.translationtype: HT
-ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
-ms.openlocfilehash: 9e9eae1623e55c1c05e97aa0b836819ce5dc16f9
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: 12303e4283de3d179590e599d4d2fe8f14167eda
 ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Trabalhar com conjuntos de dimensionamento de máquinas virtuais de grande escala
@@ -37,7 +37,7 @@ Para decidir se a aplicação pode utilizar eficazmente os conjuntos de dimensio
 
 - Os conjuntos de dimensionamento de grande escala requerem Managed Disks do Azure. Os conjuntos de dimensionamento que não são criados com discos geridos requerem várias contas de armazenamento (uma por cada 20 VMs). Os conjuntos de dimensionamento de grande escala são concebidos para funcionar exclusivamente com Managed Disks, para reduzir a sobrecarga da gestão do armazenamento e para evitar o risco de existirem limites de subscrição para contas de armazenamento. Se não utilizar Managed Disks, o conjunto de dimensionamento fica limitado a 100 VMs.
 - Os conjuntos de dimensionamento criados a partir de imagens do Azure Marketplace podem aumentar verticalmente até 1000 VMs.
-- Atualmente, os conjuntos de dimensionamento criados a partir de imagens personalizadas (imagens VM criadas e carregadas por si) podem ser aumentados verticalmente até 100 VMs.
+- Atualmente, os conjuntos de dimensionamento criados a partir de imagens personalizadas (imagens VM criadas e carregadas por si) podem ser aumentados verticalmente até 300 VMs.
 - O balanceamento de carga de camada 4 com o Balanceador de Carga do Azure não é ainda suportado para conjuntos de dimensionamento compostos por vários grupos de colocação. Se precisar de utilizar o Balanceador de Carga do Azure, certifique-se de que o conjunto de dimensionamento está configurado para utilizar um único grupo de colocação, que é a predefinição.
 - O balanceamento de carga de camada 7 com o Gateway de Aplicação do Azure é suportado para todos os conjuntos de dimensionamento.
 - Um conjunto de dimensionamento é definido com uma única sub-rede - certifique-se de que a sub-rede tem um espaço de endereço suficientemente grande para todas as VMs necessárias. Por predefinição, um conjunto de dimensionamento aprovisiona em excesso (cria VMs adicionais no momento da implementação ou ao aumentar horizontalmente, o que não lhe é cobrado) para melhorar a fiabilidade e o desempenho da implementação. Permita um espaço de endereço 20% maior do que o número de VMs que planeia dimensionar.

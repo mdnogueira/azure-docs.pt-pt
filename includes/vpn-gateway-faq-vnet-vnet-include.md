@@ -24,6 +24,10 @@ Não. As redes virtuais podem estar nas mesmas regiões ou em regiões (localiza
 
 Não.
 
+### <a name="can-i-use-vnet-to-vnet-to-connect-virtual-networks-in-separate-azure-instances"></a>Posso utilizar VNet a VNet para ligar redes virtuais em instâncias do Azure separadas? 
+
+Não. A VNet a VNet suporta a ligação de redes virtuais na mesma instância do Azure. Por exemplo, não pode criar uma ligação entre instâncias do Azure público e do  Azure chinês / alemão / US Gov. Nestes cenários, considere a utilização de uma ligação VPN Site a Site.
+
 ### <a name="can-i-use-vnet-to-vnet-along-with-multi-site-connections"></a>Pode utilizar a VNet a VNet juntamente com ligações de vários locais?
 
 Sim. A conectividade de rede virtual pode ser utilizada em simultâneo com VPNs de vários locais.

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/23/2017
 ms.author: sethm
 ms.translationtype: HT
-ms.sourcegitcommit: 5b6c261c3439e33f4d16750e73618c72db4bcd7d
-ms.openlocfilehash: 83456d775c5ff2a2476ba46e9c78a8dc1bb482e8
+ms.sourcegitcommit: 4eb426b14ec72aaa79268840f23a39b15fee8982
+ms.openlocfilehash: b810618b485b631e1d72b24c2a9587017d635cc4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/06/2017
 
 ---
 # <a name="service-bus-architecture"></a>Arquitetura do Service Bus
@@ -35,7 +35,7 @@ Um espaço de nomes do Service Bus é mapeado para uma unidade de escala. A unid
 * **Vários arquivos de mensagens.** Os arquivos de mensagens contêm as mensagens de todas as filas, tópicos e subscrições definidas nessa unidade de escala. Além disso, contêm todos os dados de subscrição. A menos que a opção [entidades de mensagens particionadas](service-bus-partitioning.md) esteja ativada, uma fila ou um tópico é mapeado para um arquivo de mensagens. As subscrições são armazenadas no mesmo arquivo de mensagens do respetivo tópico principal. Exceto as [Mensagens Premium](service-bus-premium-messaging.md) do Service Bus, os arquivos de mensagens são implementados por cima de bases de dados SQL Azure.
 
 ## <a name="containers"></a>Contentores
-A cada entidade de mensagens é atribuído um contentor específico. Um contentor é uma construção lógica que utiliza exatamente um arquivo de mensagens para armazenar todos os dados relevantes para esse contentor. Cada contentor é atribuído a um nó do mediador de mensagens. Normalmente, existem mais contentores do que nós do mediador de mensagens. Por conseguinte, cada nó do mediador de mensagens carrega vários contentores. A distribuição de contentores para um nó do mediador de mensagens está organizada de modo que todos os nós do mediador de mensagens sejam equitativamente carregados. Caso o padrão de carga seja alterado (por exemplo, um dos contentores fique muito ocupado) ou caso um nó do mediador de mensagens fique temporariamente indisponível, os contentores são redistribuídos entre os nós do mediador de mensagens.
+A cada entidade de mensagens é atribuído um contentor específico. Um contentor é uma construção lógica que utiliza um arquivo de mensagens para armazenar todos os dados relevantes para esse contentor. Cada contentor é atribuído a um nó do mediador de mensagens. Normalmente, existem mais contentores do que nós do mediador de mensagens. Por conseguinte, cada nó do mediador de mensagens carrega vários contentores. A distribuição de contentores para um nó do mediador de mensagens está organizada de modo que todos os nós do mediador de mensagens sejam equitativamente carregados. Caso o padrão de carga seja alterado (por exemplo, um dos contentores fique muito ocupado) ou caso um nó do mediador de mensagens fique temporariamente indisponível, os contentores são redistribuídos entre os nós do mediador de mensagens.
 
 ## <a name="processing-of-incoming-messaging-requests"></a>Processamento de pedidos de mensagens recebidos
 Quando um cliente envia um pedido para o Service Bus, o Azure Load Balancer encaminha o mesmo para qualquer um dos nós de gateway. O nó de gateway autoriza o pedido. Caso o pedido seja relativo a uma entidade de mensagens (fila, tópico, subscrição), o nó de gateway procura a entidade no arquivo de gateway e determina em que arquivo de mensagens está localizada a entidade. Em seguida, procura o nó do mediador de mensagens que está atualmente a utilizar esse contentor e envia o pedido para esse nó do mediador de mensagens. O nó do mediador de mensagens processa o pedido e atualiza o estado da entidade no contentor. O nó do mediador de mensagens envia a resposta novamente para o nó de gateway, o qual envia uma resposta adequada novamente para o cliente que emitiu o pedido original.

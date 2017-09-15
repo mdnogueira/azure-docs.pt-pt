@@ -3,7 +3,7 @@ title: "Autenticação do Windows e Servidor de MFA do Azure | Microsoft Docs"
 description: "Esta é a página do Multi-Factor Authentication do Azure que irá ajudar a implementar a Autenticação do Windows e o Servidor Multi-Factor Authentication do Azure."
 services: multi-factor-authentication
 documentationcenter: 
-author: kgremban
+author: MicrosoftGuyJFlo
 manager: femila
 ms.assetid: 19a4043f-c4ce-43c0-80e7-2548ee92cb74
 ms.service: multi-factor-authentication
@@ -12,7 +12,7 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 06/06/2017
-ms.author: kgremban
+ms.author: joflore
 ms.reviewer: yossib
 ms.custom: it-pro
 ms.translationtype: Human Translation

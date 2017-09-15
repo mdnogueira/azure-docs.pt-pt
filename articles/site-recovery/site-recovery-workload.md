@@ -15,10 +15,10 @@ ms.workload: storage-backup-recovery
 ms.date: 05/08/2017
 ms.author: raynew
 ms.translationtype: HT
-ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
-ms.openlocfilehash: 88f20287e2a6935b9694a25a21b607d658b8eb68
+ms.sourcegitcommit: 763bc597bdfc40395511cdd9d797e5c7aaad0fdf
+ms.openlocfilehash: d7cb95d0e099d5e0357ce8871f02c894acfdc9b7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 09/06/2017
 
 ---
 # <a name="what-workloads-can-you-protect-with-azure-site-recovery"></a>Quais as cargas de trabalho que podem ser protegidas com o Azure Site Recovery?
@@ -31,7 +31,7 @@ As organizações necessitam de uma estratégia de continuidade empresarial e de
 
 A Recuperação de Sites é um serviço do Azure que contribui para a sua estratégia de BCDR. Através da Recuperação de Sites, pode implementar a replicação com reconhecimento de aplicações para a nuvem ou para um site secundário. Se as aplicações se baseiam em Windows ou Linux, e se executam em servidores físicos, VMware ou Hyper-V, pode utilizar a Recuperação de Sites para orquestrar a replicação, efetuar o teste de recuperação após desastres e executar a ativação e reativação pós-falha.
 
-A Recuperação de Sites integra-se com aplicações da Microsoft, incluindo o SharePoint, Exchange, Dynamics, SQL Server e Active Directory. A Microsoft também trabalha diretamente com fornecedores importantes, incluindo a Oracle, SAP, IBM e Red Hat. Pode personalizar soluções de replicação nas aplicações de forma individual.
+A Recuperação de Sites integra-se com aplicações da Microsoft, incluindo o SharePoint, Exchange, Dynamics, SQL Server e Active Directory. A Microsoft também trabalha diretamente com fornecedores importantes, incluindo a Oracle, a SAP e a Red Hat. Pode personalizar soluções de replicação nas aplicações de forma individual.
 
 ## <a name="why-use-site-recovery-for-application-replication"></a>Porquê utilizar a Recuperação de Sites para replicação de aplicações?
 A Recuperação de Sites contribui para a proteção e recuperação a nível de aplicação da seguinte forma:

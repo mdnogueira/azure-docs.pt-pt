@@ -4,6 +4,8 @@
 
 # Inícios rápidos
 ## [Criar uma aplicação .NET](service-fabric-quickstart-dotnet.md)
+## [Implementar uma aplicação do contentor do Windows](service-fabric-quickstart-containers.md)
+## [Implementar uma aplicação do contentor do Linux](service-fabric-quickstart-containers-linux.md)
 
 # Tutoriais
 ## Implementar uma aplicação .NET
@@ -122,7 +124,7 @@
 ### [Diagnósticos no Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
 ### [Contadores de desempenho para Comunicação Remota com o Reliable Services](service-fabric-reliable-serviceremoting-diagnostics.md)
 
-# Guias de Procedimentos
+# Guias de procedimentos
 ## Configurar o ambiente de desenvolvimento
 ### [Windows](service-fabric-get-started.md)
 ### [Linux](service-fabric-get-started-linux.md)

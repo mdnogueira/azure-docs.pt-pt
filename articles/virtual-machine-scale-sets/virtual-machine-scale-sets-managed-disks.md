@@ -16,10 +16,10 @@ ms.topic: get-started-article
 ms.date: 6/01/2017
 ms.author: negat
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 3ab1d432a2f90db57b99f0e7d419d85e2958c308
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: 338144eb103c68c7fff407cbeccce11734c1c34b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="azure-vm-scale-sets-and-managed-disks"></a>Conjuntos de dimensionamento de VMs do Azure e discos geridos
@@ -30,7 +30,7 @@ Os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-s
 
 * Pode anexar discos de dados geridos ao conjunto de dimensionamento.
 
-* Com um disco gerido, um conjunto de dimensionamento pode ter uma capacidade tão elevada como 1000 VMs, se se basear numa imagem de plataforma, ou 100 VMs, se se basear numa imagem personalizada.
+* Com um disco gerido, um conjunto de dimensionamento pode ter uma capacidade tão elevada como 1000 VMs, se se basear numa imagem de plataforma, ou 300 VMs, se se basear numa imagem personalizada.
 
 ## <a name="get-started"></a>Introdução
 

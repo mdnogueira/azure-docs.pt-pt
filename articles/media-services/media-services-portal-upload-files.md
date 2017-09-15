@@ -1,6 +1,6 @@
 ---
-title: " Carregar ficheiros para uma conta dos Serviços de Multimédia com o portal do Azure | Microsoft Docs"
-description: "Este tutorial orienta-o ao longo dos passos para carregar ficheiros para uma conta dos Serviços de Multimédia com o portal do Azure."
+title: "Carregar ficheiros para uma conta dos Serviços de Multimédia no portal do Azure | Microsoft Docs"
+description: "Este tutorial orienta-o ao longo dos passos para carregar ficheiros para uma conta dos Serviços de Multimédia no portal do Azure."
 services: media-services
 documentationcenter: 
 author: Juliako
@@ -15,59 +15,55 @@ ms.topic: get-started-article
 ms.date: 08/07/2017
 ms.author: juliako
 ms.translationtype: HT
-ms.sourcegitcommit: f5c887487ab74934cb65f9f3fa512baeb5dcaf2f
-ms.openlocfilehash: 8b9a7a266259077d49a38d51d7f801f420cc6315
+ms.sourcegitcommit: 3eb68cba15e89c455d7d33be1ec0bf596df5f3b7
+ms.openlocfilehash: 7ddfe44918b358a1749640d1c93dba490855cc5a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 09/01/2017
 
 ---
-# <a name="upload-files-into-a-media-services-account-using-the-azure-portal"></a>Carregar ficheiros para uma conta dos Serviços de Multimédia com o portal do Azure
+# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Carregar ficheiros para uma conta dos Serviços de Multimédia no portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-upload-files.md)
 > * [.NET](media-services-dotnet-upload-files.md)
 > * [REST](media-services-rest-upload-files.md)
 > 
 > [!NOTE]
-> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
+> Para concluir este tutorial, precisa de uma conta do Azure. Para obter mais detalhes, veja [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
 > 
 
+Nos Serviços de Multimédia do Azure, os ficheiros digitais são carregados para um elemento. O elemento pode conter ficheiros de vídeo, áudio, imagens, coleções de miniaturas, pistas de texto e legendas (e os metadados relativos a esses ficheiros). Assim que os ficheiros forem carregados, o seu conteúdo é armazenado em segurança na cloud, para processamento adicional e transmissão em fluxo.
 
-Nos Serviços de Multimédia, os ficheiros digitais são carregados para um elemento. O Elemento pode conter ficheiros de vídeo, áudio, imagens, coleções de miniaturas, pistas de texto e legendas (e os metadados relativos a esses ficheiros). Assim que os ficheiros são carregados, o seu conteúdo é armazenado em segurança na nuvem para processamento adicional e a transmissão em fluxo.
-
-
-## <a name="upload-files"></a>Carregar ficheiros
-
->[!NOTE]
->Existe um limite para o tamanho máximo dos ficheiros suportado para processamento nos Serviços de Multimédia. Veja [este](media-services-quotas-and-limitations.md) tópico para obter detalhes sobre as limitações relativas aos tamanhos de ficheiros.
+> [!NOTE]
+> Os Serviços de Multimédia têm um tamanho de ficheiro máximo para o processamento de ficheiros. Para obter mais informações sobre limites de tamanho de ficheiros, veja [Media Services quotas and limitations](media-services-quotas-and-limitations.md) (Quotas e limitações dos Serviços de Multimédia).
 >
 
+## <a name="upload-files"></a>Carregar ficheiros
 1. No [portal do Azure](https://portal.azure.com/) selecione a sua conta de Serviços de Multimédia do Azure.
-2. No painel **Definições**, clique em **Recursos**.
+2. Selecione **Definições** > **Elementos**. Em seguida, selecione o botão **Carregar**.
    
     ![Carregar ficheiros](./media/media-services-portal-vod-get-started/media-services-upload.png)
-3. Clique no botão **Carregar**.
    
     A janela **Carregar um elemento de vídeo** é apresentada.
    
    > [!NOTE]
-   > Não existe qualquer limite de tamanho de ficheiro.
-   > 
-   > 
-4. Navegue até ao vídeo pretendido no seu computador, selecione-o e clique em OK.  
+   > Os Serviços de Multimédia não limitam o tamanho de ficheiro para o carregamento de vídeos.
+ 
+3. No seu computador, aceda ao vídeo que quer carregar. Selecione o vídeo e, em seguida, selecione **OK**.  
    
-    O carregamento inicia e pode ver o seu progresso sob o nome do ficheiro.  
+    O carregamento começa. Pode ver o progresso abaixo do nome do ficheiro.  
 
-Após a conclusão do carregamento, verá o novo elemento listado na janela **Elementos**. 
-
-## <a name="next-steps"></a>Passos seguintes
-Agora, pode codificar os elementos que carregar. Para obter mais informações, veja [Codificar elementos](media-services-portal-encode.md)
-
-Também pode utilizar as Funções do Azure para acionar uma tarefa de codificação num ficheiro que esteja a chegar ao contentor configurado. Para obter mais informações, veja [este exemplo](https://azure.microsoft.com/resources/samples/media-services-dotnet-functions-integration/ ).
+Quando o carregamento estiver concluído, o elemento novo é apresentado no painel **Elementos**. 
 
 ## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Enviar comentários
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
+## <a name="next-steps"></a>Passos seguintes
+* Veja [Encode your uploaded assets](media-services-portal-encode.md) (Codificar os seus elementos carregados).
+
+* Também pode utilizar as Funções do Azure para acionar um trabalho de codificação num ficheiro que esteja a chegar ao contentor configurado. Para obter mais informações, veja o exemplo em [Media Services: Integrating Azure Media Services with Azure Functions and Logic Apps](https://azure.microsoft.com/resources/samples/media-services-dotnet-functions-integration/) (Serviços de Multimédia: Integrar os Serviços de Multimédia nas Funções do Azure e no Logic Apps).
+
 
 

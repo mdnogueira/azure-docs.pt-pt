@@ -1,0 +1,71 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Aplicações Web para Documentação de Contentores
+metadata:
+  document_id: 2239df92-8506-4ee4-b5b0-9ab512c487b2
+  title: 'Documentação de Aplicações Web do Azure para Contentores - Tutoriais, Referência de API'
+  meta.description: Learn how to use Web Apps for Containers to build and host websites and web applications leveraging Docker.
+  services: app-service
+  author: syntaxc4
+  manager: carolz
+  ms.service: app-service
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/05/2017
+  ms.author: cfowler
+sections:
+  - title: Inícios rápidos de cinco minutos
+    items:
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/app-service-web/media/index/logo_net.svg'
+            text: .NET Core
+            href: 'https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-dotnetcore'
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/app-service-web/media/index/logo_nodejs.svg'
+            text: Node.js
+            href: 'https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-nodejs'
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/app-service-web/media/index/logo_php.svg'
+            text: PHP
+            href: 'https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-php'
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/app-service-web/media/index/logo_java.svg'
+            text: Java
+            href: 'https://docs.microsoft.com/en-us/azure/azure-toolkit-for-intellij-hello-world-web-app-linux?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json'
+  - title: Tutoriais Passo-a-Passo
+    items:
+      - type: paragraph
+        text: 'Saiba como implementar, gerir e monitorizar aplicações Web seguras nasAplicações Web do Azure para Contentores'
+      - type: list
+        style: ordered
+        items:
+          - html: Crie uma aplicação com <a href="en-us/azure/app-service/containers/tutorial-dotnetcore-sqldb-app">.NET Core com a BD SQL do Azure</a> ou com <a href="en-us/azure/app-service/containers/tutorial-nodejs-mongodb-app">Node.js com MongoDB</a>
+          - html: <a href="/en-us/azure/app-service-web/app-service-web-tutorial-custom-domain">Mapeie um domínio personalizado existente na sua aplicação.</a>
+          - html: <a href="/en-us/azure/app-service-web/app-service-web-tutorial-custom-SSL">Vincule um certificado SSL existente à aplicação</a>
+          - html: <a href="/en-us/azure/app-service-web/app-service-web-tutorial-content-delivery-network">Adicionar uma CDN à sua aplicação</a>
+  - title: Amostras
+    items:
+      - type: paragraph
+        text: Encontre scripts para gerir tarefas comuns.
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/en-us/powershell/azureps-cmdlets-docs">Azure PowerShell</a>
+          - html: <a href="/cli/azure/appservice">CLI 2.0 do Azure</a>
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Linha de Comandos
+            html: <p><a href="/en-us/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">CLI 2.0 do Azure</a></p>
+          - title: Linguagens
+            html: <p><a href="/en-us/dotnet/api">.NET</a></p><p><a href="/en-us/java/api/">Java</a></p>
+          - title: REST
+            html: <p><a href="/en-us/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">CLI 2.0 do Azure</a></p>

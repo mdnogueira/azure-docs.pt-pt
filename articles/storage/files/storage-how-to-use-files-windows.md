@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 05/27/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 67b8e2e0039c8bc63f50f177e3c0d18b07df45e6
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: a8e4900bee81763300d976f0c966d7d20662ca27
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 
@@ -27,16 +27,19 @@ O [armazenamento de Ficheiros do Azure](../storage-dotnet-how-to-use-files.md) �
 
 Para montar uma partilha de Ficheiros do Azure fora da região do Azure na qual está alojada, como, por exemplo, no local ou noutra região do Azure, o SO tem de suportar SMB 3.0. 
 
-A partilha de Ficheiros do Azure pode ser montada num computador Windows no local ou numa VM do Azure, dependendo da versão do SO. A tabela abaixo ilustra 
+Pode montar partilhas de ficheiros do Azure numa instalação do Windows que esteja a ser executada numa VM do Azure ou no local. A tabela abaixo mostra as versões de SO que suportam a montagem de partilhas de ficheiros e em que ambiente:
 
-| Versão do Windows        | Versão do SMB |Montável em VM do Azure|Montável no Local|
-|------------------------|-------------|---------------------|---------------------|
-| Windows 7              | SMB 2.1     | Sim                 | Não                  |
-| Windows Server 2008 R2 | SMB 2.1     | Sim                 | Não                  |
-| Windows 8              | SMB 3.0     | Sim                 | Sim                 |
-| Windows Server 2012    | SMB 3.0     | Sim                 | Sim                 |
-| Windows Server 2012 R2 | SMB 3.0     | Sim                 | Sim                 |
-| Windows 10             | SMB 3.0     | Sim                 | Sim                 |
+| Versão do Windows        | Versão do SMB | Montável em VM do Azure | Montável no Local |
+|------------------------|-------------|-----------------------|----------------------|
+| Windows 10<sup>1</sup>  | SMB 3.0 | Sim | Sim |
+| Windows Server 2016    | SMB 3.0     | Sim                   | Sim                  |
+| Windows 8.1            | SMB 3.0     | Sim                   | Sim                  |
+| Windows Server 2012 R2 | SMB 3.0     | Sim                   | Sim                  |
+| Windows Server 2012    | SMB 3.0     | Sim                   | Sim                  |
+| Windows 7              | SMB 2.1     | Sim                   | Não                   |
+| Windows Server 2008 R2 | SMB 2.1     | Sim                   | Não                   |
+
+<sup>1</sup>Windows 10, versões 1507, 1511, 1607 e 1703
 
 > [!Note]  
 > Recomendamos obter sempre o KB mais recente para a sua versão do Windows.

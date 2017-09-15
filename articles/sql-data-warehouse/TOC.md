@@ -10,7 +10,7 @@
 ## [Tutorial de principiante](sql-data-warehouse-get-started-tutorial.md)
 ## [Melhores práticas](sql-data-warehouse-best-practices.md)
 ## [Gerir](sql-data-warehouse-overview-manage.md)
-## [Obter suporte](sql-data-warehouse-get-started-create-support-ticket.md)
+
 
 
 # Procedimento
@@ -139,18 +139,22 @@
 # Referência
 
 ## [Limites de capacidade](sql-data-warehouse-service-capacity-limits.md)
-## [Elementos de linguagem do T-SQL](sql-data-warehouse-reference-tsql-language-elements.md)
-## [Declarações do T-SQL](sql-data-warehouse-reference-tsql-statements.md)
-## [Vistas de sistema do T-SQL](sql-data-warehouse-reference-tsql-system-views.md)
+## T-SQL
+### [Referência completa](https://docs.microsoft.com/sql/t-sql/language-reference/)
+### [Elementos de linguagem do SQL DW](sql-data-warehouse-reference-tsql-language-elements.md)
+### [Instruções do Armazém de Dados do SQL](sql-data-warehouse-reference-tsql-statements.md)
+## [Vistas de sistema](sql-data-warehouse-reference-tsql-system-views.md)
 ## [Cmdlets do PowerShell](sql-data-warehouse-reference-powershell-cmdlets.md)
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=databases)
-## [Fórum](https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse)
+## [Fórum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureSQLDataWarehouse)
 ## [Preços](https://azure.microsoft.com/pricing/details/sql-data-warehouse/)
 ## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
+## [Pedidos de funcionalidades](https://feedback.azure.com/forums/307516-sql-data-warehouse/)
 ## [Atualizações de serviço](https://azure.microsoft.com/updates/?product=sql-data-warehouse)
 ## [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw/)
+## [Suporte](sql-data-warehouse-get-started-create-support-ticket.md)
 ## [Vídeos](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 
 ## Parceiros

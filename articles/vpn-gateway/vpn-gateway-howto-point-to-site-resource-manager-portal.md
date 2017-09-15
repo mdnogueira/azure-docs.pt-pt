@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/10/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 25e4506cc2331ee016b8b365c2e1677424cf4992
-ms.openlocfilehash: 5c8e99f3ba52ef5d6f9f99ac24891c38e8970fff
+ms.sourcegitcommit: 9569f94d736049f8a0bb61beef0734050ecf2738
+ms.openlocfilehash: cc9018d95ffce3b5b4a5ee20d5c78a2122e0223e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
+ms.lasthandoff: 08/31/2017
 
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-certificate-authentication-azure-portal"></a>Configurar uma ligação de Ponto a Site a uma VNet com a autenticação de certificado: Portal do Azure
@@ -134,7 +134,7 @@ Para ligar a uma VNet através de uma VPN Ponto a Site, cada cliente tem de inst
 
 Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador cliente, desde que a versão corresponda à arquitetura do cliente. Para consultar a lista de sistemas operativos cliente que são suportados, consulte [Point-to-Site connections FAQ (FAQ das ligações de Ponto a Site)](#faq) no final deste artigo.
 
-### <a name="step-1---generate-and-download-the-client-configuration-package"></a>Passo 1 - gerar e transferir o pacote de configuração do cliente
+### <a name="1-generate-and-download-the-client-configuration-package"></a>1. Gerar e transferir o pacote de configuração do cliente
 
 1. Na página **Configuração ponto a site**, clique em **Transferir cliente VPN** para abrir a página **Transferir cliente VPN**. Demora um minuto ou dois para o pacote ser gerado.
 
@@ -143,7 +143,7 @@ Pode utilizar o mesmo pacote de configuração do cliente VPN em cada computador
 
   ![transferência do cliente VPN 2](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/vpnclient.png)
 
-### <a name="step-2---install-the-client-configuration-package"></a>Passo 2 - instalar o pacote de configuração do cliente
+### <a name="2-install-the-client-configuration-package"></a>2. Instalar o pacote de configuração do cliente
 
 1. Copie o ficheiro de configuração localmente para o computador que pretende ligar à rede virtual. 
 2. Faça duplo clique no ficheiro .exe para instalar o pacote no computador cliente. Como o pacote de configuração foi criado por si, o mesmo não está assinado, pelo que poderá ver um aviso. Se obtiver um pop-up SmartScreen do Windows, clique em **Mais informações** (no lado esquerdo) e, em seguida, em **Executar mesmo assim** para instalar o pacote.
@@ -227,7 +227,7 @@ Pode revogar um certificado de cliente, ao adicionar o thumbprint à lista de re
 
 ## <a name="faq"></a>FAQ Ponto a Site
 
-[!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-point-to-site-faq-include.md)]
+[!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-faq-point-to-site-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Para obter mais informações, veja [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute). Para compreender melhor o funcionamento em rede e as máquinas virtuais, veja [Descrição geral da rede VM do Azure e Linux](../virtual-machines/linux/azure-vm-network-overview.md).

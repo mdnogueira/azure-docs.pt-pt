@@ -13,13 +13,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/26/2017
+ms.date: 08/31/2017
 ms.author: magoedte;sngun
-translationtype: Human Translation
-ms.sourcegitcommit: 356de369ec5409e8e6e51a286a20af70a9420193
-ms.openlocfilehash: 4b32011b72acc647d4af44bb5ccbcaab408fb4d6
-ms.lasthandoff: 03/27/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: cd8ea6e5a85d00f8ee5a011330d5b93863fd735e
+ms.contentlocale: pt-pt
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="my-first-powershell-runbook"></a>O meu primeiro runbook do PowerShell
@@ -37,7 +37,7 @@ Este tutorial explica como criar um [ runbook do PowerShell](automation-runbook-
 Para concluir este tutorial, precisa do seguinte:
 
 * Subscrição do Azure. Se ainda não tiver uma, pode [ativar as vantagens de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou <a href="/pricing/free-account/" target="_blank">[inscrever-se numa conta gratuita](https://azure.microsoft.com/free/).
-* [Conta de automatização](automation-sec-configure-azure-runas-account.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
+* [Conta de automatização](automation-offering-get-started.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
 * Uma máquina virtual do Azure. Paramos e iniciamos esta máquina, pelo que não deve ser uma VM de produção.
 
 ## <a name="step-1---create-new-runbook"></a>Passo 1 – criar um novo runbook
@@ -54,7 +54,7 @@ Vamos começar por criar um runbook simples que produz o texto *Olá, Mundo*.
 ## <a name="step-2---add-code-to-the-runbook"></a>Passo 2 - adicionar código ao runbook
 Pode escrever o código do tipo diretamente no runbook ou pode selecionar os cmdlets, runbooks e recursos no controlo da Biblioteca e adicioná-los ao runbook com quaisquer parâmetros relacionados. Nestas instruções, escrevemos diretamente no runbook.
 
-1. Atualmente, o nosso runbook está vazio, escreva *Write-Output "Olá, Mundo"*.<br><br> ![Olá Mundo](media/automation-first-runbook-textual-powershell/automation-helloworld.png)  
+1. Atualmente, o nosso runbook está vazio; escreva *Write-Output "Hello World."* no corpo do script.<br><br> ![Olá Mundo](media/automation-first-runbook-textual-powershell/automation-helloworld.png)  
 2. Guarde o runbook ao clicar em **Guardar**.<br><br> ![Botão Guardar](media/automation-first-runbook-textual-powershell/automation-runbook-edit-controls-save.png)  
 
 ## <a name="step-3---test-the-runbook"></a>Passo 3 – testar o runbook

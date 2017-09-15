@@ -12,13 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/18/2017
+ms.date: 08/31/2017
 ms.author: magoedte
 ms.translationtype: HT
-ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
-ms.openlocfilehash: 54f137b26bf1c8f966e8ef110dcf3d25abf7ac5b
+ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
+ms.openlocfilehash: 3269af400d091435af56b0093abbb839d8dd7068
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 
@@ -170,8 +170,7 @@ O método recomendado para carregar a Automatização é selecionar a oferta de 
    - Especifique um nome para a **Área de Trabalho do OMS**.
    - Selecione uma **Subscrição** à qual ligar ao escolher na lista pendente se a predefinição selecionada não é adequada.
    - Em **Grupo de Recursos**, pode criar um grupo de recursos ou selecionar um já existente.  
-   - Selecione uma **Localização**.  Atualmente, as únicas localizações disponíveis são **Sudeste da Austrália**, **E.U.A. Leste**, **Sudeste Asiático**, **E.U.A. Central Oeste** e **Europa Ocidental**.
-   - Selecione um **Escalão de preço**.  A solução é oferecida em dois escalões, gratuito e escalão Por Nó (OMS).  O escalão gratuito tem um limite quanto à quantidade de dados recolhidos diariamente, ao período de retenção e aos minutos de tempo de execução de trabalhos de runbook.  O escalão Por Nó (OMS) não tem limite quanto à quantidade de dados recolhidos diariamente.  
+   - Selecione uma **Localização**.  Para obter mais informações, veja em que [regiões está disponível a Automatização do Azure](https://azure.microsoft.com/regions/services/).  As soluções são oferecidas em dois escalões: gratuito e escalão Por Nó (OMS).  O escalão gratuito tem um limite quanto à quantidade de dados recolhidos diariamente, ao período de retenção e aos minutos de tempo de execução de trabalhos de runbook.  O escalão Por Nó (OMS) não tem limite quanto à quantidade de dados recolhidos diariamente.  
    - Selecione **Conta de Automatização**.  Se estiver a criar uma área de trabalho do OMS novo, tem também de criar uma conta de Automatização, que é associada à área de trabalho do OMS especificada anteriormente, incluindo a subscrição, o grupo de recursos e a região do Azure.  Pode selecionar **Criar conta de Automatização** e, no painel **Conta de Automatização**, indique o seguinte: 
   - No campo **Nome**, introduza o nome da conta de Automatização.
 

@@ -13,6 +13,7 @@
 # Procedimento
 ## Planear e conceber
 ### [Autenticação e segurança](relay-authentication-and-authorization.md)
+#### [Migrar do ACS para SAS](relay-migrate-acs-sas.md)
 ### [Protocolo das Ligações Híbridas](relay-hybrid-connections-protocol.md)
 ## Programar
 ### [APIs disponíveis](relay-api-overview.md)

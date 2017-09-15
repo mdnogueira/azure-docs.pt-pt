@@ -4,6 +4,8 @@
   items:
     - name: Acerca das Aplicações Web
       href: app-service-web-overview.md
+    - name: Sobre Aplicações Web para Contentores
+      href: ../app-service/containers/app-service-linux-intro.md
     - name: Comparar opções de alojamento
       href: choose-web-site-cloud-service-vm.md
 - name: Inícios rápidos
@@ -29,10 +31,8 @@
       href: app-service-web-tutorial-nodejs-mongodb-app.md
     - name: 1 - PHP com MySQL
       href: app-service-web-tutorial-php-mysql.md
-    - name: 1 - WordPress com MySQL
-      href: app-service-web-create-web-app-from-marketplace.md
-    - name: 1 - Python com PostgreSQL
-      href: app-service-web-tutorial-docker-python-postgresql-app.md
+    - name: 1 - Java com MySQL
+      href: app-service-web-tutorial-java-mysql.md
     - name: 2 - Mapear Domínio Personalizado
       href: app-service-web-tutorial-custom-domain.md
     - name: 3 - Vincular Certificado SSL
@@ -73,14 +73,8 @@
               href: app-service-web-php-get-started.md
             - name: Configurar o seu projeto PHP
               href: web-sites-php-configure.md
-            - name: Configurar um Multisite do WordPress
-              href: web-sites-php-convert-wordpress-multisite.md
         - name: Node.js
           items:
-            - name: Aplicação Sails.js com NOSQL DB
-              href: app-service-web-nodejs-sails.md
-            - name: Utilizar o io.js
-              href: web-sites-nodejs-iojs.md
             - name: Depurar aplicação Node.js
               href: web-sites-nodejs-debug.md
         - name: Java
@@ -89,14 +83,8 @@
               href: app-service-web-eclipse-create-hello-world-web-app.md
             - name: Aplicação Java com IntelliJ
               href: app-service-web-intellij-create-hello-world-web-app.md
-            - name: Utilizar o SDK do Azure para Java
-              href: java-create-azure-website-using-java-sdk.md
             - name: Carregar aplicação existente
               href: web-sites-java-add-app.md
-        - name: Python
-          items:
-            - name: Aplicação Django com MySQL
-              href: web-sites-python-ptvs-django-mysql.md
         - name: Enviar e-mails com o SendGrid
           href: sendgrid-dotnet-how-to-send-email.md
         - name: Configurar o runtime
@@ -111,28 +99,6 @@
           items:
             - name: Utilizar as definições da aplicação
               href: web-sites-configure.md
-        - name: Aplicação Web no Linux
-          items:
-            - name: Descrição geral
-              href: app-service-linux-intro.md
-            - name: Gerir através da CLI
-              href: app-service-linux-cli.md
-            - name: Aplicação Web Ruby no Linux
-              href: app-service-linux-ruby-get-started.md
-            - name: Aplicação Web Node.js no Linux
-              href: app-service-linux-using-nodejs-pm2.md
-            - name: Aplicação Web .NET Core no Linux
-              href: app-service-linux-using-dotnetcore.md
-            - name: Aplicação Web Docker personalizada no Linux
-              href: app-service-linux-using-custom-docker-image.md
-            - name: Ligar através de SSH
-              href: app-service-linux-ssh-support.md
-            - name: Implementação Contínua
-              href: app-service-linux-ci-cd.md
-            - name: Tipo de Implementação - imagem personalizada ou incorporada?
-              href: app-service-linux-choose-deployment-type.md
-            - name: FAQ de Aplicação Web no Linux
-              href: app-service-linux-faq.md
     - name: Implementar no Azure
       href: web-sites-deploy.md
       items:
@@ -162,12 +128,6 @@
               href: web-sites-traffic-manager-custom-domain-name.md
             - name: Migrar um domínio ativo
               href: app-service-custom-domain-name-migrate.md
-        - name: Migrar do IIS
-          href: web-sites-migration-from-iis-server.md
-        - name: Testar na produção
-          href: app-service-web-test-in-production-get-start.md
-        - name: Adicionar funcionalidade a uma aplicação Web
-          href: app-service-web-get-started-2.md
         - name: Implementar uma aplicação Spring Boot nas Aplicações Web do Azure através do Plug-in Maven
           href: app-service-web-deploy-spring-boot-app-with-maven-plugin.md
         - name: Implementar uma aplicação Spring Boot de contentor através do Plug-in Maven
@@ -178,8 +138,6 @@
           href: ../azure-toolkit-for-intellij-hello-world-web-app-linux.md
     - name: Ligar a base de dados/recursos
       items:
-        - name: Ligar aos dados no local
-          href: web-sites-hybrid-connection-get-started.md
         - name: Ligar à VNet do Azure
           href: web-sites-integrate-with-vnet.md
         - name: Ligar à VNet do Azure com o PowerShell
@@ -214,8 +172,6 @@
           href: web-sites-scale.md
         - name: Aumentar horizontalmente
           href: ../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service-web%2ftoc.json
-        - name: Balanceamento de carga com o Gestor de Tráfego
-          href: web-sites-traffic-manager.md
         - name: Alto dimensionamento com Ambientes do Serviço de Aplicações
           href: ../app-service/app-service-app-service-environments-readme.md?toc=%2fazure%2fapp-service-web%2ftoc.json
         - name: Utilizar a CDN do Azure para alcance global
@@ -224,8 +180,6 @@
           href: web-sites-connect-to-redis-using-memcache-protocol.md
         - name: Criar uma Cache de Redis
           href: ../redis-cache/cache-redis-cache-arm-provision.md?toc=%2fazure%2fapp-service-web%2ftoc.json
-        - name: Gerir estado de sessão com a cache de Redis do Azure
-          href: web-sites-dotnet-session-state-caching.md
     - name: Monitorizar
       items:
         - name: Monitorizar aplicações
@@ -240,8 +194,6 @@
           href: web-sites-backup.md
         - name: Restaurar a aplicação a partir de uma cópia de segurança
           href: web-sites-restore.md
-        - name: Criar cópia de segurança com a API REST
-          href: websites-csm-backup.md
     - name: Gerir recursos de aplicação
       items:
         - name: Clonar aplicação com o PowerShell
@@ -250,10 +202,6 @@
           href: app-service-web-app-cloning-portal.md
         - name: Mover recursos
           href: app-service-move-resources.md
-        - name: Utilizar o Azure Resource Manager com o PowerShell
-          href: app-service-web-app-azure-resource-manager-powershell.md
-        - name: Gerir aplicações com a Automatização do Azure
-          href: automation-manage-web-app.md
     - name: Integrar
       items:
         - name: Exportar para as PowerApps e Microsoft Flow
