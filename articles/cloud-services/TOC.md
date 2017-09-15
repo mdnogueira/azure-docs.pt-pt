@@ -60,6 +60,7 @@
 ### Configurar o dimensionamento automático
 #### [Portal](cloud-services-how-to-scale-portal.md)
 #### [Portal clássico](cloud-services-how-to-scale.md)
+#### [PowerShell](cloud-services-how-to-scale-powershell.md)
 ### [Utilizar Python para gerir os Recursos do Azure](cloud-services-python-how-to-use-service-management.md)
 
 ### [Correções do SO convidado](cloud-services-guestos-msrc-releases.md)

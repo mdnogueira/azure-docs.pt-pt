@@ -280,7 +280,7 @@
 ### [Visualizar um cluster](service-fabric-visualizing-your-cluster.md)
 ### [Ligar a um cluster seguro](service-fabric-connect-to-secure-cluster.md)
 
-### [Gerir um cluster com a CLI do Service Fabric](service-fabric-cli.md)
+### [Introdução à CLI do Service Fabric](service-fabric-cli.md)
 ### [Aplicar o patch em nós de cluster](service-fabric-patch-orchestration-application.md)
 
 ### Gerir e organizar recursos do cluster
