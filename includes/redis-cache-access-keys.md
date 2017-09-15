@@ -6,7 +6,7 @@ Para obter o nome do anfitrião, as portas e as chaves de acesso através do Por
 ![Definições da cache de Redis](media/redis-cache-access-keys/redis-cache-hostname-ports-keys.png)
 
 ### <a name="retrieve-host-name-ports-and-access-keys-using-azure-cli"></a>Obtenha o nome do anfitrião, as portas e as chaves de acesso através da CLI do Azure
-Para obter o nome do anfitrião e as portas através da CLI 2.0 do Azure, pode chamar para [az redis show](https://docs.microsoft.com/cli/azure/redis#show) e para obter as chaves pode chamar para [az redis list-keys](https://docs.microsoft.com/cli/azure/redis#list-keys). O script seguinte chama estes dois comandos e ecoa o nome de anfitrião, as portas e as chaves para a consola.
+Para obter o nome do anfitrião e as portas através da CLI 2.0 do Azure, pode chamar para [az redis show](https://docs.microsoft.com/cli/azure/redis#az_redis_show) e para obter as chaves pode chamar para [az redis list-keys](https://docs.microsoft.com/cli/azure/redis#az_redis_list_keys). O script seguinte chama estes dois comandos e ecoa o nome de anfitrião, as portas e as chaves para a consola.
 
 ```azurecli
 #/bin/bash

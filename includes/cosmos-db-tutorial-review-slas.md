@@ -1,7 +1,7 @@
-Agora que a sua aplicação já está a funcionar, é importante garantir a continuidade do negócio e ver o acesso dos utilizadores para assegurar que têm elevada disponibilidade. Pode utilizar o portal do Azure para rever a disponibilidade, a latência, o débito e a consistência da sua aplicação. 
+Now that your app is up and running, you'll want to ensure business continuity and watch user access to ensure high availability. You can use the Azure portal to review the availability, latency, throughput, and consistency of your collection. 
 
-Cada gráfico que está associado aos [Contratos de Nível de Serviço do Azure Cosmos DB (SLAs)](https://azure.microsoft.com/support/legal/sla/documentdb/) contém uma linha que mostra as quotas necessárias para cumprir o SLA e a sua utilização real, proporcionando-lhe transparência relativamente ao desempenho da sua base de dados. O portal também inclui outras métricas, como utilização do armazenamento e número de pedidos por minuto.
+Each graph that's associated with the [Azure Cosmos DB Service Level Agreements (SLAs)](https://azure.microsoft.com/support/legal/sla/cosmos-db/) provides a line that shows the quota required to meet the SLA and your actual usage. This information gives you a clear view into your database performance. Additional metrics, such as storage usage and number of requests per minute, are also included in the portal.
 
-* No portal do Azure, no painel da esquerda, em **Monitorização**, clique em **Métricas**.
+* In the Azure portal, in the pane on the left, under **Monitoring**, select **Metrics**.
 
-   ![Aplicação de Lista A Fazer com dados de exemplo](./media/cosmos-db-tutorial-review-slas/azure-cosmosdb-portal-metrics-slas.png)
+   ![Todo app with sample data](./media/cosmos-db-tutorial-review-slas/azure-cosmosdb-portal-metrics-slas.png)
