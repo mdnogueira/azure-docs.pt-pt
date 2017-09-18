@@ -13,35 +13,27 @@
 ## [Planeamento e operações](security-center-planning-and-operations-guide.md)
 ## [Permissões](security-center-permissions.md)
 ## [Plataformas suportadas](security-center-os-coverage.md)
-## [Integração de parceiros](security-center-partner-integration.md)
 ## [FAQ](security-center-faq.md)
 
 # Procedimento
 
-## Prevenir
+## Política de segurança
+### [Recolha de dados](security-center-enable-data-collection.md)
 ### [Definir políticas de segurança](security-center-policies.md)
-### [Acesso just-in-time](security-center-just-in-time.md)
-### [Implementar recomendações de segurança](security-center-recommendations.md)
 
-### [Recomendações da aplicação](security-center-application-recommendations.md)
-#### [Adicionar uma firewall de aplicação Web](security-center-add-web-application-firewall.md)
-#### [Finalizar a proteção das aplicações](security-center-add-web-application-firewall.md#finalize-application-protection)
+## [Inclusão](security-center-onboarding.md)
+## [Eventos](security-center-events-dashboard.md)
+## [Pesquisa](security-center-search.md)
 
-### [Recomendações de rede](security-center-network-recommendations.md)
-#### [Adicionar uma firewall da próxima geração](security-center-add-next-generation-firewall.md)
-#### [Ativar os Grupos de Segurança de Rede](security-center-enable-network-security-groups.md)
-#### [Restringir o acesso através de pontos finais de acesso à Internet](security-center-restrict-access-through-internet-facing-endpoints.md)
-#### [Encaminhar o tráfego apenas através da NGFW](security-center-add-next-generation-firewall.md#route-traffic-through-ngfw-only)
+## Prevenir
+### [Monitorizar o estado de funcionamento da segurança](security-center-monitoring.md)
+### [Gerir recomendações](security-center-recommendations.md)
+### [Integrar soluções de parceiros](security-center-partner-integration.md)
+### [Soluções de monitorização de parceiros](security-center-partner-solutions.md)
 
-### [Recomendações do serviço SQL](security-center-sql-service-recommendations.md)
-#### [Ativar a auditoria e a deteção de ameaças nas bases de dados SQL](security-center-enable-auditing-on-sql-databases.md)
-#### [Ativar a auditoria e a deteção de ameaças em servidores SQL](security-center-enable-auditing-on-sql-servers.md)
-#### [Ativar a Encriptação de Dados Transparente](security-center-enable-transparent-data-encryption.md)
-
-### [Recomendações de Máquinas Virtuais](security-center-virtual-machine-recommendations.md)
+### [Computação](security-center-virtual-machine-recommendations.md)
 #### [Aplicar encriptação de discos](security-center-apply-disk-encryption.md)
 #### [Aplicar atualizações do sistema](security-center-apply-system-updates.md)
-#### [Ativar a recolha de dados](security-center-enable-data-collection.md)
 #### [Ativar a encriptação da conta de armazenamento](security-center-enable-encryption-for-storage-account.md)
 #### [Ativar o Agente de VM](security-center-enable-vm-agent.md)
 #### [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md)
@@ -52,8 +44,22 @@
 #### [Atualizar a versão do SO](security-center-update-os-version.md)
 #### [Avaliação de vulnerabilidades não instalada](security-center-vulnerability-assessment-recommendations.md)
 
-### [Monitorizar o estado de funcionamento da segurança](security-center-monitoring.md)
-### [Soluções de monitorização de parceiros](security-center-partner-solutions.md)
+### [Redes](security-center-network-recommendations.md)
+#### [Adicionar uma firewall da próxima geração](security-center-add-next-generation-firewall.md)
+#### [Ativar os Grupos de Segurança de Rede](security-center-enable-network-security-groups.md)
+#### [Restringir o acesso através de pontos finais de acesso à Internet](security-center-restrict-access-through-internet-facing-endpoints.md)
+#### [Encaminhar o tráfego apenas através da NGFW](security-center-add-next-generation-firewall.md#route-traffic-through-ngfw-only)
+
+### [Armazenamento e dados](security-center-sql-service-recommendations.md)
+#### [Ativar a auditoria e a deteção de ameaças nas bases de dados SQL](security-center-enable-auditing-on-sql-databases.md)
+#### [Ativar a auditoria e a deteção de ameaças em servidores SQL](security-center-enable-auditing-on-sql-servers.md)
+#### [Ativar a Encriptação de Dados Transparente](security-center-enable-transparent-data-encryption.md)
+
+### [Aplicações](security-center-application-recommendations.md)
+#### [Adicionar uma firewall de aplicação Web](security-center-add-web-application-firewall.md)
+#### [Finalizar a proteção das aplicações](security-center-add-web-application-firewall.md#finalize-application-protection)
+
+### [Identidade e Acesso](security-center-identity-access.md)
 
 ## Detetar e Responder
 ### [Capacidades de deteção](security-center-detection-capabilities.md)
@@ -62,7 +68,12 @@
 ### [Validação de alertas](security-center-alert-validation.md)
 ### [Gerir incidentes de segurança](security-center-incident.md)
 ### [Integração de registos do Azure](security-center-integrating-alerts-with-log-integration.md)
+### [Mapa das informações sobre ameaças](security-center-threat-intel.md)
 ### [Relatório de informações sobre ameaças](security-center-threat-report.md)
+
+## Defesas da cloud
+### [Acesso just-in-time](security-center-just-in-time.md)
+### [Controlos de aplicação adaptáveis](security-center-adaptive-application.md)
 
 ## Resolução de problemas
 ### [Guia de resolução de problemas](security-center-troubleshooting-guide.md)

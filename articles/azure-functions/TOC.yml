@@ -103,6 +103,8 @@
           href: ../app-service/app-service-export-api-to-powerapps-and-flow.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Chamar uma função a partir do PowerApps
           href: functions-powerapps-scenario.md
+        - name: Utilizar a Identidade do Serviço Gerido
+          href: ../app-service/app-service-managed-service-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
 - name: Referência
   items:
     - name: Enlaces
@@ -147,6 +149,8 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Disponibilidade regional
       href: 'https://azure.microsoft.com/regions/services/'
+    - name: Vídeos
+      href: 'https://www.youtube.com/c/AzureFunctions'
     - name: Fórum do MSDN
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions'
     - name: Stack Overflow

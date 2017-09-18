@@ -1,0 +1,49 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação do Azure Stack
+metadata:
+  document_id: cbf798da-6f1a-7d4d-7707-5d5e02589e22
+  title: 'Documentação do Azure Stack - Tutoriais, Referência da API'
+  description: Saiba como utilizar a pré-visualização do Azure Stack para fornecer os serviços do Azure a partir do centro de dados. Saiba e demonstre funcionalidades a partir de uma prova de ambiente de conceito.
+  services: azure-stack
+  author: czeumault
+  manager: carolz
+  ms.service: azure-stack
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 04/28/2017
+  ms.author: carolz
+abstract:
+  description: O Microsoft Azure Stack é uma plataforma de cloud híbrida que lhe permite fornecer serviços do Azure a partir do seu datacenter. Saiba como implementar o Azure Stack e a oferta de serviços com o nosso início rápido e tutoriais.
+sections:
+  - title: Início Rápido
+    items:
+      - type: paragraph
+        text: 'Configure o seu hardware e implemente o Azure Stack:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
+            text: Implementar o Azure Stack
+            href: azure-stack-deploy-overview.md
+  - title: Tutoriais passo-a-passo
+    items:
+      - type: paragraph
+        text: 'Saiba como adicionar serviços à sua implementação do Azure Stack:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/azure-stack/azure-stack-tutorial-tenant-vm">Ativar Máquinas Virtuais no Azure Stack</a>
+          - html: <a href="/azure/azure-stack/azure-stack-tutorial-sql-server">Ativar Bases de Dados SQL no Azure Stack</a>
+          - html: <a href="/azure/azure-stack/azure-stack-tutorial-app-service">Ativar Aplicações Web no Azure Stack</a>
+          - html: <a href="/azure/azure-stack/azure-stack-solution-pipeline">Implementar aplicações no Azure e no Azure Stack</a>
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Linha de Comandos
+            html: <p><a href="/powershell/azure/azure-stack/overview?view=azurestackps-1.2.9">PowerShell</a></p>
