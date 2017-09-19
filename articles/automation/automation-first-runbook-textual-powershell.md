@@ -16,10 +16,10 @@ ms.topic: get-started-article
 ms.date: 08/31/2017
 ms.author: magoedte;sngun
 ms.translationtype: HT
-ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
-ms.openlocfilehash: cd8ea6e5a85d00f8ee5a011330d5b93863fd735e
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: a0e802d931f017c986eba0b64eebfb27c288c8c2
 ms.contentlocale: pt-pt
-ms.lasthandoff: 09/02/2017
+ms.lasthandoff: 09/13/2017
 
 ---
 # <a name="my-first-powershell-runbook"></a>O meu primeiro runbook do PowerShell
@@ -28,7 +28,7 @@ ms.lasthandoff: 09/02/2017
 > * [Gráficos](automation-first-runbook-graphical.md)
 > * [PowerShell](automation-first-runbook-textual-powershell.md)
 > * [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
-> 
+> * [python](automation-first-runbook-textual-python2.md)
 > 
 
 Este tutorial explica como criar um [ runbook do PowerShell](automation-runbook-types.md#powershell-runbooks) na Automatização do Azure. Começamos com um runbook simples que testamos e publicamos enquanto explicamos como controlar o estado da tarefa de runbook. Em seguida, modificamos o runbook para gerir recursos do Azure, neste caso, iniciar uma máquina virtual do Azure. Por último, tornamos o runbook mais robusto ao adicionar parâmetros do runbook.
@@ -36,7 +36,7 @@ Este tutorial explica como criar um [ runbook do PowerShell](automation-runbook-
 ## <a name="prerequisites"></a>Pré-requisitos
 Para concluir este tutorial, precisa do seguinte:
 
-* Subscrição do Azure. Se ainda não tiver uma, pode [ativar as vantagens de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou <a href="/pricing/free-account/" target="_blank">[inscrever-se numa conta gratuita](https://azure.microsoft.com/free/).
+* Subscrição do Azure. Se ainda não tiver uma, pode [ativar as vantagens de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou [inscrever-se numa conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Conta de automatização](automation-offering-get-started.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
 * Uma máquina virtual do Azure. Paramos e iniciamos esta máquina, pelo que não deve ser uma VM de produção.
 

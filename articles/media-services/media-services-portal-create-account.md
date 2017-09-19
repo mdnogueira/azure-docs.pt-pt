@@ -12,13 +12,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/10/2017
+ms.date: 09/03/2017
 ms.author: juliako
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: b190ad54147a4d548806047b2257069cac4475cd
+ms.sourcegitcommit: f2ac16c2f514aaa7e3f90fdf0d0b6d2912ef8485
+ms.openlocfilehash: 4e811dee81bfbd01b3cbe7f78a57b2ce92d1c0f9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/08/2017
 
 ---
 # <a name="create-an-azure-media-services-account-using-the-azure-portal"></a>Criar uma conta dos Serviços de Multimédia do Azure com o Portal do Azure
@@ -36,6 +36,9 @@ O portal do Azure proporciona uma forma para criar rapidamente uma conta dos Ser
 
 Este artigo explica alguns conceitos comuns e mostra como criar uma conta dos Serviços de Multimédia no portal do Azure.
 
+> [!NOTE]
+> Para obter informações sobre a disponibilidade das funcionalidades dos Serviços de Multimédia do Azure em regiões diferentes, veja [disponibilidade das funcionalidades do AMS em datacenters](scenarios-and-availability.md#availability).
+
 ## <a name="concepts"></a>Conceitos
 O acesso aos Media Services requer duas contas associadas:
 
@@ -43,8 +46,8 @@ O acesso aos Media Services requer duas contas associadas:
   
 * Uma conta de armazenamento do Azure. As contas de armazenamento têm de estar localizadas na mesma região geográfica que a conta dos Serviços de Multimédia. Quando cria uma conta de Media Services, pode optar por uma conta do Storage existente na mesma região ou pode criar uma nova conta do Storage na mesma região. Se eliminar uma conta de Media Services, os blobs na sua conta do Storage relacionada não são eliminados.
 
-> [!NOTE]
-> Para obter informações sobre a disponibilidade das funcionalidades dos Serviços de Multimédia do Azure em regiões diferentes, veja [disponibilidade das funcionalidades do AMS em datacenters](scenarios-and-availability.md#availability).
+  > [!NOTE]
+  > Os Serviços de Multimédia restringe a conta de armazenamento principal a uma conta de **Armazenamento para Fins Gerais** com Tabelas, Filas. Para obter mais informações sobre as contas de armazenamento, veja [Acerca das contas de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account).
 
 ## <a name="create-an-ams-account"></a>Criar uma conta do AMS
 Os passos nesta secção explicam como criar uma conta dos AMS.

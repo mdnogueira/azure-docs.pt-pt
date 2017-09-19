@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 08/18/2017
 ms.author: magoedte
 ms.translationtype: HT
-ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
-ms.openlocfilehash: 6eadfb0c3f91c1f2c7783d70604b45d5dc9912a3
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: 85ae54f76fff47b16d7a365ccee87866d0424f82
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 09/13/2017
 
 ---
 
@@ -47,7 +47,8 @@ Nesta secção, executa os seguintes passos para criar uma conta de Automatizaç
 2. Clique em **Novo**.<br><br> ![Selecione a Nova opção no portal do Azure](media/automation-offering-get-started/automation-portal-martketplacestart.png)<br>  
 3. Procure a **Automatização** e, em seguida, nos resultados da pesquisa selecione **Automatização & Controlo***.<br><br> ![Procure e selecione Automatização a partir do Mercado](media/automation-create-standalone-account/automation-marketplace-select-create-automationacct.png)<br> 
 3. No painel Contas de Automatização, clique em **Adicionar**.<br><br>![Adicionar Conta de Automatização](media/automation-create-standalone-account/automation-create-automationacct-properties.png)
-   
+
+
    > [!NOTE]
    > Se vir o seguinte aviso no painel **Adicionar Conta de Automatização**, isto acontece porque a conta não é membro da função de Administradores da Subscrição nem coadministradora da subscrição.<br><br>![Adicionar Aviso de Conta de Automatização](media/automation-create-standalone-account/create-account-without-perms.png)
    > 
@@ -72,6 +73,7 @@ Quando a conta de Automatização é criada com sucesso, são criados vários re
 | --- | --- |
 | Runbook AzureAutomationTutorial |Um runbook gráfico de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Resource Manager. |
 | AzureAutomationTutorialScript Runbook |Um runbook do PowerShell de exemplo que demonstra como efetuar a autenticação com a conta Run As e obtém todos os recursos do Gestor de Recursos. |
+| Runbook AzureAutomationTutorialPython2 |Um runbook python de exemplo que demonstra como autenticar através da utilização da conta Run As e que, em seguida, lista os grupos de recursos presentes na subscrição especificada. |
 | AzureRunAsCertificate |Recurso de certificado criado automaticamente durante a criação da conta de Automatização ou utilizando o script do PowerShell abaixo para uma conta existente.  Permite-lhe autenticar com o Azure, para que possa gerir recursos do Azure Resource Manager a partir dos runbooks.  Este certificado tem um tempo de vida de um ano. |
 | AzureRunAsConnection |Recurso de ligação criado automaticamente durante a criação da conta de Automatização ou utilizando o script do PowerShell abaixo para uma conta existente. |
 
@@ -89,3 +91,5 @@ A tabela seguinte resume os recursos da conta Run As clássica.<br>
 * Para obter mais informações sobre a Criação de Gráficos, consulte [Graphical authoring in Azure Automation (Criação de gráficos na Automatização do Azure)](automation-graphical-authoring-intro.md).
 * Para começar com runbooks do PowerShell, consulte [My first PowerShell runbook (O meu primeiro runbook do PowerShell)](automation-first-runbook-textual-powershell.md).
 * Para começar com runbooks do fluxo de trabalho do PowerShell, veja [O meu primeiro runbook do fluxo de trabalho do PowerShell](automation-first-runbook-textual.md).
+* Para obter uma introdução aos runbooks Python2, veja [My first Python2 runbook](automation-first-runbook-textual-python2.md) (O meu primeiro runbook Python2).
+

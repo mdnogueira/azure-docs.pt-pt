@@ -5,7 +5,6 @@ services: virtual-machines-windows
 documentationcenter: 
 author: rothja
 manager: jhubbard
-editor: 
 tags: azure-service-management
 ms.assetid: c505089e-6bbf-4d14-af0e-dd39a1872767
 ms.service: virtual-machines-sql
@@ -13,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 08/07/2017
+ms.date: 09/12/2017
 ms.author: jroth
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
-ms.openlocfilehash: f0100423550046d18642180ce98e93ce3609749b
+ms.translationtype: HT
+ms.sourcegitcommit: fda37c1cb0b66a8adb989473f627405ede36ab76
+ms.openlocfilehash: b9d42e393e696187d2299e033402db8ee565593a
 ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 09/14/2017
 
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines"></a>Descrição Geral do SQL Server em Máquinas Virtuais do Azure
@@ -27,34 +26,8 @@ Este tópico descreve as opções para executar o SQL Server em máquinas virtua
 
 > [!NOTE]
 > Se já estiver familiarizado com o SQL Server e quiser ver apenas como implementar uma VM do SQL Server, veja [Aprovisionar uma máquina virtual do SQL Server no portal do Azure](virtual-machines-windows-portal-sql-server-provision.md).
-> 
-> 
 
-## <a name="overview"></a>Descrição geral
-Se for um administrador de base de dados ou um programador, as VMs do Azure oferecem uma forma de mover as cargas de trabalho no local do SQL Server e as aplicações para a Nuvem. O vídeo seguinte apresenta uma descrição geral técnica das VMs do Azure SQL Server.
-
-> [!VIDEO https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016/player]
-> 
-> 
-
-O vídeo abrange as seguintes áreas:
-
-| Hora | Área |
-| --- | --- |
-| 00:21 |O que são VMs do Azure? |
-| 01:45 |Segurança |
-| 02:50 |Conectividade |
-| 03:30 |Desempenho e fiabilidade de armazenamento |
-| 05:20 |Tamanhos de VM |
-| 05:54 |Elevada disponibilidade e SLA |
-| 07:30 |Suporte de configuração |
-| 08:00 |Monitorização |
-| 08:32 |Demonstração: Criar uma VM do SQL Server 2016 |
-
-> [!NOTE]
-> O vídeo concentra-se no SQL Server 2016, mas o Azure oferece imagens da VM para várias versões do SQL Server, incluindo 2012, 2014 e 2016. 
-> 
-> 
+Se for um administrador de base de dados ou um programador, as VMs do Azure oferecem uma forma de mover as cargas de trabalho no local do SQL Server e as aplicações para a Nuvem.
 
 ## <a name="scenarios"></a>Cenários
 Existem muitos motivos pelos quais pode optar para alojar os dados no Azure. Se a aplicação está a ser movida para o Azure, também melhora o desempenho para mover os dados. No entanto, existem outras vantagens. Tem automaticamente acesso a vários centros de dados para uma recuperação após desastre e uma presença global. Os dados são também altamente protegidos e com disponibilidade.
@@ -126,7 +99,7 @@ As VMs do Azure podem utilizar a [ Aplicação Automatizada de Patches](virtual-
 ### <a name="customer-experience-improvement-program-ceip"></a>Programa de melhoramento da experiência do cliente (PMEC)
 O Programa de Melhoramento da Experiência do Cliente (PMEC) está ativado por predefinição. Esta ação envia relatórios periodicamente para a Microsoft, para ajudar a melhorar o SQL Server. Não é precisa nenhuma tarefa de gestão com PMEC, a menos que queira desativá-la após o aprovisionamento. Pode personalizar ou desativar o PMEC ligando-se à VM com o ambiente de trabalho remoto. Em seguida, execute o utilitário **Relatórios de Utilização e Erros do SQL Server**. Siga as instruções para desativar os relatórios. 
 
-Para mais informações, consulte a secção do PMEC do tópico [Accept License Terms (Aceitar os Termos de Licenciamento)](https://msdn.microsoft.com/library/ms143343.aspx) . 
+Para obter mais informações sobre a recolha de dados, veja a [Declaração de Privacidade do SQL Server](https://www.microsoft.com/EN-US/privacystatement/SQLServer/Default.aspx). 
 
 ## <a name="next-steps"></a>Passos seguintes
 

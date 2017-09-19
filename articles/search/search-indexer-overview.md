@@ -15,11 +15,11 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 05/01/2017
 ms.author: heidist
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: 52b154895fca9fc465a9c6cc2fb6bf2d5384b057
+ms.translationtype: HT
+ms.sourcegitcommit: d24c6777cc6922d5d0d9519e720962e1026b1096
+ms.openlocfilehash: 1ea9dfcaec188bac2e92909f4811568b589357d4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 09/14/2017
 
 ---
 
@@ -58,8 +58,8 @@ Um indexador irá automatizar algumas tarefas relacionadas com a ingestão de da
 Um indexador obtém dados a partir de uma **origem de dados** que contém informações como uma cadeia de ligação. Atualmente são suportadas as seguintes origens de dados:
 
 * [Base de Dados SQL ou SQL Server do Azure numa máquina virtual do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Azure Cosmos DB](search-howto-index-documentdb.md)
-* [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md), utilizado para extrair texto de PDFs, documentos do Office, HTML ou XML
+* [BD do Cosmos para o Azure](search-howto-index-documentdb.md)
+* [Armazenamento de blobs do Azure](search-howto-indexing-azure-blob-storage.md) para determinados tipos de conteúdos
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md)
 
 As origens de dados são configuradas e geridas independentemente dos indexadores que as utilizam, o que significa que uma origem de dados pode ser utilizada por vários indexadores para carregar mais de um índice de cada vez.
@@ -71,8 +71,8 @@ A definição de indexador é uma construção que especifica o índice, a orige
 Agora que tem uma noção básica, o passo seguinte é rever os requisitos e as tarefas específicas de cada tipo de origem de dados.
 
 * [Base de Dados SQL ou SQL Server do Azure numa máquina virtual do Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Azure Cosmos DB](search-howto-index-documentdb.md)
-* [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md), utilizado para extrair texto de PDFs, documentos do Office, HTML ou XML
+* [BD do Cosmos para o Azure](search-howto-index-documentdb.md)
+* [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md)
 * [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md)
 * [Indexar blobs CSV com o indexador Blob do Azure Search](search-howto-index-csv-blobs.md)
 * [Indexar blobs JSON com o indexador Blob do Azure Search](search-howto-index-json-blobs.md)

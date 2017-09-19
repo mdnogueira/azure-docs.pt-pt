@@ -15,12 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 05/17/2017
 ms.author: magoedte;bwren
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 95b8c100246815f72570d898b4a5555e6196a1a0
-ms.openlocfilehash: 9d4b28416376482247127698bec7c99b83308885
+ms.translationtype: HT
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: d06052099acbb5544581ef3e8e2007dd751a7544
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/18/2017
-
+ms.lasthandoff: 09/13/2017
 
 ---
 # <a name="my-first-graphical-runbook"></a>O meu primeiro runbook gráfico
@@ -29,17 +28,17 @@ ms.lasthandoff: 05/18/2017
 > * [Gráficos](automation-first-runbook-graphical.md)
 > * [PowerShell](automation-first-runbook-textual-powershell.md)
 > * [Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
-> 
+> * [python](automation-first-runbook-textual-python2.md)
 > 
 
 Este tutorial explica como criar um [ runbook gráfico](automation-runbook-types.md#graphical-runbooks) na Automatização do Azure.  Vamos começar com um runbook simples que testa e publica, enquanto explicamos como controlar o estado da tarefa de runbook.  Em seguida, modificamos o runbook para gerir recursos do Azure, neste caso, iniciar uma máquina virtual do Azure.  Iremos então concluir o tutorial, tornando o runbook mais robusto ao adicionar parâmetros do runbook e ligações condicionais.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Para concluir este tutorial, irá precisar do seguinte.
+Para concluir este tutorial, precisa do seguinte:
 
-* Subscrição do Azure.  Se ainda não tiver uma, pode [ativar as vantagens de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou <a href="/pricing/free-account/" target="_blank">[inscrever-se numa conta gratuita](https://azure.microsoft.com/free/).
-* [Conta de Automatização do Azure](automation-sec-configure-azure-runas-account.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
-* Uma máquina virtual do Azure.  Iremos parar e iniciar esta máquina, pelo que não deve ser de produção.
+* Subscrição do Azure. Se ainda não tiver uma, pode [ativar as vantagens de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou [inscrever-se numa conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Conta de automatização](automation-offering-get-started.md) para manter o runbook e autenticar-se nos recursos do Azure.  Esta conta tem de ter permissão para iniciar e parar a máquina virtual.
+* Uma máquina virtual do Azure. Paramos e iniciamos esta máquina, pelo que não deve ser uma VM de produção.
 
 ## <a name="step-1---create-runbook"></a>Passo 1 – Criar runbook
 Começamos por criar um runbook simples que produz o texto *Hello World*.

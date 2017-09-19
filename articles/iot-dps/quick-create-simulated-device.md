@@ -13,10 +13,10 @@ manager: timlt
 ms.devlang: na
 ms.custom: mvc
 ms.translationtype: HT
-ms.sourcegitcommit: eeed445631885093a8e1799a8a5e1bcc69214fe6
-ms.openlocfilehash: d4eeb7a77d6336e241c196e4ad48af52d57af1d4
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: d8d8ff77f0099185707a0207c4ba6aed190a102e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 09/07/2017
+ms.lasthandoff: 09/13/2017
 
 ---
 
@@ -44,7 +44,7 @@ Certifique-se de que concluir os passos em [Set up IoT Hub Device Provisioning S
 5. Crie uma pasta na sua cópia local deste repositório do GitHub para o processo de compilação CMake. 
 
     ```cmd/sh
-    cd azure-iot-device-auth
+    cd azure-iot-sdk-c
     mkdir cmake
     cd cmake
     ```
@@ -58,7 +58,7 @@ Certifique-se de que concluir os passos em [Set up IoT Hub Device Provisioning S
 7. Numa linha de comandos separada, navegue para a pasta de raiz do GitHub e execute o simulador [TPM](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview). O simulador escuta através de um socket nas portas 2321 e 2322. Não feche esta janela de comando; terá de manter este simulador em execução até ao fim deste Guia de início rápido. 
 
     ```cmd/sh
-    .\azure-iot-device-auth\dps_client\deps\utpm\tools\tpm_simulator\Simulator.exe
+    .\azure-iot-sdk-c\dps_client\deps\utpm\tools\tpm_simulator\Simulator.exe
     ```
 
 ## <a name="create-a-device-enrollment-entry-in-the-device-provisioning-service"></a>Criar uma entrada de inscrição de dispositivos no Serviço de Aprovisionamento de Dispositivos
@@ -69,11 +69,20 @@ Certifique-se de que concluir os passos em [Set up IoT Hub Device Provisioning S
 
 3. Inicie sessão no portal do Azure, clique no botão **Todos os recursos**, no menu do lado esquerdo, e abra o Serviço Aprovisionamento de Dispositivos.
 
-4. No painel de resumo do Serviço Aprovisionamento de Dispositivos, selecione **Gerir inscrições**. Selecione o separador **Inscrições Individuais** e clique no botão **Adicionar**, na parte superior. Selecione **TPM** como o *Mecanismo* de atestado de identidade e introduza o *ID de Registo* e a *Chave de endossamento*, conforme necessário no painel. Quando tiver terminado, clique no botão **Guardar**. 
+4. No painel de resumo do Serviço Aprovisionamento de Dispositivos, selecione **Gerir inscrições**. Selecione o separador **Inscrições Individuais** e clique no botão **Adicionar**, na parte superior. 
+
+5. Em **Adicionar entrada da lista de inscrições**, introduza as informações seguintes:
+    - Selecione **TPM** como o *Mecanismo* de atestado de identidades.
+    - Introduza o *ID de Registo* e a *Chave de endossamento* do seu dispositivo TPM. 
+    - Selecione um hub IoT ligado ao seu serviço de aprovisionamento.
+    - Introduza um ID de dispositivo exclusivo. Certifique-se de que evita dados confidenciais quando der o nome ao seu dispositivo.
+    - Atualize o **estado inicial do dispositivo duplo** com a configuração inicial pretendida para o dispositivo.
+    - Quando tiver terminado, clique no botão **Guardar**. 
 
     ![Introduza as informações de inscrição de dispositivos no painel do portal](./media/quick-create-simulated-device/enter-device-enrollment.png)  
 
    Após a instalação bem-sucedida, o *ID de Registo* do seu dispositivo aparece na lista, no separador *Inscrições Individuais*. 
+
 
 <a id="firstbootsequence"></a>
 ## <a name="simulate-first-boot-sequence-for-the-device"></a>Simular a sequência de primeiro arranque para o dispositivo
@@ -94,6 +103,8 @@ Certifique-se de que concluir os passos em [Set up IoT Hub Device Provisioning S
 4. Clique com o botão direito do rato no projeto **dps_client_sample** e selecione **Set as Startup Project**. Execute o exemplo. Repare nas mensagens que simulam o arranque e a ligação do dispositivo ao Serviço Aprovisionamento de Dispositivos para obter as informações do seu hub IoT. Após o aprovisionamento bem-sucedido do dispositivo simulado no hub IoT que está associado ao seu serviço de aprovisionamento, o ID aparece no painel **Device Explorer** do hub. 
 
     ![O dispositivo é registado no hub IoT](./media/quick-create-simulated-device/hub-registration.png) 
+
+    Se tiver alterado o *estado inicial do dispositivo duplo* face ao valor predefinido na entrada de inscrição do seu dispositivo, este pode extrair o estado pretendido do dispositivo duplo a partir do hub e agir em conformidade. Para obter mais informações, veja [Understand and use device twins in IoT Hub](../iot-hub/iot-hub-devguide-device-twins.md) (Compreender e utilizar dispositivos duplos no Hub IoT)
 
 
 ## <a name="clean-up-resources"></a>Limpar recursos

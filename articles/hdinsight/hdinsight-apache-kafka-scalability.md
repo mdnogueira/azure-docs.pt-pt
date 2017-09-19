@@ -12,13 +12,13 @@ ms.devlang:
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 06/14/2017
+ms.date: 09/07/2017
 ms.author: larryfr
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 880a186a3d9a23b013294b0121e8265270d160cc
+ms.sourcegitcommit: 12c20264b14a477643a4bbc1469a8d1c0941c6e6
+ms.openlocfilehash: 41d96958ee999e4d0b304dfd9296f51d53eb3277
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/07/2017
 
 ---
 
@@ -36,12 +36,12 @@ O diagrama seguinte estabelece uma comparação entre o Kafka no HDInsight antes
 
 1. Siga os passos em [Create an HDInsight cluster](hdinsight-hadoop-create-linux-clusters-portal.md) (Criar um cluster no HDInsight) para compreender os passos comuns de criação de um cluster com o portal. Não conclua o processo de criação do portal.
 
-2. No painel __Tamanho do cluster__, utilize o campo __Discos por nó de trabalho__ para configurar o número de discos.
+2. Na secção __Tamanho do cluster__, utilize o campo __Discos por nó de trabalho__ para configurar o número de discos.
 
     > [!NOTE]
     > O tipo de disco gerido pode ser __Standard__ (HDD) ou __Premium__ (SSD). Os discos Premium são utilizados com as VMs das séries DS e GS. Todos os outros tipos de VM utilizam discos Standard.
 
-    ![Imagem do painel do tamanho do cluster com os discos por nó de trabalho realçados](./media/hdinsight-apache-kafka-scalability/set-managed-disks-portal.png)
+    ![Imagem da secção do tamanho do cluster com os discos por nó de trabalho realçados](./media/hdinsight-apache-kafka-scalability/set-managed-disks-portal.png)
 
 ## <a name="configure-managed-disks-resource-manager-template"></a>Configurar discos geridos: modelo do Resource Manager
 

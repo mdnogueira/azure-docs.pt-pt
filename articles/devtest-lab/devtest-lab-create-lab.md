@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/30/2017
+ms.date: 09/07/2017
 ms.author: tarcher
 ms.translationtype: HT
-ms.sourcegitcommit: fff84ee45818e4699df380e1536f71b2a4003c71
-ms.openlocfilehash: 265a968f902f53c7561c8c7e937f8eacfdb37167
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: 9657a4681f6bd9cc126de50883ce7a66357156e0
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 09/13/2017
 
 ---
 # <a name="create-a-lab-in-azure-devtest-labs"></a>Criar um laboratório no Azure DevTest Labs
@@ -38,21 +38,22 @@ Os passos seguintes mostram como utilizar o portal do Azure para criar um labora
     ![Opção de menu Mais serviços](./media/devtest-lab-create-lab/more-services-menu-option.png)
 
 1. Na lista de serviços disponíveis, **DevTest Labs**.
-1. No painel **DevTest Labs**, selecione **Adicionar**.
+1. Na área **DevTest Labs**, selecione **Adicionar**.
    
     ![Adicionar um laboratório](./media/devtest-lab-create-lab/add-lab-button.png)
 
-1. No painel **Criar um DevTest Lab**:
+1. Em **Criar um laboratório do DevTest Labs**:
    
     1. Introduza um **Nome de Laboratório** para o novo laboratório.
     2. Selecione a **Subscrição** para associar ao laboratório.
     3. Selecione uma **Localização** onde armazenar o laboratório.
-    4. Selecione **Encerramento automático** para especificar se pretende ativar e definir os parâmetros para o encerramento automático de todas as VMs do laboratório. A funcionalidade de encerramento automático é principalmente uma funcionalidade de poupança de custos, na qual poderá especificar quando deseja que a VM seja automaticamente desligada. Pode alterar as configurações de encerramento automático depois de criar o laboratório ao seguir os passos descritos no artigo [Manage all policies for a lab in Azure DevTest Labs](./devtest-lab-set-lab-policy.md#set-auto-shutdown) (Gerir todas as políticas para um laboratório no Azure DevTest Labs).
+    4. Selecione **Encerramento automático** para especificar se pretende ativar e definir os parâmetros para o encerramento automático de todas as VMs do laboratório. A funcionalidade de encerramento automático é principalmente uma funcionalidade de poupança de custos, na qual poderá especificar quando deseja que a VM seja automaticamente desligada. Pode alterar as configurações de encerramento automático depois de criar o laboratório ao seguir os passos descritos no artigo [Manage all policies for a lab in Azure DevTest Labs](./devtest-lab-set-lab-policy.md#set-auto-shutdown) (Gerir todas as políticas de um laboratório no Azure DevTest Labs).
+    1. Introduza as informações de **NOME** e **VALOR** nas **Etiquetas** se quiser criar etiquetas personalizadas que são adicionadas a todos os recursos que criar no laboratório. As etiquetas são úteis para ajudar a gerir e organizar os recursos do laboratório por categoria. Para obter mais informações sobre etiquetas, incluindo como adicioná-las depois de criar o laboratório, veja [Add tags to a lab](devtest-lab-add-tag.md) (Adicionar etiquetas a um laboratório).
     5. Selecione **Afixar ao Dashboard** se pretender que um atalho do laboratório apareça no dashboard do portal.
     6. Selecione **Opções de automatização** para obter modelos do Azure Resource Manager para a automatização de configuração. 
-    7. Selecione **Criar**. Depois de selecionar **Criar**, é apresentado o painel **DevTest Labs**. Pode monitorizar o estado do processo de criação de laboratório ao observar a área de **Notificações**. Depois de concluído, atualize a página para ver o laboratório recém-criado na lista de laboratórios.  
+    7. Selecione **Criar**. Pode monitorizar o estado do processo de criação de laboratório ao observar a área de **Notificações**. Depois de concluído, atualize a página para ver o laboratório recém-criado na lista de laboratórios.  
     
-    ![Painel Criar um laboratório](./media/devtest-lab-create-lab/create-devtestlab-blade.png)
+    ![Criar uma secção de laboratório do DevTest Labs](./media/devtest-lab-create-lab/create-devtestlab-blade.png)
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 

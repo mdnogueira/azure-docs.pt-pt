@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/11/2017
+ms.date: 09/07/2017
 ms.author: yurid
 ms.translationtype: HT
-ms.sourcegitcommit: a9cfd6052b58fe7a800f1b58113aec47a74095e3
-ms.openlocfilehash: 121b5d8f023a9b663d0e7af26dce8f81db27672c
+ms.sourcegitcommit: 12c20264b14a477643a4bbc1469a8d1c0941c6e6
+ms.openlocfilehash: d7aa8544f50b42bacfa1e1f16fdce468d8fc81ef
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/07/2017
 
 ---
 # <a name="alerts-validation-in-azure-security-center"></a>Validação de Alertas no Centro de Segurança do Azure
@@ -35,12 +35,15 @@ Depois de instalar o agente do Centro de Segurança no seu computador, siga os p
 3. Abra a linha de comandos e execute este ficheiro com um argumento (apenas um nome de argumento falso), tal como: *ASC_AlertTest_662jfi039N.exe -foo*
 4. Aguarde 5 a 10 minutos e abra os Alertas do Centro de Segurança. Aí, deverá encontrar um alerta semelhante ao seguinte:
 
-    ![Validação de Alertas](./media/security-center-alert-validation/security-center-alert-validation-fig1.png)
+    ![Validação de Alertas](./media/security-center-alert-validation/security-center-alert-validation-fig2.png)
 
 Quando consultar este alerta, certifique-se de que o campo Auditoria de Argumentos Ativada é apresentado como true. Se for false, terá de ativar a auditoria de argumentos da linha de comandos. Para ativar esta opção, utilize a seguinte linha de comandos:
 
 *reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"*
 
+
+> [!NOTE]
+> Veja o vídeo [Validação de Alertas no Centro de Segurança do Azure](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Alert-Validation-in-Azure-Security-Center) para ver uma demonstração desta funcionalidade. 
 
 ## <a name="see-also"></a>Consultar também
 Este artigo apresentou-lhe o processo de validação de alertas. Agora que está familiarizado com a validação, experimente os seguintes artigos:

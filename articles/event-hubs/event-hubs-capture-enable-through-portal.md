@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 08/28/2017
 ms.author: sethm
 ms.translationtype: HT
-ms.sourcegitcommit: 8351217a29af20a10c64feba8ccd015702ff1b4e
-ms.openlocfilehash: 5420c1cdefa99ff30320dd757e04aa0cafc792bc
+ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
+ms.openlocfilehash: 4a4ab1ee022b6b33d35217df916d01f32e04d3a4
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/13/2017
 
 ---
 
@@ -44,24 +44,8 @@ Para capturar os dados para o Azure Data Lake Store, crie uma conta do Data Lake
 
 ### <a name="create-an-azure-data-lake-store-account-and-folders"></a>Criar uma conta e pastas do Azure Data Lake Store
 
-1. Crie uma conta do Data Lake Store, seguindo as instruções em [Introdução ao Azure Data Lake Store com o portal do Azure](../data-lake-store/data-lake-store-get-started-portal.md). 
-2. Crie uma pasta nesta conta, siga as instruções na secção [Criar pastas na conta do Azure Data Lake Store](../data-lake-store/data-lake-store-get-started-portal.md#createfolder).
-3. Na página da conta do Data Lake Store, clique em **Explorador de Dados**.
-4. Clique em **Aceder**.
-5. Clique em **Adicionar**.
-6. Na caixa **Pesquisar por nome ou e-mail** escreva **Microsoft.EventHubs** e, em seguida, selecione esta opção. 
-7. Será apresentado o separador **Permissões**. Defina as permissões conforme mostrado na figura seguinte:
-
-    ![][6]
-
-8. Clique em **OK**.
-9. Agora, crie uma pasta na pasta raiz ao navegar para a pasta de destino e clicando no nome da pasta.
-10. Clique em **Aceder**.
-11. Clique em **Adicionar**.
-12. Na caixa **Pesquisar por nome ou e-mail** escreva **Microsoft.EventHubs** e, em seguida, selecione esta opção.
-13. Será apresentado o separador **Permissões** novamente. Defina as permissões conforme mostrado na figura seguinte:
-
-    ![][5]
+1. Crie uma conta do Data Lake Store, seguindo as instruções em [Introdução ao Azure Data Lake Store com o portal do Azure](../data-lake-store/data-lake-store-get-started-portal.md).
+2. Siga as instruções da secção [Assign permissions to Event Hubs](../data-lake-store/data-lake-store-archive-eventhub-capture.md#assign-permissions-to-event-hubs) (Atribuir permissões aos Hubs de Eventos) para criar uma pasta na conta do Data Lake Store na qual quer capturar os dados dos Hubs de Eventos e atribua permissões a esta serviço, para que possa escrever dados na sua conta do Data Lake Store.  
 
 ### <a name="create-an-event-hub"></a>Criar um hub de eventos
 
@@ -87,12 +71,11 @@ Pode configurar a Captura em hubs de eventos existentes que se encontram num esp
 [2]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture2.png
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
-[5]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture5.png
-[6]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture6.png
 
 ## <a name="next-steps"></a>Passos seguintes
 
 - Saiba mais sobre a captura dos Hubs de Eventos ao ler a [Descrição geral de Captura de Hubs de Eventos][capture-overview].
 - Também pode configurar uma Captura de Hubs de Eventos através dos modelos do Azure Resource Manager. Para obter mais informações, consulte [Enable Capture using an Azure Resource Manager template](event-hubs-resource-manager-namespace-event-hub-enable-capture.md) (Ativar a Captura através de um modelo do Azure Resource Manager).
+- [Introdução ao Azure Data Lake Store com o portal do Azure](../data-lake-store/data-lake-store-get-started-portal.md)
 
 [capture-overview]: event-hubs-capture-overview.md

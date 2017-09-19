@@ -1,5 +1,5 @@
 ---
-title: "Introdução à CLI do Azure Service Fabric (sfctl)"
+title: "Introdução à CLI do Azure Service Fabric"
 description: "Saiba como utilizar a CLI do Azure Service Fabric. Saiba como ligar a um cluster e como gerir aplicações."
 services: service-fabric
 author: samedder
@@ -9,44 +9,46 @@ ms.topic: get-started-article
 ms.date: 08/22/2017
 ms.author: edwardsa
 ms.translationtype: HT
-ms.sourcegitcommit: a0b98d400db31e9bb85611b3029616cc7b2b4b3f
-ms.openlocfilehash: 2faca2887f25b45d833dea7b2259277466290670
+ms.sourcegitcommit: fda37c1cb0b66a8adb989473f627405ede36ab76
+ms.openlocfilehash: 851f04c8b5eee762ec43060f02c8b83f00c1782e
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/14/2017
 
 ---
-# <a name="azure-service-fabric-command-line"></a>Linha de comandos do Azure Service Fabric
+# <a name="azure-service-fabric-cli"></a>CLI do Azure Service Fabric
 
-A CLI do Azure Service Fabric (sfctl) é um utilitário de linha de comandos para interagir e gerir entidades do Azure Service Fabric. O Sfctl pode ser utilizado com clusters do Windows ou Linux. O Sfctl é executado em qualquer plataforma onde o python seja suportado.
+A interface de linha de comandos (CLI) do Azure Service Fabric é um utilitário de linha de comandos para interagir e gerir entidades do Service Fabric. A CLI do Service Fabric pode ser utilizada com clusters do Windows ou do Linux. A CLI do Service Fabric é executada em qualquer plataforma onde o Python seja suportado.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes da instalação, certifique-se de que o seu ambiente tem o python e pip instalados. Para obter mais informações, veja a [documentação de início rápido do pip](https://pip.pypa.io/en/latest/quickstart/)e a [documentação para instalar o python](https://wiki.python.org/moin/BeginnersGuide/Download) oficial.
+Antes da instalação, certifique-se de que o seu ambiente tem o Python e o pip instalados. Para obter mais informações, veja a [documentação de início rápido do pip](https://pip.pypa.io/en/latest/quickstart/)e a [documentação de instalação do Python](https://wiki.python.org/moin/BeginnersGuide/Download) oficial.
 
-Embora o python 2.7 e 3.6 sejam suportados, recomenda-se a utilização do python 3.6. A secção seguinte é sobre a instalação de todos os pré-requisitos e a CLI.
+Embora o Python 2.7 e 3.6 são suportados, recomendamos que utilize o Python 3.6. A secção seguinte mostra como instalar todos os pré-requisitos e a CLI.
 
-## <a name="install-pip-python-and-sfctl"></a>Instalar o pip, python e sfctl
+## <a name="install-pip-python-and-the-service-fabric-cli"></a>Instalar o pip, o Python e a CLI do Service Fabric
 
-Enquanto existem muitas formas de instalar o pip e python na sua plataforma, seguem-se alguns passos para configurar rapidamente o python 3.6 e o pip para SO principais:
+ Existem muitas formas de instalar o pip e o Python na sua plataforma. Seguem-se alguns passos para configurar rapidamente os principais sistemas operativos com o Python 3.6 e o pip.
 
 ### <a name="windows"></a>Windows
 
-Para o Windows 10, Server 2016 e Server 2012R2, pode utilizar as instruções de instalação oficiais padrão. O instalador do python também instala o pip por predefinição.
+Para Windows 10, Windows Server 2016 e Windows Server 2012 R2, utilize as instruções de instalação oficiais padrão. O instalador do Python também instala o pip por predefinição.
 
-- Navegue para a [página de transferências do python](https://www.python.org/downloads/) oficial e transfira a versão mais recente do python 3.6
-- Inicie o instalador
-- Selecione a opção na parte inferior da linha de comandos para `Add Python 3.6 to PATH`
-- Selecione `Install Now`
-- Conclua a instalação
+1. Aceda à [página de transferências do Python](https://www.python.org/downloads/) oficial e transfira a versão mais recente do Python 3.6
 
-Agora, já deve ser capaz de abrir uma nova janela de comando e obter a versão do python e do pip:
+2. Inicie o instalador.
+
+3. Na parte inferior da linha de comandos, selecione **Adicionar Python 3.6 a PATH**.
+
+4. Selecione **Instalar Agora** e conclua a instalação.
+
+Agora, pode abrir uma janela de comandos nova e obter a versão, quer do Python, quer do pip.
 
 ```bat
 python --version
 pip --version
 ```
 
-Em seguida, execute o seguinte para instalar a CLI do Service Fabric
+Em seguida, execute o comando seguinte para instalar a CLI do Service Fabric:
 
 ```
 pip install sfctl
@@ -55,9 +57,9 @@ sfctl -h
 
 ### <a name="ubuntu"></a>Ubuntu
 
-Para o Ubuntu 16.04 Desktop, pode instalar o python 3.6 utilizando um PPA de terceiros:
+Para o Ubuntu 16.04 Desktop, pode instalar o Python 3.6 com um arquivo de pacote pessoal (PPA) de terceiros.
 
-A partir do terminal, execute os comandos seguintes:
+No terminal, execute os comandos seguintes:
 
 ```bash
 sudo add-apt-repository ppa:jonathonf/python-3.6
@@ -66,24 +68,24 @@ sudo apt-get install python3.6
 sudo apt-get install python3-pip
 ```
 
-Em seguida, para instalar o sfctl apenas para a instalação do python 3.6, execute o seguinte comando:
+Em seguida, para instalar a CLI do Service Fabric apenas para a instalação do Python 3.6, execute o seguinte comando:
 
 ```bash
 python3.6 -m pip install sfctl
 sfctl -h
 ```
 
-Estes passos não afetam o python 3.5 e 2.7 instalados no sistema. Não tente modificar estas instalações, exceto se estiver familiarizado com o Ubuntu.
+Estes passos não afetam a instalação do sistema do Python 3.5 e 2.7. Não tente modificar estas instalações, exceto se estiver familiarizado com o Ubuntu.
 
 ### <a name="macos"></a>MacOS
 
-Para MacOS, recomenda-se utilizar o [Gestor de pacotes HomeBrew](https://brew.sh). Instale o HomeBrew se ainda não o estiver instalado, executando o seguinte comando:
+Para MacOS, recomendamos utilizar o [Gestor de pacotes HomeBrew](https://brew.sh). Se o HomeBrew ainda não estiver instalado, execute o comando seguinte para o instalar:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Em seguida, a partir do terminal instale o python 3.6, pip e sfctl
+Em seguida, no terminal, instale o Python 3.6, o pip e a CLI do Service Fabric através dos comandos seguintes:
 
 ```bash
 brew install python3
@@ -91,13 +93,13 @@ pip3 install sfctl
 sfctl -h
 ```
 
-Estes passos não modificam a instalação do sistema do python 2.7.
+Estes passos não modificam a instalação do sistema do Python 2.7.
 
 ## <a name="cli-syntax"></a>Sintaxe da CLI
 
 Aos comandos é sempre adicionado o prefixo `sfctl`. Para obter informações gerais sobre todos os comandos que pode utilizar, utilize `sfctl -h`. Para obter ajuda com comandos individuais, utilize `sfctl <command> -h`.
 
-Os comandos seguem uma estrutura repetível, com o destino do comando antes do verbo ou da ação:
+Os comandos seguem uma estrutura repetível, com o destino do comando antes do verbo ou da ação.
 
 ```azurecli
 sfctl <object> <action>
@@ -107,7 +109,7 @@ Neste exemplo, `<object>` é o destino de `<action>`.
 
 ## <a name="select-a-cluster"></a>Selecionar um cluster
 
-Antes de executar qualquer operação, tem de selecionar um cluster ao qual se deve ligar. Por exemplo, execute o seguinte para selecionar e ligar ao cluster com o nome `testcluster.com`.
+Antes de executar qualquer operação, tem de selecionar um cluster ao qual se deve ligar. Por exemplo, para selecionar e ligar ao cluster com o nome `testcluster.com`, execute o comando seguinte:
 
 > [!WARNING]
 > Não utilize clusters do Service Fabric não seguros em ambientes de produção.
@@ -118,7 +120,7 @@ sfctl cluster select --endpoint http://testcluster.com:19080
 
 O ponto final do cluster tem de ter o prefixo `http` ou `https`. Tem de incluir a porta para o gateway HTTP. A porta e o endereço são os mesmos que o URL do Service Fabric Explorer.
 
-Para os clusters que estão protegidos por um certificado, pode especificar um certificado PEM codificado. O certificado pode ser especificado como um único ficheiro ou com um certificado e par de chaves.
+Para os clusters que estão protegidos por um certificado, pode especificar um certificado PEM codificado. O certificado pode ser especificado como um ficheiro individual ou como um certificado e par de chaves.
 
 ```azurecli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
@@ -128,7 +130,7 @@ Para obter mais informações, veja [Connect to a secure Azure Service Fabric cl
 
 ## <a name="basic-operations"></a>Operações básicas
 
-As informações de ligação do cluster estão presentes em diferentes sessões de sfctl. Depois de selecionar um cluster do Service Fabric, pode executar qualquer comando do Service Fabric no mesmo.
+As informações de ligação do cluster estão presentes em diferentes sessões da CLI do Service Fabric. Depois de selecionar um cluster do Service Fabric, pode executar qualquer comando do Service Fabric no mesmo.
 
 Por exemplo, para obter o estado de funcionamento do cluster do Service Fabric, utilize o comando seguinte:
 
@@ -163,7 +165,7 @@ O comando resulta na seguinte saída:
 
 ## <a name="tips-and-troubleshooting"></a>Sugestões e resolução de problemas
 
-Algumas sugestões e dicas para resolver problemas comuns.
+Seguem-se algumas sugestões e dicas para resolver problemas comuns.
 
 ### <a name="convert-a-certificate-from-pfx-to-pem-format"></a>Converter um certificado no formato PFX em PEM
 
@@ -175,7 +177,7 @@ openssl pkcs12 -in certificate.pfx -out mycert.pem -nodes
 
 Para obter mais informações, veja a [documentação de OpenSSL](https://www.openssl.org/docs/).
 
-### <a name="connection-issues"></a>Problemas de ligação
+### <a name="connection-problems"></a>Problemas de ligação
 
 Algumas operações poderão gerar a mensagem seguinte:
 
@@ -189,13 +191,13 @@ Muitas vezes, os registos detalhados são úteis para depurar ou comunicar probl
 
 ### <a name="command-help-and-syntax"></a>Ajuda de comandos e sintaxe
 
-Para obter ajuda com um comando específico ou um grupo de comandos, utilize o sinalizador `-h`:
+Para obter ajuda com um comando específico ou um grupo de comandos, utilize o sinalizador `-h`.
 
 ```azurecli
 sfctl application -h
 ```
 
-Outro exemplo:
+Segue-se outro exemplo:
 
 ```azurecli
 sfctl application create -h

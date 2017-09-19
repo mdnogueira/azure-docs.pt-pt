@@ -15,10 +15,10 @@ ms.topic: get-started-article
 ms.date: 12/15/2016
 ms.author: apimpm
 ms.translationtype: HT
-ms.sourcegitcommit: 5b6c261c3439e33f4d16750e73618c72db4bcd7d
-ms.openlocfilehash: 5553bcb8f9fd38630f694151dc644a684266387c
+ms.sourcegitcommit: 47ba7c7004ecf68f4a112ddf391eb645851ca1fb
+ms.openlocfilehash: 300b1d762a61c810dbffde5aaacd8a85f12c9fca
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/14/2017
 
 ---
 # <a name="protect-your-api-with-rate-limits-using-azure-api-management"></a>Proteger a sua API com limites de taxa utilizando a API Management do Azure
@@ -148,7 +148,7 @@ Para configurar a política **Definir quota de utilização por subscrição**, 
 </quota>
 ```
 
-Semelhante à política **Definir quota de utilização por subscrição**, a política **Definir quota de utilização por subscrição** permite definir limites para as APIs e as operações do produto. Neste tutorial, não utilizaremos essa capacidade, por isso elimine os elementos **api** e **operation** do elemento **quota**, conforme mostrado no exemplo seguinte.
+De forma semelhante à política **Limitar taxa de chamadas por subscrição**, a política **Definir quota de utilização por subscrição** permite definir limites para as APIs e operações do produto. Neste tutorial, não utilizaremos essa capacidade, por isso elimine os elementos **api** e **operation** do elemento **quota**, conforme mostrado no exemplo seguinte.
 
 ```xml
 <quota calls="number" bandwidth="kilobytes" renewal-period="seconds">
