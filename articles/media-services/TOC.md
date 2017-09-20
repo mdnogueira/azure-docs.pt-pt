@@ -183,9 +183,9 @@
 ### [Entregar por Transferência](media-services-deliver-asset-download.md)
 ### [Cenário de transmissão de ativação pós-falha](media-services-implement-failover.md)
 
-## Reproduzir
+## Consumir
 ### [Reproduzir multimédia com leitores existentes](media-services-playback-content-with-existing-players.md)
-### [Reproduzir multimédia com o Media Player](media-services-develop-video-players.md)
+### [Reproduzir multimédia com Leitor de Multimédia](media-services-develop-video-players.md)
 ### Outras opções de reprodução
 #### [Aplicação da Loja Windows de transmissão em fluxo uniforme](media-services-build-smooth-streaming-apps.md)
 #### [Aplicação HTML5 com DASH.js](media-services-embed-mpeg-dash-in-html5.md)

@@ -142,7 +142,6 @@ Uma vez que tem sessão iniciada como o administrador do servidor, tem permissõ
 
     ```sql
     CREATE LOGIN MedRCLogin WITH PASSWORD = 'a123reallySTRONGpassword!';
-    CREATE USER LoadingUser FOR LOGIN MedRCLogin;
     ```
 
 3. Agora, ao consultar a *base de dados do SQL Data Warehouse*, crie um utilizador de base de dados com base no início de sessão que criou para aceder e realizar operações na base de dados.

@@ -20,7 +20,6 @@ ms.openlocfilehash: 64af585f81d39daaa5373d7cf080404ee5f1b037
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/28/2017
 
-
 ---
 # <a name="what-are-logic-apps"></a>O que são Logic Apps?
 As Aplicações Lógicas proporcionam uma forma para simplificar e implementar integrações escaláveis e fluxos de trabalho na nuvem. Fornece um designer visual para modelar e automatizar o processo como uma série de passos conhecidos como fluxo de trabalho.  Existem [muitos conetores](../connectors/apis-list.md) na nuvem e no local para integração rápida em serviços e protocolos.  Uma aplicação lógica começa com um acionador (por exemplo, «Quando uma conta é adicionada ao Dynamics CRM») e depois de acionadas podem iniciar muitas ações de combinações, conversões e lógica de condição.
@@ -73,7 +72,7 @@ As seguintes são algumas das peças-chave que compõem a experiência das Logic
 * [Saiba como integrar os seus sistemas com Logic Apps](http://channel9.msdn.com/Events/Build/2016/P462)
 
 [biztalk]: logic-apps-enterprise-integration-accounts.md
-[appservice]: ../app-service/app-service-value-prop-what-is.md
+[appservice]: ../app-service/app-service-web-overview.md
 [create]: logic-apps-create-a-logic-app.md
 [managedapis]: ../connectors/apis-list.md
 [tpm]: logic-apps-enterprise-integration-accounts.md
