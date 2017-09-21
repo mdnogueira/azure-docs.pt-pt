@@ -257,14 +257,6 @@
           href: sql-database-ssms-mfa-authentication-configure.md
     - name: Continuidade do negócio
       items:
-        - name: Configurar o cofre - cópias de segurança
-          href: sql-database-long-term-backup-retention-configure.md
-        - name: Georreplicação - Portal
-          href: sql-database-geo-replication-portal.md
-        - name: Recuperar uma tabela simples
-          href: sql-database-cloud-migrate-restore-single-table-azure-backup.md
-    - name: Carregar e mover dados
-      items:
         - name: Carregar dados com o BCP
           href: sql-database-load-from-csv-with-bcp.md
         - name: Carregar dados com o ADF

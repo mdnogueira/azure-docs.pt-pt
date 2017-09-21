@@ -7,16 +7,15 @@
 ## [Software compatível de terceiros](active-directory-ds-compatible-software.md)
 
 # Introdução
-## Portal do Azure (Pré-visualização)
-### [Tarefa 1: configurar as definições básicas](active-directory-ds-getting-started.md)
-### [Tarefa 2: configurar as definições de rede](active-directory-ds-getting-started-network.md)
-### [Tarefa 3: configurar o grupo de administrador e ativar os Azure AD Domain Services](active-directory-ds-getting-started-admingroup.md)
-### [Tarefa 4: atualizar as definições de DNS para a rede virtual](active-directory-ds-getting-started-dns.md)
-### [Tarefa 5: ativar a sincronização de palavras-passe](active-directory-ds-getting-started-password-sync.md)
+## [Tarefa 1: configurar as definições básicas](active-directory-ds-getting-started.md)
+## [Tarefa 2: configurar as definições de rede](active-directory-ds-getting-started-network.md)
+## [Tarefa 3: configurar o grupo de administrador e ativar os Azure AD Domain Services](active-directory-ds-getting-started-admingroup.md)
+## [Tarefa 4: atualizar as definições de DNS para a rede virtual](active-directory-ds-getting-started-dns.md)
+## [Tarefa 5: ativar a sincronização de palavras-passe](active-directory-ds-getting-started-password-sync.md)
 
 # Procedimento
 ## Aderir a um domínio gerido
-### [Associar uma VM do Windows Server](active-directory-ds-admin-guide-join-windows-vm.md)
+### [Associar uma VM do Windows Server](active-directory-ds-admin-guide-join-windows-vm-portal.md)
 ### [Associar uma VM do Windows com o PowerShell](active-directory-ds-admin-guide-join-windows-vm-classic-powershell.md)
 ### [Associar uma VM do Linux](active-directory-ds-admin-guide-join-rhel-linux-vm.md)
 ## Administrar um domínio gerido
