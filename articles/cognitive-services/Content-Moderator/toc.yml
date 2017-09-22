@@ -4,6 +4,30 @@
   items:
     - name: Acerca do Content Moderator
       href: overview.md
+- name: Inícios rápidos
+  items:
+    - name: Ferramenta de revisão
+      href: quick-start.md
+    - name: APIs de Moderação
+      items:
+        - name: API de Imagem
+          href: try-image-api.md
+        - name: API de Lista de imagens
+          href: try-image-list-api.md
+        - name: API de Texto
+          href: try-text-api.md
+        - name: API de Lista de termos
+          href: try-terms-list-api.md
+    - name: APIs de revisão
+      items:
+        - name: Tarefas
+          href: try-review-api-job.md
+        - name: Revisões
+          href: try-review-api-review.md
+        - name: Fluxos de trabalho
+          href: try-review-api-workflow.md
+- name: Conceitos
+  items:
     - name: Moderação de imagens
       href: image-moderation-api.md
     - name: Moderação de texto
@@ -14,31 +38,9 @@
       href: video-moderation-api.md
     - name: APIs de revisão
       href: review-api.md
-- name: Introdução
+- name: Guias de procedimentos
   items:
-    - name: A ferramenta de revisão
-      href: quick-start.md
-    - name: Experimentar as APIs de moderação
-      items:
-        - name: Imagens
-          href: try-image-api.md
-        - name: Listas de imagens
-          href: try-image-list-api.md
-        - name: Texto
-          href: try-text-api.md
-        - name: Listas de termos
-          href: try-terms-list-api.md
-    - name: Experimentar as APIs de revisão
-      items:
-        - name: Tarefas
-          href: try-review-api-job.md
-        - name: Revisões
-          href: try-review-api-review.md
-        - name: Fluxos de trabalho
-          href: try-review-api-workflow.md
-- name: Procedimento
-  items:
-    - name: Utilizar a ferramenta de revisão
+    - name: Ferramenta de revisão
       items:
         - name: Humanos a par de tudo
           href: Review-Tool-User-Guide/human-in-the-loop.md
@@ -54,7 +56,7 @@
           href: Review-Tool-User-Guide/Text-Reviews.md
         - name: Verificar credenciais
           href: Review-Tool-User-Guide/Credentials.md
-        - name: Utilizar Conectores
+        - name: Utilizar conectores
           href: Review-Tool-User-Guide/Connectors.md
         - name: Utilizar fluxos de trabalho
           href: Review-Tool-User-Guide/Workflows.md

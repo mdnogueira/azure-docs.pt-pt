@@ -37,15 +37,15 @@
         - name: Aplicações Web para Contentores
           tocHref: /azure/app-service/containers/
           topicHref: /azure/app-service/containers/
+        - name: Ambientes do App Service
+          tocHref: /azure/app-service/environment/
+          topicHref: /azure/app-service/environment/
         - name: Aplicações Web
-          tocHref: /azure/app-service-web/
-          topicHref: /azure/app-service-web/
+          tocHref: /azure/app-service/
+          topicHref: /azure/app-service/
         - name: Mobile Apps
           tocHref: /azure/app-service-mobile/
           topicHref: /azure/app-service-mobile/
-        - name: Aplicações API
-          tocHref: /azure/app-service-api/
-          topicHref: /azure/app-service-api/
     - name: Assistente
       tocHref: /azure/advisor/
       topicHref: /azure/advisor/

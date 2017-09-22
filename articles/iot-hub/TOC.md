@@ -32,6 +32,7 @@
 ##### [Configurar o Intel NUC como um gateway](iot-hub-gateway-kit-c-lesson1-set-up-nuc.md)
 ##### [Ligar o gateway ao Hub IoT](iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud.md)
 ##### [Utilizar o gateway para conversão de dados](iot-hub-gateway-kit-c-use-iot-gateway-for-data-conversion.md)
+##### [Resolução de problemas](iot-hub-gateway-kit-c-troubleshooting.md)
 
 ## Cenários de IoT alargados
 ### [Gerir mensagens de dispositivo na cloud com o iothub-explorer](iot-hub-explorer-cloud-device-messaging.md)
@@ -82,7 +83,9 @@
 #### [.NET](iot-hub-csharp-csharp-c2d.md)
 #### [Java](iot-hub-java-java-c2d.md)
 #### [Node.js](iot-hub-node-node-c2d.md)
-### [Carregar ficheiros a partir de dispositivos](iot-hub-csharp-csharp-file-upload.md)
+### [Carregar ficheiros de dispositivos]
+#### [.NET](iot-hub-csharp-csharp-file-upload.md)
+#### [Java](iot-hub-java-java-file-upload.md)
 ### Introdução aos dispositivos duplos
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-twin-getstarted.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-twin-getstarted.md)
@@ -96,11 +99,13 @@
 ### Introdução à gestão de dispositivos
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-device-management-get-started.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-device-management-get-started.md)
+#### [Dispositivo de back-end .NET/.NET](iot-hub-csharp-csharp-device-management-get-started.md)
 #### [Back-end de Java/Dispositivo Java](iot-hub-java-java-device-management-getstarted.md)
 ### Como utilizar as propriedades duplas
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-twin-how-to-configure.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-twin-how-to-configure.md)
 #### [Dispositivo de back-end .NET/.NET](iot-hub-csharp-csharp-twin-how-to-configure.md)
+#### [Back-end de Java/Dispositivo Java](iot-hub-java-java-twin-how-to-configure.md)
 ### Utilizar tarefas de dispositivo para atualizar o firmware do dispositivo
 #### [Back-end de Node/Dispositivo Node](iot-hub-node-node-firmware-update.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-firmware-update.md)

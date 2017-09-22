@@ -1,0 +1,230 @@
+- name: Documentação do Serviço de Aplicações
+- name: Descrição geral
+  items:
+    - name: Acerca das Aplicações Web
+      href: app-service-web-overview.md
+    - name: Acerca das Aplicações Web para Contentores
+      href: containers/app-service-linux-intro.md
+    - name: Acerca dos Ambientes do Serviço de Aplicações
+      href: environment/intro.md
+    - name: Comparar opções de alojamento
+      href: choose-web-site-cloud-service-vm.md
+- name: Inícios rápidos
+  expanded: true
+  items:
+    - name: Criar aplicação .NET
+      href: app-service-web-get-started-dotnet.md
+    - name: Criar aplicação Node.js
+      href: app-service-web-get-started-nodejs.md
+    - name: Criar aplicação PHP
+      href: app-service-web-get-started-php.md
+    - name: Criar aplicação Java
+      href: app-service-web-get-started-java.md
+    - name: Criar aplicação Python
+      href: app-service-web-get-started-python.md
+    - name: Criar site HTML estático
+      href: app-service-web-get-started-html.md
+- name: Tutoriais
+  items:
+    - name: 1 - Aplicação com BD
+      items:
+        - name: .NET com BD SQL
+          href: app-service-web-tutorial-dotnet-sqldatabase.md
+        - name: PHP com MySQL
+          href: app-service-web-tutorial-php-mysql.md
+        - name: Node.js com MongoDB
+          href: app-service-web-tutorial-nodejs-mongodb-app.md
+        - name: Java com MySQL
+          href: app-service-web-tutorial-java-mysql.md
+    - name: 1 - Criar API RESTful
+      href: app-service-web-tutorial-rest-api.md
+    - name: 2 - Mapear Domínio Personalizado
+      href: app-service-web-tutorial-custom-domain.md
+    - name: 3 - Vincular Certificado SSL
+      href: app-service-web-tutorial-custom-ssl.md
+    - name: 4 - Adicionar a CDN
+      href: app-service-web-tutorial-content-delivery-network.md
+    - name: 5 - Ligar a recursos no local
+      href: web-sites-integrate-with-vnet.md
+- name: Amostras
+  items:
+    - name: CLI do Azure
+      href: app-service-cli-samples.md
+    - name: PowerShell
+      href: app-service-powershell-samples.md
+- name: Conceitos
+  items:
+    - name: Como funciona o Serviço de Aplicações
+      href: app-service-how-works-readme.md
+    - name: Planos do Serviço de Aplicações
+      href: azure-web-sites-web-hosting-plans-in-depth-overview.md
+    - name: Funcionalidade do SO
+      href: web-sites-available-operating-system-functionality.md
+    - name: Autenticação e autorização
+      href: app-service-authentication-overview.md
+    - name: Ligações híbridas
+      href: app-service-hybrid-connections.md
+    - name: Integração do Gestor de Tráfego
+      href: web-sites-traffic-manager.md
+- name: Guias de Procedimentos
+  items:
+    - name: Configurar aplicação
+      items:
+        - name: Utilizar as definições da aplicação
+          href: web-sites-configure.md
+        - name: Carregar aplicação Java existente
+          href: web-sites-java-add-app.md
+        - name: Configurar PHP
+          href: web-sites-php-configure.md
+        - name: Python
+          href: web-sites-python-configure.md
+    - name: Implementar no Azure
+      items:
+        - name: Implementar a aplicação
+          items:
+            - name: Implementar através de FTP
+              href: app-service-deploy-ftp.md
+            - name: Implementar através da sincronização da cloud
+              href: app-service-deploy-content-sync.md
+            - name: Implementar continuamente
+              href: app-service-continuous-deployment.md
+            - name: Implementar a partir do Git local
+              href: app-service-deploy-local-git.md
+            - name: Implementar com modelo
+              href: app-service-deploy-complex-application-predictably.md
+        - name: Definir credenciais de implementação
+          href: app-service-deployment-credentials.md
+        - name: Criar ambientes de teste
+          href: web-sites-staged-publishing.md
+    - name: Mapear domínio personalizado
+      items:
+        - name: Comprar domínio
+          href: custom-dns-web-site-buydomains-web-app.md
+        - name: Mapear domínios com o Gestor de Tráfego
+          href: web-sites-traffic-manager-custom-domain-name.md
+        - name: Migrar um domínio ativo
+          href: app-service-custom-domain-name-migrate.md
+    - name: Proteger aplicação
+      items:
+        - name: Comprar certificado SSL
+          href: web-sites-purchase-ssl-web-site.md
+        - name: Autenticar utilizadores
+          items:
+            - name: Autenticar com o Azure AD
+              href: app-service-mobile-how-to-configure-active-directory-authentication.md
+            - name: Autenticar com o Facebook
+              href: app-service-mobile-how-to-configure-facebook-authentication.md
+            - name: Autenticar com o Google
+              href: app-service-mobile-how-to-configure-google-authentication.md
+            - name: Autenticar com a conta Microsoft
+              href: app-service-mobile-how-to-configure-microsoft-authentication.md
+            - name: Autenticar com o Twitter
+              href: app-service-mobile-how-to-configure-twitter-authentication.md
+        - name: Utilizar a Identidade do Serviço Gerido
+          href: app-service-managed-service-identity.md
+        - name: Configurar a autenticação mútua de TLS
+          href: app-service-web-configure-tls-mutual-auth.md
+    - name: Dimensionar aplicação
+      items:
+        - name: Aumentar verticalmente a capacidade do servidor
+          href: web-sites-scale.md
+        - name: Aumentar horizontalmente para várias instâncias
+          href: ../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2ftoc.json
+    - name: Monitorizar aplicação
+      items:
+        - name: Quotas e alertas
+          href: web-sites-monitor.md
+        - name: Ativar registos
+          href: web-sites-enable-diagnostic-log.md
+    - name: Gerir aplicação
+      items:
+        - name: Efetuar cópia de segurança de uma aplicação
+          href: web-sites-backup.md
+        - name: Restaurar uma cópia de segurança
+          href: web-sites-restore.md
+        - name: Clonar uma aplicação
+          href: app-service-web-app-cloning.md
+        - name: Mover recursos
+          href: app-service-move-resources.md
+    - name: Execução de tarefas em segundo plano
+      items:
+        - name: Criar Trabalhos Web
+          href: web-sites-create-web-jobs.md
+        - name: Desenvolver Trabalhos Web com o VS
+          href: websites-dotnet-deploy-webjobs.md
+- name: Referência
+  items:
+    - name: CLI 2.0
+      href: /cli/azure/appservice
+    - name: PowerShell
+      href: /powershell
+    - name: API REST
+      href: /rest/api/appservice/
+- name: Recursos
+  items:
+    - name: Mapa do Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Preços
+      href: 'https://azure.microsoft.com/pricing/details/app-service/'
+    - name: Informações sobre a Quota
+      href: '../azure-subscription-service-limits.md#app-service-limits'
+    - name: Atualizações de Serviços e Notas de Versão
+      items:
+        - name: Atualizações do Azure
+          href: 'https://azure.microsoft.com/updates/?product=app-service'
+        - name: Azure SDK para .NET 3.0
+          href: azure-sdk-dotnet-release-notes-3-0.md
+        - name: Azure SDK para NET 2.9
+          href: azure-sdk-dotnet-release-notes-2-9.md
+        - name: Azure SDK para NET 2.8
+          href: azure-sdk-dotnet-release-notes-2-8.md
+        - name: "Azure SDK para .NET\_2.7"
+          href: azure-sdk-dotnet-release-notes-2-7.md
+        - name: Azure SDK para .NET 2.6
+          href: azure-sdk-dotnet-release-notes-2-6.md
+        - name: Azure SDK para .NET 2.5.1
+          href: app-service-release-notes.md
+        - name: Azure SDK para .NET 2.5
+          href: 'https://msdn.microsoft.com/library/azure/dn873976.aspx'
+        - name: Azure SDK para .NET 2.4
+          href: 'https://msdn.microsoft.com/library/azure/dn794167.aspx'
+        - name: Azure SDK para .NET 2.3
+          href: 'https://msdn.microsoft.com/library/azure/dn655054.aspx'
+        - name: Azure SDK para .NET 2.2
+          href: 'https://msdn.microsoft.com/library/azure/dn459835.aspx'
+        - name: Azure SDK para .NET 2.1
+          href: 'https://msdn.microsoft.com/library/azure/dn407359.aspx'
+        - name: Azure SDK para .NET 2.0
+          href: 'https://msdn.microsoft.com/library/azure/dn169556.aspx'
+    - name: Melhores práticas
+      href: app-service-best-practices.md
+    - name: Amostras
+      href: 'https://azure.microsoft.com/resources/samples/?service=app-service'
+    - name: Vídeos
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=app-service'
+    - name: Cookbooks
+      items:
+        - name: Arquiteturas de Referência
+          href: ../guidance/guidance-ra-app-service.md
+        - name: Scripts de Implementação
+          href: 'https://azure.microsoft.com/documentation/scripts/'
+    - name: Resolução de problemas
+      items:
+        - name: Resolver problemas com o Visual Studio
+          href: web-sites-dotnet-troubleshoot-visual-studio.md
+        - name: Resolver problemas da aplicação Node.js
+          href: app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
+        - name: Resolver erros de HTTP 502 e 503
+          href: app-service-web-troubleshoot-http-502-http-503.md
+        - name: Resolver problemas de desempenho
+          href: app-service-web-troubleshoot-performance-degradation.md
+        - name: FAQ
+          items:
+            - name: 'FAQ sobre disponibilidade, desempenho e aplicações'
+              href: app-service-web-availability-performance-application-issues-faq.md
+            - name: FAQ sobre implementação
+              href: app-service-web-deployment-faq.md
+            - name: FAQ sobre tecnologias de código aberto
+              href: app-service-web-open-source-technologies-faq.md
+            - name: FAQ sobre configuração e gestão
+              href: app-service-web-configuration-and-management-faq.md

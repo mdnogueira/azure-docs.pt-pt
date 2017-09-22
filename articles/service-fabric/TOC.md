@@ -12,8 +12,9 @@
 ### [1- Criar uma aplicação .NET](service-fabric-tutorial-create-dotnet-app.md)
 ### [2- Implementar a aplicação](service-fabric-tutorial-deploy-app-to-party-cluster.md)
 ### [3 - Configurar CI/CD](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
+### [4- Monitorizar e Diagnosticar](service-fabric-tutorial-monitoring-aspnet.md)
 
-## Migração lift-and-shift de uma aplicação
+## Colocar uma aplicação .NET existente num contentor
 ### [1- Criar um cluster seguro no Azure](service-fabric-tutorial-create-cluster-azure-ps.md)
 ### [2- Implementar uma aplicação .NET com o Docker Compose](service-fabric-host-app-in-a-container.md)
 
