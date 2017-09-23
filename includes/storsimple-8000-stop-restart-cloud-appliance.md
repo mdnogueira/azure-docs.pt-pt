@@ -1,6 +1,4 @@
-<a id="to-stop-and-start-a-cloud-appliance" class="xliff"></a>
-
-#### Para parar e iniciar uma aplicação da cloud
+#### <a name="to-stop-and-start-a-cloud-appliance"></a>Para parar e iniciar uma aplicação da cloud
 
 1. Para parar uma aplicação da cloud, vá para a VM da mesma.
     ![Máquina Virtual do StorSimple Cloud Appliance](./media/storsimple-8000-stop-restart-cloud-appliance/sca-stop-restart1.png)
@@ -27,9 +25,7 @@ Utilize os seguintes cmdlets para parar e iniciar uma aplicação da cloud.
 
 `Start-AzureVM -ServiceName "MyStorSimpleservice1" -Name "MyStorSimpleDevice"`
 
-<a id="to-restart-a-cloud-appliance" class="xliff"></a>
-
-#### Para reiniciar uma aplicação da cloud
+#### <a name="to-restart-a-cloud-appliance"></a>Para reiniciar uma aplicação da cloud
 
 Para reiniciar uma aplicação da cloud, vá para a VM da mesma. A partir da barra de comandos, clique em **Reiniciar**. Quando lhe for perguntado, confirme o reinício. Quando a aplicação da cloud estiver pronta para ser utilizada, o seu estado será **Em Execução**.
 

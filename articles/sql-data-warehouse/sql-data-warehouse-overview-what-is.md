@@ -21,7 +21,6 @@ ms.openlocfilehash: 575c49f83c8845edcea984459f3907490c62d269
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/06/2017
 
-
 ---
 # <a name="what-is-azure-sql-data-warehouse"></a>O que é o Azure SQL Data Warehouse?
 O Azure SQL Data Warehouse é uma base de dados para processamento paralelo em massa (MPP), baseada na cloud, de escalabilidade horizontal e relacional, capaz de processar grandes volumes de dados. 

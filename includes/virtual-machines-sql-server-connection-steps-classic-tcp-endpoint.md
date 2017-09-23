@@ -1,5 +1,4 @@
-### Criar um ponto final TCP para a máquina virtual
-<a id="create-a-tcp-endpoint-for-the-virtual-machine" class="xliff"></a>
+### <a name="create-a-tcp-endpoint-for-the-virtual-machine"></a>Criar um ponto final TCP para a máquina virtual
 Para aceder ao SQL Server a partir da Internet, a máquina virtual tem de ter um ponto final para escutar comunicações de TCP recebidas. Este passo de configuração do Azure direciona o tráfego da porta TCP recebido para uma porta TCP a que a máquina virtual tenha acesso.
 
 > [!NOTE]

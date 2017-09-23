@@ -20,7 +20,6 @@ ms.openlocfilehash: 6f95cf7631664f4630edbbcdadfd1d98105fdb98
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/17/2017
 
-
 ---
 # <a name="azure-security-center-data-security"></a>Segurança de Dados do Centro de Segurança do Azure
 Para ajudar os clientes a evitar, detetar e responder a ameaças, o Centro de Segurança do Azure recolhe e processa dados relacionados com segurança, incluindo informações de configuração, metadados, registos de eventos, ficheiros de informação de falha de sistema e mais. A Microsoft respeita diretrizes rigorosas de conformidade e segurança, desde a codificação à operação de um serviço.

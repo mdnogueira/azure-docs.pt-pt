@@ -25,8 +25,3 @@ Uma máquina virtual *personalizada* significa simplesmente uma máquina virtual
 >
 
 ## <a name="to-create-the-virtual-machine"></a>Para criar a máquina virtual
-
-
-<!--HONumber=Feb17_HO3-->
-
-

@@ -12,8 +12,3 @@ As filas do Service Bus são uma tecnologia para fins gerais que pode ser utiliz
 A utilização de filas permite ao utilizador dimensionar mais facilmente as aplicações e permite mais resiliência na arquitetura.
 
 
-
-
-<!--HONumber=Jan17_HO3-->
-
-

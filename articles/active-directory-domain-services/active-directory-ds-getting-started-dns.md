@@ -20,7 +20,6 @@ ms.openlocfilehash: c704ee189072ce8ed196d1ef0a23edd528a10025
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/30/2017
 
-
 ---
 # <a name="enable-azure-active-directory-domain-services-preview"></a>Ativar o Azure Active Directory Domain Services (pré-visualização)
 

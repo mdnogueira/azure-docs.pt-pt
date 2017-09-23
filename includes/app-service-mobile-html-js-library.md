@@ -1,11 +1,11 @@
-## <a name="a-namecreate-clientacreate-a-client-connection"></a><a name="create-client"></a>Criar uma ligação de cliente
+## <a name="create-client"></a>Criar uma ligação de cliente
 Criar uma ligação de cliente através da criação de um objeto `WindowsAzure.MobileServiceClient`.  Substitua `appUrl` pelo URL da sua Aplicação Móvel.
 
 ```
 var client = WindowsAzure.MobileServiceClient(appUrl);
 ```
 
-## <a name="a-nametable-referenceawork-with-tables"></a><a name="table-reference"></a>Trabalhar com tabelas
+## <a name="table-reference"></a>Trabalhar com tabelas
 Para atualizar ou aceder a dados, crie uma referência para a tabela de back-end. Substitua `tableName` pelo nome da sua tabela
 
 ```
@@ -22,7 +22,7 @@ Assim que tiver uma referência da tabela, pode trabalhar mais com a mesma:
 * [Modificar dados](#modifying)
 * [Eliminar Dados](#deleting)
 
-### <a name="a-namequeryingahow-to-query-a-table-reference"></a><a name="querying"></a>Como: consultar uma referência de tabela
+### <a name="querying"></a>Como: consultar uma referência de tabela
 Assim que tiver uma referência de tabela, pode utilizá-la para consultar os dados no servidor.  As consultas são efetuadas num idioma "tipo LINQ".
 Para devolver todos os dados da tabela, utilize o seguinte código:
 
@@ -56,7 +56,7 @@ A função de êxito é chamada com os resultados.  Não utilize `for (var i in 
 
 Para obter mais informações sobre a Sintaxe da consulta, consulte a [Documentação de objeto de consulta].
 
-#### <a name="a-nametable-filterafiltering-data-on-the-server"></a><a name="table-filter"></a>Filtrar dados no servidor
+#### <a name="table-filter"></a>Filtrar dados no servidor
 Pode utilizar uma cláusula `where` na referência de tabela:
 
 ```
@@ -79,7 +79,7 @@ table
     .then(success, failure);
 ```
 
-#### <a name="a-nametable-pagingapaging-through-data"></a><a name="table-paging"></a>Paginar através de dados
+#### <a name="table-paging"></a>Paginar através de dados
 Utilize os métodos `take()` e `skip()`.  Por exemplo, se pretender dividir a tabela em registos de 100 linhas:
 
 ```
@@ -107,7 +107,7 @@ O método `.includeTotalCount()` é utilizado para adicionar um campo totalCount
 
 Em seguida, pode utilizar a variável de páginas e alguns botões da IU para fornecer uma lista de páginas; utilize `loadPage()` para carregar os registos novos para cada página.  Implemente a colocação em cache para acelerar o acesso aos registos que já foram carregados.
 
-#### <a name="a-namesorting-dataahow-to-return-sorted-data"></a><a name="sorting-data"></a>Como: devolver dados ordenados
+#### <a name="sorting-data"></a>Como: devolver dados ordenados
 Utilize os métodos de consulta `.orderBy()` ou `.orderByDescending()`:
 
 ```
@@ -119,7 +119,7 @@ table
 
 Para obter mais informações sobre o Objeto da consulta, consulte a [Documentação de objeto de consulta].
 
-### <a name="a-nameinsertingahow-to-insert-data"></a><a name="inserting"></a>Como: inserir dados
+### <a name="inserting"></a>Como: inserir dados
 Crie um objeto de JavaScript com a data adequada e chame `table.insert()` assincronamente:
 
 ```javascript
@@ -139,7 +139,7 @@ Ao inserir com êxito, o item inserido é devolvido com os campos adicionais que
 
 O SDK do Servidor Node.js das Aplicações Móveis do Azure suporta um esquema dinâmica para fins de desenvolvimento.  O Esquema Dinâmico permite-lhe adicionar colunas à tabela, especificando-as numa operação de inserção ou atualização.  Recomendamos que desative o esquema dinâmico antes de mover a sua aplicação para produção.
 
-### <a name="a-namemodifyingahow-to-modify-data"></a><a name="modifying"></a>Como: modificar dados
+### <a name="modifying"></a>Como: modificar dados
 De forma semelhante ao método `.insert()`, deve criar um Objeto de atualização e, em seguida, chamar `.update()`.  O objeto de atualização tem de conter o ID do registo a ser atualizado - o ID é obtido ao ler o registo ou quando chamar `.insert()`.
 
 ```javascript
@@ -155,7 +155,7 @@ table
     }, failure);
 ```
 
-### <a name="a-namedeletingahow-to-delete-data"></a><a name="deleting"></a>Como: eliminar dados
+### <a name="deleting"></a>Como: eliminar dados
 Para eliminar um registo, chame o método `.del()`.  Introduza o ID numa referência de objeto:
 
 ```
@@ -165,8 +165,3 @@ table
         // Record is now deleted - update your cache
     }, failure);
 ```
-
-
-<!--HONumber=Feb17_HO1-->
-
-

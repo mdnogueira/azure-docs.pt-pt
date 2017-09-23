@@ -12,8 +12,3 @@ Pode ver e configurar a cache a partir do painel **Cache de Redis**.
 
 ![Todas as Definições da Cache de Redis](media/redis-cache-browse/redis-cache-blade.png)
 
-
-
-<!--HONumber=Dec16_HO3-->
-
-

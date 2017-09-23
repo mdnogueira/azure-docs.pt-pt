@@ -4,8 +4,3 @@
 
    > [!NOTE]
    > Se estiver a adicionar o servidor VMware vCenter ou o anfitrião do VMware vSphere com uma conta que não tem privilégios de administrador no vCenter ou no servidor de anfitrião, certifique-se de que a conta tem estes privilégios ativados: Datacenter, Arquivo de Dados, Pasta, Anfitrião, Rede, Recurso, Máquina Virtual e Comutador Distribuído do vSphere. Além disso, o servidor VMware vCenter necessita do privilégio de vista de armazenamento ativado.
-
-
-<!--HONumber=Feb17_HO2-->
-
-

@@ -34,8 +34,3 @@
 9. A atualização demora algumas horas a ser concluída. Selecione a tarefa de atualização e clique em **Detalhes** para ver os detalhes da tarefa em qualquer altura.
 10. Depois de a tarefa estar concluída, navegue para a página **Manutenção** e desloque para baixo até **Atualizações de Software**.
 
-
-
-<!--HONumber=Feb17_HO2-->
-
-

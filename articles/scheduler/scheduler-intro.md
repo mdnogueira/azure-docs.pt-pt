@@ -14,10 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/18/2016
 ms.author: deli
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
 ms.openlocfilehash: a3bf1aacd6978499d7ef77cbcb451a06b857ac38
-
+ms.contentlocale: pt-pt
+ms.lasthandoff: 12/07/2016
 
 ---
 # <a name="what-is-azure-scheduler"></a>O que é o Agendador do Azure?
@@ -52,10 +53,5 @@ O Agendador permite-lhe criar, atualizar, eliminar, ver e gerir tarefas e [recol
  [Limites, predefinições e códigos de erro do Azure Scheduler](scheduler-limits-defaults-errors.md)
 
  [Autenticação de saída do Azure Scheduler](scheduler-outbound-authentication.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

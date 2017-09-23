@@ -1,7 +1,5 @@
 
-<a id="to-configure-remote-management-on-cloud-appliance" class="xliff"></a>
-
-#### Para configurar a gestão remota na aplicação da cloud
+#### <a name="to-configure-remote-management-on-cloud-appliance"></a>Para configurar a gestão remota na aplicação da cloud
 
 1. No serviço Gestor de Dispositivos do StorSimple, clique em **Dispositivos**. Selecione e clique na sua aplicação da cloud a partir da lista de dispositivos ligados ao serviço.
     ![Aplicação da cloud selecionada pelo StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage1.png)

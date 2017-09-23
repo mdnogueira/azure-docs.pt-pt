@@ -1,6 +1,4 @@
-<a id="to-create-public-endpoints-on-the-cloud-appliance" class="xliff"></a>
-
-#### Para criar pontos finais públicos na aplicação da cloud
+#### <a name="to-create-public-endpoints-on-the-cloud-appliance"></a>Para criar pontos finais públicos na aplicação da cloud
 
 1. Inicie sessão no Portal do Azure.
 2. Aceda a **Máquinas Virtuais** e, em seguida, selecione e clique na máquina virtual que está a ser utilizada como a sua aplicação da cloud.

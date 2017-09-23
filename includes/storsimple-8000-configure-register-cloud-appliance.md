@@ -1,6 +1,4 @@
-<a id="to-configure-and-register-the-cloud-appliance" class="xliff"></a>
-
-#### Para configurar e registar a aplicação da cloud
+#### <a name="to-configure-and-register-the-cloud-appliance"></a>Para configurar e registar a aplicação da cloud
 
 1. Selecione e clique no StorSimple Cloud Appliance que criou no painel **Dispositivos**.
 

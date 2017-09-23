@@ -14,9 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: kumud
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
 ms.openlocfilehash: 1ceaafebcaebecb04314c7da62c69b2e9b5ba39a
+ms.contentlocale: pt-pt
+ms.lasthandoff: 01/24/2017
 
 ---
 
@@ -89,10 +91,5 @@ Verifique o esquema de definição do serviço para a [sonda de estado de funcio
 [Configurar um modo de distribuição de balanceador de carga](load-balancer-distribution-mode.md)
 
 [Configurar definições de tempo limite TCP inativo para o balanceador de carga](load-balancer-tcp-idle-timeout.md)
-
-
-
-
-<!--HONumber=Jan17_HO4-->
 
 

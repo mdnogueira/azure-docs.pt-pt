@@ -45,8 +45,8 @@ Também pode desativar pontos finais individuais que fazem parte de um perfil do
     5. Em **Prioridade**, selecione **1**. Se estiver em bom estado de funcionamento, todo o tráfego vai para este ponto final.
     6. Mantenha a caixa **Adicionar como desativado** desmarcada.
     7. Clique em **OK**
-6.    Repita os passos 4 e 5 para adicionar o ponto final do Azure seguinte. Adicione-o com o valor de **Prioridade** definido em **2**.
-7.    Quando a adição de ambos os pontos finais estiver concluída, estes são apresentados no painel **Perfil do Gestor de Tráfego**, juntamente com o respetivo estado de monitorização como **Online**.
+6.  Repita os passos 4 e 5 para adicionar o ponto final do Azure seguinte. Adicione-o com o valor de **Prioridade** definido em **2**.
+7.  Quando a adição de ambos os pontos finais estiver concluída, estes são apresentados no painel **Perfil do Gestor de Tráfego**, juntamente com o respetivo estado de monitorização como **Online**.
 
 > [!NOTE]
 > Depois de adicionar ou remover um ponto final de um perfil com o método de encaminhamento de tráfego *Ativação pós-falha*, a lista de prioridade de ativação pós-falha não pode ser ordenada da forma que pretende. Pode ajustar apenas a ordem da Lista de Prioridade de Ativação Pós-falha na Página de configuração. Para obter mais informações, consulte [Configurar o Encaminhamento de Tráfego de Ativação Pós-falha](traffic-manager-configure-failover-routing-method.md).

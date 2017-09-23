@@ -20,7 +20,6 @@ ms.openlocfilehash: cb7a9f01e43d41eb7315cb37a41e69f044ce5566
 ms.contentlocale: pt-pt
 ms.lasthandoff: 05/10/2017
 
-
 ---
 # <a name="azure-active-directory-b2c-sign-up-and-sign-in-consumers-in-your-applications-using-custom-policies"></a>Azure Active Directory B2C: inscrever e iniciar sessão de consumidores nas suas aplicações com as políticas personalizadas
 As políticas personalizadas são ficheiros de configuração que definem o comportamento do seu inquilino do Azure AD B2C. Podem ser totalmente editadas por um programador de identidades para realizar um número de tarefas quase ilimitado.

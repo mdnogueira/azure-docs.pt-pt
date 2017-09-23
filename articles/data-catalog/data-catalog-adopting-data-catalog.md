@@ -21,7 +21,6 @@ ms.openlocfilehash: 5fc5c74c7671f64bd1312ad6939e629c0277110c
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/21/2017
 
-
 ---
 # <a name="approach-and-process-for-adopting-azure-data-catalog"></a>Abordagem e processo de adoção do Catálogo de Dados do Azure
 Este artigo vai ajudá-lo a começar a adotar o **Catálogo de Dados do Azure** na sua organização. Para adotar com êxito o **Catálogo de Dados do Azure**, tem de se concentrar em três itens principais: definir a visão, identificar os casos de utilização empresarial fundamentais dentro da organização e escolher um projeto piloto.

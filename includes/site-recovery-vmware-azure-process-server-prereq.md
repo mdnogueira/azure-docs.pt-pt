@@ -7,8 +7,3 @@ Este artigo assume que
 
 > [!TIP]
 > Certifique-se de que pode estabelecer uma ligação da porta 443 do Servidor de Configuração (em execução no local) a partir da Rede Virtual do Azure que as máquinas virtuais têm falhado.
-
-
-<!--HONumber=Feb17_HO1-->
-
-

@@ -52,8 +52,8 @@ O Data Lake Store disponibiliza dois modos para gerir as chaves de encriptação
 
 Os dois modos para gerir a chave de encriptação mestra são os seguintes:
 
-*    Chaves geridas por serviços
-*    Chaves geridas pelo cliente
+*   Chaves geridas por serviços
+*   Chaves geridas pelo cliente
 
 Em ambos os modos, a chave de encriptação mestra é protegida mediante armazenamento no Azure Key Vault. O Key Vault é um serviço totalmente gerido e altamente seguro do Azure, que pode ser utilizado para salvaguardar chaves criptográficas. Para obter mais informações, veja [Key Vault](https://azure.microsoft.com/services/key-vault).
 
@@ -74,8 +74,8 @@ Para além desta diferença, ou seja, de quem gere a MEK e a instância do Key V
 
 É importante não esquecer o seguinte quando escolher o modo para as chaves de encriptação mestras:
 
-*    Pode optar por utilizar chaves geridas pelo cliente ou chaves geridas pelo serviço quando aprovisiona uma conta do Data Lake Store.
-*    Depois de uma conta do Data Lake Store ser aprovisionada, o modo não pode ser alterado.
+*   Pode optar por utilizar chaves geridas pelo cliente ou chaves geridas pelo serviço quando aprovisiona uma conta do Data Lake Store.
+*   Depois de uma conta do Data Lake Store ser aprovisionada, o modo não pode ser alterado.
 
 ### <a name="encryption-and-decryption-of-data"></a>Encriptação e desencriptação de dados
 
@@ -92,20 +92,20 @@ O diagrama seguinte ilustra estes conceitos:
 ![Chaves na encriptação de dados](./media/data-lake-store-encryption/fig2.png)
 
 #### <a name="pseudo-algorithm-when-a-file-is-to-be-decrypted"></a>Pseudo-algoritmo quando um ficheiro vai ser desencriptado:
-1.    Verificar se a DEK da conta do Data Lake Store está em cache e pronta para ser utilizada.
+1.  Verificar se a DEK da conta do Data Lake Store está em cache e pronta para ser utilizada.
     - Se não for esse o caso, leia a DEK encriptada a partir do armazenamento persistente e envie-a para o Key Vault, para ser desencriptada. Coloque a DEK desencriptada em cache na memória. Está agora pronta para ser utilizada.
-2.    Relativamente a cada bloco de dados no ficheiro:
+2.  Relativamente a cada bloco de dados no ficheiro:
     - Leia o bloco de dados encriptado no armazenamento persistente.
     - Gere a BEK a partir da DEK e do bloco de dados encriptado.
     - Utilize a BEK para desencriptar os dados.
 
 
 #### <a name="pseudo-algorithm-when-a-block-of-data-is-to-be-encrypted"></a>Pseudo-algoritmo quando vai ser encriptado um bloco de dados:
-1.    Verificar se a DEK da conta do Data Lake Store está em cache e pronta para ser utilizada.
+1.  Verificar se a DEK da conta do Data Lake Store está em cache e pronta para ser utilizada.
     - Se não for esse o caso, leia a DEK encriptada a partir do armazenamento persistente e envie-a para o Key Vault, para ser desencriptada. Coloque a DEK desencriptada em cache na memória. Está agora pronta para ser utilizada.
-2.    Gere uma BEK exclusivo para o bloco de dados a partir da DEK.
-3.    Utilize a encriptação AES-256 para encriptar o bloco de dados com a BEK.
-4.    Armazene o bloco de dados encriptado no armazenamento persistente.
+2.  Gere uma BEK exclusivo para o bloco de dados a partir da DEK.
+3.  Utilize a encriptação AES-256 para encriptar o bloco de dados com a BEK.
+4.  Armazene o bloco de dados encriptado no armazenamento persistente.
 
 > [!NOTE] 
 > Por motivos de desempenho, a DEK armazenada de forma desprotegida é colocada em cache na memória durante um breve período de tempo e imediatamente apagada depois de decorrido esse período. No suporte de dados persistente, é sempre armazenada encriptada pela MEK.
@@ -127,15 +127,15 @@ Tenha em atenção que, se utilizar as opções predefinidas para a encriptaçã
 
     ![Captura de ecrã do Key Vault](./media/data-lake-store-encryption/keyvault.png)
 
-3.    Selecione a chave associada à sua conta do Data Lake Store e crie uma versão nova desta chave. Tenha em atenção que, atualmente, o Data Lake Store só suporta a rotação de chaves para uma nova versão de uma chave. Não suporta a rotação para uma chave diferente.
+3.  Selecione a chave associada à sua conta do Data Lake Store e crie uma versão nova desta chave. Tenha em atenção que, atualmente, o Data Lake Store só suporta a rotação de chaves para uma nova versão de uma chave. Não suporta a rotação para uma chave diferente.
 
    ![Captura de ecrã da janela Chaves, com a opção Nova Versão realçada](./media/data-lake-store-encryption/keynewversion.png)
 
-4.    Navegue para a conta de armazenamento do Data Lake Store e selecione **Encriptação**.
+4.  Navegue para a conta de armazenamento do Data Lake Store e selecione **Encriptação**.
 
     ![Captura de ecrã da janela da conta de armazenamento do Data Lake Store, com a opção Encriptação realçada](./media/data-lake-store-encryption/select-encryption.png)
 
-5.    Verá uma mensagem a informar de que está disponível uma versão nova da chave. Clique em **Rodar Chave** para atualizar a chave para a versão nova.
+5.  Verá uma mensagem a informar de que está disponível uma versão nova da chave. Clique em **Rodar Chave** para atualizar a chave para a versão nova.
 
     ![Captura de ecrã da janela do Data Lake Store com a mensagem e a opção Rodar Chave realçadas](./media/data-lake-store-encryption/rotatekey.png)
 

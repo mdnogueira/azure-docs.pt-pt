@@ -20,7 +20,6 @@ ms.openlocfilehash: 1a6bf0a0352e6d9e3a22586ac825558d12e1307a
 ms.contentlocale: pt-pt
 ms.lasthandoff: 06/28/2017
 
-
 ---
 # <a name="what-is-event-hubs"></a>O que são os Hubs de Eventos?
 
