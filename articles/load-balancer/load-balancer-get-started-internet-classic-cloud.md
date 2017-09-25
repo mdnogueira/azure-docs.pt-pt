@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga com acesso à Internet para serviços clou
 description: "Saiba como criar um balanceador de carga com acesso à Internet no modelo de implementação clássica para serviços em nuvem"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-service-management
 ms.assetid: 0bb16f96-56a6-429f-88f5-0de2d0136756

@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga interno para Serviços Cloud do Azure | Mi
 description: "Saiba como criar um balanceador de carga interno com o PowerShell no modelo de implementação clássica"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-service-management
 ms.assetid: 57966056-0f46-4f95-a295-483ca1ad135d

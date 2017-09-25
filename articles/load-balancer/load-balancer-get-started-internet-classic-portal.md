@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga com acesso à Internet – Portal clássic
 description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com o portal clássico do Azure"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 editor: 
 tags: azure-service-management
