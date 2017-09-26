@@ -32,7 +32,7 @@ ms.lasthandoff: 07/01/2017
 > * [Node.js](data-lake-store-manage-use-nodejs.md)
 > * [python](data-lake-store-get-started-python.md)
 >
->
+> 
 
 Aprenda a utilizar a CLI 2.0 do Azure para criar uma conta do Azure Data Lake Store e executar operações básicas, tais como criar pastas, carregar e transferir ficheiros de dados, eliminar a conta, entre outras. Para obter mais informações sobre o Data Lake Store, veja [Descrição geral do Data Lake Store](data-lake-store-overview.md).
 
