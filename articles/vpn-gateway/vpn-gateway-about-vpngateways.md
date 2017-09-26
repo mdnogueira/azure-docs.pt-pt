@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/05/2017
+ms.date: 09/19/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 847eb792064bd0ee7d50163f35cd2e0368324203
-ms.openlocfilehash: ecfe6dab6e4deaa75d073badcb88d536396fe678
+ms.sourcegitcommit: 4f77c7a615aaf5f87c0b260321f45a4e7129f339
+ms.openlocfilehash: 9c1e4199132af737fb7af628aaa7952a5c90818d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 09/22/2017
 
 ---
 # <a name="about-vpn-gateway"></a>Acerca do VPN Gateway
@@ -82,19 +82,15 @@ Este tipo de ligação é uma variação da ligação Rede de VPNs. Cria mais de
 
 [!INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)]
 
-## <a name="P2S"></a>Ponto-a-Ponto (VPN sobre SSTP)
+## <a name="P2S"></a>Ponto a Site (VPN por IKEv2 ou SSTP)
 
-Um gateway de VPN Ponto a Site (P2S) permite-lhe criar uma ligação segura à sua rede virtual a partir de um computador cliente individual. As ligações VPN Ponto a Site são úteis quando pretende ligar à VNet a partir de uma localização remota, como em teletrabalho em casa ou numa conferência. Uma VPN P2S também é uma solução útil para utilizar em vez de uma Rede de VPNs, quando são poucos os clientes que precisam de ligar a uma VNet. 
+Uma ligação de gateway de VPN Ponto a Site (P2S) permite-lhe criar uma ligação segura à sua rede virtual a partir de um computador cliente individual. É estabelecida uma ligação P2S ao iniciá-la a partir do computador cliente. Esta solução é útil para as pessoas que trabalham à distância que queiram ligar às VNets do Azure a partir de uma localização remota, como, por exemplo, a partir de casa ou de uma conferência. Uma VPN P2S também é uma solução útil para utilizar em vez de uma VPN S2S, quando são poucos os clientes que precisam de ligar a uma VNet.
 
 Ao contrário das ligações S2S, as ligações P2S não requerem um endereço IP destinado ao público ou um dispositivo VPN no local. As ligações P2S podem ser utilizadas com as ligações S2S através do mesmo gateway de VPN, desde que todos os requisitos de configuração para ambas as ligações sejam compatíveis.
 
-A P2S utiliza SSTP (Secure Socket Tunneling Protocol), que é um protocolo VPN baseado em SSL. É estabelecida uma ligação VPN P2S ao iniciá-la a partir do computador cliente.
+Para obter mais informações sobre ligações Ponto a Site, veja [Acerca da VPN Ponto a Site](point-to-site-about.md).
 
-![Exemplo de ligação Ponto a Site de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/vpngateway-point-to-site-connection-diagram.png)
-
-### <a name="deployment-models-and-methods-for-point-to-site"></a>Métodos e modelos de implementação de Ponto para Site
-
-[!INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)]
+![Exemplo de ligação Ponto a Site de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/point-to-site.png)
 
 ## <a name="V2V"></a>Ligações VNet a VNet (túnel VPN IPsec/IKE)
 
