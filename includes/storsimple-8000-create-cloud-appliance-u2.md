@@ -20,7 +20,7 @@
    7. Selecione a caixa de verificação para indicar que entende que os dados armazenados na aplicação da cloud são alojados num datacenter da Microsoft.
        * Se utilizar apenas um dispositivo físico, a sua chave de encriptação é mantida com o dispositivo. Por conseguinte, a Microsoft não a poderá desencriptar.
 
-       * Se utilizar uma aplicação da cloud, a chave de encriptação e a chave de desencriptação são armazenadas no Microsoft Azure. Para obter mais informações, veja [security considerations for using a cloud appliance](../articles/storsimple/storsimple-security.md#storsimple-virtual-device-security) (considerações de segurança para utilizar uma aplicação da cloud).
+       * Se utilizar uma aplicação da cloud, a chave de encriptação e a chave de desencriptação são armazenadas no Microsoft Azure. Para obter mais informações, veja [security considerations for using a cloud appliance](../articles/storsimple/storsimple-security.md) (considerações de segurança para utilizar uma aplicação da cloud).
    8. Clique em **Criar** para aprovisionar a aplicação da cloud. O dispositivo poderá demorar cerca de 30 minutos a ser aprovisionado. Será notificado quando a aplicação da cloud for criada com êxito. Aceda ao painel Dispositivos e a lista de dispositivos atualiza para apresentar a aplicação da cloud. O estado da aplicação é **Pronta para configurar**.
       
       ![StorSimple Cloud Appliance pronta para configurar](./media/storsimple-8000-create-cloud-appliance-u2/sca-create3.png)

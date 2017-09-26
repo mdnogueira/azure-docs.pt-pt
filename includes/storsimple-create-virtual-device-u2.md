@@ -21,7 +21,7 @@
       > 
    7. Clique na marca de verificação para indicar que entende que os dados armazenados no dispositivo virtual serão alojados num Microsoft Datacenter. Se utilizar apenas um dispositivo físico, a sua chave de encriptação é mantida com o dispositivo. Por conseguinte, a Microsoft não a poderá desencriptar. 
       
-       Se utilizar um dispositivo virtual, a chave de encriptação e a chave de desencriptação são armazenadas no Microsoft Azure. Para obter mais informações, veja [Considerações de segurança para utilizar um dispositivo virtual](../articles/storsimple/storsimple-security.md#storsimple-virtual-device-security).
+       Se utilizar um dispositivo virtual, a chave de encriptação e a chave de desencriptação são armazenadas no Microsoft Azure. Para obter mais informações, veja [Considerações de segurança para utilizar um dispositivo virtual](../articles/storsimple/storsimple-security.md).
    8. Clique no ícone de verificação para criar o dispositivo virtual. O dispositivo poderá demorar cerca de 30 minutos a ser aprovisionado.
       
       ![Fase de criação do dispositivo virtual StorSimple](./media/storsimple-create-virtual-device-u2/StorSimple_VirtualDeviceCreating1M.png)
