@@ -42,7 +42,7 @@
 #### [Executar uma tarefa e tarefas](./scripts/batch-cli-sample-run-job.md)
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=batch)
-## [PowerShell](/powershell/module/azurerm.batch)
+## [Azure PowerShell](/powershell/module/azurerm.batch)
 ## [CLI do Azure](/cli/azure/batch)
 ## [.NET](/dotnet/api/microsoft.azure.batch)
 ## [Java](/java/api/com.microsoft.azure.batch)
@@ -63,8 +63,8 @@
 
 # Relacionado
 ## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
-## [Processamento de dados com o Batch e o Data Factory](../data-factory/data-factory-data-processing-using-batch.md?toc=%2fazure%2fbatch%2ftoc.json)
-## [Batch, HPC e soluções de Macrocomputação no Azure](../virtual-machines/linux/high-performance-computing.md?toc=%2fazure%2fbatch%2ftoc.json)
+## [Processamento de dados com o Batch e o Data Factory](../data-factory/v1/data-factory-data-processing-using-batch.md?toc=%2fazure%2fbatch%2ftoc.json)
+## [Soluções Batch e HPC na cloud do Azure](batch-hpc-solutions.md)
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/)
