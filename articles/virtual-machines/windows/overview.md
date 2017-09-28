@@ -17,15 +17,15 @@ ms.date: 07/17/2017
 ms.author: davidmu
 ms.custom: mvc
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 52113e1240b81299ae3338f35b2934891017adbf
+ms.sourcegitcommit: 4f77c7a615aaf5f87c0b260321f45a4e7129f339
+ms.openlocfilehash: 2944021cbaf777137512f4bfe0eb4cf5e6f996dc
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/22/2017
 
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Descrição Geral das Máquinas Virtuais do Windows no Azure
 
-As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de [recursos informáticos a pedido](../../app-service-web/choose-web-site-cloud-service-vm.md), dimensionáveis que o Azure oferece. Normalmente, escolher uma VM, se precisar de mais controlo sobre o ambiente informático que as outras opções oferecem. Este artigo dá-lhe informações sobre o que deve considerar antes de criar uma VM, como criá-la e geri-la.
+As Máquinas Virtuais (VMs) do Azure são um dos vários tipos de [recursos informáticos a pedido](../../app-service/choose-web-site-cloud-service-vm.md), dimensionáveis que o Azure oferece. Normalmente, escolher uma VM, se precisar de mais controlo sobre o ambiente informático que as outras opções oferecem. Este artigo dá-lhe informações sobre o que deve considerar antes de criar uma VM, como criá-la e geri-la.
 
 Uma VM do Azure fornece-lhe a flexibilidade de virtualização sem ter de comprar e manter o hardware físico que executa a VM. No entanto, ainda tem de manter a VM a realizar tarefas, como configurar, aplicar patches e instalar o software que é executado na mesma.
 
@@ -38,7 +38,7 @@ As máquinas virtuais do Azure podem ser utilizadas de várias formas. Alguns ex
 O número de VMs que a aplicação utiliza pode ser vertical e horizontalmente aumentado para o valor que for preciso para satisfazer as necessidades.
 
 ## <a name="what-do-i-need-to-think-about-before-creating-a-vm"></a>O que é preciso ter em conta antes de criar uma VM?
-Existem sempre inúmeras [considerações de design](/architecture/reference-architectures/virtual-machines-linux?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) quando está a desenvolver uma infraestrutura de aplicação no Azure. Estes aspetos de uma VM são importantes e devem ser ponderados antes de começar:
+Existem sempre inúmeras [considerações de design](/azure/architecture/reference-architectures/virtual-machines-windows?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) quando está a desenvolver uma infraestrutura de aplicação no Azure. Estes aspetos de uma VM são importantes e devem ser ponderados antes de começar:
 
 * Os nomes dos recursos da aplicação
 * A localização onde os recursos são armazenados
@@ -49,7 +49,7 @@ Existem sempre inúmeras [considerações de design](/architecture/reference-arc
 * Os recursos relacionados que a VM precisa
 
 ### <a name="naming"></a>Atribuição de nomes
-Uma máquina virtual tem um [nome](/architecture/best-practices/naming-conventions#naming-rules-and-restrictions?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) atribuído e tem um nome do computador configurado como parte do sistema operativo. O nome de uma VM pode ter até 15 carateres.
+Uma máquina virtual tem um [nome](/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) atribuído e tem um nome do computador configurado como parte do sistema operativo. O nome de uma VM pode ter até 15 carateres.
 
 Se utilizar o Azure para criar o disco do sistema operativo, o nome do computador e da máquina virtual é o mesmo. Se [carregar e utilizar a sua própria imagem](upload-generalized-managed.md) que contém um sistema operativo configurado anteriormente e utilizá-lo para criar uma máquina virtual, os nomes podem ser diferentes. Recomendamos que, ao carregar o seu próprio ficheiro de imagem, o nome do computador no sistema operativo e o da máquina virtual seja o mesmo.
 
