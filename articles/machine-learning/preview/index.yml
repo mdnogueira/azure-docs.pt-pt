@@ -1,0 +1,50 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação do Azure Machine Learning (Pré-visualização)
+metadata:
+  title: Documentação do Azure Machine Learning (Pré-visualização)
+  meta.description: Learn how to use Azure Machine Learning public preview features.
+  services: machine-learning
+  author: czeumault
+  manager: carolz
+  ms.service: machine-learning
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/06/2017
+  ms.author: carolz
+abstract:
+  description: 'Saiba como preparar dados e criar e implementar modelos com os nossos inícios rápidos e tutoriais. As funcionalidades de pré-visualização do Azure Machine Learning permitem criar, implementar e gerir modelos de ML e AI com qualquer ferramenta e biblioteca de Python. Pode utilizar uma grande variedade de dados e serviços de computação no Azure para armazenar e processar os seus dados.'
+sections:
+  - title: Inícios rápidos de cinco minutos
+    items:
+      - type: paragraph
+        text: Crie o seu primeiro projeto de Machine Learning
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/sql-database/media/index/portal.svg'
+            text: Instalar e criar
+            href: quickstart-installation
+  - title: Tutoriais Passo-a-Passo
+    items:
+      - type: paragraph
+        text: 'Saiba como preparar os dados, configurar uma experimentação e operacionalizar os seus modelos'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="tutorial-classifying-iris-part-1">Percorrer as noções básicas dos serviços de Machine Learning (pré-visualização)</a>
+          - html: <a href="tutorial-classifying-iris-part-2">Utilizar o Machine Learning Workbench para criar um modelo com o conjunto de dados Flor de Iris</a>
+          - html: <a href="tutorial-classifying-iris-part-3">Aprender a implementar um modelo de Machine Learning</a>
+          - html: <a href="tutorial-bikeshare-dataprep">Utilizar o Azure Machine Learning Workbench para preparação de dados avançada</a>
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Linguagens
+            html: '<p><a href="https://azure.microsoft.com/develop/python/">python</a></p>'
+          - title: REST
+            html: <p><a href="model-management-api-reference">API REST de Gestão de Modelos</a></p>

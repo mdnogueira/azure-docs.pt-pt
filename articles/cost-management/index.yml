@@ -1,0 +1,38 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação da Gestão de Custos do Azure
+metadata:
+  title: Documentação da Gestão de Custos - Tutoriais e Referência da API | Microsoft Docs
+  description: 'A Gestão de Custos do Azure, da Cloudyn, é uma solução de gestão de custos multiclouds que o ajuda a utilizar o Azure e outros recursos da cloud. Saiba como rever os custos e a utilização, gerir os custos ativamente, prever despesas e otimizar os custos com os nossos inícios rápidos e tutoriais.'
+  services: cost-management
+  author: czeumault
+  manager: carolz
+  ms.service: cost-management
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/18/2017
+  ms.author: carolz
+abstract:
+  description: 'A Gestão de Custos do Azure, da Cloudyn, é uma solução de gestão de custos multiclouds que o ajuda a utilizar da melhor forma o Azure e outros recursos da cloud. Saiba como rever os custos e a utilização, gerir os custos ativamente, prever despesas e otimizar os custos com os nossos inícios rápidos e tutoriais.'
+sections:
+  - title: Inícios rápidos de cinco minutos
+    items:
+      - type: paragraph
+        text: Saiba como registar as informações do seu contrato ou da sua subscrição do Azure com a Gestão de Custos e comece já a ver os dados relativos aos seus custos.
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
+            text: Ver Dados de Custos
+            href: quick-register-azure-sub
+  - title: Tutoriais passo a passo
+    items:
+      - type: paragraph
+        text: 'Saiba como rever os custos e a utilização, gerir os custos ativamente, prever despesas e otimizar os custos com a Gestão de Custos.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="tutorial-review-usage">Rever a utilização e os custos para detetar anomalias e eficiências</a>
+          - html: <a href="tutorial-user-access">Atribuir acesso aos dados da Gestão de Custos</a>

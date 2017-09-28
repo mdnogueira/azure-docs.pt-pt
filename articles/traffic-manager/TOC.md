@@ -5,6 +5,8 @@
 ## [Perfis do Gestor de Tráfego aninhados](traffic-manager-nested-profiles.md)
 ## [Tipos de ponto final](traffic-manager-endpoint-types.md)
 ## [Monitorização de pontos finais](traffic-manager-monitoring.md)
+## [Medidas de Utilizadores Reais](traffic-manager-rum-overview.md)
+## [Vista de Tráfego](traffic-manager-traffic-view-overview.md)
 ## [FAQs](traffic-manager-FAQs.md)
 
 # Introdução
@@ -16,19 +18,22 @@
 ## [Configurar o método de encaminhamento prioritário](traffic-manager-configure-priority-routing-method.md)
 ## [Configurar o método de encaminhamento ponderado](traffic-manager-configure-weighted-routing-method.md)
 ## [Configurar o método de encaminhamento de desempenho](traffic-manager-configure-performance-routing-method.md)
+## Enviar Medidas de Utilizador Reais para o Gestor de tráfego 
+### [Com o SDK do Visual Studio](traffic-manager-create-rum-visual-studio.md)
+### [Com páginas Web](traffic-manager-create-rum-web-pages.md)
 ## [Gerir pontos finais](traffic-manager-manage-endpoints.md)
 ## [Gerir perfis](traffic-manager-manage-profiles.md)
 ## [Verificar as definições do Gestor de Tráfego](traffic-manager-testing-settings.md)
 ## [Combinar serviços de balanceamento de carga](traffic-manager-load-balancing-azure.md)
 ## [Medir o desempenho do Gestor de Tráfego](traffic-manager-performance-considerations.md)
-## [Utilizar o PowerShell para gerir o Gestor de Tráfego](traffic-manager-powershell-arm.md)
+## [Utilizar o Azure PowerShell para gerir o Gestor de Tráfego](traffic-manager-powershell-arm.md)
 ## [Apontar o domínio da Internet para o Gestor de Tráfego](traffic-manager-point-internet-domain.md)
 ## Resolução de problemas
 ### [Resolução de problemas do estado degradado no Gestor de Tráfego do Azure](traffic-manager-troubleshooting-degraded.md)
 
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=traffic-manager)
-## [PowerShell](/powershell/module/azurerm.trafficmanager)
+## [Azure PowerShell](/powershell/module/azurerm.trafficmanager)
 ## [CLI do Azure](/cli/azure/network/traffic-manager)
 ## [Java](/java/api/com.microsoft.azure.management.trafficmanager)
 ## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-trafficmanager/latest/)

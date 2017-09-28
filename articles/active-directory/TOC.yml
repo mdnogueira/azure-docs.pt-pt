@@ -1,6 +1,6 @@
 - name: Acesso a recursos no Azure
   href: active-directory-understanding-resource-access.md
-- name: Controlo de Acesso Baseado em Funções
+- name: Controlo de Acesso Baseado em Funções (RBAC)
   href: role-based-access-control-what-is.md
   items:
     - name: Gerir atribuições de acesso
@@ -31,10 +31,14 @@
       href: role-based-access-control-troubleshooting.md
     - name: Operações do Fornecedor de Recursos
       href: role-based-access-control-resource-provider-operations.md
+- name: Privileged Identity Management (PIM) para o Azure
+  href: pim-azure-resource.md
+- name: Acesso condicional para a gestão do Azure
+  href: conditional-access-azure-management.md
 - name: Identidade do Serviço Gerido
   href: msi-overview.md
   items:
-    - name: Configurar o MSI da VM do Windows
+    - name: Configurar MSI para uma VM do Windows
       items:
         - name: Com o Portal do Azure
           href: msi-qs-configure-portal-windows-vm.md

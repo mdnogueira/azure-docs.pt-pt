@@ -1,8 +1,10 @@
 # Descrição geral
 ## [O que é o Balanceador de Carga?](load-balancer-overview.md)
+## [O que é o Balanceador de Carga Standard?](load-balancer-standard-overview.md)
 ## [Balanceador de Carga de Externo](load-balancer-internet-overview.md)
 ## [Balanceador de carga interno](load-balancer-internal-overview.md)
 ## [Compreender as sondas do balanceador de carga](load-balancer-custom-probe-overview.md)
+## [Compreender as Portas de Disponibilidade Elevada](load-balancer-ha-ports-overview.md)
 ## [Suporte para o Azure Resource Manager](load-balancer-arm.md)
 ## [Suporte para IPv6](load-balancer-ipv6-overview.md)
 ## [Vários VIPs](load-balancer-multivip-overview.md)
@@ -33,6 +35,10 @@
 ### [Criar um balanceador de carga com acesso à Internet com IPv6 (CLI)](load-balancer-ipv6-internet-cli.md)
 ### [Criar um balanceador de carga com acesso à Internet com IPv6 (Modelo)](load-balancer-ipv6-internet-template.md)
 
+## [Criar um Balanceador de Carga Standard Público com redundância de zona](load-balancer-get-started-internet-az-portal.md)
+### [Criar um Balanceador de Carga Standard Público com redundância de zona (PowerShell)](load-balancer-get-started-internet-az-powershell.md)
+### [Criar um Balanceador de Carga Standard Público com redundância de zona (CLI)](load-balancer-get-started-internet-az-cli.md)
+
 # Procedimento
 ## [Configurar o tempo limite de inatividade de TCP para o Balanceador de Carga](load-balancer-tcp-idle-timeout.md)
 ## [Configurar o Modo de distribuição do Balanceador de Carga](load-balancer-distribution-mode.md)
@@ -44,13 +50,17 @@
 ### [Utilizar várias configurações de IP (PowerShell)](load-balancer-multiple-ip-powershell.md)
 ## [Log Analytics para o Balanceador de Carga do Azure](load-balancer-monitor-log.md)
 ## [Configurar DHCPv6 para VMs do Linux](load-balancer-ipv6-for-linux.md)
+## [Configurar Portas de Elevada Disponibilidade para o Balanceador de Carga Interno](load-balancer-configure-ha-ports.md)
+## [Criar um endereço IP público numa zona de disponibilidade](../virtual-network/create-public-ip-availability-zone-portal.md)
+## [Criar um endereço IP público numa zona de disponibilidade (PowerShell)](../virtual-network/create-public-ip-availability-zone-powershell.md)
+## [Criar um endereço IP público numa zona de disponibilidade (CLI)](../virtual-network/create-public-ip-availability-zone-cli.md)
 ## Resolução de problemas
 ### [Resolver problemas do Balanceador de Carga do Azure](load-balancer-troubleshoot.md)
 
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=load-balancer)
-## [PowerShell](/powershell/module/azurerm.network)
-## [CLI 2.0 do Azure](/cli/azure/network/lb)
+## [Azure PowerShell](/powershell/module/azurerm.network)
+## [CLI do Azure](/cli/azure/network/lb)
 ## [.NET](/dotnet/api/microsoft.azure.management.network.models)
 ## [Java](/java/api/com.microsoft.azure.management.network)
 ## [Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-network/latest/LoadBalancers.html)

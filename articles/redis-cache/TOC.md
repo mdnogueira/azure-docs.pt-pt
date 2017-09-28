@@ -24,7 +24,7 @@
 ###[Proteja a sua cache com uma rede virtual](cache-how-to-premium-vnet.md)
 ###[Distribua a cache com clustering](cache-how-to-premium-clustering.md)
 ## Automatizar
-###[Implementação e Gestão com a utilização do PowerShell](cache-howto-manage-redis-cache-powershell.md)
+###[Implementar e gerir com o Azure PowerShell](cache-howto-manage-redis-cache-powershell.md)
 ###[Implementação e Gestão através da CLI do Azure](cli-samples.md)
 ###[Aprovisionar uma Cache de Redis](cache-redis-cache-arm-provision.md)
 ###[Aprovisionar uma Aplicação Web com a Cache de Redis](cache-web-app-arm-with-redis-cache-provision.md)
@@ -32,13 +32,13 @@
 ###[Fornecedor de estado da sessão](cache-aspnet-session-state-provider.md)
 ###[Fornecedor de cache de saída](cache-aspnet-output-cache-provider.md)
 ## Gerir
-###[Configurar no portal](cache-configure.md)
+###[Configurar no portal do Azure](cache-configure.md)
 ###[Configurar georreplicação](cache-how-to-geo-replication.md)
 ###[Importar/Exportar dados](cache-how-to-import-export-data.md)
 ###[Reiniciar](cache-administration.md#reboot)
 ###[Atualizações agendadas](cache-administration.md#schedule-updates)
 ## Monitorizar e resolver problemas
-###[Monitorizar no portal](cache-how-to-monitor.md)
+###[Monitorizar no portal do Azure](cache-how-to-monitor.md)
 ###[Resolver problemas de cache](cache-how-to-troubleshoot.md)
 ###[Definir alertas para exceções](cache-how-to-monitor.md#operations-and-alerts)
 ## Escala
@@ -49,8 +49,8 @@
 
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/resources/samples/?service=redis-cache)
-## [PowerShell](/powershell/module/azurerm.rediscache)
-## [Pré-visualização da CLI 2.0 do Azure](/cli/azure/redis)
+## [Azure PowerShell](/powershell/module/azurerm.rediscache)
+## [Pré-visualização da CLI do Azure](/cli/azure/redis)
 ## [.NET](/dotnet/api/microsoft.azure.management.redis)
 ## [Java](/java/api/com.microsoft.azure.management.redis._redis_cache)
 ## [Clientes da Redis](http://redis.io/clients)

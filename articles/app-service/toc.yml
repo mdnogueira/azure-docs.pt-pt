@@ -44,13 +44,11 @@
       href: app-service-web-tutorial-custom-ssl.md
     - name: 4 - Adicionar a CDN
       href: app-service-web-tutorial-content-delivery-network.md
-    - name: 5 - Ligar a recursos no local
-      href: web-sites-integrate-with-vnet.md
 - name: Amostras
   items:
     - name: CLI do Azure
       href: app-service-cli-samples.md
-    - name: PowerShell
+    - name: Azure PowerShell
       href: app-service-powershell-samples.md
 - name: Conceitos
   items:
@@ -78,6 +76,8 @@
           href: web-sites-php-configure.md
         - name: Python
           href: web-sites-python-configure.md
+        - name: Ligar a recursos no local
+          href: web-sites-integrate-with-vnet.md
     - name: Implementar no Azure
       items:
         - name: Implementar a aplicação
@@ -128,6 +128,8 @@
       items:
         - name: Aumentar verticalmente a capacidade do servidor
           href: web-sites-scale.md
+        - name: Configurar o escalão PremiumV2
+          href: app-service-configure-premium-tier.md
         - name: Aumentar horizontalmente para várias instâncias
           href: ../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2ftoc.json
     - name: Monitorizar aplicação
@@ -154,9 +156,9 @@
           href: websites-dotnet-deploy-webjobs.md
 - name: Referência
   items:
-    - name: CLI 2.0
+    - name: CLI do Azure
       href: /cli/azure/appservice
-    - name: PowerShell
+    - name: Azure PowerShell
       href: /powershell
     - name: API REST
       href: /rest/api/appservice/

@@ -60,13 +60,14 @@
 #### [Criar uma regra de autorização para o espaço de nomes e para a fila](service-bus-resource-manager-namespace-auth-rule.md)
 #### [Criar um espaço de nomes com o tópico, uma subscrição e regra](service-bus-resource-manager-namespace-topic-with-rule.md)
 #### 
-### [Utilizar o PowerShell para aprovisionar entidades](service-bus-manage-with-ps.md)
+### [Utilizar o Azure PowerShell para aprovisionar entidades](service-bus-manage-with-ps.md)
 
 # Referência
 ## .NET
 ### [Microsoft.ServiceBus.Messaging (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging)
 ### [Microsoft.Azure.ServiceBus (.NET Standard)](/dotnet/api/microsoft.azure.servicebus)
-## [PowerShell](/powershell/module/azurerm.servicebus)
+## [Java](/java/api/overview/azure/servicebus)
+## [Azure PowerShell](/powershell/module/azurerm.servicebus)
 ## [REST](/rest/api/servicebus)
 ## [Exceções](service-bus-messaging-exceptions.md)
 ## [Quotas](service-bus-quotas.md)

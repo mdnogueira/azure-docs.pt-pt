@@ -8,6 +8,7 @@
 # Introdução
 
 ## [Tutorial de principiante](sql-data-warehouse-get-started-tutorial.md)
+## [Tutorial de Consultas Elásticas](tutorial-elastic-query-with-sql-datababase-and-sql-data-warehouse.md)
 ## [Melhores práticas](sql-data-warehouse-best-practices.md)
 ## [Gerir](sql-data-warehouse-overview-manage.md)
 
@@ -20,7 +21,7 @@
 ### [Descrição Geral da Cópia de Segurança](sql-data-warehouse-backups.md)
 ### [Descrição Geral do Restauro](sql-data-warehouse-restore-database-overview.md)
 #### [Portal do Azure](sql-data-warehouse-restore-database-portal.md)
-#### [PowerShell](sql-data-warehouse-restore-database-powershell.md)
+#### [Azure PowerShell](sql-data-warehouse-restore-database-powershell.md)
 #### [REST](sql-data-warehouse-restore-database-rest-api.md)
 
 ## Ligar
@@ -34,7 +35,7 @@
 
 ## Criar
 ### [Portal do Azure](sql-data-warehouse-get-started-provision.md)
-### [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
+### [Azure PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 ### [T-SQL](sql-data-warehouse-get-started-create-database-tsql.md)
 
 ## Programar
@@ -79,6 +80,8 @@
 ### [Power BI](sql-data-warehouse-integrate-power-bi.md)
 ### [Visualização do Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 ### [Stream Analytics](sql-data-warehouse-integrate-azure-stream-analytics.md)
+
+### [Consulta Elástica com a Base de Dados SQL e o SQL Data Warehouse](how-to-use-elastic-query-with-sql-data-warehouse.md)
 
 ## Carregar
 

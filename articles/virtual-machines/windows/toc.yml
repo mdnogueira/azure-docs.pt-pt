@@ -33,7 +33,7 @@
       href: tutorial-virtual-network.md
     - name: 9 - Fazer cópias de segurança de máquinas virtuais
       href: tutorial-backup-vms.md
-    - name: 10 - Monitorizar máquinas virtuais
+    - name: 10 - Monitorizar e atualizar VMs
       href: tutorial-monitoring.md
     - name: 11 - Gerir a segurança de VM
       href: tutorial-azure-security.md
@@ -163,6 +163,12 @@
           href: manage-availability.md
         - name: Dimensionar verticalmente
           href: vertical-scaling-automation.md
+        - name: Criar uma VM na zona de disponibilidade
+          items:
+            - name: PowerShell
+              href: create-powershell-availability-zone.md
+            - name: Portal
+              href: create-portal-availability-zone.md
     - name: Utilizar ferramentas de automatização
       items:
         - name: Chef
@@ -170,7 +176,7 @@
     - name: Executar aplicações
       items:
         - name: SQL Server
-          href: /sql/virtual-machines-windows-sql-server-iaas-overview
+          href: sql/virtual-machines-windows-sql-server-iaas-overview.md
         - name: MongoDB
           href: install-mongodb.md
         - name: SAP no Azure
@@ -342,7 +348,7 @@
   items:
     - name: CLI do Azure
       href: /cli/azure/vm
-    - name: PowerShell
+    - name: Azure PowerShell
       href: /powershell/azureps-cmdlets-docs
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.compute

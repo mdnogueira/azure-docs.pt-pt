@@ -1,0 +1,248 @@
+- name: Documentação do Site Recovery
+  href: index.yml
+- name: Descrição geral
+  items:
+    - name: O que é a Recuperação de Sites?
+      href: site-recovery-overview.md
+- name: Inícios rápidos
+  expanded: true
+  items:
+    - name: Replicar uma VM do Azure para uma região secundária
+      href: azure-to-azure-quickstart.md
+- name: Tutoriais
+  items:
+    - name: VMs do Azure
+      items:
+        - name: Configurar a recuperação após desastre
+          href: azure-to-azure-tutorial-enable-replication.md
+        - name: Executar um teste de recuperação após desastre
+          href: azure-to-azure-tutorial-dr-drill.md
+        - name: Ativar a ativação pós-falha e a reativação pós-falha
+          href: azure-to-azure-tutorial-failover-failback.md
+    - name: VMs VMware
+      items:
+        - name: Preparar o Azure
+          href: tutorial-prepare-azure.md
+        - name: Preparar o VMware no local
+          href: tutorial-prepare-on-premises-vmware.md
+        - name: Configurar a recuperação após desastre
+          href: tutorial-vmware-to-azure.md
+        - name: Executar um teste de recuperação após desastre
+          href: tutorial-dr-drill-azure.md
+        - name: Ativar a ativação pós-falha e a reativação pós-falha
+          href: tutorial-vmware-to-azure-failover-failback.md
+    - name: Migrar para o Azure
+      items:
+        - name: Preparar o Azure
+          href: tutorial-prepare-azure.md
+        - name: Migrar máquinas no local para o Azure
+          href: tutorial-migrate-on-premises-to-azure.md
+        - name: Migrar instâncias do AWS para o Azure
+          href: tutorial-migrate-aws-to-azure.md
+- name: Conceitos
+  items:
+    - name: Arquitetura de Azure para o Azure
+      href: concepts-azure-to-azure-architecture.md
+    - name: Arquitetura de VMware para o Azure
+      href: concepts-vmware-to-azure-architecture.md
+    - name: Arquitetura de Hyper-V para o Azure
+      href: concepts-hyper-v-to-azure-architecture.md
+    - name: Arquitetura de replicação física para o Azure
+      href: concepts-physical-to-azure-architecture.md
+    - name: Arquitetura de Hyper-V para site secundário
+      href: concepts-hyper-v-to-secondary-architecture.md
+    - name: Matriz de suporte do local para o Azure
+      href: site-recovery-support-matrix-to-azure.md
+    - name: Matriz de suporte de local para site secundário
+      href: site-recovery-support-matrix-to-sec-site.md
+    - name: Recuperação após desastre para cargas de trabalho
+      href: site-recovery-workload.md
+    - name: Rede Azure para o Azure (pré-visualização)
+      href: site-recovery-azure-to-azure-networking-guidance.md
+    - name: Conectividade de VMs após a ativação pós-falha para o Azure
+      href: concepts-on-premises-to-azure-networking.md
+    - name: Conectividade de VMs após a ativação pós-falha para um site secundário
+      href: concepts-on-premises-to-on-premises-networking.md
+    - name: Mapeamento de rede para replicação de VMs do Azure
+      href: site-recovery-network-mapping-azure-to-azure.md
+    - name: Mapeamento de rede para replicação de VM de Hyper-V para o Azure
+      href: site-recovery-network-mapping.md
+    - name: Permissões do acesso baseado em funções
+      href: site-recovery-role-based-linked-access-control.md
+    - name: FAQ
+      href: site-recovery-faq.md
+    - name: Planeamento de capacidade para replicação de VMware para o Azure
+      href: site-recovery-plan-capacity-vmware.md
+      items:
+        - name: Planeador de Implementação para replicação do VMware para o Azure
+          href: site-recovery-deployment-planner.md
+    - name: Planeador de Capacidade para replicação de Hyper-V
+      href: site-recovery-capacity-planner.md
+- name: Guias de Procedimentos
+  items:
+    - name: Recuperação após desastre
+      items:
+        - name: Para o Azure para VMs de Hyper-V
+          href: tutorial-hyper-v-to-azure.md
+        - name: Para o Azure para servidores físicos
+          href: tutorial-physical-to-azure.md
+        - name: Para um site secundário para VMs de Hyper-V
+          href: tutorial-vmm-to-vmm.md
+        - name: Para um site secundário para VMs de VMware e servidores físicos
+          href: tutorial-vmware-to-vmware.md
+        - name: Executar um teste de recuperação após desastre para o Azure
+          href: tutorial-dr-drill-azure.md
+        - name: Executar um teste de recuperação após desastre para um site secundário
+          href: tutorial-dr-drill-secondary.md
+        - name: Executar uma ativação pós-falha e uma reativação pós-falha para servidores físicos
+          href: tutorial-vmware-to-azure-failover-failback.md
+        - name: Executar uma ativação pós-falha e uma reativação pós-falha para VMs de Hyper-V
+          href: tutorial-hyper-v-to-azure-failover-failback.md
+        - name: Executar uma ativação pós-falha e uma reativação pós-falha entre sites no local
+          href: tutorial-vmm-to-vmm-failover-failback.md
+    - name: Configurar
+      items:
+        - name: Configurar o ambiente de origem
+          items:
+            - name: Ambiente de origem para VMware para o Azure
+              href: site-recovery-set-up-vmware-to-azure.md
+            - name: Ambiente de origem para replicação física para o Azure
+              href: site-recovery-set-up-physical-to-azure.md
+        - name: Configurar o ambiente de destino
+          items:
+            - name: Ambiente de destino para VMware para o Azure
+              href: site-recovery-prepare-target-vmware-to-azure.md
+            - name: Ambiente de destino para replicação física para o Azure
+              href: site-recovery-prepare-target-physical-to-azure.md
+        - name: Configurar as definições de replicação
+          href: site-recovery-setup-replication-settings-vmware.md
+        - name: Implementar o serviço de Mobilidade para a replicação de VMware
+          href: site-recovery-vmware-to-azure-install-mob-svc.md
+          items:
+            - name: Implementar o serviço de Mobilidade com o System Center Configuration Manager
+              href: site-recovery-install-mobility-service-using-sccm.md
+            - name: Implementar o serviço de Mobilidade com o Automation DSC do Azure
+              href: site-recovery-automate-mobility-service-install.md
+        - name: Ativar a replicação
+          items:
+            - name: Ativar a replicação do Azure para o Azure
+              href: site-recovery-replicate-azure-to-azure.md
+            - name: Ativar a replicação do VMware para o Azure
+              href: site-recovery-replicate-vmware-to-azure.md
+    - name: Ativação e reativação pós-falha
+      items:
+        - name: Configurar planos de recuperação
+          href: site-recovery-create-recovery-plans.md
+          items:
+            - name: Adicionar runbooks do Azure aos planos de recuperação
+              href: site-recovery-runbook-automation.md
+        - name: Executar uma ativação pós-falha de teste
+          items:
+            - name: Executar uma ativação pós-falha de teste para o Azure
+              href: site-recovery-test-failover-to-azure.md
+            - name: Executar uma ativação pós-falha de teste entre clouds de VMM
+              href: site-recovery-test-failover-vmm-to-vmm.md
+        - name: Realizar a ativação pós-falha em máquinas protegidas
+          href: site-recovery-failover.md
+        - name: Voltar a proteger máquinas após a ativação pós-falha
+          items:
+            - name: Voltar a proteger de uma região secundária do Azure para uma principal
+              href: site-recovery-how-to-reprotect-azure-to-azure.md
+            - name: Voltar a proteger do Azure para o local
+              href: site-recovery-how-to-reprotect.md
+        - name: Reativação pós-falha a partir do Azure
+          items:
+            - name: Reativação pós-falha do Azure para o VMware
+              href: site-recovery-failback-azure-to-vmware.md
+            - name: Reativação pós-falha do Azure para Hyper-V
+              href: site-recovery-failback-from-azure-to-hyper-v.md
+    - name: Automatizar
+      items:
+        - name: Configurar a replicação de Hyper-V para o Azure (sem VMM) com o PowerShell
+          href: site-recovery-deploy-with-powershell-resource-manager.md
+        - name: Configurar a replicação de Hyper-V para o Azure (com VMM) com o PowerShell
+          href: site-recovery-vmm-to-azure-powershell-resource-manager.md
+        - name: Configurar a replicação de Hyper-V para um site de VMM secundário com o PowerShell
+          href: site-recovery-vmm-to-vmm-powershell-resource-manager.md
+    - name: Migrar
+      items:
+        - name: Replicar máquinas migradas para outra região do Azure
+          href: site-recovery-azure-to-azure-after-migration.md
+    - name: Cargas de trabalho
+      items:
+        - name: Active Directory e DNS
+          href: site-recovery-active-directory.md
+        - name: Replicar o SQL Server
+          href: site-recovery-sql.md
+        - name: SharePoint
+          href: site-recovery-sharepoint.md
+        - name: Dynamics AX
+          href: site-recovery-dynamicsax.md
+        - name: RDS
+          href: 'site-recovery-workload.md#protect-rds'
+        - name: Troca
+          href: 'site-recovery-workload.md#protect-exchange'
+        - name: SAP
+          href: site-recovery-sap.md
+        - name: Aplicações Web com base no IIS
+          href: site-recovery-iis.md
+        - name: Citrix XenApp e XenDesktop
+          href: site-recovery-citrix-xenapp-and-xendesktop.md
+        - name: Outras cargas de trabalho
+          href: 'site-recovery-workload.md#workload-summary'
+    - name: Gerir
+      items:
+        - name: Atualizar o seu cofre do Site Recovery para o cofre dos Serviços de Recuperação
+          href: upgrade-site-recovery-vaults.md
+        - name: Gerir servidores de processos no Azure
+          href: site-recovery-vmware-setup-azure-ps-resource-manager.md
+        - name: Gerir o servidor de configuração
+          href: site-recovery-vmware-to-azure-manage-configuration-server.md
+        - name: Gerir servidores de processos aumentados horizontalmente
+          href: site-recovery-vmware-to-azure-manage-scaleout-process-server.md
+        - name: Gerir servidores vCenter
+          href: site-recovery-vmware-to-azure-manage-vCenter.md
+        - name: Remover servidores e desativar proteção
+          href: site-recovery-manage-registration-and-protection.md
+        - name: Eliminar o cofre dos Serviços de Recuperação
+          href: delete-vault.md
+    - name: Resolução de problemas
+      items:
+        - name: Problemas da replicação do Azure para o Azure
+          href: site-recovery-azure-to-azure-troubleshoot-errors.md
+        - name: Problemas de replicação do local para o Azure
+          href: site-recovery-vmware-to-azure-protection-troubleshoot.md
+        - name: Problemas de instalação do serviço de Mobilidade
+          href: site-recovery-vmware-to-azure-push-install-error-codes.md
+        - name: Problemas de ativação pós-falha para o Azure
+          href: site-recovery-failover-to-azure-troubleshoot.md
+        - name: Recolher registos e resolver problemas no local
+          href: site-recovery-monitoring-and-troubleshooting.md
+- name: Referência
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/azurerm.siterecovery
+    - name: Azure PowerShell clássico
+      href: /powershell/module/azure/?view=azuresmps-3.7.0
+    - name: REST
+      href: 'https://msdn.microsoft.com/en-us/library/mt750497'
+- name: Relacionado
+  items:
+    - name: Automatização do Azure
+      href: /azure/automation/
+- name: Recursos
+  items:
+    - name: Mapa do Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Blogue
+      href: 'http://azure.microsoft.com/blog/tag/azure-site-recovery/'
+    - name: Fórum
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hypervrecovmgr'
+    - name: Percurso de aprendizagem
+      href: 'https://azure.microsoft.com/documentation/learning-paths/site-recovery/'
+    - name: Preços
+      href: 'https://azure.microsoft.com/pricing/details/site-recovery/'
+    - name: Calculadora de preços
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Atualizações de serviço
+      href: 'https://azure.microsoft.com/updates/?product=site-recovery'

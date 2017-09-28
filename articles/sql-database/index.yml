@@ -52,22 +52,21 @@ sections:
       - type: list
         style: ordered
         items:
-          - html: '<a href="/azure/sql-database/sql-database-design-first-database">Criar e desenhar o esquema para uma nova Base de Dados SQL com o SSMS</a> ou <a href="/azure/sql-database/sql-database-design-first-database-csharp">Criar e desenhar o esquema para uma nova Base de Dados SQL com C#</a>'
+          - html: Criar e desenhar o esquema de uma Base de Dados SQL nova com o <a href="/azure/sql-database/sql-database-design-first-database">SSMS</a> ou <a href="/azure/sql-database/sql-database-design-first-database-csharp">.NET</a>
           - html: <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrar uma Base de Dados do SQL Server existente para utilizar a Base de Dados SQL do Azure</a>
           - html: <a href="/azure/sql-database/sql-database-security-tutorial">Proteger a sua Base de Dados SQL</a>
-          - html: <a href="/azure/sql-database/sql-database-performance-tutorial">Melhorar o desempenho da Base de Dados SQL</a>
-          - html: <a href="/azure/sql-database/sql-database-multi-tenant-application">Implementar uma aplicação SaaS multi-inquilino com a BD SQL</a>
           - html: <a href="/azure/sql-database/sql-database-implement-geo-distributed-database">Implementar uma base de dados distribuída geograficamente</a>
   - title: Vídeo de Formação Gratuita da PluralSight
     items:
       - type: list
         style: cards
-        className: cardsW
+        className: cardsFTitle
         items:
-          - html: '<p><a href="https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02">Programar com .NET</a></p>'
+          - title: Programar em .NET no Azure
+            href: 'https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=FEED65A23CB221A7'
             image:
-              src: 'https://docs.microsoft.com/en-us/azure/sql-database/media/index/video-training-dotnet.png'
-              href: 'https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02'
+              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
+              href: 'https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=FEED65A23CB221A7'
   - title: Amostras
     items:
       - type: paragraph
@@ -85,7 +84,7 @@ sections:
         className: cardsD
         items:
           - title: Linha de Comandos
-            html: '<p><a href="/powershell/module/azurerm.sql/#sql">Azure PowerShell</a></p><p><a href="/powershell/module/elasticdatabasejobs/#elasticdatabasejobs">Azure PowerShell (BD Elástica)</a></p><p><a href="/cli/azure/sql">CLI 2.0 do Azure</a></p>'
+            html: '<p><a href="/powershell/module/azurerm.sql/#sql">Azure PowerShell</a></p><p><a href="/powershell/module/elasticdatabasejobs/#elasticdatabasejobs">Azure PowerShell (BD Elástica)</a></p><p><a href="/cli/azure/sql">CLI do Azure</a></p>'
           - title: Linguagens
             html: '<p><a href="/dotnet/api/microsoft.azure.management.sql.models">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.sql">Java</a></p><p><a href="https://msdn.microsoft.com/library/mt652093.aspx">Node.js</a></p><p><a href="https://msdn.microsoft.com/library/mt652092.aspx">Python</a></p><p><a href="https://msdn.microsoft.com/library/mt691981.aspx">Ruby</a></p><p><a href="https://msdn.microsoft.com/library/dn865013.aspx">PHP</a></p><p><a href="https://msdn.microsoft.com/library/azure/bb510741.aspx">T-SQL</a></p>'
           - title: REST

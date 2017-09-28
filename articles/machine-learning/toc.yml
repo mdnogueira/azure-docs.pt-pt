@@ -1,0 +1,8 @@
+- name: Funcionalidades de pré-visualização do Machine Learning
+  href: preview/index.yml
+- name: Machine Learning Studio
+  href: studio/index.md
+- name: Máquina Virtual de Ciência de Dados
+  href: data-science-virtual-machine/overview.md
+- name: Processo de Ciência de Dados de Equipa
+  href: team-data-science-process/overview.md

@@ -93,14 +93,20 @@
           href: local-emulator.md
         - name: Exportar certificados
           href: local-emulator-export-ssl-certificates.md
+    - name: 6 - Integrar com as Funções
+      items:
+        - name: Acionador HTTP
+          href: tutorial-functions-http-trigger.md
 - name: Amostras
   items:
-    - name: CLI 2.0 do Azure
+    - name: CLI do Azure
       href: cli-samples.md
-    - name: Azure PowerShell
+    - name: PowerShell
       href: powershell-samples.md
 - name: Conceitos
   items:
+    - name: Base de dados sem servidor
+      href: serverless-computing-database.md
     - name: Distribuição global
       href: distribute-data-globally.md
     - name: Criação de partições
@@ -268,6 +274,8 @@
           href: geospatial.md
         - name: Indexação
           href: indexing-policies.md
+        - name: Serviço ligado no Visual Studio
+          href: connected-service.md
     - name: Gerir
       items:
         - name: Leituras e escritas rentáveis
@@ -282,8 +290,14 @@
           href: set-throughput.md
         - name: SLA do monitor
           href: monitor-accounts.md
+        - name: Utilizar métricas
+          href: use-metrics.md
+        - name: Registo de diagnósticos
+          href: logging.md
         - name: Gerir as chaves e consistência
           href: manage-account.md
+        - name: Explorador do Storage do Azure
+          href: tutorial-documentdb-and-mongodb-in-storage-explorer.md
         - name: Segurança
           items:
             - name: Encriptação inativa
@@ -309,7 +323,7 @@
         - name: Integrar no Azure Search
           href: ../search/search-howto-index-documentdb.md
         - name: Mover dados com o Azure Data Factory
-          href: ../data-factory/data-factory-azure-documentdb-connector.md
+          href: ../data-factory/connector-azure-cosmos-db.md
         - name: Analisar dados em tempo real com o Azure Stream Analytics
           href: '../stream-analytics/stream-analytics-define-outputs.md#documentdb'
         - name: Obter o registo HL7 FHIR alterado através das Aplicações Lógicas

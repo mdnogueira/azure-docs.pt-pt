@@ -109,23 +109,24 @@
 ### Utilizar tarefas de dispositivo para atualizar o firmware do dispositivo
 #### [Back-end de Node/Dispositivo Node](iot-hub-node-node-firmware-update.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-firmware-update.md)
+#### [Back-end de Java/Dispositivo Java](iot-hub-java-java-firmware-update.md)
 ### Agendar e difundir tarefas
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-schedule-jobs.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-schedule-jobs.md)
 #### [Java](iot-hub-java-java-schedule-jobs.md)
 ## Gerir
 ### Criar um hub IoT 
-#### [Utilizar o portal](iot-hub-create-through-portal.md)
-#### [Utilizar o PowerShell](iot-hub-create-using-powershell.md)
-#### [Utilizar a CLI 2.0](iot-hub-create-using-cli.md)
+#### [Utilizar o portal do Azure](iot-hub-create-through-portal.md)
+#### [Utilizar o Azure PowerShell](iot-hub-create-using-powershell.md)
+#### [Utilizar a CLI do Azure](iot-hub-create-using-cli.md)
 #### [Utilizar a CLI](iot-hub-create-using-cli-nodejs.md)
 #### [Utilizar a API REST](iot-hub-rm-rest.md)
-#### [Utilizar um modelo do PowerShell](iot-hub-rm-template-powershell.md)
+#### [Utilizar um modelo do Azure PowerShell](iot-hub-rm-template-powershell.md)
 #### [Utilizar um modelo do .NET](iot-hub-rm-template.md)
 ### Configurar o carregamento de ficheiros
-#### [Utilizar o portal](iot-hub-configure-file-upload.md)
-#### [Utilizar o PowerShell](iot-hub-configure-file-upload-powershell.md)
-#### [Utilizar a CLI 2.0](iot-hub-configure-file-upload-cli.md)
+#### [Utilizar o portal do Azure](iot-hub-configure-file-upload.md)
+#### [Utilizar o Azure PowerShell](iot-hub-configure-file-upload-powershell.md)
+#### [Utilizar a CLI do Azure](iot-hub-configure-file-upload-cli.md)
 ### [Gerir dispositivos IoT em massa](iot-hub-bulk-identity-mgmt.md)
 ### [Métricas de utilização](iot-hub-metrics.md)
 ### [Monitorização de operações](iot-hub-operations-monitoring.md)

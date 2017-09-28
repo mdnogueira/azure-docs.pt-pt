@@ -4,7 +4,105 @@
       href: storage-blobs-introduction.md
     - name: 'Escolher Blobs, Ficheiros ou Discos de Dados'
       href: ../common/storage-decide-blobs-files-disks.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-- name: Introdução
+- name: Inícios rápidos
+  items:
+    - name: Criar uma conta de armazenamento - PowerShell
+      href: ../common/storage-quickstart-create-storage-account-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Criar uma conta de armazenamento - CLI
+      href: ../common/storage-quickstart-create-storage-account-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Trabalhar com blobs - PowerShell
+      href: storage-quickstart-blobs-powershell.md
+    - name: Trabalhar com blobs - CLI
+      href: storage-quickstart-blobs-cli.md
+    - name: Trabalhar com blobs - .NET
+      href: storage-quickstart-blobs-dotnet.md
+- name: Tutoriais
+  items:
+    - name: Carregar e processar imagens
+      items:
+        - name: 1 - Carregar e obter dados de imagens na cloud
+          href: storage-upload-process-images.md
+        - name: 2 - Acionar as Funções do Azure para processar blobs
+          href: ../../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: 3 - Proteger os dados das aplicações
+          href: storage-secure-access-application.md
+        - name: 4 - Monitorizar e resolver problemas de armazenamento
+          href: storage-monitor-troubleshoot-storage-application.md
+- name: Amostras
+  items:
+    - name: Azure PowerShell
+      href: storage-samples-blobs-powershell.md
+    - name: CLI do Azure
+      href: storage-samples-blobs-cli.md
+- name: Conceitos
+  items:
+    - name: Planear e conceber
+      items:
+        - name: Replicação
+          href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: 'Camadas de acesso frequente, de acesso esporádico e de arquivo'
+          href: storage-blob-storage-tiers.md
+        - name: Reagir a eventos
+          href: storage-blob-event-overview.md
+        - name: Metas de escalabilidade e desempenho
+          href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Lista de verificação de desempenho e escalabilidade
+          href: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Simultaneidade
+          href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Documentação de orientação da recuperação após desastre
+          href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Mover dados de e para o Armazenamento
+          href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Armazenamento Premium
+          items:
+            - name: Armazenamento Premium de elevado desempenho para Discos de VM
+              href: ../common/storage-premium-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Migrar para o Armazenamento Premium através do Azure Site Recovery
+              href: ../common/storage-migrate-to-premium-storage-using-azure-site-recovery.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Conceber o elevado desempenho
+              href: ../common/storage-premium-storage-performance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Armazenamento Standard
+          items:
+            - name: Armazenamento Standard económico e Discos de VM geridos e não geridos
+              href: ../common/storage-standard-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Proteger
+      items:
+        - name: Guia de segurança
+          href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Configurar firewalls e redes virtuais
+          href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Encriptação de dados inativos
+          href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Encriptação inativa com chaves do cliente
+          href: ../common/storage-service-encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Requer transferência segura
+          href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Autenticação de chave partilhada
+          href: /rest/api/storageservices/Authentication-for-the-Azure-Storage-Services
+        - name: Assinaturas de acesso partilhado (SAS)
+          href: ../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Acesso anónimo para blobs
+          href: storage-manage-access-to-resources.md
+        - name: Utilizar a CDN do Azure para aceder a blobs com domínios personalizados através de HTTPs
+          href: storage-https-custom-domain-cdn.md
+    - name: Monitorizar e resolver problemas
+      items:
+        - name: Tutorial de resolução de problemas
+          href: ../common/storage-e2e-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: 'Monitorizar, diagnosticar e resolver problemas'
+          href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Resolver problemas do erro de eliminação de conta de armazenamento
+          href: ../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Métricas e registo
+          items:
+            - name: Métricas do Armazenamento do Azure no Azure Monitor
+              href: ../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Análise de Armazenamento
+              href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Ativar e ver métricas
+              href: ../common/storage-enable-and-view-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+- name: Procedimento
   items:
     - name: Criar uma conta de armazenamento
       href: ../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -32,60 +130,12 @@
           href: storage-how-to-use-blobs-powershell.md
         - name: CLI 2.0 do Azure
           href: storage-how-to-use-blobs-cli.md
-- name: Procedimento
-  items:
-    - name: Planear e conceber
-      items:
-        - name: Replicação
-          href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: 'Camadas de acesso frequente, de acesso esporádico e de arquivo'
-          href: storage-blob-storage-tiers.md
-        - name: Conceber Aplicações HA com RA-GRS
-          href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Reagir a eventos
-          href: storage-blob-event-overview.md
-        - name: Metas de escalabilidade e desempenho
-          href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Lista de verificação de desempenho e escalabilidade
-          href: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Simultaneidade
-          href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Documentação de orientação da recuperação após desastre
-          href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Armazenamento Premium
-          items:
-            - name: Armazenamento Premium de elevado desempenho para Discos de VM
-              href: ../common/storage-premium-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Migrar para o Armazenamento Premium através do Azure Site Recovery
-              href: ../common/storage-migrate-to-premium-storage-using-azure-site-recovery.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Conceber o elevado desempenho
-              href: ../common/storage-premium-storage-performance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Armazenamento Standard
-          items:
-            - name: Armazenamento Standard económico e Discos de VM geridos e não geridos
-              href: ../common/storage-standard-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Programar
-      items:
-        - name: Amostras
+        - name: Exemplos de Código do GitHub
           items:
             - name: .NET
               href: ../common/storage-samples-dotnet.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Java
               href: ../common/storage-samples-java.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Configurar cadeias de ligação
-          href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Encriptar e desencriptar blobs com o Azure Key Vault
-          href: storage-encrypt-decrypt-blobs-key-vault.md
-        - name: Definir e obter propriedades e metadados
-          href: storage-properties-metadata.md
-        - name: Utilizar o Emulador do Armazenamento
-          href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Encaminhar eventos para um ponto final personalizado
-          href: storage-blob-event-quickstart.md
-        - name: Domínios personalizados
-          href: storage-custom-domain-name.md
-        - name: Pesquisar o armazenamento de Blobs com o Azure Search
-          href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Gerir
       items:
         - name: PowerShell
@@ -98,50 +148,32 @@
           href: ../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Automatização do Azure
           href: ../common/storage-manage-with-automation.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Proteger
+    - name: Encriptação do lado do cliente
       items:
-        - name: Guia de segurança
-          href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Encriptação do lado do cliente
-          items:
-            - name: .NET
-              href: ../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Java
-              href: ../common/storage-client-side-encryption-java.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Python
-              href: ../common/storage-client-side-encryption-python.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Encriptação de dados inativos
-          href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Encriptação inativa com chaves do cliente
-          href: ../common/storage-service-encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Autenticação de chave partilhada
-          href: /rest/api/storageservices/Authentication-for-the-Azure-Storage-Services
-        - name: Assinaturas de acesso partilhado (SAS)
-          href: ../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Requer transferência segura
-          href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Acesso anónimo para blobs
-          href: storage-manage-access-to-resources.md
-        - name: Utilizar a CDN do Azure para aceder a blobs com domínios personalizados através de HTTPs
-          href: storage-https-custom-domain-cdn.md
-    - name: Monitorizar e resolver problemas
+        - name: .NET
+          href: ../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Java
+          href: ../common/storage-client-side-encryption-java.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Python
+          href: ../common/storage-client-side-encryption-python.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Configurar cadeias de ligação
+      href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Conceber Aplicações HA com RA-GRS
+      href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Encriptar e desencriptar blobs com o Azure Key Vault
+      href: storage-encrypt-decrypt-blobs-key-vault.md
+    - name: Definir e obter propriedades e metadados
+      href: storage-properties-metadata.md
+    - name: Utilizar o Emulador do Armazenamento
+      href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Encaminhar eventos para um ponto final personalizado
+      href: storage-blob-event-quickstart.md
+    - name: Domínios personalizados
+      href: storage-custom-domain-name.md
+    - name: Pesquisar o armazenamento de Blobs com o Azure Search
+      href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Transferir dados
       items:
-        - name: Tutorial de resolução de problemas
-          href: ../common/storage-e2e-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: 'Monitorizar, diagnosticar e resolver problemas'
-          href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Resolver problemas do erro de eliminação de conta de armazenamento
-          href: ../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Métricas e registo
-          items:
-            - name: Análise de Armazenamento
-              href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Ativar e ver métricas
-              href: ../common/storage-enable-and-view-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Transferir Dados
-      items:
-        - name: Mover dados de e para o Armazenamento
-          href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: AzCopy no Windows
           href: ../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: AzCopy no Linux
@@ -225,8 +257,6 @@
               href: ../common/storage-import-export-backing-up-drive-manifests.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Recuperação de diagnósticos e erros para tarefas de Importação/Exportação
               href: ../common/storage-import-export-diagnostics-and-error-recovery.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Amostras
-      href: 'https://azure.microsoft.com/documentation/samples/?service=storage&term=blob'
 - name: Referência
   items:
     - name: PowerShell

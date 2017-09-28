@@ -7,7 +7,7 @@
 ## [Contentores](../../virtual-machines-windows-containers.md)
 
 # Introdução
-## [Criar uma VM com o portal](tutorial.md)
+## [Criar uma VM com o portal do Azure](tutorial.md)
 ## [Iniciar sessão numa VM](connect-logon.md)
 ## [Instalar o Azure PowerShell](/powershell/azure/overview)
 ## [Instalar a CLI do Azure](../../../cli-install-nodejs.md)
@@ -85,7 +85,7 @@
 ### [Anexar o disco rígido virtual para resolver problemas de VMs](troubleshoot-recovery-disks-portal.md)
 
 # Referência
-## [PowerShell](/powershell/azure/overview)
+## [Azure PowerShell](/powershell/azure/overview)
 ## [CLI do Azure](/cli/azure/vm)
 ## [Java](/java/api)
 ## [.NET](/dotnet/api/microsoft.azure.management.compute)

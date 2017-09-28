@@ -16,7 +16,7 @@
 # Procedimento
 ## Aderir a um domínio gerido
 ### [Associar uma VM do Windows Server](active-directory-ds-admin-guide-join-windows-vm-portal.md)
-### [Associar uma VM do Windows com o PowerShell](active-directory-ds-admin-guide-join-windows-vm-classic-powershell.md)
+### [Associar uma VM do Windows Server com o Azure o PowerShell](active-directory-ds-admin-guide-join-windows-vm-classic-powershell.md)
 ### [Associar uma VM do Linux](active-directory-ds-admin-guide-join-rhel-linux-vm.md)
 ## Administrar um domínio gerido
 ### [Administrar um domínio gerido](active-directory-ds-admin-guide-administer-domain.md)

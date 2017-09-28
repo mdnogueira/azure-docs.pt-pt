@@ -1,0 +1,129 @@
+- name: Documentação de Utilizador do Azure Stack
+  href: index.yml
+- name: Descrição geral
+  items:
+    - name: Considerações principais
+      href: azure-stack-considerations.md
+- name: Inícios rápidos
+  expanded: true
+  items:
+    - name: Criar VM do Windows - Portal
+      href: azure-stack-quick-windows-portal.md
+    - name: Criar VM do Windows - PowerShell
+      href: azure-stack-quick-create-vm-windows-powershell.md
+    - name: Criar VM do Windows - CLI
+      href: azure-stack-quick-create-vm-windows-cli.md
+    - name: Criar VM do Linux - Portal
+      href: azure-stack-quick-linux-portal.md
+    - name: Criar VM do Linux - PowerShell
+      href: azure-stack-quick-create-vm-linux-powershell.md
+    - name: Criar VM do Linux - CLI
+      href: azure-stack-quick-create-vm-linux-cli.md
+- name: Tutoriais
+  items:
+    - name: Implementar aplicações no Azure e no Azure Stack
+      href: azure-stack-solution-pipeline.md
+- name: Guias de procedimentos
+  items:
+    - name: Utilizar o Portal do Azure Stack
+      href: azure-stack-use-portal.md
+    - name: Security & Compliance
+      items:
+        - name: Gerir o RBAC
+          href: azure-stack-manage-permissions.md
+        - name: Criar principais de serviço
+          href: Azure-stack-create-service-principals.md
+    - name: Utilizar serviços
+      items:
+        - name: Considerações principais
+          href: azure-stack-considerations.md
+        - name: Computação
+          items:
+            - name: Descrição geral
+              href: azure-stack-compute-overview.md
+            - name: Considerações sobre VMs
+              href: azure-stack-vm-considerations.md
+        - name: Armazenamento
+          items:
+            - name: Descrição geral
+              href: azure-stack-storage-overview.md
+            - name: Considerações sobre armazenamento
+              href: azure-stack-acs-differences.md
+            - name: Ferramentas de desenvolvimento do armazenamento
+              href: azure-stack-storage-dev.md
+            - name: Ferramentas da transferência de dados
+              href: azure-stack-storage-transfer.md
+            - name: Ligar ao Explorador de Armazenamento
+              href: azure-stack-storage-connect-se.md
+        - name: Rede
+          items:
+            - name: Descrição geral
+              href: azure-stack-network-overview.md
+            - name: Considerações de redes
+              href: azure-stack-network-differences.md
+            - name: iDNS para o Azure Stack
+              href: azure-stack-understanding-dns.md
+            - name: DNS no Azure Stack
+              href: azure-stack-dns.md
+        - name: Cofre de Chaves
+          items:
+            - name: Descrição geral
+              href: azure-stack-kv-intro.md
+            - name: Gerir com o Portal
+              href: azure-stack-kv-manage-portal.md
+            - name: Gerir com o PowerShell
+              href: azure-stack-kv-manage-powershell.md
+            - name: Criar uma VM com um segredo
+              href: azure-stack-kv-deploy-vm-with-secret.md
+            - name: Criar uma VM com um certificado
+              href: azure-stack-kv-push-secret-into-vm.md
+            - name: Aplicação de exemplo do Key Vault
+              href: azure-stack-kv-sample-app.md
+    - name: Criar aplicações
+      items:
+        - name: Desenvolver para o Azure Stack
+          href: azure-stack-developer.md
+        - name: Configurar o ambiente de desenvolvimento
+          items:
+            - name: Instalar o PowerShell para o Azure Stack
+              href: azure-stack-powershell-install.md
+            - name: Transferir ferramentas
+              href: azure-stack-powershell-download.md
+            - name: Configurar o PowerShell - Utilizador
+              href: azure-stack-powershell-configure-user.md
+            - name: Instalar e configurar a CLI do Azure Stack
+              href: azure-stack-connect-cli.md
+            - name: Instalar o Visual Studio
+              href: azure-stack-install-visual-studio.md
+            - name: Gerir perfis da versão de API
+              href: azure-stack-version-profiles.md
+        - name: Utilizar o módulo de política
+          href: azure-stack-policy-module.md
+        - name: Utilizar modelos
+          items:
+            - name: Descrição geral do modelo
+              href: azure-stack-arm-templates.md
+            - name: Desenvolver modelos
+              href: azure-stack-develop-templates.md
+            - name: Verificar modelos
+              href: azure-stack-validate-templates.md
+            - name: Implementar com o Portal
+              href: azure-stack-deploy-template-portal.md
+            - name: Implementar com o PowerShell
+              href: azure-stack-deploy-template-powershell.md
+            - name: Implementar com o Visual Studio
+              href: azure-stack-deploy-template-visual-studio.md
+- name: Referência
+  items:
+    - name: Azure Stack do PowerShell
+      href: /powershell/azure/azure-stack/overview?view=azurestackps-1.2.9
+- name: Recursos
+  items:
+    - name: Mapa do Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Fórum do MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStack'
+    - name: Informações de preços
+      href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
+    - name: Stack Overflow
+      href: 'http://stackoverflow.com/questions/tagged/azure-stack'

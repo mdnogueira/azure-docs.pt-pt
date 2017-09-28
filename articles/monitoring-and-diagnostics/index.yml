@@ -1,0 +1,72 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação do Azure Monitor
+metadata:
+  title: 'Documentação do Azure Monitor - Tutoriais, Referência da API | Microsoft Docs'
+  description: 'O Azure Monitor faz parte da solução de monitorização geral do Microsoft Azure. O Azure Monitor ajuda-o a acompanhar o desempenho, a manter a segurança e a identificar tendências. Saiba como fazer auditorias, criar alertas e arquivar dados como os nossos inícios rápidos e tutoriais.'
+  services: monitoring-and-diagnostics
+  author: czeumault
+  manager: carolz
+  ms.service: monitoring-and-diagnostics
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/18/2017
+  ms.author: carolz
+abstract:
+  description: 'O Azure Monitor faz parte da solução de monitorização geral do Microsoft Azure. O Azure Monitor ajuda-o a acompanhar o desempenho, a manter a segurança e a identificar tendências. Saiba como fazer auditorias, criar alertas e arquivar dados como os nossos inícios rápidos e tutoriais.'
+sections:
+  - title: Inícios rápidos de cinco minutos
+    items:
+      - type: paragraph
+        text: Saiba como receber notificações quando são verificadas condições específicas na sua aplicação do Azure.
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/Chart.svg'
+            text: Monitorizar métricas
+            href: monitor-quick-resource-metric-alert-portal
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_alert.svg'
+            text: Auditoria e Alertas da Subscrição
+            href: monitor-quick-audit-notify-action-in-subscription
+  - title: Tutoriais passo a passo
+    items:
+      - type: paragraph
+        text: Saiba mais sobre o dimensionamento automático e o arquivamento dos seus dados de monitorização.
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="monitor-tutorial-autoscale-performance-schedule">Dimensionamento automático com base no desempenho da aplicação ou numa agenda</a>
+          - html: <a href="monitor-tutorial-archive-monitoring-data">Arquivamento dos dados de monitorização</a>
+  - title: Vídeo de Formação Gratuita da PluralSight
+    items:
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Introdução à Monitorização de IaaS
+            href: 'https://app.pluralsight.com/library/courses/azure-iaas-monitoring-management-getting-started/table-of-contents'
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
+              href: 'https://app.pluralsight.com/library/courses/azure-iaas-monitoring-management-getting-started/table-of-contents'
+          - title: Gerir a Infraestrutura no Microsoft Azure
+            href: 'https://app.pluralsight.com/library/courses/managing-infrastructure-microsoft-azure-getting-started'
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
+              href: 'https://app.pluralsight.com/library/courses/managing-infrastructure-microsoft-azure-getting-started'
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Linha de Comandos
+            html: <p><a href="/cli/azure/monitor?view=azure-cli-latest">CLI 2.0</a></p><p><a href="/powershell/module/azurem.insights">Azure PowerShell</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/monitor/">REST</a></p>
+          - title: Monitorização
+            html: '<p><a href="monitoring-supported-metrics">Métricas suportadas</a></p><p><a href="monitoring-diagnostic-logs-schema">Serviços, categorias e esquemas suportados para os registos de diagnósticos</a></p><p><a href="monitoring-activity-log-schema">Esquema de eventos do Registo de atividades</a></p>'
+          - title: Diagnóstico
+            html: <p><a href="azure-diagnostics-schema">Esquema da extensão do Diagnóstico do Azure</a></p>

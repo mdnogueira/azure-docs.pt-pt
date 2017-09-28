@@ -16,8 +16,8 @@
 #### [Automático - com o modelo](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
 #### [Manual - pré-requisitos](virtual-machines-windows-portal-sql-availability-group-prereq.md)
 #### [Manual - tutorial](virtual-machines-windows-portal-sql-availability-group-tutorial.md)
-#### [Balanceador de carga - portal](virtual-machines-windows-portal-sql-alwayson-int-listener.md)
-#### [Balanceador de carga - PowerShell](virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md)
+#### [Balanceador de carga - portal do Azure](virtual-machines-windows-portal-sql-alwayson-int-listener.md)
+#### [Balanceador de carga - Azure PowerShell](virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md)
 #### [Várias regiões](virtual-machines-windows-portal-sql-availability-group-dr.md)
 ### Instância de Cluster de Ativação Pós-falha
 #### [Configurar](virtual-machines-windows-portal-sql-create-failover-cluster.md)
@@ -36,7 +36,7 @@
 ## [Padrões de aplicação](virtual-machines-windows-sql-server-app-patterns-dev-strategies.md)
 
 # Referência
-## [PowerShell](/powershell/azure/overview)
+## [Azure PowerShell](/powershell/azure/overview)
 ## [CLI do Azure](/cli/azure/)
 ## [T-SQL](https://msdn.microsoft.com/library/azure/bb510741.aspx)
 ## [Controladores do SQL Server](https://msdn.microsoft.com/library/mt654049.aspx)
