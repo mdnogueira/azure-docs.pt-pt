@@ -116,8 +116,3 @@ Para poder enviar notificações push para uma aplicação iOS, tem de registar 
 7. Após criar o novo perfil de aprovisionamento, clique para o transferir e instalar no seu computador de programação do Xcode. Em seguida, clique em **Guardar**.
    
       ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-profile-ready.png)
-
-
-<!--HONumber=Dec16_HO1-->
-
-
