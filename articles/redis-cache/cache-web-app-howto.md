@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 05/09/2017
 ms.author: sdanie
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 71fea4a41b2e3a60f2f610609a14372e678b7ec4
-ms.openlocfilehash: f23f71cc01eccf17d36885f786de9a7517606803
+ms.translationtype: HT
+ms.sourcegitcommit: 8f9234fe1f33625685b66e1d0e0024469f54f95c
+ms.openlocfilehash: 21dc87b3e8c26bfbda36202b31b3b4d44be32179
 ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
-
+ms.lasthandoff: 09/20/2017
 
 ---
 # <a name="how-to-create-a-web-app-with-redis-cache"></a>Como criar uma aplicação Web com a Cache de Redis
@@ -71,7 +70,7 @@ Se tiver o Visual Studio 2013, pode [transferir o Azure SDK mais recente para o 
 
     Certifique-se de que **Sem Autenticação** está especificado para as definições **Autenticação**. Dependendo da versão do Visual Studio, a predefinição pode ser outra. Para alterá-la, clique em **Alterar Autenticação** e selecione **Sem Autenticação**.
 
-    Se estiver a seguir, juntamente com o Visual Studio 2015, desmarque a caixa de verificação **Alojar na cloud**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service-web/app-service-web-get-started-dotnet.md).
+    Se estiver a seguir, juntamente com o Visual Studio 2015, desmarque a caixa de verificação **Alojar na cloud**. Vai [aprovisionar os recursos do Azure](#provision-the-azure-resources) e [publicar a aplicação no Azure](#publish-the-application-to-azure) nos passos subsequentes do tutorial. Para obter um exemplo de aprovisionamento de uma aplicação Web do App Service a partir do Visual Studio com a opção **Alojar na nuvem** marcada, veja [Introdução às Aplicações Web no App Service do Azure com o ASP.NET e o Visual Studio](../app-service/app-service-web-get-started-dotnet.md).
    
     ![Selecionar o modelo de projeto][cache-select-template]
 4. Clique em **OK** para criar o projeto.
@@ -827,7 +826,7 @@ Assim que tiver selecionado ou criado a cache a utilizar, navegue para a cache n
 * Para obter mais exemplos de criação de uma Aplicação Web ASP.NET no Serviço de Aplicações, veja [Create and deploy an ASP.NET web app in Azure App Service (Criar e implementar uma aplicação Web ASP.NET no Serviço de Aplicações do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) da [demonstração](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/) de [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect.
   * Para obter mais inícios rápidos da demonstração de HealthClinic.biz, veja [Azure Developer Tools Quickstarts (Inícios Rápidos de Ferramentas de Programador do Azure)](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 * Saiba mais sobre a abordagem [Code first to a new database (Primeiro código para uma nova base de dados)](https://msdn.microsoft.com/data/jj193542) para o Entity Framework utilizado neste tutorial.
-* Saiba mais sobre as [Aplicações Web do App Service do Azure](../app-service-web/app-service-web-overview.md).
+* Saiba mais sobre as [Aplicações Web do App Service do Azure](../app-service/app-service-web-overview.md).
 * Saiba como [monitorizar](cache-how-to-monitor.md) a sua cache no Portal do Azure.
 * Explorar as funcionalidades da Cache de Redis do Azure Premium
   

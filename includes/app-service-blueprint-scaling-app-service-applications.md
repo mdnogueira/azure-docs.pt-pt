@@ -1,16 +1,16 @@
-* [Scale Azure App Service](../articles/app-service-web/web-sites-scale.md)
+* [Dimensionar o Serviço de Aplicações do Azure](../articles/app-service/web-sites-scale.md)
   
-  * Understanding Redundancy and Reliability
-  * StateFULL vs StateLESS applications
-    * [Configuring your Stateless app](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
-* Load Testing apps in App Service   
-* App Service scaling best practices
+  * Compreender a Redundância e a Fiabilidade
+  * Aplicações com monitorização de estado vs. sem monitorização de estado
+    * [Configurar a aplicação sem monitorização de estado](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
+* Aplicações de Teste de Carga no Serviço de Aplicações   
+* Melhores práticas de dimensionamento do Serviço de Aplicações
   
-  * Port exhaustion and connection pooling
-  * [Leveraging Azure Storage from your App Service app](../articles/storage/blobs/storage-dotnet-how-to-use-blobs.md)
-  * [Leveraging Azure CDN from your App Service app](../articles/cdn/cdn-overview.md)
-  * [Leveraging Azure Redis Cache from your App Service app](../articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md)
-* Geo distribution
+  * Exaustão de porta e agrupamento de ligações
+  * [Tirar partido do armazenamento do Azure a partir da aplicação do Serviço de Aplicações](../articles/storage/blobs/storage-dotnet-how-to-use-blobs.md)
+  * [Tirar partido do CDN do Azure a partir da aplicação do Serviço de Aplicações](../articles/cdn/cdn-overview.md)
+  * [Tirar partido do Cache de Redis do Azure a partir da aplicação do Serviço de Aplicações](../articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md)
+* Distribuição geográfica
   
-  * [Leveraging Traffic Manager to achive global scale](../articles/traffic-manager/traffic-manager-overview.md)
+  * [Tirar partido do Gestor de Tráfego para atingir dimensionamento global](../articles/traffic-manager/traffic-manager-overview.md)
 

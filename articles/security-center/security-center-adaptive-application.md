@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/14/2017
+ms.date: 09/20/2017
 ms.author: yurid
 ms.translationtype: HT
-ms.sourcegitcommit: 47ba7c7004ecf68f4a112ddf391eb645851ca1fb
-ms.openlocfilehash: 18ae6a970455646b7a25170f5abefa52a98b0ba2
+ms.sourcegitcommit: 890acae2aebf7684e567b9b49377ca7b6da95245
+ms.openlocfilehash: 9c3a9a7255bbbdab8f4c356eb07022d7f1d242d7
 ms.contentlocale: pt-pt
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 09/20/2017
 
 ---
 # <a name="adaptive-application-controls-in-azure-security-center-preview"></a>Controlos de Aplicações Adaptativos no Centro de Segurança do Azure (Pré-visualização)
@@ -33,6 +33,9 @@ Os controlos de aplicações adaptativos ajudam a controlar que aplicações pod
 - Evitar a execução de aplicações antigas e não suportadas.
 - Impedir ferramentas de software específicas que não são permitidas na sua organização.
 - Permitir que a equipa de TI controle o acesso a dados confidenciais através da utilização de aplicações.
+
+> [!NOTE]
+> Os controlos de aplicações adaptável estão disponíveis para os clientes do Centro de Segurança do Azure Standard como pré-visualização pública limitada. [Envie-nos](mailto:ASC_appcontrol@microsoft.com) um e-mail com os seus IDs de subscrição para aderir à pré-visualização.
 
 ## <a name="how-to-enable-adaptive-application-controls"></a>Como ativar os controlos de aplicações adaptáveis?
 Os controlos de aplicações adaptáveis ajudam-no a definir um conjunto de aplicações cuja execução é permitida em grupos de recursos configurados. Esta funcionalidade só está disponível para máquinas Windows (todas as versões, clássica ou Azure Resource Manager). Siga os passos abaixo para configurar a inclusão de aplicações nas listas de permissões no Centro de Segurança:
@@ -144,10 +147,6 @@ O Centro de Segurança só recomendará a inclusão de aplicações em listas de
 A lista contém:
 - **NOME**: o nome do grupo de recursos e da subscrição.
 - **VMs**: o número de máquinas virtuais no grupo de recursos.
-
-## <a name="preview-registration"></a>Registo na pré-visualização
-
-Os controlos de aplicações adaptável estão disponíveis para os clientes do Centro de Segurança do Azure Standard como pré-visualização pública limitada. [Envie-nos](mailto:ASC_appcontrol@microsoft.com) um e-mail com os seus IDs de subscrição para aderir à pré-visualização.
 
 ## <a name="see-also"></a>Consultar também
 Neste documento, aprendeu a utilizar os controlos de aplicações adaptativos no Centro de Segurança do Azure para adicionar as aplicações em execução em VMs do Azure à lista de permissões. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:

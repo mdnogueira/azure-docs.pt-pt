@@ -14,14 +14,14 @@ ms.topic: get-started-article
 ms.date: 05/05/2017
 ms.author: bwren
 ms.translationtype: HT
-ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
-ms.openlocfilehash: b25f3dd41c8dc381258bb42d8802ba4b56e05903
+ms.sourcegitcommit: 8f9234fe1f33625685b66e1d0e0024469f54f95c
+ms.openlocfilehash: 110a4d26e90f46e823a3e1c9ebece3360fbdf0c9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 09/20/2017
 
 ---
 # <a name="monitor-azure-web-app-performance"></a>Monitorizar o desempenho das aplicações Web do Azure
-No [Portal do Azure](https://portal.azure.com), pode configurar a monitorização de desempenho de aplicações para as suas [aplicações Web do Azure](../app-service-web/app-service-web-overview.md). O [Azure Application Insights](app-insights-overview.md) instrui a sua aplicação a enviar telemetria sobre as atividades para o serviço Application Insights, onde são armazenadas e analisadas. Aí, podem ser utilizados gráficos de métricas e ferramentas de pesquisa para ajudar a diagnosticar problemas, melhorar o desempenho e avaliar a utilização.
+No [Portal do Azure](https://portal.azure.com), pode configurar a monitorização de desempenho de aplicações para as suas [aplicações Web do Azure](../app-service/app-service-web-overview.md). O [Azure Application Insights](app-insights-overview.md) instrui a sua aplicação a enviar telemetria sobre as atividades para o serviço Application Insights, onde são armazenadas e analisadas. Aí, podem ser utilizados gráficos de métricas e ferramentas de pesquisa para ajudar a diagnosticar problemas, melhorar o desempenho e avaliar a utilização.
 
 ## <a name="run-time-or-build-time"></a>Hora de execução ou hora de compilação
 Para configurar a monitorização, pode instrumentar a aplicação de uma de duas formas:
