@@ -2,7 +2,7 @@ No Cloud Shell, crie credenciais de implementação com o comando [az webapp dep
 
 Para implementação de FTP e Git local numa aplicação Web, é necessário um utilizador de implementação. O nome de utilizador e a palavra-passe estão ao nível da conta. _São diferentes das credenciais da sua subscrição do Azure._
 
-No comando a seguir, substitua  *\<nome de utilizador >* e  *\<palavra-passe >* por um novo nome de utilizador e palavra-passe. O nome do utilizador tem de ser exclusivo. A palavra-passe tem de ter, pelo menos, oito carateres, com dois dos seguintes três elementos: letras, números, símbolos. 
+No comando a seguir, substitua *\<nome de utilizador >* e *\<palavra-passe >* por um novo nome de utilizador e palavra-passe. O nome do utilizador tem de ser exclusivo. A palavra-passe tem de ter, pelo menos, oito carateres, com dois dos seguintes três elementos: letras, números, símbolos. 
 
 ```azurecli-interactive
 az webapp deployment user set --user-name <username> --password <password>
