@@ -26,9 +26,8 @@
 ### [Configurar o Balanceador de Carga com acesso à Internet (CLI)](load-balancer-get-started-internet-arm-cli.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (Modelo)](load-balancer-get-started-internet-arm-template.md)
 
-## [Configurar o Balanceador de Carga com acesso à Internet (Portal Clássico)](load-balancer-get-started-internet-classic-portal.md)
+## [Configurar o Balanceador de Carga com acesso à Internet - (PowerShell Clássico)](load-balancer-get-started-internet-classic-ps.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (Cloud Clássica)](load-balancer-get-started-internet-classic-cloud.md)
-### [Configurar o Balanceador de Carga com acesso à Internet (PS Clássico)](load-balancer-get-started-internet-classic-ps.md)
 ### [Configurar o Balanceador de Carga com acesso à Internet (CLI Clássica)](load-balancer-get-started-internet-classic-cli.md)
 
 ## [Criar um balanceador de carga com acesso à Internet com IPv6](load-balancer-ipv6-internet-ps.md)

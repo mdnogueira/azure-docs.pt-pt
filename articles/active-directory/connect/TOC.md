@@ -43,6 +43,7 @@
 ##### [Bloqueio Inteligente](active-directory-aadconnect-pass-through-authentication-smart-lockout.md)
 ##### [Perguntas mais frequentes](active-directory-aadconnect-pass-through-authentication-faq.md)
 ##### [Resolução de problemas](active-directory-aadconnect-troubleshoot-pass-through-authentication.md)
+##### [Descrição detalhada da segurança](active-directory-aadconnect-pta-security-deep-dive.md)
 ### [Suporte para vários domínios para federação](active-directory-aadconnect-multiple-domains.md)
 ### [Atualização automática](active-directory-aadconnect-feature-automatic-upgrade.md)
 ### [Utilizar um Fornecedor de Identidade (IdP) SAML 2.0 para Início de Sessão Único](active-directory-aadconnect-federation-saml-idp.md)
