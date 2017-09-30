@@ -128,7 +128,7 @@ Neste passo, vai ligar a sua conta de Armazenamento do Azure à fábrica de dado
 2. Vai ver o **Editor do Data Factory**, conforme mostrado na imagem abaixo: 
 
     ![Editor do Data Factory](./media/data-factory-copy-activity-tutorial-using-azure-portal/data-factory-editor.png)
-3. No editor, clique no botão **Novo arquivo de dados**, na barra de ferramentas, e selecione ** armazenamento do Azure**, no menu pendente. Deverá ver o modelo JSON para criar um serviço ligado de armazenamento do Azure no painel à direita. 
+3. No editor, clique no botão **Novo arquivo de dados**, na barra de ferramentas, e selecione  **armazenamento do Azure**, no menu pendente. Deverá ver o modelo JSON para criar um serviço ligado de armazenamento do Azure no painel à direita. 
    
     ![Botão Arquivar dados novos do Editor](./media/data-factory-copy-activity-tutorial-using-azure-portal/getstarted-editor-newdatastore-button.png)    
 3. Substitua `<accountname>` e `<accountkey>` pelo nome da conta e pelos valores da chave de conta da sua conta de armazenamento do Azure. 
