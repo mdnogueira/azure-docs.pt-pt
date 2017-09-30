@@ -43,6 +43,7 @@
 ### [Filas de mensagens não entregues](service-bus-dead-letter-queues.md)
 ### [Processamento de transações](service-bus-transactions.md)
 ### [Registos de diagnóstico](service-bus-diagnostic-logs.md)
+### [Implementação do espaço de nomes emparelhado](service-bus-paired-namespaces.md)
 ### AMQP
 #### [Descrição geral do AMQP](service-bus-amqp-overview.md)
 #### [.NET](service-bus-amqp-dotnet.md)

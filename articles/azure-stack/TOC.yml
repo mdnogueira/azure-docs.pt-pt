@@ -19,6 +19,8 @@
       href: azure-stack-tutorial-app-service.md
 - name: Conceitos
   items:
+    - name: Considerações de planeamento
+      href: azure-stack-planning-considerations.md
     - name: Política de manutenção
       href: azure-stack-servicing-policy.md
     - name: Notas de versão

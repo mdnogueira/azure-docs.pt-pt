@@ -21,7 +21,6 @@ ms.openlocfilehash: 6b1fb9e7ae810df21cbcd592fef2b43309e2269c
 ms.contentlocale: pt-pt
 ms.lasthandoff: 07/10/2017
 
-
 ---
 # <a name="azure-automation-overview"></a>Descrição geral da Automatização do Azure
 A Automatização do Microsoft Azure fornece uma forma de os utilizadores automatizarem as tarefas manuais, de execução longa, propensas ao erro e frequentemente repetidas que normalmente são executadas num ambiente de nuvem e empresarial. Poupa tempo, aumenta a fiabilidade das tarefas administrativas normais e agenda-as para serem executadas automaticamente em intervalos regulares. Pode automatizar os processos utilizando runbooks ou automatizar a gestão de configuração utilizando a Configuração de Estado Pretendido. Este artigo fornece uma breve descrição geral de Automatização do Azure e responde a algumas perguntas comuns. É possível consultar outros artigos nesta biblioteca para informações mais detalhadas sobre os diferentes tópicos.

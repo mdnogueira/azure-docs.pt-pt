@@ -141,6 +141,8 @@
       items:
         - name: Configuração da execução
           href: experiment-execution-configuration-reference.md
+        - name: API de Registo
+          href: reference-logging-api.md
     - name: Gestão de Modelos
       items:
         - name: API da Gestão de Modelos

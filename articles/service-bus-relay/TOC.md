@@ -9,6 +9,8 @@
 ### [.NET](relay-hybrid-connections-dotnet-get-started.md)
 ### [Nó](relay-hybrid-connections-node-get-started.md)
 ## [Reencaminhamento do WCF](relay-wcf-dotnet-get-started.md)
+## [Tutorial do Reencaminhamento do WCF](service-bus-relay-tutorial.md)
+## [Tutorial REST do Reencaminhamento WCF](service-bus-relay-rest-tutorial.md)
 
 # Procedimento
 ## Planear e conceber

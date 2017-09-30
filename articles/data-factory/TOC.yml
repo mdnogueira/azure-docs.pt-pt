@@ -172,22 +172,34 @@
           href: control-flow-expression-language-functions.md
         - name: Variáveis do sistema
           href: control-flow-system-variables.md
-    - name: Armazenar as credenciais no Key Vault
-      href: store-credentials-in-key-vault.md
+    - name: Segurança
+      items:
+        - name: Considerações de segurança sobre movimento de dados
+          href: data-movement-security-considerations.md
+        - name: Armazenar credenciais no Azure Key Vault
+          href: store-credentials-in-key-vault.md
+        - name: Encriptar credenciais para o runtime de integração autoalojado
+          href: encrypt-credentials-self-hosted-integration-runtime.md
     - name: Monitorizar e gerir
       items:
         - name: Utilizar .NET
           href: 'quickstart-create-data-factory-dot-net.md#monitor-pipeline-run'
         - name: Utilizar o Azure Monitor
           href: monitor-using-azure-monitor.md
+        - name: Gerir o runtime de integração de SSIS do Azure
+          href: manage-azure-ssis-integration-runtime.md
+        - name: Monitorizar o runtime de integração
+          href: monitor-integration-runtime.md
     - name: Criar runtime de integração
       items:
         - name: Runtime de integração do Azure
           href: create-azure-integration-runtime.md
-        - name: Runtime de integração de SSIS do Azure
-          href: create-azure-ssis-integration-runtime.md
         - name: Runtime de integração autoalojado
           href: create-self-hosted-integration-runtime.md
+        - name: Runtime de integração de SSIS do Azure
+          href: create-azure-ssis-integration-runtime.md
+        - name: Associar o runtime de integração de SSIS do Azure a uma VNET
+          href: join-azure-ssis-integration-runtime-virtual-network.md
 - name: Referência
   items:
     - name: .NET
@@ -200,6 +212,8 @@
       href: /python/api/overview/azure/datafactory?view=azure-python
 - name: Recursos
   items:
+    - name: FAQ
+      href: frequently-asked-questions.md
     - name: Mapa do Azure
       href: 'https://azure.microsoft.com/roadmap/?category=analytics'
     - name: Preços

@@ -24,8 +24,7 @@
 ### Configurar LDAP seguro para um domínio gerido
 #### [Tarefa 1: obter um certificado para o LDAP seguro](active-directory-ds-admin-guide-configure-secure-ldap.md)
 #### [Tarefa 2: exportar o certificado LDAP seguro](active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md)
-#### [Tarefa 3: ativar o LDAP seguro para o domínio gerido com o portal clássico do Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps-classic.md)
-#### [Tarefa 3: ativar o LDAP seguro para o domínio gerido com o portal clássico do Azure (pré-visualização)](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
+#### [Tarefa 3: ativar o LDAP seguro para o domínio gerido com o portal do Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
 
 ### [Criar uma UO num domínio gerido](active-directory-ds-admin-guide-create-ou.md)
 ### [Administrar política de grupo num domínio gerido](active-directory-ds-admin-guide-administer-group-policy.md)

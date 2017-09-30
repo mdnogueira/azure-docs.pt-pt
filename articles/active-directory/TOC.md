@@ -42,7 +42,6 @@
 #### [Identificar e resolver problemas de licenças num grupo](active-directory-licensing-group-problem-resolution-azure-portal.md)
 #### [Migrar utilizadores licenciados individuais para o licenciamento baseado no grupo](active-directory-licensing-group-migration-azure-portal.md)
 #### [Cenários adicionais para licenciamento baseado no grupo](active-directory-licensing-group-advanced.md)
-#### [Fornecer termos de utilização para utilizadores e aplicações](active-directory-tou.md)
 #### [Exemplos do Azure PowerShell para licenciamento baseado no grupo](active-directory-licensing-ps-examples.md)
 ### [Gerir perfis de utilizador](active-directory-users-profile-azure-portal.md)
 ### [Repor uma palavra-passe](active-directory-users-reset-password-azure-portal.md)
@@ -153,7 +152,7 @@
 #### [Passos da configuração](cloudappdiscovery-get-started.md)
 #### [Criar relatórios de instantâneos](cloudappdiscovery-set-up-snapshots.md)
 #### [Configurar os relatórios contínuos](https://docs.microsoft.com/cloud-app-security/discovery-docker)
-#### [Utilizar um analisador de registos personalizados](https://docs.microsoft.comcommit/cloud-app-security/custom-log-parser)
+#### [Utilizar um analisador de registos personalizados](https://docs.microsoft.com/cloud-app-security/custom-log-parser)
 #### [Atualizar definições de registo](active-directory-cloudappdiscovery-registry-settings-for-proxy-services.md)
 #### [Compreender a segurança e privacidade](active-directory-cloudappdiscovery-security-and-privacy-considerations.md)
 
@@ -300,6 +299,7 @@
 #### Tarefas
 ##### [Configurar o acesso condicional baseado no dispositivo](active-directory-conditional-access-policy-connected-applications.md)
 ##### [Configurar o acesso condicional baseado na aplicação](active-directory-conditional-access-mam.md)
+##### [Fornecer termos de utilização para utilizadores e aplicações](active-directory-tou.md)
 ##### [Configurar ligação VPN](active-directory-conditional-access-vpn-connectivity-windows10.md)
 ##### [Configurar o SharePoint e Exchange Online](active-directory-conditional-access-no-modern-authentication.md)
 ##### [Remediação](active-directory-conditional-access-device-remediation.md)

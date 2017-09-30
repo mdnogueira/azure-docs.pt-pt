@@ -82,6 +82,8 @@
   items:
     - name: Recuperação após desastre
       items:
+        - name: Para o Azure para VMs VMware com suporte multi-inquilino
+          href: site-recovery-multi-tenant-support-vmware-using-csp.md
         - name: Para o Azure para VMs de Hyper-V
           href: tutorial-hyper-v-to-azure.md
         - name: Para o Azure para servidores físicos
