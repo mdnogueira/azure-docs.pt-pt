@@ -1,6 +1,6 @@
 ---
 title: "Diferenças do Azure Service Fabric entre o Linux e o Windows | Microsoft Docs"
-description: "Diferenças entre a Pré-visualização do Azure Service Fabric no Linux e no Windows."
+description: "Diferenças entre o Azure Service Fabric no Linux e o Azure Service Fabric no Windows."
 services: service-fabric
 documentationcenter: .net
 author: mani-ramaswamy
@@ -12,36 +12,28 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 8/9/2017
+ms.date: 09/19/2017
 ms.author: subramar
 ms.translationtype: HT
-ms.sourcegitcommit: 25e4506cc2331ee016b8b365c2e1677424cf4992
-ms.openlocfilehash: 7b80bb7d4a4e6a1b4cf47ce87200f47339785c53
+ms.sourcegitcommit: 7dceb7bb38b1dac778151e197db3b5be49dd568a
+ms.openlocfilehash: 25976ba919454e26f1dd7965de5db7c4f80b9355
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
+ms.lasthandoff: 09/25/2017
 
 ---
-# <a name="differences-between-service-fabric-on-linux-preview-and-windows-generally-available"></a>Diferenças entre o Service Fabric no Linux (pré-visualização) e no Windows (disponível em geral)
+# <a name="differences-between-service-fabric-on-linux-and-windows"></a>Diferenças entre o Service Fabric no Linux e no Windows
 
-Uma vez que o Service Fabric no Linux é uma pré-visualização, existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades ficarão em paridade quando o Service Fabric no Linux se torna disponível em geral. Em versões futuras, essa diferença de funcionalidades será cada vez menor. Existem diferenças entre as versões mais recentes disponíveis (ou seja, entre a versão 5.6 no Windows e a versão 5.5 no Linux): 
+Existem algumas funcionalidades que são suportadas no Windows, mas no Linux ainda não. Eventualmente, os conjuntos de funcionalidades estarão em paridade e, com cada versão, esta diferença de funcionalidades diminuirá. Existem diferenças entre as versões mais recentes disponíveis (ou seja, entre a versão 6.0 no Windows e a versão 6.0 no Linux): 
 
-* Coleções Fiáveis (e Serviços com Estado Fiável) 
-* ReverseProxy 
-* Instalador autónomo 
-* Validação do esquema XML para os ficheiros de manifesto 
-* Redirecionamento da consola 
-* Serviço de Análise de Falhas (FAS)
-* Composição e volume do docker e controladores de registo para contentores 
-* Governação de recursos para contentores e serviços 
-* Serviço DNS
-* Suporte do Azure Active Directory
-* Equivalentes do comando CLI de determinados comandos do Powershell 
-* Apenas um subconjunto de comandos do Powershell pode ser executado comparativamente a um cluster do Linux (conforme expandido na secção seguinte).
+* Todos os modelos de programação estão em pré-visualização (Java/C# Reliable Actors, Reliable Stateless Services e Reliable Stateful Services)
+* O Envoy (ReverseProxy) está em pré-visualização no Linux
+* O instalador autónomo para Linux ainda não está disponível no Linux
+* Redirecionamento da consola (não suportado em clusters de produção do Windows ou Linux)
+* O Serviço de Análise de Falhas (FAS) no Linux
+* Serviço DNS para serviços do Service Fabric (o serviço DNS é suportado para contentores no Linux)
+* Equivalentes de comandos da CLI de determinados comandos do Powershell (lista abaixo, a maioria da qual é aplicável apenas a clusters autónomos)
 
->[!NOTE]
->O redirecionamento da consola não é suportado em clusters de produção, mesmo no Windows.
-
-As ferramentas de desenvolvimento também são diferentes entre o Windows e o Linux. O VisualStudio, Powershell, VSTS e ETW são utilizados no Windows enquanto o Yeoman, Eclipse, Jenkins e LTTng são utilizados no Linux.
+As ferramentas de desenvolvimento também são diferentes entre o Windows e o Linux. O Visual Studio, Powershell, VSTS e ETW são utilizados no Windows, enquanto o Yeoman, Eclipse, Jenkins e LTTng são utilizados no Linux.
 
 ## <a name="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster"></a>Cmdlets do PowerShell que não funcionam num cluster do Service Fabric do Linux
 
@@ -67,7 +59,6 @@ As ferramentas de desenvolvimento também são diferentes entre o Windows e o Li
 * Start-ServiceFabricPartitionRestart
 * Stop-ServiceFabricChaos
 * Stop-ServiceFabricTestCommand
-* Cmd
 * Get-ServiceFabricNodeConfiguration
 * Get-ServiceFabricClusterConfiguration
 * Get-ServiceFabricClusterConfigurationUpgradeStatus

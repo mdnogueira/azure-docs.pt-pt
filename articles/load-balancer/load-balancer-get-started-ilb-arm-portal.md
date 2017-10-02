@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga interno – Portal do Azure | Microsoft Do
 description: Saiba como criar um balanceador de carga interno no Resource Manager com o portal do Azure
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 editor: 
 tags: azure-service-management
@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 09/25/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
-ms.openlocfilehash: 8fbe9d5d04d745de51e0e41516d6c12683c98637
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 3be595b03f667cf9700d2f17eb2080aa74f41dd9
 ms.contentlocale: pt-pt
-ms.lasthandoff: 01/24/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -31,6 +31,9 @@ ms.lasthandoff: 01/24/2017
 > * [CLI do Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Modelo](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
+
+[!INCLUDE [load-balancer-basic-sku-include.md](../../includes/load-balancer-basic-sku-include.md)]
+
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
 > [!NOTE]
@@ -40,7 +43,7 @@ ms.lasthandoff: 01/24/2017
 
 ## <a name="get-started-creating-an-internal-load-balancer-using-azure-portal"></a>Introdução à criação de um balanceador de carga interno com o portal do Azure
 
-Utilize os seguintes passos para criar um balanceador de carga interno a partir do Portal do Azure.
+Utilize os passos seguintes para criar um balanceador de carga interno a partir do portal do Azure.
 
 1. Num browser, navegue para o [Portal do Azure](http://portal.azure.com) e inicie sessão com a sua conta do Azure.
 2. No canto superior esquerdo do ecrã, clique em **Novo** > **Rede** > **Balanceador de carga**.
@@ -55,7 +58,7 @@ Utilize os seguintes passos para criar um balanceador de carga interno a partir 
 7. Em **Atribuição de endereços IP**, clique em **Dinâmico** ou **Estático**, dependendo se pretende que o endereço IP do balanceador de carga seja fixo (estático) ou não.
 
    > [!NOTE]
-   > Se optar por utilizar um endereço IP estático, terá de fornecer um endereço para o balanceador de carga.
+   > Se optar por utilizar um endereço IP estático, tem de fornecer um endereço para o balanceador de carga.
 
 8. Em **Grupo de recursos**, especifique o nome de um novo grupo de recursos para o balanceador de carga ou clique em **Selecionar existente** e selecione um grupo de recursos existente.
 9. Clique em **Criar**.
@@ -63,18 +66,18 @@ Utilize os seguintes passos para criar um balanceador de carga interno a partir 
 ## <a name="configure-load-balancing-rules"></a>Configurar regras de balanceamento de carga
 
 Após a criação do balanceador de carga, navegue para o recurso do balanceador de carga para configurá-lo.
-Tem de configurar primeiro um conjunto de endereços de back-end e uma sonda antes de configurar uma regra de balanceamento de carga.
+Configure primeiro um conjunto de endereços de back-end e uma sonda antes de configurar uma regra de balanceamento de carga.
 
-### <a name="step-1-configure-a-back-end-pool"></a>Passo 1: Configurar um conjunto de back-end
+### <a name="step-1-configure-a-backend-pool"></a>Passo 1: Configurar um conjunto de back-end
 
-1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou acima.
+1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou anteriormente.
 2. No painel **Definições**, clique em **Conjuntos de back-end**.
 3. No painel **Conjuntos de endereços de back-end**, clique em **Adicionar**.
 4. No painel **Adicionar conjunto de back-end**, introduza um **Nome** para o conjunto de back-end e, em seguida, clique em **OK**.
 
 ### <a name="step-2-configure-a-probe"></a>Passo 2: Configurar uma sonda
 
-1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou acima.
+1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou anteriormente.
 2. No painel **Definições**, clique em **Sondas**.
 3. No painel **Sondas**, clique em **Adicionar**.
 4. No painel **Adicionar sonda**, introduza um **Nome** para a sonda.
@@ -87,14 +90,14 @@ Tem de configurar primeiro um conjunto de endereços de back-end e uma sonda ant
 
 ### <a name="step-3-configure-load-balancing-rules"></a>Passo 3: Configurar regras de balanceamento de carga
 
-1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou acima.
+1. No portal do Azure, clique em **Procurar** > **Balanceadores de carga** e, em seguida, clique no balanceador de carga que criou anteriormente.
 2. No painel **Definições**, clique em **Regras de balanceamento de carga**.
 3. No painel **Regras de balanceamento de carga**, clique em **Adicionar**.
 4. No painel **Adicionar regra de balanceamento de carga**, introduza um **Nome** para a regra.
 5. Em **Protocolo**, selecione **HTTP** (para sites) ou **TCP** (para outras aplicações baseadas em TCP).
 6. Em **Porta**, especifique os clientes que ligam à porta no balanceador de carga.
 7. Em **Porta de back-end**, especifique a porta a ser utilizada no conjunto de back-end (normalmente, a porta do balanceador de carga e a porta de back-end são as mesmas).
-8. Em **Conjunto de back-end**, selecione o conjunto de back-end que criou acima.
+8. Em **Conjunto de back-end**, selecione o conjunto de back-end que criou anteriormente.
 9. Em **Persistência da sessão**, selecione como pretende que as sessões persistam.
 10. Em **Tempo limite de inatividade (minutos)**, especifique o tempo limite de inatividade.
 11. Em **IP flutuante (devolução direta do servidor)**, clique em **Desativado** ou **Ativado**.

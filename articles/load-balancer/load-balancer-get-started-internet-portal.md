@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 09/25/2017
 ms.author: annahar
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
-ms.openlocfilehash: db7c328b2ba7008b9d34275341fa4bad9522b028
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 922c33f712e160835256ad9ad040e523dfbf76db
 ms.contentlocale: pt-pt
-ms.lasthandoff: 01/24/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -31,11 +31,13 @@ ms.lasthandoff: 01/24/2017
 > * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-arm-cli.md)
 > * [Modelo](../load-balancer/load-balancer-get-started-internet-arm-template.md)
 
+[!INCLUDE [load-balancer-basic-sku-include.md](../../includes/load-balancer-basic-sku-include.md)]
+
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-Este artigo abrange o modelo de implementação do Resource Manager. Também pode [saber como criar um balanceador de carga com acesso à Internet com a implementação clássica](load-balancer-get-started-internet-classic-portal.md)
+Este artigo abrange o modelo de implementação do Resource Manager.
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -63,7 +65,7 @@ Pode obter mais informações sobre os componentes do balanceador de carga com o
 3. No painel **Criar balanceador de carga**, escreva um nome para o balanceador de carga. Aqui é designado por **myLoadBalancer**.
 4. Em **Tipo**, selecione **Público**.
 5. Em **Endereço IP público**, crie um novo IP público denominado **myPublicIP**.
-6. Em Grupo de Recursos, selecione **myRG**. Em seguida, selecione uma **Localização** adequada e clique em **OK**. O balanceador de carga irá então iniciar a implementação e irá demorar alguns minutos a concluir a implementação com êxito.
+6. Em Grupo de Recursos, selecione **myRG**. Em seguida, selecione uma **Localização** adequada e clique em **OK**. Em seguida, o balanceador de carga inicia a implementação e demora alguns minutos a concluir a implementação com êxito.
 
     ![A atualizar o grupo de recursos do balanceador de carga](./media/load-balancer-get-started-internet-portal/1-load-balancer.png)
 
@@ -83,7 +85,7 @@ Pode obter mais informações sobre os componentes do balanceador de carga com o
     Em Definições do balanceador de carga, selecione Sondas. Em seguida, clique em **Adicionar** na parte superior do painel.
 
     Existem duas formas de configurar uma pesquisa: HTTP ou TCP. Este exemplo mostra HTTP, mas o TCP pode ser configurado de forma semelhante.
-    Atualize as informações necessárias. Conforme mencionado, o **myLoadBalancer** irá carregar o tráfego de balanceamento de carga na Porta 80. O caminho selecionado é HealthProbe.aspx, o Intervalo é 15 segundos e o Limiar de mau estado de funcionamento é 2. Assim que estiver concluído, clique em **OK** para criar a sonda.
+    Atualize as informações necessárias. Conforme mencionado, o **myLoadBalancer** faz o balanceamento de carga do tráfego na Porta 80. O caminho selecionado é HealthProbe.aspx, o Intervalo é 15 segundos e o Limiar de mau estado de funcionamento é 2. Assim que estiver concluído, clique em **OK** para criar a sonda.
 
     Faça pairar o ponteiro do rato sobre o ícone "i" para saber mais sobre estas configurações individuais e como podem ser alteradas para cumprirem os seus requisitos.
 

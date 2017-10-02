@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 05/30/2017
 ms.author: cherylmc,yushwang
 ms.translationtype: HT
-ms.sourcegitcommit: 368589509b163cacf495fd0be893a8953fe2066e
-ms.openlocfilehash: 9f7eb8e63f30d0f3450ad913620e59cd461b75bc
+ms.sourcegitcommit: 7dceb7bb38b1dac778151e197db3b5be49dd568a
+ms.openlocfilehash: b12eab7a430e620d0b6e872551c0252ccb5d4c14
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="vpn-gateway-faq"></a>FAQ do VPN Gateway
@@ -113,9 +113,9 @@ Estamos limitados à utilização de chaves pré-partilhadas (PSK) para a autent
 * Portal do Azure: navegue para a rede virtual clássica > ligações VPN > ligações de Redes de VPN > Nome do site local >Site local > Espaço de endereço do cliente. 
 * Portal clássico: adicione cada intervalo que pretende enviar através do gateway para a rede virtual na página Redes, em Redes Locais. 
 
-### <a name="can-i-configure-forced-tunneling"></a>Posso configurar a Imposição do Túnel?
+### <a name="can-i-configure-force-tunneling"></a>Posso configurar a Imposição do Túnel?
 
-Sim. Veja [Configurar imposição do túnel](vpn-gateway-about-forced-tunneling.md).
+Sim. Veja [Configurar a imposição do túnel](vpn-gateway-about-forced-tunneling.md).
 
 ### <a name="can-i-set-up-my-own-vpn-server-in-azure-and-use-it-to-connect-to-my-on-premises-network"></a>Posso configurar o meu próprio servidor VPN no Azure e utilizá-lo para estabelecer ligação à minha rede no local?
 
@@ -159,9 +159,13 @@ Suportamos servidores de Encaminhamento e Acesso Remoto (RRAS) do Windows Server
 
 Outras soluções de VPN de software devem funcionar com o nosso gateway, desde que obedeçam às implementações de IPsec de norma da indústria. Contacte o fornecedor do software para as obter instruções de configuração e de suporte.
 
-## <a name="P2S"></a>Ligações Ponto a Site
+## <a name="P2S"></a>Ponto a Site - autenticação de certificados nativa do Azure
 
-[!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-point-to-site-include.md)]
+[!INCLUDE [P2S Azure cert](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
+
+## <a name="P2SRADIUS"></a>Ponto a Site - autenticação RADIUS
+
+[!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
 ## <a name="V2VMulti"></a>Ligações VNet a VNet e de Vários Sites
 

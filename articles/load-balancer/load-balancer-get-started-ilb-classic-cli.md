@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga interno – CLI clássica do Azure | Micro
 description: "Saiba como criar um balanceador de carga interno com a CLI do Azure no modelo de implementação clássica"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 editor: 
 tags: azure-service-management
@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: d24b95f75b5ffd1116b07cf9f8bac33767a9c835
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: f740633230b2479f77d7d09a31dbbf3f72ffb174
 ms.contentlocale: pt-pt
-ms.lasthandoff: 03/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -39,11 +39,11 @@ ms.lasthandoff: 03/21/2017
 
 ## <a name="to-create-an-internal-load-balancer-set-for-virtual-machines"></a>Para criar um conjunto de balanceadores de carga internos para máquinas virtuais
 
-Para criar um conjunto de balanceadores de carga internos e os servidores que irão enviar o tráfego para o mesmo, tem de efetuar o seguinte:
+Para criar um conjunto de balanceadores de carga internos e os servidores que enviam o tráfego para o mesmo, tem de fazer o seguinte:
 
-1. Crie uma instância Balanceamento de Carga Interno que será o ponto final do tráfego de entrada para balanceamento de carga nos servidores de um conjunto com balanceamento de carga.
-2. Adicione os pontos finais correspondentes às máquinas virtuais que irão receber o tráfego de entrada.
-3. Configure os servidores que irão enviar o tráfego para balanceamento de carga para enviar o tráfego para o endereço IP virtual (VIP) da instância de Balanceamento de Carga Interno.
+1. Crie uma instância de Balanceamento de Carga Interno que é ponto final do tráfego de entrada para ser sujeito a balanceamento de carga nos servidores de um conjunto com balanceamento de carga.
+2. Adicione os pontos finais correspondentes às máquinas virtuais que podem receber o tráfego de entrada.
+3. Configure os servidores para enviar o respetivo tráfego para o endereço IP virtual (VIP) da instância de Balanceamento de Carga Interno.
 
 ## <a name="step-by-step-creating-an-internal-load-balancer-using-cli"></a>Criação passo a passo de um balanceador de carga interno com a CLI
 
@@ -64,7 +64,7 @@ Este guia mostra como criar um balanceador de carga interno com base no cenário
 
 O cenário assume as máquinas virtuais "DB1" e "DB2" num serviço em nuvem denominado "mytestcloud". Ambas as máquinas virtuais estão a utilizar uma rede virtual denominada "mytestvnet" com a sub-rede "subnet-1".
 
-Este guia irá criar um conjunto de balanceadores de carga internos através da porta 1433 como porta privada e a porta 1433 como porta local.
+Este guia cria um conjunto de balanceadores de carga internos com a porta 1433 como porta privada e a porta 1433 como porta local.
 
 Este é um cenário comum em que tem máquinas virtuais SQL no back-end com um balanceador de carga interno para garantir que os servidores de base de dados não são expostos diretamente através de um endereço IP público.
 
@@ -93,7 +93,7 @@ Segue-se um exemplo do resultado:
 
 ### <a name="step-2"></a>Passo 2
 
-Configure o conjunto de balanceadores de carga internos quando adicionar o primeiro ponto final. Associe o ponto final, a máquina virtual e a porta de sonda ao conjunto de balanceadores de carga internos neste passo.
+Configure o conjunto de balanceadores de carga internos quando adicionar o primeiro ponto final. Pode associar o ponto final, a máquina virtual e a porta de sonda ao conjunto de balanceadores de carga internos neste passo.
 
 ```azurecli
 azure vm endpoint create db1 1433 --local-port 1433 --protocol tcp --probe-port 1433 --probe-protocol tcp --probe-interval 300 --probe-timeout 600 --internal-load-balancer-name ilbset
@@ -107,7 +107,7 @@ Verifique a configuração do balanceador de carga através de `azure vm show` *
 azure vm show DB1
 ```
 
-O resultado será:
+O resultado é o seguinte:
 
     azure vm show DB1
     info:    Executing command vm show

@@ -12,18 +12,18 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/27/2017
+ms.date: 09/19/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
-ms.openlocfilehash: a8e4900bee81763300d976f0c966d7d20662ca27
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 111b925de9ca2155e2d3631979272170ed614816
 ms.contentlocale: pt-pt
-ms.lasthandoff: 09/02/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
 # <a name="mount-an-azure-file-share-and-access-the-share-in-windows"></a>Montar uma partilha de Ficheiros do Azure e aceder à partilha no Windows
-O [armazenamento de Ficheiros do Azure](../storage-dotnet-how-to-use-files.md) é o sistema de ficheiros na cloud e fácil de utilizar da Microsoft. As partilhas de Ficheiros do Azure podem ser montadas no Windows e no Windows Server. Este artigo mostra três formas diferentes de montar uma partilha de Ficheiros do Azure no Windows - com a IU do Explorador de Ficheiros, através do PowerShell e através da Linha de Comandos. 
+[Ficheiros do Azure](storage-files-introduction.md) é o sistema de ficheiros na cloud fácil de utilizar da Microsoft. As partilhas de Ficheiros do Azure podem ser montadas no Windows e no Windows Server. Este artigo mostra três formas diferentes de montar uma partilha de Ficheiros do Azure no Windows - com a IU do Explorador de Ficheiros, através do PowerShell e através da Linha de Comandos. 
 
 Para montar uma partilha de Ficheiros do Azure fora da região do Azure na qual está alojada, como, por exemplo, no local ou noutra região do Azure, o SO tem de suportar SMB 3.0. 
 
@@ -39,7 +39,7 @@ Pode montar partilhas de ficheiros do Azure numa instalação do Windows que est
 | Windows 7              | SMB 2.1     | Sim                   | Não                   |
 | Windows Server 2008 R2 | SMB 2.1     | Sim                   | Não                   |
 
-<sup>1</sup>Windows 10, versões 1507, 1511, 1607 e 1703
+<sup>1</sup>Windows 10, versões 1507, 1511, 1607, 1703 e 1709.
 
 > [!Note]  
 > Recomendamos obter sempre o KB mais recente para a sua versão do Windows.
@@ -49,7 +49,7 @@ Pode montar partilhas de ficheiros do Azure numa instalação do Windows que est
 
 * **Chave da Conta de Armazenamento**: para montar uma partilha de Ficheiros do Azure, precisa da chave de armazenamento primária (ou secundária). Atualmente, não são suportadas chaves SAS para a montagem.
 
-* **Confirme que a porta 445 está aberta**: o armazenamento de Ficheiros do Azure utiliza o protocolo SMB. O SMB comunica através da porta TCP 445 - verifique se a firewall não está a bloquear as portas TCP 445 no computador cliente.
+* **Certifique-se de que a porta 445 está aberta**: os Ficheiros do Azure utilizam o protocolo SMB. O SMB comunica através da porta TCP 445 - verifique se a firewall não está a bloquear as portas TCP 445 no computador cliente.
 
 ## <a name="mount-the-azure-file-share-with-file-explorer"></a>Montar a partilha de Ficheiros do Azure com o Explorador de Ficheiros
 > [!Note]  
@@ -63,7 +63,7 @@ Pode montar partilhas de ficheiros do Azure numa instalação do Windows que est
 
 3. **Copie o caminho UNC do painel "Ligar" no portal do Azure**: está disponível [aqui](storage-how-to-use-files-portal.md#connect-to-file-share) uma descrição detalhada para encontrar esta informação.
 
-    ![Caminho UNC no painel Ligar do armazenamento de Ficheiros do Azure](./media/storage-how-to-use-files-windows/portal_netuse_connect.png)
+    ![O caminho UNC a partir do painel Ligar dos Ficheiros do Azure](./media/storage-how-to-use-files-windows/portal_netuse_connect.png)
 
 4. **Selecione a letra de unidade e introduza o caminho UNC.** 
     
@@ -121,24 +121,24 @@ Pode montar partilhas de ficheiros do Azure numa instalação do Windows que est
 >   ```
 
 ## <a name="next-steps"></a>Passos seguintes
-Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.
+Veja estas ligações para obter mais informações sobre os Ficheiros do Azure.
 
 * [FAQ](../storage-files-faq.md)
 * [Resolução de Problemas no Windows](storage-troubleshoot-windows-file-connection-problems.md)      
 
 ### <a name="conceptual-articles-and-videos"></a>Artigos e vídeos concetuais
-* [Azure File storage: a frictionless cloud SMB file system for Windows and Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/) (Armazenamento de Ficheiros do Azure: um prático sistema de ficheiros SMB na cloud para Windows e Linux)
-* [How to use Azure File Storage with Linux (Como utilizar o Armazenamento de Ficheiros do Azure com o Linux)](../storage-how-to-use-files-linux.md)
+* [Azure Files: a frictionless cloud SMB file system for Windows and Linux (Ficheiros do Azure: um sistema de ficheiros SMB na cloud sem incómodos para Windows e Linux)](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
+* [How to use Azure Files with Linux (Como utilizar os Ficheiros do Azure com o Linux)](../storage-how-to-use-files-linux.md)
 
-### <a name="tooling-support-for-azure-file-storage"></a>Suporte de ferramentas para o armazenamento de Ficheiros do Azure
+### <a name="tooling-support-for-azure-files"></a>Suporte de ferramentas para os Ficheiros do Azure
 * [How to use AzCopy with Microsoft Azure Storage (Como utilizar o AzCopy com o Armazenamento do Microsoft Azure)](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 * [Using the Azure CLI with Azure Storage (Utilizar a CLI do Azure com o Armazenamento do Azure)](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
-* [Resolução de problemas do armazenamento de Ficheiros do Azure - Windows](storage-troubleshoot-windows-file-connection-problems.md)
-* [Resolução de problemas do armazenamento de Ficheiros do Azure - Linux](storage-troubleshoot-linux-file-connection-problems.md)
+* [Resolução de problemas de Ficheiros do Azure - Windows](storage-troubleshoot-windows-file-connection-problems.md)
+* [Resolução de problemas de Ficheiros do Azure - Linux](storage-troubleshoot-linux-file-connection-problems.md)
 
 ### <a name="blog-posts"></a>Publicações no blogue
-* [Azure File storage is now generally available (O Armazenamento de Ficheiros do Azure está agora disponível normalmente)](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-* [Inside Azure File storage](https://azure.microsoft.com/blog/inside-azure-file-storage/) (Por dentro do armazenamento de Ficheiros do Azure)
+* [Os Ficheiros do Azure já estão em disponibilidade geral](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
+* [Inside Azure Files (Por dentro dos Ficheiros do Azure)](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 * [Introducing Microsoft Azure File Service (Introdução ao Serviço de Ficheiros do Microsoft Azure)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 * [Migrating data to Azure File ](https://azure.microsoft.com/blog/migrating-data-to-microsoft-azure-files/) (Migrar dados para os Ficheiros do Azure)
 

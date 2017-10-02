@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga com acesso à Internet – CLI do Azure | 
 description: "Saiba como criar um balanceador de carga com acesso à Internet no Resource Manager com a CLI do Azure"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 editor: 
 tags: azure-resource-manager
@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 09/25/2017
 ms.author: kumud
-translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: 3b1780033cbc8aa3e108a213a4d2bfd0332fd7d7
-ms.lasthandoff: 03/21/2017
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: ba36b7f6d2ae3cc4d63829ffb757ff7b311e467b
+ms.contentlocale: pt-pt
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="creating-an-internet-load-balancer-using-the-azure-cli"></a>Criar um balanceador de carga da Internet com a CLI do Azure
@@ -28,6 +29,9 @@ ms.lasthandoff: 03/21/2017
 > * [PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md)
 > * [CLI do Azure](../load-balancer/load-balancer-get-started-internet-arm-cli.md)
 > * [Modelo](../load-balancer/load-balancer-get-started-internet-arm-template.md)
+
+
+[!INCLUDE [load-balancer-basic-sku-include.md](../../includes/load-balancer-basic-sku-include.md)]
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
@@ -85,7 +89,7 @@ Para obter mais informações, veja [Suporte do Azure Resource Manager para o Lo
     ```
 
    > [!IMPORTANT]
-   > O balanceador de carga utilizará a etiqueta de domínio do IP público como o respetivo FQDN. Isto é uma alteração da implementação clássica, que utiliza o serviço em nuvem como o Nome de Domínio Completamente Qualificado (FQDN) do balanceador de carga.
+   > O balanceador de carga utiliza a etiqueta de domínio do IP público como o respetivo FQDN. Isto é uma alteração da implementação clássica, que utiliza o serviço em nuvem como o Nome de Domínio Completamente Qualificado (FQDN) do balanceador de carga.
    > Neste exemplo, o FQDN é *loadbalancernrp.eastus.cloudapp.azure.com*.
 
 ## <a name="create-a-load-balancer"></a>Criar um balanceador de carga

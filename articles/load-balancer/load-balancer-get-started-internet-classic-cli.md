@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga com acesso à Internet – CLI clássica d
 description: "Saiba como criar um balanceador de carga com acesso à Internet num modelo de implementação clássica com a CLI do Azure"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-service-management
 ms.assetid: e433a824-4a8a-44d2-8765-a74f52d4e584
@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0d8472cb3b0d891d2b184621d62830d1ccd5e2e7
-ms.openlocfilehash: da3a908f17ff5c6d3923549a884ecc0a13cb8e9e
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 0813cb0ccf976b7e47420b33ec65714fd8e60ac1
 ms.contentlocale: pt-pt
-ms.lasthandoff: 03/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 03/21/2017
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
-## <a name="step-by-step-creating-an-internet-facing-load-balancer-using-cli"></a>Criação passo a passo de um balanceador de carga com acesso à Internet com a CLI
+## <a name="create-an-internet-facing-load-balancer-using-cli"></a>Criar um balanceador de carga com acesso à Internet com a CLI
 
 Este guia mostra como criar um balanceador de carga com acesso à Internet com base no cenário acima.
 
@@ -65,7 +65,7 @@ Crie o primeiro ponto final e carregue o conjunto de balanceadores de carga atra
 azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-## <a name="step-2"></a>Passo 2
+### <a name="step-2"></a>Passo 2
 
 Adicione uma segunda máquina virtual "web2" para o conjunto de balanceadores de carga.
 
@@ -73,7 +73,7 @@ Adicione uma segunda máquina virtual "web2" para o conjunto de balanceadores de
 azure vm endpoint create web2 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 ```
 
-## <a name="step-3"></a>Passo 3
+### <a name="step-3"></a>Passo 3
 
 Verifique a configuração do balanceador de carga através de `azure vm show` .
 

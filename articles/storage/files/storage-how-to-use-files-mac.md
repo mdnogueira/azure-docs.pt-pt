@@ -12,18 +12,18 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/27/2017
+ms.date: 09/19/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: bc3d67745afb8bbffe7ec3462e995104daff9632
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 6e71a13f99160fdd310be1e9a59717c9fecbf35d
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
 # <a name="mount-azure-file-share-over-smb-with-macos"></a>Montar uma partilha de Ficheiros do Azure através de SMB com macOS
-O [armazenamento de Ficheiros do Azure](../storage-dotnet-how-to-use-files.md) é o serviço da Microsoft que lhe permite criar e utilizar partilhas de ficheiros de rede no Azure através da norma da indústria. As partilhas de Ficheiros do Azure podem ser montadas no macOS Sierra (10.12) e El Capitan (10.11). Este artigo mostra duas formas diferentes de montar uma artilha de Ficheiros do Azure em macOS com a IU do Finder e o Terminal.
+[Ficheiros do Azure](storage-files-introduction.md) é o serviço da Microsoft que lhe permite criar e utilizar partilhas de ficheiros de rede no Azure com a norma da indústria. As partilhas de Ficheiros do Azure podem ser montadas no macOS Sierra (10.12) e El Capitan (10.11). Este artigo mostra duas formas diferentes de montar uma artilha de Ficheiros do Azure em macOS com a IU do Finder e o Terminal.
 
 > [!Note]  
 > Antes de montar uma partilha de Ficheiros do Azure através de SMB, recomendamos desativar a assinatura de pacotes SMB. Mantê-la ativada pode originar um mau desempenho ao aceder à partilha a partir de macOS. A ligação SMB será encriptada, pelo que a segurança da sua ligação não é afetada. No terminal, os comandos seguintes desativam a assinatura de pacotes SMB, conforme descrito neste [artigo de suporte da Apple relativo à desativação da assinatura de pacotes SMB](https://support.apple.com/HT205926):  
@@ -65,7 +65,7 @@ O [armazenamento de Ficheiros do Azure](../storage-dotnet-how-to-use-files.md) �
     ![Instantâneo da partilha de Ficheiros do Azure montada](./media/storage-how-to-use-files-mac/mount-via-terminal-1.png)
 
 ## <a name="next-steps"></a>Passos seguintes
-Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.
+Veja estas ligações para obter mais informações sobre os Ficheiros do Azure.
 
 * [Artigo de Suporte da Apple - Como efetuar a ligação à Partilha de ficheiros no Mac](https://support.apple.com/HT204445)
 * [FAQ](../storage-files-faq.md)

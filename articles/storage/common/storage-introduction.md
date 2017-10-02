@@ -3,7 +3,7 @@ title: "Introdução ao Azure Storage | Microsoft Docs"
 description: "Introdução ao Armazenamento do Azure, o armazenamento de dados da Microsoft na cloud."
 services: storage
 documentationcenter: 
-author: robinsh
+author: tamram
 manager: timlt
 editor: tysonn
 ms.assetid: a4a1bc58-ea14-4bf5-b040-f85114edc1f1
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/09/2017
-ms.author: robinsh
+ms.author: tamram
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 163f35682a4fdaa971f715c7429153bfdcf6a584
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: a854a0033c365336c5ab13fb65524d84da92618c
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
-<!-- this is the same version that is in the MVC branch -->
+
 # <a name="introduction-to-microsoft-azure-storage"></a>Introdução ao Storage do Microsoft Azure
 
 O Armazenamento do Microsoft Azure é um serviço cloud gerido da Microsoft que oferece armazenamento de elevada disponibilidade, seguro, duradouro, dimensionável e redundante. A Microsoft trata da manutenção e lida com os problemas críticos por si. 
@@ -37,13 +37,9 @@ Neste artigo, vai ficar a saber o seguinte:
 * Transferir dados para dentro ou fora do armazenamento
 * As várias bibliotecas de clientes de armazenamento disponíveis. 
 
-
-<!-- RE-ENABLE THESE AFTER MVC GOES LIVE 
-To get up and running with Azure Storage quickly, check out one of the following Quickstarts:
-* [Create a storage account using PowerShell](storage-quick-create-storage-account-powershell.md)
-* [Create a storage account using CLI](storage-quick-create-storage-account-cli.md)
--->
-
+Para começar a trabalhar com o Armazenamento do Azure rapidamente, veja um dos Inícios rápidos seguintes:
+* [Criar uma conta de armazenamento com o PowerShell](storage-quickstart-create-storage-account-powershell.md)
+* [Criar uma conta de armazenamento com a CLI](storage-quickstart-create-storage-account-cli.md)
 
 ## <a name="introducing-the-azure-storage-services"></a>Apresentação dos serviços de Armazenamento do Azure
 
@@ -55,7 +51,7 @@ Os blobs são, essencialmente, ficheiros semelhantes aos que armazena no seu com
 
 Depois de armazenar ficheiros no Armazenamento de blobs, pode aceder aos mesmos em qualquer parte do mundo através de URLs, da interface REST ou de uma das bibliotecas de cliente de armazenamento do SDK do Azure. As bibliotecas de clientes de armazenamento estão disponíveis para muitas linguagens, incluindo Node.js, Java, PHP, Ruby, Python e .NET. 
 
-Existem três tipos de blobs - blobs de blocos, blobs de acréscimo e blobs de páginas (utilizados para ficheiros VHD).
+Existem três tipos de blobs - blobs de blocos, blobs de páginas (utilizados para ficheiros VHD) e blobs de acréscimo.
 
 * Os blobs de blocos são utilizados para armazenar ficheiros comuns com um máximo de 4,7 TB. 
 * Os blobs de páginas são utilizados para armazenar ficheiros de acesso aleatório com até 8 TB de tamanho. São utilizados para os ficheiros VHD que suportam a VMs.
@@ -63,11 +59,10 @@ Existem três tipos de blobs - blobs de blocos, blobs de acréscimo e blobs de p
 
 Para conjuntos de dados muito grandes e em que as limitações de rede fazem com que carregar ou transferir dados para o Armazenamento de blobs de forma automática seja irrealista, pode enviar um conjunto de discos rígidos à Microsoft para importar ou exportar dados diretamente do datacenter. Consulte o artigo [Utilizar o Serviço de Importação/Exportação do Microsoft Azure para Transferir Dados para o Blob Storage](../storage-import-export-service.md).
 
-## <a name="file-storage"></a>Armazenamento de ficheiros
+## <a name="azure-files"></a>Ficheiros do Azure
+O serviço [Ficheiros do Azure](../files/storage-files-introduction.md) permite configurar partilhas de ficheiros de rede de elevada disponibilidade que podem ser acedidas através do protocolo SMB (Server Message Block) padrão. Isto significa que múltiplas VMs podem partilhar os mesmos ficheiros com acesso de leitura e de escrita. Também pode ler os ficheiros através da interface REST ou das bibliotecas de cliente de armazenamento. 
 
-O serviço Ficheiros do Azure permite configurar partilhas de ficheiros de rede de elevada disponibilidade que podem ser acedidas através do protocolo Server Message Block (SMB) padrão. Isto significa que múltiplas VMs podem partilhar os mesmos ficheiros com acesso de leitura e de escrita. Também pode ler os ficheiros através da interface REST ou das bibliotecas de cliente de armazenamento. 
-
-A única coisa que distingue o armazenamento de Ficheiros do Azure dos ficheiros numa partilha de ficheiros empresarial é o facto de poder aceder aos ficheiros a partir de qualquer parte no mundo através de um URL que aponta para o ficheiro e inclui um token de assinatura de acesso partilhado (SAS). Pode gerar tokens SAS; estes permitem o acesso específico a um recurso privado durante um período de tempo específico. 
+A única coisa que distingue os Ficheiros do Azure dos ficheiros numa partilha de ficheiros empresarial é o facto de o utilizador poder aceder aos ficheiros a partir de qualquer parte do mundo através de um URL que aponta para o ficheiro e inclui um token de assinatura de acesso partilhado (SAS). Pode gerar tokens SAS; estes permitem o acesso específico a um recurso privado durante um período de tempo específico. 
 
 As partilhas de ficheiros podem ser utilizadas para inúmeros cenários comuns: 
 
@@ -85,14 +80,13 @@ O serviço Filas do Azure é utilizado para armazenar e obter mensagens. As mens
 
 Por exemplo, imaginemos que quer dar aos seus clientes a capacidade de carregar imagens e que quer igualmente criar miniaturas de cada uma delas. Pode fazer com que os clientes esperem até criar as miniaturas enquanto carregam as imagens. Uma alternativa é utilizar uma fila. Quando o cliente concluir o carregamento, escreva uma mensagem para a fila. Em seguida, crie um função das Funções do Azure para obter a mensagem da fila e criar as miniaturas. Cada uma das partes envolvidas neste processamento pode ser dimensionada à parte, dando-lhe mais controlo para a otimizar para a sua utilização.
 
-<!-- this bookmark is used by other articles; you'll need to update them before this goes into production ROBIN-->
 ## <a name="table-storage"></a>Table Storage
-<!-- add a link to the old table storage to this paragraph once it's moved -->
-O Armazenamento de Tabelas Standard do Azure faz agora parte do Cosmos DB. Também disponível estão as Tabelas Premium do armazenamento de Tabelas do Azure, que oferece tabelas otimizadas para débito, distribuição global e índices secundários automáticos. Para saber mais e experimentar a nova experiência premium, veja [Azure Cosmos DB: Table API](https://aka.ms/premiumtables) (Azure Cosmos DB: API da Tabela).
+
+O Armazenamento de Tabelas Standard do Azure faz agora parte do Cosmos DB. Para ver a referida documentação, veja a [Descrição Geral do Armazenamento de Tabelas do Azure](../../cosmos-db/table-storage-overview.md). Também disponível estão as Tabelas Premium do armazenamento de Tabelas do Azure, que oferece tabelas otimizadas para débito, distribuição global e índices secundários automáticos. Para saber mais e experimentar a nova experiência premium, veja [Azure Cosmos DB: Table API](https://aka.ms/premiumtables) (Azure Cosmos DB: API da Tabela).
 
 ## <a name="disk-storage"></a>Armazenamento em disco
 
-A equipa do Armazenamento do Azure também conta com os Discos, que incluem todas as capacidades de discos geridos e não geridos que as máquinas virtuais utilizam. Para obter mais informações sobre estas funcionalidades, veja a [documentação do Serviço de Computação](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
+O Armazenamento do Azure também inclui capacidades de discos geridos e não geridos que as máquinas virtuais utilizam. Para obter mais informações sobre estas funcionalidades, veja a [documentação do Serviço de Computação](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
 
 ## <a name="types-of-storage-accounts"></a>Tipos de contas de armazenamento 
 
@@ -145,21 +139,21 @@ Estão disponíveis alguns tipos básicos de encriptação para os serviços de 
 
 ### <a name="encryption-at-rest"></a>Encriptação inativa 
 
-Pode ativar a Storage Service Encryption (SSE) no serviço de Ficheiros (pré-visualização) ou no serviço Blob de uma conta de armazenamento do Azure. Se estiver ativada, todos os dados escritos para o serviço específico é encriptado antes de serem escritos. Quando ler os dados, estes são desencriptados antes de serem devolvidos. 
+Pode ativar a Storage Service Encryption (SSE) no serviço de Ficheiros (pré-visualização) ou no serviço Blob de uma conta de armazenamento do Azure. Se estiver ativada, todos os dados escritos no serviço específico são encriptados antes de serem escritos. Quando ler os dados, estes são desencriptados antes de serem devolvidos. 
 
 ### <a name="client-side-encryption"></a>Encriptação do lado do cliente
 
 As bibliotecas de cliente de armazenamento têm métodos que pode chamar para encriptar os dados programaticamente antes de os enviar de forma automática do cliente para o Azure. São armazenados encriptados, o que significa que também estão encriptados quando estão inativos. Ao ler os dados novamente, desencripte as informações depois de as receber. 
 
-### <a name="encryption-in-transit-with-azure-file-shares"></a>Encriptação em trânsito com Partilhas de Ficheiros do Azure
+### <a name="encryption-in-transit-with-azure-file-shares"></a>Encriptação em trânsito com partilhas de Ficheiros do Azure
 
 Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](../storage-dotnet-shared-access-signature-part-1.md) para obter mais informações sobre assinaturas de acesso partilhado. Consulte o artigo [Gerir o acesso de leitura anónimo a contentores e blobs](../blobs/storage-manage-access-to-resources.md) e [Autenticação para os Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para mais informações sobre o acesso seguro à sua conta do Storage.
 
-Para obter mais detalhes sobre como proteger a sua conta de armazenamento e a encriptação, veja o [manual de segurança do Armazenamento do Azure](storage-security-guide.md).
+Para obter mais informações sobre como proteger a sua conta de armazenamento e a encriptação, veja o [Guia de segurança do Armazenamento do Azure](storage-security-guide.md).
 
 ## <a name="replication"></a>Replicação
 
-Para garantir que os seus dados são duráveis, o Armazenamento do Azure tem a capacidade de manter (e gerir) várias cópias dos mesmos. Estas cópias são denominadas “réplicas” ou, por vezes, “redundância”. Vai selecionar o tipo de replicação quando configurar a sua conta de armazenamento. Na maioria dos casos, esta definição pode ser alterada após a configuração da conta de armazenamento. 
+Para garantir que os seus dados são duráveis, o Armazenamento do Azure tem a capacidade de manter (e gerir) várias cópias dos mesmos. Estas cópias são denominadas “réplicas” ou, por vezes, “redundância”. Quando configurar a sua conta de armazenamento, vai selecionar um tipo de replicação. Na maioria dos casos, esta definição pode ser alterada após a configuração da conta de armazenamento. 
 
 Todas as contas de armazenamento têm o **armazenamento localmente redundante (LRS)**. Isto significa que são geridas três cópias dos seus dados pelo Armazenamento do Azure no datacenter especificado quando a conta de armazenamento foi configurada. Quando as alterações forem consolidadas para uma cópia, as duas outras cópias são atualizadas antes da devolução com êxito. Isto significa que as três réplicas estão sempre sincronizadas. Além disso, as três cópias residem em domínios de falha e em domínios de atualização diferentes, o que quer dizer que os seus dados estão disponíveis mesmo que um nó de armazenamento que contenha os seus dados falhe ou seja colocado offline para ser atualizado. 
 
@@ -227,11 +221,9 @@ Para obter informações detalhadas sobre os preços do Armazenamento do Azure, 
 * [Learn more about File storage](../storage-files-introduction.md) (Saiba mais sobre o Armazenamento de ficheiros)
 * [Learn more about Queue storage](../queues/storage-queues-introduction.md) (Saiba mais sobre o Armazenamento de filas)
 
-<!-- RE-ENABLE THESE AFTER MVC GOES LIVE 
-To get up and running with Azure Storage quickly, check out one of the following Quickstarts:
-* [Create a storage account using PowerShell](storage-quick-create-storage-account-powershell.md)
-* [Create a storage account using CLI](storage-quick-create-storage-account-cli.md)
--->
+Para começar a trabalhar com o Armazenamento do Azure rapidamente, veja um dos Inícios rápidos seguintes:
+* [Criar uma conta de armazenamento com o PowerShell](storage-quickstart-create-storage-account-powershell.md)
+* [Criar uma conta de armazenamento com a CLI](storage-quickstart-create-storage-account-cli.md)
 
 <!-- FIGURE OUT WHAT TO DO WITH ALL THESE LINKS.
 
@@ -273,9 +265,6 @@ To learn more about Azure Storage, explore these resources:
 * [Azure Storage Documentation](https://azure.microsoft.com/documentation/services/storage/)
 * [Create a storage account](../storage-create-storage-account.md)
 
-<!-- after our quick starts are available, replace this link with a link to one of those. 
-Had to remove this article, it refers to the VS quickstarts, and they've stopped publishing them. Robin --> 
-<!--* [Get started with Azure Storage in five minutes](storage-getting-started-guide.md)
 -->
 
 ### <a name="for-administrators"></a>Para administradores
@@ -284,15 +273,15 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 
 ### <a name="for-net-developers"></a>Para programadores do .NET
 * [Introdução ao armazenamento de Blobs do Azure através do .NET](../blobs/storage-dotnet-how-to-use-blobs.md)
+* [Programar para os Ficheiros do Azure com .NET](../files/storage-dotnet-how-to-use-files.md)
 * [Introdução ao armazenamento de Tabelas do Azure através do .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md)
 * [Introdução ao Armazenamento de filas do Azure através do .NET](../storage-dotnet-how-to-use-queues.md)
-* [Introdução ao Armazenamento de Ficheiros do Azure no Windows](../storage-dotnet-how-to-use-files.md)
 
 ### <a name="for-javaandroid-developers"></a>Para orogramadores de Java/Android
 * [Como utilizar o Armazenamento de blobs do Java](../blobs/storage-java-how-to-use-blob-storage.md)
+* [Programar para os Ficheiros do Azure com Java](../files/storage-java-how-to-use-file-storage.md)
 * [Como utilizar o Armazenamento de tabelas do Java](../../cosmos-db/table-storage-how-to-use-java.md)
 * [Como utilizar o Armazenamento de filas do Java](../storage-java-how-to-use-queue-storage.md)
-* [Como utilizar o Armazenamento de ficheiros do Java](../storage-java-how-to-use-file-storage.md)
 
 ### <a name="for-nodejs-developers"></a>Para programadores de Node.js
 * [Como utilizar o Armazenamento de blobs do Node.js](../blobs/storage-nodejs-how-to-use-blob-storage.md)
@@ -311,7 +300,6 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 
 ### <a name="for-python-developers"></a>Para programadores de Python
 * [Como utilizar o Armazenamento de blobs do Python](../blobs/storage-python-how-to-use-blob-storage.md)
+* [Programar para os Ficheiros do Azure com Python](../files/storage-python-how-to-use-file-storage.md)
 * [Como utilizar o Armazenamento de tabelas do Python](../../cosmos-db/table-storage-how-to-use-python.md)
-* [Como utilizar o Armazenamento de filas do Python](../storage-python-how-to-use-queue-storage.md)   
-* [How to use File storage from Python](../storage-python-how-to-use-file-storage.md) 
---> (Como utilizar o Armazenamento de Ficheiros a partir do Python)
+* [Como utilizar o Armazenamento de filas do Python](../storage-python-how-to-use-queue-storage.md)

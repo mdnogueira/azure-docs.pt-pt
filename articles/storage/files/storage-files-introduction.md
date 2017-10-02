@@ -1,6 +1,6 @@
 ---
-title: "Introdução ao armazenamento de Ficheiros do Azure | Microsoft Docs"
-description: "Introdução ao armazenamento de Ficheiros do Azure, que fornece partilhas de ficheiros de rede no Microsoft Cloud"
+title: "Introdução aos Ficheiros do Azure | Microsoft Docs"
+description: "Uma descrição geral dos Ficheiros do Azure, um serviço que lhe permite criar e utilizar partilhas de ficheiros de rede na cloud com o protocolo SMB padrão da indústria."
 services: storage
 documentationcenter: 
 author: RenaShahMSFT
@@ -12,108 +12,53 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/27/2017
+ms.date: 09/19/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 498af5cffb76e026c9a87127cab238f0f23b668a
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 5a4a26957c115277e7558c210560777af63d2d0f
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
-# <a name="introduction-to-azure-file-storage"></a>Introdução ao armazenamento de Ficheiros do Azure
-
-O armazenamento de Ficheiros do Azure oferece partilhas de ficheiros de rede na cloud através do [Protocolo SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) padrão da indústria e de [Common Internet File System (CIFS)](https://technet.microsoft.com/library/cc939973.aspx). As partilhas de Ficheiros do Azure podem ser montadas em simultâneo por implementações de máquinas virtuais do Azure e no local com o Windows, macOS ou Linux. Uma conta de armazenamento para fins gerais dá-lhe acesso ao armazenamento de Ficheiros do Azure, armazenamento de Blobs do Azure e armazenamento de Filas do Azure.
+# <a name="introduction-to-azure-files"></a>Introdução aos Ficheiros do Azure
+Os Ficheiros do Azure oferecem partilhas de ficheiros completamente geridas na cloud, que são acessíveis através do [Protocolo SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) padrão da indústria (também conhecido como Common Internet File System ou CIFS). As partilhas de Ficheiros do Azure podem ser montadas em simultâneo por implementações na cloud ou no local do Windows, Linux e macOS. Além disso, as partilhas de Ficheiros do Azure podem ser colocadas em cache em Servidores Windows com o Azure File Sync (pré-visualização) para acesso rápido perto do local onde os dados estão a ser utilizados.
 
 ## <a name="videos"></a>Vídeos
-| Introducing Azure File storage (27m) (Introdução ao armazenamento de Ficheiros do Azure [27 min]) | Azure File storage Tutorial (5 minutes) (Tutorial do armazenamento de Ficheiros do Azure [5 minutos])  |
+| Apresentação dos Ficheiros do Azure (27 m) | Tutorial dos Ficheiros do Azure (5 m)  |
 |-|-|
-| [![Captura de ecrã do vídeo Apresentação do armazenamento de Ficheiros do Azure - clique para reproduzir!](./media/storage-files-introduction/azure-files-introduction-video-snapshot1.png)](https://www.youtube.com/watch?v=zlrpomv5RLs) | [![Captura de ecrã do vídeo Tutorial do armazenamento de Ficheiros do Azure - clique para reproduzir!](./media/storage-files-introduction/azure-files-introduction-video-snapshot2.png)](https://channel9.msdn.com/Blogs/Azure/Azure-File-storage-with-Windows/) |
+| [![Screencast do vídeo Apresentação dos Ficheiros do Azure - clique para reproduzir!](./media/storage-files-introduction/azure-files-introduction-video-snapshot1.png)](https://www.youtube.com/watch?v=zlrpomv5RLs) | [![Screencast do vídeo Tutorial dos Ficheiros do Azure - clique para reproduzir!](./media/storage-files-introduction/azure-files-introduction-video-snapshot2.png)](https://channel9.msdn.com/Blogs/Azure/Azure-File-storage-with-Windows/) |
 
-## <a name="why-azure-file-storage-is-useful"></a>O porquê de o armazenamento de Ficheiros do Azure ser útil
-
-O armazenamento de Ficheiros do Azure permite-lhe substituir servidores do Windows Server, do Linux ou servidores de ficheiros baseados em NAS alojados no local ou na cloud por uma partilha de ficheiros na cloud isenta de SO. O armazenamento de Ficheiros do Azure traz as vantagens seguintes:
-
-* **Acesso partilhado** As partilhas de Ficheiros do Azure suportam o protocolo SMB (Server Message Block) padrão da indústria, o que significa que pode substituir facilmente as suas partilhas de ficheiros no local por partilhas de Ficheiros do Azure, sem se preocupar com a compatibilidade aplicacional. A capacidade de poder aceder a uma partilha de ficheiros de vários computadores e aplicações/instâncias é uma enorme vantagem do armazenamento de Ficheiros do Azure.
-
-* **Completamente Gerido** As partilhas de Ficheiros do Azure podem ser criadas sem a necessidade de gerir o hardware ou um SO, o que significa que não tem de lidar com a aplicação de patches no SO do servidor com atualizações de segurança críticas, nem com a substituição de discos rígidos com falhas.
-
-* **Criação de Scripts e Ferramentas** Os cmdlets do PowerShell e a CLI do Azure podem ser utilizados para criar, montar e gerir partilhas de Ficheiros do Azure como parte da administração de aplicações do Azure. Pode criar e gerir partilhas de Ficheiros do Azure com o [portal do Azure](https://portal.azure.com) e o [Explorador de Armazenamento do Azure](https://storageexplorer.com). 
-
-* **Resiliência** O armazenamento de Ficheiros do Azure foi criado de raiz para estar sempre disponível. Substituir as partilhas de ficheiros no local pelo armazenamento de Ficheiros do Azure significa que já não tem de se preocupar com falhas de energia ou problemas de rede. 
-
-* **Programação Familiar** As aplicações que são executadas no Azure podem aceder a dados na partilha através das [APIs de E/S do sistema de ficheiros](https://msdn.microsoft.com/library/system.io.file.aspx). Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Para além das APIs de E/S do sistema, pode utilizar quaisquer Bibliotecas de cliente do armazenamento do Azure, como a para [.NET](/dotnet/api/overview/azure/storage?view=azure-dotnet) ou a [API REST do Armazenamento do Azure](/rest/api/storageservices/file-service-rest-api).
-
+## <a name="why-azure-files-is-useful"></a>Por que é que os Ficheiros do Azure são úteis
 As partilhas de Ficheiros do Azure podem ser utilizadas para:
 
-* **Substituir os servidores de ficheiros no local** O armazenamento de Ficheiros do Azure pode ser utilizado para substituir completamente as partilhas de ficheiros em servidores de ficheiros no local ou em dispositivos NAS tradicionais. Os sistemas operativos populares, como Windows, macOS e Linux, podem montar facilmente partilhas de Ficheiros do Azure a partir de qualquer ponto do mundo.
+* **Substituir ou complementar os servidores de ficheiros no local**:  
+    Os Ficheiros do Azure podem ser utilizados para substituir completamente ou complementar os servidores de ficheiros no local ou em dispositivos NAS tradicionais. Os sistemas operativos populares, como o Windows, macOS e Linux, podem montar diretamente partilhas de Ficheiros do Azure a partir de qualquer ponto do mundo. As partilhas de Ficheiros do Azure também podem ser replicadas com o Azure File Sync em Servidores Windows, no local ou na cloud, para uma colocação em cache eficaz e distribuída dos dados no local onde estão a ser utilizados.
 
-* **Fazer a migração "lift-and-shift" de aplicações**
+* **Fazer a migração "lift-and-shift" de aplicações**:  
+    Os Ficheiros do Azure facilitam a migração lift-and-shift de aplicações para a cloud, que esperam que uma partilha de ficheiros armazene dados de utilizador e aplicações de ficheiros. Os Ficheiros do Azure permitem tanto o cenário de migração lift-and-shift "clássico", no qual a aplicação e os respetivos dados são movidos para o Azure, como o cenário de migração lift-and-shift "híbrido", no qual os dados da aplicação são movidos para os Ficheiros do Azure e a aplicação continua a ser executada no local. 
 
-    Com o armazenamento de Ficheiros do Azure, é fácil fazer migrações “lift-and-shift” de aplicações para a cloud que utilizem partilhas de ficheiros no local para partilhar dados entre diferentes partes da aplicação. Para implementar isto, cada VM liga-se à partilha de ficheiros e, em seguida, pode ler e escrever ficheiros tal como faria numa partilha no local.
+* **Simplificar o Desenvolvimento na Cloud**:  
+    Os Ficheiros do Azure também podem ser utilizados de várias formas para simplificar novos projetos de desenvolvimento na cloud. Por exemplo:
+    * **Definições de Aplicações Partilhadas**:  
+        Um padrão comum para aplicações distribuídas consiste em ter ficheiros de configuração numa localização centralizada, onde podem ser acedidos a partir de muitas instâncias da aplicação. As instâncias da aplicação podem carregar a respetiva configuração através da API REST de Ficheiros e as pessoas podem aceder às mesmas conforme necessário ao montarem a partilha de SMB localmente.
 
-* **Simplificar o Desenvolvimento na Cloud**
-    
-    O armazenamento de Ficheiros do Azure pode ser utilizado de várias formas para simplificar projetos de desenvolvimento na cloud novos.
-    
-    * **Definições de Aplicações Partilhadas**
-    
-        Um padrão comum para aplicações distribuídas passa por ter ficheiros de configuração numa localização central, onde podem ser acedidos a partir de muitas VMs diferentes. Estes ficheiros de configuração podem agora ser armazenados numa partilha de Ficheiros do Azure e lidos por todas as instâncias das aplicações. Estas definições também podem ser geridas através da interface REST, que permite o acesso em todo o mundo aos ficheiros de configuração.
+    * **Partilha de Diagnósticos**:  
+        Uma partilha de Ficheiros do Azure é um local conveniente para aplicações na cloud para os respetivos registos de escrita, métricas e informações de falha de sistema. Os registos podem ser escritos pelas instâncias da aplicação através da API REST de Ficheiros e os programadores podem aceder aos mesmos ao montarem a partilha de ficheiros no seu computador local. Isto proporciona uma enorme flexibilidade, uma vez que os programadores podem adotar o desenvolvimento na cloud sem terem de abandonar quaisquer ferramentas existentes que conhecem e adoram.
 
-    * **Partilha de Diagnósticos**
-    
-        As partilhas de Ficheiros do Azure também podem ser utilizadas para guardar ficheiros de diagnósticos, como registos, métricas e informações de falhas O facto de estas partilhas de ficheiros estarem disponíveis através de SMB e da interface REST permite às aplicações criar ou tirar partido de diversas ferramentas de análise para processamento e análise dos dados de diagnóstico.
+    * **Dev/Test/Depuração**:  
+        Muitas vezes, quando trabalham em VMs na cloud, os programadores ou administradores precisam de um conjunto de ferramentas ou utilitários. Copiar essas ferramentas e utilitários para cada VM pode ser um exercício demorado. Ao montar uma partilha de Ficheiros do Azure localmente nas VMs, um programador e o administrador podem aceder rapidamente às suas ferramentas e utilitários, sem ser necessária qualquer cópia.
 
-    * **Dev/Test/Depuração**
+## <a name="key-benefits"></a>Principais Vantagens
+* **Acesso partilhado**. As partilhas de Ficheiros do Azure suportam o protocolo SMB (Server Message Block) norma da indústria, o que significa que pode substituir facilmente as suas partilhas de ficheiros no local por partilhas de Ficheiros do Azure sem se preocupar com a compatibilidade de aplicações. A capacidade de poder partilhar um sistema de ficheiros entre vários computadores e aplicações/instâncias é uma enorme vantagem com os Ficheiros do Azure para aplicações que requerem capacidade de partilha. 
+* **Totalmente Geridas**. As partilhas de Ficheiros do Azure podem ser criadas sem que seja necessário gerir hardware ou SOs. Isto significa que não tem de lidar com a aplicação de patches ao SO do servidor com atualizações de segurança críticas ou substituir os discos rígidos com falhas.
+* **Criação de Scripts e Ferramentas**. Os cmdlets do PowerShell e a CLI do Azure podem ser utilizados para criar, montar e gerir partilhas de Ficheiros do Azure como parte da administração das aplicações do Azure. Pode utilizar o portal do Azure e o Explorador de Armazenamento do Azure para criar e gerir partilhas de ficheiros do Azure. 
+* **Resiliência**. Os Ficheiros do Azure foram criados de raiz para estarem sempre disponíveis. Substituir as partilhas de ficheiros no local pelos Ficheiros do Azure significa que já não tem de se preocupar com falhas de energia ou problemas de rede. 
+* **Programação familiar**. As aplicações que são executadas no Azure podem aceder a dados na partilha através das [APIs de E/S de sistema de ficheiros](https://msdn.microsoft.com/library/system.io.file.aspx). Os programadores, por conseguinte, podem tirar partido do respetivo código existente e competências para migrar as aplicações existentes. Para além das APIs de E/S de Sistema, pode utilizar as [Bibliotecas de Cliente do Armazenamento do Azure](https://msdn.microsoft.com/library/azure/dn261237.aspx) ou da [API REST do Armazenamento do Azure](/rest/api/storageservices/file-service-rest-api).
 
-        Muitas vezes, quando trabalham em VMs na cloud, os programadores ou administradores precisam de um conjunto de ferramentas ou utilitários. Instalar e distribuir estes utilitários em cada máquina virtual onde são precisos pode ser um exercício muito moroso. Com o armazenamento de Ficheiros do Azure, os programadores ou administradores podem armazenar as ferramentas de que mais gostam numa partilha de ficheiros, à qual se podem ligar facilmente a partir de qualquer máquina virtual.
-        
-## <a name="how-does-it-work"></a>Como funciona?
-
-É muito mais fácil gerir partilhas de Ficheiros do Azure do que partilhas de ficheiros no local. O diagrama seguinte ilustra a construção da gestão do armazenamento de Ficheiros do Azure:
-
-![Estrutura de Ficheiros](./media/storage-files-introduction/files-concepts.png)
-
-* **Conta de Armazenamento** Todos os acessos ao Armazenamento do Azure são feitos através de uma conta de armazenamento. Veja [Metas de Escalabilidade e Desempenho](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) para obter detalhes sobre a capacidade das contas de armazenamento.
-
-* **Partilha** Uma partilha do Armazenamento de Ficheiros é uma partilha de ficheiros SMB no Azure. Todos os ficheiros e diretórios têm de ser criados numa partilha principal. Uma conta pode conter um número ilimitado de partilhas e uma partilha pode armazenar um número ilimitado de ficheiros, até à capacidade total de 5 TB da partilha de ficheiros.
-
-* **Diretório** Uma hierarquia opcional de diretórios.
-
-* **Ficheiro** Um ficheiro na partilha. Um ficheiro pode ter um tamanho até 1 TB.
-
-* **Formato do URL** Os ficheiros são endereçáveis através do formato de URL seguinte:  
-
-    ```
-    https://<storage account>.file.core.windows.net/<share>/<directory/directories>/<file>
-    ```
-
-## <a name="next-steps"></a>Passos seguintes
-
+## <a name="next-steps"></a>Passos Seguintes
 * [Create Azure File Share](storage-how-to-create-file-share.md) (Criar Partilha de Ficheiros do Azure)
 * [Connect and Mount on Windows](storage-how-to-use-files-windows.md) (Ligar e Montar no Windows)
 * [Connect and Mount on Linux](storage-how-to-use-files-linux.md) (Ligar e Montar no Linux)
 * [Connect and Mount on macOS](storage-how-to-use-files-mac.md) (Ligar e Montar em macOS)
-* [FAQ](../storage-files-faq.md)
-* [Resolução de Problemas no Windows](storage-troubleshoot-windows-file-connection-problems.md)   
-* [Resolução de Problemas no Linux](storage-troubleshoot-linux-file-connection-problems.md)   
-
-<!-- Rena I would remove any articles from here that are more than a year old. - Robin-->
-### <a name="conceptual-articles-and-videos"></a>Artigos e vídeos concetuais
-* [Azure File storage: a frictionless cloud SMB file system for Windows and Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/) (Armazenamento de Ficheiros do Azure: um prático sistema de ficheiros SMB na cloud para Windows e Linux)
-
-### <a name="tooling-support-for-azure-file-storage"></a>Suporte de ferramentas para o armazenamento de Ficheiros do Azure
-* [How to use AzCopy with Microsoft Azure Storage (Como utilizar o AzCopy com o Armazenamento do Microsoft Azure)](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
-* [Using the Azure CLI with Azure Storage (Utilizar a CLI do Azure com o Armazenamento do Azure)](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
-
-### <a name="blog-posts"></a>Publicações no blogue
-* [Azure File storage is now generally available (O Armazenamento de Ficheiros do Azure está agora disponível normalmente)](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-* [Inside Azure File storage](https://azure.microsoft.com/blog/inside-azure-file-storage/) (Por dentro do armazenamento de Ficheiros do Azure)
-* [Introducing Microsoft Azure File Service (Introdução ao Serviço de Ficheiros do Microsoft Azure)](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-* [Migrating data to Azure File ](https://azure.microsoft.com/blog/migrating-data-to-microsoft-azure-files/) (Migrar dados para os Ficheiros do Azure)
-
-### <a name="reference"></a>Referência
-* [Storage Client Library for .NET reference (Referência da Biblioteca de Clientes do Armazenamento para .NET)](https://msdn.microsoft.com/library/azure/dn261237.aspx)
-* [File Service REST API reference (Referência da API REST do Serviço do Ficheiros)](http://msdn.microsoft.com/library/azure/dn167006.aspx)
-

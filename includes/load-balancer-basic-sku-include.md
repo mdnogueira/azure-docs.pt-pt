@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+O Balanceador de Carga do Azure suporta dois tipos diferentes: Básico e Standard. Este artigo aborda o Balanceador de Carga Básico. O Balanceador de Carga Básico encontra-se em disponibilidade geral, enquanto que o Balanceador de Carga Standard está atualmente em Pré-visualização Pública. Para obter mais informações sobre o Balanceador de Carga Standard, veja [Descrição geral do Balanceador de Carga Standard](https://aka.ms/AzureLoadBalancerStandard).

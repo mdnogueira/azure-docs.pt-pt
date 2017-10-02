@@ -1,6 +1,6 @@
 ---
-title: Como utilizar o PowerShell para gerir o armazenamento de Ficheiros do Azure | Microsoft Docs
-description: Aprenda a utilizar o PowerShell para gerir o armazenamento de Ficheiros do Azure.
+title: Como utilizar o PowerShell para gerir os Ficheiros do Azure | Microsoft Docs
+description: Aprenda a utilizar o PowerShell para gerir os Ficheiros do Azure.
 services: storage
 documentationcenter: 
 author: RenaShahMSFT
@@ -12,16 +12,16 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/27/2017
+ms.date: 09/19/2017
 ms.author: renash
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: ce62d4423ce711a6902aed7b8174ff4e827f6083
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: f919e1880f709b416867a29de14f1dcc63a165fe
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/25/2017
 
 ---
-# <a name="how-to-use-powershell-to-manage-azure-file-storage"></a>Como utilizar o PowerShell para gerir o armazenamento de Ficheiros do Azure
+# <a name="how-to-use-powershell-to-manage-azure-files"></a>Como utilizar o PowerShell para gerir os Ficheiros do Azure
 Pode utilizar o Azure PowerShell para criar e gerir partilhas de ficheiros.
 
 ## <a name="install-the-powershell-cmdlets-for-azure-storage"></a>Instalar os cmdlets do PowerShell para o Storage do Azure
@@ -96,7 +96,7 @@ Start-AzureStorageFileCopy -SrcShareName srcshare -SrcFilePath srcdir/hello.txt 
 Start-AzureStorageFileCopy -SrcContainerName srcctn -SrcBlobName hello2.txt -DestShareName hello -DestFilePath hellodir/hello2copy.txt -DestContext $ctx -Context $ctx
 ```
 ## <a name="next-steps"></a>Passos seguintes
-Consulte as ligações para obter mais informações sobre o Armazenamento de ficheiros do Azure.
+Veja estas ligações para obter mais informações sobre os Ficheiros do Azure.
 
 * [FAQ](../storage-files-faq.md)
 * [Resolução de Problemas no Windows](storage-troubleshoot-windows-file-connection-problems.md)      

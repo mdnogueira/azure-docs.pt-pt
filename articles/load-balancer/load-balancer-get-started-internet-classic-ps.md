@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga com acesso à Internet – Azure PowerShel
 description: "Saiba como criar um balanceador de carga com acesso à Internet no modo clássico com o PowerShell"
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-service-management
 ms.assetid: 73e8bfa4-8086-4ef0-9e35-9e00b24be319
@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: aaf97d26c982c1592230096588e0b0c3ee516a73
-ms.openlocfilehash: c06be7a2d17b655c958c4ba4618739f5b218b8d7
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 0a0b4cd516033ffe74d6992a98711be7a8150842
 ms.contentlocale: pt-pt
-ms.lasthandoff: 04/27/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -39,12 +39,12 @@ ms.lasthandoff: 04/27/2017
 
 ## <a name="set-up-load-balancer-using-powershell"></a>Configurar o balanceador de carga com o PowerShell
 
-Para configurar um balanceador de carga com o PowerShell, siga os passos abaixo:
+Para configurar um balanceador de carga com o Powershell, execute os passos seguintes:
 
 1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
 2. Depois de criar uma máquina virtual, pode utilizar os cmdlets do PowerShell para adicionar um balanceador de carga a uma máquina virtual no mesmo serviço em nuvem.
 
-No exemplo seguinte, irá adicionar um conjunto de balanceadores de carga denominado "webfarm" ao serviço em nuvem "mytestcloud" (ou myctestcloud.cloudapp.net) ao adicionar os pontos finais do balanceador de carga às máquinas virtuais com o nome "web1" e "web2". O balanceador de carga recebe o tráfego de rede na porta 80 e efetua o balanceamento de carga entre as máquinas virtuais definidas pelo ponto final local (neste caso, a porta 80) através de TCP.
+No exemplo seguinte, irá adicionar um conjunto de balanceadores de carga denominado "webfarm" ao serviço cloud "mytestcloud" (ou myctestcloud.cloudapp.net) ao adicionar os pontos finais do balanceador de carga às máquinas virtuais com o nome "web1" e "web2". O balanceador de carga recebe o tráfego de rede na porta 80 e efetua o balanceamento de carga entre as máquinas virtuais definidas pelo ponto final local (neste caso, a porta 80) através de TCP.
 
 ### <a name="step-1"></a>Passo 1
 
@@ -74,5 +74,5 @@ Get-azureVM -ServiceName mytestcloud  -Name web1 |Remove-AzureEndpoint -Name htt
 
 Também pode [começar a criar um balanceador de carga interno](load-balancer-get-started-ilb-classic-ps.md) e configurar o tipo de [modo de distribuição](load-balancer-distribution-mode.md) para um comportamento de tráfego de rede do balanceador de carga específico.
 
-Se a sua aplicação precisar de manter as ligações ativas para os servidores protegidos por um balanceador de carga, pode compreender melhor as [definições de tempo limite TCP inativo para um balanceador de carga](load-balancer-tcp-idle-timeout.md). Irá ajudá-lo a saber mais sobre o comportamento de ligação inativa quando está a utilizar o Balanceador de Carga do Azure.
+Se a sua aplicação precisar de manter as ligações ativas para os servidores protegidos por um balanceador de carga, pode compreender melhor as [definições de tempo limite TCP inativo para um balanceador de carga](load-balancer-tcp-idle-timeout.md). Ajuda-o a saber mais sobre o comportamento de ligação inativa quando está a utilizar o Balanceador de Carga do Azure.
 

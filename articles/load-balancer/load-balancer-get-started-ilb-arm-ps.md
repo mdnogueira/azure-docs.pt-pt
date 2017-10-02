@@ -3,7 +3,7 @@ title: "Criar um balanceador de carga interno do Azure – PowerShell | Microsof
 description: Saiba como criar um balanceador de carga interno com o PowerShell no Resource Manager
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: c6c98981-df9d-4dd7-a94b-cc7d1dc99369
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 09/25/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5960a4488f2ecd93ba117a7d775e78272cbffd
-ms.openlocfilehash: 7bd31ab8f52ec5e81f6966000554be46eaa59396
+ms.translationtype: HT
+ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
+ms.openlocfilehash: 8feb3b5f9dddc7b54b9c5e733675c2a9aca2f223
 ms.contentlocale: pt-pt
-ms.lasthandoff: 01/24/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 
@@ -29,6 +29,8 @@ ms.lasthandoff: 01/24/2017
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md)
 > * [CLI do Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Modelo](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
+
+[!INCLUDE [load-balancer-basic-sku-include.md](../../includes/load-balancer-basic-sku-include.md)]
 
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
@@ -41,21 +43,21 @@ ms.lasthandoff: 01/24/2017
 
 Os passos seguintes explicam como criar um balanceador de carga interno com o Azure Resource Manager com PowerShell. Com o Azure Resource Manager, os itens para criar um Balanceador de carga interno são configurados individualmente e, em seguida, combinados para criar um balanceador de carga.
 
-Tem de criar e configurar os seguintes objetos para implementar um balanceador de carga:
+Crie e configure os objetos seguintes para implementar um balanceador de carga:
 
-* Configuração de IP de front-end - irá configurar o endereço IP privado para o tráfego de rede recebido
-* Conjunto de endereços de back-end - irá configurar as interfaces de rede que irão receber o tráfego de balanceamento de carga proveniente do conjunto IP de front-end
+* Configuração de IP de front-end - configura o endereço IP privado para o tráfego de rede recebido.
+* Conjunto de endereços de back-end - configura as interfaces de rede que recebem o tráfego de balanceamento de carga proveniente do conjunto IP de front-end.
 * Regras de balanceamento de carga - configuração da porta local e de origem para o balanceador de carga.
 * Sondas - configura a sonda de estado de funcionamento das instâncias da Máquina Virtual.
 * Regras NAT de entrada - configura as regras da porta para aceder diretamente a uma das instâncias da Máquina Virtual.
 
-Pode obter mais informações sobre os componentes do balanceador de carga com o Azure resource manager em [Suporte do Azure Resource Manager para o balanceador de carga](load-balancer-arm.md).
+Pode obter mais informações sobre os componentes do balanceador de carga com o Azure Resource Manager em [Suporte do Azure Resource Manager para o balanceador de carga](load-balancer-arm.md).
 
 Os seguintes passos explicam como configurar um balanceador de carga entre duas máquinas virtuais.
 
-## <a name="setup-powershell-to-use-resource-manager"></a>Configurar o PowerShell para utilizar o Resource Manager
+## <a name="set-up-powershell-to-use-resource-manager"></a>Configurar o PowerShell para utilizar o Resource Manager
 
-Certifique-se de que tem a versão de produção mais recente do módulo do Azure para o PowerShell e configurou o PowerShell corretamente para aceder à sua subscrição do Azure.
+Certifique-se de que tem a versão de produção mais recente do módulo do Azure para o PowerShell e que configurou o PowerShell corretamente para aceder à sua subscrição do Azure.
 
 ### <a name="step-1"></a>Passo 1
 
@@ -71,7 +73,7 @@ Verifique as subscrições da conta
 Get-AzureRmSubscription
 ```
 
-Ser-lhe-á solicitado para Autenticar com as suas credenciais.
+Ser-lhe-á pedido que faça a Autenticação com as suas credenciais.
 
 ### <a name="step-3"></a>Passo 3
 
@@ -89,11 +91,11 @@ Crie um grupo de recursos (ignore este passo se estiver a utilizar um grupo de r
 New-AzureRmResourceGroup -Name NRP-RG -location "West US"
 ```
 
-O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização. Isto é utilizado como a localização predefinida para recursos nesse grupo de recursos. Verifique se todos os comandos para criar um balanceador de carga irão utilizar o mesmo grupo de recursos.
+O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a predefinição para os recursos nesse grupo de recursos. Certifique-se de que todos os comandos para criar um balanceador de carga utilizam o mesmo grupo de recursos.
 
-No exemplo acima, criámos um grupo de recursos denominado “NRP-RG” e a localização “E.U.A. Oeste”.
+No exemplo anterior, criámos um grupo de recursos denominado **NRP-RG** e a localização **E.U.A. Oeste**.
 
-## <a name="create-virtual-network-and-a-private-ip-address-for-front-end-ip-pool"></a>Criar Rede Virtual e um endereço IP privado para conjunto IP de front-end
+## <a name="create-a-virtual-network-and-a-private-ip-address-for-a-front-end-ip-pool"></a>Criar uma rede virtual e um endereço IP privado para um conjunto IP de front-end
 
 Cria uma sub-rede para a rede virtual e atribui a variável $backendSubnet
 
@@ -109,13 +111,13 @@ $vnet= New-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Locati
 
 Cria a rede virtual e adiciona a sub-rede lb-subnet-be à rede virtual NRPVNet e atribui à variável $vnet
 
-## <a name="create-front-end-ip-pool-and-backend-address-pool"></a>Criar Conjunto IP de front-end e conjunto de endereços de back-end
+## <a name="create-a-front-end-ip-pool-and-back-end-address-pool"></a>Criar um conjunto IP de front-end e um conjunto de endereços de back-end
 
-Configurar um conjunto IP de front-end para o tráfego de rede do balanceador de carga recebido e conjunto de endereços de back-end para receber o tráfego com carga balanceada.
+Configurar um conjunto IP de front-end para o tráfego de rede do balanceador de carga recebido e um conjunto de endereços de back-end para receber o tráfego com balanceamento de carga.
 
 ### <a name="step-1"></a>Passo 1
 
-Crie um conjunto IP de front-end com o endereço IP privado 10.0.2.5 para a sub-rede 10.0.2.0/24, que será o ponto final de tráfego de rede recebido.
+Crie um conjunto IP de front-end com o endereço IP privado 10.0.2.5 para a sub-rede 10.0.2.0/24, que é o ponto final de tráfego de rede recebido.
 
 ```powershell
 $frontendIP = New-AzureRmLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $vnet.subnets[0].Id
@@ -129,9 +131,9 @@ Configure um conjunto de endereços de back-end utilizado para receber o tráfeg
 $beaddresspool= New-AzureRmLoadBalancerBackendAddressPoolConfig -Name "LB-backend"
 ```
 
-## <a name="create-lb-rules-nat-rules-probe-and-load-balancer"></a>Criar regras LB, regras NAT, sonda e balanceador de carga
+## <a name="create-load-balancing-rules-nat-rules-probe-and-load-balancer"></a>Criar regras de balanceamento de carga, regras NAT, sonda e balanceador de carga
 
-Depois de criar o conjunto IP de front-end e o conjunto de endereços back-end, terá de criar as regras que irão pertencer ao recurso do balanceador de carga:
+Depois de criar o conjunto IP de front-end e o conjunto de endereços de back-end, crie as regras que pertencem ao recurso do balanceador de carga:
 
 ### <a name="step-1"></a>Passo 1
 
@@ -145,12 +147,12 @@ $healthProbe = New-AzureRmLoadBalancerProbeConfig -Name "HealthProbe" -RequestPa
 $lbrule = New-AzureRmLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 ```
 
-O exemplo acima está a criar os seguintes itens:
+O exemplo anterior está a criar os seguintes itens:
 
-* Regra NAT em que todo o tráfego de entrada para porta 3441 irá para a porta 3389.
-* uma regra NAT secundária em que todo o tráfego de entrada para porta 3442 irá para a porta 3389.
-* uma regra de balanceador de carga que irá equilibrar todo o tráfego de entrada na porta pública 80 para a porta local 80, no conjunto de endereços de back-end.
-* uma regra de sonda que irá verificar o estado de funcionamento do caminho "HealthProbe.aspx"
+* regra NAT na qual todo o tráfego de entrada para a porta 3441 vai para a porta 3389.
+* uma segunda regra NAT na qual todo o tráfego de entrada para a porta 3442 vai para a porta 3389.
+* uma regra de balanceador de carga que faz o balanceamento de carga de todo o tráfego de entrada na porta pública 80 para a porta local 80, no conjunto de endereços de back-end.
+* uma regra de sonda que verifica o estado de funcionamento do caminho "HealthProbe.aspx"
 
 ### <a name="step-2"></a>Passo 2
 
@@ -162,7 +164,7 @@ $NRPLB = New-AzureRmLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Loc
 
 ## <a name="create-network-interfaces"></a>Criar interfaces de rede
 
-Depois de criar o balanceador de carga interno, tem de definir as interfaces de rede que irão receber o tráfego de rede de entrada com balanceamento de carga, as regras NAT e a sonda. Neste caso, a interface de rede é configurada individualmente e pode ser atribuída a uma máquina virtual mais tarde.
+Depois de criar o balanceador de carga interno, tem de definir as interfaces de rede que podem receber o tráfego de rede de entrada com balanceamento de carga, as regras NAT e a sonda. Neste caso, a interface de rede é configurada individualmente e pode ser atribuída a uma máquina virtual mais tarde.
 
 ### <a name="step-1"></a>Passo 1
 
@@ -174,7 +176,7 @@ $vnet = Get-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG
 $backendSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -VirtualNetwork $vnet
 ```
 
-Este passo cria uma interface de rede que irá pertencer ao conjunto de back-end do balanceador de carga e associar a primeira regra NAT para RDP a esta interface de rede:
+Este passo cria uma interface de rede que pertence ao conjunto de back-end do balanceador de carga e associa a primeira regra NAT para RDP a esta interface de rede:
 
 ```powershell
 $backendnic1= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic1-be -Location "West US" -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
@@ -190,7 +192,7 @@ Este passo cria uma segunda interface de rede, atribuindo ao mesmo conjunto de b
 $backendnic2= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-be -Location "West US" -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
 ```
 
-O resultado final irá mostrar o seguinte:
+O resultado final mostra o seguinte resultado:
 
     $backendnic1
 
@@ -252,7 +254,7 @@ Se já tiver uma máquina virtual criada, pode adicionar a interface de rede com
 
 ### <a name="step-1"></a>Passo 1
 
-Carregue o recurso do balanceador de carga para uma variável (se ainda não o tiver feito). A variável utilizada é designada por $lb e utiliza os mesmos nomes do recurso do balanceador de carga criado acima.
+Carregue o recurso do balanceador de carga para uma variável (se ainda não o tiver feito). A variável utilizada é designada por $lb e utiliza os mesmos nomes do recurso do balanceador de carga criado nos passos anteriores.
 
 ```powershell
 $lb = Get-AzureRmLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
@@ -263,12 +265,12 @@ $lb = Get-AzureRmLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
 Carregue a configuração de back-end para uma variável.
 
 ```powershell
-$backend = Get-AzureRmLoadBalancerBackendAddressPoolConfig -name backendpool1 -LoadBalancer $lb
+$backend = Get-AzureRmLoadBalancerBackendAddressPoolConfig -name LB-backend -LoadBalancer $lb
 ```
 
 ### <a name="step-3"></a>Passo 3
 
-Carregue a interface de rede já criada para uma variável. o nome da variável é $nic. O nome de interface de rede é o mesmo do exemplo abaixo.
+Carregue a interface de rede já criada para uma variável. o nome da variável é $nic. O nome da interface de rede utilizado é o mesmo do exemplo anterior.
 
 ```powershell
 $nic = Get-AzureRmNetworkInterface –name lb-nic1-be -resourcegroupname NRP-RG
@@ -295,7 +297,7 @@ Depois adicionar uma interface de rede ao conjunto de back-end do balanceador de
 ## <a name="update-an-existing-load-balancer"></a>Atualizar um balanceador de carga existente
 
 ### <a name="step-1"></a>Passo 1
-Ao utilizar o balanceador de carga do exemplo acima, atribua o objeto do balanceador de carga à variável $slb com Get-AzureRmLoadBalancer
+Com o balanceador de carga do exemplo anterior, atribua o objeto do balanceador de carga à variável $slb com Get-AzureRmLoadBalancer
 
 ```powershell
 $slb = Get-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
@@ -303,7 +305,7 @@ $slb = Get-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
 ### <a name="step-2"></a>Passo 2
 
-No exemplo seguinte, irá adicionar uma nova regra NAT de Entrada com a porta 81 no front-end e a porta 8181 para o conjunto de back-end, para um balanceador de carga existente
+No exemplo seguinte, vai adicionar uma nova regra NAT de Entrada com a porta 81 no front-end e a porta 8181 para o conjunto de back-end a um balanceador de carga existente
 
 ```powershell
 $slb | Add-AzureRmLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
