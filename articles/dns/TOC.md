@@ -64,7 +64,7 @@
 ## [Máquina Virtual](/azure/virtual-machines/)
 ## [Balanceador de Carga](/azure/load-balancer/)
 ## [Gestor de Tráfego](/azure/traffic-manager/)
-## [Aplicações Web](/azure/app-service-web/)
+## [Aplicações Web](/azure/app-service/)
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=networking)
