@@ -42,8 +42,8 @@ Na definição do esquema, tem de especificar o nome, o tipo e os atributos de c
 | *Edm.String* |Texto que pode, opcionalmente, ser atomizado para pesquisa em texto completo (separação de palavras, lematização, etc.). |
 | *Collection(Edm.String)* |Uma lista de cadeias que pode, opcionalmente, ser atomizada para pesquisa em texto completo. Não existe um limite superior teórico do número de itens numa coleção, contudo, o limite superior de 16 MB de tamanho de payload aplica-se às coleções. |
 | *Edm.Boolean* |Contém valores verdadeiro/falso. |
-| *Edm.Int32* |Valores inteiros de&32; bits. |
-| *Edm.Int64* |Valores inteiros de&64; bits. |
+| *Edm.Int32* |Valores inteiros de 32 bits. |
+| *Edm.Int64* |Valores inteiros de 64 bits. |
 | *Edm.Double* |Dados numéricos de dupla precisão. |
 | *Edm.DateTimeOffset* |Valores de data/hora representados no formato OData V4 (por ex. `yyyy-MM-ddTHH:mm:ss.fffZ` ou `yyyy-MM-ddTHH:mm:ss.fff[+/-]HH:mm`). |
 | *Edm.GeographyPoint* |Um ponto que representa uma localização geográfica no mundo. |
