@@ -19,6 +19,8 @@
       href: tutorial-review-usage.md
     - name: 2 - Controlar o acesso aos dados
       href: tutorial-user-access.md
+    - name: 3 - Previsão de despesas
+      href: tutorial-forecast-spending.md
 - name: Recursos
   items:
     - name: Mapa do Azure

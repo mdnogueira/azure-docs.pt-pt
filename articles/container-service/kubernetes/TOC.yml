@@ -1,13 +1,13 @@
-- name: ACS com o Kubernetes
+- name: Kubernetes no Azure
   href: ./index.yml
 - name: Descrição geral
   items:
-    - name: Sobre o Container Service
+    - name: Kubernetes no Azure
       href: container-service-intro-kubernetes.md
 - name: Inícios rápidos
   expanded: true
   items:
-    - name: Kubernetes Linux
+    - name: Kubernetes no Azure
       href: container-service-kubernetes-walkthrough.md
 - name: Tutoriais
   items:
@@ -25,14 +25,8 @@
       href: container-service-tutorial-kubernetes-app-update.md
     - name: 7 - Monitorizar com o OMS
       href: container-service-tutorial-kubernetes-monitor.md
-- name: Amostras
-  items:
-    - name: CLI do Azure
-      href: cli-samples.md
 - name: Conceitos
   items:
-    - name: Proteger contentores
-      href: container-service-security.md
     - name: Principal de serviço - Kubernetes
       href: container-service-kubernetes-service-principal.md
 - name: Guias de procedimentos
@@ -41,18 +35,14 @@
       href: container-service-kubernetes-windows-walkthrough.md
     - name: Interface web do Kubernetes
       href: container-service-kubernetes-ui.md
-    - name: Implementar gráficos Helm
+    - name: Utilizar gráficos Helm
       href: container-service-kubernetes-helm.md
-    - name: Jenkins e ACS Kubernetes
+    - name: Utilizar o Jenkins com o VSTS
       href: container-service-kubernetes-jenkins.md
-    - name: Utilizar o Draft com o ACR e o ACS
+    - name: Utilizar o Draft com o ACS
       href: container-service-draft-up.md
-    - name: Ligar com um cluster ACS
-      href: container-service-connect.md
-    - name: Dimensionar um cluster ACS
+    - name: Dimensionar o cluster
       href: container-service-scale.md
-    - name: Balanceamento de carga de um cluster do Kubernetes ACS
-      href: container-service-kubernetes-load-balancing.md
     - name: Monitorizar
       items:
         - name: Monitorizar com o OMS
@@ -73,10 +63,10 @@
           href: container-service-deploy-spring-boot-app-using-fabric8-maven-plugin.md
 - name: Referência
   items:
-    - name: CLI 2.0 do Azure
+    - name: CLI do Azure
       href: /cli/azure/acs
     - name: REST
-      href: /rest/api/container-services
+      href: /rest/api/container-service
 - name: Recursos
   items:
     - name: Mapa do Azure

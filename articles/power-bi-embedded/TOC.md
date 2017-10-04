@@ -1,44 +1,42 @@
 # Descrição geral
-## [O que é o Power BI Embedded?](power-bi-embedded-what-is-power-bi-embedded.md)
-## [Novidades do Power BI Embedded](power-bi-embedded-whats-new.md)
+## [O que é o Power BI Embedded?](what-is-power-bi-embedded.md)
 
 # Introdução
-## [Introdução ao Power BI Embedded](power-bi-embedded-get-started.md)
-## [Introdução com um exemplo](power-bi-embedded-get-started-sample.md)
-## [FAQ](power-bi-embedded-faq.md)
+## [Introdução ao Power BI Embedded](get-started.md)
+## [Introdução com um exemplo](https://powerbi.microsoft.com/documentation/powerbi-developer-embed-sample-app-owns-data/)
 
 # Procedimento
-## Planear e conceber
-### [Cenários comuns](power-bi-embedded-scenarios.md)
+## Gerir capacidade
+### [Criar capacidade](create-capacity.md)
+### [Dimensionar capacidade](scale-capacity.md)
+### [Colocar em pausa e iniciar capacidade](pause-start.md)
+## [Registar uma aplicação do Azure AD](https://powerbi.microsoft.com/documentation/powerbi-developer-register-app/)
+## [Incorpore o seu conteúdo do Power BI](https://powerbi.microsoft.com/documentation/powerbi-developer-embedding-content/)
 
-## Gerir
-### [Ligar a uma origem de dados](power-bi-embedded-connect-datasource.md)
-### [Incorporar um relatório do Power BI](power-bi-embedded-embed-report.md)
-### [Interaja com Relatórios](power-bi-embedded-interact-with-reports.md)
-### [Criar um novo relatório a partir de um conjunto de dados](power-bi-embedded-create-report-from-dataset.md)
-### [Guardar relatórios](power-bi-embedded-save-reports.md)
-### [Alternar entre ver e editar](power-bi-embedded-toggle-mode.md)
+## Migrar
+### [Como migrar a partir das Coleções de Área de Trabalho do Power BI](migrate-from-power-bi-workspace-collections.md)
+### [Ferramentas de migração](migrate-tool.md)
+### [Fragmentos de código de migração](migrate-code-snippets.md)
 
-## Proteger
-### [Autenticar e autorizar](power-bi-embedded-app-token-flow.md)
-### [Segurança de nível de linhas com o Power BI Embedded](power-bi-embedded-rls.md)
+# Amostras
+## [Exemplos de código](https://github.com/Microsoft/PowerBI-Developer-Samples)
+## [Instruções de exemplo](https://powerbi.microsoft.com/documentation/powerbi-developer-embed-sample-app-owns-data/)
 
 # Referência
-## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=power-bi-embedded)
-## [Azure PowerShell](/powershell/module/azurerm.powerbiembedded)
-## [Azure Resource Manager .NET](/dotnet/api/microsoft.azure.management.powerbiembedded)
-## [Transferência de SDK .NET](https://www.nuget.org/profiles/powerbi)
-## [JavaScript](https://github.com/Microsoft/PowerBI-JavaScript/wiki)
-## [APIs REST de Gestão](/rest/api/powerbiembedded/)
-## [APIs REST](https://msdn.microsoft.com/library/azure/mt711507.aspx)
-
+## APIs
+### [APIs de REST do Azure Resource Manager](/rest/api/powerbiembedded/)
+### [APIs REST](https://msdn.microsoft.com/en-us/library/mt147898.aspx)
+## SDKs
+### [Transferência de SDK .NET](https://www.nuget.org/packages/Microsoft.PowerBI.Api/)
+### [Transferir o SDK de JavaScript](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=intelligence-analytics)
 ## [Exemplo de incorporação de JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)
-## [Repositório de Git de JavaScript](https://github.com/Microsoft/PowerBI-JavaScript)
-## [Repositório de Git de C# do Power BI](https://github.com/Microsoft/PowerBI-CSharp)
-## [Comunidade do Power BI](http://community.powerbi.com/t5/Developer/bd-p/Developer)
+## [Apiary](http://docs.powerbi.apiary.io/)
 ## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)
-## [Aplicação de exemplo](https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app/)
-## [Stack Overflow](http://stackoverflow.com/questions/tagged/powerbi)
+## Repositórios do GitHub
+### [.NET](https://github.com/Microsoft/PowerBI-CSharp)
+### [JavaScript](https://github.com/Microsoft/PowerBI-JavaScript)
+## [Comunidade do Power BI](http://community.powerbi.com/t5/Developer/bd-p/Developer)
+

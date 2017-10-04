@@ -16,8 +16,9 @@
 # Procedimento
 ## Aderir a um domínio gerido
 ### [Associar uma VM do Windows Server](active-directory-ds-admin-guide-join-windows-vm-portal.md)
-### [Associar uma VM do Windows Server com o Azure o PowerShell](active-directory-ds-admin-guide-join-windows-vm-classic-powershell.md)
-### [Associar uma VM do Linux](active-directory-ds-admin-guide-join-rhel-linux-vm.md)
+### [Associar uma VM do Windows com o PowerShell](active-directory-ds-admin-guide-join-windows-vm-classic-powershell.md)
+### [Red Hat Enterprise Linux](active-directory-ds-admin-guide-join-rhel-linux-vm.md)
+### [Ubuntu Server](active-directory-ds-join-ubuntu-linux-vm.md)
 ## Administrar um domínio gerido
 ### [Administrar um domínio gerido](active-directory-ds-admin-guide-administer-domain.md)
 ### [Administrar o DNS num domínio gerido](active-directory-ds-admin-guide-administer-dns.md)
@@ -36,7 +37,6 @@
 ## Resolução de problemas
 ### [FAQs](active-directory-ds-faqs.md)
 ### [Guia de resolução de problemas](active-directory-ds-troubleshooting.md)
-### [Ativar a experiência do portal do Azure em pré-visualização](active-directory-ds-azure-portal-enable-preview-access.md)
 ### [Resolva os erros de inquilino não correspondentes](active-directory-ds-mismatched-tenant-error.md)
 
 # Referência

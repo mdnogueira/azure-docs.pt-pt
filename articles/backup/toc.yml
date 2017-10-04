@@ -39,6 +39,8 @@
           href: backup-azure-vm-backup-faq.md
         - name: FAQ sobre a criação de cópias de segurança de pastas e ficheiros mediante a utilização do agente do Azure Backup
           href: backup-azure-file-folder-backup-faq.md
+        - name: FAQ sobre a atualização automática do cofre da cópia de segurança
+          href: backup-upgrade-backup-vault.md
     - name: Controlo de Acesso Baseado em Funções
       href: backup-rbac-rs-vault.md
     - name: Segurança para cópias de segurança híbridas
