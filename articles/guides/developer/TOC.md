@@ -1,11 +1,5 @@
 # Descrição geral
 ## [Guia para programadores](azure-developer-guide.md) 
-### [O que é o Azure?](azure-developer-guide.md#what-is-azure)
-### [Por onde devo começar?](azure-developer-guide.md#where-do-i-start)
-### [Regiões do Azure](azure-developer-guide.md#azure-regions)
-### [Como posso gerir as minhas aplicações e projetos?](azure-developer-guide.md#how-do-i-manage-my-applications-and-projects)
-### [Compreender as contas, subscrições e faturação](azure-developer-guide.md#understanding-accounts-subscriptions-and-billing)
-
 ## [Descrição Geral dos serviços do Azure](https://docs.microsoft.com/azure/fundamentals-introduction-to-azure?toc=%2fazure%2fdeveloper-guide%2ftoc.json)
 ## [Descrição geral do portal](https://docs.microsoft.com/azure/azure-portal-overview?toc=%2fazure%2fdeveloper-guide%2ftoc.json)
 ## [SDKs e ferramentas](https://docs.microsoft.com/azure/index#pivot=sdkstools)
