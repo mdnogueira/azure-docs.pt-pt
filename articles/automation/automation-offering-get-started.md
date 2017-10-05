@@ -3,7 +3,7 @@ title: "Introdução à Automatização do Azure | Microsoft Docs"
 description: "Este artigo fornece uma descrição geral do serviço de Automatização do Azure ao rever o design e os detalhes de implementação em preparação para integrar a oferta do Azure Marketplace."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: 

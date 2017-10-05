@@ -3,7 +3,7 @@ title: "O meu primeiro runbook gráfico da Automatização do Azure | Microsoft 
 description: "Este tutorial orienta-o ao longo da criação, do teste e da publicação de um runbook gráfico simples."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: jwhit
 editor: 
 keywords: "runbook, modelo do runbook, automatização do runbook, runbook do azure"

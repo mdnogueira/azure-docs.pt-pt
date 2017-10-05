@@ -3,7 +3,7 @@ title: "Validar a configuração da conta de Automatização do Azure | Microsof
 description: "Este artigo descreve como confirmar que a configuração da sua conta de automatização está corretamente configurada."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: 

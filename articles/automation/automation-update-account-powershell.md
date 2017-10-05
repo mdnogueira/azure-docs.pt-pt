@@ -3,7 +3,7 @@ title: "Criar conta Run As de Automatização do Azure com o PowerShell | Micros
 description: "Este artigo descreve como atualizar a sua conta de Automatização com o PowerShell para criar as contas Run As, se não tiver executado este passo durante a criação inicial do portal."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: 

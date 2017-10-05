@@ -3,7 +3,7 @@ title: "Erro ao processar em runbooks gráficos da Automatização do Azure | Mi
 description: "Este artigo descreve como implementar a lógica de processamento de erros em runbooks gráficos da Automatização do Azure."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: jwhit
 editor: tysonn
 ms.assetid: 
