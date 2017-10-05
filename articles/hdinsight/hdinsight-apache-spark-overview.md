@@ -4,7 +4,7 @@ description: "Este artigo fornece uma introdução ao Spark no HDInsight e os di
 keywords: "o que é o apache spark,cluster do spark,introdução ao spark,spark no hdinsight"
 services: hdinsight
 documentationcenter: 
-author: nitinme
+author: maxluk
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
@@ -16,7 +16,7 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/07/2017
-ms.author: nitinme
+ms.author: maxluk
 ms.translationtype: HT
 ms.sourcegitcommit: 9b7316a5bffbd689bdb26e9524129ceed06606d5
 ms.openlocfilehash: 6da4f2527e480b621f4d3a2d74ed3107c970d1b9
