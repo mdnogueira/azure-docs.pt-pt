@@ -28,4 +28,8 @@ Não existe qualquer alteração no número máximo de ligações SSTP suportada
 
 Na autenticação de certificados RADIUS, o pedido de autenticação é reencaminhado para um servidor RADIUS que processa a validação de certificados. Esta opção é útil caso queira integrar numa infraestrutura de autenticação de certificados que já tenha através de RADIUS.
   
-Ao utilizar o Azure para a autenticação de certificados, o gateway de VPN do Azure realiza a validação do certificado. Tem de carregar a chave pública do certificado para o gateway. Também pode especificar uma lista de certificados revogados que não devem ter permissão para estabelecer ligação.  
+Ao utilizar o Azure para a autenticação de certificados, o gateway de VPN do Azure realiza a validação do certificado. Tem de carregar a chave pública do certificado para o gateway. Também pode especificar uma lista de certificados revogados que não devem ter permissão para estabelecer ligação.
+
+### <a name="does-radius-authentication-work-with-both-ikev2-and-sstp-vpn"></a>A autenticação RADIUS funciona com as VPN IKEv2 e SSTP?
+
+Sim, a autenticação RADIUS funciona com as VPNs IKEv2 e SSTP.  

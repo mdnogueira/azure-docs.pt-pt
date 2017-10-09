@@ -17,10 +17,10 @@ ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: oldportal;it-pro;
 ms.translationtype: HT
-ms.sourcegitcommit: 7456da29aa07372156f2b9c08ab83626dab7cc45
-ms.openlocfilehash: 283c9903501a1e497e4dde81146d21edb869e9e2
+ms.sourcegitcommit: 4f77c7a615aaf5f87c0b260321f45a4e7129f339
+ms.openlocfilehash: 081cf2bde44a0b55508cc7f0197fa7f8e378189b
 ms.contentlocale: pt-pt
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/22/2017
 
 ---
 # <a name="how-azure-subscriptions-are-associated-with-azure-active-directory"></a>Como as subscrições do Azure estão associadas ao Azure Active Directory
@@ -48,13 +48,14 @@ Pode obter o serviço Azure AD gratuitamente quando se inscreve para qualquer um
 ## <a name="to-add-an-existing-subscription-to-your-azure-ad-directory"></a>Para adicionar uma subscrição existente ao diretório do Azure AD
 Tem de iniciar sessão com uma conta que existe no diretório atual que está associado à subscrição e no diretório ao qual pretende adicionar. 
 
-1. Inicie sessão no [Centro de Contas do Azure](https://account.windowsazure.com/Home/Index) com uma conta que seja o Administrador de Conta da subscrição cuja propriedade pretende transferir.
+1. Inicie sessão no [Centro de Contas do Azure](https://account.azure.com/Subscriptions) com uma conta que seja o Administrador de Conta da subscrição cuja propriedade pretende transferir.
 2. Confirme que o utilizador que pretende que seja o proprietário da subscrição está no diretório segmentado.
 3. Clique em **Transferir subscrição**.
 4. Especifique o destinatário. O destinatário recebe automaticamente um e-mail com uma ligação de aceitação.
 5. O destinatário clica na ligação e segue as instruções, o que inclui a introdução das respetivas informações de pagamento. Quando o destinatário concluir o processo com êxito, a subscrição é transferida. 
 6. O diretório predefinido da subscrição é alterado para o diretório em que o utilizador se encontra.
 
+Para saber mais, consulte [Transferir propriedade da subscrição do Azure para outra conta](../billing/billing-subscription-transfer.md)
 
 ## <a name="suggestions-to-manage-both-a-subscription-and-a-directory"></a>Sugestões para gerir uma subscrição e um diretório
 As funções administrativas de uma subscrição do Azure gerem os recursos associados à subscrição do Azure. Esta secção explica as diferenças entre os administradores de subscrições do Azure e os administradores de diretórios do Azure AD. As funções administrativas e outras sugestões para utilizá-las para gerir a subscrição são abordadas em [Atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles.md).

@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/19/2017
+ms.date: 09/25/2017
 ms.author: cherylmc
 ms.translationtype: HT
-ms.sourcegitcommit: 4f77c7a615aaf5f87c0b260321f45a4e7129f339
-ms.openlocfilehash: 9c1e4199132af737fb7af628aaa7952a5c90818d
+ms.sourcegitcommit: 0e862492c9e17d0acb3c57a0d0abd1f77de08b6a
+ms.openlocfilehash: e012526af264edd8b4fdbe84ff8b8648fb6d675c
 ms.contentlocale: pt-pt
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/27/2017
 
 ---
 # <a name="about-vpn-gateway"></a>Acerca do VPN Gateway
@@ -88,6 +88,10 @@ Uma ligação de gateway de VPN Ponto a Site (P2S) permite-lhe criar uma ligaç�
 
 Ao contrário das ligações S2S, as ligações P2S não requerem um endereço IP destinado ao público ou um dispositivo VPN no local. As ligações P2S podem ser utilizadas com as ligações S2S através do mesmo gateway de VPN, desde que todos os requisitos de configuração para ambas as ligações sejam compatíveis.
 
+>[!NOTE]
+>A autenticação P2S RADIUS e IKEv2 encontram-se ambas em Pré-visualização.
+>
+
 Para obter mais informações sobre ligações Ponto a Site, veja [Acerca da VPN Ponto a Site](point-to-site-about.md).
 
 ![Exemplo de ligação Ponto a Site de Gateway de VPN do Azure](./media/vpn-gateway-about-vpngateways/point-to-site.png)
@@ -116,9 +120,9 @@ Poderá utilizar o VNet peering para criar a ligação, desde que a rede virtual
 
 [!INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
-## <a name="ExpressRoute"></a>ExpressRoute (ligação privada dedicada)
+## <a name="ExpressRoute"></a>ExpressRoute (ligação privada)
 
-O Microsoft Azure ExpressRoute permite-lhe expandir as redes no local para a nuvem da Microsoft através de uma ligação privada dedicada facilitada por um fornecedor de conectividade. Com o ExpressRoute, pode estabelecer ligações aos serviços em nuvem da Microsoft, tais como o Microsoft Azure, Office 365 e o CRM Online. A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), uma rede Ethernet de ponto a ponto ou uma ligação cruzada virtual através de um fornecedor de conectividade numa localização conjunta.
+O Microsoft Azure ExpressRoute permite-lhe expandir as redes no local para a cloud da Microsoft através de uma ligação privada facilitada por um fornecedor de conectividade. Com o ExpressRoute, pode estabelecer ligações aos serviços em nuvem da Microsoft, tais como o Microsoft Azure, Office 365 e o CRM Online. A conectividade pode ser a partir de uma rede qualquer a qualquer (VPN de IP), uma rede Ethernet de ponto a ponto ou uma ligação cruzada virtual através de um fornecedor de conectividade numa localização conjunta.
 
 As ligações do ExpressRoute não passam para a Internet pública. Tal permite que as ligações do ExpressRoute ofereçam mais fiabilidade, velocidades superiores, latências inferiores e uma maior segurança do que as ligações típicas através da Internet.
 
@@ -126,7 +130,7 @@ As ligações ExpressRoute não utilizam um gateway de VPN, embora utilizem um g
 
 ## <a name="coexisting"></a>Ligações Site a Site e ExpressRoute coexistentes
 
-O ExpressRoute é uma ligação dedicada direta a partir da WAN (e não através da Internet pública) aos Serviços Microsoft, incluindo ao Azure. O tráfego da Rede de VPNs circula de forma encriptada através da Internet pública. Poder configurar ligações ExpressRoute e de Rede de VPNs para a mesma rede virtual tem várias vantagens.
+O ExpressRoute é uma ligação privada direta a partir da WAN (e não através da Internet pública) para os Serviços Microsoft, incluindo o Azure. O tráfego da Rede de VPNs circula de forma encriptada através da Internet pública. Poder configurar ligações ExpressRoute e de Rede de VPNs para a mesma rede virtual tem várias vantagens.
 
 Pode configurar uma Rede de VPNs como um caminho de ativação pós-falha seguro para o ExpressRoute ou utilizar a Rede de VPNs para ligar a sites que não fazem parte da sua rede, mas que se encontram ligados através do ExpressRoute. Repare que esta configuração requer dois gateways de rede virtual para a mesma rede virtual, um que utilize o tipo de gateway “Vpn” e o outro o tipo de gateway “ExpressRoute”.
 
@@ -152,3 +156,4 @@ Para perguntas mais frequentes sobre o Gateway de Aplicação, veja as [FAQ do G
 - Veja as [FAQ do Gateway de VPN](vpn-gateway-vpn-faq.md) para obter mais informações.
 - Veja [Subscription and service limits (Subscrições e limites do serviço)](../azure-subscription-service-limits.md#networking-limits).
 - Saiba mais sobre algumas das outras principais [capacidades de rede](../networking/networking-overview.md) do Azure.
+

@@ -22,7 +22,7 @@ Os novos SKU de gateway simplificam os conjuntos de funcionalidades oferecidos e
 
 | **SKU**| **Funcionalidades**|
 | ---    | ---         |
-|**Básica**   | **VPN baseada em rota**: 10 túneis com P2S<br><br>**VPN baseada em políticas**: (IKEv1): 1 túnel; nenhum P2S|
+|**Básica**   | **VPN baseada na rota**: 10 túneis com P2S; sem autenticação RADIUS; sem IKEv2<br>**VPN baseada em políticas**: (IKEv1): 1 túnel; nenhum P2S|
 | **VpnGw1, VpnGw2, and VpnGw3** | **VPN baseada em rota**: até 30 túneis (*),P2S, BGP, ativo-ativo, política de IPsec/IKE personalizada, coexistência VPN/ExpressRoute |
 |        |             |
 
