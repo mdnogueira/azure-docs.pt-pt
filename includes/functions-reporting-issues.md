@@ -1,6 +1,6 @@
-| Item | Description | Link |
+| Item | Descrição | Ligação |
 | --- | --- | --- |
-| Runtime |Script Host, Triggers & Bindings, Language Support |[File an Issue](https://github.com/Azure/azure-webjobs-sdk-script/issues) |
-| Templates |Code Issues with Creation Template |[File an Issue](https://github.com/Azure/azure-webjobs-sdk-templates/issues) |
-| Portal |User Interface or Experience Issue |[File an Issue](https://github.com/ProjectKudu/AzureFunctionsPortal/issues) |
+| Tempo de execução |Anfitrião do script, Acionadores e enlaces, suporte de idiomas |[Um problema de ficheiros](https://github.com/Azure/azure-webjobs-sdk-script/issues) |
+| Modelos |Problemas de código com o modelo de criação |[Um problema de ficheiros](https://github.com/Azure/azure-webjobs-sdk-templates/issues) |
+| Portal |Interface de utilizador ou problema de experiência |[Um problema de ficheiros](https://github.com/ProjectKudu/AzureFunctionsPortal/issues) |
 

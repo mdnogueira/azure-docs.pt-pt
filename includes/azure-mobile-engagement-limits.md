@@ -1,11 +1,11 @@
-| Resource | Maximum Limit |
+| Recurso | Limite Máximo |
 | --- | --- |
-| App Collection Users |5 per App Collection |
-| Average Data points |200 per Active User/Day |
-| Average App-Info set |50 per Active User/Day |
-| Average Messages pushed |20 per Active User/Day |
-| Segments |100 per app |
-| Criteria per segment |10 |
-| Active Push Campaigns |50 per app |
-| Total Push Campaigns (includes Active & Completed) |1000 per app |
+| Utilizadores de coleção de aplicações |5 por coleção de aplicações |
+| Tempo médio de pontos de dados |200 por utilizador ativo/dia |
+| Conjunto de App-Info médio |50 por utilizador ativo/dia |
+| Médias mensagens enviadas por push |20 por utilizador ativo/dia |
+| Segmentos |100 por aplicação |
+| Critérios por segmento |10 |
+| Campanhas Push ativas |50 por aplicação |
+| Total campanhas Push (inclui o Active Directory & concluído) |1000 por aplicação |
 
