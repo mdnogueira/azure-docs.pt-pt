@@ -1,8 +1,8 @@
-**Standard unmanaged virtual machine disks: per disk limits**
+**Discos da máquina virtual não geridos standard: por limites de disco**
 
-| VM Tier | Basic Tier VM | Standard Tier VM |
+| Escalão da VM | VM de Escalão Básico | VM de Escalão Standard |
 | --- | --- | --- |
-| Disk size |4095 GB |4095 GB |
-| Max 8 KB IOPS per persistent disk |300 |500 |
-| Max number of disks performing max IOPS |66 |40 |
+| Tamanho do disco |4095 GB |4095 GB |
+| Máx. de IOPS 8 KB por disco persistente |300 |500 |
+| Número máx. de discos com IOPS máximo |66 |40 |
 

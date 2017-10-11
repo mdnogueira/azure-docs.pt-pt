@@ -1,5 +1,5 @@
 
-| Resource | Limit |
+| Recurso | Limite |
 | --- | --- |
-| Autoscale Settings |100 per region per subscription |
-| Metric Alerts |100 active alert rules per subscription |
+| Definições de dimensionamento automático |100 por região por subscrição |
+| Alertas de Métricas |100 regras de alertas ativas por subscrição |
