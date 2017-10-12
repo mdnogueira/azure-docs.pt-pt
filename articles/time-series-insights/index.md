@@ -1,4 +1,4 @@
---- 
+---
 title: "Documentação do Azure Time Series Insights - Tutoriais, Referência da API | Microsoft Docs"
 description: "Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
 services: time-series-insights
@@ -12,13 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 04/13/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
-ms.openlocfilehash: d22a3f0484da78d03dbe8411e74eb408185b1f30
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
-
---- 
+ms.openlocfilehash: ca41dab4f1488c0d172513e61b1960f236c7ebf0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
+---
 # <a name="azure-time-series-insights-documentation"></a>Documentação do Azure Time Series Insights 
  
 Saiba como configurar o ambiente do Time Series Insights, explorar e analisar dados de série de tempo das suas soluções de IoT ou aplicações ligadas. A documentação partilha os pré-requisitos, procedimentos, referências de API e outras documentações que o ajudam a começar a trabalhar em poucos minutos. 

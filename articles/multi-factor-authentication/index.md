@@ -12,14 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: acd9ead9012043bc6db8c32add86bb7797fcf8c9
-ms.openlocfilehash: c4aaa14007bf441f99ef6599bda411bcaed92a92
-ms.contentlocale: pt-pt
-ms.lasthandoff: 02/09/2017
-
+ms.openlocfilehash: 25c21170df0ae5ef3dc57943448963059550fa1b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="multi-factor-authentication-documentation"></a>Documentação do Multi-Factor Authentication
 
 Saiba como implementar e gerir o Azure Multi-Factor Authentication, um sistema de verificação de identidade de dois passos. Tutoriais, um SDK e outra documentação mostram-lhe como fornecer autenticação forte com um intervalo de métodos de verificação ao fornecer um processo de início de sessão simples.
@@ -118,6 +116,5 @@ Saiba como implementar e gerir o Azure Multi-Factor Authentication, um sistema d
 </ul>
 
 ---
-
 
 

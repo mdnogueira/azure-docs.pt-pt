@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/26/2017
 ms.author: maheshu
-ms.translationtype: HT
-ms.sourcegitcommit: 0e862492c9e17d0acb3c57a0d0abd1f77de08b6a
 ms.openlocfilehash: ab8e3215e8e73d3943af06cffafa730cf1b7744b
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/27/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="enable-azure-active-directory-domain-services"></a>Ativar o Azure Active Directory Domain Services
 
@@ -49,4 +48,3 @@ Para atualizar a definição do servidor DNS para a rede virtual em que tenha at
 
 ## <a name="next-step"></a>Passo seguinte
 [Tarefa 5: Ativar a sincronização de palavras-passe para o Azure Active Directory Domain Services](active-directory-ds-getting-started-password-sync.md)
-

@@ -267,6 +267,12 @@
           href: sql-database-vnet-service-endpoint-rule-powershell.md
     - name: Continuidade do negócio
       items:
+        - name: Configurar o cofre - cópias de segurança
+          href: sql-database-long-term-backup-retention-configure.md
+        - name: Georreplicação - Portal
+          href: sql-database-geo-replication-portal.md
+    - name: Carregar e mover dados
+      items:
         - name: Carregar dados com o BCP
           href: sql-database-load-from-csv-with-bcp.md
         - name: Carregar dados com o ADF

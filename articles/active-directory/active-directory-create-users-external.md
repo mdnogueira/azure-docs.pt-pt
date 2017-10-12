@@ -16,12 +16,11 @@ ms.date: 10/10/2017
 ms.author: curtand
 ms.custom: oldportal;it-pro;
 robots: NOINDEX
+ms.openlocfilehash: 30dbd21c6d21aa55c2c7e84c315fba098674ddd8
+ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
 ms.translationtype: HT
-ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
-ms.openlocfilehash: 399230584d01986dd0f793a6ff8245ef2b4f8fb1
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/26/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="add-users-from-other-directories-or-partner-companies-in-azure-active-directory"></a>Adicionar utilizadores de outros diretórios ou empresas associadas no Azure Active Directory
 
@@ -80,4 +79,3 @@ Se um utilizador for eliminado do respetivo diretório raiz ou se cancelar a res
 * [Administrar o Azure AD](active-directory-administer.md)
 * [Gerir palavras-passe no Azure AD](active-directory-manage-passwords.md)
 * [Gerir grupos no Azure AD](active-directory-manage-groups.md)
-

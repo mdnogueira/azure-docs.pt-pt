@@ -14,12 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/10/2017
 ms.author: alkohli
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: e7f58c8c1414f41d1d43e98b2faa327165f6eb75
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Implementar e gerir uma StorSimple Cloud Appliance no Azure (Atualização 3 e posterior)
 
@@ -265,4 +264,3 @@ Durante a criação de uma aplicação da cloud, se não existir conectividade �
 ## <a name="next-steps"></a>Passos seguintes
 * Saber como [utilizar o serviço Gestor de Dispositivos do StorSimple para gerir uma aplicação da cloud](storsimple-8000-manager-service-administration.md).
 * Compreender como [restaurar um volume StorSimple a partir de um conjunto de cópias de segurança](storsimple-8000-restore-from-backup-set-u2.md).
-

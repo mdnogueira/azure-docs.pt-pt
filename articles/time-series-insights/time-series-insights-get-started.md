@@ -15,14 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 04/21/2017
 ms.author: omravi
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1cc1ee946d8eb2214fd05701b495bbce6d471a49
-ms.openlocfilehash: eb710795916a2d7beea75a6408a0982fb4dc8750
-ms.contentlocale: pt-pt
-ms.lasthandoff: 04/25/2017
-
+ms.openlocfilehash: 5a159ed0ba38899b21212518d41ff995895904ef
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="create-a-new-time-series-insights-environment-in-the-azure-portal"></a>Criar um novo ambiente do Time Series Insights no portal do Azure
 
 O ambiente do Time Series Insights é um recurso do Azure com capacidade de receção e armazenamento. Os clientes aprovisionam os ambientes através do portal do Azure com a capacidade de que precisam.
@@ -56,4 +54,3 @@ Siga estes passos para criar o seu ambiente:
 * [Definir políticas de acesso de dados](time-series-insights-data-access.md) para aceder ao seu ambiente no [Portal do Time Series Insights](https://insights.timeseries.azure.com)
 * [Criar uma origem de eventos](time-series-insights-add-event-source.md)
 * [Enviar eventos](time-series-insights-send-events.md) para a origem de eventos
-

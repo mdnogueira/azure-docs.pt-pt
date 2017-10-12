@@ -3,7 +3,7 @@ title: "Introdução à CLI do Azure para Batch | Microsoft Docs"
 description: "Obtenha uma introdução rápida aos comandos do Batch na CLI do Azure para gerir recursos do serviço Azure Batch"
 services: batch
 documentationcenter: 
-author: tamram
+author: v-dotren
 manager: timlt
 editor: 
 ms.assetid: fcd76587-1827-4bc8-a84d-bba1cd980d85
@@ -12,15 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
-ms.date: 07/20/2017
+ms.date: 09/28/2017
 ms.author: tamram
 ms.custom: H1Hack27Feb2017
+ms.openlocfilehash: 68a5493282fa4a0b54ba551c48ae963a42b94dca
+ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
 ms.translationtype: HT
-ms.sourcegitcommit: 190ca4b228434a7d1b30348011c39a979c22edbd
-ms.openlocfilehash: 45c611e1c429e8c17c0fb1537577a4cbd037c23a
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/09/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Gerir os recursos do Batch com a CLI do Azure
 
@@ -32,7 +31,7 @@ A Microsoft recomenda utilizar a versão mais recente da CLI do Azure, a versão
 
 ## <a name="set-up-the-azure-cli"></a>Configurar a CLI do Azure
 
-Para instalar a CLI do Azure, siga os passos descritos em [Install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli.md) (Instalar a CLI do Azure).
+Para instalar a CLI do Azure, siga os passos descritos em [Install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (Instalar a CLI do Azure).
 
 > [!TIP]
 > Recomendamos que atualize frequentemente a instalação da CLI do Azure para tirar partido das atualizações e melhoramentos do serviço.
@@ -97,9 +96,7 @@ Tem duas opções para se autenticar na conta do Batch:
 
     Uma vantagem do Azure AD é o facto de oferecer o controlo de acesso baseado em funções (RBAC). Com o RBAC, o acesso dos utilizadores depende da função que lhes é atribuída e não no facto de terem ou não as chaves das contas. Em vez de gerir chaves de contas, pode gerir funções do RBAC e deixar que seja o Azure AD a lidar com o acesso e a autenticação.  
 
-    Se tiver criado a sua conta do Azure Batch com o respetivo modo de alocação de conjunto definido como “Subscrição de Utilizador”, a autenticação com o Azure AD é obrigatória. 
-
-    Para iniciar sessão na sua conta do Batch com o Azure AD, chame o comando [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az_batch_account_login): 
+        To log in to your Batch account using Azure AD, call the [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az_batch_account_login) command: 
 
     ```azurecli
     az batch account login -g myresource group -n mybatchaccount
@@ -196,4 +193,3 @@ As sugestões seguintes podem ajudá-lo a resolver problemas da CLI do Azure:
 [github_readme]: https://github.com/Azure/azure-xplat-cli/blob/dev/README.md
 [rest_api]: https://msdn.microsoft.com/library/azure/dn820158.aspx
 [rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
-

@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/19/2017
 ms.author: renash
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 6e71a13f99160fdd310be1e9a59717c9fecbf35d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="mount-azure-file-share-over-smb-with-macos"></a>Montar uma partilha de Ficheiros do Azure através de SMB com macOS
 [Ficheiros do Azure](storage-files-introduction.md) é o serviço da Microsoft que lhe permite criar e utilizar partilhas de ficheiros de rede no Azure com a norma da indústria. As partilhas de Ficheiros do Azure podem ser montadas no macOS Sierra (10.12) e El Capitan (10.11). Este artigo mostra duas formas diferentes de montar uma artilha de Ficheiros do Azure em macOS com a IU do Finder e o Terminal.
 

@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 06/15/2017
 ms.author: marsma
-ms.translationtype: HT
-ms.sourcegitcommit: 7429de05ba1d583348b0b03b69135c2bbab0be45
 ms.openlocfilehash: c37fc0b701b668ab6bb9213a487ec8baa33fe663
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/15/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="perform-blob-storage-operations-with-azure-cli"></a>Realizar operações de Armazenamento de blobs com o Azure CLI
 
 O Blob Storage do Azure é um serviço para armazenar grandes quantidades de dados de objetos não estruturados, como texto ou dados binários, que podem ser acedidos de qualquer local no mundo através de HTTP ou HTTPS. Este tutorial abrange operações básicas no Armazenamento blobs do Azure como, por exemplo, carregar, transferir e eliminar blobs. Saiba como:
@@ -283,4 +281,3 @@ Os recursos que se seguem fornecem informações adicionais sobre como trabalhar
   * [Referência de comandos do Azure CLI 2.0](/cli/azure/)
 * Explorador de Armazenamento do Microsoft Azure
   * O [Explorador de Armazenamento do Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) é uma aplicação autónoma gratuita da Microsoft que lhe permite trabalhar visualmente com dados do Armazenamento do Azure no Windows, macOS e Linux.
-

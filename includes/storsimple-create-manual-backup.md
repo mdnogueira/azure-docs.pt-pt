@@ -18,8 +18,3 @@
    
    A cópia de segurança deverá aparecer na lista de conjuntos de cópias de segurança que é apresentada no catálogo.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

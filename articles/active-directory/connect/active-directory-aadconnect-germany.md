@@ -15,12 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.author: billmath
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
-ms.openlocfilehash: 780728950199bac6a317767ef1db4462b3fe6ffd
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/04/2017
-
+ms.openlocfilehash: 4c55b116c0dc080ae316caca873a7b693caa793b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Azure AD Connect no Microsoft Cloud Alemanha - Pré-visualização Pública
 ## <a name="introduction"></a>Introdução
@@ -64,5 +63,4 @@ Para instalar o Azure AD Connect, pode utilizar a documentação [aqui](active-d
 
 ## <a name="advanced-features-and-additional-information"></a>Funcionalidades avançadas e Informações Adicionais
 Para obter informações adicionais e orientações sobre definições personalizadas ou configurações avançadas, comece por [Integrar as identidades no local no Azure Active Directory](active-directory-aadconnect.md).  Esta página fornece informações e hiperligações para orientações adicionais.
-
 

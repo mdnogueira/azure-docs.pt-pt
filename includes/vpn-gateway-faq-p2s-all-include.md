@@ -48,10 +48,6 @@ Não. Um cliente Ponto a Site só pode ligar a recursos na VNet em que resida o 
 
 Não. Só pode utilizar o cliente VPN nativo no Windows para SSTP e o cliente VPN nativo no Mac para IKEv2. Veja a lista de sistemas operativos cliente suportados.
 
-### <a name="can-i-access-the-internet-when-i-am-connected-over-p2s-vpn"></a>Posso aceder à Internet quando estou ligado através de uma VPN P2S?
-
-Sim, pode aceder à Internet quando está numa VPN P2S.
-
 ### <a name="does-azure-support-ikev2-vpn-with-windows"></a>O Azure suporta a VPN IKEv2 no Windows?
 
 Os utilizadores podem ligar-se ao Azure através do cliente VPN do Windows incorporado que suporta IKEv2. No entanto, as ligações IKEv2 a partir de um dispositivo Windows não funcionam no seguinte cenário:

@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 06/14/2017
 ms.author: raynew
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: 958b61f5de732a882e0a2682b8dd4e18504a6ae7
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="replicate-hyper-v-virtual-machines-in-vmm-clouds-to-azure-using-site-recovery-in-the-azure-portal"></a>Replicar máquinas virtuais de Hyper-V em nuvens do VMM para o Azure com o Site Recovery no portal do Azure
 > [!div class="op_single_selector"]
@@ -475,4 +474,3 @@ O valor de registo **UploadThreadsPerVM** controla o número de processos utiliz
 ## <a name="next-steps"></a>Passos seguintes
 
 Quando a replicação inicial estiver concluída e tiver testado a implementação, pode invocar ativações pós-falha sempre que for necessário. [Saiba mais](site-recovery-failover.md) sobre os diferentes tipos de ativações pós-falha e como executá-las.
-

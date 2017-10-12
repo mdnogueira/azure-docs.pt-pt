@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 03/28/2017
 ms.author: samacha
-ms.translationtype: HT
-ms.sourcegitcommit: 8351217a29af20a10c64feba8ccd015702ff1b4e
 ms.openlocfilehash: 3146604dd2dbc626d8179d5c91e3cf895b9f67da
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/29/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-azure-stream-analytics-to-process-data-from-iot-devices"></a>Introdução ao Azure Stream Analytics para o processamento de dados a partir de dispositivos da IoT
 Neste tutorial, vai aprender a criar uma lógica de processamento da transmissão para recolher dados em dispositivos IoT (Internet das Coisas). Vamos analisar um caso real de utilização da Internet das Coisas (IoT) para mostrar como deve construir a solução rapidamente e de forma económica.
@@ -119,5 +118,4 @@ Aqui, vamos utilizar uma associação **EXTERNA** para a mesma transmissão de d
 
 ## <a name="conclusion"></a>Conclusão
 O objetivo deste tutorial é demonstrar como escrever diferentes consultas de linguagem SAQL (Stream Analytics Query Language) e ver os resultados no browser. No entanto, isto é apenas o início. O Stream Analytics tem muitas outras funcionalidades. O Stream Analytics suporta uma variedade de entradas e saídas e pode mesmo tirar partido de funções no Azure Machine Learning para o transformar numa ferramenta robusta para analisar fluxos de dados. Pode começar a explorar mais sobre o Stream Analytics através do nosso [mapa de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/). Para obter mais informações sobre como escrever consultas, leia o artigo sobre [padrões de consulta comuns](stream-analytics-stream-analytics-query-patterns.md).
-
 

@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/19/2016
 ms.author: piyushjo
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 2db8af1badf908ec69e4d994755bad87e8653dee
-ms.lasthandoff: 12/07/2016
-
-
+ms.openlocfilehash: 8450651528007b4527366b89a6ad7615169f93c0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-mobile-engagement-concepts"></a>Conceitos do Azure Mobile Engagement
 O Mobile Engagement define alguns conceitos comuns para todas as plataformas suportadas. Este artigo descreve brevemente esses conceitos.
@@ -87,5 +86,4 @@ A árvore completa de pares chave/valor está armazenada como um objeto JSON. No
 * [Descrição geral do SDK do Windows Phone Silverlight para o Azure Mobile Engagement](mobile-engagement-windows-phone-sdk-overview.md)
 * [SDK do iOS do Azure Mobile Engagement](mobile-engagement-ios-sdk-overview.md)
 * [SDK do Android do Azure Mobile Engagement](mobile-engagement-android-sdk-overview.md)
-
 

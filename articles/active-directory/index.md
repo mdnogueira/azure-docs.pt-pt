@@ -12,14 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: cc9e81de9bf8a3312da834502fa6ca25e2b5834a
-ms.openlocfilehash: 8933c77013d7b0d886d3e309dc0b1a72026eb677
-ms.contentlocale: pt-pt
-ms.lasthandoff: 04/11/2017
-
+ms.openlocfilehash: a0a9b69824829d0b7a07583210eaddb1f39bcf88
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="azure-active-directory-documentation"></a>Documentação do Azure Active Directory
 
 Saiba como sincronizar diretórios e ativar o início de sessão único com o Azure Active Directory (Azure AD). Tutoriais, referências de API e outra documentação mostram-lhe como integrar as funcionalidades de gestão de identidade incluindo a autenticação multifator, o registo do dispositivo, o controlo de acesso baseado em funções e a monitorização e alertas de segurança.
@@ -141,4 +139,3 @@ Saiba como sincronizar diretórios e ativar o início de sessão único com o Az
         </div>
     </li>
 </ul>
-

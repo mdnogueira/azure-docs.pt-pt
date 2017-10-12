@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/08/2017
 ms.author: ramical
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 07635b0eb4650f0c30898ea1600697dacb33477c
-ms.openlocfilehash: c1345dcda6e52267a8037ffd7207e6bc3b0d3b31
-ms.contentlocale: pt-pt
-ms.lasthandoff: 03/28/2017
-
+ms.openlocfilehash: 38c240ed1608b2e99bde78f3633e722f8e2fa30b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-data-using-the-azure-ad-reporting-api-with-certificates"></a>Utilizar a API de Relatórios do Azure AD com certificados para obter dados
 Este artigo explica como utilizar a API de Relatórios do Azure AD com credenciais de certificados para obter dados de diretórios sem intervenção do utilizador. 
@@ -91,7 +90,6 @@ Agora, está pronto para exportar para um CSV e guardar num sistema SIEM. També
 
 ## <a name="next-steps"></a>Passos seguintes
 [The fundamentals of Azure identity management](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals-identity) (As noções básicas da gestão de identidades do Azure)<br>
-
 
 
 

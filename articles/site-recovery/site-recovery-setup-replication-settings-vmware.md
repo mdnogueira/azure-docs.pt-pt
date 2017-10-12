@@ -14,13 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 06/05/2017
 ms.author: sutalasi
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 28e905a20d878eab1428a4b88113544aa742124a
-ms.openlocfilehash: 9c34ea792aa561b8155a915845ffb857dfef7a90
-ms.contentlocale: pt-pt
-ms.lasthandoff: 02/21/2017
-
-
+ms.openlocfilehash: 73a1f19177f23441f5f7165cf2bc92ba85e62aa5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="manage-replication-policy-for-vmware-to-azure"></a>Gerir a política de replicação do VMware para o Azure
 
@@ -88,4 +86,3 @@ ms.lasthandoff: 02/21/2017
 
     > [!NOTE]
     > Não é possível eliminar uma política de replicação se esta tiver, pelo menos, um servidor de configuração associado. Certifique-se de que não existem itens replicados a utilizar a política e elimine todos os servidores de configuração associados antes de eliminar a política.
-

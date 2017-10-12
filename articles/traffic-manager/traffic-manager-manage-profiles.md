@@ -14,14 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/10/2017
 ms.author: kumud
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
 ms.openlocfilehash: a5164282264124835692bc72a4ab61891aa7af9d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/01/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="manage-an-azure-traffic-manager-profile"></a>Gerir um perfil no Traffic Manager do Azure
 
 Os perfis do Gestor de Tráfego utilizam métodos de encaminhamento de tráfego para controlar a distribuição de tráfego para os seus serviços cloud ou pontos finais de Web site. Este artigo explica como criar e gerir estes perfis.
@@ -76,4 +74,3 @@ Pode desativar um perfil existente para que o Gestor de Tráfego não refira ped
 * [Configure Geographic routing method](traffic-manager-configure-geographic-routing-method.md) (Configurar o método de encaminhamento Geográfico) 
 * [Configure Weighted routing method](traffic-manager-configure-weighted-routing-method.md) (Configurar o método de encaminhamento Ponderado)
 * [Configure Performance routing method](traffic-manager-configure-performance-routing-method.md) (Configurar o método de encaminhamento Desempenho)
-

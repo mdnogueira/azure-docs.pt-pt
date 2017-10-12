@@ -15,12 +15,11 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 12/08/2016
 ms.author: ashmaka
-ms.translationtype: HT
-ms.sourcegitcommit: 2ad539c85e01bc132a8171490a27fd807c8823a4
 ms.openlocfilehash: 9a64d1436471e406b7d9b700257d3dd96b5edcde
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/12/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-an-azure-search-index-using-the-rest-api"></a>Criar um índice da Azure Search utilizando a API REST
 > [!div class="op_single_selector"]
@@ -109,4 +108,3 @@ Quando terminar com um índice e pretender eliminá-lo, emita apenas um pedido d
 
 ## <a name="next-steps"></a>Passos seguintes
 Depois de criar um índice da Azure Search, estará pronto para [carregar o conteúdo para o índice](search-what-is-data-import.md) para que possa começar a pesquisar os seus dados.
-

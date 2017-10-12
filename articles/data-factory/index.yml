@@ -58,7 +58,7 @@ sections:
           - html: <a href="../data-factory/tutorial-transform-data-spark-powershell">Transformar dados na cloud com o Spark</a>
           - html: <a href="../data-factory/tutorial-transform-data-hive-virtual-network">Transformar dados numa rede virtual</a>
           - html: <a href="../data-factory/tutorial-control-flow">Fluxo de controlo</a>
-  - title: Exemplos
+  - title: Amostras
     items:
       - type: paragraph
         text: Utilize os exemplos seguintes para trabalhar com o Data Factory

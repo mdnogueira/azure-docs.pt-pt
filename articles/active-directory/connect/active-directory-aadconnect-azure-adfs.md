@@ -16,12 +16,11 @@ ms.topic: get-started-article
 ms.date: 07/17/2017
 ms.author: anandy; billmath
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
-ms.openlocfilehash: 9119a4523c66415925223b5de10ca0fb4a7147b2
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/04/2017
-
+ms.openlocfilehash: ddd29a1230286de8999175498ee793f3b3ea24e2
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementação do Serviço de Federação do Active Directory no Azure
 O AD FS proporciona federação de identidade simplificada e protegida e capacidades de início de sessão único (SSO) na Web. A Federação com o Azure AD ou o O365 permite aos utilizadores autenticarem-se com credenciais no local e aceder a todos os recursos na nuvem. Como resultado, torna-se importante ter uma infraestrutura do AD FS de elevada disponibilidade para garantir acesso aos recursos no local e na nuvem. Implementar o AD FS no Azure pode ajudar a alcançar a elevada disponibilidade necessária com um esforço mínimo.
@@ -281,7 +280,7 @@ De um modo geral, precisa das regras seguintes para proteger de forma eficiente 
 
 [comment]: <> (![regras de acesso INT (entrada)](./media/active-directory-aadconnect-azure-adfs/nsgintinbound.png)) [comment]: <> (![regras de acesso INT(saída)](./media/active-directory-aadconnect-azure-adfs/nsgintoutbound.png))
 
-**9.2. Proteger a sub-rede de perímetro** 
+**9.2. Proteger a sub-rede de perímetro**
 
 | Regra | Descrição | Fluxo |
 |:--- |:--- |:---:|
@@ -359,5 +358,4 @@ Pode utilizar uma rede virtual existente ou criar uma nova VNET ao implementar e
 * [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
 * [Configurar e gerir o AD FS com o Azure AD Connect](active-directory-aadconnectfed-whatis.md)
 * [Implementação de AD FS geográficos cruzados de elevada disponibilidade no Azure com o Gestor de Tráfego do Azure](../active-directory-adfs-in-azure-with-azure-traffic-manager.md)
-
 

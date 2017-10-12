@@ -10,8 +10,3 @@ O serviço Azure Backup tem dois tipos de cofres – o cofre das Cópias de Segu
 > 
 > 
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

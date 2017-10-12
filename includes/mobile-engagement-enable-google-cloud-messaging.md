@@ -12,8 +12,3 @@
 5. Clique no separador **Cloud Messaging** na parte superior. 
 6. Tome nota da **Chave do Servidor** e da **ID do Remetente** que irá utilizar mais tarde no *Ficheiro de Manifesto do Android*.  
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

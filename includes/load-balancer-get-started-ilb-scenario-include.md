@@ -9,8 +9,3 @@ Um balanceador de carga interno está configurado numa rede virtual
 * 2 máquinas virtuais denominadas DB1 e DB2
 * Pontos Finais
 * Balanceador de carga interno
-
-
-<!--HONumber=Nov16_HO2-->
-
-

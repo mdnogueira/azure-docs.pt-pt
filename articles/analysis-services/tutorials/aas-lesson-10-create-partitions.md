@@ -13,14 +13,13 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 05/26/2017
+ms.date: 09/20/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: df74d9cbdcf4916c24955e491767589e72389155
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
-
+ms.openlocfilehash: b6b5bcd1d766376bd0af71e1fa91f8f2f96b9605
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="lesson-10-create-partitions"></a>Lição 10: Criar partições
 
@@ -119,4 +118,3 @@ No Gestor de partições, observe a coluna **Última processada** para cada uma 
   
  ## <a name="whats-next"></a>Passos seguintes?
 Avance para a próxima lição: [Lição 11: Criar funções](../tutorials/aas-lesson-11-create-roles.md). 
-

@@ -14,12 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: alkohli
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: 3286db40856c9f0eb2564c01f1483870952a19e6
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-2"></a>Implementar no local o dispositivo StorSimple (Atualização 2)
 > [!div class="op_single_selector"]
@@ -221,5 +220,4 @@ Execute os seguintes passos no portal de gestão para criar uma cópia de segura
 ## <a name="next-steps"></a>Passos seguintes
 * Configurar um [dispositivo virtual](storsimple-virtual-device-u2.md).
 * Utilizar o [serviço StorSimple Manager](storsimple-manager-service-administration.md) para gerir o dispositivo StorSimple.
-
 

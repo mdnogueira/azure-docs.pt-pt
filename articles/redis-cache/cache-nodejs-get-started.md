@@ -14,12 +14,11 @@ ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
 ms.date: 02/10/2017
 ms.author: sdanie
-ms.translationtype: HT
-ms.sourcegitcommit: 12c20264b14a477643a4bbc1469a8d1c0941c6e6
 ms.openlocfilehash: f2c448af24e180db58f3ef3d39e90036dda3f7eb
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/07/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="how-to-use-azure-redis-cache-with-nodejs"></a>Como utilizar a Cache de Redis do Azure com o Node.js
 > [!div class="op_single_selector"]
@@ -86,5 +85,4 @@ Saída:
 ## <a name="next-steps"></a>Passos seguintes
 * [Ativar o diagnóstico da cache](cache-how-to-monitor.md#enable-cache-diagnostics) para poder [monitorizar](cache-how-to-monitor.md) o estado de funcionamento da cache.
 * Leia a [Documentação Redis](http://redis.io/documentation) oficial.
-
 

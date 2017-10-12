@@ -12,12 +12,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 03/14/2017
 ms.author: carolz
+ms.openlocfilehash: 9305e85ff075e8e7ee3e21315d28f63613ac01f4
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 8b857b4a629618d84f66da28d46f79c2b74171df
-ms.openlocfilehash: 43d2c5ca34e4903a41160496fdb4d975cb665de7
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 ---
 # <a name="service-bus-relay-documentation"></a>Documentação do Reencaminhamento do Service Bus
@@ -157,4 +156,3 @@ Saiba como o serviço de Reencaminhamento do Azure facilita as aplicações híb
         </div>
     </li>
 </ul>
-

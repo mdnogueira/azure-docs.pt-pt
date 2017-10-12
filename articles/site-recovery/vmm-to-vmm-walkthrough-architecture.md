@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/30/2017
 ms.author: raynew
-ms.translationtype: HT
-ms.sourcegitcommit: fff84ee45818e4699df380e1536f71b2a4003c71
 ms.openlocfilehash: b78cd0d5a5395873afaddc8856004775f447e8ea
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="step-1-review-the-architecture-for-hyper-v-replication-to-a-secondary-site"></a>Passo 1: Rever a arquitetura da replicação do Hyper-V para um site secundário
 
@@ -65,4 +64,3 @@ Segue-se aquilo de que precisa para replicar VMs de Hyper-V para um site de VMM 
 ## <a name="next-steps"></a>Passos seguintes
 
 Vá para o [Passo 2: Rever os pré-requisitos e as limitações](vmm-to-vmm-walkthrough-prerequisites.md).
-

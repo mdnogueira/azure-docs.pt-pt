@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9d7640577eedcc9221f6346b650aed85f1d31a65
-ms.openlocfilehash: 26ebdbc6f568dd3d9bbcaa3250aae70d80af2d35
-ms.contentlocale: pt-pt
-ms.lasthandoff: 01/18/2017
-
+ms.openlocfilehash: 9e5b45d71b978c383932409f0037a4f6f32d0cb3
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Utilizar o Azure AD Connect Health com o AD DS
 A seguinte documentação é específica para monitorizar os Serviços de Domínio do Active Directory com o Azure AD Connect Health. As versões suportadas do AD DS são Windows Server Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016.
@@ -62,5 +61,4 @@ Por predefinição, podemos pré-selecionar quatro contadores de desempenho. No 
 * [Utilizar o Azure AD Connect Health para sincronização](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health FAQ (FAQ do Azure AD Connect Health)](active-directory-aadconnect-health-faq.md)
 * [Histórico das Versões do Azure AD Connect Health](active-directory-aadconnect-health-version-history.md)
-
 

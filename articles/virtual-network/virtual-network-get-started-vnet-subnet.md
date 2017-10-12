@@ -15,14 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2016
 ms.author: jdial
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: e653764d7cb514d50b44fadd0cc5963dd404d99e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="create-your-first-virtual-network"></a>Criar a primeira rede virtual
 
 Saiba como criar uma rede virtual (VNet) com duas sub-redes, criar duas máquinas virtuais (VM) e ligar cada VM a uma das sub-redes, conforme mostrado na imagem seguinte:
@@ -253,4 +251,3 @@ Neste exercício, criou uma VNet e duas VMs. Especificou algumas definições pe
 - [Interfaces de rede](virtual-network-network-interface.md)
 - [Grupos de segurança de rede](virtual-networks-nsg.md)
 - [Máquinas virtuais](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-

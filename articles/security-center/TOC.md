@@ -19,6 +19,7 @@
 # Procedimento
 
 ## Política de segurança
+### [Descrição geral](security-center-policies-overview.md)
 ### [Recolha de dados](security-center-enable-data-collection.md)
 ### [Política de segurança](security-center-policies.md)
 ### [Notificações por e-mail](security-center-provide-security-contact-details.md)
@@ -53,7 +54,6 @@
 #### [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md)
 #### [Reiniciar após atualizações do sistema](security-center-apply-system-updates.md#reboot-after-system-updates)
 #### [Remediar vulnerabilidades do SO](security-center-remediate-os-vulnerabilities.md)
-#### [Resolver alertas de estado de funcionamento do endpoint protection](security-center-resolve-endpoint-protection-health-alerts.md)
 #### [Atualizar a versão do SO](security-center-update-os-version.md)
 #### [Avaliação de vulnerabilidades não instalada](security-center-vulnerability-assessment-recommendations.md)
 ### [Monitorizar o estado de funcionamento da segurança](security-center-monitoring.md)

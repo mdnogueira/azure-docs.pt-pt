@@ -12,14 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/23/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ef74361c7a15b0eb7dad1f6ee03f8df707a7c05e
-ms.openlocfilehash: f82be4ff7bd0839be4f826f9a04ba0876f4ec91d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/25/2017
-
+ms.openlocfilehash: dc8aa21d89ce575d29d3a9c08909eb5617d7b8a5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="stream-analytics-documentation"></a>Documentação do Stream Analytics
 
 Saiba como executar análises de Internet das Coisas (IoT) na cloud com o Stream Analytics, um motor processamento de eventos completamente gerido. Tutoriais e outra documentação mostram-lhe como analisar dados em tempo real a partir de aplicações, sensores, dispositivos, redes sociais e mais. 
@@ -177,6 +175,5 @@ Saiba como executar análises de Internet das Coisas (IoT) na cloud com o Stream
         </div>
     </li>
 </ul>
-
 
 

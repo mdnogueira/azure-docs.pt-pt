@@ -1,6 +1,6 @@
 
 
-1. Inicie sessão no [portal do Azure](https://portal.azure.com).
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 
 2. Selecione **Novo** > **Web + Móvel** > **Hub de Notificação**.
    

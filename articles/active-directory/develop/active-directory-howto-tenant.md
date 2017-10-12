@@ -15,12 +15,11 @@ ms.topic: hero-article
 ms.date: 07/19/2017
 ms.author: bryanla
 ms.custom: aaddev
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c300ba45cd530e5a606786aa7b2b254c2ed32fcd
-ms.openlocfilehash: b4232f2d27624e44a720047ad44991059316413e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 04/14/2017
-
+ms.openlocfilehash: fe33d490b754e2f793f5c7a13dc55ca038b1b71c
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="how-to-get-an-azure-active-directory-tenant"></a>Como obter um inquilino do Azure Active Directory
 No Azure Active Directory (Azure AD), uma organização é representada por um [inquilino](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant).  Quando assina um serviço em nuvem da Microsoft, tal como o Azure, o Microsoft Intune ou o Office 365, a organização recebe e fica proprietária de uma instância dedicada do serviço Azure AD.  Cada inquilino do Azure AD é distinto e separado dos outros inquilinos do Azure AD.  
@@ -65,4 +64,3 @@ Se já tiver uma subscrição do Azure com a sua conta organizacional, já possu
 Se tudo o que estiver acima não fizer qualquer sentido, não se preocupe.  Visite simplesmente [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization) para subscrever o Azure com uma nova organização.  Depois de concluir o processo, terá o seu próprio inquilino no Azure AD com o nome de domínio que escolheu durante a subscrição.  No [Portal do Azure](https://portal.azure.com), pode encontrar o seu inquilino ao navegar para “Azure Active Directory” na barra de navegação esquerda.
 
 Como parte do processo de subscrição do Azure, ser-lhe-á pedido para fornecer os detalhes do cartão de crédito.  Pode continuar com confiança, não lhe será cobrado nada por publicar aplicações no Azure AD ou por criar novos inquilinos.
-

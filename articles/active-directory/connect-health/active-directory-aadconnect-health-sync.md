@@ -14,12 +14,11 @@ ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b9a3b64d9de48f17a295ca7a9ea58cf26e8f83ed
-ms.openlocfilehash: f5d5f238f8f57c8dcf7a3759274f9d565e73ecce
-ms.contentlocale: pt-pt
-ms.lasthandoff: 02/28/2017
-
+ms.openlocfilehash: 4b06338cb62cc458e7b097db36023f0746d4e969
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Monitorizar a sincronização do Azure AD Connect com o Azure AD Connect Health
 A seguinte documentação é específica para monitorizar a sincronização do Azure AD Connect (Sync) com o Azure AD Connect Health.  Para informações sobre como monitorizar o AD FS com o Azure AD Connect Health consulte [Utilizar o Azure AD Connect Health com o AD FS](active-directory-aadconnect-health-adfs.md). Adicionalmente, para informações sobre como monitorizar os Serviços de Domínio do Active Directory com o Azure AD Connect Health consulte [Utilizar o Azure AD Connect Health com o AD DS](active-directory-aadconnect-health-adds.md).
@@ -68,8 +67,7 @@ Esta funcionalidade fornece um relatório sobre erros de sincronização que pod
 * O relatório abrange os erros registados pelo cliente de sincronização (Azure AD Connect versão 1.1.281.0 ou superior)
 * Inclui os erros que ocorreram na última operação de sincronização no motor de sincronização. ("Exportar" no Azure AD Connector.)
 * O agente de sincronização do Azure AD Connect Health tem de ter conectividade de saída para os pontos finais necessários para o relatório incluir os dados mais recentes.
-* O relatório é **atualizado após 30 minutos** através dos dados carregados pelo agente de sincronização do Azure AD Connect Health.
-  Fornece as principais capacidades seguintes
+* O relatório é **atualizado após 30 minutos** através dos dados carregados pelo agente de sincronização do Azure AD Connect Health. Fornece as principais capacidades seguintes
 
   * Categorização de erros
   * Lista de objetos com o erro por categoria

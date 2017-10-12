@@ -1,4 +1,4 @@
-1. Inicie sessão no [portal do Azure].
+1. Inicie sessão no [Portal do Azure].
 
 2. Clique em **Novo**.
 
@@ -16,4 +16,4 @@
 [quickstart]: ./media/app-service-mobile-dotnet-backend-create-new-service/search-mobile-apps-quickstart.png
 
 <!-- URLs. -->
-[portal do Azure]: https://portal.azure.com/
+[Portal do Azure]: https://portal.azure.com/

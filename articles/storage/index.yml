@@ -39,10 +39,10 @@ sections:
         style: ordered
         items:
           - html: <a href="/azure/storage/blobs/storage-upload-process-images">Carregar e obter dados de imagens na cloud</a>
-          - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event">Acionar as Funções do Azure para processar blobs</a>
+          - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Acionar as Funções do Azure para processar blobs</a>
           - html: <a href="/azure/storage/blobs/storage-secure-access-application">Proteger os dados das aplicações</a>
           - html: <a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Monitorizar e resolver problemas de armazenamento</a>
-  - title: Exemplos
+  - title: Amostras
     items:
       - type: paragraph
         text: Encontre scripts para tarefas de gestão comuns.

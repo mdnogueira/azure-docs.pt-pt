@@ -14,12 +14,11 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.date: 08/30/2017
 ms.author: sethm
-ms.translationtype: HT
-ms.sourcegitcommit: 07e5e15f4f4c4281a93c8c3267c0225b1d79af45
 ms.openlocfilehash: 462fa0a6e86237b8c9d9ba97aa377f8d112a8b8e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/31/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="service-bus-messaging-flexible-data-delivery-in-the-cloud"></a>Mensagens do Service Bus: entrega flexível de dados na nuvem
 
@@ -57,5 +56,4 @@ Para mais informações sobre mensagens do Service Bus, consulte os seguintes t�
 * [Filas, tópicos e subscrições do Service Bus](service-bus-queues-topics-subscriptions.md)
 * [Introdução às filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
 * [Como utilizar os tópicos e as subscrições do Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
-
 

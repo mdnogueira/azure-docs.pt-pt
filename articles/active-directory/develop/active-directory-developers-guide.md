@@ -14,12 +14,11 @@ ms.workload: identity
 ms.date: 04/07/2017
 ms.author: dastrock
 ms.custom: aaddev
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7479260c7c2e10f242b6d8e77170d4abe8634ac
 ms.openlocfilehash: dce813b885d492343428428056a2e8aada27b461
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-active-directory-for-developers"></a>Azure Active Directory para programadores
 O Azure Active Directory é um serviço de identidade em cloud que permite que os programadores iniciem a sessão de qualquer utilizador de forma segura com uma conta profissional ou escolar ,segura pela Microsoft.  A documentação presente mostra-lhe como adicionar suporte do Azure AD à aplicação através de protocolos de autenticação padrão da indústria, o OAuth e o OpenID Connect.
@@ -73,4 +72,3 @@ Estes são os melhores locais para obter ajuda com o desenvolvimento do Azure Ac
 
 > [!NOTE]
 > Caso precise de iniciar sessão em contas pessoais Microsoft, poderá querer considerar a utilização do [ponto final do Azure AD v2.0](active-directory-appmodel-v2-overview.md).  O ponto final do Azure ADv 2.0 é unificação de contas pessoais e contas profissionais da Microsoft (a partir do Azure AD) num sistema de autenticação único.
-

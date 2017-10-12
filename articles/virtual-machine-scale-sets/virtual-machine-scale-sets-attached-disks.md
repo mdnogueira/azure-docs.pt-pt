@@ -15,12 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 4/25/2017
 ms.author: guybo
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: 22c7e589efa9a9f401549ec9b95c58c4eaf07b94
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-vm-scale-sets-and-attached-data-disks"></a>Conjuntos de dimensionamento de VMs do Azure e discos de dados anexados
 Agora, os [conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-scale-sets/) do Azure suportam máquinas virtuais com discos de dados anexados. Pode definir os discos de dados no perfil de armazenamento dos conjuntos de dimensionamento que foram criados com os Managed Disks do Azure. Anteriormente, as únicas opções de armazenamento diretamente anexadas disponíveis com as VMs em conjuntos de dimensionamento eram a unidade de SO e as unidades temporárias.
@@ -128,6 +127,5 @@ O suporte para o Azure Managed Disks e para discos de dados anexados a conjuntos
 Na implementação inicial do suporte para discos anexados para conjuntos de dimensionamento, não pode anexar nem desanexar discos de dados a/de VMs individuais num conjunto de dimensionamento.
 
 O suporte do portal do Azure para discos de dados anexados em conjuntos de dimensionamento é limitado inicialmente. Dependendo das suas necessidades, pode utilizar modelos do Azure, a CLI, o PowerShell, SDKs e a API REST para gerir discos anexados.
-
 
 

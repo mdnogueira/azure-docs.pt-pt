@@ -15,12 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a643f139be40b9b11f865d528622bafbe7dec939
 ms.openlocfilehash: 6274e0101f6fb0864c8d1efaef7fcde78b8760c3
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="user-defined-routes-and-ip-forwarding"></a>Rotas definidas pelo utilizador e reencaminhamento de IP
 
@@ -111,5 +110,4 @@ Este VM de aplicação virtual deve ser capaz de receber tráfego de entrada que
 ## <a name="next-steps"></a>Passos seguintes
 * Saiba como [criar rotas no modelo de implementação do Gestor de recursos](virtual-network-create-udr-arm-template.md) e associá-las a sub-redes. 
 * Saiba como [criar rotas no modelo de implementação clássico](virtual-network-create-udr-classic-ps.md) e associá-las a sub-redes.
-
 

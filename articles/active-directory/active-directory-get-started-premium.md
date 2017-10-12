@@ -15,12 +15,11 @@ ms.date: 09/07/2017
 ms.author: curtand
 ms.reviewer: piotrci
 ms.custom: it-pro;
-ms.translationtype: HT
-ms.sourcegitcommit: 12c20264b14a477643a4bbc1469a8d1c0941c6e6
 ms.openlocfilehash: 4b86ececefd3724b9e7791d2609b146de052f605
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/07/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="quickstart-sign-up-for-azure-active-directory-premium"></a>Início Rápido: inscrever-se no Azure Active Directory Premium
 Para começar a utilizar o Azure Active Directory (Azure AD) Premium, pode comprar licenças e associá-las à sua subscrição do Azure. Se criar uma subscrição nova do Azure, também tem de ativar o plano de licenciamento e o acesso ao serviço Azure AD, conforme descrito nas secções seguintes. 

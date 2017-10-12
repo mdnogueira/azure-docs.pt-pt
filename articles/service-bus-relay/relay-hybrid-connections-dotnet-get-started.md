@@ -14,14 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 07/07/2017
 ms.author: sethm
-ms.translationtype: HT
-ms.sourcegitcommit: d941879aee6042b38b7f5569cd4e31cb78b4ad33
 ms.openlocfilehash: 1af23bfd46dd7d3781505473f7c1d86e65ea9bc7
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="get-started-with-relay-hybrid-connections"></a>Introdução às Ligações Híbridas de Reencaminhamento
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
 
@@ -77,5 +75,4 @@ Parabéns, criou uma aplicação de Ligações Híbridas ponto a ponto.
 * [FAQ de Reencaminhamento](relay-faq.md)
 * [Criar um espaço de nomes](relay-create-namespace-portal.md)
 * [Introdução ao Nó](relay-hybrid-connections-node-get-started.md)
-
 

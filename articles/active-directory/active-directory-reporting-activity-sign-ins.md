@@ -15,12 +15,11 @@ ms.workload: identity
 ms.date: 07/19/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: HT
-ms.sourcegitcommit: c3ea7cfba9fbf1064e2bd58344a7a00dc81eb148
 ms.openlocfilehash: b9e61950654ba427b09dd608d354589a0804aaa5
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/19/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividade de início de sessão no portal do Azure Active Directory
 
@@ -200,5 +199,4 @@ A opção **Inícios de sessão** dá uma visão geral completa de todos os even
 ## <a name="next-steps"></a>Passos seguintes
 
 Se quiser saber mais sobre os códigos de erro das atividades de inícios de sessão, veja os [Códigos de erro dos relatórios de atividades de inícios de sessão no portal do Azure Active Directory](active-directory-reporting-activity-sign-ins-errors.md).
-
 

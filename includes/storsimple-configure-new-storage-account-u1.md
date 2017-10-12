@@ -44,8 +44,3 @@
 6. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Será notificado quando a conta de armazenamento for criada com êxito.
 7. A conta de armazenamento recentemente criada será apresentada na página **Configurar** em **Contas de armazenamento**. Clique em **Guardar** para guardar a nova conta de armazenamento. Clique em **OK** quando lhe for pedida a confirmação.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

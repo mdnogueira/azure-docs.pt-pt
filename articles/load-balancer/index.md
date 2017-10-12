@@ -12,14 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1429bf0d06843da4743bd299e65ed2e818be199d
-ms.openlocfilehash: 96da506c8545a1b863e62133706a2687c2498bbd
-ms.contentlocale: pt-pt
-ms.lasthandoff: 03/22/2017
-
+ms.openlocfilehash: 169ca89ccd80e5a70f3e9ab07b3c34358c154be7
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 #<a name="load-balancer-documentation"></a>Documentação do Load Balancer
 
 Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilidade e desempenho da rede para aplicações. A documentação mostra-lhe como carregar tráfego de equilibrio para e de recursos na cloud e de máquinas virtuais e em redes virtuais entre locais.
@@ -145,6 +143,5 @@ Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilid
         </div>
     </li>
 </ul>
-
 
 

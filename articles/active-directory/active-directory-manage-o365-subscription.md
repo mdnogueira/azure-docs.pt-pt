@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/25/2017
+ms.date: 10/10/2017
 ms.author: curtand
+ms.reviewer: rodejo
 ms.custom: oldportal;it-pro;
+ms.openlocfilehash: 497beb75d1bd4c0709929948a9f857a034364f44
+ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
 ms.translationtype: HT
-ms.sourcegitcommit: 349fe8129b0f98b3ed43da5114b9d8882989c3b2
-ms.openlocfilehash: b520a5e96417fb766a757fabc384a1fc4eb0f14e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/26/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="manage-the-directory-for-your-office-365-subscription-in-azure"></a>Gerir o diretório da subscrição do Office 365 no Azure
 Este artigo descreve como gerir um diretório criado para uma subscrição do Office 365 utilizando o portal clássico do Azure. Tem de ser Administrador de Serviço ou coadministrador de uma subscrição do Azure para iniciar sessão no portal clássico do Azure. Se ainda não tiver uma subscrição do Azure, pode inscrever-se para obter uma [avaliação de 30 dias gratuita](https://azure.microsoft.com/trial/get-started-active-directory/) hoje e implementar a sua primeira solução em nuvem em menos de 5 minutos, utilizando a seguinte ligação. Certifique-se de que usa a conta de estudante ou profissional que utiliza para iniciar sessão no Office 365.
@@ -34,8 +34,8 @@ Se já tiver uma subscrição do Azure, o processo para gerir um diretório adic
 
 | Subscrição | Office 365 | Azure |
 | --- | --- | --- |
-|   Nome a apresentar |Contoso |Diretório do Azure Active Directory (Azure AD) predefinido |
-|   Nome de domínio |contoso.com |mcardosohotmail.onmicrosoft.com |
+|   Nome a apresentar | Contoso | Diretório do Azure Active Directory (Azure AD) predefinido |
+|   Nome de domínio | contoso.com | mcardosohotmail.onmicrosoft.com |
 
 Ele pretende gerir as identidades de utilizador no diretório Contoso enquanto tem sessão iniciada no Azure com a conta Microsoft, para poder ativar funcionalidades do Azure AD como a autenticação multifator. O diagrama seguinte pode ajudar a ilustrar o processo.
 
@@ -70,4 +70,3 @@ Agora vamos imaginar que Júlia Martins necessita de administrar Websites e recu
 
 ## <a name="next-steps"></a>Passos seguintes
 Para mais informações sobre a relação entre subscrições e diretórios, consulte [Como associar uma subscrição a um diretório](active-directory-how-subscriptions-associated-directory.md).
-

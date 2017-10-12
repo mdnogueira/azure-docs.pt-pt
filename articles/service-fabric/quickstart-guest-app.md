@@ -14,14 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/13/2017
 ms.author: adegeo
-ms.translationtype: HT
-ms.sourcegitcommit: 9afd12380926d4e16b7384ff07d229735ca94aaa
 ms.openlocfilehash: 3601b73872bbea4b4e5324382eb97b7384ca6e13
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/15/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="host-a-nodejs-application-on-azure-service-fabric"></a>Alojar uma aplicação Node.js no Azure Service Fabric
 
 Este início rápido ajuda-o a implementar uma aplicação já existente (Node.js, neste exemplo) num cluster do Service Fabric em execução no Azure.

@@ -15,38 +15,30 @@ ms.workload: identity
 ms.date: 07/15/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9ae7e129b381d3034433e29ac1f74cb843cb5aa6
-ms.openlocfilehash: 9109c698e4e8b43eeb7534c338adc99476012a3f
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
-
+ms.openlocfilehash: 3d56f89035da4d1a0074256b165663f81fc2b01e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
-# Não consigo encontrar dados nos registos de atividades do Azure Active Directory que transferi
-<a id="i-cant-find-any-data-in-the-azure-active-directory-activity-logs-i-have-downloaded" class="xliff"></a>
+# <a name="i-cant-find-any-data-in-the-azure-active-directory-activity-logs-i-have-downloaded"></a>Não consigo encontrar dados nos registos de atividades do Azure Active Directory que transferi
 
 
-## Sintomas
-<a id="symptoms" class="xliff"></a>
+## <a name="symptoms"></a>Sintomas
 
 Transferi os registos de atividades (auditorias ou inícios de sessão) e não vejo todos os registos para o período de tempo que escolhi. Porquê? 
 
  ![Relatórios](./media/active-directory-reporting-troubleshoot-missing-data-download/01.png)
  
 
-## Causa
-<a id="cause" class="xliff"></a>
+## <a name="cause"></a>Causa
 
 Quando transfere registos de atividades no portal do Azure, limitamos o tamanho a 120K registos, ordenados pelos mais recentes. 
 
-## Resolução
-<a id="resolution" class="xliff"></a>
+## <a name="resolution"></a>Resolução
 
 Pode tirar partido das [APIs de Relatórios do Azure AD](active-directory-reporting-api-getting-started.md) para obter até um milhão de registos num determinado período. A nossa abordagem recomendada é executar um script agendado que liga às APIs de relatórios para obter registos de uma forma incremental durante um período de tempo (por exemplo, diária ou semanalmente).
 
-## Passos seguintes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Passos seguintes
 Veja as [FAQ de relatórios do Azure Active Directory](active-directory-reporting-faq.md).
-
 

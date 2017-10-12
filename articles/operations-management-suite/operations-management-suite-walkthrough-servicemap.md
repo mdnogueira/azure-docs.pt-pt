@@ -1,6 +1,6 @@
 ---
-title: "Demonstração da solução de Mapa do Serviço colocada automaticamente | Microsoft Docs"
-description: "O Mapa de Serviço é uma solução no Operations Management Suite (OMS) que deteta componentes da aplicação em sistemas Windows e Linux e mapeia a comunicação entre os serviços.  Esta é uma demonstração colocada automaticamente que explica o funcionamento do Mapa de Serviço para identificar e diagnosticar um problema simulado numa aplicação Web."
+title: "Demonstração personalizada da solução Mapa do Serviço | Microsoft Docs"
+description: "O Mapa de Serviço é uma solução no Operations Management Suite (OMS) que deteta componentes da aplicação em sistemas Windows e Linux e mapeia a comunicação entre os serviços.  Esta é uma demonstração personalizada que explica o funcionamento do Mapa de Serviço para identificar e diagnosticar um problema simulado numa aplicação Web."
 services: operations-management-suite
 documentationcenter: 
 author: bwren
@@ -14,34 +14,32 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2017
 ms.author: bwren
-translationtype: Human Translation
-ms.sourcegitcommit: 7f469fb309f92b86dbf289d3a0462ba9042af48a
 ms.openlocfilehash: c3548d24c74f8ad865b22d6af3490d0b5cc77a84
-ms.lasthandoff: 04/13/2017
-
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
-# <a name="operations-management-suite-oms-self-paced-demo---service-map"></a>Demonstração automática do Operations Management Suite (OMS) - Mapa de Serviço
-Esta é uma demonstração colocada automaticamente que explica o funcionamento da [solução do Mapa de Serviço](operations-management-suite-service-map.md) no Operations Management Suite (OMS) para identificar e diagnosticar um problema simulado numa aplicação Web.  Um mapa de serviço deteta automaticamente componentes de aplicações em sistemas Windows e Linux e mapeia a comunicação entre serviços.  Também consolida os dados recolhidos por outros serviços do OMS, para o ajudar a analisar o desempenho e a identificar problemas.  Também irá utilizar [pesquisas de registos no Log Analytics](../log-analytics/log-analytics-log-searches.md) para desagregar dados recolhidos, para identificar o problema de raiz.
+# <a name="operations-management-suite-oms-self-paced-demo---service-map"></a>Demonstração personalizada do Operations Management Suite (OMS) - Mapa de Serviço
+Esta é uma demonstração personalizada que explica o funcionamento da [solução Mapa de Serviço](operations-management-suite-service-map.md) no Operations Management Suite (OMS) para identificar e diagnosticar um problema simulado numa aplicação Web.  O Mapa de Serviço deteta automaticamente componentes de aplicações em sistemas Windows e Linux e mapeia a comunicação entre serviços.  Também consolida os dados recolhidos por outros serviços do OMS, para o ajudar a analisar o desempenho e a identificar problemas.  Também vai utilizar [pesquisas de registos no Log Analytics](../log-analytics/log-analytics-log-searches.md) para desagregar dados recolhidos, de modo a identificar a causa do problema.
 
 
 ## <a name="scenario-description"></a>Descrição do cenário
 Acabou de receber uma notificação de que a aplicação de Portal de Cliente ACME está a ter problemas de desempenho.  As únicas informações que tem são que estes problemas começaram hoje pelas 4:00 PST.  Não tem a certeza de todos os componentes que o portal depende, exceto um conjunto de servidores Web.  
 
 ## <a name="components-and-features-used"></a>Componentes e funcionalidades utilizados
-- [Solução do Mapa de Serviço](operations-management-suite-service-map.md)
+- [Solução Mapa de Serviço](operations-management-suite-service-map.md)
 - [Pesquisa de registos do Log Analytics](../log-analytics/log-analytics-log-searches.md)
 
 
 ## <a name="walk-through"></a>Instruções
 
-### <a name="1-connect-to-the-oms-experience-center"></a>1. Ligar ao Centro de Experiência do OMS
-Esta instrução utiliza a [Centro de Experiência do Operations Management Suite](https://experience.mms.microsoft.com/) que fornece um ambiente de OMS completo com dados de exemplo. Comece por seguir esta ligação, forneça as informações e, em seguida, selecione o cenário **Insight and Analytics** .
+### <a name="1-connect-to-the-oms-experience-center"></a>1. Ligar ao OMS Experience Center
+Estas instruções utilizam o [Operations Management Suite Experience Center](https://experience.mms.microsoft.com/), que proporciona um ambiente de OMS completo com dados de exemplo. Comece por seguir esta ligação, indique as informações e, em seguida, selecione o cenário **Informações e Análise de Dados** .
 
 
 ### <a name="2-start-service-map"></a>2. Iniciar Mapa de Serviço
-Inicie a solução de Mapa do Serviço ao clicar no mosaico **Mapa de Serviço**.
+Clique no mosaico **Mapa de Serviço** para iniciar a solução Mapa de Serviço.
 
 ![Mosaico do Mapa de Serviço](media/operations-management-suite-walkthrough-servicemap/tile.png)
 
@@ -51,7 +49,7 @@ A consola do Mapa de Serviço é apresentada.  No painel da esquerda está uma l
 
 
 ### <a name="3-view-computer"></a>3. Ver computador
-Sabemos que os servidores Web são denominados AcmeWFE001 e AcmeWFE002, então este parece ser um local razoável para iniciar.  Clique no **AcmeWFE001**.  Esta ação mostra o mapa de AcmeWFE001 e todas as respetivas dependências.  Pode ver os processos que estão em execução no computador selecionado e com que serviços externos eles comunicam.
+Sabemos que os servidores Web se chamam AcmeWFE001 e AcmeWFE002, pelo que este parece ser um ponto de partida razoável.  Clique no **AcmeWFE001**.  Esta ação mostra o mapa de AcmeWFE001 e todas as respetivas dependências.  Pode ver os processos que estão em execução no computador selecionado e com que serviços externos eles comunicam.
 
 ![Servidor Web](media/operations-management-suite-walkthrough-servicemap/web-server.png)
 
@@ -76,16 +74,16 @@ Vemos agora que a dependência **acmetomcat** tem um alerta apresentado, que é 
 
 ### <a name="6-view-performance"></a>6. Ver desempenho
 
-Vamos olhar de forma mais atenta para **acmetomcat**.  Clique no canto superior direito de **acmetomcat** e selecione **Carregar Mapa do Servidor**, para mostrar os detalhes e as dependências desta máquina. Podemos, em seguida, ver um pouco mais dos contadores de desempenho para verificar a nossa suspeita.  Selecione o separador **Desempenho** para apresentar os [contadores de desempenho recolhidos pelo Log Analytics](../log-analytics/log-analytics-data-sources-performance-counters.md) sobre o intervalo de tempo.  Podemos ver que estamos a obter picos periódicos no processador e na memória.
+Vamos olhar de forma mais atenta para **acmetomcat**.  Clique no canto superior direito de **acmetomcat** e selecione **Carregar Mapa do Servidor**, para mostrar os detalhes e as dependências desta máquina. Podemos, em seguida, ver um pouco mais dos contadores de desempenho para verificar a nossa suspeita.  Selecione o separador **Desempenho** para apresentar os [contadores de desempenho recolhidos pelo Log Analytics](../log-analytics/log-analytics-data-sources-performance-counters.md) ao longo do intervalo de tempo.  Podemos ver que estamos a obter picos periódicos no processador e na memória.
 
 ![Desempenho](./media/operations-management-suite-walkthrough-servicemap/performance.png)
 
 
 ### <a name="7-view-change-tracking"></a>7. Ver monitorização de alterações
-Vamos ver se conseguimos perceber o que poderá ter causado esta utilização elevada.  Clique no separador **Resumo**.  Esta ação fornece informações que o OMS recolheu do computador, como as ligações falhadas, alertas críticos e alterações de software.  As secções com informações recentes interessantes já deverão estar expandidas e pode expandir outras secções para inspecionar as informações que contêm.
+Vamos ver se conseguimos perceber o que poderá ter causado esta utilização elevada.  Clique no separador **Resumo**.  São disponibilizadas informações que o OMS recolheu do computador, como ligações falhadas, alertas críticos e alterações de software.  As secções com informações recentes interessantes já deverão estar expandidas e pode expandir outras secções para inspecionar as informações que contêm.
 
 
-Se a **Monitorização de Alterações** ainda não estiver aberta, então expanda-a.  Isto mostra as informações recolhidas pela [solução de Monitorização de Alterações](../log-analytics/log-analytics-change-tracking.md).  Parece que ocorreu uma alteração de software efetuada durante este período de tempo.  Clique em **Software** para obter detalhes.  Um processo de cópia de segurança foi adicionado à máquina imediatamente após as 4:00, pelo que este parece ser o motivo do consumo excessivo de recursos.
+Se a **Monitorização de Alterações** ainda não estiver aberta, então expanda-a.  São apresentadas as informações recolhidas pela [solução Monitorização de Alterações](../log-analytics/log-analytics-change-tracking.md).  Parece que ocorreu uma alteração de software efetuada durante este período de tempo.  Clique em **Software** para obter detalhes.  Um processo de cópia de segurança foi adicionado à máquina imediatamente após as 4:00, pelo que este parece ser o motivo do consumo excessivo de recursos.
 
 ![Monitorização de alterações](./media/operations-management-suite-walkthrough-servicemap/change-tracking.png)
 
