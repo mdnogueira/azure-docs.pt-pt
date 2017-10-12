@@ -3,7 +3,7 @@ title: "Automatizar a remoção de grupos de recursos | Microsoft Docs"
 description: "Versão do Fluxo de Trabalho do PowerShell de um cenário da Automatização do Azure, incluindo runbooks, para remover todos os grupos de recursos da sua subscrição."
 services: automation
 documentationcenter: 
-author: MGoedtel
+author: eslesar
 manager: jwhit
 editor: 
 ms.assetid: b848e345-fd5d-4b9d-bc57-3fe41d2ddb5c
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/26/2016
 ms.author: magoedte
-translationtype: Human Translation
-ms.sourcegitcommit: 00b217a4cddac0a893564db27ffb4f460973c246
-ms.openlocfilehash: 6aa3897d44b146483204d43e026d3d158c3e13b6
-
-
+ms.openlocfilehash: 8b23e55a597f293b17183e80eea6c2763aabe9ba
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="azure-automation-scenario-automate-removal-of-resource-groups"></a>Cenário da Automatização do Azure – remoção automática de grupos de recursos
+# <a name="azure-automation-scenario---automate-removal-of-resource-groups"></a>Cenário da Automatização do Azure – remoção automática de grupos de recursos
 Muitos clientes criam mais do que um grupo de recursos. Alguns podem ser utilizados para gerir aplicações de produção, ao passo que outros podem ser utilizados como ambientes de desenvolvimento e de teste. Automatizar a implementação destes recursos é uma coisa, mas conseguir desativar um grupo de recursos com o clique de um botão é outra. Pode simplificar esta tarefa de gestão comum através da Automatização do Azure. Isto é útil se estiver a trabalhar com uma subscrição do Azure que tenha um limite de gastos através de uma oferta de membro, como o MSDN ou o programa Microsoft Partner Network Cloud Essentials.
 
 Este cenário baseia-se num runbook do PowerShell e foi concebido para remover um ou mais grupos de recursos que especificar da sua subscrição. A predefinição do runbook é testar antes de continuar. Isto garante que não eliminará o grupo de recursos acidentalmente antes de estar pronto para concluir este procedimento.   
@@ -67,9 +67,3 @@ O **Resumo da Tarefa** inclui mensagens dos fluxos de saída, aviso e erro. Sele
 ## <a name="next-steps"></a>Passos seguintes
 * Para começar a criar o seu próprio runbook, veja [Criar ou importar um runbook na Automatização do Azure](automation-creating-importing-runbook.md).
 * Para começar a utilizar runbooks do Fluxo de Trabalho do PowerShell, veja [O meu primeiro runbook do Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md).
-
-
-
-<!--HONumber=Nov16_HO2-->
-
-

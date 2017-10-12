@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: osamam
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 10166e6b8b9144f0a5dde4f2fc10b492120e85d7
-
-
+ms.openlocfilehash: 8568c13d2834a0643e15ab1814a35c92123837d1
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="asymmetric-routing-with-multiple-network-paths"></a>Encaminhamento assimétrico com vários caminhos de rede
 Este artigo explica como o tráfego de rede de encaminhamento e retorno poderá seguir rotas diferentes quando vários caminhos estão disponíveis entre a origem e o destino de rede.
@@ -71,10 +71,4 @@ Outra forma de resolver problemas de encaminhamento assimétrico é através da 
 
 ## <a name="asymmetric-routing-detection"></a>Deteção de encaminhamento assimétrico
 O Traceroute é a melhor forma de garantir que o tráfego de rede atravessa o caminho esperado. Se pretender que o tráfego do seu servidor SMTP no local para a Microsoft assuma o caminho da Internet, o traceroute esperado é do servidor SMTP para o Office 365. O resultado confirma se o tráfego está ou não a sair da rede para a Internet e não para o ExpressRoute.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

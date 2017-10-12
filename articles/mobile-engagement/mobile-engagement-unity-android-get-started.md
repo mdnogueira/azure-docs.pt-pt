@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/19/2016
 ms.author: piyushjo
-translationtype: Human Translation
-ms.sourcegitcommit: 2ea002938d69ad34aff421fa0eb753e449724a8f
 ms.openlocfilehash: bf0b758159d475b4ed7eadb84227e4824e11ba86
-
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-azure-mobile-engagement-for-unity-android-deployment"></a>Introdução ao Azure Mobile Engagement para implementação do Unity Android
 [!INCLUDE [Hero tutorial switcher](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
@@ -37,10 +37,10 @@ Neste tutorial necessita do seguinte:
 > 
 > 
 
-## <a name="a-idsetupazmeasetup-mobile-engagement-for-your-android-app"></a><a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação Android
+## <a id="setup-azme"></a>Configurar o Mobile Engagement para a aplicação Android
 [!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a name="a-idconnectingappaconnect-your-app-to-the-mobile-engagement-backend"></a><a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
 ### <a name="import-the-unity-package"></a>Importar o pacote Unity
 1. Transfira o [pacote do Unity do Mobile Engagement](https://aka.ms/azmeunitysdk) e guarde-o no seu computador local. 
 2. Aceda a **Elementos -> Importar Pacote -> Pacote Personalizado** e selecione o pacote que transferiu no passo anterior. 
@@ -98,10 +98,10 @@ Certifique-se de que tem o SDK Android instalado no seu computador antes de tent
 6. Poderá ser-lhe pedido para facultar um nome de pasta para armazenar o pacote Android. 
 7. Se tudo correr bem, o pacote será implementado no seu dispositivo ligado e, em seguida, deverá ver o seu jogo Unity no seu telemóvel! 
 
-## <a name="a-idmonitoraconnect-app-with-realtime-monitoring"></a><a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
+## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
-## <a name="a-idintegratepushaenable-push-notifications-and-inapp-messaging"></a><a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
+## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
 [!INCLUDE [Enable Google Cloud Messaging](../../includes/mobile-engagement-enable-google-cloud-messaging.md)]
 
 ### <a name="update-the-engagementconfiguration"></a>Atualizar o EngagementConfiguration
@@ -134,9 +134,3 @@ Certifique-se de que tem o SDK Android instalado no seu computador antes de tent
 [52]: ./media/mobile-engagement-unity-android-get-started/52.png
 [53]: ./media/mobile-engagement-unity-android-get-started/53.png
 [54]: ./media/mobile-engagement-unity-android-get-started/54.png
-
-
-
-<!--HONumber=Nov16_HO2-->
-
-

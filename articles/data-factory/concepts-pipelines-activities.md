@@ -13,14 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/17/2017
 ms.author: shlo
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 6dcc5c55fae5e2494526c492a1453747b4d6e179
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Pipelines e atividades no Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Versão 1 - GA](v1/data-factory-create-pipelines.md)
@@ -395,4 +393,3 @@ Veja os tutoriais seguintes para obter instruções passo a passo para criar pip
 
 - [Build a pipeline with a copy activity](quickstart-create-data-factory-powershell.md) (Criar um pipeline com uma atividade de cópia)
 - [Build a pipeline with a data transformation activity](tutorial-transform-data-spark-powershell.md) (Criar um pipeline cum uma atividade de transformação de dados)
-

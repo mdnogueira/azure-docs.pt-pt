@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/24/2017
 ms.author: yurid
-ms.translationtype: HT
-ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
 ms.openlocfilehash: 5ddf71dcd9c5a2b03e3b1441d8c9b4d91b6bad12
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/24/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-security-center-platform-migration"></a>Migração da plataforma do centro de segurança do Azure
 
@@ -78,5 +77,4 @@ Juntamente com a migração da plataforma, estamos a proceder a algumas pequenas
 - A recolha de dados é obrigatória e é automaticamente ativada para os clientes no escalão de preços normal.
 - O centro de segurança do Azure começará a descobrir soluções antimalware que não foram implementadas com as extensões do Azure. A descoberta do Symantec Endpoint Protection e do Defender para Windows 2016 estará disponível pela primeira vez.
 - As políticas de prevenção e as notificações só são configuráveis no nível *Subscrição*, mas o preço continua a poder ser definido no nível *Grupo de Recursos*.
-
 

@@ -14,15 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/24/2017
 ms.author: raynew
-ms.translationtype: HT
-ms.sourcegitcommit: 74b75232b4b1c14dbb81151cdab5856a1e4da28c
 ms.openlocfilehash: df4e227d02901153d3cfcfd4dfd4f11de180763a
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/26/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
-
 # <a name="step-1-review-the-architecture"></a>Passo 1: Rever a arquitetura
 
 
@@ -63,8 +60,7 @@ Saiba mais sobre os pré-requisitos de implementação e os requisitos para cada
 1. Depois de ativar a proteção para uma VM Hyper-V, no portal do Azure ou no local, **Ativar a proteção** é iniciado.
 2. A tarefa verifica se a máquina está em conformidade com os pré-requisitos, antes de invocar o [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), para configurar a replicação com as definições que configurou.
 3. A tarefa inicia a replicação inicial ao invocar o método [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), para inicializar uma replicação de VM completa e enviar os discos virtuais da VM para o Azure.
-4. Pode monitorizar a tarefa no separador **Tarefas**.
-        ![Lista de tarefas](media/vmm-to-azure-walkthrough-architecture/image1.png)![Ativar a desagregação da proteção](media/vmm-to-azure-walkthrough-architecture/image2.png)
+4. Pode monitorizar a tarefa no separador **Tarefas**.      ![Lista de tarefas](media/vmm-to-azure-walkthrough-architecture/image1.png)![Ativar a desagregação da proteção](media/vmm-to-azure-walkthrough-architecture/image2.png)
 
 ### <a name="replicate-the-initial-data"></a>Replicar os dados iniciais
 
@@ -121,4 +117,3 @@ Se ocorrer um erro de replicação, haverá uma repetição interna. Esta lógic
 ## <a name="next-steps"></a>Passos seguintes
 
 Vá para a [Etapa 2: Analisar os pré-requisitos de implementação](vmm-to-azure-walkthrough-prerequisites.md)
-

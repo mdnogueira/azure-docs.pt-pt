@@ -14,15 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 06/23/2017
 ms.author: raynew
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 857267f46f6a2d545fc402ebf3a12f21c62ecd21
 ms.openlocfilehash: 28f775afaf72b11eec0c22f755e4dbd6a485c895
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
-
 # <a name="how-does-hyper-v-replication-to-azure-work-in-site-recovery"></a>Como funciona a replicação de Hyper-V para o Azure no Site Recovery?
 
 
@@ -67,9 +64,7 @@ Saiba mais sobre os pré-requisitos de implementação e os requisitos para cada
 1. Depois de ativar a proteção para uma VM Hyper-V, no portal do Azure ou no local, **Ativar a proteção** é iniciado.
 2. A tarefa verifica se a máquina está em conformidade com os pré-requisitos, antes de invocar o [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), para configurar a replicação com as definições que configurou.
 3. A tarefa inicia a replicação inicial ao invocar o método [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), para inicializar uma replicação de VM completa e enviar os discos virtuais da VM para o Azure.
-4. Pode monitorizar a tarefa no separador **Tarefas**.
-        ![Lista de tarefas](media/site-recovery-hyper-v-azure-architecture/image1.png)
-        ![Ativar a desagregação da proteção](media/site-recovery-hyper-v-azure-architecture/image2.png)
+4. Pode monitorizar a tarefa no separador **Tarefas**.      ![Lista de tarefas](media/site-recovery-hyper-v-azure-architecture/image1.png)![Ativar a desagregação da proteção](media/site-recovery-hyper-v-azure-architecture/image2.png)
 
 ### <a name="replicate-the-initial-data"></a>Replicar os dados iniciais
 
@@ -126,4 +121,3 @@ Se ocorrer um erro de replicação, haverá uma repetição interna. Esta lógic
 ## <a name="next-steps"></a>Passos seguintes
 
 Analise a [matriz de suporte](site-recovery-support-matrix-to-azure.md)
-

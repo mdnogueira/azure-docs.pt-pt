@@ -14,16 +14,15 @@ ms.devlang: nodejs
 ms.topic: hero-article
 ms.date: 09/05/2017
 ms.author: mimig
-ms.translationtype: HT
-ms.sourcegitcommit: 4eb426b14ec72aaa79268840f23a39b15fee8982
 ms.openlocfilehash: 1fb8d7b9f1014f37f0f3afa20605fce10c45a967
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/06/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-3-build-the-ui-with-angular"></a>Criar uma aplicação MongoDB com o Angular e o Azure Cosmos DB - Parte 3: criar a IU com o Angular
 
-Este tutorial com várias parte demonstra como criar uma nova aplicação [API de MongoDB](mongodb-introduction.md) escrita em Node.js com o Express e Angular e ligá-la à sua base de dados do Azure Cosmos DB.
+Este tutorial com várias partes demonstra como criar uma nova aplicação [API de MongoDB](mongodb-introduction.md) escrita em Node.js com o Express e o Angular e ligá-la à sua base de dados do Azure Cosmos DB.
 
 A Parte 3 do tutorial é a continuação da [Parte 2](tutorial-develop-mongodb-nodejs-part2.md) e abrange as seguintes tarefas:
 
@@ -45,7 +44,7 @@ Antes de iniciar esta parte do tutorial, certifique-se de que concluiu os passos
 
 ## <a name="build-the-ui"></a>Criar a IU
 
-1. No Visual Studio Code, clique no botão Parar ![Botão Parar no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/stop-button.png) para parar a aplicação Node.
+1. No Visual Studio Code, clique no botão Stop (Parar) ![Botão Parar no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/stop-button.png) para parar a aplicação Node.
 
 2. Na Janela da Linha de Comandos do Windows ou na janela de Terminal do Mac, introduza o comando seguinte para gerar um componente heroes. Neste código, g=gerar, c=componente, heroes=nome do componente e utiliza uma estrutura de ficheiros simples (--flat), para que seja criada uma subpasta para o mesmo.
 
@@ -74,9 +73,9 @@ Antes de iniciar esta parte do tutorial, certifique-se de que concluiu os passos
 
     ![Abra o ficheiro app-module.ts](./media/tutorial-develop-mongodb-nodejs-part3/app-module-file.png)
 
-    Agora que tem o seu componente Heros, crie um novo ficheiro para o HTML do componente heroes. Uma vez que criámos uma aplicação muito simples, o HTML devia ser incluído no mesmo ficheiro que o ficheiro TypeScript, mas vamos dividi-lo e criar um ficheiro separado.
+    Agora que tem o seu componente Heroes, crie um novo ficheiro para o HTML do mesmo. Uma vez que criámos uma aplicação muito simples, o HTML devia ser incluído no mesmo ficheiro que o ficheiro TypeScript, mas vamos dividi-lo e criar um ficheiro separado.
 
-5. No painel **Explorer**, clique com o botão direito do rato na pasta **app**, clique em **Novo Ficheiro** e dê o nome *heroes.component.html* ao mesmo.
+5. No painel **Explorer**, clique com o botão direito do rato na pasta **app**, clique em **New File** (Novo Ficheiro) e dê o nome *heroes.component.html* ao mesmo.
 
 6. No ficheiro **heroes.component.ts**, elimine as linhas 5 a 9 
 
@@ -87,7 +86,7 @@ Antes de iniciar esta parte do tutorial, certifique-se de que concluiu os passos
         </p>
       `,
       ```
-      e substitua-as com
+      e substitua-as por
   
     ```ts
     templateUrl: './heroes.component.html',
@@ -394,7 +393,7 @@ Agora que temos o componente, como podemos proceder para que apareça no ecrã? 
 
 1. No painel do Explorer, abra **client/app/app.component.ts**.
 
-2. Nas linhas 6 a 8, altere o título para Heroes e ponha o nome do componente que criámos em **heroes.components.ts** (app-heroes) para referenciar esse componente novo A secção de modelo deve ter agora o seguinte aspeto: 
+2. Nas linhas 6 a 8, altere o título para Heroes e ponha o nome do componente que criámos em **heroes.components.ts** (app-heroes) para referenciar esse componente novo. A secção de modelo deve ter agora o seguinte aspeto: 
 
     ```ts
     template: `
@@ -541,7 +540,7 @@ Agora que temos o componente, como podemos proceder para que apareça no ecrã? 
 
     Agora, vamos executar a aplicação.
 
-2. No Visual Studio Code, clique em no botão **Depurar** ![ícone de Depuração no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), no lado esquerdo, clique no botão **Iniciar Depuração** ![Ícone de depuração no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png).
+2. No Visual Studio Code, clique no botão **Debug** (Depurar) ![ícone de Depuração no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), no lado esquerdo, clique no botão **Start Debugging** (Iniciar Depuração) ![Ícone de depuração no Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png).
 
 3. Agora, abra um browser e navegue para **localhost:3000** e veja a aplicação a ser executada localmente.
 
@@ -559,4 +558,3 @@ Pode avançar para a parte seguinte do tutorial para criar uma conta do Azure Co
 
 > [!div class="nextstepaction"]
 > [Create an Azure Cosmos DB account using the Azure CLI](tutorial-develop-mongodb-nodejs-part4.md) (Criar uma conta do Azure Cosmos DB com a CLI do Azure)
-

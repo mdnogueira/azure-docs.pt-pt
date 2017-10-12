@@ -15,12 +15,11 @@ ms.topic: get-started-article
 ms.date: 08/14/2017
 ms.author: shlo
 robots: noindex
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 8d4d574dee4b993d8a464482b244e1f63ade8a57
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="introduction-to-azure-data-factory"></a>Introdução ao Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -130,4 +129,3 @@ Para saber como criar fábricas de dados com pipelines de dados, siga as instru�
 | [Move data between two cloud data stores (Mover dados entre dois arquivos de dados na cloud)](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) |Neste tutorial, vai criar uma fábrica de dados com um pipeline que **move dados** do armazenamento de Blobs para a base de dados SQL. |
 | [Transform data using Hadoop cluster (Utilizar o cluster do Hadoop para transformar dados)](data-factory-build-your-first-pipeline.md) |Neste tutorial, vai criar a primeira fábrica de dados do Azure com um pipeline de dados que **processa dados** através da execução do script Hive num cluster do Azure HDInsight (Hadoop). |
 | [Move data between an on-premises data store and a cloud data store using Data Management Gateway (Utilizar o Data Management Gateway para mover dados entre um arquivo de dados no local e um arquivo de dados na cloud)](data-factory-move-data-between-onprem-and-cloud.md) |Neste tutorial, vai criar uma fábrica de dados com um pipeline que **move dados** de uma base de dados do SQL Server **no local** para um blob do Azure. Como parte das instruções, vai instalar e configurar o Data Management Gateway no seu computador. |
-

@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/09/2017
 ms.author: cawa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c1cd1450d5921cf51f720017b746ff9498e85537
 ms.openlocfilehash: 964691758254531cb92a5b1cbe055ef61d25dba8
-ms.contentlocale: pt-pt
-ms.lasthandoff: 03/14/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="using-storage-explorer-preview-with-azure-file-storage"></a>Utilizar o Explorador de Armazenamento (Pré-visualização) com o Armazenamento de ficheiros do Azure
 
 O Armazenamento de ficheiros do Azure é um serviço que oferece partilhas de ficheiros na cloud com o Protocolo SMB (Server Message Block) padrão. O SMB 2.1 e o SMB 3.0 são suportados. Com o Armazenamento de ficheiros do Azure, pode migrar aplicações antigas que se baseiam em partilhas de ficheiros para o Azure rapidamente e sem reescritas dispendiosas. Pode utilizar o Armazenamento de ficheiros para expor publicamente os dados ao mundo ou para armazenar dados da aplicação em privado. Neste artigo, vai aprender a utilizar o Explorador de Armazenamento (Pré-visualização) para trabalhar com ficheiros e partilhas de ficheiros.
@@ -263,4 +261,3 @@ Os passos seguintes mostram como gerir ficheiros (e pastas) numa partilha de fic
 - Vejas os [mais recentes vídeos e notas de versão do Storage Explorer (Preview)](http://www.storageexplorer.com/).
 
 - Saiba como [utilizar blobs, tabelas, filas e ficheiros do Azure para criar aplicações](https://azure.microsoft.com/documentation/services/storage/).
-

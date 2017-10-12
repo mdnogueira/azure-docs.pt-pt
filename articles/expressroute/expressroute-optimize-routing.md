@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/06/2017
 ms.author: charwen
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0b53a5ab59779dc16825887b3c970927f1f30821
 ms.openlocfilehash: c3a85b9445d69330c3f6c7d298169efddb6ecca0
-ms.contentlocale: pt-pt
-ms.lasthandoff: 04/07/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="optimize-expressroute-routing"></a>Otimizar o Encaminhamento do ExpressRoute
 Se tem vários circuitos do ExpressRoute, significa que tem mais do que um caminho para se ligar à Microsoft. Sendo assim, o encaminhamento poderá não ser o ideal, ou seja, o tráfego poderá optar por um caminho mais longo para chegar à Microsoft e da Microsoft à sua rede. Quanto mais longo for o caminho de rede, maior será a latência. A latência tem um impacto direto no desempenho das aplicações e na experiência do utilizador. Este artigo ilustra este problema e explica como otimizar o encaminhamento com as tecnologias de encaminhamento padrão.
@@ -75,4 +74,3 @@ A solução é simples. Uma vez que sabe onde estão as VNets e os circuitos, po
 > Também pode influenciar o encaminhamento da VNet para a sua rede no local, se tiver diversos circuitos do ExpressRoute, ao configurar a ponderação de uma ligação em vez de aplicar a prefixação COMO CAMINHO, uma técnica que foi descrita no segundo cenário, acima. Para cada prefixo, para decidir como enviar o tráfego, vamos sempre considerar primeiro a ponderação da ligação face ao comprimento de COMO CAMINHO.
 >
 >
-

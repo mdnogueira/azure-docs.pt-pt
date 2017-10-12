@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/18/2017
 ms.author: magoedte
+ms.openlocfilehash: e3c18c7886c8338efc6168464b63a9557909a769
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 2c6cf0eff812b12ad852e1434e7adf42c5eb7422
-ms.openlocfilehash: 85ae54f76fff47b16d7a365ccee87866d0424f82
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/13/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="create-a-standalone-azure-automation-account"></a>Criar uma conta de Automatização do Azure autónoma
 Este tópico mostra-lhe como criar uma conta de Automatização a partir do portal do Azure se pretender avaliar e aprender mais sobre a Automatização do Azure, sem incluir as soluções de gestão adicionais ou a integração com o Log Analytics do OMS para fornecer monitorização avançada de tarefas de runbook.  Pode adicionar essas soluções de gestão ou integrar com o Log Analytics a qualquer momento no futuro.  Com a conta de Automatização, pode autenticar runbooks que gerem recursos no Azure Resource Manager ou na implementação clássica do Azure.
 
@@ -92,4 +90,3 @@ A tabela seguinte resume os recursos da conta Run As clássica.<br>
 * Para começar com runbooks do PowerShell, consulte [My first PowerShell runbook (O meu primeiro runbook do PowerShell)](automation-first-runbook-textual-powershell.md).
 * Para começar com runbooks do fluxo de trabalho do PowerShell, veja [O meu primeiro runbook do fluxo de trabalho do PowerShell](automation-first-runbook-textual.md).
 * Para obter uma introdução aos runbooks Python2, veja [My first Python2 runbook](automation-first-runbook-textual-python2.md) (O meu primeiro runbook Python2).
-

@@ -48,7 +48,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
               href: 'https://app.pluralsight.com/library/courses/azure-iaas-monitoring-management-getting-started/table-of-contents'
-  - title: Exemplos
+  - title: Amostras
     items:
       - type: paragraph
         text: Utilize os exemplos seguintes para configurar e gerir o Log Analytics.

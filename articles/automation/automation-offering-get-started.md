@@ -1,4 +1,4 @@
---- 
+---
 title: "Introdução à Automatização do Azure | Microsoft Docs"
 description: "Este artigo fornece uma descrição geral do serviço de Automatização do Azure ao rever o design e os detalhes de implementação em preparação para integrar a oferta do Azure Marketplace."
 services: automation
@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/31/2017
 ms.author: magoedte
+ms.openlocfilehash: fad13053895c5d6e3c41835fea3cf0bdd3380cd4
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: a16daa1f320516a771f32cf30fca6f823076aa96
-ms.openlocfilehash: 3269af400d091435af56b0093abbb839d8dd7068
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="getting-started-with-azure-automation"></a>Introdução à Automatização do Azure
 
 Este guia de introdução apresenta os conceitos principais relacionados com a implementação da Automatização do Azure. Se não estiver familiarizado com a Automatização no Azure ou tiver experiência com software de fluxo de trabalho de automatização, como o System Center Orchestrator, este guia ajuda-o a compreender como preparar e integrar a Automatização.  Posteriormente, será preparado para começar a desenvolver runbooks para suportar as suas necessidades de automatização de processos. 
@@ -191,6 +189,5 @@ Após a integração da oferta, pode começar a criar runbooks, trabalhar com so
 ## <a name="next-steps"></a>Passos seguintes
 * Pode confirmar que a sua nova conta de Automatização pode autenticar em relação a recursos do Azure, através da consulta de [test Azure Automation Run As account authentication (testar a autenticação da conta Run As de Automatização do Azure)](automation-verify-runas-authentication.md).
 * Para começar a criação de runbooks, reveja primeiro os [tipos de automatização de runbooks](automation-runbook-types.md) suportados e as considerações relacionadas antes de começar a criar.
-
 
 

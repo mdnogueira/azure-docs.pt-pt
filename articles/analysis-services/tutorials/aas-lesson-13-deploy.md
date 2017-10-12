@@ -13,14 +13,13 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 07/17/2017
+ms.date: 09/20/2017
 ms.author: owend
+ms.openlocfilehash: 9594582419c716a37a1010e2410e7b2b199df04c
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: 70dbf5786262f75199270aa8009e03b9b48b8559
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="lesson-13-deploy"></a>Lição 13: implementar
 
@@ -82,4 +81,3 @@ Parabéns! Acabou de criar e implementar o seu primeiro modelo do Analysis Servi
 [Lição Suplementar - segurança dinâmica](../tutorials/aas-supplemental-lesson-dynamic-security.md)   
 [Lição Suplementar - linhas Detalhadas](../tutorials/aas-supplemental-lesson-detail-rows.md)   
 [Lição suplementar - Hierarquias desbalanceadas](../tutorials/aas-supplemental-lesson-ragged-hierarchies.md)   
-

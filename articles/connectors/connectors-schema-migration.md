@@ -15,12 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/23/2016
 ms.author: deonhe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 30abc823a72431dfd12f1051434191ea904533f6
 ms.openlocfilehash: a5a73a9f124e5339b61dbc49021444a208a471f0
-ms.contentlocale: pt-pt
-ms.lasthandoff: 01/20/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="how-to-migrate-logic-apps-to-schema-version-2015-08-01-preview"></a>Como migrar Logic Apps para o esquema versão 2015-08-01-pré-visualização
 Para mover as Logic Apps existentes para o novo esquema, efetue o seguinte:  
@@ -47,7 +46,6 @@ Para mover as Logic Apps existentes para o novo esquema, efetue o seguinte:
 <!--Icon references-->
 [step1]: ./media/connectors-schema-migration/migrateschema1.png
 [step2]: ./media/connectors-schema-migration/migrateschema2.png
-
 
 
 

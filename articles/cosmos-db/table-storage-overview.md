@@ -14,12 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/23/2017
 ms.author: mimig
-ms.translationtype: HT
-ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
 ms.openlocfilehash: 9099e90c402185b371495379db943d64fb82cdb8
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-table-storage-overview"></a>Descrição geral do armazenamento de tabelas do Azure
 
@@ -42,4 +41,3 @@ Pode utilizar o Armazenamento de Tabelas para armazenar conjuntos de dados flex�
     * [Referência da Biblioteca de Clientes do Storage para o .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
 
     * [REST API reference (Referência da API REST)](http://msdn.microsoft.com/library/azure/dd179355)
-

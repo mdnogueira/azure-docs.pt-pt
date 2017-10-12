@@ -15,12 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-catalog
 ms.date: 06/15/2017
 ms.author: maroche
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7479260c7c2e10f242b6d8e77170d4abe8634ac
 ms.openlocfilehash: 5fc5c74c7671f64bd1312ad6939e629c0277110c
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="approach-and-process-for-adopting-azure-data-catalog"></a>Abordagem e processo de adoção do Catálogo de Dados do Azure
 Este artigo vai ajudá-lo a começar a adotar o **Catálogo de Dados do Azure** na sua organização. Para adotar com êxito o **Catálogo de Dados do Azure**, tem de se concentrar em três itens principais: definir a visão, identificar os casos de utilização empresarial fundamentais dentro da organização e escolher um projeto piloto.
@@ -167,4 +166,3 @@ Este artigo informou-o sobre como introduzir o **Catálogo de Dados do Azure** n
 * [Pesquisar origens de dados](data-catalog-get-started.md)
 * [Anotar origens de dados](data-catalog-get-started.md)
 * [Crowdsourcing de metadados](data-catalog-get-started.md)
-

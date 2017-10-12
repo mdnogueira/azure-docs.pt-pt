@@ -15,12 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-catalog
 ms.date: 08/15/2017
 ms.author: maroche
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 532ff423ff53567b6ce40c0ea7ec09a689cee1e7
-ms.openlocfilehash: c0cf2805de958c979def3f21eda59ec97fb91d33
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/05/2017
-
+ms.openlocfilehash: a28a7679831201fcf3a9d1c15497ff706c2752a1
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="what-is-azure-data-catalog"></a>O que é o Catálogo de Dados do Azure?
 O Catálogo de Dados do Azure é um serviço cloud totalmente gerido que permite aos respetivos utilizadores detetar as origens de dados de que precisam e compreender as origens de dados que encontram. Ao mesmo tempo, o Catálogo de Dados ajuda as organizações a obter mais valor dos investimentos existentes. 
@@ -76,4 +75,3 @@ Para saber mais sobre as funcionalidades do Catálogo de Dados, veja:
 Para começar a utilizar o Catálogo de Dados, vá a:
 * [Catálogo de Dados do Microsoft Azure](https://www.azuredatacatalog.com)
 * [Introdução ao Catálogo de Dados do Azure](data-catalog-get-started.md)
-

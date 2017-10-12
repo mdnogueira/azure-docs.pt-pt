@@ -28,7 +28,7 @@
 ### [APIs REST](https://msdn.microsoft.com/en-us/library/mt147898.aspx)
 ## SDKs
 ### [Transferência de SDK .NET](https://www.nuget.org/packages/Microsoft.PowerBI.Api/)
-### [Transferir o SDK de JavaScript](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)
+### [Transferir o SDK em JavaScript](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)
 
 # Recursos
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=intelligence-analytics)

@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/17/2017
 ms.author: magoedte
-ms.translationtype: HT
-ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
 ms.openlocfilehash: b810e37e393ddab55500f636b72450789285a4f0
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 #  <a name="agent-health-solution-in-oms"></a>Solução Funcionamento de Agente no OMS
 A solução Funcionamento de Agente no OMS ajuda-o a determinar que agentes não respondem e que agentes estão a submeter dados operacionais, relativamente a todos os agentes que reportam diretamente à área de trabalho do OMS ou a um grupo de gestão do System Center Operations Manager ligado ao OMS.  Também pode controlar a quantidade de agentes que estão implementados, onde estão distribuídos geograficamente e fazer outras consultas, para estar a par da distribuição dos agentes implementados no Azure, noutros ambientes na cloud ou no local.    
@@ -135,4 +134,3 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos q
 ## <a name="next-steps"></a>Passos seguintes
 
 * Veja o artigo [Alerts in Log Analytics](../log-analytics/log-analytics-alerts.md) (Alertas no Log Analytics) para obter detalhes sobre a geração de alertas do Log Analytics.
-

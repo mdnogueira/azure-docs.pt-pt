@@ -15,12 +15,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 05/10/2016
 ms.author: magoedte;bwren
+ms.openlocfilehash: c9f5c346350a62540ba29444b1b00cc9dc398d56
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: f76de4efe3d4328a37f86f986287092c808ea537
-ms.openlocfilehash: 6b1fb9e7ae810df21cbcd592fef2b43309e2269c
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-automation-overview"></a>Descrição geral da Automatização do Azure
 A Automatização do Microsoft Azure fornece uma forma de os utilizadores automatizarem as tarefas manuais, de execução longa, propensas ao erro e frequentemente repetidas que normalmente são executadas num ambiente de nuvem e empresarial. Poupa tempo, aumenta a fiabilidade das tarefas administrativas normais e agenda-as para serem executadas automaticamente em intervalos regulares. Pode automatizar os processos utilizando runbooks ou automatizar a gestão de configuração utilizando a Configuração de Estado Pretendido. Este artigo fornece uma breve descrição geral de Automatização do Azure e responde a algumas perguntas comuns. É possível consultar outros artigos nesta biblioteca para informações mais detalhadas sobre os diferentes tópicos.
@@ -84,5 +83,4 @@ Está disponível uma variedade de recursos para obter mais informações sobre 
 
 ## <a name="can-i-provide-feedback"></a>Posso enviar comentários?
 **Envie-nos comentários!** Se estiver à procura de uma solução de runbook de Automatização do Azure ou um módulo de integração, publique um Pedido de Script no Centro de Scripts. Se tiver comentários ou pedidos funcionalidades para a Automatização do Azure, publique-os na [Voz do Utilizador](http://feedback.windowsazure.com/forums/34192--general-feedback). Obrigado! 
-
 

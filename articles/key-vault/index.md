@@ -12,14 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5e92b1b234e4ceea5e0dd5d09ab3203c4a86f633
-ms.openlocfilehash: 41db3ea23bc1e9895893201078b1ada3297418cb
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/10/2017
-
+ms.openlocfilehash: 3267373f6db336c34d13709cc0392631531313f4
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="key-vault-documentation"></a>Documentação do Cofre de Chaves
 
 Saiba como utilizar o Cofre de Chaves para salvaguardar e gerir as chaves criptográficas e os segredos utilizados pelas aplicações em cloud e pelos serviços. Tutoriais, referências de API e outra documentação mostram-lhe como criar e manter as chaves que acedem e encriptam os recursos e as soluções.
@@ -175,5 +173,4 @@ Saiba como utilizar o Cofre de Chaves para salvaguardar e gerir as chaves cripto
 </ul>
 
 ---
-
 
