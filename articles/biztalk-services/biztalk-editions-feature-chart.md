@@ -14,13 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
 ms.openlocfilehash: 718b57a801a9ba62a0154ae42da2ac0c0741f203
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="biztalk-services-editions-chart"></a>BizTalk Services: Gráfico de Edições
 
@@ -256,5 +254,4 @@ Para criar os BizTalk Services do Azure no Portal do Azure, veja [BizTalk Servic
 * [Serviços BizTalk: limitação](biztalk-throttling-thresholds.md)<br/>
 * [Serviços BizTalk: Nome e Chave do Emissor](biztalk-issuer-name-issuer-key.md)<br/>
 * [Como posso começar a utilizar o SDK dos Serviços BizTalk do Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
-
 

@@ -15,12 +15,11 @@ ms.date: 08/23/2017
 ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro;oldportal
+ms.openlocfilehash: 85e24587f07a4dc65a2f116499f3f7e00c3ac2b8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 25e4506cc2331ee016b8b365c2e1677424cf4992
-ms.openlocfilehash: b1390ba45f52473129dce6b904690b040af8f7e2
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="manage-your-azure-ad-directory"></a>Gerir o seu diretório do Azure AD
 
@@ -59,12 +58,14 @@ Se ainda não tiver uma subscrição de um serviço cloud da Microsoft, pode uti
 
 ### <a name="how-to-change-the-default-directory-for-a-subscription"></a>Como alterar o diretório predefinido de uma subscrição
 
-1. Inicie sessão no [Centro de Contas do Azure](https://account.windowsazure.com/Home/Index) com uma conta que seja o Administrador de Conta da subscrição para transferir a propriedade da subscrição.
+1. Inicie sessão no [Centro de Contas do Azure](https://account.azure.com/Subscriptions) com uma conta que seja o Administrador de Conta da subscrição para transferir a propriedade da subscrição.
 2. Confirme que o utilizador que pretende que seja o proprietário da subscrição está no diretório segmentado.
 3. Clique em **Transferir subscrição**.
 4. Especifique o destinatário. O destinatário recebe automaticamente um e-mail com uma ligação de aceitação.
 5. O destinatário clica na ligação e segue as instruções, o que inclui a introdução das respetivas informações de pagamento. Quando o destinatário concluir o processo com êxito, a subscrição é transferida. 
 6. O diretório predefinido da subscrição é alterado para o diretório em que o utilizador se encontra, caso a transferência de propriedade de subscrição tenha sido efetuada com êxito.
+
+Para saber mais, consulte [Transferir propriedade da subscrição do Azure para outra conta](../billing/billing-subscription-transfer.md)
 
 ### <a name="manage-the-default-directory-in-azure"></a>Gerir o diretório predefinido no Azure
 Quando se inscreve no Azure, é associado à sua subscrição um diretório predefinido do Azure AD. A utilização do Azure AD não tem custos e os seus diretórios são um recurso gratuito. Existem serviços pagos do Azure AD, os quais estão licenciados em separado e oferecem funcionalidades adicionais, como imagem corporativa da empresa no início de sessão e a reposição de palavras-passe personalizada. Também pode criar um domínio personalizado com um nome DNS de que é proprietário em vez do domínio *.com predefinido.
@@ -121,4 +122,3 @@ Verificam-se as seguintes condições:
 * [Stack Overflow for Azure questions](http://stackoverflow.com/questions/tagged/azure) (Perguntas do Stack Overflow para Azure)
 * [Azure Active Directory do PowerShell](https://docs.microsoft.com/powershell/azure/active-directory)
 * [Atribuir funções de administrador no Azure AD](active-directory-assign-admin-roles.md)
-

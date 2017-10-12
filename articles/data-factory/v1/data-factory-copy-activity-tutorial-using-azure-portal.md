@@ -15,12 +15,11 @@ ms.topic: get-started-article
 ms.date: 07/10/2017
 ms.author: spelluru
 robots: noindex
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 91c9f6d495655dd4ae267125836881d0948c13b3
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="tutorial-use-azure-portal-to-create-a-data-factory-pipeline-to-copy-data"></a>Tutorial: Utilizar o portal do Azure para criar um pipeline do Data Factory e copiar dados 
 > [!div class="op_single_selector"]

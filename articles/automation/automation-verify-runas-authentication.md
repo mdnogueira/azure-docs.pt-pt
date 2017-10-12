@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/07/2017
 ms.author: magoedte
+ms.openlocfilehash: 55f5d5524019ac63565e5ddd1f47dbdd65f05065
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: caaf10d385c8df8f09a076d0a392ca0d5df64ed2
-ms.openlocfilehash: 804e05f596e1d6d5f650e4c94a18eff6b7c3ba4e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/08/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="test-azure-automation-run-as-account-authentication"></a>Testar a autenticação da conta Run As de Automatização do Azure
 Depois de criar uma conta de Automatização com êxito, pode executar um teste simples para confirmar que consegue autenticar com êxito no Azure Resource Manager ou na implementação clássica do Azure com a sua conta Run As de Automatização recentemente criada ou atualizada.    
 
@@ -113,4 +111,3 @@ Não se esqueça de remover o cmdlet **Get-AzureVM** quando reutilizar o código
 ## <a name="next-steps"></a>Passos seguintes
 * Para começar com runbooks do PowerShell, consulte [My first PowerShell runbook (O meu primeiro runbook do PowerShell)](automation-first-runbook-textual-powershell.md).
 * Para obter mais informações sobre a Criação de Gráficos, consulte [Graphical authoring in Azure Automation (Criação de gráficos na Automatização do Azure)](automation-graphical-authoring-intro.md).
-

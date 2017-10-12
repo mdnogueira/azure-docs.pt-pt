@@ -15,12 +15,11 @@ ms.topic: get-started-article
 ms.date: 07/10/2017
 ms.author: spelluru
 robots: noindex
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 85855a3696529eae4f977e9e75800d6fa32b7cc0
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Tutorial: Utilizar o modelo do Azure Resource Manager para criar um pipeline do Data Factory e copiar dados 
 > [!div class="op_single_selector"]
@@ -594,4 +593,3 @@ Neste tutorial, utilizou o armazenamento de blobs do Azure como arquivo de dados
 [!INCLUDE [data-factory-supported-data-stores](../../../includes/data-factory-supported-data-stores.md)]
 
 Para saber como copiar dados de/para um arquivo de dados, clique na ligação relativa a esse arquivo na tabela.
-

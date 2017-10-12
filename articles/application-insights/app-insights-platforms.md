@@ -13,23 +13,22 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: bwren
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d9ae8e8948d82b9695d7d144d458fe8180294084
-ms.openlocfilehash: 7f9b886259c065627055f62a3636ab65434ca57b
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/23/2017
-
+ms.openlocfilehash: d49ad2ff584f42c0e4732a5cff60d23cdf631512
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="developer-analytics-languages-platforms-and-integrations"></a>Análise do programador: idiomas, plataformas e integrações
+# <a name="developer-analytics-languages-platforms-and-integrations"></a>Análise do programador: linguagens, plataformas e integrações
 Estes itens são implementações do [Application Insights](app-insights-overview.md) que já conhecemos, incluindo alguns de terceiros.
 
-## <a name="languages---officially-supported-by-application-insights-team"></a>Idiomas - oficialmente suportados pela equipa do Application Insights
+## <a name="languages---officially-supported-by-application-insights-team"></a>Linguagens – oficialmente suportadas pela equipa do Application Insights
 * [C#|VB (.NET)](app-insights-asp-net.md)
 * [Java](app-insights-java-get-started.md)
 * [Páginas Web JavaScript](app-insights-javascript.md)
+* [Node.JS](app-insights-nodejs.md)
 
-## <a name="languages---community-supported"></a>Idiomas - com suporte da comunidade
-* [Node.JS](https://github.com/Microsoft/ApplicationInsights-node.js)
+## <a name="languages---community-supported"></a>Linguagens – com suporte da comunidade
 * [PHP](https://github.com/Microsoft/ApplicationInsights-PHP)
 * [python](https://pypi.python.org/pypi/applicationinsights/0.1.0)
 * [Ruby](https://rubygems.org/gems/application_insights)
@@ -63,7 +62,7 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 ## <a name="logging-frameworks"></a>Arquiteturas de registo
 * [Log4Net, NLog ou System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 * [Java, Log4J ou Logback](app-insights-java-trace-logs.md)
-* [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) -integra-se no [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
+* [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) – integra-se no [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
 * [Teste de carga baseado na nuvem](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 * [Plug-in do LogStash](https://github.com/Azure/azure-diagnostics-tools/tree/master/Logstash/logstash-output-applicationinsights)
 * [OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)
@@ -83,5 +82,4 @@ Estes itens são implementações do [Application Insights](app-insights-overvie
 * [Stream Analytics](app-insights-export-power-bi.md)
 
 ## <a name="projects"></a> Criar o seu próprio SDK
-Se ainda não tem um SDK para o seu idioma ou plataforma, gostaria de criar um? Observe o código dos SDKs existentes listados no [Projeto Application Insights SDK no GitHub](https://github.com/Microsoft/AppInsights-Home).
-
+Se ainda não tem um SDK para a sua linguagem ou plataforma, gostaria de criar um? Observe o código dos SDKs existentes listados no [Projeto Application Insights SDK no GitHub](https://github.com/Microsoft/AppInsights-Home).

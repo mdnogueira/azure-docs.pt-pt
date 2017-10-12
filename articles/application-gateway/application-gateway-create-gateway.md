@@ -15,12 +15,11 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: davidmu
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 64bd7f356673b385581c8060b17cba721d0cf8e3
-ms.openlocfilehash: 79e373a69f3b899dea1f10ac447a0284931648f4
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/02/2017
-
+ms.openlocfilehash: 7fb54e96d20d34f453b7b016094b84504348335b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-start-or-delete-an-application-gateway-with-powershell"></a>Criar, iniciar ou eliminar um gateway de aplicação com o PowerShell 
 
@@ -446,4 +445,3 @@ Se pretender obter mais informações sobre as opções de balanceamento de carg
 * [Gestor de Tráfego do Azure](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
 [scenario]: ./media/application-gateway-create-gateway/scenario.png
-

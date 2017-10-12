@@ -13,13 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2017
 ms.author: gwallace
-translationtype: Human Translation
-ms.sourcegitcommit: abdbb9a43f6f01303844677d900d11d984150df0
-ms.openlocfilehash: ab6dd0e1e5975770bec741ed4a06b6eb4745e174
-ms.lasthandoff: 04/20/2017
-
+ms.openlocfilehash: 31a500502a4d3e729ecb79929ed6c1de156d6259
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="delegation-of-dns-zones-with-azure-dns"></a>Delegação de zonas DNS com o DNS do Azure
 
 O DNS do Azure permite-lhe alojar uma zona DNS e gerir os registos de DNS para um domínio no Azure. Para que as consultas do DNS de um domínio alcancem o DNS do Azure, o domínio tem de ser delegado ao DNS do Azure a partir do domínio principal. Tenha em atenção que o DNS do Azure não é a entidade de registo de domínios. Este artigo explica como funciona a delegação de domínios e como delegar domínios ao DNS do Azure.
@@ -71,5 +70,4 @@ Cada delegação, na verdade, tem duas cópias dos registos NS; uma na zona prin
 ## <a name="next-steps"></a>Passos seguintes
 
 Aprenda a [delegar o domínio no DNS do Azure](dns-delegate-domain-azure-dns.md)
-
 

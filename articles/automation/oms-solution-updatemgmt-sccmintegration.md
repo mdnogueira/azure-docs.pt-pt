@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/25/2017
 ms.author: eslesar
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: c3ae8da65e03fe9e11b5657a6a40d02de0567da6
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="integrate-system-center-configuration-manager-with-oms-update-management-preview"></a>Integrar o System Center Configuration Manager com a Gestão de Atualizações do OMS [Pré-visualização]
 
 Os clientes que investiram no System Center Configuration Manager para gerir PCs, servidores e dispositivos móveis também contam com a sua potência e maturidade na gestão de atualizações de software como parte do respetivo ciclo de gestão de atualizações de software (SUM).  
@@ -56,5 +54,4 @@ Depois de concluir a implementação da atualização com a solução OMS, os co
 Para gerir atualizações para as VMs do Windows Server que são clientes do Configuration Manager, precisa de configurar a política de cliente para desativar a funcionalidade de Gestão de Atualizações de Software para todos os clientes geridos por esta solução.  Por predefinição, as definições de cliente visam todos os dispositivos na hierarquia.  Para obter mais informações sobre esta definição de política e sobre como configurá-la, reveja [Como configurar as definições de cliente no System Center Configuration Manager](https://docs.microsoft.com/sccm/core/clients/deploy/configure-client-settings).  
 
 Depois de fazer esta alteração de configuração, crie uma nova implementação, seguindo os passos descritos na secção [Criar uma Implementação de Atualização](../operations-management-suite/oms-solution-update-management.md#creating-an-update-deployment) e selecione a coleção do Configuration Manager adequada representada como um grupo de computadores do OMS na lista pendente. 
-
 

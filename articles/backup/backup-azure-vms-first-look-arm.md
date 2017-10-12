@@ -16,12 +16,11 @@ ms.topic: hero-article
 ms.date: 09/04/2017
 ms.author: markgal;jimpark
 ms.custom: H1Hack27Feb2017
-ms.translationtype: HT
-ms.sourcegitcommit: 8f9234fe1f33625685b66e1d0e0024469f54f95c
 ms.openlocfilehash: 639f008eea61b973b9d32dc734d42d5c4e93e924
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/20/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="back-up-azure-virtual-machines-to-recovery-services-vaults"></a>Fazer cópia de segurança de máquinas virtuais do Azure para cofres dos Serviços de Recuperação
 > [!div class="op_single_selector"]
@@ -345,4 +344,3 @@ O custo de fazer cópias de segurança das VMs do Azure baseia-se no número de 
 
 ## <a name="questions"></a>Tem dúvidas?
 Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluída, [envie-nos comentários](http://aka.ms/azurebackup_feedback).
-

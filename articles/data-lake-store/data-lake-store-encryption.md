@@ -14,14 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 4/14/2017
 ms.author: yagupta
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2db2ba16c06f49fd851581a1088df21f5a87a911
 ms.openlocfilehash: 20444d368c568ee716ff242e33323b91ffd198eb
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/08/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="encryption-of-data-in-azure-data-lake-store"></a>Encriptação de dados no Azure Data Lake Store
 
 A encriptação no Azure Data Lake Store ajuda-o a proteger os seus dados, implementar políticas de segurança da empresa e cumprir os requisitos de conformidade normativa. Este artigo apresenta uma descrição geral da estrutura e descreve alguns dos aspetos técnicos da implementação.
@@ -140,4 +138,3 @@ Tenha em atenção que, se utilizar as opções predefinidas para a encriptaçã
     ![Captura de ecrã da janela do Data Lake Store com a mensagem e a opção Rodar Chave realçadas](./media/data-lake-store-encryption/rotatekey.png)
 
 Esta operação deve demorar menos de dois minutos e não se prevê qualquer período de indisponibilidade durante a rotação de chaves. Depois de a operação estar concluída, a versão nova da chave estará em uso.
-

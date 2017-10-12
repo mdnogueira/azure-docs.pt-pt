@@ -8,15 +8,12 @@ ms.service: batch
 ms.topic: get-started-article
 ms.date: 03/08/2017
 ms.author: tamram
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 9a5bbb1ecd3886a1453986c2deadb7b35e54b67b
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
-
 # <a name="overview-of-batch-apis-and-tools"></a>Descrição geral dos APIs e ferramentas do Batch
 
 O processamento de cargas de trabalho paralelas com o Azure Batch é geralmente realizado através de programação, utilizando uma das [APIs do Batch](#batch-development-apis). A aplicação ou serviço de cliente pode utilizar APIs do Batch para comunicar com o serviço Batch. Com as APIs do Batch, pode criar e gerir conjuntos de nós de computação, máquinas virtuais ou serviços cloud. Pode, então, agendar tarefas para serem executadas nesses nós. 
@@ -108,4 +105,3 @@ Aqui estão algumas ferramentas adicionais que podem ser úteis para criar e dep
 [batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [storage_explorer]: http://storageexplorer.com/
 [portal]: https://portal.azure.com
-

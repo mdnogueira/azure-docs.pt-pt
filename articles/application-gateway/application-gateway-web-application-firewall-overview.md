@@ -14,14 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: amsriva
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 09f24fa2b55d298cfbbf3de71334de579fbf2ecd
 ms.openlocfilehash: 50863b60f2843f033bdb07f4564d937cd6f0b7be
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/07/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="web-application-firewall-waf"></a>Firewall de aplicações Web (WAF)
 
 Firewall de aplicações Web (WAF) é uma funcionalidade de Gateway de Aplicação que fornece proteção centralizada das suas aplicações Web a partir de exploits e vulnerabilidades comuns. 
@@ -173,5 +171,4 @@ A faturação da WAF entra em vigor a 05/05/2017; até lá, os gateways do WAF S
 ## <a name="next-steps"></a>Passos seguintes
 
 Após saber mais sobre as capacidades da WAF, visite [How to configure web application firewall on Application Gateway](application-gateway-web-application-firewall-portal.md) (Como configurar a firewall de aplicações Web no Gateway da Aplicação).
-
 

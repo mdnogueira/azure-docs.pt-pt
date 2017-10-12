@@ -13,12 +13,11 @@ ms.workload: identity
 ms.date: 08/24/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.translationtype: HT
-ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
 ms.openlocfilehash: 04f15384a7cd0fa03300acdf159d371569ecf9fc
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="users-flagged-for-risk-security-report-in-the-azure-active-directory-portal"></a>Utilizadores sinalizados no relatório de segurança de risco no portal do Azure Active Directory
 
@@ -112,5 +111,4 @@ Para investigar um evento de risco, selecione um na lista para abrir o painel **
 ## <a name="next-steps"></a>Passos seguintes
 
 - Para obter mais informações sobre o Azure Active Directory Identity Protection, veja [Azure Active Directory Identity Protection](active-directory-identityprotection.md).
-
 

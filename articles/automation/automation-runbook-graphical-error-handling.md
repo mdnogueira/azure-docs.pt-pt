@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 12/26/2016
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 08cba012cca61eeb03187d2b4165e2a79b15bc3d
-ms.openlocfilehash: 12313f7f245d32c33882f1036f7d4b48bfb3ddc5
-ms.contentlocale: pt-pt
-ms.lasthandoff: 02/03/2017
-
+ms.openlocfilehash: 521b7bd1599ebe4158258e0eb706efae2e5c5b3a
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="error-handling-in-azure-automation-graphical-runbooks"></a>Erro ao Processar em Runbooks Gráficos da Automatização do Azure
 
 Um principal de design de runbook chave a considerar é a identificação de diferentes problemas que poderão ocorrer num runbook. Estes problemas poderão incluir o êxito, estados de erro esperados e condições de erro inesperadas.
@@ -75,4 +73,3 @@ As ligações de erro são enviadas destas atividades para uma única atividade 
 * Para saber mais sobre ligações e tipos de ligações em runbooks gráficos, veja [Criação de runbooks gráficos na Automatização do Azure](automation-graphical-authoring-intro.md#links-and-workflow).
 
 * Para saber mais sobre a execução de runbooks, como monitorizar tarefas de runbooks e outros detalhes técnicos, veja [Acompanhar uma tarefa de runbook](automation-runbook-execution.md).
-

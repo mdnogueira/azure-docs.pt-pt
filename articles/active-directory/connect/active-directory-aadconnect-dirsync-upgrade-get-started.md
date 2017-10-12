@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/13/2017
 ms.author: billmath
-ms.translationtype: HT
-ms.sourcegitcommit: 19be73fd0aec3a8f03a7cd83c12cfcc060f6e5e7
 ms.openlocfilehash: 7049af4567947d3d799a38c5a3940ba25a2c0f18
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect: atualizar do DirSync
 O Azure AD Connect é o sucessor do DirSync. Encontrará neste tópico as forma de atualizar a partir do DirSync. Estes passos não funcionam para atualizar a partir de outra versão do Azure AD Connect ou a partir do Azure AD Sync.
 
@@ -218,4 +216,3 @@ Saiba mais acerca destas novas funcionalidades que foram ativadas com a instala�
 Saiba mais acerca destes tópicos comuns: [agendador e como acionar a sincronização](active-directory-aadconnectsync-feature-scheduler.md).
 
 Saiba mais sobre como [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md).
-
