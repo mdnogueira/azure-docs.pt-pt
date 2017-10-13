@@ -16,12 +16,11 @@ ms.workload: na
 ms.date: 07/24/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
-ms.translationtype: HT
-ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
 ms.openlocfilehash: bfa8dbbd0b1d943a9eb7a042df0bac25189d9ac9
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/24/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="overview-of-azure-iot-suite"></a>Descrição Geral do Azure IoT Suite
 
@@ -76,4 +75,3 @@ Agora que tem uma ideia geral sobre o que o IoT Suite pode fazer e quais são os
 [iot-suite-what-is-azure-iot]: iot-suite-what-is-azure-iot.md
 [lnk-what-are-preconfig]: iot-suite-what-are-preconfigured-solutions.md
 [lnk-device-management]: ../iot-hub/iot-hub-device-management-overview.md
-

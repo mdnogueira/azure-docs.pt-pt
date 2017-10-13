@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 08/14/2017
 ms.author: bradsev
-ms.translationtype: HT
-ms.sourcegitcommit: 07e5e15f4f4c4281a93c8c3267c0225b1d79af45
 ms.openlocfilehash: 89fa80b3e3409b7cd2f600776fffdeb3a5271b5d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/31/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-using-r-server-on-hdinsight"></a>Introdução à utilização do R Server no HDInsight
 
@@ -788,4 +787,3 @@ Agora, deve saber como criar um cluster do HDInsight novo que inclui o R Server,
 * [Add RStudio Server to HDInsight (if not installed during cluster creation) [Adicionar o RStudio Server ao HDInsight (se não for instalado durante a criação do cluster)]](hdinsight-hadoop-r-server-install-r-studio.md)
 * [Compute context options for R Server on HDInsight (Opções do contexto de cálculo para o R Server no HDInsight)](hdinsight-hadoop-r-server-compute-contexts.md)
 * [Azure Storage options for R Server on HDInsight (Opções do Armazenamento do Azure para o R Server no HDInsight)](hdinsight-hadoop-r-server-storage.md)
-

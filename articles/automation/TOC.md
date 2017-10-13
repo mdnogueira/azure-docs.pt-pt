@@ -87,7 +87,7 @@
 ### [Resolver problemas de Função de Trabalho de Runbook Híbrida](automation-troubleshooting-hybrid-runbook-worker.md)
 # Referência
 ## [Azure PowerShell](/powershell/module/azurerm.automation)
-## [Azure PowerShell (Clássico)](/powershell/module/azure/?view=azuresmps-3.7.0)
+## [Azure PowerShell (clássico)](/powershell/module/azure/?view=azuresmps-3.7.0)
 ## [.NET](/dotnet/api/microsoft.azure.management.automation)
 ## [REST](/rest/api/automation)
 ## [REST (Clássico)](https://msdn.microsoft.com/library/azure/mt163781)

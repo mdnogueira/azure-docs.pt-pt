@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
 ms.openlocfilehash: b81791f0bce7e6f57782dfe7bc5fb5fc21369e7d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="secure-your-key-vault"></a>Proteger o seu cofre de chaves
 O Cofre de Chaves do Azure é um serviço em nuvem que protege chaves e segredos de encriptação (como certificados, cadeias de ligação e palavras-passe) das suas aplicações na nuvem. Uma vez que estes dados são confidenciais e vitais para a sua atividade, é fundamental proteger o acesso aos seus cofres de chaves, de modo a que só os utilizadores e as aplicações com autorização possam aceder aos mesmos. Este artigo disponibiliza uma descrição geral do modelo de acesso do cofre de chaves, explica a autenticação e a autorização e descreve como proteger o acesso ao cofre de chaves das suas aplicações com um exemplo.
@@ -250,5 +249,4 @@ Para obter mais informações sobre o registo de utilização do cofre de chave,
 Para obter mais informações sobre a utilização de chaves e segredos com o cofre de chave do Azure, veja [About Keys and Secrets (Sobre Chaves e Segredos)](https://msdn.microsoft.com/library/azure/dn903623.aspx).
 
 Se tiver perguntas sobre o Cofre de Chaves, visite os [Fóruns do Cofre de Chaves do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault)
-
 
