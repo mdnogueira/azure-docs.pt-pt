@@ -5,8 +5,3 @@ As seguintes tarefas serão efetuadas neste cenário:
 * Criar sondas do estado de funcionamento
 
 ![Cenário do Balanceador de carga](./media/load-balancer-get-started-internet-scenario-include/scenario-classic.png)
-
-
-<!--HONumber=Nov16_HO2-->
-
-

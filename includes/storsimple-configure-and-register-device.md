@@ -74,8 +74,3 @@ Depois de o dispositivo estar registado com êxito e se não ficar online, pode 
 
 Para ver um vídeo que mostra como configurar e registar o dispositivo através do Windows PowerShell para StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/).
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

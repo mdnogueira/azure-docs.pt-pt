@@ -15,8 +15,3 @@
 
 O Xcode criará a aplicação de demonstração onde iremos integrar o Mobile Engagement.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

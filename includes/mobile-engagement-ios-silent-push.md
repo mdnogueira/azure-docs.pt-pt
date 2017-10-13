@@ -24,8 +24,3 @@
    
    * Ative **Notificações Push** em Destinos > Nome do Destino > Capacidades.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

@@ -9,8 +9,3 @@ Esta secção mostra como ligar a aplicação ao back-end do Mobile Engagement c
    
      ![](./media/mobile-engagement-connect-app-with-monitor/monitor.png)
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

@@ -39,8 +39,3 @@
       ![Adicionar volume](./media/storsimple-create-volume-u2/AddVolumeAdditionalSettings1.png)
 4. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-create-volume-u2/HCS_CheckIcon-include.png). É criado um volume com as definições especificadas.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

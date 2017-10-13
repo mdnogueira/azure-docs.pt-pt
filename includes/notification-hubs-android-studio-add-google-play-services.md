@@ -1,5 +1,5 @@
 1. Abra o Gestor do Android SDK clicando no ícone na barra de ferramentas do Android Studio ou em **Ferramentas** -> **Android** -> **Gestor de SDKs** no menu. Localize a versão de destino do Android SDK utilizada no projeto, abra-a clicando em **Mostrar Detalhes do Pacote** e escolha **APIs do Google**, se ainda não estiver instalada.
-2. Clique no separador **Ferramentas SDK**. Se ainda não instalou o Serviço do Google Play, clique em **Serviços do Google Play**, como mostrado abaixo. Em seguida, clique em **Aplicar** para instalar. 
+2. Clique no separador **Ferramentas SDK** . Se ainda não instalou o Serviço do Google Play, clique em **Serviços do Google Play**, como mostrado abaixo. Em seguida, clique em **Aplicar** para instalar. 
    
     Anote o caminho do SDK, para utilização num passo posterior. 
    

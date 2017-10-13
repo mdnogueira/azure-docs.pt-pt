@@ -28,8 +28,3 @@ Concluiu a configuração do dispositivo.
 
 Para ver um vídeo que demonstra como fazer uma cópia de segurança do StorSimple, clique [aqui](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/).
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-
