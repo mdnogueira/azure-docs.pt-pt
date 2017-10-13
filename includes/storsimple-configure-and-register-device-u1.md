@@ -63,8 +63,3 @@
        
         Verifique se a porta 9354 está aberta para comunicação de saída, uma vez que é utilizada pelo barramento de serviço para a comunicação Serviço a dispositivo do StorSimple Manager.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

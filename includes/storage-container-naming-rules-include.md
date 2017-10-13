@@ -15,8 +15,3 @@ Um nome de contentor tem de ser um nome DNS válido, cumprindo as seguintes regr
 > 
 > 
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-
