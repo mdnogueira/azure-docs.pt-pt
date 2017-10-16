@@ -117,8 +117,6 @@
               href: app-insights-snapshot-debugger.md
         - name: J2EE
           items:
-            - name: Eclipse
-              href: app-insights-java-eclipse.md
             - name: Rastreios de pedido
               href: app-insights-java-trace-logs.md
             - name: Métricas do Unix
@@ -140,8 +138,6 @@
               href: app-insights-proactive-failure-diagnostics.md
             - name: Anomalias de desempenho
               href: app-insights-proactive-performance-diagnostics.md
-        - name: Dynamics CRM
-          href: app-insights-sample-mscrm.md
         - name: Criar um recurso
           href: app-insights-create-new-resource.md
     - name: Analisar
@@ -188,14 +184,8 @@
           items:
             - name: Descrição geral
               href: app-insights-analytics.md
-            - name: Apresentação
-              href: app-insights-analytics-tour.md
-            - name: Utilizar
-              href: app-insights-analytics-using.md
-            - name: Importar
+            - name: Importar registos personalizados
               href: app-insights-analytics-import.md
-            - name: Diagnóstico
-              href: app-insights-analytics-diagnostics.md
     - name: Automatizar
       items:
         - name: Configuração do Azure PowerShell
@@ -259,7 +249,7 @@
           href: app-insights-java-troubleshoot.md
 - name: Referência
   items:
-    - name: Análise
+    - name: Linguagem de consulta de análise
       href: 'https://docs.loganalytics.io/'
     - name: .NET
       href: 'https://docs.microsoft.com/dotnet/api/microsoft.applicationinsights'

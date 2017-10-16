@@ -53,6 +53,8 @@
               href: log-analytics-azure-vm-extension.md
             - name: Recursos do Azure
               href: log-analytics-azure-storage.md
+            - name: Dados de diagnóstico ou de registo do armazenamento do Azure
+              href: log-analytics-azure-storage-iis-table.md
             - name: Operations Manager
               href: log-analytics-om-agents.md
             - name: Configuration Manager
@@ -92,6 +94,8 @@
           items:
             - name: Expressões regulares
               href: log-analytics-log-searches-regex.md
+            - name: Pesquisas em várias áreas de trabalho
+              href: log-analytics-cross-workspace-search.md
         - name: Agir com base nos resultados de pesquisa
           href: log-analytics-log-search-takeaction.md
         - name: Grupos de computadores
@@ -229,6 +233,10 @@
       href: /powershell/module/azurerm.operationalinsights
     - name: REST
       href: /rest/api/loganalytics
+    - name: Ver referência do mosaico do Estruturador
+      href: log-analytics-view-designer-tiles.md
+    - name: Ver referência de parte da visualização do Estruturador
+      href: log-analytics-view-designer-parts.md
 - name: Recursos
   items:
     - name: Mapa do Azure
