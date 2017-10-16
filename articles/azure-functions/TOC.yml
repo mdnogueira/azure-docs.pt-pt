@@ -15,6 +15,8 @@
       href: functions-create-first-azure-function-azure-cli.md
     - name: Criar função - Visual Studio
       href: functions-create-your-first-function-visual-studio.md
+    - name: Criar função - Java/Maven
+      href: functions-create-first-java-maven.md
     - name: Acionadores
       items:
         - name: Armazenamento de blobs
@@ -67,12 +69,46 @@
           href: functions-reference-fsharp.md
         - name: JavaScript
           href: functions-reference-node.md
+        - name: Java
+          href: functions-reference-java.md
     - name: Considerações de desempenho
       href: functions-best-practices.md
     - name: Proxies de Funções
       href: functions-proxies.md
     - name: Runtime das Funções
       href: functions-runtime-overview.md
+    - name: Funções Duráveis
+      items:
+        - name: Descrição geral
+          href: durable-functions-overview.md
+        - name: Enlaces
+          href: durable-functions-bindings.md
+        - name: Ponto de verificação e repetição
+          href: durable-functions-checkpointing-and-replay.md
+        - name: Gestão de instâncias
+          href: durable-functions-instance-management.md
+        - name: API HTTP
+          href: durable-functions-http-api.md
+        - name: Processamento de erros
+          href: durable-functions-error-handling.md
+        - name: Diagnóstico
+          href: durable-functions-diagnostics.md
+        - name: Temporizadores
+          href: durable-functions-timers.md
+        - name: Eventos externos
+          href: durable-functions-external-events.md
+        - name: Orquestrações externas
+          href: durable-functions-eternal-orchestrations.md
+        - name: Orquestrações singleton
+          href: durable-functions-singletons.md
+        - name: Sub-orquestrações
+          href: durable-functions-sub-orchestrations.md
+        - name: Hubs de tarefas
+          href: durable-functions-task-hubs.md
+        - name: Controlo de versões
+          href: durable-functions-versioning.md
+        - name: Desempenho e dimensionamento
+          href: durable-functions-perf-and-scale.md
 - name: Guias de procedimentos
   items:
     - name: Programar
@@ -94,7 +130,11 @@
         - name: Funções no local
           href: functions-runtime-install.md
     - name: Configurar
-      href: functions-how-to-use-azure-function-app-settings.md
+      items:
+        - name: Gerir uma aplicação de funções
+          href: functions-how-to-use-azure-function-app-settings.md
+        - name: Definir a versão runtime
+          href: functions-versions.md
     - name: Monitorizar
       href: functions-monitoring.md
     - name: Integrar
@@ -111,6 +151,18 @@
           href: functions-flow-scenario.md
         - name: Utilizar a Identidade do Serviço Gerido
           href: ../app-service/app-service-managed-service-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
+    - name: Funções Duráveis
+      items:
+        - name: Instalar
+          href: durable-functions-install.md
+        - name: Encadeamento
+          href: durable-functions-sequence.md
+        - name: Fan-out/fan-in
+          href: durable-functions-cloud-backup.md
+        - name: Singleton com monitorização de estado
+          href: durable-functions-counter.md
+        - name: Interação humana
+          href: durable-functions-phone-verification.md
 - name: Referência
   items:
     - name: Enlaces

@@ -58,6 +58,7 @@
 ### [API REST](resource-manager-rest-api.md)
 ### [Utilizar etiquetas para organizar recursos](resource-group-using-tags.md)
 ### [Mover recursos para um grupo novo ou uma subscrição nova](resource-group-move-resources.md)
+### [Organizar subscrições com grupos de gestão](../billing/billing-enterprise-mgmt-group-overview.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ### [Exemplos de governação](resource-manager-subscription-examples.md)
 
 ## Controlar Acesso

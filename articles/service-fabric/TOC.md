@@ -240,6 +240,7 @@
 
 ### Implementar ou remover aplicações
 #### [Implementar aplicações num cluster local](service-fabric-get-started-with-a-local-cluster.md)
+#### [Azure Resource Manager](service-fabric-application-arm-resource.md)
 #### [Azure PowerShell](service-fabric-deploy-remove-applications.md)
 #### [CLI do Service Fabric](service-fabric-application-lifecycle-sfctl.md)
 #### [Visual Studio](service-fabric-publish-app-remote-cluster.md)
@@ -341,8 +342,8 @@
 # Referência
 ## [Azure PowerShell](/powershell/module/azurerm.servicefabric/)
 ## [PowerShell](/powershell/module/servicefabric/?view=azureservicefabricps)
-## [CLI do Azure](/cli/azure/sf)
-## [CLI do Service Fabric](service-fabric-sfctl.md)
+## [CLI do Azure (az sf)](/cli/azure/sf)
+## [CLI do Service Fabric (sfctl)](service-fabric-sfctl.md)
 ### [sfctl application](service-fabric-sfctl-application.md)
 ### [sfctl chaos](service-fabric-sfctl-chaos.md)
 ### [sfctl cluster](service-fabric-sfctl-cluster.md)
