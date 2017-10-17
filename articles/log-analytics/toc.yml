@@ -9,6 +9,8 @@
   items:
     - name: Recolher - VMs do Azure
       href: log-analytics-quick-collect-azurevm.md
+    - name: Recolher - Computador com Linux
+      href: log-analytics-quick-collect-linux-computer.md
 - name: Tutoriais
   items:
     - name: 1 - Analisar os dados

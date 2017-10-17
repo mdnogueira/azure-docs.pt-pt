@@ -158,6 +158,10 @@
           href: model-management-cli-reference.md
         - name: API de recolha de dados de modelo
           href: model-data-collection-api-reference.md
+    - name: Notas de versão
+      items:
+        - name: Sprint 0 - Outubro de 2017
+          href: release-notes-sprint-0.md
 - name: Recursos
   items:
     - name: Perguntas mais frequentes

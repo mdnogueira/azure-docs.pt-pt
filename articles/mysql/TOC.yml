@@ -57,6 +57,8 @@
           href: concepts-servers.md
         - name: Versões suportadas
           href: concepts-supported-versions.md
+        - name: Registos do servidor
+          href: concepts-server-logs.md
     - name: Recursos
       items:
         - name: Escalões de preço
@@ -113,6 +115,10 @@
           href: howto-server-parameters.md
         - name: CLI do Azure
           href: howto-configure-server-parameters-using-cli.md
+    - name: Aceder a registos do servidor
+      items:
+        - name: CLI do Azure
+          href: howto-configure-server-logs-in-cli.md
 - name: Referência
   items:
     - name: CLI do Azure

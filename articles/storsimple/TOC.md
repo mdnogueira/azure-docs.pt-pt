@@ -101,6 +101,7 @@
 ##### [Gerir contentores de volumes](storsimple-8000-manage-volume-containers.md)
 ##### [Gerir volumes - atual](storsimple-8000-manage-volumes-u2.md)
 ###### [FAQ: volumes afixados localmente](storsimple-8000-local-volume-faq.md)
+##### [Controlo de Acesso Baseado em Funções](storsimple-8000-role-based-access-control.md)
 ##### [Gerir ACRs](storsimple-8000-manage-acrs.md)
 ##### [Gerir modelos de largura de banda](storsimple-8000-manage-bandwidth-templates.md)
 ##### [Ver e gerir tarefas](storsimple-8000-manage-jobs-u2.md)
@@ -188,7 +189,7 @@
 #### [Versão - GA](storsimple-july-2014-release-notes.md)
 
 ## Referência
-### [Azure PowerShell](/powershell/azure/overview?view=azuresmps-3.7.0)
+### [API REST](https://docs.microsoft.com/rest/api/storsimple)
 ### [Windows PowerShell para cmdlets StorSimple](https://technet.microsoft.com/library/dn688168.aspx)
 
 # StorSimple Série 8000 (portal Clássico)

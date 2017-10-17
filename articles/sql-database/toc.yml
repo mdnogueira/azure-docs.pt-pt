@@ -135,12 +135,16 @@
           href: sql-database-disaster-recovery.md
         - name: Realizar teste de recuperação
           href: sql-database-disaster-recovery-drills.md
-    - name: Carregar e mover dados
+    - name: Migrar para a Base de Dados SQL
       items:
         - name: Migrar BD do SQL Server
           href: sql-database-cloud-migrate.md
         - name: Alterações de T-SQL
           href: sql-database-transact-sql-information.md
+        - name: Gerir a base de dados após a migração
+          href: sql-database-manage-after-migration.md
+    - name: Carregar e mover dados
+      items:
         - name: Copiar uma BD
           href: sql-database-copy.md
         - name: Importar uma BD

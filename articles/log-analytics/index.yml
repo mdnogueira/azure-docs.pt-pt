@@ -27,6 +27,10 @@ sections:
               src: 'https://docs.microsoft.com/en-us/azure/media/index/virtualmachine.svg'
             text: VMs do Azure
             href: /azure/log-analytics/log-analytics-quick-collect-azurevm
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/media/index/virtualmachine.svg'
+            text: Computador com Linux
+            href: /azure/log-analytics/log-analytics-quick-collect-linux-computer
   - title: Tutoriais passo a passo
     items:
       - type: paragraph

@@ -48,37 +48,45 @@
           href: msi-qs-configure-portal-windows-vm.md
         - name: Com o PowerShell
           href: msi-qs-configure-powershell-windows-vm.md
-        - name: Com a CLI do Azure
+        - name: Utilizar a CLI do Azure
           href: msi-qs-configure-cli-windows-vm.md
         - name: Com o modelo do Azure Resource Manager
           href: msi-qs-configure-template-windows-vm.md
-        - name: Com um SDK do Azure
+        - name: Utilizar o SDK do Azure
           href: msi-qs-configure-sdk-windows-vm.md
-    - name: Atribuir o acesso MSI a um recurso do Azure
+    - name: Conceder a uma VM acesso MSI ao Resource Manager
       items:
-        - name: Com o portal do Azure
+        - name: Com o Portal do Azure
           href: msi-howto-assign-access-portal.md
         - name: Com o PowerShell
           href: msi-howto-assign-access-powershell.md
-        - name: Com a CLI do Azure
+        - name: Utilizar a CLI do Azure
           href: msi-howto-assign-access-cli.md
-    - name: Utilizar o MSI para aceder ao Azure Resource Manager
+    - name: Utilizar um MSI de VM para aceder ao Azure Resource Manager
       items:
-        - name: Criar uma VM do Windows
+        - name: A partir de uma VM do Windows
           href: msi-tutorial-windows-vm-access-arm.md
-        - name: Com uma VM do Linux
+        - name: A partir de uma VM do Linux
           href: msi-tutorial-linux-vm-access-arm.md
-    - name: Utilizar o MSI para aceder ao armazenamento do Azure
+    - name: Utilizar um MSI de VM para aceder ao SQL do Azure
       items:
-        - name: Criar uma VM do Windows
+        - name: A partir de uma VM do Windows
+          href: msi-tutorial-windows-vm-access-sql.md
+    - name: Utilizar um MSI de VM para aceder ao armazenamento do Azure
+      items:
+        - name: A partir de uma VM do Windows com uma chave de acesso
           href: msi-tutorial-windows-vm-access-storage.md
-        - name: Com uma VM do Linux
+        - name: A partir de uma VM do Windows com SAS
+          href: msi-tutorial-windows-vm-access-storage-sas.md
+        - name: A partir de uma VM do Linux com uma chave de acesso
           href: msi-tutorial-linux-vm-access-storage.md
-    - name: Utilizar o MSI para aceder a um recurso que não seja do Azure AD
+        - name: A partir de uma VM do Linux com SAS
+          href: msi-tutorial-linux-vm-access-storage-sas.md
+    - name: Utilizar um MSI de VM para aceder ao Azure Key Vault
       items:
-        - name: Criar uma VM do Windows
+        - name: A partir de uma VM do Windows
           href: msi-tutorial-windows-vm-access-nonaad.md
-        - name: Com uma VM do Linux
+        - name: A partir de uma VM do Linux
           href: msi-tutorial-linux-vm-access-nonaad.md
     - name: FAQ e problemas conhecidos
       href: msi-known-issues.md
