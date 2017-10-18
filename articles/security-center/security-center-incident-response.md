@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/30/2017
 ms.author: yurid
-translationtype: Human Translation
-ms.sourcegitcommit: f40f64906bf87d8505fa1a209222163256326d14
-ms.openlocfilehash: a2cc4729ca5cb1dcc10630158ec3d94315fb01a5
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: 6cd6c822eb255893feac2536d7bae034380094b2
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="using-azure-security-center-for-an-incident-response"></a>Utilizar o Centro de Segurança do Azure para resposta a incidentes
 Muitas organizações só aprendem a responder a incidentes de segurança depois de sofrerem um ataque. Para reduzir os custos e os danos, é importante ter um plano de resposta a incidentes implementado antes que ocorra um ataque. Pode utilizar o Centro de segurança do Azure em várias fases de uma resposta a incidentes.
@@ -84,7 +83,7 @@ A Constança iniciou sessão no portal do Azure e está a trabalhar na consola d
    > Para efeitos deste cenário, Constança vai efetuar uma avaliação sobre o alerta de atividade SQL maliciosa, conforme indicado na imagem anterior.
    >
    >
-2. Clique em **Atividade SQL maliciosa** e reveja os recursos atacados no painel **Atividade SQL maliciosa**:  ![Detalhes do incidente](./media/security-center-incident-response/security-center-incident-response-fig5.png)
+2. Clique em **Atividade SQL maliciosa** e reveja os recursos atacados no painel **Atividade SQL maliciosa**: ![Detalhes do incidente](./media/security-center-incident-response/security-center-incident-response-fig5.png)
 
     Neste painel, Constança pode tomar notas sobre os recursos atacados, o número de ataques e quando foram detetados.
 3. Clique no **recurso atacado** para obter mais informações sobre este ataque.
@@ -101,4 +100,3 @@ A equipa de resposta a incidentes também pode tirar partido da capacidade do [P
 
 ## <a name="conclusion"></a>Conclusão
 A criação de uma equipa antes de ocorrer um incidente é muito importante para a sua organização e irá influenciar positivamente como os incidentes são processados. Ter as ferramentas certas para monitorizar recursos pode ajudar a esta equipa a tomar medidas precisas para resolver um incidente de segurança. As [capacidades de deteção](security-center-detection-capabilities.md) do Centro de Segurança vão ajudar as TI a responder rapidamente a incidentes de segurança e a resolver problemas de segurança.
-

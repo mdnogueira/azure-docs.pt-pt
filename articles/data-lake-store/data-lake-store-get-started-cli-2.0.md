@@ -12,25 +12,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 06/29/2017
+ms.date: 09/28/2017
 ms.author: nitinme
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6efa2cca46c2d8e4c00150ff964f8af02397ef99
-ms.openlocfilehash: ed78d25f2bac0a9996f1796ee503f31a36940977
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/01/2017
-
+ms.openlocfilehash: 431c974401c201a76b6d20de9837e44374716417
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-azure-data-lake-store-using-azure-cli-20"></a>Introdução ao Azure Data Lake Store com a CLI 2.0 do Azure
 > [!div class="op_single_selector"]
 > * [Portal](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [SDK do .NET](data-lake-store-get-started-net-sdk.md)
-> * [SDK Java](data-lake-store-get-started-java-sdk.md)
-> * [API REST](data-lake-store-get-started-rest-api.md)
 > * [CLI 2.0 do Azure](data-lake-store-get-started-cli-2.0.md)
-> * [Node.js](data-lake-store-manage-use-nodejs.md)
-> * [python](data-lake-store-get-started-python.md)
 >
 > 
 
@@ -239,11 +233,7 @@ az dls account delete --account mydatalakestore
 Quando lhe for pedido, introduza **S** para eliminar a conta.
 
 ## <a name="next-steps"></a>Passos seguintes
-
-* [Referência da CLI 2.0 do Azure Data Lake Store](https://docs.microsoft.com/cli/azure/dls)
+* [Utilizar o Azure Data Lake Store para requisitos de macrodados](data-lake-store-data-scenarios.md) 
 * [Secure data in Data Lake Store (Proteger dados no Data Lake Store)](data-lake-store-secure-data.md)
 * [Utilizar o Azure Data Lake Analytics com o Data Lake Store](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 * [Use Azure HDInsight with Data Lake Store (Utilizar o Azure HDInsight com o Data Lake Store)](data-lake-store-hdinsight-hadoop-use-portal.md)
-
-[azure-command-line-tools]: ../xplat-cli-install.md
-

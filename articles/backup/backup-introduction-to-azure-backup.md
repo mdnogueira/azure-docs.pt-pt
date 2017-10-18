@@ -13,15 +13,14 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 8/11/2017
+ms.date: 9/29/2017
 ms.author: markgal;trinadhk;anuragm
 ms.custom: H1Hack27Feb2017
+ms.openlocfilehash: 120810b2b112649e21ec4bfe0c0f58b1fe3d80ae
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: ce0189706a3493908422df948c4fe5329ea61a32
-ms.openlocfilehash: 699ec578832e894b5bfc0cfad35528eac377c4ff
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="overview-of-the-features-in-azure-backup"></a>Descrição geral das funcionalidades do Azure Backup
 O Azure Backup é o serviço baseado no Azure que pode utilizar para criar cópias de segurança (ou proteger) e restaurar os dados na nuvem Microsoft. O Azure Backup substitui a solução de cópia de segurança no local ou fora das instalações por uma solução baseada na nuvem que é fiável, segura e competitiva em termos de custos. O Azure Backup oferece vários componentes que são transferidos e implementados no computador ou servidor adequado, ou na nuvem. O componente ou o agente que implementar depende do que pretende proteger. Todos os componentes do Azure Backup (independentemente de estar a proteger dados no local ou na cloud) podem ser utilizados para criar cópias de segurança para um cofre dos Serviços de Recuperação do Azure. Veja a [tabela de componentes do Azure Backup](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use) (mais à frente neste artigo) para obter informações sobre os componentes a utilizar para proteger dados, aplicações ou cargas de trabalho específicos.
@@ -68,9 +67,7 @@ Se não tiver a certeza qual é componente do Azure Backup que funciona para as 
 | Cópia de segurança da VM do IaaS do Azure |<p>**Sim**</p><p>Parte dos recursos de infraestrutura do Azure</p><p>Especializada para a [cópia de segurança da infraestrutura do Azure como máquinas virtuais do serviço (IaaS)](backup-azure-vms-introduction.md).</p> |<p>**Não**</p> <p>Utilize o System Center DPM para efetuar a cópia de segurança das máquinas virtuais no datacenter.</p> |<p>Cofre dos Serviços de Recuperação</p> |
 
 ## <a name="which-applications-and-workloads-can-be-backed-up"></a>Podem ser efetuadas cópias de segurança a que aplicações e cargas de trabalho?
-A tabela seguinte fornece uma matriz dos dados e cargas de trabalho que podem ser protegidos com o Azure Backup. A coluna de solução do Azure Backup tem ligações para a documentação de implementação dessa solução. Cada componente do Azure Backup pode ser implementado num ambiente de modelo Clássico (Gestor de Serviços-implementação) ou de Gestor de Recursos-implementação.
-
-[!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
+A tabela seguinte fornece uma matriz dos dados e cargas de trabalho que podem ser protegidos com o Azure Backup. A coluna de solução do Azure Backup tem ligações para a documentação de implementação dessa solução. 
 
 | Dados ou Carga de Trabalho | Ambiente de origem | Solução do Backup do Azure |
 | --- | --- | --- |
@@ -93,7 +90,7 @@ A tabela seguinte mostra os componentes do Azure Backup com suporte para Linux.
 | Agente do Backup do Azure (MARS) |Nenhum (Apenas agente baseado no Windows) |
 | System Center DPM |<li> Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> <li> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare </br> </br>  *A cópia de segurança consistente com ficheiro não está disponível para a VM do Azure* <br/> |
 | Servidor do Backup do Azure |<li>Cópia de segurança consistente com ficheiros de VMs de Convidado Linux no Hyper-V e no VMWare<br/> <li> Restauro de VMs de Convidado do Linux do Hyper-V e do VMWare </br></br> *A cópia de segurança consistente com ficheiro não está disponível para a VM do Azure*  |
-| Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](backup-azure-linux-app-consistent.md)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](backup-azure-arm-restore-vms.md#restore-backed-up-disks)<br/> [Restauro da VM](backup-azure-arm-restore-vms.md#create-a-new-vm-from-restore-point) |
+| Cópia de segurança da VM do IaaS do Azure |Cópia de segurança consistente com a aplicação utilizando [arquitetura de script anterior script posterior](backup-azure-linux-app-consistent.md)<br/> [Recuperação de ficheiros granular](backup-azure-restore-files-from-vm.md)<br/> [Restaurar todos os discos da VM](backup-azure-arm-restore-vms.md#restore-backed-up-disks)<br/> [Restauro da VM](backup-azure-arm-restore-vms.md#create-a-new-vm-from-a-restore-point) |
 
 ## <a name="using-premium-storage-vms-with-azure-backup"></a>Utilizar VMs de Armazenamento Premium com o Azure Backup
 O Azure Backup protege VMs de Armazenamento Premium. O Armazenamento Premium do Azure é o armazenamento baseado numa unidade de estado sólido (SSD), concebido para suportar cargas de trabalho de E/S intensivas. O Armazenamento Premium é apelativo para cargas de trabalho de máquina virtual (VM). Para mais informações sobre o Armazenamento Premium, veja o artigo [Armazenamento Premium: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Máquinas Virtuais do Azure](../storage/common/storage-premium-storage.md).
@@ -224,13 +221,12 @@ Alguns exemplos comuns de instâncias protegidas são máquinas virtuais, servid
 ## <a name="what-is-a-recovery-services-vault"></a>O que é um cofre dos Serviços de Recuperação?
 Um cofre dos Serviços de Recuperação é uma entidade de armazenamento online no Azure utilizada para armazenar dados, como cópias de segurança, pontos de recuperação e políticas de cópia de segurança. Pode utilizar cofres dos Serviços de Recuperação para armazenar dados de cópia de segurança para serviços do Azure, bem como servidores e estações de trabalho no local. Os cofres dos Serviços de Recuperação facilitam a organização dos dados de cópia de segurança ao minimizar os custos de gestão. Pode criar o número de cofres dos Serviços de Recuperação que quiser numa subscrição.
 
-Os cofres de cópia de segurança, baseados no Azure Service Manager, foram a primeira versão do cofre. Os cofres dos Serviços de Recuperação, que adicionam as funcionalidades do modelo do Azure Resource Manager, são a segunda versão do cofre. Veja o artigo [Descrição geral do cofre dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md) para obter uma descrição completa das diferenças das funcionalidades. Já não pode utilizar o portal para criar cofres de Cópia de Segurança, mas os cofres de Cópia de Segurança ainda são suportados.
+Os cofres de cópia de segurança, baseados no Azure Service Manager, foram a primeira versão do cofre. Os cofres dos Serviços de Recuperação, que adicionam as funcionalidades do modelo do Azure Resource Manager, são a segunda versão do cofre. Veja o artigo [Descrição geral do cofre dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md) para obter uma descrição completa das diferenças das funcionalidades. Já não pode utilizar o portal para criar cofres de Cópia de Segurança, mas os cofres de Cópia de Segurança ainda são suportados. Tem de utilizar o portal do Azure para gerir os cofres de cópias de segurança.
 
 > [!IMPORTANT]
-> Agora pode atualizar os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação. Para obter detalhes, veja o artigo [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md). Recomendamos que atualize os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação.<br/> **15 de outubro de 2017**, não será possível continuar a utilizar o PowerShell para criar cofres de Cópia de segurança. <br/> **Até 1 de novembro de 2017**:
->- Quaisquer cofres de Cópia e Segurança restantes serão atualizados automaticamente para cofres dos Serviços de Recuperação.
->- Não vai conseguir aceder aos dados de cópia de segurança no portal clássico. Em vez disso, utilize o portal do Azure para aceder aos dados de cópia de segurança em cofres dos Serviços de Recuperação.
->
+> Agora pode atualizar os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação. Para obter detalhes, veja o artigo [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md). Recomendamos que atualize os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação.<br/> Após **15 de outubro de 2017**, não poderá continuar a utilizar o PowerShell para criar cofres de Cópia de segurança. <br/> A **1 de novembro de 2007** quaisquer cofres de Cópia e Segurança restantes serão atualizados automaticamente para cofres dos Serviços de Recuperação.
+
+
 
 ## <a name="how-does-azure-backup-differ-from-azure-site-recovery"></a>Qual é a diferença entre o Backup do Azure e o Azure Site Recovery?
 O Azure Backup e o Azure Site Recovery estão relacionados na medida em que ambos os serviços criam cópias de segurança dos dados e podem restaurá-los. No entanto, estes serviços servem objetivos diferentes ao oferecer continuidade empresarial e recuperação após desastre na sua empresa. Utilize o Azure Backup para proteger e restaurar dados a um nível mais granular. Por exemplo, se uma apresentação num computador portátil se danificasse, utilizaria o Azure Backup para restaurar a apresentação. Se quisesse replicar a configuração e os dados de uma VM através de outro datacenter, utilizaria o Azure Site Recovery.
@@ -260,4 +256,3 @@ Para obter detalhes sobre como proteger outras cargas de trabalho, veja um dos s
 [green]: ./media/backup-introduction-to-azure-backup/green.png
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
-

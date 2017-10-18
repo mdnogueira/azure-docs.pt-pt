@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/18/2017
 ms.author: yurid
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f0a512fb0684b1db25353bf4bbd35bdf2a07e1b2
-ms.openlocfilehash: 5cb5c6b6cc047974013df59d615d4f094d8d60a4
-ms.contentlocale: pt-pt
-ms.lasthandoff: 12/06/2016
-
+ms.openlocfilehash: 710a1fe0ce2b7a1841187cf75f4ffb090cc161e5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="connecting-your-security-products-to-the-operations-management-suite-oms-security-and-audit-solution"></a>Ligar os produtos de segurança à Solução de Segurança e Auditoria Operations Management Suite (OMS) 
 Este documento ajuda-o a ligar os seus produtos de segurança à Solução de Segurança e Auditoria OMS. São suportadas as seguintes origens:
@@ -64,7 +63,7 @@ No computador agente, os eventos têm de ser enviados a partir do syslog daemon 
     log { source(src); filter(f_local4_oms); destination(security_oms); };
     
 3. Transfira o ficheiro *security_events.conf* e coloque-o em */etc/opt/microsoft/omsagent/conf/omsagent.d/* no computador do Agente do OMS.
-4. Escreva o comando abaixo para reiniciar o syslog daemon:  *Para execução de syslog-ng:*
+4. Escreva o comando abaixo para reiniciar o syslog daemon: *Para execução de syslog-ng:*
     
     ```
     sudo service rsyslog restart
@@ -113,5 +112,4 @@ Neste documento, aprendeu a ligar a sua solução CEF ao OMS. Para saber mais so
 * [Descrição geral do Operations Management Suite (OMS)](operations-management-suite-overview.md)
 * [Monitorização e Resposta aos Alertas de Segurança na Solução de Segurança e Auditoria do Operations Management Suite](oms-security-responding-alerts.md)
 * [Recursos de Monitorização na Solução de Segurança e Auditoria do Operations Management Suite](oms-security-monitoring-resources.md)
-
 

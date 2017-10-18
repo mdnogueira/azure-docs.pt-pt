@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2016
 ms.author: richcar
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 26c9420c9b8ba1aff6b016c01b8ed51853c91506
-ms.contentlocale: pt-pt
-ms.lasthandoff: 12/07/2016
-
+ms.openlocfilehash: 72b724d5cf6787f8d6afc73fb37f4944cbae78a3
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="expressroute-for-cloud-solution-providers-csp"></a>ExpressRoute para Fornecedores de Soluções em Nuvem (CSP)
 A Microsoft fornece serviços de Hiper escala para revendedores e distribuidores (CSP) tradicionais de forma a aprovisionar novos serviços e soluções para os seus clientes sem a necessidade de investir no desenvolvimento destes novos serviços. Para permitir que o Fornecedor de Soluções em Nuvem (CSP) possa gerir diretamente estes novos serviços, a Microsoft disponibiliza programas e APIs que permitem ao CSP gerir os recursos do Microsoft Azure em nome dos seus clientes. Um destes recursos é o ExpressRoute. O ExpressRoute permite ao CSP ligar os recursos existentes do cliente aos serviços do Azure. O ExpressRoute é uma ligação privada de comunicações de alta velocidade para serviços no Azure. 
@@ -135,8 +134,6 @@ O serviço do Fornecedor de Soluções em Nuvem permite-lhe aumentar o seu valor
 
 Pode encontrar informações adicionais nas seguintes ligações:
 
-[Programa do Fornecedor de Soluções do Microsoft Cloud](https://partner.microsoft.com/en-US/Solutions/cloud-reseller-overview).  
+[Programa do Fornecedor de Soluções do Azure na Cloud](https://docs.microsoft.com/azure/cloud-solution-provider).  
 [Preparar-se para transacionar como um Fornecedor de Solução em Nuvem](https://partner.microsoft.com/en-us/solutions/cloud-reseller-pre-launch).  
 [Recursos do Fornecedor de Soluções do Microsoft Cloud](https://partner.microsoft.com/en-us/solutions/cloud-reseller-resources).
-
-

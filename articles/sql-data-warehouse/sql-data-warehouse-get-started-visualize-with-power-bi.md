@@ -15,13 +15,11 @@ ms.workload: data-services
 ms.custom: integrate
 ms.date: 10/31/2016
 ms.author: martinle;barbkess
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c0e2324a2b2e6294df6e502f2e7a0ae36ff94158
-ms.openlocfilehash: 8790bacecac0fa824189b5c212c2d803092ff4ed
-ms.contentlocale: pt-pt
-ms.lasthandoff: 01/30/2017
-
-
+ms.openlocfilehash: a41393730143b14e91318a61858d989fff3786c1
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="visualize-data-with-power-bi"></a>Visualizar dados com o Power BI
 > [!div class="op_single_selector"]
@@ -54,7 +52,7 @@ Para abrir o Power BI e ligar à base de dados AdventureWorksDW:
 3. Clique no botão “Abrir no Power BI”.
    
     ![Botão do Power BI][2]
-4. Deverá agora ver a página de ligação do SQL Data Warehouse, apresentando o seu endereço Web da base de dados. Clique em seguinte.
+4. Deverá agora ver a página de ligação do SQL Data Warehouse, apresentando o seu endereço Web da base de dados. Clique em Seguinte.
    
     ![Ligação ao Power BI][3]
 5. Introduza o seu nome de utilizador do Azure SQL server e a palavra-passe, e ficará completamente ligado à base de dados SQL Data Warehouse.
@@ -119,4 +117,3 @@ Agora que lhe demos algum tempo para entender os dados de exemplo, veja como [pr
 <!--Other-->
 [Azure portal]: https://portal.azure.com/
 [Power BI website]: http://www.powerbi.com/
-

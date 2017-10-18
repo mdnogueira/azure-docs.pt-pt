@@ -14,14 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/24/2017
 ms.author: ryanwi
+ms.openlocfilehash: de7fa7e6445e6eaf08bdcc8ae812611f20a98c34
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
-ms.openlocfilehash: ecf9554554c8b7acbd8b8f5aa9122ce1678c6502
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="create-your-first-service-fabric-cluster-on-azure"></a>Crie o primeiro cluster Service Fabric no Azure
 Um [cluster do Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os microsserviços são implementados e geridos. Este guia de introdução ajuda-o a criar um cluster de cinco nós, em execução no Windows ou Linux, através do [Azure PowerShell](https://msdn.microsoft.com/library/dn135248) ou do [portal do Azure](http://portal.azure.com) em apenas alguns minutos.  
 
@@ -251,6 +249,17 @@ Execute o comando seguinte para verificar se está ligado e se o cluster está e
 az sf cluster health
 ```
 
+### <a name="connect-to-the-nodes-directly"></a>Ligar diretamente aos nós 
+
+Para ligar aos nós num cluster do Linux, pode utilizar o SSH ao especificar um número de porta de 3389 em diante. Por exemplo, para o cluster de cinco nós criado anteriormente, os comandos seriam os seguintes:
+```bash
+ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3389
+ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3390
+ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3391
+ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3392
+ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3393
+```
+
 ## <a name="next-steps"></a>Passos seguintes
 Agora que configurou um cluster de desenvolvimento, experimente o seguinte:
 * [Visualizar o cluster com o Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
@@ -266,4 +275,3 @@ Agora que configurou um cluster de desenvolvimento, experimente o seguinte:
 [cluster-delete]: ./media/service-fabric-get-started-azure-cluster/delete.png
 [ps-list]: ./media/service-fabric-get-started-azure-cluster/pslist.PNG
 [ps-out]: ./media/service-fabric-get-started-azure-cluster/psout.PNG
-

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-translationtype: Human Translation
-ms.sourcegitcommit: da4d156132fba9efc98b3af441b6d095a4bb60ea
-ms.openlocfilehash: e0bc6e75fef1f3567940e30acf6f9f429258be12
-
-
+ms.openlocfilehash: d00c6e0acf437d2bfc3c27e948f4646a6685b08f
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Aceder ao Cofre de Chaves do Azure protegido por firewall
 ### <a name="q-my-key-vault-client-application-needs-to-be-behind-a-firewall-what-ports-hosts-or-ip-addresses-should-i-open-to-enable-access-to-a-key-vault"></a>P: A minha aplicação cliente do cofre de chaves tem de estar protegida por uma firewall. Que portas, anfitriões ou endereços IP devo abrir para ativar o acesso a um cofre de chaves?
@@ -64,10 +64,4 @@ O serviço Cofre de Chaves utiliza outros recursos do Azure, como a infraestrutu
 
 ## <a name="next-steps"></a>Passos seguintes
 Se tiver perguntas sobre o Cofre de Chaves, visite os [Fóruns do Cofre de Chaves do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).
-
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

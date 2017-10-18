@@ -12,15 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 06/29/2017
+ms.date: 10/03/2017
 ms.author: nitinme
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: a1d30c77dd29a134017be7deec6bb50991e6a698
-ms.contentlocale: pt-pt
-ms.lasthandoff: 12/07/2016
-
-
+ms.openlocfilehash: 956c7a4fb91c1b1a45e24128e92d6a6b1213eeb2
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="overview-of-azure-data-lake-store"></a>Descrição geral do Azure Data Lake Store
 O Azure Data Lake Store é um repositório de hiper escala a nível da empresa para cargas de trabalho de análise de macrodados. O Azure Data Lake permite-lhe capturar dados de qualquer tamanho, tipo e velocidade de ingestão num único local para análises exploratórias e operacionais.
@@ -62,9 +60,9 @@ O Azure Data Lake Store utiliza o Azure Active Directory para autenticação e l
 
 | Funcionalidade | Descrição |
 | --- | --- |
-| Autenticação |O Azure Data Lake Store integra-se com o Azure Active Directory (AAD) para gestão de identidade e de acesso de todos os dados armazenados no Azure Data Lake Store. Como resultado de integração, o Azure Data Lake a partir de todas as funcionalidades do AAD, incluindo autenticação multifator, acesso condicional, controlo de acesso baseado em funções, monitorização de utilização de aplicações, monitorização de segurança e alertas, etc. O Azure Data Lake Store suporta o protocolo de OAuth 2.0 para a autenticação com a interface REST. |
+| Autenticação |O Azure Data Lake Store integra-se com o Azure Active Directory (AAD) para gestão de identidade e de acesso de todos os dados armazenados no Azure Data Lake Store. Como resultado de integração, o Azure Data Lake a partir de todas as funcionalidades do AAD, incluindo autenticação multifator, acesso condicional, controlo de acesso baseado em funções, monitorização de utilização de aplicações, monitorização de segurança e alertas, etc. O Azure Data Lake Store suporta o protocolo de OAuth 2.0 para a autenticação com a interface REST. Veja [Data Lake Store authentication (Autenticação do Data Lake Store)](data-lakes-store-authentication-using-azure-active-directory.md)|
 | Controlo de acesso |O Azure Data Lake Store fornece controlo de acesso ao suportar permissões do estilo POSIX expostas pelo protocolo WebHDFS. Na Pré-visualização Pública do Data Lake Store (a versão atual), as ACLs podem ser ativadas na pasta raiz, em subpastas e em ficheiros individuais. Para obter mais informações sobre como as ACLs funcionam no contexto do Data Lake Store, veja [Controlo de acesso no Data Lake Store](data-lake-store-access-control.md). |
-| Encriptação |O Data Lake Store também fornece encriptação para dados armazenados na conta. As definições de encriptação são especificadas quando cria uma conta do Data Lake Store. Pode optar por encriptar os seus dados ou por não utilizar encriptação. Para obter mais informações sobre como fornecer configuração relacionada com encriptação, veja [Introdução ao Azure Data Lake Store utilizando o Portal do Azure](data-lake-store-get-started-portal.md). |
+| Encriptação |O Data Lake Store também fornece encriptação para dados armazenados na conta. As definições de encriptação são especificadas quando cria uma conta do Data Lake Store. Pode optar por encriptar os seus dados ou por não utilizar encriptação. Para obter mais informações, veja [Encryption in Data Lake Store (Encriptação no Data Lake Store)](data-lake-store-encryption.md). Para obter informações sobre como fornecer a configuração relacionada com encriptação, veja [Get started with Azure Data Lake Store using the Azure Portal (Introdução ao Azure Data Lake Store com o Portal do Azure)](data-lake-store-get-started-portal.md). |
 
 Pretende obter mais informações sobre como proteger dados no Data Lake Store. Siga as ligações abaixo.
 
@@ -103,5 +101,4 @@ Se preferir assistir a vídeos para obter mais informações, o Data Lake Store 
 * [Utilizar o Apache Sqoop para mover dados entre origens relacionais e o Azure Data Lake Store](https://mix.office.com/watch/1butcdjxmu114)
 * [Orquestração de Dados com o Azure Data Factory para o Azure Data Lake Store](https://mix.office.com/watch/1oa7le7t2u4ka)
 * [Proteger Dados no Azure Data Lake Store](https://mix.office.com/watch/1q2mgzh9nn5lx)
-
 

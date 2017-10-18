@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: glenga
+ms.openlocfilehash: 8576f2b6adce044d2060c3ba6d19ac330e3637c0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 12c20264b14a477643a4bbc1469a8d1c0941c6e6
-ms.openlocfilehash: 166cebeb20ecc79b447dac25f243f07163a6d127
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/07/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="getting-started"> </a>Sobre Aplicações Móveis no Serviço de Aplicações do Azure
 O Serviço de Aplicações do Azure é uma oferta de [plataforma como um serviço](https://azure.microsoft.com/overview/what-is-paas/) (PaaS) completamente gerida para programadores profissionais. O serviço oferece um conjunto avançado de capacidades para cenários Web, móveis e de integração. 
@@ -68,7 +67,7 @@ As seguintes funcionalidades da plataforma são úteis para sites de produção 
 
 * **Implementação contínua**: o Serviço de Aplicações pode ser integrado com sistemas de gestão de cadeias de fornecimento (SCM) comuns, para que possa implementar automaticamente uma nova versão do seu back-end ao enviar para um ramo do seu sistema SCM.
 
-  Saiba mais sobre as [opções de implementação].
+  Saiba mais sobre as [opções de implementação](../app-service/app-service-deploy-local-git.md).
 
 * **Redes virtuais**: o Serviço de Aplicações pode ligar-se a recursos no local através de uma rede virtual, o Azure ExpressRoute ou ligações híbridas.
 
@@ -87,7 +86,6 @@ Para obter mais informações sobre a plataforma do Serviço de Aplicações do 
 
 <!-- URLs. -->
 [Migrate your mobile service to App Service]: app-service-mobile-migrating-from-mobile-services.md
-[Serviço de Aplicações do Azure]: ../app-service/app-service-value-prop-what-is.md
 [introdução]: app-service-mobile-ios-get-started.md
 [Armazenamento de Tabelas do Azure]:../cosmos-db/table-storage-how-to-use-dotnet.md
 [Azure Cosmos DB]: ../cosmos-db/documentdb-get-started.md
@@ -100,12 +98,10 @@ Para obter mais informações sobre a plataforma do Serviço de Aplicações do 
 [Xamarin.iOS e Xamarin.Android]: ./app-service-mobile-dotnet-how-to-use-client-library.md
 [Xamarin.Forms]: ./app-service-mobile-xamarin-forms-get-started.md
 [Apache Cordova]: ./app-service-mobile-cordova-how-to-use-client-library.md
-[escala automática]: ../app-service-web/web-sites-scale.md
-[ambientes de teste]: ../app-service-web/web-sites-staged-publishing.md
-[opções de implementação]: ../app-service-web/web-sites-deploy.md
+[escala automática]: ../app-service/web-sites-scale.md
+[ambientes de teste]: ../app-service/web-sites-staged-publishing.md
 [ligações híbridas]: ../biztalk-services/integration-hybrid-connection-overview.md
-[redes virtuais]: ../app-service-web/web-sites-integrate-with-vnet.md
-[ExpressRoute]: ../app-service-web/app-service-app-service-environment-network-configuration-expressroute.md
-[ambientes do Serviço de Aplicações]: ../app-service-web/app-service-app-service-environment-intro.md
+[redes virtuais]: ../app-service/web-sites-integrate-with-vnet.md
+[ExpressRoute]: ../app-service/environment/app-service-app-service-environment-network-configuration-expressroute.md
+[ambientes do Serviço de Aplicações]: ../app-service/environment/intro.md
 [mapa de aprendizagem]: https://azure.microsoft.com/en-us/documentation/learning-paths/appservice-mobileapps/
-
