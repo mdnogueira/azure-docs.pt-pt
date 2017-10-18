@@ -3,7 +3,7 @@ title: "Solução de Gestão de Atualizações no OMS | Microsoft Docs"
 description: "Este artigo destina-se a ajudá-lo a saber como utilizar esta solução para gerir atualizações aos seus computadores Windows e Linux."
 services: operations-management-suite
 documentationcenter: 
-author: MGoedtel
+author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: e33ce6f9-d9b0-4a03-b94e-8ddedcc595d2
@@ -13,19 +13,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/27/2017
-ms.author: magoedte
+ms.author: eslesar
+ms.openlocfilehash: 839689ab991fdc251608cf79d65a5810db5eeeb3
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
-ms.openlocfilehash: e463102a4b21253e28b01d6d149aba55bab18674
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/31/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="update-management-solution-in-oms"></a>Solução de Gestão de Atualizações no OMS
 
 ![Símbolo de Gestão de Atualizações](./media/oms-solution-update-management/update-management-symbol.png)
 
 A solução de Gestão de Atualizações do OMS permite-lhe gerir atualizações de segurança do sistema operativo para os computadores Windows e Linux implementados no Azure, ambientes locais ou outros fornecedores de serviços cloud.  Pode rapidamente avaliar o estado das atualizações disponíveis em todos os computadores agente e gerir o processo de instalação de atualizações necessárias para os servidores.
+
+## <a name="update-management-in-azure-automation"></a>Gestão de atualizações na Automatização do Azure
+
+Pode ativar a Gestão de atualizações de máquinas virtuais diretamente a partir da sua conta de [Automatização do Azure](../automation/automation-offering-get-started.md).
+Para saber como ativar a gestão de atualizações das máquinas virtuais da sua Conta de automatização, veja [Manage updates for multiple virtual machines (Gerir atualizações de várias máquinas virtuais)](../automation/manage-update-multi.md).
 
 
 ## <a name="solution-overview"></a>Descrição geral da solução
@@ -307,11 +311,17 @@ A tabela seguinte disponibiliza pesquisas de registos de exemplo para registos d
 | Type=Update  and OSType=Linux and UpdateState!="Not needed" and (Classification="Critical Updates" OR Classification="Security Updates") |Lista de todos os pacotes que têm atualizações disponíveis, as quais se destinam a vulnerabilidades Críticas ou de Segurança | 
 | Type:UpdateRunProgress &#124; measure Count() by UpdateRunName |Listar o que as implementações de atualizações modificaram nos computadores | 
 | Type:UpdateRunProgress UpdateRunName="DeploymentName" &#124; measure Count() by Computer |Computadores que foram atualizados nesta execução de atualizações (substitua o valor pelo nome da sua Implementação de Atualizações) | 
-| Type=Update and OSType=Linux and OSName = Ubuntu &#124; measure count() by Computer |Lista de todos os computadores “Ubuntu” com eventuais atualizações disponíveis | 
+| Type=Update and OSType=Linux and OSName = Ubuntu &#124; measure count() by Computer |Lista de todos os computadores “Ubuntu” com eventuais atualizações disponíveis |
+
+## <a name="integrate-with-system-center-configuration-manager"></a>Integrar no System Center Configuration Manager
+
+Os clientes que investiram no System Center Configuration Manager para gerir PCs, servidores e dispositivos móveis também contam com a sua potência e maturidade na gestão de atualizações de software como parte do respetivo ciclo de gestão de atualizações de software (SUM).
+
+Para saber como integrar a solução de Gestão de Atualizações do OMS com o Gestor de Configuração do System Center, veja [Integrate System Center Configuration Manager with OMS Update Management (Integrar o Gestor de Configuração do System Center com a Gestão de Atualizações do OMS)](../automation/oms-solution-updatemgmt-sccmintegration.md).
 
 ## <a name="troubleshooting"></a>Resolução de problemas
 
-Esta secção disponibiliza informações para ajudar a resolver problemas com a solução Gestão de Atualizações.  
+Esta secção disponibiliza informações para ajudar a resolver problemas com a solução Gestão de Atualizações.
 
 ### <a name="how-do-i-troubleshoot-onboarding-issues"></a>Como posso resolver problemas de integração?
 Se ocorrerem problemas ao tentar integrar a solução ou uma máquina virtual, consulte o registo de eventos **Registos de Aplicações e Serviços\Operations Manager** para eventos com o ID 4502 e mensagens de evento com **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent**.  A tabela seguinte realça as mensagens de erro específicas e uma resolução possível para cada uma.  
@@ -333,4 +343,3 @@ Para obter mais informações, veja [Automation runbook output and messages](../
 * Utilizar as Pesquisas de Registos no [Log Analytics](../log-analytics/log-analytics-log-searches.md) para ver dados de atualizações detalhados.
 * [Criar os seus próprios dashboards](../log-analytics/log-analytics-dashboards.md), que mostram a conformidade das atualizações para os seus computadores geridos.
 * [Criar alertas](../log-analytics/log-analytics-alerts.md) para quando são detetadas atualizações críticas em falta nos computadores ou quando um computador tiver as atualizações automáticas desativadas.  
-

@@ -13,16 +13,14 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 06/01/2017
+ms.date: 09/19/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: e77de4b9a74b528fa8a7ce86424fc14628b2cacc
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
-
+ms.openlocfilehash: 07151fdf79d3b06f3144fbebff9015645b1ed000
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="lesson-2-get-data"></a>Lição 2: Obter dados
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
@@ -30,6 +28,9 @@ ms.lasthandoff: 06/03/2017
 Nesta lição, irá utilizar Obter dados no SSDT para se ligar à base de dados de exemplo AdventureWorksDW2014, selecionar os dados, pré-visualizar e filtrar e, em seguida, importar para o espaço de trabalho do seu modelo.  
   
 Através de Obter dados, pode importar dados de uma ampla variedade de origens: Base de Dados SQL do Azure, Oracle, Sybase, OData Feed, Teradata, ficheiros e muito mais. Os dados também podem ser consultados através de uma expressão de fórmula Power Query M.
+
+> [!NOTE]
+> As tarefas e imagens neste tutorial mostram a ligação a uma base de dados AdventureWorksDW2014 num servidor no local. Em alguns casos, uma base de dados AdventureWorksDW2014 no Azure pode ser diferente.
   
 Tempo estimado para concluir esta lição: **10 minutos**  
   
@@ -71,13 +72,19 @@ AS tabelas na base de dados de exemplo AdventureWorksDW2014 possuem dados que é
   
 #### <a name="to-filter-the-table-data-before-importing"></a>Para filtrar os dados da tabela antes de importar  
   
-1.  No Editor de consultas, selecione a tabela **DimCustomer**. É apresentada a tabela DimCustomer na origem de dados (a sua base de dados de exemplo AdventureWorksDWQ2014). 
+1.  No Editor de consultas, selecione a tabela **DimCustomer**. É apresentada a tabela DimCustomer na origem de dados (a sua base de dados de exemplo AdventureWorksDW2014). 
   
 2.  Multisseleção (Ctrl + clique) **SpanishEducation**, **FrenchEducation**, **SpanishOccupation**, **FrenchOccupation** e, em seguida, clique com botão direito do rato e clique em **Remover colunas**. 
 
     ![aas-lesson2-remove-columns](../tutorials/media/aas-lesson2-remove-columns.png)
   
     Uma vez que os valores para essas colunas não são relevantes para a análise de vendas na Internet, não é necessário importar essas colunas. A eliminação de colunas desnecessárias torna seu modelo menor e mais eficiente.  
+
+    > [!TIP]
+    > Se cometer um erro, pode realizar uma cópia de segurança, ao eliminar um passo em **PASSOS APLICADOS**.   
+    
+    ![aas-lesson2-remove-columns](../tutorials/media/aas-lesson2-remove-step.png)
+
   
 4.  Filtre as tabelas restantes, removendo as seguintes colunas em cada tabela:  
     
@@ -85,7 +92,7 @@ AS tabelas na base de dados de exemplo AdventureWorksDW2014 possuem dados que é
     
       |Coluna|  
       |--------|  
-      |DateKey|  
+      |**DateKey**|  
       |**SpanishDayNameOfWeek**|  
       |**FrenchDayNameOfWeek**|  
       |**SpanishMonthName**|  
@@ -130,11 +137,7 @@ AS tabelas na base de dados de exemplo AdventureWorksDW2014 possuem dados que é
   
     **FactInternetSales**
   
-      |Coluna|  
-      |------------------|  
-      |**OrderDateKey**|  
-      |**DueDateKey**|  
-      |**ShipDateKey**|   
+      Nenhuma coluna removida.
   
 ## <a name="Import"></a>Importar os dados de coluna e as tabelas selecionadas  
 Agora que pré-visualizou e filtrou os dados desnecessários, pode importar os restante dos dados que pretende. O assistente importa os dados da tabela juntamente com as relações entre tabelas. Novas tabelas e colunas são criadas no modelo e não é possível importar os dados que filtrou.  
@@ -160,4 +163,3 @@ Agora que pré-visualizou e filtrou os dados desnecessários, pode importar os r
 
   
   
-

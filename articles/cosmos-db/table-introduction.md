@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/29/2017
 ms.author: arramac
+ms.openlocfilehash: c184b02f46ac2ad66c6ce607967a687c82d31477
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: f2ac16c2f514aaa7e3f90fdf0d0b6d2912ef8485
-ms.openlocfilehash: 2073948d44ccc4b9b83e4eaf4f250dc272e46292
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/08/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Introdução ao Azure Cosmos DB: Table API
 
@@ -31,7 +30,7 @@ O [Azure Cosmos DB](introduction.md) disponibiliza a API de Tabela (pré-visuali
 * Elevada disponibilidade garantida.
 * [Indexação secundária automática](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
 
-Estas aplicações podem migrar para o Azure Cosmos BD com a API de Tabela sem alterações de código e tirar partido das funcionalidades premium.
+Estas aplicações podem migrar para o Azure Cosmos BD com a API de Tabela sem alterações de código e tirar partido das funcionalidades premium. A API de Tabela está disponível para .NET e Python.
 
 Recomendamos que veja o vídeo seguinte, onde Aravind Ramachandran explica como começar a utilizar a API de Tabela para o Azure Cosmos DB:
 
@@ -64,5 +63,6 @@ Eis alguns sítios por onde começar:
 * [Desenvolver com a API de Tabela no .NET](tutorial-develop-table-dotnet.md)
 * [Consulta de dados de tabela utilizando a API de Tabela](tutorial-query-table.md)
 * [Learn how to set up Azure Cosmos DB global distribution by using the Table API](tutorial-global-distribution-table.md) (Como configurar a distribuição global do Azure Cosmos DB com a API de Tabela)
-* [SDK da API de Tabela do Azure Cosmos DB para .NET](table-sdk-dotnet.md)
+* [API .NET da Tabela do Azure Cosmos DB](table-sdk-dotnet.md)
+* [SDK da Tabela do Azure Cosmos DB para Python](table-sdk-python.md)
 

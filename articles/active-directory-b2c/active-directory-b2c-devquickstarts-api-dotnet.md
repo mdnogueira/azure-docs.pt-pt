@@ -14,12 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: parakhj
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f6006d5e83ad74f386ca23fe52879bfbc9394c0f
-ms.openlocfilehash: 48749bfa2ab54a0e766a4aad4f39073cc4e90818
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/03/2017
-
+ms.openlocfilehash: 78a165d831796bb6bb23e51f415383eb925115ee
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-active-directory-b2c-build-a-net-web-api"></a>Azure Active Directory B2C: criar uma API Web do .NET
 
@@ -40,7 +39,7 @@ Em seguida, tem de criar uma aplicação API Web no seu diretório do B2C. Isto 
 * Incluir uma **aplicação web** ou uma **API Web**  na aplicação.
 * Utilize o **URI de Redirecionamento**`https://localhost:44332/` da aplicação Web. Esta é a localização predefinida da aplicação Web cliente para este exemplo de código.
 * Copiar a **ID da Aplicação** atribuída à aplicação. Precisará dela mais tarde.
-* Introduza um identificador de aplicação em **URI de ID de Aplicação**.
+* Introduza um identificador de aplicação em **URI de ID de Aplicação**. Copie o **URI de ID de Aplicação** completo. Precisará dela mais tarde.
 * Adicione permissões através do menu **Âmbitos publicados**.
 
   [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
@@ -83,6 +82,7 @@ O nosso exemplo está configurado para utilizar as políticas e o ID de cliente 
     * `ida:SignUpSignInPolicyId` pelo nome da sua política de “Inscrição ou Início de Sessão”
     * `ida:EditProfilePolicyId` pelo nome da sua política de “Editar Perfil”
     * `ida:ResetPasswordPolicyId` pelo nome da sua política de “Repor Palavras-Passe”
+    * `api:ApiIdentifier` com o "URI de ID de Aplicação"
 
 
 ## <a name="secure-the-api"></a>Proteger a API
@@ -212,4 +212,3 @@ Por último, crie e execute `TaskWebApp` e `TaskService`. Crie algumas tarefas n
 ## <a name="edit-your-policies"></a>Editar as suas políticas
 
 Depois de proteger uma API com o Azure AD B2C, pode experimentar com a sua política de Inscrição/Início de Sessão e ver os efeitos (ou falta deles) na API. Pode manipular afirmações de aplicação nas políticas e alterar as informações de utilizador que estão disponíveis na API Web. Qualquer afirmações que adicionar estarão disponíveis para a API Web de MVC do .NET no objeto `ClaimsPrincipal`, como descrito anteriormente neste artigo.
-

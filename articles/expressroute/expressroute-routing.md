@@ -14,12 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: osamam
+ms.openlocfilehash: ecb71e8cfc1d723521024ecb79665f4a3117bd4b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
-ms.openlocfilehash: e6e2009717430a692528cd3ec3a2c6e46a12fe03
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="expressroute-routing-requirements"></a>Requisitos de encaminhamento do ExpressRoute
 Para ligar aos serviços em nuvem da Microsoft com o ExpressRoute, terá de configurar e gerir o encaminhamento. Alguns fornecedores de conectividade oferecem a configuração e a gestão do encaminhamento como um serviço gerido. Contacte o seu fornecedor de conectividade para ver se oferece este serviço. Caso contrário, terá de cumprir os seguintes requisitos:
@@ -73,10 +72,18 @@ Pode optar por utilizar endereços IPv4 públicos ou privados para o peering pri
 ### <a name="public-peering"></a>Peering público
 O caminho de peering público Azure permite-lhe ligar a todos os serviços alojados no Azure ao longo dos respetivos endereços IP públicos. Estes incluem os serviços listados nas [FAQ do ExpressRoute](expressroute-faqs.md) e quaisquer serviços alojados pelos ISVs no Microsoft Azure. A conectividade aos serviços do Microsoft Azure em peering público é sempre iniciada a partir da sua rede para a rede da Microsoft. Tem de utilizar endereços IP Públicos para o tráfego destinado à rede da Microsoft.
 
+> [!IMPORTANT]
+> Todos os serviços do Azure PaaS também estão acessíveis através do peering da Microsoft. Recomendamos a criação do peering da Microsoft e ligação aos serviços PaaS do Azure através do peering da Microsoft.  
+>   
+
+
+É permitido um Número AS Privado com Peering Público.
+
 ### <a name="microsoft-peering"></a>Peering da Microsoft
-O caminho de peering da Microsoft permite-lhe ligar aos serviços em nuvem da Microsoft que não são suportados através do caminho de peering público do Azure. A lista de serviços inclui os serviços do Office 365, como o Exchange Online, SharePoint Online, Skype para Empresas e o Dynamics 365. A Microsoft suporta a conetividade bidirecional no peering da Microsoft. O tráfego destinado aos serviços em nuvem da Microsoft tem de utilizar endereços IPv4 públicos válidos antes de serem introduzidos na rede da Microsoft.
+O caminho de peering da Microsoft permite-lhe ligar a todos os serviços cloud da Microsoft alojados em endereços IP públicos. A lista de serviços inclui os serviços PaaS do Office 365, do Dynamics 365 e do Microsoft Azure. A Microsoft suporta a conetividade bidirecional no peering da Microsoft. O tráfego destinado aos serviços cloud da Microsoft tem de utilizar endereços IPv4/IPv6 públicos válidos antes de serem introduzidos na rede da Microsoft.
 
 Certifique-se de que o endereço IP e o número AS estão registados em seu nome num dos registos seguintes:
+
 
 * [ARIN](https://www.arin.net/)
 * [APNIC](https://www.apnic.net/)
@@ -85,6 +92,10 @@ Certifique-se de que o endereço IP e o número AS estão registados em seu nome
 * [RIPENCC](https://www.ripe.net/)
 * [RADB](http://www.radb.net/)
 * [ALTDB](http://altdb.net/)
+
+Se os prefixos e o número SA não estiverem atribuídos a si nos registos acima, terá de abrir um pedido de suporte para a validação manual dos seus prefixos e ASN. O suporte irá exigir documentação, como uma Carta de Autorização, que prova que está autorizado a utilizar os recursos.
+
+É permitido um Número AS privado com Peering da Microsoft, mas também irá precisar de validação manual.
 
 > [!IMPORTANT]
 > Os endereços IP públicos anunciados à Microsoft através do ExpressRoute não devem ser anunciados à Internet. Tal poderá interromper a conectividade a outros serviços Microsoft. No entanto, os endereços IP Públicos utilizados pelos servidores da rede que comunicam com pontos finais do O365 dentro da Microsoft poderão ser anunciados através do ExpressRoute. 
@@ -134,39 +145,40 @@ Pode comprar mais do que um circuito do ExpressRoute por região geopolítica. T
 | **Região do Microsoft Azure** | **Valor da comunidade BGP** |
 | --- | --- |
 | **América do Norte** | |
-| EUA Leste |12076:51004 |
-| EUA Leste 2 |12076:51005 |
-| EUA Oeste |12076:51006 |
-| EUA Oeste 2 |12076:51026 |
-| EUA Centro-Oeste |12076:51027 |
-| EUA Centro-Norte |12076:51007 |
-| EUA Centro-Sul |12076:51008 |
-| EUA Central |12076:51009 |
-| Canadá Central |12076:51020 |
-| Leste do Canadá |12076:51021 |
+| EUA Leste | 12076:51004 |
+| EUA Leste 2 | 12076:51005 |
+| EUA Oeste | 12076:51006 |
+| EUA Oeste 2 | 12076:51026 |
+| EUA Centro-Oeste | 12076:51027 |
+| EUA Centro-Norte | 12076:51007 |
+| EUA Centro-Sul | 12076:51008 |
+| EUA Central | 12076:51009 |
+| Canadá Central | 12076:51020 |
+| Leste do Canadá | 12076:51021 |
 | **América do Sul** | |
-| Sul do Brasil |12076:51014 |
+| Sul do Brasil | 12076:51014 |
 | **Europa** | |
-| Europa do Norte |12076:51003 |
-| Europa Ocidental |12076:51002 |
+| Europa do Norte | 12076:51003 |
+| Europa Ocidental | 12076:51002 |
 | Reino Unido Sul | 12076:51024 |
 | Reino Unido Oeste | 12076:51025 |
 | **Ásia-Pacífico** | |
-| Ásia Oriental |12076:51010 |
-| Sudeste Asiático |12076:51011 |
+| Ásia Oriental | 12076:51010 |
+| Sudeste Asiático | 12076:51011 |
 | **Japão** | |
-| Leste do Japão |12076:51012 |
-| Oeste do Japão |12076:51013 |
+| Leste do Japão | 12076:51012 |
+| Oeste do Japão | 12076:51013 |
 | **Austrália** | |
-| Leste da Austrália |12076:51015 |
-| Sudeste da Austrália |12076:51016 |
+| Leste da Austrália | 12076:51015 |
+| Sudeste da Austrália | 12076:51016 |
 | **Índia** | |
-| Índia do Sul |12076:51019 |
-| Índia Ocidental |12076:51018 |
-| Índia Central |12076:51017 |
+| Índia do Sul | 12076:51019 |
+| Índia Ocidental | 12076:51018 |
+| Índia Central | 12076:51017 |
 | **Coreia** | |
-| Coreia do Sul |12076:51028 |
-| Coreia Central |12076:51029 |
+| Coreia do Sul | 12076:51028 |
+| Coreia Central | 12076:51029 |
+
 
 Todas as rotas anunciadas a partir da Microsoft serão etiquetadas com o valor da comunidade adequado. 
 
@@ -179,11 +191,11 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
 
 | **Serviço** | **Valor da comunidade BGP** |
 | --- | --- |
-| Exchange Online |12076:5010 |
-| SharePoint Online |12076:5020 |
-| Skype para Empresas Online |12076:5030 |
-| Dynamics 365 |12076:5040 |
-| Outros serviços do Office 365 Online |12076:5100 |
+| Exchange Online | 12076:5010 |
+| SharePoint Online | 12076:5020 |
+| Skype para Empresas Online | 12076:5030 |
+| Dynamics 365 | 12076:5040 |
+| Outros serviços do Office 365 Online | 12076:5100 |
 
 > [!NOTE]
 > A Microsoft não honra valores das comunidades de BGP definidos por si nas rotas anunciadas para a Microsoft.
@@ -218,5 +230,4 @@ Para além do que foi dito acima, a Microsoft também marcará prefixos baseados
   * [Criar um circuito do ExpressRoute para o modelo de implementação clássico](expressroute-howto-circuit-classic.md) ou [Criar e modificar um circuito do ExpressRoute com o Azure Resource Manager](expressroute-howto-circuit-arm.md)
   * [Configurar o encaminhamento para o modelo de implementação clássico](expressroute-howto-routing-classic.md) ou [Configurar encaminhamento para o modelo de implementação do Resource Manager](expressroute-howto-routing-arm.md)
   * [Ligar uma VNet clássica a um circuito do ExpressRoute](expressroute-howto-linkvnet-classic.md) ou [Ligar uma VNet do Resource Manager a um circuito do ExpressRoute](expressroute-howto-linkvnet-arm.md)
-
 

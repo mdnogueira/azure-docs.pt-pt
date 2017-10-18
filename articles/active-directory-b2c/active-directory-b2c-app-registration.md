@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 6/13/2017
 ms.author: parakhj
+ms.openlocfilehash: b49a894365dd344afb2f3cab51e7cfd28d930b1a
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 3eb68cba15e89c455d7d33be1ec0bf596df5f3b7
-ms.openlocfilehash: 0e91d249116d39675d6e4bdf429442b6bc8af391
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/01/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-active-directory-b2c-register-your-application"></a>Azure Active Directory B2C : Registar a aplicação
 
@@ -50,6 +49,8 @@ Inicie sessão no [Portal do Azure](https://portal.azure.com/) como Administrado
 ### <a name="register-a-web-app"></a>Registar uma aplicação Web
 
 [!INCLUDE [active-directory-b2c-register-web-app](../../includes/active-directory-b2c-register-web-app.md)]
+
+### <a name="create-a-web-app-client-secret"></a>Criar um segredo do cliente da aplicação Web
 
 Se a sua aplicação Web chamar uma API Web protegida pelo Azure AD B2C, efetue estes passos:
    1. Crie um segredo de aplicação ao aceder ao painel **Chaves** e ao clicar no botão **Gerar Chave**. Anote o valor da **Chave da aplicação**. Utilize o valor como o segredo de aplicação no código da aplicação.

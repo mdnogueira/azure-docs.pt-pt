@@ -11,14 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/19/2017
+ms.date: 09/29/2017
 ms.author: shlo
+ms.openlocfilehash: ef7055342a04057acfba9dad350f654aa4de6096
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
-ms.openlocfilehash: 09e514aee503b7cb045c81d8ddcb855ced9b072b
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="introduction-to-azure-data-factory"></a>Introdução ao Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -58,10 +57,10 @@ Assim que os dados estiverem presentes num arquivo de dados centralizado na clou
 Agora que os dados não processados foram refinados e estão prontos para consumo por parte das empresas, carregue os dados para o Azure Data Warehouse, para a BD SQL do Azure, para o Azure Cosmos DB ou para qualquer que seja o motor de análise para o qual os seus utilizadores empresariais podem apontar a partir as ferramentas de business intelligence que utilizam.
 
 ### <a name="monitor"></a>Monitorizar
-Depois de criar e implementar com êxito o seu pipeline de integração de dados, proporcionando valor comercial a partir dos dados refinados, é útil monitorizar as atividades e os pipelines agendados relativamente às taxas de êxito e falha. O Azure Data Factory tem suporte incorporado para monitorização de pipelines através do Azure Monitor, de APIs, do PowerShell, do OMS e dos painéis de estado de funcionamento no portal do Azure.
+Depois de criar e implementar com êxito o seu pipeline de integração de dados, proporcionando valor comercial a partir dos dados refinados, é útil monitorizar as atividades e os pipelines agendados relativamente às taxas de êxito e falha. O Azure Data Factory tem suporte incorporado para monitorização de pipelines através do Azure Monitor, de APIs, do PowerShell, do Microsoft Operations Management Suite (OMS) e dos painéis de estado de funcionamento no portal do Azure.
 
 ## <a name="whats-different-in-version-2"></a>Quais são as diferenças na versão 2?
-A versão 2 do Azure Data Factory tem por base o serviço de movimento e de transformação de dados original do Azure Data Factory, alargando-se para um conjunto mais vasto de cenários de integração de dados cloud-first. O Azure Data Factory V2 oferece as capacidades seguintes:
+A versão 2 do Azure Data Factory tem por base o serviço de movimento e de transformação de dados original do Azure Data Factory, alargando-se para um conjunto mais vasto de cenários de integração de dados cloud-first. O Azure Data Factory Versão 2 oferece as capacidades seguintes:
 
 - Controlar o Flow e o Dimensionamento
 - Implementar e executar pacotes do SSIS no Azure
@@ -98,14 +97,18 @@ Para obter mais informações, veja [tutorial; controlo flow](tutorial-control-f
 Se quiser mover as cargas de trabalho do SSIS, pode criar uma fábrica de dados da versão 2 e aprovisionar um Runtime de Integração (IR) Azure-SSIS. O IR Azure-SSIS é um cluster totalmente gerido de VMs do Azure (nós) dedicadas à execução dos pacotes do SSIS na cloud. Para obter instruções passo a passo, veja o tutorial: [deploy SSIS packages to Azure](tutorial-deploy-ssis-packages-azure.md) (Implementar pacotes do SSIS no Azure). 
  
 
-## <a name="rich-cross-platform-sdks"></a>SDKs multiplataformas avançados
+### <a name="sdks"></a>SDKs
 Se for utilizador avançado e quiser uma interface programática, a versão 2 proporciona um conjunto avançado de SDKs que podem ser utilizados para criar, gerir e monitorizar pipelines com o seu IDE preferido.
 
-- SDK .NET
-- PowerShell
-- SDK Python
+- SDK .NET - O SDK .NET é atualizado para a versão 2. 
+- PowerShell – Os cmdlets do PowerShell são atualizados para a versão 2. Os cmdlets da versão 2 têm **DataFactoryV2** no nome. Por exemplo: Get-AzureRmDataFactoryV2. 
+- Python SDK - Este SDK é uma novidade para a versão 2.
+- API REST - A API REST é atualizada para a versão 2.  
 
-Também pode utilizar as APIs REST para criar fábricas de dados. 
+Os SDKs que são atualizados para a versão 2 não são compatíveis com versões anteriores com clientes de versão 1. 
+
+### <a name="monitoring"></a>Monitorização
+Atualmente, a versão 2 suporta monitorização de fábricas de dados com apenas SDKs. O portal ainda não tem o suporte para a monitorização de fábricas de dados de versão 2. 
 
 ## <a name="load-the-data-into-a-lake"></a>Carregar os dados para um lake
 O Data Factory tem mais de 30 conectores, através dos quais pode carregar dados de ambientes híbridos e heterogéneos para o Azure.  Veja os últimos resultados de desempenho dos testes internos e das sugestões de desempenho no [Guia de Desempenho e Otimização](copy-activity-performance.md). Além disso, ativámos recentemente a Elevada Disponibilidade e a Escalabilidade no Runtime de Integração autoalojado que instala num ambiente de rede privada, de modo a dar resposta aos requisitos dos clientes empresariais grandes quanto a melhor disponibilidade e escalabilidade.
@@ -165,4 +168,3 @@ Por exemplo, vamos assumir que os seus ambientes de computação, tais como o cl
 
 ## <a name="next-steps"></a>Passos seguintes
 Saiba como criar uma fábrica de dados com as instruções passo a passo nos Inícios Rápidos [PowerShell](quickstart-create-data-factory-powershell.md), [.NET](quickstart-create-data-factory-dot-net.md), [Python](quickstart-create-data-factory-python.md), [REST API](quickstart-create-data-factory-rest-api.md) e portal do Azure. 
-

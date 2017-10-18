@@ -15,12 +15,11 @@ ms.workload: na
 ms.date: 08/08/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
+ms.openlocfilehash: 8f16f23928977ef6bf53f41c79375290da70a2fa
+ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
 ms.translationtype: HT
-ms.sourcegitcommit: f9003c65d1818952c6a019f81080d595791f63bf
-ms.openlocfilehash: 69296eb9ac2a74a97b632d27733a6a06500b4abd
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/09/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="connect-your-device-to-your-iot-hub-using-net"></a>Ligue o seu dispositivo ao seu hub IoT através de .NET
 
@@ -201,7 +200,7 @@ Nesta secção, irá criar uma aplicação de consola do .NET que simula um disp
     Console.ReadLine();
     ```
 
-    Por predefinição, o método **Criar** numa aplicação .NET Framework cria uma instância **DeviceClient** que utiliza o protocolo AMQP para comunicar com o Hub IoT. Para utilizar o protocolo MQTT ou HTTP, substitua o método **Criar** que lhe permite especificar o protocolo. Por predefinição, os clientes UWP e PCL utilizam o protocolo HTTP. Se utilizar o protocolo HTTP, deverá ainda adicionar o pacote NuGet **Microsoft.AspNet.WebApi.Client** ao seu projeto para incluir o espaço de nomes **System.Net.Http.Formatting**.
+    Por predefinição, o método **Criar** numa aplicação .NET Framework cria uma instância **DeviceClient** que utiliza o protocolo AMQP para comunicar com o Hub IoT. Para utilizar o protocolo MQTT ou HTTPS, substitua o método **Criar** que lhe permite especificar o protocolo. Por predefinição, os clientes UWP e PCL utilizam o protocolo HTTPS. Se utilizar o protocolo HTTPS, deverá ainda adicionar o pacote NuGet **Microsoft.AspNet.WebApi.Client** ao seu projeto para incluir o espaço de nomes **System.Net.Http.Formatting**.
 
 Este tutorial guia-o pelos passos para criar uma aplicação de dispositivo do Hub IoT. Pode ainda utilizar a extensão do Visual Studio [Serviço Ligado para o Hub IoT do Azure][lnk-connected-service] para adicionar o código necessário à aplicação do seu dispositivo.
 
@@ -263,4 +262,3 @@ Para saber como expandir a sua solução de IoT e processar mensagens do disposi
 [lnk-device-management]: iot-hub-node-node-device-management-get-started.md
 [lnk-iot-edge]: iot-hub-linux-iot-edge-get-started.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/
-

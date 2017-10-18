@@ -3,7 +3,7 @@ title: "Controlo de acesso baseado em funções na Automatização do Azure | Mi
 description: "O controlo de acesso baseado em funções (RBAC) permite uma gestão de acesso para os recursos do Azure. Este artigo descreve como configurar o RBAC na Automatização do Azure."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: jwhit
 editor: tysonn
 keywords: "rbac de automatização, controlo de acesso baseado em funções , rbac do azure"
@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/12/2016
+ms.date: 09/30/2016
 ms.author: magoedte;sngun
-translationtype: Human Translation
-ms.sourcegitcommit: dcda8b30adde930ab373a087d6955b900365c4cc
-ms.openlocfilehash: 17c7e410a9c5b69ab450eb3affd192f1e3cb6e76
-
-
+ms.openlocfilehash: 946d80d40ac0566db72c787f260f2d4faff01e6d
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Controlo de acesso baseado em funções na Automatização do Azure
 ## <a name="role-based-access-control"></a>Controlo de acesso baseado em funções
@@ -41,7 +41,7 @@ Na Automatização do Azure, é concedido acesso ao atribuir a função RBAC ade
 > 
 > 
 
-Neste artigo, ajudá-lo-emos a configurar o RBAC na Automatização do Azure. Mas, primeiro, vamos analisar com mais atenção as permissões individuais concedidas ao Contribuidor, Leitor, Operador de Automatização e Administrador de Acesso de Utilizador para que possamos ter uma boa compreensão antes de conceder a alguém direitos à conta de Automatização.  Caso contrário, poderão resultar em consequências involuntárias ou indesejáveis.     
+Neste artigo, ajudamo-lo a configurar o RBAC na Automatização do Azure. Mas, primeiro, vamos analisar com mais atenção as permissões individuais concedidas ao Contribuidor, Leitor, Operador de Automatização e Administrador de Acesso de Utilizador para que possamos ter uma boa compreensão antes de conceder a alguém direitos à conta de Automatização.  Caso contrário, poderão resultar em consequências involuntárias ou indesejáveis.     
 
 ## <a name="contributor-role-permissions"></a>Permissões de Função de Contribuidor
 A tabela seguinte apresenta as ações específicas que podem ser efetuadas pela função de Contribuidor na Automatização.
@@ -126,9 +126,9 @@ A tabela seguinte apresenta as ações específicas que podem ser efetuadas pela
 | Tarefa de Teste de Rascunho do Runbook de Automatização |![Estado Verde](media/automation-role-based-access-control/green-checkmark.png) | | | |
 | Webhook de automatização |![Estado Verde](media/automation-role-based-access-control/green-checkmark.png) | | | |
 
-## <a name="configure-rbac-for-your-automation-account-using-azure-portal"></a>Configurar o RBAC para a sua Conta de Automatização com o Portal do Azure
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com/) e abra a sua conta de Automatização a partir do painel de Contas de Automatização.  
-2. Clique no controlo **Acesso** no canto superior direito. Esta ação abre o painel **Utilizadores**, onde pode adicionar novos utilizadores, grupos e aplicações para gerir a sua conta de Automatização e ver funções existentes que podem ser configuradas para a Conta de Automatização.  
+## <a name="configure-rbac-for-your-automation-account-using-azure-portal"></a>Configurar o RBAC para a sua Conta de Automatização com o portal do Azure
+1. Inicie sessão no [portal do Azure](https://portal.azure.com/) e abra a sua conta de Automatização a partir da página Contas de Automatização.  
+2. Clique no controlo **Acesso** no canto superior direito. Esta ação abre a página **Utilizadores**, onde pode adicionar novos utilizadores, grupos e aplicações para gerir a sua conta de Automatização e ver funções existentes que podem ser configuradas para a Conta de Automatização.  
    
    ![Botão de acesso](media/automation-role-based-access-control/automation-01-access-button.png)  
 
@@ -138,24 +138,24 @@ A tabela seguinte apresenta as ações específicas que podem ser efetuadas pela
 > 
 
 ### <a name="add-a-new-user-and-assign-a-role"></a>Adicionar um novo utilizador e atribuir uma função
-1. O painel de Utilizadores, clique em **Adicionar** para abrir o **painel Adicionar acesso** onde pode adicionar um utilizador, grupo ou aplicação e atribuir-lhes uma função.  
+1. Na página Utilizadores, clique em **Adicionar** para abrir a página **Adicionar acesso**, onde pode adicionar um utilizador, grupo ou aplicação e atribuir-lhes uma função.  
    
    ![Adicionar utilizador](media/automation-role-based-access-control/automation-02-add-user.png)  
 2. Selecione uma função na lista de funções disponíveis. Vamos escolher a função de **Leitor**, mas pode escolher qualquer uma das funções incorporadas disponíveis que uma Conta de Automatização suportar ou qualquer função personalizada que pode ter definido.  
    
    ![Selecionar função](media/automation-role-based-access-control/automation-03-select-role.png)  
-3. Clique em **Adicionar utilizadores** para abrir o painel **Adicionar utilizadores**. Se tiver adicionado quaisquer utilizadores, grupos ou aplicações para gerir a sua subscrição, esses utilizadores estão listados e pode selecioná-los para adicionar o acesso. Se não existirem quaisquer utilizadores listados ou se o utilizador no qual está interessado não estiver listado, clique em **convidar** para abrir o painel **Convidar um convidado**, onde pode convidar um utilizador com um endereço de e-mail de uma conta Microsoft válida como o Outlook.com, OneDrive ou Xbox Live IDs. Depois de introduzir o endereço de e-mail do utilizador, clique em **Selecionar** para adicionar o utilizador e, em seguida, clique em **OK**. 
+3. Clique em **Adicionar utilizadores** para abrir a página **Adicionar utilizadores**. Se tiver adicionado quaisquer utilizadores, grupos ou aplicações para gerir a sua subscrição, esses utilizadores estão listados e pode selecioná-los para adicionar o acesso. Se não existirem quaisquer utilizadores listados ou se o utilizador no qual está interessado não estiver listado, clique em **convidar** para abrir a página **Convidar um convidado**, onde pode convidar um utilizador com um endereço de e-mail de uma conta Microsoft válida como o Outlook.com, OneDrive ou Xbox Live IDs. Depois de introduzir o endereço de e-mail do utilizador, clique em **Selecionar** para adicionar o utilizador e, em seguida, clique em **OK**. 
    
    ![Adicionar utilizadores](media/automation-role-based-access-control/automation-04-add-users.png)  
    
-   Agora, deve conseguir ver o utilizador adicionado ao painel **Utilizadores** com a função **Leitor** atribuída.  
+   Agora, deve conseguir ver o utilizador adicionado à página **Utilizadores** com a função **Leitor** atribuída.  
    
    ![Listar utilizadores](media/automation-role-based-access-control/automation-05-list-users.png)  
    
-   Também pode atribuir uma função ao utilizador a partir do painel **Funções**. 
-4. Clique em **Funções** a partir do painel de Utilizadores para abrir o **painel Funções**. A partir deste painel, pode ver o nome da função, o número de utilizadores e os grupos atribuídos a essa função.
+   Também pode atribuir uma função ao utilizador a partir da página **Funções**. 
+4. Clique em **Funções** a partir da página Utilizadores para abrir a página **Funções**. A partir daí, pode ver o nome da função, o número de utilizadores e os grupos atribuídos a essa função.
    
-    ![Atribuir função a partir do painel de utilizadores](media/automation-role-based-access-control/automation-06-assign-role-from-users-blade.png)  
+    ![Atribuir função a partir da página Utilizadores](media/automation-role-based-access-control/automation-06-assign-role-from-users-blade.png)  
    
    > [!NOTE]
    > O Controlo de acesso baseado em funções só pode ser definido ao nível da Conta de Automatização e não em qualquer recurso abaixo a Conta de Automatização.
@@ -169,8 +169,8 @@ A tabela seguinte apresenta as ações específicas que podem ser efetuadas pela
 ### <a name="remove-a-user"></a>Remover um utilizador
 Pode remover a permissão de acesso de um utilizador que não está a gerir a Conta de Automatização ou que já não trabalha para a organização. Seguem-se os passos para remover um utilizador: 
 
-1. A partir do painel **Utilizadores**, selecione a atribuição de função que pretende remover.
-2. Clique no botão **Remover** no painel de detalhes de atribuição.
+1. A partir da página **Utilizadores**, selecione a atribuição de função que quer remover.
+2. Clique no botão **Remover** na página de detalhes de atribuição.
 3. Clique em **Sim** para confirmar a remoção. 
    
    ![Remover utilizadores](media/automation-role-based-access-control/automation-08-remove-users.png)  
@@ -181,7 +181,7 @@ Quando um utilizador atribuído a uma função iniciar sessão na respetiva cont
 ![Diretório predefinido](media/automation-role-based-access-control/automation-09-default-directory-in-role-assigned-user.png)  
 
 ### <a name="user-experience-for-automation-operator-role"></a>Experiência de utilizador para a função de operador de Automatização
-Quando um utilizador, a quem é atribuída a função de Operador de Automatização vê a conta de Automatização à qual é atribuído, pode ver a lista de runbooks, tarefas de runbook e agendas criadas da conta de Automatização, mas não pode ver a respetiva definição. Pode iniciar, parar, suspender, retomar ou agendar a tarefa de runbook. O utilizador não terá acesso a outros recursos de Automatização, tais como configurações, grupos de função de trabalho híbrida ou nós de DSC.  
+Quando um utilizador, a quem é atribuída a função de Operador de Automatização vê a conta de Automatização à qual é atribuído, pode ver a lista de runbooks, tarefas de runbook e agendas criadas da conta de Automatização, mas não pode ver a respetiva definição. Pode iniciar, parar, suspender, retomar ou agendar a tarefa de runbook. O utilizador não tem acesso a outros recursos de Automatização, tais como configurações, grupos de função de trabalho híbrida ou nós de DSC.  
 
 ![Sem acesso a recursos](media/automation-role-based-access-control/automation-10-no-access-to-resources.png)  
 
@@ -189,7 +189,7 @@ Quando o utilizador clica no runbook, os comandos para ver a origem ou editar o 
 
 ![Sem acesso para editar o runbook](media/automation-role-based-access-control/automation-11-no-access-to-edit-runbook.png)  
 
-O utilizador terá acesso para ver e criar agendas, mas não terá acesso a qualquer outro tipo de recurso.  
+O utilizador tem acesso para ver e criar agendas, mas não tem acesso a qualquer outro tipo de recurso.  
 
 ![Sem acesso aos recursos](media/automation-role-based-access-control/automation-12-no-access-to-assets.png)  
 
@@ -229,10 +229,4 @@ Nos exemplos indicados acima, substitua o **ID de início de sessão**, o **ID d
 * Para obter informações sobre diferentes maneiras de configurar o RBAC para a Automatização do Azure, veja [Gerir o RBAC com o Azure PowerShell](../active-directory/role-based-access-control-manage-access-powershell.md).
 * Para obter detalhes sobre diferentes formas de iniciar um runbook, consulte o artigo [Iniciar um runbook](automation-starting-a-runbook.md)
 * Para obter informações sobre os vários tipos de runbook, veja [Tipos de runbook de Automatização do Azure](automation-runbook-types.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

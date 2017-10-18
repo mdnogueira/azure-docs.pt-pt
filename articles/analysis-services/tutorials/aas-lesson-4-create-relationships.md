@@ -13,14 +13,13 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 05/26/2017
+ms.date: 09/20/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: d79af3915c718a79f60e5f589527eb4c2ae8b367
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
-
+ms.openlocfilehash: 70812790348bbf525c7ed6299c656f7dd8e83dff
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="lesson-4-create-relationships"></a>Lição 4: Criar relações
 
@@ -34,7 +33,10 @@ Tempo estimado para concluir esta lição: **dez minutos**
 Este tópico faz parte de um tutorial de modelação em tabela, que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a [Lição 3: Marcar como Tabela de Data](../tutorials/aas-lesson-3-mark-as-date-table.md). 
   
 ## <a name="review-existing-relationships-and-add-new-relationships"></a>Rever relações existentes e adicionar novas  
-Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dados AdventureWorksDW2014. Em geral, quando importa dados de uma origem relacional, as relações existentes são importadas automaticamente em conjunto com os dados. No entanto, antes de continuar a criar seu modelo, deve confirmar se as relações entre as tabelas foram criadas adequadamente. Neste tutorial, vai adicionar três relações novas.  
+Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dados AdventureWorksDW2014. Em geral, quando importa dados de uma origem relacional, as relações existentes são importadas automaticamente em conjunto com os dados. Para a ação Obter Dados criar automaticamente relações no modelo de dados, têm de existir relações entre as tabelas na origem de dados.
+
+Antes de continuar a criar o seu modelo, deve confirmar se as relações entre as tabelas foram criadas adequadamente. Neste tutorial, também vai adicionar três relações novas.  
+
   
 #### <a name="to-review-existing-relationships"></a>Para rever relações existentes  
   
@@ -44,7 +46,10 @@ Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dad
     
     ![aas-lesson4-diagram](../tutorials/media/aas-lesson4-diagram.png)
   
-    Utilize os controlos de minimapa no canto inferior direito do estruturador de modelos para incluir o máximo de tabelas possível. Também pode clicar e arrastar as tabelas para diferentes localizações, aproximando-as ou dispondo-as numa determinada ordem. Mover as tabelas não afeta as relações que já existem entre as mesmas. Para ver todas as colunas de uma tabela específica, clique e arraste uma extremidade dessa tabela para expandi-la ou diminuí-la.  
+    > [!NOTE]
+    > Se não vir quaisquer relações entre tabelas, provavelmente significa que não existem relações entre essas tabelas na origem de dados.
+
+    Utilize os controlos de minimapa no canto inferior direito do estruturador de modelos para incluir o máximo de tabelas possível. Também pode clicar e arrastar as tabelas para diferentes localizações, aproximando-as ou dispondo-as numa determinada ordem. Mover as tabelas não afeta as relações que existem entre as mesmas. Para ver todas as colunas de uma tabela específica, clique e arraste uma extremidade dessa tabela para expandi-la ou diminuí-la.  
   
 2.  Clique na linha sólida entre as tabelas **DimCustomer** e **DimGeography**. A linha sólida entre estas duas tabelas mostra que esta relação está ativa, ou seja, é utilizada por predefinição ao calcular fórmulas DAX.  
   
@@ -63,7 +68,7 @@ Quando utilizou Get Data para importar dados, obteve sete tabelas da base de dad
     |Sim|**FactInternetSales [CustomerKey]**|**DimCustomer [CustomerKey]**|  
     |Sim|**FactInternetSales [ProductKey]**|**DimProduct [ProductKey]**|  
   
-    Se uma das relações estiver em falta, verifique se o seu modelo inclui as tabelas DimCustomer, DimDate, DimGeography, DimProduct, DimProductCategory, DimProductSubcategory e FactInternetSales. Se forem importadas em momentos diferentes tabelas da mesma ligação de origem de dados, as relações entre essas tabelas têm de ser criadas manualmente.  
+    Se uma das relações estiver em falta, verifique se o seu modelo inclui as tabelas DimCustomer, DimDate, DimGeography, DimProduct, DimProductCategory, DimProductSubcategory e FactInternetSales. Se forem importadas em momentos diferentes tabelas da mesma ligação de origem de dados, as relações entre essas tabelas têm de ser criadas manualmente. Se não forem apresentadas relações, significa que estas não existem na origem de dados. Pode criá-las manualmente no modelo de dados.
 
 ### <a name="take-a-closer-look"></a>Uma visão mais detalhada
 Na Vista de Diagrama, repare numa seta, num asterisco e num número nas linhas que mostram as relações entre as tabelas.
@@ -102,4 +107,3 @@ Em alguns casos, poderá ter de criar relações adicionais entre tabelas do seu
   
   
   
-

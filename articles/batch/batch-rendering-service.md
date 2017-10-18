@@ -2,23 +2,24 @@
 title: "Utilizar o serviço Azure Batch Rendering para compor na cloud | Microsoft Docs"
 description: "Componha tarefas em máquinas virtuais do Azure diretamente no Maya com o modelo de faturação de pagamento por utilização."
 services: batch
-author: tamram
+author: v-dotren
 manager: timlt
 ms.service: batch
 ms.topic: hero-article
-ms.date: 07/31/2017
-ms.author: tamram
+ms.date: 09/14/2017
+ms.author: danlep
+ms.openlocfilehash: 47ccbd89d5abf04034196ab735c6740d57099023
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 7bf5d568e59ead343ff2c976b310de79a998673b
-ms.openlocfilehash: 4d22f92cafdbceee5213361d6d2b2f38904d12c6
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/01/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="get-started-with-the-batch-rendering-service"></a>Introdução ao serviço Batch Rendering
 
-O serviço Azure Batch Rendering oferece capacidades de composição à escala da cloud num modelo de faturação de pagamento por utilização. Processa o agendamento e a colocação em fila de trabalhos, a gestão de falhas e repetições e o dimensionamento automático dos seus trabalhos de composição. O Batch Rendering suporta Autodesk Maya, 3ds Max e Arnold, sendo que vão ser suportadas mais aplicações brevemente. O plug-in do Batch para Maya 2017 faz com que seja mais fácil começar a compor trabalhos no Azure diretamente a partir do seu computador. 
+O serviço Azure Batch Rendering oferece capacidades de composição à escala da cloud num modelo de faturação de pagamento por utilização. Processa o agendamento e a colocação em fila de trabalhos, a gestão de falhas e repetições e o dimensionamento automático dos seus trabalhos de composição. Suporta [Autodesk Maya](https://www.autodesk.com/products/maya/overview), [3ds Max](https://www.autodesk.com/products/3ds-max/overview), [Arnold](https://www.autodesk.com/products/arnold/overview) e [V-Ray](https://www.chaosgroup.com/vray/maya). O plug-in do Batch para Maya 2017 faz com que seja mais fácil começar a compor trabalhos no Azure diretamente a partir do seu computador.
+
+Com Maya e 3ds Max, pode executar trabalhos com a aplicação de computador [Batch Labs](https://github.com/Azure/BatchLabs) ou com a [CLI de Modelos do Batch](batch-cli-templates.md). Com a CLI do Azure Batch, pode executar trabalhos do Batch sem escrever código. Em vez disso, pode utilizar ficheiros de modelos para criar conjuntos, trabalhos e tarefas do Batch. Para obter mais informações, veja [Use Azure Batch CLI Templates and File Transfer](batch-cli-templates.md) (Utilizar Modelos da CLI do Azure Batch e a Transferência de Ficheiros).
+
 
 ## <a name="supported-applications"></a>Aplicações suportadas
 
@@ -26,22 +27,23 @@ Atualmente, o serviço Batch Rendering suporta as aplicações seguintes:
 
 - Autodesk Maya
 - Autodesk 3ds Max
-- Autodesk Arnold
+- Autodesk Arnold for Maya
+- Autodesk Arnold for 3ds Max
+- Chaos Group V-Ray for Maya
+- Chaos Group V-Ray for 3ds Max
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para utilizar o serviço Batch Rendering, precisa de:
 
-- Uma [conta do Azure](https://azure.microsoft.com/free/). 
+- Uma [conta do Azure](https://azure.microsoft.com/free/).
 - **Uma conta do Azure Batch.** Para obter orientações para a criação de uma conta do Batch no portal do Azure, veja [Criar uma conta do Batch com portal do Azure](batch-account-create-portal.md).
 - **Uma conta do Armazenamento do Azure.** Os recursos utilizados para o trabalho de composição são armazenados Armazenamento do Azure. Pode criar uma conta de armazenamento automaticamente quando configurar a sua conta do Batch. Também pode utilizar uma conta de armazenamento já existente. Para saber mais sobre as contas de Armazenamento, veja [Acerca das contas do Storage do Azure](https://docs.microsoft.com/azure/storage/storage-create-storage-account).
 
 Para utilizar o plug-in do Batch para Maya, precisa do:
 
-- **Maya 2017**
-- **Arnold for Maya**
-
-Também pode utilizar o [portal do Azure](https://portal.azure.com) para criar conjuntos de máquinas virtuais que estão pré-configuradas com Maya, 3ds Max e Arnold. Pode utilizar o portal para monitorizar trabalhos e diagnosticar tarefas falhadas ao transferir os registos de aplicações e ligar-se remotamente às VMs individuais através de RDP ou SSH.
+- [Autodesk Maya 2017](https://www.autodesk.com/products/maya/overview).
+- Um compositor suportado, como o Arnold for Maya ou o V-Ray for Maya.
 
 ## <a name="basic-batch-concepts"></a>Conceitos básicos do Batch
 
@@ -57,13 +59,68 @@ Para obter mais informações sobre os conjuntos e os nós de computação do Ba
 
 Um **trabalho** do Batch é uma coleção de tarefas que são executadas nos nós de computação num conjunto. Quando submete um trabalho de composição, o Batch divide-o em tarefas e distribui-as para os nós de computação do conjunto, para serem executados.
 
+Pode utilizar o [portal do Azure](https://ms.portal.azure.com/) para monitorizar trabalhos e diagnosticar tarefas falhadas ao transferir os registos de aplicações e ligar-se remotamente às VMs individuais através de RDP ou SSH. Também pode utilizar o [cliente Batch Labs](https://github.com/Azure/BatchLabs) para gerir, monitorizar e depurar.
+
 Para obter mais informações sobre os trabalhos do Batch, veja a secção [Tarefa](batch-api-basics.md#job) do artigo [Desenvolver soluções de computação paralelas em grande escala com o Batch](batch-api-basics.md).
+
+## <a name="options-for-provisioning-required-applications"></a>Opções para o aprovisionamento de aplicações necessárias
+
+Poderão ser necessárias várias aplicações para compor um trabalho, como, por exemplo, uma combinação de Maya e Arnold ou de 3ds Max e V-Ray, bem como outros plug-ins de terceiros, se aplicável. Além disso, alguns clientes poderão precisar de versões específicas destas aplicações. Como tal, estão disponíveis vários métodos para aprovisionar as aplicações e o software necessários:
+
+### <a name="pre-configured-vm-images"></a>Imagens de VMs pré-configuradas
+
+O Azure disponibiliza imagens do Windows e do Linux, cada qual com uma versão única do Maya, do 3ds Max, do Arnold e do V-Ray pré-instalada e pronta a ser utilizada. Pode selecionar estas imagens no [portal do Azure](https://portal.azure.com), no plug-in do Maya ou no [Batch Labs](https://github.com/Azure/BatchLabs) quando cria um conjunto.
+
+No portal do Azure e no Batch Labs, pode instalar uma das imagens de VM com as aplicações pré-instaladas da seguinte forma: na secção Conjuntos da sua conta do Batch, selecione **Nova**, em seguida, em **Adicionar Conjunto**, selecione **Gráficos e Composição (Linux/Windows)**, a partir da lista pendente **Tipo de imagem**:
+
+![Selecionar o tipo de imagem para a conta do Batch](./media/batch-rendering-service/add-pool.png)
+
+Desloque-se para baixo e clique em **Licenciamento de gráficos e composição** para abrir o painel **Escolher licenças** e selecione uma ou mais licenças de software:
+
+![Selecionar licenças de gráficos e de composição para o conjunto](./media/batch-rendering-service/graphics-licensing.png)
+
+As versões de licenças específicas são as seguintes:
+
+- Maya 2017
+- 3ds Max 2018
+- Arnold for Maya 5.0.1.1
+- Arnold for 3ds Max 1.0.836
+- V-Ray for Maya 3.52.03
+- V-Ray for 3ds Max 3.60.01
+
+### <a name="custom-images"></a>Imagens personalizadas
+
+O Azure Batch permite-lhe fornecer uma imagem personalizada. Com esta opção, pode configurar a VM com as aplicações e versões específicas exatas de que precisa. Para obter mais informações, veja [Use a custom image to create a pool of virtual machines](https://docs.microsoft.com/en-us/azure/batch/batch-custom-images) (Utilizar uma imagem personalizada para criar um conjunto de máquinas virtuais). Tenha em atenção que a Autodesk e a Chaos Group modificaram o Arnold e o V-Ray respetivamente, no sentido de se autenticarem no nosso próprio serviço de licenciamento. Tem de confirmar que tem as versões destas aplicações com este suporte, caso contrário, o licenciamento “pay-per-use “ não funcionará. Esta validação de licenças não é necessária para o Maya nem para o 3ds Max, uma vez que as versões atualmente publicadas não precisam de servidores de licença durante a execução sem periféricos (no modo batch/linha de comandos). Se não souber ao certo como utilizar esta opção, contacte o suporte do Azure.
+
+## <a name="options-for-submitting-a-render-job"></a>Opções para submeter trabalhos de composição
+
+Dependendo da aplicação 3D que utilizar, existem várias opções para submeter trabalhos de composição para o serviço:
+
+### <a name="maya"></a>Maya
+
+Com o Maya, pode utilizar:
+
+- [Plug-in do Batch para Maya](https://docs.microsoft.com/en-us/azure/batch/batch-rendering-service#use-the-batch-plug-in-for-maya-to-submit-a-render-job)
+- Aplicação de computador [Batch Labs](https://github.com/Azure/BatchLabs)
+- [CLI de Modelos do Batch](batch-cli-templates.md)
+
+### <a name="3ds-max"></a>3ds Max
+
+Com o 3ds Max, pode utilizar:
+
+- Aplicação de computador [Batch Labs](https://github.com/Azure/BatchLabs) (veja [Batch Labs Data](https://github.com/Azure/BatchLabs-data/tree/master/ncj/3dsmax) [Dados do Batch Labs] para obter instruções sobre como utilizar modelos do Batch Labs do 3ds Max)
+- [CLI de Modelos do Batch](batch-cli-templates.md)
+
+Os modelos do Batch Labs do 3ds Max permitem-lhe utilizar o Serviço Azure Batch Rendering para compor cenas do VRay e do Arnold. Existem duas variações do modelo para o VRay e o Arnold, uma para cenas padrão e outra para cenas mais complexas que requerem um ficheiro de caminho do 3ds Max para elementos e texturas (ficheiro .mxp). Para obter mais informações sobre os modelos do Batch Labs do 3ds Max, veja o repositório [Batch Labs Data](https://github.com/Azure/BatchLabs-data/tree/master/ncj/3dsmax) no GitHub.
+
+Além disso, pode utilizar o [SDK do Batch para Python](https://docs.microsoft.com/en-us/azure/batch/batch-python-tutorial) para integrar o serviço de composição no seu pipeline já existente.
+
 
 ## <a name="use-the-batch-plug-in-for-maya-to-submit-a-render-job"></a>Utilizar o plug-in do Batch para Maya submeter um trabalho de composição
 
 Com o plug-in do Batch para Maya, pode submeter um trabalho para o serviço Batch Rendering diretamente a partir do Maya. As secções seguintes descrevem como configurar o trabalho no plug-in e, depois, submetê-lo. 
 
-### <a name="load-the-batch-plug-in-in-maya"></a>Carregar o plug-in do Batch para Maya
+### <a name="load-the-batch-plug-in-for-maya"></a>Carregar o plug-in do Batch para Maya
 
 O plug-in do Batch está disponível no [GitHub](https://github.com/Azure/azure-batch-maya/releases). Deszipe o arquivo num diretório à sua escolha. Pode carregar o plug-in diretamente a partir do diretório *azure_batch_maya*.
 

@@ -3,7 +3,7 @@ title: "Gerir conta de Automatização do Azure | Microsoft Docs"
 description: "Este artigo descreve como gerir a configuração da sua conta de Automatização, como uma configuração incorreta, eliminação e renovação de certificado."
 services: automation
 documentationcenter: 
-author: mgoedtel
+author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: 
@@ -14,14 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 04/13/2017
 ms.author: magoedte
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: 41efdbcacede74bac038342688362ff480cadc7e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 04/15/2017
-
+ms.openlocfilehash: fa3109f15cf14a95af35e814fb61a505d3130462
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="manage-azure-automation-account"></a>Gerir conta de Automatização do Azure
 Num dado momento antes de a sua conta de Automatização expirar, vai ter de renovar o certificado. Se considerar que a conta Run As tiver sido comprometida, pode eliminá-la e voltar a criá-la. Esta secção mostra como executar estas operações.
 
@@ -29,16 +27,17 @@ Num dado momento antes de a sua conta de Automatização expirar, vai ter de ren
 O certificado autoassinado que criou para a conta Run As expira ao fim de um ano após a data de criação. Pode renová-lo em qualquer altura antes de expirar. Quando o renovar, o certificado atual válido é mantido, para garantir que todos os runbooks que se encontram em fila ou ativamente em execução, e que se autenticam com a conta Run As, não são afetados negativamente. O certificado permanece válido até à data de expiração.
 
 > [!NOTE]
-> Se tiver configurado a sua conta Run As de Automatização para utilizar um certificado emitido pela sua autoridade de certificação empresarial e utilizar esta opção, esse certificado empresarial será substituído por um certificado autoassinado.
+> Se tiver configurado a sua conta Run As de Automatização para utilizar um certificado emitido pela sua autoridade de certificação empresarial e utilizar esta opção, esse certificado empresarial é substituído por um certificado autoassinado.
 
 Para renovar o certificado, faça o seguinte:
 
 1. No portal do Azure, abra a conta de Automatização.
 
-2. No painel **Conta de Automatização**, no painel **Propriedades da conta**, em **Definições da Conta**, selecione **Contas Run As**.
+2. Na **Conta de Automatização** 
+3. , no painel **Propriedades da conta**, em **Definições da Conta**, selecione **Contas Run As**.
 
     ![Painel Propriedades da conta de automatização](media/automation-manage-account/automation-account-properties-pane.png)
-3. No painel de propriedades das **Contas Run As**, selecione a conta Run As ou a conta Run As Clássica para a qual pretende renovar o certificado.
+3. Nas propriedades **Contas Run As**, selecione a conta Run As ou a conta Run As Clássica para a qual pretende renovar o certificado.
 
 4. No painel **Propriedades** da conta selecionada, clique em **Renovar certificado**.
 
@@ -51,15 +50,15 @@ Esta secção descreve como eliminar e recriar uma conta Run As ou Run As Cláss
 
 1. No portal do Azure, abra a conta de Automatização.
 
-2. No painel **Conta de Automatização**, no painel de propriedades da conta, selecione **Contas Run As**.
+2. Na página **Conta de automatização**, selecione **Contas Run as**.
 
-3. No painel de propriedades **Contas Run As**, selecione a conta Run As ou a conta Run As Clássico que quer eliminar. Em seguida, no painel **Propriedades** da conta selecionada, clique em **Eliminar**.
+3. Nas propriedades **Contas Run As**, selecione a conta Run As ou a conta Run As Clássica que quer eliminar. Em seguida, no painel **Propriedades** da conta selecionada, clique em **Eliminar**.
 
  ![Eliminar a conta Run As](media/automation-manage-account/automation-account-delete-runas.png)
 
 4. Enquanto a conta estiver a ser eliminada, pode acompanhar o progresso em **Notificações** a partir do menu.
 
-5. Assim que a conta tiver sido eliminada, pode voltar a criá-la no painel de propriedades **Contas Run As**, ao selecionar a opção de criação **Conta Run As do Azure**.
+5. Assim que a conta tiver sido eliminada, pode voltar a criá-la na página de propriedades **Contas Run As**, ao selecionar a opção de criação **Conta Run As do Azure**.
 
  ![Recriar a conta Run As de Automatização](media/automation-manage-account/automation-account-create-runas.png)
 
