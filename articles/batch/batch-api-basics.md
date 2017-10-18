@@ -3,7 +3,7 @@ title: "Descrição geral do Azure Batch para programadores | Microsoft Docs"
 description: "Conheça as funcionalidades do serviço Batch e das respetivas APIs de um ponto de vista de programação."
 services: batch
 documentationcenter: .net
-author: tamram
+author: v-dotren
 manager: timlt
 editor: 
 ms.assetid: 416b95f8-2d7b-4111-8012-679b0f60d204
@@ -12,15 +12,14 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 06/28/2017
-ms.author: tamram
+ms.date: 010/04/2017
+ms.author: danlep
 ms.custom: H1Hack27Feb2017
+ms.openlocfilehash: f182dff164b8baa7e2144231667adbd12fcc717d
+ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
 ms.translationtype: HT
-ms.sourcegitcommit: 83f19cfdff37ce4bb03eae4d8d69ba3cbcdc42f3
-ms.openlocfilehash: c2f2a878414e4efd626d674ef9a182ae52eeb1ff
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
 
@@ -46,7 +45,7 @@ O fluxo de trabalho detalhado que se segue é típico de quase todos os serviço
 As secções seguintes abordam estes e os outros recursos do Batch permitem o seu cenário computacional distribuído.
 
 > [!NOTE]
-> Precisa de uma [conta do Batch](#account) para utilizar o serviço. Quase todas as soluções do Batch utilizam também uma conta de [Armazenamento do Azure][azure_storage] para armazenamento e obtenção de ficheiros. Atualmente, o Batch só suporta o tipo de conta de armazenamento para **fins gerais**, conforme descrito no passo 5 de [Criar uma conta de Armazenamento](../storage/common/storage-create-storage-account.md#create-a-storage-account), em [Acerca das contas de Armazenamento do Azure](../storage/common/storage-create-storage-account.md).
+> Precisa de uma [conta do Batch](#account) para utilizar o serviço. Quase todas as soluções do Batch utilizam também uma conta de [Armazenamento do Azure][azure_storage] associada para armazenamento e obtenção de ficheiros. 
 >
 >
 
@@ -71,44 +70,14 @@ Todas as soluções que utilizam o serviço Batch precisam de alguns dos recurso
 ## <a name="account"></a>Conta
 Uma conta do Batch é uma entidade identificada exclusivamente no âmbito do serviço Batch. Todo o processamento está associado a uma conta do Batch.
 
-Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure.
+Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-create-portal.md) ou através de programação, como com a [Biblioteca .NET de Gestão de Batch](batch-management-dotnet.md). Ao criar a conta, pode associar uma conta de armazenamento do Azure para armazenar aplicações ou dados de entrada e saída relacionados com tarefas.
 
-### <a name="pool-allocation-mode"></a>Modo de alocação de conjuntos
+Pode executar várias cargas de trabalho do Batch numa única conta do Batch ou distribuí-las entre contas do Batch que estejam na mesma subscrição, mas em diferentes regiões do Azure.
 
-Quando cria uma conta do Batch, pode especificar quantos [conjuntos](#pool) de nós de computação são alocados. Pode optar por alocar conjuntos de nós de computação numa subscrição gerida pelo Azure Batch ou pode alocá-los na sua própria subscrição. A propriedade *pool allocation mode* da conta determina onde é que os conjuntos são alocados. 
+> [!NOTE]
+> Ao criar uma conta do Batch, geralmente escolhe o modo **Serviço Batch** predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. No modo **Subscrição de utilizador** alternativo, o qual já não é recomendado, as VMs do Batch e outros recursos são criados diretamente na sua subscrição quando é criado um conjunto.
+>
 
-Para decidir que modo de alocação de conjuntos utilizar, considere qual destes melhor se adequa ao seu cenário:
-
-* **Serviço Batch**: o Serviço Batch é o modo de alocação de conjuntos predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. Tenha em conta os aspetos seguintes relativamente ao modo de alocação de conjuntos do Serviço Batch.
-
-    - O modo de alocação de conjuntos do Serviço Batch suporta conjuntos do Serviço Cloud e de Máquinas Virtuais.
-    - O modo de alocação de conjuntos do Serviço Batch suporta a autenticação de chave partilhada ou a [autenticação do Azure Active Directory](batch-aad-auth.md) (Azure AD). 
-    - Pode utilizar nós de computação dedicados ou de baixa prioridade nos conjuntos alocados com o modo de alocação de conjuntos do Serviço Batch.
-    - Não utilize o modo de alocação de conjuntos se planear criar conjuntos de maquinas virtuais a partir de imagens de VMs personalizadas ou se planear utilizar uma rede virtual. Em alternativa, crie a sua conta com o modo de alocação de conjuntos Subscrição de Utilizador.
-    - Os conjuntos de Máquinas Virtuais aprovisionados em contas criadas com o modo de alocação de conjuntos do Serviço Batch têm de ser criados a partir de imagens do [Marketplace das Máquinas Virtuais do Azure][vm_marketplace].
-
-* **Subscrição de Utilizador**: com o modo de alocação de conjuntos Subscrição do Utilizador, os conjuntos do Batch são alocados na subscrição do Azure em que a conta é criada. Tenha em conta os aspetos seguintes relativamente ao modo de alocação de conjuntos Subscrição de Utilizador:
-     
-    - O modo de alocação de conjuntos Subscrição de Utilizador suporta apenas conjuntos de Máquinas Virtuais. Não suporta agrupamentos de Serviços Cloud.
-    - Para criar conjuntos de Máquinas Virtuais a partir de imagens de VMs personalizadas ou para utilizar uma rede virtual com estes conjuntos, tem de utilizar o modo de alocação de conjuntos Subscrição de Utilizador.  
-    - Nos conjuntos que são alocados na subscrição de utilizador, tem de utilizar a [autenticação do Azure Active Directory](batch-aad-auth.md). 
-    - Tem de configurar um cofre de chaves do Azure para a sua conta do Batch, se o modo de alocação de conjuntos for definido como Subscrição de Utilizador. 
-    - Só pode utilizar nós de computação dedicados em conjuntos numa conta criada com o modo de alocação de conjuntos Subscrição de Utilizador. Os nós de prioridade baixa não são suportados.
-    - Os conjuntos de Máquinas Virtuais aprovisionados em contas com o modo de alocação de conjuntos Subscrição de Utilizador têm de ser criados a partir de imagens do [Marketplace das Máquinas Virtuais do Azure][vm_marketplace] ou de imagens personalizadas fornecidas por si.
-
-A tabela seguinte compara os modos de alocação de conjuntos Serviço Batch e Subscrição de Utilizador.
-
-| **Modo de alocação de conjuntos**                 | **Serviço Batch**                                                                                       | **Subscrição de Utilizador**                                                              |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **Os conjuntos são alocados**               | Numa subscrição do Azure gerida                                                                           | Na subscrição do utilizador na qual a conta do Batch é criada                        |
-| **Configurações suportadas**             | <ul><li>Configuração do Serviço Cloud</li><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul> | <ul><li>Configuração de Máquina Virtual (Linux e Windows)</li></ul>                |
-| **Imagens de VM suportadas**                  | <ul><li>Imagens do Azure Marketplace</li></ul>                                                              | <ul><li>Imagens do Azure Marketplace</li><li>Imagens personalizadas</li></ul>                   |
-| **Tipos de nós de computação suportados**         | <ul><li>Nós dedicados</li><li>Nós de baixa prioridade</li></ul>                                            | <ul><li>Nós dedicados</li></ul>                                                  |
-| **Autenticação suportada**             | <ul><li>Chave Partilhada</li><li>Azure AD</li></ul>                                                           | <ul><li>Azure AD</li></ul>                                                         |
-| **Azure Key Vault necessário**             | Não                                                                                                      | Sim                                                                                |
-| **Quota de núcleos**                           | Determinada pela quota de núcleos do Batch                                                                          | Determinada pela quota de núcleos da subscrição                                              |
-| **Suporte da Rede Virtual do Azure (Vnet)** | Conjuntos criados com a Configuração Serviço Cloud                                                      | Conjuntos criados com a Configuração de Máquina Virtual                               |
-| **Modelo de implementação de Vnet suportado**      | Vnets criadas com o modelo de implementação clássica                                                             | Não são suportadas VNets criadas com o modelo de implementação clássica ou Azure Resource Manager |
 
 ## <a name="azure-storage-account"></a>Conta de armazenamento do Azure
 
@@ -135,7 +104,7 @@ Conjuntos do Azure Batch criados com base na plataforma de computação principa
 
 Um nome e um endereço IP exclusivos são atribuídos a cada nó que seja adicionado a um conjunto. Quando um nó é removido de um conjunto, as alterações feitas ao sistema operativo ou aos ficheiros perdem-se e o respetivo nome e endereço IP são libertados para utilização futura. Quando um nó deixa um conjunto, a sua duração termina.
 
-Quando cria um conjunto, pode especificar os seguintes atributos. Algumas definições variam, consoante o modo de alocação do agrupamento da [conta](#account) do Batch:
+Quando cria um conjunto, pode especificar os seguintes atributos:
 
 - Sistema operativo e versão do nó de computação
 - Tipo de nó de comutação e número de nós de destino
@@ -150,11 +119,9 @@ Quando cria um conjunto, pode especificar os seguintes atributos. Algumas defini
 Cada uma destas definições está descrita mais detalhadamente nas secções seguintes.
 
 > [!IMPORTANT]
-> As contas do Batch criadas com o modo de alocação de conjuntos Serviço Batch têm uma quota predefinida que limita o número de núcleos nas mesmas. O número de núcleos corresponde ao número de nós de computação. Pode encontrar as quotas predefinidas e instruções sobre como [aumentar uma quota](batch-quota-limit.md#increase-a-quota) em [Quotas and limits for the Azure Batch service](batch-quota-limit.md) (Quotas e limites para o serviço Azure Batch). Se o seu agrupamento não estiver a obter o número de destino de nós, tal poderá dever-se à quota de núcleos.
+> As contas do Batch têm uma quota predefinida que limita o número de núcleos nas mesmas. O número de núcleos corresponde ao número de nós de computação. Pode encontrar as quotas predefinidas e instruções sobre como [aumentar uma quota](batch-quota-limit.md#increase-a-quota) em [Quotas and limits for the Azure Batch service](batch-quota-limit.md) (Quotas e limites para o serviço Azure Batch). Se o seu agrupamento não estiver a obter o número de destino de nós, tal poderá dever-se à quota de núcleos.
 >
->As contas do Batch criadas com o modo de alocação de conjuntos Subscrição do Utilizador não observam as quotas de serviço do Batch. Em vez disso, partilham a quota de núcleos da subscrição especificada. Para obter mais informações, veja [Virtual Machines limits](../azure-subscription-service-limits.md#virtual-machines-limits) (Limites das Máquinas Virtuais), em [Azure subscription and service limits, quotas, and constraints](../azure-subscription-service-limits.md) (Limites, quotas e limitações das subscrições e serviços do Azure).
->
->
+
 
 ### <a name="compute-node-operating-system-and-version"></a>Sistema operativo e versão do nó de computação
 
@@ -174,41 +141,14 @@ Quando cria um agrupamento do Batch, pode especificar a configuração da máqui
 
 Quando cria um agrupamento, tem de selecionar o **nodeAgentSkuId** adequado, consoante o SO da imagem de base do VHD. Pode chamar a operação [List Supported Node Agent SKUs](https://docs.microsoft.com/rest/api/batchservice/list-supported-node-agent-skus) para ver um mapeamento dos IDs de SKUs de agente de nós disponíveis para as respetivas referências de Imagem do SO.
 
-Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
 
 #### <a name="custom-images-for-virtual-machine-pools"></a>Imagens personalizadas para agrupamentos de Máquinas Virtuais
 
-Para utilizar uma imagem personalizada para aprovisionar os seus conjuntos de Máquinas Virtuais, crie a sua conta do Batch com o modo de alocação de conjuntos Subscrição de Utilizador. Com este modo, os conjuntos do Batch são alocados à subscrição na qual a conta reside. Veja a secção [Conta](#account) para obter mais informações sobre como definir o modo de alocação de agrupamentos durante a criação de uma conta do Batch.
+Para utilizar uma imagem personalizada, terá de generalizar a imagem para prepará-la. Para obter informações sobre como preparar imagens do Linux personalizadas a partir de VMs do Azure, veja [Como criar uma imagem de uma máquina virtual ou VHD](../virtual-machines/linux/capture-image.md). Para obter informações sobre como preparar imagens do Windows personalizadas a partir de VMs do Azure, veja [Criar uma imagem gerida de uma VM generalizada no Azure](../virtual-machines/windows/capture-image-resource.md). 
 
-Para utilizar uma imagem personalizada, terá de generalizar a imagem para prepará-la. Para obter informações sobre como preparar imagens do Linux personalizadas a partir de VMs do Azure, veja [Capture an Azure Linux VM to use as a template](../virtual-machines/linux/capture-image-nodejs.md) (Capturar uma VM do Azure do Linux e utilizá-la como modelo). Para obter informações sobre como preparar imagens do Windows personalizadas a partir de VMs do Azure, veja [Create custom VM images with Azure PowerShell](../virtual-machines/windows/tutorial-custom-images.md) (Criar imagens de VM personalizadas com o Azure PowerShell). 
+Para obter requisitos e passos detalhados, veja [Utilizar uma imagem personalizada para criar um conjunto de máquinas virtuais](batch-custom-images.md).
 
-> [!IMPORTANT]
-> Quando preparar a imagem personalizada, tenha em atenção o seguinte:
-> - Confirme que a imagem de SO base que vai utilizar para aprovisionar o conjunto do Batch não tem nenhuma extensão do Azure pré-instalada, como a extensão Custom Script. Se a imagem tiver uma extensão pré-instalada, o Azure poderá encontrar problemas durante a implementação da VM.
-> - Certifique-se de que a imagem de SO base que indicar utiliza a unidade temp predefinida, pois o agente de nós do Batch espera, atualmente, a unidade temp.
->
->
 
-Para criar um agrupamento de Configuração de Máquina Virtual com uma imagem personalizada, precisa de uma ou mais contas do Armazenamento do Azure standard, para armazenar as imagens VHD personalizadas. As imagens personalizadas são armazenadas como blobs. Para fazer referência às imagens personalizadas quando cria um agrupamento, especifique os URIs dos blobs de VHD da imagem personalizada para a propriedade [osDisk](https://docs.microsoft.com/rest/api/batchservice/add-a-pool-to-an-account#bk_osdisk) da propriedade [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/add-a-pool-to-an-account#bk_vmconf).
-
-Certifique-se de que as suas contas de armazenamento cumprem os critérios seguintes:   
-
-- As contas de armazenamento que contêm os blobs de VHD da imagem personalizada têm de estar na mesma subscrição que a conta do Batch (a subscrição do utilizador).
-- As contas de armazenamento especificadas têm de estar na mesma região que a conta do Batch.
-- Atualmente, só são suportadas as contas de armazenamento para fins gerais. O Armazenamento premium do Azure será suportado no futuro.
-- Pode especificar uma conta de armazenamento com vários blobs de VHD personalizados ou múltiplas contas de armazenamento, contendo cada uma um único blob. Para obter um desempenho melhor, recomendamos utilizar várias contas de armazenamento.
-- Um blob de VHD de imagem personalizada individual pode suportar até 40 instâncias de VMs do Linux ou 20 instâncias de VM do Windows. Para criar agrupamentos com mais VMs, tem de criar cópias do blob de VHD. Por exemplo, um agrupamento com 200 VMs do Windows precisa de dez blobs de VHD individuais especificados na propriedade **osDisk**.
-
-Para criar um agrupamento a partir de uma imagem personalizada através do portal do Azure:
-
-1. No portal do Azure, navegue para a sua conta do Batch.
-2. No painel **Definições**, selecione o item de menu **Agrupamentos**.
-3. No painel **Agrupamentos**, selecione o comando **Adicionar**; é apresentado o painel **Adicionar agrupamento**.
-4. Selecione **Imagem Personalizada (Linux/Windows)**, no menu pendente **Tipo de Imagem**. O portal apresenta o seletor **Imagem Personalizada**. Escolha um ou mais VHDs no mesmo contentor e clique no botão **Selecionar**. 
-    Será adicionado no futuro suporte para vários VHDs de diferentes contas de armazenamento e diferentes contentores.
-5. Selecione o **Editor/Oferta/Sku** correto para os VHDs personalizados, selecione o modo de **Colocação em Cache** pretendido e preencha todos os outros parâmetros do agrupamento.
-6. Para verificar se um agrupamento se baseia numa imagem personalizada, veja a propriedade **Operating System** na secção de resumo do recurso do painel **Agrupamento**. O valor desta propriedade deve ser **Imagem de VM personalizada**.
-7. São apresentados no painel **Propriedades** do agrupamento todos os VHDs personalizados associados a esse agrupamento.
 
 ### <a name="compute-node-type-and-target-number-of-nodes"></a>Tipo de nó de comutação e número de nós de destino
 
@@ -220,8 +160,7 @@ Quando cria um conjunto, pode especificar quais os tipos de nós de computação
 
     Se o Azure não tiver capacidade excedente suficiente, os nós de computação de baixa prioridade podem ser substituídos. Se um nó for substituído enquanto está a executar tarefas, estas são colocadas novamente na fila e executadas assim que esteja disponível um nó de computação. Os nós de baixa prioridade são uma boa opção para cargas de trabalho em que o tempo de conclusão do trabalho é flexível e este pode ser distribuído por muitos nós. Antes de decidir se vai utilizar nós de baixa prioridade no seu cenário, confirme que eventuais trabalhos perdidos devido à interrupção são mínimos e fáceis de recriar.
 
-    Os nós de computação de baixa prioridade só estão disponíveis para contas do Batch criadas com o modo de alocação de conjuntos definido como **Serviço do Batch**.
-
+    
 Pode ter nós de computação de baixa prioridade e dedicados no mesmo conjunto. Cada tipo e nó &mdash; baixa prioridade e dedicado &mdash; tem a sua própria definição de destino, de acordo com a qual pode especificar o número pretendido de nós. 
     
 O número de nós de computação é referido com *destino* porque, em algumas situações, é possível que o seu conjunto não atinja o número de nós pretendido. Por exemplo, um conjunto pode não alcançar o destino se atingir primeiro a [quota de núcleos](batch-quota-limit.md) da sua conta do Batch. Ou o conjunto poderá não alcançar o destino se tiver aplicado uma fórmula de dimensionamento automático ao conjunto que limite o número máximo de nós.
@@ -447,34 +386,15 @@ Geralmente, é utilizada uma abordagem combinada para lidar com cargas variávei
 
 ## <a name="virtual-network-vnet-and-firewall-configuration"></a>Configurar a rede virtual (VNet) e a firewall 
 
-Quando aprovisiona um conjunto de nós de computação no Azure Batch, pode associá-lo a uma sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure. Para saber mais sobre como criar uma VNet com sub-redes, veja [Criar uma rede virtual do Azure com sub-redes](../virtual-network/virtual-networks-create-vnet-arm-pportal.md). 
+Quando aprovisiona um conjunto de nós de computação no Batch, pode associá-lo a uma sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure. Para saber mais sobre como criar uma VNet com sub-redes, veja [Criar uma rede virtual do Azure com sub-redes](../virtual-network/virtual-networks-create-vnet-arm-pportal.md). 
 
- * A VNet associada a um conjunto tem de:
+Requisitos de VNet:
 
-   * Estar na mesma **região** do Azure que a conta do Azure Batch.
-   * Estar na mesma **subscrição** do Azure que a conta do Azure Batch.
+* A rede virtual tem de estar na mesma **região** e **subscrição** do Azure da conta do Azure Batch.
 
-* O tipo de VNet suportada depende da forma como os agrupamentos estão a ser alocados na conta do Batch:
+* Para os conjuntos criados com uma configuração de máquina virtual, apenas são suportadas redes virtuais baseadas no Azure Resource Manager (ARM). Para os conjuntos criados com uma configuração de serviços cloud, são suportados o ARM e redes virtuais clássicas. 
 
-    - Se o modo de alocação de conjuntos da sua conta do Batch estiver definido como Serviço Batch, só pode atribuir VNets a conjuntos criados com a **Configuração de Serviços Cloud**. Além disso, a VNet especificada tem de ser criada com o modelo de implementação clássica. Não são suportadas VNets criadas com o modelo de implementação Azure Resource Manager.
- 
-    - Se o modo de alocação de conjuntos da sua conta do Batch estiver definido como Subscrição de Utilizador, só pode atribuir VNets a conjuntos criados com a **Configuração de Máquina Virtual**. Não há suporte para conjuntos criados com a **Configuração de Serviço Cloud**. A VNet associada pode ser criada com o modelo de implementação Azure Resource Manager ou o modelo de implementação clássica.
-
-    Para obter uma tabela que resume o suporte de VNet de acordo com o modo de alocação de conjuntos, veja a secção [Modo de alocação de conjuntos](#pool-allocation-mode).
-
-* Se o modo de alocação de conjuntos da sua conta do Batch estiver definido como Serviço Batch, tem de fornecer permissões para que o principal de serviço do Batch aceda à VNet. A VNet tem de atribuir a função [Controlo de Acesso Baseado em Funções (RBAC) Contribuidor de Máquina Virtual Clássica](https://azure.microsoft.com/documentation/articles/role-based-access-built-in-roles/#classic-virtual-machine-contributor) ao principal de serviço do Batch. Se a função RBAC especificada não for fornecida, o serviço Batch devolve 400 (Pedido Inválido). Para adicionar a função no portal do Azure:
-
-    1. Selecione a **VNet**, selecione **Controlo de acesso (IAM)** > **Funções** > **Contribuidor de Máquina Virtual** > **Adicionar**.
-    2. No painel **Adicionar permissões**, selecione a função **Contribuidor de Máquina Virtual**.
-    3. No painel **Adicionar permissões**, procure a API do Batch. Procure cada uma destas cadeias por ordem até encontrar a API:
-        1. **MicrosoftAzureBatch**.
-        2. **Batch do Microsoft Azure**. Os inquilinos mais recentes podem utilizar este nome.
-        3. **ddbf3205-c6bd-46ae-8127-60eb93363864** é o ID para a API do Batch. 
-    3. Selecione o principal de serviço da API do Batch. 
-    4. Clique em **Guardar**.
-
-        ![Atribuir a função Contribuidor de VM ao principal de serviço do Batch](./media/batch-api-basics/iam-add-role.png)
-
+* Para utilizar uma rede baseada no ARM, a API do cliente do Batch tem de utilizar a [autenticação do Azure Active Directory](batch-aad-auth.md). Para utilizar uma rede virtual clássica, o principal de serviço ''MicrosoftAzureBatch'' tem de ter a função ''Contribuinte de Máquina Virtual Clássica'' do Controlo de Acesso Baseado em Funções (RBAC) na rede virtual especificada. 
 
 * A sub-rede indicada deve ter **endereços IP** livres suficientes para acomodar o número de nós de destino, ou seja, a soma das propriedades `targetDedicatedNodes` e `targetLowPriorityNodes` do agrupamento. Se a sub-rede não tiver endereços IP livres suficientes, o serviço Batch aloca, parcialmente, os nós de computação do conjunto e devolve um erro de redimensionamento.
 
@@ -666,4 +586,3 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 [rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
-

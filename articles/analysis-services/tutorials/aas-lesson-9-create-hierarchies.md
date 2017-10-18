@@ -13,20 +13,19 @@ ms.devlang: NA
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 05/26/2017
+ms.date: 09/20/2017
 ms.author: owend
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 43aab8d52e854636f7ea2ff3aae50d7827735cc7
-ms.openlocfilehash: d628dc621335acf231342a6d9186079de16e85f4
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/03/2017
-
+ms.openlocfilehash: dbfaf3b791dd44a43a2cf862819e6292b94d958a
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="lesson-9-create-hierarchies"></a>Lição 9: Criar hierarquias
 
 [!INCLUDE[analysis-services-appliesto-aas-sql2017-later](../../../includes/analysis-services-appliesto-aas-sql2017-later.md)]
 
-Nesta lição, irá criar hierarquias. Hierarquias são grupos de colunas organizados em níveis; por exemplo, uma hierarquia de Geografia pode ter subníveis para país, estado, município e cidade. As hierarquias podem aparecer separadas de outras colunas numa lista de campos de aplicações cliente relatório, tornando mais fácil para os utilizadores clientes navegarem e incluírem num relatório. Para obter mais informações, consulte [Hierarquias](https://docs.microsoft.com/sql/analysis-services/tabular-models/hierarchies-ssas-tabular)
+Nesta lição, irá criar hierarquias. Hierarquias são grupos de colunas organizados em níveis. Por exemplo, uma hierarquia de Geografia pode ter subníveis para país, estado, município e cidade. As hierarquias podem aparecer separadas de outras colunas numa lista de campos de aplicações cliente relatório, tornando mais fácil para os utilizadores clientes navegarem e incluírem num relatório. Para obter mais informações, consulte [Hierarquias](https://docs.microsoft.com/sql/analysis-services/tabular-models/hierarchies-ssas-tabular)
   
 Para criar hierarquias, use o designer de modelo da *vista de diagrama*. A criação e a gestão de hierarquias não é suportada na vista de dados.  
   
@@ -43,7 +42,7 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
   
 2.  Clique e arraste a coluna **ProductCategoryName** para a nova hierarquia **Categoria**.  
   
-3.  Na hierarquia **Categoria**, clique com botão direito do rato **ProductCategoryName** > **Mudar nome** e, em seguida, digite **Categoria**.  
+3.  Na hierarquia **Categoria**, clique com o botão direito do rato em **ProductCategoryName** > **Mudar nome** e, em seguida, digite **Categoria**.  
   
     > [!NOTE]  
     > Mudar o nome de uma coluna numa hierarquia não muda o nome dessa coluna na tabela. Uma coluna numa hierarquia é apenas uma representação da coluna na tabela.  
@@ -85,4 +84,3 @@ Este tópico faz parte de um tutorial de modelação em tabela que deve ser conc
 [Lição 10: Criar partições](../tutorials/aas-lesson-10-create-partitions.md). 
   
   
-

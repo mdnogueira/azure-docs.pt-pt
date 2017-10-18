@@ -12,36 +12,37 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/30/2017
+ms.date: 09/18/2017
 ms.author: maheshu
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f537befafb079256fba0529ee554c034d73f36b0
-ms.openlocfilehash: 4b6da997f44860dccb2aa2571ce099ab2d0231f3
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/08/2017
-
-
+ms.openlocfilehash: c0cd24e03c24655adfe851bc85b721c0b617efcc
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="enable-password-synchronization-to-azure-active-directory-domain-services"></a>Ativar a sincronização de palavras-passe para o Azure Active Directory Domain Services
 Em tarefas anteriores, ativou o Azure Active Directory Domain Services do seu inquilino do Azure Active Directory (Azure AD). A tarefa seguinte consiste em ativar a sincronização de hashes de credenciais necessários para a autenticação NTLM (NT LAN Manager) e Kerberos para sincronizar com os Serviços de Domínio do Azure AD. Assim que a sincronização de credenciais estiver configurada, os utilizadores podem iniciar sessão no domínio gerido com as credenciais da empresa.
 
-Os passos envolvidos são diferentes para contas de utilizador apenas na cloud vs contas de utilizador que são sincronizadas a partir do seu diretório no local com o Azure AD Connect.  Se o seu inquilino do Azure AD tiver uma combinação de utilizadores apenas na cloud e utilizadores do seu AD no local, tem de executar os dois passos.
+Os passos envolvidos são diferentes para contas de utilizador apenas na cloud vs contas de utilizador que são sincronizadas a partir do seu diretório no local com o Azure AD Connect. 
+
+<br>
+| **Tipo de conta de utilizador** | **Passos a realizar** |
+| --- |---|
+| **Contas de utilizador da cloud criadas no Azure AD** |**&#x2713;** [Siga as instruções neste artigo](active-directory-ds-getting-started-password-sync.md#task-5-enable-password-synchronization-to-your-managed-domain-for-cloud-only-user-accounts) |
+| **Contas de utilizador sincronizadas a partir de um diretório no local** |**&#x2713;**: [Sincronizar as palavras-passe para contas de utilizador sincronizadas a partir do seu AD no local com o seu domínio gerido](active-directory-ds-getting-started-password-sync-synced-tenant.md) | 
 
 <br>
 
-> [!div class="op_single_selector"]
-> * **Contas de utilizador apenas na cloud**: [sincronizar as palavras-passe para contas de utilizador apenas na cloud com o seu domínio gerido](active-directory-ds-getting-started-password-sync.md)
-> * **Contas de utilizador no local**: [sincronizar as palavras-passe para contas de utilizador sincronizadas a partir do seu AD no local com o seu domínio gerido](active-directory-ds-getting-started-password-sync-synced-tenant.md)
+> [!TIP]
+> **Poderá ter de concluir ambos os conjuntos de passos.**
+> Se o seu inquilino do Azure AD tiver uma combinação de utilizadores apenas na cloud e utilizadores do seu AD no local, tem de executar ambos os conjuntos de passos.
 >
->
-
-<br>
 
 ## <a name="task-5-enable-password-synchronization-to-your-managed-domain-for-cloud-only-user-accounts"></a>Tarefa 5: ativar a sincronização de palavras-passe do seu domínio gerido para contas de utilizador apenas na cloud
 Para autenticar os utilizadores no domínio gerido, o Azure Active Directory Domain Services precisa de hashes de credenciais num formato adequado para autenticação NTLM e Kerberos. O Azure AD não gera nem armazena hashes de credenciais no formato necessário para a autenticação NTLM ou Kerberos até ativar o Azure Active Directory Domain Services para o seu inquilino. Por motivos óbvios de segurança, o Azure AD também não armazena quaisquer credenciais de palavras-passes no formato de texto não encriptado. Por isso, o Azure AD não tem uma forma de gerar automaticamente estes hashes de credenciais NTLM ou Kerberos, com base nas credenciais existentes dos utilizadores.
 
 > [!NOTE]
-> Se a sua organização tiver contas de utilizador apenas na cloud, os utilizadores que necessitam de utilizar o Azure Active Directory Domain Services têm de alterar as respetivas palavras-passe. Uma conta de utilizador apenas na cloud é uma conta que foi criada no diretório do Azure AD com o portal do Azure ou os cmdlets do PowerShell do Azure AD. Essas contas de utilizador não são sincronizadas a partir de um diretório no local.
+> **Se a sua organização tiver contas de utilizador apenas na cloud, todos os utilizadores que precisam de utilizar o Azure Active Directory Domain Services têm de alterar as respetivas palavras-passe.** Uma conta de utilizador apenas na cloud é uma conta que foi criada no diretório do Azure AD com o portal do Azure ou os cmdlets do PowerShell do Azure AD. Essas contas de utilizador não são sincronizadas a partir de um diretório no local.
 >
 >
 
@@ -62,7 +63,7 @@ Seguem-se as instruções que tem de fornecer aos utilizadores, para que possam 
 
     ![Clicar em "Alterar palavra-passe"](./media/active-directory-domain-services-getting-started/user-change-password.png)
 
-   > [!NOTE]
+   > [!TIP]
    > Se a opção **Alterar palavra-passe** não estiver apresentada na página do Painel de Acesso, certifique-se de que a sua organização configurou a [gestão de palavras-passe no Azure AD](../active-directory/active-directory-passwords-getting-started.md).
    >
    >
@@ -72,7 +73,7 @@ Seguem-se as instruções que tem de fornecer aos utilizadores, para que possam 
 
 5. Clique em **Submeter**.
 
-Uns minutos depois de ter alterado a palavra-passe, a nova palavra-passe pode ser utilizada no Azure Active Directory Domain Services. Após mais alguns minutos (normalmente, cerca de 20 minutos), pode iniciar sessão em computadores que estão associados ao domínio gerido com a palavra-passe recentemente alterada.
+Uns minutos depois de ter alterado a palavra-passe, a nova palavra-passe pode ser utilizada no Azure Active Directory Domain Services. Após cerca de 20 minutos, pode iniciar sessão em computadores associados ao domínio gerido com a palavra-passe recentemente alterada.
 
 ## <a name="related-content"></a>Conteúdo relacionado
 * [Como atualizar a sua própria palavra-passe](../active-directory/active-directory-passwords-update-your-own-password.md)
@@ -81,4 +82,3 @@ Uns minutos depois de ter alterado a palavra-passe, a nova palavra-passe pode se
 * [Administrar um domínio gerido pelo Azure Active Directory Domain Services](active-directory-ds-admin-guide-administer-domain.md)
 * [Associar uma máquina virtual do Windows a um domínio gerido do Azure Active Directory Domain Services](active-directory-ds-admin-guide-join-windows-vm.md)
 * [Associar uma máquina virtual do Red Hat Enterprise Linux a um domínio gerido do Azure Active Directory Domain Services](active-directory-ds-admin-guide-join-rhel-linux-vm.md)
-

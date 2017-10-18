@@ -13,12 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 05/05/2017
 ms.author: bwren
+ms.openlocfilehash: dd6c2a1acdcd3b933bed536fd2bb1d83e1e593c0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 8f9234fe1f33625685b66e1d0e0024469f54f95c
-ms.openlocfilehash: 110a4d26e90f46e823a3e1c9ebece3360fbdf0c9
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/20/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="monitor-azure-web-app-performance"></a>Monitorizar o desempenho das aplicações Web do Azure
 No [Portal do Azure](https://portal.azure.com), pode configurar a monitorização de desempenho de aplicações para as suas [aplicações Web do Azure](../app-service/app-service-web-overview.md). O [Azure Application Insights](app-insights-overview.md) instrui a sua aplicação a enviar telemetria sobre as atividades para o serviço Application Insights, onde são armazenadas e analisadas. Aí, podem ser utilizados gráficos de métricas e ferramentas de pesquisa para ajudar a diagnosticar problemas, melhorar o desempenho e avaliar a utilização.
@@ -50,7 +49,7 @@ Se já estiver a executar uma aplicação Web no Azure, já beneficia de alguma 
     
     Valor:`true`
    * **Guarde** as definições e **reinicie** a aplicação.
-3. **Monitorizar a sua aplicação**  [Explore os dados](#explore-the-data).
+3. **Monitorizar a sua aplicação**  [Explorar os dados](#explore-the-data).
 
 Mais tarde, pode criar a aplicação com o Application Insights, se pretender.
 
@@ -120,5 +119,4 @@ Para fazer pesquisas mais poderosas na sua telemetria, utilize a [linguagem de c
 * [Receber notificações de alertas](../monitoring-and-diagnostics/insights-receive-alert-notifications.md) sempre que ocorrem eventos operacionais ou quando as métricas ultrapassam um determinado limiar.
 * Utilizar o [Application Insights para aplicações JavaScript e páginas Web](app-insights-javascript.md) para obter telemetria de clientes a partir dos browsers que visitam as páginas Web.
 * [Configurar os Testes Web de disponibilidade](app-insights-monitor-web-app-availability.md) para ser alertado se o seu site estiver em baixo.
-
 

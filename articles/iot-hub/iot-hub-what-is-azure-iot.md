@@ -12,15 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/16/2017
+ms.date: 09/15/2017
 ms.author: dobett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 64e69df256404e98f6175f77357500b562d74318
-ms.openlocfilehash: e95d02e706b87eaa355951a34bbaa3abf2ac2370
-ms.contentlocale: pt-pt
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: 417ca4b6ecc39cbdafd8e12b5360b370d0ce79fa
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 [!INCLUDE [iot-azure-and-iot](../../includes/iot-azure-and-iot.md)]
 
@@ -33,9 +31,9 @@ O Hub IoT do Azure é um serviço do Azure que permite comunicações bidirecion
 * Receber carregamentos de ficheiros dos dispositivos.
 * Enviar mensagens da cloud para o dispositivo para dispositivos específicos.
 
-Pode utilizar o IoT Hub para implementar a sua própria solução de back-end. Além disso, o Hub IoT inclui um registo de identidade utilizado para aprovisionar dispositivos, as suas credenciais de segurança e os seus direitos de ligação ao Hub IoT. Para saber mais sobre o Hub IoT, veja [O que é o Hub IoT?][lnk-iot-hub].
+Pode utilizar o IoT Hub para implementar a sua própria solução de back-end. Além disso, o Hub IoT inclui um registo de identidade utilizado para aprovisionar dispositivos, as suas credenciais de segurança e os seus direitos de ligação ao Hub IoT. Para saber mais sobre o Hub IoT, veja [What is IoT Hub (O que é o Hub IoT)][lnk-iot-hub].
 
-Para saber como o Hub IoT do Azure permite a gestão de dispositivos baseada em normas para que possa gerir remotamente, configurar e atualizar os seus dispositivos, veja [Descrição geral da gestão de dispositivos com o Hub IoT][lnk-device-management].
+Para saber como o Hub IoT do Azure permite a gestão de dispositivos baseada em normas para que possa gerir remotamente os seus dispositivos, veja [Overview of device management with IoT Hub (Descrição geral da gestão de dispositivos com o Hub IoT)][lnk-device-management].
 
 Para implementar aplicações de cliente em várias plataformas de hardware e sistemas operativos para dispositivos, pode utilizar os Azure IoT Device SDKs. Os SDKs do dispositivo incluem bibliotecas que facilitam o envio de telemetria para um Hub IoT e a receção de mensagens da cloud para o dispositivo. Quando utiliza os SDKs do dispositivo, pode escolher entre vários protocolos de rede para comunicar com o Hub IoT. Para saber mais, veja as [informações sobre os Device SDKs][lnk-device-sdks].
 
@@ -49,4 +47,3 @@ Também poderá estar interessado na [Azure IoT Suite][lnk-iot-suite], que é um
 [lnk-iot-suite]: https://azure.microsoft.com/documentation/suites/iot-suite/
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 [lnk-device-management]: iot-hub-device-management-overview.md
-

@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 01/12/17-->
+<!--author=alkohli last changed: 09/28/17-->
 
 #### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Para concluir a configuração mínima do dispositivo StorSimple
 
@@ -21,7 +21,7 @@
 
             ![Interfaces de rede para a configuração mínima do dispositivo StorSimple](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig2.png)
 
-            Os endereços IP fixos do controlador são utilizados para a manutenção de atualizações do dispositivo. Por conseguinte, os IPs fixos têm de ser encaminháveis e conseguir estabelecer uma ligação à Internet. Pode verificar se os IPs fixos do controlador fixo são encaminháveis com o cmdlet [Test-HcsmConnection][Test]. O exemplo seguinte mostra IPs fixos do controlador a serem encaminhados para a Internet e a poderem aceder os servidores do Microsoft Update.
+            Os endereços IP fixos do controlador servem para a manutenção de atualizações do dispositivo e para a libertação da memória. Por conseguinte, os IPs fixos têm de ser encaminháveis e conseguir estabelecer uma ligação à Internet. Pode verificar se os IPs fixos do controlador fixo são encaminháveis com o cmdlet [Test-HcsmConnection][Test]. O exemplo seguinte mostra IPs fixos do controlador a serem encaminhados para a Internet e a poderem aceder os servidores do Microsoft Update.
 
             ![Test-HcsmConnection a mostrar os IPs encaminháveis](./media/storsimple-8000-complete-minimum-device-setup-u2/step4minconfig3.png)
 

@@ -14,12 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/20/2017
 ms.author: ryanwi
+ms.openlocfilehash: c7625a5670aca5d105601432fedfd0d7a78bb53c
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: a29f1e7b39b7f35073aa5aa6c6bd964ffaa6ffd0
-ms.openlocfilehash: 68f9492231d367b1ede6ab032ec1c66c75150957
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/21/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Criar a sua primeira aplicação Java Reliable Actors do Service Fabric no Linux
 > [!div class="op_single_selector"]
@@ -34,7 +33,7 @@ Este guia de introdução ajuda-o a criar a sua primeira aplicação Java do Azu
 ## <a name="prerequisites"></a>Pré-requisitos
 Antes de começar, instale o SDK do Service Fabric, a CLI do Service Fabric e configure um cluster de desenvolvimento no seu [ambiente de desenvolvimento do Linux](service-fabric-get-started-linux.md). Se estiver a utilizar o Mac OS X, pode [configurar um ambiente de desenvolvimento do Linux numa máquina virtual com Vagrant](service-fabric-get-started-mac.md).
 
-Também deve instalar a [CLI do Service Fabric](service-fabric-cli.md).
+Além disso, instale a [CLI do Service Fabric](service-fabric-cli.md).
 
 ### <a name="install-and-set-up-the-generators-for-java"></a>Instalar e configurar os geradores para Java
 O Service Fabric fornece ferramentas estruturais que irão ajudá-lo a criar uma aplicação Java do Service Fabric a partir do terminal, através do gerador de modelos Yeoman. Siga os passos abaixo para certificar-se de que tem o gerador de modelo yeoman do Service Fabric para Java operacional no seu computador.
@@ -49,11 +48,28 @@ O Service Fabric fornece ferramentas estruturais que irão ajudá-lo a criar uma
   ```bash
   sudo npm install -g yo
   ```
-3. Instalar o gerador de aplicações Java Yeo do Service Fabric a partir do NPM
+3. Instalar o gerador de aplicações Java Yeoman do Service Fabric a partir do NPM
 
   ```bash
   sudo npm install -g generator-azuresfjava
   ```
+
+## <a name="basic-concepts"></a>Conceitos básicos
+Para começar a utilizar o Reliable Actors, só precisa de compreender alguns conceitos básicos:
+
+* **Serviço de ator**. O Reliable Actors é compactado no Reliable Services que pode ser implementado na infraestrutura do Service Fabric. As instâncias de ator são ativadas numa instância de serviço com nome.
+* **Registo de ator**. Tal como acontece com o Reliable Services, um serviço Reliable Actor tem de ser registado com o runtime do Service Fabric. Além disso, o tipo de ator tem de ser registado com o runtime de Ator.
+* **Interface de ator**. A interface de ator serve para definir uma interface pública com tipos de dados inflexíveis de um ator. Na terminologia modelo do Reliable Actor, a interface de ator define os tipos de mensagens que o ator pode compreender e processar. A interface de ator é utilizada por outros atores e aplicações cliente para "enviar" (de forma assíncrona) mensagens para o ator. O Reliable Actors pode implementar várias interfaces.
+* **Classe ActorProxy**. A classe ActorProxy é utilizada por aplicações cliente para invocar os métodos expostos através da interface de ator. A classe ActorProxy fornece duas funcionalidades importantes:
+  
+  * Resolução de nomes: é capaz de localizar o ator no cluster (localizar o nó do cluster onde está alojado).
+  * Processamento de falhas: pode repetir invocações de método e voltar a resolver a localização do ator após, por exemplo, uma falha que exija que o ator seja relocalizado para outro nó no cluster.
+
+As seguintes regras que pertencem a interfaces de ator merecem especial referência:
+
+* Os métodos de interfaces de ator não podem ser sobrecarregados.
+* Os métodos de interfaces de ator não podem ter parâmetros out, ref ou opcionais.
+* As interfaces genéricas não são suportadas.
 
 ## <a name="create-the-application"></a>Criar a aplicação
 Uma aplicação de Service Fabric contém um ou mais serviços, cada um com uma função específica no fornecimento de funcionalidade da aplicação. O gerador instalado na última secção facilita a criação do primeiro serviço e a adição posterior de outros.  Também pode criar, construir e implementar aplicações Java do Service Fabric com um plug-in do Eclipse. Veja [Criar e implementar a sua primeira aplicação Java com o Eclipse](service-fabric-get-started-eclipse.md). Neste guia de introdução, utilize Yeoman para criar uma aplicação com um único serviço, que armazena e obtém um valor do contador.
@@ -62,6 +78,118 @@ Uma aplicação de Service Fabric contém um ou mais serviços, cada um com uma 
 2. Dê um nome à aplicação.
 3. Escolha o tipo do seu primeiro serviço e dê-lhe um nome. Para este tutorial, escolha um Serviço Reliable Actor. Para obter mais informações sobre os outros tipos de serviço, veja [Service Fabric programming model overview (Descrição geral do modelo de programação do Service Fabric)](service-fabric-choose-framework.md).
    ![Gerador Yeoman do Service Fabric para Java][sf-yeoman]
+
+Se der à aplicação o nome "HelloWorldActorApplication" e ao ator o nome "HelloWorldActor", é criado o andaime seguinte:
+
+```bash
+HelloWorldActorApplication/
+├── build.gradle
+├── HelloWorldActor
+│   ├── build.gradle
+│   ├── settings.gradle
+│   └── src
+│       └── reliableactor
+│           ├── HelloWorldActorHost.java
+│           └── HelloWorldActorImpl.java
+├── HelloWorldActorApplication
+│   ├── ApplicationManifest.xml
+│   └── HelloWorldActorPkg
+│       ├── Code
+│       │   ├── entryPoint.sh
+│       │   └── _readme.txt
+│       ├── Config
+│       │   ├── _readme.txt
+│       │   └── Settings.xml
+│       ├── Data
+│       │   └── _readme.txt
+│       └── ServiceManifest.xml
+├── HelloWorldActorInterface
+│   ├── build.gradle
+│   └── src
+│       └── reliableactor
+│           └── HelloWorldActor.java
+├── HelloWorldActorTestClient
+│   ├── build.gradle
+│   ├── settings.gradle
+│   ├── src
+│   │   └── reliableactor
+│   │       └── test
+│   │           └── HelloWorldActorTestClient.java
+│   └── testclient.sh
+├── install.sh
+├── settings.gradle
+└── uninstall.sh
+```
+## <a name="reliable-actors-basic-building-blocks"></a>Blocos modulares básicos do Reliable Actors
+Os conceitos básicos descritos anteriormente traduzem-se nos blocos modulares básicos de um serviço Reliable Actor.
+
+### <a name="actor-interface"></a>Interface de ator
+Contém a definição de interface para o ator. Esta interface define o contrato de ator que é partilhado pela implementação de ator e pelos clientes que chamam o ator, pelo que, normalmente, faz sentido defini-lo num local que esteja separado da implementação de ator e que possa ser partilhado por vários outros serviços ou aplicações cliente.
+
+`HelloWorldActorInterface/src/reliableactor/HelloWorldActor.java`:
+
+```java
+public interface HelloWorldActor extends Actor {
+    @Readonly   
+    CompletableFuture<Integer> getCountAsync();
+
+    CompletableFuture<?> setCountAsync(int count);
+}
+```
+
+### <a name="actor-service"></a>Serviço de ator
+Contém a implementação de ator e o código de registo de ator. A classe de ator implementa a interface de ator. É aqui que seu ator faz o seu trabalho.
+
+`HelloWorldActor/src/reliableactor/HelloWorldActorImpl`:
+
+```java
+@ActorServiceAttribute(name = "HelloWorldActor.HelloWorldActorService")
+@StatePersistenceAttribute(statePersistence = StatePersistence.Persisted)
+public class HelloWorldActorImpl extends ReliableActor implements HelloWorldActor {
+    Logger logger = Logger.getLogger(this.getClass().getName());
+
+    protected CompletableFuture<?> onActivateAsync() {
+        logger.log(Level.INFO, "onActivateAsync");
+
+        return this.stateManager().tryAddStateAsync("count", 0);
+    }
+
+    @Override
+    public CompletableFuture<Integer> getCountAsync() {
+        logger.log(Level.INFO, "Getting current count value");
+        return this.stateManager().getStateAsync("count");
+    }
+
+    @Override
+    public CompletableFuture<?> setCountAsync(int count) {
+        logger.log(Level.INFO, "Setting current count value {0}", count);
+        return this.stateManager().addOrUpdateStateAsync("count", count, (key, value) -> count > value ? count : value);
+    }
+}
+```
+
+### <a name="actor-registration"></a>Registo de ator
+O serviço de ator tem de ser registado com um tipo de serviço no runtime do Service Fabric. Para que o Serviço de Ator execute as suas instâncias de ator, o tipo de ator também tem de estar registado no Serviço de Ator. O método de registo `ActorRuntime` realiza este trabalho para atores.
+
+`HelloWorldActor/src/reliableactor/HelloWorldActorHost`:
+
+```java
+public class HelloWorldActorHost {
+
+    public static void main(String[] args) throws Exception {
+
+        try {
+            ActorRuntime.registerActorAsync(HelloWorldActorImpl.class, (context, actorType) -> new ActorServiceImpl(context, actorType, ()-> new HelloWorldActorImpl()), Duration.ofSeconds(10));
+
+            Thread.sleep(Long.MAX_VALUE);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+}
+```
 
 ## <a name="build-the-application"></a>Criar a aplicação
 Os modelos Yeoman do Service Fabric incluem um script de compilação para [Gradle](https://gradle.org/), que pode utilizar para criar a aplicação a partir do terminal.
@@ -229,4 +357,3 @@ Recentemente, movemos as bibliotecas Java do Service Fabric do SDK Java do Servi
 [sf-yeoman]: ./media/service-fabric-create-your-first-linux-application-with-java/sf-yeoman.png
 [sfx-primary]: ./media/service-fabric-create-your-first-linux-application-with-java/sfx-primary.png
 [sf-eclipse-templates]: ./media/service-fabric-create-your-first-linux-application-with-java/sf-eclipse-templates.png
-

@@ -15,14 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: anithaa
 ms.custom: 
+ms.openlocfilehash: 0a0fe6f0e353e33cec80a9e06a61e772931cdea6
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: cb9130243bdc94ce58d6dfec3b96eb963cdaafb0
-ms.openlocfilehash: e2359bc6002bd5c823467a33a4660ebccd116374
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="virtual-network-service-endpoints-preview"></a>Pontos Finais de Serviço de Rede Virtual (Pré-visualização)
 
 Os pontos finais de serviço da Rede Virtual (VNet) expandem o seu espaço de endereços privados de rede virtual e da identidade da sua VNet para os serviços do Azure através de uma ligação direta. Os pontos finais permitem-lhe obter os seus recursos críticos de serviço do Azure apenas para as suas redes virtuais. O tráfego da sua VNet para o serviço do Azure permanece sempre na rede backbone do Microsoft Azure.
@@ -57,8 +55,11 @@ Os pontos finais de serviço oferecem as seguintes vantagens:
 
 - Um ponto final de serviço de rede virtual transmite a identidade da sua rede virtual ao serviço do Azure. Depois de ativar os pontos finais de serviço na rede virtual, pode proteger os recursos de serviço do Azure para a rede virtual ao adicionar uma regra de rede virtual aos recursos.
 - Atualmente, o tráfego de serviço do Azure a partir de uma rede virtual utiliza endereços IP públicos como endereços IP de origem. Com pontos finais de serviço, o tráfego de serviço comuta-se para utilizar endereços privados da rede virtual como endereços IP de origem quando acede ao serviço do Azure a partir de uma rede virtual. Esta comutação permite-lhe aceder aos serviços sem necessitar de endereços IP reservados públicos utilizados nas firewalls IP.
-- Proteger o acesso a serviços do Azure no local: Por predefinição, os recursos de serviço do Azure protegidos para redes virtuais não são acessíveis a partir de redes no local. Se pretender permitir o tráfego no local, tem também de permitir endereços IP NAT nos circuitos no local ou ExpressRoute. Os endereços IP NAT podem ser adicionados através da configuração da firewall do IP para os recursos de serviço do Azure.
-- ExpressRoute: se está a utilizar o [ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) no local, cada circuito ExpressRoute utiliza dois endereços IP NAT que são aplicados ao tráfego de serviço do Azure quando o tráfego entra no backbone de rede do Microsoft Azure. Para permitir o acesso aos recursos de serviço, tem de permitir esses dois endereços IP na definição da firewall do IP dos recursos. Para localizar os endereços IP do seu circuito ExpressRoute, [abra um pedido de suporte no ExpressRoute](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) através do portal do Azure.
+- __Obter acesso a serviços do Azure no local__:
+
+  Por predefinição, os recursos de serviço do Azure obtidos para redes virtuais não são acessíveis a partir de redes no local. Se pretender permitir o tráfego no local, tem também de permitir endereços IP (habitualmente NAT) públicos no local ou ExpressRoute. Estes endereços IP podem ser adicionados através da configuração da firewall do IP para os recursos de serviço do Azure.
+
+  ExpressRoute: se está a utilizar o [ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) no local, para peering público, cada circuito ExpressRoute utiliza dois endereços IP NAT que são aplicados ao tráfego de serviço do Azure quando o tráfego entra no backbone de rede do Microsoft Azure. Para permitir o acesso aos recursos de serviço, tem de permitir esses dois endereços IP públicos na definição da firewall do IP dos recursos. Para localizar os endereços IP do seu circuito ExpressRoute, [abra um pedido de suporte no ExpressRoute](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) através do portal do Azure. Saiba mais sobre [NAT para peering público do ExpressRoute.](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering)
 
 ![Proteger serviços do Azure para redes virtuais](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
@@ -76,9 +77,9 @@ Os pontos finais de serviço oferecem as seguintes vantagens:
 
   A mudança do endereço IP só afeta o tráfego de serviço da rede virtual. Não afeta qualquer outro tráfego enviado ou recebido a partir de endereços IPv4 públicos atribuídos às máquinas virtuais. Nos serviços do Azure, se tiver regras de firewall existente que utilizem IPs públicos do Azure, estas regras deixam de funcionar com a mudança para os endereços privados da rede virtual.
 - Com pontos finais de serviço, as entradas de DNS dos serviços do Azure permanecem inalteradas e continuam a resolver endereços IP atribuídos ao serviço do Azure.
-- Grupos de segurança de rede com pontos finais de serviço:
-  - Ainda permitem o tráfego de Internet de saída para a Internet e, consequentemente, também permitem o tráfego a partir de uma rede virtual para endereços IP públicos de serviços do Azure.
-  - Permitem-lhe recusar o tráfego para endereços IP públicos, exceto para os endereços dos serviços do Azure, através de [etiquetas de serviço](security-overview.md#service-tags) nos grupos de segurança de rede. Pode especificar os serviços do Azure suportados como o destino nas regras de grupo de segurança de rede. A manutenção dos endereços IP subjacente a cada etiqueta é efetuada pelo Azure.
+- Grupos de segurança de rede (NSGs) com pontos finais de serviço:
+  - Por predefinição, os NSGs permitem tráfego de saída da Internet e, por isso, também permitem o tráfego da sua VNet para os serviços do Azure. A operação permanece inalterada com os pontos finais de serviço. 
+  - Se pretende negar todo o tráfego de saída da Internet e permitir apenas o tráfego para serviços específicos do Azure, pode fazê-lo ao utilizar __"etiquetas de serviço do Azure"__ nos seus NSGs. Pode especificar os serviços do Azure suportados como destino nas regras do NSG e a manutenção dos endereços IP indicando que cada etiqueta é fornecida pelo Azure. Para obter mais informações, consulte [Etiquetas de Serviço do Azure para NSGs.](https://aka.ms/servicetags) 
 
 ### <a name="scenarios"></a>Cenários
 
@@ -89,7 +90,7 @@ Os pontos finais de serviço oferecem as seguintes vantagens:
 ### <a name="logging-and-troubleshooting"></a>Registo e resolução de problemas
 
 Depois configurar os pontos finais de serviço para um serviço específico, valide se a rota do ponto final de serviço está em vigor através do seguinte: 
-
+ 
 - Validação do endereço IP de origem de qualquer pedido de serviço no diagnóstico do serviço. Todos os novos pedidos com pontos finais de serviço mostram o endereço IP de origem para o pedido como o endereço IP privado da rede virtual atribuído ao cliente que efetua o pedido a partir da sua rede virtual. Sem o ponto final, o endereço é um endereço IP público do Azure.
 - Visualização das rotas efetivas em qualquer interface de rede numa sub-rede. A rota para o serviço:
   - Mostra uma rota predefinida mais específica para endereçar intervalos de prefixo de cada serviço
@@ -121,5 +122,4 @@ Para um recurso de serviço do Azure (como uma conta do Armazenamento do Microso
 - Saiba como [proteger uma conta do Armazenamento do Microsoft Azure para uma rede virtual](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - Saiba como [proteger uma conta da Base de Dados SQL do Microsoft Azure para uma rede virtual](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - Saiba mais sobre a [integração do serviço do Azure em redes virtuais](virtual-network-for-azure-services.md)
-
 

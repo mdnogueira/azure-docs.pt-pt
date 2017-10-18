@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/30/2017
 ms.author: yurid
-translationtype: Human Translation
-ms.sourcegitcommit: f0a512fb0684b1db25353bf4bbd35bdf2a07e1b2
-ms.openlocfilehash: f29b20ba11b030d98a7a5574f816ea132edc3f6d
-ms.lasthandoff: 12/06/2016
-
-
+ms.openlocfilehash: 6f4cfda6f367cb8a68d038fa0a3390442be034c8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="baseline-assessment-in-operations-management-suite-security-and-audit-solution"></a>Avaliação da Linha de Base em Solução de Segurança e Auditoria do Operations Management Suite
 Este documento ajuda-o a utilizar as capacidades de avaliação da linha de base da [Solução de Segurança e Auditoria do Operations Management Suite (OMS)](operations-management-suite-overview.md) para aceder ao estado seguro dos seus recursos monitorizados.
@@ -40,9 +39,9 @@ Existem três tipos de regras:
 > 
 
 ## <a name="security-baseline-assessment"></a>Avaliação da Linha de Base de Segurança
-Pode rever a avaliação de linha de base de segurança atual para todos os computadores que são monitorizados pela Segurança OMS e Auditoria utilizando o dashboard.  Execute os passos seguintes para aceder ao dashboard de avaliação da linha de base de segurança:
+Pode rever a avaliação de linha de base de segurança atual para todos os computadores que são monitorizados pela Segurança OMS e Auditoria utilizando o dashboard. Execute os passos seguintes para aceder ao dashboard de avaliação da linha de base de segurança:
 
-1. No dashboard principal do **Microsoft Operations Management Suite **, clique em mosaico de **Segurança e Auditoria**.
+1. No dashboard principal do **Microsoft Operations Management Suite**, clique em mosaico de **Segurança e Auditoria**.
 2. No dashboard de **Segurança e Auditoria** dashboard, clique em **Avaliação da Linha de base** em **Domínios de Segurança**. O dashboard de **Avaliação da Linha de Base de Segurança** é apresentado na imagem seguinte:
    
     ![Segurança OMS e Avaliação da Linha de Base de Auditoria](./media/oms-security-baseline/oms-security-baseline-fig1.png)
@@ -54,7 +53,7 @@ Este dashboard está dividido em três áreas principais:
 * **Computadores com avaliação da linha de base em falta**: esta secção lista os computadores que não foram acedidos devido à incompatibilidade do sistema operativo ou falhas. 
 
 ### <a name="accessing-computers-compared-to-baseline"></a>Aceder a computadores em comparação com a linha de base
-Idealmente todos os seus computadores devem estar em conformidade com a avaliação da linha de base de segurança. Contudo, é esperado que em algumas circunstâncias isto não aconteça. Como parte do processo de gestão de segurança, é importante incluir a revisão dos computadores que falharam em todos os testes de avaliação de segurança. Uma forma rápida para visualizar é selecionando a opção **Computadores acedidos** localizado na secção **Computadores comparados com a linha de base**. Deverá ver o resultado da pesquisa de registo que apresenta a lista de computadores, como mostra no ecrã seguinte:
+Idealmente todos os seus computadores devem satisfazer a avaliação da linha de base de segurança. Contudo, é esperado que em algumas circunstâncias isto não aconteça. Como parte do processo de gestão de segurança, é importante incluir a revisão dos computadores que falharam em todos os testes de avaliação de segurança. Uma forma rápida para visualizar é selecionando a opção **Computadores acedidos** localizado na secção **Computadores comparados com a linha de base**. Deverá ver o resultado da pesquisa de registo que apresenta a lista de computadores, como mostra no ecrã seguinte:
 
 ![Resultados do computador acedido](./media/oms-security-baseline/oms-security-baseline-fig2.png)
 
@@ -65,7 +64,7 @@ O resultado da pesquisa é apresentado em formato de tabela, onde a primeira col
 Neste resultado da pesquisa, tem o total de regras de acesso, o número de regras críticas que falharam, as regras de aviso e as regras de informações com falhas.
 
 ### <a name="accessing-required-rules-status"></a>Aceder ao estado de regras obrigatórias
-Depois de obter as informações sobre o número de percentagem de computadores que passaram a avaliação, poderá pretender obter mais informações sobre quais as regras que estão a falhar, de acordo com o nível crítico. Esta visualização ajuda-o a atribuir prioridade aos computadores que devem ser resolvidos primeiro, para se certificar de que serão compatíveis na avaliação seguinte. Passe o rato sobre a parte Crítica do gráfico localizado no mosaico **Regras com falhas por gravidade ** no **Estado de regras obrigatórias** e clique. Deverá ver um resultado semelhante ao ecrã seguinte:
+Depois de obter as informações sobre o número de percentagem de computadores que passaram a avaliação, poderá pretender obter mais informações sobre quais as regras que estão a falhar, de acordo com o nível crítico. Esta visualização ajuda-o a atribuir prioridade aos computadores que devem ser resolvidos primeiro, para se certificar de que serão compatíveis na avaliação seguinte. Passe o rato sobre a parte Crítica do gráfico localizado no mosaico **Regras com falhas por gravidade** no **Estado de regras obrigatórias** e clique. Deverá ver um resultado semelhante ao ecrã seguinte:
 
 ![Regras com falhas por detalhes de gravidade](./media/oms-security-baseline/oms-security-baseline-fig4.png) 
 
@@ -85,5 +84,4 @@ Neste documento, aprendeu sobre a avaliação da linha de base de Segurança e A
 * [Descrição geral do Operations Management Suite (OMS)](operations-management-suite-overview.md)
 * [Monitorização e Resposta aos Alertas de Segurança na Solução de Segurança e Auditoria do Operations Management Suite](oms-security-responding-alerts.md)
 * [Recursos de Monitorização na Solução de Segurança e Auditoria do Operations Management Suite](oms-security-monitoring-resources.md)
-
 

@@ -1,6 +1,6 @@
 ---
-title: Threat Intelligence in Azure Security Center | Microsoft Docs
-description: This document helps you to use threat intelligence capability in Azure Security Center to identify potential threats in your VMs and computers.
+title: "Informações sobre ameaças no Centro de Segurança do Azure | Microsoft Docs"
+description: "Saiba como utilizar a capacidade de informações sobre ameaças no Centro de Segurança do Azure para identificar potenciais ameaças nas suas VMs e computadores."
 services: security-center
 documentationcenter: na
 author: YuriDio
@@ -14,84 +14,89 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/12/2017
 ms.author: yurid
+ms.openlocfilehash: b5bdeb1c70893c2477413df02c7b1a4a07999e93
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 4c2be7c35f678430d0ad83a3374ef25f68fd2509
-ms.openlocfilehash: 8ee8836122de607b213616739861b1653ebea596
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/20/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="threat-intelligence-in-azure-security-center"></a>Threat Intelligence in Azure Security Center
-This document helps you use Azure Security Center Threat Intelligence to address security related issues.
+# <a name="threat-intelligence-in-azure-security-center"></a>Informações sobre ameaças no Centro de Segurança do Azure
+Este artigo ajuda-o a utilizar as informações sobre ameaças do Centro de Segurança do Azure para lidar com problemas relacionados com segurança.
 
-## <a name="what-is-threat-intelligence"></a>What is threat intelligence?
-By using the Threat Intelligence option available in Security Center, IT administrators can identify security threats against the environment, such as identify if a particular computer is part of a botnet. Computers can become nodes in a botnet when attackers illicitly install malware that secretly connects this computer to the command and control. It can also identify potential threats coming from underground communication channels, such as darknet.
+## <a name="what-is-threat-intelligence"></a>O que são as informações sobre ameaças?
+Ao utilizar a opção de informações sobre ameaças disponível no Centro de Segurança, os administradores de TI podem identificar ameaças de segurança contra o ambiente. Por exemplo, podem identificar se um determinado computador faz parte de um botnet. Os computadores podem tornar-se nós de um botnet quando os atacantes instalam ilicitamente malware que liga secretamente o computador ao comando e controlo. As informações sobre ameaças também podem identificar potenciais ameaças provenientes de canais de comunicação underground, como a dark web.
 
-In order to build this threat intelligence, Security Center uses data coming from multiple sources within Microsoft. Security Center leverages this data to identify potential threats against your environment. The Threat Intelligence pane is composed by three major options:
+Para recolher estas informações de ameaças, o Centro de Segurança utiliza dados provenientes de várias origens na Microsoft. O Centro de Segurança utiliza destes dados para identificar potenciais ameaças contra o seu ambiente. O painel **Informações sobre ameaças** é composto por três opções principais:
 
-- Detected threat types
-- Threat origin
-- Threat intelligence map
+- Tipos de ameaças detetadas
+- Origem das ameaças
+- Mapa das informações sobre ameaças
 
 
-## <a name="when-should-i-use-threat-intelligence"></a>When should I use threat intelligence?
-One of the steps of a [security incident response process](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide#incident-response) is to identify the severity of the compromise system(s). In this phase, you should perform the following tasks:
+## <a name="when-should-you-use-threat-intelligence"></a>Quando deve utilizar a informação sobre ameaças?
+Um dos passos de um [processo de resposta a incidentes de segurança](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide#incident-response) é identificar a gravidade dos sistemas comprometidos. Nesta fase, deve realizar as tarefas seguintes:
 
-- Determine the nature of the attack
-- Determine the attack point of origin
-- Determine the intent of the attack. Was the attack specifically directed at your organization to acquire specific information, or was it random?
-- Identify the systems that have been compromised
-- Identify the files that have been accessed and determine the sensitivity of those files You can leverage Threat Intelligence information in Security Center to help with these tasks. 
+- Determinar a natureza do ataque.
+- Determinar o ponto de ataque de origem.
+- Determinar a intenção do ataque. O ataque foi direcionado à sua organização, para adquirir informações específicas, ou foi aleatório?
+- Identificar os sistemas que foram comprometidos.
+- Identificar os ficheiros que foram acedidos e determinar a sensibilidade desses ficheiros.
 
-## <a name="how-to-access-the-threat-intelligence"></a>How to access the threat intelligence?
-To visualize the current threat intelligence for your environment, you must first select the workspace that your information resides. If you don’t have multiple workspaces you will not see the workspace selector, and it will go directly to the **Threat intelligence** dashboard. Follow the steps below to access the threat intelligence dashboard:
+Pode utilizar os dados de informações sobre ameaças no Centro de Segurança para o ajudar com estas tarefas. 
 
-1.  Open **Security Center** dashboard.
-2.  In the left pane, under **Detection** click **Threat intelligence**. The **Threat intelligence** dashboard appears.
+## <a name="access-the-threat-intelligence"></a>Aceder às informações sobre ameaças
+Para visualizar as informações sobre ameaças atuais relativamente ao seu ambiente, primeiro tem de selecionar a área de trabalho onde as suas informações residem. Se só tiver uma área de trabalho, ignore o seletor de áreas de trabalho e aceda diretamente ao dashboard **Informações sobre ameaças**. Para aceder ao dashboard:
 
-    ![Threat Intel](./media/security-center-threat-intel/security-center-threat-intel-fig1.png)
+1. Abra o dashboard **Centro de Segurança**.
+
+2. No painel do lado esquerdo, em **Deteção**, selecione **Informações sobre ameaças**. É apresentado o dashboard das **Informações Sobre Ameaças**.
+
+    ![Dashboard Informações sobre ameaças](./media/security-center-threat-intel/security-center-threat-intel-fig1.png)
 
     > [!NOTE]
-    > If the last column shows **UPGRADE PLAN** is because this workspace is using the free subscription, and you need to upgrade to standard to use this feature. If it shows REQUIRES UPDATE is because you need to update the [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) in order to use this feature. For more information about the pricing plan, read Azure Security Center pricing. 
+    > Se a coluna mais à direita mostrar **ATUALIZAR PLANO**, esta área de trabalho está a utilizar a subscrição gratuita. Atualize para o plano Standard para utilizar esta funcionalidade. Se a coluna mais à direita mostrar **PRECISA DE ATUALIZAÇÃO**, atualize o [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) para utilizar esta funcionalidade. Para obter mais informações sobre o plano de preços, leia o artigo sobre os preços do Centro de Segurança do Azure. 
     > 
-3. If you have more than one workspace to investigate, you may prioritize the investigation according to the **MALICIOUS IP** column that shows the current number of malicious IPs in this workspace. Select the workspace that you want to use, and then the **Threat intelligence** dashboard appears.
+3. Se tiver mais do que uma área de trabalho para investigar, priorize a investigação de acordo com a coluna **IP malicioso**. Mostra o número atual de IPs maliciosos nesta área de trabalho. Selecione a área de trabalho que pretende utilizar e o dashboard **Informações sobre ameaças** é apresentado.
 
-    ![Threat Intel](./media/security-center-threat-intel/security-center-threat-intel-fig5.png)
+    ![Dados de informações sobre ameaças](./media/security-center-threat-intel/security-center-threat-intel-fig5.png)
 
-4. This dashboard is divided in four tiles:
-    * **Threat types**: summarizes the type of threats were detected in the selected workspace.
-    * **Origin country**: aggregates the amount of traffic according to its source location.
-    * **Threat location**: help you to identify the current locations around the globe that communicates with your environment. There are orange (incoming) and red (outgoing) arrows in this map that identify the traffic direction, if you click in one of these arrows, it will show the type of threat and the traffic direction.
-    * **Threat details**: shows more details about the threat that you selected in the map.
+4. O dashboard está dividido em quatro mosaicos:
 
-Regardless of which option tile you select, the dashboard that will appear is based on the Log Search  query, the only difference is the type of query and the result.
+    a.  **Tipos de ameaça**. Resume o tipo de ameaças que foram detetadas na área de trabalho selecionada.
 
-### <a name="threat-types"></a>Threat types
-Once you click the **Threat types** tile the **Log Search** dashboard appears, and there you have the filter options on the left, and the query results in the right.
+    b.  **País de origem**. Agrega a quantidade de tráfego de acordo com a localização de origem.
 
-![Threat intel search](./media/security-center-threat-intel/security-center-threat-intel-fig3.png)
+    c.  **Localização da ameaça**. Ajuda-o a identificar as localizações atuais em todo o mundo que comunicam com o seu ambiente. No mapa apresentado, as setas laranja (recebido) e vermelhas (enviado) identificam as direções de tráfego. Se selecionar uma destas setas, é apresentado o tipo de ameaça e a direção de tráfego.
 
-The query result shows aggregates the threats by name, You can use the left pane to select the attribute that you want to filter, for example if you want to see only the threats that are current connected to the machines, you select **Connected** in the **SESSIONSTATE**, and click **Apply** button.
+    d.  **Detalhes da ameaça**. Mostra mais detalhes sobre a ameaça que selecionou no mapa.
 
-![session state](./media/security-center-threat-intel/security-center-threat-intel-fig4.png)
+Independentemente do mosaico de opção que selecionar, o dashboard que é apresentado baseia-se na consulta de Pesquisa de Registos. A única diferença é o tipo de consulta e o resultado.
 
-For Azure VMs, only the network data that flows through the agent is going to appear in the threat intelligence dashboard. The following data types are also used by threat intelligence:
+### <a name="threat-types"></a>Tipos de ameaças
+Selecione o mosaico **Tipos de ameaça** para abrir o dashboard **Pesquisa de Registos**. As opções de filtro aparecem no lado esquerdo e os resultados da consulta aparecem no lado direito.
 
-- CEF Data (Type=CommonSecurityLog)
+![Pesquisa de Registos](./media/security-center-threat-intel/security-center-threat-intel-fig3.png)
+
+O resultado da consulta mostra as ameaças por nome. Pode utilizar o painel da esquerda para selecionar o atributo que pretende filtrar. Por exemplo, para ver apenas as ameaças que estão atualmente ligadas às máquinas, em **SESSIONSTATE**, selecione **Ligado** > **Aplicar**.
+
+![Estado da Sessão](./media/security-center-threat-intel/security-center-threat-intel-fig4.png)
+
+Relativamente às VMs do Azure, só são apresentados no dashboard **Informações sobre ameaças** os dados da rede que fluem através do agente. As informações sobre ameaças também utilizam os tipos de dados seguintes:
+
+- Dados CEF (Type=CommonSecurityLog)
 - WireData (Type= WireData)
-- IIS Logs (Type=W3CIISLog)
-- Windows Firewall (Type=WindowsFirewall)
-- DNS Events (Type=DnsEvents)
+- Registos do IIS (Type=W3CIISLog)
+- Firewall do Windows (Type=WindowsFirewall)
+- Eventos de DNS (Type=DnsEvents)
 
 
-## <a name="see-also"></a>See also
-In this document, you learned how to use threat intelligence in Security Center to assist you identifying suspicious activity. To learn more about Azure Security Center, see the following:
+## <a name="see-also"></a>Consultar também
+Neste artigo, aprendeu a utilizar as informações sobre ameaças no Centro de Segurança para ajudar a identificar atividade suspeita. Para saber mais sobre o Centro de Segurança, veja os artigos seguintes:
 
-* [Managing and responding to security alerts in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Learn how to manage alerts, and respond to security incidents in Security Center.
-* [Security health monitoring in Azure Security Center](security-center-monitoring.md). Learn how to monitor the health of your Azure resources.
-* [Understanding security alerts in Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Learn about the different types of security alerts.
-* [Azure Security Center Troubleshooting Guide](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Learn how to troubleshoot common issues in Security Center. 
-* [Azure Security Center FAQ](security-center-faq.md). Find frequently asked questions about using the service.
-* [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/). Find blog posts about Azure security and compliance.
-
+* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Saiba como gerir alertas e responder a incidentes de segurança no Centro de Segurança.
+* [Monitorização de estado de funcionamento de segurança no Centro de Segurança do Azure](security-center-monitoring.md). Saiba como monitorizar o estado de funcionamento dos recursos do Azure.
+* [Compreender os alertas de segurança no Centro de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Saiba mais sobre os diferentes tipos de alertas de segurança.
+* [Guia de resolução de problemas do Centro de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Saiba como resolver problemas comuns no Centro de Segurança. 
+* [Centro de Segurança do Azure FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md). Encontre respostas para as perguntas mais frequentes sobre o serviço.
+* [Blogue de segurança do Azure](http://blogs.msdn.com/b/azuresecurity/). Encontre mensagens do blogue acerca da segurança e conformidade do Azure.
 

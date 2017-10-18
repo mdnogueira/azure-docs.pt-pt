@@ -12,20 +12,17 @@ ms.devlang: tbd
 ms.topic: hero-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 06/30/2017
+ms.date: 10/10/2017
 ms.author: sethm
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6efa2cca46c2d8e4c00150ff964f8af02397ef99
-ms.openlocfilehash: 9401ada519f600b0d2817f06a396e16607a24129
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/01/2017
-
+ms.openlocfilehash: 3646d14be662af0fdf80790cb53ddc581b33a146
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-service-bus-topics"></a>Introdução aos tópicos do Service Bus
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
-
-## <a name="what-will-be-accomplished"></a>O que será efetuado
 
 Este tutorial contém os seguintes passos:
 
@@ -66,7 +63,7 @@ Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance par
 ## <a name="3-create-a-subscription-to-the-topic"></a>3. Criar uma subscrição para o tópico
 
 1. No painel de recursos do portal, clique no espaço de nomes que criou no passo 1 e clique no nome do tópico que criou no passo 2.
-2. Na parte superior do painel de descrição geral, clique no sinal «+» junto a **Subscrição** para adicionar uma subscrição para esse tópico.
+2. Na parte superior do painel de descrição geral, clique no sinal "+" junto a **Subscrição**, para adicionar uma subscrição para esse tópico.
 
     ![Criar subscrição][createtopic4]
 
@@ -78,12 +75,12 @@ Para enviar mensagens para o tópico, gravamos uma aplicação de consola C# com
 
 ### <a name="create-a-console-application"></a>Criar uma aplicação de consola
 
-Abra o Visual Studio e crie um novo projeto de **aplicação de consola (.NET Framework)**.
+Abra o Visual Studio e crie um novo projeto de **Aplicação de consola (.NET Framework)**.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Service Bus
 
 1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
-2. Clique no separador **Procurar**, procure **Microsoft Azure Service Bus** e selecione o item **Microsoft Azure Service Bus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
+2. Clique no separador **Procurar**, procure **Windows Azure Service Bus** e selecione o item **WindowsAzure.ServiceBus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
    
     ![Selecionar um pacote NuGet][nuget-pkg]
 
@@ -157,7 +154,7 @@ Abra o Visual Studio e crie um novo projeto de **aplicação de consola (.NET Fr
     ```csharp
     using Microsoft.ServiceBus.Messaging;
     ```
-3. Adicione o seguinte código ao método `Main`. Defina a variável `connectionString` para a cadeia de ligação que obteve ao criar o espaço de nomes e defina `topicName` para o nome que utilizou ao criar o tópico.
+3. Adicione o seguinte código ao método `Main`. Defina a variável `connectionString` para a cadeia de ligação que obteve ao criar o espaço de nomes e defina `topicName` para o nome que utilizou ao criar o tópico. Certifique-se também de substituir `<your subscription name>` pelo nome da subscrição que criou no passo 3. 
    
     ```csharp
     var connectionString = "<your connection string>";
@@ -225,4 +222,3 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure/
 [createtopic4]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-topic4.png
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 [azure-portal]: https://portal.azure.com
-

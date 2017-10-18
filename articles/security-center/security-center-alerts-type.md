@@ -12,21 +12,21 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/16/2017
+ms.date: 09/20/2017
 ms.author: yurid
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ff2fb126905d2a68c5888514262212010e108a3d
-ms.openlocfilehash: 19f71e0d5a8a4642b86ae60a3ab2a4042fa2990e
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/17/2017
-
+ms.openlocfilehash: 274c50dad9b8a1d79a71a29b04cb8e44ad91893c
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="understanding-security-alerts-in-azure-security-center"></a>Compreender os alertas de segurança no Centro de Segurança do Azure
 Este artigo ajuda-o a compreender os vários tipos de alertas de segurança e informações relacionadas que estão disponíveis no Centro de Segurança do Azure. Para obter mais informações sobre como gerir alertas e incidentes, veja [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md).
 
+Para configurar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 60 dias. Para atualizar, selecione **Escalão de Preço** na [política de segurança](security-center-policies.md). Para saber mais, veja a [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
+
 > [!NOTE]
-> Para configurar as deteções avançadas, atualize para o Centro de Segurança do Azure Standard. Está disponível uma avaliação gratuita de 60 dias. Para atualizar, selecione **Escalão de Preço** na [política de segurança](security-center-policies.md). Para saber mais, veja a [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
->
+> O Centro de Segurança lançou uma pré-visualização limitada de um novo conjunto de deteções que tiram partido dos registos de auditoria, um framework de auditoria comum, para detetar comportamentos maliciosos em computadores Linux. Envie um e-mail para a [Microsoft](mailto:ASC_linuxdetections@microsoft.com) com os seus IDs de subscrição para aderir à pré-visualização.
 
 ## <a name="what-type-of-alerts-are-available"></a>Que tipo de alertas estão disponíveis?
 O Centro de Segurança do Azure utiliza uma variedade de [capacidades de deteção](security-center-detection-capabilities.md) para alertar os clientes para possíveis ataques direcionados aos respetivos ambientes. Estes alertas contêm informações valiosas sobre o que acionou o alerta, os recursos afetados e a origem do ataque. As informações incluídas num alerta variam de acordo com o tipo de análise usado para detetar a ameaça. Os incidentes também podem conter informações contextuais adicionais que podem ser úteis ao investigar uma ameaça.  Este artigo fornece informações sobre os seguintes tipos de alerta:
@@ -44,7 +44,7 @@ O Centro de Segurança do Azure pode utilizar a análise comportamental para ide
 >
 
 ### <a name="crash-analysis"></a>Análise de falhas
-A análise de memória de informação de falha de memória é um método utilizado para detetar software maligno sofisticado que é capaz de se esconder de soluções de segurança tradicionais. As várias formas de software maligno tentam reduzir a possibilidade de ser detetado por produtos de software antivírus, ao nunca escrever no disco ou ao encriptar componentes de software escritos em disco. Isto faz com que o software maligno seja difícil de detetar com soluções contra software maligno tradicionais. No entanto, este tipo de software maligno pode ser detetado através da análise de memória, uma vez que o software maligno tem de deixar rastreios na memória para funcionar.
+A análise de memória de informação de falha de memória é um método utilizado para detetar software maligno sofisticado que é capaz de se esconder de soluções de segurança tradicionais. As várias formas de software maligno tentam reduzir a possibilidade de ser detetado por produtos de software antivírus, ao nunca escrever no disco ou ao encriptar componentes de software escritos em disco. Esta técnica faz com que o software maligno seja difícil de detetar com soluções contra software maligno tradicionais. No entanto, este tipo de software maligno pode ser detetado através da análise de memória, uma vez que o software maligno tem de deixar rastreios na memória para funcionar.
 
 Quando o software falha, uma informação de falha de sistema captura uma parte da memória no momento da falha. A falha pode ser provocada por software maligno, aplicações gerais ou problemas de sistema. Ao analisar a memória na informação de falha de sistema, o Centro de Segurança pode detetar técnicas utilizadas para explorar vulnerabilidades no software, aceder a dados confidenciais e persistir, de maneira sub-reptícia, numa máquina afetada. Isto é conseguido com um impacto mínimo no desempenho nos anfitriões, porque a análise é realizada pelo back-end do Centro de Segurança.
 
@@ -61,7 +61,7 @@ O exemplo de alerta Shellcode fornece o seguinte campo adicional:
 
 * ADDRESS: a localização na memória do shellcode.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de Shellcode](./media/security-center-alerts-type/security-center-alerts-type-fig2.png)
 
@@ -77,7 +77,7 @@ Além dos campos comuns descritos na secção “Shellcode detetado” anterior,
 * HIJACKEDMODULEPATH: o caminho do módulo do sistema Windows hijacked.
 * HIJACKINGMODULEPATH: o caminho do módulo de hijacking.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de hijacking do módulo](./media/security-center-alerts-type/security-center-alerts-type-fig3.png)
 
@@ -96,7 +96,7 @@ Além dos campos comuns descritos na secção “Shellcode detetado” anterior,
 
 Este alerta também extrai e apresenta determinados campos do cabeçalho de PE do módulo, como "CHECKSUM" e "TIMESTAMP". Estes campos são apresentados apenas se os campos estiverem presentes no módulo. Veja o artigo [Microsoft PE e Especificação de COFF](https://msdn.microsoft.com/windows/hardware/gg463119.aspx) para obter detalhes sobre estes campos.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de Windows de disfarce](./media/security-center-alerts-type/security-center-alerts-type-fig4.png)
 
@@ -110,21 +110,21 @@ Além dos campos comuns descritos na secção “Shellcode detetado” anterior,
 * MODULENAME: nome do binário de sistema modificado.
 * MODULEVERSION: versão do binário de sistema modificado.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de binário do sistema](./media/security-center-alerts-type/security-center-alerts-type-fig5.png)
 
 ### <a name="suspicious-process-executed"></a>Processos suspeitos executados
 O Centro de Segurança identifica um processo suspeito em execução na máquina virtual de destino e, em seguida, aciona um alerta. A deteção não procura o nome específico, mas sim o parâmetro do ficheiro executável. Por conseguinte, mesmo que o atacante mude o nome do executável, o Centro de Segurança continua a conseguir detetar o processo suspeito.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de processos suspeitos](./media/security-center-alerts-type/security-center-alerts-type-fig6-new.png)
 
-### <a name="multiple-domain-accounts-queried"></a>Várias contas de domínio consultadas
-O Centro de Segurança pode detetar várias tentativas para consultar contas de domínio do Active Directory, o que é normalmente efetuado pelos atacantes durante o reconhecimento de redes. Os atacantes podem aproveitar esta técnica para consultar o domínio e identificar os utilizadores, identificar as contas de administrador de domínio, identificar os computadores que são controladores de domínio e também identificar uma potencial relação de confiança do domínio com outros domínios.
+### <a name="multiple-domains-accounts-queried"></a>Várias contas de domínios consultadas
+O Centro de Segurança pode detetar várias tentativas para consultar contas de domínio do Active Directory, o que é normalmente realizado pelos atacantes durante o reconhecimento de redes. Os atacantes podem aproveitar esta técnica para consultar o domínio e identificar os utilizadores, identificar as contas de administrador de domínio, identificar os computadores que são controladores de domínio e também identificar uma potencial relação de confiança do domínio com outros domínios.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Alerta de conta de vários domínios](./media/security-center-alerts-type/security-center-alerts-type-fig7-new.png)
 
@@ -132,7 +132,7 @@ Este é um exemplo deste tipo de alerta:
 
 O Centro de Segurança vai acionar um alerta quando o evento de segurança 4798, no Windows Server 2016 e Windows 10, está acionado. Isto acontece quando são enumerados grupos de administradores locais, que é algo normalmente efetuado pelos atacantes durante o reconhecimento de rede. Os atacantes podem tirar partido desta técnica para consultar a identidade dos utilizadores com privilégios administrativos.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Administrador local](./media/security-center-alerts-type/security-center-alerts-type-fig14-new.png)
 
@@ -140,7 +140,7 @@ Este é um exemplo deste tipo de alerta:
 
 O Centro de Segurança irá acionar um alerta quando detetar a utilização de uma combinação de carateres minúsculos e maiúsculos na linha de comandos. Alguns atacantes poderão utilizar esta técnica para ocultar a regra de maiúsculas e minúsculas ou a máquina baseada em hash.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Mistura anómala](./media/security-center-alerts-type/security-center-alerts-type-fig15-new.png)
 
@@ -151,7 +151,7 @@ Uma chave [krbtgt](https://technet.microsoft.com/library/dn745899.aspx) comprome
 > [!NOTE] 
 > Para mais informações sobre o Pedido Dourado Kerberos, leia [Windows 10 credential theft mitigation guide (Guia de atenuação de roubo de credenciais do Windows 10)](http://download.microsoft.com/download/C/1/4/C14579CA-E564-4743-8B51-61C0882662AC/Windows%2010%20credential%20theft%20mitigation%20guide.docx).
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Pedido dourado](./media/security-center-alerts-type/security-center-alerts-type-fig16-new.png)
 
@@ -159,7 +159,7 @@ Este é um exemplo deste tipo de alerta:
 
 O Centro de Segurança irá acionar um alerta quando for criada uma conta semelhante a uma conta de privilégios administrativos incorporada existente. Esta técnica pode ser utilizada por atacantes para criar uma conta de adesão, para evitar serem detetados por verificação humana.
  
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Conta suspeita](./media/security-center-alerts-type/security-center-alerts-type-fig17-new.png)
 
@@ -167,7 +167,7 @@ Este é um exemplo deste tipo de alerta:
 
 Os atacantes poderão tentar contornar a segurança do anfitrião ao criar regras personalizadas da firewall para permitir que aplicações maliciosas comuniquem com o comando e o controlo, ou para lançar ataques através da rede pelo anfitrião comprometido. O Centro de Segurança irá acionar um alerta quando detetar que foi criada uma nova regra de firewall de um ficheiro executável numa localização suspeita.
  
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![Regra de firewall](./media/security-center-alerts-type/security-center-alerts-type-fig18-new.png)
 
@@ -175,7 +175,7 @@ Este é um exemplo deste tipo de alerta:
 
 O Centro de Segurança irá acionar um alerta quando detetar que um Anfitrião de Aplicação HTML (HTA) da Microsoft está a iniciar comandos do PowerShell. Esta é uma técnica utilizada pelos atacantes para iniciar scripts maliciosos do PowerShell.
  
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![HTA e PS](./media/security-center-alerts-type/security-center-alerts-type-fig19-new.png)
 
@@ -188,7 +188,7 @@ Os dispositivos de rede podem ser detetados e pode ser criado um perfil dos mesm
 
 ![Alerta de tráfego de saída suspeito](./media/security-center-alerts-type/security-center-alerts-type-fig8.png)
 
-Este alerta dá informações que lhe permitem identificar o recurso que foi utilizado para iniciar este ataque. Este alerta fornece também informações para identificar a máquina comprometida, a hora da deteção, para além do protocolo e da porta que foi utilizada. Este painel também fornece uma lista dos passos de remediação que podem ser seguidos para atenuar este problema.
+Este alerta dá informações que lhe permitem identificar o recurso que foi utilizado para iniciar este ataque. Este alerta fornece também informações para identificar a máquina comprometida, a hora da deteção, para além do protocolo e da porta que foi utilizada. Esta página também apresenta uma lista dos passos de remediação que podem ser seguidos para atenuar este problema.
 
 ### <a name="network-communication-with-a-malicious-machine"></a>Comunicação de rede com uma máquina maliciosa
 Ao tirar partido dos feeds de informações sobre ameaças da Microsoft, o Centro de Segurança do Azure pode detetar máquinas comprometidas que comunicam com endereços IP maliciosos. Em muitos casos, o endereço malicioso é um centro de comando e controlo. Neste caso, o Centro de Segurança detetou que a comunicação foi realizada através de software maligno Pony Loader (também conhecido como [Fareit](https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=PWS:Win32/Fareit.AF)).
@@ -205,7 +205,7 @@ Este alerta dá informações que lhe permitem identificar o recurso que foi uti
 ### <a name="possible-outgoing-denial-of-service-attack-detected"></a>Possível ataque denial-of-service de saída detetado
 O tráfego de rede anómalo proveniente de uma máquina virtual pode fazer com que o Centro de Segurança acione um potencial tipo de ataque denial-of-service.
 
-Este é um exemplo deste tipo de alerta:
+Segue um exemplo deste tipo de alerta:
 
 ![DOS de saída](./media/security-center-alerts-type/security-center-alerts-type-fig10-new.png)
 
@@ -253,4 +253,3 @@ Neste artigo, obteve informações sobre os vários tipos de alertas de seguran�
 * [Guia de operações e planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md)
 * [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md): encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 * [Blogue de segurança do Azure](http://blogs.msdn.com/b/azuresecurity/): encontre mensagens do blogue acerca da segurança e conformidade do Azure.
-
