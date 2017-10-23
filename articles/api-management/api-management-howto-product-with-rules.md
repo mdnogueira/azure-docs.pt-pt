@@ -3,7 +3,7 @@ title: "Proteger a sua API com a Gestão de API do Azure | Microsoft Docs"
 description: "Saiba como proteger a sua API com quotas e políticas de limitação (limitação de taxas)."
 services: api-management
 documentationcenter: 
-author: vladvino
+author: juliako
 manager: erikre
 editor: 
 ms.assetid: 450dc368-d005-401d-ae64-3e1a2229b12f
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 12/15/2016
 ms.author: apimpm
-ms.openlocfilehash: 300b1d762a61c810dbffde5aaacd8a85f12c9fca
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.sourcegitcommit: 47ba7c7004ecf68f4a112ddf391eb645851ca1fb
+ms.openlocfilehash: 300b1d762a61c810dbffde5aaacd8a85f12c9fca
+ms.contentlocale: pt-pt
+ms.lasthandoff: 09/14/2017
+
 ---
 # <a name="protect-your-api-with-rate-limits-using-azure-api-management"></a>Proteger a sua API com limites de taxa utilizando a API Management do Azure
 Este guia mostra como é fácil adicionar proteção para a sua API de back-end através da configuração de políticas de limite de taxa e quota com a API Management do Azure.
@@ -325,3 +326,4 @@ Quando a política de limite de taxa de 10 chamadas por minuto estiver em vigor,
 
 [Limit call rate]: https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate
 [Set usage quota]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
+
