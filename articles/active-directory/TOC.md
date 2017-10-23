@@ -97,6 +97,7 @@
 #### [Latências](active-directory-reporting-latencies-azure-portal.md)
 #### [Notificações](active-directory-reporting-notifications.md)
 #### [Códigos de erro de atividade de início de sessão](active-directory-reporting-activity-sign-ins-errors.md)
+#### [Multi-Factor Authentication](active-directory-reporting-activity-sign-ins-mfa.md)
 ### Resolução de problemas
 #### [Dados de auditoria em falta](active-directory-reporting-troubleshoot-missing-audit-data.md)
 #### [Dados em falta em transferências](active-directory-reporting-troubleshoot-missing-data-download.md)
@@ -150,8 +151,7 @@
 ### [Descrição geral](active-directory-enable-sso-scenario.md)
 ### [Introdução](active-directory-integrating-applications-getting-started.md)
 ### [Tutoriais de integração de aplicação SaaS](active-directory-saas-tutorial-list.md)
-### [Cloud App Discovery](cloudappdiscovery-overview.md)
-#### [Configurar a deteção sem agente](cloudappdiscovery-get-started.md)
+### [Cloud App Discovery](cloudappdiscovery-get-started.md)
 #### [Criar relatórios de instantâneos](cloudappdiscovery-set-up-snapshots.md)
 #### [Configurar os relatórios contínuos](https://docs.microsoft.com/cloud-app-security/discovery-docker)
 #### [Utilizar um analisador de registos personalizados](https://docs.microsoft.com/cloud-app-security/custom-log-parser)

@@ -81,7 +81,6 @@
 ### [Problema de ligação Ponto a Site](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)
 ### [A ligação Site a Site desliga-se intermitentemente](vpn-gateway-troubleshoot-site-to-site-disconnected-intermittently.md)
 ### [Não é possível estabelecer a ligação Site a Site](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md) 
-### [Problemas de afinidade de sessão do Gateway de Aplicação](https://support.microsoft.com/help/4033827/troubleshooting-azure-application-gateway-session-affinity-issues)
 ### [Configurar e validar ligações VNet ou VPN](https://support.microsoft.com/help/4032151/configuring-and-validating-vnet-or-vpn-connections)
 
 # Referência

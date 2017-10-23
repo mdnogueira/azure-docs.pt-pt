@@ -109,6 +109,7 @@
 ### Utilizar tarefas de dispositivo para atualizar o firmware do dispositivo
 #### [Back-end de Node/Dispositivo Node](iot-hub-node-node-firmware-update.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-firmware-update.md)
+#### [Dispositivo de back-end .NET/.NET](iot-hub-csharp-csharp-firmware-update.md)
 #### [Back-end de Java/Dispositivo Java](iot-hub-java-java-firmware-update.md)
 ### Agendar e difundir tarefas
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-schedule-jobs.md)
