@@ -20,9 +20,25 @@
 ## [Guia de implementação de SAP IDES em SAP CAL no Windows/SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
 ## [SAP NetWeaver nas VMs de Linux do Azure](suse-quickstart.md)
 ## [Planear e implementar o SAP NetWeaver no Azure](planning-guide.md)
-## [Elevada disponibilidade no Windows](high-availability-guide.md)
-## [Elevada disponibilidade no SUSE Linux](high-availability-guide-suse.md)
-## [Configurações de múltiplos SID](high-availability-multi-sid.md)
+## Elevada Disponibilidade (HA) no Windows e Linux
+### [Descrição geral](sap-high-availability-guide-start.md)
+### Arquitetura de Elevada Disponibilidade
+#### [Arquitetura e Cenários de HA](sap-high-availability-architecture-scenarios.md)
+#### [Arquitetura e Cenários de Elevada Disponibilidade](sap-higher-availability-architecture-scenarios.md)
+#### [HA no Windows com Disco Partilhado para a Instância (A)SCS](sap-high-availability-guide-wsfc-shared-disk.md)
+#### [HA no Windows com Partilha de Ficheiros SOFS para a Instância (A)SCS](sap-high-availability-guide-wsfc-file-share.md)
+#### [HA no SUSE Linux para a Instância (A)SCS](high-availability-guide-suse.md)
+### Preparação da Infraestrutura do Azure
+#### [Windows com Disco Partilhado para a Instância (A)SCS](sap-high-availability-infrastructure-wsfc-shared-disk.md)
+#### [Windows com Partilha de Ficheiros SOFS para a Instância (A)SCS](sap-high-availability-infrastructure-wsfc-file-share.md)
+#### [SUSE Linux com NFS para a Instância (A)SCS](high-availability-guide-suse.md)
+### Instalação de SAP
+#### [Windows com Disco Partilhado para a Instância (A)SCS](sap-high-availability-installation-wsfc-shared-disk.md)
+#### [Windows com Partilha de Ficheiros SOFS para a Instância (A)SCS](sap-high-availability-installation-wsfc-file-share.md)
+#### [SUSE Linux com NFS para a Instância (A)SCS](high-availability-guide-suse.md)
+### Múltiplos SID SAP
+#### [Windows com Disco Partilhado para a Instância (A)SCS](sap-ascs-ha-multi-sid-wsfc-shared-disk.md)
+#### [Windows com Partilha de Ficheiros SOFS para a Instância (A)SCS](sap-ascs-ha-multi-sid-wsfc-file-share.md)
 ## [Guia de implementação](deployment-guide.md)
 ## [Guia de Implementação do DBMS](dbms-guide.md)
 ## [Azure Site Recovery para Recuperação após Desastre do SAP](../../../site-recovery/site-recovery-workload.md#protect-sap)

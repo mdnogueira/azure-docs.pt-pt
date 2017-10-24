@@ -20,6 +20,7 @@
 ### [Tarefas de nós simultâneas](batch-parallel-node-tasks.md)
 ### [Contagem de tarefas por estado](batch-get-task-counts.md)
 ### [Criar um conjunto com uma imagem personalizada](batch-custom-images.md)
+### [Criar um conjunto numa rede virtual](batch-virtual-network.md)
 ### [Consultas de lista eficientes](batch-efficient-list-queries.md)
 ### [Tarefas de preparação e conclusão de trabalhos](batch-job-prep-release.md)
 ### [Nós de computação do Linux](batch-linux-nodes.md)
@@ -62,6 +63,7 @@
 ## [Variáveis de ambiente do nó de computação do Azure Batch](batch-compute-node-environment-variables.md)
 
 # Relacionado
+## [Batch AI](../batch-ai/overview.md?toc=%2fazure%2fbatch%2ftoc.json)
 ## [Batch Shipyard](https://github.com/Azure/batch-shipyard)
 ## [Processamento de dados com o Batch e o Data Factory](../data-factory/v1/data-factory-data-processing-using-batch.md?toc=%2fazure%2fbatch%2ftoc.json)
 ## [Soluções Batch e HPC na cloud do Azure](batch-hpc-solutions.md)

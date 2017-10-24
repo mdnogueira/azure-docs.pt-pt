@@ -11,6 +11,8 @@
       href: log-analytics-quick-collect-azurevm.md
     - name: Recolher - Computador com Linux
       href: log-analytics-quick-collect-linux-computer.md
+    - name: Recolher - Computador com Windows
+      href: log-analytics-quick-collect-windows-computer.md
 - name: Tutoriais
   items:
     - name: 1 - Analisar os dados
@@ -25,21 +27,23 @@
       href: powershell-samples.md
 - name: Conceitos
   items:
+    - name: Atualização da área de trabalho
+      href: log-analytics-log-search-upgrade.md
     - name: FAQ do Log Analytics
       href: log-analytics-faq.md
     - name: Consumo de dados
       href: log-analytics-usage.md
     - name: Gerir o acesso
       href: log-analytics-manage-access.md
-    - name: Funcionalidades para Fornecedores de serviços
+    - name: Funcionalidades para fornecedores de serviços
       href: log-analytics-service-providers.md
     - name: Pesquisa de Registos
       items:
-        - name: FAQ da Pesquisa de Registos
-          href: log-analytics-log-search-faq.md
         - name: Descrição geral das pesquisas de registos
           href: log-analytics-log-search-new.md
-        - name: Portais de pesquisa de registos
+        - name: FAQ da Pesquisa de Registos
+          href: log-analytics-log-search-faq.md
+        - name: Portais de Pesquisa de Registos
           href: log-analytics-log-search-portals.md
 - name: Procedimento
   items:
@@ -89,6 +93,20 @@
               href: log-analytics-custom-fields.md
     - name: Consultar dados
       items:
+        - name: Documentação de linguagem
+          href: 'https://docs.loganalytics.io'
+        - name: Transição da linguagem legada
+          href: log-analytics-log-search-transition.md
+        - name: Pesquisas em várias áreas de trabalho
+          href: log-analytics-cross-workspace-search.md
+        - name: Agir com base nos resultados de pesquisa
+          href: log-analytics-log-search-takeaction.md
+        - name: Utilizar grupos de computadores
+          href: log-analytics-computer-groups.md
+        - name: Conector de fluxo
+          href: log-analytics-flow-tutorial.md
+    - name: Pesquisa de registo legado
+      items:
         - name: Descrição geral das pesquisas de registos
           href: log-analytics-log-searches.md
         - name: Referência de pesquisa
@@ -96,26 +114,18 @@
           items:
             - name: Expressões regulares
               href: log-analytics-log-searches-regex.md
-            - name: Pesquisas em várias áreas de trabalho
-              href: log-analytics-cross-workspace-search.md
-        - name: Agir com base nos resultados de pesquisa
-          href: log-analytics-log-search-takeaction.md
-        - name: Grupos de computadores
-          href: log-analytics-computer-groups.md
-    - name: Nova pesquisa de registos
-      items:
-        - name: Atualizar a sua área de trabalho
-          href: log-analytics-log-search-upgrade.md
-        - name: Transitar da linguagem legada
-          href: log-analytics-log-search-transition.md
-        - name: Conector de fluxo
-          href: log-analytics-flow-tutorial.md
     - name: Analisar dados
       items:
         - name: Dashboards
           href: log-analytics-dashboards.md
         - name: Estruturador de Vista
-          href: log-analytics-view-designer.md
+          items:
+            - name: Descrição geral
+              href: log-analytics-view-designer.md
+            - name: Referência de mosaico
+              href: log-analytics-view-designer-tiles.md
+            - name: Referência de parte da visualização
+              href: log-analytics-view-designer-parts.md
         - name: Power BI
           href: log-analytics-powerbi.md
     - name: Criar alertas
@@ -231,14 +241,12 @@
           href: log-analytics-api-alerts.md
 - name: Referência
   items:
+    - name: Referência de linguagem
+      href: 'https://docs.loganalytics.io/docs/Language-Reference'
     - name: Azure PowerShell
       href: /powershell/module/azurerm.operationalinsights
     - name: REST
       href: /rest/api/loganalytics
-    - name: Ver referência do mosaico do Estruturador
-      href: log-analytics-view-designer-tiles.md
-    - name: Ver referência de parte da visualização do Estruturador
-      href: log-analytics-view-designer-parts.md
 - name: Recursos
   items:
     - name: Mapa do Azure

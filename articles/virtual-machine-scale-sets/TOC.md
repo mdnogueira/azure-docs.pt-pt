@@ -21,19 +21,20 @@
 ### [Criar com o Visual Studio](virtual-machine-scale-sets-vs-create.md)
 ### [Criar com o Azure PowerShell ou a CLI do Azure](virtual-machine-scale-sets-create.md)
 ### [Conjunto de dimensionamento com discos geridos](virtual-machine-scale-sets-managed-disks.md)
-### [Conjunto de dimensionamento do Linux com dimensionamento automático](virtual-machine-scale-sets-linux-autoscale.md)
-### [Conjunto de dimensionamento do Windows com dimensionamento automático](virtual-machine-scale-sets-windows-autoscale.md)
+### [Dimensionar automaticamente um conjunto de dimensionamento](virtual-machine-scale-sets-autoscale-overview.md)
+#### [Utilizar o portal do Azure](virtual-machine-scale-sets-autoscale-portal.md)
+#### [Utilizar CLI 2.0 do Azure](virtual-machine-scale-sets-autoscale-cli.md)
+#### [Utilizar o Azure PowerShell](virtual-machine-scale-sets-autoscale-powershell.md)
+#### [Dimensionamento automático avançado](../monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets.md)
 ### [Aplicações em conjuntos de dimensionamento](virtual-machine-scale-sets-deploy-app.md)
 ### [Utilizar discos de dados com conjuntos de dimensionamento](virtual-machine-scale-sets-attached-disks.md)
 ### [Trabalhar com conjuntos de dimensionamento de grande escala](virtual-machine-scale-sets-placement-groups.md)
 ### [Converter um modelo de conjunto de dimensionamento para utilizar um disco gerido](virtual-machine-scale-sets-convert-template-to-md.md)
 
-
-
 ## Gerir
-### [Conjunto de disponibilidade do Windows com o Azure PowerShell](virtual-machine-scale-sets-windows-manage.md)
-### [Dimensionamento automático e conjuntos de dimensionamento](virtual-machine-scale-sets-autoscale-overview.md)
-### [Dimensionamento automático avançado](../monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets.md)
+### Tarefas comuns de gestão
+#### [Utilizar CLI 2.0 do Azure](virtual-machine-scale-sets-manage-cli.md)
+#### [Utilizar o Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md)
 ### [Dimensionamento vertical num conjunto de dimensionamento](virtual-machine-scale-sets-vertical-scale-reprovision.md)
 ### [Atualizações para conjuntos de dimensionamento](virtual-machine-scale-sets-upgrade-scale-set.md)
 ### [Com o DSC e conjuntos de dimensionamento](virtual-machine-scale-sets-dsc.md)

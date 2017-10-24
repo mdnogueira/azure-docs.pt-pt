@@ -73,7 +73,7 @@
               href: connector-azure-data-lake-store.md
             - name: Azure Search
               href: connector-azure-search.md
-            - name: BD SQL do Azure
+            - name: Base de Dados SQL do Azure
               href: connector-azure-sql-database.md
             - name: Azure SQL Data Warehouse
               href: connector-azure-sql-data-warehouse.md
@@ -91,10 +91,16 @@
               href: connector-file-system.md
             - name: FTP
               href: connector-ftp.md
+            - name: GE Historian
+              href: 'connector-odbc.md#ge-historian-source'
             - name: HDFS
               href: connector-hdfs.md
             - name: HTTP
               href: connector-http.md
+            - name: Informix
+              href: 'connector-odbc.md#ibm-informix-source'
+            - name: Microsoft Access
+              href: 'connector-odbc.md#microsoft-access-source'
             - name: MongoDB
               href: connector-mongodb.md
             - name: MySQL
@@ -121,7 +127,7 @@
               href: connector-sybase.md
             - name: Teradata
               href: connector-teradata.md
-            - name: WebTable
+            - name: Tabela Web
               href: connector-web-table.md
         - name: Suporte de formato e compressão
           href: supported-file-formats-and-compression-codecs.md
@@ -168,7 +174,7 @@
           href: control-flow-execute-pipeline-activity.md
         - name: Para Cada Atividade
           href: control-flow-for-each-activity.md
-        - name: Expressão de Idioma
+        - name: Linguagem de Expressão
           href: control-flow-expression-language-functions.md
         - name: Variáveis do sistema
           href: control-flow-system-variables.md

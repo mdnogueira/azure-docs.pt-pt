@@ -53,6 +53,8 @@
           href: concepts-extensions.md
         - name: Registos do servidor
           href: concepts-server-logs.md
+        - name: Elevada disponibilidade
+          href: concepts-high-availability.md
     - name: Recursos
       items:
         - name: Escalões de preço
@@ -67,6 +69,8 @@
           href: concepts-firewall-rules.md
         - name: Configurar o SSL
           href: concepts-ssl-connection-security.md
+    - name: Monitorizar
+      href: concepts-monitoring.md
     - name: Desenvolvimento
       items:
         - name: Bibliotecas de ligação
@@ -91,14 +95,20 @@
           href: howto-migrate-using-dump-and-restore.md
         - name: Importar e exportar
           href: howto-migrate-using-export-and-import.md
-    - name: Personalizar os parâmetros de configuração do servidor
+    - name: Configurar parâmetros do servidor
       items:
         - name: CLI do Azure
           href: howto-configure-server-parameters-using-cli.md
-    - name: Registos do Servidor
+    - name: Aceder a Registos do Servidor
       items:
+        - name: Portal do Azure
+          href: howto-configure-server-logs-in-portal.md
         - name: CLI do Azure
           href: howto-configure-server-logs-using-cli.md
+    - name: Monitorizar
+      items:
+        - name: Criar alertas para as métricas
+          href: howto-alert-on-metric.md
 - name: Referência
   items:
     - name: CLI do Azure
