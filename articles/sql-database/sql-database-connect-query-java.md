@@ -12,15 +12,14 @@ ms.custom: mvc,develop apps
 ms.workload: drivers
 ms.tgt_pltfrm: na
 ms.devlang: java
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 07/10/2017
 ms.author: andrela
+ms.openlocfilehash: 943e355ffcc6c0670585936ec2e559b7fb592ff5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
-ms.sourcegitcommit: 54454e98a2c37736407bdac953fdfe74e9e24d37
-ms.openlocfilehash: f07f49e64f107ec063bfb755dbb89644f3d00576
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/13/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="use-java-to-query-an-azure-sql-database"></a>Utilizar o Java para consultar uma base de dados SQL do Azure
 
@@ -161,5 +160,4 @@ Obtenha as informações de ligação necessárias para ligar à base de dados S
 - [Criar a sua primeira base de dados SQL do Azure](sql-database-design-first-database.md)
 - [Controlador Microsoft JDBC para SQL Server](https://github.com/microsoft/mssql-jdbc)
 - [Comunicar problemas/fazer perguntas](https://github.com/microsoft/mssql-jdbc/issues)
-
 

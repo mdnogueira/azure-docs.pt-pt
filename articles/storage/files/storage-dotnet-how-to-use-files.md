@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 09/19/2017
 ms.author: renash
-ms.openlocfilehash: 98e5964f4a2dffd728dae1c452facfa6ea488167
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: 51180530790fc0077cea4d8aea7088f1f871681b
+ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/19/2017
 ---
 # <a name="develop-for-azure-files-with-net"></a>Programar para os Ficheiros do Azure com .NET 
 > [!NOTE]
@@ -29,7 +29,6 @@ ms.lasthandoff: 10/11/2017
 
 [!INCLUDE [storage-check-out-samples-dotnet](../../../includes/storage-check-out-samples-dotnet.md)]
 
-## <a name="about-this-tutorial"></a>Acerca deste tutorial
 Este tutorial demonstra as noções básicas da utilização de .NET para programar aplicações ou serviços que utilizam os Ficheiros do Azure para armazenar dados de ficheiros. Neste tutorial, vamos criar uma aplicação de consola simples e mostrar como realizar ações básicas com .NET e os Ficheiros do Azure:
 
 * Obter os conteúdos de um ficheiro
