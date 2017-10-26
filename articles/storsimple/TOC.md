@@ -119,7 +119,7 @@
 ##### [Configurar proxy Web](storsimple-8000-configure-web-proxy.md)
 ##### [Modificar definições dos DADOS 0](storsimple-8000-modify-data-0.md)
 
-#### [Utilizar scripts de exemplo do Azure PowerShell](storsimple-8000-automation-azurerm-scripts.md)
+
 
 #### [Utilizar o Snapshot Manager do StorSimple](storsimple-snapshot-manager-admin.md)
 ##### [O que é o Snapshot Manager do StorSimple?](storsimple-what-is-snapshot-manager.md)
@@ -131,6 +131,11 @@
 ##### [Gerir tarefas de cópia de segurança através do Snapshot Manager do StorSimple](storsimple-snapshot-manager-manage-backup-jobs.md)
 ##### [Gerir volumes através do Snapshot Manager do StorSimple](storsimple-snapshot-manager-manage-volumes.md)
 ##### [Utilizar ações de MMC no Snapshot Manager do StorSimple](storsimple-snapshot-manager-mmc-menu.md)
+
+### Automatizar
+
+#### [Utilizar scripts de exemplo do Azure PowerShell](storsimple-8000-automation-azurerm-scripts.md)
+#### [Utilizar runbooks da Automatização do Azure (Using Azure Automation runbooks)](storsimple-8000-automation-azurerm-runbook.md)
 
 ### Criar soluções
 #### [StorSimple com Veeam](storsimple-configure-backup-target-veeam.md)

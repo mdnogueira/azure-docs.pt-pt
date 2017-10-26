@@ -20,7 +20,9 @@
 ## Programar
 ### [APIs disponíveis](relay-api-overview.md)
 #### [.NET](relay-hybrid-connections-dotnet-api-overview.md)
-#### [Nó](relay-hybrid-connections-node-ws-api-overview.md)
+#### [Node](relay-hybrid-connections-node-ws-api-overview.md)
+## Gerir
+### [Monitorizar o Reencaminhamento do Azure com a Monitorização do Azure (Monitor Azure Relay with Azure Monitoring)](relay-metrics-azure-monitor.md)
 
 # Referência
 ## .NET

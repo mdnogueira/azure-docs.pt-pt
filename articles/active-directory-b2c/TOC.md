@@ -80,16 +80,15 @@
 #### [Personalizar a IU dinamicamente](active-directory-b2c-ui-customization-custom-dynamic.md)
 #### [Personalizar tokens](active-directory-b2c-reference-manage-sso-and-token-configuration.md)
 #### [Complexidade de palavras-passe](active-directory-b2c-reference-password-complexity-custom.md)
-
 #### [Alteração de palavras-passe](active-directory-b2c-reference-password-change-custom.md)
-
 #### [Manter a sessão iniciada](active-directory-b2c-reference-kmsi-custom.md)
-
 ### Resolução de problemas
 #### [Recolher registos com o Application Insights](active-directory-b2c-troubleshoot-custom.md)
 ## Referência
 ### [Notas de versão](active-directory-b2c-developer-notes-custom.md)
+### [Fornecedores de sessões SSO](active-directory-b2c-reference-sso-custom.md)
 ### [Definição da Arquitetura Fidedigna](active-directory-b2c-reference-trustframeworks-defined-ief-custom.md) 
+
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=active-directory-b2c)
 ## Glossário

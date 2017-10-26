@@ -3,11 +3,11 @@ layout: HubPage
 hide_bc: True
 title: "Documentação do Microsoft Azure"
 description: "Saiba como criar e gerir aplicações poderosas com os serviços cloud do Microsoft Azure. Obtenha documentação, código de exemplo, tutoriais e muito mais."
-ms.openlocfilehash: 552739da2429fd747101ae5e28e805ca8559b431
-ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
+ms.openlocfilehash: 9752a75dc20ec7f92b87ddb50ed74208982bd92e
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 10/24/2017
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -599,31 +599,31 @@ ms.lasthandoff: 10/21/2017
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-overview">
-                                                <img src="media/index/cs-decision-maker.svg" alt="" />
+                                                <img src="media/index/API_Custom_Decision_Service.svg" alt="" />
                                                 <p>Serviço de Decisão Personalizada</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/entitylinking/home">
-                                                <img src="media/index/API_Know_EntityLink.svg" alt="" />
+                                                <img src="media/index/API_Entity_LinkingIntelligence.svg" alt="" />
                                                 <p>Ligar à Entidade</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/kes/overview">
-                                                <img src="media/index/API_Know_Exploration.svg" alt="" />
+                                                <img src="media/index/API_KnowledgeExploration.svg" alt="" />
                                                 <p>Serviço de Exploração do Conhecimento (KES)</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/qnamaker/home">
-                                                <img src="media/index/API_Know_QandA_Maker.svg" alt="" />
+                                                <img src="media/index/API_QnAMaker.svg" alt="" />
                                                 <p>QnAMaker</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/recommendations/overview">
-                                                <img src="media/index/API_Know_Recommendations.svg" alt="" />
+                                                <img src="media/index/API_Recommendations.svg" alt="" />
                                                 <p>Recomendações</p>
                                             </a>
                                         </li>
@@ -635,139 +635,145 @@ ms.lasthandoff: 10/21/2017
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-spell-check/">
-                                                <img src="media/index/API_Lang_BingSpellCheck.svg" alt="" />
+                                                <img src="media/index/API_Bing_Spell_Check.svg" alt="" />
                                                 <p>Verificação Ortográfica do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/luis/home">
-                                                <img src="media/index/API_Lang_LanguageUnderstanding.svg" alt="" />
+                                                <img src="media/index/API_Luis.svg" alt="" />
                                                 <p>Language Understanding Intelligent Service (LUIS)</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/linguisticanalysisapi/home">
-                                                <img src="media/index/API_Lang_LinguisticAnalysis.svg" alt="" />
+                                                <img src="media/index/API_LinguisticAnalysis.svg" alt="" />
                                                 <p>Análise Linguística</p>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/cognitive-services/text-analytics/overview">
-                                                <img src="media/index/API_Lang_TextAnalytics.svg" alt="" />
+                                            <a href="/azure/cognitive-services/text-analytics/">
+                                                <img src="media/index/API_TextAnalytics.svg" alt="" />
                                                 <p>Análise de Texto</p>
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="https://docs.microsofttranslator.com/speech-translate.html">
+                                                <img src="media/index/API_TranslatorSpeech.svg" alt="" />
+                                                <p>Voz do Tradutor</p>
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="/azure/cognitive-services/translator/translator-info-overview">
-                                                <img src="media/index/cognitive-services-translator.svg" alt="" />
+                                                <img src="media/index/API_TranslatorText.svg" alt="" />
                                                 <p>API de Texto do Tradutor</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/web-language-model/home">
-                                                <img src="media/index/API_Lang_WebLM.svg" alt="" />
+                                                <img src="media/index/API_WebLanguageModel.svg" alt="" />
                                                 <p>Web Language Model</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Bing-news-Search/search-the-web">
-                                                <img src="media/index/API_Sear_BingNewsSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_News_Search.svg" alt="" />
                                                 <p>Bing Notícias</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Bing-Video-Search/search-the-web">
-                                                <img src="media/index/API_Sear_BingVideoSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_Video_Search.svg" alt="" />
                                                 <p>Pesquisa de Vídeos do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-web-search/">
-                                                <img src="media/index/API_Sear_BingSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_Web_Search.svg" alt="" />
                                                 <p>Pesquisa Web do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Bing-Autosuggest">
-                                                <img src="media/index/API_Sear_BingAutoSuggest.svg" alt="" />
+                                                <img src="media/index/API_Bing_AutoSuggest.svg" alt="" />
                                                 <p>Sugestão Automática do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-custom-search">
-                                                <img src="media/index/API_Sear_BingSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_Custom_Search.svg" alt="" />
                                                 <p>Pesquisa Personalizada do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-entities-search/search-the-web">
-                                                <img src="media/index/API_Sear_BingSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_Entity_Search.svg" alt="" />
                                                 <p>Pesquisa de Entidades do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-image-search">
-                                                <img src="media/index/API_Sear_BingImageSearch.svg" alt="" />
+                                                <img src="media/index/API_Bing_Image_Search.svg" alt="" />
                                                 <p>Pesquisa de Imagens do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/speech/home">
-                                                <img src="media/index/API_Spc_CustomSpeechService.svg" alt="" />
+                                                <img src="media/index/API_Bing_Speech.svg" alt="" />
                                                 <p>Serviço de Voz do Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home">
-                                                <img src="media/index/API_Spc_CustomSpeechService.svg" alt="" />
+                                                <img src="media/index/API_Custom_Speech.svg" alt="" />
                                                 <p>Serviço de Voz Personalizada</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/speaker-recognition/home">
-                                                <img src="media/index/API_Spc_SpeakerRecognition.svg" alt="" />
+                                                <img src="media/index/API_Speaker_Recognition.svg" alt="" />
                                                 <p>Reconhecimento de Orador</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/computer-vision/">
-                                                <img src="media/index/API_Vis_ComputerVision.svg" alt="" />
+                                                <img src="media/index/API_Computer_Vision.svg" alt="" />
                                                 <p>Imagem Digitalizada</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/content-moderator/overview">
-                                                <img src="media/index/cs-content-moderator.svg" alt="" />
+                                                <img src="media/index/API_Content_Moderator.svg" alt="" />
                                                 <p>Content Moderator</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Custom-Vision-Service/home">
-                                                <img src="media/index/cs-custom-vision.svg" alt="" />
-                                                <p>Pesquisa de Imagem Personalizada</p>
+                                                <img src="media/index/API_Custom_Vision.svg" alt="" />
+                                                <p>Serviço de Imagem Personalizada</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/emotion/home">
-                                                <img src="media/index/API_Vis_Emotion.svg" alt="" />
+                                                <img src="media/index/API_Emotion.svg" alt="" />
                                                 <p>API de Emoções</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/face/">
-                                                <img src="media/index/API_Vis_Face.svg" alt="" />
+                                                <img src="media/index/API_Face.svg" alt="" />
                                                 <p>API Face</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/video/home">
-                                                <img src="media/index/cs-video.svg" alt="" />
+                                                <img src="media/index/API_Video.svg" alt="" />
                                                 <p>API de Vídeo</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/video-indexer/video-indexer-overview">
-                                                <img src="media/index/cs-video-indexer.svg" alt="" />
+                                                <img src="media/index/API_VideoIndexer.svg" alt="" />
                                                 <p>Indexador de Vídeos</p>
                                             </a>
                                         </li>
@@ -2556,25 +2562,25 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                         <h3>Visão</h3>
                                                         <ul class="noBullet">
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/computer-vision/"><img src="media/index/API_Vis_ComputerVision.svg" alt="" />Imagem Digitalizada</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/computer-vision/"><img src="media/index/API_Computer_Vision.svg" alt="" />Imagem Digitalizada</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/content-moderator/overview"><img src="media/index/cs-content-moderator.svg" alt="" />Content Moderator</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/content-moderator/overview"><img src="media/index/API_Content_Moderator.svg" alt="" />Content Moderator</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/Custom-Vision-Service/home"><img src="media/index/cs-custom-vision.svg" alt="" /><span>Pesquisa de Imagem Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/Custom-Vision-Service/home"><img src="media/index/API_Custom_Vision.svg" alt="" /><span>Serviço de Visão Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/emotion/home"><img src="media/index/API_Vis_Emotion.svg" alt="" /><span>API de Emoções&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/emotion/home"><img src="media/index/API_Emotion.svg" alt="" /><span>API de Emoções&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/face/"><img src="media/index/API_Vis_Face.svg" alt="" />API Face</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/face/"><img src="media/index/API_Face.svg" alt="" />API Face</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/video/home"><img src="media/index/cs-video.svg" alt="" /><span>API de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/video/home"><img src="media/index/API_Video.svg" alt="" /><span>API de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/video-indexer/video-indexer-overview"><img src="media/index/cs-video-indexer.svg" alt="" /><span>Indexador de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/video-indexer/video-indexer-overview"><img src="media/index/API_VideoIndexer.svg" alt="" /><span>Indexador de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -2590,13 +2596,16 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                         <h3>Voz</h3>
                                                         <ul class="noBullet">
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/speech/home"><img src="media/index/API_Spc_CustomSpeechService.svg" alt="" />Serviço de Voz do Bing</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/speech/home"><img src="media/index/API_Bing_Speech.svg" alt="" />Serviço de Voz do Bing</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><img src="media/index/API_Spc_CustomSpeechService.svg" alt="" /><span>Serviço de Voz Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><img src="media/index/API_Custom_Speech.svg" alt="" /><span>Serviço de Voz Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/speaker-recognition/home"><img src="media/index/API_Spc_SpeakerRecognition.svg" alt="" /><span>Reconhecimento de Orador&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/speaker-recognition/home"><img src="media/index/API_Speaker_Recognition.svg" alt="" /><span>Reconhecimento de Orador&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="barLink" href="https://docs.microsofttranslator.com/speech-translate.html"><img src="media/index/API_TranslatorSpeech.svg" alt="" />Voz do Tradutor</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -2612,22 +2621,22 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                         <h3>Idioma</h3>
                                                         <ul class="noBullet">
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-spell-check/"><img src="media/index/API_Lang_BingSpellCheck.svg" alt="" />Verificação Ortográfica do Bing</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-spell-check/"><img src="media/index/API_Bing_Spell_Check.svg" alt="" />Verificação Ortográfica do Bing</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/luis/home"><img src="media/index/API_Lang_LanguageUnderstanding.svg" alt="" /><span>Language Understanding Intelligent Services (LUIS)&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/luis/home"><img src="media/index/API_Luis.svg" alt="" /><span>Language Understanding Intelligent Services (LUIS)&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/linguisticanalysisapi/home"><img src="media/index/API_Lang_LinguisticAnalysis.svg" alt="" /><span>Análise Linguística&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/linguisticanalysisapi/home"><img src="media/index/API_LinguisticAnalysis.svg" alt="" /><span>Análise Linguística&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/text-analytics/overview"><img src="media/index/API_Lang_TextAnalytics.svg" alt="" />Análise de Texto</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/text-analytics/"><img src="media/index/API_TextAnalytics.svg" alt="" />Análise de Texto</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/translator/translator-info-overview"><img src="media/index/cognitive-services-translator.svg" alt="" />Texto do Tradutor</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/translator/translator-info-overview"><img src="media/index/API_TranslatorText.svg" alt="" />Texto do Tradutor</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/web-language-model/home"><img src="media/index/API_Lang_WebLM.svg" alt="" /><span>Web Language Model&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/web-language-model/home"><img src="media/index/API_WebLanguageModel.svg" alt="" /><span>Web Language Model&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -2643,19 +2652,19 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                         <h3>Conhecimento</h3>
                                                         <ul class="noBullet">
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/custom-decision-service/custom-decision-service-overview"><img src="media/index/cs-decision-maker.svg" alt="" /><span>Serviço de Decisão Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/custom-decision-service/custom-decision-service-overview"><img src="media/index/API_Custom_Decision_Service.svg" alt="" /><span>Serviço de Decisão Personalizada&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/entitylinking/home"><img src="media/index/API_Know_EntityLink.svg" alt="" /><span>Ligação de Entidades&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/entitylinking/home"><img src="media/index/API_Entity_LinkingIntelligence.svg" alt="" /><span>Ligação de Entidades&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/kes/overview"><img src="media/index/API_Know_Exploration.svg" alt="" /><span>Serviço de Exploração do Conhecimento (KES)&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/kes/overview"><img src="media/index/API_KnowledgeExploration.svg" alt="" /><span>Serviço de Exploração do Conhecimento (KES)&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/qnamaker/home"><img src="media/index/API_Know_QandA_Maker.svg" alt="" /><span>QnAMaker&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/qnamaker/home"><img src="media/index/API_QnAMaker.svg" alt="" /><span>QnAMaker&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/recommendations/overview"><img src="media/index/API_Know_Recommendations.svg" alt="" /><span>Recomendações&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/recommendations/overview"><img src="media/index/API_Recommendations.svg" alt="" /><span>Recomendações&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                             <li>
                                                                 <a class="barLink" href="/azure/cognitive-services/academic-knowledge/home"><img src="media/index/API_Know_Academic.svg" alt="" /><span>Conhecimento Académico&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
@@ -2674,24 +2683,24 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                         <h3>Pesquisa</h3>
                                                         <ul class="noBullet">
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-news-search/search-the-web"><img src="media/index/API_Sear_BingNewsSearch.svg" alt="" />Bing Notícias</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-news-search/search-the-web"><img src="media/index/API_Bing_News_Search.svg" alt="" />Bing Notícias</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/Bing-Video-Search/search-the-web"><img src="media/index/API_Sear_BingVideoSearch.svg" alt="" />Pesquisa de Vídeos do Bing</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/Bing-Video-Search/search-the-web"><img src="media/index/API_Bing_Video_Search.svg" alt="" />Pesquisa de Vídeos do Bing</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-web-search/"><img src="media/index/API_Sear_BingSearch.svg" alt="" />Pesquisa Web do Bing</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-web-search/"><img src="media/index/API_Bing_Web_Search.svg" alt="" />Pesquisa Web do Bing</a>
                                                             </li>
-                                                            <li>                                                 <a class="barLink" href="/azure/cognitive-services/Bing-Autosuggest"><img src="media/index/API_Sear_BingAutoSuggest.svg" alt="" />Sugestão Automática do Bing</a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-custom-search"><img src="media/index/API_Sear_BingSearch.svg" alt="" /><span>Pesquisa Personalizada do Bing</a>
+                                                            <li>                                                 <a class="barLink" href="/azure/cognitive-services/Bing-Autosuggest"><img src="media/index/API_Bing_AutoSuggest.svg" alt="" />Sugestão Automática do Bing</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-entities-search/search-the-web"><img src="media/index/API_Sear_BingSearch.svg" alt="" /><span>Pesquisa de Entidades do Bing&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-custom-search"><img src="media/index/API_Bing_Custom_Search.svg" alt="" /><span>Pesquisa Personalizada do Bing</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/bing-image-search"><img src="media/index/API_Sear_BingImageSearch.svg" alt="" />Pesquisa de Imagens do Bing</a>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-entities-search/search-the-web"><img src="media/index/API_Bing_Entity_Search.svg" alt="" /><span>Pesquisa de Entidades do Bing&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="barLink" href="/azure/cognitive-services/bing-image-search"><img src="media/index/API_Bing_Image_Search.svg" alt="" />Pesquisa de Imagens do Bing</a>
                                                             </li>
                                                         </ul>
                                                     </div>

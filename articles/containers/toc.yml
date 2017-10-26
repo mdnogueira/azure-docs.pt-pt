@@ -1,24 +1,14 @@
 - name: Azure para Contentores
   href: index.yml
   items:
-    - name: Container Service (ACS)
-      href: 'https://docs.microsoft.com/en-us/azure/container-service/'
+    - name: Container Service (AKS)
+      href: 'https://docs.microsoft.com/en-us/azure/aks/'
       expanded: true
       items:
-        - name: Utilizar o Kubernetes
-          href: 'https://docs.microsoft.com/azure/container-service/kubernetes/'
-          items:
-            - name: Descrição Geral - Introdução ao Azure Container Service para Kubernetes
-              href: 'https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-intro-kubernetes'
-            - name: Início Rápido - Implementar um cluster do Kubernetes para contentores do Linux
-              href: 'https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-kubernetes-walkthrough'
-        - name: Docker Swarm e DC/OS
-          href: 'https://docs.microsoft.com/azure/container-service/dcos-swarm/'
-          items:
-            - name: Início Rápido - Implementar um cluster do Docker Swarm
-              href: 'https://docs.microsoft.com/en-us/azure/container-service/dcos-swarm/container-service-swarm-walkthrough'
-            - name: Início Rápido - Implementar um cluster do DC/OS
-              href: 'https://docs.microsoft.com/en-us/azure/container-service/dcos-swarm/container-service-dcos-quickstart'
+        - name: Introdução ao AKS
+          href: ../aks/intro-kubernetes.md
+        - name: Implementar um cluster do AKS (Deploy an AKS cluster)
+          href: ../aks/kubernetes-walkthrough.md
     - name: Container Instances (ACI)
       href: 'https://docs.microsoft.com/en-us/azure/container-instances/'
       items:
@@ -67,26 +57,11 @@
               href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/docker-machine'
             - name: Utilizar o Docker Compose
               href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/docker-compose-quickstart'
-    - name: Máquinas Virtuais (Linux)
-      href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/overview'
-      items:
-        - name: Desenvolver e executar cargas de trabalho do contentor no Azure
-          href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/containers'
-        - name: Procedimento
-          items:
-            - name: Criar anfitrião do Docker
-              href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/dockerextension'
-            - name: Utilizar o Docker Machine
-              href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/docker-machine'
-            - name: Utilizar o Docker Compose
-              href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/docker-compose-quickstart'
-    - name: Máquinas Virtuais (Windows)
+    - name: Contentores do Windows
       href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview'
       items:
         - name: Início Rápido - Contentores do Windows no Windows Server
           href: 'https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server'
-        - name: Máquinas virtuais e contentores no Azure
-          href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/windows/containers'
         - name: Acerca dos Contentores do Windows
           href: 'https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index'
     - name: Referência
@@ -97,7 +72,7 @@
           href: 'https://docs.microsoft.com/en-us/cli/azure/acs'
         - name: Azure Container Registry (az acr)
           href: 'https://docs.microsoft.com/en-us/cli/azure/acr'
-        - name: Aplicações Web do Azure para Contentores (az appservice)
+        - name: Aplicações Web para Contentores (az appservice)
           href: 'https://docs.microsoft.com/en-us/cli/azure/appservice'
         - name: Aplicação Web do Serviço de Aplicações do Azure (az webapp)
           href: 'https://docs.microsoft.com/en-us/cli/azure/webapp'

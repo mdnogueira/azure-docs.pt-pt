@@ -15,7 +15,7 @@ metadata:
   ms.date: 01-23-2017
   ms.author: carolz
 abstract:
-  description: 'As Funções do Azure são um serviço de computação sem servidor lhe que permite executar código a pedido sem ter de aprovisionar ou gerir explicitamente uma infraestrutura. Utilize as Funções do Azure para executar um script ou fragmento de código em resposta a uma variedade de eventos. Saiba como utilizar as Funções do Azure com os nossos guias de introdução, tutoriais e amostras.'
+  description: 'As Funções do Azure são um serviço de computação <a href="https://azure.microsoft.com/overview/serverless-computing/">sem servidor</a> lhe que permite executar código a pedido sem ter de aprovisionar ou gerir explicitamente uma infraestrutura. Utilize as Funções do Azure para executar um script ou fragmento de código em resposta a uma variedade de eventos. Saiba como utilizar as Funções do Azure com os nossos guias de introdução, tutoriais e amostras.'
   aside:
     image:
       alt: null
