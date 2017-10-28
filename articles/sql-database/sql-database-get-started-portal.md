@@ -1,6 +1,6 @@
 ---
 title: "Portal do Azure: Criar uma única base de dados SQL | Microsoft Docs"
-description: "Saiba como criar um servidor lógico da Base de Dados SQL, regras de firewall ao nível do servidor e bases de dados no portal do Azure. Saiba também como consultar uma base de dados SQL do Azure através do portal do Azure."
+description: "Crie um servidor lógico da Base de Dados SQL, regras de firewall ao nível do servidor e uma base de dados no portal do Azure e realize consultas à mesma."
 keywords: tutorial de base de dados sql, criar uma base de dados sql
 services: sql-database
 documentationcenter: 
@@ -13,15 +13,14 @@ ms.custom: mvc,DBs & servers
 ms.workload: data-management
 ms.tgt_pltfrm: portal
 ms.devlang: na
-ms.topic: hero-article
-ms.date: 05/30/2017
+ms.topic: quickstart
+ms.date: 08/25/2017
 ms.author: carlrab
+ms.openlocfilehash: a97ff8cbd05eb3cd94b557b4dbeb63634a94ccf8
+ms.sourcegitcommit: 1131386137462a8a959abb0f8822d1b329a4e474
 ms.translationtype: HT
-ms.sourcegitcommit: 6e76ac40e9da2754de1d1aa50af3cd4e04c067fe
-ms.openlocfilehash: a863cf3ad08040906850f64db6505f30bcfa72eb
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/31/2017
-
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Criar uma base de dados SQL do Azure no portal do Azure
 
@@ -41,7 +40,7 @@ Siga estes passos para criar uma base de dados SQL com os dados de exemplo da Ad
 
 1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
-2. Selecione **Bases de Dados** na página **Novo** e selecione **Base de Dados SQL** na página **Bases de Dados**.
+2. Selecione **Bases de Dados** na página **Novo** e selecione **Criar na Base de Dados SQL** em **Base de Dados SQL** na página **Novo**.
 
    ![criar base de dados-1](./media/sql-database-get-started-portal/create-database-1.png)
 
@@ -77,17 +76,33 @@ Siga estes passos para criar uma base de dados SQL com os dados de exemplo da Ad
 
 5. Quando concluir o formulário, clique em **Selecionar**.
 
-6. Clique em **Escalão de preço** para especificar o escalão de serviço e o nível de desempenho para a nova base de dados. Utilize o controlo de deslize para selecionar **20 DTUs** e **250** GB de armazenamento. Para obter mais informações sobre DTUs, consulte [O que é um DTU?](sql-database-what-is-a-dtu.md).
+6. Clique em **Escalão de preço** para especificar a camada de serviço, o número de DTUs e a quantidade de armazenamento. Explore as opções para a quantidade de DTUs e de armazenamento que tem disponível para cada camada de serviço. 
+
+   > [!IMPORTANT]
+   > \*Tamanhos de armazenamento maiores do que a quantidade de armazenamento incluído estão em pré-visualização e são aplicados custos adicionais. Para detalhes, ver os preços da [Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
+   >
+   >\* No escalão Premium, mais de 1 TB de armazenamento estão atualmente disponível nas seguintes regiões: E.U.A. Leste 2, E.U.A. Oeste, Gov (US) - Virginia, Europa Ocidental, Alemanha Central, Sudeste Asiático, Leste do Japão, Leste da Austrália, Canadá Central e Leste do Canadá. Ver [Limitações Atuais P11-P15](sql-database-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+   > 
+
+7. Para este tutorial de início rápido, selecione o escalão de preço **Standard** e, em seguida, utilize o controlo de deslize para selecionar **100 DTUs (S3)** e **400** GB de armazenamento.
 
    ![criar base de dados-s1](./media/sql-database-get-started-portal/create-database-s1.png)
 
-7. Depois de selecionar a quantidade de DTUs, clique em **Aplicar**.  
+8. Aceitd os termos de pré-visualização para utilizar a opção **Adicionar ao Armazenamento**. 
 
-8. Agora que concluiu o formulário da Base de Dados SQL do Servidor, clique em **Criar** para aprovisionar a base de dados. O aprovisionamento demora alguns minutos. 
+   > [!IMPORTANT]
+   > \*Tamanhos de armazenamento maiores do que a quantidade de armazenamento incluído estão em pré-visualização e são aplicados custos adicionais. Para detalhes, ver os preços da [Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
+   >
+   >\* No escalão Premium, mais de 1 TB de armazenamento estão atualmente disponível nas seguintes regiões: E.U.A. Leste 2, E.U.A. Oeste, Gov (US) - Virginia, Europa Ocidental, Alemanha Central, Sudeste Asiático, Leste do Japão, Leste da Austrália, Canadá Central e Leste do Canadá. Ver [Limitações Atuais P11-P15](sql-database-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+   > 
 
-9. Na barra de ferramentas, clique em **Notificações** para monitorizar o processo de implementação.
+9. Depois de selecionar o escalão de servidor, o número de DTUs e a quantidade de armazenamento, clique em **Aplicar**.  
 
-   ![notificação](./media/sql-database-get-started-portal/notification.png)
+10. Agora que concluiu o formulário da Base de Dados SQL do Servidor, clique em **Criar** para aprovisionar a base de dados. O aprovisionamento demora alguns minutos. 
+
+11. Na barra de ferramentas, clique em **Notificações** para monitorizar o processo de implementação.
+    
+     ![notificação](./media/sql-database-get-started-portal/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>Criar uma regra de firewall ao nível do servidor
 
@@ -97,25 +112,21 @@ O serviço da Base de Dados SQL cria uma firewall ao nível do servidor, impedin
 > A Base de Dados SQL comunica através da porta 1433. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 1433 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao servidor da Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 >
 
-1. Depois de concluída a implementação, clique em **Bases de dados SQL** no menu do lado esquerdo e, em seguida, clique em **mySampleDatabase** na página **Bases de dados SQL**. É aberta uma página de descrição geral para a base de dados que mostra o nome de servidor completamente qualificado (como **mynewserver20170313.database.windows.net**) e oferece opções para configuração adicional. Copie este nome de servidor totalmente qualificado para utilizar mais tarde.
+1. Depois de concluída a implementação, clique em **Bases de dados SQL** no menu do lado esquerdo e, em seguida, clique em **mySampleDatabase** na página **Bases de dados SQL**. É aberta uma página de descrição geral para a base de dados que mostra o nome de servidor completamente qualificado (como **mynewserver-20170824.database.windows.net**) e oferece opções para configuração adicional. 
 
-   > [!IMPORTANT]
-   > Irá precisar deste nome de servidor totalmente qualificado para ligar ao seu servidor e às respetivas bases de dados nos seguintes guias de introdução.
-   > 
+2. Copie este nome de servidor totalmente qualificado para utilizar para ligar ao seu servidor e às respetivas bases de dados nos seguintes guias de introdução. 
 
-   ![nome do servidor](./media/sql-database-connect-query-dotnet/server-name.png) 
+   ![nome do servidor](./media/sql-database-get-started-portal/server-name.png) 
 
-2. Clique em **Configurar firewall do servidor** na barra de ferramentas, conforme mostrado na imagem anterior. É aberta a página **Definições da firewall** do servidor da Base de Dados SQL. 
+3. Clique em **Configurar firewall do servidor** na barra de ferramentas, conforme mostrado na imagem anterior. É aberta a página **Definições da firewall** do servidor da Base de Dados SQL. 
 
    ![regra de firewall do servidor](./media/sql-database-get-started-portal/server-firewall-rule.png) 
 
-3. Clique em **Adicionar IP de cliente**, na barra de ferramentas, para adicionar o seu endereço IP atual a uma nova regra de firewall. Uma regra de firewall consegue abrir a porta 1433 para um único endereço IP ou para um intervalo de endereços IP.
+4. Clique em **Adicionar IP de cliente**, na barra de ferramentas, para adicionar o seu endereço IP atual a uma nova regra de firewall. Uma regra de firewall consegue abrir a porta 1433 para um único endereço IP ou para um intervalo de endereços IP.
 
-4. Clique em **Guardar**. É criada uma regra de firewall ao nível do servidor para a sua porta de abertura 1433 do endereço IP atual no servidor lógico.
+5. Clique em **Guardar**. É criada uma regra de firewall ao nível do servidor para a sua porta de abertura 1433 do endereço IP atual no servidor lógico.
 
-   ![configurar regra de firewall do servidor](./media/sql-database-get-started-portal/server-firewall-rule-set.png) 
-
-4. Clique em **OK** e, em seguida, feche a página **Definições da firewall**.
+6. Clique em **OK** e, em seguida, feche a página **Definições da firewall**.
 
 Pode agora ligar ao servidor da Base de Dados SQL e às respetivas bases de dados com o SQL Server Management Studio ou outra ferramenta à sua escolha a partir deste endereço IP com a conta de administrador de servidor criada anteriormente.
 
@@ -127,19 +138,19 @@ Pode agora ligar ao servidor da Base de Dados SQL e às respetivas bases de dado
 
 Agora que criou uma base de dados de exemplo no Azure, vamos utilizar a ferramenta de consulta incorporada no portal do Azure para confirmar que se consegue ligar à base de dados e consultar os dados. 
 
-1. Na página Base de Dados SQL da sua base de dados, clique em **Ferramentas** na barra de ferramentas. É aberta a página **Ferramentas**.
+1. Na página Base de Dados SQL da sua base de dados, clique em **Ferramentas** na barra de ferramentas e, em seguida, clique em **Editor de consultas (pré-visualização)**.
 
    ![menu ferramentas](./media/sql-database-get-started-portal/tools-menu.png) 
 
-2. Clique em **Editor de consultas (pré-visualização)**, clique na caixa de verificação **Termos de pré-visualização** e, em seguida, clique em **OK**. É aberta a página Editor de consultas.
+2. Clique a caixa de verificação **Termos de pré-visualização** e, em seguida, clique em **OK**. É aberta a página Editor de consultas.
 
-3. Clique em **Iniciar sessão** e, em seguida, quando lhe for pedido, selecione **Autenticação do SQL Server** e forneça o início de sessão e a palavra-passe de administrador do servidor que criou anteriormente.
+3. Clique em **Iniciar sessão**, reveja as informações de início de sessão e, em seguida, clique em **OK** para iniciar sessão com a autenticação do SQL server com o início de sessão de administrador de servidor e a palavra-passe que criou anteriormente.
 
    ![início de sessão](./media/sql-database-get-started-portal/login.png) 
 
 4. Clique em **OK** para iniciar sessão.
 
-5. Quando estiver autenticado, escreva a consulta seguinte no painel do editor de consultas.
+5. Quando estiver autenticado como **ServerAdmin**, escreva a consulta seguinte no painel do editor de consultas.
 
    ```sql
    SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
@@ -152,11 +163,11 @@ Agora que criou uma base de dados de exemplo no Azure, vamos utilizar a ferramen
 
    ![Resultados do editor de consultas](./media/sql-database-get-started-portal/query-editor-results.png)
 
-7. Feche a página **Editor de consultas** e a página **Ferramentas**.
+7. Feche a página **Editor de consultas**, clique em **OK** para eliminar as edições não guardadas e, em seguida, feche a página **ferramentas**.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se não precisa destes recursos para outro início rápido/tutorial (consulte [Passos seguintes](#next-steps)), pode eliminá-los ao realizar o seguinte procedimento:
+Guarde estes recursos se pretender aceder aos [Próximos passos](#next-steps) e saiba como ligar e consultar a base de dados utilizando um número de métodos diferentes. Se, no entanto, pretender eliminar os recursos que criou neste início rápido, utilize os seguintes passos. 
 
 
 1. No menu do lado esquerdo no portal do Azure, clique em **Grupos de recursos** e, em seguida, clique em **myResourceGroup**. 
@@ -174,4 +185,3 @@ Agora que tem uma base de dados, pode ligar e consultar com as suas ferramentas 
 - [Java](sql-database-connect-query-java.md)
 - [python](sql-database-connect-query-python.md)
 - [Ruby](sql-database-connect-query-ruby.md)
-
