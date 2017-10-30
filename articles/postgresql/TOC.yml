@@ -99,7 +99,7 @@
       items:
         - name: CLI do Azure
           href: howto-configure-server-parameters-using-cli.md
-    - name: Aceder a Registos do Servidor
+    - name: Aceder a registos do servidor
       items:
         - name: Portal do Azure
           href: howto-configure-server-logs-in-portal.md

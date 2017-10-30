@@ -105,6 +105,8 @@
       items:
         - name: Portal do Azure
           href: howto-restore-server-portal.md
+        - name: CLI do Azure
+          href: howto-restore-server-cli.md
     - name: Ligar a aplicações
       items:
         - name: Cadeias de ligação
