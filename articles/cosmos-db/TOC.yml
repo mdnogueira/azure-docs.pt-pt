@@ -139,6 +139,7 @@
     - name: Programar
       items:
         - name: API do DocumentDB
+          href: documentdb-index.md
           items:
             - name: Recursos
               href: documentdb-resources.md
@@ -213,6 +214,7 @@
                 - name: 'Extinguir S1, S2, S3'
                   href: performance-levels.md
         - name: API do MongoDB
+          href: mongodb-index.md
           items:
             - name: Ligar à sua conta MongoDB
               href: connect-mongodb-account.md
