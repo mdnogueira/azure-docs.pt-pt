@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 010/04/2017
+ms.date: 10/12/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f182dff164b8baa7e2144231667adbd12fcc717d
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: f277f59982251eb66ca02e72b4ced7f765935b9d
+ms.sourcegitcommit: 963e0a2171c32903617d883bb1130c7c9189d730
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/20/2017
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
 
@@ -75,7 +75,7 @@ Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-
 Pode executar várias cargas de trabalho do Batch numa única conta do Batch ou distribuí-las entre contas do Batch que estejam na mesma subscrição, mas em diferentes regiões do Azure.
 
 > [!NOTE]
-> Ao criar uma conta do Batch, geralmente escolhe o modo **Serviço Batch** predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. No modo **Subscrição de utilizador** alternativo, o qual já não é recomendado, as VMs do Batch e outros recursos são criados diretamente na sua subscrição quando é criado um conjunto.
+> Ao criar uma conta do Batch, geralmente escolhe o modo **Serviço Batch** predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. No modo **Subscrição de utilizador** alternativo, o qual já não é recomendado, as VMs do Batch e outros recursos são criados diretamente na sua subscrição quando é criado um conjunto. Para criar uma conta do Batch no modo de subscrição Utilizador, também tem de associar o Azure Key Vault à conta.
 >
 
 
@@ -129,7 +129,7 @@ Quando cria um agrupamento do Batch, pode especificar a configuração da máqui
 
 - A **Configuração de Máquina Virtual**, que especifica que o agrupamento é composto por máquinas virtuais do Azure. Estas VMs podem ser criadas a partir de imagens do Linux ou do Windows. 
 
-    Quando cria um agrupamento com base na Configuração de Máquina Virtual, tem de especificar não só o tamanho dos nós e a origem das imagens utilizadas para criá-los, como também a **referência da imagem da máquina virtual** e o **SKU do agente de nó** do Batch a instalar nos nós. Para obter mais informações sobre como especificar estas propriedades dos conjuntos, veja [Provision Linux compute nodes in Azure Batch pools (Aprovisionar nós de computação do Linux em conjuntos do Azure Batch)](batch-linux-nodes.md).
+    Quando cria um agrupamento com base na Configuração de Máquina Virtual, tem de especificar não só o tamanho dos nós e a origem das imagens utilizadas para criá-los, como também a **referência da imagem da máquina virtual** e o **SKU do agente de nó** do Batch a instalar nos nós. Para obter mais informações sobre como especificar estas propriedades dos conjuntos, veja [Provision Linux compute nodes in Azure Batch pools (Aprovisionar nós de computação do Linux em conjuntos do Azure Batch)](batch-linux-nodes.md). Opcionalmente, pode anexar um ou mais discos de dados vazio às VMs do agrupamento criadas a partir de imagens do Marketplace ou incluir os discos de dados em imagens personalizadas utilizadas para criar as VMs.
 
 - A **Configuração de Serviços Cloud**, que especifica que o agrupamento é composto por nós de Serviços Cloud do Azure. Os Serviços Cloud *só* disponibilizam nós de computação do Windows.
 
@@ -148,9 +148,11 @@ Para utilizar uma imagem personalizada, terá de generalizar a imagem para prepa
 
 Para obter requisitos e passos detalhados, veja [Utilizar uma imagem personalizada para criar um conjunto de máquinas virtuais](batch-custom-images.md).
 
+#### <a name="container-support-in-virtual-machine-pools"></a>Suporte de contentor em agrupamentos de Máquinas Virtuais
 
+Ao criar um agrupamento de Configuração de Máquinas Virtuais com as APIs do Batch, pode configurar o agrupamento para executar tarefas nos contentores do Docker. Atualmente, tem de criar o agrupamento através do Windows Server 2016 Datacenter com a imagem de Contentores do Azure Marketplace ou fornecer uma imagem da VM personalizada que inclua o Docker Community Edition e quaisquer controladores necessários. As definições do agrupamento têm de incluir uma [configuração de contentor](/rest/api/batchservice/pool/add#definitions_containerconfiguration) que copie as imagens do contentor para as VMs quando for criado o agrupamento. As tarefas executadas no agrupamento podem, então, referenciar as imagens e as opções de execução do contentor.
 
-### <a name="compute-node-type-and-target-number-of-nodes"></a>Tipo de nó de comutação e número de nós de destino
+## <a name="compute-node-type-and-target-number-of-nodes"></a>Tipo de nó de comutação e número de nós de destino
 
 Quando cria um conjunto, pode especificar quais os tipos de nós de computação que pretende e o número de destino de cada um. Os dois tipos de nós de computação são:
 
@@ -258,6 +260,7 @@ Quando cria uma tarefa, pode especificar:
 * As **variáveis de ambiente** de que a aplicação precisa. Para obter mais informações, veja a secção [Definições de ambiente das tarefas](#environment-settings-for-tasks).
 * As **restrições** sob as quais a computação deve ocorrer. Por exemplo, as restrições incluem o tempo máximo dentro do qual a tarefa pode ser executada, o número máximo de vezes que uma tarefa falhada deve ser repetida e o tempo máximo durante o qual os ficheiros no diretório de trabalho da tarefa são retidos.
 * **Pacotes de aplicações** para implementar o nó de computação no qual a tarefa está agendada para ser executada. Os [pacotes de aplicações](#application-packages) fornecem uma implementação simplificada e o controlo de versões das aplicações que as suas tarefas executam. Os pacotes de aplicações ao nível das tarefas são particularmente úteis em ambientes de conjunto partilhado, em que as diferentes tarefas são executadas num conjunto, e o conjunto não é eliminado quando um trabalho estiver concluído. Se o trabalho tiver menos tarefas do que nós no conjunto, os pacotes de aplicações de tarefas podem minimizar a transferência de dados, uma vez que a aplicação é implementada apenas nos nós que executam tarefas.
+* Referência da **imagem de contentor** no Docker Hub ou num registo privado e as definições adicionais para criar um contentor do Docker no qual a tarefa seja executada no nó. Apenas pode especificar estas informações se o agrupamento tiver uma configuração de contentor.
 
 Além das tarefas que define para realizar a computação num nó, também são fornecidas pelo serviço Batch as seguintes tarefas especiais:
 
@@ -386,39 +389,12 @@ Geralmente, é utilizada uma abordagem combinada para lidar com cargas variávei
 
 ## <a name="virtual-network-vnet-and-firewall-configuration"></a>Configurar a rede virtual (VNet) e a firewall 
 
-Quando aprovisiona um conjunto de nós de computação no Batch, pode associá-lo a uma sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure. Para saber mais sobre como criar uma VNet com sub-redes, veja [Criar uma rede virtual do Azure com sub-redes](../virtual-network/virtual-networks-create-vnet-arm-pportal.md). 
+Quando aprovisiona um conjunto de nós de computação no Batch, pode associá-lo a uma sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure. Para utilizar uma VNet do Azure, a API do cliente do Batch tem de utilizar a autenticação do Azure Active Directory. O suporte do Azure Batch para o Azure AD está documentado em [Autenticar soluções de serviço do Batch com o Active Directory](batch-aad-auth.md).  
 
-Requisitos de VNet:
+### <a name="vnet-requirements"></a>Requisitos de VNet
+[!INCLUDE [batch-virtual-network-ports](../../includes/batch-virtual-network-ports.md)]
 
-* A rede virtual tem de estar na mesma **região** e **subscrição** do Azure da conta do Azure Batch.
-
-* Para os conjuntos criados com uma configuração de máquina virtual, apenas são suportadas redes virtuais baseadas no Azure Resource Manager (ARM). Para os conjuntos criados com uma configuração de serviços cloud, são suportados o ARM e redes virtuais clássicas. 
-
-* Para utilizar uma rede baseada no ARM, a API do cliente do Batch tem de utilizar a [autenticação do Azure Active Directory](batch-aad-auth.md). Para utilizar uma rede virtual clássica, o principal de serviço ''MicrosoftAzureBatch'' tem de ter a função ''Contribuinte de Máquina Virtual Clássica'' do Controlo de Acesso Baseado em Funções (RBAC) na rede virtual especificada. 
-
-* A sub-rede indicada deve ter **endereços IP** livres suficientes para acomodar o número de nós de destino, ou seja, a soma das propriedades `targetDedicatedNodes` e `targetLowPriorityNodes` do agrupamento. Se a sub-rede não tiver endereços IP livres suficientes, o serviço Batch aloca, parcialmente, os nós de computação do conjunto e devolve um erro de redimensionamento.
-
-* A sub-rede especificada tem de permitir a comunicação do serviço Batch para conseguir agendar tarefas nos nós de computação. Se a comunicação com os nós de computação for recusada por um **Grupo de Segurança de Rede (NSG)** associado à VNet, o serviço Batch define o estado dos nós de computação como **inutilizável**.
-
-* Se a VNet especificada tiver **Grupos de Segurança de Rede (NSG)** associados e/ou uma **firewall**, têm de ser ativadas algumas portas do sistema reservadas para a comunicação de entrada:
-
-- Nos agrupamentos criados com a configuração de máquina virtual, ative as portas 29876 e 29877, bem como a porta 22 para Linux e a 3389 para Windows. 
-- Nos agrupamentos criados com uma configuração de serviço cloud, ative as portas 10100, 20100 e 30100. 
-- Ative as ligações de saída para o Armazenamento do Azure na porta 443. Confirme também que o ponto final do Armazenamento do Azure pode ser resolvido por qualquer servidor DNS personalizado que sirva a sua VNet. Mais concretamente, deve ser resolvível um URL no formato `<account>.table.core.windows.net`.
-
-    A tabela seguinte descreve as portas de entrada que tem de ativar nos agrupamentos que criou com a configuração de máquina virtual:
-
-    |    Porta(s) de Destino    |    Endereço IP de origem      |    O Batch adiciona NSGs?    |    Necessário para a VM seja utilizável?    |    Ação do utilizador   |
-    |---------------------------|---------------------------|----------------------------|-------------------------------------|-----------------------|
-    |    <ul><li>Em agrupamentos criados com a configuração de máquina virtual: 29876, 29877</li><li>Nos agrupamentos criados com a configuração de serviço cloud: 10100, 20100, 30100, 30100</li></ul>         |    Apenas endereços IP de função do serviço Batch |    Sim. O Batch adiciona NSGs ao nível das interfaces de rede (NIC) anexadas a VMs. Estes NSGs permitem tráfego apenas de endereços IP da função do serviço Batch. Mesmo que abra estas portas a todo o tráfego da Internet, este será bloqueado na NIC. |    Sim  |  Não tem de especificar um NSG, porque o Batch só permite endereços IP do Batch. <br /><br /> No entanto, se especificar um NSG, certifique-se que estas portas estão abertas para tráfego de entrada. <br /><br /> Se especificar * como o IP de origem no NSG, o Batch continua a adicionar NSGs ao nível da NIC anexada às VMs. |
-    |    3389, 22               |    Máquinas de utilizador, utilizadas para fins de depuração, para que possa aceder remotamente à VM.    |    Não                                    |    Não                     |    Adicione NSGs se quiser permitir o acesso remoto (RDP/SSH) à VM.   |                 
-
-    A tabela seguinte descreve a porta de saída que tem de ativar para permitir o acesso ao Armazenamento do Azure:
-
-    |    Porta(s) de Saída    |    Destino    |    O Batch adiciona NSGs?    |    Necessário para a VM seja utilizável?    |    Ação do utilizador    |
-    |------------------------|-------------------|----------------------------|-------------------------------------|------------------------|
-    |    443    |    Storage do Azure    |    Não    |    Sim    |    Se adicionar NSGs, confirme que esta porta está aberta ao tráfego de saída.    |
-
+Para obter mais informações sobre como configurar um agrupamento do Batch numa VNet, veja [Criar um agrupamento de máquinas virtuais com a rede virtual](batch-virtual-network.md).
 
 ## <a name="scaling-compute-resources"></a>Dimensionar os recursos de computação
 Com o [dimensionamento automático](batch-automatic-scaling.md), pode fazer com que o serviço Batch ajuste dinamicamente o número de nós de computação num conjunto de acordo com a carga de trabalho e a utilização de recursos atual do seu cenário de computação. Esta funcionalidade permite-lhe reduzir o custo global de execução da sua aplicação ao utilizar apenas os recursos de que precisa e libertar aqueles de que não precisa.
@@ -525,11 +501,7 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 ## <a name="next-steps"></a>Passos seguintes
 * Saiba mais sobre o [Ferramentas e APIs do Batch](batch-apis-tools.md) disponíveis para criação de soluções para o Batch.
 * Ver um guia passo a passo para um exemplo de aplicação do Batch, em [Introdução à biblioteca do Azure Batch para .NET](batch-dotnet-get-started.md). Também existe uma [versão para Python](batch-python-tutorial.md) do tutorial que executa uma carga de trabalho em nós de computação do Linux.
-* Transfira e crie o projeto de exemplo [Batch Explorer][github_batchexplorer] para utilização enquanto programa as suas soluções do Batch. Ao utilizar o Batch Explorer, pode realizar o seguinte e muito mais:
-
-  * Monitorizar e manipular conjuntos e tarefas na sua conta do Batch
-  * Transferir `stdout.txt`, `stderr.txt` e outros ficheiros a partir de nós
-  * Criar utilizadores em nós e transferir ficheiros RDP para início de sessão remoto
+* Transfira e instale o [BatchLabs][batch_labs] para utilizar enquanto desenvolve as soluções do Batch. Utilize o BatchLabs para ajudar a criar, depurar e monitorizar aplicações do Azure Batch. 
 * Saiba como [criar conjuntos de nós de computação do Linux](batch-linux-nodes.md).
 * Visite o [fórum do Azure Batch][batch_forum] no MSDN. O fórum é o local certo para fazer perguntas, quer esteja apenas a aprender ou seja já perito no Batch.
 
@@ -541,7 +513,7 @@ Em situações onde algumas das suas tarefas estejam a falhar, a aplicação cli
 [msmpi]: https://msdn.microsoft.com/library/bb524831.aspx
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_sample_taskdeps]:  https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
-[github_batchexplorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
+[batch_labs]: https://azure.github.io/BatchLabs/
 [batch_net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [msdn_env_vars]: https://msdn.microsoft.com/library/azure/mt743623.aspx
 [net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx

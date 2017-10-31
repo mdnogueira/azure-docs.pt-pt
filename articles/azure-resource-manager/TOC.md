@@ -3,7 +3,6 @@
 ## [Fornecedores e tipos de recursos](resource-manager-supported-services.md)
 ## [Implementação clássica e Resource Manager](resource-manager-deployment-model.md)
 ## [Governação de subscrições](resource-manager-subscription-governance.md)
-## [Aplicações Geridas](managed-application-overview.md)
 
 # Introdução
 ## [Criar e implementar modelo](resource-manager-create-first-template.md)
@@ -60,12 +59,12 @@
 ### [Mover recursos para um grupo novo ou uma subscrição nova](resource-group-move-resources.md)
 ### [Organizar subscrições com grupos de gestão](../billing/billing-enterprise-mgmt-group-overview.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 ### [Exemplos de governação](resource-manager-subscription-examples.md)
+### [Aplicações geridas](../managed-applications/overview.md)
 
 ## Controlar Acesso
 ### Criar um principal de serviço
 #### [Azure PowerShell](resource-group-authenticate-service-principal.md)
 #### [CLI do Azure](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
-#### [CLI do Azure 1.0](resource-group-authenticate-service-principal-cli.md)
 #### [Portal do Azure](resource-group-create-service-principal-portal.md)
 ### [API de Autenticação para aceder a subscrições](resource-manager-api-authentication.md)
 ### [Bloquear recursos](resource-group-lock-resources.md)
@@ -81,13 +80,6 @@
 #### [Armazenamento](resource-manager-policy-storage.md)
 #### [VM do Linux](../virtual-machines/linux/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 #### [VM do Windows](../virtual-machines/windows/policy.md?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
-
-## Utilizar aplicações geridas
-### [Publicar a aplicação do catálogo de serviço](managed-application-publishing.md)
-### [Consumir a aplicação do catálogo de serviço](managed-application-consumption.md)
-### [Publicar a aplicação do mercado](managed-application-author-marketplace.md)
-### [Consumir a aplicação do mercado](managed-application-consume-marketplace.md)
-### [Criar definições de IU](managed-application-createuidefinition-overview.md)
 
 ## Auditoria
 ### [Ver registos de atividades](resource-group-audit.md)
@@ -125,21 +117,6 @@
 ### [Funções numéricas](resource-group-template-functions-numeric.md)
 ### [Funções de recursos](resource-group-template-functions-resource.md)
 ### [Funções de cadeia](resource-group-template-functions-string.md)
-## [Funções da definição de IU](managed-application-createuidefinition-functions.md)
-## [Elementos de definição de IU](managed-application-createuidefinition-elements.md)
-### [Microsoft.Common.DropDown](managed-application-microsoft-common-dropdown.md)
-### [Microsoft.Common.FileUpload](managed-application-microsoft-common-fileupload.md)
-### [Microsoft.Common.OptionsGroup](managed-application-microsoft-common-optionsgroup.md)
-### [Microsoft.Common.PasswordBox](managed-application-microsoft-common-passwordbox.md)
-### [Microsoft.Common.Section](managed-application-microsoft-common-section.md)
-### [Microsoft.Common.TextBox](managed-application-microsoft-common-textbox.md)
-### [Microsoft.Compute.CredentialsCombo](managed-application-microsoft-compute-credentialscombo.md)
-### [Microsoft.Compute.SizeSelector](managed-application-microsoft-compute-sizeselector.md)
-### [Microsoft.Compute.UserNameTextBox](managed-application-microsoft-compute-usernametextbox.md)
-### [Microsoft.Network.PublicIpAddressCombo](managed-application-microsoft-network-publicipaddresscombo.md)
-### [Microsoft.Network.VirtualNetworkCombo](managed-application-microsoft-network-virtualnetworkcombo.md)
-### [Microsoft.Storage.MultiStorageAccountCombo](managed-application-microsoft-storage-multistorageaccountcombo.md)
-### [Microsoft.Storage.StorageAccountSelector](managed-application-microsoft-storage-storageaccountselector.md)
 ## [PowerShell](/powershell/module/azurerm.resources)
 ## [CLI do Azure](/cli/azure/resource)
 ## [.NET](/dotnet/api/microsoft.azure.management.resourcemanager)

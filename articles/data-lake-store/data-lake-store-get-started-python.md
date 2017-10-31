@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 09/28/2017
+ms.date: 10/11/2017
 ms.author: nitinme
-ms.openlocfilehash: 601d756e0d6554d8a4db9cc83f6919fc36d1e844
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 76e84687815ca6f4b031e5f7143ba0079fb053db
+ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="account-management-operations-on-azure-data-lake-store-using-python"></a>Operações de gestão de contas no Azure Data Lake Store com o Python
 > [!div class="op_single_selector"]
@@ -35,6 +35,8 @@ Saiba como utilizar o Python SDK para o Azure Data Lake Store, para realizar ope
 * **Python**. Pode transferir o Python [aqui](https://www.python.org/downloads/). Este artigo utiliza a versão Python 3.6.2.
 
 * **Uma subscrição do Azure**. Consulte [Obter uma avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+* **Um grupo de recursos do Azure**. Para obter instruções, veja [Criar um grupo de recursos do Azure](../azure-resource-manager/resource-group-portal.md).
 
 ## <a name="install-the-modules"></a>Instalar os módulos
 
@@ -92,29 +94,6 @@ Nesta secção, vamos falar sobre as diferentes formas de autenticar com o Azure
 * Para a autenticação de utilizador final na sua aplicação, veja [End-user authentication with Data Lake Store using Python (Autenticação de utilizador final com o Data Lake Store através de Python)](data-lake-store-end-user-authenticate-python.md).
 * Para a autenticação serviço a serviço na sua aplicação, veja [Service-to-service authentication with Data Lake Store using Python (Autenticação serviço a serviço com o Data Lake Store através de Python)](data-lake-store-service-to-service-authenticate-python.md).
 
-## <a name="create-an-azure-resource-group"></a>Criar um Grupo de Recursos do Azure
-
-Utilize o fragmento de código seguinte para criar um Grupo de Recursos do Azure:
-
-    ## Declare variables
-    subscriptionId= 'FILL-IN-HERE'
-    resourceGroup = 'FILL-IN-HERE'
-    location = 'eastus2'
-    
-    ## Create resource management client object
-    resourceClient = ResourceManagementClient(
-        credentials,
-        subscriptionId
-    )
-    
-    ## Create an Azure Resource Group
-    resourceClient.resource_groups.create_or_update(
-        resourceGroup,
-        ResourceGroup(
-            location=location
-        )
-    )
-
 ## <a name="create-client-and-data-lake-store-account"></a>Criar cliente e conta do Data Lake Store
 
 O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. Utiliza o objeto de cliente para criar uma conta do Data Lake Store. Por fim, o fragmento cria um objeto de cliente do sistema de ficheiros.
@@ -122,9 +101,11 @@ O fragmento que se segue cria, primeiro, o cliente de conta do Data Lake Store. 
     ## Declare variables
     subscriptionId = 'FILL-IN-HERE'
     adlsAccountName = 'FILL-IN-HERE'
+    resourceGroup = 'FILL-IN-HERE'
+    location = 'eastus2'
 
     ## Create data lake store account management client object
-    adlsAcctClient = DataLakeStoreAccountManagementClient(credentials, subscriptionId)
+    adlsAcctClient = DataLakeStoreAccountManagementClient(armCreds, subscriptionId)
 
     ## Create a Data Lake Store account
     adlsAcctResult = adlsAcctClient.account.create(

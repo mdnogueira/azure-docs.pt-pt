@@ -3,11 +3,11 @@ layout: HubPage
 hide_bc: True
 title: "Documentação do Microsoft Azure"
 description: "Saiba como criar e gerir aplicações poderosas com os serviços cloud do Microsoft Azure. Obtenha documentação, código de exemplo, tutoriais e muito mais."
-ms.openlocfilehash: 9752a75dc20ec7f92b87ddb50ed74208982bd92e
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 5ca26e7fc6230140ee424e35a8d174613a4a93f4
+ms.sourcegitcommit: b83781292640e82b5c172210c7190cf97fabb704
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 10/27/2017
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -503,6 +503,12 @@ ms.lasthandoff: 10/24/2017
                                             <a href="/azure/germany/">
                                                 <img src="media/index/azure-germany.svg" alt="" />
                                                 <p>Azure Alemanha</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/china/">
+                                                <img src="media/index/azure-germany.svg" alt="" />
+                                                <p>Microsoft Azure China 21Vianet</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -1210,6 +1216,12 @@ ms.lasthandoff: 10/24/2017
                                             <a href="/azure/azure-resource-manager/">
                                                 <img src="media/index/azuredefaultblack.svg" alt="" />
                                                 <p>Azure Resource Manager</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/managed-applications">
+                                                <img src="media/index/i_managed-application.svg" alt="" />
+                                                <p>Aplicações Geridas</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -3629,18 +3641,18 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                 </a>
                             </li>
                             <li>
-                                <a href="/azure/azure-resource-manager/">
+                                <a href="/azure/managed-applications">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage">
-                                                        <img src="media/index/azuredefaultblack.svg" alt="" />
+                                                        <img src="media/index/i_managed-application.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Azure Resource Manager</h3>
-                                                    <p>Implemente e faça a gestão de recursos do Azure</p>
+                                                    <h3>Aplicações Geridas</h3>
+                                                    <p>Gerir soluções implementadas para os seus clientes</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3725,6 +3737,25 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                 <div class="cardText">
                                                     <h3>Microsoft Azure Alemanha</h3>
                                                     <p>Crie e aloje aplicações em conformidade com os regulamentos da Alemanha e normas internacionais chave, com o controlo adicional de um administrador de dados</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/azure/china/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/azure-germany.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Microsoft Azure China 21Vianet</h3>
+                                                    <p>Crie e aloje aplicações em conformidade com políticas e regulamentos de processamento de dados estipulados pela administração pública na China</p>
                                                 </div>
                                             </div>
                                         </div>

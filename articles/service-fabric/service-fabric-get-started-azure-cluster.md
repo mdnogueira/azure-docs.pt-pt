@@ -12,13 +12,13 @@ ms.devlang: dotNet
 ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/24/2017
+ms.date: 10/13/2017
 ms.author: ryanwi
-ms.openlocfilehash: de7fa7e6445e6eaf08bdcc8ae812611f20a98c34
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: facb9643e0bb848f0ea9aadf447f05af218fdd0f
+ms.sourcegitcommit: a7c01dbb03870adcb04ca34745ef256414dfc0b3
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="create-your-first-service-fabric-cluster-on-azure"></a>Crie o primeiro cluster Service Fabric no Azure
 Um [cluster do Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os microsserviços são implementados e geridos. Este guia de introdução ajuda-o a criar um cluster de cinco nós, em execução no Windows ou Linux, através do [Azure PowerShell](https://msdn.microsoft.com/library/dn135248) ou do [portal do Azure](http://portal.azure.com) em apenas alguns minutos.  
@@ -33,7 +33,7 @@ Inicie sessão no portal do Azure em [http://portal.azure.com](http://portal.azu
 ### <a name="create-the-cluster"></a>Criar o cluster
 
 1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
-2. Selecione **Computação** a partir do painel **Novo** e, em seguida, selecione **Cluster do Service Fabric** a partir do painel **Computação**.
+2. Procure **Service Fabric** e selecione **Cluster do Service Fabric** do **Cluster do Service Fabric** nos resultados devolvidos.  Clique em **Criar**.
 3. Preencha o formulário **Informações básicas** do Service Fabric. Para o **Sistema operativo**, selecione a versão do Windows ou do Linux que pretende que os nós do cluster executem. O nome de utilizador e palavra-passe introduzidos aqui são utilizados para iniciar sessão na máquina virtual. Para o **Grupo de recursos** crie um novo. Um grupo de recursos é um contentor lógico no qual os recursos do Azure são criados e geridos coletivamente. Quando terminar, clique em **OK**.
 
     ![Saída do programa de configuração do cluster][cluster-setup-basics]
@@ -98,83 +98,83 @@ Eliminar um grupo de recursos no portal do Azure:
     ![Eliminar o grupo de recursos][cluster-delete]
 
 
-## <a name="use-azure-powershell-to-deploy-a-secure-windows-cluster"></a>Utilizar o Azure Powershell para implementar um cluster Windows seguro
+## <a name="use-azure-powershell"></a>Utilizar o Azure Powershell
 1. Transfira o [módulo Azure Powershell versão 4.0 ou superior](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) para o computador.
 
-2. Abra uma janela do Windows PowerShell e execute o comando seguinte. 
-    
-    ```powershell
-
-    Get-Command -Module AzureRM.ServiceFabric 
-    ```
-
-    Deverá ver um resultado semelhante ao seguinte.
-
-    ![ps-list][ps-list]
-
-3. Inicie sessão no Azure e selecione a subscrição para a qual pretende criar o cluster.
+2. Execute o cmdlet [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/new-azurermservicefabriccluster) para criar um cluster do Service Fabric com cinco nós, protegido por um certificado x.509. O comando cria um certificado autoassinado e carrega-o para um novo cofre de chaves. O certificado é também copiado para um diretório local. Defina o parâmetro *-OS* para escolher a versão do Windows ou Linux que é executada nos nós do cluster. Personalize os parâmetros conforme necessário. 
 
     ```powershell
+    #Provide the subscription Id
+    $subscriptionId = 'yourSubscriptionId'
 
-    Login-AzureRmAccount
-
-    Select-AzureRmSubscription -SubscriptionId "Subcription ID" 
-    ```
-
-4. Execute o seguinte comando para criar agora um cluster seguro. Não se esqueça de personalizar os parâmetros. 
-
-    ```powershell
+    # Certificate variables.
     $certpwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force
-    $RDPpwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force 
-    $RDPuser="vmadmin"
-    $RGname="mycluster" # this is also the name of your cluster
-    $clusterloc="SouthCentralUS"
-    $subname="$RGname.$clusterloc.cloudapp.azure.com"
     $certfolder="c:\mycertificates\"
-    $clustersize=1 # can take values 1, 3-99
 
-    New-AzureRmServiceFabricCluster -ResourceGroupName $RGname -Location $clusterloc -ClusterSize $clustersize -VmUserName $RDPuser -VmPassword $RDPpwd -CertificateSubjectName $subname -CertificatePassword $certpwd -CertificateOutputFolder $certfolder
+    # Variables for VM admin.
+    $adminuser="vmadmin"
+    $adminpwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force 
+
+    # Variables for common values
+    $clusterloc="SouthCentralUS"
+    $clustername = "mysfcluster"
+    $groupname="mysfclustergroup"       
+    $vmsku = "Standard_D2_v2"
+    $vaultname = "mykeyvault"
+    $subname="$clustername.$clusterloc.cloudapp.azure.com"
+
+    # Set the number of cluster nodes. Possible values: 1, 3-99
+    $clustersize=5 
+
+    # Set the context to the subscription ID where the cluster will be created
+    Login-AzureRmAccount
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionId $subscriptionId
+
+    # Create the Service Fabric cluster.
+    New-AzureRmServiceFabricCluster -Name $clustername -ResourceGroupName $groupname -Location $clusterloc `
+    -ClusterSize $clustersize -VmUserName $adminuser -VmPassword $adminpwd -CertificateSubjectName $subname `
+    -CertificatePassword $certpwd -CertificateOutputFolder $certfolder `
+    -OS WindowsServer2016DatacenterwithContainers -VmSku $vmsku -KeyVaultName $vaultname
     ```
 
-    O comando pode demorar de 10 minutos a 30 minutos a concluir e, no final do mesmo, deverá obter um resultado semelhante ao seguinte. A saída contém informações sobre o certificado, o KeyVault para onde foi carregado e a pasta local onde o certificado é copiado. 
+    O comando pode demorar de 10 minutos a 30 minutos a concluir e, no final do mesmo, deverá obter um resultado semelhante ao seguinte. A saída contém informações sobre o certificado, o KeyVault para onde foi carregado e a pasta local onde o certificado é copiado.     
 
-    ![ps-out][ps-out]
+3. Copie a saída completa e guarde num ficheiro de texto porque temos de consultá-la. Tome nota das seguintes informações da saída. 
 
-5. Copie a saída completa e guarde num ficheiro de texto porque temos de consultá-la. Tome nota das seguintes informações da saída. 
-
-    - **CertificateSavedLocalPath** : c:\mycertificates\mycluster20170504141137.pfx
-    - **CertificateThumbprint** : C4C1E541AD512B8065280292A8BA6079C3F26F10
-    - **ManagementEndpoint** : https://mycluster.southcentralus.cloudapp.azure.com:19080
-    - **ClientConnectionEndpointPort** : 19000
+    - CertificateSavedLocalPath
+    - CertificateThumbprint
+    - ManagementEndpoint
+    - ClientConnectionEndpointPort
 
 ### <a name="install-the-certificate-on-your-local-machine"></a>Instalar o certificado no computador local
   
 Para ligar ao cluster, terá de instalar o certificado no arquivo pessoal (O meu) do utilizador atual. 
 
-Execute o PowerShell seguinte
+Execute o seguinte:
 
 ```powershell
+$certpwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force
 Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
-        -FilePath C:\mycertificates\the name of the cert.pfx `
-        -Password (ConvertTo-SecureString -String certpwd -AsPlainText -Force)
+        -FilePath C:\mycertificates\<certificatename>.pfx `
+        -Password $certpwd
 ```
 
 Está agora pronto para ligar ao seu cluster seguro.
 
 ### <a name="connect-to-a-secure-cluster"></a>Ligar a um cluster seguro 
 
-Execute o seguinte comando do PowerShell para ligar a um cluster seguro. Os detalhes do certificado têm de corresponder a um certificado que foi utilizado para configurar o cluster. 
+Execute o cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) para ligar a um cluster seguro. Os detalhes do certificado têm de corresponder a um certificado que foi utilizado para configurar o cluster. 
 
 ```powershell
-Connect-ServiceFabricCluster -ConnectionEndpoint <Cluster FQDN>:19000 `
+Connect-ServiceFabricCluster -ConnectionEndpoint <ManagementEndpoint>:19000 `
           -KeepAliveIntervalInSec 10 `
-          -X509Credential -ServerCertThumbprint <Certificate Thumbprint> `
-          -FindType FindByThumbprint -FindValue <Certificate Thumbprint> `
+          -X509Credential -ServerCertThumbprint <CertificateThumbprint> `
+          -FindType FindByThumbprint -FindValue <CertificateThumbprint> `
           -StoreLocation CurrentUser -StoreName My
 ```
 
-
-O exemplo seguinte mostra os parâmetros concluídos: 
+O exemplo seguinte mostra os parâmetros de exemplo: 
 
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint mycluster.southcentralus.cloudapp.azure.com:19000 `
@@ -195,11 +195,10 @@ Get-ServiceFabricClusterHealth
 Um cluster é constituído por outros recursos do Azure, além do próprio recurso do cluster. A forma mais simples de eliminar o cluster e todos os recursos que consome é eliminando o grupo de recursos. 
 
 ```powershell
-
-Remove-AzureRmResourceGroup -Name $RGname -Force
-
+$groupname="mysfclustergroup"
+Remove-AzureRmResourceGroup -Name $groupname -Force
 ```
-## <a name="use-azure-cli-to-deploy-a-secure-linux-cluster"></a>Utilizar a CLI do Azure para implementar um cluster Linux seguro
+## <a name="use-azure-cli"></a>Utilizar a CLI do Azure
 
 1. Instale o [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) no seu computador.
 2. Inicie sessão no Azure e selecione a subscrição na qual pretende criar o cluster.
@@ -207,7 +206,7 @@ Remove-AzureRmResourceGroup -Name $RGname -Force
    az login
    az account set --subscription <GUID>
    ```
-3. Execute o comando [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) para criar um cluster seguro.
+3. Execute o comando [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) para criar um cluster do Service Fabric com cinco nós, protegido por um certificado x.509. O comando cria um certificado autoassinado e carrega-o para um novo cofre de chaves. O certificado é também copiado para um diretório local. Defina o parâmetro *-os* para escolher a versão do Windows ou Linux que é executada nos nós do cluster. Personalize os parâmetros conforme necessário.
 
     ```azurecli
     #!/bin/bash
@@ -260,6 +259,14 @@ ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3392
 ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3393
 ```
 
+### <a name="remove-the-cluster"></a>Remover o cluster
+Um cluster é constituído por outros recursos do Azure, além do próprio recurso do cluster. A forma mais simples de eliminar o cluster e todos os recursos que consome é eliminando o grupo de recursos. 
+
+```azurecli
+ResourceGroupName = "aztestclustergroup"
+az group delete --name $ResourceGroupName
+```
+
 ## <a name="next-steps"></a>Passos seguintes
 Agora que configurou um cluster de desenvolvimento, experimente o seguinte:
 * [Visualizar o cluster com o Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
@@ -273,5 +280,3 @@ Agora que configurou um cluster de desenvolvimento, experimente o seguinte:
 [cluster-status]: ./media/service-fabric-get-started-azure-cluster/clusterstatus.png
 [service-fabric-explorer]: ./media/service-fabric-get-started-azure-cluster/sfx.png
 [cluster-delete]: ./media/service-fabric-get-started-azure-cluster/delete.png
-[ps-list]: ./media/service-fabric-get-started-azure-cluster/pslist.PNG
-[ps-out]: ./media/service-fabric-get-started-azure-cluster/psout.PNG

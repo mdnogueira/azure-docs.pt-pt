@@ -12,13 +12,13 @@ ms.devlang: tbd
 ms.topic: hero-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 06/26/2017
+ms.date: 10/16/2017
 ms.author: sethm
-ms.openlocfilehash: 99a377db6341d90d263b98e14227db61dd9beabd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c381489c3cb5b42505d0cdf01618edb370793304
+ms.sourcegitcommit: a7c01dbb03870adcb04ca34745ef256414dfc0b3
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="get-started-with-service-bus-queues"></a>Introdução às filas do Service Bus
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -56,7 +56,7 @@ Abra o Visual Studio e crie um novo projeto de **Aplicação de consola (.NET Fr
 
 ### <a name="add-the-service-bus-nuget-package"></a>Adicionar o pacote NuGet do Service Bus
 1. Clique com o botão direito do rato no projeto recém-criado e selecione **Gerir Pacotes NuGet**.
-2. Clique no separador **Procurar**, procure **Microsoft Azure Service Bus** e selecione o item **WindowsAzure.ServiceBus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
+2. Clique no separador **Procurar**, procure **Windows Azure Service Bus** e selecione o item **WindowsAzure.ServiceBus**. Clique em **Instalar** para concluir a instalação e, em seguida, feche esta caixa de diálogo.
    
     ![Selecionar um pacote NuGet][nuget-pkg]
 
@@ -115,7 +115,7 @@ Abra o Visual Studio e crie um novo projeto de **Aplicação de consola (.NET Fr
         }
     }
     ```
-3. Execute o programa e verifique o portal do Azure: clique no nome da sua fila no painel **Descrição geral** do espaço de nomes. É apresentado o painel **Aspetos essenciais** da fila. Repare que o valor de **Contagem de Mensagens Ativas** deve ser agora 1. Sempre que executar a aplicação do remetente sem recuperar as mensagens, esse valor aumenta 1. Note também que o tamanho atual da fila aumenta sempre que a aplicação adiciona uma mensagem à fila.
+3. Execute o programa e verifique o portal do Azure: clique no nome da sua fila na janela **Descrição Geral** do espaço de nomes. É apresentada a janela **Informações Básicas** da fila. Repare que o valor de **Contagem de Mensagens Ativas** deve ser agora 1. Sempre que executar a aplicação do remetente sem recuperar as mensagens, esse valor aumenta 1. Note também que o tamanho atual da fila aumenta sempre que a aplicação adiciona uma mensagem à fila.
    
       ![Tamanho da mensagem][queue-message]
 
@@ -178,7 +178,7 @@ Abra o Visual Studio e crie um novo projeto de **Aplicação de consola (.NET Fr
    
     ![Comprimento da fila][queue-message-receive]
 
-Parabéns! Acabou de criar uma fila, enviar uma mensagem e receber uma mensagem.
+Parabéns! Acabou de criar uma fila, enviou uma mensagem para a fila e recebeu uma mensagem da mesma.
 
 ## <a name="next-steps"></a>Passos seguintes
 
@@ -189,4 +189,4 @@ Consulte o nosso [repositório do GitHub com exemplos](https://github.com/Azure/
 [nuget-pkg]: ./media/service-bus-dotnet-get-started-with-queues/nuget-package.png
 [queue-message]: ./media/service-bus-dotnet-get-started-with-queues/queue-message.png
 [queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive.png
-[github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
+

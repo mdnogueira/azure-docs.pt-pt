@@ -16,11 +16,11 @@ ms.topic: get-started-article
 ms.date: 09/01/2017
 ms.author: guybo
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5fa08049fd0b13945de307e9d28224ea0d5a1307
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 303ead6e1d98d464aeba2687c2a72a38bc1ce209
+ms.sourcegitcommit: 2d1153d625a7318d7b12a6493f5a2122a16052e0
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/20/2017
 ---
 # <a name="what-are-virtual-machine-scale-sets-in-azure"></a>O que são os conjuntos de dimensionamento de máquinas virtuais do Azure?
 Os conjuntos de dimensionamento de máquinas virtuais são um recurso de computação do Azure que pode utilizar para implementar e gerir um conjunto de VMs idênticas. Com todas as VMs configuradas da mesma forma, os conjuntos de dimensionamento foram concebidos para suportar um autêntico dimensionamento automático, sem que seja necessário o pré-aprovisionamento de VMs. Assim, é mais fácil criar serviços em grande escala orientados para macrocomputação, macrodados e cargas de trabalho em contentores.
@@ -33,12 +33,12 @@ Para obter mais informações sobre os conjuntos de dimensionamento, veja estes 
 * [Virtual Machine Scale Sets with Guy Bowerman (Conjuntos de Dimensionamento de Máquinas Virtuais, com Guy Bowerman)](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-191-Virtual-Machine-Scale-Sets-with-Guy-Bowerman)
 
 ## <a name="creating-and-managing-scale-sets"></a>Criar e gerir conjuntos de dimensionamento
-Pode criar um conjunto de dimensionamento no [portal do Azure](https://portal.azure.com) ao selecionar **novo** e escrever **dimensionamento** na barra de pesquisa. É apresentado **Conjunto de dimensionamento de máquinas virtuais** nos resultados. A partir daí, pode preencher os campos necessários para personalizar e implementar o seu conjunto de dimensionamento. Também tem opções no portal para configurar regras de dimensionamento automático básicas com base na utilização da CPU. 
+Pode criar um conjunto de dimensionamento no [portal do Azure](https://portal.azure.com) ao selecionar **novo** e escrever **dimensionamento** na barra de pesquisa. É apresentado **Conjunto de dimensionamento de máquinas virtuais** nos resultados. A partir daí, pode preencher os campos necessários para personalizar e implementar o seu conjunto de dimensionamento. Também tem opções no portal para configurar regras de dimensionamento automático básicas com base na utilização da CPU. Para gerir o seu conjunto de dimensionamento, pode utilizar o portal do Azure, [cmdlets do Azure PowerShell](virtual-machine-scale-sets-windows-manage.md) ou a CLI 2.0 do Azure.
 
 Os conjuntos de dimensionamento podem ser implementados numa [zona de disponibilidade](../availability-zones/az-overview.md).
 
 > [!NOTE]
-> Os conjuntos de dimensionamento de máquinas virtuais só suportam a implementação de uma zona de disponibilidade única. A implementação de várias zonas será suportada no futuro.
+> Atualmente, os conjuntos de dimensionamento de máquinas virtuais só suportam a implementação de uma zona de disponibilidade única. A implementação de várias zonas será suportada no futuro.
 
 Pode utilizar modelos JSON e [APIs REST](https://msdn.microsoft.com/library/mt589023.aspx), tais como VMs do Azure Resource Manager individuais, para definir e implementar conjuntos de dimensionamento. Por conseguinte, pode utilizar qualquer método de implementação Azure Resource Manager padrão. Para obter mais informações sobre os modelos, veja [Authoring Azure Resource Manager templates (Criar modelos do Azure Resource Manager)](../azure-resource-manager/resource-group-authoring-templates.md).
 
@@ -46,8 +46,23 @@ Está disponível uma gama de modelos de exemplos de conjuntos de dimensionament
 
 Para os exemplos de modelo de Início rápido, um botão "Implementar no Azure" no ficheiro Leia-me para cada modelo é ligado à funcionalidade Implementação do portal. Para implementar o conjunto de dimensionamento, clique no botão e preencha os parâmetros obrigatórios no portal. 
 
-## <a name="scaling-a-scale-set-out-and-in"></a>Aumentar e reduzir verticalmente um conjunto de dimensionamento
-Pode clicar na secção **Dimensionamento**, em **Definições**, para alterar a capacidade dos conjuntos de dimensionamento no portal do Azure. 
+
+## <a name="autoscale"></a>Dimensionamento Automático
+Para manter o desempenho consistente das aplicações, pode aumentar ou diminuir automaticamente o número de instâncias de VM no seu conjunto de dimensionamento. Esta capacidade de dimensionamento automático reduz os custos de gestão para monitorizar e otimizar o seu conjunto de dimensionamento à medida que a procura dos clientes muda ao longo do tempo. Pode definir regras com base nas métricas de desempenho, na resposta da aplicação ou num agendamento fixo, sendo que o conjunto de dimensionamento é dimensionado automaticamente conforme necessário.
+
+Para regras de dimensionamento automático básicas, pode utilizar métricas de desempenho baseadas no anfitrião, tais como a utilização da CPU ou a E/S do disco. Estas métricas baseadas no anfitrião já estão disponíveis, sem instalação e configuração de agentes ou extensões adicionais. Podem ser criadas regras de dimensionamento automático que utilizem métricas baseadas no anfitrião com uma das seguintes ferramentas:
+
+- [Portal do Azure](virtual-machine-scale-sets-autoscale-portal.md)
+- [Azure PowerShell](virtual-machine-scale-sets-autoscale-powershell.md)
+- [CLI 2.0 do Azure](virtual-machine-scale-sets-autoscale-cli.md)
+
+Para utilizar métricas de desempenho mais granulares, pode instalar e configurar a extensão de diagnóstico do Azure nas instâncias de VM no seu conjunto de dimensionamento. A extensão de diagnóstico do Azure permite-lhe recolher métricas de desempenho adicionais, como o consumo de memória, a partir de cada instância de VM. Estas métricas de desempenho são transmitidas em fluxo para uma conta de armazenamento do Azure e pode criar regras de dimensionamento automático para consumir estes dados. Para obter mais informações, veja os artigos para saber como ativar a extensão de diagnóstico do Azure numa [VM do Linux](../virtual-machines/linux/diagnostic-extension.md) ou numa [VM do Windows](../virtual-machines/windows/ps-extensions-diagnostics.md).
+
+Para monitorizar o desempenho da própria aplicação, pode instalar e configurar um pequeno pacote de instrumentação na sua aplicação para o App Insights. Em seguida, podem ser transmitidas em fluxo métricas de desempenho detalhadas para o tempo de resposta ou o número de sessões da aplicação a partir da sua aplicação. Em seguida, pode criar regras de dimensionamento automático com limiares definidos para o desempenho ao nível da própria aplicação. Para obter mais informações sobre o App Insights, veja [O que é o Application Insights](../application-insights/app-insights-overview.md).
+
+
+## <a name="manually-scaling-a-scale-set-out-and-in"></a>Aumentar e reduzir verticalmente um conjunto de dimensionamento manualmente
+Pode clicar na secção **Dimensionamento**, em **Definições**, para alterar manualmente a capacidade dos conjuntos de dimensionamento no portal do Azure. 
 
 Para alterar a capacidade dos conjuntos de dimensionamento na linha de comandos, utilize o comando **scale** na [CLI do Azure](https://github.com/Azure/azure-cli). Por exemplo, utilize este comando para definir um conjunto de dimensionamento com uma capacidade de dez VMs:
 
@@ -67,26 +82,6 @@ Para aumentar ou reduzir o número de máquinas virtuais num conjunto de dimensi
 
 Se estiver a reimplementar um modelo do Azure Resource Manager para alterar a capacidade, pode definir um modelo muito mais pequeno que inclua apenas o pacote da propriedade **SKU** e a capacidade atualizada. [Segue-se um exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing).
 
-## <a name="autoscale"></a>Dimensionamento Automático
-
-Opcionalmente, é possível configurar um conjunto de dimensionamento com definições de dimensionamento automático, se for criado no portal do Azure. O número de VMs pode, depois, ser aumentado ou diminuído, com base na utilização média da CPU. 
-
-Muitos dos modelos de conjuntos de dimensionamento nos [modelos de Início Rápido do Azure](https://github.com/Azure/azure-quickstart-templates) têm definições de dimensionamento automático. Também pode adicionar definições de dimensionamento automático a conjuntos de dimensionamento já existentes. Por exemplo, este script do Azure PowerShell adiciona dimensionamento automático baseado na CPU a um conjunto de dimensionamento:
-
-```PowerShell
-
-$subid = "yoursubscriptionid"
-$rgname = "yourresourcegroup"
-$vmssname = "yourscalesetname"
-$location = "yourlocation" # e.g. southcentralus
-
-$rule1 = New-AzureRmAutoscaleRule -MetricName "Percentage CPU" -MetricResourceId /subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/virtualMachineScaleSets/$vmssname -Operator GreaterThan -MetricStatistic Average -Threshold 60 -TimeGrain 00:01:00 -TimeWindow 00:05:00 -ScaleActionCooldown 00:05:00 -ScaleActionDirection Increase -ScaleActionValue 1
-$rule2 = New-AzureRmAutoscaleRule -MetricName "Percentage CPU" -MetricResourceId /subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/virtualMachineScaleSets/$vmssname -Operator LessThan -MetricStatistic Average -Threshold 30 -TimeGrain 00:01:00 -TimeWindow 00:05:00 -ScaleActionCooldown 00:05:00 -ScaleActionDirection Decrease -ScaleActionValue 1
-$profile1 = New-AzureRmAutoscaleProfile -DefaultCapacity 2 -MaximumCapacity 10 -MinimumCapacity 2 -Rules $rule1,$rule2 -Name "autoprofile1"
-Add-AzureRmAutoscaleSetting -Location $location -Name "autosetting1" -ResourceGroup $rgname -TargetResourceId /subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/virtualMachineScaleSets/$vmssname -AutoscaleProfiles $profile1
-```
-
-Pode encontrar uma lista de métricas válidas para dimensionar em [Supported metrics with Azure Monitor (Métricas suportadas com o Azure Monitor)](../monitoring-and-diagnostics/monitoring-supported-metrics.md), na secção "Microsoft.Compute/virtualMachineScaleSets". Também estão disponíveis opções de dimensionamento automático mais avançadas, incluindo o dimensionamento automático com base numa agenda e a utilização de webhooks para integrar em sistemas de alerta.
 
 ## <a name="monitoring-your-scale-set"></a>Monitorizar o conjunto de dimensionamento
 O [portal do Azure](https://portal.azure.com) apresenta uma lista de conjuntos de dimensionamento e mostra as propriedades dos mesmos. Também suporta operações de gestão. Pode realizar operações de gestão em conjuntos de dimensionamento e em VMs individuais dentro de um conjunto de dimensionamento. O portal disponibiliza, igualmente, um gráfico de utilização de recursos personalizável. 

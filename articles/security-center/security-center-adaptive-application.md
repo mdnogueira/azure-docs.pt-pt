@@ -1,6 +1,6 @@
 ---
 title: "Controlos de Aplicações Adaptativos no Centro de Segurança do Azure | Microsoft Docs"
-description: "Este documento ajuda-o a utilizar os controlos de aplicações adaptativos no Centro de Segurança do Azure para adicionar as aplicações em execução em VMs do Azure à lista de permissões"
+description: "Este documento ajuda-o a utilizar os controlos de aplicações adaptativos no Centro de Segurança do Azure para adicionar as aplicações em execução em VMs do Azure à lista de permissões."
 services: security-center
 documentationcenter: na
 author: YuriDio
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2017
+ms.date: 10/18/2017
 ms.author: yurid
-ms.openlocfilehash: 9c3a9a7255bbbdab8f4c356eb07022d7f1d242d7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e68ec1b7d82a0e1d98953521b05f423044e6d2f2
+ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="adaptive-application-controls-in-azure-security-center-preview"></a>Controlos de Aplicações Adaptativos no Centro de Segurança do Azure (Pré-visualização)
 Saiba como configurar o controlo de aplicações no Centro de Segurança do Azure com estas instruções.
@@ -27,24 +27,24 @@ Saiba como configurar o controlo de aplicações no Centro de Segurança do Azur
 Os controlos de aplicações adaptativos ajudam a controlar que aplicações podem ser executadas nas suas VMs localizadas no Azure, o que, entre outros benefícios, permite proteger as VMs contra malware. O Centro de Segurança utiliza machine learning para analisar os processos que estão a ser executados na VM e ajuda-o a aplicar regras de inclusão nas listas de permissões com base nessas informações. Esta capacidade simplifica grandemente o processo de configuração e manutenção de listas de permissões de aplicações, permitindo-lhe:
 
 - Bloquear ou alertar relativamente a tentativas de execução de aplicações maliciosas, incluindo aplicações que possam não ser detetadas pelas soluções de antimalware.
-- Estar em conformidade com a política de segurança da sua organização que rege a utilização de software licenciado apenas.
+- Estar em conformidade com a política de segurança da sua organização que estabelece que só pode ser utilizado software licenciado.
 - Evitar a utilização de software não desejado no seu ambiente.
 - Evitar a execução de aplicações antigas e não suportadas.
 - Impedir ferramentas de software específicas que não são permitidas na sua organização.
 - Permitir que a equipa de TI controle o acesso a dados confidenciais através da utilização de aplicações.
 
 > [!NOTE]
-> Os controlos de aplicações adaptável estão disponíveis para os clientes do Centro de Segurança do Azure Standard como pré-visualização pública limitada. [Envie-nos](mailto:ASC_appcontrol@microsoft.com) um e-mail com os seus IDs de subscrição para aderir à pré-visualização.
+> Os controlos de aplicações adaptável estão disponíveis para os clientes do Centro de Segurança do Azure Standard como pré-visualização pública limitada. Envie um e-mail para a [Microsoft](mailto:ASC_appcontrol@microsoft.com) com os seus IDs de subscrição para aderir à pré-visualização.
 
 ## <a name="how-to-enable-adaptive-application-controls"></a>Como ativar os controlos de aplicações adaptáveis?
-Os controlos de aplicações adaptáveis ajudam-no a definir um conjunto de aplicações cuja execução é permitida em grupos de recursos configurados. Esta funcionalidade só está disponível para máquinas Windows (todas as versões, clássica ou Azure Resource Manager). Siga os passos abaixo para configurar a inclusão de aplicações nas listas de permissões no Centro de Segurança:
+Os controlos de aplicações adaptáveis ajudam-no a definir um conjunto de aplicações cuja execução é permitida em grupos de recursos configurados. Esta funcionalidade só está disponível para máquinas Windows (todas as versões, clássica ou Azure Resource Manager). Os passos seguintes podem ser utilizados para configurar a inclusão de aplicações nas listas de permissões do Centro de Segurança:
 
 1.  Abra o dashboard do **Centro de Segurança** e clique em **Descrição Geral**.
 2.  Em **Defesa na cloud avançada**, o mosaico **Controlos de aplicações adaptáveis** mostra o número de VMs que têm, atualmente, o controlo implementado em comparação com todas as VMs. Também mostra o número de problemas que foram encontrados na última semana: 
 
     ![Controlos de aplicações adaptáveis](./media/security-center-adaptive-application\security-center-adaptive-application-fig1.png)
 
-3. Clique no mosaico **Controlos de aplicações adaptáveis** para ver mais opções.
+3. Clique no mosaico **Controlos de aplicações adaptáveis** para obter mais opções.
 
     ![controlos](./media/security-center-adaptive-application/security-center-adaptive-application-fig2.png)
 
@@ -52,8 +52,6 @@ Os controlos de aplicações adaptáveis ajudam-no a definir um conjunto de apli
     * **Recomendados**: lista de grupos de recursos para os quais o controlo de aplicações é recomendado. O Centro de Segurança utiliza machine learning para identificar as VMs que são boas candidatas para o controlo de aplicações com base no facto de executarem consistentemente as mesmas aplicações.
     * **Configurados**: lista de grupos de recursos que contém as VMs que foram configuradas com o controlo de aplicações. 
     * **Nenhuma recomendação**: lista de grupos de recursos que contêm as VMs para as quais não existem recomendações de controlo de aplicações. Por exemplo, VMs em que as aplicações estão sempre a ser alteradas e que não atingiram um estado estável.
-
-As secções que se seguem mostram mais pormenorizadamente cada opção e como utilizá-la.
 
 ### <a name="configure-a-new-application-control-policy"></a>Configurar uma política de controlo de aplicações nova
 Clique no separador **Recomendados** para ver uma lista dos grupos de recursos com recomendações de controlo de aplicações:
@@ -75,9 +73,11 @@ Em **Selecionar VMs**, reveja a lista de VMs recomendadas e desmarque aquelas à
 - **NOME**: o caminho completo da aplicação
 - **PROCESSOS**: quantas aplicações residem em cada caminho
 - **COMUNS**: “verdadeiro” indica que estes processos foram executados na maioria das VMs deste grupo de recursos.
-- **EXPLORÁVEIS**: um ícone de aviso indica se as aplicações podem ser utilizadas por um atacante para ignorar as listas de permissões de aplicações. É vivamente recomendado que estas aplicações sejam analisadas antes da aprovação. 
+- **EXPLORÁVEIS**: um ícone de aviso indica se as aplicações podem ser utilizadas por um atacante para ignorar as listas de permissões de aplicações. Recomenda-se que reveja estas aplicações antes da respetiva aprovação. 
 
-Depois de concluir as suas seleções, clique no botão **Criar**. Por predefinição, o Centro de Segurança permite sempre o controlo de aplicações no modo *Auditoria*. Depois de confirmar que a lista de permissões não tem nenhum efeito adverso na sua carga de trabalho, pode alterar para o modo *Impor*.
+Depois de concluir as suas seleções, clique no botão **Criar**. Por predefinição, o Centro de Segurança ativa sempre o controlo de aplicações no modo *Auditoria*. Depois de confirmar que a lista de permissões não tem nenhum efeito adverso na sua carga de trabalho, pode alterar para o modo *Imposição*.
+
+O Centro de Segurança precisa de um mínimo de duas semanas de dados para criar uma linha de base e preencher as recomendações exclusivas por grupo de VMs. Os novos clientes do escalão standard do Centro de Segurança devem esperar um comportamento em que, primeiro, os grupos de VMs serão apresentados no separador *nenhuma recomendação*.
 
 > [!NOTE]
 > Como melhor prática de segurança, o Centro de Segurança tentará sempre criar uma regra de publicador para as aplicações que devem ser adicionadas à lista de permissões e, a menos que as aplicações não tenham informações do publicador (ou seja, não sejam assinadas), é criada uma regra de caminho para o caminho completo do EXE específico.
@@ -111,7 +111,7 @@ Conforme mencionado anteriormente, por predefinição, é sempre configurada uma
 A lista inclui:
 
 - **PROBLEMAS**: todas as violações que foram registadas, que podem incluir o seguinte:
-    - **ViolationsBlocked**: quando a solução está ativada no modo Impor e tenta executar uma aplicação que não se encontra na lista de permissões.
+    - **ViolationsBlocked**: quando a solução está ativada no modo Imposição e tenta executar uma aplicação que não se encontra na lista de permissões.
     - **ViolationsAudited**: quando a solução está ativada no modo Auditoria e é executada uma aplicação que não está na lista de permissões.
     - **RulesViolatedManually**: quando um utilizador tentou configurar manualmente as regras nas VMs e não através do portal de gestão do ASC.
 - **N.º DE VMS**: o número de máquinas virtuais com este tipo de problema.
@@ -124,7 +124,7 @@ Se clicar em cada uma destas linhas, será redirecionado para a página [Registo
 
 ![Regras de inclusão em listas de permissões](./media/security-center-adaptive-application/security-center-adaptive-application-fig9.png)
 
-Se clicar nos três pontos no final de cada linha, poderá eliminar essa regra específica. As **Regras de inclusão em listas de permissões de caminho** mostram o caminho completo de aplicação (incluindo o executável) das aplicações que não estão assinadas com um certificado digital, mas ainda são atuais nas regras de inclusão. 
+Se clicar nos três pontos no final de cada linha, poderá eliminar essa regra específica. As **Regras de inclusão em listas de permissões de caminho** mostram o caminho completo de aplicação (incluindo o executável) das aplicações que não estão assinadas com um certificado digital, mas ainda são atuais nas regras de inclusão em listas de permissões. 
 
 > [!NOTE]
 > Por predefinição, como melhor prática de segurança, o Centro de Segurança tentará sempre criar uma regra de publicador para os EXEs que devem ser adicionados à lista de permissões e, a menos que os EXEs não tenham informações do publicador (ou seja, não sejam assinados), é criada uma regra de caminho para o caminho completo do EXE específico.
@@ -147,7 +147,7 @@ A lista contém:
 - **NOME**: o nome do grupo de recursos e da subscrição.
 - **VMs**: o número de máquinas virtuais no grupo de recursos.
 
-## <a name="see-also"></a>Consultar também
+## <a name="next-steps"></a>Passos seguintes
 Neste documento, aprendeu a utilizar os controlos de aplicações adaptativos no Centro de Segurança do Azure para adicionar as aplicações em execução em VMs do Azure à lista de permissões. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
 * [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Saiba como gerir alertas e responder a incidentes de segurança no Centro de Segurança.

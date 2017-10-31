@@ -15,20 +15,20 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 04/21/2017
 ms.author: omravi
-ms.openlocfilehash: c247a7abd3d1682f8ccd1940e506ef54f9409263
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 123ecca28f0d970851487827d0d18e244ce6d98e
+ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="create-an-event-source-for-your-time-series-insights-environment-using-the-ibiza-portal"></a>Criar uma origem de evento para o seu ambiente Time Series Insights através do portal Ibiza
+# <a name="create-an-event-source-for-your-time-series-insights-environment-using-the-azure-portal"></a>Criar uma origem de eventos para o seu ambiente do Time Series Insights com o portal do Azure
 
 A Origem de Eventos do Time Series Insights deriva de um mediador de eventos, como os Hubs de Eventos do Azure. O Time Series Insights liga-se diretamente às Origens de Eventos, ingerindo o fluxo de dados sem que os utilizadores tenham de escrever uma única linha de código. Atualmente, o Time Series Insights suporta Hubs de Eventos do Azure e Hubs IoT do Azure. No futuro, serão adicionadas mais Origens de Eventos.
 
 ## <a name="steps-to-add-an-event-source-to-your-environment"></a>Passos para adicionar uma origem de eventos ao seu ambiente
 
-1.  Inicie sessão no [portal Azure](https://portal.azure.com).
-2.  Clique em "Todos os recursos" no menu do lado esquerdo do portal Ibiza.
+1.  Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2.  Clique em "Todos os recursos" no menu no lado esquerdo do Portal do Azure.
 3.  Selecione o seu ambiente do Time Series Insights.
 
   ![Criar a origem de eventos do Time Series Insights](media/add-event-source/getstarted-create-event-source-1.png)
@@ -43,7 +43,7 @@ A Origem de Eventos do Time Series Insights deriva de um mediador de eventos, co
 8.  Especifique o grupo de consumidores do hub.
 
   > [!IMPORTANT]
-  > Certifique-se de que este grupo de consumidores não é utilizado por nenhum outro serviço (como uma tarefa do Stream Analytics ou outro ambiente do Time Series Insights). Se for utilizado por outros serviços, a operação de leitura é afetada negativamente neste ambiente e nos outros serviços. A utilização de “$Default” como o grupo de consumidores pode levar à potencial reutilização por parte de outros leitores.
+  > Certifique-se de que este grupo de consumidores não é utilizado por nenhum outro serviço (como uma tarefa do Stream Analytics ou outro ambiente do Time Series Insights). Se o grupo de consumidores for utilizado por outros serviços, a operação de leitura é afetada negativamente neste ambiente e nos outros serviços. A utilização de “$Default” como o grupo de consumidores pode levar à potencial reutilização por parte de outros leitores.
 
 9.  Clique em “Criar”.
 

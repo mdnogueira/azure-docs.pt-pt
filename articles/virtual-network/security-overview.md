@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: jdial
-ms.openlocfilehash: 98559cbb0acab91c4b2c30c6d0129e955eef85f9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c5b5d79a18d8c4d370b1deb506285519fdbfbcf8
+ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/19/2017
 ---
 # <a name="network-security"></a>Segurança da rede
 
@@ -151,7 +151,10 @@ Se criar outras regras, especificando outros grupos de segurança de aplicaçõe
  
 Para saber mais sobre os limites durante a criação de grupos de segurança de aplicações e como especificá-los em regras de segurança, veja [Azure limits](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) (Limites do Azure).
 
-Os grupos de segurança de aplicações estão disponíveis na versão de pré-visualização. Antes de utilizar os grupos de segurança de aplicação, tem de se registar para utilizá-los ao concluir os passos 1 a 5 em [Create a network security group with application security groups](create-network-security-group-preview.md#powershell) (Criar um grupo de segurança de rede com grupos de segurança de aplicações) e leia [Preview features](#preview-features) (Funcionalidades de pré-visualização) para obter informações importantes. Durante a pré-visualização, os grupos de segurança de aplicações estão limitados ao âmbito da rede virtual. As redes virtuais em modo de peering com referências cruzadas a grupos de segurança de aplicações num grupo de segurança de rede não se aplicam. 
+Os grupos de segurança de aplicações estão disponíveis na versão de pré-visualização. Antes de utilizar os grupos de segurança de aplicação, tem de se registar para utilizá-los ao concluir os passos 1 a 5 em [Create a network security group with application security groups](create-network-security-group-preview.md#powershell) (Criar um grupo de segurança de rede com grupos de segurança de aplicações) e leia [Preview features](#preview-features) (Funcionalidades de pré-visualização) para obter informações importantes. Os grupos de segurança de aplicação têm as seguintes restrições:
+
+-   Todas as interfaces de rede dentro de um grupo de segurança de aplicação têm de existir na mesma rede virtual. Não é possível adicionar interfaces de rede de redes virtuais diferentes ao mesmo grupo de segurança de aplicação. A rede virtual em que se encontra a primeira interface de rede atribuída ao grupo de segurança de aplicação define a rede virtual em que todas as interfaces de rede posteriormente atribuídas têm de existir.
+- Se especificar grupos de segurança de aplicação como a origem e o destino numa regra de segurança, as interfaces de rede em ambos os grupos de segurança de aplicação têm de existir na mesma rede virtual. Por exemplo, se ASG1 contivesse interfaces de rede da VNet1 e ASG2 contivesse interfaces de rede da VNet2, não poderia atribuir ASG1 como a origem e ASG2 como o destino de uma regra, pois todas as interfaces de rede têm de existir na VNet1. 
 
 As funcionalidades em pré-visualização não têm o mesmo nível de disponibilidade e fiabilidade do que as funcionalidades em versão geral. Antes de utilizar os grupos de segurança de aplicações, tem, primeiro, de se registar para utilizá-los. As funcionalidades estão disponíveis apenas nas regiões seguintes: E.U.A. Centro-Oeste.
 

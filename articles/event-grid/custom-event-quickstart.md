@@ -1,20 +1,20 @@
 ---
-title: Eventos personalizados do Azure Event Grid | Microsoft Docs
-description: "Utilize o Azure Event Grid para publicar um tópico e subscrever esse evento."
+title: Eventos personalizados do Azure Event Grid com a CLI | Microsoft Docs
+description: "Utilize o Azure Event Grid e a CLI do Azure para publicar um tópico e subscrever esse evento."
 services: event-grid
 keywords: 
 author: djrosanova
 ms.author: darosa
-ms.date: 08/15/2017
+ms.date: 10/11/2017
 ms.topic: hero-article
 ms.service: event-grid
-ms.openlocfilehash: cd285471196f75f6a8c8ead0e2895fd71414f223
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d969b44bdfa610b18f3f934b48d987cb1735155f
+ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/23/2017
 ---
-# <a name="create-and-route-custom-events-with-azure-event-grid"></a>Criar e encaminhar eventos personalizados com o Azure Event Grid
+# <a name="create-and-route-custom-events-with-azure-cli-and-event-grid"></a>Criar e encaminhar eventos personalizados com a CLI do Azure e o Event Grid
 
 O Azure Event Grid é um serviço de eventos para a cloud. Neste artigo, a CLI do Azure é utilizada para criar um tópico personalizado, subscrever o tópico e acionar o evento para ver o resultado. Normalmente, os eventos são enviados para um ponto final que responde ao evento, como um webhook ou uma Função do Azure. No entanto, para simplificar este artigo, irá enviar eventos para um URL que apenas recolhe as mensagens. Este URL é criado através de uma ferramenta de terceiros open source chamada [RequestBin](https://requestb.in/).
 
@@ -117,6 +117,6 @@ az group delete --name gridResourceGroup
 Agora que sabe como criar tópicos e subscrições de eventos, saiba mais sobre o que o Event Grid pode ajudá-lo a fazer:
 
 - [Sobre o Event Grid](overview.md)
-- [Encaminhar eventos de armazenamento de Blobs para um ponto final da Web personalizado (pré-visualização)](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)
+- [Encaminhar eventos de armazenamento de Blobs para um ponto final Web personalizado](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)
 - [Monitorizar alterações de máquina virtual com o Azure Event Grid e Logic Apps](monitor-virtual-machine-changes-event-grid-logic-app.md)
 - [Transmitir macrodados em fluxo para um armazém de dados](event-grid-event-hubs-integration.md)

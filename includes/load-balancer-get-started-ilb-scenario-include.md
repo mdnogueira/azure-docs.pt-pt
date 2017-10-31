@@ -1,11 +1,11 @@
-## <a name="scenario"></a>Cenário
+## <a name="configuration-scenario"></a>Cenário de configuração
 
-Está a criar um balanceador de carga interno, de acordo com o seguinte cenário
+Neste cenário, estamos a criar um balanceador de carga interno numa rede virtual, conforme mostrado na figura seguinte:
 
-![DESCRIÇÃO DA IMAGEM](./media/load-balancer-get-started-ilb-scenario-include/figure1.png)
+![Cenário de balanceador de carga interno](./media/load-balancer-get-started-ilb-scenario-include/figure1.png)
 
-Um balanceador de carga interno está configurado numa rede virtual
+A configuração para o nosso cenário é a seguinte:
 
-* 2 máquinas virtuais denominadas DB1 e DB2
-* Pontos Finais
-* Balanceador de carga interno
+* Duas máquinas virtuais denominadas **DB1** e **DB2**
+* Pontos finais para o balanceador de carga interno
+* Um balanceador de carga interno

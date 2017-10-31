@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/05/2017
 ms.author: ryanwi
-ms.openlocfilehash: 42a2542b7564f1692146b3e3927792ac339f30be
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7c1ac13d50180909bbe55b01f47721387d1195d7
+ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/23/2017
 ---
 # <a name="deploy-an-azure-service-fabric-linux-container-application-on-azure"></a>Implementar uma aplicação de contentor do Linux do Azure Service Fabric no Azure
 O Azure Service Fabric é uma plataforma de sistemas distribuídos par implementar e gerir microsserviços e contentores dimensionáveis e fiáveis. 
@@ -29,7 +29,7 @@ Este guia de início rápido mostra como implementar contentores do Linux num cl
 
 Neste início rápido, vai aprender a:
 > [!div class="checklist"]
-> * Implementar contentores do Linux no Service Fabric
+> * Implemente contentores num cluster do Service Fabric Linux do Azure
 > * Dimensionar e efetuar a ativação pós-falha de contentores no Service Fabric
 
 ## <a name="prerequisite"></a>Pré-requisito
@@ -52,6 +52,10 @@ cd service-fabric-dotnet-containers/Linux/container-tutorial/Voting
 
 ## <a name="deploy-the-containers-to-a-service-fabric-cluster-in-azure"></a>Implementar os contentores num cluster do Service Fabric no Azure
 Para implementar a aplicação num cluster no Azure, utilize o seu próprio cluster ou utilize um Cluster de grupo.
+
+> [!Note]
+> A aplicação tem de ser implementada para um cluster no Azure e não para um cluster do Service Fabric no seu computador de desenvolvimento local. 
+>
 
 Party clusters são clusters do Service Fabric gratuitos e de tempo limitado, alojados no Azure. Estes são mantidos pela equipa do Service Fabric, onde qualquer pessoa pode implementar aplicações e saber mais sobre a plataforma. Para obter acesso a um Cluster de grupo, [siga as instruções](http://aka.ms/tryservicefabric). 
 
