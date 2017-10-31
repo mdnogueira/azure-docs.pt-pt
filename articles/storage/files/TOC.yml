@@ -28,9 +28,9 @@
           href: storage-files-planning.md
         - name: Como implementar os Ficheiros do Azure
           href: storage-files-deployment-guide.md
-        - name: Planear uma implementação do Azure File Sync
+        - name: Planear uma implementação da Sincronização de Ficheiros do Azure
           href: storage-sync-files-planning.md
-        - name: Como implementar o Azure File Sync
+        - name: Como implementar a Sincronização de Ficheiros do Azure
           href: storage-sync-files-deployment-guide.md
         - name: Acerca dos instantâneos de partilha de ficheiros
           href: storage-snapshots-files.md
@@ -66,15 +66,19 @@
           href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Gerir
       items:
-        - name: PowerShell
+        - name: PowerShell para os Ficheiros do Azure
           href: storage-how-to-use-files-powershell.md
+        - name: PowerShell para o Armazenamento do Azure
+          href: ../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: 'PowerShell para clouds da China, Administração Pública e Alemanha'
+          href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: CLI 2.0 do Azure
           href: ../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: CLI do Azure 1.0
           href: ../common/storage-azure-cli-nodejs.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Registar um servidor no Azure File Sync
+        - name: Registar um servidor na Sincronização de Ficheiros do Azure
           href: storage-sync-files-server-registration.md
-        - name: Adicionar um ponto final de servidor do Azure File Sync
+        - name: Adicionar um ponto final de servidor da Sincronização de Ficheiros do Azure
           href: storage-sync-files-server-endpoint.md
         - name: Utilizar o Explorador de Armazenamento com o Armazenamento de Ficheiros do Azure
           href: ../../vs-azure-tools-storage-explorer-files.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
@@ -100,7 +104,7 @@
           href: storage-troubleshoot-windows-file-connection-problems.md
         - name: Resolução de problemas de Ligações de Ficheiros do Azure - Linux
           href: storage-troubleshoot-linux-file-connection-problems.md
-        - name: Resolver problemas do Azure File Sync
+        - name: Resolver problemas da Sincronização de Ficheiros do Azure
           href: storage-sync-files-troubleshoot.md
         - name: Tutorial de resolução de problemas
           href: ../common/storage-e2e-troubleshooting.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json

@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 06/15/2017
+ms.date: 10/12/2017
 ms.author: sethm
-ms.openlocfilehash: af8b10f0a460e695a39879718174e81f78934ef8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b71814756a52f56ac6d0bb72a2f4bb1b1c2ea0b2
+ms.sourcegitcommit: 1131386137462a8a959abb0f8822d1b329a4e474
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="azure-service-bus"></a>Service Bus do Azure
 
@@ -58,15 +58,15 @@ O processo é simples: um remetente envia uma mensagem para uma fila do Service 
 
 Cada mensagem tem duas partes: um conjunto de propriedades, cada uma delas um par chave/valor e um payload de mensagem. O payload pode ser binário, texto ou até mesmo XML. O modo como são utilizados depende do que a aplicação está a tentar fazer. Por exemplo, uma aplicação que envia uma mensagem sobre uma venda recente pode incluir as propriedades **Vendedor="Ava"** e **Valor= 10000**. O corpo da mensagem poderá conter uma imagem digitalizada do contrato de venda assinado ou, se não existir, permanece vazio.
 
-O recetor pode ler uma mensagem da fila do Service Bus de duas formas diferentes. A primeira opção, denominada *[ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode)*, remove a mensagem da fila e elimina-a imediatamente. Esta opção é simples, mas se há uma falha da parte do recetor antes de concluir o processamento da mensagem, esta será perdida. Dado que é removida da fila, nenhum outro recetor pode aceder à mesma. 
+O recetor pode ler uma mensagem da fila do Service Bus de duas formas diferentes. A primeira opção, denominada *[ReceiveAndDelete](/dotnet/api/microsoft.azure.servicebus.receivemode)*, recebe a mensagem da fila e elimina-a imediatamente. Esta opção é simples, mas se há uma falha da parte do recetor antes de concluir o processamento da mensagem, esta será perdida. Dado que é removida da fila, nenhum outro recetor pode aceder à mesma. 
 
-A segunda opção, *[PeekLock](/dotnet/api/microsoft.servicebus.messaging.receivemode)*, foi criada para solucionar este problema. Como acontece com **ReceiveAndDelete**, uma leitura de **PeekLock** remove a mensagem da fila. No entanto, não elimina a mensagem. Neste caso, bloqueia a mensagem, pelo que fica invisível para os outros recetores, em seguida, aguarda que um dos três eventos ocorra:
+A segunda opção, *[PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode)*, foi criada para solucionar este problema. Como acontece com **ReceiveAndDelete**, uma leitura de **PeekLock** remove a mensagem da fila. No entanto, não elimina a mensagem. Neste caso, bloqueia a mensagem, pelo que fica invisível para os outros recetores, em seguida, aguarda que um dos três eventos ocorra:
 
-* Se o recetor processar a mensagem com êxito, invoca [Concluir()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Complete) e a fila elimina a mensagem. 
-* Se o recetor decidir que não consegue processar a mensagem com êxito, invoca [Abandonar()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Abandon). A fila, em seguida, remove o bloqueio da mensagem e torna-o disponível para outros recetores.
+* Se o recetor processar a mensagem com êxito, invoca [Concluir()](/dotnet/api/microsoft.azure.servicebus.queueclient.completeasync) e a fila elimina a mensagem. 
+* Se o recetor decidir que não consegue processar a mensagem com êxito, invoca [Abandonar()](/dotnet/api/microsoft.azure.servicebus.queueclient.abandonasync). A fila, em seguida, remove o bloqueio da mensagem e torna-o disponível para outros recetores.
 * Se o recetor não invocar nenhum destes métodos num período de tempo configurável (60 segundos, por predefinição), a fila assume que o recetor falhou. Neste caso, comporta-se como se o recetor invocasse **Abandonar**, pelo que a mensagem ficaria disponível para outros recetores.
 
-Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para este evento. Para facilitar a deteção duplicada, cada mensagem dispõe de uma propriedade [MessageID](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_MessageId) exclusiva que não se modifica de forma predefinida, independentemente do número de vezes que se leia uma mensagem numa fila. 
+Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para este evento. Para facilitar a deteção duplicada, cada mensagem dispõe de uma propriedade [MessageID](/dotnet/api/microsoft.azure.servicebus.message.messageid#Microsoft_Azure_ServiceBus_Message_MessageId) exclusiva que não se modifica de forma predefinida, independentemente do número de vezes que se leia uma mensagem numa fila. 
 
 As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações móveis. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
 
@@ -84,7 +84,7 @@ Um *tópico* é semelhante em muitos aspetos a uma fila. Os remetentes submetem 
 * O subscritor 2 recebe mensagens que contêm a propriedade *Vendedor="Ruby"* e/ou contem a propriedade *Valor* cujo valor é superior a 100.000. Talvez Ruby seja a gestora de vendas, pelo que pretende ver as suas próprias vendas e todas as vendas grandes, independentemente de quem as faz.
 * O subscritor 3 definiu o seu filtro como *True*, o que significa que recebe todas as mensagens. Por exemplo, esta aplicação pode ser responsável por manter um registo de auditoria e, por conseguinte, precisa de ver todas as mensagens.
 
-Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de [ReceiveAndDelete ou de PeekLock](/dotnet/api/microsoft.servicebus.messaging.receivemode). No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
+Como acontece com as filas, os subscritores de um tópico podem ler mensagens através de [ReceiveAndDelete ou de PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode). No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por várias subscrições. Esta abordagem, geralmente designada por *publicar e subscrever* (ou *pub/sub*), é útil quando várias aplicações estão interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
 
 ## <a name="relays"></a>Reencaminhamentos
 

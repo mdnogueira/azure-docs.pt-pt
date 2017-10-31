@@ -11,11 +11,11 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: hero-article
 ms.date: 09/25/2017
-ms.openlocfilehash: 273b94e9a53e36d7e8c699d3b7fa4305b881a001
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5d86f3bdf19603d2f92fc1a704376beefd7323c0
+ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="classifying-iris-part-2-build-a-model"></a>Classificar Íris, parte 2: criar um modelo
 Os serviços do Azure Machine Learning (pré-visualização) são uma solução de análise avançada e ciência de dados ponto a ponto integrada para os cientistas de dados profissionais prepararem dados, desenvolverem experimentações e implementarem modelos à escala da cloud.
@@ -58,7 +58,7 @@ Se pretender experimentar com emissão de script para executar num contentor do 
    - Carrega o pacote de preparação de dados **iris.dprep** para criar um [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). 
 
         >[!NOTE]
-        >Estamos a utilizar o pacote de preparação de dados `iris.dprep` que vem com o projeto de exemplo e que deve ser o mesmo que o ficheiro `iris-1.dprep` que criou na parte do tutorial.
+        >Estamos a utilizar o pacote de preparação de dados `iris.dprep` que vem com o projeto de exemplo e que deve ser o mesmo que o ficheiro `iris-1.dprep` que criou na parte 1 do tutorial.
 
    - Adiciona funcionalidades aleatórias para tornar o problema mais difícil de resolver. (A aleatoriedade é necessária porque o Íris é um conjunto de dados pequeno que pode ser facilmente classificado com uma precisão de 100%.)
 

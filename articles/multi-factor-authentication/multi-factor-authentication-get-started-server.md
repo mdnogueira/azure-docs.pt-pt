@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/30/2017
+ms.date: 10/02/2017
 ms.author: joflore
 ms.reviewer: alexwe
 ms.custom: it-pro
-ms.openlocfilehash: df847c370817c0702163b5e22c35c7e4f1d3cfee
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d8a0eec19eea1a75b67f314f204fb769e6eff162
+ms.sourcegitcommit: a7c01dbb03870adcb04ca34745ef256414dfc0b3
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Introdução ao Servidor Multi-Factor Authentication do Azure
 
@@ -89,26 +89,42 @@ Se não estiver a utilizar a funcionalidade Confirmação de Eventos e os seus u
 | 134.170.165.72/29 |255.255.255.248 |134.170.165.72 – 134.170.165.79 |
 | 70.37.154.200/29 |255.255.255.248 |70.37.154.201 – 70.37.154.206 |
 
-## <a name="download-the-azure-multi-factor-authentication-server"></a>Transferir o Servidor Multi-Factor Authentication do Azure
+## <a name="download-the-mfa-server---public-preview"></a>Transferir o Servidor MFA - pré-visualização pública
+
+Siga estes passos para transferir o Servidor Multi-Factor Authentication do Azure a partir do portal do Azure:
+
+1. Inicie sessão no [portal do Azure](https://portal.azure.com) como administrador.
+2. Selecione **Active Directory** > **Multi-Factor Authentication**.
+3. Selecione **Definições do Servidor**.
+4. Selecione **Transferir** e siga as instruções na página de transferência para guardar o instalador. 
+
+   ![Transferir o Servidor MFA](./media/multi-factor-authentication-get-started-server/downloadportal.png)
+
+5. Mantenha esta página aberta, uma vez que iremos referi-la depois de executar o instalador.
+
+
+## <a name="download-the-mfa-server"></a>Transferir o Servidor MFA
+
+Siga estes passos para transferir o Servidor Multi-Factor Authentication do Azure a partir do portal pfweb:
 
 1. Inicie sessão no [portal do Azure](https://portal.azure.com) como administrador.
 2. No lado esquerdo, selecione **Active Directory**
-3. Clique em **Utilizadores e grupos**
-4. Clique em **Todos os utilizadores**
-5. Clique em **Multi-Factor Authentication**
+3. Selecionar **Utilizadores e grupos**
+4. Selecionar **Todos os utilizadores**
+5. Selecionar **Multi-Factor Authentication**
 6. Na secção **autenticação multifator**, selecione **definições de serviço**
 
    ![Página de definições de serviço](./media/multi-factor-authentication-get-started-server/servicesettings.png)
 
 6. Na página de definições do serviço, na parte inferior do ecrã, clique em **Ir para o portal**. Uma nova página é aberta.
-7. Clique em **Transferências**.
+7. Selecione **Transferências**.
 8. Clique na ligação **Transferir** e guarde o instalador.
 
    ![Transferir o Servidor MFA](./media/multi-factor-authentication-get-started-server/download4.png)
 
 9. Mantenha esta página aberta, uma vez que iremos referi-la depois de executar o instalador.
 
-## <a name="install-and-configure-the-azure-multi-factor-authentication-server"></a>Instalar e configurar o Servidor Multi-Factor Authentication do Azure
+## <a name="install-and-configure-the-mfa-server"></a>Instalar e configurar o Servidor MFA
 
 Agora que transferiu o servidor, pode instalá-lo e configurá-lo. Certifique-se de que o servidor no qual o está a instalar cumpre os requisitos listados na secção de planeamento.
 
@@ -119,7 +135,7 @@ Agora que transferiu o servidor, pode instalá-lo e configurá-lo. Certifique-se
 
    ![Nuvem](./media/multi-factor-authentication-get-started-server/skip2.png)
 
-5. Na página a partir da qual transferimos o servidor, clique no botão **Gerar Credenciais de Ativação**. Copie estas informações para o servidor MFA do Azure nas caixas fornecidas e clique em **Ativar**.
+5. Na página a partir da qual transferiu o servidor, clique no botão **Gerar Credenciais de Ativação**. Copie estas informações para o servidor MFA do Azure nas caixas fornecidas e clique em **Ativar**.
 
 ## <a name="send-users-an-email"></a>Enviar uma mensagem de e-mail aos utilizadores
 

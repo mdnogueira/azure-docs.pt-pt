@@ -5,7 +5,7 @@ services: container-registry
 documentationcenter: 
 author: stevelas
 manager: balans
-editor: dlepow
+editor: mmacy
 tags: 
 keywords: 
 ms.assetid: ee2b652b-fb7c-455b-8275-b8d4d08ffeb3
@@ -14,14 +14,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/11/2017
+ms.date: 10/13/2017
 ms.author: stevelas
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 664696d2f355609c76477765c2238c6d62253482
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d54caa45078221cdbe091649cb3fe3b65eaa47e8
+ms.sourcegitcommit: ccb84f6b1d445d88b9870041c84cebd64fbdbc72
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/14/2017
 ---
 # <a name="introduction-to-private-docker-container-registries-in-azure"></a>Introdução aos registos privados de contentores Docker no Azure
 
@@ -38,11 +37,9 @@ Extrair imagens de um registo de contentores do Azure para vários destinos de i
 Os programadores também podem enviar para um registo de contentores como parte de um fluxo de trabalho de desenvolvimento de contentores. Por exemplo, podem segmentar um registo de contentores de uma ferramenta de integração contínua e programação, como o [Visual Studio Team Services](https://www.visualstudio.com/docs/overview) ou o [Jenkins](https://jenkins.io/).
 
 ## <a name="key-concepts"></a>Conceitos-chave
-* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Cada registo tem por base uma [conta de armazenamento](../storage/common/storage-introduction.md) standard do Azure na mesma localização. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações. Os nomes de registo completamente qualificados têm o formato `myregistry.azurecr.io`.
+* **Registo** - crie um ou mais registos de contentores na sua subscrição do Azure. Os registos estão disponíveis em três SKUs: [Básico, Standard e Premium](container-registry-skus.md), cada um dos quais suporta a integração de webhook, autenticação de repositório no Azure Active Directory e a funcionalidade de eliminação. Tire partido do armazenamento local e perto da rede das imagens do seu contentor ao criar um registo na mesma localização do Azure das suas implementações. Utilize a funcionalidade de [georreplicação](container-registry-geo-replication.md) de registos Premium para replicação avançada e cenários de distribuição de imagens de contentor. Os nomes de registo completamente qualificados têm o formato `myregistry.azurecr.io`.
 
   Para [controlar o acesso](container-registry-authentication.md) a um registo de contentores, utilize um [principal de serviço](../active-directory/active-directory-application-objects.md) baseado no Azure Active Directory ou uma conta de administrador fornecida. Execute o comando `docker login` padrão para se autenticar num registo.
-
-* **Registo gerido** - pode optar por criar um registo gerido ou um registo apoiado pela sua própria conta de armazenamento ao criar um registo. Os registos geridos oferecem capacidades adicionais em três SKUs - Básico, Standard e Premium. As imagens nestes SKUs são armazenadas em contas de Armazenamento do Azure geridas pelo serviço de Registos de Contentores do Azure, o que melhora a fiabilidade e permite novas funcionalidades. As novas capacidades incluem a integração de webhooks, autenticação do repositório no Azure Active Directory e suporte para a funcionalidade de eliminação.
 
 * **Repositório** - um registo contém um ou mais repositórios, que são grupos de imagens do contentor. O Registo de Contentores do Azure suporta espaços de nomes de repositórios com múltiplos níveis. Com espaços de nomes de vários níveis, pode agrupar coleções de imagens relacionadas com uma aplicação específica ou uma coleção de aplicações para equipas de programação ou operacionais específicas. Por exemplo:
 
@@ -58,4 +55,3 @@ Os programadores também podem enviar para um registo de contentores como parte 
 * [Create a container registry using the Azure portal (Criar um registo de contentores com o portal do Azure)](container-registry-get-started-portal.md)
 * [Create a container registry using the Azure CLI (Criar um registo de contentores com a CLI do Azure)](container-registry-get-started-azure-cli.md)
 * [Push your first image using the Docker CLI (Enviar a sua primeira imagem com a CLI do Docker)](container-registry-get-started-docker-cli.md)
-* Para criar uma integração contínua e um fluxo de trabalho de implementação através do Visual Studio Team Services, do Azure Container Service e do Azure Container Registry, veja [CI/CD with Docker Swarm and VSTS (CI/CD com Docker Swarm e VSTS)](../container-service/dcos-swarm/container-service-docker-swarm-setup-ci-cd.md).

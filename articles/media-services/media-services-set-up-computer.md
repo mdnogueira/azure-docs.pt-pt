@@ -12,13 +12,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/10/2017
+ms.date: 10/24/2017
 ms.author: juliako
-ms.openlocfilehash: 9144407ed530921904458a7249473eaea26c66b3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7c28ccb10f5b2e52fd4dd5d5b99683b7d78d1bb6
+ms.sourcegitcommit: 4d90200f49cc60d63015bada2f3fc4445b34d4cb
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="set-up-your-media-services-development-environment"></a>Configurar o ambiente de desenvolvimento dos Serviços de Multimédia
 
@@ -41,7 +41,10 @@ Para configurar o ambiente de desenvolvimento REST, veja [este](media-services-r
 
 Para ligar à API dos Serviços de Multimédia do Azure, veja [Aceder à API dos Serviços de Multimédia do Azure com a autenticação do Azure AD](media-services-use-aad-auth-to-access-ams-api.md).  
 
-## <a name="next-steps-azure-media-services-learning-paths"></a>Passos seguintes: percursos de aprendizagem dos Media Services do Azure
+## <a name="next-steps"></a>Passos seguintes
+
+Localize vários exemplos de código na galeria **Exemplos de Código do Azure**: [exemplos de código dos Serviços de Multimédia do Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
+
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Enviar comentários
