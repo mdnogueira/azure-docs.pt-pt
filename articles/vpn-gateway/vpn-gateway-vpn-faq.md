@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/30/2017
+ms.date: 10/19/2017
 ms.author: cherylmc,yushwang
-ms.openlocfilehash: b12eab7a430e620d0b6e872551c0252ccb5d4c14
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8af984a7321d99faecb9d79903a442c938460919
+ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/21/2017
 ---
 # <a name="vpn-gateway-faq"></a>FAQ do VPN Gateway
 
@@ -70,6 +70,15 @@ Os gateways baseados em políticas implementam VPNs baseadas em políticas. As V
 
 Os gateways baseados na rota implementam as VPNs baseadas na rota. As VPNs baseadas na rota utilizam “rotas” no reencaminhamento IP ou na tabela de encaminhamento para direcionar os pacotes para as respetivas interfaces de túnel. As interfaces de túnel, em seguida, encriptam ou desencriptam os pacotes dentro e fora dos túneis. A política ou o seletor de tráfego das VPNs baseadas na rota é configurado como “de qualquer ponto a qualquer ponto” (ou carateres universais).
 
+### <a name="can-i-update-my-policy-based-vpn-gateway-to-route-based"></a>Posso atualizar o meu gateway de VPN baseado em Políticas para ser baseado na Rota?
+Não. Um tipo de gateway de Vnet do Azure não pode ser alterado de baseado em políticas para baseado na rota, ou ao contrário. O gateway tem de ser eliminado e recriado, um processo que demora cerca de 60 minutos. O endereço IP do gateway não será mantido, nem a Chave Pré-partilhada (PSK).
+1. Elimine todas as ligações associadas ao gateway a eliminar.
+2. Elimine o gateway:
+* [Portal do Azure](vpn-gateway-delete-vnet-gateway-portal.md)
+* [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
+* [Azure Powershell - clássico](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
+3. [Criar um novo gateway do tipo pretendido e concluir a configuração VPN](vpn-gateway-howto-site-to-site-resource-manager-portal.md#VNetGateway)
+
 ### <a name="do-i-need-a-gatewaysubnet"></a>Preciso de um "GatewaySubnet"?
 
 Sim. A sub-rede do gateway contém os endereços IP que os serviços do gateway de rede virtual utilizam. Tem de criar uma sub-rede do gateway para que a VNet configure um gateway de rede virtual. Para funcionarem corretamente, todas as sub-redes do gateway têm de ter o nome "GatewaySubnet". Não atribua outro nome à sub-rede do gateway. E não implemente VMs ou quaisquer outros elementos na sub-rede do gateway.
@@ -110,7 +119,6 @@ Estamos limitados à utilização de chaves pré-partilhadas (PSK) para a autent
 #### <a name="classic-deployment-model"></a>Modelo de implementação clássica
 
 * Portal do Azure: navegue para a rede virtual clássica > ligações VPN > ligações de Redes de VPN > Nome do site local >Site local > Espaço de endereço do cliente. 
-* Portal clássico: adicione cada intervalo que pretende enviar através do gateway para a rede virtual na página Redes, em Redes Locais. 
 
 ### <a name="can-i-configure-force-tunneling"></a>Posso configurar a Imposição do Túnel?
 
@@ -160,9 +168,13 @@ Outras soluções de VPN de software devem funcionar com o nosso gateway, desde 
 
 ## <a name="P2S"></a>Ponto a Site - autenticação de certificados nativa do Azure
 
+Esta secção aplica-se ao Modelo de implementação Resource Manager.
+
 [!INCLUDE [P2S Azure cert](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
 ## <a name="P2SRADIUS"></a>Ponto a Site - autenticação RADIUS
+
+Esta secção aplica-se ao Modelo de implementação Resource Manager.
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 

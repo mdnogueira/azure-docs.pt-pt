@@ -14,11 +14,11 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 10/10/2017
 ms.author: sethm
-ms.openlocfilehash: 3646d14be662af0fdf80790cb53ddc581b33a146
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 43064ddbdfec3e2ddae8de8c69f6c03dc7f8f45e
+ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/23/2017
 ---
 # <a name="get-started-with-service-bus-topics"></a>Introdução aos tópicos do Service Bus
 
@@ -48,7 +48,7 @@ Se já tiver criado um espaço de nomes das mensagens do Service Bus, avance par
 ## <a name="2-create-a-topic-using-the-azure-portal"></a>2. Criar um tópico com o portal do Azure
 
 1. Inicie sessão no [Portal do Azure][azure-portal].
-2. No painel de navegação à esquerda do portal, clique em **Service Bus** (se não vir **Service Bus**, clique em **Mais serviços**).
+2. No painel de navegação à esquerda do portal, clique em **Service Bus** (se não vir **Service Bus**, clique em **Mais serviços** ou clique em **Todos os Recursos**).
 3. Clique no espaço de nomes no qual gostaria de criar o tópico. Será apresentado o painel de descrição geral do espaço de nomes:
    
     ![Criar um tópico][createtopic1]

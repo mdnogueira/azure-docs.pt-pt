@@ -14,39 +14,33 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: narayan;anavin
-ms.openlocfilehash: 082cd8a6cf50f76c89fe5995047396c734f83034
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: f055f1e87e73733b3f2ecfa87e4d372ade8a7868
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="virtual-network-peering"></a>Peering de rede virtual
 
-A [Rede Virtual do Azure (VNet)](virtual-networks-overview.md) é um espaço de rede privado no Azure que permite ao utilizador ligar em segurança recursos do Azure entre si.
-
-O peering de rede virtual permite ao utilizador ligar redes virtuais de forma totalmente integrada. Uma vez executado o peering, as redes virtuais aparecem como uma única, para fins de conectividade. As máquinas virtuais nas redes virtuais em modo de peering podem comunicar diretamente entre si.
-O tráfego entre máquinas virtuais nas redes virtuais em modo de peering será encaminhado através da infraestrutura principal da Microsoft, tal como o tráfego é encaminhado entre máquinas virtuais na mesma rede virtual através apenas de endereços IP *privados*.
-
->[!IMPORTANT]
-> Pode ligar em modo de peering redes virtuais em diferentes regiões do Azure. Esta funcionalidade encontra-se em pré-visualização. Pode [registar a sua subscrição na pré-visualização.](virtual-network-create-peering.md) O peering de redes virtuais nas mesmas regiões encontra-se em disponibilidade geral.
->
+O peering de rede virtual permite ao utilizador ligar duas [redes virtuais](virtual-networks-overview.md) do Azure de forma totalmente integrada. Uma vez executado o peering, as redes virtuais aparecem como uma única, para fins de conectividade. O tráfego entre máquinas virtuais nas redes virtuais em modo de peering será encaminhado através da infraestrutura principal da Microsoft, tal como o tráfego é encaminhado entre máquinas virtuais na mesma rede virtual através apenas de endereços IP *privados*. 
 
 As vantagens da utilização do peering de redes virtuais incluem:
 
-* O tráfego que passa por peerings de redes virtuais é completamente privado. Passa pela rede principal da Microsoft, sem o envolvimento da Internet pública ou de gateways.
+* O tráfego de rede entre redes virtuais em modo de peering é privado. O tráfego entre as redes virtuais é mantido na rede principal da Microsoft. Não é necessária Internet pública, gateways ou encriptação na comunicação entre as redes virtuais.
 * Uma ligação de baixa latência e largura de banda alta entre os recursos em redes virtuais diferentes.
-* A capacidade de utilizar recursos numa rede virtual a partir de outra rede virtual, uma vez executado o peering.
-* O peering de redes virtuais ajuda-o a transferir dados entre subscrições do Azure, modelos de implementação e entre regiões do Azure (pré-visualização).
-* A capacidade de configurar o peering entre redes virtuais criadas através do Azure Resource Manager ou o peering entre uma rede virtual criada através do Resource Manager e outra criada através do modelo de implementação clássica. Para saber mais sobre as diferenças entre os dois modelos de implementação do Azure, leia [Understand Azure deployment models (Compreender os modelos de implementação do Azure)](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+* A capacidade dos recursos numa rede virtual comunicarem com os recursos numa rede virtual diferente, assim que as redes virtuais forem colocadas em modo de peering.
+* A capacidade de transferir dados entre subscrições do Azure, modelos de implementação e entre regiões do Azure (pré-visualização).
+* A capacidade de configurar o peering entre redes virtuais criadas através do Azure Resource Manager ou o peering entre uma rede virtual criada através do Resource Manager e outra criada através do modelo de implementação clássica. Para saber mais sobre os modelos de implementação do Azure, veja [Understand Azure deployment models](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Compreender os modelos de implementação do Azure).
+* Sem períodos de indisponibilidade para recursos em qualquer rede virtual durante ou após a criação do peering.
 
 ## <a name="requirements-constraints"></a>Requisitos e limitações
 
-* O peering de redes virtuais na mesma região encontra-se em disponibilidade geral. O peering de redes virtuais em diferentes regiões encontra-se atualmente em pré-visualização nas regiões E.U.A. Centro-Oeste, Canadá Central e E.U.A. Oeste 2. Pode [registar a sua subscrição na pré-visualização.](virtual-network-create-peering.md)
+* O peering de redes virtuais na mesma região encontra-se em disponibilidade geral. O peering de redes virtuais em diferentes regiões encontra-se atualmente em pré-visualização nas regiões E.U.A. Centro-Oeste, Canadá Central e E.U.A. Oeste 2. Pode [registar a sua subscrição](virtual-network-create-peering.md) na pré-visualização.
     > [!WARNING]
-    > Os peerings de redes virtuais criados neste cenário podem não ter o mesmo nível de disponibilidade e fiabilidade do que em cenários de versão de disponibilidade geral. Os peerings de redes virtuais podem ter capacidades restringidas e não estar disponíveis em todas as regiões do Azure. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
+    > Os peerings de redes virtuais criados entre regiões podem não ter o mesmo nível de disponibilidade e fiabilidade do que os peerings numa versão de disponibilidade geral. Os peerings de redes virtuais podem ter capacidades restringidas e não estar disponíveis em todas as regiões do Azure. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
 * As redes virtuais no modo de peering têm de ter espaços de endereços IP não sobrepostos.
-* Não é possível adicionar nem eliminar espaços de endereços de uma rede virtual quando cria o peering entre duas redes virtuais.
+* Não é possível adicionar nem eliminar intervalos de endereços do espaço de endereços de uma rede virtual quando é criado o peering entre duas redes virtuais. Se precisar de adicionar intervalos de endereços ao espaço de endereços de uma rede virtual em modo de peering, tem de remover o peering, adicionar o espaço de endereços e, em seguida, adicionar novamente o peering.
 * O peering de rede virtual é feito entre duas redes virtuais. Não existe nenhuma relação transitiva derivada entre peerings. Por exemplo, se virtualNetworkA e virtualNetworkB estiverem no mesmo peer e esta última e a virtualNetworkC também, virtualNetworkA *não* está no mesmo peer que virtualNetworkC.
 * Pode configurar o peering em redes virtuais que existam em duas subscrições diferentes, desde que um utilizador com privilégios (veja [Specific Permissions](create-peering-different-deployment-models-subscriptions.md#permissions) [Permissões Específicas]) em ambas as subscrições o autorize e que essas subscrições estejam associadas ao mesmo inquilino do Azure Active Directory. Pode utilizar um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#V2V) para ligar redes virtuais em subscrições associadas a diferentes inquilinos do Active Directory.
 * O peering pode ser configurado nas redes virtuais se ambas forem criadas com o modelo de implementação Resource Manager ou se uma for criada com este modelo e a outra com o modelo de implementação clássica. Contudo, não é possível configurar o peering entre redes virtuais criadas através do modelo de implementação clássica. Pode utilizar um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#V2V) para ligar redes virtuais criadas através do modelo de implementação clássica.
@@ -58,20 +52,20 @@ As vantagens da utilização do peering de redes virtuais incluem:
 
 Depois das redes virtuais serem colocadas em modo de peering, os recursos em cada uma destas podem ligar-se diretamente a recursos na rede virtual em modo de peering.
 
-A latência de rede entre máquinas virtuais em redes virtuais no modo de peering na mesma região é igual à de uma rede virtual individual. O débito de rede baseia-se na largura de banda que é permitida para a máquina virtual proporcionalmente ao respetivo tamanho. Não existe qualquer restrição adicional na largura de banda no peering.
+A latência de rede entre máquinas virtuais em redes virtuais no modo de peering na mesma região é igual à latência numa rede virtual individual. O débito de rede baseia-se na largura de banda que é permitida para a máquina virtual proporcionalmente ao respetivo tamanho. Não existe qualquer restrição adicional na largura de banda no peering.
 
 O tráfego entre as máquinas virtuais nas redes virtuais em modo de peering é encaminhado diretamente através da infraestrutura principal da Microsoft e não através de um gateway ou numa Internet pública.
 
-As máquinas virtuais numa rede virtual podem aceder ao balanceador de carga interno na rede virtual em modo de peering na mesma região. O suporte do balanceador de carga interno não se estende por várias redes virtuais em modo de peering global em pré-visualização. A versão de disponibilidade geral do peering de rede virtual global terá suporte do balanceador de carga interno.
+As máquinas virtuais numa rede virtual podem aceder ao balanceador de carga interno na rede virtual em modo de peering na mesma região. O suporte do balanceador de carga interno não se estende por várias redes virtuais em modo de peering global (pré-visualização). A versão de disponibilidade geral do peering de rede virtual global terá suporte do balanceador de carga interno.
 
-Os grupos de segurança de rede podem ser aplicados a qualquer uma das redes virtuais para bloquear o acesso a outras redes virtuais ou sub-redes, se assim o desejar.
-Ao configurar o peering de rede virtual, pode abrir ou fechar as regras do grupo de segurança de rede entre as redes virtuais. Se abrir a conectividade total entre as redes virtuais em modo de peering (que é a opção predefinida), pode aplicar grupos de segurança de rede a sub-redes ou máquinas virtuais específicas, para bloquear ou negar o acesso específico. Para saber mais sobre os grupos de segurança de rede, leia o artigo [Filtrar o tráfego de rede com grupos de segurança de rede](virtual-networks-nsg.md).
+Os grupos de segurança de rede podem ser aplicados a qualquer rede virtual para bloquear o acesso a outras redes virtuais ou sub-redes, se assim o desejar.
+Ao configurar o peering de rede virtual, pode abrir ou fechar as regras do grupo de segurança de rede entre as redes virtuais. Se abrir a conectividade total entre as redes virtuais em modo de peering (que é a opção predefinida), pode aplicar grupos de segurança de rede a sub-redes ou máquinas virtuais específicas, para bloquear ou negar o acesso específico. Para saber mais sobre os grupos de segurança de rede, veja [Descrição geral dos grupos de segurança de rede](virtual-networks-nsg.md).
 
 ## <a name="service-chaining"></a>Encadeamento de serviços
 
 Para ativar o encadeamento de serviços, pode configurar rotas definidas pelo utilizador que apontem para máquinas virtuais em redes virtuais em modo de peering como o endereço IP de "próximo salto". O encadeamento se serviços permite-lhe encaminhar o tráfego de uma rede virtual para um dispositivo de rede numa rede virtual em modo de peering através de rotas definidas pelo utilizador.
 
-Também pode criar, eficazmente, ambientes de tipo “hub-and-spoke”, onde o concentrador pode alojar componentes da infraestrutura, como um aplicação virtual de rede. Todas as redes virtuais “spoke” podem, então, configurar o peering com a rede virtual do concentrador. O tráfego pode fluir dos dispositivos de rede virtual que estão em execução na rede virtual do concentrador. Em suma, o peering de rede virtual permite que o endereço IP de próximo salto na rota definida pelo utilizador seja o endereço IP de uma máquina virtual na rede virtual em modo de peering. Para saber mais sobre as rotas definidas pelo utilizador, leia o artigo [Descrição geral das rotas definidas pelo utilizador](virtual-networks-udr-overview.md). Para saber como criar uma [topologia de rede hub-and-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual network-peering)
+Também pode criar, eficazmente, ambientes de tipo “hub-and-spoke”, onde o concentrador pode alojar componentes da infraestrutura, como um aplicação virtual de rede. Todas as redes virtuais “spoke” podem, então, configurar o peering com a rede virtual do concentrador. O tráfego pode fluir dos dispositivos de rede virtual que estão em execução na rede virtual do concentrador. Em suma, o peering de rede virtual permite que o endereço IP de próximo salto na rota definida pelo utilizador seja o endereço IP de uma máquina virtual na rede virtual em modo de peering. Para saber mais sobre as rotas definidas pelo utilizador, veja [Descrição geral das rotas definidas pelo utilizador](virtual-networks-udr-overview.md). Para saber como criar uma topologia de rede hub-and-spoke, veja [Topologia de rede hub-and-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual network-peering)
 
 ## <a name="gateways-and-on-premises-connectivity"></a>Gateways e conetividade no local
 
@@ -93,19 +87,19 @@ O peering de rede virtual é uma operação com privilégios. É uma função se
 
 Um utilizador que seja administrador ou utilizador com privilégios da capacidade de peering pode iniciar uma operação de peering noutra rede virtual. O nível mínimo de permissão necessário é Contribuidor de Rede. Se houver um pedido de correspondência para peering no outro lado e forem cumpridos outros requisitos, o peering é estabelecido.
 
-Por exemplo, se estiver a configurar o peering de redes virtuais com o nome myvirtual networkA e myvirtual networkB, deve ser atribuída à sua conta a seguinte função mínima ou permissões para cada rede virtual:
+Por exemplo, se estiver a configurar o peering de redes virtuais com o nome myVirtualNetworkA e myVirtualNetworkB, deve ser atribuída à sua conta a seguinte função mínima ou permissões para cada rede virtual:
 
 |Rede virtual|Modelo de implementação|Função|Permissões|
 |---|---|---|---|
-|myvirtual networkA|Resource Manager|[Contribuidor de Rede](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
+|myVirtualNetworkA|Resource Manager|[Contribuidor de Rede](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
 | |Clássica|[Contribuidor de Rede Clássica](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|N/D|
-|myvirtual networkB|Resource Manager|[Contribuidor de Rede](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
+|myVirtualNetworkB|Resource Manager|[Contribuidor de Rede](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
 ||Clássica|[Contribuidor de Rede Clássica](../active-directory/role-based-access-built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Microsoft.ClassicNetwork/virtualNetworks/peer|
 
 ## <a name="monitor"></a>Monitorizar
 
 Ao configurar o peering de duas redes virtuais criadas através do Resource Manager, tem de ser configurado um peering para cada rede virtual no peering.
-Pode monitorizar o estado da sua ligação de peering. O estado do peering pode ser um dos seguintes:
+Pode monitorizar o estado da sua ligação de peering. O estado do peering é um dos seguintes:
 
 * **Iniciado**: quando cria o peering para a segunda rede virtual a partir da primeira rede virtual, o estado do peering é Iniciado.
 
@@ -121,7 +115,7 @@ Também pode resolver problemas relacionados com a conectividade a uma máquina 
 
 ## <a name="limits"></a>Limites
 
-Existem limites em relação ao número de peerings que são permitidos para uma única rede virtual. O número predefinido de peerings é 50. Pode aumentar o número de peerings. Para obter mais informações, veja [Azure networking limits](../azure-subscription-service-limits.md#networking-limits) (Limites de rede do Azure).
+Existem limites em relação ao número de peerings que são permitidos para uma única rede virtual. Para obter mais detalhes, veja [Limites de redes do Azure](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
 
 ## <a name="pricing"></a>Preços
 

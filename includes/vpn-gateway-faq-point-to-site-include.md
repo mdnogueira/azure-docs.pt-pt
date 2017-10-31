@@ -1,3 +1,5 @@
+Estas FAQ aplicam-se às ligações P2S com o modelo de implementação clássica.
+
 ### <a name="what-client-operating-systems-can-i-use-with-point-to-site"></a>Que sistemas operativos cliente posso utilizar com a ligação Ponto a Site?
 
 São suportados os seguintes sistemas operativos cliente:

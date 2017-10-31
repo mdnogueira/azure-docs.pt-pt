@@ -208,7 +208,7 @@
 #### [Gerir o aprovisionamento de contas de utilizador](active-directory-enterprise-apps-manage-provisioning.md)
 #### [Gerir o início de sessão único para aplicações empresariais](active-directory-enterprise-apps-manage-sso.md)
 #### [Assinatura de certificado avançada para aplicações SAML](active-directory-enterprise-apps-advance-certificate-options.md)
-####[ Ocultar a experiência do utilizador no Azure Active Directory](active-directory-coreapps-hide-third-party-app.md)
+#### [Ocultar uma aplicação de terceiros da experiência do utilizador](active-directory-coreapps-hide-third-party-app.md)
 
 ### [Gerir o acesso a aplicações](active-directory-managing-access-to-apps.md)
 #### [Acesso ao Self-service](active-directory-self-service-application-access.md)
