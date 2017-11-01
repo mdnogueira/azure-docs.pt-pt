@@ -15,7 +15,7 @@
       href: container-registry-get-started-powershell.md
 - name: Tutoriais
   items:
-    - name: Georreplicação
+    - name: Georreplicação (pré-visualização)
       items:
         - name: 1 - Preparar o registo de contentores
           href: container-registry-tutorial-prepare-registry.md
