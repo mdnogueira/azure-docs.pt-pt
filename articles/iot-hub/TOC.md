@@ -86,6 +86,7 @@
 ### Carregar ficheiros a partir de dispositivos
 #### [.NET](iot-hub-csharp-csharp-file-upload.md)
 #### [Java](iot-hub-java-java-file-upload.md)
+#### [Node.js](iot-hub-node-node-file-upload.md)
 ### Introdução aos dispositivos duplos
 #### [Back-end de Node.js/Dispositivo Node.js](iot-hub-node-node-twin-getstarted.md)
 #### [Back-end de .NET/Dispositivo Node.js](iot-hub-csharp-node-twin-getstarted.md)

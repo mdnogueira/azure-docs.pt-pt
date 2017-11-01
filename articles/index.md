@@ -3,11 +3,12 @@ layout: HubPage
 hide_bc: True
 title: "Documentação do Microsoft Azure"
 description: "Saiba como criar e gerir aplicações poderosas com os serviços cloud do Microsoft Azure. Obtenha documentação, código de exemplo, tutoriais e muito mais."
-ms.openlocfilehash: 5ca26e7fc6230140ee424e35a8d174613a4a93f4
-ms.sourcegitcommit: b83781292640e82b5c172210c7190cf97fabb704
+featureFlags: clicktale
+ms.openlocfilehash: 1cce8a0c31a7bb7e4c6e228261b27244a762b441
+ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/01/2017
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -151,7 +152,7 @@ ms.lasthandoff: 10/27/2017
                                                             <img src="media/index/logo_PHP.svg" alt=""> PHP</a>
                                                     </li>
                                                     <li>
-                                                        <a class="barLink" href="/nodejs/azure/?view=azure-node-2.0.0">
+                                                        <a class="barLink" href="/nodejs/azure/">
                                                             <img src="media/index/logo_nodejs.svg" alt=""> Node.js</a>
                                                     </li>
                                                 </ul></td></tr></table>
@@ -769,12 +770,6 @@ ms.lasthandoff: 10/27/2017
                                             <a href="/azure/cognitive-services/face/">
                                                 <img src="media/index/API_Face.svg" alt="" />
                                                 <p>API Face</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/azure/cognitive-services/video/home">
-                                                <img src="media/index/API_Video.svg" alt="" />
-                                                <p>API de Vídeo</p>
                                             </a>
                                         </li>
                                         <li>
@@ -2589,9 +2584,6 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                                 <a class="barLink" href="/azure/cognitive-services/face/"><img src="media/index/API_Face.svg" alt="" />API Face</a>
                                                             </li>
                                                             <li>
-                                                                <a class="barLink" href="/azure/cognitive-services/video/home"><img src="media/index/API_Video.svg" alt="" /><span>API de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
-                                                            </li>
-                                                            <li>
                                                                 <a class="barLink" href="/azure/cognitive-services/video-indexer/video-indexer-overview"><img src="media/index/API_VideoIndexer.svg" alt="" /><span>Indexador de Vídeo&nbsp;<sup style="font-size:70%">PRÉ-VISUALIZAÇÃO</sup></span></a>
                                                             </li>
                                                         </ul>
@@ -2703,7 +2695,8 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                             <li>
                                                                 <a class="barLink" href="/azure/cognitive-services/bing-web-search/"><img src="media/index/API_Bing_Web_Search.svg" alt="" />Pesquisa Web do Bing</a>
                                                             </li>
-                                                            <li>                                                 <a class="barLink" href="/azure/cognitive-services/Bing-Autosuggest"><img src="media/index/API_Bing_AutoSuggest.svg" alt="" />Sugestão Automática do Bing</a>
+                                                            <li>
+                                                                <a class="barLink" href="/azure/cognitive-services/Bing-Autosuggest"><img src="media/index/API_Bing_AutoSuggest.svg" alt="" />Sugestão Automática do Bing</a>
                                                             </li>
                                                             <li>
                                                                 <a class="barLink" href="/azure/cognitive-services/bing-custom-search"><img src="media/index/API_Bing_Custom_Search.svg" alt="" /><span>Pesquisa Personalizada do Bing</a>
@@ -3839,7 +3832,7 @@ Load Balancer Layer 7 com um balanceamento de carga HTTP incorporado e controlo 
                                                     <a href="/nodejs/azure/node-sdk-azure-install">Obter as bibliotecas do Azure para Node.js</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="/nodejs/azure/?view=azure-node-2.0.0">Introdução</a>
+                                                    <a href="/nodejs/azure/">Introdução</a>
                                                 </p>
                                                 <p>
                                                     <a href="/nodejs/api/overview/azure">Referência da API</a>
