@@ -15,11 +15,11 @@ ms.topic: get-started-article
 f1_keywords: sql13.swb.windowsazurestorage.connect.f1
 ms.date: 10/11/2017
 ms.author: tamram
-ms.openlocfilehash: db878f257f64ccc573a220c675cd373539dd5b17
-ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
+ms.openlocfilehash: c9630e575de15b404bd91cbeefc60d698c5da667
+ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="about-azure-storage-accounts"></a>Acerca das contas do Storage do Azure
 
@@ -79,7 +79,7 @@ Também pode configurar um nome de domínio personalizado para utilizar com a su
 
 5. Selecione o tipo da conta do Storage: **Fins gerais** ou **Blob Storage**. A predefinição é **Fins gerais**.
    
-    Se tiver selecionado **Fins gerais**, especifique a camada de desempenho: **Standard** ou **Premium**. A predefinição é **Standard**. Para obter mais detalhes sobre as contas do Storage standard e premium, consulte [Introdução ao Storage do Microsoft Azure](storage-introduction.md) e [Premium Storage: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Virtual Machines do Azure](storage-premium-storage.md).
+    Se tiver selecionado **Fins gerais**, especifique a camada de desempenho: **Standard** ou **Premium**. A predefinição é **Standard**. Para obter mais detalhes sobre as contas do Storage standard e premium, consulte [Introdução ao Storage do Microsoft Azure](storage-introduction.md) e [Premium Storage: Armazenamento de Elevado Desempenho para Cargas de Trabalho de Virtual Machines do Azure](../../virtual-machines/windows/premium-storage.md).
    
     Se tiver selecionado **Blob Storage**, especifique a camada de acesso: **Frequente** ou **Esporádico**. A predefinição é **Frequente**. Consulte [Blob Storage do Azure: camadas de acesso frequente e esporádico](../blobs/storage-blob-storage-tiers.md) para obter mais detalhes.
 6. Selecione a opção de replicação para a conta do Storage: **LRS**, **GRS**, **RA-GRS** ou **ZRS**. A predefinição é **RA-GRS**. Consulte [Replicação do Storage do Azure](storage-redundancy.md) para obter detalhes adicionais sobre as opções de replicação do Storage do Azure.

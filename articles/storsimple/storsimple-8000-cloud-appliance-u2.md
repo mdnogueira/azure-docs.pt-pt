@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/10/2017
 ms.author: alkohli
-ms.openlocfilehash: e7f58c8c1414f41d1d43e98b2faa327165f6eb75
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1ece5b1b2ba8e4d26fe633fe7c7c60f4187f9d6b
+ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Implementar e gerir uma StorSimple Cloud Appliance no Azure (Atualização 3 e posterior)
 
@@ -44,7 +44,7 @@ O StorSimple Cloud Appliance está disponível em dois modelos, um 8010 convenci
 | **Capacidade máxima** |30 TB |64 TB |
 | **VM do Azure** |Standard_A3 (4 núcleos, 7 GB de memória)| Standard_DS3 (4 núcleos, 14 GB de memória)|
 | **Disponibilidade por regiões** |Todas as regiões do Azure |As regiões do Azure que suportam o Armazenamento Premium e VMs DS3 do Azure<br></br>Utilize [esta lista](https://azure.microsoft.com/regions/services/) para ver se ambas as **Máquinas Virtuais > série DS** e o **Armazenamento > Armazenamento em Disco** estão disponíveis na sua região. |
-| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/common/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../storage/common/storage-premium-storage.md) |
+| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/common/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../virtual-machines/windows/premium-storage.md) |
 | **Orientações para a carga de trabalho** |Obtenção ao nível de item dos ficheiros a partir de cópias de segurança |Cenários de desenvolvimento e teste da cloud <br></br>Baixa latência e cargas de trabalho de desempenho superior<br></br>Dispositivo secundário para a recuperação após desastre |
 
 <sup>1</sup> *Anteriormente conhecido como 1100*.
@@ -93,7 +93,7 @@ Antes de aprovisionar a aplicação da cloud, terá de efetuar os seguintes prep
 Efetue as seguintes atualizações no serviço Gestor de Dispositivos do StorSimple antes de criar uma aplicação da cloud:
 
 * Adicionar [registos de controlo de acesso](storsimple-8000-manage-acrs.md) para as VMs que serão servidores de anfitrião para a aplicação da cloud.
-* Utilizar uma [conta de armazenamento](storsimple-8000-manage-storage-accounts.md#add-a-storage-account) na mesma região da aplicação da cloud. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta de armazenamento Standard ou Premium com a aplicação da cloud. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/common/storage-create-storage-account.md) ou uma [conta do Premium Storage](../storage/common/storage-premium-storage.md)
+* Utilizar uma [conta de armazenamento](storsimple-8000-manage-storage-accounts.md#add-a-storage-account) na mesma região da aplicação da cloud. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta de armazenamento Standard ou Premium com a aplicação da cloud. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/common/storage-create-storage-account.md) ou uma [conta do Premium Storage](../virtual-machines/windows/premium-storage.md)
 * Utilize uma conta de armazenamento diferente para a criação da aplicação da cloud a partir da conta utilizada para os seus dados. Com a mesma conta do Storage, poderá obter um fraco desempenho.
 
 Certifique-se de que tem as seguintes informações antes de começar:
