@@ -35,9 +35,9 @@
 ### [Ligar inquilino do Office 365](billing-add-office-365-tenant-to-azure-subscription.md)
 ### [Comprar subscrições através de fatura](billing-how-to-pay-by-invoice.md)
 ## Resolução de problemas
-### [Problemas de inscrição](billing-troubleshoot-azure-sign-up-issues.md)
-### [Cartão rejeitado](billing-credit-card-fails-during-azure-sign-up.md)
-### [Problemas de início de sessão](billing-cannot-login-subscription.md)
+### [Problemas de inscrição](https://support.microsoft.com/en-us/help/4042959)
+### [Cartão rejeitado](https://support.microsoft.com/en-us/help/4042960)
+### [Problemas de início de sessão](https://support.microsoft.com/en-us/help/4042961)
 ### [Não foram encontradas subscrições](billing-no-subscriptions-found.md)
 ### [Vista de custos empresariais desativada](billing-enterprise-mgmt-grp-troubleshoot-cost-view.md)
 
