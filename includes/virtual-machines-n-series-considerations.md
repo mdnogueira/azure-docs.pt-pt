@@ -1,18 +1,18 @@
-## <a name="deployment-considerations"></a>Deployment considerations
+## <a name="deployment-considerations"></a>Considerações sobre implementação
 
-* For availability of N-series VMs, see [Products available by region](https://azure.microsoft.com/en-us/regions/services/).
+* Para disponibilidade de série N VMs, consulte [produtos disponíveis por região](https://azure.microsoft.com/en-us/regions/services/).
 
-* N-series VMs can only be deployed in the Resource Manager deployment model.
+* Série N VMs só podem ser implementadas no modelo de implementação Resource Manager.
 
-* When creating an N-series VM using the Azure portal, on the **Basics** blade, select a **VM disk type** of **HDD**. To choose an available N-series size, on the **Size** blade, click **View all**.
+* Ao criar uma VM de série N no portal do Azure, no **Noções básicas** painel, selecione um **tipo de disco da VM** de **HDD**. Para escolher um tamanho de série N disponível, no **tamanho** painel, clique em **ver todos os**.
 
-* N-series VMs do not support VM disks that are backed by Azure Premium storage.
+* Série N VMs não suportam discos VM que sejam copiados pelo armazenamento do Azure Premium.
 
-* If you want to deploy more than a few N-series VMs, consider a pay-as-you-go subscription or other purchase options. If you're using an [Azure free account](https://azure.microsoft.com/free/), you can use only a limited number of Azure compute cores.
+* Se pretender implementar mais do que alguns série N VMs, considere uma subscrição pay as you go ou outras opções de compra. Se estiver a utilizar uma [conta gratuita do Azure](https://azure.microsoft.com/free/), pode utilizar apenas um número limitado de núcleos de computação do Azure.
 
-* You might need to increase the cores quota (per region) in your Azure subscription, and increase the separate quota for NC or NV cores. To request a quota increase, [open an online customer support request](../articles/azure-supportability/how-to-create-azure-support-request.md) at no charge. Default limits may vary depending on your subscription category.
+* Poderá ter de aumentar a quota de núcleos (por região) na sua subscrição do Azure e aumentar a quota de núcleos de NC ou NV separada. Para pedir um aumento de quota [abrir um pedido de suporte ao cliente online](../articles/azure-supportability/how-to-create-azure-support-request.md) , sem encargos. Limites de predefinição podem variar consoante a categoria de subscrição.
 
-* One VM image you can deploy on N-series VMs is the [Azure Data Science Virtual Machine](../articles/machine-learning/data-science-virtual-machine/overview.md). The Data Science Virtual Machine preinstalls and configures many popular data science and deep learning tools. It also preinstalls NVIDIA Tesla GPU drivers for NC instances.
+* Uma imagem de VM, pode implementar em série N VMs é o [máquina de Virtual de ciência de dados do Azure](../articles/machine-learning/data-science-virtual-machine/overview.md). As máquinas de ciência de dados preinstalls e configura muitos ciência de dados mais populares e avançada ferramentas de aprendizagem. É também preinstalls controladores NVIDIA Tesla GPU para instâncias de NC.
 
 
 

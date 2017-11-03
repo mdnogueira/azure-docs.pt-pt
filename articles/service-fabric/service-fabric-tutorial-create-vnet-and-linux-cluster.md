@@ -1,0 +1,150 @@
+---
+title: Criar um cluster do Service Fabric do Linux no Azure | Microsoft Docs
+description: Saiba como implementar um cluster do Linux Service Fabric numa rede virtual do Azure existente ao utilizar a CLI do Azure.
+services: service-fabric
+documentationcenter: .net
+author: rwike77
+manager: timlt
+editor: 
+ms.assetid: 
+ms.service: service-fabric
+ms.devlang: dotNet
+ms.topic: tutorial
+ms.tgt_pltfrm: NA
+ms.workload: NA
+ms.date: 09/26/2017
+ms.author: ryanwi
+ms.openlocfilehash: b2542af86be236b8d575fcaf7687222cd74af661
+ms.sourcegitcommit: ccb84f6b1d445d88b9870041c84cebd64fbdbc72
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/14/2017
+---
+# <a name="deploy-a-service-fabric-linux-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Linux numa rede virtual do Azure
+Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Linux Service Fabric numa rede virtual do Azure existente (VNET) e subplano net utilizando a CLI do Azure. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações. Para criar um cluster do Windows com o PowerShell, consulte [criar um cluster do Windows seguro no Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
+
+Neste tutorial, ficará a saber como:
+
+> [!div class="checklist"]
+> * Criar uma VNET no Azure utilizando a CLI do Azure
+> * Criar um cluster do Service Fabric seguro no Azure utilizando a CLI do Azure
+> * Proteger o cluster com um certificado x. 509
+> * Ligar ao cluster ao utilizar a CLI de recursos de infraestrutura de serviço
+> * Remover um cluster
+
+Este tutorial série, a saber como:
+> [!div class="checklist"]
+> * Criar um cluster seguro no Azure
+> * [Implementar a gestão de API com o Service Fabric](service-fabric-tutorial-deploy-api-management.md)
+
+## <a name="prerequisites"></a>Pré-requisitos
+Antes de começar este tutorial:
+- Se não tiver uma subscrição do Azure, crie um [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Instalar o [Service Fabric CLI](service-fabric-cli.md)
+- Instalar o [CLI do Azure 2.0](/cli/azure/install-azure-cli)
+
+Os procedimentos seguintes criar um cluster do Service Fabric cinco nós. Para calcular o custo tarifas através da execução de um cluster do Service Fabric em utilização do Azure a [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/).
+
+## <a name="sign-in-to-azure-and-select-your-subscription"></a>Início de sessão para o Azure e selecionar a sua subscrição
+Este guia utiliza CLI do Azure. Quando iniciar uma sessão nova, inicie sessão na sua conta do Azure e selecionar a sua subscrição antes de executar os comandos do Azure.
+ 
+Execute o script seguinte para iniciar sessão sua conta do Azure selecione a sua subscrição:
+
+```azurecli
+az login
+az account set --subscription <guid>
+```
+
+## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+Criar um novo grupo de recursos para a implementação e atribua-lhe um nome e uma localização.
+
+```azurecli
+ResourceGroupName="sflinuxclustergroup"
+Location="southcentralus"
+az group create --name $ResourceGroupName --location $Location
+```
+
+## <a name="deploy-the-network-topology"></a>Implementar a topologia de rede
+Em seguida, configure a topologia de rede à qual serão implementados API Management e o cluster do Service Fabric. O [network.json] [ network-arm] modelo do Resource Manager é configurado para criar uma rede virtual (VNET) e também um grupo de segurança sub-rede e de rede (NSG) para o Service Fabric e uma sub-rede e o NSG para gestão de API . Saiba mais sobre as VNETs, sub-redes e NSGs [aqui](../virtual-network/virtual-networks-overview.md).
+
+O [network.parameters.json] [ network-parameters-arm] ficheiro de parâmetros contém os nomes das sub-redes e NSGs Service Fabric e gestão de API implementar.  API Management está implementada no [seguintes tutorial](service-fabric-tutorial-deploy-api-management.md). Para este guia, os valores de parâmetros não precisam de ser alteradas. Os modelos de serviço Gestor de recursos de infraestrutura utilizam estes valores.  Se os valores forem modificados aqui, deve modificá-las nos outros modelos do Resource Manager utilizados neste tutorial e [tutorial de gestão de API implementar](service-fabric-tutorial-deploy-api-management.md). 
+
+Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
+- [Network.JSON][network-arm]
+- [Network.Parameters.JSON][network-parameters-arm]
+
+Utilize o seguinte script para implementar os ficheiros de parâmetros e modelo do Resource Manager para a configuração de rede:
+
+```azurecli
+az group deployment create \
+    --name VnetDeployment \
+    --resource-group $ResourceGroupName \
+    --template-file network.json \
+    --parameters @network.parameters.json
+```
+<a id="createvaultandcert" name="createvaultandcert_anchor"></a>
+## <a name="deploy-the-service-fabric-cluster"></a>Implementar o cluster do Service Fabric
+Assim que os recursos de rede tem concluído a implementação, o passo seguinte é implementar um cluster do Service Fabric para a VNET na sub-rede e NSG designado para o cluster do Service Fabric. A implementação de um cluster para uma VNET existente e a sub-rede (implementado anteriormente neste artigo) requer um modelo do Resource Manager.  Para obter mais informações, consulte [criar um cluster utilizando o Azure Resource Manager](service-fabric-cluster-creation-via-arm.md). Para esta série tutorial, o modelo está pré-configurada para utilizar os nomes da VNET, uma sub-rede e um NSG que configurou no passo anterior.  Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
+- [linuxcluster.JSON][cluster-arm]
+- [linuxcluster.Parameters.JSON][cluster-parameters-arm]
+
+Preencha vazia **clusterName**, **adminUserName**, e **adminPassword** parâmetros a *linuxcluster.parameters.json* ficheiro para a sua implementação.  Deixe o **certificateThumbprint**, **certificateUrlValue**, e **sourceVaultValue** parâmetros em branco se pretender criar um certificado autoassinado.  Se tiver um certificado existente carregado anteriormente para um cofre de chaves, preencha os valores de parâmetros.
+
+Utilize o seguinte script para implementar o cluster utilizando os ficheiros de parâmetros e modelo do Resource Manager.  Um certificado autoassinado é criado no Cofre de chaves especificado e é utilizado para proteger o cluster.  O certificado também é transferido localmente.
+
+```azurecli
+Password="q6D7nN%6ck@6"
+Subject="aztestcluster.southcentralus.cloudapp.azure.com"
+VaultName="linuxclusterkeyvault"
+az group create --name $ResourceGroupName --location $Location
+
+az sf cluster create --resource-group $ResourceGroupName --location $Location \
+   --certificate-output-folder . --certificate-password $Password --certificate-subject-name $Subject \
+   --vault-name $VaultName --vault-resource-group $ResourceGroupName  \
+   --template-file linuxcluster.json --parameter-file linuxcluster.parameters.json
+
+```
+
+## <a name="connect-to-the-secure-cluster"></a>Ligar ao cluster seguro
+Ligar ao cluster utilizando a CLI de recursos de infraestrutura de serviço `sfctl cluster select` comando utilizando a chave.  Tenha em atenção, utilize apenas o **– Certifique-se de não** opção para um certificado autoassinado.
+
+```azurecli
+sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 \
+--pem ./aztestcluster201709151446.pem --no-verify
+```
+
+Verifique se está ligado e o cluster está em bom estado utilizando a `sfctl cluster health` comando.
+
+```azurecli
+sfctl cluster health
+```
+
+## <a name="clean-up-resources"></a>Limpar recursos
+Os outros artigos nesta série tutorial utilizam o cluster que acabou de criar. Se não estiver imediatamente mover para o artigo seguinte, pode querer eliminar o cluster para evitar incorrer em custos. A forma mais simples de eliminar o cluster e todos os recursos que consome é eliminando o grupo de recursos.
+
+Inicie sessão no Azure e selecione o ID de subscrição com o qual pretende remover o cluster.  Pode encontrar o ID de subscrição ao iniciar sessão a [portal do Azure](http://portal.azure.com). Eliminar o grupo de recursos e todos os recursos de cluster utilizando o [eliminação do grupo de az](/cli/azure/group?view=azure-cli-latest#az_group_delete) comando.
+
+```azurecli
+az group delete --name $ResourceGroupName
+```
+
+## <a name="next-steps"></a>Passos seguintes
+Neste tutorial, ficou a saber como:
+
+> [!div class="checklist"]
+> * Criar uma VNET no Azure utilizando a CLI do Azure
+> * Criar um cluster do Service Fabric seguro no Azure utilizando a CLI do Azure
+> * Proteger o cluster com um certificado x. 509
+> * Ligar ao cluster ao utilizar a CLI de recursos de infraestrutura de serviço
+> * Remover um cluster
+
+Em seguida, avançar para o tutorial seguinte para saber como implementar a gestão de API com o Service Fabric.
+> [!div class="nextstepaction"]
+> [Implementar a gestão de API](service-fabric-tutorial-deploy-api-management.md)
+
+
+[network-arm]:https://github.com/Azure-Samples/service-fabric-api-management/blob/master/network.json
+[network-parameters-arm]:https://github.com/Azure-Samples/service-fabric-api-management/blob/master/network.parameters.json
+
+[cluster-arm]:https://github.com/Azure-Samples/service-fabric-api-management/blob/master/linuxcluster.json
+[cluster-parameters-arm]:https://github.com/Azure-Samples/service-fabric-api-management/blob/master/linuxcluster.parameters.json

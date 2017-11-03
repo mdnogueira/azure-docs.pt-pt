@@ -12,21 +12,20 @@ ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 08/29/2017
 ms.author: denlee
-ms.translationtype: HT
-ms.sourcegitcommit: 1c730c65194e169121e3ad1d1423963ee3ced8da
-ms.openlocfilehash: 60cb187cf40f72fce86c421891bea02d3d6d708a
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/30/2017
-
+ms.openlocfilehash: 228d739ac4505d9f16c43bb484dd8050631f084e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-cosmos-db-build-a-nodejs-application-by-using-graph-api"></a>Azure Cosmos DB: Criar uma aplicação Node.js com o Graph API
 
-O Azure Cosmos DB é um serviço de bases de dados da Microsoft com vários modelos e distribuído globalmente. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
+BD do Azure do Cosmos é o serviço de base de dados multimodel globalmente distribuída da Microsoft. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
 
-Este guia de introdução rápida demonstra como criar uma conta do Azure Cosmos DB para o Graph API (pré-visualização), bases de dados e gráficos com o portal do Azure. Em seguida, irá criar e executar uma aplicação de consola com o controlador [Gremlin Node.js](https://www.npmjs.com/package/gremlin) «open-source».  
+Este artigo de início rápido demonstra como criar uma conta de base de dados do Azure Cosmos para Graph API (pré-visualização), a base de dados e o gráfico com o portal do Azure. Em seguida, irá criar e executar uma aplicação de consola com o controlador [Gremlin Node.js](https://www.npmjs.com/package/gremlin) «open-source».
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -48,9 +47,9 @@ Antes de poder executar este exemplo, tem de ter os pré-requisitos seguintes:
 
 Vamos agora clonar uma aplicação do Graph API a partir do GitHub, definir a cadeia de ligação e executá-la. Vai ver como é fácil trabalhar com dados programaticamente. 
 
-1. Abra uma janela de terminal do Git, tal como Git Bash, e mude (com o comando `cd`) para um diretório de trabalho.  
+1. Abra uma janela de terminal do Git, tal como Git Bash, e mude (com o comando `cd`) para um diretório de trabalho.
 
-2. Execute o seguinte comando para clonar o repositório de exemplo. 
+2. Execute o seguinte comando para clonar o repositório de exemplo: 
 
     ```bash
     git clone https://github.com/Azure-Samples/azure-cosmos-db-graph-nodejs-getting-started.git
@@ -60,7 +59,7 @@ Vamos agora clonar uma aplicação do Graph API a partir do GitHub, definir a ca
 
 ## <a name="review-the-code"></a>Rever o código
 
-Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o ficheiro `app.js` e irá encontrar as seguintes linhas de código. 
+Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o `app.js` ficheiros e ver as seguintes linhas de código. 
 
 * O cliente Gremlin é criado.
 
@@ -99,19 +98,19 @@ Vamos fazer uma breve revisão do que está a acontecer à aplicação. Abra o f
 
     ![Ver e copiar uma chave de acesso no portal do Azure, painel Chaves](./media/create-graph-nodejs/gremlin-uri.png)
 
-   Se o valor **URI do Gremlin** estiver em branco, pode gerá-lo na página **Chaves** do portal, utilizando o valor **URI**, removendo https:// e alterando os documentos para gráficos.
+   Se o **Gremlin URI** valor está em branco, pode gerar o valor da **chaves** página no portal. Utilize o **URI** valor, remova https:// e alterar os documentos para gráficos.
 
    O ponto final do Gremlin deve ser apenas o nome do sistema anfitrião sem o número de porta/protocolo, como `mygraphdb.graphs.azure.com` (não `https://mygraphdb.graphs.azure.com` ou `mygraphdb.graphs.azure.com:433`).
 
-3. No config.js, preencha o valor de config.primaryKey com o valor da **Chave Primária** a partir da página **Chaves** do portal do Azure. 
+3. Preencha, config.js, o valor de config.primaryKey com o **chave primária** valor a partir do **chaves** página do portal do Azure. 
 
     `config.primaryKey = "PRIMARYKEY";`
 
-   ![O painel de chaves do portal do Azure](./media/create-graph-nodejs/keys.png)
+   ![Painel de "Chaves" portal do Azure](./media/create-graph-nodejs/keys.png)
 
 4. Insira o nome da base de dados e o nome de gráfico (contentor) para o valor de config.database e config.collection. 
 
-Eis um exemplo de como deve ser o aspeto do seu ficheiro config.js concluído:
+Eis um exemplo de que o ficheiro de config.js concluída deve ter o seguinte aspeto:
 
 ```nodejs
 var config = {}
@@ -127,7 +126,7 @@ module.exports = config;
 
 ## <a name="run-the-console-app"></a>Executar a aplicação de consola
 
-1. Abra uma janela do terminal e mude (como o comando `cd`) para o diretório de instalação, para o ficheiro package.json que está incluído no projeto.  
+1. Abra uma janela do terminal e mude (como o comando `cd`) para o diretório de instalação, para o ficheiro package.json que está incluído no projeto.
 
 2. Execute `npm install` para instalar os módulos npm necessários, incluindo `gremlin`.
 
@@ -137,9 +136,9 @@ module.exports = config;
 
 Agora, pode voltar ao Data Explorer no portal do Azure para ver, consultar, alterar e trabalhar os dados do gráfico novo.
 
-No Data Explorer, a nova base de dados é apresentada no painel **Gráficos**. Expanda a base de dados, seguido da coleção e, em seguida, clique em **Gráfico**.
+No Data Explorer, a nova base de dados é apresentada no painel **Gráficos**. Expanda a base de dados, seguido pela coleção e, em seguida, selecione **gráfico**.
 
-Os dados gerados pela aplicação de exemplo são apresentados no painel seguinte dentro do separador **Gráfico** quando clicar em **Aplicar Filtro**.
+Os dados gerados pela aplicação de exemplo são apresentados no painel seguinte dentro de **gráfico** separador Quando seleciona **aplicar filtro**.
 
 Experimente concluir `g.V()` com `.has('firstName', 'Thomas')`, para testar o filtro. Tenha em atenção que o valor é sensível às maiúsculas e minúsculas.
 
@@ -151,13 +150,13 @@ Experimente concluir `g.V()` com `.has('firstName', 'Thomas')`, para testar o fi
 
 Se não planeia continuar a utilizar esta aplicação, elimine todos os recursos que criou neste artigo, fazendo o seguinte: 
 
-1. No menu de navegação do lado esquerdo do portal do Azure, clique em **Grupos de recursos** e, em seguida, clique no nome de recurso que criou. 
-2. Na página do grupo de recursos, clique em **Eliminar**, escreva o nome do recurso a eliminar e, em seguida, clique em **Eliminar**.
+1. No portal do Azure, no menu de navegação esquerdo, selecione **grupos de recursos**. Em seguida, selecione o nome do recurso que criou. 
+
+2. Na página do grupo de recursos, selecione **Eliminar**. Escreva o nome do recurso que pretende eliminar e, em seguida, selecione **eliminar**.
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Neste artigo, aprendeu a criar uma conta do Azure Cosmos DB, a criar um gráfico com o Data Explorer e a executar uma aplicação. Agora pode criar consultas mais complexas e implementar a lógica de passagem de gráfico através do Gremlin. 
+Neste artigo, aprendeu a criar uma conta de base de dados do Azure Cosmos, criar um gráfico com o Explorador de dados e executar uma aplicação. Agora pode criar consultas mais complexas e implementar a lógica de passagem de gráfico através do Gremlin. 
 
 > [!div class="nextstepaction"]
-> [Query using Gremlin](tutorial-query-graph.md) (Utilizar Gremlin para consultar)
-
+> [Consultar utilizando Gremlin](tutorial-query-graph.md)

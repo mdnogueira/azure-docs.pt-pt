@@ -108,5 +108,6 @@
 #### [Credenciais de certificado](active-directory-certificate-credentials.md)
 ### [Âmbitos](active-directory-v2-scopes.md)
 # Recursos
+## [Obter ajuda](active-directory-develop-help-support.md)
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
 ## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)

@@ -1,6 +1,6 @@
 ---
 title: "Executar consultas de análise em várias bases de dados SQL do Azure | Microsoft Docs"
-description: "Executar consultas distribuídas em várias bases de dados SQL do Azure"
+description: "Extrair dados de bases de dados do inquilino para uma base de dados de análise para a análise offline"
 keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
@@ -9,24 +9,22 @@ manager: jhubbard
 editor: 
 ms.assetid: 
 ms.service: sql-database
-ms.custom: tutorial
-ms.workload: data-management
+ms.custom: scale out apps
+ms.workload: Inactive
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: hero-article
-ms.date: 05/10/2017
+ms.topic: article
+ms.date: 06/16/2017
 ms.author: billgib; sstein
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
-ms.openlocfilehash: a0742a004b618dda304618bca21ae715552c16e6
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/12/2017
-
-
+ms.openlocfilehash: 4a96efb15268c56e3625832b0b4d6dd8f6a78614
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
-# <a name="run-distributed-queries-across-multiple-azure-sql-databases"></a>Executar consultas distribuídas em várias bases de dados SQL do Azure
+# <a name="extract-data-from-tenant-databases-into-an-analytics-database-for-offline-analysis"></a>Extrair dados de bases de dados do inquilino para uma base de dados de análise para a análise offline
 
-Neste tutorial, vai executar consultas de análise em cada inquilino no catálogo. É criada uma tarefa elástica que executa as consultas. A tarefa obtém os dados e carrega-os numa base de dados de análise separada, criada no servidor de catálogo. Esta base de dados pode ser consultada para extrair as informações que estão escondidas nos dados operacionais diários de todos os inquilinos. Como resultado da tarefa, é criada uma tabela a partir das consultas dos resultados dentro da base de dados de análise de inquilinos.
+Neste tutorial, utilize uma tarefa elástica para executar consultas no cada base de dados do inquilino. A tarefa extrai dados de vendas de permissão e carrega-o para uma base de dados de análise (ou do armazém de dados) para análise. A base de dados de análise, em seguida, está a ser consultado para extrair informações de dados operacionais diárias de todos os inquilinos.
 
 
 Neste tutorial, ficará a saber como:
@@ -37,7 +35,7 @@ Neste tutorial, ficará a saber como:
 
 Para concluir este tutorial, devem ser cumpridos os seguintes pré-requisitos:
 
-* A aplicação WTP está implementada. Para implementar em menos de cinco minutos, veja [Implementar e explorar a aplicação SaaS WTP](sql-database-saas-tutorial.md)
+* A aplicação Wingtip SaaS é implementada. Para implementar em menos de cinco minutos, consulte [implementar e explorar a aplicação Wingtip SaaS](sql-database-saas-tutorial.md)
 * O Azure PowerShell está instalado. Para obter mais detalhes, veja [Introdução ao Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps)
 * Está instalada a versão mais recente do SQL Server Management Studio (SSMS). [Transferir e instalar o SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
 
@@ -47,7 +45,7 @@ Uma das grandes possibilidades das aplicações SaaS consiste em utilizar os dad
 
 ## <a name="get-the-wingtip-application-scripts"></a>Obter os scripts da aplicação Wingtip
 
-Os scripts da Wingtip Tickets e o código fonte da aplicação estão disponíveis no repositório do github [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS). Os ficheiros dos scripts estão localizados na pasta [Módulos de Aprendizagem](https://github.com/Microsoft/WingtipSaaS/tree/master/Learning%20Modules). Transfira a pasta **Módulos de Aprendizagem** para o computador local, mantendo a estrutura das pastas.
+Os scripts de Wingtip SaaS e o código fonte da aplicação, estão disponíveis no [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS) repositório do github. [Passos para transferir os scripts de Wingtip SaaS](sql-database-wtp-overview.md#download-and-unblock-the-wingtip-saas-scripts).
 
 ## <a name="deploy-a-database-for-tenant-analytics-results"></a>Implementar uma base de dados dos resultados da análise de inquilinos
 
@@ -68,14 +66,14 @@ Este tutorial requer que tenha uma base de dados implementada para capturar os r
 
 Este script cria uma tarefa para obter informações de compra de bilhetes de todos os inquilinos. Depois de agregados numa única tabela, pode obter métricas avançadas e esclarecedoras relativas aos padrões de compra de bilhetes de todos inquilinos.
 
-1. Abra o SSMS e ligue-se ao servidor catalog-\<utilizador\>.database.windows.net
+1. Abra o SSMS e ligue-se ao servidor catalog-&lt;utilizador&gt;.database.windows.net
 1. Abra ...\\Módulos de Aprendizagem\\Análise Operacional\\Análise de Inquilinos\\*TicketPurchasesfromAllTenants.sql*
-1. Modifique \<WtpUser\>, utilize o nome de utilizador que usou quando implementou a aplicação WTP na parte superior do script, **sp\_add\_target\_group\_member** e **sp\_add\_jobstep**
-1. Clique com o botão direito do rato, selecione **Ligação** e ligue-se ao servidor catalog-\<WtpUser\>.database.windows.net, se ainda não estiver ligado
+1. Modificar &lt;utilizador&gt;, utilize o nome de utilizador utilizado quando implementou a aplicação Wingtip SaaS na parte superior do script, **sp\_adicionar\_destino\_grupo\_membro** e **sp\_adicionar\_passo de tarefa**
+1. Clique com o botão direito, selecione **ligação**e ligar ao catálogo -&lt;utilizador&gt;. database.windows.net servidor, se ainda não estiver ligado
 1. Verifique se está ligado à base de dados **jobaccount** e prima **F5** para executar o script
 
 * **sp\_add\_target\_group** cria o nome do grupo *TenantGroup* de destino. Agora, precisamos adicionar membros de destino.
-* **sp\_add\_target\_group\_member** adiciona um tipo de membro de destino de *servidor*, que considera todas as bases de dados dentro desse servidor (tenha em atenção que se trata do servidor customer1-&lt;WtpUser&gt; que contém as bases de dados dos inquilinos) no momento em que a execução da tarefa deve ser incluída na tarefa.
+* **SP\_adicionar\_destino\_grupo\_membro** adiciona um *servidor* tipo de membro, considere todas as bases de dados dentro desse servidor de destino (tenha em atenção de que este é o customer1 -&lt;utilizador&gt; servidor que contém as bases de dados do inquilino) no momento da tarefa de execução deve ser incluída na tarefa.
 * **sp\_add\_job** cria uma nova tarefa semanal agendada denominada “Compras de Bilhetes de Todos os Inquilinos”
 * **sp\_add\_jobstep** cria o passo da tarefa que contém o texto do comando T-SQL para obter todas as informações das compras de bilhetes de todos os inquilinos e para copiar o resultado das devolução definido numa tabela denominada *AllTicketsPurchasesfromAllTenants*
 * As vistas restantes no script mostram a existência dos objetos e monitorizam a execução da tarefa. Consulte o valor de estado na coluna **ciclo de vida** para monitorizar o estado. A tarefa concluída com êxito significa que foi concluída com êxito em todas as bases de dados de inquilinos e nas duas bases de dados adicionais que contêm a tabela de referência.
@@ -90,8 +88,8 @@ Este script cria uma tarefa para obter a soma de todas compras de bilhetes de to
 
 1. Abra o SSMS e ligue -se ao servidor *catalog-&lt;Utilizador&gt;.database.windows.net*
 1. Abra o ficheiro ...\\Módulos de Aprendizagem \\Aprovisionar e Catalogar\\Análise Operacional\\Análise de Inquilinos\\*Results-TicketPurchasesfromAllTenants.sql*
-1. Modifique &lt;WtpUser&gt;, utilize o nome de utilizador que usou quando implementou a aplicação WTP no script, no procedimento **sp\_add\_jobstep** armazenado
-1. Clique com o botão direito do rato, selecione **Ligação** e ligue-se ao servidor catalog-\<WtpUser\>.database.windows.net, se ainda não estiver ligado
+1. Modificar &lt;utilizador&gt;, utilize o nome de utilizador utilizado quando implementou a aplicação Wingtip SaaS no script, no **sp\_adicionar\_passo** procedimento armazenado
+1. Clique com o botão direito, selecione **ligação**e ligar ao catálogo -&lt;utilizador&gt;. database.windows.net servidor, se ainda não estiver ligado
 1. Verifique se está ligado à base de dados **tenantanalytics** e prima **F5** para executar o script
 
 A execução com êxito do script deve resultar em resultados semelhantes:
@@ -119,5 +117,5 @@ Parabéns!
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Tutoriais adicionais criados após a implementação inicial da aplicação Wingtip Tickets Platform (WTP)](sql-database-wtp-overview.md#sql-database-wtp-saas-tutorials)
+* Adicionais [tutoriais tirar partido da aplicação Wingtip SaaS](sql-database-wtp-overview.md#sql-database-wingtip-saas-tutorials)
 * [Tarefas elásticas](sql-database-elastic-jobs-overview.md)

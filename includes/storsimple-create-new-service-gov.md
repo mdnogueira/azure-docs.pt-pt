@@ -1,20 +1,20 @@
 <!--author=SharS last changed: 9/17/15-->
 
 
-#### <a name="to-create-a-new-service"></a>To create a new service
-1. Use your Microsoft account credentials to log on to the [Microsoft Azure Government Portal](https://manage.windowsazure.us/).
-2. In the Government Portal, click **New** > **Data Services** > **StorSimple Manager** > **Quick Create**.
-3. In the form that is displayed, do the following:
+#### <a name="to-create-a-new-service"></a>Para criar um novo serviço
+1. Utilizar as credenciais da conta Microsoft para iniciar sessão no [Portal do Microsoft Azure Government](https://manage.windowsazure.us/).
+2. No Portal de administração pública, clique em **novo** > **serviços de dados** > **StorSimple Manager** > **criação rápida** .
+3. No formulário apresentado, realize as seguintes ações:
    
-   1. Supply a unique **Name** for your service. This is a friendly name that can be used to identify the service. The name can have between 2 and 50 characters that can be letters, numbers, and hyphens. The name must start and end with a letter or a number.
-   2. Supply a **Location** for your service. Location refers to the geographical region where you want to deploy your device. Select **US Govt Iowa** or **US Govt Virgina**.
-   3. Choose a **Subscription** from the drop-down list. The subscription is linked to your billing account. This field is not present if you have only one subscription.
-   4. Select **Create a new storage account** to automatically create a storage account with the service. This storage account will have a special name such as "storsimplebwv8c6dcnf."
-   5. Click **Create StorSimple Manager** to create the service.
+   1. Forneça um **Nome** exclusivo para o serviço. Este é um nome amigável que pode ser utilizado para identificar o serviço. O nome pode ter entre 2 e 50 carateres que podem ser letras, números e hífenes. O nome tem de começar e terminar com uma letra ou um número.
+   2. Forneça uma **Localização** para o serviço. Localização do pacote refere-se para a região geográfica onde pretende implementar o dispositivo. Selecione **E.U.A. Govt Iowa** ou **E.U.A. Govt Virgina**.
+   3. Escolha uma **Subscrição** na lista pendente. A subscrição está ligada à sua conta de faturação. Este campo não estará presente se tiver apenas uma subscrição.
+   4. Selecione **Criar uma nova conta de armazenamento** para criar automaticamente uma conta de armazenamento com o serviço. Esta conta de armazenamento terá um nome especial, como “storsimplebwv8c6dcnf”.
+   5. Clique em **Criar StorSimple Manager** para criar o serviço.
       
-       ![create a service](./media/storsimple-create-new-service-gov/HCS_CreateAService-gov-include.png)
+       ![Criar um serviço](./media/storsimple-create-new-service-gov/HCS_CreateAService-gov-include.png)
       
-      You will be directed to the **Service** landing page. The service creation will take a few minutes. After the service is successfully created, you will be notified appropriately and the status of the service will change to **Active**.
+      Será redirecionado para a página de destino do **Serviço**. A criação do serviço irá demorar alguns minutos. Após criar o serviço com êxito, será devidamente notificado e o estado do serviço será alterado para **Ativo**.
       
-       ![service creation](./media/storsimple-create-new-service-gov/HCS_StorSimpleManagerServicePage-gov-include.png)
+       ![criação do serviço](./media/storsimple-create-new-service-gov/HCS_StorSimpleManagerServicePage-gov-include.png)
 

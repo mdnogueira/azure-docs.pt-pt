@@ -1,27 +1,27 @@
 > [!div class="op_single_selector"]
 > * [Node.js](../articles/iot-hub/iot-hub-node-node-twin-how-to-configure.md)
-> * [C#/Node.js](../articles/iot-hub/iot-hub-csharp-node-twin-how-to-configure.md)
+> * [C#/node.js](../articles/iot-hub/iot-hub-csharp-node-twin-how-to-configure.md)
 > * [C#](../articles/iot-hub/iot-hub-csharp-csharp-twin-how-to-configure.md)
 > * [Java](../articles/iot-hub/iot-hub-java-java-twin-how-to-configure.md)
 > 
 > 
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Introdução
 
-In [Get started with IoT Hub device twins][lnk-twin-tutorial], you learned how to set device metadata from your solution back end using *tags*, report device conditions from a device app using *reported properties*, and query this information using a SQL-like language.
+No [começar a utilizar dispositivos duplos do IoT Hub][lnk-twin-tutorial], aprendeu a definir os metadados do dispositivo da sua solução de back-end utilizar *etiquetas*, relatório de condições do dispositivo a partir de uma aplicação de dispositivo utilizar *comunicadas propriedades*e consultar esta informação utilizando uma linguagem como o SQL Server.
 
-In this tutorial, you learn how to use the device twin's *desired properties* along with *reported properties*, to remotely configure device apps. More specifically, this tutorial shows how a device twin's reported and desired properties enable a multi-step configuration of a device application, and provide the visibility to the solution back end of the status of this operation across all devices. You can find more information regarding the role of device configurations in [Overview of device management with IoT Hub][lnk-dm-overview].
+Neste tutorial, irá aprender a utilizar o dispositivo duplo *pretendido propriedades* juntamente com *comunicadas propriedades*, para configurar remotamente a aplicações de dispositivos. Mais especificamente, este tutorial mostra como um dispositivo duplo comunicadas e propriedades pretendidas ative uma configuração de vários passo de uma aplicação de dispositivo e fornecem a visibilidade para a solução de back-end do estado desta operação em todos os dispositivos. Pode encontrar mais informações sobre a função de configurações de dispositivo [descrição geral da gestão de dispositivos do IoT hub][lnk-dm-overview].
 
-At a high level, using device twins enables the solution back end to specify the desired configuration for the managed devices, instead of sending specific commands. This puts the device in charge of setting up the best way to update its configuration (important in IoT scenarios where specific device conditions affect the ability to immediately carry out specific commands), while continually reporting to the solution back end the current state and potential error conditions of the update process. This pattern is instrumental to the management of large sets of devices, as it enables the solution back end to have full visibility of the state of the configuration process across all devices.
+Um nível elevado, utilizar dispositivos duplos permite que a solução de back-end especificar a configuração pretendida para os dispositivos geridos, em vez de enviar comandos específicos. Isto coloca o dispositivo responsável pela como configurar a melhor forma de atualizar a configuração da sua (importante nos cenários de IoT onde condições de dispositivo específico afetam a capacidade de realizar imediatamente comandos específicos), ao continuamente comunicam com o solução de back-end o estado atual e potenciais condições de erro do processo de atualização. Este padrão é instrumental para a gestão de grandes conjuntos de dispositivos, que permite que a solução de back-end para tem visibilidade total do Estado do processo de configuração em todos os dispositivos.
 
 > [!NOTE]
-> In scenarios where devices are controlled in a more interactive fashion (turn on a fan from a user-controlled app), consider using [direct methods][lnk-methods].
+> Em cenários em que os dispositivos são controlados de forma interativa mais (ative uma ventoinha a partir de uma aplicação controlados pelo utilizador), considere a utilização de [direcionar métodos][lnk-methods].
 > 
 > 
 
-In this tutorial, the solution back end changes the telemetry configuration of a target device and, as a result of that, the device app follows a multi-step process to apply a configuration update (for example, requiring a software module restart, which this tutorial simulates with a simple delay).
+Neste tutorial, o solução de back-end altera a configuração de telemetria de um dispositivo de destino e, assim que, a aplicação de dispositivo segue um processo de vários passo para aplicar uma atualização da configuração (por exemplo, exigir um reinício de módulo de software, o qual este tutorial simula com um atraso simple).
 
-The solution back end stores the configuration in the device twin's desired properties in the following way:
+O solução de back-end armazena a configuração nas propriedades do dispositivo duplo pretendido da seguinte forma:
 
         {
             ...
@@ -39,11 +39,11 @@ The solution back end stores the configuration in the device twin's desired prop
         }
 
 > [!NOTE]
-> Since configurations can be complex objects, they are assigned unique IDs (hashes or [GUIDs][lnk-guid]) to simplify their comparisons.
+> Uma vez que as configurações podem ser objetos complexos, são atribuídas os IDs exclusivos (hashes ou [GUIDs][lnk-guid]) para simplificar as respetivas comparações.
 > 
 > 
 
-The device app reports its current configuration mirroring the desired property **telemetryConfig** in the reported properties:
+A aplicação de dispositivo relatórios configuração atual espelhamento a propriedade pretendida **telemetryConfig** nas propriedades de comunicado:
 
         {
             "properties": {
@@ -59,9 +59,9 @@ The device app reports its current configuration mirroring the desired property 
             }
         }
 
-Note how the reported **telemetryConfig** has an additional property **status**, used to report the state of the configuration update process.
+Tenha em atenção como os que relatados **telemetryConfig** tem uma propriedade adicional **estado**, utilizada para comunicar o estado do processo de atualização de configuração.
 
-When a new desired configuration is received, the device app reports a pending configuration by changing the information:
+Quando uma nova configuração desejada é recebida, a aplicação de dispositivo relatórios uma configuração pendente alterando as informações:
 
         {
             "properties": {
@@ -81,13 +81,13 @@ When a new desired configuration is received, the device app reports a pending c
             }
         }
 
-Then, at some later time, the device app reports the success or failure of this operation by updating the above property.
-Note how the solution back end is able, at any time, to query the status of the configuration process across all the devices.
+Em seguida, em algum momento posterior, a aplicação de dispositivo relatórios o êxito ou falha desta operação atualizando a propriedade acima.
+Tenha em atenção a como o solução de back-end é capaz de, em qualquer altura, para consultar o estado do processo de configuração em todos os dispositivos.
 
-This tutorial shows you how to:
+Este tutorial mostrar-lhe como:
 
-* Create a simulated device app that receives configuration updates from the solution back end, and reports multiple updates as *reported properties* on the configuration update process.
-* Create a back-end app that updates the desired configuration of a device, and then queries the configuration update process.
+* Criar uma aplicação de dispositivo simulado que recebe atualizações de configuração de back-end da solução e relatórios de várias atualizações como *comunicadas propriedades* na configuração de processo de atualização.
+* Crie uma aplicação de back-end que atualiza a configuração pretendida de um dispositivo e, em seguida, consulta o processo de atualização da configuração.
 
 <!-- links -->
 

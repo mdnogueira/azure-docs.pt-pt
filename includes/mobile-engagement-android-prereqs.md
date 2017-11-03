@@ -1,7 +1,7 @@
-Before starting this tutorial, you must first complete the [Getting Started](../articles/mobile-engagement/mobile-engagement-android-get-started.md) tutorial.
+Antes de começar este tutorial, primeiro tem de concluir o [introdução](../articles/mobile-engagement/mobile-engagement-android-get-started.md) tutorial.
 
 > [!IMPORTANT]
-> Your minimum Android SDK API level must be 10 or higher (Android 2.3.3 or higher).
+> O nível de API do SDK Android mínimo tem de ser 10 ou superior (Android 2.3.3 ou superior).
 > 
 > 
 

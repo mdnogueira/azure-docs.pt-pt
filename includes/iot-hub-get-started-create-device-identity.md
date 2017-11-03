@@ -1,26 +1,26 @@
-## <a name="create-a-device-identity"></a>Create a device identity
+## <a name="create-a-device-identity"></a>Criar uma identidade de dispositivo
 
-In this section, you use a Node.js tool called [iothub-explorer][iot-hub-explorer] to create a device identity for this tutorial. Device IDs are case sensitive.
+Nesta secção, utilize uma ferramenta de Node.js chamada [iothub explorer] [ iot-hub-explorer] para criar uma identidade de dispositivo para este tutorial. Os IDs dos dispositivos são sensíveis às maiúsculas e minúsculas.
 
-1. Run the following in your command-line environment:
+1. Execute o seguinte no seu ambiente de linha de comandos:
 
     `npm install -g iothub-explorer@latest`
 
-1. Then, run the following command to login to your hub. Substitute `{iot hub connection string}` with the IoT Hub connection string you previously copied:
+1. Em seguida, execute o seguinte comando para iniciar sessão para o seu hub. Substitute `{iot hub connection string}` com a cadeia de ligação do IoT Hub que copiou anteriormente:
 
     `iothub-explorer login "{iot hub connection string}"`
 
-1. Finally, create a new device identity called `myDeviceId` with the command:
+1. Por fim, crie uma nova identidade de dispositivo chamada `myDeviceId` com o comando:
 
     `iothub-explorer create myDeviceId --connection-string`
 
    [!INCLUDE [iot-hub-pii-note-naming-device](iot-hub-pii-note-naming-device.md)]
 
-Make a note of the device connection string from the result. This device connection string is used by the device app to connect to your IoT Hub as a device.
+Tome nota da cadeia de ligação do dispositivo do resultado. Esta cadeia de ligação do dispositivo é utilizada pela aplicação de dispositivo para ligar ao seu IoT Hub como um dispositivo.
 
 ![][img-identity]
 
-Refer to [Getting started with IoT Hub][lnk-getstarted] to programmatically create device identities.
+Consulte [introdução ao IoT Hub] [ lnk-getstarted] para programaticamente criar as identidades de dispositivo.
 
 <!-- images and links -->
 [img-identity]: media/iot-hub-get-started-create-device-identity/devidentity.png

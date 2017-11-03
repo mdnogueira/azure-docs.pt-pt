@@ -1,15 +1,15 @@
 > [!WARNING]
-> When you enable diagnostics on an existing role, any extensions you have enabled will be disabled when the package is deployed. These include:
+> Quando ativar diagnósticos para uma função existente, as extensões que já definiu são desativados quando o pacote é implementado. Estas incluem:
 >
-> * Microsoft Monitoring Agent Diagnostics
-> * Microsoft Azure Security Monitoring
+> * Diagnóstico de agente de monitorização Microsoft
+> * Monitorização de segurança do Microsoft Azure
 > * Microsoft Antimalware                 
-> * Microsoft Monitoring Agent
-> * Microsoft Service Profiler Agent      
-> * Windows Azure Domain Extension        
-> * Windows Azure Diagnostics Extension   
-> * Windows Azure Remote Desktop Extension
-> * Windows Azure Log Collector
+> * Agente de Monitorização da Microsoft
+> * Agente do gerador de perfis de serviço da Microsoft      
+> * Extensão do Windows de domínio do Azure        
+> * Extensão de diagnóstico do Azure do Windows   
+> * Windows extensão de ambiente de trabalho remoto do Azure
+> * Recoletor de registos do Azure do Windows
 >
-> You may re-enable your extensions via the Azure Portal or PowerShell after you have deployed the updated role.
+> Só pode repor as extensões através do portal do Azure ou do PowerShell depois de implementar a função atualizada.
 >

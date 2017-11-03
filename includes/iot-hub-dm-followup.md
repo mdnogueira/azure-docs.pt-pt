@@ -1,22 +1,22 @@
-## <a name="customize-and-extend-the-device-management-actions"></a>Customize and extend the device management actions
+## <a name="customize-and-extend-the-device-management-actions"></a>Personalizar e expandir o dispositivo ações de gestão
 
-Your IoT solutions can expand the defined set of device management patterns or enable custom patterns by using the device twin and cloud-to-device method primitives. Other examples of device management actions include factory reset, firmware update, software update, power management, network and connectivity management, and data encryption.
+As soluções de IoT podem expandir o conjunto definido de padrões de gestão de dispositivos ou ativar padrões personalizadas utilizando o dispositivo duplo e primitivos do método de nuvem para o dispositivo. Outros exemplos de ações de gestão de dispositivos incluem a reposição de fábrica, atualização de firmware, a atualização de software, gestão de energia, gestão de rede e a conectividade e encriptação de dados.
 
-## <a name="device-maintenance-windows"></a>Device maintenance windows
+## <a name="device-maintenance-windows"></a>Janelas de manutenção do dispositivo
 
-Typically, you configure devices to perform actions at a time that minimizes interruptions and downtime. Device maintenance windows are a commonly used pattern to define the time when a device should update its configuration. Your back-end solutions can use the desired properties of the device twin to define and activate a policy on your device that enables a maintenance window. When a device receives the maintenance window policy, it can use the reported property of the device twin to report the status of the policy. The back-end app can then use device twin queries to attest to compliance of devices and each policy.
+Normalmente, pode configurar dispositivos para efetuar ações de cada vez que minimiza a interrupções planeadas e período de indisponibilidade. Janelas de manutenção do dispositivo são um padrão frequentemente utilizado para definir a hora quando um dispositivo deve ser atualizado a respetiva configuração. As soluções de back-end podem utilizar as propriedades do dispositivo duplo pretendidas para definir e ativar uma política no seu dispositivo que permite uma janela de manutenção. Quando um dispositivo recebe a política de janela de manutenção, pode utilizar a propriedade do dispositivo duplo comunicada para comunicar o estado da política. A aplicação de back-end, em seguida, pode utilizar consultas do dispositivo duplo atestem a conformidade de dispositivos e cada política.
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Passos seguintes
 
-In this tutorial, you used a direct method to trigger a remote reboot on a device. You used the reported properties to report the last reboot time from the device, and queried the device twin to discover the last reboot time of the device from the cloud.
+Neste tutorial, utilizou um método direto para acionar um reinício remoto num dispositivo. Utilizar as propriedades que relatados para reportar a última de reinício do dispositivo e consultar o dispositivo duplo para detetar a última de reinício do dispositivo da nuvem.
 
-To continue getting started with IoT Hub and device management patterns such as remote over the air firmware update, see:
+Para continuar a introdução ao IoT Hub e padrões de gestão de dispositivos como remota através da atualização de firmware ondas eletromagnéticas, consulte:
 
-[Tutorial: How to do a firmware update][lnk-fwupdate]
+[Tutorial: Como efetuar uma atualização de firmware][lnk-fwupdate]
 
-To learn how to extend your IoT solution and schedule method calls on multiple devices, see the [Schedule and broadcast jobs][lnk-tutorial-jobs] tutorial.
+Para saber como expandir o seu IoT chama o método de solução e agenda em vários dispositivos, consulte o [agenda e as tarefas de difusão] [ lnk-tutorial-jobs] tutorial.
 
-To continue getting started with IoT Hub, see [Getting started with IoT Edge][lnk-iot-edge].
+Para continuar a introdução ao IoT Hub, consulte [introdução ao IoT Edge][lnk-iot-edge].
 
 [lnk-fwupdate]: ../articles/iot-hub/iot-hub-node-node-firmware-update.md
 [lnk-tutorial-jobs]: ../articles/iot-hub/iot-hub-node-node-schedule-jobs.md

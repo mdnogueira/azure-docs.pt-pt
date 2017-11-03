@@ -6,54 +6,52 @@ author: jasonwhowell
 ms.author: jasonh
 manager: jhubbard
 editor: jasonwhowell
-ms.service: postgresql-database
+ms.service: postgresql
 ms.custom: mvc
 ms.devlang: php
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 06/29/2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1500c02fa1e6876b47e3896c40c7f3356f8f1eed
-ms.openlocfilehash: 009cc7941dc5d60153f1ab27adb9b86866b9a3f2
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/30/2017
-
+ms.openlocfilehash: 20dbc4bbe66ec311afcc238b25a6c1f6f6a40829
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="azure-database-for-postgresql-use-php-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilize o PHP para ligar e consultar dados
-Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de uma aplicação [PHP](http://php.net/manual/intro-whatis.php). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Este artigo pressupõe que esteja familiarizado com o desenvolvimento que utiliza o PHP, mas que nunca trabalhou com a Base de Dados do Azure para PostgreSQL.
+Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de uma aplicação [PHP](http://php.net/manual/intro-whatis.php). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Os passos neste artigo partem do princípio de que está familiarizado com o desenvolvimento de linguagem PHP e estiver a trabalhar com a base de dados do Azure para PostgreSQL.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Este início rápido utiliza os recursos criados em qualquer um desses guias como ponto de partida:
+Este guia de início rápido utiliza os recursos criados em qualquer um destes guias como ponto de partida:
 - [Criar BD - Portal](quickstart-create-server-database-portal.md)
 - [Criar BD - CLI do Azure](quickstart-create-server-database-azure-cli.md)
 
 ## <a name="install-php"></a>Instalar o PHP
-Instale o PHP no seu próprio servidor ou crie uma [aplicação Web](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-overview) do Azure que inclua o PHP.
+Instale o PHP no seu próprio servidor ou crie uma [aplicação Web](../app-service/app-service-web-overview.md) do Azure que inclua o PHP.
 
 ### <a name="windows"></a>Windows
-- Transfira a [versão 7.1.4 do PHP (x64) não «thread safe»](http://windows.php.net/download#php-7.1)
+- Transfira a [versão 7.1.4 do PHP (x64) não segura para threads](http://windows.php.net/download#php-7.1)
 - Instale o PHP e veja o [manual do PHP](http://php.net/manual/install.windows.php) para mais configurações
 - O código utiliza a classe **pgsql** (ext/php_pgsql.dll) incluída na instalação do PHP. 
 - Ative a extensão **pgsql** ao editar o ficheiro de configuração php.ini, geralmente localizado em `C:\Program Files\PHP\v7.1\php.ini`. O ficheiro de configuração deve conter uma linha com o texto `extension=php_pgsql.so`. Se não for apresentado, adicione o texto e guarde o ficheiro. Se o texto estiver presente, mas comentado com um prefixo de ponto e vírgula, remova os comentários do texto ao remover o ponto e vírgula.
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
-- Transfira a [versão 7.1.4 do PHP (x64) não «thread safe»](http://php.net/downloads.php) 
+- Transfira a [versão 7.1.4 do PHP (x64) não segura para threads](http://php.net/downloads.php) 
 - Instale o PHP e veja o [manual do PHP](http://php.net/manual/install.unix.php) para mais configurações
 - O código utiliza a classe **pgsql** (php_pgsql.so). Instale-o ao executar `sudo apt-get install php-pgsql`.
 - Ative a extensão **pgsql** ao editar o ficheiro de configuração `/etc/php/7.0/mods-available/pgsql.ini`. O ficheiro de configuração deve conter uma linha com o texto `extension=php_pgsql.so`. Se não for apresentado, adicione o texto e guarde o ficheiro. Se o texto estiver presente, mas comentado com um prefixo de ponto e vírgula, remova os comentários do texto ao remover o ponto e vírgula.
 
 ### <a name="macos"></a>MacOS
-- Transferir a [versão 7.1.4 do PHP](http://php.net/downloads.php)
+- Transfira a [versão 7.1.4 do PHP](http://php.net/downloads.php)
 - Instale o PHP e veja o [manual do PHP](http://php.net/manual/install.macosx.php) para mais configurações
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
-Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para PostgreSQL. Precisa das credenciais de nome de servidor totalmente qualificado e de início de sessão.
+Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para PostgreSQL. Necessita do nome do servidor e das credenciais de início de sessão totalmente qualificados.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. No menu esquerdo do portal do Azure, clique em **Todos os recursos** e procure o servidor que acabou de criar, por exemplo, **mypgserver-20170401**.
 3. Clique no nome do servidor **mypgserver 20170401**.
 4. Selecione a página **Descrição Geral** do servidor. Anote o **Nome do servidor** e **Nome de início de sessão de administrador do servidor**.
- ![Base de Dados do Azure para o PostgreSQL – Início de Sessão de Administrador do Servidor](./media/connect-php/1-connection-string.png)
+ ![Base de Dados do Azure para o PostgreSQL – Início de sessão de administrador do servidor](./media/connect-php/1-connection-string.png)
 5. Caso se tenha esquecido das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** para visualizar o nome de início de sessão de administrador do servidor e, se necessário, repor a palavra-passe.
 
 ## <a name="connect-and-create-a-table"></a>Ligar e criar uma tabela
@@ -222,5 +220,4 @@ Substitua os parâmetros `$host`, `$database`, `$user` e `$password` pelos seus 
 
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
-> [Migrar a base de dados com as opções Exportar e Importar](./howto-migrate-using-export-and-import.md)
-
+> [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)

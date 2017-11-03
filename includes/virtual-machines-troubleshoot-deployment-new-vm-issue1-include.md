@@ -1,5 +1,5 @@
-## <a name="issue-custom-image-provisioning-errors"></a>Issue: Custom image; provisioning errors
-Provisioning errors arise if you upload or capture a generalized VM image as a specialized VM image or vice versa. The former will cause a provisioning timeout error and the latter will cause a provisioning failure. To deploy your custom image without errors, you must ensure that the type of the image does not change during the capture process.
+## <a name="issue-custom-image-provisioning-errors"></a>Problema: Imagem personalizado; erros de aprovisionamento
+Erros de aprovisionamento surgem se carregar ou capturar uma imagem VM generalizada como uma imagem VM especializada, ou vice versa. A primeira fará com que um erro de tempo limite de aprovisionamento e a última opção causará uma falha de aprovisionamento. Para implementar a sua imagem personalizada sem erros, tem de se certificar de que o tipo da imagem não se altera durante o processo de captura.
 
-The following table lists the possible combinations of generalized and specialized images, the error type you will encounter and what you need to do to fix the errors.
+A tabela seguinte lista as possíveis combinações de imagens generalizadas e especializadas, irá encontrar o tipo de erro e o que precisa de fazer para corrigir os erros.
 

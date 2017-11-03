@@ -1,20 +1,20 @@
 
 
 
-## <a name="viewing-your-tags-in-the-usage-details"></a>Viewing your tags in the usage details
-Tags placed on Compute, Network, and Storage resources in the Resource Manager deployment model will be populated in your usage details in the [billing portal](https://account.windowsazure.com/).
+## <a name="viewing-your-tags-in-the-usage-details"></a>Ver as suas etiquetas nos detalhes de utilização
+Etiquetas colocada computação, rede, e recursos de armazenamento no modelo de implementação Resource Manager serão preenchidos no seu detalhes de utilização no [portal faturação](https://account.windowsazure.com/).
 
-Click on **Download usage details** to view the usage details in your subscription.
+Clique em **transferir detalhes de utilização** para ver os detalhes de utilização na sua subscrição.
 
-![Usage details in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-tags-usage-details.png)
+![Detalhes de utilização no portal do Azure](./media/virtual-machines-common-tag-usage/azure-portal-tags-usage-details.png)
 
-Select your billing statement and the **Version 2** usage details:
+Selecione a sua declaração de faturação e **versão 2** detalhes de utilização:
 
-![Version 2 Preview Usage Details in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-version2-usage-details.png)
+![Detalhes de utilização de pré-visualização de versão 2 no portal do Azure](./media/virtual-machines-common-tag-usage/azure-portal-version2-usage-details.png)
 
-From the usage details, you can see all of the tags in the **Tags** column:
+De detalhes de utilização, pode ver todas as etiquetas no **etiquetas** coluna:
 
-![Tags column in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-tags-column.png)
+![Coluna de tags no portal do Azure](./media/virtual-machines-common-tag-usage/azure-portal-tags-column.png)
 
-By analyzing these tags along with usage, organizations will be able to gain new insights into their consumption data.
+Ao analisar estas etiquetas, juntamente com a utilização, as organizações vão conseguir obter novas informações sobre os seus dados de consumo.
 

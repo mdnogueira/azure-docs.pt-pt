@@ -18,8 +18,3 @@ Esta é uma alternativa que tira partido do facto de o script de implementação
 ### <a name="option-3-customize-deployment-script"></a>Opção 3: personalizar o script de implementação
 Se tiver personalizado o script de implementação, pode alterar o código no deploy.cmd para forçá-lo a eliminar a pasta env.
 
-
-
-<!--HONumber=Nov16_HO2-->
-
-

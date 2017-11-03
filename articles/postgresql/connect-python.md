@@ -6,19 +6,17 @@ author: SaloniSonpal
 ms.author: salonis
 manager: jhubbard
 editor: jasonwhowell
-ms.service: postgresql-database
-ms.custom: mvc
+ms.service: postgresql
+ms.custom: mvc, devcenter
 ms.devlang: python
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 08/15/2017
-ms.translationtype: HT
-ms.sourcegitcommit: 1e6fb68d239ee3a66899f520a91702419461c02b
-ms.openlocfilehash: 481e2552e2a2cd91d026774438788143109b28df
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/16/2017
-
+ms.openlocfilehash: 0e1a334f4dd4d142c923fababc336897d9020fad
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="azure-database-for-postgresql-use-python-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilizar o Python para se ligar e consultar dados
 Este guia de início rápido mostra como utilizar o [Python](https://python.org) para se ligar a uma Base de Dados do Azure para PostgreSQL. Mostra também como utilizar declarações SQL para consultar, inserir, atualizar e eliminar dados na base de dados a partir de plataformas macOS, Ubuntu Linux e Windows. Os passos neste artigo pressupõem que está familiarizado com a programação com Python e que nunca trabalhou com a Base de Dados do Azure para PostgreSQL.
 
@@ -63,8 +61,8 @@ Este tópico contém um total de quatro exemplos de código, cada um dos quais e
 
 - Através do seu editor de texto favorito, crie um novo ficheiro.
 - Copie e cole um dos exemplos de código nas secções seguintes no ficheiro de texto. Substitua os parâmetros de **anfitrião**, **dbname**, **utilizador** e **palavra-passe** pelos valores que especificou quando criou o servidor e a base de dados.
-- Guarde o ficheiro com a extensão .py (por exemplo postgres.py) na pasta do projeto. Se estiver a utilizar o SO do Windows, certifique-se de que seleciona a codificação UTF-8 ao guardar o ficheiro. 
-- Inicie a Linha de Comandos ou shell do Bash e, em seguida, por exemplo, altere o diretório para a pasta do projeto, `cd postgres`.
+- Guarde o ficheiro com a extensão .py (por exemplo postgres.py) na pasta do projeto. Se estiver a executar no Windows, lembre-se de que selecione a codificação UTF-8 quando guardar o ficheiro. 
+- Inicie a shell de linha de comandos, Terminal ou Bash e, em seguida, por exemplo, altere o diretório para a pasta do projeto, `cd postgres`.
 -  Para executar o código, escreva o comando do Python seguido do nome de ficheiro, por exemplo `Python postgres.py`.
 
 > [!NOTE]
@@ -211,4 +209,3 @@ conn.close()
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
 > [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)
-

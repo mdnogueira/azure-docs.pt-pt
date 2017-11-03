@@ -1,9 +1,9 @@
-Collection of custom measurements. Use this collection to report named measurement associated with the telemetry item. Typical use cases are:
-- the size of Dependency Telemetry payload
-- the number of queue items processed by Request Telemetry
-- time that customer took to complete the step in wizard step completion Event Telemetry.
+Coleção de medidas personalizadas. Utilize esta coleção para o relatório com o nome de medida associada ao item de telemetria. Casos de utilização típicos são:
+- o tamanho do payload de telemetria de dependência
+- o número de itens da fila processados pelo pedido de telemetria
+- tempo desse cliente demorou a concluir o passo na conclusão do passo do Assistente para eventos de telemetria.
 
-You can query [custom measurements](https://analytics.applicationinsights.io/demo?q=H4sIAAAAAAAAA2WLOw6DMAyGd07hZoLeoRPqyMaGGAL8aiPhGCV2kKoeHsHK%2Bj1myyr8LoiaqfrT%2FkUCzRft4LMl8OUeL3LuLLIx%2BxR%2BIF8%2BtcoiNq2o78vgWuFthQaJ1AeGGxt6UlBwKxa1qQ6EpLhAfQAAAA%3D%3D&timespan=PT24H) in Application Analytics:
+Pode consultar [medidas personalizadas](https://analytics.applicationinsights.io/demo?q=H4sIAAAAAAAAA2WLOw6DMAyGd07hZoLeoRPqyMaGGAL8aiPhGCV2kKoeHsHK%2Bj1myyr8LoiaqfrT%2FkUCzRft4LMl8OUeL3LuLLIx%2BxR%2BIF8%2BtcoiNq2o78vgWuFthQaJ1AeGGxt6UlBwKxa1qQ6EpLhAfQAAAA%3D%3D&timespan=PT24H) na análise de aplicação:
 
 ```
 customEvents
@@ -12,6 +12,6 @@ customEvents
 ```
 
  > [!NOTE]
- > Custom measurements are associated with the telemetry item they belong to. They are subject to sampling with the telemetry item containing those measurements. To track a measurement that has a value independent from other telemetry types, use [Metric telemetry](../articles/application-insights/app-insights-api-custom-events-metrics.md).
+ > Medidas personalizadas estão associadas a do item de telemetria que pertencem a. Estão sujeitos a amostragem com o item de telemetria que contém as medidas. Para monitorizar uma medida que tem um valor independente dos outros tipos de telemetria, utilize [telemetria métrica](../articles/application-insights/app-insights-api-custom-events-metrics.md).
 
-Max key length: 150
+Comprimento de chave máximo: 150

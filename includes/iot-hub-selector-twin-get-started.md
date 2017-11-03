@@ -1,37 +1,37 @@
 > [!div class="op_single_selector"]
 > * [Node.js](../articles/iot-hub/iot-hub-node-node-twin-getstarted.md)
-> * [C#/Node.js](../articles/iot-hub/iot-hub-csharp-node-twin-getstarted.md)
+> * [C#/node.js](../articles/iot-hub/iot-hub-csharp-node-twin-getstarted.md)
 > * [C#](../articles/iot-hub/iot-hub-csharp-csharp-twin-getstarted.md)
 > * [Java](../articles/iot-hub/iot-hub-java-java-twin-getstarted.md)
 
-Device twins are JSON documents that store device state information (metadata, configurations, and conditions). IoT Hub persists a device twin for each device that connects to it.
+Os dispositivos duplos são documentos JSON que armazenam informações de estado dos dispositivos (metadados, configurações e condições). IoT Hub mantém um dispositivo duplo para cada dispositivo que se liga ao mesmo.
 
-Use device twins to:
+Utilize dispositivos duplos para:
 
-* Store device metadata from your solution back end.
-* Report current state information such as available capabilities and conditions (for example, the connectivity method used) from your device app.
-* Synchronize the state of long-running workflows (such as firmware and configuration updates) between a device app and a back-end app.
-* Query your device metadata, configuration, or state.
+* Armazenar metadados do dispositivo da sua solução de back-end.
+* Comunicarão as informações de estado atual, tais como condições (por exemplo, o método de conectividade utilizado) e capacidades disponíveis da sua aplicação de dispositivo.
+* Sincronize o estado de execução longa os fluxos de trabalho (tais como atualizações de firmware e de configuração) entre uma aplicação de dispositivo e uma aplicação de back-end.
+* Consulta os metadados do dispositivo, a configuração ou o estado.
 
 > [!NOTE]
-> Device twins are designed for synchronization and for querying device configurations and conditions. More informations on when to use device twins can be found in [Understand device twins][lnk-twins].
+> Dispositivos duplos foram concebidos para a sincronização de e para consultar as configurações de dispositivo e condições. Podem encontrar mais informations no quando utilizar dispositivos duplos [compreender dispositivos duplos][lnk-twins].
 
-Device twins are stored in an IoT hub and contain:
+Dispositivos duplos são armazenados num IoT hub e contenham:
 
-* *tags*, device metadata accessible only by the solution back end;
-* *desired properties*, JSON objects modifiable by the solution back end and observable by the device app; and
-* *reported properties*, JSON objects modifiable by the device app and readable by the solution back end. Tags and properties cannot contain arrays, but objects can be nested.
+* *etiquetas*, os metadados do dispositivo acessível apenas ao solução de back-end;
+* *pretender propriedades*, objetos JSON modificável pela solução de back-end e observable pela aplicação do dispositivo; e
+* *comunicado propriedades*, objetos JSON modificável pela aplicação de dispositivo e ser lido pelo solução de back-end. As etiquetas e propriedades não podem conter matrizes, mas podem ser aninhados em objetos.
 
 ![][img-twin]
 
-Additionally, the solution back end can query device twins based on all the above data.
-Refer to [Understand device twins][lnk-twins] for more information about device twins, and to the [IoT Hub query language][lnk-query] reference for querying.
+Além disso, o solução de back-end pode consultar dispositivos duplos com base em todos os dados acima.
+Consulte [compreender dispositivos duplos] [ lnk-twins] para obter mais informações sobre dispositivos duplos e o [idioma de consulta do IoT Hub] [ lnk-query] referenciar para a consultar.
 
 
-This tutorial shows you how to:
+Este tutorial mostrar-lhe como:
 
-* Create a back-end app that adds *tags* to a device twin, and a simulated device app that reports its connectivity channel as a *reported property* on the device twin.
-* Query devices from your back-end app using filters on the tags and properties previously created.
+* Criar uma aplicação de back-end que adiciona *etiquetas* para um dispositivo duplo e uma aplicação de dispositivo simulado que comunica o canal de conectividade como um *comunicadas propriedade* no dispositivo duplo.
+* Consultar os dispositivos da sua aplicação de back-end utilizando filtros na etiquetas e propriedades que criou anteriormente.
 
 <!-- images -->
 [img-twin]: media/iot-hub-selector-twin-get-started/twin.png

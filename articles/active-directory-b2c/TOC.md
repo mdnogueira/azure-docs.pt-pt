@@ -1,6 +1,9 @@
 # [Descrição geral](active-directory-b2c-overview.md)
 
 # Introdução
+## [Testar uma aplicação web do Azure AD B2C](active-directory-b2c-quickstarts-web-app.md)
+## [Testar uma aplicação de ambiente de trabalho do Azure AD B2C](active-directory-b2c-quickstarts-desktop-app.md)
+## [Testar uma aplicação de página única do Azure AD B2C](active-directory-b2c-quickstarts-spa.md)
 ## [Criar um Diretório do Azure AD B2C](active-directory-b2c-get-started.md)
 ## [Registar a sua aplicação](active-directory-b2c-app-registration.md)
 ## [Políticas Incorporadas](active-directory-b2c-reference-policies.md)

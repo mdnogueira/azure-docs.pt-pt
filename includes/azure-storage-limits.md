@@ -1,44 +1,21 @@
-| Resource | Default Limit |
+| Recurso | Limite Predefinido |
 | --- | --- |
-| Number of storage accounts per subscription |200<sup>1</sup> |
-| Max storage account capacity |500 TB<sup>2</sup> |
-| Max number of blob containers, blobs, file shares, tables, queues, entities, or messages per storage account |No limit |
-| Max size of a single blob container, table, or queue |Same as max storage account capacity |
-| Max number of blocks in a block blob or append blob |50,000 |
-| Max size of a block in a block blob |100 MB |
-| Max size of a block blob |50,000 X 100 MB (approx. 4.75 TB) |
-| Max size of a block in an append blob |4 MB |
-| Max size of an append blob |50,000 X 4 MB (approx. 195 GB) |
-| Max size of a page blob |8 TB |
-| Max size of a table entity |1 MB |
-| Max number of properties in a table entity |252 |
-| Max size of a message in a queue |64 KB |
-| Max size of a file share |5 TB |
-| Max size of a file in a file share |1 TB |
-| Max number of files in a file share |Only limit is the 5 TB total capacity of the file share |
-| Max IOPS per share |1000 |
-| Max number of files in a file share |Only limit is the 5 TB total capacity of the file share |
-| Max number of stored access policies per container, file share, table, or queue |5 |
-| Maximum Request Rate per storage account |Blobs: 20,000 requests per second<sup>2</sup> for blobs of any valid size (capped only by the account's ingress/egress limits) <br />Files: 1000 IOPS (8 KB in size) per file share <br />Queues: 20,000 messages per second (assuming 1 KB message size)<br />Tables: 20,000 transactions per second (assuming 1 KB entity size) |
-| Target throughput for single blob |Up to 60 MB per second, or up to 500 requests per second |
-| Target throughput for single queue (1 KB messages) |Up to 2000 messages per second |
-| Target throughput for single table partition (1 KB entities) |Up to 2000 entities per second |
-| Target throughput for single file share |Up to 60 MB per second |
-| Max ingress<sup>3</sup> per storage account (US Regions) |10 Gbps if GRS/ZRS<sup>4</sup> enabled, 20 Gbps for LRS<sup>2</sup> |
-| Max egress<sup>3</sup> per storage account (US Regions) |20 Gbps if RA-GRS/GRS/ZRS<sup>4</sup> enabled, 30 Gbps for LRS<sup>2</sup> |
-| Max ingress<sup>3</sup> per storage account (Non-US regions) |5 Gbps if GRS/ZRS<sup>4</sup> enabled, 10 Gbps for LRS<sup>2</sup> |
-| Max egress<sup>3</sup> per storage account (Non-US regions) |10 Gbps if RA-GRS/GRS/ZRS<sup>4</sup> enabled, 15 Gbps for LRS<sup>2</sup> |
+| Número de contas do storage por subscrição | 200<sup>1</sup> |
+| Capacidade de conta de armazenamento máximo | 500 TiB<sup>2</sup> |
+| Número máx. de contentores de BLOBs, blobs, partilhas de ficheiros, tabelas, filas, entidades ou mensagens por conta de armazenamento | Sem limite |
+| Entrada máximo<sup>3</sup> por conta de armazenamento (regiões EUA) | 10 Gbps se GRS/ZRS<sup>4</sup> ativada, 20 Gbps para LRS<sup>2</sup> |
+| Saída máximo<sup>3</sup> por conta de armazenamento (regiões EUA) | 20 Gbps se RA-GRS/GRS/ZRS<sup>4</sup> ativada, 30 Gbps para LRS<sup>2</sup> |
+| Entrada máximo<sup>3</sup> por conta de armazenamento (regiões de não-US) | 5 Gbps se GRS/ZRS<sup>4</sup> ativada, 10 Gbps para LRS<sup>2</sup> |
+| Saída máximo<sup>3</sup> por conta de armazenamento (regiões de não-US) | 10 Gbps se RA-GRS/GRS/ZRS<sup>4</sup> ativada, 15 Gbps para LRS<sup>2</sup> |
 
-<sup>1</sup>This includes both Standard and Premium storage accounts. If you require more than 200 storage accounts, make a request through [Azure Support](https://azure.microsoft.com/support/faq/). The Azure Storage team will review your business case and may approve up to 250 storage accounts. 
+<sup>1</sup>inclui as contas do storage Standard e Premium. Se necessitar de mais de 200 contas de armazenamento, efetue um pedido através do [Suporte do Azure](https://azure.microsoft.com/support/faq/). A equipa do Armazenamento do Azure analisará o seu caso comercial e pode aprovar até 250 contas de armazenamento. 
 
-<sup>2</sup> To get your standard storage accounts to grow past the advertised limits in capacity, ingress/egress and request rate, please make a request through [Azure Support](https://azure.microsoft.com/support/faq/). The Azure Storage team will review the request and may approve higher limits on a case by case basis.
+<sup>2</sup> para obter as contas de armazenamento standard para aumentar passado os limites anunciados na taxa de capacidade, a entrada/saída e a pedido, certifique-se um pedido de [suporte do Azure](https://azure.microsoft.com/support/faq/). A equipa de armazenamento do Azure irá examinar o pedido e pode aprovar os limites superiores numa base de maiúsculas e minúsculas, maiúsculas e minúsculas.
 
-<sup>3</sup>*Ingress* refers to all data (requests) being sent to a storage account. *Egress* refers to all data (responses) being received from a storage account.  
+<sup>3</sup> limitado apenas por limites de entrada/saída da conta. *Entrada* refere-se a todos os dados (pedidos) que está a ser enviados para uma conta de armazenamento. *Entrada* refere-se a todos os dados (respostas) recebidas de uma conta de armazenamento.  
 
-<sup>4</sup>Azure Storage replication options include:
-* **RA-GRS**: Read-access geo-redundant storage. If RA-GRS is enabled, egress targets for the secondary location are identical to those for the primary location.
-* **GRS**:  Geo-redundant storage. 
-* **ZRS**: Zone-redundant storage. Available only for block blobs. 
-* **LRS**: Locally redundant storage. 
-
-
+<sup>4</sup>as opções de redundância do armazenamento do azure incluem:
+* **RA-GRS**: armazenamento georredundante com acesso de leitura. Se estiver ativada RA-GRS, destinos de saída para a localização secundária são idênticos para a localização primária.
+* **GRS**: armazenamento georredundante. 
+* **O ZRS**: armazenamento com redundância de zona. Disponível apenas para blobs de blocos. 
+* **LRS**: armazenamento localmente redundante. 

@@ -1,44 +1,44 @@
-# <a name="compute"></a>Compute
-Azure enables you to deploy and monitor your application code running inside a Microsoft data center. When you create an application and run it on Azure, the code and configuration together is called an Azure hosted service. Hosted services are easy to manage, scale up and down, reconfigure, and update with new versions of your application's code. This article focuses on the Azure hosted service application model.<a id="compare" name="compare"></a>
+# <a name="compute"></a>Computação
+Azure permite-lhe implementar e monitorizar o código da aplicação em execução dentro de um centro de dados da Microsoft. Quando cria uma aplicação e executá-la no Azure, o código e a configuração em conjunto é chamado um Azure serviço alojado. Serviços alojados são fáceis de gerir, aumentar e reduzir verticalmente, reconfigure e atualizar com novas versões do código das aplicações. Este artigo incida no Azure alojado modelo de serviço de aplicações.<a id="compare" name="compare"></a>
 
-## Table of Contents<a id="_GoBack" name="_GoBack"></a>
-* [Azure Application Model Benefits][Azure Application Model Benefits]
-* [Hosted Service Core Concepts][Hosted Service Core Concepts]
-* [Hosted Service Design Considerations][Hosted Service Design Considerations]
-* [Designing your Application for Scale][Designing your Application for Scale]
-* [Hosted Service Definition and Configuration][Hosted Service Definition and Configuration]
-* [The Service Definition File][The Service Definition File]
-* [The Service Configuration File][The Service Configuration File]
-* [Creating and Deploying a Hosted Service][Creating and Deploying a Hosted Service]
-* [References][References]
+## Índice<a id="_GoBack" name="_GoBack"></a>
+* [Vantagens do modelo de aplicação do Azure][Azure Application Model Benefits]
+* [Conceitos de principais de serviço alojado][Hosted Service Core Concepts]
+* [Considerações de Design do serviço alojado][Hosted Service Design Considerations]
+* [Conceber a sua aplicação para a escala][Designing your Application for Scale]
+* [Definição de serviço alojado e a configuração][Hosted Service Definition and Configuration]
+* [O ficheiro de definição de serviço][The Service Definition File]
+* [O ficheiro de configuração de serviço][The Service Configuration File]
+* [Criar e implementar um serviço alojado][Creating and Deploying a Hosted Service]
+* [Referências][References]
 
-## <a id="benefits"> </a>Azure Application Model Benefits
-When you deploy your application as a hosted service, Azure creates one or more virtual machines (VMs) that contain your application's code, and boots the VMs on physical machines residing in one of the Azure data centers. As client requests to your hosted application enter the data center, a load balancer distributes these requests equally to the VMs. While your application is hosted in Azure, it gets three key benefits:
+## <a id="benefits"></a>Vantagens do modelo de aplicação do azure
+Quando implementar a aplicação como um serviço alojado, o Azure cria um ou mais máquinas virtuais (VMs) que contêm código da aplicação e inicia as VMs em máquinas físicas que reside dos centros de dados do Azure. Como os pedidos de cliente para a aplicação alojada introduzir o Centro de dados, um balanceador de carga distribui estes pedidos igualmente para as VMs. Enquanto a aplicação será alojada no Azure, obtém três principais vantagens:
 
-* **High availability.** High availability means Azure ensures that your application is running as much as possible and is able to respond to client requests. If your application terminates (due to an unhandled exception, for example), then Azure will detect this, and it will automatically re-start your application. If the machine your application is running on experiences some kind of hardware failure, then Azure will also detect this and automatically create a new VM on another working physical machine and run your code from there. NOTE: In order for your application to get Microsoft's Service Level Agreement of 99.95% available, you must have at least two VMs running your application code. This allows one VM to process client requests while Azure moves your code from a failed VM to a new, good VM.
-* **Scalability.** Azure lets you easily and dynamically change the number of VMs running your application code to handle the actual load being placed on your application. This allows you to adjust your application to the workload that your customers are placing on it while paying only for the VMs you need when you need them. When you want to change the number of VMs, Azure responds within minutes making it possible to dynamically change the number of VMs running as often as desired.
-* **Manageability.** Because Azure is a Platform as a Service (PaaS) offering, it manages the infrastructure (the hardware itself, electricity, and networking) required to keep these machines running. Azure also manages the platform, ensuring an up-to-date operating system with all the correct patches and security updates, as well as component updates such as the .NET Framework and Internet Information Server. Because all the VMs are running Windows Server 2008, Azure provides additional features such as diagnostic monitoring, remote desktop support, firewalls, and certificate store configuration. All these features are provided at no extra cost. In fact, when you run your application in Azure, the Windows Server 2008 operating system (OS) license is included. Since all of the VMs are running Windows Server 2008, any code that runs on Windows Server 2008 works just fine when running in Azure.
+* **Elevada disponibilidade.** Elevada disponibilidade significa que Azure garante que a aplicação está em execução quanto possível e é capaz de responder a pedidos de cliente. Se a aplicação termina (devido a uma exceção não processada, por exemplo), em seguida, Azure detetará esta e irá automaticamente voltar a iniciar a aplicação. Se a máquina a aplicação está em execução no experiências algum tipo de falha de hardware, em seguida, Azure será também detetá-lo e criar uma nova VM noutra máquina física do trabalho e executar automaticamente o código a partir daí. Nota: Por ordem para a sua aplicação obter o contrato de nível de serviço da Microsoft de 99,95% disponível, tem de ter, pelo menos, duas VMs com o código da aplicação. Isto permite que uma VM para processar pedidos de cliente ao Azure move o código de uma VM com falhas para uma VM nova, bom.
+* **Escalabilidade.** Azure permite-lhe facilmente e alterar dinamicamente o número de VMs com o código da aplicação para processar a carga real que está a ser colocada na sua aplicação. Isto permite-lhe ajustar a sua aplicação para a carga de trabalho que os seus clientes estão a colocar no mesmo ao pagar apenas para as VMs terá quando que precisar. Quando pretender alterar o número de VMs, Azure responde dentro de minutos, tornando a possível alterar dinamicamente o número de VMs em execução como muitas vezes, conforme o desejado.
+* **Capacidade de gestão.** Porque o Azure é uma plataforma como um oferta de serviço (PaaS), gere a infraestrutura (hardware próprio, eletricidade e redes) necessária para manter estas máquinas em execução. Azure também gere a plataforma, assegurando um sistema operativo atualizado com todas as os patches corretos e atualizações de segurança, bem como atualizações de componentes, tais como o .NET Framework e o servidor de informações da Internet. Porque todas as VMs estão a executar o Windows Server 2008, o Azure fornece funcionalidades adicionais, tais como a monitorização de diagnóstico, suporte de ambiente de trabalho remoto, as firewalls e configuração do arquivo de certificados. Todas estas funcionalidades são fornecidas ao não custo extra. Na verdade, quando executar a sua aplicação no Azure, a licença de sistema operativo (SO) do Windows Server 2008 está incluída. Uma vez que todas as VMs estão a executar o Windows Server 2008, qualquer código que é executado no Windows Server 2008 funciona apenas ajustar quando em execução no Azure.
 
-## <a id="concepts"> </a>Hosted Service Core Concepts
-When your application is deployed as a hosted service in Azure, it runs as one or more *roles.* A *role* simply refers to application files and configuration. You can define one or more roles for your application, each with its own set of application files and configuration. For each role in your application, you can specify the number of VMs, or *role instances*, to run. The figure below show two simple examples of an application modeled as a hosted service using roles and role instances.
+## <a id="concepts"></a>Alojado conceitos principais de serviço
+Quando a aplicação é implementada como um serviço alojado no Azure, é executada como um ou mais *funções.* A *função* simplesmente refere-se a configuração e de ficheiros de aplicação. Pode definir uma ou mais funções para a sua aplicação, cada um com o seu próprio conjunto de ficheiros de aplicação e a configuração. Para cada função na sua aplicação, pode especificar o número de VMs, ou *instâncias de função*, para executar. A figura abaixo mostram dois exemplos simples de uma aplicação modelada como um serviço alojado com funções e instâncias de função.
 
-##### <a name="figure-1-a-single-role-with-three-instances-vms-running-in-an-azure-data-center"></a>Figure 1: A single role with three instances (VMs) running in an Azure data center
-![image][0]
+##### <a name="figure-1-a-single-role-with-three-instances-vms-running-in-an-azure-data-center"></a>Figura 1: Uma única função com três instâncias (VMs) em execução no Centro de dados do Azure
+![Imagem][0]
 
-##### <a name="figure-2-two-roles-each-with-two-instances-vms-running-in-an-azure-data-center"></a>Figure 2: Two roles, each with two instances (VMs), running in an Azure data center
-![image][1]
+##### <a name="figure-2-two-roles-each-with-two-instances-vms-running-in-an-azure-data-center"></a>Figura 2: Duas funções, cada um com duas instâncias (VMs) em execução no Centro de dados do Azure
+![Imagem][1]
 
-Role instances typically process Internet client requests entering the data center through what is called an *input endpoint*. A single role can have 0 or more input endpoints. Each endpoint indicates a protocol (HTTP, HTTPS, or TCP) and a port. It is common to configure a role to have two input endpoints: HTTP listening on port 80 and HTTPS listening on port 443. The figure below shows an example of two different roles with different input endpoints directing client requests to them.
+Instâncias de função normalmente processam pedidos de cliente de Internet introduzir o Centro de dados através de que é chamado um *ponto final de entrada*. Uma única função pode ter mais de entrada ou 0 pontos finais. Cada ponto final indica um protocolo (HTTP, HTTPS ou TCP) e uma porta. É comum para configurar uma função com dois pontos finais de entrada: HTTP a escutar na porta 80 e HTTPS está a escutar na porta 443. A figura abaixo mostra um exemplo de duas funções diferentes com pontos finais de entrada diferentes instruir os pedidos de cliente aos mesmos.
 
-![image][2]
+![Imagem][2]
 
-When you create a hosted service in Azure, it is assigned a publicly addressable IP address that clients can use to access it. Upon creating the hosted service you must also select a URL prefix that is mapped to that IP address. This prefix must be unique as you are essentially reserving the *prefix*.cloudapp.net URL so that no one else can have it. Clients communicate with your role instances by using the URL. Usually, you will not distribute or publish the Azure *prefix*.cloudapp.net URL. Instead, you will purchase a DNS name from your DNS registrar of choice and configure your DNS name to redirect client requests to the Azure URL. For more details, see [Configuring a Custom Domain Name in Azure][Configuring a Custom Domain Name in Azure].
+Quando cria um serviço alojado no Azure, é atribuído um endereço IP publicamente endereçável que os clientes podem utilizar para aceder ao mesmo. Após criar o serviço alojado tem de selecionar também um prefixo de URL que está mapeado para esse endereço IP. Este prefixo tem de ser exclusivo é essencialmente reservar o *prefixo*. URL cloudapp.net, pelo que ninguém mais pode ter. Os clientes comunicam com as instâncias de função utilizando o URL. Normalmente, irá não distribuir ou publicar do Azure *prefixo*. cloudapp.net URL. Em vez disso, irá adquirir um nome DNS da sua entidade de registo DNS da preferência e configure o seu nome DNS para redirecionar os pedidos de cliente para o URL do Azure. Para obter mais detalhes, consulte [configurar um nome de domínio personalizado no Azure][Configuring a Custom Domain Name in Azure].
 
-## <a id="considerations"> </a>Hosted Service Design Considerations
-When designing an application to run in a cloud environment, there are several considerations to think about such as latency, high-availability, and scalability.
+## <a id="considerations"></a>Alojado considerações de Design de serviço
+Ao conceber uma aplicação para ser executada num ambiente de nuvem, existem várias considerações de pensar como latência, elevada disponibilidade e escalabilidade.
 
-Deciding where to locate your application code is an important consideration when running a hosted service in Azure. It is common to deploy your application to data centers that are closest to your clients to reduce latency and get the best performance possible.
-However, you might choose a data center closer to your company or closer to your data if you have some jurisdictional or legal concerns about your data and where it resides. There are six data centers around the globe capable of hosting your application code. The table below shows the available locations:
+Decidir onde localizar o código da aplicação é uma consideração importante quando em execução num serviço alojado no Azure. É comum para implementar a aplicação para os centros de dados que são mais próximo para os seus clientes para reduzir a latência e obter o melhor desempenho possível.
+No entanto, pode escolher um centro de dados próximo da sua empresa ou mais próximo dos seus dados, se tiver algumas questões legais ou jurisdictional sobre os dados e a respetiva localização. Existem seis centros de dados em torno de todo o mundo capaz de alojar o código da aplicação. A tabela abaixo mostra as localizações disponíveis:
 
 <table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
 
@@ -47,12 +47,12 @@ However, you might choose a data center closer to your company or closer to your
 <tr>
 
 <td style="width: 100px;">
-**Country/Region**
+**País/região**
 
 </td>
 
 <td style="width: 200px;">
-**Sub-regions**
+**Regiões secundárias**
 
 </td>
 </tr>
@@ -60,25 +60,12 @@ However, you might choose a data center closer to your company or closer to your
 <tr>
 
 <td>
-United States
+Estados Unidos
 
 </td>
 
 <td>
-South Central & North Central
-
-</td>
-</tr>
-
-<tr>
-
-<td>
-Europe
-
-</td>
-
-<td>
-North & West
+Centro-Sul & Centro-Norte
 
 </td>
 </tr>
@@ -86,50 +73,63 @@ North & West
 <tr>
 
 <td>
-Asia
+Europa
 
 </td>
 
 <td>
-Southeast & East
+Norte & oeste
+
+</td>
+</tr>
+
+<tr>
+
+<td>
+Ásia
+
+</td>
+
+<td>
+Sudeste & leste
 
 </td>
 </tr>
 </tbody>
 </table>
-When creating a hosted service, you select a sub-region indicating the location in which you want your code to execute.
+Ao criar um serviço alojado, selecione uma região secundária que indica a localização na qual pretende que o seu código para executar.
 
-To achieve high availability and scalability, it is critically important that your application's data be kept in a central repository accessible to multiple role instances. To help with this, Azure offers several storage options such as blobs, tables, and SQL Database. Please see the [Data Storage Offerings in Azure][Data Storage Offerings in Azure] article for more information about these storage technologies. The figure below shows how the load balancer inside the Azure data center distributes client requests to different role instances all of which have access to the same data storage.
+Para alcançar a elevada disponibilidade e escalabilidade, é extremamente importante que os dados da sua aplicação seja mantida num repositório central acessível a várias instâncias de função. Para ajudar com esta opção, o Azure oferece várias opções de armazenamento como blobs, tabelas e base de dados SQL. Consulte o [ofertas de armazenamento de dados no Azure] [ Data Storage Offerings in Azure] artigo para obter mais informações sobre estas tecnologias de armazenamento. A figura abaixo mostra como o Balanceador de carga no interior do Centro de dados do Azure distribui os pedidos de cliente para instâncias de função diferentes que têm acesso para o mesmo armazenamento de dados.
 
-![image][3]
+![Imagem][3]
 
-Usually, you want to locate your application code and your data in the same data center as this allows for low latency (better performance) when your application code accesses the data. In addition, you are not charged for bandwidth when data is moved around within the same data center.
+Normalmente, pretende localizar o código da aplicação e os dados no mesmo centro de dados como para esta ação permite baixa latência (um melhor desempenho) quando o código da aplicação acede os dados. Além disso, não lhe serem cobrados largura de banda quando são movidos dados em torno dentro do mesmo centro de dados.
 
-## <a id="scale"> </a>Designing your Application for Scale
-Sometimes, you may want to take a single application (like a simple web site) and have it hosted in Azure. But frequently, your application may consist of several roles that all work together. For example, in the figure below, there are two instances of the Website role, three instances of the Order Processing role, and one instance of the Report Generator role. These roles are all working together and the code for all of them can be packaged together and deployed as a single unit up to Azure.
+## <a id="scale"></a>Conceber a sua aplicação para a escala
+Por vezes, poderá querer efetuar uma única aplicação (por exemplo, um web site simples) e o tiver alojado no Azure. Mas frequentemente, a aplicação pode consistir em várias funções que todos os funcionam em conjunto. Por exemplo, a figura abaixo, existem duas instâncias da função de site, três instâncias de função de ordem de processamento e uma instância da função do gerador de relatório. Estas funções estão todos a funcionar em conjunto e o código para todos eles pode ser agrupado e implementado como uma única unidade no Azure.
 
-![image][4]
+![Imagem][4]
 
-The main reason to split an application into different roles each running on its own set of role instances (that is, VMs) is to scale the roles independently. For example, during the holiday season, many customers may be purchasing products from your company, so you might want to increase the number of role instances running your Website role as well as the number of role instances running your Order Processing role. After the holiday season, you may get a lot of products returned, so you may still need a lot of Website instances but fewer Order Processing instances. During the rest of the year, you may only need a few Website and Order Processing instances. Throughout all of this, you may need only one Report Generator instance. The flexibility of role-based deployments in Azure enables you to easily adapt your application to your business needs.
+O motivo principal para dividir uma aplicação em diferentes funções cada a ser executado no seu próprio conjunto de instâncias de função (ou seja, VMs) está a dimensionar as funções de forma independente. Por exemplo, durante a época, muitos clientes podem ser compra produtos da sua empresa, pelo que pode querer aumentar o número de instâncias de função com a sua função de site, bem como o número de instâncias de função a executar a função de ordem de processamento. Após a época, poderá receber uma grande quantidade de produtos devolvido, pelo que poderá ainda necessita de um grande número de instâncias de Web site, mas menos instâncias de ordem de processamento. Durante o restante do ano, só poderá ser necessário instâncias alguns Web site e ordem de processamento. Ao longo tudo isto, poderá ter apenas uma instância do gerador de relatório. A flexibilidade de implementações baseada em funções no Azure permite-lhe adaptar facilmente a sua aplicação para as suas necessidades de negócio.
 
-It's common to have the role instances within your hosted service communicate with each other. For example, the website role accepts a customer's order but then it offloads the order processing to the Order Processing role instances. The best way to pass work form one set of role instances to another set of instances is using the queuing technology provided by Azure, either the Queue Service or Service Bus Queues. The use of a queue is a critical part of the story here. The queue allows the hosted service to scale its roles independently allowing you to balance the workload against cost. If the number of messages in the queue increases over time, then you can scale up the number of Order Processing role instances. If the number of messages in the queue decreases over time, then you can scale down the number of Order Processing role instances. This way, you are only paying for the instances required to handle the actual workload.
+É comum para a função de instâncias no serviço alojado comunicam entre si. Por exemplo, a função de site aceita a ordem de um cliente, mas, em seguida,-descarrega a ordem de processamento para as instâncias de função ordem de processamento. A melhor forma de passar o formulário de trabalho um conjunto de instâncias de função para outro conjunto de instâncias está a utilizar a tecnologia de colocação fornecida pelo Azure, o serviço fila ou filas do Service Bus. A utilização de uma fila é uma parte crítica aqui o bloco. A fila permite que o serviço alojado dimensionar as respetivas funções de forma independente, permitindo-lhe equilibrar a carga de trabalho em relação custo. Se o número de mensagens na fila aumenta ao longo do tempo, em seguida, pode dimensionar o número de instâncias de função de ordem de processamento. Se o número de mensagens na fila diminui ao longo do tempo, em seguida, pode dimensionar o abaixo o número de instâncias de função de ordem de processamento. Desta forma, apenas são pagar para as instâncias necessárias para processar a carga de trabalho real.
 
-The queue also provides reliability. When scaling down the number of Order Processing role instances, Azure decides which instances to terminate. It may decide to terminate an instance that is in the middle of processing a queue message. However, because the message processing does not complete successfully, the message becomes visible again to another Order Processing role instance that picks it up and processes it. Because of queue message visibility, messages are guaranteed to eventually get processed. The queue also acts as a load balancer by effectively distributing its messages to any and all role instances that request messages from it.
+A fila também fornece a fiabilidade. Quando o dimensionamento para baixo o número de ordem de processamento de instâncias de função, o Azure decide que instâncias para terminar. Pode decidir a terminar uma instância que está a processar uma mensagem de fila. No entanto, uma vez que o processamento da mensagem não for concluída com êxito, a mensagem fica visível novamente para outra ordem de processamento da instância de função que escolherá-lo e processa-os. Devido a visibilidade da mensagem de fila, mensagens garantidas, eventualmente, obter processados. A fila também age como um balanceador de carga por distribuição de forma eficaz as mensagens de instâncias de função todos e que as mensagens de pedido a partir do mesmo.
 
-For the Website role instances, you can monitor the traffic coming into them and decide to scale the number of them up or down as well. The queue allows you to scale the number of Website role instances independently of the Order Processing role instances. This is very powerful and gives you a lot of flexibility. Of course, if your application consists of additional roles, you could add additional queues as the conduit to communicate between them in order to leverage the same scaling and cost benefits.
+Para as instâncias de função de site, pode monitorizar o tráfego entra-los e optar por aumentar o número deles ou também reduzir vertical. A fila permite-lhe aumentar o número de instâncias de função de site independentemente das instâncias de função da ordem de processamento. Isto é extremamente útil e dá-lhe muita flexibilidade. Obviamente, se a sua aplicação consiste em funções adicionais, pode adicionar filas adicionais como conduit para comunicar entre-los para poder tirar partido do mesmo dimensionar e benefícios de custos.
 
-## <a id="defandcfg"> </a>Hosted Service Definition and Configuration
-Deploying a hosted service to Azure requires you to also have a service definition file and a service configuration file. Both of these files are XML files, and they allow you to declaratively specify deployment options for your hosted service. The service definition file describes all of the roles that make up your hosted service and how they communicate. The service configuration file describes the number of instances for each role and settings used to configure each role instance.
+## <a id="defandcfg"></a>Alojada a definição de serviço e configuração
+Implementar um serviço alojado para o Azure necessita também de ter um ficheiro de definição de serviço e um ficheiro de configuração do serviço. Estes ficheiros são ficheiros XML e permitem-lhe forma declarativa especificar opções de implementação para o serviço alojado. O ficheiro de definição de serviço descreve todas as funções que compõem o serviço alojado e como comunicam. O ficheiro de configuração do serviço descreve o número de instâncias para cada função e as definições utilizadas para configurar cada instância de função.
 
-## <a id="def"> </a>The Service Definition File
-As I mentioned earlier, the service definition (CSDEF) file is an XML file that describes the various roles that make up your complete application. The complete schema for the XML file can be found here: [http://msdn.microsoft.com/library/windowsazure/ee758711.aspx][].
-The CSDEF file contains a WebRole or WorkerRole element for each role that you want in your application. Deploying a role as a web role (using the WebRole element) means that the code will run on a role instance containing Windows Server 2008 and Internet Information Server (IIS).
-Deploying a role as a worker role (using the WorkerRole element) means that the role instance will have Windows Server 2008 on it (IIS will not be installed).
+## <a id="def"></a>o ficheiro de definição de serviço
+Como posso mencionado anteriormente, a definição de serviço (. CSDEF) o ficheiro é um ficheiro XML que descreve as várias funções que compõem a sua aplicação completa. O esquema de completado para o ficheiro XML que pode ser encontrado aqui: [http://msdn.microsoft.com/library/windowsazure/ee758711.aspx] [-].
+O ficheiro CSDEF contém um elemento de WebRole ou WorkerRole para cada função que pretende na sua aplicação. Implementar uma função como uma função da web (utilizando o elemento de WebRole) significa que o código será executada numa instância de função com o Windows Server 2008 e o servidor de informação Internet (IIS).
+Implementar uma função, como uma função de trabalho (utilizando o elemento de WorkerRole) significa que a instância de função serão a ter o Windows Server 2008 no mesmo (não será instalada IIS).
 
-You can certainly create and deploy a worker role that uses some other mechanism to listen for incoming web requests (for example, your code could create and use a .NET HttpListener). Since the role instances are all running Windows Server 2008, your code can perform any operations that are normally available to an application running on Windows Server
+Pode criar e implementar uma função de trabalho utiliza algumas outro mecanismo para escutar os pedidos web recebidos certamente (por exemplo, o código foi possível criar e utilizar um HttpListener .NET). Uma vez que todas as instâncias de função são o Windows Server 2008, o seu código pode executa quaisquer operações que estão normalmente disponíveis para uma aplicação em execução no Windows Server
 2008.
 
-For each role, you indicate the desired VM size that instances of that role should use. The table below shows the various VM sizes available today and the attributes of each:
+Para cada função, indicar que o tamanho da VM pretendido que devem utilizar instâncias dessa função. A tabela abaixo mostra os vários tamanhos VM atualmente disponíveis e os atributos de cada:
 
 <table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
 
@@ -138,7 +138,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**VM Size**
+**Tamanho da VM**
 
 </td>
 
@@ -153,12 +153,12 @@ For each role, you indicate the desired VM size that instances of that role shou
 </td>
 
 <td>
-**Disk**
+**Disco**
 
 </td>
 
 <td>
-**Peak Network I/O**
+**Pico de rede e/s**
 
 </td>
 </tr>
@@ -166,7 +166,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**Extra Small**
+**Muito pequeno**
 
 </td>
 
@@ -194,7 +194,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**Small**
+**Pequeno**
 
 </td>
 
@@ -204,7 +204,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 </td>
 
 <td>
-1.75 GB
+1,75 GB
 
 </td>
 
@@ -222,7 +222,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**Medium**
+**Média**
 
 </td>
 
@@ -232,7 +232,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 </td>
 
 <td>
-3.5 GB
+3,5 GB
 
 </td>
 
@@ -250,7 +250,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**Large**
+**Grande**
 
 </td>
 
@@ -278,7 +278,7 @@ For each role, you indicate the desired VM size that instances of that role shou
 <tr align="left" valign="top">
 
 <td>
-**Extra Large**
+**Muito grande**
 
 </td>
 
@@ -304,44 +304,44 @@ For each role, you indicate the desired VM size that instances of that role shou
 </tr>
 </tbody>
 </table>
-You are charged hourly for each VM you use as a role instance and you are also charged for any data that your role instances send outside the data center. You are not charged for data entering the data center. For more information, see [Azure Pricing][Azure Pricing]. In general, it is advisable to use many small role instances as opposed to a few large instances so that your application is more resilient to failure. After all, the fewer role instances you have, the more disastrous a failure in one of them is to your overall application. Also, as mentioned before, you must deploy at least two instances for each role in order to get the 99.95% service level agreement Microsoft provides.
+São-lhe cobrados hora a hora para cada VM utiliza como uma instância de função e lhe é cobrados também para todos os dados que as instâncias da função Enviar fora do Datacenter. Não lhe serem cobrados para introduzir o Centro de dados de dados. Para obter mais informações, consulte [preços do Azure] [preços do Azure]. Em geral, é recomendado utilizar várias instâncias de função pequeno, por oposição a algumas instâncias grande, para que a aplicação é mais resistente a falhas. Após todos os menos instâncias de função tiver, é mais desastroso uma falha dos mesmos global da sua aplicação. Além disso, tal como mencionado anteriormente, tem de implementar, pelo menos, duas instâncias para cada função para obter o contrato de nível de serviço de 99,95% Microsoft fornece.
 
-The service definition (CSDEF) file is also where you would specify many attributes about each role in your application. Here are some of the more useful items available to you:
+O ficheiro de definição (. CSDEF) do serviço é também onde tem de especificar demasiados atributos sobre cada função na sua aplicação. Seguem-se alguns dos itens mais úteis disponíveis:
 
-* **Certificates**. You use certificates for encrypting data or if your web service supports SSL. Any certificates need to be uploaded to Azure. For more information, see [Managing Certificates in Azure][Managing Certificates in Azure]. This XML setting installs previously-uploaded certificates into the role instance's certificate store so that they are usable by your application code.
-* **Configuration Setting Names**. For values that you want your application(s) to read while running on a role instance. The actual value of the configuration settings is set in the service configuration (CSCFG) file which can be updated at any time without requiring you to redeploy your code. In fact, you can code your applications in such a way to detect the changed configuration values without incurring any downtime.
-* **Input Endpoints**. Here you specify any HTTP, HTTPS, or TCP endpoints (with ports) that you want to expose to the outside world via your *prefix*.cloadapp.net URL. When Azure deploys your role, it will configure the firewall on the role instance automatically.
-* **Internal Endpoints**. Here you specify any HTTP or TCP endpoints that you want exposed to other role instances that are deployed as part of your application. Internal endpoints allow all the role instances within your application to talk to each other but are not accessible to any role instances that are outside your application.
-* **Import Modules**. These optionally install useful components on your role instances. Components exist for diagnostic monitoring, remote desktop, and Azure Connect (which allows your role instance to access on-premises resources through a secure channel).
-* **Local Storage**. This allocates a subdirectory on the role instance for your application to use. It is described in more detail in the [Data Storage Offerings in Azure][Data Storage Offerings in Azure] article.
-* **Startup Tasks**. Startup tasks give you a way to install prerequisite components on a role instance as it boots up. The tasks can run elevated as an administrator if required.
+* **Certificados**. Utilize certificados de encriptação de dados ou se o seu serviço web suporta SSL. Todos os certificados têm de ser carregado para o Azure. Para obter mais informações, consulte [gestão de certificados no Azure][Managing Certificates in Azure]. Esta definição de XML instala certificados carregada anteriormente para o arquivo de certificados a instância de função para que fiquem utilizáveis pelo código da aplicação.
+* **Nomes de definição de configuração**. Para os valores que pretende que a sua aplicação (ões) ler durante a execução numa instância de função. O valor real das definições de configuração está definido no ficheiro de configuração (. CSCFG) do serviço que pode ser atualizado em qualquer altura, sem necessidade de Reimplementar o seu código. Na verdade, pode código as suas aplicações de forma para detetar os valores de configuração foi alterada sem incorrer em qualquer período de inatividade.
+* **Pontos finais de entrada**. Aqui poderá Especifica qualquer HTTP, HTTPS ou TCP pontos finais (com portas) que pretende expor ao mundo externo através do seu *prefixo*. cloadapp.net URL. Quando o Azure implementa a função, esta irá configurar a firewall na instância de função automaticamente.
+* **Pontos finais internos**. Aqui, pode especificar qualquer HTTP ou TCP pontos finais que pretende que sejam expostos a outras instâncias de função que são implementadas como parte da sua aplicação. Pontos finais internos permitem todas as instâncias de função na sua aplicação para comunicar entre si, mas não estão acessíveis para qualquer instâncias de função que não pertencem à sua aplicação.
+* **Importar módulos**. Estes opcionalmente instalar útil componentes as instâncias da função. Componentes existem para o diagnóstico de monitorização, ambiente de trabalho remoto e Azure ligar (o que permite que a instância de função aceder a recursos no local através de um canal seguro).
+* **Armazenamento local**. Isto aloca um subdiretório na instância de função para a sua aplicação utilizar. Descrita com maior detalhe no [ofertas de armazenamento de dados no Azure] [ Data Storage Offerings in Azure] artigo.
+* **Tarefas de arranque**. Tarefas de arranque dão-lhe uma forma de instalar os componentes de pré-requisitos numa instância de função como arrancarem a. As tarefas podem ser executados elevadas como administrador, se necessário.
 
-## <a id="cfg"> </a>The Service Configuration File
-The service configuration (CSCFG) file is an XML file that describes settings that can be changed without redeploying your application. The complete schema for the XML file can be found here: [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][http://msdn.microsoft.com/library/windowsazure/ee758710.aspx].
-The CSCFG file contains a Role element for each role in your application. Here are some of the items you can specify in the CSCFG file:
+## <a id="cfg"></a>o ficheiro de configuração de serviço
+O ficheiro de configuração (. CSCFG) do serviço é um ficheiro XML que descreve as definições que podem ser alteradas sem Reimplementar a sua aplicação. O esquema de completado para o ficheiro XML que pode ser encontrado aqui: [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][http://msdn.microsoft.com/library/windowsazure/ee758710.aspx].
+O ficheiro CSCFG contém um elemento de função para cada função na sua aplicação. Seguem-se alguns dos itens que pode especificar no ficheiro CSCFG:
 
-* **OS Version**. This attribute allows you to select the operating system (OS) version you want used for all the role instances running your application code. This OS is known as the *guest OS*, and each new version includes the latest security patches and updates available at the time the guest OS is released. If you set the osVersion attribute value to "\*", then Azure automatically updates the guest OS on each of your role instances as new guest OS versions become available. However, you can opt out of automatic updates by selecting a specific guest OS version. For example, setting the osVersion attribute to a value of "WA-GUEST-OS-2.8\_201109-01" causes all your role instances to get what is described on this web page: [http://msdn.microsoft.com/library/hh560567.aspx][http://msdn.microsoft.com/library/hh560567.aspx]. For more information about guest OS versions, see [Managing Upgrades to the Azure Guests OS].
-* **Instances**. This element's value indicates the number of role instances you want provisioned running the code for a particular role. Since you can upload a new CSCFG file to Azure (without redeploying your application), it is trivially simple to change the value for this element and upload a new CSCFG file to dynamically increase or decrease the number of role instances running your application code. This allows you to easily scale your application up or down to meet actual workload demands while also controlling how much you are charged for running the role instances.
-* **Configuration Setting Values**. This element indicates values for settings (as defined in the CSDEF file). Your role can read these values while it is running. These configuration settings values are typically used for connection strings to SQL Database or to Azure Storage, but they can be used for any purpose you desire.
+* **Versão do SO**. Este atributo permite-lhe selecionar a versão de sistema operativo (SO) que pretende utilizada para todas as instâncias de função com o código da aplicação. Este SO é conhecido como o *convidado SO*, e cada nova versão inclui as atualizações disponíveis no momento o SO convidado é libertado e patches de segurança mais recentes. Se definir o valor do atributo osVersion para "\*", em seguida, o Azure atualiza automaticamente o SO convidado em cada uma das suas instâncias de função como novas versões de SO convidado fiquem disponíveis. No entanto, pode escolher fora das atualizações automáticas selecionando um versão de SO de convidados específico. Por exemplo, definir o atributo osVersion para um valor de "WA-convidado-SO-2.8\_201109-01" faz com que todas as instâncias da função obter o que é descrito nesta página web: [http://msdn.microsoft.com/library/hh560567.aspx] [http://msdn.microsoft.com/library/hh560567.aspx]. Para obter mais informações sobre as versões de SO convidado, consulte [gerir atualizações para o SO de convidados Azure].
+* **Instâncias**. O valor deste elemento indica o número de instâncias de função que pretende aprovisionado com o código para uma função específica. Uma vez que pode carregar um novo ficheiro CSCFG no Azure (sem Reimplementar a sua aplicação), que é trivially simples alterar o valor para este elemento e carregar um novo ficheiro CSCFG dinamicamente aumentar ou reduzir o número de instâncias de função com o código da aplicação . Isto permite-lhe dimensionar facilmente a aplicação de cópia de segurança ou para baixo para a carga de trabalho real às exigências ao também controlar quanto são-lhe cobrados para executar as instâncias da função.
+* **Os valores de definição de configuração**. Este elemento indica os valores para definições (conforme definido no ficheiro CSDEF). A função pode ler estes valores, enquanto estiver em execução. Estes valores de definições de configuração são normalmente utilizadas nas cadeias de ligação à base de dados do SQL Server ou ao Storage do Azure, mas pode ser utilizados para qualquer finalidade que pretendidos ao nível.
 
-## <a id="hostedservices"> </a>Creating and Deploying a Hosted Service
-Creating a hosted service requires that you first go to the [Azure Management Portal] and provision a hosted service by specifying a DNS prefix and the data center you ultimately want your code running in. Then in your development environment, you create your service definition (CSDEF) file, build your application code and package (zip) all these files into a service package (CSPKG) file. You must also prepare your service configuration (CSCFG) file. To deploy your role, you upload the CSPKG and CSCFG files with the Azure Service Management API. Once deployed, Azure, will provision role instances in the data center (based upon the configuration data), extract your application code from the package, copy it to the role instances, and boot the instances. Now, your code is up and running.
+## <a id="hostedservices"></a>Criar e implementar um serviço alojado
+A criação de um serviço alojado requer primeiro passar para o [Azure Management Portal] e aprovisionar do Centro de um serviço alojado, especificando um prefixo de DNS e os dados quiser, fundamentalmente, o código em execução no. Em seguida, no seu ambiente de desenvolvimento, crie o seu ficheiro de definição (. CSDEF) do serviço, criar o seu código da aplicação e os ficheiros de pacote (. zip) para um ficheiro de pacote (. CSPKG) do serviço. Também tem de preparar o ficheiro de configuração (. CSCFG) do serviço. Para implementar a sua função, carregar os ficheiros CSPKG e CSCFG com a API de gestão de serviço do Azure. Depois de implementada, o Azure, aprovisionar instâncias de função no Centro de dados (com base nos dados de configuração), extraia o código da aplicação do pacote, copiá-lo para as instâncias de função e as instâncias de arranque. Agora, o seu código está em execução.
 
-The figure below shows the CSPKG and CSCFG files you create on your development computer. The CSPKG file contains the CSDEF file and the code for two roles. After uploading the CSPKG and CSCFG files with the Azure Service Management API, Azure creates the role instances in the data center. In this example, the CSCFG file indicated that Azure should create three instances of role \#1 and two instances of Role \#2.
+A figura abaixo mostra os ficheiros CSPKG e CSCFG que criar no seu computador de desenvolvimento. O ficheiro CSPKG contém o ficheiro CSDEF e o código para duas funções. Depois de carregar os ficheiros CSPKG e CSCFG com a API de gestão de serviço do Azure, o Azure cria as instâncias de função no Centro de dados. Neste exemplo, o ficheiro CSCFG indicado que a Azure deve criar três instâncias de função \#1 e duas instâncias de função \#2.
 
-![image][5]
+![Imagem][5]
 
-For more information about deploying, upgrading, and reconfiguring your roles, see the [Deploying and Updating Azure Applications][Deploying and Updating Azure Applications] article.<a id="Ref" name="Ref"></a>
+Para obter mais informações sobre como implementar, atualizar e reconfigurar as funções, consulte o [implementar e atualizar aplicações do Azure] [ Deploying and Updating Azure Applications] artigo.<a id="Ref" name="Ref"></a>
 
-## <a id="references"> </a>References
-* [Creating a Hosted Service for Azure][Creating a Hosted Service for Azure]
-* [Managing Hosted Services in Azure][Managing Hosted Services in Azure]
-* [Migrating Applications to Azure][Migrating Applications to Azure]
-* [Configuring an Azure Application][Configuring an Azure Application]
+## <a id="references"></a>Referências
+* [Criar um serviço alojado do Azure][Creating a Hosted Service for Azure]
+* [Gerir serviços alojados no Azure][Managing Hosted Services in Azure]
+* [Migrar as aplicações do Azure][Migrating Applications to Azure]
+* [Configuração de uma aplicação do Azure][Configuring an Azure Application]
 
 <div style="width: 700px; border-top: solid; margin-top: 5px; padding-top: 5px; border-top-width: 1px;">
 
-<p>Written by Jeffrey Richter (Wintellect)</p>
+<p>Escritas pelo Jeffrey Richter (Wintellect)</p>
 
 </div>
 
@@ -366,7 +366,7 @@ For more information about deploying, upgrading, and reconfiguring your roles, s
 [Managing Certificates in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
 [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
 [http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
-[Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/library/ee924680.aspx
+[gerir atualizações para o SO de convidados Azure]: http://msdn.microsoft.com/library/ee924680.aspx
 [Azure Management Portal]: http://manage.windowsazure.com/
 [5]: ./media/application-model/application-model-8.jpg
 [Deploying and Updating Azure Applications]: http://www.windowsazure.com/develop/net/fundamentals/deploying-applications/

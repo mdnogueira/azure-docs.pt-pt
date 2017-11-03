@@ -1,13 +1,13 @@
-1. In the Settings blade for the resource, resource group, or subscription that you wish to lock, select **Locks**.
+1. No painel de definições para o recurso, grupo de recursos ou subscrição que pretende bloquear, selecione **bloqueia**.
    
-      ![select lock](./media/resource-manager-lock-resources/select-lock.png)
-2. To add a lock, select **Add**. If you want to create a lock at a parent level, select the parent. The currently selected resource inherits the lock from the parent. For example, you could lock the resource group to apply a lock to all its resources.
+      ![Selecione o bloqueio](./media/resource-manager-lock-resources/select-lock.png)
+2. Para adicionar um bloqueio, selecione **adicionar**. Se pretender criar um bloqueio no nível principal, selecione um elemento principal. O recurso selecionado atualmente herda o bloqueio do principal. Por exemplo, pode bloquear o grupo de recursos para aplicar um bloqueio para todos os respetivos recursos.
    
-      ![add lock](./media/resource-manager-lock-resources/add-lock.png) 
-3. Give the lock a name and lock level. Optionally, you can add notes that describe the lock.
+      ![Adicionar bloqueio](./media/resource-manager-lock-resources/add-lock.png) 
+3. Atribua o bloqueio de um nível de nome e o bloqueio. Opcionalmente, pode adicionar notas que descrevem o bloqueio.
    
-      ![set lock](./media/resource-manager-lock-resources/set-lock.png) 
-4. To delete the lock, select the ellipsis and **Delete** from the available options.
+      ![conjunto de bloqueio](./media/resource-manager-lock-resources/set-lock.png) 
+4. Para eliminar o bloqueio, selecione o botão de reticências e **eliminar** entre as opções disponíveis.
    
-      ![delete lock](./media/resource-manager-lock-resources/delete-lock.png) 
+      ![Eliminar bloqueio](./media/resource-manager-lock-resources/delete-lock.png) 
 

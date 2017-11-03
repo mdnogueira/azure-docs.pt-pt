@@ -6,22 +6,17 @@ keywords:
 author: cbrooksmsft
 ms.author: cbrooks
 ms.date: 08/18/2017
-ms.topic: hero-article
+ms.topic: article
 ms.service: storage
-ms.translationtype: HT
-ms.sourcegitcommit: a0b98d400db31e9bb85611b3029616cc7b2b4b3f
-ms.openlocfilehash: a68d5c4ee8ad69cd888765a96566a7ca6c13cff3
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/29/2017
-
+ms.openlocfilehash: f364d7b25a75012f33a282111c9624d51b65b42f
+ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/25/2017
 ---
-
 # <a name="route-blob-storage-events-to-a-custom-web-endpoint-preview"></a>Encaminhar eventos de armazenamento de Blobs para um ponto final da Web personalizado (pré-visualização)
 
 O Azure Event Grid é um serviço de eventos para a cloud. Neste artigo, a CLI do Azure é utilizada para subscrever a eventos de armazenamento de Blobs e acionar o evento para ver o resultado. 
-
-> [!IMPORTANT]
-> Tem de estar registado para a pré-visualização de eventos de armazenamento de Blobs para concluir este tutorial.  Saiba mais sobre o programa de pré-visualização [aqui](storage-blob-event-overview.md#join-the-preview).
 
 Normalmente, os eventos são enviados para um ponto final que responde ao evento, como um webhook ou uma Função do Azure. Para simplificar o exemplo apresentado neste artigo, enviamos eventos para um URL que apenas recolhe as mensagens. Este URL é criado através de uma ferramenta de terceiros open source chamada [RequestBin](https://requestb.in/).
 
@@ -57,7 +52,7 @@ Para utilizar o Armazenamento do Azure, é necessária uma conta de armazenament
 Uma conta de armazenamento de Blobs é uma conta de armazenamento especializada para armazenar os seus dados não estruturados como blobs (objetos) no Storage do Azure. As contas de armazenamento de Blobs são semelhantes às contas de armazenamento para fins gerais existentes e partilham todas as excelentes características de durabilidade, disponibilidade, escalabilidade e desempenho que utiliza atualmente, incluindo 100% de consistência com a API dos blobs de blocos e dos blobs de acréscimo. Para aplicações que requerem apenas armazenamento de blobs de blocos ou de blobs de acréscimo, recomendamos a utilização das contas de armazenamento de Blobs.
 
 > [!NOTE]
-> Para a versão de pré-visualização, os eventos de armazenamento de Blobs apenas estão disponíveis para contas de armazenamento na localização **westcentralus**.
+> Grelha de eventos está atualmente em pré-visualização e disponível apenas para contas de armazenamento na **westcentralus** e **westus2** regiões.
 
 Substitua `<storage_account_name>` por um nome exclusivo para a conta de armazenamento, e `<resource_group_name>` com o grupo de recursos que criou anteriormente.
 
@@ -145,4 +140,3 @@ Agora que sabe como criar tópicos e subscrições de eventos, saiba mais sobre 
 
 - [Reagir aos eventos de armazenamento de Blobs](storage-blob-event-overview.md)
 - [Sobre o Event Grid](../../event-grid/overview.md)
-

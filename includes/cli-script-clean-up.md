@@ -1,6 +1,6 @@
-## <a name="clean-up-deployment"></a>Clean up deployment
+## <a name="clean-up-deployment"></a>Limpar a implementação
 
-After the script sample has been run, the follow command can be used to remove the resource group and all resources associated with it.
+Depois de executar o script de exemplo, o comando de siga pode ser utilizado para remover o grupo de recursos e todos os recursos associados à mesma.
 
 ```azurecli
 az group delete --name myResourceGroup

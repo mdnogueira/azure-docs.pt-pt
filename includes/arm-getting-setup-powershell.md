@@ -1,12 +1,12 @@
-## <a name="setting-up-powershell-for-resource-manager-templates"></a>Setting up PowerShell for Resource Manager templates
-Before you can use Azure PowerShell with Resource Manager, you will need to have the right Windows PowerShell and Azure PowerShell versions.
+## <a name="setting-up-powershell-for-resource-manager-templates"></a>Configurar o PowerShell para modelos do Resource Manager
+Antes de poder utilizar o Azure PowerShell com o Resource Manager, terá de ter o direito do Windows PowerShell e as versões do Azure PowerShell.
 
-### <a name="verify-powershell-versions"></a>Verify PowerShell versions
-Verify you have Windows PowerShell version 3.0 or 4.0. To find the version of Windows PowerShell, type this command at a Windows PowerShell command prompt.
+### <a name="verify-powershell-versions"></a>Verificar se versões do PowerShell
+Certifique-se de que tem o Windows PowerShell versão 3.0 ou 4.0. Para encontrar a versão do Windows PowerShell, escreva este comando numa linha de comandos do Windows PowerShell.
 
     $PSVersionTable
 
-You will receive the following type of information:
+Receberá os tipos de informações seguintes:
 
     Name                           Value
     ----                           -----
@@ -19,20 +19,20 @@ You will receive the following type of information:
     PSRemotingProtocolVersion      2.2
 
 
-Verify that the value of **PSVersion** is 3.0 or 4.0. If not, see [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
+Certifique-se de que o valor de **PSVersion** é 3.0 ou 4.0. Caso contrário, veja [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) ou [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-### <a name="set-your-azure-account-and-subscription"></a>Set your Azure account and subscription
-If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free trial](https://azure.microsoft.com/pricing/free-trial/).
+### <a name="set-your-azure-account-and-subscription"></a>Definir a conta e a subscrição do Azure
+Se ainda não tiver uma subscrição do Azure, pode ativar o [benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou inscrever-se um [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/).
 
-Open an Azure PowerShell command prompt and log on to Azure with this command.
+Abra uma linha de comandos do Azure PowerShell e inicie sessão no Azure com este comando.
 
     Login-AzureRmAccount
 
-If you have multiple Azure subscriptions, you can list your Azure subscriptions with this command.
+Se tiver várias subscrições do Azure, pode listar as subscrições do Azure com este comando.
 
     Get-AzureRmSubscription
 
-You will receive the following type of information:
+Receberá os tipos de informações seguintes:
 
     SubscriptionId            : fd22919d-eaca-4f2b-841a-e4ac6770g92e
     SubscriptionName          : Visual Studio Ultimate with MSDN
@@ -45,10 +45,10 @@ You will receive the following type of information:
     CurrentStorageAccountName :
     TenantId                  : 32fa88b4-86f1-419f-93ab-2d7ce016dba7
 
-You can set the current Azure subscription by running these commands at the Azure PowerShell command prompt. Replace everything within the quotes, including the < and > characters, with the correct name.
+Pode definir a subscrição do Azure atual, executando estes comandos na linha de comandos do Azure PowerShell. Substituir tudo dentro de aspas, incluindo os < e > carateres, com o nome correto.
 
     $subscr="<SubscriptionName from the display of Get-AzureRmSubscription>"
     Select-AzureRmSubscription -SubscriptionName $subscr -Current
 
-For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/powershell/azureps-cmdlets-docs#step-3-connect).
+Para obter mais informações sobre as subscrições do Azure e as contas, consulte [como: ligar à sua subscrição](/powershell/azureps-cmdlets-docs#step-3-connect).
 

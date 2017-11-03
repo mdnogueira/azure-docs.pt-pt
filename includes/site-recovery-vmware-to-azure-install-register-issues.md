@@ -12,8 +12,3 @@ As falhas de registo podem ser depuradas ao consultar os registos na pasta **%Pr
 |**09:20:06**:InnerException.Type: SrsRestApiClientLib.AcsException,InnerException.<br>Mensagem: ACS50008: O token SAML é inválido.<br>ID de rastreio: 1921ea5b-4723-4be7-8087-a75d3f9e1072<br>ID de correlação: 62fea7e6-2197-4be4-a2c0-71ceb7aa2d97 ><br>Carimbo de data/hora: **2016-12-12 14:50:08Z<br>** | Certifique-se de que a hora no relógio do seu sistema não excede mais de 15 minutos da hora local. Volte a executar o instalador para concluir o registo.|
 |**09:35:27** :DRRegistrationException ao tentar obter todos os cofres da recuperação após desastre para o certificado selecionado: : Threw Exception.Type:Microsoft.DisasterRecovery.Registration.DRRegistrationException, Exception.Message: ACS50008: o token SAML é inválido.<br>ID de rastreio: e5ad1af1-2d39-4970-8eef-096e325c9950<br>ID de correlação: abe9deb8-3e64-464d-8375-36db9816427a<br>Carimbo de data/hora: **2016-05-19 01:35:39Z**<br> | Certifique-se de que a hora no relógio do seu sistema não excede mais de 15 minutos da hora local. Volte a executar o instalador para concluir o registo.|
 |06:28:45: Falha ao criar certificado<br>06:28:45: Não é possível continuar a configuração. Não é possível criar um certificado necessário para autenticar no Site Recovery. Execute Novamente a Configuração | Certifique-se de que está a executar o programa de configuração como administrador local. |
-
-
-<!--HONumber=Feb17_HO2-->
-
-

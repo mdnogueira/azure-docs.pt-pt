@@ -1,17 +1,17 @@
 <!--author=SharS last changed: 9/17/15-->
 
 
-#### <a name="to-create-a-new-service"></a>To create a new service
-1. Use your Microsoft account credentials to log on to the [Microsoft Azure Government Portal](https://portal.azure.us/).
-2. In the Government Portal, click **+** and then in the marketplace, click **See all**. Search for _StorSimple Physical_. Select and click **StorSimple Physical Device Series** and then click **Create**. Alternatively, in the Government portal, click **+** and then under **Storage**, click **StorSimple Physical Device Series**.
-3. In the **StorSimple Device Manager** blade, do the following steps:
+#### <a name="to-create-a-new-service"></a>Para criar um novo serviço
+1. Utilizar as credenciais da conta Microsoft para iniciar sessão no [Portal do Microsoft Azure Government](https://portal.azure.us/).
+2. No Portal de administração pública, clique em  **+**  e, em seguida, no marketplace, clique em **ver todos os**. Procure o _StorSimple Físico_. Selecione e clique em **Série do Dispositivo Físico do StorSimple** e, em seguida, clique em **Criar**. Em alternativa, no portal de administração pública, clique em  **+**  e, em **armazenamento**, clique em **série de dispositivo físico StorSimple**.
+3. No painel **Gestor de Dispositivos do StorSimple**, siga os seguintes passos:
    
-   1. Supply a unique **Resource name** for your service. This name is a friendly name that can be used to identify the service. The name can have between 2 and 50 characters that can be letters, numbers, and hyphens. The name must start and end with a letter or a number.
-   2. Choose a **Subscription** from the drop-down list. The subscription is linked to your billing account. This field is not present if you have only one subscription.
-   3. For **Resource group**, **Use existing** or **Create new** group. For more information, see [Azure resource groups](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-infrastructure-resource-groups-guidelines/).
-   4. Supply a **Location** for your service. Location refers to the geographical region where you want to deploy your device. Select **US Govt Iowa** or **US Govt Virgina**.
-   5. Select **Create a new storage account** to automatically create a storage account with the service. Specify a name for this storage account. If you need your data in a different location, uncheck this box.
-   6. Check **Pin to dashboard** if you want a quick link to this service on your dashboard.
-   7. Click **Create** to create the StorSimple Device Manager. The service creation takes a few minutes. After the service is successfully created, you will see a notification and the new service blade opens up.
+   1. Forneça um **Nome do recurso** exclusivo para o serviço. Este é um nome amigável que pode ser utilizado para identificar o serviço. O nome pode ter entre 2 e 50 carateres que podem ser letras, números e hífenes. O nome tem de começar e terminar com uma letra ou um número.
+   2. Escolha uma **Subscrição** na lista pendente. A subscrição está ligada à sua conta de faturação. Este campo não estará presente se tiver apenas uma subscrição.
+   3. Para **Grupo de recursos**, **Utilizar existente** ou **Criar novo**. Para obter mais informações, veja [Azure resource groups](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-infrastructure-resource-groups-guidelines/) (Grupos de recursos do Azure).
+   4. Forneça uma **Localização** para o serviço. Localização do pacote refere-se para a região geográfica onde pretende implementar o dispositivo. Selecione **E.U.A. Govt Iowa** ou **E.U.A. Govt Virgina**.
+   5. Selecione **Criar uma nova conta de armazenamento** para criar automaticamente uma conta de armazenamento com o serviço. Especifique um nome para esta conta de armazenamento. Se precisar de ter os seus dados numa localização diferente, desmarque esta caixa.
+   6. Assinale **Afixar ao dashboard** se pretender uma ligação rápida para este serviço no seu dashboard.
+   7. Clique em **Criar** para criar o Gestor de Dispositivos do StorSimple. A criação do serviço demora alguns minutos. Depois de o serviço ser criado com êxito, verá uma notificação e o novo painel de serviço é aberto.
 
 

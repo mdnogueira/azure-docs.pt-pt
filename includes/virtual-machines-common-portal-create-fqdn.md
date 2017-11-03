@@ -1,14 +1,14 @@
 
-1. Select your VM in the portal. The *DNS name* is currently blank. Select **Public IP address**:
+1. Selecione a VM no portal. O *nome DNS* está atualmente em branco. Selecione **endereço IP público**:
    
-   ![Click Public IP resource in the portal](./media/virtual-machines-common-portal-create-fqdn/locatePublicIP.PNG)
+   ![Clique em recursos de IP público no portal](./media/virtual-machines-common-portal-create-fqdn/locatePublicIP.PNG)
 
-2. Enter the desired DNS name and then select **Save**.
+2. Introduza o nome DNS pretendido e, em seguida, selecione **guardar**.
    
-   ![Enter a DNS name label for your public IP resource](./media/virtual-machines-common-portal-create-fqdn/dnsNameLabel.PNG)
+   ![Introduza uma etiqueta de nome DNS para o recurso de IP público](./media/virtual-machines-common-portal-create-fqdn/dnsNameLabel.PNG)
  
 
-3. To return to the VM overview blade, close the *Public IP address* blade. Verify that the *DNS name* is now shown.
+3. Para regressar ao painel de descrição geral VM, feche o *endereço IP público* painel. Certifique-se de que o *nome DNS* agora é apresentado.
    
-   ![Confirm your new DNS label is set](./media/virtual-machines-common-portal-create-fqdn/fqdnCreated.PNG)
+   ![Confirme a que sua nova etiqueta DNS está definida](./media/virtual-machines-common-portal-create-fqdn/fqdnCreated.PNG)
 

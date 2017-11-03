@@ -10,20 +10,18 @@ tags: azure-resource-manager
 ms.assetid: 
 ms.service: virtual-machines-linux
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/15/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.translationtype: HT
-ms.sourcegitcommit: 94d1d4c243bede354ae3deba7fbf5da0652567cb
-ms.openlocfilehash: d009020e86fdfed6a45b5b63b9664c623bcb1843
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/18/2017
-
+ms.openlocfilehash: 15d4f81f8a7a835ea61a9056d83d8337d529c7cc
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="create-a-linux-virtual-machine-with-the-azure-portal"></a>Criar uma máquina virtual Linux com o portal do Azure
 
 As máquinas virtuais podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Este Guia de Introdução explica como criar uma máquina virtual e como instalar um servidor Web na VM.
@@ -58,18 +56,18 @@ Inicie sessão no portal do Azure em http://portal.azure.com.
 
     ![Captura de ecrã que mostra os tamanhos de VM](./media/quick-create-portal/create-linux-vm-portal-sizes.png)  
 
-5. No painel de definições, mantenha as predefinições e clique em **OK**.
+5. Em **Definições**, mantenha as predefinições e clique em **OK**.
 
 6. Na página de resumo, clique em **Ok** para iniciar a implementação da máquina virtual.
 
-7. A VM será afixada ao dashboard do portal do Azure. Depois de concluída a implementação, o painel de resumo da VM abre automaticamente.
+7. A VM será afixada ao dashboard do portal do Azure. Depois de concluída a implementação, o resumo da VM abre-se automaticamente.
 
 
 ## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
 
 Crie uma ligação SSH com a máquina virtual.
 
-1. Clique no botão **Ligar** no painel da máquina virtual. O botão de ligação apresenta uma cadeia de ligação SSH que pode ser utilizada para ligar à máquina virtual.
+1. Clique no botão **Ligar** nas propriedades da máquina virtual. O botão de ligação apresenta uma cadeia de ligação SSH que pode ser utilizada para ligar à máquina virtual.
 
     ![Portal 9](./media/quick-create-portal/portal-quick-start-9.png) 
 
@@ -110,13 +108,13 @@ Um Grupo de segurança de rede (NSG) protege os tráfegos de entrada e de saída
 
 ## <a name="view-the-nginx-welcome-page"></a>Ver a página de boas-vindas do NGINX
 
-Com o NGINX instalado e a porta 80 aberta para a VM, torna-se possível aceder ao servidor Web a partir da Internet. Abra um browser e introduza o endereço IP público da VM. Pode encontrar o endereço IP público no painel da VM no portal do Azure.
+Com o NGINX instalado e a porta 80 aberta para a VM, torna-se possível aceder ao servidor Web a partir da Internet. Abra um browser e introduza o endereço IP público da VM. O endereço IP público pode ser encontrado no propriedades da VM no portal do Azure.
 
 ![Site predefinido do NGINX](./media/quick-create-cli/nginx.png) 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando já não for necessário, elimine o grupo de recursos, a máquina virtual e todos os recursos relacionados. Para fazê-lo, selecione o grupo de recursos a partir do painel da máquina virtual e clique em **Eliminar**.
+Quando já não for necessário, elimine o grupo de recursos, a máquina virtual e todos os recursos relacionados. Para tal, selecione o grupo de recursos para a máquina virtual e clique em **eliminar**.
 
 ## <a name="next-steps"></a>Passos seguintes
 
@@ -124,4 +122,3 @@ Neste guia de introdução, implementou uma máquina virtual simples, uma regra 
 
 > [!div class="nextstepaction"]
 > [Tutoriais das máquinas virtuais do Linux do Azure](./tutorial-manage-vm.md)
-

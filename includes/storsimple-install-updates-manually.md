@@ -1,10 +1,10 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### <a name="to-install-regular-updates-via-the-azure-classic-portal"></a>To install regular updates via the Azure classic portal
-1. On the **Devices** page, select the device on which you want to install updates.
-2. Navigate to **Devices** > **Maintenance** and scroll down to **Software Updates**.
-3. To check for updates, click **Check Updates** at the bottom of the page.
-4. You will see a message if software updates are available. Click **Install Updates** to begin updating the device.
+#### <a name="to-install-regular-updates-via-the-azure-classic-portal"></a>Para instalar atualizações regulares através do portal clássico do Azure
+1. No **dispositivos** página, selecione o dispositivo no qual pretende instalar as atualizações.
+2. Navegue para **dispositivos** > **manutenção** e desloque para baixo até **atualizações de Software**.
+3. Para procurar atualizações, clique em **verificar atualizações** na parte inferior da página.
+4. Verá uma mensagem se as atualizações de software estão disponíveis. Clique em **instalar atualizações** para começar a atualizar o dispositivo.
    
-    You will be notified when the update is successfully installed.
+    Será notificado quando a atualização é instalada com êxito.
 

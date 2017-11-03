@@ -34,8 +34,3 @@
 9. Em **Resumo**, consulte as informações e clique em **Instalar**. Quando a instalação estiver concluída, é gerada uma frase de acesso. Irá precisar dela, quando ativar a replicação, por isso, copie-a e mantenha-a numa localização segura.
 
      ![Adicionar servidor de processos 7](./media/site-recovery-add-process-server/ps-page-8.png)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

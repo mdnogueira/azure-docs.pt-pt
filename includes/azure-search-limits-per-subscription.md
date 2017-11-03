@@ -1,17 +1,17 @@
-You can create multiple services within a subscription, each one provisioned at a specific tier, limited only by the number of services allowed at each tier. For example, you could create up to 12 services at the Basic tier and another 12 services at the S1 tier within the same subscription. For more information about tiers, see [Choose a SKU or tier for Azure Search](../articles/search/search-sku-tier.md).
+Pode criar vários serviços numa subscrição, cada um deles aprovisionados a nenhum escalão específico, limitado apenas pelo número de serviços permitidos em cada camada. Por exemplo, pode criar até 12 serviços na camada básica e outro serviços 12 na camada S1 dentro da mesma subscrição. Para obter mais informações sobre as camadas, consulte [escolha um SKU ou a camada para a Azure Search](../articles/search/search-sku-tier.md).
 
-Maximum service limits can be raised upon request. Contact Azure Support if you need more services within the same subscription.
+Limites de serviço máximo podem desencadeados após pedido. Se precisar de mais serviços dentro da mesma subscrição, contacte o suporte do Azure.
 
-| Resource | Free | Basic | S1 | S2 | S3 | S3 HD <sup>1</sup> |
+| Recurso | Gratuito | Básica | S1 | S2 | S3 | S3 HD <sup>1</sup> |
 | --- | --- | --- | --- | --- | --- | --- |
-| Maximum services |1 |12 |12 |6 |6 |6 |
-| Maximum scale in SU <sup>2</sup> |N/A <sup>3</sup> |3 SU <sup>4</sup> |36 SU |36 SU |36 SU |36 SU |
+| Serviços máximos |1 |12 |12 |6 |6 |6 |
+| Dimensionamento máximo no SU <sup>2</sup> |N/D <sup>3</sup> |3 SU <sup>4</sup> |36 SU |36 SU |36 SU |36 SU |
 
-<sup>1</sup> S3 HD does not support [indexers](../articles/search/search-indexer-overview.md) at this time. 
+<sup>1</sup> S3 HD não suporta [indexadores](../articles/search/search-indexer-overview.md) neste momento. 
 
-<sup>2</sup> Search units (SU) are billing units, allocated as either a *replica* or a *partition*. You need both resources for storage, indexing, and query operations. To learn more about how search units are computed, plus a chart of valid combinations that stay under the maximum limits, see [Scale resource levels for query and index workloads](../articles/search/search-capacity-planning.md). 
+<sup>2</sup> unidades de pesquisa (SU) são faturação unidades, atribuídas como um *réplica* ou um *partição*. Terá de ambos os recursos de armazenamento, a indexação e as operações de consulta. Para obter mais informações sobre como são calculadas unidades de pesquisa, mais um gráfico de combinações válidos que permanecem sob os limites máximos, consulte o artigo [Dimensionar níveis de recursos de cargas de trabalho de consulta e índice](../articles/search/search-capacity-planning.md). 
 
-<sup>3</sup> Free is based on shared resources used by multiple subscribers. At this tier, there are no dedicated resources for an individual subscriber. For this reason, maximum scale is marked as not applicable.
+<sup>3</sup> livres é baseada em recursos partilhados utilizados por vários subscritores. Nesta camada, existem não existem recursos dedicados para um subscritor individuais. Por este motivo, o dimensionamento máximo é marcado como não aplicável.
 
-<sup>4</sup> Basic has one fixed partition. At this tier, additional SUs are used for allocating more replicas for increased query workloads.
+<sup>4</sup> basic tem uma partição fixa. Nesta camada SUs adicionais são utilizados para alocar mais réplicas para cargas de trabalho de consulta de aumento.
 

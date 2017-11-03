@@ -1,3 +1,3 @@
-* Windows: `Ctrl-insert` to copy and `Shift-insert` to paste. Right-click dropdown can also enable copy/paste.
-  * FireFox/IE may not support clipboard permissions properly.
-* Mac OS: `Cmd-c` to copy and `Cmd-v` to paste. Right-click dropdown can also enable copy/paste.
+* Windows: `Ctrl-insert` para copiar e `Shift-insert` colar. Contexto pendente, também pode ativar copiar/colar.
+  * FireFox/IE podem não suportar corretamente as permissões da área de transferência.
+* Mac OS: `Cmd-c` para copiar e `Cmd-v` colar. Contexto pendente, também pode ativar copiar/colar.

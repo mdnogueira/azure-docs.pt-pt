@@ -1,2 +1,2 @@
 >[!Note]
-> We recommend that you use an Azure Storage account when developing locally. Use of the Azure Storage Emulator is not supported by Azure Functions tools.
+> Utilização do emulador do Storage do Azure não é suportada pelas ferramentas de funções do Azure quando desenvolver localmente.

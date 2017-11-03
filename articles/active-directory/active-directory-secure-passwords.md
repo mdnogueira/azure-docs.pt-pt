@@ -1,85 +1,87 @@
 ---
-title: "Proteger palavras-passe no Azure AD e repor palavras-passe que são bloqueadas pelo Smart Password Lockout | Microsoft Docs"
-description: "Explica o que é um inquilino do Azure AD e como gerir o Azure através do Azure Active Directory"
+title: "Segurança de palavra-passe de camadas do Azure AD | Microsoft Docs"
+description: "Explica a forma como os do Azure AD impõe palavras-passe seguras e protege as palavras-passe de utilizadores de criminals informático,"
 services: active-directory
 documentationcenter: 
-author: markvi
-writer: v-lorisc
+author: barlanmsft
 manager: femila
 ms.assetid: 
 ms.service: active-directory
-ms.workload: infrastructure-services
+ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
-ms.date: 03/02/2017
-ms.author: markvi
-translationtype: Human Translation
-ms.sourcegitcommit: 07635b0eb4650f0c30898ea1600697dacb33477c
-ms.openlocfilehash: 8e625a346c9495d436a99fcf9eadf8ffeffcfdff
-ms.lasthandoff: 03/28/2017
-
-
+ms.topic: article
+ms.date: 08/28/2017
+ms.author: barlan
+ms.openlocfilehash: 50b24466bcbd399de19934f7ec5ed096e308eaf3
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="secure-passwords--in-azure-ad-and-reset-passwords-that-get-blocked-by-smart-password-lockout"></a>Proteger palavras-passe no Azure AD e repor palavras-passe que são bloqueadas pelo Smart Password Lockout
-Este artigo cobre melhores práticas que pode seguir como utilizador ou administrador para proteger as suas contas do Azure Active Directory (Azure AD) e do Serviço de Conta Microsoft. 
+# <a name="a-multi-tiered-approach-to-azure-ad-password-security"></a>Uma abordagem de várias camadas de segurança de palavra-passe do Azure AD
 
- >[!NOTE]
- >Os administradores do Azure AD podem clicar no nome do diretório para repor palavras-passe de utilizador. A partir do [portal de gestão do Azure](https://manage.windowsazure.com), escolha a página Utilizadores, clique no nome do utilizador e em Repor Palavra-passe. 
+Este artigo aborda algumas melhores práticas que pode seguir como um utilizador ou como um administrador para proteger o seu Azure Active Directory (Azure AD) ou Account Microsoft.
+
+ > [!NOTE]
+ > **Está aqui porque está a ter problemas em iniciar sessão?** Se assim for, [Eis como pode alterar e repor a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md).
+ >
+ > Os administradores do AD do Azure podem repor palavras-passe do utilizador com as orientações no artigo [repor a palavra-passe de um utilizador no Azure Active Directory](active-directory-users-reset-password-azure-portal.md).
  >
 
+## <a name="password-requirements"></a>Requisitos de palavra-passe
+
 O Azure AD incorpora as seguintes abordagens comuns relativamente à proteção de palavras-passe:
- *    Requisitos de comprimento de palavras-passe
- *    Requisitos de “complexidade” de palavras-passe
- *    Expiração de palavras-passe regular e periódica 
 
-Para obter informações sobre as capacidades de gestão de palavras-passe, veja [Manage passwords in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-manage-passwords) (Gerir palavras-passe no Azure Active Directory). 
+* Requisitos de comprimento de palavras-passe
+* Requisitos de complexidade de palavra-passe
+* Expiração de palavras-passe regular e periódica
 
-## <a name="azure-ad-password-protection"></a>Proteção de palavras-passe do Azure AD
-O Azure AD e o Sistema de Contas Microsoft utilizam abordagens comprovadas da indústria para garantir a proteção das palavras-passe de utilizadores e administradores. 
+Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords.md).
 
-Esta secção descreve como o Azure AD protege as palavras-passe com os seguintes métodos:
- *    Palavras-passe banidas dinamicamente
- *    Smart Password Lockout
+## <a name="azure-ad-password-protections"></a>Proteções de palavra-passe do Azure AD
 
-Para obter informações sobre a gestão de palavras-passe com base nas investigações atuais, veja o documento técnico [Password Guidance](http://aka.ms/passwordguidance) (Orientações Sobre Palavras-passe). 
+Azure AD e o sistema de contas do Microsoft utilizar da indústria comprovada abordagens para garantir a proteção segura de utilizador e administrador de palavras-passe, incluindo:
+
+* Palavras-passe banidas dinamicamente
+* Smart Password Lockout
+
+Para obter informações sobre a gestão de palavra-passe com base na investigação atual, consulte o documento técnico [orientações de palavra-passe](http://aka.ms/passwordguidance).
 
 ### <a name="dynamically-banned-passwords"></a>Palavras-passe banidas dinamicamente
-O Azure AD e o Sistema de Contas Microsoft banem dinamicamente todas as palavras-passe utilizadas frequentemente, para salvaguardar a proteção das palavras-passe. A equipa do Azure AD Identity Protection analisa, rotineiramente, as listas de palavras-passe banidas, impedindo os utilizadores de selecionar as que são mais utilizadas. Este serviço está disponível para clientes do Azure AD e do Serviço de Conta Microsoft. 
 
-Ao criar palavras-passe, é importante que os administradores incentivem os utilizadores a escolher expressões para palavras-passe pouco comuns, que incluam uma combinação única de letras, números e carateres. Desta forma, torna-se praticamente impossível colocar em risco as palavras-passe dos utilizadores. 
+Azure AD e Accounts Microsoft salvaguardar proteção de palavra-passe por dinamicamente banning palavras-passe utilizadas frequentemente. A equipa do Azure AD Identity Protection analisa regularmente listas banned palavra-passe, impedir que os utilizadores a seleção de palavras-passe utilizadas frequentemente. Este serviço está disponível para clientes do Azure AD e do Serviço de Conta Microsoft.
 
-**Listas de violações**
+Ao criar palavras-passe, é importante para os administradores a encorajar os utilizadores para escolher as expressões de palavra-passe que incluam uma combinação de letras, números, carateres ou palavras exclusivos. Esta abordagem ajuda a tornar as palavras-passe do utilizador praticamente impossíveis ser mais fácil para os utilizadores memorizem mas comprometido.
 
-O Azure AD está sempre a trabalhar para estar um passo à frente dos cibercriminosos. Uma forma que utilizamos para isso é impedir que os utilizadores criem palavras-passe que estejam na lista de ataques atual.
+#### <a name="password-breaches"></a>Falhas de palavra-passe
 
-A equipa do Azure AD Identity Protection analisa continuamente as palavras-passe que são utilizadas mais vezes. Os cibercriminosos também utilizam estratégias semelhantes para informar os respetivos ataques, que podem incluir a criação de [rainbow tables](https://en.wikipedia.org/wiki/Rainbow_table), para descodificar hashes de palavras-passe. 
+Microsoft sempre está a trabalhar para se manter um passo à frente das criminals informático.
 
-A Microsoft analisa continuamente [violações a dados](https://www.privacyrights.org/data-breaches), para manter uma lista de palavras-passe banidas dinamicamente atualizada, assegurando que as palavras-passe vulneráveis são banidas antes de se tornarem uma ameaça real aos clientes do Azure AD. Para obter mais informações sobre os nossos esforços de segurança atuais, veja [Microsoft Security Intelligence Report](https://www.microsoft.com/security/sir/default.aspx) (Relatório de Informações de Segurança da Microsoft). 
+A equipa do Azure AD Identity Protection analisa continuamente as palavras-passe que são utilizadas mais vezes. Os cibercriminosos também utilizam estratégias semelhantes para informar os respetivos ataques, que podem incluir a criação de [rainbow tables](https://en.wikipedia.org/wiki/Rainbow_table), para descodificar hashes de palavras-passe.
+
+A Microsoft analisa continuamente [violações a dados](https://www.privacyrights.org/data-breaches), para manter uma lista de palavras-passe banidas dinamicamente atualizada, assegurando que as palavras-passe vulneráveis são banidas antes de se tornarem uma ameaça real aos clientes do Azure AD. Para obter mais informações sobre os nossos esforços de segurança atuais, veja [Microsoft Security Intelligence Report](https://www.microsoft.com/security/sir/default.aspx) (Relatório de Informações de Segurança da Microsoft).
 
 ### <a name="smart-password-lockout"></a>Smart Password Lockout
 
-Quando o Azure AD deteta que um potencial cibercriminoso está a tentar piratear uma palavra-passe de utilizador, bloqueamos essa conta com o Smart Password Lockout. O Azure AD foi concebido para determinar o risco associado a sessões de início de sessão específicas. 
+Quando o Azure AD deteta que um potencial cibercriminoso está a tentar piratear uma palavra-passe de utilizador, bloqueamos essa conta com o Smart Password Lockout. O Azure AD foi concebido para determinar o risco associado a sessões de início de sessão específicas. Em seguida, utilizar os dados de segurança mais atualizados, iremos aplicar semântica de bloqueio para parar ameaças informático.
 
-Utilizando os dados de segurança mais atualizados, aplicamos semântica de bloqueio às ameaças cibernéticas. Desta forma, os utilizadores não são bloqueados, na eventualidade de um cibercriminoso ter conseguido piratear as palavras-passe de utilizador da sua rede.
-
-Se um utilizador for bloqueado do Azure AD, o ecrã do mesmo será semelhante ao seguinte:
+Se um utilizador está bloqueado fora do Azure AD, as respetivas ecrã semelhante ao seguinte:
 
   ![Bloqueado do Azure AD](./media/active-directory-secure-passwords/locked-out-azuread.png)
-  
-E relativamente a outras contas Microsoft, o ecrã será parecido com:
+
+Para outras contas Microsoft, os respetivos ecrã semelhante ao seguinte:
 
   ![Bloqueado de uma conta Microsoft](./media/active-directory-secure-passwords/locked-out-ms-accounts.png)
 
-Para obter informações sobre a gestão de palavras-passe no Azure Active Directory, veja [How password management works](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-passwords-how-it-works) (Como funciona a gestão de palavras-passe).
+Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords.md).
 
-  >![NOTE] ISe for administrador do Azure AD, poderá ser útil utilizar o [Windows Hello](https://www.microsoft.com/en-us/windows/windows-hello) para impedir que os seus utilizadores criem palavras-passe tradicionais.
+  >[!NOTE]
+  >Se for administrador do Azure AD, poderá ser útil utilizar o [Windows Hello](https://www.microsoft.com/windows/windows-hello) para impedir que os seus utilizadores criem palavras-passe tradicionais.
   >
 
 ## <a name="next-steps"></a>Passos seguintes
-[Como atualizar a sua própria palavra-passe](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-passwords-update-your-own-password)<br>
-[The fundamentals of Azure identity management](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals-identity) (Noções básicas da gestão de identidades do Azure)<br>
-[How to get operational insights with password management reports](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-passwords-get-insights#view-password-reset-activity) (Como obter informações operacionais com relatórios de gestão de palavras-passe)
 
-
-
+* [Como atualizar a sua própria palavra-passe](active-directory-passwords-update-your-own-password.md)
+* [The fundamentals of Azure identity management](fundamentals-identity.md) (As noções básicas da gestão de identidades do Azure)
+* [Atividade de reposição de relatório na palavra-passe](active-directory-passwords-reporting.md)
