@@ -1,27 +1,27 @@
-1. In Failover Cluster Manager, expand **Roles**, and then highlight your availability group.  
+1. No Gestor de clusters de ativação pós-falha, expanda **funções**e, em seguida, realce o grupo de disponibilidade.  
 
-2. On the **Resources** tab, right-click the listener name, and then click **Properties**.
+2. No **recursos** separador, faça duplo clique o nome do serviço de escuta e, em seguida, clique em **propriedades**.
 
-3. Click the **Dependencies** tab. If multiple resources are listed, verify that the IP addresses have OR, not AND, dependencies.  
+3. Clique em de **dependências** separador. Se forem apresentados vários recursos, certifique-se de que os endereços IP têm ou não e, dependências.  
 
-4. Click **OK**.
+4. Clique em **OK**.
 
-5. Right-click the listener name, and then click **Bring Online**.
+5. O nome do serviço de escuta com o botão direito e, em seguida, clique em **colocar Online**.
 
-6. After the listener is online, on the **Resources** tab, right-click the availability group, and then click **Properties**.
+6. Depois do serviço de escuta está online, no **recursos** separador, clique no grupo de disponibilidade e, em seguida, clique em **propriedades**.
    
-    ![Configure the availability group resource](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678772.gif)
+    ![Configurar o recurso do grupo de disponibilidade](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678772.gif)
 
-7. Create a dependency on the listener name resource (not the IP address resources name), and then click **OK**.
+7. Criar uma dependência no recurso de nome de serviço de escuta (não o recursos nome de endereço IP) e, em seguida, clique em **OK**.
    
-    ![Add dependency on the listener name](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678773.gif)
+    ![Adicione a dependência no nome do serviço de escuta](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678773.gif)
 
-8. Start SQL Server Management Studio, and then connect to the primary replica.
+8. Iniciar o SQL Server Management Studio e, em seguida, ligue para a réplica primária.
 
-9. Go to **AlwaysOn High Availability** > **Availability Groups** > **\<AvailabilityGroupName\>** > **Availability Group Listeners**.  
-    The listener name that you created in Failover Cluster Manager should be displayed.
+9. Aceda a **AlwaysOn alta disponibilidade** > **grupos de disponibilidade** > **\<AvailabilityGroupName\>**   >  **Serviços de escuta do grupo de disponibilidade**.  
+    O nome do serviço de escuta que criou no Gestor de clusters de ativação pós-falha deve ser apresentado.
 
-10. Right-click the listener name, and then click **Properties**.
+10. O nome do serviço de escuta com o botão direito e, em seguida, clique em **propriedades**.
 
-11. In the **Port** box, specify the port number for the availability group listener by using the $EndpointPort that you used earlier (in this tutorial, 1433 was the default), and then click **OK**.
+11. No **porta** caixa, especifique o número de porta para o serviço de escuta do grupo de disponibilidade com o $EndpointPort que utilizou anteriormente (neste tutorial, 1433 era a predefinição) e, em seguida, clique em **OK**.
 

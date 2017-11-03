@@ -155,7 +155,7 @@ Está disponível uma implementação para esta arquitetura de referência no [G
    * O nome do **Grupo de recursos** já está definido no ficheiro de parâmetros, por isso, selecione **Criar Novo** e introduza `ra-single-vm-rg` na caixa de texto.
    * Selecione a região na caixa pendente **Localização**.
    * Não edite as caixas de texto **Uri da Raiz de Modelo** nem **Uri da Raiz de Parâmetro**.
-.   * Selecione **linux** na caixa pendente **Tipo de SO**.
+.   * Selecionar **linux** no **tipo de SO** pendente caixa.
    * Reveja os termos e condições e clique na caixa de seleção **Aceito os termos e condições acima apresentados**.
    * Clique no botão **Comprar**.
 3. Aguarde pela conclusão da implementação.
@@ -188,7 +188,7 @@ Para maior disponibilidade, implemente duas ou mais VMs por trás de um balancea
 [nsg-default-rules]: ../articles/virtual-network/virtual-networks-nsg.md#default-rules
 [OSPatching]: https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching
 [planned-maintenance]:../articles/virtual-machines/linux/planned-maintenance.md
-[premium-storage]:../articles/storage/common/storage-premium-storage.md
+[premium-storage]:../articles/virtual-machines/windows/premium-storage.md
 [rbac]: ../articles/active-directory/role-based-access-control-what-is.md
 [rbac-roles]: ../articles/active-directory/role-based-access-built-in-roles.md
 [rbac-devtest]: ../articles/active-directory/role-based-access-built-in-roles.md#devtest-labs-user

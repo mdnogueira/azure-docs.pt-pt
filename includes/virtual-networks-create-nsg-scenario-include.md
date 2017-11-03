@@ -1,16 +1,16 @@
-## <a name="scenario"></a>Scenario
-To better illustrate how to create NSGs, this document will use the scenario below.
+## <a name="scenario"></a>Cenário
+Para ilustrar melhor como criar NSGs, este documento utilizará o cenário abaixo.
 
-![VNet scenario](./media/virtual-networks-create-nsg-scenario-include/figure1.png)
+![Cenário de VNet](./media/virtual-networks-create-nsg-scenario-include/figure1.png)
 
-In this scenario you will create an NSG for each subnet in the **TestVNet** virtual network, as described below: 
+Neste cenário, irá criar um NSG para cada sub-rede no **TestVNet** rede virtual, conforme descrito abaixo: 
 
-* **NSG-FrontEnd**. The front end NSG will be applied to the *FrontEnd* subnet, and contain two rules:    
-  * **rdp-rule**. This rule will allow RDP traffic to the *FrontEnd* subnet.
-  * **web-rule**. This rule will allow HTTP traffic to the *FrontEnd* subnet.
-* **NSG-BackEnd**. The back end NSG will be applied to the *BackEnd* subnet, and contain two rules:    
-  * **sql-rule**. This rule allows SQL traffic only from the *FrontEnd* subnet.
-  * **web-rule**. This rule denies all internet bound traffic from the *BackEnd* subnet.
+* **NSG-front-end**. O front-end NSG será aplicada ao *front-end* sub-rede e contêm duas regras:    
+  * **regra de RDP**. Esta regra irá permitir tráfego RDP para a *front-end* sub-rede.
+  * **regra de Web**. Esta regra irá permitir tráfego HTTP para o *front-end* sub-rede.
+* **NSG-back-end**. O back-end NSG será aplicada ao *back-end* sub-rede e contêm duas regras:    
+  * **regra de SQL**. Esta regra permite que o tráfego SQL apenas a partir de *front-end* sub-rede.
+  * **regra de Web**. Esta regra negar internet todos os vinculado tráfego a partir do *back-end* sub-rede.
 
-The combination of these rules create a DMZ-like scenario, where the back end subnet can only receive incoming traffic for SQL from the front end subnet, and has no access to the Internet, while the front end subnet can communicate with the Internet, and receive incoming HTTP requests only.
+A combinação destas regras criar um cenário semelhante a rede de Perímetro, onde a sub-rede de back-end pode receber apenas tráfego de entrada para o SQL Server da sub-rede do front-end e não tem acesso à Internet, enquanto a sub-rede do front-end pode comunicar com a Internet e receber pedidos HTTP recebidos apenas.
 

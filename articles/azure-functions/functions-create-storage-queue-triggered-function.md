@@ -4,24 +4,23 @@ description: "Utilize as Funções do Azure para criar uma função sem servidor
 services: azure-functions
 documentationcenter: na
 author: ggailey777
-manager: erikre
+manager: cfowler
 editor: 
 tags: 
 ms.assetid: 361da2a4-15d1-4903-bdc4-cc4b27fc3ff4
 ms.service: functions
 ms.devlang: multiple
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/31/2017
 ms.author: glenga
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 07584294e4ae592a026c0d5890686eaf0b99431f
-ms.openlocfilehash: ba8db575c8731e4f9067a6635e745da12c8667dd
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/01/2017
-
+ms.openlocfilehash: 3fd5a5b9d2e2eec485fd9ecc5380ad6adb9851d0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Criar uma função acionada pelo Armazenamento de filas do Azure
 
@@ -59,9 +58,9 @@ Em seguida, vai criar uma função na aplicação Function App nova.
     
     | Definição | Valor sugerido | Descrição |
     |---|---|---|
-    | **Nome da fila**   | myqueue-items    | O nome da fila à qual ligar na sua conta de Armazenamento. |
-    | **Ligação da conta de armazenamento** | AzureWebJobStorage | Pode utilizar a ligação da conta de armazenamento que já está a ser utilizada pela sua aplicação Function App ou criar uma nova.  |
     | **Dar um nome à função** | Exclusivo na aplicação Function App | O nome desta função acionada por fila. |
+    | **Nome da fila**   | myqueue-items    | O nome da fila à qual ligar na sua conta de Armazenamento. |
+    | **Ligação da conta de armazenamento** | AzureWebJobStorage | Pode utilizar a ligação da conta de armazenamento que já está a ser utilizada pela sua aplicação Function App ou criar uma nova.  |    
 
 3. Clique em **Criar** para criar a função.
 
@@ -69,9 +68,9 @@ Em seguida, vai ligar à sua conta de Armazenamento do Azure e criar a fila de a
 
 ## <a name="create-the-queue"></a>Criar a fila
 
-1. Na sua função, clique em **Integrar**, expanda **Documentação** e copie **Nome da conta** e **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento. Se já tiver ligado a sua conta de armazenamento, avance para o passo 4.
+1. Na sua função, clique em **Integrar**, expanda **Documentação** e copie **Nome da conta** e **Chave da conta**. Pode utilizar estas credenciais para ligar à conta de armazenamento no Explorador de armazenamento do Azure. Se já tiver ligado a sua conta de armazenamento, avance para o passo 4.
 
-    ![Obtenha as credenciais de ligação da conta de Armazenamento.](./media/functions-create-storage-queue-triggered-function/functions-storage-account-connection.png)v
+    ![Obtenha as credenciais de ligação da conta de Armazenamento.](./media/functions-create-storage-queue-triggered-function/functions-storage-account-connection.png)
 
 1. Execute a ferramenta [Microsoft Azure Storage Explorer](http://storageexplorer.com/), clique no ícone de ligação à esquerda, escolha **Utilizar um nome e uma chave de conta de armazenamento** e clique em **Seguinte**.
 
@@ -81,7 +80,7 @@ Em seguida, vai ligar à sua conta de Armazenamento do Azure e criar a fila de a
 
     ![Introduza as credenciais de armazenamento e ligue-se.](./media/functions-create-storage-queue-triggered-function/functions-storage-manager-connect-2.png)
 
-1. Expanda a conta de armazenamento anexada, clique com o botão direito do rato em **Filas**, clique em **Criar fila**, escreva `myqueue-items` e prima Enter.
+1. Expanda a conta de armazenamento ligado, faça duplo clique **filas**, clique em **criar fila**, tipo `myqueue-items`, e, em seguida, prima enter.
 
     ![Crie uma fila de armazenamento.](./media/functions-create-storage-queue-triggered-function/functions-storage-manager-create-queue.png)
 
@@ -89,7 +88,7 @@ Agora que tem uma fila de armazenamento, pode adicionar uma mensagem à mesma pa
 
 ## <a name="test-the-function"></a>Testar a função
 
-1. Novamente no portal do Azure, navegue para a função, expanda os **Registos**, na parte inferior da página, e confirme que a transmissão de registos não está em pausa.
+1. Novamente no portal do Azure, navegue para a função, expanda o **registos** na parte inferior da página e certifique-se de que registo de transmissão em fluxo não está em pausa.
 
 1. No Storage Explorer, expanda a conta de armazenamento, **Filas** e **myqueue-items** e clique em **Adicionar mensagem**.
 
