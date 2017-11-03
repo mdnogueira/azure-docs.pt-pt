@@ -1,33 +1,14 @@
 ## <a name="create-an-iot-hub"></a>Criar um hub IoT
 
-1. No [portal do Azure](https://portal.azure.com/), clique em **Novo** > **Internet das Coisas** > **Hub IoT**.
+[!INCLUDE [iot-hub-create-hub](iot-hub-create-hub.md)]
 
-   ![Criar um hub IoT no portal do Azure](../articles/iot-hub/media/iot-hub-create-hub-and-device/1_create-azure-iot-hub-portal.png)
-2. No painel **Hub IoT**, introduza as seguintes informações para o hub IoT:
+Agora que criou um hub IoT, localize as informações importantes que utilizar para ligar dispositivos e aplicações para o seu IoT hub. 
 
-     **Nome**: introduza o nome do hub IoT. Se o nome introduzido for válido, aparece uma marca de verificação verde.
-
-     **Escalão de preços e dimensionamento**: selecione o escalão **F1 - Gratuito**. Esta opção é suficiente para esta demonstração. Para obter mais informações, veja o [escalão de preços e dimensionamento](https://azure.microsoft.com/pricing/details/iot-hub/).
-
-     **Grupo de recursos**: crie um grupo de recursos para utilizar o hub IoT ou utilize um já existente. Para obter mais informações, veja [Utilizar grupos de recursos para gerir os recursos do Azure](../articles/azure-resource-manager/resource-group-portal.md).
-
-     **Localização**: selecione a localização mais próxima da origem de criação do hub IoT.
-
-     **Afixar ao dashboard**: selecione esta opção para facilitar o acesso ao hub IoT a partir do dashboard.
-
-   ![Introduzir as informações para criar o hub IoT](../articles/iot-hub/media/iot-hub-create-hub-and-device/2_fill-in-fields-for-azure-iot-hub-portal.png)
-
-   [!INCLUDE [iot-hub-pii-note-naming-hub](iot-hub-pii-note-naming-hub.md)]
-
-3. Clique em **Criar**. A criação do hub IoT pode demorar alguns minutos. Pode ver o progresso no painel **Notificações**.
-
-   ![Ver as notificações de progresso do hub IoT](../articles/iot-hub/media/iot-hub-create-hub-and-device/3_notification-azure-iot-hub-creation-progress-portal.png)
-
-4. Depois de criar o hub IoT, clique no mesmo no dashboard. Anote o **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
+1. Depois de criar o hub IoT, clique no mesmo no dashboard. Anote o **Nome de anfitrião** e, em seguida, clique em **Políticas de acesso partilhado**.
 
    ![Obter o nome do anfitrião do hub IoT](../articles/iot-hub/media/iot-hub-create-hub-and-device/4_get-azure-iot-hub-hostname-portal.png)
 
-5. No painel **Políticas de acesso partilhado**, clique na política **iothubowner** e copie e anote a **Cadeia de ligação** do hub IoT. Para obter mais informações, veja [Controlar o acesso ao Hub IoT](../articles/iot-hub/iot-hub-devguide-security.md).
+1. No painel **Políticas de acesso partilhado**, clique na política **iothubowner** e copie e anote a **Cadeia de ligação** do hub IoT. Para obter mais informações, veja [Controlar o acesso ao Hub IoT](../articles/iot-hub/iot-hub-devguide-security.md).
 
 > [!NOTE] 
 Não precisará da cadeia de ligação iothubowner para este tutorial de configuração. No entanto, poderá ser necessária para alguns dos tutoriais sobre os diferentes cenários de IoT depois de concluir esta configuração.

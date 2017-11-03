@@ -1,20 +1,20 @@
-#### <a name="vpn-type---resource-manager-deployment-model"></a>VPN type - Resource Manager deployment model
+#### <a name="vpn-type---resource-manager-deployment-model"></a>Tipo de VPN - modelo de implementação do Resource Manager
 |  | **RouteBased** | **PolicyBased** |
 | --- | --- | --- |
-| **Site-to-Site** |Supported |Supported |
-| **VNet-to-VNet** |Supported |Not Supported |
-| **Multi-Site** |Supported |Not Supported |
-| **S2S and ExpressRoute coexist** |Supported |Not Supported |
-| **Point-to-Site** |Supported |Not Supported |
-| **Classic to Resource Manager** |Supported |Not Supported |
+| **Site a Site** |Suportado |Suportado |
+| **VNet a VNet** |Suportado |Não suportado |
+| **Multilocal** |Suportado |Não suportado |
+| **Coexistência do ExpressRoute e S2S** |Suportado |Não suportado |
+| **Ponto a Site** |Suportado |Não suportado |
+| **Clássica para o Resource Manager** |Suportado |Não suportado |
 
-#### <a name="vpn-type---classic-deployment-model"></a>VPN type - classic deployment model
-|  | **Dynamic** | **Static** |
+#### <a name="vpn-type---classic-deployment-model"></a>Tipo de VPN - modelo de implementação clássica
+|  | **Dinâmica** | **Estática** |
 | --- | --- | --- |
-| **Site-to-Site** |Supported |Supported |
-| **VNet-to-VNet** |Supported |Not Supported |
-| **Multi-Site** |Supported |Not Supported |
-| **S2S and ExpressRoute coexist** |Supported |Not Supported |
-| **Point-to-Site** |Supported |Not Supported |
-| **Classic to Resource Manager** |Supported |Not Supported |
+| **Site a Site** |Suportado |Suportado |
+| **VNet a VNet** |Suportado |Não suportado |
+| **Multilocal** |Suportado |Não suportado |
+| **Coexistência do ExpressRoute e S2S** |Suportado |Não suportado |
+| **Ponto a Site** |Suportado |Não suportado |
+| **Clássica para o Resource Manager** |Suportado |Não suportado |
 

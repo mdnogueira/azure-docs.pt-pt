@@ -1,142 +1,142 @@
-# <a name="azure-managed-disks-overview"></a>Azure Managed Disks Overview
+# <a name="azure-managed-disks-overview"></a>Descrição geral de discos gerida do Azure
 
-Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the [storage accounts](../articles/storage/common/storage-introduction.md) associated with the VM disks. You only have to specify the type ([Premium](../articles/storage/common/storage-premium-storage.md) or [Standard](../articles/storage/common/storage-standard-storage.md)) and the size of disk you need, and Azure creates and manages the disk for you.
+Discos gerida do Azure simplifica a gestão de discos para VMs IaaS do Azure ao gerir o [contas do storage](../articles/storage/common/storage-introduction.md) associadas aos discos VM. Só tem de especificar o tipo ([Premium](../articles/virtual-machines/windows/premium-storage.md) ou [padrão](../articles/virtual-machines/windows/standard-storage.md)) e o tamanho do disco é necessário e Azure cria e gere o disco para si.
 
-## <a name="benefits-of-managed-disks"></a>Benefits of managed disks
+## <a name="benefits-of-managed-disks"></a>Benefícios dos discos geridos
 
-Let's take a look at some of the benefits you gain by using managed disks, starting with this Channel 9 video, [Better Azure VM Resiliency with Managed Disks](https://channel9.msdn.com/Blogs/Azure/Managed-Disks-for-Azure-Resiliency).
+Vamos ver em algumas das vantagens que obtém ao utilizar discos geridos, começando neste vídeo no Channel 9, [melhor resiliência de VM do Azure com discos geridos](https://channel9.msdn.com/Blogs/Azure/Managed-Disks-for-Azure-Resiliency).
 <br/>
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Managed-Disks-for-Azure-Resiliency/player]
 
-### <a name="simple-and-scalable-vm-deployment"></a>Simple and scalable VM deployment
+### <a name="simple-and-scalable-vm-deployment"></a>Implementação da VM Simple e dimensionável
 
-Managed Disks handles storage for you behind the scenes. Previously, you had to create storage accounts to hold the disks (VHD files) for your Azure VMs. When scaling up, you had to make sure you created additional storage accounts so you didn't exceed the IOPS limit for storage with any of your disks. With Managed Disks handling storage, you are no longer limited by the storage account limits (such as 20,000 IOPS / account). You also no longer have to copy your custom images (VHD files) to multiple storage accounts. You can manage them in a central location – one storage account per Azure region – and use them to create hundreds of VMs in a subscription.
+Gerida armazenamento de identificadores de discos nos bastidores. Anteriormente, era necessário criar as contas do storage para armazenar os discos (ficheiros. VHD) para as suas VMs do Azure. Quando como aumentar verticalmente, era necessário Certifique-se de que criou mais contas do storage, pelo que não foi excedido o limite IOPS de armazenamento com qualquer um dos seus discos. Com os discos geridos processamento de armazenamento, já não são limitados por limites de conta de armazenamento (por exemplo, o 20.000 IOPS / conta). Também já não tem de copiar as imagens personalizadas (ficheiros. VHD) para várias contas de armazenamento. Pode geri-los numa localização central – uma conta do storage por região do Azure – e utilizá-los para criar centenas de VMs numa subscrição.
 
-Managed Disks will allow you to create up to 10,000 VM **disks** in a subscription, which will enable you to create thousands of **VMs** in a single subscription. This feature also further increases the scalability of [Virtual Machine Scale Sets (VMSS)](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) by allowing you to create up to a thousand VMs in a VMSS using a Marketplace image.
+Discos geridos permite-lhe criar até 10 000 VM **discos** numa subscrição, que permitirá criar milhares de **VMs** numa única subscrição. Esta funcionalidade também aumenta a escalabilidade do [conjuntos de dimensionamento da Máquina Virtual (VMSS)](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) , permitindo-lhe criar até um thousand VMs num VMSS utilizando uma imagem do Marketplace.
 
-### <a name="better-reliability-for-availability-sets"></a>Better reliability for Availability Sets
+### <a name="better-reliability-for-availability-sets"></a>Melhor fiabilidade para conjuntos de disponibilidade
 
-Managed Disks provides better reliability for Availability Sets by ensuring that the disks of [VMs in an Availability Set](../articles/virtual-machines/windows/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) are sufficiently isolated from each other to avoid single points of failure. It does this by automatically placing the disks in different storage scale units (stamps). If a stamp fails due to hardware or software failure, only the VM instances with disks on those stamps fail. For example, let's say you have an application running on five VMs, and the VMs are in an Availability Set. The disks for those VMs won't all be stored in the same stamp, so if one stamp goes down, the other instances of the application continue to run.
+Discos geridos fornece melhor fiabilidade para conjuntos de disponibilidade, garantindo que os discos de [VMs num conjunto de disponibilidade](../articles/virtual-machines/windows/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) são suficientemente isoladas umas das outras para evitar pontos únicos de falha. Este é automaticamente colocando os discos em unidades de escala de armazenamento diferente (carimbos de data /). Se um carimbo falhar devido uma falha de hardware ou software, apenas as instâncias de VM com discos os carimbos de data / falharem. Por exemplo, vamos supor que tem uma aplicação em execução em cinco VMs e as VMs estão num conjunto de disponibilidade. Os discos para essas VMs não todas ser armazenadas no mesmo carimbo, por isso, se um carimbo ficar inativo, as outras instâncias da aplicação continuam a ser executado.
 
-### <a name="highly-durable-and-available"></a>Highly durable and available
+### <a name="highly-durable-and-available"></a>Elevada disponibilidade e durabilidade
 
-Azure Disks are designed for 99.999% availability. Rest easier knowing that you have three replicas of your data that enables high durability. If one or even two replicas experience issues, the remaining replicas help ensure persistence of your data and high tolerance against failures. This architecture has helped Azure consistently deliver enterprise-grade durability for IaaS disks, with an industry-leading ZERO% Annualized Failure Rate. 
+Os Discos do Azure foram concebidos para garantir uma disponibilidade de 99,999%. REST mais fácil sabendo que tem três réplicas dos dados que permite elevada durabilidade. Se uma ou até mesmo duas réplicas apresentarem problemas, as restantes ajudam a garantir a persistência dos dados e alta tolerância contra falhas. Esta arquitetura tem ajudado o Azure a garantir de forma consistente uma durabilidade de nível empresarial para discos IaaS, com uma Taxa de Falhas Anual de ZERO% líder da indústria. 
 
-### <a name="granular-access-control"></a>Granular access control
+### <a name="granular-access-control"></a>Controlo de acesso granulares
 
-You can use [Azure Role-Based Access Control (RBAC)](../articles/active-directory/role-based-access-control-what-is.md) to assign specific permissions for a managed disk to one or more users. Managed Disks exposes a variety of operations, including read, write (create/update), delete, and retrieving a [shared access signature (SAS) URI](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md) for the disk. You can grant access to only the operations a person needs to perform his job. For example, if you don't want a person to copy a managed disk to a storage account, you can choose not to grant access to the export action for that managed disk. Similarly, if you don't want a person to use an SAS URI to copy a managed disk, you can choose not to grant that permission to the managed disk.
+Pode utilizar [controlo de acesso em funções do Azure (RBAC)](../articles/active-directory/role-based-access-control-what-is.md) para atribuir permissões específicas para um disco gerido a um ou mais utilizadores. Gerido discos expõe uma variedade de operações, incluindo de leitura, escrita (criar/atualizar), eliminar e obter um [assinatura de acesso partilhado (SAS) URI](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md) para o disco. Pode conceder acesso apenas as operações de uma pessoa que precisa de realizar a tarefa. Por exemplo, se não pretender que uma pessoa para copiar um disco gerido para uma conta de armazenamento, pode optar por não conceda acesso para a ação de exportação para esse disco gerido. Da mesma forma, se não pretender que uma pessoa a utilizar um URI de SAS para copiar um disco gerido, pode optar por não conceder essa permissão para o disco gerido.
 
-### <a name="azure-backup-service-support"></a>Azure Backup service support
-Use Azure Backup service with Managed Disks to create a backup job with time-based backups, easy VM restoration and backup retention policies. Managed Disks only support Locally Redundant Storage (LRS) as the replication option; this means it keeps three copies of the data within a single region. For regional disaster recovery, you must backup your VM disks in a different region using [Azure Backup service](../articles/backup/backup-introduction-to-azure-backup.md) and a GRS storage account as backup vault. Currently Azure Backup supports data disk sizes up to 1TB for backup. Read more about this at [Using Azure Backup service for VMs with Managed Disks](../articles/backup/backup-introduction-to-azure-backup.md#using-managed-disk-vms-with-azure-backup).
+### <a name="azure-backup-service-support"></a>Suporte do serviço de cópia de segurança do Azure
+Utilize o serviço de cópia de segurança do Azure com discos geridos para criar uma tarefa de cópia de segurança com políticas de retenção de cópias de segurança, fácil restauro de VM e cópias de segurança baseados no tempo. Discos geridos só suportam localmente redundante armazenamento (LRS) como a opção de replicação; Isto significa que mantém três cópias dos dados numa única região. Recuperação de desastres regionais, deve efetuar cópias de segurança aos discos VM numa região diferente através de [serviço cópia de segurança do Azure](../articles/backup/backup-introduction-to-azure-backup.md) e uma conta de armazenamento GRS como o Cofre de cópia de segurança. Atualmente, disco de dados do Backup do Azure suporta tamanhos até 1TB para cópia de segurança. Saiba mais sobre no [serviço utilizando a cópia de segurança do Azure para as VMs com discos geridos](../articles/backup/backup-introduction-to-azure-backup.md#using-managed-disk-vms-with-azure-backup).
 
-## <a name="pricing-and-billing"></a>Pricing and Billing
+## <a name="pricing-and-billing"></a>Preços e Faturação
 
-When using Managed Disks, the following billing considerations apply:
-* Storage Type
+Ao utilizar discos geridos, aplicam as seguintes considerações de faturação:
+* Tipo de armazenamento
 
-* Disk Size
+* Tamanho do Disco
 
-* Number of transactions
+* Número de transações
 
-* Outbound data transfers
+* Transferências de dados de saída
 
-* Managed Disk Snapshots (full disk copy)
+* Gerido instantâneos de discos (cópia de disco completo)
 
-Let's take a closer look at these.
+Vamos um olhar estes.
 
-**Storage Type:** Managed Disks offers 2 performance tiers: [Premium](../articles/storage/common/storage-premium-storage.md) (SSD-based) and [Standard](../articles/storage/common/storage-standard-storage.md) (HDD-based). The billing of a managed disk depends on which type of storage you have selected for the disk.
+**Tipo de armazenamento:** discos geridos oferece 2 escalões de desempenho: [Premium](../articles/virtual-machines/windows/premium-storage.md) (baseadas em SSD) e [padrão](../articles/virtual-machines/windows/standard-storage.md) (baseado em HDD). A faturação de um disco gerido depende de qual o tipo de armazenamento que selecionou para o disco.
 
 
-**Disk Size**: Billing for managed disks depends on the provisioned size of the disk. Azure maps the provisioned size (rounded up) to the nearest Managed Disks option as specified in the tables below. Each managed disk maps to one of the supported provisioned sizes and is billed accordingly. For example, if you create a standard managed disk and specify a provisioned size of 200 GB, you are billed as per the pricing of the S20 Disk type.
+**Tamanho do disco**: faturação para discos geridos depende do tamanho do disco aprovisionado. Azure mapeia o tamanho de aprovisionamento (arredondar por excesso) para a opção de discos geridos mais próximo conforme especificado nas tabelas abaixo. Cada disco gerido mapeia para um dos tamanhos suportados aprovisionados e é faturado em conformidade. Por exemplo, se criar um disco gerido standard e especificar um tamanho de aprovisionamento de 200 GB, é-lhe cobrada de acordo com os preços do tipo disco S20.
 
-Here are the disk sizes available for a premium managed disk:
+Aqui estão os tamanhos de disco disponíveis para um disco gerido premium:
 
-| **Premium Managed <br>Disk Type** | **P4** | **P6** |**P10** | **P20** | **P30** | **P40** | **P50** | 
+| **Premium gerido <br>tipo de disco** | **P4** | **P6** |**P10** | **P20** | **P30** | **P40** | **P50** | 
 |------------------|---------|---------|---------|---------|----------------|----------------|----------------|  
-| Disk Size        | 32 GB   | 64 GB   | 128 GB  | 512 GB  | 1024 GB (1 TB) | 2048 GB (2 TB) | 4095 GB (4 TB) | 
+| Tamanho do Disco        | 32 GB   | 64 GB   | 128 GB  | 512 GB  | 1024 GB (1 TB) | 2048 GB (2 TB) | 4095 GB (4 TB) | 
 
 
-Here are the disk sizes available for a standard managed disk:
+Seguem-se disponível para um disco gerido standard os tamanhos de disco:
 
-| **Standard Managed <br>Disk Type** | **S4** | **S6** | **S10** | **S20** | **S30** | **S40** | **S50** |
+| **Standard gerido <br>tipo de disco** | **S4** | **S6** | **S10** | **S20** | **S30** | **S40** | **S50** |
 |------------------|---------|---------|--------|--------|----------------|----------------|----------------| 
-| Disk Size        | 32 GB   | 64 GB   | 128 GB | 512 GB | 1024 GB (1 TB) | 2048 GB (2 TB) | 4095 GB (4 TB) | 
+| Tamanho do Disco        | 32 GB   | 64 GB   | 128 GB | 512 GB | 1024 GB (1 TB) | 2048 GB (2 TB) | 4095 GB (4 TB) | 
 
 
-**Number of transactions**: You are billed for the number of transactions that you perform on a standard managed disk. There is no cost for transactions for a premium managed disk.
+**Número de transações**: É Faturado por número de transações que efetuar um disco gerido standard. Não há sem qualquer custo para transações para um disco gerido premium.
 
-**Outbound data transfers**: [Outbound data transfers](https://azure.microsoft.com/pricing/details/data-transfers/) (data going out of Azure data centers) incur billing for bandwidth usage.
+**Transferências de dados de saída**: [transferências de dados de saída](https://azure.microsoft.com/pricing/details/data-transfers/) (dados ficar fora de centros de dados do Azure) cobrança para utilização de largura de banda.
 
-For detailed information on pricing for Managed Disks, see [Managed Disks Pricing](https://azure.microsoft.com/pricing/details/managed-disks).
-
-
-## <a name="managed-disk-snapshots"></a>Managed Disk Snapshots
-
-A Managed Snapshot is a read-only full copy of a managed disk which is stored as a standard managed disk by default. With snapshots, you can back up your managed disks at any point in time. These snapshots exist independent of the source disk and can be used to create new Managed Disks. They are billed based on the used size. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GB and actual used data size of 10 GB, snapshot will be billed only for the used data size of 10 GB.  
-
-[Incremental snapshots](../articles/virtual-machines/windows/incremental-snapshots.md) are currently not supported for Managed Disks, but will be supported in the future.
-
-To learn more about how to create snapshots with Managed Disks, please check out these resources:
-
-* [Create copy of VHD stored as a Managed Disk using Snapshots in Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
-* [Create copy of VHD stored as a Managed Disk using Snapshots in Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
+Para obter informações detalhadas sobre os preços para discos geridos, consulte [geridos discos preços](https://azure.microsoft.com/pricing/details/managed-disks).
 
 
-## <a name="images"></a>Images
+## <a name="managed-disk-snapshots"></a>Disco gerido instantâneos
 
-Managed Disks also support creating a managed custom image. You can create an image from your custom VHD in a storage account or directly from a generalized (sys-prepped) VM. This captures in a single image all managed disks associated with a VM, including both the OS and data disks. This enables creating hundreds of VMs using your custom image without the need to copy or manage any storage accounts.
+Um instantâneo gerido é uma cópia completa de só de leitura de um disco gerida que é armazenado como um disco gerido standard por predefinição. Com instantâneos, pode criar cópias de segurança aos discos geridos em qualquer ponto no tempo. Estes instantâneos existem independentes de disco de origem e podem ser utilizados para criar novos discos geridos. Estes são cobrados com base no tamanho utilizado. Por exemplo, se criar um instantâneo de um disco gerido com capacidade de aprovisionamento de 64 GB e o tamanho de dados utilizados real de 10 GB, instantâneo será faturado apenas para o tamanho de dados utilizados de 10 GB.  
 
-For information on creating images, please check out the following articles:
-* [How to capture a managed image of a generalized VM in Azure](../articles/virtual-machines/windows/capture-image-resource.md)
-* [How to generalize and capture a Linux virtual machine using the Azure CLI 2.0](../articles/virtual-machines/linux/capture-image.md)
+[Instantâneos incrementais](../articles/virtual-machines/windows/incremental-snapshots.md) não são atualmente suportadas para discos geridos, mas será suportada no futuro.
 
-## <a name="images-versus-snapshots"></a>Images versus snapshots
+Para obter mais informações sobre como criar instantâneos com discos geridos, consulte estes recursos:
 
-You often see the word "image" used with VMs, and now you see "snapshots" as well. It's important to understand the difference between these. With Managed Disks, you can take an image of a generalized VM that has been deallocated. This image will include all of the disks attached to the VM. You can use this image to create a new VM, and it will include all of the disks.
-
-A snapshot is a copy of a disk at the point in time it is taken. It only applies to one disk. If you have a VM that only has one disk (the OS), you can take a snapshot or an image of it and create a VM from either the snapshot or the image.
-
-What if a VM has five disks and they are striped? You could take a snapshot of each of the disks, but there is no awareness within the VM of the state of the disks – the snapshots only know about that one disk. In this case, the snapshots would need to be coordinated with each other, and that is not currently supported.
-
-## <a name="managed-disks-and-encryption"></a>Managed Disks and Encryption
-
-There are two kinds of encryption to discuss in reference to managed disks. The first one is Storage Service Encryption (SSE), which is performed by the storage service. The second one is Azure Disk Encryption, which you can enable on the OS and data disks for your VMs.
-
-### <a name="storage-service-encryption-sse"></a>Storage Service Encryption (SSE)
-
-[Azure Storage Service Encryption](../articles/storage/common/storage-service-encryption.md) provides encryption-at-rest and safeguard your data to meet your organizational security and compliance commitments. SSE is enabled by default for all Managed Disks, Snapshots and Images in all the regions where managed disks is available. Starting June 10th, 2017, all new managed disks/snapshots/images and new data written to existing managed disks are automatically encrypted-at-rest with keys managed by Microsoft.  Visit the [Managed Disks FAQ page](../articles/virtual-machines/windows/faq-for-disks.md#managed-disks-and-storage-service-encryption) for more details.
+* [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
+* [Criar uma cópia de um VHD armazenado como Disco Gerido com os Instantâneos no Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
 
 
-### <a name="azure-disk-encryption-ade"></a>Azure Disk Encryption (ADE)
+## <a name="images"></a>Imagens
 
-Azure Disk Encryption allows you to encrypt the OS and Data disks used by an IaaS Virtual Machine. This includes managed disks. For Windows, the drives are encrypted using industry-standard BitLocker encryption technology. For Linux, the disks are encrypted using the DM-Crypt technology. This is integrated with Azure Key Vault to allow you to control and manage the disk encryption keys. For more information, please see [Azure Disk Encryption for Windows and Linux IaaS VMs](../articles/security/azure-security-disk-encryption.md).
+Discos geridos também suportam a criação de uma imagem personalizada gerida. Pode criar uma imagem do seu VHD personalizado em contas de armazenamento ou diretamente a partir de uma VM (sys prepped) generalizada. Isto captura numa única imagem gerido todos os discos associados uma VM, incluindo tanto o SO e discos de dados. Isto permite criar centenas de VMs com a sua imagem personalizada sem a necessidade de copiar ou gerir as contas de armazenamento.
 
-## <a name="next-steps"></a>Next steps
+Para obter informações sobre a criação de imagens, consulte os artigos seguintes:
+* [Como capturar uma imagem gerida de uma VM generalizada no Azure](../articles/virtual-machines/windows/capture-image-resource.md)
+* [Como generalize e capturar uma máquina virtual de Linux utilizando o 2.0 CLI do Azure](../articles/virtual-machines/linux/capture-image.md)
 
-For more information about Managed Disks, please refer to the following articles.
+## <a name="images-versus-snapshots"></a>Imagens versus instantâneos
 
-### <a name="get-started-with-managed-disks"></a>Get started with Managed Disks
+Muitas vezes, vir a palavra "imagem" utilizada com as VMs e agora ver "instantâneos" bem. É importante compreender a diferença entre estes. Com os discos geridos, pode demorar uma imagem de uma VM generalizada que tenha sido anulada. Esta imagem incluirá todos os discos ligados à VM. Pode utilizar esta imagem para criar uma nova VM e incluirá todos os discos.
 
-* [Create a VM using Resource Manager and PowerShell](../articles/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md)
+Um instantâneo é uma cópia de um disco no ponto no tempo que é executada. Aplica-se apenas a um disco. Se tiver uma VM que tem apenas um disco (SO), pode tirar um instantâneo ou uma imagem do mesmo e criar uma VM a partir do instantâneo ou a imagem.
 
-* [Create a Linux VM using the Azure CLI 2.0](../articles/virtual-machines/linux/quick-create-cli.md)
+E se uma VM tem cinco discos e estão repartidas? Poderá tirar um instantâneo de cada um dos discos, mas não existe nenhum deteção dentro da VM do estado dos discos – os instantâneos de conhecer apenas se um disco. Neste caso, os instantâneos seriam têm de ser coordenada entre si e que não é atualmente suportado.
 
-* [Attach a managed data disk to a Windows VM using PowerShell](../articles/virtual-machines/windows/attach-disk-ps.md)
+## <a name="managed-disks-and-encryption"></a>Discos geridos e encriptação
 
-* [Add a managed disk to a Linux VM](../articles/virtual-machines/linux/add-disk.md)
+Existem dois tipos de encriptação para discutir no contexto de discos geridos. A primeira é armazenamento serviço encriptação (SSE), que é efetuada pelo serviço de armazenamento. Segunda é Azure Disk Encryption, que pode ativar nos SO e discos de dados para as suas VMs.
 
-* [Managed Disks PowerShell Sample Scripts](https://github.com/Azure-Samples/managed-disks-powershell-getting-started)
+### <a name="storage-service-encryption-sse"></a>Encriptação do serviço de armazenamento (SSE)
 
-* [Use Managed Disks in Azure Resource Manager templates](../articles/virtual-machines/windows/using-managed-disks-template-deployments.md)
+[Encriptação do serviço de armazenamento do Azure](../articles/storage/common/storage-service-encryption.md) fornece encriptação em rest e salvaguardar os seus dados para satisfazer os seus compromissos de segurança e conformidade organizacionais. SSE está ativada por predefinição para todos os discos geridos, instantâneos e imagens em todas as regiões onde discos geridos está disponível. A partir de 10 de Junho de 2017, todos os novos geridos instantâneos/discos/imagens e novos dados escritos discos geridos existentes são automaticamente encriptados-em-rest com chaves geridas pela Microsoft.  Visite o [página de FAQ de discos geridos](../articles/virtual-machines/windows/faq-for-disks.md#managed-disks-and-storage-service-encryption) para obter mais detalhes.
 
-### <a name="compare-managed-disks-storage-options"></a>Compare Managed Disks storage options
 
-* [Premium storage and disks](../articles/storage/common/storage-premium-storage.md)
+### <a name="azure-disk-encryption-ade"></a>Encriptação de disco do Azure (ADE)
 
-* [Standard storage and disks](../articles/storage/common/storage-standard-storage.md)
+Encriptação de disco do Azure permite-lhe encriptar os SO e discos de dados utilizados pela máquina Virtual IaaS. A lista inclui discos geridos. Para o Windows, as unidades estão encriptadas com tecnologia de encriptação do BitLocker de norma da indústria. Para Linux, os discos estão encriptados com a tecnologia de DM-Crypt. Isto é integrado com o Cofre de chaves do Azure para permitem controlar e gerir as chaves de encriptação de disco. Para obter mais informações, consulte [encriptação de disco do Azure para Windows e as VMs de IaaS Linux](../articles/security/azure-security-disk-encryption.md).
 
-### <a name="operational-guidance"></a>Operational guidance
+## <a name="next-steps"></a>Passos seguintes
 
-* [Migrate from AWS and other platforms to Managed Disks in Azure](../articles/virtual-machines/windows/on-prem-to-azure.md)
+Para obter mais informações sobre discos geridos, consulte os artigos seguintes.
 
-* [Convert Azure VMs to managed disks in Azure](../articles/virtual-machines/windows/migrate-to-managed-disks.md)
+### <a name="get-started-with-managed-disks"></a>Introdução aos Discos Geridos
+
+* [Criar uma VM com o Resource Manager e o PowerShell](../articles/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md)
+
+* [Criar uma VM com Linux através da CLI do Azure 2.0](../articles/virtual-machines/linux/quick-create-cli.md)
+
+* [Anexar um disco de dados geridos para uma VM do Windows com o PowerShell](../articles/virtual-machines/windows/attach-disk-ps.md)
+
+* [Adicionar um disco gerido a uma VM do Linux](../articles/virtual-machines/linux/add-disk.md)
+
+* [Gerido Scripts de exemplo do PowerShell de discos](https://github.com/Azure-Samples/managed-disks-powershell-getting-started)
+
+* [Utilizar discos geridos na modelos Azure Resource Manager](../articles/virtual-machines/windows/using-managed-disks-template-deployments.md)
+
+### <a name="compare-managed-disks-storage-options"></a>Comparar as opções de armazenamento de discos geridos
+
+* [Armazenamento Premium e discos](../articles/virtual-machines/windows/premium-storage.md)
+
+* [Armazenamento padrão e discos](../articles/virtual-machines/windows/standard-storage.md)
+
+### <a name="operational-guidance"></a>Orientação operacional
+
+* [Migrar do AWS e outras plataformas para discos geridos no Azure](../articles/virtual-machines/windows/on-prem-to-azure.md)
+
+* [Converter as VMs do Azure para discos geridos no Azure](../articles/virtual-machines/windows/migrate-to-managed-disks.md)
