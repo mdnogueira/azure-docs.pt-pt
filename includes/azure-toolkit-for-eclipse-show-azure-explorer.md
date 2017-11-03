@@ -1,12 +1,12 @@
-## <a name="display-the-azure-explorer-view"></a>Display the Azure Explorer view
+## <a name="display-the-azure-explorer-view"></a>Apresente a vista do Explorador do Azure
 
-If the **Azure Explorer** view is not visible in Eclipse, display it by doing the following:
+Se o **Explorador do Azure** a vista não é visível no Eclipse, apresentá-lo ao fazer o seguinte:
 
-1. Click **Window**, click **Show View**, and then click **Other**.
+1. Clique em **janela**, clique em **Mostrar vista**e, em seguida, clique em **outros**.
 
-   ![Show View command](./media/azure-toolkit-for-eclipse-show-azure-explorer/show-az-exp-01.png)
+   ![Mostrar comando de vista](./media/azure-toolkit-for-eclipse-show-azure-explorer/show-az-exp-01.png)
 
-2. In the **Show View** dialog box, select **Azure Explorer**, and then click **OK**.
+2. No **Mostrar vista** caixa de diálogo, selecione **Explorador do Azure**e, em seguida, clique em **OK**.
 
-   ![Show View dialog box](./media/azure-toolkit-for-eclipse-show-azure-explorer/show-az-exp-02.png)
+   ![Mostrar a caixa de diálogo de vista](./media/azure-toolkit-for-eclipse-show-azure-explorer/show-az-exp-02.png)
 

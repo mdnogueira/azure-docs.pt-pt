@@ -1,36 +1,36 @@
-## <a name="incremental-and-complete-deployments"></a>Incremental and complete deployments
-When deploying your resources, you specify that the deployment is either an incremental update or a complete update. The primary difference between these two modes is how Resource Manager handles existing resources in the resource group that are not in the template:
+## <a name="incremental-and-complete-deployments"></a>Implementações de incrementais e completas
+Quando implementar os recursos, especifica que a implementação é uma atualização incremental ou uma atualização completa. A principal diferença entre estes dois modos é a forma como o Gestor de recursos processa os recursos existentes no grupo de recursos que não estão no modelo:
 
-* In complete mode, Resource Manager **deletes** resources that exist in the resource group but are not specified in the template. 
-* In incremental mode, Resource Manager **leaves unchanged** resources that exist in the resource group but are not specified in the template.
+* No modo de conclusão, o Gestor de recursos **elimina** recursos que existem no grupo de recursos, mas não foram especificados no modelo. 
+* No modo de incremental, o Gestor de recursos **deixa inalterados** recursos que existem no grupo de recursos, mas não foram especificados no modelo.
 
-For both modes, Resource Manager attempts to provision all resources specified in the template. If the resource already exists in the resource group and its settings are unchanged, the operation results in no change. If you change the settings for a resource, the resource is provisioned with those new settings. If you attempt to update the location or type of an existing resource, the deployment fails with an error. Instead, deploy a new resource with the location or type that you need.
+Para ambos os modos, o Resource Manager tenta aprovisionar todos os recursos especificados no modelo. Se o recurso já existe no grupo de recursos e as respetivas definições são iguais, a operação resulta numa nenhuma alteração. Se alterar as definições para um recurso, o recurso é aprovisionado com as novas definições. Se tentar atualizar a localização ou o tipo de um recurso existente, a implementação falhar com um erro. Em vez disso, implemente um novo recurso com a localização ou escreva o que precisa.
 
-By default, Resource Manager uses the incremental mode.
+Por predefinição, o Gestor de recursos utiliza o modo de incremental.
 
-To illustrate the difference between incremental and complete modes, consider the following scenario.
+Para ilustrar a diferença entre os modos de incrementais e completas, considere o seguinte cenário.
 
-**Existing Resource Group** contains:
+**Grupo de recursos existente** contém:
 
-* Resource A
-* Resource B
-* Resource C
+* Recurso A
+* Recurso B
+* Recurso C
 
-**Template** defines:
+**Modelo** define:
 
-* Resource A
-* Resource B
-* Resource D
+* Recurso A
+* Recurso B
+* Recurso D
 
-When deployed in **incremental** mode, the resource group contains:
+Quando implementada no **incremental** modo, o grupo de recursos contém:
 
-* Resource A
-* Resource B
-* Resource C
-* Resource D
+* Recurso A
+* Recurso B
+* Recurso C
+* Recurso D
 
-When deployed in **complete** mode, Resource C is deleted. The resource group contains:
+Quando implementada no **concluída** modo, C recurso é eliminado. O grupo de recursos contém:
 
-* Resource A
-* Resource B
-* Resource D
+* Recurso A
+* Recurso B
+* Recurso D

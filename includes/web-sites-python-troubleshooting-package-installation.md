@@ -5,18 +5,18 @@ Nesta secção, vamos abordar formas de lidar com este problema.
 ### <a name="request-wheels"></a>Solicitar rodas
 Se a instalação do pacote exigir um compilador, deve tentar contactar o proprietário do pacote para pedir que as rodas sejam disponibilizadas para o pacote.
 
-Com a recente disponibilidade do [Microsoft Visual C++ Compiler para o Python 2.7][Microsoft Visual C++ Compiler para o Python 2.7], agora é mais fácil criar pacotes com código nativo do Python 2.7.
+Com a recente disponibilidade do [Microsoft Visual C++ Compiler para o Python 2.7][Microsoft Visual C++ Compiler for Python 2.7], agora é mais fácil criar pacotes com código nativo para o Python 2.7.
 
 ### <a name="build-wheels-requires-windows"></a>Criar rodas (requer o Windows)
 Nota: ao utilizar esta opção, garanta que compila o pacote através de um ambiente Python que corresponde à plataforma/arquitetura/versão que é utilizada na aplicação Web no Serviço de Aplicações do Azure (Windows/32 bits/2.7 ou 3.4).
 
 Se o pacote não for instalado por ser necessário um compilador, pode instalar o compilador no computador local e criar uma roda para o pacote, que irá incluir no seu repositório.
 
-Utilizadores MAC/Linux: se não tiver acesso a um computador do Windows, veja [Criar uma Máquina Virtual com o Windows][Criar uma Máquina Virtual com o Windows] para saber como criar uma VM no Azure.  Pode utilizá-la para criar as rodas, adicioná-las ao repositório e eliminar a VM, se assim o desejar. 
+Utilizadores Mac/Linux: Se não tiver acesso a um computador Windows, consulte o artigo [criar uma Máquina Virtual com o Windows] [ Create a Virtual Machine Running Windows] para saber como criar uma VM no Azure.  Pode utilizá-la para criar as rodas, adicioná-las ao repositório e eliminar a VM, se assim o desejar. 
 
-Para o Python 2.7, pode instalar o [Microsoft Visual C++ Compiler para o Python 2.7][Microsoft Visual C++ Compiler para o Python 2.7].
+Para Python 2.7, pode instalar [Microsoft Visual C++ Compiler para o Python 2.7][Microsoft Visual C++ Compiler for Python 2.7].
 
-Para o Python 3.4, pode instalar o [Microsoft Visual C++ 2010 Express][Microsoft Visual C++ 2010 Express].
+Para Python 3.4, pode instalar [Microsoft Visual C++ 2010 Express][Microsoft Visual C++ 2010 Express].
 
 Para criar rodas, precisa do pacote de rodas:
 
@@ -59,11 +59,6 @@ Se incluir o ambiente virtual no repositório, pode impedir o script de implemen
 
 Recomendamos que elimine o ambiente virtual existente na aplicação para impedir os ficheiros restantes resultantes da gestão automática do ambiente virtual.
 
-[Criar uma Máquina Virtual com o Windows]: http://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
-[Microsoft Visual C++ Compiler para o Python 2.7]: http://aka.ms/vcpython27
+[Create a Virtual Machine Running Windows]: http://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
+[Microsoft Visual C++ Compiler for Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
-
-
-<!--HONumber=Nov16_HO2-->
-
-

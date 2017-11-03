@@ -1,6 +1,6 @@
-## <a name="webapi-project"></a>WebAPI Project
-1. In Visual Studio, open the **AppBackend** project that you created in the **Notify Users** tutorial.
-2. In Notifications.cs, replace the whole **Notifications** class with the following code. Be sure to replace the placeholders with your connection string (with full access) for your notification hub, and the hub name. You can obtain these values from the [Azure Classic Portal](http://manage.windowsazure.com). This module now represents the different secure notifications that will be sent. In a complete implementation, the notifications will be stored in a database; for simplicity, in this case we store them in memory.
+## <a name="webapi-project"></a>End WebAPI projeto
+1. No Visual Studio, abra o **AppBackend** projeto que criou no **notificam os utilizadores** tutorial.
+2. No Notifications.cs, substitua o inteiro **notificações** classe com o seguinte código. Não se esqueça de substituir os marcadores de posição pela cadeia de ligação (com acesso total) para o notification hub e o nome do hub. Pode obter estes valores no [Portal clássico do Azure](http://manage.windowsazure.com). Este módulo agora representa as diferentes notificações seguras que serão enviadas. Uma implementação completa, as notificações serão armazenadas numa base de dados; de simplicidade, neste caso, iremos armazená-las na memória.
    
         public class Notification
         {
@@ -40,7 +40,7 @@
             }
         }
 
-1. In NotificationsController.cs, replace the code inside the **NotificationsController** class definition with the following code. This component implements a way for the device to retrieve the notification securely, and also provides a way (for the purposes of this tutorial) to trigger a secure push to your devices. Note that when sending the notification to the notification hub, we only send a raw notification with the ID of the notification (and no actual message):
+1. No NotificationsController.cs, substitua o código no interior do **NotificationsController** classe definição com o seguinte código. Este componente implementa uma forma do dispositivo obter a notificação de forma segura e também fornece uma forma (para efeitos deste tutorial) para acionar um push seguro para os seus dispositivos. Tenha em atenção que ao enviar a notificação para o hub de notificação, apenas Enviámos uma notificação não processada, com o ID de notificação (e não existem mensagens real):
    
        public NotificationsController()
        {
@@ -75,8 +75,8 @@
         }
 
 
-Note that the `Post` method now does not send a toast notification. It sends a raw notification that contains only the notification ID, and not any sensitive content. Also, make sure to comment the send operation for the platforms for which you do not have credentials configured on your notification hub, as they will result in errors.
+Tenha em atenção que o `Post` método agora não enviar uma notificação de alerta. Envia uma notificação em bruto que contém apenas o ID de notificação e não a qualquer conteúdo confidencial. Além disso, certifique-se comente a operação de envio para as plataformas que não tem credenciais configuradas no seu hub de notificação, conforme irá causar erros.
 
-1. Now we will re-deploy this app to an Azure Website in order to make it accessible from all devices. Right-click on the **AppBackend** project and select **Publish**.
-2. Select Azure Website as your publish target. Log in with your Azure account and select an existing or new Website, and make a note of the **destination URL** property in the **Connection** tab. We will refer to this URL as your *backend endpoint* later in this tutorial. Click **Publish**.
+1. Agora iremos novamente implementar esta aplicação para um Web site do Azure para o tornam acessível a partir de todos os dispositivos. Clique com o botão direito do rato no projeto **AppBackend** e selecione **Publicar**.
+2. Selecione o Web site do Azure como o destino da publicação. Iniciar sessão com a sua conta do Azure e selecione um Web site existente ou novo e anote o **URL de destino** propriedade no **ligação** separador. Vamos referir-nos a este URL como o *ponto final do seu back-end* mais adiante neste tutorial. Clique em **Publicar**.
 

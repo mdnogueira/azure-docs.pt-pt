@@ -1,41 +1,41 @@
 <!--author=alkohli last changed: 9/16/15-->
 
 
-#### <a name="to-cable-your-device-for-power"></a>To cable your device for power
+#### <a name="to-cable-your-device-for-power"></a>Para instalar os cabos do dispositivo de energia
 > [!NOTE]
-> Both enclosures on your StorSimple device include redundant PCMs. For each enclosure, the PCMs must be installed and connected to different power sources to ensure high availability.
+> Ambas as inclusões no dispositivo StorSimple incluem PCMs redundantes. Para cada bastidor, os PCMs tem de ser instalados e ligados a origens de energia diferentes, para garantir a elevada disponibilidade.
 > 
 > 
 
-1. Make sure that the power switches on all the PCMs are in the OFF position.
-2. On the primary enclosure, connect the power cords to both PCMs. The power cords are identified in red in the power cabling diagram, below.
-3. Make sure that the two PCMs on the primary enclosure use separate power sources.
-4. Attach the power cords to the power on the rack distribution units as shown in the power cabling diagram.
-5. Repeat steps 2 through 4 for the EBOD enclosure.
-6. Turn on the EBOD enclosure by flipping the power switch on each PCM to the ON position.
-7. Verify that the EBOD enclosure is turned on by checking that the green LEDs on the back of the EBOD controller are turned ON.
-8. Turn on the primary enclosure by flipping each PCM switch to the ON position.
-9. Verify that the system is on by ensuring the device controller LEDs have turned ON.
-10. Make sure that the connection between the EBOD controller and the device controller is active by verifying that the four LEDs next to the SAS port on the EBOD controller are green.
+1. Certifique-se de que os comutadores de energia em todos os PCMs na posição OFF.
+2. Na caixa primária, ligar os cabos de energia para ambos os PCMs. Os cabos de energia são identificados vermelho no diagrama de cablagem de energia, abaixo.
+3. Certifique-se de que os dois PCMs na caixa primária utilizam fontes de alimentação separado.
+4. Ligue os cabos de energia para o poder das unidades de distribuição de bastidor conforme mostrado no power cablagem diagrama.
+5. Repita os passos 2 a 4 para o bastidor EBOD.
+6. Ative o bastidor EBOD ao indicar o botão Ligar / desligar em cada PCM para a posição de no.
+7. Certifique-se de que o bastidor EBOD está ativado por verificar que o LEDs verdes na cópia de segurança do controlador de EBOD estão ativadas.
+8. Ative o bastidor primário por indicar cada comutador PCM para a posição de no.
+9. Verifique se o sistema, assegurando que o controlador de dispositivo que LEDs ter ativado.
+10. Certifique-se de que a ligação entre o controlador de EBOD e o controlador de dispositivo está ativa, verificando que o quatro LEDs junto a porta SAS no controlador de EBOD são verdes.
     
     > [!IMPORTANT]
-    > To ensure high availability for your system, we recommend that you strictly adhere to the power cabling scheme shown in the following diagram.
+    > Para garantir a elevada disponibilidade para o seu sistema, é recomendável que estritamente aderem à potência cablagem esquema mostrada no diagrama seguinte.
     > 
     > 
     
-    ![Cable your 4U device for power](./media/storsimple-cable-8600-for-power/HCSCableYour4UDeviceforPower.png)
+    ![Instalar os cabos do dispositivo 4U de energia](./media/storsimple-cable-8600-for-power/HCSCableYour4UDeviceforPower.png)
     
-    **Power cabling**
+    **Cablagem de energia**
     
-    | Label | Description |
+    | Etiqueta | Descrição |
     |:--- |:--- |
-    | 1 |Primary enclosure |
+    | 1 |Inclusão principal |
     | 2 |PCM 0 |
     | 3 |PCM 1 |
-    | 4 |Controller 0 |
-    | 5 |Controller 1 |
-    | 6 |EBOD controller 0 |
-    | 7 |EBOD controller 1 |
-    | 8 |EBOD enclosure |
+    | 4 |Controlador 0 |
+    | 5 |Controlador 1 |
+    | 6 |Controlador EBOD 0 |
+    | 7 |Controlador EBOD 1 |
+    | 8 |Inclusão EBOD |
     | 9 |PDUs |
 

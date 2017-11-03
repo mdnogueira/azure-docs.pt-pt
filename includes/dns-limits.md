@@ -1,8 +1,8 @@
 
-| Resource | Default limit |
+| Recurso | Limite predefinido |
 | --- | --- |
-| Zones per subscription |100 <sup>1</sup> |
-| Record sets per zone |5000 <sup>1</sup> |
-| Records per record set |20 |
+| Zonas por subscrição |100 <sup>1</sup> |
+| Conjuntos de registos por zona |5000 <sup>1</sup> |
+| Registos por conjunto de registos |20 |
 
-<sup>1</sup> Contact Azure Support in case you need to increase these limits.
+<sup>1</sup> contacte o suporte do Azure caso precisa de aumentar estes limites.

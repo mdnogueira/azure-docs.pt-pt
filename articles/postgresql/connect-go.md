@@ -6,19 +6,17 @@ author: jasonwhowell
 ms.author: jasonh
 manager: jhubbard
 editor: jasonwhowell
-ms.service: postgresql-database
+ms.service: postgresql
 ms.custom: mvc
 ms.devlang: go
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 06/29/2017
-ms.translationtype: HT
-ms.sourcegitcommit: 22aa82e5cbce5b00f733f72209318c901079b665
-ms.openlocfilehash: a80adae0359aac6aa8c9e7922e3f4c3883dd8056
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/24/2017
-
+ms.openlocfilehash: 1a581752e3803e9c9aba826b23db14a76080b4ec
+ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/23/2017
 ---
-
 # <a name="azure-database-for-postgresql-use-go-language-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilize a linguagem Go para ligar e consultar dados
 Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de código escrito na linguagem [Go](https://golang.org/) (golang). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados na base de dados. Este artigo pressupõe que esteja familiarizado com o desenvolvimento que utiliza o Go, mas que nunca trabalhou com a base de dados do Azure para PostgreSQL.
 
@@ -28,12 +26,12 @@ Este guia de início rápido utiliza os recursos criados em qualquer um destes g
 - [Criar BD - CLI do Azure](quickstart-create-server-database-azure-cli.md)
 
 ## <a name="install-go-and-pq-connector"></a>Instalar o Go e o conector pq
-Instale o [Go](https://golang.org/doc/install) e o [controlador Pure Go Postgres (pq)](https://github.com/lib/pq) no seu computador. Dependendo da sua plataforma, siga os passos:
+Instale o [Go](https://golang.org/doc/install) e o [controlador Pure Go Postgres (pq)](https://github.com/lib/pq) no seu computador. Dependendo da sua plataforma, siga os passos adequados de:
 
 ### <a name="windows"></a>Windows
 1. [Transfira](https://golang.org/dl/) e instale o Go para o Microsoft Windows, de acordo com as [instruções de instalação](https://golang.org/doc/install).
 2. Inicie a linha de comandos a partir do menu Iniciar.
-3. Crie uma pasta para o seu projeto, como `mkdir  %USERPROFILE%\go\src\postgresqlgo`.
+3. Crie uma pasta para o seu projeto, tais como `mkdir  %USERPROFILE%\go\src\postgresqlgo`.
 4. Altere o diretório para a pasta do projeto, como `cd %USERPROFILE%\go\src\postgresqlgo`.
 5. Defina a variável de ambiente de GOPATH para apontar para o diretório do código de origem. `set GOPATH=%USERPROFILE%\go`.
 6. Execute o comando `go get github.com/lib/pq` para instalar o [controlador Pure Go Postgres (pq)](https://github.com/lib/pq).
@@ -47,7 +45,7 @@ Instale o [Go](https://golang.org/doc/install) e o [controlador Pure Go Postgres
    ```
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
-1. Inicie a Shell de Bash. 
+1. Inicie a shell de Bash. 
 2. Execute `sudo apt-get install golang-go` para instalar o Go.
 3. Crie uma pasta para o projeto no seu diretório raiz, como `mkdir -p ~/go/src/postgresqlgo/`.
 4. Altere o diretório para a pasta, como `cd ~/go/src/postgresqlgo/`.
@@ -65,7 +63,7 @@ Instale o [Go](https://golang.org/doc/install) e o [controlador Pure Go Postgres
 
 ### <a name="apple-macos"></a>Apple macOS
 1. Transfira e instale o Go em conformidade com as [instruções de instalação](https://golang.org/doc/install) da sua plataforma. 
-2. Inicie a Shell de Bash. 
+2. Inicie a shell de Bash. 
 3. Crie uma pasta para o projeto no seu diretório raiz, como `mkdir -p ~/go/src/postgresqlgo/`.
 4. Altere o diretório para a pasta, como `cd ~/go/src/postgresqlgo/`.
 5. Defina a variável de ambiente GOPATH para apontar para um diretório de origem válido, como a pasta do go do diretório raiz atual. Na shell do bash, execute `export GOPATH=~/go` para adicionar o diretório do go como o GOPATH da sessão de shell atual.
@@ -100,9 +98,9 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
 ## <a name="connect-and-create-a-table"></a>Ligar-se e criar uma tabela
 Utilize o código seguinte para ligar e criar uma tabela com a instrução SQL **CREATE TABLE**, seguida das instruções SQL **INSERT INTO** para adicionar linhas à tabela.
 
-O código importa três pacotes: o [pacote sql](https://golang.org/pkg/database/sql/), o [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor Postgres e o [pacote fmt](https://golang.org/pkg/fmt/) para entrada e saída de dados impressos na linha de comandos.
+O código importa três pacotes: o [pacote SQL Server](https://golang.org/pkg/database/sql/), a [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor de PostgreSQL e o [fmt pacote](https://golang.org/pkg/fmt/) para a entrada impressos e saída na linha de comandos.
 
-O código chama o método [sql.Open()](http://godoc.org/github.com/lib/pq#Open) para ligar à Base de Dados do Azure para PostgreSQL e verifica a ligação através do método [db.Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. O código chama o método[Exec()](https://golang.org/pkg/database/sql/#DB.Exec) várias vezes para executar vários comandos SQL. Sempre que seja chamado um método checkError() personalizado para verificar se ocorreu um erro e pânico para sair se ocorrer um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. O código chama o método[Exec()](https://golang.org/pkg/database/sql/#DB.Exec) várias vezes para executar vários comandos SQL. Sempre que um método personalizado checkError() verifica se Ocorreu um erro e panic para sair se ocorrer um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 
@@ -166,9 +164,9 @@ func main() {
 ## <a name="read-data"></a>Ler dados
 Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **SELECT**. 
 
-O código importa três pacotes: o [pacote sql](https://golang.org/pkg/database/sql/), o [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor Postgres e o [pacote fmt](https://golang.org/pkg/fmt/) para entrada e saída de dados impressos na linha de comandos.
+O código importa três pacotes: o [pacote SQL Server](https://golang.org/pkg/database/sql/), a [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor de PostgreSQL e o [fmt pacote](https://golang.org/pkg/fmt/) para a entrada impressos e saída na linha de comandos.
 
-O código chama o método [sql.Open()](http://godoc.org/github.com/lib/pq#Open) para ligar à Base de Dados do Azure para PostgreSQL e verifica a ligação através do método [db.Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. A consulta select é executada ao chamar o método [db.Query()](https://golang.org/pkg/database/sql/#DB.Query) e as linhas resultantes são mantidas numa variável do tipo [rows](https://golang.org/pkg/database/sql/#Rows). O código lê os valores de dados de coluna na linha atual através do método [rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) e cria ciclos nas linhas através do iterador [rows.Next()](https://golang.org/pkg/database/sql/#Rows.Next) até não existirem mais linhas. Os valores de coluna de cada linha são impressos na consola. Sempre que seja chamado um método checkError() personalizado para verificar se ocorreu um erro e pânico para sair se ocorrer um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. A consulta select é executada chamando o método [db. Query ()](https://golang.org/pkg/database/sql/#DB.Query), e as linhas resultantes são mantidas numa variável do tipo [linhas](https://golang.org/pkg/database/sql/#Rows). O código lê os valores de dados de coluna na linha atual através do método [rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) e cria ciclos nas linhas através do iterador [rows.Next()](https://golang.org/pkg/database/sql/#Rows.Next) até não existirem mais linhas. Os valores de coluna de cada linha são impressos na consola. Sempre que um método de checkError() personalizado está a utilizar para verificar se Ocorreu um erro e panic para sair se ocorrer um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 
@@ -231,11 +229,11 @@ func main() {
 ```
 
 ## <a name="update-data"></a>Atualizar dados
-Utilize o código seguinte para se ligar e atualizar os dados com uma instrução SQL **UPDATE**.
+Utilize o seguinte código para estabelecer ligação e atualizar os dados utilizando um **ATUALIZAR** instrução SQL.
 
 O código importa três pacotes: o [pacote sql](https://golang.org/pkg/database/sql/), o [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor Postgres e o [pacote fmt](https://golang.org/pkg/fmt/) para entrada e saída de dados impressos na linha de comandos.
 
-O código chama o método [sql.Open()](http://godoc.org/github.com/lib/pq#Open) para ligar à Base de Dados do Azure para PostgreSQL e verifica a ligação através do método [db.Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. O código chama o método [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) para executar a instrução SQL que atualiza a tabela. Método checkError() personalizado para verificar se ocorreu um erro e pânico para sair se ocorrer um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. O código chama o método [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) para executar a instrução SQL que atualiza a tabela. Um método checkError() personalizada é utilizado para verificar se Ocorreu um erro e panic para sair se ocorrer um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 ```go
@@ -284,11 +282,11 @@ func main() {
 ```
 
 ## <a name="delete-data"></a>Eliminar dados
-Utilize o código seguinte para se ligar e ler os dados com uma instrução SQL **DELETE**. 
+Utilize o código seguinte para se ligar e eliminar os dados com a instrução SQL **DELETE**. 
 
 O código importa três pacotes: o [pacote sql](https://golang.org/pkg/database/sql/), o [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor Postgres e o [pacote fmt](https://golang.org/pkg/fmt/) para entrada e saída de dados impressos na linha de comandos.
 
-O código chama o método [sql.Open()](http://godoc.org/github.com/lib/pq#Open) para ligar à Base de Dados do Azure para PostgreSQL e verifica a ligação através do método [db.Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. O código chama o método [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) para executar a instrução SQL que atualiza a tabela. Método checkError() personalizado para verificar se ocorreu um erro e pânico para sair se ocorrer um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. As chamadas de código a [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) método a executar a instrução de SQL que elimina uma linha da tabela. Um método checkError() personalizado é utilizado para verificar se Ocorreu um erro e ocorre panic para sair se um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 ```go
@@ -339,4 +337,3 @@ func main() {
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
 > [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)
-

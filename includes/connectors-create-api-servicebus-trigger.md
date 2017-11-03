@@ -1,16 +1,16 @@
-Here's how to use the **Service Bus - When a message is received in a queue** trigger to initiate a logic app workflow when a new item is sent to a Service Bus queue.  
+Eis como utilizar o **Service Bus - quando é recebida uma mensagem numa fila** trigger para iniciar um fluxo de trabalho de aplicação lógica, quando um novo item é enviado para uma fila do Service Bus.  
 
 > [!NOTE]
-> You will be prompted to sign in with your Service Bus connection string if you have not already created a connection to Service Bus.  
+> Será solicitado para iniciar sessão com a cadeia de ligação do Service Bus, se não tiver criado uma ligação ao Service Bus.  
 > 
 > 
 
-1. In the search box on the logic apps designer, enter **service bus**. Then select the **Service Bus - When a message is received in a queue** trigger.  
-   ![Service Bus trigger image 1](./media/connectors-create-api-servicebus/trigger-1.png)   
-2. The **When a message is received in a queue** dialog box is displayed.  
-   ![Service Bus trigger image 2](./media/connectors-create-api-servicebus/trigger-2.png)   
-3. Enter the name of the Service Bus queue you would like the trigger to monitor.   
-   ![Service Bus trigger image 3](./media/connectors-create-api-servicebus/trigger-3.png)   
+1. Na caixa de pesquisa no designer de aplicações lógica, introduza **service bus**. Em seguida, selecione o **Service Bus - quando é recebida uma mensagem numa fila** acionador.  
+   ![Imagem de Acionador de barramento de serviço 1](./media/connectors-create-api-servicebus/trigger-1.png)   
+2. O **quando é recebida uma mensagem numa fila** é apresentada a caixa de diálogo.  
+   ![Imagem de Acionador de barramento de serviço 2](./media/connectors-create-api-servicebus/trigger-2.png)   
+3. Introduza o nome da fila do Service Bus que gostaria de acionamento para monitorizar.   
+   ![Imagem de Acionador de Service Bus 3](./media/connectors-create-api-servicebus/trigger-3.png)   
 
-At this point, your logic app has been configured with a trigger. When a new item is received in the queue you selected, the trigger will begin a run of the other triggers and actions in the workflow.    
+Neste momento, a aplicação lógica foi configurada com um acionador. Quando é recebido um novo item na fila selecionada, o acionador irá iniciar a execução dos outros acionadores e ações no fluxo de trabalho.    
 

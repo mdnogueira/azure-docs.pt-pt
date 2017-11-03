@@ -1,20 +1,20 @@
-## <a name="extended-iot-scenarios"></a>Extended IoT scenarios
+## <a name="extended-iot-scenarios"></a>Cenários de IoT alargados
 
-Use other Azure services and tools. When you have connected your device to IoT Hub, you can explore additional scenarios that use other Azure tools and services:
+Utilize outros serviços e ferramentas do Azure. Depois de ligar o seu dispositivo ao Hub IoT, pode explorar mais cenários que utilizam outras ferramentas e serviços do Azure:
 
-| Scenario                                                   | Azure service or tool              |
+| Cenário                                                   | Serviço ou ferramenta do Azure              |
 |----------------------------------------------------------- |------------------------------------|
-| [Manage IoT Hub messages][Mg_IoT_Hub_Msg]                  | iothub-explorer tool               |
-| [Manage your IoT device][Mg_IoT_Dv]                        | iothub-explorer tool               |
-| [Save IoT Hub messages to Azure storage][Sv_IoT_Msg_Stor]  | Azure table storage                |
-| [Visualize sensor data][Vis_Data_PBI]                      | Microsoft Power BI                 |
-| [Visualize sensor data][Vis_Data_Web]                      | Azure Web Apps                     |
-| [Forecast weather with sensor data][Weather_Forecast]      | Azure Machine Learning             |
-| [Automatic anomaly detection and reaction][Anomaly_Detect] | Azure Logic Apps                   |
+| [Gerir mensagens do Hub IoT][Mg_IoT_Hub_Msg]                  | ferramenta iothub-explorer               |
+| [Gerir o seu dispositivo IoT][Mg_IoT_Dv]                        | ferramenta iothub-explorer               |
+| [Guardar mensagens do Hub IoT no armazenamento do Azure][Sv_IoT_Msg_Stor]  | Armazenamento de tabelas do Azure                |
+| [Visualizar dados de sensores][Vis_Data_PBI]                      | Microsoft Power BI                 |
+| [Visualizar dados de sensores][Vis_Data_Web]                      | Aplicações Web do Azure                     |
+| [Prever a Meteorologia com dados de sensores][Weather_Forecast]      | Azure Machine Learning             |
+| [Deteção de anomalias e reação automáticas][Anomaly_Detect] | Azure Logic Apps                   |
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Passos seguintes
 
-When you have completed these tutorials, you can further explore the capabilities of IoT Hub in the [Developer guide][lnk-dev-guide]. You can find additional tutorials in the [How To][lnk-how-to] section.
+Depois de concluir estes tutoriais, pode explorar ainda mais as capacidades do Hub IoT no [Manual para programadores][lnk-dev-guide]. Pode encontrar tutoriais adicionais na secção [Procedimentos][lnk-how-to].
 
 
 [Mg_IoT_Hub_Msg]: ../articles/iot-hub/iot-hub-explorer-cloud-device-messaging.md

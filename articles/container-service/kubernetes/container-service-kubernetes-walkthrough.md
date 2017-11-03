@@ -11,21 +11,21 @@ keywords:
 ms.assetid: 8da267e8-2aeb-4c24-9a7a-65bdca3a82d6
 ms.service: container-service
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/21/2017
 ms.author: nepeters
-ms.custom: H1Hack27Feb2017, mvc
-ms.translationtype: HT
-ms.sourcegitcommit: 646886ad82d47162a62835e343fcaa7dadfaa311
-ms.openlocfilehash: 5a2131659903e79b28f4d1b795d25a31d8d4ce8d
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/24/2017
-
+ms.custom: H1Hack27Feb2017, mvc, devcenter
+ms.openlocfilehash: 59f37565d7e1912a149497223707e96a5ce8b24e
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="deploy-kubernetes-cluster-for-linux-containers"></a>Implementar o cluster do Kubernetes para contentores do Linux
+
+[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
 
 Neste guia rápido, é implementado um cluster do Kubernetes com a CLI do Azure. Depois, é implementada e executada no cluster uma aplicação de vários contentores que consiste num front-end da Web e numa instância de Redis. Depois de concluída, a aplicação está acessível através da Internet. 
 
@@ -71,8 +71,10 @@ Saída:
 Crie um cluster do Kubernetes no Azure Container Service com o comando [az acs create](/cli/azure/acs#create). O exemplo seguinte cria um cluster com o nome *myK8sCluster* com um nó principal do Linux e três nós de agente do Linux.
 
 ```azurecli-interactive 
-az acs create --orchestrator-type kubernetes --resource-group myResourceGroup --name myK8sCluster --generate-ssh-keys 
+az acs create --orchestrator-type kubernetes --resource-group myResourceGroup --name myK8sCluster --generate-ssh-keys
 ```
+
+Em alguns casos, como numa versão de avaliação limitada, uma subscrição do Azure tem acesso limitado aos recursos do Azure. Caso a implementação falhe devido a um número limitado de núcleos disponíveis, reduza a contagem de agentes pré-definida ao adicionar `--agent-count 1` ao comando [az acs create](/cli/azure/acs#create). 
 
 Ao fim de vários minutos, o comando é concluído e devolve informações sobre o cluster no formato json. 
 
@@ -228,4 +230,3 @@ Para saber mais sobre o Azure Container Service e ver um exemplo completo de có
 
 > [!div class="nextstepaction"]
 > [Gerir um cluster do ACS Kubernetes](./container-service-tutorial-kubernetes-prepare-app.md)
-

@@ -1,27 +1,26 @@
 ---
-title: "Criar uma função no Azure acionada por mensagens de fila | Microsoft Docs"
+title: "Adicionar mensagens de uma fila de armazenamento do Azure utilizando funções | Microsoft Docs"
 description: "Utilize as Funções do Azure para criar uma função sem servidores que é invocada por mensagens que são submetidas para filas do Armazenamento do Azure."
 services: azure-functions
 documentationcenter: na
 author: ggailey777
-manager: erikre
+manager: cfowler
 editor: 
 tags: 
 ms.assetid: 0b609bc0-c264-4092-8e3e-0784dcc23b5d
 ms.service: functions
 ms.devlang: multiple
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/02/2017
+ms.date: 09/19/2017
 ms.author: glenga
 ms.custom: mvc
-ms.translationtype: HT
-ms.sourcegitcommit: c30998a77071242d985737e55a7dc2c0bf70b947
-ms.openlocfilehash: 3eae02f7cf756e8e24d4f1952d12c37f2ad4b400
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/02/2017
-
+ms.openlocfilehash: 822879861ee8189cdd413f0061f26fb91819d88d
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Utilizar as Funções para adicionar mensagens a uma fila do Armazenamento do Azure
 
@@ -39,7 +38,7 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
  
 1. Expanda a aplicação Function App e a função.
 
-2. Selecione **Integrar** e **+ Nova saída**, selecione **Armazenamento de Filas do Azure** e selecione **Selecionar**.
+2. Selecione **integrar** e **+ nova saída**, em seguida, escolha **armazenamento de filas do Azure** e escolha **selecione**.
     
     ![Adicione um enlace de saída do Armazenamento de filas a uma função no portal do Azure.](./media/functions-integrate-storage-queue-output-binding/function-add-queue-storage-output-binding.png)
 
@@ -51,7 +50,7 @@ Nas Funções do Azure, os enlaces de entrada e saída proporcionam uma forma de
     | ------------ |  ------- | -------------------------------------------------- |
     | **Nome da fila**   | myqueue-items    | O nome da fila à qual ligar na sua conta de Armazenamento. |
     | **Ligação da conta de armazenamento** | AzureWebJobStorage | Pode utilizar a ligação da conta de armazenamento que já está a ser utilizada pela sua aplicação Function App ou criar uma nova.  |
-    | **Nome do parâmetro da mensagem** | outQueueItem | O nome do parâmetro de enlace de saída. | 
+    | **Nome do parâmetro da mensagem** | outputQueueItem | O nome do parâmetro de enlace de saída. | 
 
 4. Clique em **Guardar** para adicionar o enlace.
  
@@ -61,11 +60,11 @@ Agora que tem um enlace de saída definido, tem de atualizar o código para util
 
 1. Selecione a sua função para apresentar o código da mesma no editor. 
 
-2. Para funções C#, atualize a definição da função da seguinte forma, para adicionar o parâmetro de enlace de armazenamento **outQueueItem**. Ignore este passo para funções JavaScript.
+2. Para uma função de c#, atualizar a definição de função da seguinte forma para adicionar o **outputQueueItem** parâmetro de enlace de armazenamento. Ignore este passo para funções JavaScript.
 
     ```cs   
     public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, 
-        ICollector<string> outQueueItem, TraceWriter log)
+        ICollector<string> outputQueueItem, TraceWriter log)
     {
         ....
     }
@@ -74,12 +73,12 @@ Agora que tem um enlace de saída definido, tem de atualizar o código para util
 3. Adicione o seguinte código à função imediatamente antes de o método ser devolvido. Utilize o fragmento adequado à linguagem da sua função.
 
     ```javascript
-    context.bindings.outQueueItem = "Name passed to the function: " + 
+    context.bindings.outputQueueItem = "Name passed to the function: " + 
                 (req.query.name || req.body.name);
     ```
 
     ```cs
-    outQueueItem.Add("Name passed to the function: " + name);     
+    outputQueueItem.Add("Name passed to the function: " + name);     
     ```
 
 4. Selecione **Guardar** para guardar as alterações.
@@ -100,7 +99,7 @@ Em seguida, ligue à sua conta de armazenamento para verificar a fila nova e a m
 
 Ignore os três primeiros passos se já tiver instalado o Storage Explorer e ligado à sua conta de armazenamento.    
 
-1. Na sua função, selecione **Integrar** e o novo enlace de saída do **Armazenamento de Filas do Azure** e, em seguida, expanda **Documentação**. Copie o **Nome da conta** e a **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento.
+1. Na sua função, escolha **integrar** e o novo **armazenamento de filas do Azure** vínculo de saída, em seguida, expanda **documentação**. Copie o **Nome da conta** e a **Chave da conta**. Vai utilizar estas credenciais para ligar à conta de armazenamento.
  
     ![Obtenha as credenciais de ligação da conta de Armazenamento.](./media/functions-integrate-storage-queue-output-binding/function-get-storage-account-credentials.png)
 
@@ -112,7 +111,7 @@ Ignore os três primeiros passos se já tiver instalado o Storage Explorer e lig
   
     ![Cole as credenciais de armazenamento e ligue-se.](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-2.png)
 
-4. Expanda a conta de armazenamento anexada, clique com o botão direito do rato em **Filas** e confirme se existe uma fila com o nome **myqueue itens**. Também deverá ver uma mensagem já na fila.  
+4. Expanda a conta de armazenamento ligado, expanda **filas** e certifique-se de que existe uma fila com o nome **myqueue itens** existe. Também deverá ver uma mensagem já na fila.  
  
     ![Crie uma fila de armazenamento.](./media/functions-integrate-storage-queue-output-binding/function-queue-storage-output-view-queue.png)
  
@@ -128,7 +127,6 @@ Adicionou um enlace de saída a uma função já existente.
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]
 
 Para obter mais informações sobre o enlace para o Armazenamento de filas, veja [Azure Functions Storage queue bindings](functions-bindings-storage-queue.md) (Enlaces da fila de Armazenamento das Funções do Azure). 
-
 
 
 

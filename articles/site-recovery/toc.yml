@@ -59,6 +59,8 @@
       href: site-recovery-support-matrix-to-sec-site.md
     - name: Recuperação após desastre para cargas de trabalho
       href: site-recovery-workload.md
+    - name: Migração para o Azure Site Recovery
+      href: site-recovery-migrate-to-azure.md
     - name: Rede Azure para o Azure (pré-visualização)
       href: site-recovery-azure-to-azure-networking-guidance.md
     - name: Conectividade de VMs após a ativação pós-falha para o Azure
@@ -104,9 +106,9 @@
         - name: Ferramenta Planeador de Implementação para replicação do VMware para o Azure
           href: site-recovery-deployment-planner.md
         - name: Planeamento de capacidade para replicação de Hyper-V para o Azure
-          href: site-recovery-capacity-planning-for-hyper-v-replication.md
-        - name: Ferramenta Planeador de Capacidade para replicação de Hyper-V para o Azure
           href: site-recovery-capacity-planner.md
+        - name: Ferramenta Planeador de Capacidade para replicação de Hyper-V para o Azure
+          href: site-recovery-capacity-planning-for-hyper-v-replication.md
         - name: Ampliar servidores de processos para a replicação de VMware
           href: site-recovery-vmware-to-azure-manage-scaleout-process-server.md
         - name: Testes de dimensionamento de desempenho de replicação do Hyper-V entre sites no local
@@ -181,7 +183,9 @@
           href: site-recovery-vmm-to-vmm-powershell-resource-manager.md
     - name: Migrar
       items:
-        - name: Replicar máquinas migradas para outra região do Azure
+        - name: Migrar VMs do Azure para outra região do Azure
+          href: site-recovery-migrate-azure-to-azure.md
+        - name: Replicar máquinas para outra região do Azure após a migração
           href: site-recovery-azure-to-azure-after-migration.md
     - name: Cargas de trabalho
       items:

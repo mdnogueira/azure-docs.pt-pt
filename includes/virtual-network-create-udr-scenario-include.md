@@ -1,14 +1,14 @@
-## <a name="scenario"></a>Scenario
-To better illustrate how to create UDRs, this document will use the scenario below.
+## <a name="scenario"></a>Cenário
+Para ilustrar melhor como criar UDRs, este documento utilizará o cenário abaixo.
 
-![IMAGE DESCRIPTION](./media/virtual-network-create-udr-scenario-include/figure1.png)
+![DESCRIÇÃO DA IMAGEM](./media/virtual-network-create-udr-scenario-include/figure1.png)
 
-In this scenario you will create one UDR for the *Front end subnet* and another UDR for the *Back end subnet* , as described below: 
+Neste cenário, irá criar um UDR para o *sub-rede de fim da frente* e UDR outro para o *da sub-rede Back end* , conforme descrito abaixo: 
 
-* **UDR-FrontEnd**. The front end UDR will be applied to the *FrontEnd* subnet, and contain one route:    
-  * **RouteToBackend**. This route will send all traffic to the back end subnet to the **FW1** virtual machine.
-* **UDR-BackEnd**. The back end UDR will be applied to the *BackEnd* subnet, and contain one route:    
-  * **RouteToFrontend**. This route will send all traffic to the front end subnet to the **FW1** virtual machine.
+* **UDR-front-end**. O front-end UDR será aplicada ao *front-end* sub-rede e contêm uma rota:    
+  * **RouteToBackend**. Esta rota irá enviar todo o tráfego para a sub-rede de back-end para o **FW1** máquina virtual.
+* **UDR-back-end**. O back-end UDR será aplicada ao *back-end* sub-rede e contêm uma rota:    
+  * **RouteToFrontend**. Esta rota irá enviar todo o tráfego para a sub-rede do front-end para o **FW1** máquina virtual.
 
-The combination of these routes will ensure that all traffic destined from one subnet to another will be routed to the **FW1** virtual machine, which is being used as a virtual appliance. You also need to turn on IP forwarding for that VM, to ensure it can receive traffic destined to other VMs.
+A combinação destas rotas irá garantir que todo o tráfego destinado a partir de uma sub-rede para outra será encaminhado para o **FW1** máquina virtual, que está a ser utilizada como uma aplicação virtual. Terá também de ativar o reencaminhamento IP para essa VM, certifique-se de que pode receber o tráfego destinado ao outras VMs.
 

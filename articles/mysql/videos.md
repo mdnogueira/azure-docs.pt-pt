@@ -1,0 +1,24 @@
+---
+title: "Base de dados do Azure para vídeos MySQL | Microsoft Docs"
+description: "Esta página apresenta uma lista de conteúdo de vídeo relevante para a base de dados do Azure de aprendizagem para MySQL, Microsoft geridos MySQL oferta no Azure."
+services: mysql
+author: jasonwhowell
+ms.author: jasonh
+manager: jhubbard
+editor: jasonwhowell
+ms.service: mysql-database
+ms.topic: article
+ms.date: 06/05/2017
+ms.openlocfilehash: 49d81c5b449b9af7ac025296982aa5ff82aa8b09
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
+---
+# <a name="azure-database-for-mysql-videos"></a>Base de dados do Azure para MySQL vídeos
+
+[Como começar com a nova base de dados do Azure para o serviço de MySQL](https://channel9.msdn.com/events/Build/2017/B8045)
+
+<iframe src="https://channel9.msdn.com/Events/Build/2017/B8045/player" width="800" height="450" allowFullScreen frameBorder="0"></iframe>
+
+Neste vídeo a partir de Maio de 2017 conferência de //Build da Microsoft, saiba mais sobre a oferta MySQL gerida da Microsoft no Azure. Vamos guiá-lo através da estratégia da Microsoft para suportar os sistemas de base de dados de Open Source no Azure. Iremos abordar o que significa o programador para desenvolver ou implementar as aplicações que utilizam MySQL no Azure. Vamos mostrar uma descrição geral da arquitetura do serviço e demonstrar a que base de dados do Azure para MySQL está integrado com outros serviços do Azure, tais como Web Apps.

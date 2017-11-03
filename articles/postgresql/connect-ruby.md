@@ -6,24 +6,22 @@ author: jasonwhowell
 ms.author: jasonh
 manager: jhubbard
 editor: jasonwhowell
-ms.service: postgresql-database
+ms.service: postgresql
 ms.custom: mvc
 ms.devlang: ruby
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 06/30/2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6dbb88577733d5ec0dc17acf7243b2ba7b829b38
-ms.openlocfilehash: a04188aed40a46e8cb64dfeb1230fb9b3c6ab679
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/04/2017
-
+ms.openlocfilehash: 7ad4a2fd7452f31689a02b144078a9630bfd5259
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="azure-database-for-postgresql-use-ruby-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilize o Ruby para ligar e consultar dados
-Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de uma aplicação [Ruby](https://www.ruby-lang.org). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Este artigo pressupõe que esteja familiarizado com o desenvolvimento que utiliza o Ruby, mas que nunca trabalhou com a Base de Dados do Azure para PostgreSQL.
+Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de uma aplicação [Ruby](https://www.ruby-lang.org). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Os passos neste artigo partem do princípio de que está familiarizado com o desenvolvimento utilizando Ruby e estiver a trabalhar com a base de dados do Azure para PostgreSQL.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Este início rápido utiliza os recursos criados em qualquer um desses guias como ponto de partida:
+Este guia de início rápido utiliza os recursos criados em qualquer um destes guias como ponto de partida:
 - [Criar BD - Portal](quickstart-create-server-database-portal.md)
 - [Criar BD - CLI do Azure](quickstart-create-server-database-azure-cli.md)
 
@@ -59,7 +57,7 @@ Instale o Ruby no seu próprio computador.
 - Para executar o código, inicie a linha de comandos ou a shell de bash. Altere o diretório para a pasta de projeto `cd rubypostgres` e, em seguida, escreva o comando `ruby read.rb` para executar a aplicação.
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
-Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para PostgreSQL. Precisa das credenciais de nome de servidor totalmente qualificado e de início de sessão.
+Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para PostgreSQL. Necessita do nome do servidor e das credenciais de início de sessão totalmente qualificados.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. No menu esquerdo do portal do Azure, clique em **Todos os recursos** e procure o servidor que acabou de criar, por exemplo, **mypgserver-20170401**.
@@ -213,5 +211,4 @@ end
 
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
-> [Migrar a base de dados com as opções Exportar e Importar](./howto-migrate-using-export-and-import.md)
-
+> [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)

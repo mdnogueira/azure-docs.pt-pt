@@ -1,46 +1,46 @@
-## <a name="typical-output"></a>Typical output
+## <a name="typical-output"></a>Resultado típico
 
-The following example shows the output written to the log file by the Hello World sample. The output is formatted for legibility:
+O exemplo seguinte mostra a saída escrita para o ficheiro de registo pelo exemplo Olá mundo. O resultado é formatado para legibilidade:
 
 ```json
 [{
-    "time": "Mon Apr 11 13:48:07 2016",
+    "time": "Mon Apr 11 13:42:50 2016",
     "content": "Log started"
 }, {
-    "time": "Mon Apr 11 13:48:48 2016",
+    "time": "Mon Apr 11 13:42:50 2016",
     "properties": {
         "helloWorld": "from Azure IoT Gateway SDK simple sample!"
     },
     "content": "aGVsbG8gd29ybGQ="
 }, {
-    "time": "Mon Apr 11 13:48:55 2016",
+    "time": "Mon Apr 11 13:42:55 2016",
     "properties": {
         "helloWorld": "from Azure IoT Gateway SDK simple sample!"
     },
     "content": "aGVsbG8gd29ybGQ="
 }, {
-    "time": "Mon Apr 11 13:49:01 2016",
+    "time": "Mon Apr 11 13:43:00 2016",
     "properties": {
         "helloWorld": "from Azure IoT Gateway SDK simple sample!"
     },
     "content": "aGVsbG8gd29ybGQ="
 }, {
-    "time": "Mon Apr 11 13:49:04 2016",
+    "time": "Mon Apr 11 13:45:00 2016",
     "content": "Log stopped"
 }]
 ```
 
-## <a name="code-snippets"></a>Code snippets
+## <a name="code-snippets"></a>Fragmentos de código
 
-This section discusses some key sections of the code in the hello\_world sample.
+Esta secção descreve algumas partes principais do código no exemplo hello\_world.
 
-### <a name="iot-edge-gateway-creation"></a>IoT Edge gateway creation
+### <a name="iot-edge-gateway-creation"></a>Criação do gateway de IoT Edge
 
-You must implement a *gateway process*. This program creates the internal infrastructure (the broker), loads the IoT Edge modules, and configures the gateway process. IoT Edge provides the **Gateway\_Create\_From\_JSON** function to enable you to bootstrap a gateway from a JSON file. To use the **Gateway\_Create\_From\_JSON** function, pass it the path to a JSON file that specifies the IoT Edge modules to load.
+Para criar um gateway, implemente um *processo gateway*. Este programa cria a infraestrutura interna (o mediador), carrega os módulos de limite de IoT e configura o processo de gateway. O IoT Edge fornece a função **Gateway\_Create\_From\_JSON**, para lhe permitir arrancar um gateway a partir de um ficheiro JSON. Para utilizar o **Gateway\_criar\_de\_JSON** funcionar, introduzir o caminho para um ficheiro JSON que especifica os módulos de limite de IoT a carregar.
 
-You can find the code for the gateway process in the *Hello World* sample in the [main.c][lnk-main-c] file. For legibility, the following snippet shows an abbreviated version of the gateway process code. This example program creates a gateway and then waits for the user to press the **ENTER** key before it tears down the gateway.
+Pode encontrar o código para o processo de gateway no *Olá, mundo* exemplo no [Main] [ lnk-main-c] ficheiro. Para melhorar a legibilidade, o fragmento seguinte mostra uma versão abreviada do código de processo do gateway. Este exemplo cria um gateway e, em seguida, aguarda que o utilizador prima a tecla **ENTER** antes de fechar o gateway.
 
-```c
+```C
 int main(int argc, char** argv)
 {
     GATEWAY_HANDLE gateway;
@@ -59,16 +59,16 @@ int main(int argc, char** argv)
 }
 ```
 
-The JSON settings file contains a list of IoT Edge modules to load and the links between the modules. Each IoT Edge module must specify a:
+O ficheiro de definições JSON contém uma lista de módulos de limite de IoT a carregar e as ligações entre os módulos. Cada módulo IoT limite tem de especificar um:
 
-* **name**: a unique name for the module.
-* **loader**: a loader that knows how to load the desired module. Loaders are an extension point for loading different types of modules. IoT Edge provides loaders for use with modules written in native C, Node.js, Java, and .NET. The Hello World sample only uses the native C loader because all the modules in this sample are dynamic libraries written in C. For more information about how to use IoT Edge modules written in different languages, see the [Node.js](https://github.com/Azure/iot-edge/blob/master/samples/nodejs_simple_sample/), [Java](https://github.com/Azure/iot-edge/tree/master/samples/java_sample), or [.NET](https://github.com/Azure/iot-edge/tree/master/samples/dotnet_binding_sample) samples.
-    * **name**: the name of the loader used to load the module.
-    * **entrypoint**: the path to the library containing the module. On Linux this library is a .so file, on Windows this library is a .dll file. The entry point is specific to the type of loader being used. The Node.js loader entry point is a .js file. The Java loader entry point is a classpath and a class name. The .NET loader entry point is an assembly name and a class name.
+* **name**: um nome exclusivo para o módulo.
+* **carregador**: um carregador que sabe como carregar o módulo pretendido. Carregadores são um ponto de extensão para carregar diferentes tipos de módulos. Limite de IoT fornece carregadores para utilização com módulos escritos em nativo C, Node.js, Java e .NET. O exemplo Olá mundo utiliza apenas o carregador de C nativo porque todos os módulos neste exemplo são dinâmicas bibliotecas escritas no C. Para obter mais informações sobre como utilizar os módulos de limite de IoT escritos em idiomas diferentes, consulte o [Node.js](https://github.com/Azure/iot-edge/blob/master/samples/nodejs_simple_sample/), [Java](https://github.com/Azure/iot-edge/tree/master/samples/java_sample), ou [.NET](https://github.com/Azure/iot-edge/tree/master/samples/dotnet_binding_sample) amostras.
+    * **nome**: o nome do carregador utilizado para carregar o módulo.
+    * **entrypoint**: caminho para a biblioteca que contém o módulo. No Linux, esta biblioteca é um ficheiro do SO, no Windows, esta biblioteca é um ficheiro. dll. O ponto de entrada é específico para o tipo de carregador utilizado. O ponto de entrada do carregador de Node.js é um ficheiro. js. O ponto de entrada do Java loader é um classpath e um nome de classe. O ponto de entrada do carregador de .NET é um nome de assemblagem e um nome de classe.
 
-* **args**: any configuration information the module needs.
+* **args**: quaisquer informações de configuração de que o módulo precise.
 
-The following code shows the JSON used to declare all the IoT Edge modules for the Hello World sample on Linux. Whether a module requires any arguments depends on the design of the module. In this example, the logger module takes an argument that is the path to the output file and the hello\_world module has no arguments.
+O código seguinte mostra o JSON utilizado para declarar todos os o limite de IoT módulos para o exemplo Olá mundo no Linux. A necessidade de quaisquer argumentos por parte de um módulo depende da estrutura desse módulo. Neste exemplo, o módulo de registo assume um argumento que é o caminho para o ficheiro de saída e o módulo hello\_world não assume qualquer argumento.
 
 ```json
 "modules" :
@@ -96,14 +96,14 @@ The following code shows the JSON used to declare all the IoT Edge modules for t
 ]
 ```
 
-The JSON file also contains the links between the modules that are passed to the broker. A link has two properties:
+O ficheiro JSON também contém as ligações entre os módulos que são transmitidos para o mediador. As ligações têm duas propriedades:
 
-* **source**: a module name from the `modules` section, or `\*`.
-* **sink**: a module name from the `modules` section.
+* **origem**: um nome de módulo do `modules` secção, ou `\*`.
+* **sink**: um nome de módulo da secção `modules`.
 
-Each link defines a message route and direction. Messages from the **source** module are delivered to the **sink** module. You can set the **source** module to `\*`, which indicates that the **sink** module receives messages from any module.
+Cada ligação define uma rota e direção de mensagem. Mensagens do **origem** módulo são entregues para o **sink** módulo. Pode definir o **origem** módulo `\*`, que indica que o **sink** módulo recebe mensagens de qualquer módulo.
 
-The following code shows the JSON used to configure links between the modules used in the hello\_world sample on Linux. Every message produced by the `hello_world` module is consumed by the `logger` module.
+O código seguinte mostra o JSON utilizado para configurar ligações entre módulos utilizados no exemplo hello\_world no Linux. Todas as mensagens produzidas pelo módulo `hello_world` são consumidas pelo módulo `logger`.
 
 ```json
 "links":
@@ -115,11 +115,11 @@ The following code shows the JSON used to configure links between the modules us
 ]
 ```
 
-### <a name="helloworld-module-message-publishing"></a>Hello\_world module message publishing
+### <a name="helloworld-module-message-publishing"></a>Publicação de mensagens do módulo hello\_world
 
-You can find the code used by the hello\_world module to publish messages in the ['hello_world.c'][lnk-helloworld-c] file. The following snippet shows an amended version of the code with comments added and some error handling code removed for legibility:
+Pode encontrar o código utilizado pelo módulo hello\_world para publicar mensagens no ficheiro ["hello_world.c"][lnk-helloworld-c]. O fragmento seguinte mostra uma versão modificada do código com comentários adicionais e algum código de processamento de erros removido, para melhorar a legibilidade:
 
-```c
+```C
 int helloWorldThread(void *param)
 {
     // create data structures used in function.
@@ -165,24 +165,22 @@ int helloWorldThread(void *param)
 }
 ```
 
-### <a name="helloworld-module-message-processing"></a>Hello\_world module message processing
+O Olá\_módulo mundo nunca processa mensagens que outros módulos de limite de IoT publiquem para o mediador. Consequentemente, a implementação da chamada de retorno da mensagem no módulo hello\_world é uma função sem operações.
 
-The hello\_world module never processes messages that other IoT Edge modules publish to the broker. Therefore, the implementation of the message callback in the hello\_world module is a no-op function.
-
-```c
+```C
 static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
 {
     /* No action, HelloWorld is not interested in any messages. */
 }
 ```
 
-### <a name="logger-module-message-publishing-and-processing"></a>Logger module message publishing and processing
+### <a name="logger-module-message-processing"></a>Processamento de mensagens do módulo de registo
 
-The logger module receives messages from the broker and writes them to a file. It never publishes any messages. Therefore, the code of the logger module never calls the **Broker_Publish** function.
+O módulo de logger recebe mensagens do mediador e escreve-as num ficheiro. Nunca publica mensagens. Por conseguinte, o código do módulo Logger nunca chama a função **Broker_Publish**.
 
-The **Logger_Receive** function in the [logger.c][lnk-logger-c] file is the callback the broker invokes to deliver messages to the logger module. The following snippet shows an amended version with comments added and some error handling code removed for legibility:
+O **Logger_Receive** funcionar o [Logger] [ lnk-logger-c] ficheiro é a chamada de retorno invoca o mediador para entregar mensagens para o módulo de registo. O fragmento seguinte mostra uma versão modificada com comentários adicionais e algum código de processamento de erros removido, para melhorar a legibilidade:
 
-```c
+```C
 static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
 {
 
@@ -221,9 +219,12 @@ static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHan
 }
 ```
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Passos seguintes
 
-In this article, you ran a simple IoT Edge gateway that writes messages to a log file. To run a sample that sends messages to IoT Hub, see [IoT Edge – send device-to-cloud messages with a simulated device using Linux][lnk-gateway-simulated-linux] or [IoT Edge – send device-to-cloud messages with a simulated device using Windows][lnk-gateway-simulated-windows].
+Neste artigo, foi executado um gateway de IoT Edge simple que escreve mensagens para um ficheiro de registo. Para executar uma amostra que envia mensagens do hub IoT, consulte:
+
+- [Limite de IoT – enviar mensagens do dispositivo-nuvem com um dispositivo simulado com Linux][lnk-gateway-simulated-linux] 
+- [Limite de IoT – enviar mensagens do dispositivo-nuvem com um dispositivo simulado com Windows][lnk-gateway-simulated-windows].
 
 
 <!-- Links -->

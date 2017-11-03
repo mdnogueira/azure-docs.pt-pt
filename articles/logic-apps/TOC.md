@@ -25,7 +25,8 @@
 #### [Proteger conectores com o Azure AD](custom-connector-azure-active-directory-authentication.md)
 #### [Descrever APIs com o Postman](custom-connector-api-postman-collection.md)
 #### [Expandir OpenAPI para conectores personalizados](custom-connector-openapi-extensions.md)
-#### [Registar os seus conectores](logic-apps-custom-connector-register.md)
+#### [Criar e registar um conector OpenAPI](logic-apps-custom-connector-register.md)
+#### [Crie e registe um conector SOAP](logic-apps-soap-connector-create-register.md)
 #### [Certificar os seus conectores](custom-connector-submit-certification.md)
 #### [FAQ dos conectores personalizados](custom-connector-faq.md)
 ### Desenvolver APIs personalizadas

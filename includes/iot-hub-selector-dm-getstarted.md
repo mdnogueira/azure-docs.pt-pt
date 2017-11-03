@@ -1,18 +1,18 @@
 > [!div class="op_single_selector"]
-> * [Device: Node.js Service: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
-> * [Device: Node.js Service: C#](../articles/iot-hub/iot-hub-csharp-node-device-management-get-started.md)
-> * [Device: C# Service: C#](../articles/iot-hub/iot-hub-csharp-csharp-device-management-get-started.md)
-> * [Device: Java Service: Java](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
+> * [Dispositivo: Node.js Serviço: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
+> * [Dispositivo: Node.js Serviço: C#](../articles/iot-hub/iot-hub-csharp-node-device-management-get-started.md)
+> * [Dispositivos: Serviço c#: c#](../articles/iot-hub/iot-hub-csharp-csharp-device-management-get-started.md)
+> * [Dispositivo: Serviço de Java: Java](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
 
-Back-end apps can use Azure IoT Hub primitives, such as [device twin][lnk-devtwin] and [direct methods][lnk-c2dmethod], to remotely start and monitor device management actions on devices. This tutorial shows you how a back-end app and a device app can work together to initiate and monitor a remote device reboot using IoT Hub.
+Aplicações de back-end pode utilizar primitivos do IoT Hub do Azure, tal como [dispositivo duplo] [ lnk-devtwin] e [direcionar métodos][lnk-c2dmethod], para iniciar e monitorizar dispositivos remotamente ações de gestão nos dispositivos. Este tutorial mostra como uma aplicação de back-end e uma aplicação de dispositivo podem trabalhar em conjunto para iniciar e monitorizar um reinício do dispositivo remoto utilizar o IoT Hub.
 
-Use a direct method to initiate device management actions (such as reboot, factory reset, and firmware update) from a back-end app in the cloud. The device is responsible for:
+Utilize um método direto para iniciar as ações de gestão de dispositivos (por exemplo, o reinício, reposição de fábrica e atualização de firmware) a partir de uma aplicação de back-end na nuvem. O dispositivo é responsável por:
 
-* Handling the method request sent from IoT Hub.
-* Initiating the corresponding device-specific action on the device.
-* Providing status updates through *reported properties* to IoT Hub.
+* A processar o pedido de método enviado a partir do IoT Hub.
+* A iniciar a ação de específicos do dispositivo correspondente no dispositivo.
+* Fornecer atualizações de estado através de *comunicadas propriedades* ao IoT Hub.
 
-You can use a back-end app in the cloud to run device twin queries to report on the progress of your device management actions.
+Pode utilizar uma aplicação de back-end na nuvem para executar consultas de duplo de dispositivo para elaborar relatórios sobre o progresso das suas ações de gestão de dispositivos.
 
 [lnk-devtwin]: ../articles/iot-hub/iot-hub-devguide-device-twins.md
 [lnk-c2dmethod]: ../articles/iot-hub/iot-hub-devguide-direct-methods.md

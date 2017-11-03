@@ -1,5 +1,5 @@
-When you try to create a new Azure Virtual Machine (VM), the common errors you encounter are provisioning failures or allocation failures.
+Ao tentar criar uma nova máquina Virtual (VM do Azure), os erros comuns que encontrar são aprovisionamento falhas ou falhas de atribuição.
 
-* A provisioning failure happens when the OS image fails to load either due to incorrect preparatory steps or because of selecting the wrong settings during the image capture from the portal.
-* An allocation failure results when the cluster or region either does not have resources available or cannot support the requested VM size.
+* Uma falha de aprovisionamento ocorre quando a imagem do SO não é possível carregar devido a passos preparatórios incorretos ou devido ao selecionar as definições de errado durante a captura de imagem do portal.
+* Uma falha de alocação resulta quando o cluster ou a região não dispõe de recursos disponíveis ou não suporta o tamanho da VM pedido.
 

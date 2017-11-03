@@ -12,16 +12,14 @@ ms.custom: quick start connect, mvc
 ms.workload: 
 ms.tgt_pltfrm: na
 ms.devlang: java
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 05/10/2017
 ms.author: mimig
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a643f139be40b9b11f865d528622bafbe7dec939
-ms.openlocfilehash: 1683afd842294b3b45ae4d0e53bbecdccadc1ed5
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/01/2017
-
-
+ms.openlocfilehash: 81bf338d3be18905fd04e07a53284432b5feb491
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-java-and-the-azure-portal"></a>Azure Cosmos DB: criar uma aplicação de consola da MongoDB API com Java e o portal do Azure
 
@@ -31,11 +29,12 @@ Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bas
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Antes de poder executar este exemplo, tem de ter os pré-requisitos seguintes:
-   * JDK 1.7+ (Execute `apt-get install default-jdk` se não tiver o JDK)
-   * Maven (Execute `apt-get install maven` se não tiver o Maven)
+Antes de poder executar este exemplo, tem de ter os pré-requisitos seguintes:
+* JDK 1.7+ (Execute `apt-get install default-jdk` se não tiver o JDK)
+* Maven (Execute `apt-get install maven` se não tiver o Maven)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
 
@@ -45,7 +44,7 @@ Este guia de introdução demonstra como criar uma conta do Azure Cosmos DB, bas
 
 Dê um nome à base de dados nova, **db**, e à coleção nova, **coll**.
 
-[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
+[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)] 
 
 ## <a name="clone-the-sample-application"></a>Clonar a aplicação de exemplo
 
@@ -128,6 +127,5 @@ Neste guia rápido, aprendeu a criar uma conta do Azure Cosmos DB, a criar uma c
 
 > [!div class="nextstepaction"]
 > [Import MongoDB data into Azure Cosmos DB](mongodb-migrate.md) (Importar dados do MongoDB para o Azure Cosmos DB)
-
 
 

@@ -1,32 +1,32 @@
 <!--author=alkohli last changed: 07/05/2017-->
 
 > [!NOTE] 
-> You cannot modify the encryption settings and the storage account credentials associated with a volume container after it is created.
+> Não é possível modificar as definições de encriptação e as credenciais de conta de armazenamento associadas um contentor de volume depois de criado.
 
-#### <a name="to-modify-a-volume-container"></a>To modify a volume container
+#### <a name="to-modify-a-volume-container"></a>Para modificar um contentor de volume
 
-1. Go to your StorSimple Device Manager service and then navigate to **Management > Volume containers**.
+1. Aceda ao seu serviço do Gestor de dispositivos do StorSimple e, em seguida, navegue para **gestão > contentores de Volume**.
 
-2. From the tabular list of volume containers, select the volume container you want to modify. On the **Devices** page, select the device, double-click it, and then click the **Volume containers** tab.
+2. Na lista de tabela de contentores de volume, selecione o contentor de volume que pretende modificar. No **dispositivos** página, selecione o dispositivo, faça duplo clique e, em seguida, clique em de **contentores de Volume** separador.
 
-2. In the tabular listing of the volume containers, select the volume container that you want to modify. In the blade that opens up, click **Modify** from the command bar.
+2. Na tabela listagem dos contentores de volume, selecione o contentor de volume que pretende modificar. No painel que abre-se, clique em **modificar** na barra de comando.
 
-    ![Modify volume container](./media/storsimple-8000-modify-volume-container/modify-vol-container1.png)
+    ![Modificar o contentor de volume](./media/storsimple-8000-modify-volume-container/modify-vol-container1.png)
 
-3. In the **Modify Volume container** blade, do the following steps:
+3. No **contentor de Volume modificar** painel, efetue os seguintes passos:
    
-   1. The name, encryption key, and storage account associated with the volume container cannot be changed after they are specified. Change the associated bandwidth setting.
+   1. Não não possível alterar o nome, a chave de encriptação e a conta de armazenamento associado o contentor de volume após forem especificadas. Altere a definição de largura de banda associado.
       
-       ![Change bandwidth setting](./media/storsimple-8000-modify-volume-container/modify-vol-container2.png)
+       ![Alterar a definição de largura de banda](./media/storsimple-8000-modify-volume-container/modify-vol-container2.png)
 
-   2.  Click **OK**.
-4. In the next page of the **Modify Volume Container** dialog box:
+   2.  Clique em **OK**.
+4. Na página seguinte do **modificar o contentor de Volume** caixa de diálogo:
    
-   1. From the drop-down list, choose an existing bandwidth template.
-   2. Review the schedule settings for the specified bandwidth template.
-   3. Click **Save** and confirm the changes.
+   1. Na lista pendente, escolha um modelo de largura de banda existente.
+   2. Reveja as definições de agendamento para o modelo de largura de banda especificado.
+   3. Clique em **guardar** e confirmar as alterações.
       
-       ![Confirm changes](./media/storsimple-8000-modify-volume-container/modify-vol-container3.png)
+       ![Confirmar as alterações](./media/storsimple-8000-modify-volume-container/modify-vol-container3.png)
 
-   3. The **Volume containers** blade is updated to reflect the changes.
+   3. O **contentores de Volume** painel é atualizado para refletir as alterações.
 

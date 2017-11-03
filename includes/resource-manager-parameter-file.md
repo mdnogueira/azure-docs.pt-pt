@@ -1,4 +1,4 @@
-If you use a parameter file to pass parameter values during deployment, you need to create a JSON file with a format similar to the following example:
+Se utilizar um ficheiro de parâmetros para passar valores de parâmetros durante a implementação, terá de criar um ficheiro JSON com formato semelhante ao seguinte exemplo:
 
 ```json
 {
@@ -26,7 +26,7 @@ If you use a parameter file to pass parameter values during deployment, you need
 }
 ```
 
-The size of the parameter file cannot be more than 64 KB.
+O tamanho do ficheiro de parâmetros não pode ser superior a 64 KB.
 
-If you need to provide a sensitive value for a parameter (such as a password), add that value to a key vault. Retrieve the key vault during deployment as shown in the previous example. For more information, see [Pass secure values during deployment](../articles/azure-resource-manager/resource-manager-keyvault-parameter.md). 
+Se tiver de fornecer um valor sensível para um parâmetro (por exemplo, uma palavra-passe), adicione esse valor para um cofre de chaves. Obter o Cofre de chaves durante a implementação, conforme mostrado no exemplo anterior. Para obter mais informações, consulte [passar valores seguros durante a implementação](../articles/azure-resource-manager/resource-manager-keyvault-parameter.md). 
 

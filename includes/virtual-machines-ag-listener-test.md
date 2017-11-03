@@ -1,18 +1,18 @@
-In this step, you test the availability group listener by using a client application that's running on the same network.
+Neste passo, testar o serviço de escuta do grupo de disponibilidade, utilizando uma aplicação cliente que está a ser executado na mesma rede.
 
-Client connectivity has the following requirements:
+Conectividade de clientes tem os seguintes requisitos:
 
-* Client connections to the listener must come from machines that reside in a different cloud service than the one that hosts the Always On availability replicas.
-* If the Always On replicas are in different subnets, clients must specify *MultisubnetFailover=True* in the connection string. This condition results in parallel connection attempts to replicas in the various subnets. This scenario includes a cross-region Always On availability group deployment.
+* Ligações de cliente para o serviço de escuta tem provenientes de máquinas que residem num serviço cloud diferente daquela que aloja as réplicas de disponibilidade Always On.
+* Se as réplicas Always On estiverem em sub-redes diferentes, os clientes têm de especificar *MultisubnetFailover = True* na cadeia de ligação. Esta condição resulta em tentativas de ligação de paralelo para réplicas nas várias sub-redes. Este cenário inclui a uma implementação de por várias regiões Always On disponibilidade grupo.
 
-One example is to connect to the listener from one of the VMs in the same Azure virtual network (but not one that hosts a replica). An easy way to complete this test is to try to connect SQL Server Management Studio to the availability group listener. Another simple method is to run [SQLCMD.exe](https://technet.microsoft.com/library/ms162773.aspx), as follows:
+Um exemplo é para ligar ao serviço de escuta de uma das VMs na mesma rede virtual do Azure (mas não um que aloja uma réplica). Uma forma fácil para concluir este teste está a tentar estabelecer a ligação SQL Server Management Studio para o serviço de escuta do grupo de disponibilidade. Outro método simple está a ser executado [SQLCMD.exe](https://technet.microsoft.com/library/ms162773.aspx), da seguinte forma:
 
     sqlcmd -S "<ListenerName>,<EndpointPort>" -d "<DatabaseName>" -Q "select @@servername, db_name()" -l 15
 
 > [!NOTE]
-> If the EndpointPort value is *1433*, you are not required to specify it in the call. The previous call also assumes that the client machine is joined to the same domain and that the caller has been granted permissions on the database by using Windows authentication.
+> Se o valor de EndpointPort for *1433*, não é necessário especificá-la na chamada. A chamada anterior também assume que o computador de cliente está associado ao mesmo domínio e se o autor da chamada foram concedida as permissões na base de dados utilizando a autenticação do Windows.
 > 
 > 
 
-When you test the listener, be sure to fail over the availability group to make sure that clients can connect to the listener across failovers.
+Quando testar o serviço de escuta, lembre-se de que a ativação pós-falha o grupo de disponibilidade para se certificar de que os clientes podem ligar ao serviço de escuta em ativações pós-falha.
 

@@ -1,14 +1,14 @@
-### <a name="prerequisites"></a>Prerequisites
-* A [SMTP](https://wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) account  
+### <a name="prerequisites"></a>Pré-requisitos
+* A [SMTP](https://wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) conta  
 
-Before you can use your SMTP account in a logic app, you must authorize the logic app to connect to your SMTP account.Fortunately, you can do this easily from within your logic app on the Azure Portal.  
+Antes de poder utilizar a conta de SMTP numa aplicação lógica, tem de autorizar a aplicação lógica para ligar à sua conta de SMTP. Felizmente, pode fazê-facilmente na sua aplicação lógica no Portal do Azure.  
 
-Here are the steps to authorize your logic app to connect to your SMTP account:  
+Eis os passos para autorizar a aplicação lógica para ligar à sua conta de SMTP:  
 
-1. To create a connection to SMTP, in the logic app designer, select **Show Microsoft managed APIs** in the drop down list then enter *SMTP* in the search box. Select the trigger or action you'll like to use:  
+1. Para criar uma ligação a SMTP, no designer de aplicação lógica, selecione **Mostrar Microsoft APIs geridas** na lista pendente, em seguida, introduza *SMTP* na caixa de pesquisa. Selecione o acionador ou ação que irá gostar a utilizar:  
    ![](./media/connectors-create-api-smtp/smtp-1.png)  
-2. If you haven't created any connections to SMTP before, you'll get prompted to provide your SMTP credentials. These credentials will be used to authorize your logic app to connect to, and access your SMTP account's data:  
+2. Se ainda não criou quaisquer ligações a SMTP antes, irá obter lhe fornecer as credenciais de SMTP. Estas credenciais serão utilizadas para autorizar a aplicação lógica para ligar a e aceder aos dados da sua conta SMTP:  
    ![](./media/connectors-create-api-smtp/smtp-2.png)  
-3. Notice the connection has been created and you are now free to proceed with the other steps in your logic app:  
+3. Repare a ligação foi criada e está agora livre para continuar com os outros passos da sua aplicação lógica:  
    ![](./media/connectors-create-api-smtp/smtp-3.png)  
 

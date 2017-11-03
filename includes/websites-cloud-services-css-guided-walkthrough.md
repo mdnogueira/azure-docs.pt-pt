@@ -1,6 +1,6 @@
 
 > [!NOTE]
-> Get going faster--use the NEW Azure [guided walkthrough](http://support.microsoft.com/kb/2990804)!  It makes associating a custom domain name AND securing communication (SSL) with Azure Cloud Services or Azure App Service Web Apps a snap.
+> Começar mais rapidamente – utilize novo Azure [orientado instruções](http://support.microsoft.com/kb/2990804)!  Faz a associação de um nome de domínio personalizado e proteger comunicação (SSL) com Cloud Services do Azure ou as Web Apps do Azure App Service um snap.
 > 
 > 
 

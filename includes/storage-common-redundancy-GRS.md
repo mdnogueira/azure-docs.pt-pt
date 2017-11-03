@@ -1,55 +1,55 @@
-Geo-redundant storage (GRS) replicates your data to a secondary region that is hundreds of miles away from the primary region. If your storage account has GRS enabled, then your data is durable even in the case of a complete regional outage or a disaster in which the primary region is not recoverable.
+Armazenamento georredundante (GRS) replica os dados para uma região secundária centenas de quilómetros região primária. Se a sua conta do storage tiver GRS ativada, em seguida, os dados são duráveis mesmo em caso de uma falha regional completa ou de um desastre no qual a região primária não é recuperável.
 
-For a storage account with GRS enabled, an update is first committed to the primary region, where it is replicated three times. Then the update is replicated asynchronously to the secondary region, where it is also replicated three times.
+Para uma conta de armazenamento com a GRS ativada, uma atualização pela primeira vez é consolidada na região primária, em que estes são replicados três vezes. Em seguida, a atualização é replicada de forma assíncrona para a região secundária, onde também são replicado três vezes.
 
-With GRS, both the primary and secondary regions manage replicas across separate fault domains and upgrade domains within a storage scale unit as described with LRS.
+Com a GRS, regiões primários e secundários gerir réplicas em vários domínios de falhas separada e atualizar domínios dentro de uma unidade de escala de armazenamento, conforme descrito com LRS.
 
-Considerations:
+Considerações:
 
-* Since asynchronous replication involves a delay, in the event of a regional disaster it is possible that changes that have not yet been replicated to the secondary region will be lost if the data cannot be recovered from the primary region.
-* The replica is not available unless Microsoft initiates failover to the secondary region. If Microsoft does initiate a failover to the secondary region, you will have read and write access to that data after the failover has completed. For more information, please see [Disaster Recovery Guidance](../articles/storage/common/storage-disaster-recovery-guidance.md). 
-* If an application wants to read from the secondary region, the user should enable RA-GRS.
+* Uma vez que a replicação assíncrona envolve um atraso, na eventualidade de ocorrer um desastre regional é possível que as alterações que ainda não tem sido replicadas para a região secundária serão perdidas se não não possível recuperar os dados da região primária.
+* A réplica não está disponível, a menos que a Microsoft inicia a ativação pós-falha para a região secundária. Se o Microsoft inicie uma ativação pós-falha para a região secundária, será leu e acesso de escrita para que os dados após a ativação pós-falha foi concluída. Para obter mais informações, consulte [orientações de recuperação após desastre](../articles/storage/common/storage-disaster-recovery-guidance.md). 
+* Se pretender uma aplicação ao ler a partir da região secundária, o utilizador deve ativar RA-GRS.
 
-When you create a storage account, you select the primary region for the account. The secondary region is determined based on the primary region, and cannot be changed. The following table shows the primary and secondary region pairings.
+Quando cria uma conta de armazenamento, selecione a região primária para a conta. A região secundária é determinada com base na região primária e não pode ser alterada. A tabela seguinte mostra os emparelhamentos região primária e secundária.
 
-| Primary | Secondary |
+| Primária | Secundária |
 | --- | --- |
-| North Central US | South Central US |
-| South Central US | North Central US |
-| East US | West US |
-| West US | East US |
-| US East 2 | Central US |
-| Central US | US East 2 |
-| North Europe | West Europe |
-| West Europe | North Europe |
-| South East Asia | East Asia |
-| East Asia | South East Asia |
-| East China | North China |
-| North China | East China |
-| Japan East | Japan West |
-| Japan West | Japan East |
-| Brazil South | South Central US |
-| Australia East | Australia Southeast |
-| Australia Southeast | Australia East |
-| India South | India Central |
-| India Central | India South |
-| India West | India South |
-| US Gov Iowa | US Gov Virginia |
-| US Gov Virginia | US Gov Texas |
-| US Gov Texas | US Gov Arizona |
-| US Gov Arizona | US Gov Texas |
-| Canada Central | Canada East |
-| Canada East | Canada Central |
-| UK West | UK South |
-| UK South | UK West |
-| Germany Central | Germany Northeast |
-| Germany Northeast | Germany Central |
-| West US 2 | West Central US |
-| West Central US | West US 2 |
+| EUA Centro-Norte | EUA Centro-Sul |
+| EUA Centro-Sul | EUA Centro-Norte |
+| EUA Leste | EUA Oeste |
+| EUA Oeste | EUA Leste |
+| Este dos EUA 2 | EUA Central |
+| EUA Central | Este dos EUA 2 |
+| Europa do Norte | Europa Ocidental |
+| Europa Ocidental | Europa do Norte |
+| Sudeste Asiático | Ásia Oriental |
+| Ásia Oriental | Sudeste Asiático |
+| Leste da China | Norte da China |
+| Norte da China | Leste da China |
+| Leste do Japão | Oeste do Japão |
+| Oeste do Japão | Leste do Japão |
+| Sul do Brasil | EUA Centro-Sul |
+| Leste da Austrália | Sudeste da Austrália |
+| Sudeste da Austrália | Leste da Austrália |
+| Índia do Sul | Índia Central |
+| Índia Central | Índia do Sul |
+| Índia Ocidental | Índia do Sul |
+| Gov (US) - Iowa | Gov (US) - Virginia |
+| Gov (US) - Virginia | Gov (US) - Texas |
+| Gov (US) - Texas | Gov (US) - Arizona |
+| Gov (US) - Arizona | Gov (US) - Texas |
+| Canadá Central | Leste do Canadá |
+| Leste do Canadá | Canadá Central |
+| Reino Unido Oeste | Reino Unido Sul |
+| Reino Unido Sul | Reino Unido Oeste |
+| Alemanha Central | Alemanha Nordeste |
+| Alemanha Nordeste | Alemanha Central |
+| Oeste dos E.U.A 2 | EUA Centro-Oeste |
+| EUA Centro-Oeste | Oeste dos E.U.A 2 |
 
-For up-to-date information about regions supported by Azure, see [Azure regions](https://azure.microsoft.com/regions/).
+Para obter informações atualizadas sobre regiões suportadas pelo Azure, consulte [regiões do Azure](https://azure.microsoft.com/regions/).
 
 >[!NOTE]  
-> US Gov Virginia secondary region is US Gov Texas. Previously, US Gov Virginia utilized US Gov Iowa as a secondary region. Storage accounts still leveraging US Gov Iowa as a secondary region are being migrated to US Gov Texas as a seconday region. 
+> Região secundária do US Virginia EUA é Texas us-nos. Anteriormente, US-nos Virginia utilizados Iowa us-nos de como uma região secundária. As contas do Storage ainda tirar partido dos EUA us Iowa como uma região secundária estão a ser migradas para Texas us-nos como uma região secundário;. 
 > 
 > 

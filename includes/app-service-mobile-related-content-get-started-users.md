@@ -1,6 +1,6 @@
-* [App Service Authentication / Authorization overview](../articles/app-service/app-service-authentication-overview.md)
-* Add authentication to your Mobile App: [iOS][ios-get-started-users], [Android][android-get-started-users], [Windows Universal][windows-get-started-users], [Xamarin.Android][xamarin-android-get-started-users], [Xamarin.iOS][xamarin-ios-get-started-users], [Xamarin.Forms][xamarin-forms-get-started-users], [Cordova][cordova-get-started-users]  
-  Learn how to add App Service authenication to your mobile app.
+* [Autenticação do serviço de aplicações / descrição geral de autorização](../articles/app-service/app-service-authentication-overview.md)
+* Adicionar autenticação à sua aplicação móvel: [iOS][ios-get-started-users], [Android][android-get-started-users], [Windows Universal] [ windows-get-started-users], [Xamarin. Android][xamarin-android-get-started-users], [xamarin. IOS][xamarin-ios-get-started-users], [xamarin. Forms] [ xamarin-forms-get-started-users], [Cordova][cordova-get-started-users]  
+  Saiba como adicionar a autenticação do serviço de aplicações na sua aplicação móvel.
 
 [android-get-started-users]: ../articles/app-service-mobile/app-service-mobile-android-get-started-users.md
 [cordova-get-started-users]: ../articles/app-service-mobile/app-service-mobile-cordova-get-started-users.md

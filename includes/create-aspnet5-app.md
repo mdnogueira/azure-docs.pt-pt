@@ -1,6 +1,6 @@
-1. From the Visual Studio menu, select **File > New > Project**.
-2. Under the **Templates** section of the **New Project** dialog box, select **Visual C# > Web**.
-3. Select **ASP.NET Core Web Application (.NET Core)**.
-4. Give your new application a name (or take the default) and select **OK**.
-5. Under **ASP.NET Core 1.1 Templates**, select **Web Application** and select **OK**.
+1. A partir do menu do Visual Studio, selecione **ficheiro > novo > projeto**.
+2. Sob o **modelos** secção o **novo projeto** caixa de diálogo, selecione **Visual c# > Web**.
+3. Selecione **aplicação Web do ASP.NET Core (.NET Core)**.
+4. Dê um nome a sua nova aplicação (ou efetuar a predefinição) e selecione **OK**.
+5. Em **ASP.NET Core 1.1 modelos**, selecione **aplicação Web** e selecione **OK**.
 

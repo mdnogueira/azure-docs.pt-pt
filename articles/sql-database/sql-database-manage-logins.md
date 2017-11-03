@@ -1,5 +1,5 @@
 ---
-title: "Autenticação e Autorização da Base de Dados SQL | Microsoft Docs"
+title: "Inícios de sessão e utilizadores do SQL do Azure | Microsoft Docs"
 description: "Saiba mais sobre a gestão da segurança da Base de Dados SQL, mais concretamente como gerir o acesso às bases de dados e a segurança dos inícios de sessão através da conta principal ao nível do servidor."
 keywords: "segurança de base de dados sql,gestão de segurança da base de dados,segurança de início de sessão,segurança de base de dados,acesso de base de dados"
 services: sql-database
@@ -10,18 +10,18 @@ editor:
 tags: 
 ms.assetid: 0a65a93f-d5dc-424b-a774-7ed62d996f8c
 ms.service: sql-database
-ms.custom: authentication and authorization
+ms.custom: security
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: article
 ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 01/17/2017
+ms.workload: Active
+ms.date: 01/23/2017
 ms.author: rickbyh
-translationtype: Human Translation
-ms.sourcegitcommit: 435fca81cda845200467fbc0d6ed4d41de41aaf6
-ms.openlocfilehash: 324fd91b415a4744cb472bbd8a8b795a8fbb8080
-
-
+ms.openlocfilehash: 0e66eec6c1843df49d3dc323cd109fb9eeb708c3
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="controlling-and-granting-database-access"></a>Controlar e conceder acesso à base de dados
 
@@ -29,6 +29,12 @@ Quando as regras de firewall tiverem sido configuradas, as pessoas podem ligar a
 
 >  [!NOTE]  
 >  Este tópico aplica-se ao servidor SQL do Azure, bem como às bases de dados da Base de Dados SQL e do SQL Data Warehouse que são criadas no servidor SQL do Azure. Para simplificar, a Base de Dados SQL é utilizada para referenciar a Base de Dados SQL e o SQL Data Warehouse. 
+>
+
+> [!TIP]
+> Para um tutorial, consulte [proteger a base de dados do SQL do Azure](sql-database-security-tutorial.md).
+>
+
 
 ## <a name="unrestricted-administrative-accounts"></a>Contas administrativas sem restrições
 Existem duas contas administrativas (**Administrador de servidor** e **Administrador do Active Directory**) que atuam como administradores. Para identificar estas contas de administrador para o seu servidor SQL, abra o portal do Azure e navegue para as propriedades do servidor SQL.
@@ -50,10 +56,8 @@ As contas de **Administrador de servidor** e de **Administrador do Azure AD** t�
 - Estas contas podem adicionar e remover membros das funções `dbmanager` e `loginmanager`.
 - Estas contas podem ver a tabela de sistema `sys.sql_logins`.
 
-
-
 ### <a name="configuring-the-firewall"></a>Configurar a firewall
-Quando a firewall ao nível do servidor está configurada para um endereço IP individual ou intervalo de IP, o **administrador de servidor SQL** e o **administrador do Azure Active Directory** podem ligar-se à base de dados mestra e a todas as bases de dados de utilizador. A firewall ao nível do servidor inicial pode ser configurada através do [portal do Azure](sql-database-configure-firewall-settings.md), com o [PowerShell](sql-database-configure-firewall-settings-powershell.md) ou com a [API REST](sql-database-configure-firewall-settings-rest.md). Depois de estabelecida uma ligação, também podem ser configuradas regras de firewall ao nível do servidor adicionais através do [Transact-SQL](sql-database-configure-firewall-settings-tsql.md).
+Quando a firewall ao nível do servidor está configurada para um endereço IP individual ou intervalo de IP, o **administrador de servidor SQL** e o **administrador do Azure Active Directory** podem ligar-se à base de dados mestra e a todas as bases de dados de utilizador. A firewall ao nível do servidor inicial pode ser configurada através do [portal do Azure](sql-database-get-started-portal.md), com o [PowerShell](sql-database-get-started-powershell.md) ou com a [API REST](https://msdn.microsoft.com/library/azure/dn505712.aspx). Depois de estabelecida uma ligação, também podem ser configuradas regras de firewall ao nível do servidor adicionais através do [Transact-SQL](sql-database-configure-firewall-settings.md).
 
 ### <a name="administrator-access-path"></a>Caminho de acesso do administrador
 Quando a firewall ao nível do servidor está configurada corretamente, o **administrador de servidor SQL** e o **administrador do Azure Active Directory** podem ligar-se com ferramentas de cliente como o SQL Server Management Studio ou os SQL Server Data Tools. Só as ferramentas mais recentes proporcionam todas as funcionalidades e capacidades. O diagrama seguinte mostra uma configuração típica para as duas contas de administrador.
@@ -63,7 +67,7 @@ Quando a firewall ao nível do servidor está configurada corretamente, o **admi
 Quando utilizar uma porta aberta na firewall ao nível do servidor, os administradores podem ligar-se a qualquer Base de Dados SQL.
 
 ### <a name="connecting-to-a-database-by-using-sql-server-management-studio"></a>Ligar a uma base de dados com o SQL Server Management Studio
-Para ver uma introdução à criação de um servidor, uma base de dados, regras de firewall ao nível do servidor e à utilização do SQL Server Management Studio para consultar uma base de dados, veja [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started.md).
+Para ver uma introdução à criação de um servidor, uma base de dados, regras de firewall ao nível do servidor e à utilização do SQL Server Management Studio para consultar uma base de dados, veja [Introdução aos servidores, bases de dados e regras de firewall da Base de Dados SQL do Azure através do portal do Azure e do SQL Server Management Studio](sql-database-get-started-portal.md).
 
 > [!IMPORTANT]
 > É recomendado utilizar sempre a versão mais recente do Management Studio, para permanecer sincronizado com as atualizações do Microsoft Azure e da Base de Dados SQL. [Atualize o SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
@@ -185,14 +189,6 @@ Ao gerir inícios de sessão e utilizadores na Base de Dados SQL, considere o se
 
 - Para saber mais sobre regras de firewall, veja [Firewall da Base de Dados SQL do Azure](sql-database-firewall-configure.md).
 - Para obter uma descrição geral de todas as funcionalidades de segurança da Base de Dados SQL, veja a [Descrição geral da segurança de SQL](sql-database-security-overview.md).
-- Para ver um tutorial, veja [Introdução à segurança de SQL](sql-database-control-access-sql-authentication-get-started.md)
+- Para um tutorial, consulte [proteger a base de dados do SQL do Azure](sql-database-security-tutorial.md).
 - Para obter informações sobre vistas e procedimentos armazenados, veja [Creating views and stored procedures (Criar vistas e procedimentos armazenados)](https://msdn.microsoft.com/library/ms365311.aspx)
 - Para obter informações sobre como conceder acesso a um objeto de base de dados, veja [Granting Access to a Database Object (Conceder Acesso a um Objeto de Base de Dados)](https://msdn.microsoft.com/library/ms365327.aspx)
-- Para obter um tutorial sobre como utilizar a autenticação do SQL Server, veja [SQL Database tutorial: SQL Server authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do SQL Server, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-sql-authentication-get-started.md).
-- Para obter um tutorial sobre como utilizar a autenticação do Azure Active Directory, veja [SQL Database tutorial: AAD authentication, logins and user accounts, database roles, permissions, server-level firewall rules, and database-level firewall rules (Tutorial da Base de Dados SQL: autenticação do AAD, inícios de sessão e contas de utilizador, funções de base de dados, permissões, regras de firewall ao nível do servidor e regras de firewall ao nível da base de dados)](sql-database-control-access-aad-authentication-get-started.md).
-
-
-
-<!--HONumber=Jan17_HO3-->
-
-

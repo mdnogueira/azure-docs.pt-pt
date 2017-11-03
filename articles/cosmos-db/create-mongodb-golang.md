@@ -6,28 +6,29 @@ author: Durgaprasad-Budhwani
 manager: jhubbard
 editor: mimig1
 ms.service: cosmos-db
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 07/21/2017
 ms.author: mimig
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 138f04f8e9f0a9a4f71e43e73593b03386e7e5a9
-ms.openlocfilehash: a7da42f4b84b77ad0a82004a56f7712c31567449
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/28/2017
-
+ms.openlocfilehash: cb123107178f5e7c0207524c19331a6fa4658739
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-golang-and-the-azure-portal"></a>Azure Cosmos DB: criar uma aplicação de consola da API do MongoDB com o Golang e o portal do Azure
 
 O Azure Cosmos DB é um serviço de bases de dados com vários modelos e distribuído globalmente. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB.
 
-Este guia de introdução demonstra como utilizar uma aplicação [MongoDB](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction) existente escrita em [Golang](https://golang.org/) e como ligá-la à base de dados do Azure Cosmos DB, que suporta ligações de cliente da MongoDB.
+Este guia de introdução demonstra como utilizar uma aplicação [MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction) existente escrita em [Golang](https://golang.org/) e como ligá-la à base de dados do Azure Cosmos DB, que suporta ligações de cliente da MongoDB.
 
 Por outras palavras, a aplicação Golang sabe apenas que está a ligar a uma base de dados através das APIs do MongoDB. É transparente para a aplicação onde os dados são armazenados no Azure Cosmos DB.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Uma subscrição do Azure. Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free) antes de começar.
+- Uma subscrição do Azure. Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free) antes de começar. 
+
+  [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
+
 - O [Go](https://golang.org/dl/) e conhecimento básico da linguagem [Go](https://golang.org/).
 - Um IDE — [Gogland](https://www.jetbrains.com/go/) da Jetbrains, o [Visual Studio Code](https://code.visualstudio.com/) da Microsoft ou o [Atom](https://atom.io/). Neste tutorial, estamos a utilizar o Goglang.
 
@@ -244,4 +245,3 @@ Neste guia de introdução, aprendeu a criar uma conta do Azure Cosmos DB e a ex
 
 > [!div class="nextstepaction"]
 > [Import data into Azure Cosmos DB for the MongoDB API](mongodb-migrate.md) (Importar dados para o Azure Cosmos DB para a MongoDB API)
-

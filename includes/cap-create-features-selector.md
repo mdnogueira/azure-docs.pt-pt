@@ -1,8 +1,8 @@
 > [!div class="op_single_selector"]
-> * [Create features for data](../articles/machine-learning/team-data-science-process/create-features.md)
-> * [Create features for data in Azure blob storage](../articles/machine-learning/team-data-science-process/create-features-blob.md)
-> * [Create features for data in SQL Server](../articles/machine-learning/team-data-science-process/create-features-sql-server.md)
-> * [Create features for data in an Hadoop cluster using Hive queries](../articles/machine-learning/team-data-science-process/create-features-hive.md)
+> * [Criar as funcionalidades de dados](../articles/machine-learning/team-data-science-process/create-features.md)
+> * [Criar as funcionalidades de dados no armazenamento de Blobs do Azure](../articles/machine-learning/team-data-science-process/create-features-blob.md)
+> * [Criar as funcionalidades de dados no SQL Server](../articles/machine-learning/team-data-science-process/create-features-sql-server.md)
+> * [Criar as funcionalidades para dados de um cluster de Hadoop através de consultas do Hive](../articles/machine-learning/team-data-science-process/create-features-hive.md)
 > 
 > 
 

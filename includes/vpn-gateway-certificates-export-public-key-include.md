@@ -1,7 +1,7 @@
-Point-to-Site connections require the certificate public key .cer file (not the private key) to be uploaded to Azure. The following steps help you export the .cer file for your self-signed root certificate:
+As ligações ponto a Site requerem o ficheiro. cer de chave pública do certificado (não a chave privada) para ser carregado para o Azure. Os seguintes passos ajudam a exportar o ficheiro. cer para o seu certificado de raiz autoassinado:
 
-1. To obtain a .cer file from the certificate, open **Manage user certificates**. Locate the self-signed root certificate, typically in 'Certificates - Current User\Personal\Certificates', and right-click. Click **All Tasks**, and then click **Export**. This opens the **Certificate Export Wizard**.
-2. In the Wizard, click **Next**. Select **No, do not export the private key**, and then click **Next**.
-3. On the **Export File Format** page, select **Base-64 encoded X.509 (.CER).**, and then click **Next**. 
-4. On the **File to Export**, **Browse** to the location to which you want to export the certificate. For **File name**, name the certificate file. Then, click **Next**.
-5. Click **Finish** to export the certificate. You see **The export was successful**. Click **OK** to close the wizard.
+1. Para obter um ficheiro .cer a partir do certificado, abra **Gerir certificados de utilizador**. Localize o certificado de raiz autoassinado, normalmente em ''Certificates - Current User\Personal\Certificates'', e clique com o botão direito do rato. Clique em **Todas as Tarefas** e, em seguida, clique em **Exportar**. Esta ação abre o **Assistente para Exportar Certificados**.
+2. No Assistente, clique em **Seguinte**. Selecione **Não, não exportar a chave privada** e, em seguida, clique em **Seguinte**.
+3. Na página **Formato do Ficheiro de Exportação**, selecione **X.509 codificado com Base-64 (.CER).** e, em seguida, clique em **Seguinte**. 
+4. Em **Ficheiro a Exportar**, **Navegue** até à localização para a qual pretende exportar o certificado. Em **Nome do ficheiro**, atribua um nome ao ficheiro de certificado. Clique depois em **Seguinte**.
+5. Clique em **Concluir** para exportar o certificado. Verá **a exportação foi bem-sucedida**. Clique em **OK** para fechar o assistente.

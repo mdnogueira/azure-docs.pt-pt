@@ -1,20 +1,20 @@
 
 > [!NOTE] 
-> Previews are made available to you on the condition that you agree to the terms of use. For more information, see [Microsoft Azure Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-> This preview is limited to the following regions:
-> - US - West 2
-> - US - East
-> - Europe - West
-> - Asia Pacific - Southeast
+> Pré-visualizações ficam disponíveis para si condition que aceita os termos de utilização. Para obter mais informações, consulte [Termos de Utilização Suplementares do Microsoft Azure para Pré-visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Esta pré-visualização está limitada às seguintes regiões:
+> - -NOS - oeste 2
+> - -NOS - leste
+> - Europa - Oeste
+> - Ásia-Pacífico - Southeast
 
 
-The B-series VM family allows you to choose which VM size provides you the necessary base level performance for your workload, with the ability to burst CPU performance up to 100% of an Intel® Broadwell E5-2673 v4 2.3GHz, or an Intel® Haswell 2.4 GHz E5-2673 v3 processor vCPU.
+A família VM de série B permite-lhe escolher o tamanho da VM que fornece-lhe o desempenho de nível de base necessário para a carga de trabalho, a capacidade de impulsar desempenho da CPU de até 100% de um v4 Intel® Broadwell E5-2673 2.3 GHz ou um processador de v3 Intel® Haswell 2.4 GHz E5-2673 vCPU.
 
-The B-series VMs are ideal for workloads that do not need the full performance of the CPU continuously, like web servers, small databases and development and test environments. These workloads typically have burstable performance requirements. The B-series provides you with the ability to purchase a VM size with baseline performance and the VM instance builds up credits when it is using less than its baseline. When the VM has accumulated credit, it VM can burst above the baseline using up to 100% of the vCPU when your application requires higher CPU performance.
+As VMs de série B são ideais para cargas de trabalho que não tem o desempenho total da CPU continuamente, como servidores web, desenvolvimento de bases de dados pequenas e ambientes de teste. Estas cargas de trabalho normalmente têm requisitos de desempenho burstable. A série B fornece-lhe a possibilidade de comprar um tamanho VM com o desempenho da linha de base e a instância VM cria créditos quando está a utilizar menor do que a linha de base. Quando a VM terem sido acumulados crédito, a VM pode impulsar acima a linha de base com até 100% do vCPU, quando a aplicação requer um desempenho superior da CPU.
 
-The B-series comes in the following six VM sizes:
+A série B é apresentada nos tamanhos VM de seis seguintes:
 
-| Size          | vCPU's | Memory: GiB | Local SSD: GiB | Base CPU Perf of VM | Max CPU Perf of VM | Credits Banked / Hour | Max Banked Credits |
+| Tamanho          | do vCPU | Memória: GiB | SSD Local: GiB | Base de CPU de desempenho da VM | Desempenho de CPU máx. de VM | Créditos Banked / hora | Os créditos de Banked máx. |
 |---------------|--------|-------------|----------------|--------------------------------|---------------------------|-----------------------|--------------------|
 | Standard_B1s  | 1      | 1           | 4              | 10%                            | 100%                      | 6                     | 144                |
 | Standard_B1ms | 1      | 2           | 4              | 20%                            | 100%                      | 12                    | 288                |
@@ -26,46 +26,46 @@ The B-series comes in the following six VM sizes:
 
 
 
-## <a name="q--a-about-this-preview"></a>Q & A about this preview
+## <a name="q--a-about-this-preview"></a>As perguntas e respostas sobre esta pré-visualização
 
-### <a name="q-how-can-i-participate-in-this-preview"></a>Q: How can I participate in this preview?
-**A**: Request quota for the B-series in one of the supported regions.  After your quota has been approved then you can use the portal or the APIs to do your deployment as you normally would. For more information, see [Resource Manager core quota increase requests](../articles/azure-supportability/resource-manager-core-quotas-request.md).
+### <a name="q-how-can-i-participate-in-this-preview"></a>P: como podem participar nesta pré-visualização?
+**A**: pedido de quota para a série de B das regiões suportadas.  Após a sua quota tiver sido aprovada, em seguida, pode utilizar o portal ou as APIs para efetuar a implementação como normalmente seriam. Para obter mais informações, consulte [aumentar a quota de núcleos de Gestor de recursos pedidos](../articles/azure-supportability/resource-manager-core-quotas-request.md).
 
-### <a name="q-how-do-you-get-135-baseline-performance-from-a-vm"></a>Q: How do you get 135% baseline performance from a VM?
-**A**: The 135% is shared amongst the 8 vCPU’s that make up the VM size. For example, if your application leverages 4 of the 8 cores working on batch processing and each of those 4 vCPU’s are running at 30% utilization the total amount of VM CPU performance would equal 120%.  Meaning that your VM would be building credit time based on the 15% delta from your baseline performance.  But it also means that when you have credits available that same VM can use 100% of all 8 vCPU’s giving that VM a Max CPU performance of 800%.
+### <a name="q-how-do-you-get-135-baseline-performance-from-a-vm"></a>P: como é obter o desempenho da linha de base de 135% de uma VM?
+**A**: 135% é partilhado entre a 8 vCPU que compõem o tamanho da VM. Por exemplo, se 4 os 8 núcleos de trabalhar no processamento em lote tira partido da sua aplicação e cada um desses 4 vCPU são executadas em 30% de utilização a quantidade total de desempenho de VM CPU seria igual a % de 120.  O que significa que a VM iria criar tempo de crédito com base no delta de 15% do desempenho da sua linha de base.  Mas também significa que se tiver disponíveis que mesma VM pode utilizar a 100% de vCPU 8 todos os créditos da fornecer essa VM de desempenho de CPU máx. de 800%.
 
-### <a name="q-is-there-a-discount-on-price-during-the-preview"></a>Q: Is there a discount on price during the preview?
-**A**: Yes, the preview prices can be viewed on our [pricing page](http://aka.ms/vmsizes).
+### <a name="q-is-there-a-discount-on-price-during-the-preview"></a>P: existe um desconto no preço durante a pré-visualização?
+**A**: Sim, os preços da pré-visualização podem ser visualizados no nosso [página de preços](http://aka.ms/vmsizes).
 
-### <a name="q-how-can-i-monitor-my-credit-balance-and-consumption"></a>Q: How can I monitor my credit balance and consumption
-**A**: We will be introducing 2 new metrics in the coming weeks, the **Credit** metric will allow you to view how many credits your VM has banked and the **ConsumedCredit** metric will show how many CPU credits your VM has consumed from the bank.    You will be able to view these metrics from the metrics pane in the portal or programmatically through the Azure Monitor APIs.
+### <a name="q-how-can-i-monitor-my-credit-balance-and-consumption"></a>P: como posso monitorizar as minhas saldo do crédito e consumo
+**A**: podemos irá introduzir 2 nova métrica nas próximas semanas, o **crédito** métrica irá permitir-lhe ver quantas créditos a VM tem banked e o **ConsumedCredit** métrica mostra quantos Créditos de CPU VM consumiu do banco.    Poderá ver estas métricas no painel de métricas no portal ou de forma programática através das APIs do Monitor do Azure.
 
-For more information on how to access the metrics data for Azure, see [Overview of metrics in Microsoft Azure](../articles/monitoring-and-diagnostics/monitoring-overview-metrics.md).
+Para obter mais informações sobre como aceder aos dados de métricas para o Azure, consulte [descrição geral das métricas no Microsoft Azure](../articles/monitoring-and-diagnostics/monitoring-overview-metrics.md).
 
-### <a name="q-how-are-credits-accumulated"></a>Q: How are credits accumulated?
-**A**: The VM accumulation and consumption rates are set such that a VM running at exactly its base performance level will have neither a net accumulation or consumption of bursting credits.  A VM will have a net increase in credits whenever it is running below its base performance level and will have a net decrease in credits whenever the VM is utilizing the CPU more than its base performance level.
+### <a name="q-how-are-credits-accumulated"></a>P: como são acumulados créditos?
+**A**: taxas de VM a acumulação e o consumo de estão definidas de forma a que uma VM em execução no exatamente o nível de desempenho de base terá nem uma acumulação de rede ou o consumo de segurança créditos.  Uma VM tem um aumento net em créditos sempre que se encontra em execução abaixo o nível de desempenho de base e terá um decréscimo net em créditos sempre que a VM está a utilizar a CPU mais do que o nível de desempenho de base.
 
-**Example**:  I deploy a VM using the B1ms size for my small time and attendance database application. This size allows my application to use up to 20% of a vCPU as my baseline, which is .2 credits per minute I can use or bank. 
+**Exemplo**: implementar uma VM com o tamanho de B1ms para a minha aplicação de base de dados do tempo de pequena e assistência. Este tamanho permite que a minha aplicação utilizar até 20% de um vCPU como o meu da linha de base, que é.2 créditos por minuto, que pode utilizar ou bank. 
 
-My application is busy at the beginning and end of my employees work day, between 7:00-9:00 AM and 4:00 - 6:00PM. During the other 20 hours of the day, my application is typically at idle, only using 10% of the vCPU. For the non-peak hours I earn 0.2 credits per minute but only consume 0.l credits per minute, so my VM will bank .1 x 60 = 6 credits per hour.  For the 20 hours that I am off-peak, I will bank 120 credits.  
+A minha aplicação está ocupada no início e fim do dia de trabalho meu funcionários, entre 7:00-09:00:00 e 4:00-18:00:00. Durante as outras 20 horas do dia, a minha aplicação está normalmente em inatividade, apenas a utilizar 10% do vCPU. Para as horas de pico posso mais significativos beneficiar 0.2 créditos por minuto, mas apenas consumir 0.l créditos por minuto, pelo que a minha VM será bank.1 x 60 = 6 créditos por hora.  Para as horas de 20 que estou ponta, posso será bank 120 créditos.  
 
-During peak hours my application averages 60% vCPU utilization, I still earn 0.2 credits per minute but I consume 0.6 credits per minute, for a net cost of .4 credits a minute or .4 x 60 = 24 credits per hour. I have 4 hours per day of peak usage, so it costs 4 x 24 = 96 credits for my peak usage.
+Durante o horário de pico a minha aplicação averages 60% de utilização de vCPU, posso ainda mais significativos beneficiar de 0.2 créditos por minuto mas consigo consumir 0,6 créditos por minuto, um custo net de.4 créditos um minuto ou.4 x 60 = 24 créditos por hora. Tenho de 4 horas por dia de utilização das horas de ponta, para que os custos de 24 x 4 = 96 créditos para os meus utilização máxima.
 
-If I take the 120 credits I earned off-peak and subtract the 96 credits I used for my peak times, I bank an additional 24 credits per day that I can use for other bursts of activity.
+Se efetuar os 120 créditos que posso resultantes ponta e subtrair os 96 créditos que posso utilizado para a minha ponta, posso bank um créditos 24 adicionais por dia que podem ser utilizados para outros bursts da atividade.
 
 
-### <a name="q-does-the-b-series-support-premium-storage-data-disks"></a>Q: Does the B-Series support Premium Storage data disks?
-**A**: Yes, all B-Series sizes support Premium Storage data disks.   
+### <a name="q-does-the-b-series-support-premium-storage-data-disks"></a>P: B-série suporta discos de dados de Premium Storage?
+**A**: Sim, todos os tamanhos de série B suportam discos de dados de armazenamento Premium.   
     
 
-### <a name="q-which-regions-can-i-access-the-preview-from"></a>Q: Which regions can I access the preview from?
-**A**:  The B-series preview will be available in the following regions:
-- US - West 2
-- US - East
-- Europe - West
-- Asia Pacific - Southeast
+### <a name="q-which-regions-can-i-access-the-preview-from"></a>P: quais regiões posso aceder à pré-visualização do?
+**A**: A pré-visualização de série B estarão disponível as seguintes regiões:
+- -NOS - oeste 2
+- -NOS - leste
+- Europa - Oeste
+- Ásia-Pacífico - Southeast
 
-After the preview has completed we will release the B-series to all remaining regions.
+Uma vez concluída a pré-visualização Lançamos a série de B a todas as regiões restantes.
     
 
     

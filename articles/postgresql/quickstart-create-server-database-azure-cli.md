@@ -1,21 +1,20 @@
 ---
 title: Criar uma Base de Dados do Azure para PostgreSQL com a CLI do Azure | Microsoft Docs
-description: "Guia de introdução para criar e gerir a Base de Dados do Azure para o servidor PostgreSQL com a CLI (interface de linha de comandos) do Azure."
+description: "Guia de início rápido para criar e gerir a base de dados do Azure para o servidor de PostgreSQL utilizando a CLI do Azure (interface de linha de comandos)."
 services: postgresql
 author: sanagama
 ms.author: sanagama
 manager: jhubbard
 editor: jasonwhowell
-ms.service: postgresql-database
+ms.service: postgresql
 ms.devlang: azure-cli
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 06/13/2017
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4f68f90c3aea337d7b61b43e637bcfda3c98f3ea
-ms.openlocfilehash: b2be9e265075c58ed53a0a49c01a08e05db35a06
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/20/2017
-
+ms.openlocfilehash: f51964687e2fbbcca4f5623b56997dc8acfa78a6
+ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="create-an-azure-database-for-postgresql-using-the-azure-cli"></a>Criar uma Base de Dados do Azure para PostgreSQL com a CLI do Azure
 A Base de Dados do Azure para o PostgreSQL é um serviço gerido que lhe permite executar, gerir e dimensionar as bases de dados de alta disponibilidade do PostgreSQL na cloud. A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia de introdução mostra-lhe como criar uma Base de Dados do Azure para o servidor PostgreSQL num [grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) com a CLI do Azure.
@@ -25,6 +24,11 @@ Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
 Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+
+Se estiver a executar o CLI localmente, terá de iniciar sessão na sua conta ao utilizar o [início de sessão az](/cli/azure/authenticate-azure-cli?view=interactive-log-in) comando.
+```azurecli-interactive
+az login
+```
 
 Se tiver várias subscrições, escolha a subscrição adequada na qual o recurso vai ser cobrado. Selecione um ID de subscrição específica na sua conta com o comando [az account set](/cli/azure/account#set).
 ```azurecli-interactive
@@ -151,18 +155,17 @@ Para ligar ao servidor PostgreSQL do Azure com a ferramenta _pgAdmin_ da GUI
 Limpe todos os recursos que criou no guia de introdução ao eliminar o [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
 > [!TIP]
-> Serão criados outros guias de introdução nesta coleção através deste guia. Se quiser continuar a trabalhar com os guias de introdução subsequentes, não limpe os recursos criados neste guia. Se não quiser continuar, utilize os passos seguintes para eliminar todos os recursos criados por este guia de introdução na CLI do Azure.
+> Outros guias de introdução desta coleção têm por base este guia de introdução. Se pretender continuar a trabalhar com inícios rápidos subsequentes, não limpeza até os recursos criados neste guia de introdução. Se não quiser continuar, utilize os passos seguintes para eliminar todos os recursos criados por este guia de introdução na CLI do Azure.
 
 ```azurecli-interactive
 az group delete --name myresourcegroup
 ```
 
-Se pretende eliminar o único servidor criado recentemente, pode executar o comando [az postgres server delete](/cli/azure/postgres/server#delete).
+Se apenas pretende eliminar o um servidor recentemente criado, pode executar [delete de servidor az postgres](/cli/azure/postgres/server#delete) comando.
 ```azurecli-interactive
 az postgres server delete --resource-group myresourcegroup --name mypgserver-20170401
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
-> [Migrar a base de dados com as opções Exportar e Importar](./howto-migrate-using-export-and-import.md)
-
+> [Migrar a base de dados com Exportar e Importar](./howto-migrate-using-export-and-import.md)

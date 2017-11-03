@@ -9,19 +9,18 @@ manager: jhubbard
 editor: cjgronlund
 ms.assetid: 7467f422-b77d-4b60-9cb5-0f1ec17ec565
 ms.service: sql-database
-ms.custom: compare
-ms.workload: data-management
+ms.custom: DBs & servers
+ms.workload: Active
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: article
 ms.date: 02/01/2017
 ms.author: carlrab
-translationtype: Human Translation
-ms.sourcegitcommit: e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d
-ms.openlocfilehash: 48e95d51cb9414fb5ff50e587645ee6fd46abd5b
-ms.lasthandoff: 04/15/2017
-
-
+ms.openlocfilehash: 436166fcb0fa9103c6b702b63d93a0b222d536d0
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="choose-a-cloud-sql-server-option-azure-sql-paas-database-or-sql-server-on-azure-vms-iaas"></a>Escolha uma opção de SQL Server na nuvem: Base de Dados SQL (PaaS) do Azure ou SQL Server em VMs (IaaS) do Azure
 O Azure tem duas opções para alojar cargas de trabalho do SQL Server no Microsoft Azure:
@@ -64,13 +63,12 @@ A tabela seguinte resume as principais caraterísticas da Base de Dados SQL e do
 | --- | --- | --- |
 |  |Novas aplicações concebidas na nuvem que têm restrições de tempo em termos de desenvolvimento e marketing. |Aplicações existentes que necessitam de migração rápida para a nuvem com alterações mínimas. Cenários de desenvolvimento e teste rápidos quando não pretende comprar hardware de SQL Server de não produção no local. |
 |  | Equipas que necessitam de atualizações, recuperação após desastre e elevada disponibilidade para a base de dados. |Equipas que podem configurar e gerir a elevada disponibilidade, a recuperação após desastre e a aplicação de patches do SQL Server. Algumas das funcionalidades automatizadas fornecidas simplificam-no significativamente. | |
-|  | Equipas que não pretendem gerir o sistema operativo subjacente e definições de configuração. |Se precisar de um ambiente personalizado com direitos administrativos completos. | |
-|  | Bases de dados com até 1 TB ou bases de dados maiores que podem ser [particionadas horizontal ou verticalmente](sql-database-elastic-scale-introduction.md#horizontal-and-vertical-scaling) com um padrão de escalamento horizontal. |Instâncias do SQL Server com até 64 TB de armazenamento. A instância pode suportar tantas bases de dados quanto necessário. | |
-|  | [Criar aplicações SaaS (Software como serviço)](sql-database-design-patterns-multi-tenancy-saas-applications.md). |Migrar e criar aplicações empresariais e híbridas. | |
+|  | Equipas que não pretendem gerir o sistema operativo subjacente e definições de configuração. |Precisa de um ambiente personalizado com direitos administrativos completos. | |
+|  | Bases de dados de até 4 TB ou bases de dados maiores que podem ser [particionadas horizontal ou verticalmente](sql-database-elastic-scale-introduction.md#horizontal-and-vertical-scaling) utilizando um padrão de escalamento horizontal. |Instâncias do SQL Server com até 64 TB de armazenamento. A instância pode suportar tantas bases de dados quanto necessário. | |
 |  | | |
 | **Recursos:** |Não pretende utilizar recursos de TI para configuração e gestão da infraestrutura subjacente, mas pretende focar-se na camada da aplicação. |Tem alguns recursos de TI para a configuração e gestão. Algumas das funcionalidades automatizadas fornecidas simplificam-no significativamente. |
 | **Custo total de propriedade:** |Elimina os custos de hardware e reduz os custos administrativos. |Elimina os custos com hardware. |
-| **Continuidade do negócio:** |Para além das capacidades de infraestrutura de tolerância a falhas incorporadas, a Base de Dados SQL do Azure fornece funcionalidades, tais como [cópias de segurança automatizadas](sql-database-automated-backups.md), [Restauro para um ponto anterior no tempo](sql-database-recovery-using-backups.md#point-in-time-restore), [Georrestauro](sql-database-recovery-using-backups.md#geo-restore) e [Georreplicação Ativa](sql-database-geo-replication-overview.md), para aumentar a continuidade do negócio. Para obter mais informações, consulte [Descrição geral da continuidade de negócio da Base de Dados SQL](sql-database-business-continuity.md). |O SQL Server em VMs do Azure permite configurar uma solução de elevada disponibilidade e recuperação após desastre para as necessidades específicas da sua base de dados. Assim, poderá ter um sistema que está altamente otimizado para a sua aplicação. Pode testar e executar ativações pós-falha sempre que necessário. Para obter mais informações, consulte [Elevada Disponibilidade e Recuperação Após Desastre do SQL Server em Azure Virtual Machines](../virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr.md). |
+| **Continuidade do negócio:** |Para além das capacidades de infraestrutura de tolerância a falhas incorporadas, SQL Database do Azure fornece funcionalidades, tais como [cópias de segurança automatizadas](sql-database-automated-backups.md), [no momento restauro](sql-database-recovery-using-backups.md#point-in-time-restore), [georrestauro](sql-database-recovery-using-backups.md#geo-restore), e [georreplicação ativa](sql-database-geo-replication-overview.md) para aumentar a continuidade do negócio. Para obter mais informações, consulte [Descrição geral da continuidade de negócio da Base de Dados SQL](sql-database-business-continuity.md). |O SQL Server em VMs do Azure permite configurar uma solução de elevada disponibilidade e recuperação após desastre para as necessidades específicas da sua base de dados. Assim, poderá ter um sistema que está altamente otimizado para a sua aplicação. Pode testar e executar ativações pós-falha sempre que necessário. Para obter mais informações, consulte [Elevada Disponibilidade e Recuperação Após Desastre do SQL Server em Azure Virtual Machines](../virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr.md). |
 | **Nuvem híbrida:** |A sua aplicação no local pode aceder a dados na Base de Dados SQL do Azure. |Com o SQL Server em VMs do Azure, pode ter aplicações que são executadas parcialmente na nuvem e parcialmente no local. Por exemplo, pode expandir a sua rede no local e o Domínio do Active Directory para a nuvem através da [Rede Virtual do Azure](../virtual-network/virtual-networks-overview.md). Além disso, pode armazenar ficheiros de dados no local no Armazenamento do Azure, utilizando [Ficheiros de Dados do SQL Server no Azure](http://msdn.microsoft.com/library/dn385720.aspx). Para obter mais informações, consulte [Introdução à Nuvem Híbrida do SQL Server 2014](http://msdn.microsoft.com/library/dn606154.aspx). |
 |  | Suporta a [replicação transacional do SQL Server](https://msdn.microsoft.com/library/mt589530.aspx) como um subscritor para replicar os dados. |Suporta totalmente a [replicação transacional do SQL Server](https://msdn.microsoft.com/library/mt589530.aspx), [Grupos de Disponibilidade AlwaysOn](../virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr.md), Serviços de Integração e Envio de Registo para replicar dados. Além disso, as cópias de segurança do SQL Server tradicionais são totalmente suportadas | |
 |  | | |
@@ -139,12 +137,11 @@ Opte pela **Base de Dados SQL do Azure** se:
 
 Opte pelo **SQL Server em VMs do Azure** se:
 
-* tem aplicações no local existentes que pretende migrar ou expandir para a nuvem ou pretende criar aplicações empresariais superiores a 1 TB. Esta abordagem oferece o benefício de compatibilidade SQL de 100%, capacidade de base de dados de grandes dimensões, controlo total sobre o SQL Server e sobre o Windows e túnel seguro no local. Esta abordagem minimiza os custos de programação e de modificação de aplicações existentes.
+* Tiver aplicações no local que pretende migrar ou expandir para a nuvem, ou se pretender criar aplicações da empresa com mais de 4 TB. Esta abordagem oferece o benefício de compatibilidade SQL de 100%, capacidade de base de dados de grandes dimensões, controlo total sobre o SQL Server e sobre o Windows e túnel seguro no local. Esta abordagem minimiza os custos de programação e de modificação de aplicações existentes.
 * tiver os recursos de TI existentes e pode, em última análise, se proprietário da aplicação de patches, de cópias de segurança e de base de dados de elevada disponibilidade. Repare que algumas funcionalidades automatizadas simplificam significativamente estas operações. 
 
 ## <a name="next-steps"></a>Passos seguintes
 * Consulte [A sua primeira Base de Dados SQL do Azure](sql-database-get-started-portal.md) para começar a utilizar a Base de Dados SQL.
 * Consulte [Preços de Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 * Consulte [Aprovisionar uma máquina virtual do SQL Server no Azure](../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md) para começar a utilizar o SQL Server em VMs do Azure.
-
 

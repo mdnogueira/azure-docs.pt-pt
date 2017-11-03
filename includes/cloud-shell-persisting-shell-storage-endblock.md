@@ -1,19 +1,19 @@
-## <a name="transfer-local-files-to-cloud-shell"></a>Transfer local files to Cloud Shell
-The `clouddrive` directory syncs with the Azure portal storage blade. Use this blade to transfer local files to or from your file share. Updating files from within Cloud Shell is reflected in the file storage GUI when you refresh the blade.
+## <a name="transfer-local-files-to-cloud-shell"></a>Transferência de ficheiros locais para a Shell de nuvem
+O `clouddrive` diretório sincroniza-se com o painel do portal de armazenamento do Azure. Utilize este painel para transferir os ficheiros de locais de ou para a partilha de ficheiros. Atualizar ficheiros a partir de Shell de nuvem é refletida no armazenamento de ficheiros GUI quando atualizar o painel.
 
-### <a name="download-files"></a>Download files
+### <a name="download-files"></a>Transferir ficheiros
 
-![List of local files](../articles/cloud-shell/media/persisting-shell-storage/download.png)
-1. In the Azure portal, go to the mounted file share.
-2. Select the target file.
-3. Select the **Download** button.
+![Lista de ficheiros locais](../articles/cloud-shell/media/persisting-shell-storage/download.png)
+1. No portal do Azure, aceda à partilha de ficheiros montada.
+2. Selecione o ficheiro de destino.
+3. Selecione o **transferir** botão.
 
-### <a name="upload-files"></a>Upload files
+### <a name="upload-files"></a>Carregar ficheiros
 
-![Local files to be uploaded](../articles/cloud-shell/media/persisting-shell-storage/upload.png)
-1. Go to your mounted file share.
-2. Select the **Upload** button.
-3. Select the file or files that you want to upload.
-4. Confirm the upload.
+![Ficheiros de locais para ser carregado](../articles/cloud-shell/media/persisting-shell-storage/upload.png)
+1. Vá para a partilha de ficheiros montada.
+2. Selecione o **carregar** botão.
+3. Selecione o ficheiro ou ficheiros que pretende carregar.
+4. Confirme o carregamento.
 
-You should now see the files that are accessible in your `clouddrive` directory in Cloud Shell.
+Deverá ver agora os ficheiros que estão acessíveis no seu `clouddrive` diretório na Cloud Shell.

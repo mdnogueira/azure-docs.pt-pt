@@ -1,18 +1,18 @@
-In this walk-through, you will learn how to use the **Salesforce - When an object is created** trigger to initiate a logic app workflow when a new lead is created in your Salesforce.
+Esta passagem, irá aprender a utilizar o **Salesforce - quando é criado um objecto** trigger para iniciar um fluxo de trabalho de aplicação lógica, quando é criado um novo fabrico no Salesforce.
 
 > [!NOTE]
-> You will get prompted to sign into your Salesforce account if you have not already created a *connection* to Salesforce.  
+> Obter-á pedido para iniciar sessão na sua conta do Salesforce, se não tiver já criado uma *ligação* Salesforce.  
 > 
 > 
 
-1. Enter *salesforce* in the search box on the logic apps designer then select the **Salesforce - When an object is created**  trigger.  
-   ![Salesforce trigger image 1](./media/connectors-create-api-salesforce/trigger-1.png)   
-2. The **When an object is created** control is displayed.  
-   ![Salesforce trigger image 2](./media/connectors-create-api-salesforce/trigger-2.png)   
-3. Select the **Object Type** then select *Lead* from the list of objects. In this step you are indicating that you are creating a trigger that will notify your logic app whenever a new lead is created in Salesforce.   
-   ![Salesforce trigger image 3](./media/connectors-create-api-salesforce/trigger-3.png)   
-4. That's it. You've created the trigger. However, you need to create at least one action in order to make this a valid logic app.    
-   ![Salesforce trigger image 4](./media/connectors-create-api-salesforce/trigger-4.png)   
+1. Introduza *salesforce* na caixa de pesquisa no designer de aplicações lógicas, em seguida, selecione o **Salesforce - quando é criado um objecto** acionador.  
+   ![Imagem de Acionador de Salesforce 1](./media/connectors-create-api-salesforce/trigger-1.png)   
+2. O **quando é criado um objecto** controlo é apresentado.  
+   ![Imagem de Acionador de Salesforce 2](./media/connectors-create-api-salesforce/trigger-2.png)   
+3. Selecione o **tipo de objeto** , em seguida, selecione *levar* da lista de objetos. Neste passo, é com a indicação de que está a criar um acionador que irá notificar a sua aplicação lógica sempre que é criado um novo fabrico no Salesforce.   
+   ![Imagem de Acionador de Salesforce 3](./media/connectors-create-api-salesforce/trigger-3.png)   
+4. E já está. Criou o acionador. No entanto, terá de criar pelo menos uma ação para tornar esta uma aplicação lógica válida.    
+   ![Imagem de Acionador de Salesforce 4](./media/connectors-create-api-salesforce/trigger-4.png)   
 
-At this point, your logic app has been configured with a trigger that will begin a run of the other triggers and actions in the workflow when a new item is created in your Salesforce.  
+Neste momento, a aplicação lógica foi configurada com um acionador que começará a execução dos outros acionadores e ações no fluxo de trabalho é criado um novo item na sua Salesforce.  
 

@@ -9,19 +9,18 @@ manager: jhubbard
 editor: cgronlun
 ms.assetid: c561f600-a292-4e3b-b1d4-8ab89b81db48
 ms.service: sql-database
-ms.custom: overview
+ms.custom: overview, mvc
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: overview
 ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 06/30/2017
+ms.workload: Active
+ms.date: 09/20/2017
 ms.author: carlrab
-ms.translationtype: HT
-ms.sourcegitcommit: 137671152878e6e1ee5ba398dd5267feefc435b7
-ms.openlocfilehash: 54aa8c2f738ef92c211462498103d368e4cb4c5c
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: f97a1e7977e28765985991ba9e38ed4618e00bda
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="what-is-the-azure-sql-database-service"></a>O que é o serviço Base de Dados SQL do Azure? 
 
@@ -85,16 +84,20 @@ O contrato de nível de serviço [(SLA)](http://azure.microsoft.com/support/lega
 
 Com a Base de Dados SQL, pode tirar partido da inteligência incorporada que o ajuda a reduzir significativamente os custos de execução e gestão de bases de dados e que maximiza, tanto o desempenho, como a segurança, da sua aplicação. Executando milhões de cargas de trabalho dos clientes ininterruptamente, a Base de Dados SQL recolhe e processa uma gigantesca quantidade de dados de telemetria, respeitando também totalmente a privacidade dos clientes em segundo plano. Vários algoritmos avaliam continuamente os dados de telemetria, de modo a que o serviço possa aprender e adaptar-se com a sua aplicação. Com babe nestas análises, o serviço oferece recomendações de melhoria do desempenho, personalizadas à medida da sua carga de trabalho específica. 
 
-### <a name="automatic-performance-tuning"></a>Otimização de desempenho automática
+### <a name="automatic-performance-monitoring-and-tuning"></a>Monitorização de desempenho automático e Otimização
 
-A Base de Dados SQL disponibiliza informações detalhadas sobre as consultas que tem de monitorizar. Aprende os padrões da sua base de dados e permite-lhe adaptar o esquema da mesma à carga de trabalho. A Base de Dados SQL disponibiliza recomendações de otimização de desempenho mediante a utilização do [Assistente de Base de Dados SQL](sql-database-advisor.md), onde pode ver as ações de otimização e aplicá-las. No entanto, a monitorização contínua de bases de dados é uma tarefa difícil e entediante, especialmente se forem muitas. Pode ser impossível gerir eficazmente um grande número de bases de dados, mesmo tendo em conta todas as ferramentas e relatórios que a Base de Dados SQL e o Azure proporcionam. Em vez de monitorizar e otimizar a sua base de dados manualmente, pode considerar utilizar a funcionalidade de otimização automática para delegar algumas das ações de monitorização e otimização à Base de Dados SQL. A Base de Dados SQL aplica recomendações, testa e verifica automaticamente todas as ações de otimização, para garantir que o desempenho continua a melhorar. Desta forma, a Base de Dados SQL adapta-se automaticamente à sua carga de trabalho de forma controlada e segura. A otimização automática significa que o desempenho da sua base de dados é cuidadosamente monitorizado e comparado antes e depois de cada ação de otimização e, caso não melhore, as ações são revertidas.
+A Base de Dados SQL disponibiliza informações detalhadas sobre as consultas que tem de monitorizar. Aprende os padrões da sua base de dados e permite-lhe adaptar o esquema da mesma à carga de trabalho. Base de dados do SQL Server fornece [recomendações de otimização do desempenho](sql-database-advisor.md), onde pode consultar as ações de Otimização e aplicá-las. 
+
+No entanto, a monitorização contínua de bases de dados é uma tarefa difícil e entediante, especialmente se forem muitas. [Insights inteligentes](sql-database-intelligent-insights.md) não esta tarefa para si por automaticamente monitorização do desempenho de base de dados SQL em escala e informa dos problemas de degradação de desempenho, identifica a causa do problema e fornece melhorias de desempenho recomendações sempre que possível.
+
+Pode ser impossível gerir eficazmente um grande número de bases de dados, mesmo tendo em conta todas as ferramentas e relatórios que a Base de Dados SQL e o Azure proporcionam. Em vez de monitorização e otimizar a sua base de dados manualmente, poderá considerar delegar algumas da monitorização e otimização de ações a base de dados do SQL Server utilizar [otimização automática](sql-database-automatic-tuning.md). A Base de Dados SQL aplica recomendações, testa e verifica automaticamente todas as ações de otimização, para garantir que o desempenho continua a melhorar. Desta forma, a Base de Dados SQL adapta-se automaticamente à sua carga de trabalho de forma controlada e segura. A otimização automática significa que o desempenho da sua base de dados é cuidadosamente monitorizado e comparado antes e depois de cada ação de otimização e, caso não melhore, as ações são revertidas.
 
 Hoje em dia, muitos dos nossos parceiros que executam [aplicações SaaS multi-inquilino](sql-database-design-patterns-multi-tenancy-saas-applications.md) tendo a Base de Dados SQL como base confiam na otimização de desempenho automática, para garantir que as aplicações têm sempre um desempenho estável e previsível. Para estes parceiros, esta funcionalidade reduz significativamente o risco de ocorrência de incidentes de desempenho a meio da noite. Além disso, uma vez que parte da base de clientes deles também utiliza o SQL Server, os parceiros utilizam as mesmas recomendações de indexação disponibilizadas pela Base de Dados SQL para ajudar os clientes do SQL Server.
 
-Estão disponíveis dois aspetos de otimização automática na Base de Dados SQL:
+Existem dois aspetos de otimização automáticos, que são [disponíveis na base de dados do SQL Server](sql-database-automatic-tuning.md):
 
-- **[Gestão de índices automática](sql-database-automatic-tuning.md#automatic-index-management)**: identifica os índices que devem ser adicionados à sua base de dados e os que devem ser removidos.
-- **[Correção de planos automática](sql-database-automatic-tuning.md#automatic-plan-choice-correction)**: identifica planos problemáticos e corrige problemas de desempenho dos planos do SQL (brevemente; já disponível no SQL Server 2017).
+- **A gestão automática de índices**: identifica os índices devem ser adicionados na base de dados e índices que devem ser removidos.
+- **Correção automática plano**: identifica problemáticos planos e corrige os problemas de desempenho do plano SQL (disponível em breve, já disponível no SQL Server 2017).
 
 ### <a name="adaptive-query-processing"></a>Processamento de consultas adaptável
 
@@ -114,7 +117,7 @@ A [Auditoria da Base de Dados SQL](sql-database-auditing.md) regista os eventos 
 
 ### <a name="data-encryption-at-rest"></a>Encriptação de dados inativos
 
-A [encriptação de dados transparente](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-with-azure-sql-database) da Base de Dados SQL ajuda a proteger contra a ameaça de atividades maliciosas, ao fazer a encriptação e desencriptação inativa em tempo real da base de dados, das cópias de segurança associadas e dos ficheiros de registo de transações sem que seja necessário fazer alterações à aplicação. A partir de maio de 2017, todas as bases de dados SQL do Azure novas estão automaticamente protegidas com a encriptação de dados transparente (TDE). A TDE é a tecnologia comprovada de encriptação inativa do SQL e que é exigida por muitas normas de conformidade para proteger de roubos de suportes de dados de armazenamento. Os clientes podem utilizar o Azure Key Vault para gerir as chaves e outros segredos da encriptação TDE de uma forma segura e que está em conformidade.
+A [encriptação de dados transparente](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql) da Base de Dados SQL ajuda a proteger contra a ameaça de atividades maliciosas, ao fazer a encriptação e desencriptação inativa em tempo real da base de dados, das cópias de segurança associadas e dos ficheiros de registo de transações sem que seja necessário fazer alterações à aplicação. A partir de maio de 2017, todas as bases de dados SQL do Azure novas estão automaticamente protegidas com a encriptação de dados transparente (TDE). A TDE é a tecnologia comprovada de encriptação inativa do SQL e que é exigida por muitas normas de conformidade para proteger de roubos de suportes de dados de armazenamento. Os clientes podem utilizar o Azure Key Vault para gerir as chaves e outros segredos da encriptação TDE de uma forma segura e que está em conformidade.
 
 ### <a name="data-encryption-in-motion"></a>Encriptação de dados ativa
 
@@ -147,6 +150,14 @@ Com a Base de Dados SQL, criar e manter aplicações é mais fácil e produtivo.
 
 A Base de Dados suporta a criação de aplicações com Python, Java, Node.js, PHP, Ruby e .NET em macOS, Linux e Windows. A Base de Dados SQL suporta as mesmas [bibliotecas de ligações](sql-database-libraries.md) que o SQL Server.
 
+## <a name="engage-with-the-sql-server-engineering-team"></a>Envolver a equipa de engenharia do SQL Server
+
+- [DBA Stack Exchange](https://dba.stackexchange.com/questions/tagged/sql-server): colocar questões de administração de base de dados
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/sql-server): colocar questões de desenvolvimento
+- [Fóruns do MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?category=sqlserver): colocar questões técnicas
+- [Microsoft Connect](https://connect.microsoft.com/SQLServer/Feedback): relatar erros e pedir funcionalidades
+- [Reddit](https://www.reddit.com/r/SQLServer/): discutir sobre o SQL Server
+
 ## <a name="next-steps"></a>Passos seguintes
 
 - Consultar a [página de preços](https://azure.microsoft.com/pricing/details/sql-database/) para ver comparações de preços e calculadoras de bases de dados individuais e conjuntos elásticos.
@@ -160,4 +171,3 @@ A Base de Dados suporta a criação de aplicações com Python, Java, Node.js, P
 - Para um conjunto de amostras de CLI do Azure e PowerShell, veja:
   - [Exemplos da CLI do Azure para a Base de Dados SQL (Azure CLI samples for SQL Database)](sql-database-cli-samples.md)
   - [Exemplos do Azure PowerShell para a Base de Dados SQL (Azure PowerShell samples for SQL Database)](sql-database-powershell-samples.md)
-
