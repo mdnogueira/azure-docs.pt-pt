@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 79d4084deb6d8c028918690c339c21c720e63594
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2879e72636ffc7603e29fe8f8233a065fe6f897c
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="restore-an-app-in-azure"></a>Restaurar uma aplicação no Azure
-Este artigo mostra como restaurar uma aplicação no [App Service do Azure](../app-service/app-service-web-overview.md) que criou anteriormente ter cópias de segurança (consulte [cópia de segurança sua aplicação no Azure](web-sites-backup.md)). Pode restaurar a aplicação com o respetiva ligado bases de dados a pedido para um estado anterior ou criar uma nova aplicação com base dos cópia de segurança da sua aplicação original. App Service do Azure suporta as seguintes bases de dados de cópia de segurança e restauro:
+Este artigo mostra como restaurar uma aplicação no [App Service do Azure](../app-service/app-service-web-overview.md) que criou anteriormente ter cópias de segurança (consulte [cópia de segurança sua aplicação no Azure](web-sites-backup.md)). Pode restaurar a aplicação com o respetiva ligado bases de dados a pedido para um estado anterior ou criar uma nova aplicação com base dos cópias de segurança da sua aplicação original. App Service do Azure suporta as seguintes bases de dados de cópia de segurança e restauro:
 - [Base de Dados SQL](https://azure.microsoft.com/en-us/services/sql-database/)
 - [Base de dados do Azure para MySQL (pré-visualização)](https://azure.microsoft.com/en-us/services/mysql)
 - [Base de dados do Azure para PostgreSQL (pré-visualização)](https://azure.microsoft.com/en-us/services/postgres)
@@ -33,10 +33,10 @@ O restauro de cópias de segurança está disponível para aplicações em execu
 <a name="PreviousBackup"></a>
 
 ## <a name="restore-an-app-from-an-existing-backup"></a>Restaurar uma aplicação a partir de uma cópia de segurança existente
-1. No **definições** painel da sua aplicação no Portal do Azure, clique em **cópias de segurança** para apresentar o **cópias de segurança** painel. Em seguida, clique em **restaurar**.
+1. No **definições** página da sua aplicação no portal do Azure, clique em **cópias de segurança** para apresentar o **cópias de segurança** página. Em seguida, clique em **restaurar**.
    
     ![Escolha o restauro agora][ChooseRestoreNow]
-2. No **restaurar** painel, primeiro selecione a origem de cópia de segurança.
+2. No **restaurar** página, primeiro selecione a origem de cópia de segurança.
    
     ![](./media/web-sites-restore/021ChooseSource1.png)
    
@@ -59,9 +59,9 @@ O restauro de cópias de segurança está disponível para aplicações em execu
 <a name="StorageAccount"></a>
 
 ## <a name="download-or-delete-a-backup-from-a-storage-account"></a>Transferir ou eliminar uma cópia de segurança de uma conta de armazenamento
-1. A partir de principal **procurar** painel do portal do Azure, selecione **contas do Storage**. É apresentada uma lista das suas contas de armazenamento existente.
-2. Selecione a conta de armazenamento que contém a cópia de segurança que pretende transferir ou eliminar. É apresentado o painel da conta do storage.
-3. No painel de conta de armazenamento, selecione o contentor que pretende
+1. A partir de principal **procurar** página do portal do Azure, selecione **contas do Storage**. É apresentada uma lista das suas contas de armazenamento existente.
+2. Selecione a conta de armazenamento que contém a cópia de segurança que pretende transferir ou eliminar. É apresentada a página para a conta de armazenamento.
+3. Na página de conta de armazenamento, selecione o contentor que pretende
    
     ![Contentores de vista][ViewContainers]
 4. Selecione o ficheiro de cópia de segurança que pretende transferir ou eliminar.
@@ -72,12 +72,21 @@ O restauro de cópias de segurança está disponível para aplicações em execu
 <a name="OperationLogs"></a>
 
 ## <a name="monitor-a-restore-operation"></a>Monitorizar uma operação de restauro
-Para ver detalhes sobre o êxito ou falha da operação de restauro de aplicação, navegue para o **registo de atividade** painel no portal do Azure.  
+Para ver detalhes sobre o êxito ou falha da operação de restauro de aplicação, navegue para o **registo de atividade** página no portal do Azure.  
  
 
 Desloque para baixo para localizar a operação de restauro e clique para selecionar o pretendido.
 
-O painel de detalhes apresenta as informações disponíveis relacionadas com a operação de restauro.
+A página de detalhes apresenta as informações disponíveis relacionadas com a operação de restauro.
+
+## <a name="automate-with-scripts"></a>Automatizar com scripts
+
+Pode automatizar gestão de cópia de segurança com scripts, utilizando o [CLI do Azure](/cli/azure/install-azure-cli) ou [Azure PowerShell](/powershell/azure/overview).
+
+Para exemplos, consulte:
+
+- [Exemplos da CLI do Azure](app-service-cli-samples.md)
+- [Exemplos do PowerShell do Azure](app-service-powershell-samples.md)
 
 <!-- ## Next Steps
 You can backup and restore App Service apps using REST API. -->

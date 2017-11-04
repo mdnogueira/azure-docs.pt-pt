@@ -13,19 +13,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 7/7/2017
+ms.date: 11/2/2017
 ms.author: raviperi
-ms.openlocfilehash: 70a3d762431d90acdd6ed2a432a569f34d0ce447
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 399ed17e997baf5dcf484f7798d3c4679522c633
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-storm-by-using-azure-hdinsight"></a>Resolver problemas de Storm através do Azure HDInsight
 
 Saiba mais sobre os principais problemas e as resoluções para trabalhar com payloads do Apache Storm no Apache Ambari.
 
-## <a name="how-do-i-access-the-storm-ui-on-a-cluster"></a>Como acedo a IU do Storm num cluster
+## <a name="how-do-i-access-the-storm-ui-on-a-cluster"></a>Como acedo a IU do Storm num cluster?
 Tem duas opções para aceder a IU do Storm num browser:
 
 ### <a name="ambari-ui"></a>IU do Ambari
@@ -42,7 +42,7 @@ Exemplo:
 
  https://stormcluster.azurehdinsight.NET/stormui
 
-## <a name="how-do-i-transfer-storm-event-hub-spout-checkpoint-information-from-one-topology-to-another"></a>Como transferir as informações de ponto de verificação do Storm event hub spout da topologia de um para outro
+## <a name="how-do-i-transfer-storm-event-hub-spout-checkpoint-information-from-one-topology-to-another"></a>Como transferir as informações de ponto de verificação do Storm event hub spout da topologia de um para outro?
 
 Quando desenvolver topologias ler a partir do Event Hubs do Azure utilizando o hub de eventos do HDInsight Storm spout o ficheiro. JAR, tem de implementar uma topologia que tem o mesmo nome num cluster de novo. No entanto, tem de manter os dados de ponto de verificação que foi consolidados para Apache ZooKeeper no cluster antigo.
 
@@ -86,14 +86,14 @@ O comando de exportação escreve os metadados de um caminho de sistema de fiche
     java -cp ./*:/etc/hadoop/conf/*:/usr/hdp/2.5.1.0-56/hadoop/*:/usr/hdp/2.5.1.0-56/hadoop/lib/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/lib/*:/etc/failover-controller/conf/*:/etc/hadoop/* com.microsoft.storm.zkdatatool.ZkdataImporter delete /eventhubspout
     ```
 
-## <a name="how-do-i-locate-storm-binaries-on-a-cluster"></a>Como localizar o binários de Storm num cluster
+## <a name="how-do-i-locate-storm-binaries-on-a-cluster"></a>Como localizar o binários de Storm num cluster?
 Binários do Storm para a pilha HDP atual são /usr/hdp/current/storm-client. A localização é o mesmo para nós principais e nós de trabalho.
  
 Podem existir vários binários para versões HDP específicas no /usr/hdp (por exemplo, /usr/hdp/2.5.0.1233/storm). A pasta de /usr/hdp/current/storm-client é symlinked para a versão mais recente que está em execução no cluster.
 
 Para obter mais informações, consulte [ligar a um cluster do HDInsight utilizando SSH](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) e [Storm](http://storm.apache.org/).
  
-## <a name="how-do-i-determine-the-deployment-topology-of-a-storm-cluster"></a>Como posso determinar a topologia de implementação de um cluster do Storm
+## <a name="how-do-i-determine-the-deployment-topology-of-a-storm-cluster"></a>Como posso determinar a topologia de implementação de um cluster do Storm?
 Em primeiro lugar, identifique todos os componentes que são instalados com o HDInsight Storm. Um cluster do Storm é constituída por quatro categorias de nó:
 
 * Nós de gateway
@@ -122,7 +122,7 @@ Nós de trabalho do Storm executam os seguintes serviços:
 * Trabalho Java as máquinas virtuais (JVMs), para a execução de topologias
 * Agente do Ambari
  
-## <a name="how-do-i-locate-storm-event-hub-spout-binaries-for-development"></a>Como localizar o Storm event hub spout os binários para o desenvolvimento
+## <a name="how-do-i-locate-storm-event-hub-spout-binaries-for-development"></a>Como localizar o Storm event hub spout os binários para o desenvolvimento?
  
 Para obter mais informações sobre como utilizar os ficheiros do Storm event hub spout. JAR com a topologia, consulte os seguintes recursos.
  
@@ -152,3 +152,5 @@ O ficheiro de configuração de trabalho Log4J é lida /usr/hdp/\<versão HDP\>/
  
 Exemplos: /usr/hdp/2.6.0.2-76/storm/log4j2/cluster.xml /usr/hdp/2.6.0.2-76/storm/log4j2/worker.xml
 
+### <a name="see-also"></a>Veja Também
+[Resolver problemas utilizando o Azure HDInsight](../../hdinsight/hdinsight-troubleshoot-guide.md)

@@ -5,15 +5,15 @@ services: azure-policy
 keywords: 
 author: Jim-Parker
 ms.author: jimpark
-ms.date: 10/06/2017
+ms.date: 11/01/2017
 ms.topic: tutorial
 ms.service: azure-policy
 ms.custom: mvc
-ms.openlocfilehash: 55e5a60294fc5ccb2a55b1e572af2fd27c68f462
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: adbf6e13efaad196c39e4fce0900fa40d7511122
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="create-and-manage-policies-to-enforce-compliance"></a>Criar e gerir políticas para impor a compatibilidade
 
@@ -61,7 +61,7 @@ Política do Azure está agora disponível na pré-visualização limitada, por 
    ![Definições de política disponíveis aberta](media/create-manage-policy/open-policy-definitions.png)
 
 5. Selecione **requerem versão do SQL Server 12.0**.
-   
+
    ![Localize uma política](media/create-manage-policy/select-available-definition.png)
 
 6. Forneça uma apresentação **nome** para a atribuição de política. Neste caso, vamos utilizar *requerem o SQL Server versão 12.0*. Também pode adicionar opcional **Descrição**. A descrição fornece detalhes sobre a forma como esta atribuição de política assegura a todos os servidores SQL criados neste ambiente têm a versão 12.0.
@@ -93,7 +93,7 @@ Agora que Atribuímos a definição de política, vamos criar uma nova política
       - Os parâmetros de política.
       - A política de regras/condições, neste caso – o tamanho do SKU de VM é igual a série de G
       - A política em vigor, neste caso – **negar**.
-   
+
    Eis o que o json deve ter o seguinte aspeto
 
 ```json
@@ -118,9 +118,225 @@ Agora que Atribuímos a definição de política, vamos criar uma nova política
 }
 ```
 
+<!-- Update the following link to the top level samples page
+-->
    Para ver os exemplos de código json, observe este artigo - [descrição geral da política de recurso](../azure-resource-manager/resource-manager-policy.md)
-   
+
 4. Selecione **Guardar**.
+
+## <a name="create-a-policy-definition-with-rest-api"></a>Criar uma definição de política com a REST API
+
+Pode criar uma política com a API REST para definições de política. A API REST permite-lhe criar e eliminar definições de política e obter informações sobre as definições existentes.
+Para criar uma definição de política, utilize o seguinte exemplo:
+
+```
+PUT https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
+
+```
+Incluem um corpo do pedido semelhante ao seguinte exemplo:
+
+```
+{
+  "properties": {
+    "parameters": {
+      "allowedLocations": {
+        "type": "array",
+        "metadata": {
+          "description": "The list of locations that can be specified when deploying resources",
+          "strongType": "location",
+          "displayName": "Allowed locations"
+        }
+      }
+    },
+    "displayName": "Allowed locations",
+    "description": "This policy enables you to restrict the locations your organization can specify when deploying resources.",
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "location",
+          "in": "[parameters('allowedLocations')]"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
+```
+
+## <a name="create-a-policy-definition-with-powershell"></a>Criar uma definição de política com o PowerShell
+
+Antes de continuar com o exemplo do PowerShell, certifique-se de que instalou a versão mais recente do Azure PowerShell. Parâmetros de política foram adicionados na versão 3.6.0. Se tiver uma versão anterior, os exemplos de devolverem um erro que indica que o parâmetro não é possível encontrar.
+
+Pode criar uma definição de política utilizando o `New-AzureRmPolicyDefinition` cmdlet.
+
+Para criar uma definição de política de um ficheiro, passe o caminho para o ficheiro. Para um ficheiro externo, utilize o seguinte exemplo:
+
+```
+$definition = New-AzureRmPolicyDefinition `
+    -Name denyCoolTiering `
+    -DisplayName "Deny cool access tiering for storage" `
+    -Policy 'https://raw.githubusercontent.com/Azure/azure-policy-samples/master/samples/Storage/storage-account-access-tier/azurepolicy.rules.json'
+```
+
+Para utilizar um ficheiro local, utilize o seguinte exemplo:
+
+```
+$definition = New-AzureRmPolicyDefinition `
+    -Name denyCoolTiering `
+    -Description "Deny cool access tiering for storage" `
+    -Policy "c:\policies\coolAccessTier.json"
+```
+
+Para criar uma definição de política com uma regra de inline, utilize o seguinte exemplo:
+
+```
+$definition = New-AzureRmPolicyDefinition -Name denyCoolTiering -Description "Deny cool access tiering for storage" -Policy '{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Storage/storageAccounts"
+      },
+      {
+        "field": "kind",
+        "equals": "BlobStorage"
+      },
+      {
+        "not": {
+          "field": "Microsoft.Storage/storageAccounts/accessTier",
+          "equals": "cool"
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}'
+```
+
+O resultado é armazenado num `$definition` objeto, que é utilizado durante a atribuição de política.
+O exemplo seguinte cria uma definição de política que inclui os parâmetros:
+
+```
+$policy = '{
+    "if": {
+        "allOf": [
+            {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts"
+            },
+            {
+                "not": {
+                    "field": "location",
+                    "in": "[parameters(''allowedLocations'')]"
+                }
+            }
+        ]
+    },
+    "then": {
+        "effect": "Deny"
+    }
+}'
+
+$parameters = '{
+    "allowedLocations": {
+        "type": "array",
+        "metadata": {
+          "description": "The list of locations that can be specified when deploying storage accounts.",
+          "strongType": "location",
+          "displayName": "Allowed locations"
+        }
+    }
+}'
+
+$definition = New-AzureRmPolicyDefinition -Name storageLocations -Description "Policy to specify locations for storage accounts." -Policy $policy -Parameter $parameters
+```
+
+## <a name="view-policy-definitions"></a>Definições de política do Vista
+
+Para ver todas as definições de política na sua subscrição, utilize o seguinte comando:
+
+```
+Get-AzureRmPolicyDefinition
+```
+
+Devolve todas as definições de política disponíveis, incluindo políticas incorporadas. Cada política é devolvida o seguinte formato:
+
+```
+Name               : e56962a6-4747-49cd-b67b-bf8b01975c4c
+ResourceId         : /providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c
+ResourceName       : e56962a6-4747-49cd-b67b-bf8b01975c4c
+ResourceType       : Microsoft.Authorization/policyDefinitions
+Properties         : @{displayName=Allowed locations; policyType=BuiltIn; description=This policy enables you to
+                     restrict the locations your organization can specify when deploying resources. Use to enforce
+                     your geo-compliance requirements.; parameters=; policyRule=}
+PolicyDefinitionId : /providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c
+```
+
+## <a name="create-a-policy-definition-with-azure-cli"></a>Criar uma definição de política com a CLI do Azure
+
+Pode criar uma definição de política utilizando a CLI do Azure com o comando de definição de política.
+Para criar uma definição de política com uma regra de inline, utilize o seguinte exemplo:
+
+```
+az policy definition create --name denyCoolTiering --description "Deny cool access tiering for storage" --rules '{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Storage/storageAccounts"
+      },
+      {
+        "field": "kind",
+        "equals": "BlobStorage"
+      },
+      {
+        "not": {
+          "field": "Microsoft.Storage/storageAccounts/accessTier",
+          "equals": "cool"
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}'
+```
+
+## <a name="view-policy-definitions"></a>Definições de política do Vista
+
+Para ver todas as definições de política na sua subscrição, utilize o seguinte comando:
+
+```
+az policy definition list
+```
+
+Devolve todas as definições de política disponíveis, incluindo políticas incorporadas. Cada política é devolvida o seguinte formato:
+
+```
+{                                                            
+  "description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements.",                      
+  "displayName": "Allowed locations",
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+  "name": "e56962a6-4747-49cd-b67b-bf8b01975c4c",
+  "policyRule": {
+    "if": {
+      "not": {
+        "field": "location",
+        "in": "[parameters('listOfAllowedLocations')]"
+      }
+    },
+    "then": {
+      "effect": "Deny"
+    }
+  },
+  "policyType": "BuiltIn"
+}
+```
 
 ## <a name="create-and-assign-an-initiative-definition"></a>Criar e atribuir uma definição de iniciativa
 
@@ -166,7 +382,7 @@ Com uma definição de iniciativa, pode agrupar várias definições de polític
    - escalão de preço: Standard
    - âmbito gostaria esta atribuição aplicada a: **Dev de capacidade do Azure do Advisor**
 
-5. Selecione **atribuir**. 
+5. Selecione **atribuir**.
 
 ## <a name="resolve-a-non-compliant-or-denied-resource"></a>Resolver um recurso de não conformidade ou negado
 
@@ -205,4 +421,4 @@ Neste tutorial, é com êxito feito o seguinte:
 Para saber mais sobre as estruturas de definições de política, consulte este artigo:
 
 > [!div class="nextstepaction"]
-> [Estrutura de definição de política](../azure-resource-manager/resource-manager-policy.md#policy-definition-structure)
+> [Estrutura de definição de política do Azure](policy-definition.md)

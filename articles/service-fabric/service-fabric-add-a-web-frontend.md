@@ -12,13 +12,13 @@ ms.devlang: dotNet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/01/2017
+ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: b19aaa652f2c15573ded632ca1348e1a6752f080
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 9a63a15782b85a48552fd913d5d3f8aaaae7db44
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="build-a-web-service-front-end-for-your-application-using-aspnet-core"></a>Criar um serviço front-end web para a sua aplicação com o ASP.NET Core
 Por predefinição, os serviços do Azure Service Fabric não fornecem uma interface pública para o web. Ao exporem a funcionalidade da sua aplicação para clientes HTTP, tem de criar um projeto web para atuar como um ponto de entrada e, em seguida, comunicar a partir daí aos seus serviços individuais.
@@ -210,12 +210,6 @@ O nosso serviço com monitorização de estado está agora pronto para receber o
     ![O valor do contador de monitorização de estado apresentado no browser][browser-aspnet-counter-value]
    
     Atualize o browser periodicamente para ver o valor do contador de atualização.
-
-## <a name="kestrel-and-weblistener"></a>Kestrel e WebListener
-
-O servidor de web ASP.NET Core predefinido, conhecido como Kestrel, é [não suportada atualmente para processar o tráfego de internet direta](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel). Como resultado, o modelo de serviço sem monitorização de estado do ASP.NET Core para o Service Fabric utiliza [WebListener](https://docs.microsoft.com/aspnet/core/fundamentals/servers/weblistener) por predefinição. 
-
-Para saber mais sobre Kestrel e WebListener nos serviços do Service Fabric, consulte [ASP.NET Core no Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md).
 
 ## <a name="connecting-to-a-reliable-actor-service"></a>Ligar a um serviço de Atores fiável
 Este tutorial centra-se adicionar um web front-end que comunicou com um serviço com monitorização de estado. No entanto, pode seguir um modelo muito semelhante para falar com atores. Quando cria um projeto de Ator fiável, o Visual Studio gera automaticamente um projeto de interface para si. Pode utilizar essa interface para gerar um proxy de ator no projeto web para comunicar com o ator. O canal de comunicação é fornecido automaticamente. Para que precisa de fazer tudo o que é equivalente ao estabelecer uma `ServiceRemotingListener` como fez para o serviço de monitorização de estado neste tutorial.

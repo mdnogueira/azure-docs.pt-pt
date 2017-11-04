@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/11/2017
+ms.date: 11/02/2017
 ms.author: bwren
-ms.openlocfilehash: f27f038e0507270c0bfe200cb8c86622ebac5372
-ms.sourcegitcommit: 5735491874429ba19607f5f81cd4823e4d8c8206
+ms.openlocfilehash: 17a59a38b6a445a7f42df171a711669f95fc84c2
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="computer-groups-in-log-analytics-log-searches"></a>Pesquisas de registo de grupos de computadores na análise de registos
 
@@ -109,13 +109,29 @@ Clique em de **x** no **remover** coluna ao eliminar o grupo de computadores.  C
 
 
 ## <a name="using-a-computer-group-in-a-log-search"></a>Utilizar um grupo de computadores numa pesquisa de registo
-Utilize um grupo de computadores de uma consulta por encará-los o alias como uma função, normalmente com a seguinte sintaxe:
+Utilize um grupo de computadores criado a partir de uma pesquisa de registo numa consulta por encará-los o alias como uma função, normalmente com a seguinte sintaxe:
 
   `Table | where Computer in (ComputerGroup)`
 
 Por exemplo, pode utilizar o seguinte procedimento para devolver UpdateSummary registos para apenas os computadores num grupo de computadores chamado mycomputergroup.
  
   `UpdateSummary | where Computer in (mycomputergroup)`
+
+
+Grupos de computadores importados e os respetivos computadores incluídas são armazenados no **grupo de computador** tabela.  Por exemplo, a seguinte consulta devolvam uma lista de computadores no grupo de computadores de domínio do Active Directory. 
+
+  `ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer`
+
+A seguinte consulta devolvam UpdateSummary registos para apenas os computadores em computadores de domínio.
+
+  ```
+  let ADComputers = ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer;
+  UpdateSummary | where Computer in (ADComputers)
+  ```
+
+
+
+  
 
 >[!NOTE]
 > Se a sua área de trabalho ainda está a utilizar o [idioma de consulta de análise de registos legado](log-analytics-log-search-upgrade.md)>, em seguida, utilize a seguinte sintaxe para fazer referência a um grupo de computadores numa pesquisa de registo.  Especificar o **categoria** > é opcional e apenas necessário se tiver grupos de computadores com o mesmo nome em diferentes categorias. 

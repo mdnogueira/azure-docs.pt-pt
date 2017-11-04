@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/29/2017
+ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 4b48b893e5a3bf5620f00a336576efe1ad63def8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b1b7c8af6d852599359baab2188bfc3395d33a28
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="notes-on-service-fabric-reliable-actors-type-serialization"></a>Notas sobre o serviço de recursos de infraestrutura Reliable Actors escreva serialização
 Os argumentos de todos os métodos, tipos de resultados das tarefas devolvido por cada método numa interface ator e objetos armazenados no Gestor de estado de um ator tem de ser [contrato de dados serializáveis](https://msdn.microsoft.com/library/ms731923.aspx). Isto também se aplica aos argumentos dos métodos definidos no [interfaces de eventos de ator](service-fabric-reliable-actors-events.md). (Métodos de interface de eventos de ator sempre devolvem void.)

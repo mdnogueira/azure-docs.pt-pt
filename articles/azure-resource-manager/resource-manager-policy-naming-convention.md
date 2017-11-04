@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/27/2017
+ms.date: 11/03/2017
 ms.author: tomfitz
-ms.openlocfilehash: 51b3519bbba8cb4c768bfdd7dadf92fced434f22
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 955b04517c3ccdbe530eb982e6aa1255b69e1edd
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="apply-resource-policies-for-names-and-text"></a>Aplicar políticas de recursos de nomes e texto
-Este tópico mostra várias [as políticas de recursos](resource-manager-policy.md) pode aplicar para estabelecer as convenções de atribuição de nomes e texto. Estas políticas garantir consistência para os nomes de recursos e valores de etiqueta. 
+Este artigo mostra várias [as políticas de recursos](resource-manager-policy.md) pode aplicar para estabelecer as convenções de atribuição de nomes e texto. Estas políticas garantir consistência para os nomes de recursos e valores de etiqueta. 
 
 ## <a name="set-naming-convention-with-wildcard"></a>Definir a Convenção de nomenclatura com carateres universais
 O exemplo seguinte mostra a utilização do caráter universal, que é suportado pelo **como** condição. A condição indica que, se o nome corresponde ao padrão mencionado (namePrefix\*nameSuffix), em seguida, negar o pedido:
@@ -71,6 +71,34 @@ Para exigir um padrão de data de dois dígitos, traço, três letras, dash e qu
   "then": {
     "effect": "deny"
   }
+}
+```
+
+## <a name="set-multiple-naming-patterns"></a>Definir vários padrões de nomenclatura
+
+Para especificar mais do que uma convenção de nomenclatura de permitido, utilize o **tudo** e **não** operadores. No exemplo seguinte, se o nome fornecido não corresponde um padrão, for negada.
+
+```json
+{
+    "if": {
+        "allOf": [
+            {
+                "not": {
+                    "field": "name",
+                    "match": "contoso??????"
+                }
+            },
+            {
+                "not": {
+                    "field": "name",
+                    "match": "contoso-???-##"
+                }
+            }
+        ]
+    },
+    "then": {
+        "effect": "deny"
+    }
 }
 ```
 

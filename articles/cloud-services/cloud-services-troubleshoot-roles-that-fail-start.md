@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 7/26/2017
+ms.date: 11/03/2017
 ms.author: v-six
-ms.openlocfilehash: 44d912c8bee1a7c8db79d3626e00108fbcb39352
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ec33ba08c6284e90edc1870eef4bf3059b917efb
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Resolver problemas relacionados com funções de serviço em nuvem que não conseguem iniciar
 Seguem-se alguns problemas comuns e soluções relacionadas com a Cloud Services do Azure funções que não conseguem iniciar.

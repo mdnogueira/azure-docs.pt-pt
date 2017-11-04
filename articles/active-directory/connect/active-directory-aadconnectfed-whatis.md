@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/17/2017
+ms.date: 11/02/2017
 ms.author: anandy
-ms.openlocfilehash: 6822320c92d106d28607289a90f2f08a51e04070
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6dc5ef81704423c5a1bc136fb2d51d79a9265e20
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="azure-ad-connect-and-federation"></a>Azure AD Connect e a federação
 Azure Connect do Active Directory (Azure AD) permite ao configurar a Federação com o local Serviços de Federação do Active Directory (AD FS) e o Azure AD. Com Federação início de sessão, pode permitir aos utilizadores iniciar sessão para serviços do Azure baseada no AD com as palavras-passe no local – e, enquanto na rede empresarial, sem ter de introduzir as palavras-passe novamente. Ao utilizar a opção de federação com o AD FS, pode implementar uma nova instalação do AD FS ou pode especificar uma instalação existente num farm do Windows Server 2012 R2.
@@ -40,6 +40,7 @@ Este tópico é a base para obter informações sobre as funcionalidades relacio
 | [Adicionar um novo servidor do WAP do AD FS](active-directory-aadconnect-federation-management.md#addwapserver) |Expanda um farm do AD FS com um servidor de Proxy de aplicações Web (WAP) adicionais após a instalação inicial. |
 | [Adicionar um novo domínio federado](active-directory-aadconnect-federation-management.md#addfeddomain) |Adicione outro domínio Federado com o Azure AD. |
 | [Atualizar o certificado SSL](active-directory-aadconnectfed-ssl-update.md)| Atualize o certificado SSL para um farm do AD FS. |
+| [Renovar os certificados de Federação para o Office 365 e o Azure AD](active-directory-aadconnect-o365-certs.md)|Renove o certificado do O365 com o Azure AD.|
 | **Outra configuração de Federação** | |
 | [Federar várias instâncias do Azure AD com uma instância única do AD FS](active-directory-aadconnectfed-single-adfs-multitenant-federation.md) | Federar vários do Azure AD com única farm do AD FS| 
 | [Adicionar uma ilustração/logótipo de empresa personalizado](active-directory-aadconnect-federation-management.md#customlogo) |Modificar a experiência de início de sessão, especificando o logótipo personalizado que é apresentado na página de início de sessão do AD FS. |

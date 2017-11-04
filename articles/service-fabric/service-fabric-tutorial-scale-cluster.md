@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/24/2017
 ms.author: adegeo
-ms.openlocfilehash: e1d35bcd51349e6460d50acec0d9706fcd291e89
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: b8b1ac04c20cf9fe6d6d8ea58571af05010461d9
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="scale-a-service-fabric-cluster"></a>Dimensionar um cluster do Service Fabric
 
@@ -48,6 +48,11 @@ Get-AzureRmSubscription
 Set-AzureRmContext -SubscriptionId <guid>
 ```
 
+```azurecli
+az login
+az account set --subscription <guid>
+```
+
 ## <a name="connect-to-the-cluster"></a>Ligar ao cluster
 
 Para concluir com êxito esta parte do tutorial, precisa de ligar para o cluster do Service Fabric e o conjunto de dimensionamento de máquina virtual (que aloja o cluster). O conjunto de dimensionamento de máquina virtual é o recurso do Azure que aloja o Service Fabric no Azure.
@@ -67,7 +72,12 @@ Connect-ServiceFabricCluster -ConnectionEndpoint $endpoint `
 Get-ServiceFabricClusterHealth
 ```
 
-Com o `Get-ServiceFabricClusterHealth` comando, o estado é devolvido para si com detalhes sobre o estado de funcionamento de cada nó no cluster.
+```azurecli
+sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 \
+--pem ./aztestcluster201709151446.pem --no-verify
+```
+
+Agora que o se estiver ligado, pode utilizar um comando para obter o estado de cada nó no cluster. Para o PowerShell, utilize o `Get-ServiceFabricClusterHealth` comando e para **sfctl** utilizar o ' comando.
 
 ## <a name="scale-out"></a>Aumentar horizontalmente
 
@@ -80,7 +90,15 @@ $scaleset.Sku.Capacity += 1
 Update-AzureRmVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm -VirtualMachineScaleSet $scaleset
 ```
 
-Uma vez concluída a operação de atualização, execute o `Get-ServiceFabricClusterHealth` comando para ver as novas informações de nó.
+Este código define a capacidade para 6.
+
+```azurecli
+# Get the name of the node with
+az vmss list-instances -n nt1vm -g sfclustertutorialgroup --query [*].name
+
+# Use the name to scale
+az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 6
+```
 
 ## <a name="scale-in"></a>Dimensionar de
 
@@ -91,22 +109,29 @@ Dimensionamento no é igual a aumentar horizontalmente, exceto que utiliza uma m
 > [!NOTE]
 > Esta parte aplica-se apenas a *Bronze* o escalão de durabilidade. Para obter mais informações sobre a durabilidade, consulte [planeamento de capacidade de cluster do Service Fabric][durability].
 
-Quando dimensiona um conjunto de dimensionamento de máquina virtual, o conjunto (na maioria dos casos) de dimensionamento remove a instância de máquina virtual que foi criada pela última vez. Por isso, tem de encontrar o correspondente, pela última vez criado, o nó de recursos de infraestrutura de serviço. Pode encontrar este último nó verificando o biggest `NodeInstanceId` valor da propriedade em nós de recursos de infraestrutura de serviço. 
+Quando dimensiona um conjunto de dimensionamento de máquina virtual, o conjunto (na maioria dos casos) de dimensionamento remove a instância de máquina virtual que foi criada pela última vez. Por isso, tem de encontrar o correspondente, pela última vez criado, o nó de recursos de infraestrutura de serviço. Pode encontrar este último nó verificando o biggest `NodeInstanceId` valor da propriedade em nós de recursos de infraestrutura de serviço. Os exemplos de código abaixo ordenar por nó de instância e os detalhes sobre a instância com o maior valor de id de retorno. 
 
 ```powershell
 Get-ServiceFabricNode | Sort-Object NodeInstanceId -Descending | Select-Object -First 1
 ```
 
+```azurecli
+`sfctl node list --query "sort_by(items[*], &instanceId)[-1]"`
+```
+
 O cluster do service fabric tem de saber o que este nó é removido. Existem três passos que precisa de tomar:
 
 1. Desative o nó para que já não seja uma replicação de dados.  
-`Disable-ServiceFabricNode`
+PowerShell:`Disable-ServiceFabricNode`  
+sfcli:`sfctl node disable`
 
 2. Pare o nó para que o tempo de execução do service fabric encerra corretamente e a aplicação obtém um pedido de terminar.  
-`Start-ServiceFabricNodeTransition -Stop`
+PowerShell:`Start-ServiceFabricNodeTransition -Stop`  
+sfcli:`sfctl node transition --node-transition-type Stop`
 
 2. Remove o nó do cluster.  
-`Remove-ServiceFabricNodeState`
+PowerShell:`Remove-ServiceFabricNodeState`  
+sfcli:`sfctl node remove-state`
 
 Depois de tem sido aplicados estes três passos para o nó, este pode ser removido do conjunto de dimensionamento. Se estiver a utilizar qualquer o escalão de durabilidade para além de [bronze][durability], estes passos são efetuados para que quando o dimensionamento definida instância é removida.
 
@@ -169,6 +194,30 @@ else
 }
 ```
 
+No **sfctl** código abaixo, o seguinte comando é utilizado para aceder a **nome de nó** e **id de instância de nó** valores do nó criado por último:`sfctl node list --query "sort_by(items[*], &instanceId)[-1].[instanceId,name]"`
+
+```azurecli
+# Inform the node that it is going to be removed
+sfctl node disable --node-name _nt1vm_5 --deactivation-intent 4 -t 300
+
+# Stop the node using a random guid as our operation id
+sfctl node transition --node-instance-id 131541348482680775 --node-name _nt1vm_5 --node-transition-type Stop --operation-id c17bb4c5-9f6c-4eef-950f-3d03e1fef6fc --stop-duration-in-seconds 14400 -t 300
+
+# Remove the node from the cluster
+sfctl node remove-state --node-name _nt1vm_5
+```
+
+> [!TIP]
+> Utilize o seguinte **sfctl** consultas para verificar o estado de cada passo
+>
+> **Verifique o estado de Desativação**  
+> `sfctl node list --query "sort_by(items[*], &instanceId)[-1].nodeDeactivationInfo"`
+>
+> **Verifique o estado de paragem**  
+> `sfctl node list --query "sort_by(items[*], &instanceId)[-1].isStopped"`
+>
+
+
 ### <a name="scale-in-the-scale-set"></a>Escalar no conjunto de dimensionamento
 
 Agora que o nó de recursos de infraestrutura de serviço foi removido do cluster, o conjunto de dimensionamento de máquina virtual pode ser ampliado no. No exemplo abaixo, a capacidade de conjunto de dimensionamento é reduzida por 1.
@@ -179,6 +228,17 @@ $scaleset.Sku.Capacity -= 1
 
 Update-AzureRmVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm -VirtualMachineScaleSet $scaleset
 ```
+
+Este código define a capacidade para 5.
+
+```azurecli
+# Get the name of the node with
+az vmss list-instances -n nt1vm -g sfclustertutorialgroup --query [*].name
+
+# Use the name to scale
+az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
+```
+
 
 ## <a name="next-steps"></a>Passos seguintes
 

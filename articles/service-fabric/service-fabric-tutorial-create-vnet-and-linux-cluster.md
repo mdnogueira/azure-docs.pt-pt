@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/26/2017
 ms.author: ryanwi
-ms.openlocfilehash: 983abcd103a58be63053e466c767015c0835eaba
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 33a3474ed91194efbaf2ef96957ad268f43a717e
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="deploy-a-service-fabric-linux-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Linux numa rede virtual do Azure
 Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Linux Service Fabric numa rede virtual do Azure existente (VNET) e subplano net utilizando a CLI do Azure. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações. Para criar um cluster do Windows com o PowerShell, consulte [criar um cluster do Windows seguro no Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
@@ -98,7 +98,15 @@ Pode utilizar um certificado de uma autoridade de certificação (AC), como o ce
 - criada para a troca de chaves, que é exportável para um ficheiro Personal Information Exchange (. pfx).
 - tem um nome de requerente que corresponde ao domínio que utilizar para aceder ao cluster do Service Fabric. Esta correspondência é necessário para fornecer o SSL para o cluster pontos finais de gestão HTTPS e Service Fabric Explorer. Não é possível obter um certificado SSL de uma autoridade de certificação (AC) para o. cloudapp.azure.com domínio. Tem de obter um nome de domínio personalizado para o cluster. Quando solicitar um certificado a partir de uma AC, o nome de requerente do certificado tem de corresponder ao nome de domínio personalizado que utilizar para o cluster.
 
-Preencha vazia **clusterName**, **adminUserName**, e **adminPassword** parâmetros a *linuxcluster.parameters.json* ficheiro para a sua implementação.  Deixe o **certificateThumbprint**, **certificateUrlValue**, e **sourceVaultValue** parâmetros em branco para criar um certificado autoassinado.  Se pretender utilizar um certificado existente carregado anteriormente para um cofre de chaves, preencha os valores de parâmetros.
+Preencha estes parâmetros vazios no *linuxcluster.parameters.json* ficheiro para a sua implementação:
+
+|Parâmetro|Valor|
+|---|---|
+|adminPassword|Palavra-passe #1234|
+|adminUserName|vmadmin|
+|clusterName|mysfcluster|
+
+Deixe o **certificateThumbprint**, **certificateUrlValue**, e **sourceVaultValue** parâmetros em branco para criar um certificado autoassinado.  Se pretender utilizar um certificado existente carregado anteriormente para um cofre de chaves, preencha os valores de parâmetros.
 
 O script seguinte utiliza o [Criar cluster de sf az](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) comando e o modelo para implementar um cluster de novo no Azure. O cmdlet também cria um novo cofre de chaves no Azure, adiciona um novo certificado autoassinado para o Cofre de chaves e transfere o ficheiro de certificado localmente. Pode especificar um certificado existente e/ou o Cofre de chaves utilizando outros parâmetros do [Criar cluster de sf az](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) comando.
 
@@ -148,9 +156,9 @@ Neste tutorial, ficou a saber como:
 > * Ligar ao cluster ao utilizar a CLI de recursos de infraestrutura de serviço
 > * Remover um cluster
 
-Em seguida, avançar para o tutorial seguinte para saber como implementar a gestão de API com o Service Fabric.
+Em seguida, avançar para o tutorial seguinte para saber como dimensionar o seu cluster.
 > [!div class="nextstepaction"]
-> [Implementar a gestão de API](service-fabric-tutorial-deploy-api-management.md)
+> [Um Cluster de escala](service-fabric-tutorial-scale-cluster.md)
 
 
 [network-arm]:https://github.com/Azure-Samples/service-fabric-api-management/blob/master/network.json

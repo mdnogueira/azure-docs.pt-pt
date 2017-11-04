@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: TBD
-ms.date: 08/17/2016
+ms.date: 11/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 36b4e73d0336deb9560d44163fc5330d1c9d775c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 83ad256522ca19a19b3fe46fcc48e9cb37cbe246
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>Configurar o CHAP para o dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [configurar o CHAP para o dispositivo StorSimple](storsimple-8000-configure-chap.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 Este tutorial explica como configurar o CHAP para o dispositivo StorSimple. O procedimento detalhado neste artigo aplica-se a série 8000 do StorSimple, bem como dispositivos StorSimple 1200.
 
 CHAP representa Challenge Handshake Authentication Protocol. É um esquema de autenticação utilizado pelos servidores para validar a identidade de clientes remotos. A verificação é baseada numa palavra-passe partilhada ou o segredo. CHAP pode ser unidirecional (unidirecionais) ou mútua (bidirecional). CHAP unidirecional é quando o destino autentica um iniciador. CHAP inverso ou mútua, por outro lado, requer que o destino autenticar o iniciador e, em seguida, o iniciador autenticar o destino. Autenticação de iniciador pode ser implementada sem a autenticação de destino. No entanto, a autenticação de destino pode ser implementada apenas se a autenticação de iniciador também é implementada. 

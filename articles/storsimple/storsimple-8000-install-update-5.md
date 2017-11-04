@@ -12,13 +12,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 10/06/2017
+ms.date: 11/02/2017
 ms.author: alkohli
-ms.openlocfilehash: e9b2f8b225c6b9ed0f0622e6a51a48cdfada28bb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 9f5b5cc597da714369d4c452edce42ea7fe205dd
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="install-update-5-on-your-storsimple-device"></a>Instalar a atualização 5 no dispositivo StorSimple
 
@@ -30,7 +30,7 @@ A atualização 5 inclui o software de dispositivos, Storport e Spaceport, atual
 
 > [!IMPORTANT]
 > * Um conjunto de pré-verificações de manuais e automáticas terminado antes da instalação para determinar o estado de funcionamento do dispositivo em termos de conectividade de rede e estado de hardware. Estas verificações prévias são efetuadas apenas se aplicar as atualizações do portal do Azure.
-> * Recomendamos vivamente que ao atualizar um dispositivo com versões anteriores ao Update 3, instale as atualizações utilizando o método de correção. Para ajudar o suporte ajudá-lo durante a atualização, [iniciar um pedido de suporte](storsimple-8000-contact-microsoft-support.md).
+> * Recomendamos vivamente que ao atualizar um dispositivo com versões anteriores ao Update 3, instale as atualizações utilizando o método de correção. Caso encontre quaisquer problemas, [iniciar um pedido de suporte](storsimple-8000-contact-microsoft-support.md).
 > * Recomendamos que instale o software e outras atualizações regulares através do portal do Azure. Só deve passar para a interface do Windows PowerShell do dispositivo (para instalar atualizações) se falhar a verificação de pré-atualização de gateway no portal. Consoante a versão que está a atualizar, as atualizações poderão demorar 4 horas (ou superior) para instalar. As atualizações de modo de manutenção tem de ser instaladas através da interface do Windows PowerShell do dispositivo. As atualizações de modo de manutenção acontece atualizações, estas resultam em indisponíveis para o seu dispositivo.
 > * Se executar opcional Snapshot Manager do StorSimple, certifique-se de que a atualização a versão do Snapshot Manager para atualização 5 antes de atualizar o dispositivo.
 

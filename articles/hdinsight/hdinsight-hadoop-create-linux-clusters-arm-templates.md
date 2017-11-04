@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/30/2017
 ms.author: jgao
-ms.openlocfilehash: 82733e2a3025f932961122bad9d70c26896837b7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 25a45a380db06808db352fa26b88235d6e4b8fd4
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="create-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Criar clusters do Hadoop no HDInsight com modelos do Resource Manager
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -34,8 +34,6 @@ Para seguir as instruções neste artigo, terá de:
 
 * Um [subscrição do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * CLI do Azure PowerShell e/ou do Azure.
-
-[!INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
 
 ### <a name="resource-manager-templates"></a>Modelos do Resource Manager
 Um modelo do Resource Manager torna mais fácil de criar o seguinte para a sua aplicação numa operação única e coordenada:
@@ -58,8 +56,7 @@ Ao utilizar o portal do Azure, pode configurar todas as propriedades de um clust
 **Para gerar um modelo através do portal do Azure**
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
-2. Clique em **novo** no menu da esquerda, clique em **Intelligence + análise**e, em seguida, clique em **HDInsight**.
-3. Siga as instruções para introduzir propriedades. Pode utilizar o **criação rápida** ou **personalizada** opção.
+2. Clique em **crie um recurso** no menu da esquerda, clique em **dados + análise**e, em seguida, clique em **HDInsight**.
 4. No **resumo** separador, clique em **transferir modelo e os parâmetros**:
 
     ![HDInsight Hadoop criar transferências de modelo de Gestor de recursos de cluster](./media/hdinsight-hadoop-create-linux-clusters-arm-templates/hdinsight-create-cluster-resource-manager-template-download.png)
@@ -169,6 +166,7 @@ Caso se depare com problemas com a criação de clusters do HDInsight, veja [ace
 ## <a name="next-steps"></a>Passos seguintes
 Neste artigo, aprendeu a várias formas de criar um cluster do HDInsight. Para obter mais informações, consulte os artigos seguintes:
 
+* Para o HDInsight mais relacionados modelos, consulte [modelos de início rápido do Azure](https://azure.microsoft.com/resources/templates/?term=hdinsight).
 * Para obter um exemplo de implementar recursos através da biblioteca de cliente .NET, consulte [implementar recursos com bibliotecas .NET e um modelo](../virtual-machines/windows/csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Para obter um exemplo detalhado para implementar uma aplicação, consulte [aprovisionar e implementar micro-serviços previsibilidade no Azure](../app-service/app-service-deploy-complex-application-predictably.md).
 * Para obter orientações sobre a implementação da sua solução em ambientes diferentes, consulte [Ambientes de desenvolvimento e teste no Microsoft Azure](../solution-dev-test-environments.md).
@@ -176,7 +174,7 @@ Neste artigo, aprendeu a várias formas de criar um cluster do HDInsight. Para o
 * Para obter uma lista das funções que pode utilizar um modelo Azure Resource Manager, consulte [funções de modelo](../azure-resource-manager/resource-group-template-functions.md).
 
 ## <a name="appendix-resource-manager-template-to-create-a-hadoop-cluster"></a>Apêndice: Modelo do Resource Manager criar um cluster de Hadoop
-O modelo Azure Resource Manager seguinte cria um cluster do Hadoop baseados em Linux com a conta do storage do Azure dependente.
+O modelo Azure Resource Manager seguinte cria um cluster de Hadoop com a conta do storage do Azure dependente.
 
 > [!NOTE]
 > Este exemplo inclui informações de configuração para o metastore do Hive e metastore do Oozie. Remover a secção ou configurar a secção antes de utilizar o modelo.
@@ -289,7 +287,7 @@ O modelo Azure Resource Manager seguinte cria um cluster do Hadoop baseados em L
 
         },
         "properties": {
-            "clusterVersion": "3.4",
+            "clusterVersion": "3.6",
             "osType": "Linux",
             "tier": "standard",
             "clusterDefinition": {
@@ -420,7 +418,7 @@ Se qualquer um parâmetro numa secção como parte do modelo de si próprio, o H
         },
         "clusterVersion": {
             "type": "string",
-            "defaultValue": "3.5",
+            "defaultValue": "3.6",
             "metadata": {
                 "description": "HDInsight cluster version."
             }

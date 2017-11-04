@@ -13,24 +13,24 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/26/2017
+ms.date: 11/02/2017
 ms.author: kumud
-ms.openlocfilehash: 7256548b988812c64ca9a9f8a84fec377646635d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4cd65c01d75af8539f5fa13dbbd2aaec548aea0b
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="how-to-configure-high-availability-ports-for-internal-load-balancer"></a>Como configurar portas de elevada disponibilidade para o Balanceador de carga interno
 
-Este artigo fornece um exemplo de implementação de elevada disponibilidade (HA) portas num Balanceador de carga interno. Para os dispositivos de rede Virtual configurações específicas, consulte os sites correspondentes do fornecedor.
+Este artigo fornece um exemplo de implementação de elevada disponibilidade (HA) portas num Balanceador de carga interno. Para aplicações de rede virtuais (NVAs) configurações específicas, consulte os sites correspondentes do fornecedor.
 
 >[!NOTE]
 > Funcionalidade de elevada disponibilidade portas está atualmente em pré-visualização. Durante a pré-visualização, a funcionalidade poderá não ter o mesmo nível de disponibilidade e fiabilidade oferecido na versão de disponibilidade geral. Para obter mais informações, consulte [Termos de Utilização Suplementares do Microsoft Azure para Pré-visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Figura 1 ilustra o exemplo de implementação descrita neste artigo, a seguinte configuração:
 - Os NVAs são implementadas no conjunto back-end de um balanceador de carga interno subjacente à configuração de portas do HA. 
-- O UDR aplicado as rotas de sub-rede DMZ todo o tráfego para <>? efetuando o salto seguinte como lista IP Virtual de Balanceador de carga interno. 
+- O UDR aplicado as rotas de sub-rede DMZ todo o tráfego para os NVAs efetuando o salto seguinte como lista IP Virtual de Balanceador de carga interno. 
 - Balanceador de carga interno distribui o tráfego para um os NVAs Active Directory, de acordo com o algoritmo LB.
 - NVA processa o tráfego e reencaminha-lo para o destino original da sub-rede de back-end.
 - O caminho de retorno também pode tirar a rota mesma se um UDR correspondente estiver configurada na sub-rede de back-end. 
@@ -41,19 +41,13 @@ Figura 1 - aparelhos de rede Virtual implementado por trás de um balanceador de
 
 ## <a name="preview-sign-up"></a>Pré-visualização inscrição
 
-Participar na pré-visualização da funcionalidade de portas HA no SKU Standard de Balanceador de carga, registe a sua subscrição para obter acesso utilizando o PowerShell ou o Azure CLI 2.0.
+Participar na pré-visualização da funcionalidade de portas HA no padrão de Balanceador de carga, registe a sua subscrição para obter acesso utilizando 2.0 do Azure CLI ou PowerShell.  Registe a sua subscrição do
 
-- Inscrever-se com o PowerShell
+1. [Pré-visualização padrão do Balanceador de carga](https://aka.ms/lbpreview#preview-sign-up) e 
+2. [HA portas pré-visualizar](https://aka.ms/haports#preview-sign-up).
 
-   ```powershell
-   Register-AzureRmProviderFeature -FeatureName AllowILBAllPortsRule -ProviderNamespace Microsoft.Network
-    ```
-
-- Inscrever-se utilizar o Azure CLI 2.0
-
-    ```cli
-  az feature register --name AllowILBAllPortsRule --namespace Microsoft.Network  
-    ```
+>[!NOTE]
+>Para utilizar esta funcionalidade, tem também de inscrição para o Balanceador de carga [pré-visualização padrão](https://aka.ms/lbpreview#preview-sign-up) para além das portas HA. Registo de pré-visualizações de portas HA ou padrão de Balanceador de carga pode demorar uma hora.
 
 ## <a name="configuring-ha-ports"></a>Configurar as portas HA
 
@@ -68,6 +62,39 @@ O portal do Azure inclui o **HA portas** opção através de uma caixa de verifi
 ![ha portas configuração através do portal do Azure](./media/load-balancer-configure-ha-ports/haports-portal.png)
 
 Figura 2 - HA configuração de portas através do Portal
+
+### <a name="configure-ha-ports-lb-rule-via-resource-manager-template"></a>Configurar HA portas LB regra através do modelo do Resource Manager
+
+Pode configurar as portas HA com a versão de API de 2017-08-01 para Microsoft.Network/loadBalancers no recurso de Balanceador de carga. O fragmento JSON seguinte ilustra as alterações na configuração de Balanceador de carga para HA portas através da REST API.
+
+```json
+    {
+        "apiVersion": "2017-08-01",
+        "type": "Microsoft.Network/loadBalancers",
+        ...
+        "sku":
+        {
+            "name": "Standard"
+        },
+        ...
+        "properties": {
+            "frontendIpConfigurations": [...],
+            "backendAddressPools": [...],
+            "probes": [...],
+            "loadBalancingRules": [
+             {
+                "properties": {
+                    ...
+                    "protocol": "All",
+                    "frontendPort": 0,
+                    "backendPort": 0
+                }
+             }
+            ],
+       ...
+       }
+    }
+```
 
 ### <a name="configure-ha-ports-load-balancer-rule-with-powershell"></a>Configurar a regra de Balanceador de carga do HA portas com o PowerShell
 

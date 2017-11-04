@@ -13,14 +13,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/20/2017
+ms.date: 11/03/2017
 ms.author: jdial
 ms.custom: 
-ms.openlocfilehash: 19f94f009aac53baca31dcb6973a8aff3f4f5ab9
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 9aea299738eb5cac6fe6d3b633707862d978fff0
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="filter-network-traffic-with-network-and-application-security-groups-preview"></a>Filtrar o tráfego de rede com grupos de segurança de rede e de aplicação (pré-visualização)
 
@@ -53,7 +53,9 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
     az feature show --name AllowApplicationSecurityGroups --namespace Microsoft.Network
     ```
 
-    Não continue com os restantes passos até *registada* aparece para **estado** no resultado devolvido pelo comando anterior. Se continuar antes de estiver registado, os restantes passos falharem.
+    > [!WARNING]
+    > Registo pode demorar até uma hora para concluir. Não continue com os restantes passos até *registada* aparece para **estado** no resultado devolvido pelo comando anterior. Se continuar antes de estiver registado, os restantes passos falharem.
+
 6. Execute o seguinte script de deteção para criar um grupo de recursos:
 
     ```azurecli-interactive
@@ -161,7 +163,6 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       --name myNic1 \
       --vnet-name myVnet \
       --subnet mySubnet \
-      --network-security-group myNsg \
       --location westcentralus \
       --application-security-groups "WebServers" "AppServers"
 
@@ -170,7 +171,6 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       --name myNic2 \
       --vnet-name myVnet \
       --subnet mySubnet \
-      --network-security-group myNsg \
       --location westcentralus \
       --application-security-groups "AppServers"
 
@@ -179,12 +179,11 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       --name myNic3 \
       --vnet-name myVnet \
       --subnet mySubnet \
-      --network-security-group myNsg \
       --location westcentralus \
       --application-security-groups "DatabaseServers"
     ```
 
-    Apenas a segurança regra correspondente que criou no passo 9 é aplicada a interface de rede, baseada no grupo de segurança de aplicação, que a interface de rede é um membro do. Por exemplo, apenas o *WebRule* Efetivo para o *myWebNic*, porque a interface de rede é um membro do *servidores Web* grupo de segurança de aplicação e a regra Especifica o *servidores Web* grupo de segurança de aplicações como respectivo destino. O *AppRule* e *DatabaseRule* regras não são aplicadas para o *myWebNic*, porque a interface de rede não é um membro do *AppServers*e *DatabaseServers* grupos de segurança de aplicações.
+    Apenas a segurança regra correspondente que criou no passo 9 é aplicada a interface de rede, baseada no grupo de segurança de aplicação, que a interface de rede é um membro do. Por exemplo, apenas o *WebRule* Efetivo para *myNic1*, porque a interface de rede é um membro do *servidores Web* grupo de segurança de aplicação e a regra Especifica o *servidores Web* grupo de segurança de aplicações como respectivo destino. O *AppRule* e *DatabaseRule* regras não são aplicadas a *myNic1*, porque a interface de rede não é um membro do *AppServers*e *DatabaseServers* grupos de segurança de aplicações.
 
 13. Crie uma máquina virtual para cada tipo de servidor, anexar a interface de rede correspondente a cada máquina virtual. Este exemplo cria máquinas virtuais do Windows, mas pode alterar *win2016datacenter* para *UbuntuLTS* para criar máquinas virtuais do Linux em vez disso.
 
@@ -240,7 +239,8 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
     Get-AzureRmProviderFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network
     ```
 
-    Não continue com os restantes passos até *registada* aparece no **RegistrationState** coluna do resultado devolvido pelo comando anterior. Se continuar antes de estiver registado, os restantes passos falharem.
+    > [!WARNING]
+    > Registo pode demorar até uma hora para concluir. Não continue com os restantes passos até *registada* aparece para **RegistrationState** no resultado devolvido pelo comando anterior. Se continuar antes de estiver registado, os restantes passos falharem.
         
 6. Criar um grupo de recursos:
 
@@ -344,7 +344,6 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       -ResourceGroupName myResourceGroup `
       -Location westcentralus `
       -Subnet $vNet.Subnets[0] `
-      -NetworkSecurityGroup $nsg `
       -ApplicationSecurityGroup $webAsg,$appAsg
 
     $nic2 = New-AzureRmNetworkInterface `
@@ -352,7 +351,6 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       -ResourceGroupName myResourceGroup `
       -Location westcentralus `
       -Subnet $vNet.Subnets[0] `
-      -NetworkSecurityGroup $nsg `
       -ApplicationSecurityGroup $appAsg
 
     $nic3 = New-AzureRmNetworkInterface `
@@ -360,11 +358,10 @@ Comandos da CLI do Azure são os mesmos, se executar os comandos do Windows, Lin
       -ResourceGroupName myResourceGroup `
       -Location westcentralus `
       -Subnet $vNet.Subnets[0] `
-      -NetworkSecurityGroup $nsg `
       -ApplicationSecurityGroup $databaseAsg
     ```
 
-    Apenas a segurança regra correspondente que criou no passo 8 é aplicada a interface de rede, baseada no grupo de segurança de aplicação, que a interface de rede é um membro do. Por exemplo, apenas o *WebRule* Efetivo para o *myWebNic*, porque a interface de rede é um membro do *servidores Web* grupo de segurança de aplicação e a regra Especifica o *servidores Web* grupo de segurança de aplicações como respectivo destino. O *AppRule* e *DatabaseRule* regras não são aplicadas para o *myWebNic*, porque a interface de rede não é um membro do *AppServers*e *DatabaseServers* grupos de segurança de aplicações.
+    Apenas a segurança regra correspondente que criou no passo 8 é aplicada a interface de rede, baseada no grupo de segurança de aplicação, que a interface de rede é um membro do. Por exemplo, apenas o *WebRule* Efetivo para *myNic1*, porque a interface de rede é um membro do *servidores Web* grupo de segurança de aplicação e a regra Especifica o *servidores Web* grupo de segurança de aplicações como respectivo destino. O *AppRule* e *DatabaseRule* regras não são aplicadas a *myNic1*, porque a interface de rede não é um membro do *AppServers*e *DatabaseServers* grupos de segurança de aplicações.
 
 13. Crie uma máquina virtual para cada tipo de servidor, anexar a interface de rede correspondente a cada máquina virtual. Este exemplo cria máquinas virtuais do Windows, mas antes de executar o script, pode alterar *-Windows* para *- Linux*, *MicrosoftWindowsServer* para *Canónico*, *WindowsServer* para *UbuntuServer* e *2016 Datacenter* para *14.04.2-LTS*para criar máquinas virtuais do Linux em vez disso.
 
