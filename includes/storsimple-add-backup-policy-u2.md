@@ -22,8 +22,3 @@
 
 A política recentemente adicionada será apresentada na vista tabular na página **Políticas de Cópia de Segurança**.
 
-
-
-<!--HONumber=Jan17_HO4-->
-
-

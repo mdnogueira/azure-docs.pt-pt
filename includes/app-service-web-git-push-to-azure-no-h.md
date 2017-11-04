@@ -1,4 +1,4 @@
-Na janela de terminal local, adicione um remoto do Azure ao seu repositório Git local.
+Na janela de terminal local, adicione um remoto do Azure ao seu repositório Git local. Este remoto do Azure foi criado por si no [criar uma aplicação web](#create-a-web-app).
 
 ```bash
 git remote add azure <URI from previous step>

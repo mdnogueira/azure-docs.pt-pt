@@ -1,16 +1,16 @@
-### <a name="prerequisites"></a>Prerequisites
-* A [Yammer](https://www.yammer.com/) account 
+### <a name="prerequisites"></a>Pré-requisitos
+* A [Yammer](https://www.yammer.com/) conta 
 
-Before you can use your Yammer account in a Logic app, you must authorize the Logic app to connect to your Yammer account. Fortunately, you can do this easily from within your Logic app on the Azure Portal. 
+Antes de poder utilizar a sua conta do Yammer numa aplicação lógica, tem de autorizar a aplicação lógica para ligar à sua conta do Yammer. Felizmente, pode fazê-facilmente na sua aplicação lógica no Portal do Azure. 
 
-Here are the steps to authorize your Logic app to connect to your Yammer account:
+Eis os passos para autorizar a aplicação lógica para ligar à sua conta do Yammer:
 
-1. To create a connection to Yammer, in the Logic app designer, select **Show Microsoft managed APIs** in the drop down list then enter *Yammer* in the search box. Select the trigger or action you'll like to use:  
+1. Para criar uma ligação ao Yammer, no designer de aplicação lógica, selecione **Mostrar Microsoft APIs geridas** na lista pendente, em seguida, introduza *Yammer* na caixa de pesquisa. Selecione o acionador ou ação que irá gostar a utilizar:  
    ![](./media/connectors-create-api-yammer/yammer-1.png)
-2. If you haven't created any connections to Yammer before, you'll get prompted to provide your Yammer credentials. These credentials will be used to authorize your Logic app to connect to, and access your Yammer account's data:  
+2. Se ainda não criou quaisquer ligações a Yammer antes, irá obter lhe fornecer as credenciais do Yammer. Estas credenciais serão utilizadas para autorizar a aplicação lógica para ligar a e aceder aos dados da sua conta Yammer:  
    ![](./media/connectors-create-api-yammer/yammer-2.png)
-3. Provide your Yammer user name and password to authorize your Logic app:  
+3. Forneça o nome de utilizador do Yammer e a palavra-passe para autorizar a aplicação lógica:  
    ![](./media/connectors-create-api-yammer/yammer-3.png)   
-4. Notice the connection has been created and you are now free to proceed with the other steps in your Logic app:  
+4. Repare a ligação foi criada e está agora livre para continuar com os outros passos da sua aplicação lógica:  
    ![](./media/connectors-create-api-yammer/yammer-4.png)   
 

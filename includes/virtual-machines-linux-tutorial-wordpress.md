@@ -1,27 +1,27 @@
-## <a name="install-wordpress"></a>Install WordPress
+## <a name="install-wordpress"></a>Instalar o WordPress
 
-If you want to try your stack, install a sample app. As an example, the following steps install the open source [WordPress](https://wordpress.org/) platform to create websites and blogs. Other workloads to try include [Drupal](http://www.drupal.org) and [Moodle](https://moodle.org/). 
+Se pretender a pilha, instale uma aplicação de exemplo. Por exemplo, os seguintes passos instalar de open source [WordPress](https://wordpress.org/) plataforma para criar os Web sites e blogues. Incluem outras cargas de trabalho para experimentar [Drupal](http://www.drupal.org) e [Moodle](https://moodle.org/). 
 
-This WordPress setup is for proof of concept. For more information and settings for production installation, see the [WordPress documentation](https://codex.wordpress.org/Main_Page). 
+Este programa de configuração do WordPress destina-se a prova de conceito. Para obter mais informações e as definições de instalação de produção, consulte o [WordPress documentação](https://codex.wordpress.org/Main_Page). 
 
 
 
-### <a name="install-the-wordpress-package"></a>Install the WordPress package
+### <a name="install-the-wordpress-package"></a>Instalar o pacote do WordPress
 
-Run the following command:
+Execute o seguinte comando:
 
 ```bash
 sudo apt install wordpress
 ```
 
-### <a name="configure-wordpress"></a>Configure WordPress
+### <a name="configure-wordpress"></a>Configurar WordPress
 
-Configure WordPress to use MySQL and PHP. Run the following command to open a text editor of your choice and create the file `/etc/wordpress/config-localhost.php`:
+Configure WordPress para utilizar o MySQL e PHP. Execute o seguinte comando para abrir o editor de texto à sua escolha e criar o ficheiro `/etc/wordpress/config-localhost.php`:
 
 ```bash
 sudo sensible-editor /etc/wordpress/config-localhost.php
 ```
-Copy the following lines to the file, substituting your database password for *yourPassword* (leave other values unchanged). Then save the file.
+Copie as seguintes linhas ao ficheiro, substituindo a palavra-passe de base de dados para *yourPassword* (mantenha outros valores inalterados). Em seguida, guarde o ficheiro.
 
 ```php
 <?php
@@ -33,13 +33,13 @@ define('WP_CONTENT_DIR', '/usr/share/wordpress/wp-content');
 ?>
 ```
 
-In a working directory, create a text file `wordpress.sql` to configure the WordPress database: 
+No diretório de trabalho, crie um ficheiro de texto `wordpress.sql` para configurar a base de dados do WordPress: 
 
 ```bash
 sudo sensible-editor wordpress.sql
 ```
 
-Add the following commands, substituting your database password for *yourPassword* (leave other values unchanged). Then save the file.
+Adicionar os comandos seguintes, substituindo a palavra-passe de base de dados para *yourPassword* (mantenha outros valores inalterados). Em seguida, guarde o ficheiro.
 
 ```sql
 CREATE DATABASE wordpress;
@@ -51,15 +51,15 @@ FLUSH PRIVILEGES;
 ```
 
 
-Run the following command to create the database:
+Execute o seguinte comando para criar a base de dados:
 
 ```bash
 cat wordpress.sql | sudo mysql --defaults-extra-file=/etc/mysql/debian.cnf
 ```
 
-After the command completes, delete the file `wordpress.sql`.
+Depois do comando for concluído, elimine o ficheiro `wordpress.sql`.
 
-Move the WordPress installation to the web server document root:
+Mova a instalação do WordPress na raiz de documento de servidor web:
 
 ```bash
 sudo ln -s /usr/share/wordpress /var/www/html/wordpress
@@ -67,6 +67,6 @@ sudo ln -s /usr/share/wordpress /var/www/html/wordpress
 sudo mv /etc/wordpress/config-localhost.php /etc/wordpress/config-default.php
 ```
 
-Now you can complete the WordPress setup and publish on the platform. Open a browser and go to `http://yourPublicIPAddress/wordpress`. Substitute the public IP address of your VM. It should look similar to this image.
+Agora pode concluir a configuração do WordPress e publicar na plataforma. Abra um browser e aceda a `http://yourPublicIPAddress/wordpress`. Substitua o endereço IP público da sua VM. Deve ser semelhante a esta imagem.
 
-![WordPress installation page](./media/virtual-machines-linux-tutorial-wordpress/wordpressstartpage.png)
+![Página de instalação do WordPress](./media/virtual-machines-linux-tutorial-wordpress/wordpressstartpage.png)

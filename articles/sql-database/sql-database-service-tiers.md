@@ -1,7 +1,7 @@
 ---
-title: "Desempenho da Base de Dados SQL: camadas de serviço | Microsoft Docs"
-description: "Compare as camadas de serviços da Base de Dados SQL."
-keywords: "opções da base de dados, desempenho da base de dados"
+title: "Serviço de base de dados SQL do Azure | Microsoft Docs"
+description: "Saiba mais sobre os escalões de serviço para único e bases de dados de conjunto para fornecer os níveis de desempenho e tamanhos de armazenamento."
+keywords: 
 services: sql-database
 documentationcenter: 
 author: CarlRabeler
@@ -9,80 +9,74 @@ manager: jhubbard
 editor: 
 ms.assetid: f5c5c596-cd1e-451f-92a7-b70d4916e974
 ms.service: sql-database
-ms.custom: overview
+ms.custom: DBs & servers
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: article
 ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 01/11/2017
-ms.author: carlrab; janeng
-translationtype: Human Translation
-ms.sourcegitcommit: 0a00aff343bfd31c956f6cbc831e89cc1cc84b23
-ms.openlocfilehash: 95ae4bd67b7d08755035e7b5559ca9648d45bdaa
-
-
+ms.workload: Active
+ms.date: 08/20/2017
+ms.author: carlrab
+ms.openlocfilehash: 55f59fddee008eb42b7252d6368a56873a6abd16
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
-# <a name="sql-database-options-and-performance-understand-whats-available-in-each-service-tier"></a>Opções e desempenho da Base de Dados SQL: compreender o que está disponível em cada camada de serviço
-A [Base de Dados SQL do Azure](sql-database-technical-overview.md) oferece três camadas de serviço, **Básico**, **Standard** e **Premium**, com vários níveis de desempenho para processar diferentes cargas de trabalho. Os níveis de desempenho superiores oferecem recursos crescentes concebidos para proporcionar um débito cada vez mais elevado. Pode alterar os [escalões de serviço e os níveis de desempenho dinamicamente](sql-database-scale-up.md) sem período de indisponibilidade. As camadas de serviços Básica, Standard e Premium têm um SLA de 99,99% de tempo de atividade, opções de continuidade do negócio flexíveis, funcionalidades de segurança e faturação por hora. 
+# <a name="what-are-azure-sql-database-service-tiers"></a>Quais são os escalões de serviço do SQL Database do Azure
 
-Pode criar bases de dados únicas com recursos dedicados no [nível de desempenho](sql-database-service-tiers.md#single-database-service-tiers-and-performance-levels) selecionado. Também pode gerir várias bases de dados num [conjunto elástico](sql-database-service-tiers.md#elastic-pool-service-tiers-and-performance-in-edtus) no qual os recursos são partilhados entre bases de dados. Os recursos disponíveis para bases de dados únicas são expressos em termos de Unidades de Transação da Base de Dados (DTUs) e para conjuntos elásticos em termos de DTUs elásticas (eDTUs). Para obter mais informações sobre DTUs e eDTUs, veja [O que é uma DTU?](sql-database-what-is-a-dtu.md). 
-
-Em ambos os casos, as camadas de serviço incluem **Básico**, **Standard** e **Premium**. 
+[Base de dados SQL do Azure](sql-database-technical-overview.md) oferece **básico**, **padrão**, **Premium**, e **Premium RS** camadas para ambos os doserviço[único bases de dados](sql-database-single-database-resources.md) e [conjuntos elásticos](sql-database-elastic-pool.md). Escalões de serviço são principalmente diferenciadas por um intervalo de nível de desempenho e opções de tamanho de armazenamento e preços.  Todos os escalões de serviço fornecem flexibilidade na alteração do tamanho de armazenamento e de nível de desempenho.  Bases de dados individuais e conjuntos elásticos são faturados por hora com base na camada de serviço, o nível de desempenho e o tamanho de armazenamento.   
 
 ## <a name="choosing-a-service-tier"></a>Escolher uma camada de serviços
-A tabela seguinte fornece exemplos de camadas mais adequadas para cargas de trabalho de aplicações diferentes.
 
-| Camada de serviços | Cargas de trabalho de destino |
-| :--- | --- |
-| **Básica** | Mais adequada para uma base de dados pequena, suportando normalmente uma única operação ativa num determinado momento. Os exemplos incluem bases de dados utilizadas para desenvolvimento ou testes, ou aplicações de dimensionamento pequeno raramente utilizadas. |
-| **Standard** |A opção go-to (ir) para aplicações na cloud com requisitos de desempenho E/S entre baixos e médios suporta várias consultas em simultâneo. Os exemplos incluem aplicações de grupo de trabalho ou Web. |
-| **Premium** | Concebido para elevado volume transacional com requisitos de desempenho E/S elevados, suporta muitos utilizadores em simultâneo. Os exemplos são bases de dados que suportam aplicações fundamentais. |
+Escolher uma camada de serviço depende principalmente continuidade do negócio, armazenamento e requisitos de desempenho.
+| | **Básica** | **Standard** |**Premium** |**Premium RS** |
+| :-- | --: |--:| --:| --:| 
+|Carga de trabalho de destino|Desenvolvimento e de produção|Desenvolvimento e de produção|Desenvolvimento e de produção|Carga de trabalho que pode tolerar a perda de dados até 5 minutos devido a falhas de serviço|
+|SLA de Tempo de Atividade|99,99%|99,99%|99,99%|N/d enquanto em pré-visualização|
+|Retenção da cópia de segurança|7 dias|35 dias|35 dias|35 dias|
+|CPU|Baixo|Baixa, média, alta|Média, alta|Médio|
+|Débito de e/s|Baixo  | Médio | Ordem de grandeza superior ao padrão|Mesmo que Premium|
+|Latência de e/s|Superior ao Premium|Superior ao Premium|Inferior ao básico e Standard|Mesmo que Premium|
+|A indexação Columnstore e OLTP na memória|N/D|N/D|Suportado|Suportado|
+|||||
 
-Primeiro decida se pretende executar uma base de dados única ou se pretende agrupar bases de dados que partilham recursos. Reveja as [considerações sobre o conjunto elástico](sql-database-elastic-pool-guidance.md). Para decidir sobre uma camada de serviços, comece por determinar as funcionalidades mínimas da base de dados de que necessita:
+## <a name="performance-level-and-storage-size-limits"></a>Limites de tamanho de armazenamento e de nível de desempenho
 
-* Tamanho máximo da base de dados para bases de dados individuais (2 GB no máximo para Basic, 250 GB no máximo para Standard e 500 GB a 1 TB no máximo para Premium, em níveis de desempenho máximos)
-* Armazenamento total máximo no caso de um conjunto elástico (117 GB para o Básico, 1200 GB para o Standard e 750 GB para o Premium)
-* Número máximo de bases de dados por conjunto (400 para o Básico, 400 para o Standard e 50 para o Premium)
-* Período de retenção de cópias de segurança da base de dados (7 dias para o Básico, 35 dias para o Standard e para o Premium)
+Níveis de desempenho são expressas em termos de unidades de transação de base de dados (DTUs) para bases de dados individuais e unidades de transação da base de dados elásticas (eDTUs) para conjuntos elásticos. Para mais informações sobre as DTUs e eDTUs, consulte [quais são as DTUs e eDTUs?](sql-database-what-is-a-dtu.md).
 
-Depois de ter determinado a camada de serviços mínima, estará pronto para determinar o nível de desempenho para a base de dados (o número de DTUs). Os níveis de desempenho S2 e S3 standard são, em muitos casos, um bom ponto de partida. Para bases de dados com requisitos de CPU ou E/S elevados, os níveis de desempenho Premium são o ponto inicial acertado. O Premium oferece mais CPU e começa com 10x mais E/S comparativamente com o nível de desempenho mais elevado do Standard.
+### <a name="single-databases"></a>Bases de dados individuais
 
-Após escolher inicialmente um nível de desempenho pode, em seguida, aumentar ou reduzir verticalmente e de forma dinâmica a [base de dados individual](sql-database-scale-up.md) ou o [conjunto elástico](sql-database-elastic-pool-manage-portal.md#change-performance-settings-of-a-pool) com base na experiência real. Para cenários de migração, pode ainda utilizar a [Calculadora de DTU](http://dtucalculator.azurewebsites.net/) para se obter uma estimativa do número de DTUs necessários. 
+|  | **Básica** | **Standard** | **Premium** | **Premium RS**|
+| :-- | --: | --: | --: | --: |
+| Armazenamento máximo tamanho * | 2GB | 1 TB | 4 TB  | 1 TB  |
+| DTUs máximas | 5 | 3000 | 4000 | 1000 |
+||||||
 
-> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-dynamically-scale-up-or-scale-down/player]
+### <a name="elastic-pools"></a>Conjuntos elásticos
+
+| | **Básica** | **Standard** | **Premium** | **Premium RS**|
+| :-- | --: | --: | --: | --: |
+| Tamanho máximo de armazenamento por base de dados *  | 2GB | 1 TB | 1 TB | 1 TB |
+| Tamanho máximo de armazenamento por agrupamento * | 156 GB | 4 TB | 4 TB | 1 TB |
+| EDTUs máximo por base de dados | 5 | 3000 | 4000 | 1000 |
+| Máximo eDTUs por conjunto | 1600 | 3000 | 4000 | 1000 |
+| Número máximo de bases de dados por agrupamento | 500  | 500 | 100 | 100 |
+||||||
+
+> [!IMPORTANT]
+> \*Tamanhos de armazenamento maiores do que a quantidade de armazenamento incluído estão em pré-visualização e são aplicados custos adicionais. Para detalhes, ver os preços da [Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
 >
-
-## <a name="single-database-service-tiers-and-performance-levels"></a>Camadas de serviços de bases de dados individuais e níveis de desempenho
-Para bases de dados individuais, existem vários níveis de desempenho dentro de cada camada de serviços. Tem a flexibilidade de escolher o nível que melhor se adequa às exigências da sua carga de trabalho. Se precisar de aumentar ou reduzir verticalmente, pode alterar facilmente as camadas da base de dados. Consulte [Alterar Camadas de Serviços de Bases de Dados e Níveis de Desempenho](sql-database-scale-up.md), para detalhes.
-
-Independentemente do número de bases de dados alojadas, a sua base de dados obtém um conjunto de recursos garantido, e as características de desempenho esperadas da base de dados não são afetadas.
-
-[!INCLUDE [SQL DB service tiers table](../../includes/sql-database-service-tiers-table.md)]
-
-> [!NOTE]
-> Para obter uma explicação detalhada de todas as outras linhas nesta tabela de camadas de serviço, consulte [Capacidades e limites da camada de serviço](sql-database-performance-guidance.md#service-tier-capabilities-and-limits).
+> \* No escalão Premium, mais de 1 TB de armazenamento estão atualmente disponível nas seguintes regiões: E.U.A. Leste 2, E.U.A. Oeste, Gov (US) - Virginia, Europa Ocidental, Alemanha Central, Sudeste Asiático, Leste do Japão, Leste da Austrália, Canadá Central e Leste do Canadá. Ver [Limitações Atuais P11-P15](sql-database-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 > 
 
-## <a name="elastic-pool-service-tiers-and-performance-in-edtus"></a>Camadas de serviços do conjunto elástico e o desempenho nas eDTUs
-
-Os conjuntos permitem que as bases de dados partilhem e consumam recursos de eDTU sem ser necessário atribuir um nível de desempenho específico a cada base de dados no conjunto. Por exemplo, uma base de dados individual num conjunto Standard pode utilizar desde 0 eDTUs até à eDTU máxima de base de dados que definir quando configurar o conjunto. Os conjuntos permitem que várias bases de dados com diferentes cargas de trabalho utilizem eficazmente os recursos eDTU disponíveis para o conjunto completo. Consulte [Considerações sobre preços e o desempenho de um conjunto elástico](sql-database-elastic-pool-guidance.md), para detalhes.
-
-A tabela seguinte descreve as características de camadas de serviços de conjunto.
-
-[!INCLUDE [SQL DB service tiers table for elastic pools](../../includes/sql-database-service-tiers-table-elastic-pools.md)]
-
-Cada base de dados dentro de um conjunto também respeita as características de base de dados individual para essa camada. Por exemplo, o conjunto Básico tem um limite máximo de sessões por conjunto de 4 800–28 800, mas uma base de dados individual dentro de um conjunto Básico tem um limite de base de dados de 300 sessões.
+Para obter detalhes sobre as opções de tamanho de armazenamento disponíveis e níveis de desempenho específicos, consulte [dos limites de recursos de base de dados SQL](sql-database-resource-limits.md).
 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* Saiba os detalhes de [conjuntos elásticos](sql-database-elastic-pool-guidance.md) e as [considerações sobre preços e desempenho de conjuntos elásticos](sql-database-elastic-pool-guidance.md).
-* Saiba como [Monitorizar, gerir e redimensionar conjuntos elásticos](sql-database-elastic-pool-manage-portal.md) e [Monitorizar o desempenho de bases de dados individuais](sql-database-single-database-monitor.md).
-* Agora que sabe mais sobre as camadas de base de dados SQL, experimente com uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) e saiba [como criar a sua primeira base de dados SQL](sql-database-get-started.md).
-
-
-
-
-<!--HONumber=Jan17_HO2-->
-
+- Saiba mais sobre [único recursos de base de dados](sql-database-single-database-resources.md).
+- Saiba mais sobre conjuntos elásticos, consulte [conjuntos elásticos](sql-database-elastic-pool.md).
+- Saiba mais sobre [subscrição do Azure e limites de serviço, Quotas e restrições](../azure-subscription-service-limits.md)
+* Saiba mais sobre [DTUs e eDTUs](sql-database-what-is-a-dtu.md).
+* Saiba mais sobre a monitorização de utilização, consulte [monitorização e a otimização de desempenho](sql-database-troubleshoot-performance.md).
 

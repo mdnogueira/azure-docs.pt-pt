@@ -1,7 +1,7 @@
-| Resource | Default Limit |
+| Recurso | Limite Predefinido |
 | --- | --- |
-| Virtual machines per availability set | 200 |
-| Certificates per subscription |Unlimited<sup>1</sup> |
+| Máquinas virtuais por conjunto de disponibilidade | 200 |
+| Certificados por subscrição |Ilimitados<sup>1</sup> |
 
-<sup>1</sup>With Azure Resource Manager, certificates are stored in the Azure Key Vault. Although the number of certificates is unlimited for a subscription, there is still a 1 MB limit of certificates per deployment (which consists of either a single VM or an availability set).
+<sup>1</sup>com o Azure Resource Manager, os certificados são armazenados no Cofre de chaves do Azure. Apesar do número de certificados é ilimitado para uma subscrição, há um limite de 1 MB de certificados por implementação (que consiste numa única VM ou um conjunto de disponibilidade).
 

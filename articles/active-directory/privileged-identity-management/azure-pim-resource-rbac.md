@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/19/2017
 ms.author: barclayn
-ms.openlocfilehash: abaf78428cb12235a659bad5c13d64e8e51f4ba6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 114ef434e6167ef2b25b040e35ab3ce1b85151a9
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="pim-for-azure-resources-preview"></a>PIM para recursos do Azure (pré-visualização)
 
@@ -43,11 +43,12 @@ Pode gerir o Azure AD PIM funções incorporadas de recursos do Azure, bem como 
 - Gestor de segurança e muito mais
 
 >[!NOTE]
-Os utilizadores ou membros de um grupo atribuídas às funções de proprietário ou administrador de acesso de utilizador e os administradores globais que ativar a gestão de subscrição no Azure AD são administradores de recursos. Estes administradores podem atribuir funções, configure definições de função e rever o acesso a utilizar o PIM para recursos do Azure. Ver a lista de [funções incorporadas para recursos do Azure](../role-based-access-built-in-roles.md)
+Os utilizadores ou membros de um grupo atribuídas às funções de proprietário ou administrador de acesso de utilizador e os administradores globais que ativar a gestão de subscrição no Azure AD são administradores de recursos. Estes administradores podem atribuir funções, configure definições de função e rever o acesso a utilizar o PIM para recursos do Azure. Ver a lista de [funções incorporadas para recursos do Azure](../role-based-access-built-in-roles.md).
 
 ## <a name="tasks"></a>Tarefas
 
 PIM fornece acesso prático para ativar funções, ver ativações/pedidos pendentes aprovações pendentes (para [funções de diretório do Azure AD](azure-ad-pim-approval-workflow.md)) e revê pendentes a resposta da secção de tarefas do menu de navegação esquerdo.
+
 Quando aceder qualquer um dos itens de menu tarefas a partir do ponto de entrada de descrição geral, a vista resultante contém resultados para as funções de diretório do Azure AD e funções de recursos do Azure (pré-visualização). 
 
 ![](media/azure-pim-resource-rbac/role-settings-details.png)
@@ -56,7 +57,7 @@ As minhas funções contém uma lista das suas atribuições de funções de Act
 
 ## <a name="activate-roles"></a>Ativar funções
 
-Ativar funções para recursos do Azure (pré-visualização) apresenta uma nova experiência que permite que os membros da função elegível agendar ativação para uma data/hora no futuro e selecione uma duração de ativação específico no máximo (configurado por administradores). Saiba mais sobre [ativar aqui a funções do Azure AD](../active-directory-privileged-identity-management-how-to-activate-role.md)
+Ativar funções para recursos do Azure (pré-visualização) apresenta uma nova experiência que permite que os membros da função elegível agendar ativação para uma data/hora no futuro e selecione uma duração de ativação específico no máximo (configurado por administradores). Saiba mais sobre [ativar aqui a funções do Azure AD](../active-directory-privileged-identity-management-how-to-activate-role.md).
 
 ![](media/azure-pim-resource-rbac/contributor.png)
 

@@ -1,17 +1,17 @@
-## <a name="use-the-azure-portal"></a>Use the Azure portal
-1. Select the VM you wish to redeploy, then select the *Redeploy* button in the *Settings* blade. You may need to scroll down to see the **Support and Troubleshooting** section that contains the 'Redeploy' button as in the following example:
+## <a name="use-the-azure-portal"></a>Utilizar o portal do Azure
+1. Selecione a VM que pretende Reimplementar, em seguida, selecione o *Reimplementar* clique no botão no *definições* painel. Poderá ter de deslocar para baixo para ver o **suporte e resolução de problemas** secção que contém o botão 'Reimplementar' como no exemplo seguinte:
    
-    ![Azure VM blade](./media/virtual-machines-common-redeploy-to-new-node/vmoverview.png)
-2. To confirm the operation, select the *Redeploy* button:
+    ![Painel VM do Azure](./media/virtual-machines-common-redeploy-to-new-node/vmoverview.png)
+2. Para confirmar a operação, selecione o *Reimplementar* botão:
    
-    ![Redeploy a VM blade](./media/virtual-machines-common-redeploy-to-new-node/redeployvm.png)
-3. The **Status** of the VM changes to *Updating* as the VM prepares to redeploy, as shown in the following example:
+    ![Volte a implementar um painel VM](./media/virtual-machines-common-redeploy-to-new-node/redeployvm.png)
+3. O **estado** da VM é alterado para *atualização* como a VM se prepara para voltar a implementar, conforme mostrado no exemplo seguinte:
    
-    ![VM updating](./media/virtual-machines-common-redeploy-to-new-node/vmupdating.png)
-4. The **Status** then changes to *Starting* as the VM boots up on a new Azure host, as shown in the following example:
+    ![Atualizar a VM](./media/virtual-machines-common-redeploy-to-new-node/vmupdating.png)
+4. O **estado** muda para *inicial* como VM arranca num novo anfitrião do Azure, conforme mostrado no exemplo seguinte:
    
-    ![VM starting](./media/virtual-machines-common-redeploy-to-new-node/vmstarting.png)
-5. After the VM finishes the boot process, the **Status** then returns to *Running*, indicating the VM has been successfully redeployed:
+    ![A partir de VM](./media/virtual-machines-common-redeploy-to-new-node/vmstarting.png)
+5. Depois da VM termina o processo de arranque, o **estado** , em seguida, regressar ao *executar*, que indica que a VM tenha sido implementada novamente com êxito:
    
-    ![VM running](./media/virtual-machines-common-redeploy-to-new-node/vmrunning.png)
+    ![Execução de VM](./media/virtual-machines-common-redeploy-to-new-node/vmrunning.png)
 

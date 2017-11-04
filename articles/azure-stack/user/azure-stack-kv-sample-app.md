@@ -1,6 +1,6 @@
 ---
-title: Allow applications to retrieve Azure Stack Key Vault secrets | Microsoft Docs
-description: Use a sample app to work with Azure Stack Key Vault
+title: "Permitir que as aplicações obter segredos do Cofre de chaves de pilha do Azure | Microsoft Docs"
+description: "Utilizar uma aplicação de exemplo para trabalhar com o Cofre de chaves de pilha do Azure"
 services: azure-stack
 documentationcenter: 
 author: SnehaGunda
@@ -14,28 +14,26 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/26/2017
 ms.author: sngun
-ms.translationtype: HT
-ms.sourcegitcommit: 9b39c949e33dfbcc75ba8c09d6b38e4bdb243766
 ms.openlocfilehash: 7cfb78cc5219d4adab5ceddc9d7eb8d1fc71b678
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/19/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
+# <a name="sample-application-that-uses-keys-and-secrets-stored-in-a-key-vault"></a>Exemplo de aplicação que utiliza as chaves e segredos armazenados no Cofre de chaves
 
-# <a name="sample-application-that-uses-keys-and-secrets-stored-in-a-key-vault"></a>Sample application that uses keys and secrets stored in a key vault
+Neste artigo, vamos mostrar-lhe como executar uma aplicação de exemplo (HelloKeyVault) que obtém as chaves e segredos de um cofre de chaves na pilha do Azure.
 
-In this article, we show you how to run a sample application (HelloKeyVault) that retrieves keys and secrets from a key vault in Azure Stack.
+## <a name="prerequisites"></a>Pré-requisitos 
 
-## <a name="prerequisites"></a>Prerequisites 
+Execute os seguintes pré-requisitos a partir de [Development Kit](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop), ou baseados em Windows externo cliente se estiver [ligado através de VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn):
 
-Run the following prerequisites either from the [Development Kit](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop), or from a Windows-based external client if you are [connected through VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn):
+* Instalar [módulos do Azure pilha compatível com o Azure PowerShell](azure-stack-powershell-install.md).  
+* Transferir o [ferramentas necessárias para trabalhar com a pilha de Azure](azure-stack-powershell-download.md). 
 
-* Install [Azure Stack-compatible Azure PowerShell modules](azure-stack-powershell-install.md).  
-* Download the [tools required to work with Azure Stack](azure-stack-powershell-download.md). 
+## <a name="create-and-get-the-key-vault-and-application-settings"></a>Criar e obter o Cofre de chaves e as definições da aplicação
 
-## <a name="create-and-get-the-key-vault-and-application-settings"></a>Create and get the key vault and application settings
-
-First, you should create a key vault in Azure Stack, and register an application in Azure Active Directory (Azure AD). You can create and register the key vaults by using the Azure portal or PowerShell. This article shows you the PowerShell way to do the tasks. By default, this PowerShell script creates a new application in Active Directory. However, you can also use one of your existing applications. Make sure to provide a value for the `aadTenantName` and `applicationPassword` variables. If you don't specify a value for the `applicationPassword` variable, this script generates a random password. 
+Em primeiro lugar, deve criar um cofre de chaves na pilha do Azure e registar uma aplicação no Azure Active Directory (Azure AD). Pode criar e registar os cofres de chaves utilizando o portal do Azure ou do PowerShell. Este artigo mostra-lhe a forma de PowerShell para efetuar as tarefas. Por predefinição, este script do PowerShell cria uma nova aplicação no Active Directory. No entanto, também pode utilizar uma das suas aplicações existentes. Certifique-se de fornecer um valor para o `aadTenantName` e `applicationPassword` variáveis. Se não especificar um valor para o `applicationPassword` variável, este script gera uma palavra-passe aleatória. 
 
 ```powershell
 $vaultName           = 'myVault'
@@ -126,28 +124,27 @@ Write-Host
 
 ``` 
 
-The following screenshot shows the output of the previous script:
+A seguinte captura de ecrã mostra a saída do script anterior:
 
-![App config](media/azure-stack-kv-sample-app/settingsoutput.png)
+![Configuração de aplicação](media/azure-stack-kv-sample-app/settingsoutput.png)
 
-Make a note of the **VaultUrl**, **AuthClientId**, and **AuthClientSecret** values returned by the previous script. You use these values to run the HelloKeyVault application.
+Anote o **VaultUrl**, **AuthClientId**, e **AuthClientSecret** valores devolvidos pelo script anterior. Utilize estes valores para executar a aplicação de HelloKeyVault.
 
-## <a name="download-and-run-the-sample-application"></a>Download and run the sample application
+## <a name="download-and-run-the-sample-application"></a>Transferir e executar a aplicação de exemplo
 
-Download the key vault sample from the Azure [Key Vault client samples](https://www.microsoft.com/en-us/download/details.aspx?id=45343) page. Extract the contents of the .zip file onto your development workstation. There are two samples within the samples folder. We use the HellpKeyVault sample in this topic. Browse to the **Microsoft.Azure.KeyVault.Samples** > **samples** > **HelloKeyVault** folder and open the HelloKeyVault application in Visual Studio. 
+Transferir o exemplo do Cofre de chaves do Azure [amostras de cliente do Cofre de chaves](https://www.microsoft.com/en-us/download/details.aspx?id=45343) página. Extraia os conteúdos do ficheiro. zip para a estação de trabalho de desenvolvimento. Existem dois exemplos dentro da pasta de amostras. Utilizamos o exemplo de HellpKeyVault neste tópico. Navegue para o **Microsoft.Azure.KeyVault.Samples** > **amostras** > **HelloKeyVault** pasta e abra a aplicação de HelloKeyVault no Visual Studio. 
 
-Open the HelloKeyVault\App.config file and replace the values of the <appSettings> element with the **VaultUrl**, **AuthClientId**, and **AuthClientSecret** values returned by the previous script. Note that by default the App.config contains a placeholder for *AuthCertThumbprint*, but use *AuthClientSecret* instead. After you replace the settings, rebuild the solution and start the application.
+Abra o ficheiro HelloKeyVault\App.config e substitua os valores do <appSettings> elemento com o **VaultUrl**, **AuthClientId**, e **AuthClientSecret** valores devolvido pelo script anterior. Tenha em atenção que, por predefinição, o App. config contém um marcador de posição para *AuthCertThumbprint*, mas utilizar *AuthClientSecret* em vez disso. Depois de as substituir as definições, reconstruir a solução e iniciar a aplicação.
 
-![App settings](media/azure-stack-kv-sample-app/appconfig.png)
+![Definições de aplicação](media/azure-stack-kv-sample-app/appconfig.png)
  
-The application signs in to Azure AD, and then uses that token to authenticate to the key vault in Azure Stack. The application performs operations like create, encrypt, wrap, and delete on the keys and secrets of the key vault. You can also pass specific parameters such as *encrypt* and *decrypt* to the application, which makes sure that the application executes only those operations against the vault. 
+A aplicação inicia sessão com o Azure AD e, em seguida, utiliza esse token para autenticar para o Cofre de chaves na pilha do Azure. A aplicação executa operações como criar, encriptar, moldar e eliminar nas chaves e segredos do Cofre de chaves. Pode também passar parâmetros específicos, tais como *encriptar* e *desencriptar* à aplicação, que certifica-se de que a aplicação executa apenas essas operações contra o cofre. 
 
 
-## <a name="next-steps"></a>Next steps
-[Deploy a VM with a Key Vault password](azure-stack-kv-deploy-vm-with-secret.md)
+## <a name="next-steps"></a>Passos seguintes
+[Implementar uma VM com uma palavra-passe do Cofre de Chaves](azure-stack-kv-deploy-vm-with-secret.md)
 
-[Deploy a VM with a Key Vault certificate](azure-stack-kv-push-secret-into-vm.md)
-
+[Implementar uma VM com um certificado do Cofre de chaves](azure-stack-kv-push-secret-into-vm.md)
 
 
 

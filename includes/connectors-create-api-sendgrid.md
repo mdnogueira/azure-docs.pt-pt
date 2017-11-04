@@ -1,14 +1,14 @@
-### <a name="prerequisites"></a>Prerequisites
-* A [SendGrid](https://www.SendGrid.com/) account 
+### <a name="prerequisites"></a>Pré-requisitos
+* A [SendGrid](https://www.SendGrid.com/) conta 
 
-Before you can use your SendGrid account in a Logic app, you must authorize the Logic app to connect to your SendGrid account. Fortunately, you can do this easily from within your Logic app on the Azure Portal. 
+Antes de poder utilizar a sua conta do SendGrid numa aplicação lógica, tem de autorizar a aplicação lógica para ligar à sua conta do SendGrid. Felizmente, pode fazê-facilmente na sua aplicação lógica no Portal do Azure. 
 
-Here are the steps to authorize your Logic app to connect to your SendGrid account:
+Eis os passos para autorizar a aplicação lógica para ligar à sua conta do SendGrid:
 
-1. To create a connection to SendGrid, in the Logic app designer, select **Show Microsoft managed APIs** in the drop down list then enter *SendGrid* in the search box. Select the trigger or action you'll like to use:  
-   ![SendGrid step 1](./media/connectors-create-api-sendgrid/sendgrid-1.png)
-2. If you haven't created any connections to SendGrid before, you'll get prompted to provide your SendGrid credentials. These credentials will be used to authorize your Logic app to connect to, and access your SendGrid account's data:  
-   ![SendGrid step 2](./media/connectors-create-api-sendgrid/sendgrid-2.png)
-3. Notice the connection has been created and you are now free to proceed with the other steps in your Logic app:  
-   ![SendGrid step 3](./media/connectors-create-api-sendgrid/sendgrid-3.png)   
+1. Para criar uma ligação a SendGrid, no designer de aplicação lógica, selecione **Mostrar Microsoft APIs geridas** na lista pendente, em seguida, introduza *SendGrid* na caixa de pesquisa. Selecione o acionador ou ação que irá gostar a utilizar:  
+   ![SendGrid passo 1](./media/connectors-create-api-sendgrid/sendgrid-1.png)
+2. Se ainda não criou quaisquer ligações a SendGrid antes, pode obter-á pedido para fornecer as credenciais do SendGrid. Estas credenciais serão utilizadas para autorizar a aplicação lógica para ligar a e aceder aos dados da sua conta SendGrid:  
+   ![SendGrid passo 2](./media/connectors-create-api-sendgrid/sendgrid-2.png)
+3. Repare a ligação foi criada e está agora livre para continuar com os outros passos da sua aplicação lógica:  
+   ![SendGrid passo 3](./media/connectors-create-api-sendgrid/sendgrid-3.png)   
 

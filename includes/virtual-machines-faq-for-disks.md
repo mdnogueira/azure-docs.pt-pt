@@ -1,222 +1,222 @@
-# <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Frequently asked questions about Azure IaaS VM disks and managed and unmanaged premium disks
+# <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Perguntas mais frequentes sobre os discos de VM do IaaS do Azure e os discos premium geridas e não geridas
 
-This article answers some frequently asked questions about Azure Managed Disks and Azure Premium Storage.
+Este artigo responde a algumas perguntas mais frequentes sobre discos gerida do Azure e o Premium Storage do Azure.
 
 ## <a name="managed-disks"></a>Managed Disks
 
-**What is Azure Managed Disks?**
+**O que é discos gerida do Azure?**
 
-Managed Disks is a feature that simplifies disk management for Azure IaaS VMs by handling storage account management for you. For more information, see the [Managed Disks overview](../articles/virtual-machines/windows/managed-disks-overview.md).
+Discos geridos é uma funcionalidade que simplifica a gestão de discos para VMs IaaS do Azure, processando gestão de contas de armazenamento para si. Para obter mais informações, consulte o [descrição geral de discos geridos](../articles/virtual-machines/windows/managed-disks-overview.md).
 
-**If I create a standard managed disk from an existing VHD that's 80 GB, how much will that cost me?**
+**Se criar um disco gerido standard de um VHD existente que é 80 GB, quanto será que custo-me?**
 
-A standard managed disk created from an 80-GB VHD is treated as the next available standard disk size, which is an S10 disk. You're charged according to the S10 disk pricing. For more information, see the [pricing page](https://azure.microsoft.com/pricing/details/storage).
+Um disco gerido standard criado a partir de um VHD de 80 GB é tratado como o tamanho de disco padrão disponível seguinte, o que é um disco de S10. Está a cobrado, de acordo com os preços de disco de S10. Para obter mais informações, veja a [página de preços](https://azure.microsoft.com/pricing/details/storage).
 
-**Are there any transaction costs for standard managed disks?**
+**Existem quaisquer custos de transação para discos geridos padrão?**
 
-Yes. You're charged for each transaction. For more information, see the [pricing page](https://azure.microsoft.com/pricing/details/storage).
+Sim. Está a cobrado para cada transação. Para obter mais informações, veja a [página de preços](https://azure.microsoft.com/pricing/details/storage).
 
-**For a standard managed disk, will I be charged for the actual size of the data on the disk or for the provisioned capacity of the disk?**
+**Para um disco gerido standard, será posso cobrado para o tamanho real dos dados no disco ou para a capacidade do disco aprovisionada?**
 
-You're charged based on the provisioned capacity of the disk. For more information, see the [pricing page](https://azure.microsoft.com/pricing/details/storage).
+Está a cobrados com base na capacidade do disco aprovisionada. Para obter mais informações, veja a [página de preços](https://azure.microsoft.com/pricing/details/storage).
 
-**How is pricing of premium managed disks different from unmanaged disks?**
+**Como é preços dos discos premium gerido diferente dos discos não geridos?**
 
-The pricing of premium managed disks is the same as unmanaged premium disks.
+Os preços dos discos premium gerido é o mesmo que os discos premium não gerido.
 
-**Can I change the storage account type (Standard or Premium) of my managed disks?**
+**Pode alterar o tipo de conta de armazenamento (Standard ou Premium) do meu discos geridos?**
 
-Yes. You can change the storage account type of your managed disks by using the Azure portal, PowerShell, or the Azure CLI.
+Sim. Pode alterar o tipo de conta de armazenamento dos seus discos geridos utilizando o portal do Azure, PowerShell ou a CLI do Azure.
 
-**Is there a way that I can copy or export a managed disk to a private storage account?**
+**Existe alguma forma posso pode copiar ou exportar um disco gerido para uma conta de armazenamento privada?**
 
-Yes. You can export your managed disks by using the Azure portal, PowerShell, or the Azure CLI.
+Sim. Pode exportar os discos geridos utilizando o portal do Azure, PowerShell ou a CLI do Azure.
 
-**Can I use a VHD file in an Azure storage account to create a managed disk with a different subscription?**
+**Pode utilizar um ficheiro VHD de uma conta de armazenamento do Azure para criar um disco gerido com uma subscrição diferente?**
 
-No.
+Não.
 
-**Can I use a VHD file in an Azure storage account to create a managed disk in a different region?**
+**Pode utilizar um ficheiro VHD de uma conta de armazenamento do Azure para criar um disco gerido numa região diferente?**
 
-No.
+Não.
 
-**Are there any scale limitations for customers that use managed disks?**
+**Existem algumas limitações de dimensionamento para os clientes que utilizam discos geridos?**
 
-Managed Disks eliminates the limits associated with storage accounts. However, the number of managed disks per subscription is limited to 2,000 by default. You can call support to increase this number.
+Discos geridos elimina os limites associados a contas de armazenamento. No entanto, o número de discos geridos por subscrição está limitado a 2.000 por predefinição. Pode contactar o suporte para aumentar este número.
 
-**Can I take an incremental snapshot of a managed disk?**
+**Pode tirar um instantâneo incremental de um disco gerido?**
 
-No. The current snapshot capability makes a full copy of a managed disk. However, we are planning to support incremental snapshots in the future.
+Não. A capacidade de instantâneos atual faz uma cópia completa de um disco gerido. No entanto, iremos estiver a planear suporta instantâneos incrementais no futuro.
 
-**Can VMs in an availability set consist of a combination of managed and unmanaged disks?**
+**VMs num conjunto de disponibilidade podem consistir de uma combinação de discos geridos e?**
 
-No. The VMs in an availability set must use either all managed disks or all unmanaged disks. When you create an availability set, you can choose which type of disks you want to use.
+Não. As VMs num conjunto de disponibilidade tem de utilizar discos de todos os geridos ou todos os discos não geridos. Quando cria um conjunto de disponibilidade, pode escolher o tipo de discos que pretende utilizar.
 
-**Is Managed Disks the default option in the Azure portal?**
+**É discos geridos a opção predefinida no portal do Azure?**
 
-Not currently, but it will become the default in the future.
+Sim. 
 
-**Can I create an empty managed disk?**
+**Pode criar um disco vazio gerido?**
 
-Yes. You can create an empty disk. A managed disk can be created independently of a VM, for example, without attaching it to a VM.
+Sim. Pode criar um disco vazio. Um disco gerido pode ser criado independentemente de uma VM, por exemplo, sem a ligá-la a uma VM.
 
-**What is the supported fault domain count for an availability set that uses Managed Disks?**
+**O que é o número de domínios de falhas suportado para um disponibilidade definir que utiliza discos geridos?**
 
-Depending on the region where the availability set that uses Managed Disks is located, the supported fault domain count is 2 or 3.
+Consoante a região onde está localizado o conjunto de disponibilidade que utiliza discos geridos, o número de domínios de falhas suportado é de 2 ou 3.
 
-**How is the standard storage account for diagnostics set up?**
+**Como é a conta de armazenamento standard para configurar o diagnóstico?**
 
-You set up a private storage account for VM diagnostics. In the future, we plan to switch diagnostics to Managed Disks as well.
+Configurar uma conta de armazenamento privada para diagnósticos da VM. No futuro, planeamos de mudar de diagnóstico para discos geridos bem.
 
-**What kind of Role-Based Access Control support is available for Managed Disks?**
+**Que tipo de suporte de controlo de acesso baseado em funções está disponível para discos geridos?**
 
-Managed Disks supports three key default roles:
+Gerido funções do discos suporta três predefinido de chaves:
 
-* Owner: Can manage everything, including access
-* Contributor: Can manage everything except access
-* Reader: Can view everything, but can't make changes
+* O proprietário: Podem gerir tudo, incluindo o acesso
+* Contribuidor: Podem gerir tudo, exceto acesso
+* Leitor: Podem ver tudo, mas não é possível efetuar alterações
 
-**Is there a way that I can copy or export a managed disk to a private storage account?**
+**Existe alguma forma posso pode copiar ou exportar um disco gerido para uma conta de armazenamento privada?**
 
-You can get a read-only shared access signature URI for the managed disk and use it to copy the contents to a private storage account or on-premises storage.
+Pode obter uma URI de assinatura de acesso partilhado só de leitura para o disco gerido e utilizá-lo para copiar o conteúdo para um armazenamento de conta ou no local de armazenamento privada.
 
-**Can I create a copy of my managed disk?**
+**Pode criar uma cópia do meu disco gerido?**
 
-Customers can take a snapshot of their managed disks and then use the snapshot to create another managed disk.
+Os clientes podem tirar um instantâneo os respetivos discos geridos e, em seguida, utilize o instantâneo para criar outro disco gerido.
 
-**Are unmanaged disks still supported?**
+**Os discos não geridos ainda são suportados?**
 
-Yes. We support unmanaged and managed disks. We recommend that you use managed disks for new workloads and migrate your current workloads to managed disks.
+Sim. Suportamos discos não geridos e geridos. Recomendamos que utilize discos geridos para novas cargas de trabalho e migre as cargas de trabalho atuais para discos geridos.
 
 
-**If I create a 128-GB disk and then increase the size to 130 GB, will I be charged for the next disk size (512 GB)?**
+**Se criar um disco de 128 GB e, em seguida, aumentar o tamanho da 130 GB, será posso cobrado para o próximo tamanho de disco (GB de 512)?**
 
-Yes.
+Sim.
 
-**Can I create locally redundant storage, geo-redundant storage, and zone-redundant storage managed disks?**
+**Posso criar armazenamento localmente redundante, armazenamento georredundante, e discos geridos pelo armazenamento com redundância de zona?**
 
-Azure Managed Disks currently supports only locally redundant storage managed disks.
+Discos gerida do Azure suporta atualmente os discos de armazenamento apenas localmente redundante gerido.
 
-**Can I shrink or downsize my managed disks?**
+**Pode reduzir ou downsize meu discos geridos?**
 
-No. This feature is not supported currently. 
+Não. Esta funcionalidade não é suportada atualmente. 
 
-**Can I change the computer name property when a specialized (not created by using the System Preparation tool or generalized) operating system disk is used to provision a VM?**
+**Posso alterar a propriedade de nome do computador quando um especializadas (não criada utilizando a ferramenta de preparação do sistema ou generalizado) o disco do sistema operativo é utilizado para Aprovisionar uma VM?**
 
-No. You can't update the computer name property. The new VM inherits it from the parent VM, which was used to create the operating system disk. 
+Não. Não é possível atualizar a propriedade de nome de computador. A VM nova herda a VM, que foi utilizado para criar o disco de sistema operativo principal. 
 
-**Where can I find sample Azure Resource Manager templates to create VMs with managed disks?**
-* [List of templates using Managed Disks](https://github.com/Azure/azure-quickstart-templates/blob/master/managed-disk-support-list.md)
+**Onde posso encontrar modelos do Azure Resource Manager de exemplo para criar as VMs com discos geridos?**
+* [Lista de modelos utilizando discos geridos](https://github.com/Azure/azure-quickstart-templates/blob/master/managed-disk-support-list.md)
 * https://github.com/chagarw/MDPP
 
-## <a name="managed-disks-and-storage-service-encryption"></a>Managed Disks and Storage Service Encryption 
+## <a name="managed-disks-and-storage-service-encryption"></a>Geridos discos e a encriptação do serviço de armazenamento 
 
-**Is Azure Storage Service Encryption enabled by default when I create a managed disk?**
+**É encriptação do serviço de armazenamento do Azure ativada por predefinição quando criar um disco gerido?**
 
-Yes.
+Sim.
 
-**Who manages the encryption keys?**
+**Quem gere as chaves de encriptação?**
 
-Microsoft manages the encryption keys.
+Microsoft gere as chaves de encriptação.
 
-**Can I disable Storage Service Encryption for my managed disks?**
+**Pode desativar encriptação do serviço de armazenamento para os meus discos geridos?**
 
-No.
+Não.
 
-**Is Storage Service Encryption only available in specific regions?**
+**Encriptação do serviço de armazenamento só está disponível em regiões específicas?**
 
-No. It's available in all the regions where Managed Disks is available. Managed Disks is available in all public regions and Germany.
+Não. Está disponível em todas as regiões onde discos geridos está disponível. Discos geridos está disponível em todas as regiões públicas e na Alemanha.
 
-**How can I find out if my managed disk is encrypted?**
+**Como posso saber se se o meu disco gerido é encriptado?**
 
-You can find out the time when a managed disk was created from the Azure portal, the Azure CLI, and PowerShell. If the time is after June 9, 2017, then your disk is encrypted. 
+Pode encontrar a hora quando um disco gerido foi criado a partir do portal do Azure, a CLI do Azure e o PowerShell. Se a hora de 9 de Junho de 2017, o disco está encriptado. 
 
-**How can I encrypt my existing disks that were created before June 10, 2017?**
+**Como encriptar o meu discos existentes que foram criados antes de 10 de Junho de 2017?**
 
-As of June 10, 2017, new data written to existing managed disks is automatically encrypted. We are also planning to encrypt existing data, and the encryption will happen asynchronously in the background. If you must encrypt existing data now, create a copy of your disk. New disks will be encrypted.
+A partir de 10 de Junho de 2017, os novos dados escritos em discos geridos existentes é encriptados automaticamente. Podemos também estiver a planear para encriptar os dados existentes e a encriptação irá acontecer de forma assíncrona em segundo plano. Se tem de encriptar dados existentes agora, crie uma cópia do seu disco. Novos discos serão encriptados.
 
-* [Copy managed disks by using the Azure CLI](../articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json)
-* [Copy managed disks by using PowerShell](../articles/virtual-machines/scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json)
+* [Copiar discos geridos utilizando a CLI do Azure](../articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json)
+* [Copiar discos geridos utilizando o PowerShell](../articles/virtual-machines/scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fcli%2fmodule%2ftoc.json)
 
-**Are managed snapshots and images encrypted?**
+**São gerido instantâneos e imagens encriptadas?**
 
-Yes. All managed snapshots and images created after June 9, 2017, are automatically encrypted. 
+Sim. Gerido todos os instantâneos e as imagens criadas após 9 de Junho de 2017, são encriptadas automaticamente. 
 
-**Can I convert VMs with unmanaged disks that are located on storage accounts that are or were previously encrypted to managed disks?**
+**Pode converter VMs com discos não geridos que estão localizados em contas de armazenamento que estão ou que foram anteriormente encriptadas para discos geridos?**
 
-Yes
+Sim
 
-**Will an exported VHD from a managed disk or a snapshot also be encrypted?**
+**Será um VHD exportado a partir de um disco gerido ou um instantâneo também será encriptado?**
 
-No. But if you export a VHD to an encrypted storage account from an encrypted managed disk or snapshot, then it's encrypted. 
+Não. Mas se exportar um VHD para uma conta de armazenamento encriptada de uma encriptados geridos disco ou um instantâneo, em seguida, é encriptada. 
 
-## <a name="premium-disks-managed-and-unmanaged"></a>Premium disks: Managed and unmanaged
+## <a name="premium-disks-managed-and-unmanaged"></a>Os discos Premium: geridos e não geridas
 
-**If a VM uses a size series that supports Premium Storage, such as a DSv2, can I attach both premium and standard data disks?** 
+**Se uma VM utiliza uma série de tamanho que suporte o Premium Storage, tais como uma série DSv2, posso anexar os discos de dados standard e premium?** 
 
-Yes.
+Sim.
 
-**Can I attach both premium and standard data disks to a size series that doesn't support Premium Storage, such as D, Dv2, G, or F series?**
+**Posso anexar os discos de dados standard e premium a uma série de tamanho que não suporta o Premium Storage, tais como a série de D, Dv2, G ou F?**
 
-No. You can attach only standard data disks to VMs that don't use a size series that supports Premium Storage.
+Não. Pode anexar apenas discos de dados standard para VMs que não utilizem uma série de tamanho que suporte o Premium Storage.
 
-**If I create a premium data disk from an existing VHD that was 80 GB, how much will that cost?**
+**Se criar um disco de dados premium a partir de um VHD existente que estava 80 GB, quanto será que custo?**
 
-A premium data disk created from an 80-GB VHD is treated as the next-available premium disk size, which is a P10 disk. You're charged according to the P10 disk pricing.
+Um disco de dados premium criado a partir de um VHD de 80 GB é tratado como o tamanho do disco premium seguinte disponíveis, que é um disco de P10. Está a cobrado, de acordo com os preços de disco de P10.
 
-**Are there transaction costs to use Premium Storage?**
+**Existem custos de transação para utilizar o Premium Storage?**
 
-There is a fixed cost for each disk size, which comes provisioned with specific limits on IOPS and throughput. The other costs are outbound bandwidth and snapshot capacity, if applicable. For more information, see the [pricing page](https://azure.microsoft.com/pricing/details/storage).
+Não há um custo fixo para cada tamanho de disco, o que é aprovisionado com limites específicos no IOPS e débito. Os custos de outros são largura de banda de saída e a capacidade de instantâneos, se aplicável. Para obter mais informações, veja a [página de preços](https://azure.microsoft.com/pricing/details/storage).
 
-**What are the limits for IOPS and throughput that I can get from the disk cache?**
+**Quais são os limites de IOPS e débito que pode receber de cache do disco?**
 
-The combined limits for cache and local SSD for a DS series are 4,000 IOPS per core and 33 MB per second per core. The GS series offers 5,000 IOPS per core and 50 MB per second per core.
+Os limites combinados para a cache e o SSD local para uma série DS são 4000 IOPS por núcleos e 33 MB por segundo por núcleo. A série GS oferece 5000 IOPS por núcleos e 50 MB por segundo por núcleo.
 
-**Is the local SSD supported for a Managed Disks VM?**
+**O SSD local é suportado para uma VM de discos geridos?**
 
-The local SSD is temporary storage that is included with a Managed Disks VM. There is no extra cost for this temporary storage. We recommend that you do not use this local SSD to store your application data because it isn't persisted in Azure Blob storage.
+O SSD local é armazenamento temporário que está incluído com uma VM de discos geridos. Existe um custo extra para este armazenamento temporário. Recomendamos que utilize este SSD local para armazenar os dados de aplicação porque este não é continuada no Blob storage do Azure.
 
-**Are there any repercussions for the use of TRIM on premium disks?**
+**Existem quaisquer repercussions para a utilização de operações de COMPACTAÇÃO no discos premium?**
 
-There is no downside to the use of TRIM on Azure disks on either premium or standard disks.
+Não há nenhum downside a utilização de operações de COMPACTAÇÃO nos discos do Azure premium o ou os discos padrão.
 
-## <a name="new-disk-sizes-managed-and-unmanaged"></a>New disk sizes: Managed and unmanaged
+## <a name="new-disk-sizes-managed-and-unmanaged"></a>Novos tamanhos de disco: geridos e não geridas
 
-**What is the largest disk size supported for operating system and data disks?**
+**O que é o maior tamanho de disco suportado pelo sistema operativo e os discos de dados?**
 
-The partition type that Azure supports for an operating system disk is the master boot record (MBR). The MBR format supports a disk size up to 2 TB. The largest size that Azure supports for an operating system disk is 2 TB. Azure supports up to 4 TB for data disks. 
+O tipo de partição que suporta o Azure para um disco de sistema operativo é o registo de arranque principal (MBR). O suporta de formato MBR um disco tamanho até 2 TB. O tamanho maior que suporta o Azure para um disco de sistema operativo é 2 TB. Azure suporta até 4 TB para discos de dados. 
 
-**What is the largest page blob size that's supported?**
+**O que é o maior tamanho do blob de página que é suportado?**
 
-The largest page blob size that Azure supports is 8 TB (8,191 GB). We don't support page blobs larger than 4 TB (4,095 GB) attached to a VM as data or operating system disks.
+O maior tamanho do blob de página que suporte do Azure é de 8 TB (8,191 GB). Não é suportada com mais de 4 TB (4,095 GB) ligado a uma VM, como discos de sistema operativo ou de dados de blobs de páginas.
 
-**Do I need to use a new version of Azure tools to create, attach, resize, and upload disks larger than 1 TB?**
+**É necessário utilizar uma nova versão das ferramentas do Azure para criar, anexar, redimensionar e carregar discos superiores a 1 TB?**
 
-You don't need to upgrade your existing Azure tools to create, attach, or resize disks larger than 1 TB. To upload your VHD file from on-premises directly to Azure as a page blob or unmanaged disk, you need to use the latest tool sets:
+Não precisa de atualizar as ferramentas do Azure existentes para criar e anexar ou redimensionar discos superiores a 1 TB. Para carregar o ficheiro VHD no local diretamente para o Azure como um blob de página ou disco não gerido, tem de utilizar os conjuntos de ferramenta mais recentes:
 
-|Azure tools      | Supported versions                                |
+|Ferramentas do Azure      | Versões suportadas                                |
 |-----------------|---------------------------------------------------|
-|Azure PowerShell | Version number 4.1.0: June 2017 release or later|
-|Azure CLI v1     | Version number 0.10.13: May 2017 release or later|
-|AzCopy           | Version number 6.1.0: June 2017 release or later|
+|Azure PowerShell | Número de versão 4.1.0: versão de Junho de 2017 ou posterior|
+|CLI do Azure v1     | Número de versão 0.10.13: versão de Maio de 2017 ou posterior|
+|AzCopy           | Número de versão 6.1.0: versão de Junho de 2017 ou posterior|
 
-The support for Azure CLI v2 and Azure Storage Explorer is coming soon. 
+O suporte para v2 CLI do Azure e o Explorador de armazenamento do Azure estará disponível brevemente. 
 
-**Are P4 and P6 disk sizes supported for unmanaged disks or page blobs?**
+**P4 e P6 tamanhos de disco são suportados para os discos não geridos ou blobs de página?**
 
-No. P4 (32 GB) and P6 (64 GB) disk sizes are supported only for managed disks. Support for unmanaged disks and page blobs is coming soon.
+Não. P4 (32 GB) e P6 tamanhos de disco (64 GB) são suportados apenas para discos geridos. Suporte para discos não geridos e blobs de páginas está disponível em breve.
 
-**If my existing premium managed disk less than 64 GB was created before the small disk was enabled (around June 15, 2017), how is it billed?**
+**Se a minha premium existente gerido disco inferior a 64 GB foi criado antes do disco pequeno foi ativado (em torno do dia 15 de Junho de 2017), como é é faturada?**
 
-Existing small premium disks less than 64 GB continue to be billed according to the P10 pricing tier. 
+Premium pequeno existente discos inferior a 64 GB continuar a ser faturada, de acordo com o escalão de preço P10. 
 
-**How can I switch the disk tier of small premium disks less than 64 GB from P10 to P4 or P6?**
+**Como posso mudar a camada de disco de discos premium pequeno inferior a 64 GB de P10 P4 ou P6?**
 
-You can take a snapshot of your small disks and then create a disk to automatically switch the pricing tier to P4 or P6 based on the provisioned size. 
+Pode tirar um instantâneo os discos pequenos e, em seguida, criar um disco para mudar automaticamente o escalão de preço para P4 ou P6 com base no tamanho aprovisionado. 
 
 
-## <a name="what-if-my-question-isnt-answered-here"></a>What if my question isn't answered here?
+## <a name="what-if-my-question-isnt-answered-here"></a>E se a minha pergunta não é atendida aqui?
 
-If your question isn't listed here, let us know and we'll help you find an answer. You can post a question at the end of this article in the comments. To engage with the Azure Storage team and other community members about this article, use the MSDN [Azure Storage forum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata).
+Se a sua pergunta não está listada aqui, informe-nos e vamos ajudá-lo a encontrar uma resposta. Pode colocar uma pergunta no final deste artigo nos comentários. Para interagir com o agrupamento de armazenamento do Azure e outros membros da Comunidade sobre neste artigo, utilize o MSDN [fórum de armazenamento do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata).
 
-To request features, submit your requests and ideas to the [Azure Storage feedback forum](https://feedback.azure.com/forums/217298-storage).
+Para pedir as funcionalidades, submeter os pedidos e ideias para o [fórum de comentários do Storage do Azure](https://feedback.azure.com/forums/217298-storage).

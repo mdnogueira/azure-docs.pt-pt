@@ -1,20 +1,20 @@
 <!--author=SharS last changed: 11/04/15-->
 
 
-#### <a name="to-create-a-custom-backup-policy"></a>To create a custom backup policy
-1. On the **Devices** page, click **Backup Policies** and then click **Add**.
-2. In the **Add a backup policy** dialog box, under **Define your backup policy**:
+#### <a name="to-create-a-custom-backup-policy"></a>Para criar uma política de cópia de segurança personalizada
+1. No **dispositivos** página, clique em **políticas de cópia de segurança** e, em seguida, clique em **adicionar**.
+2. No **adicionar uma política de cópia de segurança** caixa de diálogo em **definir a política de cópia de segurança**:
    
-   1. Specify a backup policy name.
-   2. Select the volumes to be added to this policy. You can choose to add multiple volumes by selecting multiple check boxes.
-   3. Click the arrow icon ![check icon](./media/storsimple-create-custom-backup-policy-u2/HCS_ArrowIcon-include.png).
-3. Under **Define a Schedule**:
+   1. Especifique um nome de política de cópia de segurança.
+   2. Selecione os volumes a adicionar a esta política. Pode optar por adicionar vários volumes, selecionando vários caixas de verificação.
+   3. Clique no ícone de seta ![ícone de verificação](./media/storsimple-create-custom-backup-policy-u2/HCS_ArrowIcon-include.png).
+3. Em **definir uma agenda**:
    
-   1. Select the **Type of backup** (**Local Snapshot** or **Cloud Snapshot**).
-   2. Specify the backup frequency in minutes, hours, days, or weeks.
-   3. Select a retention schedule from the drop-down list. The retention choices depend on the backup frequency. 
-   4. Select the starting time and date for the policy.
-   5. Select the check box to enable the policy.
-4. Click the check icon ![check icon](./media/storsimple-add-backup-policy-u2/HCS_CheckIcon-include.png) to finish.
-5. You will return to the **Backup Policies** page. The tabular listing of the backup policies will be updated to display the custom policy.
+   1. Selecione o **tipo de cópia de segurança** (**instantâneo Local** ou **instantâneo na nuvem**).
+   2. Especifique a frequência da cópia de segurança em minutos, horas, dias ou semanas.
+   3. Selecione uma agenda de retenção da lista pendente. As opções de período de retenção dependem da frequência da cópia de segurança. 
+   4. Selecione a hora de início e a data para a política.
+   5. Selecione a caixa de verificação para ativar a política.
+4. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-add-backup-policy-u2/HCS_CheckIcon-include.png) para concluir.
+5. Regressará ao **políticas de cópia de segurança** página. A tabela a listagem das políticas de cópia de segurança será atualizada para apresentar a política personalizada.
 

@@ -4,34 +4,34 @@
 > 
 > 
 
-This article provides a detailed walkthrough of the [Hello World sample code][lnk-helloworld-sample] to illustrate the fundamental components of the [Azure IoT Edge][lnk-iot-edge] architecture. The sample uses the Azure IoT Edge to build a simple gateway that logs a "hello world" message to a file every five seconds.
+Este artigo apresenta instruções detalhadas sobre o [código de exemplo Hellow World][lnk-helloworld-sample] para ilustrar os componentes fundamentais da arquitetura do [Azure IoT Edge][lnk-iot-edge]. Este exemplo utiliza o Azure IoT Edge para criar um gateway simples que regista uma mensagem "hello world" num ficheiro a cada cinco segundos.
 
-This walkthrough covers:
+Estas instruções abrangem:
 
-* **Hello World sample architecture**: Describes how [Azure IoT Edge architectural concepts][lnk-edge-concepts] apply to the Hello World sample and how the components fit together.
-* **How to build the sample**: The steps required to build the sample.
-* **How to run the sample**: The steps required to run the sample. 
-* **Typical output**: An example of the output to expect when you run the sample.
-* **Code snippets**: A collection of code snippets to show how the Hello World sample implements key IoT Edge gateway components.
+* **Olá, mundo exemplo de arquitetura**: descreve como [conceitos de arquitetura do Azure IoT Edge] [ lnk-edge-concepts] aplicam-se ao exemplo Olá mundo e como os componentes se encaixam.
+* **Como criar o exemplo**: os passos necessários para criar o exemplo.
+* **Como executar o exemplo**: os passos necessários para executar o exemplo. 
+* **Resultado típico**: um exemplo do resultado a esperar quando executa o exemplo.
+* **Fragmentos de código**: uma coleção de fragmentos de código para mostrar a forma como o exemplo Olá mundo implementa componentes chave de gateway de IoT Edge.
 
 
-## <a name="hello-world-sample-architecture"></a>Hello World sample architecture
-The Hello World sample illustrates the concepts described in the previous section. The Hello World sample implements a IoT Edge gateway that has a pipeline made up of two IoT Edge modules:
+## <a name="hello-world-sample-architecture"></a>Arquitetura do exemplo Olá Mundo
+O exemplo Olá Mundo ilustra os conceitos descritos na secção anterior. O exemplo Olá mundo implementa um gateway de IoT limite que tem um pipeline composto por dois módulos de limite de IoT:
 
-* The *hello world* module creates a message every five seconds and passes it to the logger module.
-* The *logger* module writes the messages it receives to a file.
+* O módulo *olá mundo* cria uma mensagem a cada cinco segundos e passa-a para o módulo de registo.
+* O módulo *registo* escreve num ficheiro as mensagens que recebe.
 
-![Architecture of Hello World sample built with Azure IoT Edge][4]
+![Arquitetura do exemplo “Hello World” criada com o Azure IoT Edge][4]
 
-As described in the previous section, the Hello World module does not pass messages directly to the logger module every five seconds. Instead, it publishes a message to the broker every five seconds.
+Tal como descrito na secção anterior, o módulo Olá Mundo não passa mensagens diretamente para o módulo de registo a cada cinco segundos. Em vez disso, publica uma mensagem no mediador a cada cinco segundos.
 
-The logger module receives the message from the broker and acts upon it, writing the contents of the message to a file.
+O módulo Logger recebe a mensagem a partir do mediador e toma medidas relativamente à mesma, escrevendo os conteúdos da mensagem num ficheiro.
 
-The logger module only consumes messages from the broker, it never publishes new messages to the broker.
+O módulo Logger só consome mensagens do mediador, nunca publica mensagens novas no mesmo.
 
-![How the broker routes messages between modules in Azure IoT Edge][5]
+![Como o mediador encaminha as mensagens entre módulos no Azure IoT Edge][5]
 
-The figure above shows the architecture of the Hello World sample and the relative paths to the source files that implement different portions of the sample in the [repository][lnk-iot-edge]. Explore the code on your own, or use the code snippets below as a guide.
+A ilustração anterior mostra a arquitetura do exemplo Olá mundo e os caminhos relativos para ficheiros de origem que implementam partes diferentes da amostra no [repositório][lnk-iot-edge]. Explore o código ou utilize os fragmentos de código neste artigo como guia.
 
 <!-- Images -->
 [4]: media/iot-hub-iot-edge-getstarted-selector/high_level_architecture.png

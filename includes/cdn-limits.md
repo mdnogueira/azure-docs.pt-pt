@@ -1,11 +1,11 @@
 
-| Resource | Default limit | Maximum limit | 
+| Recurso | Limite predefinido | Limite máximo | 
 | --- | --- | --- |
-| CDN profiles |8 |25 |
-| CDN endpoints per profile |10 |25 |
-| Custom domains per endpoint |10 |25 |
+| Perfis da CDN |8 |25 |
+| Pontos finais por perfil da CDN |10 |25 |
+| Domínios personalizados por ponto final |10 |25 |
 
-A CDN subscription can contain one or more CDN profiles and a CDN profile can contain one or more CDN endpoints. You may wish to use multiple profiles to organize your CDN endpoints by internet domain, web application, or some other criteria. 
+Uma subscrição de CDN pode conter uma ou mais perfis da CDN e um perfil da CDN podem conter um ou mais pontos finais da CDN. Pode pretender utilizar vários perfis para organizar os seus pontos finais da CDN por domínio de Internet, aplicação Web ou alguns outros critérios. 
 
-To request an update to your subscription's default limits, open a support ticket. 
+Para pedir uma atualização para os limites de predefinida da sua subscrição, abra um pedido de suporte. 
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2016
 ms.author: ddove
-ms.openlocfilehash: 12ace2ff3bcb967ec5e0ae88d3ce79a53836dd5e
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
-ms.translationtype: HT
+ms.openlocfilehash: f9bdc28349c540ee68b421b7643e4bed099c9fdd
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="create-and-manage-sql-database-elastic-jobs-using-powershell-preview"></a>Criar e gerir tarefas elásticas da base de dados do SQL Server através do PowerShell (pré-visualização)
 
@@ -68,7 +68,6 @@ A tabela seguinte lista os todos os tipos de objeto de **tarefas de bases de dad
   <tr>
     <td>DACPAC</td>
     <td><a href="https://msdn.microsoft.com/library/ee210546.aspx">Aplicação de camada de dados </a> pacote seja aplicado em bases de dados.
-
     </td>
     <td>
     <p>Get-AzureSqlJobContent</p>
@@ -79,7 +78,6 @@ A tabela seguinte lista os todos os tipos de objeto de **tarefas de bases de dad
   <tr>
     <td>Destino de base de dados</td>
     <td>Nome da base de dados e o servidor de apontar para uma base de dados do SQL do Azure.
-
     </td>
     <td>
     <p>Get-AzureSqlJobTarget</p>

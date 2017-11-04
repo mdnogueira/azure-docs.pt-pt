@@ -1,38 +1,38 @@
-In this step, you manually create the availability group listener in Failover Cluster Manager and SQL Server Management Studio.
+Neste passo, cria manualmente o serviço de escuta do grupo de disponibilidade no Gestor de clusters de ativação pós-falha e o SQL Server Management Studio.
 
-1. Open Failover Cluster Manager from the node that hosts the primary replica.
+1. Abra o Gestor de clusters de ativação pós-falha do nó que aloja a réplica primária.
 
-2. Select the **Networks** node, and then note the cluster network name. This name is used in the $ClusterNetworkName variable in the PowerShell script.
+2. Selecione o **redes** nó e, em seguida, tenha em atenção o nome de rede de cluster. Este nome é utilizado na variável $ClusterNetworkName do script do PowerShell.
 
-3. Expand the cluster name, and then click **Roles**.
+3. Expanda o nome do cluster e, em seguida, clique em **funções**.
 
-4. In the **Roles** pane, right-click the availability group name, and then select **Add Resource** > **Client Access Point**.
+4. No **funções** painel, faça duplo clique o nome do grupo de disponibilidade e, em seguida, selecione **adicionar recursos** > **ponto de acesso de cliente**.
    
-    ![Add Client Access Point for availability group](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678769.gif)
+    ![Adicionar o ponto de acesso de cliente para o grupo de disponibilidade](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678769.gif)
 
-5. In the **Name** box, create a name for this new listener, click **Next** twice, and then click **Finish**.  
-    Do not bring the listener or resource online at this point.
+5. No **nome** caixa, crie um nome para este novo serviço de escuta, clique em **seguinte** duas vezes e, em seguida, clique em **concluir**.  
+    Não colocar o serviço de escuta ou recurso online neste momento.
 
-6. Click the **Resources** tab, and then expand the client access point you just created. 
-    The IP address resource for each cluster network in your cluster is displayed. If this is an Azure-only solution, only one IP address resource is displayed.
+6. Clique em de **recursos** separador e, em seguida, expanda o ponto de acesso de cliente que acabou de criar. 
+    O recurso de endereço IP para cada rede de cluster do cluster é apresentado. Se se tratar de uma solução apenas de Azure, é apresentado apenas um recurso de endereço IP.
 
-7. Do either of the following:
+7. Efetue um dos seguintes procedimentos:
    
-   * To configure a hybrid solution:
+   * Para configurar uma solução híbrida:
      
-        a. Right-click the IP address resource that corresponds to your on-premises subnet, and then select **Properties**. Note the IP address name and network name.
+        a. O recurso de endereço IP que corresponde à sua sub-rede no local com o botão direito e, em seguida, selecione **propriedades**. Tenha em atenção que o nome de endereço IP e o nome de rede.
    
-        b. Select **Static IP Address**, assign an unused IP address, and then click **OK**.
+        b. Selecione **endereço IP estático**, atribua um endereço IP não utilizado e, em seguida, clique em **OK**.
  
-   * To configure an Azure-only solution:
+   * Para configurar uma solução apenas de Azure:
 
-        a. Right-click the IP address resource that corresponds to your Azure subnet, and then select **Properties**.
+        a. Faça duplo clique no recurso de endereço IP que corresponde à sua sub-rede do Azure e, em seguida, selecione **propriedades**.
        
        > [!NOTE]
-       > If the listener later fails to come online because of a conflicting IP address selected by DHCP, you can configure a valid static IP address in this properties window.
+       > Se o serviço de escuta falhar posteriormente fique online devido a um endereço IP em conflito selecionado por DHCP, pode configurar um endereço IP estático válido nesta janela de propriedades.
        > 
        > 
 
-       b. In the same **IP Address** properties window, change the **IP Address Name**.  
-        This name is used in the $IPResourceName variable of the PowerShell script. If your solution spans multiple Azure virtual networks, repeat this step for each IP resource.
+       b. Da mesma **endereço IP** janela de propriedades, altere o **nome de endereço IP**.  
+        Este nome é utilizado na variável $IPResourceName do script do PowerShell. Se a solução abranger várias redes virtuais do Azure, repita este passo para cada recurso IP.
 

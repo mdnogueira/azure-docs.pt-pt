@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/28/2017
+ms.date: 11/01/2017
 ms.author: nitinme
-ms.openlocfilehash: 1309b44ea99af6d20a4d0f730dd68969f3c3082b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 744759968706e0a2c9fe8c1c153f44cc958e31b8
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-store"></a>Utilizar o serviço de importação/exportação do Azure para cópia offline dos dados ao Data Lake Store
 Neste artigo, irá aprender como copiar conjuntos enormes de dados (> 200 GB) para um Azure Data Lake Store utilizando métodos de cópia offline, como o [serviço importar/exportar do Azure](../storage/common/storage-import-export-service.md). Especificamente, o ficheiro utilizado como um exemplo neste artigo é 339,420,860,416 bytes ou cerca de 319 GB no disco. Vamos chamar 319GB.tsv este ficheiro.
@@ -58,7 +58,7 @@ Siga as instruções em [utilizando o serviço do Azure para importar/exportar](
     WAImportExport PrepImport /sk:<StorageAccountKey> /t: <TargetDriveLetter> /format /encrypt /logdir:e:\myexportimportjob\logdir /j:e:\myexportimportjob\journal1.jrn /id:myexportimportjob /srcdir:F:\demo\ExImContainer /dstdir:importcontainer/vf1/
     ````
     Consulte [utilizando o serviço do Azure para importar/exportar](../storage/common/storage-import-export-service.md) para obter mais fragmentos de exemplo.
-4. O comando anterior cria um ficheiro do diário de alterações na localização especificada. Utilizar este ficheiro de diário de alterações para criar uma tarefa de importação do [portal clássico do Azure](https://manage.windowsazure.com).
+4. O comando anterior cria um ficheiro do diário de alterações na localização especificada. Utilizar este ficheiro de diário de alterações para criar uma tarefa de importação do [portal do Azure](https://portal.azure.com).
 
 ## <a name="create-an-import-job"></a>Criar uma tarefa de importação
 Agora, pode criar uma tarefa de importação utilizando as instruções em [utilizando o serviço do Azure para importar/exportar](../storage/common/storage-import-export-service.md) (sob a **criar a tarefa de importação** secção). Para esta tarefa de importação com outros detalhes também fornecem o ficheiro de diário criado durante a preparação das unidades de disco.

@@ -1,16 +1,16 @@
-Key transactions (Max transactions allowed in 10 seconds, per vault per region<sup>1</sup>):
+Transações da chave (transações máxima permitidas dentro de 10 segundos, por cofre por região<sup>1</sup>):
 
-|Key type|HSM-Key<br>CREATE Key|HSM-key<br>All other transactions|Software-key<br>CREATE Key|Software-key<br>All other transactions|
+|tipo de chave|Chave HSM<br>CRIAR a chave|Chave HSM<br>Todas as outras transações|Chave de software<br>CRIAR a chave|Chave de software<br>Todas as outras transações|
 |:---|---:|---:|---:|---:|
-|RSA 2048-bit|5|1000|10|2000|
+|RSA 2048 bits|5|1000|10|2000|
 |RSA 3072-bit|5|250|10|500|
-|RSA 4096-bit|5|125|10|250|
+|RSA 4096 bits|5|125|10|250|
 |
 
-Secrets, Managed Storage Account Keys, and vault transactions:
-| Transactions Type | Max transactions allowed in 10 seconds, per vault per region<sup>1</sup> |
+Segredos, chaves de conta de armazenamento gerida e transações do cofre:
+| Tipo de transações | Transações de máxima permitidas dentro de 10 segundos, por cofre por região<sup>1</sup> |
 | --- | --- |
-| All transactions |2000 |
+| Todas as transações |2000 |
 |
 
-<sup>1</sup> There is a subscription-wide limit for all transaction types, that is 5x per key vault limit. For example, HSM- other transactions per subscription are limited to 5000 transactions in 10 seconds per subscription.
+<sup>1</sup> há um limite de toda a subscrição para todos os tipos de transação, o que é x 5 por limite de Cofre de chaves. Por exemplo, HSM - outras transações por subscrição estão limitadas a 5000 transações dentro de 10 segundos por subscrição.

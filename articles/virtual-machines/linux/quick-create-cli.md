@@ -10,20 +10,18 @@ tags: azure-resource-manager
 ms.assetid: 
 ms.service: virtual-machines-linux
 ms.devlang: azurecli
-ms.topic: hero-article
+ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/14/2017
+ms.date: 10/13/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7948c99b7b60d77a927743c7869d74147634ddbf
-ms.openlocfilehash: a7cba5b2c43704d92e36d6f808efaa9fc73fdf36
-ms.contentlocale: pt-pt
-ms.lasthandoff: 06/20/2017
-
+ms.openlocfilehash: dab783e574ef4f5507737d5004fd8d2a98629458
+ms.sourcegitcommit: 5735491874429ba19607f5f81cd4823e4d8c8206
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/16/2017
 ---
-
 # <a name="create-a-linux-virtual-machine-with-the-azure-cli"></a>Criar uma máquina virtual Linux com a CLI do Azure
 
 A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia fornece detalhes utilizando a CLI do Azure para implementar uma virtual a executar o Ubuntu 16.04 LTS. Quando o servidor estiver implementado, uma ligação SSH é criada e um servidor NGINX Web é instalado.
@@ -46,7 +44,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-virtual-machine"></a>Criar a máquina virtual
 
-Crie uma VM com o comando [z vm create](/cli/azure/vm#create). 
+Crie uma VM com o comando [z vm create](/cli/azure/vm#az_vm_create). 
 
 O exemplo seguinte cria uma VM com o nome *myVM* e cria chaves SSH caso estas ainda não existam numa localização chave predefinida. Para utilizar um conjunto específico de chaves, utilize a opção `--ssh-key-value`.  
 
@@ -87,16 +85,14 @@ ssh <publicIpAddress>
 
 ## <a name="install-nginx"></a>Instalar o NGINX
 
-Utilize o script de bash seguinte para atualizar as origens de pacotes e instalar o pacote NGINX mais recente. 
+Utilize os seguintes comandos para atualizar as origens de pacote e instalar o pacote NGINX mais recente. 
 
 ```bash 
-#!/bin/bash
-
 # update package source
-apt-get -y update
+sudo apt-get -y update
 
 # install NGINX
-apt-get -y install nginx
+sudo apt-get -y install nginx
 ```
 
 ## <a name="view-the-nginx-welcome-page"></a>Ver a página de boas-vindas do NGINX
@@ -108,7 +104,7 @@ Com o NGINX instalado e a porta 80 agora aberta na sua VM a partir da Internet, 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando já não for necessário, pode utilizar o comando [az group delete](/cli/azure/group#delete) para remover o Grupo de Recursos, a VM e todos os recursos relacionados.
+Quando já não for necessário, pode utilizar o comando [az group delete](/cli/azure/group#delete) para remover o Grupo de Recursos, a VM e todos os recursos relacionados. Sair sessão SSH para a VM, em seguida, elimine os recursos da seguinte forma:
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup
@@ -121,4 +117,3 @@ Neste guia de introdução, implementou uma máquina virtual simples, uma regra 
 
 > [!div class="nextstepaction"]
 > [Tutoriais das máquinas virtuais do Linux do Azure](./tutorial-manage-vm.md)
-

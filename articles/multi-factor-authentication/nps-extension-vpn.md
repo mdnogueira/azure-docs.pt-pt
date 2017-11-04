@@ -16,17 +16,17 @@ ms.date: 08/15/2017
 ms.author: kgremban
 ms.reviewer: jsnow
 ms.custom: it-pro
-ms.openlocfilehash: b47e9b321b2fd0d0db9762003531b0fe9f045f07
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 8ac4c5d88e724febf21fe6bcc8ecf939283f361e
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-multi-factor-authentication-mfa-using-the-network-policy-server-nps-extension-for-azure"></a>Integrar a sua infraestrutura de VPN com multi-factor Authentication (MFA) do Azure com a extensão de servidor de políticas de rede (NPS) para o Azure
 
 ## <a name="overview"></a>Descrição geral
 
-A extensão de serviço de políticas de rede (NPS) para o Azure permite que as organizações a salvaguardar a autenticação de cliente RADIUS Remote Authentication Dial-In User Service () com baseado na nuvem [Azure multi-factor Authentication (MFA)](multi-factor-authentication-get-started-server-rdg.md), que fornece verificação em dois passos.
+A extensão de servidor de políticas de rede (NPS) para o Azure permite que as organizações a salvaguardar a autenticação de cliente RADIUS Remote Authentication Dial-In User Service () com baseado na nuvem [Azure multi-factor Authentication (MFA)](multi-factor-authentication-get-started-server-rdg.md), que fornece verificação em dois passos.
 
 Este artigo fornece instruções para integrar a infraestrutura NPS mfa do Azure com a extensão NPS para o Azure para ativar a verificação de dois passos segura para os utilizadores a tentar ligar à sua rede através de uma VPN. 
 
@@ -88,11 +88,11 @@ O serviço de função NPS fornece a funcionalidade de cliente e servidor RADIUS
 
 Para obter informações sobre como instalar a função NPS de serviço do Windows Server 2012 ou superior, consulte [instalar um servidor de políticas de estado de funcionamento de NAP](https://technet.microsoft.com/library/dd296890.aspx). Política de acesso de rede (NAP) foi preterido no Windows Server 2016. Para obter uma descrição das melhores práticas para NPS, incluindo a recomendação para instalar NPS num controlador de domínio, consulte [melhores práticas para NPS](https://technet.microsoft.com/library/cc771746).
 
-### <a name="licenses"></a>Licenças
+### <a name="azure-mfa-license"></a>Licença do MFA do Azure
 
 Necessário destina-se a uma licença do MFA do Azure, que está disponível através de um Azure AD Premium, o Enterprise Mobility plus segurança (EMS) ou uma subscrição de MFA. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
 
-### <a name="software"></a>Software
+### <a name="windows-server-software"></a>Software Windows Server
 
 A extensão NPS requer o Windows Server 2008 R2 SP1 ou posterior com o serviço de função NPS instalado. Todos os passos neste guia foram efetuados com o Windows Server 2016.
 
@@ -111,7 +111,7 @@ Para utilizar a extensão NPS, os utilizadores no local tem de ser sincronizados
 Para obter informações sobre o Azure AD connect, consulte [integrar os diretórios no local ao Azure Active Directory](../active-directory/connect/active-directory-aadconnect.md). 
 
 ### <a name="azure-active-directory-guid-id"></a>ID de GUID do Azure Active Directory 
-Para instalar o NPS, terá de saber o GUID do Azure Active Directory. Na secção seguinte, são fornecidas instruções para localizar o GUID do Azure Active Directory.
+Para instalar a extensão NPS, terá de saber o GUID do Azure Active Directory. Na secção seguinte, são fornecidas instruções para localizar o GUID do Azure Active Directory.
 
 ## <a name="configure-radius-for-vpn-connections"></a>Configurar RADIUS para ligações VPN
 
@@ -369,11 +369,11 @@ A extensão NPS tem de ser instalado num servidor que tenha a política de rede 
 1. Transfira a extensão NPS do [https://aka.ms/npsmfa](https://aka.ms/npsmfa). 
 2. Copie o ficheiro executável do programa de configuração (NpsExtnForAzureMfaInstaller.exe) para o servidor NPS.
 3. No servidor NPS, faça duplo clique em **NpsExtnForAzureMfaInstaller.exe**. Se lhe for pedido, clique em **executar**.
-4. Na extensão do NPS para a caixa de diálogo de MFA do Azure, reveja os termos de licenciamento de software, consulte **concordo com os termos de licenciamento e as condições**e clique em **instalar**.
+4. Na caixa de diálogo de extensão de NPS para o Azure MFA configuração, reveja os termos de licenciamento de software, consulte **concordo com os termos de licenciamento e as condições**e clique em **instalar**.
 
  ![Extensão NPS](./media/nps-extension-vpn/image36.png)
  
-5. Na extensão do NPS para a caixa de diálogo de MFA do Azure, clique em **fechar**.  
+5. Na caixa de diálogo de extensão de NPS para o Azure MFA configuração, clique em **fechar**.  
 
  ![Configuração com êxito](./media/nps-extension-vpn/image37.png) 
  
@@ -388,7 +388,7 @@ O script executa as seguintes ações:
 * Concede acesso a chave privada do certificado de utilizador de rede
 * Reinicia o serviço de servidor de políticas de rede
 
-Se pretender utilizar os seus próprios certificados, tem de associar o público do seu certificado para o princípio de serviço no Azure AD e assim sucessivamente.
+Se pretender utilizar os seus próprios certificados, tem de associar a chave pública do certificado para o principal de serviço no Azure AD e assim sucessivamente.
 Para utilizar o script, forneça a extensão com as credenciais administrativas do Azure Active Directory e o ID de inquilino do Azure Active Directory que copiou anteriormente. Execute o script em cada servidor NPS onde instalar a extensão NPS.
 
 1. Abra uma linha de comandos do Windows PowerShell administrativa.

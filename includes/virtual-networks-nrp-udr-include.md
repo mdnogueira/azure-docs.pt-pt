@@ -1,25 +1,25 @@
-## <a name="route-tables"></a>Route tables
-Route table resources contains routes used to define how traffic flows within your Azure infrastructure. You can use user defined routes (UDR) to send all traffic from a given subnet to a virtual appliance, such as a firewall or intrusion detection system (IDS). You can associate a route table to subnets. 
+## <a name="route-tables"></a>Tabelas de rotas
+Recursos de tabela de rota contém rotas utilizadas para definir a forma como o tráfego flui dentro da sua infraestrutura do Azure. Pode utilizar rotas definidas pelo utilizador (UDR) para enviar todo o tráfego de sub-rede fornecida para uma aplicação virtual, tais como um sistema de deteção intrusões ou uma firewall (IDS). Pode associar uma tabela de rotas para sub-redes. 
 
-Route tables contain the following properties.
+As tabelas de rotas contêm as seguintes propriedades.
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **routes** |Collection of user defined routes in the route table |see [user defined routes](#User-defined-routes) |
-| **subnets** |Collection of subnets the route table is applied to |see [subnets](#Subnets) |
+| **rotas** |Coleção de utilizador rotas definidas na tabela de rota |consulte [rotas definidas pelo utilizador](#User-defined-routes) |
+| **sub-redes** |Coleção de sub-redes é aplicada a tabela de rotas para |consulte [sub-redes](#Subnets) |
 
-### <a name="user-defined-routes"></a>User defined routes
-You can create UDRs to specify where traffic should be sent to, based on its destination address. You can think of a route as the default gateway definition based on the destination address of a network packet.
+### <a name="user-defined-routes"></a>Rotas definidas pelo utilizador
+Pode criar UDRs para especificar onde o tráfego deve ser enviado, com base no respetivo endereço de destino. Pode considerar que a definição de gateway predefinido com base no endereço de destino de um pacote de rede uma rota.
 
-UDRs contain the following properties. 
+UDRs contêm as seguintes propriedades. 
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **addressPrefix** |Address prefix, or full IP address for the destination |192.168.1.0/24, 192.168.1.101 |
-| **nextHopType** |Type of device the traffic will be sent to |VirtualAppliance, VPN Gateway, Internet |
-| **nextHopIpAddress** |IP address for the next hop |192.168.1.4 |
+| **addressPrefix** |Prefixo do endereço ou o endereço IP completo para o destino |192.168.1.0/24, 192.168.1.101 |
+| **nextHopType** |Tipo de dispositivo, que o tráfego será enviado para |Internet VirtualAppliance, Gateway de VPN |
+| **nextHopIpAddress** |Endereço IP para o salto seguinte |192.168.1.4 |
 
-Sample route table in JSON format:
+Tabela de rota de exemplo no formato JSON:
 
     {
         "name": "UDR-BackEnd",
@@ -50,8 +50,8 @@ Sample route table in JSON format:
         }
     }
 
-### <a name="additional-resources"></a>Additional resources
-* Get more information about [UDRs](../articles/virtual-network/virtual-networks-udr-overview.md).
-* Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt502549.aspx) for route tables.
-* Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt502539.aspx) for user defined routes (UDRs).
+### <a name="additional-resources"></a>Recursos adicionais
+* Obter mais informações [UDRs](../articles/virtual-network/virtual-networks-udr-overview.md).
+* Leia o [documentação de referência da REST API](https://msdn.microsoft.com/library/azure/mt502549.aspx) para tabelas de rota.
+* Leia o [documentação de referência da REST API](https://msdn.microsoft.com/library/azure/mt502539.aspx) do utilizador definida rotas (UDRs).
 

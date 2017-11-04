@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 09/22/2017
 ms.author: ryanwi
-ms.openlocfilehash: dc57c813a6aecabc21ac3931b7294bce909778d6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 82d2024f567768e784d9d8697784d06b56bc08ed
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="sfctl-application"></a>aplicação de sfctl
 Criar, eliminar e gerir aplicações e tipos de aplicações.
@@ -30,25 +30,21 @@ Criar, eliminar e gerir aplicações e tipos de aplicações.
 | criar       | Cria uma aplicação de Service Fabric utilizando a descrição especificada.|
 | eliminar       | Elimina uma aplicação de Service Fabric existente.|
 | Implementado     | Obtém as informações sobre uma aplicação implementada num nó de Service Fabric.|
-| Estado de funcionamento implementado | Obtém as informações sobre o estado de funcionamento de uma aplicação implementada num serviço
-                      Nó do Fabric.|
+| Estado de funcionamento implementado | Obtém as informações sobre o estado de funcionamento de uma aplicação implementada num nó de Service Fabric.|
 | lista implementado| Obtém a lista de aplicações implementadas num nó de Service Fabric.|
 | Estado de funcionamento       | Obtém o estado de funcionamento da aplicação de recursos de infraestrutura de serviço.|
 | informações         | Obtém informações sobre uma aplicação de Service Fabric.|
-| lista         | Obtém a lista de aplicações criado no cluster de Service Fabric correspondentes
-                      filtros especificados como parâmetro.|
+| lista         | Obtém a lista de aplicações criado no cluster de Service Fabric que correspondem aos filtros especificados como parâmetro.|
 | carregar | Obtém informações sobre uma aplicação de Service Fabric de carga. |
 | Manifesto     | Obtém o manifesto que descreve um tipo de aplicação.|
 | Aprovisionar    | Aprovisiona ou regista escrever uma aplicação de Service Fabric com o cluster.|
 | Estado de funcionamento de relatório| Envia um relatório de estado de funcionamento da aplicação de Service Fabric.|
-| tipo         | Obtém a lista de tipos de aplicações na correspondência de cluster de Service Fabric
-                      exatamente o nome especificado.|
+| tipo         | Obtém a lista de tipos de aplicações no cluster de Service Fabric correspondente exatamente o nome especificado.|
 | lista de tipos    | Obtém a lista de tipos de aplicações no cluster de Service Fabric.|
 | Não aprovisionamento  | Remove ou anula o registo de um tipo de aplicação de Service Fabric do cluster.|
 | atualização      | Inicia a atualizar uma aplicação no cluster de Service Fabric.|
 | retoma de atualização  | Retoma a atualizar uma aplicação no cluster de Service Fabric.|
-| reversão de atualização| Inicia a reverter a atualização atualmente em curso de uma aplicação no
-                      Cluster do Service Fabric.|
+| reversão de atualização| Inicia a reverter a atualização atualmente em curso de uma aplicação no cluster de Service Fabric.|
 | Estado de atualização  | Obtém os detalhes para a atualização mais recente efetuada nesta aplicação.|
 | Carregar       | Copie um pacote de aplicação de Service Fabric para o arquivo de imagens.|
 
@@ -87,12 +83,9 @@ Elimina uma aplicação de Service Fabric existente. Tem de ser criada uma aplic
 
 |Argumento|Descrição|
 | --- | --- |
-| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir de
-                                 version 6.0, hierarchical names are delimited with the "~"
-                                 character. For example, if the application name is
-                                 "fabric://myapp/app1", the application identity would be
-                                 "myapp~app1" in 6.0+ and "myapp/app1" in previous versions.|
-| -force-remover | Remova uma aplicação de Service Fabric ou o serviço forçadamente sem passar a sequência de encerramento correto. Este parâmetro pode ser utilizado para forçadamente eliminar uma aplicação ou serviço para o eliminar é exceder o tempo limite devido a problemas com o código do serviço que impede o correto fechar das réplicas. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o "~" carateres. Por exemplo, se o nome da aplicação é "fabric://myapp/app1", a identidade da aplicação será "myapp ~ app1" 6.0 + e "myapp/app1" em versões anteriores.|
+| -force-remover          | Remova uma aplicação de Service Fabric ou o serviço forçadamente sem passar a sequência de encerramento correto. Este parâmetro pode ser utilizado para forçadamente eliminar uma aplicação ou serviço para o eliminar é exceder o tempo limite devido a problemas com o código do serviço que impede o correto fechar das réplicas.|
+| tempo limite – -t            | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -105,18 +98,15 @@ Elimina uma aplicação de Service Fabric existente. Tem de ser criada uma aplic
 | -verbose               | Aumente a verbosidade do registo. Utilize - a depuração para os registos de depuração completas.|
 
 ## <a name="sfctl-application-deployed"></a>sfctl aplicação implementada
-Obtém as informações sobre uma aplicação implementada num nó de Service Fabric.|
-|     
+Obtém as informações sobre uma aplicação implementada num nó de Service Fabric.
+     
 ### <a name="arguments"></a>Argumentos
 
 |Argumento|Descrição|
 | --- | --- |
-| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir de
-                                 version 6.0, hierarchical names are delimited with the "~"
-                                 character. For example, if the application name is
-                                 "fabric://myapp/app1", the application identity would be
-                                 "myapp~app1" in 6.0+ and "myapp/app1" in previous versions.|
-| --nome do nó [necessário] | O nome do nó. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o "~" carateres. Por exemplo, se o nome da aplicação é "fabric://myapp/app1", a identidade da aplicação será "myapp ~ app1" 6.0 + e "myapp/app1" em versões anteriores.|
+| --nome do nó [necessário]| O nome do nó.|
+| tempo limite – -t            | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -137,13 +127,12 @@ Devolve o estado de estado de funcionamento da aplicação de recursos de infrae
 
 |Argumento|Descrição|
 | --- | --- |
-| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0,
-                                                 hierarchical names are delimited with the "~"
-                                                 character. For example, if the application name is
-                                                 "fabric://myapp/app1", the application identity
-                                                 would be "myapp~app1" in 6.0+ and "myapp/app1" in
-                                                 previous versions.|
-| -implementar aplicações-estado de funcionamento-Estado-filtro | Permite a filtragem dos objetos de estado de funcionamento de aplicações implementadas devolvido nos resultados da consulta de estado de funcionamento de aplicação com base no respetivo estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas as aplicações implementadas que correspondem ao filtro vai ser devolvidas. Todas as aplicações implementadas são utilizadas para avaliar o estado de funcionamento agregada. Se não for especificado, são devolvidas todas as entradas. Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit.                        Por exemplo, se o valor fornecido é 6, em seguida, estado de funcionamento de aplicações implementadas com o valor HealthState OK (2) e de aviso (4) são devolvidas. -Predefinição - valor predefinido. Corresponde a qualquer HealthState.                        O valor é zero. -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados.                        O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535. | | – Estado-filtro de eventos-estado de funcionamento | Permite a filtragem na coleção de objetos de HealthEvent devolvido com base no estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas os eventos que correspondem ao filtro são devolvidos. Todos os eventos são utilizados para avaliar o estado de funcionamento agregada. Se não for especificado, são devolvidas todas as entradas.                        Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit. Por exemplo, se o valor fornecido é 6, em seguida, todos os eventos com o valor HealthState OK (2) e de aviso (4) são devolvidos. -Predefinição - valor predefinido. Corresponde a qualquer HealthState. O valor é zero. -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados. O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535. | | – estatísticas de estado de funcionamento de exclusão | Indica se as estatísticas de estado de funcionamento devem ser devolvidas como parte do resultado da consulta. FALSO por predefinição. As estatísticas mostram o número de elementos subordinados entidades no estado de funcionamento Ok, aviso e erro. | | -Serviços de estado de funcionamento-Estado filtro | Permite a filtragem de objetos de estado de funcionamento dos serviços devolvido nos resultados da consulta de estado de funcionamento de serviços com base no respetivo estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas os serviços que correspondem ao filtro são devolvidos. Todos os serviços são utilizados para avaliar o estado de funcionamento agregada.                        Se não for especificado, são devolvidas todas as entradas. Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit. Por exemplo, se o valor fornecido é 6, em seguida, estado de funcionamento de serviços com o valor HealthState OK (2) e de aviso (4) vai ser devolvido. -Predefinição - valor predefinido. Corresponde a qualquer HealthState. O valor é zero.                        -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados. O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o "~" carateres. Por exemplo, se o nome da aplicação é "fabric://myapp/app1", a identidade da aplicação será "myapp ~ app1" 6.0 + e "myapp/app1" em versões anteriores.|
+| -implementar-aplicações-estado de funcionamento--filtro de estado| Permite a filtragem dos objetos de estado de funcionamento de aplicações implementadas devolvido nos resultados da consulta de estado de funcionamento de aplicação com base no respetivo estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas as aplicações implementadas que correspondem ao filtro vai ser devolvidas. Todas as aplicações implementadas são utilizadas para avaliar o estado de funcionamento agregada. Se não for especificado, são devolvidas todas as entradas. Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit. Por exemplo, se o valor fornecido é 6, em seguida, estado de funcionamento de aplicações implementadas com o valor HealthState OK (2) e de aviso (4) são devolvidas. -Predefinição - valor predefinido. Corresponde a qualquer HealthState. O valor é zero. -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados. O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535.|
+| – Estado-filtro de eventos-estado de funcionamento            | Permite a filtragem na coleção de objetos de HealthEvent devolvido com base no estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas os eventos que correspondem ao filtro são devolvidos. Todos os eventos são utilizados para avaliar o estado de funcionamento agregada. Se não for especificado, são devolvidas todas as entradas. Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit. Por exemplo, se o valor fornecido é 6, em seguida, todos os eventos com o valor HealthState OK (2) e de aviso (4) são devolvidos. -Predefinição - valor predefinido. Corresponde a qualquer HealthState. O valor é zero. -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados. O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535.|
+| – estatísticas de estado de funcionamento de exclusão | Indica se as estatísticas de estado de funcionamento devem ser devolvidas como parte do resultado da consulta. FALSO por predefinição. As estatísticas mostram o número de elementos subordinados entidades no estado de funcionamento Ok, aviso e erro.|
+| -Serviços de estado de funcionamento-estado do filtro          | Permite a filtragem de objetos de estado de funcionamento dos serviços devolvido nos resultados da consulta de estado de funcionamento de serviços com base no respetivo estado de funcionamento. Os valores possíveis para este parâmetro incluem o valor de número inteiro de um dos seguintes Estados de funcionamento. Apenas os serviços que correspondem ao filtro são devolvidos. Todos os serviços são utilizados para avaliar o estado de funcionamento agregada. Se não for especificado, são devolvidas todas as entradas. Os valores de estado são enumeração baseada no sinalizador de, pelo que o valor pode ser uma combinação destes valores obtidos através de operador de 'Ou' bit a bit. Por exemplo, se o valor fornecido é 6, em seguida, estado de funcionamento de serviços com o valor HealthState OK (2) e de aviso (4) vai ser devolvido. -Predefinição - valor predefinido. Corresponde a qualquer HealthState. O valor é zero. -Nenhuma - filtro que não corresponde a qualquer valor HealthState. Utilizado para não devolver resultados numa coleção especificada dos Estados. O valor é 1. -Ok - filtre que corresponde de entrada com o valor de HealthState Ok. O valor é 2. -Aviso - filtro que corresponde à entrada com HealthState valor aviso. O valor é 4. -Erro - filtro que corresponda à entrada com o valor de HealthState erro. O valor é 8. -Todos os - filtro que corresponda à entrada com qualquer valor HealthState. O valor é a 65535.|
+| tempo limite – -t                            | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -164,11 +153,9 @@ Devolve as informações sobre a aplicação que foi criada ou no processo de qu
 
 |Argumento|Descrição|
 | --- | --- |
-| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por
-                                      with the "~" character. For example, if the application name
-                                      is "fabric://myapp/app1", the application identity would be
-                                      "myapp~app1" in 6.0+ and "myapp/app1" in previous versions.|
-| -parâmetros da aplicação de exclusão | O sinalizador que especifica se os parâmetros da aplicação serão excluídos do resultado. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+| --id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o "~" carateres. Por exemplo, se o nome da aplicação é "fabric://myapp/app1", a identidade da aplicação será "myapp ~ app1" 6.0 + e "myapp/app1" em versões anteriores.|
+| -parâmetros da aplicação de exclusão| O sinalizador que especifica se os parâmetros da aplicação serão excluídos do resultado.|
+| tempo limite – -t                 | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -189,19 +176,11 @@ Obtém as informações sobre as aplicações que foram criados ou no processo d
 
 |Argumento|Descrição|
 | --- | --- |
-|– aplicação-definição de tipo de filtro| Utilizado para filtrar ApplicationDefinitionKind para
-                                          application query operations. - Default - Default value.
-                                          Filter that matches input with any
-                                          ApplicationDefinitionKind value. The value is 0. - All -
-                                          Filter that matches input with any
-                                          ApplicationDefinitionKind value. The value is 65535. -
-                                          ServiceFabricApplicationDescription - Filter that matches
-                                          input with ApplicationDefinitionKind value
-                                          ServiceFabricApplicationDescription. The value is 1. -
-                                          Compose - Filter that matches input with
-                                          ApplicationDefinitionKind value Compose. The value is 2.
-                                          Default: 65535.|
-| – o nome de tipo de aplicação | O nome do tipo de aplicação utilizado para filtrar as aplicações a consultar. Este valor não deve conter a versão de tipo de aplicação. | | -token de continuação | O parâmetro de token de continuação é utilizado para obter o seguinte conjunto de resultados. Um token de continuação com um valor não vazio está incluído na resposta da API de quando os resultados do sistema não se enquadram numa única resposta. Quando este valor é transmitido para a próxima chamada de API, a API devolve o seguinte conjunto de resultados. Se não existirem resultados adicionais, em seguida, o token de continuação não contém um valor. O valor deste parâmetro não deve ser o URL, codificado. | | -parâmetros da aplicação de exclusão | O sinalizador que especifica se os parâmetros da aplicação são excluídos do resultado. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+|– aplicação-definição de tipo de filtro| Utilizado para filtrar ApplicationDefinitionKind para operações de consulta de aplicações. -Predefinição - valor predefinido. Filtro que corresponda à entrada com qualquer valor ApplicationDefinitionKind. O valor é 0. -Todos os - filtro que corresponda à entrada com qualquer valor ApplicationDefinitionKind. O valor é a 65535. -ServiceFabricApplicationDescription - filtro que corresponda à entrada com o valor de ApplicationDefinitionKind ServiceFabricApplicationDescription. O valor é 1. -Compose - filtro que corresponda à entrada com o valor de ApplicationDefinitionKind Compose. O valor é 2. Predefinição: 65535.|
+| – o nome de tipo de aplicação      | O nome do tipo de aplicação utilizado para filtrar as aplicações a consultar. Este valor não deve conter a versão de tipo de aplicação.|
+| -token de continuação         | O parâmetro de token de continuação é utilizado para obter o seguinte conjunto de resultados. Um token de continuação com um valor não vazio está incluído na resposta da API de quando os resultados do sistema não se enquadram numa única resposta. Quando este valor é transmitido para a próxima chamada de API, a API devolve o seguinte conjunto de resultados. Se não existirem resultados adicionais, em seguida, o token de continuação não contém um valor. O valor deste parâmetro não deve ser o URL, codificado.|
+| -parâmetros da aplicação de exclusão| O sinalizador que especifica se os parâmetros da aplicação são excluídos do resultado.|
+| tempo limite – -t                 | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -216,32 +195,21 @@ Obtém as informações sobre as aplicações que foram criados ou no processo d
 ## <a name="sfctl-application-load"></a>sfctl carga da aplicação
 Obtém informações sobre uma aplicação de Service Fabric de carga.
 
-        Returns the load information about the application that was created or in the process of
-        being created in the Service Fabric cluster and whose name matches the one specified as the
-        parameter. The response includes the name, minimum nodes, maximum nodes, the number of nodes
-        the app is occupying currently, and application load metric information about the
-        application.
+Devolve as carregar as informações sobre a aplicação que foi criada ou no processo de que está a ser criado no cluster de Service Fabric e cujo nome corresponde à especificado como parâmetro. A resposta inclui o nome, nós mínimo, máximo de nós, o número de nós que a aplicação está atualmente occupying e informações de métrica de carga de aplicação sobre a aplicação.
 
 ### <a name="arguments"></a>Argumentos
 |Argumento|Descrição|
 | --- | --- |
-|--id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo do
-                                 the application without the 'fabric:' URI scheme. Starting from
-                                 version 6.0, hierarchical names are delimited with the "~"
-                                 character. For example, if the application name is
-                                 "fabric://myapp/app1", the application identity would be
-                                 "myapp~app1" in 6.0+ and "myapp/app1" in previous versions. |
-| tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. |
+|--id da aplicação [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o "~" carateres. Por exemplo, se o nome da aplicação é "fabric://myapp/app1", a identidade da aplicação será "myapp ~ app1" 6.0 + e "myapp/app1" em versões anteriores. |
+| tempo limite – -t               | Tempo limite do servidor em segundos.  Predefinição: 60.|
 
 ### <a name="global-arguments"></a>Argumentos global
 |Argumento|Descrição|
 | --- | --- |
 |-debug                    | Aumente a verbosidade do registo para mostrar que todos os registos de depuração.|
     -ajudar -h                  | Mostra esta mensagem de ajuda e saída.|
-    --o de saída                | Formato de saída.  Valores permitidos: json, jsonc, tabela, tsv.  Predefinição:
-                                 JSON.|
-    – consulta                    | Cadeia de consulta JMESPath. Consulte http://jmespath.org/ para obter mais informações
-                                 informações e exemplos.|
+    --o de saída                | Formato de saída.  Valores permitidos: json, jsonc, tabela, tsv.  Predefinição: json.|
+    – consulta                    | Cadeia de consulta JMESPath. Consulte http://jmespath.org/ para obter mais informações e exemplos.|
     -verbose                  | Aumente a verbosidade do registo. Utilize - a depuração para os registos de depuração completas.|
 
 ## <a name="sfctl-application-manifest"></a>manifesto da aplicação sfctl
@@ -347,10 +315,23 @@ Valida os parâmetros de atualização da aplicação fornecida e começa a efet
 
 |Argumento|Descrição|
 | --- | --- |
-| id da aplicação – [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o ' ~' carateres. Para
-        example, if the application name is 'fabric://myapp/app1', the application identity would be
-        'myapp~app1' in 6.0+ and 'myapp/app1' in previous versions.|
-| versão de – aplicação [necessária] | Versão da aplicação de destino. | | -parâmetros [necessários] | Uma lista JSON codificado de parâmetro de aplicação substitui a aplicar ao atualizar a aplicação. | | -predefinição-service-estado de funcionamento-policy | JSON codificado especificação da política de estado de funcionamento utilizada por predefinição para avaliar o estado de funcionamento de um tipo de serviço. | | -Falha de ação | A ação a executar quando uma atualização monitorizada encontra monitorização violações de políticas ou de estado de funcionamento da política. | | -force-reinício | Reiniciar forçadamente processos durante a atualização, mesmo quando a versão de código não foi alterada. | | -Estado de funcionamento verificação-repetição-tempo limite da | A quantidade de tempo para repetir avaliações do Estado de funcionamento quando a aplicação ou o cluster mau estado de funcionamento antes da ação de falha é executada. Medido em milissegundos.  Predefinição: PT0H10M0S. | | -Estado de funcionamento-verifique-estável-duração | A quantidade de tempo que a aplicação ou o cluster tem de permanecer bom estado de funcionamento antes de continua a atualização para o domínio de atualização seguinte.            Medido em milissegundos.  Predefinição: PT0H2M0S. | | -Estado de funcionamento-verificação espera duração | A quantidade de tempo de espera após a conclusão de um domínio de atualização antes de aplicar políticas de estado de funcionamento. Medido em milissegundos.            Predefinição: 0. | | – máximo mau estado de funcionamento aplicações | O máximo permitido de percentagem de mau estado de funcionamento aplicações implementadas. Representado como um número entre 0 e 100. | | -modo | O modo utilizado para monitorizar o estado de funcionamento durante uma atualização sem interrupção.            Predefinição: UnmonitoredAuto. | | -réplica set-verifique-tempo limite da | A quantidade máxima de tempo para bloquear o processamento de um domínio de atualização e evitar a perda de disponibilidade quando existirem problemas inesperados. Medido em segundos. | | – política de estado de funcionamento de serviço | JSON codificado mapa com a política de estado de funcionamento do tipo de serviço por nome de tipo de serviço. O mapa está vazio ser predefinido. | | tempo limite – -t | Tempo limite do servidor em segundos.  Predefinição: 60. | | -atualização--tempo limite do domínio | A quantidade de tempo cada domínio de atualização tem de concluir antes de FailureAction é executada. Medido em milissegundos.  Predefinição: P10675199DT02H48M05.4775807S. | | -tempo limite de atualização | A quantidade de tempo de atualização global tem de concluir antes de FailureAction é executada. Medido em milissegundos.  Predefinição: P10675199DT02H48M05.4775807S. | | -aviso como erro | Processe avisos de avaliação do Estado de funcionamento com o mesmo gravidade como erros. |
+| id da aplicação – [necessário]| A identidade da aplicação. Isto é, geralmente, o nome completo da aplicação sem a ' recursos de infraestrutura:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados por com o ' ~' carateres. Por exemplo, se o nome da aplicação é 'fabric://myapp/app1', a identidade da aplicação será ' myapp ~ app1' 6.0 + e ' myapp/app1' em versões anteriores.|
+| versão de – aplicação [necessária]| Versão da aplicação de destino.|
+| -parâmetros [necessários]| Uma lista JSON codificado de parâmetro de aplicação as substituições aplicadas ao atualizar a aplicação.|
+| -predefinição serviço-estado de funcionamento da política| JSON codificado especificação da política de estado de funcionamento utilizada por predefinição para avaliar o estado de funcionamento de um tipo de serviço.|
+| -Falha de ação            | A ação a executar quando uma atualização monitorizada encontra monitorização violações de políticas ou de estado de funcionamento da política.|
+| -force-reinício             | Reinicie forçadamente processos durante a atualização, mesmo quando a versão de código não foi alterada.|
+| -Estado de funcionamento verificação-repetição-tempo limite| A quantidade de tempo para repetir avaliações do Estado de funcionamento quando a aplicação ou o cluster mau estado de funcionamento antes da ação de falha é executada. Medido em milissegundos.  Predefinição: PT0H10M0S.|
+| -Estado de funcionamento-verifique-estável-duração | A quantidade de tempo que a aplicação ou o cluster tem de permanecer bom estado de funcionamento antes de continua a atualização para o domínio de atualização seguinte.            Medido em milissegundos.  Predefinição: PT0H2M0S.|
+| -Estado de funcionamento-verificação espera duração| A quantidade de tempo de espera após a conclusão de um domínio de atualização antes de aplicar políticas de estado de funcionamento. Medido em milissegundos.            Predefinição: 0.|
+| – máximo aplicações mau estado de funcionamento        | O máximo permitido de percentagem de mau estado de funcionamento aplicações implementadas. Representado como um número entre 0 e 100.|
+| -modo                      | O modo utilizado para monitorizar o estado de funcionamento durante uma atualização sem interrupção.            Predefinição: UnmonitoredAuto.|
+| -réplica set-verifique-tempo limite | A quantidade máxima de tempo para bloquear o processamento de um domínio de atualização e evitar a perda de disponibilidade quando existirem problemas inesperados. Medido em segundos.|
+| – política de estado de funcionamento de serviço     | JSON codificado mapa com a política de estado de funcionamento do tipo de serviço por nome de tipo de serviço. O mapa está vazio ser predefinido.|
+| tempo limite – -t                | Tempo limite do servidor em segundos.  Predefinição: 60.|
+| -atualização--tempo limite do domínio    | A quantidade de tempo cada domínio de atualização tem de concluir antes de FailureAction é executada. Medido em milissegundos.  Predefinição: P10675199DT02H48M05.4775807S.|
+| -tempo limite de atualização           | A quantidade de tempo de atualização global tem de concluir antes de FailureAction é executada. Medido em milissegundos.  Predefinição: P10675199DT02H48M05.4775807S.|
+| -aviso como erro          | Processe avisos de avaliação do Estado de funcionamento com o mesmo gravidade como erros.|
 
 ### <a name="global-arguments"></a>Argumentos global
 
@@ -372,8 +353,7 @@ Apresenta opcionalmente o progresso do carregamento para cada ficheiro no pacote
 |Argumento|Descrição|
 | --- | --- |
 | – o caminho [necessário]| Caminho para o pacote de aplicação local.|
-|cadeia de – o arquivo de imagens| Armazenar a imagem de destino para carregar o pacote de aplicação.  Predefinição:
-                         recursos de infraestrutura: arquivo de imagens.|
+|cadeia de – o arquivo de imagens| Armazenar a imagem de destino para carregar o pacote de aplicação.  Predefinição: recursos de infraestrutura: arquivo de imagens.|
 | – Mostrar progresso  | Mostra progresso de carregamento de ficheiros para pacotes grandes.|
 
 ### <a name="global-arguments"></a>Argumentos global
@@ -383,8 +363,7 @@ Apresenta opcionalmente o progresso do carregamento para cada ficheiro no pacote
 | -debug       | Aumente a verbosidade do registo para mostrar que todos os registos de depuração.|
 | -ajudar -h     | Mostra esta mensagem de ajuda e saída.|
 | --o de saída   | Formato de saída.  Valores permitidos: json, jsonc, tabela, tsv.  Predefinição: json.|
-| – consulta       | Cadeia de consulta JMESPath. Consulte http://jmespath.org/ para obter mais informações e
-                       exemplos.|
+| – consulta       | Cadeia de consulta JMESPath. Consulte http://jmespath.org/ para obter mais informações e exemplos.|
 | -verbose     | Aumente a verbosidade do registo. Utilize - a depuração para os registos de depuração completas.|
 
 ## <a name="next-steps"></a>Passos seguintes

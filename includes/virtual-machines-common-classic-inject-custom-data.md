@@ -1,19 +1,19 @@
 
 
 
-This topic describes how to:
+Este tópico descreve como:
 
-* Inject data into an Azure virtual machine (VM) when it is being provisioned.
-* Retrieve it for both Windows and Linux.
-* Use special tools available on some systems to detect and handle custom data automatically.
+* Inserir dados numa máquina virtual do Azure (VM) ao que está a ser aprovisionado.
+* Obtê-lo para o Windows e Linux.
+* Utilize ferramentas especiais disponíveis em alguns sistemas para detetar e processar dados personalizados automaticamente.
 
 > [!NOTE]
-> This article describes how custom data can be injected by using a VM created with the Azure Service Management API. To see how to use the Azure Resource Management API, see [the example template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
+> Este artigo descreve como personalizados dados podem ser injetadas através da utilização de uma VM criada com a API de gestão de serviço do Azure. Para ver como utilizar a API de gestão de recursos do Azure, consulte [o modelo de exemplo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 > 
 > 
 
-## <a name="injecting-custom-data-into-your-azure-virtual-machine"></a>Injecting custom data into your Azure virtual machine
-This feature is currently supported only in the [Azure Command-Line Interface](https://github.com/Azure/azure-xplat-cli). Here we create a `custom-data.txt` file that contains our data, then inject that in to the VM during provisioning. Although you may use any of the options for the `azure vm create` command, the following demonstrates one very basic approach:
+## <a name="injecting-custom-data-into-your-azure-virtual-machine"></a>Dados personalizados inserirem-se para a máquina virtual do Azure
+Esta funcionalidade atualmente só é suportada no [Interface de linha de comandos do Azure](https://github.com/Azure/azure-xplat-cli). Aqui criamos uma `custom-data.txt` ficheiro que contém os nossos dados, em seguida, inserir que para a VM durante o aprovisionamento. Embora possa utilizar qualquer uma das opções para o `azure vm create` comando, o seguinte demonstra uma abordagem muito básica:
 
 ```
     azure vm create <vmname> <vmimage> <username> <password> \  
@@ -22,33 +22,33 @@ This feature is currently supported only in the [Azure Command-Line Interface](h
 ```
 
 
-## <a name="using-custom-data-in-the-virtual-machine"></a>Using custom data in the virtual machine
-* If your Azure VM is a Windows-based VM, then the custom data file is saved to `%SYSTEMDRIVE%\AzureData\CustomData.bin`. Although it was base64-encoded to transfer from the local computer to the new VM, it is automatically decoded and can be opened or used immediately.
+## <a name="using-custom-data-in-the-virtual-machine"></a>Dados personalizados a utilizar na máquina virtual
+* Se a VM do Azure é uma VM com base no Windows, em seguida, o ficheiro de dados personalizada é guardado `%SYSTEMDRIVE%\AzureData\CustomData.bin`. Embora foi codificado em base64 para transferir a partir do computador local para a nova VM, este é automaticamente descodificado e pode ser aberta ou utilizada imediatamente.
   
   > [!NOTE]
-  > If the file exists, it is overwritten. The security on the directory is set to **System:Full Control** and **Administrators:Full Control**.
+  > Se o ficheiro existir, será substituído. A segurança no diretório está definida como **controlo de sistema: completo** e **administradores: completo controlo**.
   > 
   > 
-* If your Azure VM is a Linux-based VM, then the custom data file will be located in one of the following places depending on your distro. The data may be base64-encoded, so you may need to decode the data first:
+* Se a VM do Azure é uma VM baseado em Linux, em seguida, o ficheiro de dados personalizados estarão localizado em um dos locais seguintes, dependendo do seu distro. Os dados podem ser codificados base64, por isso terá de descodificar primeiro os dados:
   
   * `/var/lib/waagent/ovf-env.xml`
   * `/var/lib/waagent/CustomData`
   * `/var/lib/cloud/instance/user-data.txt` 
 
-## <a name="cloud-init-on-azure"></a>Cloud-init on Azure
-If your Azure VM is from an Ubuntu or CoreOS image, then you can use CustomData to send a cloud-config to cloud-init. Or if your custom data file is a script, then cloud-init can simply execute it.
+## <a name="cloud-init-on-azure"></a>Init de nuvem no Azure
+Se a VM do Azure é a partir de uma imagem Ubuntu ou CoreOS, em seguida, pode utilizar CustomData para enviar uma configuração de nuvem para a nuvem init. Ou, se o ficheiro de dados personalizada é um script, em seguida, na nuvem init pode simplesmente executá-lo.
 
-### <a name="ubuntu-cloud-images"></a>Ubuntu Cloud Images
-In most Azure Linux images, you would edit "/etc/waagent.conf" to configure the temporary resource disk and swap file. See [Azure Linux Agent user guide](../articles/virtual-machines/linux/agent-user-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) for more information.
+### <a name="ubuntu-cloud-images"></a>Ubuntu nuvem imagens
+Na maioria das imagens de Linux do Azure, seria editar "/ etc/waagent.conf" para configurar o disco de recursos temporário e ficheiro de comutação. Consulte [guia de utilizador do agente Linux do Azure](../articles/virtual-machines/linux/agent-user-guide.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para obter mais informações.
 
-However, on the Ubuntu Cloud Images, you must use cloud-init to configure the resource disk (that is, the "ephemeral" disk) and swap partition. See the following page on the Ubuntu wiki for more details: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
+No entanto, nas imagens de nuvem Ubuntu, tem de utilizar init da nuvem para configurar o disco de recursos (ou seja, o disco "efémeras") e trocar de partição. Consulte a página seguinte no wiki do Ubuntu para obter mais detalhes: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps-using-cloud-init"></a>Next steps: Using cloud-init
-For further information, see the [cloud-init documentation for Ubuntu](https://help.ubuntu.com/community/CloudInit).
+## <a name="next-steps-using-cloud-init"></a>Próximas etapas: nuvem init a utilizar
+Para obter mais informações, consulte o [documentação de nuvem init para Ubuntu](https://help.ubuntu.com/community/CloudInit).
 
 <!--Link references-->
-[Add Role Service Management REST API Reference](http://msdn.microsoft.com/library/azure/jj157186.aspx)
+[Adicionar referência de API de REST de gestão de serviço de função](http://msdn.microsoft.com/library/azure/jj157186.aspx)
 
-[Azure Command-line Interface](https://github.com/Azure/azure-xplat-cli)
+[Interface de linha de comandos do Azure](https://github.com/Azure/azure-xplat-cli)
 

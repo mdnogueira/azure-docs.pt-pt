@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 93e6c87a9d445ca448509a256247fb5e4749ec1c
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
-ms.translationtype: HT
+ms.openlocfilehash: 3b51276fe074282339d30d075547160277bee53f
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="understanding-outbound-connections-in-azure"></a>Compreender as ligações de saída no Azure
 
@@ -93,4 +93,4 @@ Azure utiliza um algoritmo para determinar o número de portas de realizar o SNA
 
 Ligações de saída têm um tempo de limite de inatividade de 4 minutos.  Não é ajustável.
 
-É importante rememember que o número de portas de realizar o SNAT disponíveis não traduzir diretamente para o número de ligações. Consulte acima para informações específicas sobre quando e como portas de realizar o SNAT são alocadas e como gerir este recurso exhaustible.
+É importante lembrar-se de que o número de portas de realizar o SNAT disponíveis traduz diretamente para o número de ligações. Consulte acima para informações específicas sobre quando e como portas de realizar o SNAT são alocadas e como gerir este recurso exhaustible.

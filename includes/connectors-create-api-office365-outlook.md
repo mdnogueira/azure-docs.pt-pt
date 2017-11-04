@@ -1,19 +1,19 @@
-#### <a name="prerequisites"></a>Prerequisites
-* An Azure account; you can create a [free account](https://azure.microsoft.com/free)
-* An [Office 365](https://office365.com) account  
+#### <a name="prerequisites"></a>Pré-requisitos
+* Uma conta do Azure; Pode criar um [conta gratuita](https://azure.microsoft.com/free)
+* Um [do Office 365](https://office365.com) conta  
 
-Before using your Office 365 account in a logic app, authorize the logic app to connect to your Office 365 account. You can do this easily within your logic app on the Azure portal.  
+Antes de utilizar a sua conta Office 365 numa aplicação lógica, autorize a aplicação lógica para ligar à sua conta Office 365. Pode fazê-facilmente na sua aplicação lógica no portal do Azure.  
 
-Authorize your logic app to connect to your Office 365 account using the following steps:
+Autorize a aplicação lógica para ligar à sua conta Office 365 através dos seguintes passos:
 
-1. Create a logic app. In the Logic Apps designer, select **Show Microsoft managed APIs** in the drop down list, and then enter "office 365" in the search box. Select one of the triggers or actions:  
-    ![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-sendemail.png)  
-2. If you haven't previously created any connections to Office 365, you are prompted to sign in using your Office 365 credentials:  
-    ![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-signin.png)  
-3. Select **Sign in**, and enter your user name and password. Select **Sign in**:  
-    ![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-usernamepassword.png)
+1. Crie uma aplicação lógica. No designer Logic Apps, selecione **Mostrar Microsoft APIs geridas** na lista pendente lista e, em seguida, introduza "office 365" na caixa de pesquisa. Selecione um dos acionadores ou ações:  
+    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-sendemail.png)  
+2. Se ainda não criou anteriormente todas as ligações ao Office 365, lhe for pedido para iniciar sessão com as suas credenciais do Office 365:  
+    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-signin.png)  
+3. Selecione **sessão**e introduza o nome de utilizador e palavra-passe. Selecione **sessão**:  
+    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-usernamepassword.png)
    
-    These credentials are used to authorize your logic app to connect to, and access your Office 365 account. 
-4. Notice the connection has been created. Now, proceed with the other steps in your logic app:   
-    ![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-sendemailproperties.png)  
+    Estas credenciais são utilizadas para autorizar a aplicação lógica para ligar a e aceder à sua conta Office 365. 
+4. Tenha em atenção de que a ligação foi criada. Agora, continue com os outros passos na sua aplicação lógica:   
+    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-sendemailproperties.png)  
 

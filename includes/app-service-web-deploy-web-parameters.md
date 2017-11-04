@@ -1,26 +1,26 @@
-With Azure Resource Manager, you define parameters for values you want to specify when the template is deployed. The template includes a section called Parameters that contains all of the parameter values.
-You should define a parameter for those values that will vary based on the project you are deploying or based on the environment you are deploying to. Do not define parameters for values that will always stay the same. Each parameter value is used in the template to define the resources that are deployed. 
+Com o Azure Resource Manager, define parâmetros para os valores que pretende especificar quando o modelo é implementado. O modelo inclui uma secção denominada parâmetros que contém todos os valores de parâmetros.
+Deve definir um parâmetro para esses valores que irão variar com base no projeto que está a implementar ou com base no ambiente que esteja a implementar. Não defina parâmetros para valores que irão sempre permaneça igual. Cada valor de parâmetro é utilizado no modelo para definir os recursos que são implementados. 
 
-When defining parameters, use the **allowedValues** field to specify which values a user can provide during deployment. Use the **defaultValue** field to assign a value to the parameter, if no value is provided during deployment.
+Quando definir parâmetros, utilize o **allowedValues** campo para especificar que os valores de um utilizador pode fornecer durante a implementação. Utilize o **defaultValue** campo para atribuir um valor para o parâmetro se não for fornecido nenhum valor durante a implementação.
 
-We will describe each parameter in the template.
+Iremos descrevem cada um dos parâmetros no modelo.
 
-### <a name="sitename"></a>siteName
-The name of the web app that you wish to create.
+### <a name="sitename"></a>SiteName
+O nome da aplicação web que pretende criar.
 
     "siteName":{
       "type":"string"
     }
 
 ### <a name="hostingplanname"></a>hostingPlanName
-The name of the App Service plan to use for hosting the web app.
+O nome do plano do App Service para utilizar para alojar a aplicação web.
 
     "hostingPlanName":{
       "type":"string"
     }
 
-### <a name="sku"></a>sku
-The pricing tier for the hosting plan.
+### <a name="sku"></a>SKU
+O escalão de preço para o plano de alojamento.
 
     "sku": {
       "type": "string",
@@ -44,10 +44,10 @@ The pricing tier for the hosting plan.
       }
     }
 
-The template defines the values that are permitted for this parameter, and assigns a default value (S1) if no value is specified.
+O modelo define os valores que são permitidos para este parâmetro e atribui um valor predefinido (S1), se for especificado nenhum valor.
 
 ### <a name="workersize"></a>workerSize
-The instance size of the hosting plan (small, medium, or large).
+O tamanho da instância do plano de alojamento (pequeno, médio ou grande).
 
     "workerSize":{
       "type":"string",
@@ -59,5 +59,5 @@ The instance size of the hosting plan (small, medium, or large).
       "defaultValue":"0"
     }
 
-The template defines the values that are permitted for this parameter (0, 1, or 2), and assigns a default value (0) if no value is specified. The values correspond to small, medium and large.
+O modelo define os valores que são permitidos para este parâmetro (0, 1 ou 2) e atribui um valor predefinido (0) se for especificado nenhum valor. Os valores correspondem às pequena, média e grande.
 

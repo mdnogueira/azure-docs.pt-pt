@@ -12,13 +12,13 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/26/2017
+ms.date: 11/02/2017
 ms.author: ryanwi
-ms.openlocfilehash: b3bab57f5ca6627b4532284376a9809d5ab543f2
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
-ms.translationtype: HT
+ms.openlocfilehash: 1ac5ca34e412aeb8b24e657abfe8eca04943799d
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Windows numa rede virtual do Azure
 Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Windows Service Fabric numa rede virtual do Azure existente (VNET) e subplano net através do PowerShell. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações.  Para criar um cluster de Linux utilizando a CLI do Azure, consulte [criar um cluster com Linux seguro no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
@@ -78,44 +78,42 @@ Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
 Utilize o seguinte comando do PowerShell para implementar os ficheiros de parâmetros e modelo do Resource Manager para a configuração de rede:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName $groupname -TemplateFile .\network.json -TemplateParameterFile .\network.parameters.json -Verbose
+New-AzureRmResourceGroupDeployment -ResourceGroupName $groupname -TemplateFile C:\winclustertutorial\network.json -TemplateParameterFile C:\winclustertutorial\network.parameters.json -Verbose
 ```
 
 <a id="createvaultandcert" name="createvaultandcert_anchor"></a>
 ## <a name="deploy-the-service-fabric-cluster"></a>Implementar o cluster do Service Fabric
-Assim que os recursos de rede tem concluído a implementação, o passo seguinte é implementar um cluster do Service Fabric para a VNET na sub-rede e NSG designado para o cluster do Service Fabric. A implementação de um cluster para uma VNET existente e a sub-rede (implementado anteriormente neste artigo) requer um modelo do Resource Manager.  Para obter mais informações, consulte [criar um cluster utilizando o Azure Resource Manager](service-fabric-cluster-creation-via-arm.md). Para esta série tutorial, o modelo está pré-configurada para utilizar os nomes da VNET, uma sub-rede e um NSG que configurou no passo anterior.  Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
+Assim que os recursos de rede tem concluído a implementação, o passo seguinte é implementar um cluster do Service Fabric para a VNET na sub-rede e NSG designado para o cluster do Service Fabric. A implementação de um cluster para uma VNET existente e a sub-rede (implementado anteriormente neste artigo) requer um modelo do Resource Manager.  Para esta série tutorial, o modelo está pré-configurada para utilizar os nomes da VNET, uma sub-rede e um NSG que configurou no passo anterior.  
+
+Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
 - [cluster.JSON][cluster-arm]
 - [cluster.Parameters.JSON][cluster-parameters-arm]
 
-Um certificado é utilizado para proteger a comunicação de nó de nó para o cluster e para gerir o acesso de utilizador ao cluster do Service Fabric. API Management também utiliza este certificado para o serviço Service Fabric Naming para a deteção do serviço de acesso. 
+Utilize este modelo para criar um cluster seguro.  Um certificado de cluster é um certificado x. 509 utilizado para proteger a comunicação de nó de nó e autenticar pontos finais de gestão de cluster para um cliente de gestão.  O certificado de cluster também fornece um SSL para a API de gestão HTTPS e para o Service Fabric Explorer através de HTTPS. O Cofre de chaves do Azure é utilizado para gerir os certificados para clusters de Service Fabric no Azure.  Quando um cluster é implementado no Azure, o fornecedor de recursos do Azure responsável pela criação de clusters de Service Fabric obtém certificados a partir do Cofre de chaves e instala-los em VMs do cluster. 
 
-O script seguinte utiliza o [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/New-AzureRmServiceFabricCluster) cmdlet para implementar um cluster de novo no Azure. O cmdlet também cria um cofre de chaves no Azure, cria um certificado autoassinado e um cofre de chaves e transfere o ficheiro de certificado localmente.   
+Pode utilizar um certificado de uma autoridade de certificação (AC), como o certificado de cluster ou, para fins de teste, criar um certificado autoassinado. Tem do certificado de cluster:
+
+- contém uma chave privada.
+- criada para a troca de chaves, que é exportável para um ficheiro Personal Information Exchange (. pfx).
+- tem um nome de requerente que corresponde ao domínio que utilizar para aceder ao cluster do Service Fabric. Esta correspondência é necessário para fornecer o SSL para o cluster pontos finais de gestão HTTPS e Service Fabric Explorer. Não é possível obter um certificado SSL de uma autoridade de certificação (AC) para o. cloudapp.azure.com domínio. Tem de obter um nome de domínio personalizado para o cluster. Quando solicitar um certificado a partir de uma AC, o nome de requerente do certificado tem de corresponder ao nome de domínio personalizado que utilizar para o cluster.
+
+Preencha vazia *localização*, *clusterName*, *adminUserName*, e *adminPassword* parâmetros a  *cluster.Parameters.JSON* ficheiro para a sua implementação.  Deixe o *certificateThumbprint*, *certificateUrlValue*, e *sourceVaultValue* parâmetros em branco para criar um certificado autoassinado.  Se pretender utilizar um certificado existente carregado anteriormente para um cofre de chaves, preencha os valores de parâmetros.
+
+O script seguinte utiliza o [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/New-AzureRmServiceFabricCluster) cmdlet e o modelo para implementar um cluster de novo no Azure. O cmdlet também cria um novo cofre de chaves no Azure, adiciona um novo certificado autoassinado para o Cofre de chaves e transfere o ficheiro de certificado localmente. Pode especificar um certificado existente e/ou o Cofre de chaves utilizando outros parâmetros do [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/New-AzureRmServiceFabricCluster) cmdlet.
 
 ```powershell
-# Certificate variables.
+# Variables.
 $certpwd="q6D7nN%6ck@6" | ConvertTo-SecureString -AsPlainText -Force
 $certfolder="c:\mycertificates\"
-
-# Variables for VM admin.
-$adminuser="vmadmin"
-$adminpwd="Password#1234" | ConvertTo-SecureString -AsPlainText -Force 
-
-# Variables for common values
 $clustername = "mysfcluster"
-$vmsku = "Standard_D2_v2"
-$vaultname = "clusterkeyvault"
-$vaultgroupname="clusterkeyvaultgroup"
+$vaultname = "clusterkeyvault111"
+$vaultgroupname="clusterkeyvaultgroup111"
 $subname="$clustername.$clusterloc.cloudapp.azure.com"
 
-# Set the number of cluster nodes. Possible values: 1, 3-99
-$clustersize=5 
-
 # Create the Service Fabric cluster.
-New-AzureRmServiceFabricCluster -Name $clustername -ResourceGroupName $groupname -Location $clusterloc `
--ClusterSize $clustersize -VmUserName $adminuser -VmPassword $adminpwd -CertificateSubjectName $subname `
--CertificatePassword $certpwd -CertificateOutputFolder $certfolder `
--OS WindowsServer2016DatacenterwithContainers -VmSku $vmsku -KeyVaultName $vaultname -KeyVaultResouceGroupName $vaultgroupname `
--TemplateFile .\cluster.json -ParameterFile .\cluster.parameters.json
+New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile 'C:\winclustertutorial\cluster.json' `
+-ParameterFile 'C:\winclustertutorial\cluster.parameters.json' -CertificatePassword $certpwd `
+-CertificateOutputFolder $certfolder -KeyVaultName $vaultname -KeyVaultResouceGroupName $vaultgroupname -CertificateSubjectName $subname
 ```
 
 ## <a name="connect-to-the-secure-cluster"></a>Ligar ao cluster seguro

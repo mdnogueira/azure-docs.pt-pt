@@ -1,29 +1,29 @@
-## <a name="fileshare-dataset-type-properties"></a>FileShare dataset type properties
-For a full list of sections & properties available for defining datasets, see the [Creating datasets](../articles/data-factory/v1/data-factory-create-datasets.md) article. Sections such as structure, availability, and policy of a dataset JSON are similar for all dataset types.
+## <a name="fileshare-dataset-type-properties"></a>Propriedades do tipo de conjunto de dados de partilha de ficheiros
+Para uma lista completa das secções & Propriedades disponíveis para definir os conjuntos de dados, consulte o [criar conjuntos de dados](../articles/data-factory/v1/data-factory-create-datasets.md) artigo. As secções, tais como a estrutura, a disponibilidade e a política de um conjunto de dados JSON são semelhantes para todos os tipos de conjunto de dados.
 
-The **typeProperties** section is different for each type of dataset. It provides information that is specific to the dataset type. The typeProperties section for a dataset of type **FileShare** dataset has the following properties:
+O **typeProperties** secção é diferente para cada tipo de conjunto de dados. Fornece informações que são específicas para o tipo de conjunto de dados. Os typeProperties secção para um conjunto de dados do tipo **FileShare** dataset tem as seguintes propriedades:
 
-| Property | Description | Required |
+| Propriedade | Descrição | Necessário |
 | --- | --- | --- |
-| folderPath |Sub path to the folder. Use escape character ‘ \ ’ for special characters in the string. See [Sample linked service and dataset definitions](#sample-linked-service-and-dataset-definitions) for examples.<br/><br/>You can combine this property with **partitionBy** to have folder paths based on slice start/end date-times. |Yes |
-| fileName |Specify the name of the file in the **folderPath** if you want the table to refer to a specific file in the folder. If you do not specify any value for this property, the table points to all files in the folder.<br/><br/>When fileName is not specified for an output dataset, the name of the generated file would be in the following this format: <br/><br/>Data.<Guid>.txt (Example: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |No |
-| fileFilter |Specify a filter to be used to select a subset of files in the folderPath rather than all files.<br/><br/>Allowed values are: `*` (multiple characters) and `?` (single character).<br/><br/>Examples 1: `"fileFilter": "*.log"`<br/>Example 2: `"fileFilter": 2014-1-?.txt"`<br/><br/> fileFilter is applicable for an input FileShare dataset. This property is not supported with HDFS. |No |
-| partitionedBy |partitionedBy can be used to specify a dynamic folderPath, filename for time series data. For example, folderPath parameterized for every hour of data. |No |
-| format | The following format types are supported: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Set the **type** property under format to one of these values. For more information, see [Text Format](#specifying-textformat), [Json Format](#specifying-jsonformat), [Avro Format](#specifying-avroformat), [Orc Format](#specifying-orcformat), and [Parquet Format](#specifying-parquetformat) sections. <br><br> If you want to **copy files as-is** between file-based stores (binary copy), skip the format section in both input and output dataset definitions. |No |
-| compression | Specify the type and level of compression for the data. Supported types are: **GZip**, **Deflate**, **BZip2**, and **ZipDeflate**; and supported levels are: **Optimal** and **Fastest**. For more information, see [Specifying compression](#specifying-compression) section. |No |
-| useBinaryTransfer |Specify whether use Binary transfer mode. True for binary mode and false ASCII. Default value: True. This property can only be used when associated linked service type is of type: FtpServer. |No |
+| folderPath |Caminho de subchaves para a pasta. Utilize o caráter de escape ' \ ' para carateres especiais na cadeia. Consulte [exemplo ligado definições de serviço e o conjunto de dados](#sample-linked-service-and-dataset-definitions) para obter exemplos.<br/><br/>Pode combinar esta propriedade com **partitionBy** ter pasta caminhos com base no setor início/fim tempos de data. |Sim |
+| fileName |Especifique o nome do ficheiro no **folderPath** se pretender que a tabela para fazer referência a um ficheiro específico na pasta. Se não for especificado qualquer valor para esta propriedade, a tabela de pontos a todos os ficheiros na pasta.<br/><br/>Quando não for especificado o nome de ficheiro para um conjunto de dados de saída, o nome do ficheiro gerado seria a seguir este formato: <br/><br/>Dados. <Guid>. txt (exemplo: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Não |
+| fileFilter |Especifique um filtro para ser utilizado para selecionar um subconjunto de ficheiros em folderPath em vez de todos os ficheiros.<br/><br/>Valores permitidos são: `*` (vários carateres) e `?` (único caráter).<br/><br/>Exemplos 1:`"fileFilter": "*.log"`<br/>Exemplo 2:`"fileFilter": 2014-1-?.txt"`<br/><br/> fileFilter se aplica a um conjunto de dados de partilha de ficheiros de entrada. Esta propriedade não é suportada com HDFS. |Não |
+| partitionedBy |partitionedBy pode ser utilizado para especificar um folderPath dinâmica, o nome de ficheiro de dados de séries de tempo. Por exemplo, folderPath parametrizada para cada hora dos dados. |Não |
+| formato | São suportados os seguintes tipos de formato: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Definir o **tipo** propriedade de formato para um destes valores. Para obter mais informações, consulte [formato de texto](#specifying-textformat), [formato Json](#specifying-jsonformat), [formato Avro](#specifying-avroformat), [Orc formato](#specifying-orcformat), e [Parquet formato](#specifying-parquetformat) secções. <br><br> Se pretender **copiar ficheiros como-é** entre arquivos baseados em ficheiros (cópia binário), ignorar a secção de formato em ambas as definições do conjunto de dados de entrada e de saída. |Não |
+| Compressão | Especifique o tipo e o nível de compressão de dados. Tipos suportados são: **GZip**, **Deflate**, **BZip2**, e **ZipDeflate**; e níveis suportados são: **Optimal** e **mais rápido**. Para obter mais informações, consulte [especificando compressão](#specifying-compression) secção. |Não |
+| useBinaryTransfer |Especifique se utilizar o modo de transferência de binários. Verdadeiro para o modo binário e ASCII FALSO. Valor predefinido: True. Esta propriedade só pode ser utilizada quando o tipo de serviço ligado associado é do tipo: FtpServer. |Não |
 
 > [!NOTE]
-> filename and fileFilter cannot be used simultaneously.
+> nome de ficheiro e fileFilter não podem ser utilizados em simultâneo.
 >
 >
 
-### <a name="using-partionedby-property"></a>Using partionedBy property
-As mentioned in the previous section, you can specify a dynamic folderPath, filename for time series data with partitionedBy. You can do so with the Data Factory macros and the system variable SliceStart, SliceEnd that indicate the logical time period for a given data slice.
+### <a name="using-partionedby-property"></a>Utilizar a propriedade partionedBy
+Tal como mencionado na secção anterior, pode especificar um folderPath dinâmica, o nome de ficheiro de dados de séries de tempo com partitionedBy. Pode fazê-lo com as macros fábrica de dados e a variável de sistema SliceStart, SliceEnd que indicam o período de tempo de lógica de um setor de dados indicado.
 
-To learn about time series datasets, scheduling, and slices, See [Creating Datasets](../articles/data-factory/v1/data-factory-create-datasets.md), [Scheduling & Execution](../articles/data-factory/v1/data-factory-scheduling-and-execution.md), and [Creating Pipelines](../articles/data-factory/v1/data-factory-create-pipelines.md) articles.
+Para mais informações sobre conjuntos de dados de séries de tempo, agendar e setores, consulte o artigo [criar conjuntos de dados](../articles/data-factory/v1/data-factory-create-datasets.md), [agendamento e execução](../articles/data-factory/v1/data-factory-scheduling-and-execution.md), e [criar Pipelines](../articles/data-factory/v1/data-factory-create-pipelines.md) artigos.
 
-#### <a name="sample-1"></a>Sample 1:
+#### <a name="sample-1"></a>Exemplo 1:
 
 ```json
 "folderPath": "wikidatagateway/wikisampledataout/{Slice}",
@@ -32,9 +32,9 @@ To learn about time series datasets, scheduling, and slices, See [Creating Datas
     { "name": "Slice", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyyMMddHH" } },
 ],
 ```
-In this example {Slice} is replaced with the value of Data Factory system variable SliceStart in the format (YYYYMMDDHH) specified. The SliceStart refers to start time of the slice. The folderPath is different for each slice. Example: wikidatagateway/wikisampledataout/2014100103 or wikidatagateway/wikisampledataout/2014100104.
+Neste exemplo é substituído {setor} com o valor da variável de sistema do Data Factory SliceStart no formato (YYYYMMDDHH) especificado. SliceStart refere-se a hora do setor. FolderPath é diferente para cada setor. Exemplo: wikidatagateway/wikisampledataout/2014100103 ou wikidatagateway/wikisampledataout/2014100104.
 
-#### <a name="sample-2"></a>Sample 2:
+#### <a name="sample-2"></a>Exemplo 2:
 
 ```json
 "folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
@@ -47,4 +47,4 @@ In this example {Slice} is replaced with the value of Data Factory system variab
     { "name": "Hour", "value": { "type": "DateTime", "date": "SliceStart", "format": "hh" } }
 ],
 ```
-In this example, year, month, day, and time of SliceStart are extracted into separate variables that are used by folderPath and fileName properties.
+Neste exemplo, ano, mês, dia e hora do SliceStart são extraídos em separado variáveis que são utilizadas pelas propriedades folderPath e nome de ficheiro.

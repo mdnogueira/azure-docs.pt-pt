@@ -1,16 +1,16 @@
 
 **Objective-C**:
 
-1. In **QSAppDelegate.m**, import the iOS SDK and **QSTodoService.h**:
+1. No **QSAppDelegate.m**, importar o SDK do iOS e **QSTodoService.h**:
    
         #import <MicrosoftAzureMobile/MicrosoftAzureMobile.h>
         #import "QSTodoService.h"
-2. In `didFinishLaunchingWithOptions` in **QSAppDelegate.m**, insert the following lines right before `return YES;`:
+2. No `didFinishLaunchingWithOptions` no **QSAppDelegate.m**, as seguintes linhas antes de inserir `return YES;`:
    
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-3. In **QSAppDelegate.m**, add the following handler methods. Your app is now updated to support push notifications. 
+3. No **QSAppDelegate.m**, adicione os seguintes métodos de processador. A aplicação agora é atualizada para suportar notificações push. 
    
         // Registration with APNs is successful
         - (void)application:(UIApplication *)application
@@ -77,17 +77,17 @@
    
         }
 
-**Swift**:
+**SWIFT**:
 
-1. Add file **ClientManager.swift** with the following contents. Replace *%AppUrl%* with the URL of the Azure Mobile App backend.
+1. Adicionar ficheiro **ClientManager.swift** com o seguinte conteúdo. Substitua *% AppUrl %* com o URL de back-end da aplicação móvel do Azure.
    
         class ClientManager {
             static let sharedClient = MSClient(applicationURLString: "%AppUrl%")
         }
-2. In **ToDoTableViewController.swift**, replace the `let client` line that initializes an `MSClient` with this line:
+2. No **ToDoTableViewController.swift**, substitua o `let client` linha inicializa um `MSClient` com esta linha:
    
         let client = ClientManager.sharedClient
-3. In **AppDelegate.swift**, replace the body of `func application` as follows:
+3. No **AppDelegate.swift**, substituir o corpo da `func application` da seguinte forma:
    
         func application(application: UIApplication,
           didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -97,7 +97,7 @@
            application.registerForRemoteNotifications()
            return true
         }
-4. In **AppDelegate.swift**, add the following handler methods. Your app is now updated to support push notifications.
+4. No **AppDelegate.swift**, adicione os seguintes métodos de processador. A aplicação agora é atualizada para suportar notificações push.
    
         func application(application: UIApplication,
            didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {

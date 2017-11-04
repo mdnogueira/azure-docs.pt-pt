@@ -5,47 +5,46 @@ keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
 author: stevestein
-manager: jhubbard
+manager: craigg
 editor: 
 ms.assetid: 
 ms.service: sql-database
-ms.custom: tutorial
-ms.workload: data-management
+ms.custom: scale out apps
+ms.workload: Inactive
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: hero-article
-ms.date: 05/10/2017
+ms.topic: article
+ms.date: 07/28/2017
 ms.author: billgib; sstein
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
-ms.openlocfilehash: 19d02229781186053a0063af1c7e1a3280179f46
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/12/2017
-
-
+ms.openlocfilehash: 14912df26074b525585594cc1b5d32c85ce9094f
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
-# <a name="manage-schema-for-multiple-tenants-in-the-wtp-saas-application"></a>Gerir esquema para vários inquilinos na aplicação SaaS WTP
+# <a name="manage-schema-for-multiple-tenants-in-a-multi-tenant-application-that-uses-azure-sql-database"></a>Gerir o Esquema para vários inquilinos numa aplicação multi-inquilino que utiliza a Base de Dados SQL do Azure
 
-O tutorial Introdução à Aplicação WTP mostra como a aplicação WTP pode aprovisionar uma base de dados de inquilinos com o seu esquema inicial e registá-la no catálogo. Como qualquer aplicação, a aplicação WTP evoluirá ao longo do tempo e exigirá, por vezes, que sejam feitas alterações à base de dados. As alterações podem incluir o esquema novo ou alterado, os dados de referência novos ou alterados e as tarefas de manutenção de rotina da base de dados para garantir o desempenho ideal da aplicação. Com uma aplicação SaaS, estas alterações têm de ser implementadas de forma coordenada através de uma frota potencialmente massiva de bases de dados de inquilinos. As alterações também têm de ser incorporadas no processo de aprovisionamento das bases de dados de inquilinos futuras.
+O [primeiro tutorial de Wingtip SaaS](sql-database-saas-tutorial.md) mostra como a aplicação pode aprovisionar uma base de dados do inquilino e registá-lo no catálogo. Como qualquer aplicação, a aplicação Wingtip SaaS será evoluir ao longo do tempo e, por vezes, irá exigir alterações à base de dados. As alterações podem incluir o esquema novo ou alterado, os dados de referência novos ou alterados e as tarefas de manutenção de rotina da base de dados para garantir o desempenho ideal da aplicação. Com uma aplicação SaaS, estas alterações têm de ser implementadas de forma coordenada através de uma frota potencialmente massiva de bases de dados de inquilinos. Para estas alterações no futuro estar bases de dados do inquilino, necessitam de ser incorporadas no processo de aprovisionamento.
 
-Este tutorial explora dois cenários – implementar atualizações de dados de referência para todos os inquilinos e devolver um índice na tabela que contém os dados de referência. A funcionalidade [Tarefas elásticas](sql-database-elastic-jobs-overview.md) é utilizada para executar estas operações em todos os inquilinos e numa base de dados de inquilinos *dourada* que é utilizada como modelo para as novas bases de dados.
+Este tutorial explora dois cenários – implementar atualizações de dados de referência para todos os inquilinos e devolver um índice na tabela que contém os dados de referência. O [as tarefas elásticas](sql-database-elastic-jobs-overview.md) funcionalidade é utilizada para executar estas operações em todos os inquilinos e o *dourada* base de dados do inquilino que é utilizado como um modelo para novas bases de dados.
 
 Neste tutorial, ficará a saber como:
 
 > [!div class="checklist"]
 
-> * Criar uma conta de tarefa para consulta em vários inquilinos
+> * Criar uma conta de tarefa
+> * Consulta em vários inquilinos
 > * Atualizar dados em todas as bases de dados de inquilinos
 > * Criar um índice numa tabela em todas as bases de dados de inquilinos
 
 
 Para concluir este tutorial, devem ser cumpridos os seguintes pré-requisitos:
 
-* A aplicação WTP está implementada. Para implementar em menos de cinco minutos, veja [Implementar e explorar a aplicação SaaS WTP](sql-database-saas-tutorial.md)
+* A aplicação Wingtip SaaS é implementada. Para implementar em menos de cinco minutos, consulte [implementar e explorar a aplicação Wingtip SaaS](sql-database-saas-tutorial.md)
 * O Azure PowerShell está instalado. Para obter mais detalhes, veja [Introdução ao Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps)
 * Está instalada a versão mais recente do SQL Server Management Studio (SSMS). [Transferir e instalar o SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
 
-*Este tutorial utiliza funcionalidades do serviço de Base de Dados SQL que estão numa pré-visualização limitada (tarefas da Base de Dados Elástica). Se pretender realizar este tutorial, forneça o ID da subscrição paraSaaSFeedback@microsoft.com com assunto=Elastic Jobs Preview (Pré-Visualização de Tarefas Elásticas). Após receber a confirmação indicando que a sua subscrição foi ativada, deverá [transferir e instalar os cmdlets mais recentes das tarefas da versão de pré-lançamento](https://github.com/jaredmoo/azure-powershell/releases). Como é uma pré-visualização limitada, deve contactar SaaSFeedback@microsoft.com para questões relacionadas ou para suporte.*
+*Este tutorial utiliza funcionalidades do serviço de Base de Dados SQL que estão numa pré-visualização limitada (tarefas da Base de Dados Elástica). Se pretender realizar este tutorial, forneça o ID da subscrição paraSaaSFeedback@microsoft.com com assunto=Elastic Jobs Preview (Pré-Visualização de Tarefas Elásticas). Após receber a confirmação indicando que a sua subscrição foi ativada, deverá [transferir e instalar os cmdlets mais recentes das tarefas da versão de pré-lançamento](https://github.com/jaredmoo/azure-powershell/releases). Esta pré-visualização é limitada, por isso, contacte SaaSFeedback@microsoft.com para suporte ou questões relacionados.*
 
 
 ## <a name="introduction-to-saas-schema-management-patterns"></a>Introdução aos padrões de Gestão de Esquemas SaaS
@@ -60,11 +59,11 @@ O padrão SaaS de inquilino individual por base de dados beneficia em muitos asp
 Existe uma nova versão das Tarefas Elásticas, que agora é uma funcionalidade integrada da Base de Dados SQL do Azure (não requer nenhum componente ou serviço adicional). Esta nova versão das Tarefas Elásticas está atualmente em pré-visualização limitada. Esta pré-visualização limitada suporta atualmente o PowerShell para criar contas de tarefa e o T-SQL para criar e gerir tarefas.
 
 > [!NOTE]
-> *Este tutorial utiliza funcionalidades do serviço de Base de Dados SQL que estão numa pré-visualização limitada (tarefas da Base de Dados Elástica). Se pretender realizar este tutorial, forneça o ID da subscrição paraSaaSFeedback@microsoft.com com assunto=Elastic Jobs Preview (Pré-Visualização de Tarefas Elásticas). Após receber a confirmação indicando que a sua subscrição foi ativada, deverá [transferir e instalar os cmdlets mais recentes das tarefas da versão de pré-lançamento](https://github.com/jaredmoo/azure-powershell/releases). Como é uma pré-visualização limitada, deve contactar SaaSFeedback@microsoft.com para questões relacionadas ou para suporte.*
+> *Este tutorial utiliza funcionalidades do serviço de Base de Dados SQL que estão numa pré-visualização limitada (tarefas da Base de Dados Elástica). Se pretender realizar este tutorial, forneça o ID da subscrição paraSaaSFeedback@microsoft.com com assunto=Elastic Jobs Preview (Pré-Visualização de Tarefas Elásticas). Após receber a confirmação indicando que a sua subscrição foi ativada, deverá [transferir e instalar os cmdlets mais recentes das tarefas da versão de pré-lançamento](https://github.com/jaredmoo/azure-powershell/releases). Esta pré-visualização é limitada, por isso, contacte SaaSFeedback@microsoft.com para suporte ou questões relacionados.*
 
 ## <a name="get-the-wingtip-application-scripts"></a>Obter os scripts da aplicação Wingtip
 
-Os scripts da Wingtip Tickets e o código fonte da aplicação estão disponíveis no repositório do github [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS). Os ficheiros dos scripts estão localizados na pasta [Módulos de Aprendizagem](https://github.com/Microsoft/WingtipSaaS/tree/master/Learning%20Modules). Transfira a pasta **Módulos de Aprendizagem** para o computador local, mantendo a estrutura das pastas.
+Os scripts de Wingtip SaaS e o código fonte da aplicação, estão disponíveis no [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS) repositório do github. [Passos para transferir os scripts de Wingtip SaaS](sql-database-wtp-overview.md#download-and-unblock-the-wingtip-saas-scripts).
 
 ## <a name="create-a-job-account-database-and-new-job-account"></a>Criar uma base de dados das contas de tarefa e uma nova conta de tarefa
 
@@ -89,14 +88,14 @@ Para criar uma nova tarefa, vamos utilizar um conjunto de procedimentos armazena
 1. Ligue-se também ao servidor de inquilinos: tenants1-\<utilizador\>.database.windows.net
 1. Navegue para a base de dados *contosoconcerthall*, no servidor *tenants1*, e consulte a tabela *VenueTypes* para confirmar que *Corrida de Motos* e *Clube de Natação* **não estão** na lista de resultados.
 1. Abra o ficheiro ...\\Módulos de Aprendizagem\\Gestão de Esquemas\\DeployReferenceData.sql
-1. Modifique o \<utilizador\>, (utilize o nome de utilizador que usou quando implementou a aplicação WTP) em nas três localizações no script
+1. Modificar a instrução: definir @wtpUser = &lt;utilizador&gt; e substitua o valor de utilizador utilizado quando implementou a aplicação de Wingtip
 1. Verifique se está ligado à base de dados jobaccount e prima **F5** para executar o script
 
 * **sp\_add\_target\_group** cria o nome do grupo DemoServerGroup de destino. Agora, precisamos adicionar membros de destino.
-* **sp\_add\_target\_group\_member** adiciona um tipo de membro destino de *servidor*, que considera todas as bases de dados dentro desse servidor (tenha em atenção que se trata do servidor customer1-&lt;WtpUser&gt; que contém as bases de dados de inquilinos) no momento em que a execução da tarefa deve ser incluída na tarefa. Em seguida, deve adicionar um tipo de membro destino de *base de dados*, especificamente a base de dados “dourada”, baseTenantDB, que reside no servidor catalog-&lt;WtpUser&gt;. E, por último, adicionar outro tipo de membro de grupo de destino de *base de dados* para incluir a base de dados adhocanalytics, utilizada num tutorial posterior.
+* **SP\_adicionar\_destino\_grupo\_membro** adiciona um *servidor* tipo de membro, considere todas as bases de dados dentro desse servidor de destino (tenha em atenção de que este é o tenants1 -&lt;utilizador&gt; servidor que contém as bases de dados do inquilino) no momento da tarefa de execução deve ser incluída na tarefa, o segundo é adicionar uma *base de dados* visar o tipo de membro, especificamente 'dourada' base de dados (basetenantdb) que reside no catálogo -&lt;utilizador&gt; servidor e por último outro *base de dados* tipo de membro de grupo para incluir a base de dados de adhocanalytics que é utilizado um tutorial posterior de destino.
 * **sp\_add\_job** cria uma tarefa denominada “Implementação de Dados de Referência”
-* **sp\_add\_jobstep** cria o passo de tarefa que contém o texto do comando T-SQL para atualizar a tabela de referência, VenueTypes
-* As vistas restantes no script mostram a existência dos objetos e monitorizam a execução da tarefa. Consulte o valor de estado na coluna **ciclo de vida**. A tarefa foi concluída com êxito em todas as bases de dados de inquilinos e nas duas bases de dados adicionais que contêm a tabela de referência.
+* **SP\_adicionar\_passo** cria o passo de tarefa que contém o texto do comando T-SQL ao atualizar a tabela de referência, VenueTypes
+* As vistas restantes no script mostram a existência dos objetos e monitorizam a execução da tarefa. Utilize estas consultas para consultar o valor de estado no **ciclo de vida** coluna para determinar quando a tarefa tem foi concluído com êxito em todas as bases de dados do inquilino e duas bases de dados adicionais que contém a tabela de referência.
 
 1. No SSMS, navegue para a base de dados *contosoconcerthall*, no servidor *tenants1*, e consulte a tabela *VenueTypes* para confirmar que *Corrida de Motos* e *Clube de Natação*  **estão** agora na lista de resultados.
 
@@ -107,9 +106,9 @@ Para criar uma nova tarefa, vamos utilizar um conjunto de procedimentos armazena
 
 Crie uma tarefa com os mesmos procedimentos armazenados no “sistema” das tarefas.
 
-1. Abra o SSMS e ligue-se ao servidor catalog-&lt;WtpUser&gt;.database.windows.net
+1. Abra o SSMS e ligar ao catálogo -&lt;utilizador&gt;. database.windows.net servidor
 1. Abra o ficheiro ...\\Módulos de Aprendizagem\\Gestão de Esquemas\\OnlineReindex.sql
-1. Clique com o botão direito do rato, selecione Ligação e ligue-se ao servidor catalog-&lt;WtpUser&gt;.database.windows.net, se ainda não estiver ligado
+1. Clique com o botão direito, selecione a ligação e ligar ao catálogo -&lt;utilizador&gt;. database.windows.net servidor, se ainda não estiver ligado
 1. Verifique se está ligado à base de dados jobaccount e prima F5 para executar o script
 
 * sp\_add\_job cria uma nova tarefa denominada “Online Reindex PK\_\_VenueTyp\_\_265E44FD7FD4C885”
@@ -133,6 +132,6 @@ Neste tutorial, ficou a saber como:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Tutoriais adicionais criados após a implementação inicial da aplicação Wingtip Tickets Platform (WTP)](sql-database-wtp-overview.md#sql-database-wtp-saas-tutorials)
+* [Tutoriais adicionais que criar após a implementação da aplicação Wingtip SaaS](sql-database-wtp-overview.md#sql-database-wingtip-saas-tutorials)
 * [Managing scaled-out cloud databases (Gerir bases de dados de escalamento horizontal na cloud)](sql-database-elastic-jobs-overview.md)
 * [Create and manage scaled-out cloud databases (Criar e gerir bases de dados de escalamento horizontal na cloud)](sql-database-elastic-jobs-create-and-manage.md)

@@ -1,5 +1,5 @@
-### <a name="app-service-plan"></a>App Service plan
-Creates the service plan for hosting the web app. You provide the name of the plan through the **hostingPlanName** parameter. The location of the plan is the same location used for the resource group. The pricing tier and worker size are specified in the **sku** and **workerSize** parameters
+### <a name="app-service-plan"></a>Plano do App Service
+Cria o plano de serviço para alojar a aplicação web. Forneça o nome do plano através do **hostingPlanName** parâmetro. A localização do plano é a mesma localização que utilizou para o grupo de recursos. O preço tamanho de camadas e de trabalho estão especificados no **sku** e **workerSize** parâmetros
 
     {
       "apiVersion": "2015-08-01",

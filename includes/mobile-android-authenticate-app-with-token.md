@@ -1,22 +1,22 @@
 
-The previous example showed a standard sign-in, which requires the client to contact both the identity provider and the back-end Azure service every time the app starts. This method is inefficient, and you can have usage-related issues if many customers try to start your app simultaneously. A better approach is to cache the authorization token returned by the Azure service, and try to use this first before using a provider-based sign-in.
+O exemplo anterior mostrou uma norma início de sessão, que exige que o cliente contactar o fornecedor de identidade e o serviço do Azure de back-end, sempre que a aplicação for iniciada. Este método é ineficaz e podem ter problemas relacionados com a utilização se muitos clientes tentam iniciar a sua aplicação em simultâneo. É uma melhor abordagem para colocar em cache o token de autorização devolvido pelo serviço do Azure e tente utilizar este primeiro antes de utilizar um fornecedor com base no início de sessão.
 
 > [!NOTE]
-> You can cache the token issued by the back-end Azure service regardless of whether you are using client-managed or service-managed authentication. This tutorial uses service-managed authentication.
+> Pode colocar em cache o token emitido pelo serviço do Azure, independentemente se estiver a utilizar autenticação de cliente geridos ou geridos pelo serviço de back-end. Este tutorial utiliza a autenticação de serviço gerido.
 >
 >
 
-1. Open the ToDoActivity.java file and add the following import statements:
+1. Abra o ficheiro ToDoActivity.java e adicione as seguintes declarações de importação:
 
         import android.content.Context;
         import android.content.SharedPreferences;
         import android.content.SharedPreferences.Editor;
-2. Add the following members to the `ToDoActivity` class.
+2. Adicione as seguintes para o `ToDoActivity` classe.
 
         public static final String SHAREDPREFFILE = "temp";    
         public static final String USERIDPREF = "uid";    
         public static final String TOKENPREF = "tkn";    
-3. In the ToDoActivity.java file, add the following definition for the `cacheUserToken` method.
+3. No ficheiro ToDoActivity.java, adicione a seguinte definição para o `cacheUserToken` método.
 
         private void cacheUserToken(MobileServiceUser user)
         {
@@ -27,13 +27,13 @@ The previous example showed a standard sign-in, which requires the client to con
             editor.commit();
         }    
 
-    This method stores the user ID and token in a preference file that is marked private. This should protect access to the cache so that other apps on the device do not have access to the token. The preference is sandboxed for the app. However, if someone gains access to the device, it is possible that they may gain access to the token cache through other means.
+    Este método armazena o ID de utilizador e o token num ficheiro preferência que está marcado como privado. Isto deve proteger o acesso à cache para que as outras aplicações no dispositivo não tem acesso para o token. A preferência é uma para a aplicação. No entanto, se alguém obtiver o acesso ao dispositivo, é possível que estes podem ter acesso à cache de token através de outros meios.
 
    > [!NOTE]
-   > You can further protect the token with encryption, if token access to your data is considered highly sensitive and someone may gain access to the device. A completely secure solution is beyond the scope of this tutorial, however, and depends on your security requirements.
+   > Pode proteger ainda mais o token com a encriptação, se o token acesso aos seus dados é considerado altamente confidencial e alguém obter acesso ao dispositivo. Uma solução completamente segura está fora do âmbito deste tutorial, no entanto e depende dos requisitos de segurança.
    >
    >
-4. In the ToDoActivity.java file, add the following definition for the `loadUserTokenCache` method.
+4. No ficheiro ToDoActivity.java, adicione a seguinte definição para o `loadUserTokenCache` método.
 
         private boolean loadUserTokenCache(MobileServiceClient client)
         {
@@ -51,7 +51,7 @@ The previous example showed a standard sign-in, which requires the client to con
 
             return true;
         }
-5. In the *ToDoActivity.java* file, replace the `authenticate` method with the following method, which uses a token cache. Change the login provider if you want to use an account other than Google.
+5. No *ToDoActivity.java* de ficheiros, substitua o `authenticate` método com o seguinte método que utiliza uma cache de token. Altere o fornecedor de início de sessão se pretender utilizar uma conta diferente da Google.
 
         private void authenticate() {
             // We first try to load a token cache if one exists.
@@ -81,4 +81,4 @@ The previous example showed a standard sign-in, which requires the client to con
                 });
             }
         }
-6. Build the app and test authentication using a valid account. Run it at least twice. During the first run, you should receive a prompt to sign in and create the token cache. After that, each run attempts to load the token cache for authentication. You should not be required to sign in.
+6. Crie a autenticação de aplicação e teste utilizando uma conta válida. Execute, pelo menos, duas vezes. Durante a primeira execução, deverá receber um pedido para iniciar sessão e criar a cache de token. Depois disso, cada execução tenta carregar a cache de token de autenticação. Não deve ser necessário iniciar sessão.

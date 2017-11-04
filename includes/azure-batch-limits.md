@@ -1,19 +1,15 @@
-| **Resource** | **Default Limit** | **Maximum Limit** |
+| **Recurso** | **Limite Predefinido** | **Limite Máximo** |
 | --- | --- | --- |
-| Batch accounts per region per subscription | 3 |50 |
-| Dedicated cores per Batch account (Batch service mode)<sup>1</sup> | 20 | N/A<sup>2</sup> |
-| Low-priority cores per Batch account (Batch service mode)<sup>3</sup> | 50 | N/A<sup>4</sup> |
-| Active jobs and job schedules<sup>5</sup> per Batch account | 20 | 5000<sup>6</sup> |
-| Pools per Batch account | 20 | 2500 |
+| Contas do Batch por região por subscrição | 3 |50 |
+| Dedicado núcleos por conta do Batch | 20 | N/A<sup>1</sup> |
+| Prioridade baixa núcleos por conta do Batch | 20 | N/D<sup>2</sup> |
+| Tarefas ativas e agendamentos de trabalhos<sup>3</sup> por conta do Batch | 20 | 5000<sup>4</sup> |
+| Conjuntos por conta do Batch | 20 | 2500 |
 
-<sup>1</sup> Dedicated core quotas shown are only for accounts with pool allocation mode set to **Batch service**. For accounts with the mode set to **user subscription**, core quotas are based on the VM cores quota at a regional level or per VM family in your subscription.
+<sup>1</sup> o número de núcleos dedicados por conta do Batch pode ser aumentado, mas o número máximo é não especificado. Contacte o suporte do Azure para discutir as opções de aumento.
 
-<sup>2</sup> The number of dedicated cores per Batch account can be increased, but the maximum number is unspecified. Contact Azure support to discuss increase options.
+<sup>2</sup> o número de núcleos de prioridade baixa por conta do Batch pode ser aumentado, mas o número máximo é não especificado. Contacte o suporte do Azure para discutir as opções de aumento.
 
-<sup>3</sup> Low-priority core quotas shown are only for accounts with pool allocation mode set to **Batch service**. Low-priority cores are not available for accounts with pool allocation mode set to **user subscription**.
+<sup>3</sup> tarefas concluído e agendas de tarefas não são limitadas.
 
-<sup>4</sup> The number of low-priority cores per Batch account can be increased, but the maximum number is unspecified. Contact Azure support to discuss increase options.
-
-<sup>5</sup> Completed jobs and job schedules are not limited.
-
-<sup>6</sup> Contact Azure support if you want to request an increase beyond this limit.
+<sup>4</sup> suporte do Azure de contacto se pretender pedir um aumento além deste limite.

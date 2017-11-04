@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/04/2017
 ms.author: nitinme
-ms.openlocfilehash: 96b2b4976729da5b7d8b75909dbe099090240c08
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 8a8b62e2cdf9f4f6c41b041ac20694303203531b
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="release-notes-for-hadoop-components-on-azure-hdinsight"></a>Notas de versão para componentes do Hadoop no Azure HDInsight
 
@@ -61,7 +61,7 @@ Este artigo fornece informações sobre o **mais recente** atualizações de lan
 
 * **Novas funcionalidades do ramo de registo**. Consulte [Hortonworks documentação](https://hortonworks.com/apache/hive/#section_4).
 
-* **Descontinuação do CLI de ramo de registo**: CLI de ramo de registo está a ser preterido e os clientes são encorajados a utilizar em vez disso, Beeline. Para obter mais informações, consulte [documentação do Apache](https://cwiki.apache.org/confluence/display/Hive/Replacing+the+Implementation+of+Hive+CLI+Using+Beeline). Para obter instruções sobre como utilizar Beeline com o HDInsight, consulte [Beeline utilizar com o HDInsight Hadoop clusters](hdinsight-hadoop-use-hive-beeline.md).
+* **Descontinuação do CLI de ramo de registo**: CLI de ramo de registo está a ser preterido e os clientes são encorajados a utilizar em vez disso, Beeline. Para obter mais informações, consulte [documentação do Apache](https://cwiki.apache.org/confluence/display/Hive/Replacing+the+Implementation+of+Hive+CLI+Using+Beeline). Para obter instruções sobre como utilizar Beeline com o HDInsight, consulte [Beeline utilizar com o HDInsight Hadoop clusters](hadoop/apache-hadoop-use-hive-beeline.md).
 
 * **Novas funcionalidades do Apache Phoenix e o HBase**.
     * Suporte de quota de armazenamento: normalmente utilizado em ambientes de multi-inquilinos, permitindo que o espaço de armazenamento limitada numa por tabela e por nível de espaço de nomes.

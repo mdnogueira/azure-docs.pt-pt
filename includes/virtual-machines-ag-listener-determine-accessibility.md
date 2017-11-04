@@ -1,14 +1,14 @@
-It is important to realize that there are two ways to configure an availability group listener in Azure. The ways differ in the type of Azure load balancer you use when you create the listener. The following table describes the differences:
+É importante compreender que existem duas formas de configurar um serviço de escuta do grupo de disponibilidade no Azure. As formas diferem no tipo de Balanceador de carga do Azure a utiliza quando criar o serviço de escuta. A tabela seguinte descreve as diferenças:
 
-| Load balancer type | Implementation | Use when: |
+| Tipo de Balanceador de carga | Implementação | Utilize se: |
 | --- | --- | --- |
-| **External** |Uses the *public virtual IP address* of the cloud service that hosts the virtual machines (VMs). |You need to access the listener from outside the virtual network, including from the Internet. |
-| **Internal** |Uses an *internal load balancer* with a private address for the listener. |You can access the listener only from within the same virtual network. This access includes site-to-site VPN in hybrid scenarios. |
+| **Externo** |Utiliza o *endereço IP virtual público* do serviço de nuvem que aloja as máquinas virtuais (VMs). |Precisa de aceder ao serviço de escuta de fora da rede virtual, incluindo a partir da Internet. |
+| **Interno** |Utiliza um *Balanceador de carga interno* com um endereço privado para o serviço de escuta. |Pode aceder ao serviço de escuta apenas a partir de dentro da mesma rede virtual. Este acesso inclui VPN site a site em cenários híbridos. |
 
 > [!IMPORTANT]
-> For a listener that uses the cloud service's public VIP (external load balancer), as long as the client, listener, and databases are in the same Azure region, you will not incur egress charges. Otherwise, any data returned through the listener is considered egress, and it is charged at normal data-transfer rates. 
+> Para um serviço de escuta que utiliza pública VIP o serviço em nuvem (Balanceador de carga externo), desde que o cliente, serviço de escuta e bases de dados na mesma região do Azure, não será cobrado encargos associados à saída. Caso contrário, os dados devolvidos através do serviço de escuta são considerados saída e é-lhe cobrado às taxas de transferência de dados normal. 
 > 
 > 
 
-An ILB can be configured only on virtual networks with a regional scope. Existing virtual networks that have been configured for an affinity group cannot use an ILB. For more information, see [Internal load balancer overview](../articles/load-balancer/load-balancer-internal-overview.md).
+Pode ser configurado um ILB apenas em redes virtuais com um âmbito regional. As redes virtuais existentes que tenham sido configuradas para um grupo de afinidade não é possível utilizar um ILB. Para obter mais informações, consulte [descrição geral do Balanceador de carga interno](../articles/load-balancer/load-balancer-internal-overview.md).
 

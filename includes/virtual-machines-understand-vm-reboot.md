@@ -1,91 +1,91 @@
-Azure virtual machines (VMs) might sometimes reboot for no apparent reason, without evidence of your having initiated the reboot operation. This article lists the actions and events that can cause VMs to reboot and provides insight into how to avoid unexpected reboot issues or reduce the impact of such issues.
+Máquinas virtuais do Azure (VMs), por vezes, poderá reiniciar por nenhum motivo aparente, sem provas do ter iniciou a operação de reinício. Este artigo apresenta os eventos que podem fazer com que as VMs reiniciar o computador e fornece informações sobre como evitar problemas de reinício inesperado ou reduzir o impacto de tais problemas e ações.
 
-## <a name="configure-the-vms-for-high-availability"></a>Configure the VMs for high availability
-The best way to protect an application that's running on Azure against VM reboots and downtime is to configure the VMs for high availability.
+## <a name="configure-the-vms-for-high-availability"></a>Configurar as VMs de elevada disponibilidade
+A melhor forma de proteger uma aplicação que está em execução no Azure contra VM reinicia e período de indisponibilidade é configurar as VMs de elevada disponibilidade.
 
-To provide this level of redundancy to your application, we recommend that you group two or more VMs in an availability set. This configuration ensures that during either a planned or unplanned maintenance event, at least one VM is available and meets the 99.95 percent [Azure SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_5/).
+Para proporcionar este nível de redundância à sua aplicação, recomendamos que agrupe duas ou mais VMs num conjunto de disponibilidade. Esta configuração assegura que durante a um evento de manutenção planeada ou, pelo menos uma VM está disponível e que cumpra a percentagem de 99,95 [SLA do Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_5/).
 
-For more information about availability sets, see the following articles:
+Para obter mais informações sobre conjuntos de disponibilidade, consulte os artigos seguintes:
 
-- [Manage the availability of VMs](../articles/virtual-machines/windows/manage-availability.md)
-- [Configure availability of VMs](../articles/virtual-machines/windows/classic/configure-availability.md)
+- [Gerir a disponibilidade das VMs](../articles/virtual-machines/windows/manage-availability.md)
+- [Configurar a disponibilidade de VMs](../articles/virtual-machines/windows/classic/configure-availability.md)
 
-## <a name="resource-health-information"></a>Resource Health information 
-Azure Resource Health is a service that exposes the health of individual Azure resources and provides actionable guidance for troubleshooting problems. In a cloud environment where it isn’t possible to directly access servers or infrastructure elements, the goal of Resource Health is to reduce the time that you spend on troubleshooting. In particular, the aim is to reduce the time that you spend determining whether the root of the problem lies in the application or in an event inside the Azure platform. For more information, see [Understand and use Resource Health](../articles/resource-health/resource-health-overview.md).
+## <a name="resource-health-information"></a>Informações de estado de funcionamento de recursos 
+Estado de funcionamento de recursos do Azure é um serviço que expõe o estado de funcionamento dos recursos do Azure individuais e fornece orientações acionável para resolução de problemas. Num ambiente de nuvem em que não se encontra possível diretamente aos servidores ou elementos de infraestrutura, o objetivo do Estado de funcionamento de recursos é reduzir o tempo que demora na resolução de problemas. Em particular, o objetivo é para reduzir o tempo que demora a determinar se a raiz do problema situam-se na aplicação ou um evento dentro de plataforma do Azure. Para obter mais informações, consulte [compreender e utilizar o estado de funcionamento do recurso](../articles/resource-health/resource-health-overview.md).
 
-## <a name="actions-and-events-that-can-cause-the-vm-to-reboot"></a>Actions and events that can cause the VM to reboot
+## <a name="actions-and-events-that-can-cause-the-vm-to-reboot"></a>Ações e os eventos que podem fazer com que a VM reiniciar o computador
 
-### <a name="planned-maintenance"></a>Planned maintenance
-Microsoft Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies VMs. Many of these updates, including memory-preserving updates, are performed without any impact on your VMs or cloud services.
+### <a name="planned-maintenance"></a>Manutenção planeada
+Microsoft Azure executa periodicamente as atualizações em todo o mundo, para melhorar a fiabilidade, o desempenho e a segurança da infraestrutura de anfitrião subjacente a VMs. Muitas destas atualizações, incluindo atualizações preservação de memória, são efetuadas sem qualquer impacto nas suas VMs ou serviços em nuvem.
 
-However, some updates do require a reboot. In such cases, the VMs are shut down while we patch the infrastructure, and then the VMs are restarted.
+No entanto, algumas atualizações requerem um reinício. Nestes casos, as VMs estão encerradas, mas iremos aplicar o patch da infraestrutura e, em seguida, as VMs são reiniciadas.
 
-To understand what Azure planned maintenance is and how it can affect the availability of your Linux VMs, see the articles listed here. The articles provide background about the Azure planned maintenance process and how to schedule planned maintenance to further reduce the impact.
+Para compreender quais manutenção planeada do Azure e como esta pode afetar a disponibilidade das suas VMs do Linux, consulte os artigos listados aqui. Os artigos fornecem fundo sobre o Azure planeada o processo de manutenção e como agendar manutenção planeada para reduzir o impacto.
 
-- [Planned maintenance for VMs in Azure](../articles/virtual-machines/windows/planned-maintenance.md)
-- [How to schedule planned maintenance on Azure VMs](../articles/virtual-machines/windows/classic/planned-maintenance-schedule.md)
+- [Manutenção planeada para VMs no Azure](../articles/virtual-machines/windows/planned-maintenance.md)
+- [Como agendar manutenção planeada em VMs do Azure](../articles/virtual-machines/windows/classic/planned-maintenance-schedule.md)
 
-### <a name="memory-preserving-updates"></a>Memory-preserving updates   
-For this class of updates in Microsoft Azure, users experience no impact on their running VMs. Many of these updates are to components or services that can be updated without interfering with the running instance. Some are platform infrastructure updates on the host operating system that can be applied without a reboot of the VMs.
+### <a name="memory-preserving-updates"></a>Atualizações para preservação de memória   
+Para esta classe de atualizações no Microsoft Azure, os utilizadores passam sem afetar as respetivas VMs em execução. Muitas destas atualizações são componentes ou serviços que podem ser atualizados sem interferir com a instância em execução. Alguns são atualizações de infraestrutura da plataforma no sistema operativo anfitrião que podem ser aplicados sem um reinício de VMs.
 
-These memory-preserving updates are accomplished with technology that enables in-place live migration. When it is being updated, the VM is placed in a *paused* state. This state preserves the memory in RAM while the underlying host operating system receives the necessary updates and patches. The VM is resumed within 30 seconds of being paused. After the VM is resumed, its clock is automatically synchronized.
+Estas atualizações preservação de memória são realizadas com a tecnologia que permite a migração em direto no local. Quando está a ser atualizado, a VM é colocada num *colocada em pausa* estado. Este estado preserva a memória RAM enquanto o sistema de operativo do anfitrião subjacente recebe as atualizações necessárias e correções de erros. A VM é retomada dentro de 30 segundos, de que está a ser colocada em pausa. Depois da VM é retomada, o relógio é automaticamente sincronizado.
 
-Because of the short pause period, deploying updates through this mechanism greatly reduces the impact on the VMs. However, not all updates can be deployed in this way. 
+Devido ao período curto pausa, implementar atualizações através destes mecanismo significativamente reduz o impacto nas VMs. No entanto, nem todas as atualizações podem ser implementadas desta forma. 
 
-Multi-instance updates (for VMs in an availability set) are applied one update domain at a time.
+Atualizações de várias instâncias (para VMs num conjunto de disponibilidade) são aplicados um domínio de atualização de cada vez.
 
 > [!NOTE]
-> Linux machines that have old kernel versions are affected by a kernel panic during this update method. To avoid this issue, update to kernel version 3.10.0-327.10.1 or later. For more information, see [An Azure Linux VM on a 3.10-based kernel panics after a host node upgrade](https://support.microsoft.com/help/3212236).     
+> Máquinas de Linux que tenham versões antigas do kernel são afetadas por um panic kernel durante este método de atualização. Para evitar este problema, atualize para o kernel versão 3.10.0-327.10.1 ou posterior. Para obter mais informações, consulte [uma VM do Linux do Azure num kernel baseado em 3.10 panics após uma atualização do nó de anfitrião](https://support.microsoft.com/help/3212236).     
     
-### <a name="user-initiated-reboot-or-shutdown-actions"></a>User-initiated reboot or shutdown actions
+### <a name="user-initiated-reboot-or-shutdown-actions"></a>Ações de reinício ou encerramento iniciadas pelo utilizador
  
-If you perform a reboot from the Azure portal, Azure PowerShell, command-line interface, or Reset API, you can find the event in the [Azure Activity Log](../articles/monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
+Se efetuar um reinício do portal do Azure, Azure PowerShell, a interface de linha de comandos ou repor API, pode encontrar o evento no [registo de atividade do Azure](../articles/monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
 
-If you perform the action from the VM's operating system, you can find the event in the system logs.
+Se efetuar a ação do sistema de operativo da VM, pode encontrar o evento nos registos do sistema.
 
-Other scenarios that usually cause the VM to reboot include multiple configuration-change actions. You'll ordinarily see a warning message indicating that executing a particular action will result in a reboot of the VM. Examples include any VM resize operations, changing the password of the administrative account, and setting a static IP address.
+Outros cenários que, normalmente, fazer com que a VM reiniciar o computador incluem várias ações de alteração da configuração. Normalmente, irá ver uma mensagem de aviso que indica que a execução de uma ação específica resultará numa reinicialização da VM. Os exemplos incluem quaisquer operações de redimensionamento de VM, alterar a palavra-passe da conta administrativa e definir um endereço IP estático.
 
-### <a name="azure-security-center-and-windows-update"></a>Azure Security Center and Windows Update
-Azure Security Center monitors daily Windows and Linux VMs for missing operating-system updates. Security Center retrieves a list of available security and critical updates from Windows Update or Windows Server Update Services (WSUS), depending on which service is configured on a Windows VM. Security Center also checks for the latest updates for Linux systems. If your VM is missing a system update, Security Center recommends that you apply system updates. The application of these system updates is controlled through the Security Center in the Azure portal. After you apply some updates, VM reboots might be required. For more information, see [Apply system updates in Azure Security Center](../articles/security-center/security-center-apply-system-updates.md).
+### <a name="azure-security-center-and-windows-update"></a>Centro de segurança do Azure e no Windows Update
+Centro de segurança do Azure monitoriza diárias Windows e VMs com Linux para atualizações do sistema operativo em falta. Centro de segurança obtém uma lista de atualizações críticas e de segurança disponíveis do Windows Update ou Windows Server Update Services (WSUS), dependendo de que o serviço está configurado numa VM do Windows. Centro de segurança também verifica as atualizações mais recentes para sistemas Linux. Se a VM está em falta uma atualização do sistema, o Centro de segurança recomenda se aplicam a atualizações do sistema. A aplicação destas atualizações do sistema é controlada através do Centro de segurança no portal do Azure. Depois de aplicar algumas atualizações, os reinícios VM poderão ser necessários. Para obter mais informações, consulte [aplicar atualizações do sistema no Centro de segurança do Azure](../articles/security-center/security-center-apply-system-updates.md).
 
-Like on-premises servers, Azure does not push updates from Windows Update to Windows Azure VMs, because these machines are intended to be managed by their users. You are, however, encouraged to leave the automatic Windows Update setting enabled. Automatic installation of updates from Windows Update can also cause reboots to occur after the updates are applied. For more information, see [Windows Update FAQ](https://support.microsoft.com/help/12373/windows-update-faq).
+Servidores no local, como o Azure não push atualizações do Windows Update para VMs do Windows Azure, porque estas máquinas são concebidas para serem geridos pelo que os utilizadores. É, no entanto, encouraged para deixar a definição do Windows Update automática ativada. Instalação automática de atualizações do Windows Update pode também fazer com que reinícios ocorrer após as atualizações são aplicadas. Para obter mais informações, consulte [FAQ de atualização do Windows](https://support.microsoft.com/help/12373/windows-update-faq).
 
-### <a name="other-situations-affecting-the-availability-of-your-vm"></a>Other situations affecting the availability of your VM
-There are other cases in which Azure might actively suspend the use of a VM. You'll receive email notifications before this action is taken, so you'll have a chance to resolve the underlying issues. Examples of issues that affect VM availability include security violations and the expiration of payment methods.
+### <a name="other-situations-affecting-the-availability-of-your-vm"></a>Noutras situações que afetam a disponibilidade da sua VM
+Existem outros casos em que Azure ativamente poderá suspender a utilização de uma VM. Receberá notificações de e-mail antes desta ação é executada, pelo que terá uma oportunidade para resolver os problemas subjacentes. Os exemplos dos problemas que afetam a disponibilidade VM incluem violações de segurança e a expiração de métodos de pagamento.
 
-### <a name="host-server-faults"></a>Host server faults 
-The VM is hosted on a physical server that is running inside an Azure datacenter. The physical server runs an agent called the Host Agent in addition to a few other Azure components. When these Azure software components on the physical server become unresponsive, the monitoring system triggers a reboot of the host server to attempt recovery. The VM is usually available again within five minutes and continues to live on the same host as previously.
+### <a name="host-server-faults"></a>Falhas de servidor de anfitrião 
+A VM está alojada num servidor físico que está a ser executado no interior de um datacenter do Azure. O servidor físico executa um agente chamado o agente do anfitrião, além de alguns outros componentes do Azure. Quando estes componentes de software do Azure no servidor físico deixar de responder, o sistema de monitorização aciona um reinício do servidor de anfitrião, a tentativa de recuperação. A VM está normalmente disponível novamente dentro de cinco minutos e continua a em direto no mesmo anfitrião como anteriormente.
 
-Server faults are usually caused by hardware failure, such as the failure of a hard disk or solid-state drive. Azure continuously monitors these occurrences, identifies the underlying bugs, and rolls out updates after the mitigation has been implemented and tested.
+Falhas de servidor são normalmente causadas por falhas de hardware, tais como a falha de um disco rígido ou unidade de estado sólido. Azure monitoriza estes ocorrências continuamente, identifica os erros subjacentes e lança atualizações, depois de serem implementada e testada a mitigação.
 
-Because some host server faults can be specific to that server, a repeated VM reboot situation might be improved by manually redeploying the VM to another host server. This operation can be triggered by using the **redeploy** option on the details page of the VM, or by stopping and restarting the VM in the Azure portal.
+Como algumas falhas de hardware do servidor de anfitrião podem ser específicas nesse servidor, uma situação de reinício VM repetida pode ser melhorada através da reimplementação manualmente a VM para outro servidor de anfitrião. Esta operação pode ser acionada utilizando o **Reimplementar** opção na página de detalhes da VM ou a parar e reiniciar a VM no portal do Azure.
 
-### <a name="auto-recovery"></a>Auto-recovery
-If the host server cannot reboot for any reason, the Azure platform initiates an auto-recovery action to take the faulty host server out of rotation for further investigation. 
+### <a name="auto-recovery"></a>Recuperação automática
+Se o servidor de anfitrião não é possível reiniciar por qualquer motivo, a plataforma do Azure inicia uma ação de recuperação automática para colocar o servidor de anfitrião defeituoso fora de rotação para uma investigação mais aprofundada. 
 
-All VMs on that host are automatically relocated to a different, healthy host server. This process is usually complete within 15 minutes. To learn more about the auto-recovery process, see [Auto-recovery of VMs](https://azure.microsoft.com/blog/service-healing-auto-recovery-of-virtual-machines).
+Todas as VMs nesse anfitrião são automaticamente relocalizadas para um servidor de anfitrião diferente, bom estado de funcionamento. Este processo é normalmente completo em 15 minutos. Para saber mais sobre o processo de recuperação automática, consulte o artigo [recuperação automática de VMs](https://azure.microsoft.com/blog/service-healing-auto-recovery-of-virtual-machines).
 
-### <a name="unplanned-maintenance"></a>Unplanned maintenance
-On rare occasions, the Azure operations team might need to perform maintenance activities to ensure the overall health of the Azure platform. This behavior might affect VM availability, and it usually results in the same auto-recovery action as described earlier.  
+### <a name="unplanned-maintenance"></a>Manutenção não planeada
+Em raras ocasiões, a equipa de operações do Azure poderá ter de efetuar atividades de manutenção para garantir o estado de funcionamento geral da plataforma do Azure. Este comportamento pode afetar a disponibilidade VM e que normalmente resulta na mesma ação de recuperação automática, tal como descrito anteriormente.  
 
-Unplanned maintenances include the following:
+Não planeadas maintenances incluem o seguinte:
 
-- Urgent node defragmentation
-- Urgent network switch updates
+- Desfragmentação de nó urgente
+- Atualizações de comutador de rede urgente
 
-### <a name="vm-crashes"></a>VM crashes
-VMs might restart because of issues within the VM itself. The workload or role that's running on the VM might trigger a bug check within the guest operating system. For help determining the reason for the crash, view the system and application logs for Windows VMs, and the serial logs for Linux VMs.
+### <a name="vm-crashes"></a>Falhas VM
+VMs pode ser reiniciado devido a problemas de VM a próprio. A carga de trabalho ou a função que está em execução na VM pode acionar uma verificação de erros no sistema operativo convidado. Para ajudar a determinar o motivo da falha, veja o sistema e os registos de aplicações para as VMs do Windows e os registos de série para VMs com Linux.
 
-### <a name="storage-related-forced-shutdowns"></a>Storage-related forced shutdowns
-VMs in Azure rely on virtual disks for operating system and data storage that is hosted on the Azure Storage infrastructure. Whenever the availability or connectivity between the VM and the associated virtual disks is affected for more than 120 seconds, the Azure platform performs a forced shutdown of the VMs to avoid data corruption. The VMs are automatically powered back on after storage connectivity has been restored. 
+### <a name="storage-related-forced-shutdowns"></a>Relacionadas com o armazenamento encerramentos forçados
+As VMs no Azure baseiam-se nos discos virtuais para armazenamento de dados que está alojado na infraestrutura de armazenamento do Azure e de sistema operativo. Sempre que a disponibilidade ou a conectividade entre a VM e os discos virtuais associados é afetada por mais de 120 segundos, a plataforma do Azure efetua um encerramento forçado das VMs para evitar danificar os dados. As VMs estão automaticamente ligadas novamente após o restauro de conectividade de armazenamento. 
 
-The duration of the shutdown can be as short as five minutes but can be significantly longer. The following is one of the specific cases that is associated with storage-related forced shutdowns: 
+A duração do encerramento pode ser o mais curta cinco minutos mas pode ser bastante maior. Segue-se um dos casos específicos que estão associados com relacionadas com o armazenamento forçados encerramentos: 
 
-**Exceeding IO limits**
+**Limita a exceder a e/s**
 
-VMs might be temporarily shut down when I/O requests are consistently throttled because the volume of I/O operations per second (IOPS) exceeds the I/O limits for the disk. (Standard disk storage is limited to 500 IOPS.) To mitigate this issue, use disk striping or configure the storage space inside the guest VM, depending on the workload. For details, see [Configuring Azure VMs for Optimal Storage Performance](http://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
+VMs poderão estar temporariamente encerrar quando pedidos de e/s consistentemente limitados porque o volume de operações de e/s por segundo (IOPS) excede os limites de e/s para o disco. (Armazenamento de disco standard está limitado a 500 IOPS.) Para atenuar este problema, utilize striping de disco ou configurar o espaço de armazenamento no computador convidado VM, consoante a carga de trabalho. Para obter mais informações, consulte [configurar as VMs do Azure para otimizar o desempenho de armazenamento](http://blogs.msdn.com/b/mast/archive/2014/10/14/configuring-azure-virtual-machines-for-optimal-storage-performance.aspx).
 
-Higher IOPS limits are available via Azure Premium Storage with up to 80,000 IOPS. For more information, see [High-Performance Premium Storage](../articles/storage/common/storage-premium-storage.md).
+Estão disponíveis através do armazenamento do Azure Premium com IOPS até 80.000 limites de IOPS superiores. Para obter mais informações, consulte [elevado desempenho Premium Storage](../articles/virtual-machines/windows/premium-storage.md).
 
-### <a name="other-incidents"></a>Other incidents
-In rare circumstances, a widespread issue can affect multiple servers in an Azure datacenter. If this issue occurs, the Azure team sends email notifications to the affected subscriptions. You can check the [Azure Service Health dashboard](https://azure.microsoft.com/status/) and the Azure portal for the status of ongoing outages and past incidents.
+### <a name="other-incidents"></a>Outros incidentes
+Em raras circunstâncias, um problema ampla pode afetar vários servidores num datacenter do Azure. Se este problema ocorrer, a equipa do Azure envia notificações de correio eletrónico para as subscrições afetadas. Pode verificar o [dashboard de estado de funcionamento de serviço de Azure](https://azure.microsoft.com/status/) e o portal do Azure para o estado de falhas em curso e passado dos incidentes.

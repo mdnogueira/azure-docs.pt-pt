@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2017
 ms.author: jgao
-ms.openlocfilehash: c1aeed8c6fe4f83b170838e4efb9d9c4744fb951
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 00eb9f6e13035ba5827b70e911be4afeafd442a2
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="create-a-non-interactive-authentication-net-hdinsight-application"></a>Criar uma aplicação do HDInsight de .NET de autenticação não interativa
 Pode executar a aplicação do Microsoft .NET do Azure HDInsight com a identidade da aplicação (não interativo) ou com a identidade do utilizador com sessão iniciada da aplicação (interativa). Este artigo mostra como criar uma aplicação .NET para ligar ao Azure e gerir HDInsight de autenticação não interativa. Para um exemplo de uma aplicação interativa, consulte [ligar ao Azure HDInsight](hdinsight-administer-use-dotnet-sdk.md#connect-to-azure-hdinsight). 
@@ -32,7 +32,7 @@ A aplicação .NET não interativa, é necessário:
 * O Azure AD aplicação chave secreta. Consulte [chave de autenticação de aplicação Get](../azure-resource-manager/resource-group-create-service-principal-portal.md#get-application-id-and-authentication-key).
 
 ## <a name="prerequisites"></a>Pré-requisitos
-* Um cluster do HDInsight. Consulte o [tutorial de introdução](hdinsight-hadoop-linux-tutorial-get-started.md#create-cluster).
+* Um cluster do HDInsight. Consulte o [tutorial de introdução](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).
 
 ## <a name="assign-a-role-to-the-azure-ad-application"></a>Atribuir uma função para a aplicação do Azure AD
 Atribuir a aplicação do Azure AD um [função](../active-directory/role-based-access-built-in-roles.md), para conceder permissão para efetuar ações. Pode definir o âmbito ao nível da subscrição, do grupo de recursos ou do recurso. As permissões são herdadas a níveis inferiores de âmbito. (Por exemplo, adicionar uma aplicação para a função de leitor para um grupo de recursos significa que a aplicação pode ler o grupo de recursos e quaisquer recursos na mesma.) Neste tutorial, é possível definir o âmbito ao nível do grupo de recursos. Para obter mais informações, consulte [utilize atribuições de funções para gerir o acesso aos recursos da sua subscrição do Azure](../active-directory/role-based-access-control-configure.md).

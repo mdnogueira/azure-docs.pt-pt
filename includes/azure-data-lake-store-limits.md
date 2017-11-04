@@ -1,7 +1,7 @@
-Azure Data Lake Store is an enterprise-wide hyper-scale repository for big data analytic workloads. Data Lake Store enables you to capture data of any size, type, and ingestion speed in one single place for operational and exploratory analytics. There is no limit to the amount of data you can store in a Data Lake Store account.
+O Azure Data Lake Store é um repositório de hiper escala a nível da empresa para cargas de trabalho de análise de macrodados. O Data Lake Store permite-lhe capturar dados de qualquer tamanho, tipo e velocidade de ingestão num único local para análises exploratórias e operacionais. Não existe limite para a quantidade de dados, pode armazenar numa conta do Data Lake Store.
 
-| **Resource** | **Default Limit** | **Comments** |
+| **Recurso** | **Limite Predefinido** | **Comentários** |
 | --- | --- | --- |
-| Max number of Data Lake Store accounts, per subscription, per region |10 | Contact Support to request an increase for this limit |
-| Max number of access ACLs, per file or folder |32 | This is a hard limit. Use groups to manage access with fewer entries |
-| Max number of default ACLs, per file or folder |32 | This is a hard limit. Use groups to manage access with fewer entries |
+| Número máx. de contas do Data Lake Store, por subscrição, por região |10 | Contacte o Suporte para pedir um aumento para este limite |
+| Número máx. de acesso ACLs, por ficheiro ou pasta |32 | Este é um limite de disco rígido. Utilizar grupos para gerir o acesso com menos entradas |
+| Número máx. de ACLs predefinido, por ficheiro ou pasta |32 | Este é um limite de disco rígido. Utilizar grupos para gerir o acesso com menos entradas |

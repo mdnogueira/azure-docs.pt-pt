@@ -13,13 +13,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-catalog
-ms.date: 09/06/2017
+ms.date: 10/01/2017
 ms.author: maroche
-ms.openlocfilehash: 7259505b68202f3741e64e86555d2e3f968b8951
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 2eab8ce96399c7d6da9b4afbccdfd8b836f0c9f3
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="whats-new-in-azure-data-catalog"></a>Novidades no catálogo de dados do Azure
 Atualizações **catálogo de dados do Azure** são lançadas regularmente. Não cada versão inclui novas funcionalidades de destinada ao utilizador, como algumas versões são concentra-se nas capacidades do serviço de back-end. Esta página realça as novas capacidades destinada ao utilizador adicionadas para o serviço de catálogo de dados do Azure.
@@ -239,7 +239,7 @@ A partir de Setembro de 2015, foram adicionadas as seguintes capacidades do Azur
 * Suporte para registar e deteção de objetos do armazém de dados do SQL do Azure e bases de dados. Para obter informações adicionais sobre o Azure SQL Data Warehouse, consulte [SQL Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/).
 * Suporte para registar e deteção de servidores do SQL Server Reporting Services como contentores e modelos de SQL Server Analysis Services. Quando registar objetos SSAS e SSRS, o catálogo de dados do Azure cria uma entrada para o modelo SSAS e o servidor SSRS e para os relatórios e outros objetos. Os contentores podem ser detetados e anotado com o portal do catálogo de dados do Azure. Os utilizadores também podem procurar e filtrar o conteúdo de um modelo ou do servidor para além de pesquisar e filtrar o conteúdo do catálogo.
 * Suporte para registar e deteção de objetos de SQL Server Analysis Services através de HTTP/HTTPS. Os utilizadores agora podem ligar aos servidores SSAS utilizando um URL (por exemplo, https://servername/olap/msmdpump.dll) em vez de um nome de servidor e podem utilizar a autenticação básica e ligações anónimas para além de autenticação do Windows. Para obter informações adicionais sobre as ligações HTTP/HTTPS ao SSAS, consulte [configurar o acesso HTTP ao Analysis Services](https://msdn.microsoft.com/library/gg492140.aspx).
-* Suporte para as origens de dados do Hive no HDInsight. Os utilizadores podem agora registar e detetar as tabelas do Hive para Apache Hive no Hadoop no HDInsight origens de dados. Para obter informações adicionais sobre o Hive no HDInsight, consulte o [Centro de documentação do HDInsight](../hdinsight/hdinsight-use-hive.md).
+* Suporte para as origens de dados do Hive no HDInsight. Os utilizadores podem agora registar e detetar as tabelas do Hive para Apache Hive no Hadoop no HDInsight origens de dados. Para obter informações adicionais sobre o Hive no HDInsight, consulte o [Centro de documentação do HDInsight](../hdinsight/hadoop/hdinsight-use-hive.md).
 * Suporte para registar e deteção de bases de dados Oracle e clusters do HDFS como contentores. Quando registar tabelas Oracle e vistas ou HDFS, o catálogo de dados do Azure cria uma entrada para a base de dados, tabelas e vistas. A base de dados pode ser detetado e anotado com o portal do catálogo de dados do Azure. Os utilizadores também podem procurar e filtrar o conteúdo da base de dados ou num cluster, além de pesquisar e filtrar o conteúdo do catálogo.
 * Suporte para registar manualmente os tipos de origens de dados desconhecido. Os utilizadores podem introduzir manualmente as informações da origem de dados através do portal do catálogo de dados do Azure, para que possam ser anotadas e detetar origens de dados explicitamente não suportadas pela ferramenta de registo da origem de dados.
 * Suporte para registar e deteção de bases de dados do SQL Server como contentores. Ao registar e vistas de tabelas do SQL Server, o catálogo de dados do Azure cria uma entrada para a base de dados, tabelas e vistas. A base de dados pode ser detetado e anotado com o portal do catálogo de dados do Azure. Os utilizadores também podem procurar e filtrar o conteúdo de uma base de dados, além de pesquisar e filtrar o conteúdo do catálogo.

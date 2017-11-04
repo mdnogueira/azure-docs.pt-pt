@@ -1,7 +1,7 @@
-#### <a name="to-get-the-storsimple-service-registration-key"></a>To get the StorSimple service registration key
+#### <a name="to-get-the-storsimple-service-registration-key"></a>Para obter a chave de registo do serviço StorSimple
 
-1.  On the **StorSimple Device Manager** blade, click the service that you created. This opens up a new blade to the right.
+1.  Na página **Gestor de Dispositivos do StorSimple**, clique no serviço que criou. Esta ação abre um novo painel à direita.
 
-2.  In the blade that opens up, click **Manage &gt;** **Keys**.
+2.  No painel que abre-se, clique em **gerir &gt;**  **chaves**.
 
-3.  Click the copy icon to copy the service registration key and save it for later use.
+3.  Clique no ícone de cópia para copiar a chave de registo do serviço e guardá-lo para utilização posterior.

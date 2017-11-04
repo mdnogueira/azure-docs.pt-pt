@@ -15,11 +15,11 @@ ms.workload: big-data
 ms.date: 10/04/2017
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 90a1ea99cbba82b49a0ff6712bcaaa5dc814810e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 02fcff7cf2b40c712f0575f7885eac95f9de04b8
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="add-custom-hive-libraries-when-creating-your-hdinsight-cluster"></a>Adicione as bibliotecas Hive personalizadas ao criar o cluster do HDInsight
 
@@ -98,4 +98,4 @@ Depois de concluída a criação do cluster, é capazes de utilizar o v7 adicion
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Para obter mais informações sobre como trabalhar com o Hive, consulte [utilizar o Hive com o HDInsight](hdinsight-use-hive.md)
+Para obter mais informações sobre como trabalhar com o Hive, consulte [utilizar o Hive com o HDInsight](hadoop/hdinsight-use-hive.md)

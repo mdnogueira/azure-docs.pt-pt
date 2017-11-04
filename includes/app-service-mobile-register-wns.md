@@ -1,16 +1,16 @@
 
-1. In Visual Studio Solution Explorer, right-click the Windows Store app project, and click **Store** > **Associate App with the Store**.
+1. No Explorador de soluções do Visual Studio, clique com o botão direito do projeto de aplicação da loja Windows e clique em **arquivo** > **associar aplicação à loja**.
 
-    ![Associate app with Windows Store](./media/app-service-mobile-register-wns/notification-hub-associate-win8-app.png)
-2. In the wizard, click **Next**, and sign in with your Microsoft account. Type a name for your app in **Reserve a new app name**, and then click **Reserve**.
-3. After the app registration is successfully created, select the new app name, click **Next**, and then click **Associate**. This adds the required Windows Store registration information to the application manifest.
-4. Repeat steps 1 and 3 for the Windows Phone Store app project by using the same registration you previously created for the Windows Store app.  
-5. Browse to the [Windows Dev Center](https://dev.windows.com/en-us/overview), and sign in with your Microsoft account. Click the new app registration in **My apps**, and then expand **Services** > **Push notifications**.
-6. On the **Push notifications** page, click **Live Services site** under **Windows Push Notification Services (WNS) and Microsoft Azure Mobile Apps**. Make a note of the values of the **Package SID** and the *current*  value in **Application Secret**. 
+    ![Associar aplicação à loja Windows](./media/app-service-mobile-register-wns/notification-hub-associate-win8-app.png)
+2. No assistente, clique em **seguinte**e inicie sessão com a sua conta Microsoft. Escreva um nome para a sua aplicação no **reservar um novo nome de aplicação**e, em seguida, clique em **reserva**.
+3. Após o registo de aplicação é criado com êxito, selecione o novo nome de aplicação, clique em **seguinte**e, em seguida, clique em **associar**. Esta ação adiciona ao manifesto da aplicação as informações de registo da Loja Windows necessárias.
+4. Repita os passos 1 e 3 para o projeto de aplicação da loja Windows Phone utilizando o mesmo registo que criou anteriormente para a aplicação da loja Windows.  
+5. Navegue para o [Windows Dev Center](https://dev.windows.com/en-us/overview)e inicie sessão com a sua conta Microsoft. Clique em novo registo de aplicação no **as minhas aplicações**e, em seguida, expanda **serviços** > **notificações Push**.
+6. No **notificações Push** página, clique em **site dos Serviços Live** em **Push notificação serviços Windows (WNS) e as Mobile Apps do Microsoft Azure**. Tome nota dos valores do **SID do pacote** e *atual* valor **segredo da aplicação**. 
 
-    ![App setting in the developer center](./media/app-service-mobile-register-wns/mobile-services-win8-app-push-auth.png)
+    ![Definição de aplicação no Centro de programadores](./media/app-service-mobile-register-wns/mobile-services-win8-app-push-auth.png)
 
    > [!IMPORTANT]
-   > The application secret and package SID are important security credentials. Do not share these values with anyone or distribute them with your app.
+   > O segredo da aplicação e o SID do pacote são credenciais de segurança importantes. Não partilhe estes valores com ninguém e não os distribua com a aplicação.
    >
    >

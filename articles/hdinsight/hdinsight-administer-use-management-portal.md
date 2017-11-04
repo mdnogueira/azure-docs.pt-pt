@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/25/2017
 ms.author: jgao
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3f1c7bb1795828899148a8ba8a0461a06947d40d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: ecaad702843a63bb82b781339d25fde10df0a0a4
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="manage-windows-based-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Gerir clusters do Hadoop baseados em Windows no HDInsight ao utilizar o portal do Azure
 
@@ -61,7 +61,7 @@ HDInsight funciona com um intervalo Hadoop wide componentes. Para obter a lista 
 
 * Utilize a ação de Script para executar scripts personalizados que podem personalizar um cluster para alterar a configuração de cluster ou instalar componentes personalizados, tais como Giraph ou Solr. Para obter mais informações, consulte [através da ação de Script de cluster de HDInsight personalizar](hdinsight-hadoop-customize-cluster.md).
 * Utilize os parâmetros de personalização de cluster no Azure PowerShell ou de SDK .NET do HDInsight durante a criação do cluster. Estas alterações de configuração, em seguida, são mantidas através da duração do cluster e não são afetadas por reimages de nó de cluster que plataforma Azure executa periodicamente para manutenção. Para obter mais informações sobre como utilizar os parâmetros de personalização do cluster, consulte [criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
-* Alguns componentes de Java nativas, como o Mahout e Cascading, podem ser executados no cluster como ficheiros JAR. Estes ficheiros JAR podem ser distribuídos ao Blob storage do Azure e submetidos para clusters do HDInsight através de mecanismos de submissão de tarefas do Hadoop. Para obter mais informações, consulte [Hadoop submeter as tarefas através de programação](hdinsight-submit-hadoop-jobs-programmatically.md).
+* Alguns componentes de Java nativas, como o Mahout e Cascading, podem ser executados no cluster como ficheiros JAR. Estes ficheiros JAR podem ser distribuídos ao Blob storage do Azure e submetidos para clusters do HDInsight através de mecanismos de submissão de tarefas do Hadoop. Para obter mais informações, consulte [Hadoop submeter as tarefas através de programação](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
   > [!NOTE]
   > Se tiver problemas de implementação de ficheiros JAR em clusters do HDInsight ou chamar JAR ficheiros nos clusters do HDInsight, contacte [Microsoft Support](https://azure.microsoft.com/support/options/).
@@ -213,7 +213,7 @@ Existem várias formas pode programar o processo:
 * Fábrica de dados do Azure do utilizador. Consulte [serviço ligado do Azure HDInsight](../data-factory/compute-linked-services.md) e [transformar e analisar utilizando o Azure Data Factory](../data-factory/transform-data.md) para o HDInsight a pedido e personalizada definida serviços ligados.
 * Utilize o Azure PowerShell.  Consulte [analisar dados de atraso do voo](hdinsight-analyze-flight-delay-data.md).
 * Utilize a CLI do Azure. Consulte [gerir clusters do HDInsight ao utilizar a CLI do Azure](hdinsight-administer-use-command-line.md).
-* Utilize o SDK .NET do HDInsight. Consulte [tarefas do Hadoop submeter](hdinsight-submit-hadoop-jobs-programmatically.md).
+* Utilize o SDK .NET do HDInsight. Consulte [tarefas do Hadoop submeter](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Para informações de preços, consulte [preços do HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Para eliminar um cluster a partir do Portal, consulte o artigo [eliminar clusters](#delete-clusters)
 
@@ -271,7 +271,7 @@ Consulte [clusters lista e mostrar](#list-and-show-clusters).
 ## <a name="open-hdinsight-query-console"></a>Abra a consola de consulta do HDInsight
 A consola de consulta do HDInsight inclui as seguintes funcionalidades:
 
-* **Editor de ramo de registo**: a interface de web de uma GUI para submeter tarefas do Hive.  Consulte [executar consultas do Hive através da consola de consulta](hdinsight-hadoop-use-hive-query-console.md).
+* **Editor de ramo de registo**: a interface de web de uma GUI para submeter tarefas do Hive.  Consulte [executar consultas do Hive através da consola de consulta](hadoop/apache-hadoop-use-hive-query-console.md).
 
     ![Editor de portal do hive do HDInsight](./media/hdinsight-administer-use-management-portal/hdinsight-hive-editor.png)
 * **Histórico da tarefa**: tarefas do Hadoop do Monitor.  
@@ -371,8 +371,8 @@ Neste artigo, aprendeu como criar um cluster do HDInsight através do Portal e c
 * [Administrar HDInsight com o Azure PowerShell](hdinsight-administer-use-powershell.md)
 * [Administrar HDInsight ao utilizar a CLI do Azure](hdinsight-administer-use-command-line.md)
 * [Criar clusters do HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
-* [Submeter tarefas do Hadoop através de programação](hdinsight-submit-hadoop-jobs-programmatically.md)
-* [Introdução ao Azure HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md)
+* [Submeter tarefas do Hadoop através de programação](hadoop/submit-apache-hadoop-jobs-programmatically.md)
+* [Introdução ao Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Qual a versão do Hadoop é no Azure HDInsight?](hdinsight-component-versioning.md)
 
 [azure-portal]: https://portal.azure.com

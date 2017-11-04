@@ -1,21 +1,21 @@
-Most of the time authentication errors result from incorrect or inconsistent configuration settings. Here are some specific suggestions for things to check.
+A maioria dos erros de autenticação tempo resulta de definições de configuração inconsistentes ou incorretos. Aqui estão algumas sugestões específicos para aspetos a verificar.
 
-* Make sure that you didn't miss the **Save** button anywhere. This is often easy to do, and the result is that you'll be looking at the correct values on a portal page but they haven't actually been saved in the Azure environment or Azure AD application.
-* For settings configured in the **Application Settings** blade of the Azure portal, make sure that the correct API app or web app was selected when the settings were entered.  Also make sure that the settings were entered as **App settings** and not **Connection strings**, as the format of the two sections is similar.
-* For authentication to a JavaScript front end, download the manifest again to verify that `oauth2AllowImplicitFlow` was successfully changed to `true`.
-* Verify that you used HTTPS wherever you configured URLs:
+* Certifique-se de que não perder o **guardar** botão em qualquer lugar. Isto, muitas vezes, é fácil fazer e o resultado é que que irá ser observar os valores corretos numa página de portal, mas, na verdade, não foram guardadas no ambiente do Azure ou da aplicação do Azure AD.
+* Para as definições configuradas no **definições da aplicação** painel do portal do Azure, certifique-se de que a aplicação de API correta ou aplicação web foi selecionada quando as definições foram introduzidas.  Certifique-se de que as definições foram introduzidas como também **as definições de aplicação** e não **cadeias de ligação**, uma vez que o formato das dois secções é semelhante.
+* Para a autenticação para um front-end de JavaScript, transfira o manifesto novamente para verificar se `oauth2AllowImplicitFlow` foi alterada com êxito para `true`.
+* Certifique-se de que utilizou HTTPS independentemente do local onde configurou URLs:
   
-  * In project code
-  * In CORS
-  * In Azure environment App settings for each API app and web app
-  * In Azure AD application settings.
+  * No código de projeto
+  * No CORS
+  * Nas definições de aplicação de ambiente do Azure para cada aplicação API e a aplicação web
+  * Nas definições de aplicação do Azure AD.
     
-    Note that if you copy an API app's URL from the portal, it often has `http://` and you have to manually change it to `https://`.
-* Make sure that any code changes were successfully deployed. For example, in a multiple-project solution it's possible to change a project's code and accidentally choose one of the others when you intend to deploy the change.
-* Make sure that you are going to HTTPS URLs in your browser, not HTTP URLs. By default, Visual Studio creates publish profiles with HTTP URLs, and that's what opens in the browser after you deploy a project.
-* For authentication to a JavaScript front end, make sure that CORS is correctly configured on the API app that the JavaScript code calls. If in doubt about whether the problem is CORS-related, try "*" as the allowed origin URL. 
-* For a JavaScript front end, open your browser's Developer Tools Console tab to get more error information, and examine HTTP requests on the Network. However, Console error messages may be misleading. If you get a message indicating a CORS error, the real issue may be authentication. You can check if this is the case by running the app with authentication temporarily temporarily disabled.
-* For a .NET API app, make sure you are getting as much information in error messages as possible by setting [customErrors mode to Off](../articles/app-service/web-sites-dotnet-troubleshoot-visual-studio.md#remoteview).
-* For a .NET API app, start a [remote debugging session](../articles/app-service/web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug), and examine the values of the variables that are passed to code that uses ADAL to acquire a bearer token, or code that checks claims against the expected service principal ID. Note that your code can pick up configuration values from many different sources, so it's possible to find surprises this way. For example, if you mistype `ida:ClientId` as `ida:ClientID` when configuring Azure App Service environment settings, the code might get the `ida:ClientId` value that it's looking for from the Web.config file, ignoring the Azure App Service setting. 
-* If things don't work in a normal Internet Explorer window, an existing log-in may be interfering; try InPrivate and try Chrome or Firefox.
+    Tenha em atenção que se copiar o URL de uma aplicação API no portal, muitas vezes tem `http://` e tiver de alterar manualmente a `https://`.
+* Certifique-se de que as alterações de código foram implementadas com êxito. Por exemplo, numa solução de vários projeto é possível alterar o código de um projeto e escolha um dos outros acidentalmente quando pretender implementar a alteração.
+* Certifique-se de que vai os URLs HTTPS no seu browser, não os URLs de HTTP. Por predefinição, o Visual Studio cria publicar perfis com HTTP URLs e que é o que se abre no browser depois de implementar um projeto.
+* Para a autenticação para um front-end de JavaScript, certifique-se de que está corretamente configurada CORS na aplicação API que chama o código JavaScript. Em caso de dúvida sobre se o problema está relacionado com a CORS, tente "*" como o URL de origem permitidas. 
+* Para um JavaScript front-end, abra o separador de consola de ferramentas de programador do seu browser para obter mais informações de erro e examinar os pedidos de HTTP na rede. No entanto, poderá enganosa mensagens de erro de consola. Se receber uma mensagem a indicar um erro CORS, o problema real pode ser a autenticação. Pode verificar se é este o caso, executando a aplicação com a autenticação temporariamente temporariamente desativada.
+* Para uma aplicação .NET API, certifique-se estão a obter a maior quantidade informações em mensagens de erro possível definindo [customErrors modo desligado](../articles/app-service/web-sites-dotnet-troubleshoot-visual-studio.md#remoteview).
+* Para uma aplicação .NET API, inicie um [sessão de depuração remota](../articles/app-service/web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug)e examinar os valores das variáveis que são transmitidos para o código que utiliza a ADAL para adquirir um token de portador ou código que verifica as afirmações com o ID de principal do serviço esperado. Tenha em atenção que o seu código pode recolher valores de configuração a partir de várias origens diferentes, pelo que é possível localizar surpresas desta forma. Por exemplo, se de que escreveu `ida:ClientId` como `ida:ClientID` quando configurar as definições de ambiente de App Service do Azure, pode obter o código de `ida:ClientId` valor está à procura do ficheiro Web. config, a ignorar a definição de serviço de aplicações do Azure. 
+* Se as coisas não funcionam numa janela do Internet Explorer normal, uma existente início de sessão pode estar a interferir; Tente InPrivate e tente Chrome ou o Firefox.
 

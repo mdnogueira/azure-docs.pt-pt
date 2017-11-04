@@ -13,17 +13,17 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.date: 07/07/2016
 ms.author: nateko
-ms.openlocfilehash: 739a0ad77c68ea74ec25bc80c7539ac8b3f18201
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 447abc48cca3dee398e641f8458e52a5b2cb8e42
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="synonyms-in-azure-search-preview"></a>Sinónimos na pesquisa do Azure (pré-visualização)
 
 Sinónimos no motores de busca associar termos equivalentes que implicitamente expande o âmbito de uma consulta, sem o utilizador ter de fornecer, na verdade, o termo. Por exemplo, tendo em conta os termo "preguiçoso" e o sinónimo associações "canine" e "puppy", os documentos que contenham "preguiçoso", "canine" ou "puppy" será se encontra no âmbito da consulta.
 
-Na Azure Search, expansão de sinónimo é feito no momento da consulta. Pode adicionar o sinónimo maps para um serviço com operações existentes sem interrupção. Pode adicionar um **synonymMaps** propriedade a uma definição de campo sem ter de reconstruir o índice. Para obter mais informações, consulte [atualização índice](https://docs.microsoft.com/rest/api/searchservice/update-index).
+Na Azure Search, expansão de sinónimo é feito no momento da consulta. Pode adicionar o sinónimo maps para um serviço com operações existentes sem interrupção. Pode adicionar um **synonymMaps** propriedade a uma definição de campo sem ter de reconstruir o índice.
 
 ## <a name="feature-availability"></a>Disponibilidade de funcionalidades
 
@@ -78,14 +78,14 @@ Em alternativa, pode utilizar PUT e especifique o nome de mapa de sinónimo no U
 
 O formato de Solr suporta mapeamentos sinónimo equivalentes e explícita. As regras de mapeamento de respeitar a especificação de filtro de sinónimo de código aberto do Apache Solr, descritas neste documento: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Segue-se uma regra de exemplo para sinónimos equivalentes.
 ```
-              USA, United States, United States of America
+USA, United States, United States of America
 ```
 
 Com a regra acima, uma consulta de pesquisa "EUA" irá expandir "EUA" ou "Estados Unidos" ou "Estados Unidos da América".
 
 Mapeamento explícito está em falta por que uma seta "= >". Quando especificado, uma sequência de prazo de uma consulta de pesquisa que corresponda ao lado esquerdo do "= >" será substituído por alternativas no lado direito. Tendo em conta a regra abaixo, consultas de pesquisa "Washington", "Wash." ou "WA" será todos ser rescrita para "WA". Mapeamento explícito só aplica-se na direção especificada e não volte a escrever a consulta "WA" para "Washington" neste caso.
 ```
-              Washington, Wash., WA => WA
+Washington, Wash., WA => WA
 ```
 
 #### <a name="list-synonym-maps-under-your-service"></a>Mapeia o sinónimo de lista no seu serviço.
@@ -160,7 +160,7 @@ Expansions sinónimo não se aplicam a termos de pesquisa de caráter universal;
 
 - Pode criar várias sinónimo maps para a sua aplicação de pesquisa (por exemplo, por idioma se a aplicação suportar uma base de clientes com várias lingual). Atualmente, um campo só pode utilizar um deles. Pode atualizar synonymMaps propriedade um campo em qualquer altura.
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 - Se tiver um índice existente num ambiente de desenvolvimento (não a produção), experimente um dicionário pequeno para ver como a adição de sinónimos altera a experiência de pesquisa, incluindo o impacto nos perfis de classificação, detetor de ocorrências e sugestões.
 

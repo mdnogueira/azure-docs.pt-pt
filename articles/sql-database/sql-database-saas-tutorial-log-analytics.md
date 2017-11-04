@@ -1,32 +1,30 @@
 ---
 title: "Utilizar o Log Analytics com uma aplicação multi-inquilino da Base de Dados SQL | Microsoft Docs"
-description: "Configurar e utilizar o Log Analytics (OMS) com a aplicação Wingtip Tickets (WTP) de exemplo da Base de Dados SQL do Azure"
+description: "Configurar e utilizar a análise de registos (OMS) com uma aplicação de SaaS de base de dados do SQL Azure multi-inquilino"
 keywords: tutorial de base de dados sql
 services: sql-database
 documentationcenter: 
 author: stevestein
-manager: jhubbard
+manager: craigg
 editor: 
 ms.assetid: 
 ms.service: sql-database
-ms.custom: tutorial
-ms.workload: data-management
+ms.custom: scale out apps
+ms.workload: Inactive
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: hero-article
-ms.date: 05/10/2017
+ms.topic: article
+ms.date: 07/26/2017
 ms.author: billgib; sstein
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc4172b27b93a49c613eb915252895e845b96892
-ms.openlocfilehash: 4ff4519ca40f036d58f82993db78fe08aa7d5733
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/12/2017
-
-
+ms.openlocfilehash: 43d46e6a31ee05add33da59348a1d180c4078f97
+ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/31/2017
 ---
-# <a name="setup-and-use-log-analytics-oms-with-the-wtp-sample-saas-app"></a>Configurar e utilizar o Log Analytics (OMS) com a aplicação SaaS WTP de exemplo
+# <a name="setup-and-use-log-analytics-oms-with-a-multi-tenant-azure-sql-database-saas-app"></a>Configurar e utilizar a análise de registos (OMS) com uma aplicação de SaaS de base de dados do SQL Azure multi-inquilino
 
-Neste tutorial, vai configurar e utilizar o *Log Analytics ([OMS](https://www.microsoft.com/cloud-platform/operations-management-suite))* com a aplicação WTP para monitorizar as bases de dados e os conjuntos elásticos. É criado no [Tutorial de Monitorização e Gestão do Desempenho](sql-database-saas-tutorial-performance-monitoring.md) e mostra como utilizar o *Log Analytics* para aumentar a monitorização e os alertas fornecidos no portal do Azure. O Log Analytics é particularmente adequado para a monitorização e os alertas em escala, uma vez que suporta centenas de conjuntos e centenas de milhares de bases de dados. Também fornece uma solução de monitorização única que pode integrar a monitorização de diferentes aplicações e serviços do Azure, em várias subscrições do Azure.
+Neste tutorial, configurar e utilizar *Log Analytics ([OMS](https://www.microsoft.com/cloud-platform/operations-management-suite))* para conjuntos elásticos e bases de dados de monitorização. Este tutorial baseia-se a [tutorial de gestão e monitorização do desempenho](sql-database-saas-tutorial-performance-monitoring.md). Mostra como utilizar *Log Analytics* para melhorar a monitorização e alertas fornecido no portal do Azure. Análise de registos é adequado para a monitorização e alertas na escala porque suporta centenas de agrupamentos e centenas de milhares de bases de dados. Também fornece uma solução de monitorização única que pode integrar a monitorização de diferentes aplicações e serviços do Azure, em várias subscrições do Azure.
 
 Neste tutorial, ficará a saber como:
 
@@ -34,9 +32,9 @@ Neste tutorial, ficará a saber como:
 > * Instalar e configurar o Log Analytics (OMS)
 > * Utilizar o Log Analytics para monitorizar conjuntos e bases de dados
 
-Para concluir este tutorial, devem ser cumpridos os seguintes pré-requisitos:
+Para concluir este tutorial, confirme que conclui os pré-requisitos seguintes:
 
-* A aplicação WTP está implementada. Para implementar em menos de cinco minutos, veja [Implementar e explorar a aplicação SaaS WTP](sql-database-saas-tutorial.md)
+* A aplicação Wingtip SaaS é implementada. Para implementar em menos de cinco minutos, consulte [implementar e explorar a aplicação Wingtip SaaS](sql-database-saas-tutorial.md)
 * O Azure PowerShell está instalado. Para obter mais detalhes, veja [Introdução ao Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps)
 
 Veja o [Tutorial de Monitorização e Gestão do Desempenho](sql-database-saas-tutorial-performance-monitoring.md) para ver um debate sobre padrões e cenários SaaS e como afetam os requisitos numa solução de monitorização.
@@ -45,38 +43,38 @@ Veja o [Tutorial de Monitorização e Gestão do Desempenho](sql-database-saas-t
 
 Na Base de Dados SQL, a monitorização e os alertas estão disponíveis nas bases de dados e nos conjuntos. Estes alertas e monitorização incorporados, específicos dos recursos, são convenientes quando existirem números baixos de recursos, mas são menos adequados para a monitorização de grandes instalações ou para fornecer uma vista unificada nos diferentes recursos e subscrições.
 
-Para cenários de volume elevado, pode ser utilizado o Log Analytics. Este é um serviço do Azure separado que fornece análises sobre os registos de diagnóstico emitidos e a telemetria recolhida na área de trabalho do Log Analytics, que pode recolher telemetria de muitos serviços e ser utilizado para consultar e definir alertas. O Log Analytics fornece uma linguagem de consulta incorporada e ferramentas de visualização de dados que permitem análises operacionais e visualização de dados. A solução Análise de SQL fornece várias consultas e vistas de alertas e monitorização predefinidas dos conjuntos elásticos e das bases de dados e permite-lhe adicionar as suas próprias consultas ad hoc e guardá-las conforme necessário. O OMS também fornece um estruturador de vistas personalizado.
+Para cenários de volume elevado, pode ser utilizado o Log Analytics. Este é um serviço do Azure separado que fornece análises sobre os registos de diagnóstico emitidos e a telemetria recolhida na área de trabalho do Log Analytics, que pode recolher telemetria de muitos serviços e ser utilizado para consultar e definir alertas. O Log Analytics fornece uma linguagem de consulta incorporada e ferramentas de visualização de dados que permitem análises operacionais e visualização de dados. A solução de análise do SQL Server fornece vários predefinido conjunto elástico e base de dados de monitorização e alertas, vistas e consultas e permite-lhe adicionar as suas próprias consultas ad-hoc e guardá-las conforme necessário. O OMS também fornece um estruturador de vistas personalizado.
 
 As áreas de trabalho do Log Analytics e as soluções de análise podem ser abertas no portal do Azure e no OMS. O portal do Azure é o mais recente ponto de acesso, mas pode ficar atrás em relação ao portal do OMS em algumas áreas.
 
-### <a name="start-the-load-generator-to-create-data-to-analyze"></a>Iniciar o gerador de carga para criar dados para analisar
+### <a name="create-data-by-starting-the-load-generator"></a>Criar dados ao iniciar o gerador de carga 
 
 1. Abra o **Demo-PerformanceMonitoringAndManagement.ps1** no **ISE do PowerShell**. Mantenha este script aberto, uma vez que poderá querer executar vários cenários de geração de carga durante este tutorial.
-1. Se tiver menos de cinco inquilinos, aprovisione um lote de inquilinos para fornecer um contexto de monitorização mais interessante:
+1. Se tiver menos de cinco inquilinos, aprovisionar um lote de inquilinos para fornecer um mais interessante monitorização contexto:
    1. Defina **$DemoScenario = 1,** **Aprovisionar um lote de inquilinos**
-   1. Prima **F5** para executar o script.
+   1. Para executar o script, prima **F5**.
 
-1. Defina **$DemoScenario** = 2, **Gerar carga de intensidade normal (aprox. 40 DTUs)**.
-1. Prima **F5** para executar o script.
+1. Definir **$DemoScenario** = 2, **carga normal intensidade de gerar (approx. 40 DTU)**.
+1. Para executar o script, prima **F5**.
 
 ## <a name="get-the-wingtip-application-scripts"></a>Obter os scripts da aplicação Wingtip
 
-Os scripts da Wingtip Tickets e o código fonte da aplicação estão disponíveis no repositório do github [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS). Os ficheiros dos scripts estão localizados na pasta [Módulos de Aprendizagem](https://github.com/Microsoft/WingtipSaaS/tree/master/Learning%20Modules). Transfira a pasta **Módulos de Aprendizagem** para o computador local, mantendo a estrutura das pastas.
+Os scripts e o código de origem da aplicação Wingtip Tickets estão disponíveis no repositório do GitHub [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS). Os ficheiros dos scripts estão localizados na pasta [Módulos de Aprendizagem](https://github.com/Microsoft/WingtipSaaS/tree/master/Learning%20Modules). Transfira a pasta **Módulos de Aprendizagem** para o computador local, mantendo a estrutura das pastas.
 
 ## <a name="installing-and-configuring-log-analytics-and-the-azure-sql-analytics-solution"></a>Instalar e configurar o Log Analytics e a solução Análise de SQL do Azure
 
-O Log Analytics é um serviço em separado que tem de ser configurado. O Log Analytics recolhe dados de registo, telemetria e métricas numa área de trabalho do Log Analytics. Uma área de trabalho é um recurso, tal como os outros recursos no Azure, e tem de ser criada. Enquanto a área de trabalho não precisa de ser criada no mesmo grupo de recursos como a aplicação (ou aplicações) que está a monitorizar, muitas vezes, isto faz mais sentido. No caso da aplicação WTP, isto permite que a área de trabalho seja facilmente eliminada com a aplicação. Para tal, basta eliminar o grupo de recursos.
+O Log Analytics é um serviço em separado que tem de ser configurado. O Log Analytics recolhe dados de registo, telemetria e métricas numa área de trabalho do Log Analytics. Uma área de trabalho é um recurso, tal como os outros recursos no Azure, e tem de ser criada. Enquanto a área de trabalho não precisa de ser criada no mesmo grupo de recursos como a aplicação (ou aplicações) que está a monitorizar, muitas vezes, isto faz mais sentido. Para a aplicação Wingtip SaaS, isto permite que a área de trabalho facilmente ser eliminadas com a aplicação, basta eliminando o grupo de recursos.
 
 1. Abra ...\\Módulos de Aprendizagem\\Monitorização e Gestão do Desempenho\\Log Analytics\\*Demo-LogAnalytics.ps1* no **ISE do PowerShell**.
-1. Prima **F5** para executar o script.
+1. Para executar o script, prima **F5**.
 
-Nesta altura, deve ser capaz de abrir o Log Analytics no portal do Azure (ou no portal do OMS). Serão necessários alguns minutos para a telemetria ser recolhida na área de trabalho do Log Analytics e para ficar visível. Quanto mais tempo deixar o sistema a recolher dados, mais interessante será a experiência. Agora é o momento indicado para tomar um café. Só tem de verificar se o gerador de carga ainda está em execução!
+Nesta fase, deve ser capaz de análise de registos de abrir o portal do Azure (ou o portal do OMS). Demora alguns minutos para que a telemetria recolhida na área de trabalho de análise de registos e ficar visível. Mais tempo deixar o sistema de recolha de dados mais interessante a experiência é. Agora é o momento indicado para tomar um café. Só tem de verificar se o gerador de carga ainda está em execução!
 
 
 ## <a name="use-log-analytics-and-the-sql-analytics-solution-to-monitor-pools-and-databases"></a>Utilizar o Log Analytics e a Solução de Análise de SQL para monitorizar conjuntos e bases de dados
 
 
-Neste exercício, abra o Log Analytics e o portal do OMS para observar a telemetria que está a ser recolhida para os conjuntos e bases de dados da WTP.
+Neste exercício, abra o portal do OMS e de análise de registo para ver a telemetria a ser recolhida para as bases de dados e agrupamentos.
 
 1. Navegue para o [portal do Azure](https://portal.azure.com) e abra o Log Analytics ao clicar em Mais serviços e, em seguida, procure o Log Analytics:
 
@@ -134,7 +132,6 @@ Neste tutorial, ficou a saber como:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Tutoriais adicionais criados após a implementação inicial da aplicação Wingtip Tickets Platform (WTP)](sql-database-wtp-overview.md#sql-database-wtp-saas-tutorials)
+* [Tutoriais adicionais que criar após a implementação de aplicação Wingtip SaaS inicial](sql-database-wtp-overview.md#sql-database-wingtip-saas-tutorials)
 * [Log Analytics do Azure](../log-analytics/log-analytics-azure-sql.md)
 * [OMS](https://blogs.technet.microsoft.com/msoms/2017/02/21/azure-sql-analytics-solution-public-preview/)
-

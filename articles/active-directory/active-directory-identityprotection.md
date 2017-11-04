@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 08/15/2017
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 0c7a8d68c0df729441e3f7faa5cd06066db1261d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: a4473f25fefd65de75996240955302abb08762da
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="azure-active-directory-identity-protection"></a>Azure Active Directory Identity Protection
 
@@ -34,7 +34,7 @@ Azure Active Directory Identity Protection é uma funcionalidade da edição do 
 
 ## <a name="getting-started"></a>Introdução
 
-Microsoft protege identidades baseado na nuvem para a mais do que um decade. Com o Azure Active Directory Identity Protection, no seu ambiente, pode utilizar os sistemas de proteção mesmo, a Microsoft utiliza para proteger as identidades.
+Microsoft tem seguros identidades baseado na nuvem para a mais do que um decade. Com o Azure Active Directory Identity Protection, no seu ambiente, pode utilizar os sistemas de proteção mesmo, a Microsoft utiliza para proteger as identidades.
 
 A grande maioria das falhas de segurança ocorrer quando os atacantes ganham acesso a um ambiente roubo de identidade do utilizador. Ao longo dos anos, os atacantes tem tornar-se cada vez mais eficientes tirar partido das violações de terceiros e utilização de ataques de phishing sofisticadas. Assim que um atacante obtiver acesso ao mesmo de contas de utilizador com privilégios baixa, é relativamente fácil de obter acesso a recursos importantes da empresa através de movimento lateral.
 
@@ -67,7 +67,7 @@ Azure Active Directory Identity Protection é maior do que uma monitorização e
 
 **Políticas de acesso condicional baseado em risco:**
 
-* Política para mitigar o risco de inícios de sessão por bloquear inícios de sessão ou exigindo desafios de autenticação multifator.
+* Política para mitigar o risco de inícios de sessão por bloquear inícios de sessão ou exigindo desafios de autenticação multifator
 * Política para bloquear ou contas de utilizador de risco segura
 * Política para exigir que os utilizadores para se registar para autenticação multifator
 
@@ -81,7 +81,7 @@ Para o balanceamento de carga as atividades de gestão em torno da sua implement
 | :--                          | ---                                |  ---   |
 | Administrador global         | Acesso completo a proteção de identidade, carregar Identity Protection| |
 | Administrador de segurança       | Acesso total ao Identity Protection | Carregar Identity Protection, repor palavras-passe para um utilizador |
-| Leitor de segurança              | Acesso só de prontos para Identity Protection | Carregar Identity Protection, remidiate utilizadores, configurar políticas, repor palavras-passe |
+| Leitor de segurança              | Acesso só de leitura para Identity Protection | Carregar Identity Protection, remidiate utilizadores, configurar políticas, repor palavras-passe |
 
 
 

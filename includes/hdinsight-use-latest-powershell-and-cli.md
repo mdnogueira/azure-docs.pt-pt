@@ -1,7 +1,7 @@
 > [!IMPORTANT]
-> Support for managing HDInsight resources by using Azure Service Manager (ASM) through Azure PowerShell and the Azure CLI is **deprecated** and was removed on January 1, 2017. The steps in this document use the new Azure PowerShell cmdlets and Azure CLI commands that work with Azure Resource Manager.
+> Suporte para gerir recursos do HDInsight ao utilizar o Azure Service Manager (ASM) através do Azure PowerShell e a CLI do Azure é **preterido** e foi removida no dia 1 de Janeiro de 2017. Os passos neste documento utilizam os novos cmdlets do PowerShell do Azure e os comandos da CLI do Azure que funcionam com o Azure Resource Manager.
 > 
-> Follow the steps in the [Install and configure Azure CLI](../articles/cli-install-nodejs.md) and [Install and configure Azure PowerShell](/powershell/azureps-cmdlets-docs) articles to install the latest versions. If you have existing scripts that need to be modified to use the new cmdlets or new CLI commands, see [Migrating to Azure Resource Manager-based development tools for HDInsight clusters](../articles/hdinsight/hdinsight-hadoop-development-using-azure-resource-manager.md).
+> Siga os passos a [instalar e configurar a CLI do Azure](../articles/cli-install-nodejs.md) e [instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) artigos para instalar as versões mais recentes. Se tiver scripts existentes que necessitam de ser modificados para utilizar os novos cmdlets ou novos comandos da CLI, consulte [migrar para as ferramentas de desenvolvimento baseadas no Azure Resource Manager para clusters do HDInsight](../articles/hdinsight/hdinsight-hadoop-development-using-azure-resource-manager.md).
 > 
 > 
 

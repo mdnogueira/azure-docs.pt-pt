@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: bradsev;deguhath
-ms.openlocfilehash: 8f1d9ab5186684c4aac806ace4ebfd38ca1fb306
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 19e963a56e8f905bb89d0162c65e893ae7515a97
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="data-science-using-scala-and-spark-on-azure"></a>Utilizar o Scala e o Spark para Ciência de Dados no Azure
 Este artigo mostra como utilizar o Scala para tarefas de aprendizagem máquina supervisionados com os Spark dimensionáveis MLlib Spark ML pacotes e num cluster do Azure HDInsight Spark. Explica como as tarefas que constituem o [processo de ciência de dados](http://aka.ms/datascienceprocess): ingestão de dados e exploração, visualização, funcionalidade engenharia, modelação e consumo de modelo. Os modelos no artigo incluem regressão linear e logística da, florestas aleatórias e árvores elevada de gradação (GBTs), para além das duas supervisionado tarefas de machine learning:
@@ -32,7 +32,7 @@ O processo de modelação requer formação e avaliação num conjunto de dados 
 
 [O Spark](http://spark.apache.org/) é uma arquitetura de processamento paralelo open source que suporta o processamento dentro da memória para melhorar o desempenho de aplicações de análise de macrodados. O motor de processamento do Spark foi concebido para velocidade, facilidade de utilização e efetuar análises sofisticadas. Capacidades de cálculo distribuído dentro da memória do Spark tornam uma boa opção para algoritmos iterativos na computações de machine learning e do graph. O [spark.ml](http://spark.apache.org/docs/latest/ml-guide.html) pacote fornece um conjunto de alto nível APIs desenvolvidas fotogramas que podem ajudar a criarem e otimizar prático de machine learning pipelines de dados uniforme. [MLlib](http://spark.apache.org/mllib/) biblioteca de dimensionável de aprendizagem do Spark, que capacidades de modelação para este ambiente distribuído.
 
-[HDInsight Spark](../../hdinsight/hdinsight-apache-spark-overview.md) é a oferta do Spark open source alojado no Azure. Também inclui suporte para blocos de notas do Jupyter Scala no cluster do Spark e pode executar consultas interativas do Spark SQL para transformar, filtrar e visualizar dados armazenados no Blob storage do Azure. Os fragmentos de código Scala neste artigo que fornecem as soluções e mostram rastreia relevante para visualizar os dados executam nos blocos de notas do Jupyter instalados nos clusters do Spark. Os passos de modelação nos seguintes tópicos tem o código que mostra como preparar, avaliar, guardar e consumir cada tipo de modelo.
+[HDInsight Spark](../../hdinsight/spark/apache-spark-overview.md) é a oferta do Spark open source alojado no Azure. Também inclui suporte para blocos de notas do Jupyter Scala no cluster do Spark e pode executar consultas interativas do Spark SQL para transformar, filtrar e visualizar dados armazenados no Blob storage do Azure. Os fragmentos de código Scala neste artigo que fornecem as soluções e mostram rastreia relevante para visualizar os dados executam nos blocos de notas do Jupyter instalados nos clusters do Spark. Os passos de modelação nos seguintes tópicos tem o código que mostra como preparar, avaliar, guardar e consumir cada tipo de modelo.
 
 Os passos de configuração e o código neste artigo são para o Azure HDInsight 3.4 Spark 1.6. No entanto, o código neste artigo e no [notas do Jupyter Scala](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Scala/Exploration%20Modeling%20and%20Scoring%20using%20Scala.ipynb) são genéricas e deve trabalhar em qualquer cluster do Spark. Os passos de configuração e gestão de cluster podem ser ligeiramente diferentes do que é mostrado neste artigo, se não estiver a utilizar o Spark do HDInsight.
 
@@ -43,7 +43,7 @@ Os passos de configuração e o código neste artigo são para o Azure HDInsight
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * Tem de ter uma subscrição do Azure. Se já tiver um, [obtenha uma avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* Precisa de um cluster do Azure HDInsight 3.4 Spark 1.6 para concluir os procedimentos seguintes. Para criar um cluster, consulte as instruções no [introdução: criar o Apache Spark no Azure HDInsight](../../hdinsight/hdinsight-apache-spark-jupyter-spark-sql.md). Definir o tipo de cluster e a versão de **selecionar tipo de Cluster** menu.
+* Precisa de um cluster do Azure HDInsight 3.4 Spark 1.6 para concluir os procedimentos seguintes. Para criar um cluster, consulte as instruções no [introdução: criar o Apache Spark no Azure HDInsight](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). Definir o tipo de cluster e a versão de **selecionar tipo de Cluster** menu.
 
 ![Configuração de tipo de cluster do HDInsight](./media/scala-walkthrough/spark-cluster-on-portal.png)
 
@@ -86,7 +86,7 @@ O kernel do Spark fornece algumas predefinidas "magia", que são comandos especi
 * `%%local`Especifica que o código em linhas subsequentes será executado localmente. O código tem de ser código Scala válido.
 * `%%sql -o <variable name>`executa uma consulta do Hive contra `sqlContext`. Se o `-o` parâmetro é transmitido, o resultado da consulta é continuado no `%%local` Scala contexto como um intervalo de dados de Spark.
 
-Para obter mais informações sobre os kernels para blocos de notas do Jupyter e os respetivos predefinida "magics" que tem de chamar com `%%` (por exemplo, `%%local`), consulte [clusters Kernels disponíveis para blocos de notas do Jupyter com o HDInsight Spark Linux no HDInsight](../../hdinsight/hdinsight-apache-spark-jupyter-notebook-kernels.md).
+Para obter mais informações sobre os kernels para blocos de notas do Jupyter e os respetivos predefinida "magics" que tem de chamar com `%%` (por exemplo, `%%local`), consulte [clusters Kernels disponíveis para blocos de notas do Jupyter com o HDInsight Spark Linux no HDInsight](../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md).
 
 ### <a name="import-libraries"></a>Bibliotecas de importação
 Importe o Spark, MLlib e outras bibliotecas, terá de utilizando o seguinte código.

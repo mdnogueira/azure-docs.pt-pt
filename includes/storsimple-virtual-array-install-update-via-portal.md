@@ -1,55 +1,55 @@
 <!--author=alkohli last changed: 11/07/16 -->
 
-#### <a name="to-install-updates-via-the-azure-portal"></a>To install updates via the Azure portal
+#### <a name="to-install-updates-via-the-azure-portal"></a>Para instalar atualizações através do portal do Azure
 
-1. Go to your StorSimple Device Manager and select **Devices**. From the list of devices connected to your service, select and click the device you want to update. 
+1. Aceda ao seu Gestor de Dispositivos do StorSimple e selecione **Dispositivos**. Na lista de dispositivos ligados ao seu serviço, selecione e clique no dispositivo que pretende atualizar. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate1m.png) 
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate1m.png) 
 
-2. In the **Settings** blade, click **Device updates**. 
+2. No painel **Definições**, clique em **Atualizações de dispositivos**. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate2m.png)  
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate2m.png)  
 
-3. You see a message if the software updates are available. To check for updates, you can also click **Scan**.
+3. Verá uma mensagem se as atualizações de software estiverem disponíveis. Para procurar atualizações, também pode clicar em **Analisar**.
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate3m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate3m.png)
 
-    You will be notified when the scan starts and completes successfully.
+    Será notificado quando a análise iniciar e for concluída com êxito.
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate5m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate5m.png)
 
-4. Once the updates are scanned, click **Download updates**. 
+4. Assim que as atualizações são analisadas, clique em **Transferir atualizações**. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate6m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate6m.png)
 
-5. In the **New updates** blade, review the information that after the updates are downloaded, you need to confirm the installation. Click **OK**.
+5. No painel **Novas atualizações**, consulte as informações que são transferidas após as atualizações, terá de confirmar a instalação. Clique em **OK**.
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate7m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate7m.png)
 
-6. You are notified when the upload starts and completes successfully.
+6. É notificado quando o carregamento iniciar e for concluído com êxito.
 
-     ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate8m.png)
+     ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate8m.png)
 
-5. In the **Device updates** blade, click **Install**.
+5. No painel **Atualizações do dispositivo**, clique em **Instalar**.
 
-     ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate11m.png)   
+     ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate11m.png)   
 
-6. In the **New updates** blade, you are warned that the update is disruptive. As virtual array is a single node device, the device restarts after it is updated. This disrupts any IO in progress. Click **OK** to install the updates. 
+6. No painel **Novas atualizações**, é avisado que a atualização é indesejada. Como a matriz virtual é um dispositivo de nó único, o dispositivo é reiniciado depois de ser atualizado. Isto afeta qualquer E/S em curso. Clique em **OK** para instalar as atualizações. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate12m.png) 
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate12m.png) 
 
-7. You are notified when the install job starts. 
+7. Será notificado quando a tarefa de instalação é iniciada. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate13m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate13m.png)
 
-8.  After the install job completes successfully, click **View Job** link in the **Device updates** blade to monitor the installation. 
+8.  Assim que a instalação for concluída com êxito, clique na ligação **Ver Tarefa** no painel **Atualizações do dispositivo**, para monitorizar a instalação. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate15m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate15m.png)
 
-    This takes you to the **Install Updates** blade. You can view detailed information about the job here.
+    Esta ação irá encaminhá-lo para o painel **Atualizações de Instalação**. Pode ver informações detalhadas sobre a tarefa aqui.
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate16m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate16m.png)
 
-9. After the updates are successfully installed, you see a message to this effect in the Device updates blade. The software version also changes to **10.0.10288.0**. 
+9. Depois das atualizações são instaladas com êxito, verá uma mensagem para este efeito no painel de atualizações do dispositivo. A versão do software também altera para **10.0.10288.0**. 
 
-    ![update device](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate17m.png)
+    ![atualizar o dispositivo](../includes/media/storsimple-virtual-array-install-update-via-portal/azupdate17m.png)

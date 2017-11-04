@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/13/2017
 ms.author: ryanwi
-ms.openlocfilehash: d98d2823c19f24a2d9040f7959bd5189bd6bcc16
-ms.sourcegitcommit: ccb84f6b1d445d88b9870041c84cebd64fbdbc72
-ms.translationtype: HT
+ms.openlocfilehash: 8ff8c425189efdd7ea21984528bf7ea765e17955
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="deploy-api-management-with-service-fabric"></a>Implementar a gestão de API com o Service Fabric
 Este tutorial é parte dois de uma série. Este tutorial mostra como configurar [API Management do Azure](../api-management/api-management-key-concepts.md) com o Service Fabric para encaminhar o tráfego para um serviço de back-end no Service Fabric.  Quando tiver terminado, ter implementado a API Management para uma VNET, configurada uma operação de API para enviar o tráfego para serviços sem monitorização de estado de back-end. Para saber mais sobre os cenários de API Management do Azure com o Service Fabric, consulte o [descrição geral](service-fabric-api-management-overview.md) artigo.
@@ -384,7 +384,7 @@ ResourceGroupName="tutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="conclusion"></a>Conclusão
 Neste tutorial, ficou a saber como:
 
 > [!div class="checklist"]
@@ -393,7 +393,6 @@ Neste tutorial, ficou a saber como:
 > * Criar uma operação de API
 > * Configure uma política de back-end
 > * Adicionar a API para um produto
-
 
 [azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
 

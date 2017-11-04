@@ -1,10 +1,10 @@
-## <a name="java-sample-code-repositories"></a>Java sample code repositories
+## <a name="java-sample-code-repositories"></a>Repositórios de código de exemplo de Java
 
-Here is a list of all our sample repositories for the Azure Storage Java client library.
+Eis uma lista de todos os nossos repositórios de exemplo para a biblioteca de cliente de Java de armazenamento do Azure.
 
-* [Getting Started with Storage - Manage Storage Account in Java](https://azure.microsoft.com/resources/samples/storage-java-manage-storage-accounts/)
-* [Getting Started with Azure Blob Service in Java](https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/)
-* [Getting Started with Azure File Service in Java](https://azure.microsoft.com/resources/samples/storage-file-java-getting-started/)
-* [Getting Started with Azure Queue Service in Java](https://azure.microsoft.com/resources/samples/storage-queue-java-getting-started/)
-* [Getting Started with Azure Table Service in Java](https://azure.microsoft.com/resources/samples/storage-table-java-getting-started/)
-* [Storage Java Client Library Samples](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage)
+* [Introdução ao Storage - gerir a conta de armazenamento em Java](https://azure.microsoft.com/resources/samples/storage-java-manage-storage-accounts/)
+* [Introdução ao serviço Blob do Azure em Java](https://azure.microsoft.com/resources/samples/storage-blob-java-getting-started/)
+* [Introdução ao serviço de ficheiros do Azure em Java](https://azure.microsoft.com/resources/samples/storage-file-java-getting-started/)
+* [Introdução ao serviço de fila do Azure em Java](https://azure.microsoft.com/resources/samples/storage-queue-java-getting-started/)
+* [Introdução ao serviço de tabela do Azure em Java](https://azure.microsoft.com/resources/samples/storage-table-java-getting-started/)
+* [Exemplos de biblioteca de cliente de Java de armazenamento](https://github.com/Azure/azure-storage-java/tree/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage)

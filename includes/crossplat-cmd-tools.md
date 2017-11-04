@@ -59,7 +59,7 @@ Em seguida, importe o ficheiro `.publishsettings`. Para tal, execute o comando s
 
     azure account import {path to .publishsettings file}
 
-Pode utilizar o comando <code>account clear</code> para remover todas as informações armazenadas pelo comando <code>import</code>:
+Pode remover todas as informações armazenadas pelo <code>import</code> comando utilizando a <code>account clear</code> comando:
 
     azure account clear
 

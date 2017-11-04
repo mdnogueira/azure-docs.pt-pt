@@ -1,19 +1,19 @@
 
 
-In order to connect to **SharePoint Online**, you need to provide your identity (username and password, smart card credentials, etc.) to SharePoint Online. Once you've been authenticated, you can proceed to use the SharePoint Online connector  in your logic app. 
+Para se ligar aos **SharePoint Online**, tem de fornecer a sua identidade (nome de utilizador e palavra-passe, smart card credenciais, etc.) para o SharePoint Online. Uma vez que já foi autenticado, pode continuar a utilizar o conector do SharePoint Online na sua aplicação lógica. 
 
-While on the designer of your logic app, follow these steps to sign into SharePoint to create the **connection** for use in your logic app:
+Enquanto no designer da sua aplicação lógica, siga estes passos para iniciar sessão no SharePoint para criar o **ligação** para utilização na sua aplicação lógica:
 
-1. Enter SharePoint in the search box and wait for the search to return all triggers and actions related to SharePoint Online:   
-   ![Configure SharePoint][1]  
-2. Select the **SharePoint Online - When a file is created** trigger  
-3. Select **Sign in to SharePoint Online**:   
-   ![Configure SharePoint][2]    
-4. Provide your SharePoint credentials to sign in to authenticate with SharePoint   
-   ![Configure SharePoint][3]     
-5. After the authentication completes you'll be redirected to your logic app. That's it, the connection has been created. Notice the message at the bottom that indicates that you are now connected to SharePoint.  
-   ![Configure SharePoint][4]  
-6. You can then add other triggers and actions that you need to complete your logic app.   
+1. Introduza o SharePoint na caixa de pesquisa e aguarde que a procura para devolver todos os acionadores e ações relacionadas com o SharePoint Online:   
+   ![Configurar o SharePoint][1]  
+2. Selecione o **SharePoint Online - quando é criado um ficheiro** acionador  
+3. Selecione **iniciar sessão no SharePoint Online**:   
+   ![Configurar o SharePoint][2]    
+4. Fornecer as credenciais do SharePoint para iniciar sessão autenticar com o SharePoint   
+   ![Configurar o SharePoint][3]     
+5. Depois de concluir a autenticação irá ser redirecionados para a sua aplicação lógica. Já está, a ligação foi criada. Tenha em atenção a mensagem na parte inferior que indica que está agora ligado ao SharePoint.  
+   ![Configurar o SharePoint][4]  
+6. Em seguida, pode adicionar outros acionadores e ações que precisa para concluir a sua aplicação lógica.   
 
 [1]: ./media/connectors-create-api-sharepointonline/connectionconfig1.png
 [2]: ./media/connectors-create-api-sharepointonline/connectionconfig2.png 

@@ -1,17 +1,17 @@
-## <a name="prerequisites"></a>Prerequisites
-The Azure Toolkit for IntelliJ requires the following software components:
+## <a name="prerequisites"></a>Pré-requisitos
+O Toolkit do Azure para o IntelliJ requer os seguintes componentes de software:
 
-* IntelliJ IDEA Ultimate Edition, which can be downloaded from the [JetBrains website](https://www.jetbrains.com/idea/download/).
+* IntelliJ IDEA Ultimate Edition, que pode ser transferido a partir de [JetBrains site](https://www.jetbrains.com/idea/download/).
 
-* A Java Developer Kit (JDK), version 1.8 or later.
+* Um Java Developer Kit (JDK), versão 1.8 ou posterior.
 
-* An Azure subscription, which can be acquired from <https://azure.microsoft.com/free/> or <http://azure.microsoft.com/pricing/purchase-options/>.
+* Uma subscrição do Azure, o que é possível adquirir de <https://azure.microsoft.com/free/> ou <http://azure.microsoft.com/pricing/purchase-options/>.
 
-* An operating system. The Azure Toolkit for IntelliJ has been tested on the following operating systems:
+* Um sistema operativo. O Toolkit do Azure para o IntelliJ foi testado nos seguintes sistemas operativos:
   
-  * Windows 10, Windows 8.1, Windows 8, and Windows 7
-  * Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, and Windows Server 2008
-  * [Mac OS X](http://www.apple.com/osx) version "Yosemite" or later
-  * [Ubuntu Linux](http://www.ubuntu.com) version 14, 15, and 16
+  * Windows 10, Windows 8.1, Windows 8 e Windows 7
+  * Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
+  * [Mac OS X](http://www.apple.com/osx) versão "Yosemite" ou posterior
+  * [Ubuntu Linux](http://www.ubuntu.com) versão 14, 15 e 16
 
-For more information, see the [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) page at the JetBrains Plugin Repository.
+Para obter mais informações, consulte o [Toolkit do Azure para o IntelliJ](https://plugins.jetbrains.com/plugin/8053) página no repositório de plug-in JetBrains.

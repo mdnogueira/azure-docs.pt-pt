@@ -3,25 +3,25 @@ title: "O que é o Azure Application Insights? | Microsoft Docs"
 description: "Gestão de Desempenho de Aplicações e controlo da utilização da sua aplicação Web publicada.  Detete, faça a triagem, diagnostique problemas e veja como é que as pessoas utilizam a sua aplicação."
 services: application-insights
 documentationcenter: 
-author: CFreemanwa
+author: mrbullwinkle
 manager: carmonm
 ms.assetid: 379721d1-0f82-445a-b416-45b94cb969ec
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: overview
+ms.custom: mvc
 ms.date: 05/14/2017
-ms.author: bwren
-ms.translationtype: HT
-ms.sourcegitcommit: b6c65c53d96f4adb8719c27ed270e973b5a7ff23
-ms.openlocfilehash: d06bb37ba38ad7bc2b9b3c5c09b45be6c7fd17bb
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/17/2017
-
+ms.author: mbullwin
+ms.openlocfilehash: 7910540add4092e1b5822a7525bec912befd80e7
+ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="what-is-application-insights"></a>O que é o Application Insights?
-O Application Insights é um serviço de Gestão de Desempenho de Aplicações (APM) extensível para programadores Web em várias plataformas. Utilize-o para monitorizar a sua aplicação Web online. Além de detetar automaticamente anomalias de desempenho, inclui ferramentas de análise poderosas para o ajudar a diagnosticar problemas e a compreender o que os utilizadores efetivamente fazem com a sua aplicação.  Foi concebido para o ajudar a melhorar continuamente o desempenho e a usabilidade. Funciona para aplicações em diversas plataformas, incluindo .NET, Node.js e J2EE, alojadas no local ou na cloud. Integra-se com o seu processo de devOps e tem pontos de ligação a diversas outras ferramentas de programação.
+O Application Insights é um serviço de Gestão de Desempenho de Aplicações (APM) extensível para programadores Web em várias plataformas. Utilize-o para monitorizar a sua aplicação Web online. Além de detetar automaticamente anomalias de desempenho, inclui ferramentas de análise poderosas para o ajudar a diagnosticar problemas e a compreender o que os utilizadores efetivamente fazem com a sua aplicação.  Foi concebido para o ajudar a melhorar continuamente o desempenho e a usabilidade. Funciona para aplicações em diversas plataformas, incluindo .NET, Node.js e J2EE, alojadas no local ou na cloud. Integra-se com o processo de DevOps e pontos de ligação a uma variedade de ferramentas de desenvolvimento. Pode monitorizar e analisar a telemetria de aplicações móveis através da integração com o Visual Studio Mobile Center e o HockeyApp.
 
 ![Crie gráficos com estatísticas de atividades dos utilizadores ou analise pormenorizadamente eventos específicos.](./media/app-insights-overview/00-sample.png)
 
@@ -117,6 +117,7 @@ Existem várias formas de começar. Comece com a que funcionar melhor para si. P
   * [Node.js](app-insights-nodejs.md)
   * [Outras plataformas](app-insights-platforms.md)
 * **[Instrumente as suas páginas Web](app-insights-javascript.md)** para visualização de páginas, AJAX e outra telemetria do lado do cliente.
+* **[Analisar a utilização de aplicações móveis](app-insights-mobile-center-quickstart.md)**  através da integração com o Visual Studio Mobile Center.
 * **[Testes de disponibilidade](app-insights-monitor-web-app-availability.md)** - envie um ping ao seu Web site regularmente a partir dos nossos servidores.
 
 
@@ -163,4 +164,3 @@ Introdução no momento de programação com:
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
-

@@ -1,51 +1,51 @@
 
 <a name="cs_0_csharpprogramexample_h2"/>
 
-## <a name="c-program-example"></a>C# program example
+## <a name="c-program-example"></a>Exemplo de programa c#
 
-The next sections of this article present a C# program that uses ADO.NET to send Transact-SQL statements to the SQL database. The C# program performs the following actions:
+As secções seguintes deste artigo apresentam um programa c# que utiliza ADO.NET para enviar instruções Transact-SQL para a base de dados do SQL Server. O programa c# efetua as seguintes ações:
 
-1. [Connects to our SQL database using ADO.NET](#cs_1_connect).
-2. [Creates tables](#cs_2_createtables).
-3. [Populates the tables with data, by issuing T-SQL INSERT statements](#cs_3_insert).
-4. [Updates data by use of a join](#cs_4_updatejoin).
-5. [Deletes data by use of a join](#cs_5_deletejoin).
-6. [Selects data rows by use of a join](#cs_6_selectrows).
-7. Closes the connection (which drops any temporary tables from tempdb).
+1. [Estabelece ligação à nossa base de dados do SQL Server utilizando ADO.NET](#cs_1_connect).
+2. [Cria tabelas](#cs_2_createtables).
+3. [Preenche as tabelas com dados, através da emissão de instruções INSERT T-SQL](#cs_3_insert).
+4. [Atualizações de dados através de uma associação](#cs_4_updatejoin).
+5. [Elimina os dados através de uma associação](#cs_5_deletejoin).
+6. [Seleciona as linhas de dados através de uma associação](#cs_6_selectrows).
+7. Fecha a ligação (que ignora quaisquer tabelas temporárias de tempdb).
 
-The C# program contains:
+O programa c# contém:
 
-- C# code to connect to the database.
-- Methods that return the T-SQL source code.
-- Two methods that submit the T-SQL to the database.
+- Código c# para ligar à base de dados.
+- Métodos de devolverem o código de origem de T-SQL.
+- Dois métodos que submetem T-SQL na base de dados.
 
-#### <a name="to-compile-and-run"></a>To compile and run
+#### <a name="to-compile-and-run"></a>Para compilar e executar
 
-This C# program is logically one .cs file. But here the program is physically divided into several code blocks, to make each block easier to see and understand. To compile and run this program, do the following:
+Este programa c# está logicamente um ficheiro de CS. Mas aqui o programa fisicamente está dividido em vários blocos de código, para facilitar a cada bloco e compreender. Para compilar e executar este programa, efetue o seguinte:
 
-1. Create a C# project in Visual Studio.
-    - The project type should be a *console* application, from something like the following hierarchy: **Templates** > **Visual C#** > **Windows Classic Desktop** > **Console App (.NET Framework)**.
-3. In the file **Program.cs**, erase the small starter lines of code.
-3. Into Program.cs, copy and paste each of the following blocks, in the same sequence they are presented here.
-4. In Program.cs, edit the following values in the **Main** method:
+1. Crie um projeto c# no Visual Studio.
+    - O tipo de projeto deve ser um *consola* aplicação, de algo semelhante a hierarquia seguinte: **modelos** > **Visual c#** >  **Ambiente de trabalho clássico do Windows** > **(.NET Framework) de aplicação de consola**.
+3. No ficheiro **Program.cs**, apagar as linhas de pequenas arranque de código.
+3. Em Program.cs, copiar e colar cada um dos seguintes blocos, a mesma sequência que são apresentados aqui.
+4. Em Program.cs, editar os seguintes valores no **Main** método:
 
-   - **cb.DataSource**
-   - **cd.UserID**
-   - **cb.Password**
+   - **CB. Origem de dados**
+   - **CD. ID de utilizador**
+   - **CB. Palavra-passe**
    - **InitialCatalog**
 
-5. Verify that the assembly **System.Data.dll** is referenced. To verify, expand the **References** node in the **Solution Explorer** pane.
-6. To build the program in Visual Studio, click the **Build** menu.
-7. To run the program from Visual Studio, click the **Start** button. The report output is displayed in a cmd.exe window.
+5. Certifique-se de que a assemblagem **System.Data.dll** é referenciado. Para verificar, expanda o **referências** no nó de **Explorador de soluções** painel.
+6. Para criar o programa no Visual Studio, clique em de **criar** menu.
+7. Para executar o programa a partir do Visual Studio, clique em de **iniciar** botão. A saída de relatório é apresentada numa janela cmd.exe.
 
 > [!NOTE]
-> You have the option of editing the T-SQL to add a leading **#** to the table names, which creates them as temporary tables in **tempdb**. This can be useful for demonstration purposes, when no test database is available. Temporary tables are deleted automatically when the connection closes. Any REFERENCES for foreign keys are not enforced for temporary tables.
+> Tem a opção de editar o T-SQL para adicionar à esquerda  **#**  para os nomes de tabela, que cria tabelas temporárias como no **tempdb**. Isto pode ser útil para fins de demonstração, se não estiver disponível nenhuma base de dados de teste. Tabelas temporárias são eliminadas automaticamente quando fecha a ligação. Quaisquer referências para as chaves externas não são impostas para tabelas temporárias.
 >
 
 <a name="cs_1_connect"/>
-### <a name="c-block-1-connect-by-using-adonet"></a>C# block 1: Connect by using ADO.NET
+### <a name="c-block-1-connect-by-using-adonet"></a>C# bloco 1: ligar utilizando ADO.NET
 
-- [Next](#cs_2_createtables)
+- [Seguinte](#cs_2_createtables)
 
 
 ```csharp
@@ -99,9 +99,9 @@ namespace csharp_db_test
 
 
 <a name="cs_2_createtables"/>
-### <a name="c-block-2-t-sql-to-create-tables"></a>C# block 2: T-SQL to create tables
+### <a name="c-block-2-t-sql-to-create-tables"></a>C# bloco 2: T-SQL para criar tabelas
 
-- [Previous](#cs_1_connect) &nbsp; / &nbsp; [Next](#cs_3_insert)
+- [Anterior](#cs_1_connect) &nbsp;  /  &nbsp; [seguinte](#cs_3_insert)
 
 ```csharp
       static string Build_2_Tsql_CreateTables()
@@ -131,19 +131,19 @@ CREATE TABLE tabEmployee
       }
 ```
 
-#### <a name="entity-relationship-diagram-erd"></a>Entity Relationship Diagram (ERD)
+#### <a name="entity-relationship-diagram-erd"></a>Diagrama de relação de entidade (ERD)
 
-The preceding CREATE TABLE statements involve the **REFERENCES** keyword to create a *foreign key* (FK) relationship between two tables.  If you are using tempdb, comment out the `--REFERENCES` keyword using a pair of leading dashes.
+As instruções CREATE TABLE anteriores envolvem o **referências** palavra-chave para criar um *chave externa* relação (FK) entre duas tabelas.  Se estiver a utilizar tempdb, comente o `--REFERENCES` palavra-chave através de um par de traços à esquerda.
 
-Next is an ERD that displays the relationship between the two tables. The values in the #tabEmployee.DepartmentCode *child* column are limited to the values present in the #tabDepartment.Department *parent* column.
+Em seguida, é um ERD que mostra a relação entre duas tabelas. Os valores existentes no #tabEmployee.DepartmentCode *subordinado* coluna estão limitados aos valores presentes no #tabDepartment.Department *principal* coluna.
 
-![ERD showing foreign key](./media/sql-database-csharp-adonet-create-query-2/erd-dept-empl-fky-2.png)
+![Chave externa da apresentação ERD](./media/sql-database-csharp-adonet-create-query-2/erd-dept-empl-fky-2.png)
 
 
 <a name="cs_3_insert"/>
-### <a name="c-block-3-t-sql-to-insert-data"></a>C# block 3: T-SQL to insert data
+### <a name="c-block-3-t-sql-to-insert-data"></a>C# bloco 3: T-SQL ao inserir dados
 
-- [Previous](#cs_2_createtables) &nbsp; / &nbsp; [Next](#cs_4_updatejoin)
+- [Anterior](#cs_2_createtables) &nbsp;  /  &nbsp; [seguinte](#cs_4_updatejoin)
 
 
 ```csharp
@@ -173,9 +173,9 @@ INSERT INTO tabEmployee
 
 
 <a name="cs_4_updatejoin"/>
-### <a name="c-block-4-t-sql-to-update-join"></a>C# block 4: T-SQL to update-join
+### <a name="c-block-4-t-sql-to-update-join"></a>C# bloco 4: T-SQL para associação de atualização
 
-- [Previous](#cs_3_insert) &nbsp; / &nbsp; [Next](#cs_5_deletejoin)
+- [Anterior](#cs_3_insert) &nbsp;  /  &nbsp; [seguinte](#cs_5_deletejoin)
 
 
 ```csharp
@@ -201,9 +201,9 @@ UPDATE empl
 
 
 <a name="cs_5_deletejoin"/>
-### <a name="c-block-5-t-sql-to-delete-join"></a>C# block 5: T-SQL to delete-join
+### <a name="c-block-5-t-sql-to-delete-join"></a>C# bloco 5: T-SQL para eliminar a associação
 
-- [Previous](#cs_4_updatejoin) &nbsp; / &nbsp; [Next](#cs_6_selectrows)
+- [Anterior](#cs_4_updatejoin) &nbsp;  /  &nbsp; [seguinte](#cs_6_selectrows)
 
 
 ```csharp
@@ -233,9 +233,9 @@ DELETE tabDepartment
 
 
 <a name="cs_6_selectrows"/>
-### <a name="c-block-6-t-sql-to-select-rows"></a>C# block 6: T-SQL to select rows
+### <a name="c-block-6-t-sql-to-select-rows"></a>C# bloco 6: T-SQL para selecionar as linhas
 
-- [Previous](#cs_5_deletejoin) &nbsp; / &nbsp; [Next](#cs_6b_datareader)
+- [Anterior](#cs_5_deletejoin) &nbsp;  /  &nbsp; [seguinte](#cs_6b_datareader)
 
 
 ```csharp
@@ -261,11 +261,11 @@ SELECT
 
 
 <a name="cs_6b_datareader"/>
-### <a name="c-block-6b-executereader"></a>C# block 6b: ExecuteReader
+### <a name="c-block-6b-executereader"></a>C# bloco 6b: ExecuteReader
 
-- [Previous](#cs_6_selectrows) &nbsp; / &nbsp; [Next](#cs_7_executenonquery)
+- [Anterior](#cs_6_selectrows) &nbsp;  /  &nbsp; [seguinte](#cs_7_executenonquery)
 
-This method is designed to run the T-SQL SELECT statement that is built by the **Build_6_Tsql_SelectEmployees** method.
+Este método é concebido para ser executado a instrução de SELECIONAR o T-SQL é composta pelo **Build_6_Tsql_SelectEmployees** método.
 
 
 ```csharp
@@ -297,11 +297,11 @@ This method is designed to run the T-SQL SELECT statement that is built by the *
 
 
 <a name="cs_7_executenonquery"/>
-### <a name="c-block-7-executenonquery"></a>C# block 7: ExecuteNonQuery
+### <a name="c-block-7-executenonquery"></a>C# bloco 7: ExecuteNonQuery
 
-- [Previous](#cs_6b_datareader) &nbsp; / &nbsp; [Next](#cs_8_output)
+- [Anterior](#cs_6b_datareader) &nbsp;  /  &nbsp; [seguinte](#cs_8_output)
 
-This method is called for operations that modify the data content of tables without returning any data rows.
+Este método é denominado para operações que modificam o conteúdo de dados de tabelas sem devolver quaisquer linhas de dados.
 
 
 ```csharp
@@ -335,11 +335,11 @@ This method is called for operations that modify the data content of tables with
 
 
 <a name="cs_8_output"/>
-### <a name="c-block-8-actual-test-output-to-the-console"></a>C# block 8: Actual test output to the console
+### <a name="c-block-8-actual-test-output-to-the-console"></a>C# bloco 8: resultado do teste real para a consola do
 
-- [Previous](#cs_7_executenonquery)
+- [Anterior](#cs_7_executenonquery)
 
-This section captures the output that the program sent to the console. Only the guid values vary between test runs.
+Esta secção capturas de saída que o programa enviado para a consola. Apenas os valores de guid variam entre execuções do teste.
 
 
 ```text

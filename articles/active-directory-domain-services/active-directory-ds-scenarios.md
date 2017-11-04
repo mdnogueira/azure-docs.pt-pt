@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2017
 ms.author: maheshu
-ms.openlocfilehash: b73bfc7703d79681f0de345f4ec994da540aa2a5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: fc1aa4d778a6232258470fc9a58a98906c86ec7b
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="deployment-scenarios-and-use-cases"></a>Cenários de implementação e casos de utilização
 Nesta secção, vamos ver alguns cenários e casos de utilização que beneficiam dos serviços de domínio do Azure Active Directory (AD).
@@ -85,4 +85,4 @@ Para obter mais informações sobre este cenário de implementação, consulte c
 ## <a name="domain-joined-hdinsight-clusters-preview"></a>Clusters do HDInsight associados a um domínio (pré-visualização)
 Pode configurar um cluster do HDInsight do Azure que está associado a um domínio gerido dos serviços de domínio do Azure AD com Ranger Apache ativada. Criar e aplicar políticas de ramo de registo através do Apache Ranger e permitir que os utilizadores (por exemplo, cientistas de dados) ligar ao ramo de registo utilizando ferramentas baseadas em ODBC, por exemplo, Excel, Tableau etc. Microsoft está a trabalhar na adição de outras cargas de trabalho, como o HBase, Spark e Storm, para o HDInsight associados a um domínio em breve.
 
-Para obter mais informações sobre este cenário de implementação, consulte como [configurar clusters do HDInsight associados a um domínio](../hdinsight/hdinsight-domain-joined-configure.md)
+Para obter mais informações sobre este cenário de implementação, consulte como [configurar clusters do HDInsight associados a um domínio](../hdinsight/domain-joined/apache-domain-joined-configure.md)

@@ -1,4 +1,4 @@
-1. Copy the installer to a local folder (for example, C:\Temp) on the server that you want to protect. Run the following commands as an administrator at a command prompt:
+1. Copie o instalador para uma pasta local (por exemplo, C:\Temp) no servidor que pretende proteger. Execute os seguintes comandos como administrador, numa linha de comandos:
 
   ```
   cd C:\Temp
@@ -6,47 +6,47 @@
   MobilityServiceInstaller.exe /q /x:C:\Temp\Extracted
   cd C:\Temp\Extracted.
   ```
-2. To install Mobility Service, run the following command:
+2. Para instalar o serviço de mobilidade, execute o seguinte comando:
 
   ```
   UnifiedAgent.exe /Role "MS" /InstallLocation "C:\Program Files (x86)\Microsoft Azure Site Recovery" /Platform "VmWare" /Silent
   ```
-3. Now the agent needs to be registered with the Configuration Server.
+3. Agora o agente tem de ser registado com o servidor de configuração.
 
   ```
   cd C:\Program Files (x86)\Microsoft Azure Site Recovery\agent
   UnifiedAgentConfigurator.exe”  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
   ```
 
-#### <a name="mobility-service-installer-command-line-arguments"></a>Mobility Service installer command-line arguments
+#### <a name="mobility-service-installer-command-line-arguments"></a>Argumentos da linha de comandos de instalador do serviço de mobilidade
 
 ```
 Usage :
 UnifiedAgent.exe /Role <MS|MT> /InstallLocation <Install Location> /Platform “VmWare” /Silent
 ```
 
-| Parameter|Type|Description|Possible values|
+| Parâmetro|Tipo|Descrição|Valores possíveis|
 |-|-|-|-|
-|/Role|Mandatory|Specifies whether Mobility Service (MS) should be installed or MasterTarget(MT) should be installed|MS </br> MT|
-|/InstallLocation|Optional|Location where Mobility Service is installed|Any folder on the computer|
-|/Platform|Mandatory|Specifies the platform on which the Mobility Service is getting installed </br> </br>- **VMware** : use this value if you are installing mobility service on a VM running on *VMware vSphere ESXi Hosts*, *Hyper-V Hosts* and *Phsyical Servers* </br> - **Azure** : use this value if you are installing agent on a Azure IaaS VM| VMware </br> Azure|
-|/Silent|Optional|Specifies to run the installer in silent mode| NA|
+|/ Função|Obrigatório|Especifica se deve ser instalado o serviço de mobilidade (MS) ou MasterTarget(MT) deve ser instalado|MS </br> MT|
+|/InstallLocation|Opcional|Localização onde o serviço de mobilidade está instalado|Qualquer pasta no computador|
+|/ Plataforma|Obrigatório|Especifica a plataforma em que o serviço de mobilidade está a obter instalado </br> </br>- **VMware** : Utilize este valor se estiver a instalar o serviço de mobilidade numa VM em execução no *VMware vSphere anfitriões ESXi*, *anfitriões Hyper-V* e *Phsyical servidores* </br> - **Azure** : Utilize este valor se estiver a instalar o agente de uma VM do IaaS do Azure| VMware </br> Azure|
+|/ Automática|Opcional|Especifica a executar o programa de instalação no modo silencioso| ND|
 
 >[!TIP]
-> The setup logs can be found under %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log
+> Os registos de configuração podem ser encontrados em %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log
 
-#### <a name="mobility-service-registration-command-line-arguments"></a>Mobility Service registration command-line arguments
+#### <a name="mobility-service-registration-command-line-arguments"></a>Argumentos da linha de comandos de registo do serviço de mobilidade
 
 ```
 Usage :
 UnifiedAgentConfigurator.exe”  /CSEndPoint <CSIP> /PassphraseFilePath <PassphraseFilePath>
 ```
 
-  | Parameter|Type|Description|Possible values|
+  | Parâmetro|Tipo|Descrição|Valores possíveis|
   |-|-|-|-|
-  |/CSEndPoint |Mandatory|IP address of the configuration server| Any valid IP address|
-  |/PassphraseFilePath|Mandatory|Location of the passphrase |Any valid UNC or local file path|
+  |/ CSEndPoint |Obrigatório|Endereço IP do servidor de configuração| Qualquer endereço IP válido|
+  |/PassphraseFilePath|Obrigatório|Localização do frase de acesso |Qualquer UNC válido ou o caminho do ficheiro local|
 
 
 >[!TIP]
-> The AgentConfiguration logs can be found under %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log
+> Os registos de AgentConfiguration podem ser encontrados em %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log

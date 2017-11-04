@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 09/21/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 24b8a9852395c26a40adb406bd706283e1a96d5d
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
-ms.translationtype: HT
+ms.openlocfilehash: 2eeb49cb6ab39c78612e0f1b3e08130ba88cf356
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="how-to-troubleshoot-self-service-password-reset"></a>Como resolver problemas de reposição de palavra-passe self-service
 
@@ -102,6 +102,7 @@ Se estiver a ter problemas com a reposição de palavra-passe self-service, os i
 | Código | Nome do/mensagem | Descrição |
 | --- | --- | --- |
 | 6329 | BAIL: MMS(4924) 0x80230619 – "uma restrição impede a palavra-passe a ser alterada para o atual especificado." | Este evento ocorre quando o serviço de repetição de escrita de palavras-passe tenta definir uma palavra-passe no diretório no local que não cumprem a idade da palavra-passe, histórico, complexidade ou requisitos de filtragem do domínio. <br> <br> Se tiver uma antiguidade mínima da palavra-passe e tiver alterado recentemente a palavra-passe dentro desse período de tempo, não é possível alterar a palavra-passe novamente até atingir a duração especificada no seu domínio. Para fins de teste, antiguidade mínima deve ser definida como 0. <br> <br> Se tiver requisitos de histórico de palavras-passe ativados, então tem de selecionar uma palavra-passe que não tenha sido utilizada nas últimas vezes N, em que N é a definição do histórico de palavra-passe. Se selecionar uma palavra-passe que foi utilizada nas últimas vezes N, em seguida, verá uma falha neste caso. Para fins de teste, histórico deve ser definido como 0. <br> <br> Se tiver requisitos de complexidade de palavra-passe, todos eles são aplicados quando o utilizador tenta alterar ou repor uma palavra-passe. <br> <br> Se tiver ativados de filtros de palavra-passe e um utilizador seleccionar uma palavra-passe que não cumpre os critérios de filtragem, em seguida, a reposição ou falha da operação de alteração. |
+| 6329 | MMS(3040): admaexport.cpp(2837): O servidor não contém o controlo de política de palavra-passe LDAP. | Este problema ocorre se o controlo LDAP_SERVER_POLICY_HINTS_OID (1.2.840.113556.1.4.2066) não está ativado nos controladores de domínio. Para utilizar a funcionalidade de repetição de escrita de palavras-passe, tem de ativar o controlo. Para tal, os controladores de domínio tem de ser no Windows Server 2008 (com SP mais recente) ou posterior. Se os DCs estão no 2008 (pré-R2), em seguida, também tem de aplicar correção [KB2386717](http://support.microsoft.com/kb/2386717). |
 | HR 8023042 | Motor de sincronização devolveu um erro hr = 80230402, mensagem = uma tentativa de obtenção de um objeto falhou porque não existem entradas duplicadas com a mesma âncora | Este evento ocorre quando o mesmo id de utilizador está ativado em vários domínios. Por exemplo, se estiver a sincronizar a florestas de recursos/conta e ter o mesmo id de utilizador presente e ativado em cada um, este erro pode ocorrer. <br> <br> Este erro também pode ocorrer se estiver a utilizar um atributo âncora não exclusivo (como alias ou UPN) e dois utilizadores partilham esse mesmo atributo de âncora. <br> <br> Para resolver este problema, certifique-se de que não têm quaisquer utilizadores duplicados dentro os domínios e que está a utilizar um atributo âncora exclusivo para cada utilizador. |
 
 ### <a name="source-of-event-is-passwordresetservice"></a>Origem do evento é PasswordResetService

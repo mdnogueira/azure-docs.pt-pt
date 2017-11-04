@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 08/28/2017
 ms.author: nitinme
-ms.openlocfilehash: 5c3e4a4d98922533bcf901108d58329cb951b01c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: c48c0931ede6d17078c64cbb1e1dacd21098f792
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="using-azure-data-lake-store-for-big-data-requirements"></a>Utilizar o Azure Data Lake Store para requisitos de macrodados
 Existem quatro fases principais grande de processamento de dados:
@@ -49,7 +49,7 @@ Representa os dados que podem ser gerados por várias origens, como aplicações
 Seguem-se as ferramentas que pode utilizar:
 
 * [O Azure Stream Analytics](../stream-analytics/stream-analytics-data-lake-output.md) -eventos ingeridos para os Event Hubs podem ser escritos para o Azure Data Lake utilizando uma saída de Azure Data Lake Store.
-* [Azure HDInsight Storm](../hdinsight/hdinsight-storm-write-data-lake-store.md) -pode escrever dados diretamente para o Data Lake Store a partir do cluster do Storm.
+* [Azure HDInsight Storm](../hdinsight/storm/apache-storm-write-data-lake-store.md) -pode escrever dados diretamente para o Data Lake Store a partir do cluster do Storm.
 * [EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md) – pode receber eventos de Event Hubs e, em seguida, gravá-lo para o Data Lake Store utilizando o [SDK .NET do Data Lake Store](data-lake-store-get-started-net-sdk.md).
 
 ### <a name="relational-data"></a>Dados relacionais

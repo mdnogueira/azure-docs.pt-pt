@@ -79,8 +79,6 @@
   items:
     - name: Recuperação após desastre
       items:
-        - name: VMs VMware com suporte multi-inquilino para o Azure
-          href: site-recovery-multi-tenant-support-vmware-using-csp.md
         - name: VMs de Hyper-V para o Azure
           href: tutorial-hyper-v-to-azure.md
         - name: Servidores físicos para o Azure
@@ -99,6 +97,8 @@
           href: tutorial-hyper-v-to-azure-failover-failback.md
         - name: Executar uma ativação pós-falha e uma reativação pós-falha entre sites no local
           href: tutorial-vmm-to-vmm-failover-failback.md
+        - name: VMs VMware com suporte multi-inquilino para o Azure
+          href: site-recovery-multi-tenant-support-vmware-using-csp.md
     - name: Capacidade e dimensionamento
       items:
         - name: Planeamento de capacidade para replicação de VMware para o Azure
@@ -203,6 +203,8 @@
           href: 'site-recovery-workload.md#protect-exchange'
         - name: SAP
           href: site-recovery-sap.md
+        - name: Servidor de Ficheiros
+          href: file-server-disaster-recovery.md
         - name: Aplicações Web com base no IIS
           href: site-recovery-iis.md
         - name: Citrix XenApp e XenDesktop

@@ -1,6 +1,6 @@
 ---
-title: Understanding DNS in Azure Stack | Microsoft Docs
-description: Understanding DNS features and capabilities in Azure Stack
+title: Compreender o DNS na pilha do Azure | Microsoft Docs
+description: "A compreensão das funcionalidades DNS e capacidades na pilha do Azure"
 services: azure-stack
 documentationcenter: 
 author: ScottNapolitan
@@ -14,45 +14,43 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 9/25/2017
 ms.author: scottnap
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: 8c023eda179ace41a082bf4a4fadc281c14db7ba
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="introducing-idns-for-azure-stack"></a>Introducing iDNS for Azure Stack
+# <a name="introducing-idns-for-azure-stack"></a>Introdução ao iDNS para pilha do Azure
 
-*Applies to: Azure Stack integrated systems and Azure Stack Development Kit*
+*Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
-iDNS is a feature in Azure Stack that allows you to resolve external DNS names (such as http://www.bing.com).
-It also allows you to register internal virtual network names. By doing so, you can resolve VMs on the same virtual network by name rather than IP address, without having to provide custom DNS server entries.
+iDNS é uma funcionalidade na pilha do Azure que permite-lhe resolver nomes DNS externos (tal como http://www.bing.com).
+Também permite-lhe registar nomes de rede virtual interna. Ao fazê-lo, pode resolver VMs na mesma rede virtual por nome em vez de endereço IP, sem ter de fornecer as entradas de servidor DNS personalizadas.
 
-It’s something that’s always been there in Azure, but it's available in Windows Server 2016 and Azure Stack too.
+É algo que foi sempre existe no Azure, mas está disponível no Windows Server 2016 e o Azure pilha demasiado.
 
-## <a name="what-does-idns-do"></a>What does iDNS do?
-With iDNS in Azure Stack, you get the following capabilities, without having to specify custom DNS server entries.
+## <a name="what-does-idns-do"></a>O que fazer iDNS?
+Com iDNS na pilha do Azure, obtenha as seguintes capacidades, sem ter de especificar as entradas de servidor DNS personalizadas.
 
-* Shared DNS name resolution services for tenant workloads.
-* Authoritative DNS service for name resolution and DNS registration within the tenant virtual network.
-* Recursive DNS service for resolution of Internet names from tenant VMs. Tenants no longer need to specify custom DNS entries to resolve Internet names (for example, www.bing.com).
+* Partilhado serviços de resolução de nome DNS para cargas de trabalho inquilinas.
+* Serviço DNS autoritativo para a resolução do nome e o registo DNS na rede virtual de inquilino.
+* Serviço DNS recursivo para a resolução de nomes de Internet de VMs inquilinas. Os inquilinos já não tem de especificar as entradas de DNS personalizadas para resolver nomes de Internet (por exemplo, www.bing.com).
 
-You can still bring your own DNS and use custom DNS servers if you want. But now, if you just want to be able to resolve Internet DNS names and be able to connect to other virtual machines in the same virtual network, you don’t need to specify anything and it will just work.
+Pode ainda traga a sua própria DNS e utilizar servidores DNS personalizados, se pretender. Mas, agora, se acabou pretender ser capaz de resolver os nomes de DNS da Internet e de conseguir estabelecer ligação com outras máquinas virtuais na mesma rede virtual, não precisa de especificar nada e irá funcionar normalmente.
 
-## <a name="what-does-idns-not-do"></a>What does iDNS not do?
-What iDNS does not allow you to do is create a DNS record for a name that can be resolved from outside the virtual network.
+## <a name="what-does-idns-not-do"></a>O que faz iDNS não?
+Que iDNS não permite-lhe fazer é criar um registo DNS para um nome que pode ser resolvido a partir de fora da rede virtual.
 
-In Azure, you have the option of specifying a DNS name label that can be associated with a public IP address. You can choose the label (prefix), but Azure chooses the suffix, which is based on the region in which you create the public IP address.
+No Azure, tem a opção de especificar uma etiqueta de nome DNS que pode ser associada com um endereço IP público. Pode escolher a etiqueta (prefixo), mas o Azure escolhe o sufixo, que se baseia na região na qual criar o endereço IP público.
 
-![Screenshot of DNS name label](media/azure-stack-understanding-dns-in-tp2/image3.png)
+![Etiqueta de nome de captura de ecrã do DNS](media/azure-stack-understanding-dns-in-tp2/image3.png)
 
-In the image above, Azure will create an “A” record in DNS for the DNS name label specified under the zone **westus.cloudapp.azure.com**. The prefix and the suffix together compose a Fully Qualified Domain Name (FQDN) that can be resolved from anywhere on the public Internet.
+Na imagem que se segue, Azure irá criar um registo "A no DNS para a etiqueta do nome DNS especificado na zona" **westus.cloudapp.azure.com**. O prefixo e o sufixo em conjunto, compõem um completamente qualificado domínio nome (FQDN) que pode ser resolvido a partir em qualquer lugar na Internet pública.
 
-Azure Stack only supports iDNS for internal name registration, so it cannot do the following.
+Pilha do Azure só suporta iDNS para o registo do nome interno, pelo que não é possível efetuar o seguinte.
 
-* Create a DNS record under an existing hosted DNS zone (for example, local.azurestack.external).
-* Create a DNS zone (such as Contoso.com).
-* Create a record under your own custom DNS zone.
-* Support the purchase of domain names.
-
+* Crie um registo DNS sob uma zona DNS alojada existente (por exemplo, local.azurestack.external).
+* Crie uma zona DNS (por exemplo, Contoso.com).
+* Crie um registo na sua própria zona DNS personalizado.
+* Suporta a compra de nomes de domínio.
 

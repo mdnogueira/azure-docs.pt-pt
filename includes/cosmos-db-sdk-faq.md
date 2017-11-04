@@ -1,24 +1,24 @@
-**1. How will customers be notified of the retiring SDK?**
+**1. Como os clientes receberá do retiring SDK?**
 
-Microsoft will provide 12 month advance notification to the end of support of the retiring SDK in order to facilitate a smooth transition to a supported SDK. Further, customers will be notified through various communication channels – Azure Management Portal, Developer Center, blog post, and direct communication to assigned service administrators.
+A Microsoft vai fornecer mês 12 notificação antecipada ao fim do suporte do retiring SDK para facilitar uma transição tranquila para um SDK suportado. Além disso, os clientes serão notificados através de vários comunicação canais – o Portal de gestão do Azure, Developer Center, mensagem de blogue, e comunicação direta para atribuídos os administradores de serviço.
 
-**2. Can customers author applications using a "to-be" retired Azure Cosmos DB SDK during the 12 month period?** 
+**2. Podem aos clientes criar aplicações com um "restaurar" extinto Azure Cosmos DB SDK durante o período de 12 meses?** 
 
-Yes, customers will have full access to author, deploy and modify applications using the "to-be" retired Azure Cosmos DB SDK during the 12 month grace period. During the 12 month grace period, customers are advised to migrate to a newer supported version of Azure Cosmos DB SDK as appropriate.
+Sim, os clientes terão acesso total para criar, implementar e modificação das aplicações utilizando o "restaurar" extinto Azure Cosmos DB SDK durante o período de tolerância de 12 meses. Durante o período de tolerância de 12 meses, os clientes aconselha-se para migrar para uma versão suportada mais recente do Azure SDK de BD do Cosmos conforme apropriado.
 
-**3. Can customers author and modify applications using a retired Azure Cosmos DB SDK after the 12 month notification period?**
+**3. Os clientes podem criar e modificar aplicações utilizando uma base de dados SDK extinto do Azure Cosmos após o período de notificação de 12 meses?**
 
-After the 12 month notification period, the SDK will be retired. Any access to Azure Cosmos DB by an applications using a retired SDK will not be permitted by the Azure Cosmos DB platform. Further, Microsoft will not provide customer support on the retired SDK.
+Após o período de notificação de 12 meses, o SDK será descontinuado. Qualquer acesso à base de dados do Azure Cosmos por um aplicações utilizando um SDK extinto não será permitido pela plataforma do Azure Cosmos DB. Além disso, a Microsoft não vai fornecer suporte ao cliente sobre o SDK extinto.
 
-**4. What happens to Customer’s running applications that are using unsupported Azure Cosmos DB SDK version?**
+**4. O que acontece ao cliente da execução de aplicações que estão a utilizar a versão não suportada do SDK de BD do Cosmos do Azure?**
 
-Any attempts made to connect to the Azure Cosmos DB service with a retired SDK version will be rejected. 
+Quaisquer tentativas de ligar para o serviço de base de dados do Azure Cosmos com uma versão do SDK extinto serão rejeitadas. 
 
-**5. Will new features and functionality be applied to all non-retired SDKs?**
+**5. Novas funcionalidades e funções são aplicadas a todos os SDKs de não extinto?**
 
-New features and functionality will only be added to new versions. If you are using an old, non-retired, version of the SDK your requests to Azure Cosmos DB will still function as previous but you will not have access to any new capabilities.  
+Novas funcionalidades e funções apenas serão adicionadas novas versões. Se estiver a utilizar uma versão antiga não-extinto, do SDK pedidos para a base de dados do Azure Cosmos continuará a funcionar como anterior, mas não terão acesso a quaisquer novas capacidades.  
 
-**6. What should I do if I cannot update my application before a cut-off date?**
+**6. O que posso fazer se não é possível atualizar a minha aplicação antes de uma data de truncado?**
 
-We recommend that you upgrade to the latest SDK as early as possible. Once an SDK has been tagged for retirement you will have 12 months to update your application. If, for whatever reason, you cannot complete your application update within this timeframe then please contact the [Cosmos DB Team](mailto:askcosmosdb@microsoft.com) and request their assistance before the cutoff date.
+Recomendamos que Atualize para o SDK mais recente antecipadamente quanto possível. Depois de um SDK tem sido etiquetado para extinção terá de atualizar a aplicação de 12 meses. Se, por qualquer motivo, não é possível concluir a atualização da aplicação durante este período de tempo, contacte o [Cosmos DB equipa](mailto:askcosmosdb@microsoft.com) e pedir os seus assistência antes da data de serem.
 

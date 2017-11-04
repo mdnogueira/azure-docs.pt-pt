@@ -1,14 +1,14 @@
-### <a name="prerequisites"></a>Prerequisites
-* An [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) account  
+### <a name="prerequisites"></a>Pré-requisitos
+* Um [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) conta  
 
-Before you can use your SFTP account in a logic app, you must authorize the logic app to connect to your SFTP account. Fortunately, you can do this easily from within your logic app on the Azure Portal.  
+Antes de poder utilizar a sua conta SFTP numa aplicação lógica, tem de autorizar a aplicação lógica para ligar à sua conta SFTP. Felizmente, pode fazê-facilmente na sua aplicação lógica no Portal do Azure.  
 
-Here are the steps to authorize your logic app to connect to your SFTP account:  
+Eis os passos para autorizar a aplicação lógica para ligar à sua conta SFTP:  
 
-1. To create a connection to SFTP, in the logic app designer, select **Show Microsoft managed APIs** in the drop down list then enter *SFTP* in the search box. Select the **SFTP - When a file is added or modified** trigger:  
-   ![SFTP online connection image 1](./media/connectors-create-api-sftp/sftp-1.png)  
-2. If you haven't created any connections to SFTP before, you'll get prompted to provide your SFTP credentials. These credentials will be used to authorize your logic app to connect to, and access your SFTP account's data:  
-   ![SFTP online connection image 2](./media/connectors-create-api-sftp/sftp-2.png)  
-3. Notice the connection has been created and you are now free to proceed with the other steps in your logic app:   
-   ![SFTP online connection image 3](./media/connectors-create-api-sftp/sftp-3.png) 
+1. Para criar uma ligação ao SFTP, no designer de aplicação lógica, selecione **Mostrar Microsoft APIs geridas** na lista pendente, em seguida, introduza *SFTP* na caixa de pesquisa. Selecione o **SFTP - quando um ficheiro é adicionado ou modificado** acionador:  
+   ![Imagem de ligação online SFTP 1](./media/connectors-create-api-sftp/sftp-1.png)  
+2. Se ainda não criou quaisquer ligações a SFTP antes, irá obter lhe fornecer as credenciais SFTP. Estas credenciais serão utilizadas para autorizar a aplicação lógica para ligar a e aceder aos dados da sua conta SFTP:  
+   ![Imagem de ligação online SFTP 2](./media/connectors-create-api-sftp/sftp-2.png)  
+3. Repare a ligação foi criada e está agora livre para continuar com os outros passos da sua aplicação lógica:   
+   ![Imagem de ligação online SFTP 3](./media/connectors-create-api-sftp/sftp-3.png) 
 

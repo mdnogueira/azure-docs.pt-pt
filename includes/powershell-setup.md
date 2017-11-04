@@ -1,6 +1,6 @@
 ---
 services: virtual-machines
-title: Setting up PowerShell
+title: Configurar o PowerShell
 author: JoeDavies-MSFT
 solutions: 
 manager: timlt
@@ -12,22 +12,21 @@ ms.tgt_pltfrm:
 ms.workload: infrastructure
 ms.date: 05/12/2015
 ms.author: rasquill
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b3fd172d8dc468780d483821d7067c053e39968e
 ms.openlocfilehash: 19c704d965ff3e2fc9ac8c5b623aeb386cb0b974
-ms.contentlocale: pt-pt
-ms.lasthandoff: 01/18/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-## <a name="setting-up-powershell"></a>Setting up PowerShell
-Before you can use Azure PowerShell, follow these steps.
+## <a name="setting-up-powershell"></a>Configurar o PowerShell
+Antes de poder utilizar o Azure PowerShell, siga estes passos.
 
-### <a name="verify-powershell-versions"></a>Verify PowerShell versions
-Before you can use Windows PowerShell, you must have Windows PowerShell, Version 3.0 or 4.0. To find the version of Windows PowerShell, type this command at a Windows PowerShell command prompt.
+### <a name="verify-powershell-versions"></a>Verificar se versões do PowerShell
+Antes de poder utilizar o Windows PowerShell, tem de ter o Windows PowerShell, versão 3.0 ou 4.0. Para encontrar a versão do Windows PowerShell, escreva este comando numa linha de comandos do Windows PowerShell.
 
     $PSVersionTable
 
-You should see something like this.
+Deverá ver algo semelhante ao seguinte.
 
     Name                           Value
     ----                           -----
@@ -39,32 +38,32 @@ You should see something like this.
     PSCompatibleVersions           {1.0, 2.0, 3.0}
     PSRemotingProtocolVersion      2.2
 
-Verify that the value of **PSVersion** is 3.0 or 4.0. To install a compatible version, see [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
+Certifique-se de que o valor de **PSVersion** é 3.0 ou 4.0. Para instalar uma versão compatível, consulte [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) ou [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855).
 
-You should also have Azure PowerShell version 0.8.0 or later. You can check the version of Azure PowerShell that you have installed with this command at the Azure PowerShell command prompt.
+Também deverá ter o Azure PowerShell versão 0.8.0 ou posterior. Pode verificar a versão do Azure PowerShell que tenha instalado com este comando na linha de comandos do Azure PowerShell.
 
     Get-Module azure | format-table version
 
-You should see something like this.
+Deverá ver algo semelhante ao seguinte.
 
     Version
     -------
     0.8.16.1
 
-For instructions and a link to the latest version, see [How to Install and Configure Azure PowerShell](/powershell/azureps-cmdlets-docs).
+Para obter instruções e uma hiperligação para a versão mais recente, consulte [como instalar e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
 
-### <a name="set-your-azure-account-and-subscription"></a>Set your Azure account and subscription
-If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free trial](https://azure.microsoft.com/pricing/free-trial/).
+### <a name="set-your-azure-account-and-subscription"></a>Definir a conta e a subscrição do Azure
+Se ainda não tiver uma subscrição do Azure, pode ativar o [benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou inscrever-se um [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/).
 
-Open an Azure PowerShell command prompt and log on to Azure with this command.
+Abra uma linha de comandos do Azure PowerShell e inicie sessão no Azure com este comando.
 
     Add-AzureAccount
 
-If you have multiple Azure subscriptions, you can list your Azure subscriptions with this command.
+Se tiver várias subscrições do Azure, pode listar as subscrições do Azure com este comando.
 
     Get-AzureSubscription
 
-You will receive the following type of information:
+Receberá os tipos de informações seguintes:
 
     SubscriptionId            : fd22919d-eaca-4f2b-841a-e4ac6770g92e
     SubscriptionName          : Visual Studio Ultimate with MSDN
@@ -77,11 +76,10 @@ You will receive the following type of information:
     CurrentStorageAccountName : 
     TenantId                  : 32fa88b4-86f1-419f-93ab-2d7ce016dba7
 
-You can set the current Azure subscription by running these commands at the Azure PowerShell command prompt. Replace everything within the quotes, including the < and > characters, with the correct name.
+Pode definir a subscrição do Azure atual, executando estes comandos na linha de comandos do Azure PowerShell. Substituir tudo dentro de aspas, incluindo os < e > carateres, com o nome correto.
 
     $subscr="<SubscriptionName from the display of Get-AzureSubscription>"
     Select-AzureSubscription -SubscriptionName $subscr -Current    
 
-For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/powershell/azureps-cmdlets-docs#Connect).
-
+Para obter mais informações sobre as subscrições do Azure e as contas, consulte [como: ligar à sua subscrição](/powershell/azureps-cmdlets-docs#Connect).
 

@@ -4,70 +4,70 @@ sql-database-performance-guidance.md
 sql-database-single-database-resources.md 
 -->
 
-### <a name="basic-service-tier"></a>Basic service tier
-| **Performance level** | **Basic** |
+### <a name="basic-service-tier"></a>Camada de serviços básicos
+| **Nível de desempenho** | **Básica** |
 | :--- | --: |
-| Max DTUs | 5 |
-| Included storage (GB) | 2 |
-| Max storage choices (GB) | 2 |
-| Max in-memory OLTP storage (GB) |N/A |
-| Max concurrent workers (requests) | 30 |
-| Max concurrent logins | 30 |
-| Max concurrent sessions | 300 |
+| Máximo de DTUs | 5 |
+| Incluído armazenamento (GB) | 2 |
+| Opções de armazenamento máximo (GB) | 2 |
+| Armazenamento em OLTP na memória máx. (GB) |N/D |
+| Funcionários em simultâneo de máx. (pedidos) | 30 |
+| Inícios de sessão simultâneos máx. | 30 |
+| Sessões simultâneas máx. | 300 |
 |||
 
-### <a name="standard-service-tier"></a>Standard service tier
-| **Performance level** | **S0** | **S1** | **S2** | **S3** |
+### <a name="standard-service-tier"></a>Camada de serviços padrão
+| **Nível de desempenho** | **S0** | **S1** | **S2** | **S3** |
 | :--- |---:| ---:|---:|---:|---:|
-| Max DTUs** | 10 | 20 | 50 | 100 |
-| Included storage (GB) | 250 | 250 | 250 | 250 |
-| Max storage choices (GB)* | 250 | 250 | 250 | 250, 500, 750, 1024 |
-| Max in-memory OLTP storage (GB) | N/A | N/A | N/A | N/A |
-| Max concurrent workers (requests)| 60 | 90 | 120 | 200 |
-| Max concurrent logins | 60 | 90 | 120 | 200 |
-| Max concurrent sessions |600 | 900 | 1200 | 2400 |
+| Máx. DTUs * * | 10 | 20 | 50 | 100 |
+| Incluído armazenamento (GB) | 250 | 250 | 250 | 250 |
+| Opções de armazenamento máximo (GB) * | 250 | 250 | 250 | 250, 500, 750, 1024 |
+| Armazenamento em OLTP na memória máx. (GB) | N/D | N/D | N/D | N/D |
+| Funcionários em simultâneo de máx. (pedidos)| 60 | 90 | 120 | 200 |
+| Inícios de sessão simultâneos máx. | 60 | 90 | 120 | 200 |
+| Sessões simultâneas máx. |600 | 900 | 1200 | 2400 |
 ||||||
 
-### <a name="standard-service-tier-continued"></a>Standard service tier (continued)
-| **Performance level** | **S4** | **S6** | **S7** | **S9** | **S12** |
+### <a name="standard-service-tier-continued"></a>Camada de serviço Standard (continuação)
+| **Nível de desempenho** | **S4** | **S6** | **S7** | **S9** | **S12** |
 | :--- |---:| ---:|---:|---:|---:|---:|
-| Max DTUs** | 200 | 400 | 800 | 1600 | 3000 |
-| Included storage (GB) | 250 | 250 | 250 | 250 | 250 |
-| Max storage choices (GB)* | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 |
-| Max in-memory OLTP storage (GB) | N/A | N/A | N/A | N/A |N/A |
-| Max concurrent workers (requests)| 400 | 800 | 1600 | 3200 |6000 |
-| Max concurrent logins | 400 | 800 | 1600 | 3200 |6000 |
-| Max concurrent sessions |4800 | 9600 | 19200 | 30000 |30000 |
+| Máx. DTUs * * | 200 | 400 | 800 | 1600 | 3000 |
+| Incluído armazenamento (GB) | 250 | 250 | 250 | 250 | 250 |
+| Opções de armazenamento máximo (GB) * | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 |
+| Armazenamento em OLTP na memória máx. (GB) | N/D | N/D | N/D | N/D |N/D |
+| Funcionários em simultâneo de máx. (pedidos)| 400 | 800 | 1600 | 3200 |6000 |
+| Inícios de sessão simultâneos máx. | 400 | 800 | 1600 | 3200 |6000 |
+| Sessões simultâneas máx. |4800 | 9600 | 19200 | 30000 |30000 |
 |||||||
 
-### <a name="premium-service-tier"></a>Premium service tier 
-| **Performance level** | **P1** | **P2** | **P4** | **P6** | **P11** | **P15** | 
+### <a name="premium-service-tier"></a>Camada de serviços premium 
+| **Nível de desempenho** | **P1** | **P2** | **P4** | **P6** | **P11** | **P15** | 
 | :--- |---:|---:|---:|---:|---:|---:|
-| Max DTUs | 125 | 250 | 500 | 1000 | 1750 | 4000 |
-| Included storage (GB) | 500 | 500 | 500 | 500 | 4096 | 4096 |
-| Max storage choices (GB)* | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 4096 | 4096 |
-| Max in-memory OLTP storage (GB) | 1 | 2 | 4 | 8 | 14 | 32 |
-| Max concurrent workers (requests)| 200 | 400 | 800 | 1600 | 2400 | 6400 |
-| Max concurrent logins | 200 | 400 | 800 | 1600 | 2400 | 6400 |
-| Max concurrent sessions | 30000 | 30000 | 30000 | 30000 | 30000 | 30000 |
+| Máximo de DTUs | 125 | 250 | 500 | 1000 | 1750 | 4000 |
+| Incluído armazenamento (GB) | 500 | 500 | 500 | 500 | 4096 | 4096 |
+| Opções de armazenamento máximo (GB) * | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 4096 | 4096 |
+| Armazenamento em OLTP na memória máx. (GB) | 1 | 2 | 4 | 8 | 14 | 32 |
+| Funcionários em simultâneo de máx. (pedidos)| 200 | 400 | 800 | 1600 | 2400 | 6400 |
+| Inícios de sessão simultâneos máx. | 200 | 400 | 800 | 1600 | 2400 | 6400 |
+| Sessões simultâneas máx. | 30000 | 30000 | 30000 | 30000 | 30000 | 30000 |
 |||||||
 
-### <a name="premium-rs-service-tier"></a>Premium RS service tier 
-| **Performance level** | **PRS1** | **PRS2** | **PRS4** | **PRS6** |
+### <a name="premium-rs-service-tier"></a>Camada de serviço RS Premium 
+| **Nível de desempenho** | **PRS1** | **PRS2** | **PRS4** | **PRS6** |
 | :--- |---:|---:|---:|---:|---:|---:|
-| Max DTUs | 125 | 250 | 500 | 1000 |
-| Included storage (GB) | 500 | 500 | 500 | 500 |
-| Max storage choices (GB)* | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 |
-| Max in-memory OLTP storage (GB) | 1 | 2 | 4 | 8 |
-| Max concurrent workers (requests)| 200 | 400 | 800 | 1600 |
-| Max concurrent logins | 200 | 400 | 800 | 1600 |
-| Max concurrent sessions | 30000 | 30000 | 30000 | 30000 |
+| Máximo de DTUs | 125 | 250 | 500 | 1000 |
+| Incluído armazenamento (GB) | 500 | 500 | 500 | 500 |
+| Opções de armazenamento máximo (GB) * | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 |
+| Armazenamento em OLTP na memória máx. (GB) | 1 | 2 | 4 | 8 |
+| Funcionários em simultâneo de máx. (pedidos)| 200 | 400 | 800 | 1600 |
+| Inícios de sessão simultâneos máx. | 200 | 400 | 800 | 1600 |
+| Sessões simultâneas máx. | 30000 | 30000 | 30000 | 30000 |
 |||||||
 
 > [!IMPORTANT]
-> \* Storage sizes greater than the amount of included storage are in preview and extra costs apply. For details, see [SQL Database pricing](https://azure.microsoft.com/pricing/details/sql-database/). 
+> \*Tamanhos de armazenamento maiores do que a quantidade de armazenamento incluído estão em pré-visualização e são aplicados custos adicionais. Para detalhes, ver os preços da [Base de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
 >
->\* In the Premium tier, more than 1 TB of storage is currently available in the following regions: US East2, West US, US Gov Virginia, West Europe, Germany Central, South East Asia, Japan East, Australia East, Canada Central, and Canada East. See [P11-P15 Current Limitations](../articles/sql-database/sql-database-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+>\* No escalão Premium, mais de 1 TB de armazenamento estão atualmente disponível nas seguintes regiões: E.U.A. Leste 2, E.U.A. Oeste, Gov (US) - Virginia, Europa Ocidental, Alemanha Central, Sudeste Asiático, Leste do Japão, Leste da Austrália, Canadá Central e Leste do Canadá. Ver [Limitações Atuais P11-P15](../articles/sql-database/sql-database-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 > 
->\*\* Max DTUs per database starting at 200 DTUs and higher in Standard are in preview.
+>\*\*Número máximo de DTUs por base de dados a partir de 200 DTUs e superior padrão estão na pré-visualização.
 >

@@ -1,8 +1,8 @@
-Data Lake Analytics makes the complex task of managing distributed infrastructure and complex code easy. It dynamically provisions resources and lets you do analytics on exabytes of data. When the job completes, it winds down resources automatically, and you pay only for the processing power used. As you increase or decrease the size of data stored or the amount of compute used, you don’t have to rewrite code. Many of the default limits can be easily raised for your subscription by contacting support. 
+O Data Lake Analytics facilita a complexa tarefa de gestão da infraestrutura distribuída e de códigos complexos. Aprovisiona recursos dinamicamente e permite-lhe fazer análises a exabytes de dados. Quando a tarefa é concluída, os recursos são reduzidos automaticamente e paga apenas pela capacidade de processamento utilizada. À medida que aumenta ou diminui o tamanho dos dados armazenados ou a quantidade de computação utilizada, não tem de reescrever o código. Muitas das ultrapasse os limites predefinidos podem ser facilmente geradas para a sua subscrição ao contactar o suporte. 
 
-| **Resource** | **Default Limit** | **Comments** |
+| **Recurso** | **Limite Predefinido** | **Comentários** |
 | --- | --- | --- |
-| Maximum number of concurrent jobs |20 | |
-| Maximum number of Analytics Units (AUs) per account |250 | Use any combination of up to a maximum of 250 AUs across 20 jobs. |
-| Maximum script size for job submission | 3 MB | |
+| Número máximo de tarefas simultâneas |20 | |
+| Número máximo de unidades de análise (AUs) por conta |250 | Utilizar qualquer combinação de até um máximo de 250 AUs em 20 tarefas. |
+| Tamanho máximo de script para submissão da tarefa | 3 MB | |
 

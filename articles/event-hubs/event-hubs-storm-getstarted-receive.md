@@ -14,11 +14,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 08/15/2017
 ms.author: sethm
-ms.openlocfilehash: 3e15370c7602276ef323708632b324fe05497f41
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: cabfbda3ea31a81248e7f87b79a5637063091be0
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="receive-events-from-event-hubs-using-apache-storm"></a>Receber eventos provenientes dos Hubs de eventos a utilizar o Apache Storm
 
@@ -30,7 +30,7 @@ Para obter mais informações sobre os Event Hubs receber padrões, consulte o [
 
 Este tutorial utiliza um [HDInsight Storm] [ HDInsight Storm] instalação, o que vem com o spout de Event Hubs já disponível.
 
-1. Siga o [HDInsight Storm - começar](../hdinsight/hdinsight-storm-overview.md) procedimento para criar um novo cluster do HDInsight e ligar ao mesmo através de ambiente de trabalho remoto.
+1. Siga o [HDInsight Storm - começar](../hdinsight/storm/apache-storm-overview.md) procedimento para criar um novo cluster do HDInsight e ligar ao mesmo através de ambiente de trabalho remoto.
 2. Copiar o `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` ficheiro para o seu ambiente de desenvolvimento local. Contém o spout de storm de eventos.
 3. Utilize o seguinte comando para instalar o pacote para o arquivo local do Maven. Isto permite-lhe para adicioná-lo como referência no projeto Storm num passo posterior.
 
@@ -246,8 +246,8 @@ Pode saber mais sobre os Hubs de Eventos ao aceder às seguintes ligações:
 
 <!-- Links -->
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
-[HDInsight Storm]: ../hdinsight/hdinsight-storm-overview.md
-[tutorial de análise do HDInsight sensor]: ../hdinsight/hdinsight-storm-sensor-data-analysis.md
+[HDInsight Storm]: ../hdinsight/storm/apache-storm-overview.md
+[Tutorial de análise do sensor HDInsight]:../hdinsight/storm/apache-storm-sensor-data-analysis.md
 
 <!-- Images -->
 

@@ -10,20 +10,18 @@ tags: azure-resource-manager
 ms.assetid: 
 ms.service: virtual-machines-linux
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/02/2017
+ms.date: 10/13/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5edc47e03ca9319ba2e3285600703d759963e1f3
-ms.openlocfilehash: 6c9a50c1f3dcd55cd03a694c7d4e13b8a55c3cd4
-ms.contentlocale: pt-pt
-ms.lasthandoff: 05/31/2017
-
+ms.openlocfilehash: fdd83f2386055fa9fac1ad50f4b01bf4419342b5
+ms.sourcegitcommit: 5735491874429ba19607f5f81cd4823e4d8c8206
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/16/2017
 ---
-
 # <a name="create-a-linux-virtual-machine-with-powershell"></a>Criar máquinas virtuais do Linux com o PowerShell
 
 O módulo do Azure PowerShell é utilizado para criar e gerir recursos do Azure a partir da linha de comandos do PowerShell ou em scripts. Este guia fornece detalhes utilizando o módulo do Azure PowerShell para implementar uma máquina virtual a executar o servidor Ubuntu. Quando o servidor estiver implementado, uma ligação SSH é criada e um servidor NGINX Web é instalado.
@@ -33,6 +31,7 @@ Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure
 Este guia de introdução requer a versão do módulo 3.6 ou posterior do Azure PowerShell. Executar ` Get-Module -ListAvailable AzureRM` para localizar a versão. Se precisar de instalar ou atualizar, veja [Install Azure PowerShell module](/powershell/azure/install-azurerm-ps)(Instalar o módulo do Azure PowerShell).
 
 Finalmente, uma chave SSH pública com o nome *id_rsa.pub* tem de ser armazenada no diretório *.ssh* do seu perfil de utilizador do Windows. Para obter informações detalhadas sobre a criação de chaves SSH para o Azure, consulte [Create SSH keys for Azure (Criar chaves SSH para o Azure)](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+
 
 ## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
@@ -140,16 +139,14 @@ Quando lhe for pedido, o nome de utilizador de início de sessão é *azureuser*
 
 ## <a name="install-nginx"></a>Instalar o NGINX
 
-Utilize o script de bash seguinte para atualizar as origens de pacotes e instalar o pacote NGINX mais recente. 
+Utilize os seguintes comandos para atualizar as origens de pacote e instalar o pacote NGINX mais recente. 
 
 ```bash 
-#!/bin/bash
-
 # update package source
-apt-get -y update
+sudo apt-get -y update
 
 # install NGINX
-apt-get -y install nginx
+sudo apt-get -y install nginx
 ```
 
 ## <a name="view-the-ngix-welcome-page"></a>Ver a página de boas-vindas do NGINX
@@ -172,4 +169,3 @@ Neste guia de introdução, implementou uma máquina virtual simples, uma regra 
 
 > [!div class="nextstepaction"]
 > [Tutoriais das máquinas virtuais do Linux do Azure](./tutorial-manage-vm.md)
-
