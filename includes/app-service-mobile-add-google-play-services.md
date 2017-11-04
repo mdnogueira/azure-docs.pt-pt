@@ -1,6 +1,6 @@
-1. Open the Android SDK Manager by clicking the icon on the toolbar of Android Studio, or by clicking **Tools** > **Android** > **SDK Manager** on the menu. Click the **Launch Standalone SDK Manager** link.
-2. Locate the target version of the Android SDK that is used in your project, and open it. If **Google APIs** is not already installed, then select it and click **Install packages...**.
-3. In Android Studio, choose **File** > **Project Structure**. Select **Notifications**, select **Google Cloud Messaging**, and then click **OK**.
+1. Abra o Gestor do Android SDK clicando no ícone na barra de ferramentas do Android Studio, ou clicando **ferramentas** > **Android** > **SDK Manager** no menu. Clique em de **iniciar o Gestor de SDK autónomo** ligação.
+2. Localizar a versão de destino do SDK Android que é utilizado no seu projeto e abra-o. Se **Google APIs** já não estiver instalado, em seguida, selecione-o e clique em **instalar pacotes...** .
+3. No Android Studio, selecione **ficheiro** > **estrutura do projeto**. Selecione **notificações**, selecione **Google Cloud Messaging**e, em seguida, clique em **OK**.
 
 <!--
 3. Open **AndroidManifest.xml** and add this tag to the *application* tag.

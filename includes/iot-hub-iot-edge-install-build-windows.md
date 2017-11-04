@@ -1,34 +1,34 @@
-## <a name="install-the-prerequisites"></a>Install the prerequisites
+## <a name="install-the-prerequisites"></a>Instale os pré-requisitos
 
-1. Install [Visual Studio 2015 or 2017](https://www.visualstudio.com). You can use the free Community Edition if you meet the licensing requirements. Be sure to include Visual C++ and NuGet Package Manager.
+1. Instalar [Visual Studio 2015 ou 2017](https://www.visualstudio.com). Pode utilizar a edição da Comunidade gratuito se cumpre os requisitos de licenciamento. Lembre-se de que incluem o Visual C++ e Gestor de pacotes NuGet.
 
-1. Install [git](http://www.git-scm.com) and make sure you can run git.exe from the command line.
+1. Instalar [git](http://www.git-scm.com) e certifique-se de que pode executar git.exe na linha de comandos.
 
-1. Install [CMake](https://cmake.org/download/) and make sure you can run cmake.exe from the command line. CMake version 3.7.2 or later is recommended. The **.msi** installer is the easiest option on Windows. Add CMake to the PATH for at least the current user when the installer prompts you.
+1. Instalar [CMake](https://cmake.org/download/) e certifique-se de que pode executar cmake.exe na linha de comandos. CMake versão 3.7.2 ou posterior é recomendada. O **. msi** installer é a opção mais fácil no Windows. Adicionar o CMake ao caminho para, pelo menos, o utilizador atual quando o instalador irá pedir-lhe.
 
-1. Install [Python 2.7](https://www.python.org/downloads/release/python-27). Make sure you add Python to your `PATH` environment variable in **Control Panel -> System -> Advanced system settings -> Environment Variables**.
+1. Instalar [Python 2.7](https://www.python.org/downloads/release/python-27). Certifique-se de adicionar o Python a sua `PATH` variável de ambiente. Aceda a **painel de controlo** > **sistema e segurança** > **sistema** > **definições de sistemaAvançadas**  >  **Variáveis de ambiente**. Adicionar `C:\Python27` para o caminho. 
 
-1. At a command prompt, run the following command to clone the Azure IoT Edge GitHub repository to your local machine:
+1. Numa linha de comandos, execute o seguinte comando para clonar o repositório do GitHub de limite de IoT do Azure no seu computador local:
 
     ```cmd
     git clone https://github.com/Azure/iot-edge.git
     ```
 
-## <a name="how-to-build-the-sample"></a>How to build the sample
+## <a name="how-to-build-the-sample"></a>Como criar o exemplo
 
-You can now build the IoT Edge runtime and samples on your local machine:
+Agora pode compilar o limite de IoT e exemplos de tempo de execução no seu computador local:
 
-1. Open a **Developer Command Prompt for VS 2015** or **Developer Command Prompt for VS 2017** command prompt.
+1. Abra **linha de comandos do programador para VS 2015** ou **linha de comandos do programador para VS 2017**, consoante a sua versão.
 
-1. Navigate to the root folder in your local copy of the **iot-edge** repository.
+1. Navegue para a pasta raiz na sua cópia local do repositório **iot-edge**.
 
-1. Run the build script as follows:
+1. Execute o script de compilação da seguinte forma:
 
     ```cmd
     tools\build.cmd --disable-native-remote-modules
     ```
 
-This script creates a Visual Studio solution file and builds the solution. You can find the Visual Studio solution in the **build** folder in your local copy of the **iot-edge** repository. If you want to build and run the unit tests, add the `--run-unittests` parameter. If you want to build and run the end to end tests, add the `--run-e2e-tests`.
+Este script cria um ficheiro de solução do Visual Studio e compila a solução. Pode encontrar a solução do Visual Studio no **criar** pasta na sua cópia local do **iot edge** repositório. Se pretender criar e executar os testes de unidade, adicione o `--run-unittests` parâmetro. Se pretender criar e executar os testes de ponto a ponto, adicione o `--run-e2e-tests`.
 
 > [!NOTE]
-> Every time you run the **build.cmd** script, it deletes and then recreates the **build** folder in the root folder of your local copy of the **iot-edge** repository.
+> Sempre que executar o **build.cmd** script, este elimina e, em seguida, recria a **criar** pasta na pasta raiz da sua cópia local a **iot edge** repositório.

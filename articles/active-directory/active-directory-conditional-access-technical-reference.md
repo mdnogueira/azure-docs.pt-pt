@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/31/2017
+ms.date: 11/01/2017
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 4bcca3ee5862a0455b6064d0f9c0a91388db9516
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
-ms.translationtype: HT
+ms.openlocfilehash: 8cde8e10b6789e930ea1deda2f4aa0d4a5e7ea97
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="azure-active-directory-conditional-access-technical-reference"></a>Referência técnica do Azure Active Directory acesso condicional
 
@@ -135,7 +135,7 @@ Na sua política de acesso condicional, os seguintes browsers são suportados:
 | macOS                  | Chrome                      | Brevemente |
 
 > [!NOTE]
-> Para obter suporte do Chrome, muse utilize criadores de 10 do Windows Update (versão 1703) ou posterior.<br>
+> Para obter suporte do Chrome, tem de utilizar o Windows 10 criadores Update (versão 1703) ou posterior.<br>
 > Pode instalar [esta extensão](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji).
 
 ### <a name="supported-mobile-applications-and-desktop-clients"></a>Clientes de ambiente de trabalho e aplicações móveis suportadas

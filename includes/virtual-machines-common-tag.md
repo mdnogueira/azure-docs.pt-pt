@@ -1,44 +1,44 @@
 
 
 
-## <a name="tagging-a-virtual-machine-through-templates"></a>Tagging a Virtual Machine through Templates
-First, let’s look at tagging through templates. [This template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) places tags on the following resources: Compute (Virtual Machine), Storage (Storage Account), and Network (Public IP Address, Virtual Network, and Network Interface). This template is for a Windows VM but can be adapted for Linux VMs.
+## <a name="tagging-a-virtual-machine-through-templates"></a>Marcação de uma Máquina Virtual através de modelos
+Em primeiro lugar, vamos ver etiquetagem através de modelos. [Este modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) etiquetas, coloca nos seguintes recursos: computação (Máquina Virtual), de armazenamento (conta de armazenamento) e de rede (endereço IP público, rede Virtual e Interface de rede). Este modelo é para uma VM do Windows, mas pode ser adaptado para VMs com Linux.
 
-Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags). This will navigate to the [Azure portal](https://portal.azure.com/) where you can deploy this template.
+Clique em de **implementar no Azure** no botão do [ligação de modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags). Isto irá navegue para o [portal do Azure](https://portal.azure.com/) onde pode implementar este modelo.
 
-![Simple deployment with Tags](./media/virtual-machines-common-tag/deploy-to-azure-tags.png)
+![Implementação simples com etiquetas](./media/virtual-machines-common-tag/deploy-to-azure-tags.png)
 
-This template includes the following tags: *Department*, *Application*, and *Created By*. You can add/edit these tags directly in the template if you would like different tag names.
+Este modelo inclui as seguintes tags: *departamento*, *aplicação*, e *criado pelo*. Pode adicionar/editar estas etiquetas diretamente no modelo se pretender que os nomes de etiqueta diferentes.
 
-![Azure tags in a template](./media/virtual-machines-common-tag/azure-tags-in-a-template.png)
+![Etiquetas do Azure num modelo](./media/virtual-machines-common-tag/azure-tags-in-a-template.png)
 
-As you can see, the tags are defined as key/value pairs, separated by a colon (:). The tags must be defined in this format:
+Como pode ver, as etiquetas são definidas como pares chave/valor, separados por ponto e vírgula (:). As etiquetas tem de ser definidas neste formato:
 
         “tags”: {
             “Key1” : ”Value1”,
             “Key2” : “Value2”
         }
 
-Save the template file after you finish editing it with the tags of your choice.
+Guarde o ficheiro de modelo depois de concluir a edição-lo com as etiquetas da sua preferência.
 
-Next, in the **Edit Parameters** section, you can fill out the values for your tags.
+Em seguida, no **Editar parâmetros** secção, pode preencher os valores para as suas etiquetas.
 
-![Edit Tags in Azure portal](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
+![Editar etiquetas no portal do Azure](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
 
-Click **Create** to deploy this template with your tag values.
+Clique em **criar** para implementar este modelo com os valores de etiqueta.
 
-## <a name="tagging-through-the-portal"></a>Tagging through the Portal
-After creating your resources with tags, you can view, add, and delete tags in the portal.
+## <a name="tagging-through-the-portal"></a>Marcação através do Portal
+Depois de criar os recursos com etiquetas, pode ver, adicionar e eliminar etiquetas no portal.
 
-Select the tags icon to view your tags:
+Selecione o ícone de etiquetas para ver as suas etiquetas:
 
-![Tags icon in Azure portal](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
+![Ícone de etiquetas no portal do Azure](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
 
-Add a new tag through the portal by defining your own Key/Value pair, and save it.
+Adicione uma nova etiqueta através do portal, definindo o seu próprio par chave/valor e guardá-lo.
 
-![Add new Tag in Azure portal](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
+![Adicionar nova etiqueta no portal do Azure](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
 
-Your new tag should now appear in the list of tags for your resource.
+A nova etiqueta deverá agora aparecer na lista de etiquetas para o seu recurso.
 
-![New Tag saved in Azure portal](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)
+![Nova etiqueta guardada no portal do Azure](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)
 

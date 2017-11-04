@@ -1,22 +1,22 @@
 
-| Resource | Default limit |
+| Recurso | Limite predefinido |
 | --- | --- |
-| Collections per user |1 |
-| Published apps per collection |100 |
-| Paid collections |3 |
-| Paid template images |25 |
-| Users - basic tier |800 maximum |
-| Users - standard tier |500 maximum |
-| Users- premium tier |100 maximum |
-| Users - premium plus tier |50 maximum |
-| User data storage (UPD) per user per collection |50 GB |
-| Idle timeout |4 hours |
-| Disconnected timeout |4 hours |
+| Coleções por utilizador |1 |
+| Aplicações publicadas por coleção |100 |
+| Coleções pagas |3 |
+| Imagens de modelo paga |25 |
+| Utilizadores - escalão básico |800 máximo |
+| Utilizadores - escalão standard |máximo de 500 |
+| Utilizadores premium camada |máximo de 100 |
+| Utilizadores - premium adição de camada |máximo de 50 |
+| Armazenamento de dados de utilizador (UDP) por utilizador por coleção |50 GB |
+| Tempo limite de inatividade |4 horas |
+| Tempo limite desligado |4 horas |
 
-The number of users is determined by the number of VMs used for your collection:
+O número de utilizadores é determinado pelo número de VMs utilizada para a coleção:
 
-* Basic = 16 users per VM
-* Standard = 10 users per VM
-* Premium = 4 users per VM
-* Premium plus = 2 users per VM
+* Básico = 16 utilizadores por VM
+* Standard = 10 utilizadores por VM
+* Premium = 4 utilizadores por VM
+* Premium plus = 2 utilizadores por VM
 

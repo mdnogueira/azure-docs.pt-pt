@@ -134,6 +134,8 @@
       items:
         - name: Arquivo
           href: monitoring-archive-diagnostic-logs.md
+        - name: Enviar para o Log Analytics
+          href: monitor-stream-diagnostic-logs-log-analytics.md
         - name: Transmitir em Fluxo para os Hubs de Eventos
           href: monitoring-stream-diagnostic-logs-to-event-hubs.md
         - name: Ativar as definições de diagnóstico com modelos do Resource Manager

@@ -1,47 +1,47 @@
-## <a name="set-up-azure-powershell-for-azure-dns"></a>Set up Azure PowerShell for Azure DNS
+## <a name="set-up-azure-powershell-for-azure-dns"></a>Configurar o Azure PowerShell para o DNS do Azure
 
-### <a name="before-you-begin"></a>Before you begin
+### <a name="before-you-begin"></a>Antes de começar
 
-Verify that you have the following items before beginning your configuration.
+Antes de iniciar a configuração, verifique se tem os seguintes itens.
 
-* An Azure subscription. If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free account](https://azure.microsoft.com/pricing/free-trial/).
-* You need to install the latest version of the Azure Resource Manager PowerShell cmdlets. For more information, see [How to install and configure Azure PowerShell](/powershell/azureps-cmdlets-docs).
+* Uma subscrição do Azure. Se ainda não tiver uma subscrição do Azure, pode ativar os [Benefícios de subscritor do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou inscrever-se numa [conta gratuita](https://azure.microsoft.com/pricing/free-trial/).
+* Tem de instalar a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager. Para obter mais informações, veja [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azureps-cmdlets-docs).
 
-### <a name="sign-in-to-your-azure-account"></a>Sign in to your Azure account
+### <a name="sign-in-to-your-azure-account"></a>Inicie sessão na sua conta do Azure
 
-Open your PowerShell console and connect to your account. For more information, see [Using PowerShell with Resource Manager](../articles/azure-resource-manager/powershell-azure-resource-manager.md).
+Abra a consola do PowerShell e ligue-se à sua conta. Para obter mais informações, consulte [utilizando o PowerShell com o Resource Manager](../articles/azure-resource-manager/powershell-azure-resource-manager.md).
 
 ```powershell
 Login-AzureRmAccount
 ```
 
-### <a name="select-the-subscription"></a>Select the subscription
+### <a name="select-the-subscription"></a>Selecionar a subscrição
  
-Check the subscriptions for the account.
+Verifique as subscrições da conta.
 
 ```powershell
 Get-AzureRmSubscription
 ```
 
-Choose which of your Azure subscriptions to use.
+Escolha qual das suas subscrições do Azure utilizar.
 
 ```powershell
 Select-AzureRmSubscription -SubscriptionName "your_subscription_name"
 ```
 
-### <a name="create-a-resource-group"></a>Create a resource group
+### <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
-Azure Resource Manager requires that all resource groups specify a location. This location is used as the default location for resources in that resource group. However, because all DNS resources are global, not regional, the choice of resource group location has no impact on Azure DNS.
+O Azure Resource Manager requer que todos os grupos de recursos especifiquem uma localização, que é utilizada como a localização predefinida para os recursos nesse grupo de recursos. No entanto, uma vez que todos os recursos DNS são globais, não regionais, a opção de localização do grupo de recursos não tem impacto no DNS do Azure.
 
-You can skip this step if you are using an existing resource group.
+Pode ignorar este passo se estiver a utilizar um grupo de recursos existente.
 
 ```powershell
 New-AzureRmResourceGroup -Name MyAzureResourceGroup -location "West US"
 ```
 
-### <a name="register-resource-provider"></a>Register resource provider
+### <a name="register-resource-provider"></a>Registar o fornecedor de recursos
 
-The Azure DNS service is managed by the Microsoft.Network resource provider. Your Azure subscription must be registered to use this resource provider before you can use Azure DNS. This is a one-time operation for each subscription.
+O serviço do DNS do Azure é gerido pelo fornecedor de recursos Microsoft.Network. A subscrição do Azure tem de estar registada para utilizar este fornecedor de recursos antes de poder utilizar o DNS do Azure. Esta é uma operação única para cada subscrição.
 
 ```powershell
 Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network

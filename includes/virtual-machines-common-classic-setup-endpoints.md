@@ -1,57 +1,57 @@
 
-Each endpoint has a *public port* and a *private port*:
+Cada ponto final tem um *Porta pública* e um *porta privada*:
 
-* The public port is used by the Azure load balancer to listen for incoming traffic to the virtual machine from the Internet.
-* The private port is used by the virtual machine to listen for incoming traffic, typically destined to an application or service running on the virtual machine.
+* A porta pública é utilizada pelo balanceador de carga do Azure para escutar para tráfego de entrada para a máquina virtual a partir da Internet.
+* A porta privada é utilizada pela máquina virtual para escutar de tráfego de entrada, normalmente destinado para uma aplicação ou serviço em execução na máquina virtual.
 
-Default values for the IP protocol and TCP or UDP ports for well-known network protocols are provided when you create endpoints with the Azure portal. For custom endpoints, you'll need to specify the correct IP protocol (TCP or UDP) and the public and private ports. To distribute incoming traffic randomly across multiple virtual machines, you'll need to create a load-balanced set consisting of multiple endpoints.
+Valores predefinidos para o protocolo de endereço IP e portas TCP ou UDP bem conhecida rede protocolos são fornecidos quando criar pontos finais com o portal do Azure. Para os pontos finais personalizados, terá de especificar o protocolo correto de IP (TCP ou UDP) e as portas públicas e privadas. Para distribuir o tráfego de entrada aleatoriamente em várias máquinas virtuais, terá de criar um conjunto com balanceamento de carga constituídas por vários pontos finais.
 
-After you create an endpoint, you can use an access control list (ACL) to define rules that permit or deny the incoming traffic to the public port of the endpoint based on its source IP address. However, if the virtual machine is in an Azure virtual network, you should use network security groups instead. For details, see [About network security groups](../articles/virtual-network/virtual-networks-nsg.md).
+Depois de criar um ponto final, pode utilizar uma lista de controlo de acesso (ACL) para definir regras que permitem ou negam o tráfego de entrada para a porta pública do ponto final com base no respetivo endereço IP de origem. No entanto, se a máquina virtual está numa rede virtual do Azure, deve de utilizar grupos de segurança de rede em vez disso. Para obter mais informações, consulte [sobre grupos de segurança de rede](../articles/virtual-network/virtual-networks-nsg.md).
 
 > [!NOTE]
-> Firewall configuration for Azure virtual machines is done automatically for ports associated with remote connectivity endpoints that Azure sets up automatically. For ports specified for all other endpoints, no configuration is done automatically to the firewall of the virtual machine. When you create an endpoint for the virtual machine, you'll need to ensure that the firewall of the virtual machine also allows the traffic for the protocol and private port corresponding to the endpoint configuration. To configure the firewall, see the documentation or on-line help for the operating system running on the virtual machine.
+> Configuração da firewall para máquinas virtuais do Azure é efetuada automaticamente para as portas associadas a pontos finais de conectividade remota que Azure configura automaticamente. Para as portas especificadas para todos os outros pontos finais, nenhuma configuração é efetuada automaticamente para a firewall da máquina virtual. Quando cria um ponto final da máquina virtual, terá de garantir que a firewall da máquina virtual também permite que o tráfego para o protocolo e porta privada correspondente à configuração do ponto final. Para configurar a firewall, consulte a documentação ou a ajuda online para o sistema operativo em execução na máquina virtual.
 >
 >
 
-## <a name="create-an-endpoint"></a>Create an endpoint
-1. If you haven't already done so, sign in to the [Azure portal](https://portal.azure.com).
-2. Click **Virtual Machines**, and then click the name of the virtual machine that you want to configure.
-3. Click **Endpoints** in the **Settings** group. The **Endpoints** page lists all the current endpoints for the virtual machine. (This example is a Windows VM. A Linux VM will by default show an endpoint for SSH.)
+## <a name="create-an-endpoint"></a>Criar um ponto final
+1. Se ainda não o fez, inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. Clique em **máquinas virtuais**e, em seguida, clique no nome da máquina virtual que pretende configurar.
+3. Clique em **pontos finais** no **definições** grupo. O **pontos finais** página apresenta uma lista de todos os pontos finais atuais para a máquina virtual. (Este exemplo é uma VM do Windows. Um VM do Linux por predefinição apresentará um ponto final de SSH.)
 
    <!-- ![Endpoints](./media/virtual-machines-common-classic-setup-endpoints/endpointswindows.png) -->
-   ![Endpoints](./media/virtual-machines-common-classic-setup-endpoints/endpointsblade.png)
+   ![Pontos Finais](./media/virtual-machines-common-classic-setup-endpoints/endpointsblade.png)
 
-4. In the command bar above the endpoint entries, click **Add**.
-5. On the **Add endpoint** page, type a name for the endpoint in **Name**.
-6. In **Protocol**, choose either **TCP** or **UDP**.
-7. In **Public Port**, type the port number for the incoming traffic from the Internet. In **Private Port**, type the port number on which the virtual machine is listening. These port numbers can be different. Ensure that the firewall on the virtual machine has been configured to allow the traffic corresponding to the protocol (in step 6) and private port.
-10. Click **Ok**.
+4. Na barra de comando acima das entradas de ponto final, clique em **adicionar**.
+5. No **adicionar ponto final** , escreva um nome para o ponto final no **nome**.
+6. No **protocolo**, escolha o **TCP** ou **UDP**.
+7. No **Porta pública**, escreva o número de porta para o tráfego de entrada da Internet. No **porta privada**, escreva o número de porta em que a máquina virtual está a escutar. Estes números de porta podem ser diferentes. Certifique-se de que a firewall na máquina virtual tiver sido configurada para permitir o tráfego correspondente para o protocolo (no passo 6) e a porta privada.
+10. Clique em **OK**.
 
-The new endpoint will be listed on the **Endpoints** page.
+O novo ponto final será listado no **pontos finais** página.
 
-![Endpoint creation successful](./media/virtual-machines-common-classic-setup-endpoints/endpointcreated.png)
+![Criação do ponto final com êxito](./media/virtual-machines-common-classic-setup-endpoints/endpointcreated.png)
 
-## <a name="manage-the-acl-on-an-endpoint"></a>Manage the ACL on an endpoint
-To define the set of computers that can send traffic, the ACL on an endpoint can restrict traffic based upon source IP address. Follow these steps to add, modify, or remove an ACL on an endpoint.
+## <a name="manage-the-acl-on-an-endpoint"></a>Gerir a ACL num ponto final
+Para definir o conjunto de computadores que podem enviar tráfego, a ACL num ponto final pode restringir o tráfego com base no endereço IP de origem. Siga estes passos para adicionar, modificar ou remover uma ACL num ponto final.
 
 > [!NOTE]
-> If the endpoint is part of a load-balanced set, any changes you make to the ACL on an endpoint are applied to all endpoints in the set.
+> Se o ponto final faz parte de um conjunto com balanceamento de carga, quaisquer alterações efetuadas a um ponto final a ACL são aplicadas a todos os pontos finais no conjunto.
 >
 >
 
-If the virtual machine is in an Azure virtual network, we recommend network security groups instead of ACLs. For details, see [About network security groups](../articles/virtual-network/virtual-networks-nsg.md).
+Se a máquina virtual está numa rede virtual do Azure, recomendamos que grupos de segurança de rede em vez de ACLs. Para obter mais informações, consulte [sobre grupos de segurança de rede](../articles/virtual-network/virtual-networks-nsg.md).
 
-1. If you haven't already done so, sign in to the Azure portal.
-2. Click **Virtual Machines**, and then click the name of the virtual machine that you want to configure.
-3. Click **Endpoints**. From the list, select the appropriate endpoint. The ACL list is at the bottom of the page.
+1. Se ainda não o tiver feito, iniciar sessão no portal do Azure.
+2. Clique em **máquinas virtuais**e, em seguida, clique no nome da máquina virtual que pretende configurar.
+3. Clique em **Pontos Finais**. Na lista, selecione o ponto final adequado. A lista ACL é na parte inferior da página.
 
-   ![Specify ACL details](./media/virtual-machines-common-classic-setup-endpoints/aclpreentry.png)
+   ![Especifique os detalhes ACL](./media/virtual-machines-common-classic-setup-endpoints/aclpreentry.png)
 
-4. Use rows in the list to add, delete, or edit rules for an ACL and change their order. The **Remote Subnet** value is an IP address range for incoming traffic from the Internet that the Azure load balancer uses to permit or deny the traffic based on its source IP address. Be sure to specify the IP address range in CIDR format, also known as address prefix format. An example is `10.1.0.0/8`.
+4. Utilize as linhas na lista para adicionar, eliminar, ou editar regras para uma ACL e alterar a sua ordem. O **sub-rede remota** valor é um intervalo de endereços IP para o tráfego de entrada de Internet que o Azure load balancer utiliza para permitir ou negar o tráfego com base no respetivo endereço IP de origem. Lembre-se de que especifique o intervalo de endereços IP no formato CIDR, também conhecido como formato de prefixo de endereço. Um exemplo é `10.1.0.0/8`.
 
- ![New ACL entry](./media/virtual-machines-common-classic-setup-endpoints/newaclentry.png)
+ ![Nova entrada ACL](./media/virtual-machines-common-classic-setup-endpoints/newaclentry.png)
 
 
-You can use rules to allow only traffic from specific computers corresponding to your computers on the Internet or to deny traffic from specific, known address ranges.
+Pode utilizar regras para permitir o tráfego apenas de computadores específicos correspondentes aos computadores na Internet ou para negar o tráfego de intervalos de endereços específica, conhecidos.
 
-The rules are evaluated in order starting with the first rule and ending with the last rule. This means that rules should be ordered from least restrictive to most restrictive. For examples and more information, see [What is a Network Access Control List](../articles/virtual-network/virtual-networks-acl.md).
+As regras são avaliadas por ordem a partir da primeira regra e termina com a última regra. Isto significa que as regras devem ser ordenadas menos restritivo para mais restritivas. Para obter exemplos e obter mais informações, consulte [o que é uma lista de controlo de acesso de rede](../articles/virtual-network/virtual-networks-acl.md).

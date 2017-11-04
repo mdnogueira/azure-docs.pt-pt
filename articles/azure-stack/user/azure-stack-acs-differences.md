@@ -1,6 +1,6 @@
 ---
-title: 'Azure Stack Storage: Differences and considerations'
-description: Understand the differences between Azure Stack Storage and Azure Storage, along with Azure Stack deployment considerations.
+title: "Armazenamento do Azure da pilha: Diferenças e as considerações"
+description: "Compreenda as diferenças entre o armazenamento de pilha do Azure e Storage do Azure, juntamente com considerações de implementação de pilha do Azure."
 services: azure-stack
 documentationcenter: 
 author: xiaofmao
@@ -14,52 +14,51 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 9/25/2017
 ms.author: xiaofmao
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
-ms.openlocfilehash: 381950321ac3a5ea8a43b76f3fba868da4be4682
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 4d6fb44fd6fd2261059ca45093d8b49345adfa74
+ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/25/2017
 ---
-# <a name="azure-stack-storage-differences-and-considerations"></a>Azure Stack Storage: Differences and considerations
+# <a name="azure-stack-storage-differences-and-considerations"></a>Armazenamento do Azure da pilha: Diferenças e as considerações
 
-*Applies to: Azure Stack integrated systems and Azure Stack Development Kit*
+*Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
-Azure Stack Storage is the set of storage cloud services in Microsoft Azure Stack. Azure Stack Storage provides blob, table, queue, and account management functionality with Azure-consistent semantics.
+Armazenamento de pilha do Azure é um conjunto de serviços de cloud de armazenamento na pilha do Microsoft Azure. Armazenamento de pilha do Azure fornece blob, tabela, fila e funcionalidade de gestão de conta com semântica consistentes com o Azure.
 
-This article summarizes the known Azure Stack Storage differences from Azure Storage. It also summarizes other considerations to keep in mind when you deploy Azure Stack. To learn about high-level differences between Azure Stack and Azure, see the [Key considerations](azure-stack-considerations.md) topic.
+Este artigo resume as diferenças de armazenamento do Azure pilha conhecidas do armazenamento do Azure. Também resume outras considerações a lembrar quando implementa a pilha do Azure. Para saber mais sobre das principais diferenças entre a pilha do Azure e do Azure, consulte o [chave considerações](azure-stack-considerations.md) tópico.
 
-## <a name="cheat-sheet-storage-differences"></a>Cheat sheet: Storage differences
+## <a name="cheat-sheet-storage-differences"></a>Cheat folha: diferenças de armazenamento
 
-| Feature | Azure (global) | Azure Stack |
+| Funcionalidade | Azure (global) | Azure Stack |
 | --- | --- | --- |
-|File storage|Cloud-based SMB file shares supported|Not yet supported
-|Data at rest encryption|256-bit AES encryption|Not yet supported
-|Storage account type|General-purpose and Azure Blob storage accounts|General-purpose only
-|Replication options|Locally redundant storage, geo-redundant storage, read-access geo-redundant storage, and zone-redundant storage|Locally redundant storage
-|Premium storage|Fully supported|Can be provisioned, but no performance limit or guarantee
-|Managed disks|Premium and standard supported|Not yet supported
-|Blob name|1,024 characters (2,048 bytes)|880 characters (1,760 bytes)
-|Block blob max size|4.75 TB (100 MB X 50,000 blocks)|50,000 X 4 MB (approx. 195 GB)
-|Page blob incremental snapshot copy|Premium and standard Azure page blobs supported|Not yet supported
-|Page blob max size|8 TB|1 TB
-|Page blob page size|512 bytes|4 KB
-|Table partition key and row key size|1,024 characters (2,048 bytes)|400 characters (800 bytes)
+|Armazenamento de ficheiros|Baseado na nuvem partilhas de ficheiros SMB suportadas|Ainda não suportado
+|Dados na encriptação de Inativos|encriptação AES de 256 bits|Ainda não suportado
+|Tipo de conta de armazenamento|Contas do Blob storage do Azure e para fins gerais|Para fins gerais apenas
+|Opções de replicação|Armazenamento localmente redundante, o armazenamento georredundante, o armazenamento georredundante com acesso de leitura e o armazenamento com redundância de zona|Armazenamento localmente redundante
+|Armazenamento Premium|Totalmente suportado|Pode ser aprovisionado, mas sem limite de desempenho ou garantir
+|Managed disks|Premium e padrão suportados|Ainda não suportado
+|Nome do blob|1024 caracteres (2.048 bytes)|880 carateres (1,760 bytes)
+|Tamanho máximo do blob de bloco|4.75 TB (100 MB X 50 000 blocos)|50 000 4 MB (aprox 195 GB)
+|Cópia de instantâneos do blob de página|Cópia de segurança do Azure não geridos VM discos anexados a uma VM em execução suportada|Ainda não suportado
+|Cópia de instantâneo incremental de blob de página|Suportado de blobs de página do Azure standard e Premium|Ainda não suportado
+|Tamanho máximo do blob de página|8 TB|1 TB
+|Tamanho de página do blob de página|512 bytes|4 KB
+|Tamanho da chave de linha e chave de partição da tabela|1024 caracteres (2.048 bytes)|400 carateres (800 bytes)
 
-### <a name="metrics"></a>Metrics
-There are also some differences with storage metrics:
-* The transaction data in storage metrics does not differentiate internal or external network bandwidth.
-* The transaction data in storage metrics does not include virtual machine access to the mounted disks.
+### <a name="metrics"></a>Métricas
+Também existem algumas diferenças com as métricas do storage:
+* Os dados de transação nas métricas do storage não distingue largura de banda de rede internos ou externos.
+* Os dados de transação nas métricas do storage não incluem acesso a máquina virtual para os discos montados.
 
-## <a name="api-version"></a>API version
-The following versions are supported with Azure Stack Storage:
+## <a name="api-version"></a>Versão de API
+São suportadas as seguintes versões com armazenamento de pilha do Azure:
 
-* Azure Storage data services: [2015-04-05 REST API version](https://docs.microsoft.com/rest/api/storageservices/Version-2015-04-05?redirectedfrom=MSDN)
-* Azure Storage management services: [2015-05-01-preview, 2015-06-15, and 2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN) 
+* Serviços de dados de armazenamento do Azure: [2015-04-05 versão de REST API](https://docs.microsoft.com/rest/api/storageservices/Version-2015-04-05?redirectedfrom=MSDN)
+* Serviços de gestão de armazenamento do Azure: [2015-05-01-preview, 2015-06-15 e 2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN) 
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Passos seguintes
 
-* [Get started with Azure Stack Storage development tools](azure-stack-storage-dev.md)
-* [Introduction to Azure Stack Storage](azure-stack-storage-overview.md)
-
+* [Começar a utilizar as ferramentas de desenvolvimento do armazenamento de pilha do Azure](azure-stack-storage-dev.md)
+* [Introdução ao armazenamento de pilha do Azure](azure-stack-storage-overview.md)
 

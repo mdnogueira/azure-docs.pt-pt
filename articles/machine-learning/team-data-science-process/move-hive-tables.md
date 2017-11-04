@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/29/2017
 ms.author: bradsev
-ms.openlocfilehash: e879ab2874cb3298de4b0929b286482d824e8309
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: c90c3d3c0effd68a4a5962d4d097fccbdc3fee56
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Criar as tabelas do Hive e carregar dados do Blob Storage do Azure
 Este tópico apresenta genéricas consultas do Hive que criar tabelas do Hive e carregar dados do blob storage do Azure. Algumas orientações também são fornecidas na criação de partições de tabelas do Hive e sobre como utilizar o otimizada linha Columnar (ORC) formatação para melhorar o desempenho de consulta.
@@ -120,7 +120,7 @@ Se abrir o contentor predefinido do cluster de Hadoop através do Explorador de 
 Também pode utilizar a consola de consulta (Editor do Hive) ao introduzir um URL do formulário *https://&#60; Nome do cluster de Hadoop >.azurehdinsight.net/Home/HiveEditor* num browser. Tem de ser registadas na ver esta consola e, por isso, terá das credenciais de cluster do Hadoop.
 
 ### <a name="ps"></a> 3. Submeter consultas do Hive com comandos do PowerShell do Azure
-Também pode utilizar o PowerShell para submeter consultas do Hive. Para obter instruções, consulte [tarefas submeter o Hive com o PowerShell](../../hdinsight/hdinsight-hadoop-use-hive-powershell.md).
+Também pode utilizar o PowerShell para submeter consultas do Hive. Para obter instruções, consulte [tarefas submeter o Hive com o PowerShell](../../hdinsight/hadoop/apache-hadoop-use-hive-powershell.md).
 
 ## <a name="create-tables"></a>Criar tabelas e a base de dados do Hive
 As consultas do Hive são partilhadas no [repositório do GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_db_tbls_load_data_generic.hql) , podendo ser transferido a partir daí.

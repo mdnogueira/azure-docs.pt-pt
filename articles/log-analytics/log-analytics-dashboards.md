@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 08/08/2017
 ms.author: magoedte
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a90d9c620221bffbb225fb060b997af2f5e90390
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 22cc516c15353e39c73e762d2b8fa0d787a05ef4
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="create-a-custom-dashboard-for-use-in-log-analytics"></a>Criar um dashboard personalizado para ser utilizado na análise de registos
 
->[!NOTE]
-> Se a sua área de trabalho tiver sido atualizada para o [idioma de consulta de análise de registos nova](log-analytics-log-search-upgrade.md), em seguida, não é possível criar novos dashboards ou editar dashboards existentes. 
-
 Este guia ajuda-o a compreender como dashboards de análise de registos podem visualizar a todas as pesquisas de registo guardado, dando-lhe uma lente única para ver o seu ambiente.
+
+>[!NOTE]
+> Se a sua área de trabalho tiver sido atualizada para o [idioma de consulta de análise de registos nova](log-analytics-log-search-upgrade.md), e não é possível editar existentes **Dashboard os meus**. Se a sua área de trabalho não tinha qualquer **My Dashboard** mosaicos adicionados, em seguida, não verá **My Dashboard** na sua área de trabalho atualizada. 
 
 ![Dashboard de exemplo](./media/log-analytics-dashboards/oms-dashboards-example-dash.png)
 

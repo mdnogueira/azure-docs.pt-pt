@@ -1,17 +1,17 @@
-## <a name="load-balancer"></a>Load Balancer
-A load balancer is used when you want to scale your applications. Typical deployment scenarios involve applications running on multiple VM instances. The VM instances are fronted by a load balancer that helps to distribute network traffic to the various instances. 
+## <a name="load-balancer"></a>Balanceador de Carga
+Um balanceador de carga é utilizado quando pretende dimensionar as suas aplicações. Cenários de implementação típica pode envolver aplicações executadas em várias instâncias VM. As instâncias de VM são fronted por um balanceador de carga que ajuda a distribuir o tráfego de rede para as várias instâncias. 
 
-![NIC's on a single VM](./media/resource-groups-networking/figure8.png)
+![NIC numa única VM](./media/resource-groups-networking/figure8.png)
 
-| Property | Description |
+| Propriedade | Descrição |
 | --- | --- |
-| *frontendIPConfigurations* |a Load balancer can include one or more front end IP addresses, otherwise known as a virtual IPs (VIPs). These IP addresses serve as ingress for the traffic and can be public IP or private IP |
-| *backendAddressPools* |these are IP addresses associated with the VM NICs to which load will be distributed |
-| *loadBalancingRules* |a rule property maps a given front end IP and port combination to a set of back end IP addresses and port combination. With a single definition of a load balancer resource, you can define multiple load balancing rules, each rule reflecting a combination of a front end IP and port and back end IP and port associated with virtual machines. The rule is one port in the front end pool to many virtual machines in the back end pool |
-| *Probes* |probes enable you to keep track of the health of VM instances. If a health probe fails, the virtual machine instance will be taken out of rotation automatically |
-| *inboundNatRules* |NAT rules defining the inbound traffic flowing through the front end IP and distributed to the back end IP to a specific virtual machine instance. NAT rule is one port in the front end pool to one virtual machine in the back end pool |
+| *frontendIPConfigurations* |um balanceador de carga pode incluir um ou mais front-end endereços IP, caso contrário, conhecidos como um IPs virtuais (VIP). Estes endereços IP servem como entrada para o tráfego e podem ser um IP público ou IP privado |
+| *backendAddressPools* |Estes são os endereços IP associados a NICs de VM para os quais será distribuída carga |
+| *loadBalancingRules* |uma propriedade de regra mapeia um IP de front-end especificado e a combinação de porta para um conjunto de endereços IP back-end e a combinação de porta. Com uma única definição de um recurso de Balanceador de carga, pode definir várias regras de balanceamento de carga, cada regra ao refletir uma combinação de um início de IP e porta de fim e back-end IP e porta associados a máquinas virtuais. A regra é uma porta no conjunto de front-end para várias máquinas virtuais no conjunto de back-end |
+| *Pesquisas* |as pesquisas permitem-lhe controlar o estado de funcionamento de instâncias VM. Se uma sonda do Estado de funcionamento falhar, a instância de máquina virtual será retirada rotação automaticamente |
+| *inboundNatRules* |Definir o tráfego de entrada que fluem através de início de regras NAT IP de fim e distribuído para o IP de back-end para uma instância de máquina virtual específica. Regra NAT é uma porta no conjunto de front-end para uma máquina virtual no conjunto de back-end |
 
-Example of load balancer template in Json format:
+Exemplo de modelo de Balanceador de carga no formato Json:
 
     {
       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -186,6 +186,6 @@ Example of load balancer template in Json format:
       ]
     }
 
-### <a name="additional-resources"></a>Additional resources
-Read [load balancer REST API](https://msdn.microsoft.com/library/azure/mt163651.aspx) for more information.
+### <a name="additional-resources"></a>Recursos adicionais
+Leitura [REST API do Balanceador de carga](https://msdn.microsoft.com/library/azure/mt163651.aspx) para obter mais informações.
 

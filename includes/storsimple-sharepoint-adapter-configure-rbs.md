@@ -1,54 +1,54 @@
 <!--author=SharS last changed: 1/14/2016 -->
 
 > [!NOTE]
-> When making changes to the StorSimple Adapter for SharePoint RBS configuration, you must be logged on with a user account that belongs to the Domain Admins group. Additionally, you must access the configuration page from a browser running on the same host as Central Administration.
+> Quando efetuar alterações ao adaptador do StorSimple para a configuração do SharePoint RBS, tem de ser sessão iniciada com uma conta de utilizador que pertença ao grupo Admins do domínio. Além disso, tem de aceder a página de configuração a partir de um browser em execução no mesmo anfitrião como Administração Central.
 > 
 > 
 
-#### <a name="to-configure-rbs"></a>To configure RBS
-1. Open the SharePoint Central Administration page, and browse to **System Settings**. 
-2. In the **Azure StorSimple** section, click **Configure StorSimple Adapter**.
+#### <a name="to-configure-rbs"></a>Para configurar RBS
+1. Abra a página de Administração Central do SharePoint e navegue até à **definições do sistema**. 
+2. No **Azure StorSimple** secção, clique em **configurar adaptador do StorSimple**.
    
-    ![Configure the StorSimple Adapter](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS1-include.png) 
-3. On the **Configure StorSimple Adapter** page:
+    ![Configure o adaptador do StorSimple](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS1-include.png) 
+3. No **configurar adaptador do StorSimple** página:
    
-   1. Make sure that the **Enable editing path** check box is selected.
-   2. In the text box, type the Universal Naming Convention (UNC) path of the BLOB store.
+   1. Certifique-se de que o **ativar caminho edição** caixa de verificação está selecionada.
+   2. Na caixa de texto, escreva o caminho de convenção de Nomenclatura Universal (UNC) do arquivo de BLOB.
       
       > [!NOTE]
-      > The BLOB store volume must be hosted on an iSCSI volume configured on the StorSimple device.
+      > O volume de arquivo BLOB tem de estar alojado num volume iSCSI configurado no dispositivo StorSimple.
 
-   3. Click the **Enable** button below each of the content databases that you want to configure for remote storage.
+   3. Clique em de **ativar** no botão abaixo cada uma das bases de dados conteúdos que pretende configurar para armazenamento remoto.
       
       > [!NOTE]
-      > The BLOB store must be shared and reachable by all web front-end (WFE) servers, and the user account that is configured for the SharePoint server farm must have access to the share.
+      > O arquivo de BLOB tem de ser partilhados e pode ser acedida por todos os servidores (WFE) front-end web e a conta de utilizador que está configurada para o farm de servidores do SharePoint tem de ter acesso à partilha.
       
-      ![Enable the RBS provider](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS2-include.png)
+      ![Ativar o fornecedor RBS](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS2-include.png)
       
-      When you enable or disable RBS, you will also see the following message.
+      Quando ativar ou desativar RBS, também verá a mensagem seguinte.
       
-      ![Configure StorSimple Adapter Enable Disable](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_ConfigureStorSimpleAdapterEnableDisableMessage-include.png)
+      ![Configurar StorSimple adaptador Ativar desativar](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_ConfigureStorSimpleAdapterEnableDisableMessage-include.png)
 
-   4. Click the **Update** button to apply the configuration. When you click the **Update** button, the RBS configuration status will be updated on all WFE servers, and the entire farm will be RBS-enabled. The following message appears.
+   4. Clique em de **atualização** botão para aplicar a configuração. Ao clicar no **atualização** botão, o estado de configuração RBS será atualizado em todos os servidores WFE, e todo o farm irá ser RBS-ativado. É apresentada a mensagem seguinte.
       
-      ![Adapter configuration message](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS3-include.png)
+      ![Mensagem de configuração do adaptador](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS3-include.png)
       
       > [!NOTE]
-      > If you are configuring RBS for a SharePoint farm with a very large number of databases (greater than 200), the SharePoint Central Administration web page might time out. If that occurs, refresh the page. This does not affect the configuration process.
+      > Se estiver a configurar RBS para um farm do SharePoint com um número muito elevado de bases de dados (superior a 200), a página web de Administração Central do SharePoint poderá tempo limite. Se isso ocorrer, atualize a página. Isto não afeta o processo de configuração.
 
-4. Verify the configuration:
+4. Certifique-se a configuração:
    
-   1. Log on to the SharePoint Central Administration website, and browse to the **Configure StorSimple Adapter** page.
-   2. Check the configuration details to make sure that they match the settings that you entered. 
-5. Verify that RBS works correctly:
+   1. Inicie sessão para o site de Administração Central do SharePoint e navegue para o **configurar adaptador do StorSimple** página.
+   2. Verifique os detalhes de configuração para se certificar de que correspondem às definições que introduziu. 
+5. Certifique-se de que RBS funciona corretamente:
    
-   1. Upload a document to SharePoint. 
-   2. Browse to the UNC path that you configured. Make sure that the RBS directory structure was created and that it contains the uploaded object.
-6. (Optional) You can use the Microsoft RBS `Migrate()` PowerShell cmdlet included with SharePoint to migrate existing BLOB content to the StorSimple device. For more information, see [Migrate content into or out of RBS in SharePoint 2013][6] or [Migrate content into or out of RBS (SharePoint Foundation 2010)][7].
-7. (Optional) On test installations, you can verify that the BLOBs were moved out of the content database as follows: 
+   1. Carregar um documento para o SharePoint. 
+   2. Aceda ao caminho UNC que configurou. Certifique-se de que a estrutura de diretórios RBS foi criada e que contém o objeto foi carregado.
+6. (Opcional) Pode utilizar o Microsoft RBS `Migrate()` cmdlet do PowerShell incluído com o SharePoint para migrar conteúdo BLOB existente para o dispositivo StorSimple. Para obter mais informações, consulte [migrar conteúdo ou a sair RBS no SharePoint 2013] [ 6] ou [migrar conteúdo ou a sair RBS (SharePoint Foundation 2010)] [7].
+7. (Opcional) Nas instalações de teste, pode verificar que os BLOBs foram movidos fora da base de dados de conteúdo da seguinte forma: 
    
-   1. Start SQL Management Studio.
-   2. Run the ListBlobsInDB_2010.sql or ListBlobsInDB_2013.sql query, as follows.
+   1. Inicie o SQL Server Management Studio.
+   2. Execute a consulta ListBlobsInDB_2010.sql ou ListBlobsInDB_2013.sql, da seguinte forma.
       
       ```
       **ListBlobsInDB_2013.sql**
@@ -91,18 +91,18 @@
         GO
       ```
       
-      If RBS was configured correctly, a NULL value should appear in the SizeOfContentInDB column for any object that was uploaded and successfully externalized with RBS.
-8. (Optional) After you configure RBS and move all BLOB content to the StorSimple device, you can move the content database to the device. If you choose to move the content database, we recommend that you configure the content database storage on the device as a primary volume. Then, use established SQL Server best practices to migrate the content database to the StorSimple device. 
+      Se RBS foi configurada corretamente, deverá aparecer um valor nulo na coluna SizeOfContentInDB para qualquer objeto que foi carregada e externalized com êxito com RBS.
+8. (Opcional) Depois de configurar RBS e mover todo o conteúdo BLOB para o dispositivo StorSimple, pode mover a base de dados de conteúdo para o dispositivo. Se optar por mover a base de dados de conteúdos, recomendamos que configure o armazenamento de conteúdo da base de dados no dispositivo como um volume primário. Em seguida, utilize estabelecida recomendados do SQL Server para migrar a base de dados de conteúdo para o dispositivo StorSimple. 
    
    > [!NOTE]
-   > Moving the content database to the device is only supported for the StorSimple 8000 series (it is not supported for the 5000 or 7000 series).
+   > Mover a base de dados de conteúdo para o dispositivo só é suportada para a série 8000 do StorSimple (que não é suportado para a série de 5000 ou 7000).
    
-   If you store BLOBs and the content database in separate volumes on the StorSimple device, we recommend that you configure them in the same volume container. This ensures that they will be backed up together.
+   Se armazenar os BLOBs e a base de dados de conteúdo em volumes separados no dispositivo StorSimple, recomendamos que configurar no mesmo contentor de volume. Isto garante que estes irão ser copiados em segurança em conjunto.
    
    > [!WARNING]
-   > If you have not enabled RBS, we do not recommend moving the content database to the StorSimple device. This is an untested configuration.
+   > Se não tiver ativado RBS, não recomendamos a mover a base de dados de conteúdo para o dispositivo StorSimple. Esta é uma configuração untested.
    
-9. Go to the next step: [Configure garbage collection](#configure-garbage-collection).
+9. Vá para o próximo passo: [configurar recolha de lixo](#configure-garbage-collection).
 
 [6]: https://technet.microsoft.com/library/ff628254(v=office.15).aspx
 [7]: https://technet.microsoft.com/library/ff628255(v=office.14).aspx

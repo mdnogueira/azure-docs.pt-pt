@@ -6,24 +6,22 @@ author: seanli1988
 ms.author: seal
 manager: janders
 editor: jasonwhowell
-ms.service: mysql-database
+ms.service: mysql
 ms.custom: mvc
 ms.devlang: C++
-ms.topic: hero-article
-ms.date: 08/03/2017
-ms.translationtype: HT
-ms.sourcegitcommit: f9003c65d1818952c6a019f81080d595791f63bf
-ms.openlocfilehash: 63388b83b913d95136140fa4c56af0dbebbdad81
-ms.contentlocale: pt-pt
-ms.lasthandoff: 08/09/2017
-
+ms.topic: quickstart
+ms.date: 09/22/2017
+ms.openlocfilehash: 92620c8081b1f0f5c96cc3ae09465b3526e74042
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-
 # <a name="azure-database-for-mysql-use-connectorc-to-connect-and-query-data"></a>Base de Dados do Azure para MySQL: utilizar o Connector/C++ para se ligar e consultar dados
-Este guia de início rápido explica como se pode ligar a uma Base de Dados do Azure para MySQL através de uma aplicação C++. Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Os passos neste artigo pressupõem que está familiarizado com programação em C++ e que nunca trabalhou com a Base de Dados do Azure para MySQL.
+Este guia de introdução demonstra como estabelecer ligação a uma base de dados do Azure para MySQL utilizando uma aplicação de C++. Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados da base de dados. Este tópico assume que está familiarizado com o desenvolvimento utilizando C++ e que estiver a trabalhar com a base de dados do Azure para MySQL.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Este guia de início rápido utiliza os recursos criados em qualquer um desTes guias como ponto de partida:
+Este guia de introdução utiliza os recursos criados dos seguintes guias como um ponto de partida:
 - [Criar uma Base de Dados do Azure para o servidor MySQL com o portal do Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)
 - [Criar uma Base de Dados do Azure para o servidor MySQL com a CLI do Azure](./quickstart-create-mysql-server-database-using-azure-cli.md)
 
@@ -37,30 +35,30 @@ Também tem de:
 Os passos nesta secção partem do princípio que está familiarizado com a programação com .NET.
 
 ### <a name="windows"></a>**Windows**
-1. Instale o Visual Studio 2017 Community, o qual é um IDE gratuito, extensível e repleto de funcionalidades para criar aplicações modernas para Android, iOS e Windows, bem como aplicações Web e de bases de dados e serviços cloud. Pode instalar o .NET Framework completo ou apenas o .NET Core. Os fragmentos de código no Início Rápido funcionam com ambos. Se já tiver o Visual Studio instalado no seu computador, ignore os dois passos seguintes.
-   - Transferir o [instalador do Visual Studio 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15). 
-   - Execute o instalador e siga as instruções de instalação, para concluí-la.
+- Instale o Visual Studio 2017 Community, que é um completo em destaque, extensível, livre IDE para a criação de aplicações modernas para Android, iOS, Windows, bem como web e aplicações de base de dados e serviços em nuvem. Pode instalar o .NET Framework completo ou apenas .NET Core: os fragmentos de código no início rápido funcionam com qualquer um. Se já tiver o Visual Studio instalado no seu computador, ignore as dois passos seguintes.
+   1. Transferir o [instalador do Visual Studio 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15). 
+   2. Execute o instalador e siga as instruções de instalação, para concluí-la.
 
 ### <a name="configure-visual-studio"></a>**Configurar o Visual Studio**
 1. No Visual Studio, project property > configuration properties > C/C++ > linker > general > additional library directories, adicione o diretório lib\opt (ou seja: C:\Programas (x86)\MySQL\MySQL Connector C++ 1.1.9\lib\opt) do conector C++.
-2. No Visual Studio, project property > configuration properties > C/C++ > general > additional include directories
-   - Adicione o diretório include/ do conector C++ (ou seja: C:\Programas (x86)\MySQL\MySQL Connector C++ 1.1.9\include\)
-   - Adicione o diretório de raiz da biblioteca Boost (ou seja: C:\boost_1_64_0\)
-3. No Visual Studio, project property > configuration properties > C/C++ > linker > Input > Additional Dependencies, adicione mysqlcppconn.lib no campo de texto
-4. Copie mysqlcppconn.dll da pasta da biblioteca do conector C++ no passo 3 para o mesmo diretório do executável da aplicação ou adicione-o à variável de ambiente para que a aplicação o possa localizar.
+2. Propriedade do projeto do Visual Studio, > propriedades de configuração > C/C++ > geral > adicionais incluir diretórios:
+   - Adicionar incluem / diretório de c + + conector (ou seja,: C:\Program Files (x86) \MySQL\MySQL conector C++ 1.1.9\include\).
+   - Adicione o diretório de raiz da biblioteca de aumento (ou seja,: C:\boost_1_64_0\).
+3. Propriedade do projeto do Visual Studio, > propriedades de configuração > C/C++ > linker > entrada > dependências adicionais, adicione mysqlcppconn.lib para o campo de texto.
+4. Copiar mysqlcppconn.dll da pasta de biblioteca do conector C++ no passo 3 para o mesmo diretório que o executável da aplicação ou adicione-o para a variável de ambiente para a aplicação possa encontrar.
 
 ## <a name="get-connection-information"></a>Obter informações da ligação
 Obtenha as informações de ligação necessárias para se ligar à Base de Dados do Azure para MySQL. Necessita do nome do servidor e das credenciais de início de sessão totalmente qualificados.
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
-2. No menu esquerdo do portal do Azure, clique em **Todos os recursos** e procure o servidor que acabou de criar, por exemplo, **myserver4demo**.
+2. No menu da esquerda no portal do Azure, clique em **todos os recursos**e a pesquisa para o servidor que criou (tais como **myserver4demo**).
 3. Clique no nome do servidor.
-4. Selecione a página **Propriedades** do servidor. Anote o **Nome do servidor** e **Nome de início de sessão de administrador do servidor**.
+4. Selecione o servidor **propriedades** página e, em seguida, anote o **nome do servidor** e **nome de início de sessão de administração do servidor**.
  ![Nome do servidor da Base de Dados do Azure para o MySQL](./media/connect-cpp/1_server-properties-name-login.png)
-5. Se se esqueceu das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** para visualizar o nome de início de sessão de administrador do servidor e, se necessário, repor a palavra-passe.
+5. Se se esquecer da sua informações de início de sessão do servidor, navegue para o **descrição geral** página para ver o nome de início de sessão de administração do servidor e, se necessário repor a palavra-passe.
 
 ## <a name="connect-create-table-and-insert-data"></a>Ligar, criar tabela e inserir dados
-Utilize o seguinte código para se ligar e carregar os dados com as instruções SQL **CREATE TABLE** e **INSERT INTO**. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método createStatement() e o método execute() para executar os comandos da base de dados. 
+Utilize o seguinte código para estabelecer ligação e carregar os dados utilizando **CREATE TABLE** e **INSERT INTO** instruções SQL. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método createStatement() e o método execute() para executar os comandos da base de dados. 
 
 Substitua os parâmetros Anfitrião, DBName, Utilizador e Palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
 
@@ -127,7 +125,7 @@ int main()
 
 ## <a name="read-data"></a>Ler dados
 
-Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **SELECT**. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos select. Por fim, o código utiliza next() para avançar para os registos nos resultados. Em seguida, o código utiliza getInt() e getString() para analisar os valores do registo.
+Utilize o seguinte código para estabelecer ligação e ler os dados utilizando um **SELECIONE** instrução SQL. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos select. Em seguida, o código utiliza next() para avançar para os registos nos resultados. Por fim, o código utiliza getInt() e GetString () para analisar os valores no registo.
 
 Substitua os parâmetros Anfitrião, DBName, Utilizador e Palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
 
@@ -179,7 +177,7 @@ int main()
 ```
 
 ## <a name="update-data"></a>Atualizar dados
-Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **UPDATE**. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos update. 
+Utilize o seguinte código para estabelecer ligação e ler os dados utilizando um **ATUALIZAÇÃO** instrução SQL. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos update. 
 
 Substitua os parâmetros Anfitrião, DBName, Utilizador e Palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
 
@@ -229,7 +227,7 @@ int main()
 
 
 ## <a name="delete-data"></a>Eliminar dados
-Utilize o código seguinte para se ligar e ler os dados com a instrução SQL **DELETE**. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos delete.
+Utilize o seguinte código para estabelecer ligação e ler os dados utilizando um **eliminar** instrução SQL. O código utiliza a classe sql::Driver com o método connect() para estabelecer uma ligação ao MySQL. Em seguida, o código utiliza o método prepareStatement() e executeQuery() para executar os comandos delete.
 
 Substitua os parâmetros Anfitrião, DBName, Utilizador e Palavra-passe pelos valores que especificou ao criar o servidor e a base de dados. 
 
@@ -282,4 +280,3 @@ int main()
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
 > [Migrar a sua base de dados MySQL para a Dase de Dados do Azure para MySQL através da funcionalidade de captura e restauro](concepts-migrate-dump-restore.md)
-

@@ -1,37 +1,37 @@
 
 
 
-## <a name="using-vm-extensions"></a>Using VM Extensions
-Azure VM Extensions implement behaviors or features that either help other programs work on Azure VMs (for example, the **WebDeployForVSDevTest** extension allows Visual Studio to Web Deploy solutions on your Azure VM) or provide the ability for you to interact with the VM to support some other behavior (for example, you can use the VM Access extensions from PowerShell, the Azure CLI, and REST clients to reset or modify remote access values on your Azure VM).
+## <a name="using-vm-extensions"></a>Utilizar extensões VM
+Extensões de VM do Azure implementa comportamentos ou funcionalidades que ajudam a outros programas de trabalho em VMs do Azure (por exemplo, o **WebDeployForVSDevTest** extensão permite que o Visual Studio para o Web Deploy soluções na sua VM do Azure) ou forneça o capacidade de interagir com a VM para suportar alguns outro comportamento (por exemplo, pode utilizar as extensões de acesso de VM a partir de clientes do PowerShell, a CLI do Azure e REST para repor ou modificar os valores de acesso remoto na sua VM do Azure).
 
 > [!IMPORTANT]
-> For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](../articles/virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Because each VM extension supports a specific feature, exactly what you can and cannot do with an extension depends on the extension. Therefore, before modifying your VM, make sure you have read the documentation for the VM Extension you want to use. Removing some VM Extensions is not supported; others have properties that can be set that change VM behavior radically.
+> Para obter uma lista completa das extensões pelas funcionalidades que suportam, consulte [extensões de VM do Azure e funcionalidades](../articles/virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Porque cada extensão VM suporta uma funcionalidade específica, exatamente o que pode e não pode fazer com uma extensão depende a extensão. Por conseguinte, antes de modificar a sua VM, certifique-se de que leu a documentação para a extensão de VM que pretende utilizar. A remoção algumas extensões de VM não é suportada; outras pessoas têm propriedades que podem ser definidas e alterar o comportamento VM forma radicalmente.
 > 
 > 
 
-The most common tasks are:
+As tarefas mais comuns são:
 
-1. Finding Available Extensions
-2. Updating Loaded Extensions
-3. Adding Extensions
-4. Removing Extensions
+1. Localizar as extensões disponíveis
+2. Atualizar extensões carregadas
+3. Adicionar extensões
+4. Remoção de extensões
 
-## <a name="find-available-extensions"></a>Find Available Extensions
-You can locate extension and extended information using:
+## <a name="find-available-extensions"></a>Localizar as extensões disponíveis
+Pode localizar a extensão e a utilização de informações expandidas:
 
 * PowerShell
-* Azure Cross-Platform Command Line Interface (Azure CLI)
-* Service Management REST API
+* Interface de linha de comandos de plataforma do Azure (CLI do Azure)
+* API REST da Gestão de Serviços
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Some extensions have PowerShell cmdlets that are specific to them, which may make their configuration from PowerShell easier; but the following cmdlets work for all VM extensions.
+Algumas extensões têm os cmdlets do PowerShell que são específicos, que poderá facilitar a configuração a partir do PowerShell; mas os seguintes cmdlets funciona para todas as extensões VM.
 
-You can use the following cmdlets to obtain information about available extensions:
+Pode utilizar os seguintes cmdlets para obter informações sobre as extensões disponíveis:
 
-* For instances of web roles or worker roles, you can use the [Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/library/azure/dn722498.aspx) cmdlet.
-* For instances of Virtual Machines, you can use the [Get-AzureVMAvailableExtension](https://msdn.microsoft.com/library/azure/dn722480.aspx) cmdlet.
+* Para instâncias de funções da web ou funções de trabalho, pode utilizar o [Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/library/azure/dn722498.aspx) cmdlet.
+* Para as instâncias de máquinas virtuais, pode utilizar o [Get-AzureVMAvailableExtension](https://msdn.microsoft.com/library/azure/dn722480.aspx) cmdlet.
   
-   For example, the following code example shows how to list the information for the **IaaSDiagnostics** extension using PowerShell.
+   Por exemplo, o exemplo de código seguinte mostra como listar as informações para o **IaaSDiagnostics** extensão com o PowerShell.
   
       PS C:\> Get-AzureVMAvailableExtension -ExtensionName IaaSDiagnostics
   
@@ -54,12 +54,12 @@ You can use the following cmdlets to obtain information about available extensio
       PublishedDate               :
       CompanyName                 :
 
-### <a name="azure-command-line-interface-azure-cli"></a>Azure Command Line Interface (Azure CLI)
-Some extensions have Azure CLI commands that are specific to them (the Docker VM Extension is one example), which may make their configuration easier; but the following commands work for all VM extensions.
+### <a name="azure-command-line-interface-azure-cli"></a>Interface de linha de comandos do Azure (CLI do Azure)
+Algumas extensões têm de comandos da CLI do Azure que são específicos aos mesmos (a extensão de VM de Docker é um exemplo), que poderá facilitar a respetiva configuração; mas os comandos seguintes funcionam para todas as extensões VM.
 
-You can use the **azure vm extension list** command to obtain information about available extensions, and use the **–-json** option to display all available information about one or more extensions. If you do not use an extension name, the command returns a JSON description of all available extensions.
+Pode utilizar o **lista de extensão de vm do azure** comando para obter informações sobre as extensões disponíveis e utilizar o **–-json** opção para apresentar todas as informações disponíveis sobre uma ou mais extensões. Se utilizar um nome de extensão, o comando devolve uma descrição JSON de todas as extensões disponíveis.
 
-For example, the following code example shows how to list the information for the **IaaSDiagnostics** extension using the Azure CLI **azure vm extension list** command and uses the **–-json** option to return complete information.
+Por exemplo, o exemplo de código seguinte mostra como listar as informações para o **IaaSDiagnostics** extensão utilizando a CLI do Azure **lista de extensão de vm do azure** comando e utiliza o **–-json**  opção para devolver informações completas.
 
     $ azure vm extension list -n IaaSDiagnostics --json
     [
@@ -76,33 +76,33 @@ For example, the following code example shows how to list the information for th
 
 
 
-### <a name="service-management-rest-apis"></a>Service Management REST APIs
-You can use the following REST APIs to obtain information about available extensions:
+### <a name="service-management-rest-apis"></a>APIs REST de Gestão de Serviço
+Pode utilizar as APIs REST seguintes para obter informações sobre as extensões disponíveis:
 
-* For instances of web roles or worker roles, you can use the [List Available Extensions](https://msdn.microsoft.com/library/dn169559.aspx) operation. To list the versions of available extensions, you can use [List Extension Versions](https://msdn.microsoft.com/library/dn495437.aspx).
-* For instances of Virtual Machines, you can use the [List Resource Extensions](https://msdn.microsoft.com/library/dn495441.aspx) operation. To list the versions of available extensions, you can use [List Resource Extension Versions](https://msdn.microsoft.com/library/dn495440.aspx).
+* Para instâncias de funções da web ou funções de trabalho, pode utilizar o [extensões disponíveis lista](https://msdn.microsoft.com/library/dn169559.aspx) operação. Para listar as versões das extensões disponíveis, pode utilizar [lista as versões de extensão](https://msdn.microsoft.com/library/dn495437.aspx).
+* Para as instâncias de máquinas virtuais, pode utilizar o [extensões de recursos de lista](https://msdn.microsoft.com/library/dn495441.aspx) operação. Para listar as versões das extensões disponíveis, pode utilizar [versões de extensão de recursos de lista](https://msdn.microsoft.com/library/dn495440.aspx).
 
-## <a name="add-update-or-disable-extensions"></a>Add, Update, or Disable Extensions
-Extensions can be added when an instance is created or they can be added to a running instance. Extensions can be updated, disabled, or removed. You can perform these actions by using Azure PowerShell cmdlets or by using the Service Management REST API operations. Parameters are required to install and set up some extensions. Public and private parameters are supported for extensions.
+## <a name="add-update-or-disable-extensions"></a>Adicionar, atualizar, ou desativar extensões
+As extensões podem ser adicionadas quando é criada uma instância ou podem ser adicionados a uma instância em execução. As extensões podem ser atualizadas, desativadas ou removidas. Pode efetuar estas ações utilizando cmdlets do PowerShell do Azure ou através da utilização de operações de API de REST de gestão de serviço. Os parâmetros são necessários para instalar e configurar algumas extensões. Parâmetros públicos e privados são suportados para as extensões.
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Using Azure PowerShell cmdlets is the easiest way to add and update extensions. When you use the extension cmdlets, most of the configuration of the extension is done for you. At times, you may need to programmatically add an extension. When you need to do this, you must provide the configuration of the extension.
+A utilização de cmdlets do PowerShell do Azure é a forma mais fácil para adicionar e atualizar extensões. Quando utilizar os cmdlets de extensão, a maior parte da configuração da extensão é feita por si. Por vezes, terá de adicionar através de programação de uma extensão. Quando precisar de efetuar este procedimento, tem de fornecer a configuração da extensão.
 
-You can use the following cmdlets to know whether an extension requires a configuration of public and private parameters:
+Pode utilizar os seguintes cmdlets para saber se uma extensão requer uma configuração de parâmetros públicas e privadas:
 
-* For instances of web roles or worker roles, you can use the **Get-AzureServiceAvailableExtension** cmdlet.
-* For instances of Virtual Machines, you can use the **Get-AzureVMAvailableExtension** cmdlet.
+* Para instâncias de funções da web ou funções de trabalho, pode utilizar o **Get-AzureServiceAvailableExtension** cmdlet.
+* Para as instâncias de máquinas virtuais, pode utilizar o **Get-AzureVMAvailableExtension** cmdlet.
 
-### <a name="service-management-rest-apis"></a>Service Management REST APIs
-When you retrieve a listing of available extensions by using the REST APIs, you receive information about how the extension is to be configured. The information that is returned might show parameter information represented by a public schema and private schema. Public parameter values are returned in queries about the instances. Private parameter values are not returned.
+### <a name="service-management-rest-apis"></a>APIs REST de Gestão de Serviço
+Ao obter uma listagem das extensões disponíveis, utilizando as APIs REST, recebe informações sobre como a extensão de ser configurada. As informações que são devolvidas poderão mostrar informações de parâmetro representadas por um esquema pública e privada esquema. Os valores de parâmetros público são devolvidos nas consultas sobre as instâncias. Os valores de parâmetros privada não são devolvidos.
 
-You can use the following REST APIs to know whether an extension requires a configuration of public and private parameters:
+Pode utilizar as APIs REST do seguinte para saber se uma extensão requer uma configuração de parâmetros públicas e privadas:
 
-* For instances of web roles or worker roles, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Available Extensions](https://msdn.microsoft.com/library/dn169559.aspx) operation.
-* For instances of Virtual Machines, the **PublicConfigurationSchema** and **PrivateConfigurationSchema** elements contain the information in the response from the [List Resource Extensions](https://msdn.microsoft.com/library/dn495441.aspx) operation.
+* Para instâncias de funções da web ou funções de trabalho, o **PublicConfigurationSchema** e **PrivateConfigurationSchema** elementos contêm as informações na resposta do [lista disponíveis Extensões](https://msdn.microsoft.com/library/dn169559.aspx) operação.
+* Para instâncias de máquinas virtuais, o **PublicConfigurationSchema** e **PrivateConfigurationSchema** elementos contêm as informações na resposta do [lista de recursos Extensões](https://msdn.microsoft.com/library/dn495441.aspx) operação.
 
 > [!NOTE]
-> Extensions can also use configurations that are defined with JSON. When these types of extensions are used, only the **SampleConfig** element is used.
+> Extensões também podem utilizar as configurações que estão definidas com JSON. Quando estes tipos de extensões são utilizados, apenas o **SampleConfig** elemento é utilizado.
 > 
 > 
 

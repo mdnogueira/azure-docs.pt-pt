@@ -34,7 +34,7 @@
       tocHref: /azure/app-service/
       topicHref: /azure/app-service/
       items:
-        - name: Aplicações Web para Contentores
+        - name: Serviço de Aplicações no Linux
           tocHref: /azure/app-service/containers/
           topicHref: /azure/app-service/containers/
         - name: Ambientes do App Service
@@ -61,6 +61,9 @@
     - name: Registo de Contentor
       tocHref: /azure/container-registry/
       topicHref: /azure/container-registry/
+    - name: Gestão de Custos
+      tocHref: /azure/cost-management/
+      topicHref: /azure/cost-management/
     - name: Funções
       tocHref: /azure/azure-functions/
       topicHref: /azure/azure-functions/
@@ -91,6 +94,9 @@
     - name: Batch
       tocHref: /azure/batch/
       topicHref: /azure/batch/
+    - name: Batch AI
+      tocHref: /azure/batch-ai/
+      topicHref: /azure/batch-ai/
     - name: Faturação
       tocHref: /azure/billing/
       topicHref: /azure/billing/
@@ -116,6 +122,9 @@
         - name: Pesquisa Web do Bing
           tocHref: /azure/cognitive-services/bing-web-search/
           topicHref: /azure/cognitive-services/bing-web-search/
+        - name: Voz
+          tocHref: /azure/cognitive-services/Speech/
+          topicHref: /azure/cognitive-services/Speech/
         - name: Imagem Digitalizada
           tocHref: /azure/cognitive-services/computer-vision/
           topicHref: /azure/cognitive-services/computer-vision/
@@ -143,6 +152,9 @@
     - name: Container Instances
       tocHref: /azure/container-instances/
       topicHref: /azure/container-instances/
+    - name: AKS
+      tocHref: /azure/aks/
+      topicHref: /azure/aks/
     - name: Serviço de Contentor
       tocHref: /azure/container-service/
       topicHref: /azure/container-service/

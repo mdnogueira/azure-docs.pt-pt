@@ -1,25 +1,25 @@
 <!--author=alkohli last changed: 01/02/17-->
 
 
-#### <a name="to-add-or-remove-a-volume"></a>To add or remove a volume
+#### <a name="to-add-or-remove-a-volume"></a>Para adicionar ou remover um volume
 
-1. Go to your StorSimple device and click **Backup policy**.
+1. Aceda ao seu dispositivo StorSimple e clique em **Política de cópias de segurança**.
 
-2. In the tabular listing of the policies, select and click the policy that you want to modify. Right-click to invoke the context menu and then select **Add/remove volume**.
+2. Na tabela listagem das políticas, selecione e clique na política que pretende modificar. Contexto para invocar o menu de contexto e, em seguida, selecione **Adicionar/remover volume**.
 
-    ![manage schedules](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol1.png)
+    ![gerir agendas](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol1.png)
 
-3. In the **Add/remove volume** blade, select or deselect the checkbox(es) to add or remove the volume. Multiple volumes are selected/deselected by checking or unchecking the corresponding checkboxes.
+3. No **Adicionar/remover volume** painel, selecione ou desmarque checkbox(es) para adicionar ou remover o volume. Vários volumes estão selecionados/desmarcada a verificação ou ao desmarcar as caixas de verificação correspondentes.
 
-    ![manage schedules](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol3.png)
+    ![gerir agendas](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol3.png)
 
-    If you assign volumes from different volume containers to a backup policy, then you will need to remember to fail over those volume containers together. You will see a warning to that effect.
+    Se atribuir volumes de contentores de volume diferente para uma política de cópia de segurança, terá de não se esqueça de efetuar a ativação pós-falha desses contentores de volume em conjunto. Irá ver um aviso para esse efeito.
 
-    ![manage schedules](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol2.png)
+    ![gerir agendas](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol2.png)
 
-4. You are notified when the backup policy is modified. The backup policy list is also updated.
+4. Será notificado quando a política de cópia de segurança é modificada. Lista de políticas de cópia de segurança também é atualizada.
 
-    ![manage schedules](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol6.png)
+    ![gerir agendas](./media/storsimple-8000-add-remove-volume-backup-policy-u2/addvolbupol6.png)
 
 
 

@@ -1,16 +1,16 @@
-## <a name="application-gateway"></a>Application Gateway
-Application Gateway provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. Application load balancing allows the use of routing rules for network traffic based on HTTP. 
+## <a name="application-gateway"></a>Gateway de Aplicação
+Gateway de aplicação fornece uma solução baseada em camada 7 balanceamento de carga de balanceamento de carga HTTP gerida do Azure. O balanceamento de carga da aplicação permite a utilização de regras de encaminhamento de tráfego de rede com base em HTTP. 
 <BR>
 
-| Property | Description |
+| Propriedade | Descrição |
 | --- | --- |
-| **backendAddressPools** |The list of IP addresses of the back end servers. The IP addresses listed should either belong to the virtual network subnet, or should be a public IP/VIP or private IP |
-| **backendHttpSettingsCollection** |Every pool has settings like port, protocol, and cookie based affinity. These settings are tied to a pool and are applied to all servers within the pool |
-| **frontendPorts** |This port is the public port opened on the application gateway. Traffic hits this port, and then gets redirected to one of the back end servers |
-| **httpListeners** |Listener has a frontend port, a protocol (Http or Https, these are case-sensitive), and the SSL certificate name (if configuring SSL offload) |
-| **requestRoutingRules** |The rule binds the listener and the back end server pool and defines which back end server pool the traffic should be directed. Currently works only as Round-robin |
+| **backendAddressPools** |A lista de endereços IP dos servidores de back-end. Os endereços IP listados devem pertencer à sub-rede da rede virtual, ou devem ser um IP/VIP público ou IP privado |
+| **backendHttpSettingsCollection** |Cada conjunto tem definições como a porta, protocolo e a afinidade de cookie com base. Estas definições estão associadas a um conjunto e são aplicadas a todos os servidores dentro do conjunto |
+| **frontendPorts** |Esta porta é a porta pública aberta no gateway de aplicação. O tráfego chega a esta porta e posteriormente redirecionado para um dos servidores back-end |
+| **httpListeners** |Serviço de escuta possui uma porta de front-end, um protocolo (Http ou Https, estes são maiúsculas e minúsculas) e o nome do certificado SSL (se configurar o SSL offload) |
+| **requestRoutingRules** |A regra vincula o serviço de escuta e o back end agrupamento de servidores e define qual novamente terminar o tráfego deve ser direcionado de agrupamento de servidores. Atualmente, funciona apenas como Round robin |
 
-Example of an application gateway Json template:
+Exemplo de um modelo de Json do gateway de aplicação:
 
     {
       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -216,6 +216,6 @@ Example of an application gateway Json template:
     }
 
 
-### <a name="additional-resources"></a>Additional resources
-Read [ application gateway REST API](https://msdn.microsoft.com/library/azure/mt299388.aspx) for more information.
+### <a name="additional-resources"></a>Recursos adicionais
+Leitura [ gateway de aplicação API de REST](https://msdn.microsoft.com/library/azure/mt299388.aspx) para obter mais informações.
 

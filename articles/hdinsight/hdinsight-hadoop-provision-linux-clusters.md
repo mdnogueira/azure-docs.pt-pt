@@ -17,11 +17,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 09/06/2017
 ms.author: jgao
-ms.openlocfilehash: 8118570071aa5af6ec74c971a711b2eab07fb1b5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: c0f89f98c26b80e8b71c58fc89ea7ecebe734f71
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="set-up-clusters-in-hdinsight-with-hadoop-spark-kafka-and-more"></a>Configurar clusters no HDInsight com o Hadoop, Spark, Kafka e muito mais
 
@@ -76,13 +76,13 @@ O Azure HDInsight fornece atualmente os seguintes tipos de cluster, cada um com 
 
 | Tipo de cluster | Funcionalidade |
 | --- | --- |
-| [Hadoop](hdinsight-hadoop-introduction.md) |Análise dos dados armazenados e consulta de batch |
-| [HBase](hdinsight-hbase-overview.md) |Processamento de grandes quantidades de dados de NoSQL sem esquemas, |
-| [Storm](hdinsight-storm-overview.md) |Processamento de eventos em tempo real |
-| [Spark](hdinsight-apache-spark-overview.md) |Processamento de memória, consultas interativas, processamento de fluxo micro batch |
-| [Kafka (Pré-visualização)](hdinsight-apache-kafka-introduction.md) | Uma plataforma de transmissão em fluxo distribuída que pode ser utilizada para criar pipelines de dados de transmissão em fluxo em tempo real e aplicações |
-| [R Server](hdinsight-hadoop-r-server-overview.md) |Vários estatísticas de macrodados, modelação preditiva e capacidades de aprendizagem |
-| [Consulta interativa](hdinsight-hadoop-use-interactive-hive.md) |Dentro da memória colocação em cache para mais rápidas e interativas consultas do Hive |
+| [Hadoop](hadoop/apache-hadoop-introduction.md) |Análise dos dados armazenados e consulta de batch |
+| [HBase](hbase/apache-hbase-overview.md) |Processamento de grandes quantidades de dados de NoSQL sem esquemas, |
+| [Storm](storm/apache-storm-overview.md) |Processamento de eventos em tempo real |
+| [Spark](spark/apache-spark-overview.md) |Processamento de memória, consultas interativas, processamento de fluxo micro batch |
+| [Kafka (Pré-visualização)](kafka/apache-kafka-introduction.md) | Uma plataforma de transmissão em fluxo distribuída que pode ser utilizada para criar pipelines de dados de transmissão em fluxo em tempo real e aplicações |
+| [R Server](r-server/r-server-overview.md) |Vários estatísticas de macrodados, modelação preditiva e capacidades de aprendizagem |
+| [Consulta interativa](./interactive-query/apache-interactive-query-get-started.md) |Dentro da memória colocação em cache para mais rápidas e interativas consultas do Hive |
 
 ### <a name="number-of-nodes-for-each-cluster-type"></a>Número de nós para cada tipo de cluster
 Cada tipo de cluster tem o suas próprias número de nós, terminologia para nós e o tamanho predefinido da VM. A tabela seguinte, é o número de nós para cada tipo de nó parênteses.
@@ -208,7 +208,7 @@ A maioria das aplicações do HDInsight é instalada num nó de extremidade vazi
 
 Pode instalar componentes adicionais ou personalizar a configuração de cluster utilizando scripts durante a criação. Scripts são invocados através de **ação de Script**, que é uma opção de configuração que pode ser utilizada a partir do portal do Azure, cmdlets do HDInsight Windows PowerShell ou o SDK .NET do HDInsight. Para obter mais informações, consulte [através da ação de Script de cluster de HDInsight personalizar](hdinsight-hadoop-customize-cluster-linux.md).
 
-Alguns componentes de Java nativas, como o Mahout e Cascading, podem ser executados no cluster como ficheiros de arquivo de Java (JAR). Estes ficheiros JAR podem ser distribuídos ao Storage do Azure e submetidos a clusters do HDInsight com mecanismos de submissão de tarefas do Hadoop. Para obter mais informações, consulte [Hadoop submeter as tarefas através de programação](hdinsight-submit-hadoop-jobs-programmatically.md).
+Alguns componentes de Java nativas, como o Mahout e Cascading, podem ser executados no cluster como ficheiros de arquivo de Java (JAR). Estes ficheiros JAR podem ser distribuídos ao Storage do Azure e submetidos a clusters do HDInsight com mecanismos de submissão de tarefas do Hadoop. Para obter mais informações, consulte [Hadoop submeter as tarefas através de programação](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 > [!NOTE]
 > Se tiver problemas de implementação de ficheiros JAR em clusters do HDInsight, ou chamar JAR ficheiros nos clusters do HDInsight, contacte [Microsoft Support](https://azure.microsoft.com/support/options/).
@@ -242,7 +242,7 @@ Se a sua solução requer tecnologias que são distribuídas por vários tipos d
 
 Para obter mais informações sobre como utilizar uma rede virtual do Azure com o HDInsight, consulte [expandir HDInsight com redes virtuais do Azure](hdinsight-extend-hadoop-virtual-network.md).
 
-Para obter um exemplo de utilização de dois tipos de cluster dentro de uma rede virtual do Azure, consulte [analisar dados de sensor com o Storm e HBase](hdinsight-storm-sensor-data-analysis.md). Para obter mais informações sobre como utilizar o HDInsight com uma rede virtual, incluindo requisitos de configuração específicos para a rede virtual, consulte [capacidades de expandir HDInsight utilizando a Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
+Para obter um exemplo de utilização de dois tipos de cluster dentro de uma rede virtual do Azure, consulte [analisar dados de sensor com o Storm e HBase](storm/apache-storm-sensor-data-analysis.md). Para obter mais informações sobre como utilizar o HDInsight com uma rede virtual, incluindo requisitos de configuração específicos para a rede virtual, consulte [capacidades de expandir HDInsight utilizando a Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
 ## <a name="troubleshoot-access-control-issues"></a>Resolver problemas de controlo de acesso
 
@@ -250,6 +250,6 @@ Caso se depare com problemas com a criação de clusters do HDInsight, veja [ace
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Quais são o HDInsight, ecossistema do Hadoop, e clusters do Hadoop?](hdinsight-hadoop-introduction.md)
-- [Introdução à utilização do Hadoop no HDInsight](hdinsight-hadoop-linux-tutorial-get-started.md)
+- [Quais são o HDInsight, ecossistema do Hadoop, e clusters do Hadoop?](hadoop/apache-hadoop-introduction.md)
+- [Introdução à utilização do Hadoop no HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 - [Hadoop no HDInsight a partir do Windows PC de trabalho](hdinsight-hadoop-windows-tools.md)

@@ -1,22 +1,22 @@
 <!--author=alkohli last changed: 08/29/17-->
 
-## <a name="troubleshooting-update-failures"></a>Troubleshooting update failures
-**What if you see a notification that the pre-upgrade checks have failed?**
+## <a name="troubleshooting-update-failures"></a>Resolução de problemas de falhas na atualização
+**E se vir uma notificação informando-me de que as verificações de pré-atualização falharam?**
 
-If a pre-check fails, make sure that you have looked at the detailed notification bar at the bottom of the page. This provides guidance as to which pre-check has failed. For instance, you receive a notification that the controller health check and hardware component health check have failed. Go to **Monitor > Hardware health**. You need to make sure that both controllers are healthy and online. You also need to make sure that all the hardware components in the StorSimple device are shown to be healthy in this blade. You can then try to install updates. If you are not able to fix the hardware component issues, then you will need to contact Microsoft Support for next steps.
+Se uma pré-verificação falhar, certifique-se de que viu a barra de notificação detalhada na parte inferior da página. Isto fornece orientações relativamente a qual pré-verificação falhou. Por exemplo, receberá uma notificação que falharam a verificação de estado de funcionamento do controlador e verificação de estado de funcionamento do componente de hardware. Aceda a **monitorização > Estado de funcionamento do Hardware**. Tem de certificar-se de que tanto os controladores são bom estado de funcionamento e online. Terá também de certificar-se de que todos os componentes de hardware no dispositivo StorSimple são apresentados para estar em bom estado de funcionamento neste painel. Pode então tentar instalar atualizações. Se não conseguir corrigir os problemas dos componentes de hardware, terá de contactar o Suporte da Microsoft para obter os passos a seguir.
 
-**What if you receive a "Could not install updates" error message, and the recommendation is to refer to the update troubleshooting guide to determine the cause of the failure?**
+**E se receber uma mensagem de erro “Não foi possível instalar as atualizações” e a recomendação for consultar o guia de resolução de problemas para determinar a causa da falha?**
 
-One likely cause for this could be that you do not have connectivity to the Microsoft Update servers. This is a manual check that needs to be performed. If you lose connectivity to the update server, your update job would fail. You can check the connectivity by running the following cmdlet from the Windows PowerShell interface of your StorSimple device:
+Uma das causas prováveis poderia ser não ter conectividade aos servidores do Microsoft Update. Esta é uma verificação manual que tem de ser efetuada. Se perder a conectividade ao servidor de atualização, a tarefa de atualização falha. Pode verificar a conectividade ao executar o seguinte cmdlet a partir da interface do Windows PowerShell do seu dispositivo StorSimple:
 
  `Test-Connection -Source <Fixed IP of your device controller> -Destination <Any IP or computer name outside of datacenter>`
 
-Run the cmdlet on both controllers.
+Execute o cmdlet nos dois controladores.
 
-If you have verified the connectivity exists, and you continue to see this issue, please contact Microsoft Support for next steps.
+Se verificar que há conectividade e continuar a ver este problema, contacte o Suporte da Microsoft para obter os passos a seguir.
 
-**What if you see an update failure when updating your device to Update 4 and both the controllers are running Update 4?**
+**E se vir uma falha de atualização ao atualizar o seu dispositivo para a Atualização 4 e os dois controladores estiverem a executar a Atualização 4?**
 
-Starting Update 4, if both the controllers are running the same software version and if there is an update failure, the controllers do not go into recovery mode. This situation can arise if the device software hotfix (1st order update) is applied to both the controllers successfully but other hotfixes (2nd order and 3rd order) are yet to be applied. Starting Update 4, the controllers will go into recovery mode only if the two controllers are running different software versions. 
+Ao iniciarem a Atualização 4, se os dois controladores estiverem a executar a mesma versão de software e se existir uma falha de atualização, os controladores não entram em modo de recuperação. Esta situação pode surgir se a correção de software do dispositivo (atualização de 1.ª ordem) for aplicada aos dois controladores com êxito, mas se outras correções (de 2.ª e 3.ª ordem) ainda não tiverem sido aplicadas. Ao iniciarem a Atualização 4, os controladores só entram em modo de recuperação se os dois controladores estiverem a executar versões de software diferentes. 
 
-If the user sees an update failure when both controllers are running Update 4, we recommend that they wait a few minutes and then retry updating. If the retry does not succeed, then they should contact Microsoft Support.
+Se o utilizador vir uma falha de atualização quando os dois controladores estiverem a executar a Atualização 4, recomendamos que aguarde alguns minutos e tente novamente a atualização. Se a tentativa não for bem sucedida, deverá contactar o Suporte da Microsoft.

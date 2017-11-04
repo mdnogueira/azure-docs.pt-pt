@@ -15,11 +15,11 @@ ms.workload: big-data
 ms.date: 05/25/2017
 ms.author: jgao
 ROBOTS: NOINDEX
-ms.openlocfilehash: 04392b535965edd785bbb66a52eb6b41b768553e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 64a4c5b158ebe0119f2f0133587a743fd2dbf0ff
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="use-apache-phoenix-and-squirrel-with-windows-based-hbase-clusters-in-hdinsight"></a>Utilizar o Apache Phoenix e o SQuirreL com clusters baseados em Windows HBase no HDInsight
 Saiba como utilizar [Apache Phoenix](http://phoenix.apache.org/) no HDInsight e como instalar e configurar o SQuirreL na estação de trabalho para ligar a um cluster de HBase no HDInsight. Para obter mais informações sobre o Phoenix, consulte [Phoenix em 15 minutos ou menos](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). Para a gramática Phoenix, consulte [Phoenix gramática](http://phoenix.apache.org/language/index.html).
@@ -29,7 +29,7 @@ Saiba como utilizar [Apache Phoenix](http://phoenix.apache.org/) no HDInsight e 
 >
 
 > [!IMPORTANT]
-> Os passos neste documento só funcionam para os clusters do HDInsight baseados em Windows. HDInsight só está disponível no Windows para as versões inferiores ao HDInsight 3.4. O Linux é o único sistema operativo utilizado na versão 3.4 ou superior do HDInsight. Para obter mais informações, veja [HDInsight retirement on Windows](hdinsight-component-versioning.md#hdinsight-windows-retirement) (Desativação do HDInsight no Windows). Para obter informações sobre como utilizar o Phoenix no HDInsight baseado em Linux, consulte [clusters de utilizar o Apache Phoenix com HBase baseado em Linux no HDInsight](hdinsight-hbase-phoenix-squirrel-linux.md).
+> Os passos neste documento só funcionam para os clusters do HDInsight baseados em Windows. HDInsight só está disponível no Windows para as versões inferiores ao HDInsight 3.4. O Linux é o único sistema operativo utilizado na versão 3.4 ou superior do HDInsight. Para obter mais informações, veja [HDInsight retirement on Windows](hdinsight-component-versioning.md#hdinsight-windows-retirement) (Desativação do HDInsight no Windows). Para obter informações sobre como utilizar o Phoenix no HDInsight baseado em Linux, consulte [clusters de utilizar o Apache Phoenix com HBase baseado em Linux no HDInsight](hbase/apache-hbase-phoenix-squirrel-linux.md).
 >
 
 
@@ -269,7 +269,7 @@ Neste artigo, aprendeu a utilizar o Apache Phoenix no HDInsight.  Para obter mai
 
 * [Descrição geral do HBase do HDInsight ][hdinsight-hbase-overview]: O HBase é uma base de dados NoSQL open source do Apache, baseada no Hadoop, que fornece acesso aleatório e uma sólida consistência para grandes quantidades de dados não estruturados e semi-estruturados.
 * [Aprovisionar clusters do HBase no Azure Virtual Network][hdinsight-hbase-provision-vnet]: com a integração de rede virtual, clusters de HBase podem ser implementados para a mesma rede virtual que as suas aplicações para que as aplicações podem comunicar com o HBase diretamente.
-* [Configurar a replicação do HBase no HDInsight](hdinsight-hbase-replication.md): Saiba como configurar a replicação do HBase entre dois centros de dados do Azure.
+* [Configurar a replicação do HBase no HDInsight](hbase/apache-hbase-replication.md): Saiba como configurar a replicação do HBase entre dois centros de dados do Azure.
 
 
 [azure-portal]: https://portal.azure.com
@@ -278,8 +278,8 @@ Neste artigo, aprendeu a utilizar o Apache Phoenix no HDInsight.  Para obter mai
 [hdinsight-versions]: hdinsight-component-versioning.md
 [hdinsight-hbase-get-started]: hdinsight-hbase-tutorial-get-started.md
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md#connect-to-clusters-using-rdp
-[hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
+[hdinsight-hbase-provision-vnet]:hbase/apache-hbase-provision-vnet.md
+[hdinsight-hbase-overview]:hbase/apache-hbase-overview.md
 
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png

@@ -1,16 +1,16 @@
-### <a name="prerequisites"></a>Prerequisites
-* A [Office 365 Video](https://support.office.com/article/Meet-Office-365-Video-ca1cc1a9-a615-46e1-b6a3-40dbd99939a6) account  
+### <a name="prerequisites"></a>Pré-requisitos
+* A [vídeo do Office 365](https://support.office.com/article/Meet-Office-365-Video-ca1cc1a9-a615-46e1-b6a3-40dbd99939a6) conta  
 
-Before you can use your Office 365 Video account in a Logic app, you must authorize the Logic app to connect to your Office 365 Video account.Fortunately, you can do this easily from within your Logic app on the Azure Portal.  
+Antes de poder utilizar a sua conta Office 365 vídeo numa aplicação lógica, tem de autorizar a aplicação lógica para ligar à sua conta Office 365 vídeo. Felizmente, pode fazê-facilmente na sua aplicação lógica no Portal do Azure.  
 
-Here are the steps to authorize your Logic app to connect to your Office 365 Video account:  
+Eis os passos para autorizar a aplicação lógica para ligar à sua conta Office 365 vídeo:  
 
-1. To create a connection to Office 365 Video, in the Logic app designer, select **Show Microsoft managed APIs** in the drop down list then enter *Office 365 Video* in the search box. Select the trigger or action you'll like to use:  
-   ![Office 365 Video connection creation step](./media/connectors-create-api-office365video/office365video-1.png)  
-2. If you haven't created any connections to Office 365 Video before, you'll get prompted to provide your Office 365 Video credentials. These credentials will be used to authorize your Logic app to connect to, and access your Office 365 Video account's data:  
-   ![Office 365 Video connection creation step](./media/connectors-create-api-office365video/office365video-2.png)  
-3. Provide your credentials to connect to Office 365 Video:  
-   ![Office 365 Video connection creation step](./media/connectors-create-api-office365video/office365video-3.png)  
-4. Notice the connection has been created and you are now free to proceed with the other steps in your Logic app:  
-   ![Office 365 Video connection creation step](./media/connectors-create-api-office365video/office365video-4.png)  
+1. Para criar uma ligação ao Office 365 vídeo, no designer de aplicação lógica, selecione **Mostrar Microsoft APIs geridas** na lista pendente, em seguida, introduza *vídeo do Office 365* na caixa de pesquisa. Selecione o acionador ou ação que irá gostar a utilizar:  
+   ![Passo de criação de ligação de vídeo do Office 365](./media/connectors-create-api-office365video/office365video-1.png)  
+2. Se ainda não criou quaisquer ligações para Office 365 vídeo antes, irá obter lhe fornecer as credenciais de vídeo do Office 365. Estas credenciais serão utilizadas para autorizar a aplicação lógica para ligar a e aceder aos dados da sua conta Office 365 vídeo:  
+   ![Passo de criação de ligação de vídeo do Office 365](./media/connectors-create-api-office365video/office365video-2.png)  
+3. Indique as suas credenciais para ligar ao Office 365 vídeo:  
+   ![Passo de criação de ligação de vídeo do Office 365](./media/connectors-create-api-office365video/office365video-3.png)  
+4. Repare a ligação foi criada e está agora livre para continuar com os outros passos da sua aplicação lógica:  
+   ![Passo de criação de ligação de vídeo do Office 365](./media/connectors-create-api-office365video/office365video-4.png)  
 

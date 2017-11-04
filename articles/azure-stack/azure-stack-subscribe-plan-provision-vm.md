@@ -1,6 +1,6 @@
 ---
-title: Subscribe to an offer | Microsoft Docs
-description: As a tenant, learn how to subscribe to an offer.
+title: Subscrever uma oferta | Microsoft Docs
+description: Como um utilizador, saiba como subscrever uma oferta.
 services: azure-stack
 documentationcenter: 
 author: ErikjeMS
@@ -14,35 +14,36 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 7/03/2017
 ms.author: erikje
-ms.translationtype: HT
-ms.sourcegitcommit: d941879aee6042b38b7f5569cd4e31cb78b4ad33
-ms.openlocfilehash: 3cd87ebe9827249d32f15b5de0ad8521d0282c47
-ms.contentlocale: pt-pt
-ms.lasthandoff: 07/10/2017
-
+ms.openlocfilehash: f70815b5e89753a4b0083ffbe10d9920062d1ff0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="subscribe-to-an-offer"></a>Subscribe to an offer
-Now that you've [created an offer](azure-stack-create-offer.md), test that your tenants can create a subscription.
+# <a name="subscribe-to-an-offer"></a>Subscrever uma oferta
 
-1. [Sign in](azure-stack-connect-azure-stack.md) to the Azure Stack tenant portal (https://portal.local.azurestack.external) and click **Get a Subscription**.
+*Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
+
+Agora que já [criado uma oferta](azure-stack-create-offer.md), testar a que os utilizadores podem criar uma subscrição.
+
+1. [Inicie sessão no](azure-stack-connect-azure-stack.md) no portal de utilizador de pilha do Azure (https://portal.local.azurestack.external) e clicar em **obter uma subscrição**.
 
    ![](media/azure-stack-subscribe-plan-provision-vm/image01.png)
-2. In the **Display Name** field, type a name for your subscription, click **Offer**, click one of the offers in the **Choose an offer** blade, and then click **Create**.
+2. No **nome a apresentar** campo, escreva um nome para a sua subscrição, clique em **oferecem**, clique das ofertas no **escolher uma oferta** painel e, em seguida, clique em  **Criar**.
 
    ![](media/azure-stack-subscribe-plan-provision-vm/image02.png)
-3. To view the subscription you created, click **More services**, click **Subscriptions**, then click your new subscription.  
+3. Para ver a subscrição que criou, clique em **mais serviços**, clique em **subscrições**, em seguida, clique em sua nova subscrição.  
 
-After you subscribe to an offer, refresh the portal to see which services are part of the new subscription.
+Depois de subscrever uma oferta, atualize o portal para ver quais os serviços fazem parte da nova subscrição.
 
-## <a name="subscribe-to-an-add-on-plan"></a>Subscribe to an add-on plan
-If the offer has an add-on plan, tenants can add them to their subscription at any time.  
+## <a name="subscribe-to-an-add-on-plan"></a>Subscrever um plano de suplemento
+Se a oferta tiver um plano de suplemento, os utilizadores podem adicioná-los para a subscrição em qualquer altura.  
 
-1. In the tenant portal, select **More services** > **Subscriptions**.
+1. No portal de utilizador, selecione **mais serviços** > **subscrições**.
 
-2. Click on the subscription > **Add Plan** button, and select the add-on plan.
+2. Clique na subscrição > **adicionar plano** botão e selecione o plano de suplemento.
 
 
 
-## <a name="next-steps"></a>Next steps
-[Provision a virtual machine](azure-stack-provision-vm.md)
-
+## <a name="next-steps"></a>Passos seguintes
+[Aprovisionar uma máquina virtual](azure-stack-provision-vm.md)

@@ -1,48 +1,48 @@
-# <a name="persist-files-in-azure-cloud-shell"></a>Persist files in Azure Cloud Shell
-Cloud Shell utilizes Azure File storage to persist files across sessions.
+# <a name="persist-files-in-azure-cloud-shell"></a>Manter os ficheiros na Shell de nuvem do Azure
+Shell de nuvem utiliza o File storage do Azure para manter os ficheiros entre sessões.
 
-## <a name="set-up-a-clouddrive-file-share"></a>Set up a clouddrive file share
-On initial start, Cloud Shell prompts you to associate a new or existing file share to persist files across sessions.
+## <a name="set-up-a-clouddrive-file-share"></a>Configurar uma partilha de ficheiros clouddrive
+No início inicial, Shell da nuvem pede-lhe para associar uma partilha de ficheiros novo ou existente para manter os ficheiros entre sessões.
 
 > [!NOTE]
-> Bash and PowerShell share the same file share. Only one file share can be associated with automatic mounting in Cloud Shell.
+> Bash e PowerShell partilham a mesma partilha de ficheiros. Partilha de ficheiros só pode ser associada a montagem automática na Shell de nuvem.
 
-### <a name="create-new-storage"></a>Create new storage
+### <a name="create-new-storage"></a>Criar o novo armazenamento
 
-When you use basic settings and select only a subscription, Cloud Shell creates three resources on your behalf in the supported region that's nearest to you:
-* Resource group: `cloud-shell-storage-<region>`
-* Storage account: `cs<uniqueGuid>`
-* File share: `cs-<user>-<domain>-com-<uniqueGuid>`
+Quando utilizar definições básicas e selecione apenas uma subscrição, Shell da nuvem cria três recursos em seu nome na região suportada que seja nearest to:
+* Grupo de recursos:`cloud-shell-storage-<region>`
+* Conta de armazenamento:`cs<uniqueGuid>`
+* Partilha de ficheiros:`cs-<user>-<domain>-com-<uniqueGuid>`
 
-![The Subscription setting](../articles/cloud-shell/media/persisting-shell-storage/basic-storage.png)
+![A definição de subscrição](../articles/cloud-shell/media/persisting-shell-storage/basic-storage.png)
 
-The file share mounts as `clouddrive` in your `$Home` directory. This is a one-time action, and the file share mounts automatically in subsequent sessions. 
+Monta a partilha de ficheiros como `clouddrive` no seu `$Home` diretório. Esta é uma ação única e a partilha de ficheiros automaticamente monta nas sessões subsequentes. 
 
-In Bash, the file share also contains a 5-GB image that is created for you which automatically persists data in your `$Home` directory. 
+Bash, a partilha de ficheiros também contém uma imagem de 5 GB é criada para si que automaticamente mantém os dados no seu `$Home` diretório. 
 
-### <a name="use-existing-resources"></a>Use existing resources
+### <a name="use-existing-resources"></a>Utilizar recursos existentes
 
-By using the advanced option, you can associate existing resources. When the storage setup prompt appears, select **Show advanced settings** to view additional options. The drop-down menus are filtered for your assigned Cloud Shell region and the locally redundant storage and geo-redundant storage accounts.
+Ao utilizar a opção avançada, pode associar recursos existentes. Quando for apresentada a linha de comandos do programa de configuração da armazenamento, selecione **mostrar as definições avançadas** para ver as opções adicionais. Os menus de lista pendente são filtrados para a região de nuvem Shell atribuída e o armazenamento localmente redundante e contas de armazenamento georredundante.
 
-In Bash, existing file shares receive a 5-GB image created for you to persist your `$Home` directory.
+De Bash, partilhas de ficheiros existentes recebem uma imagem de 5 GB criada para si manter o `$Home` diretório.
 
-![The Resource group setting](../articles/cloud-shell/media/persisting-shell-storage/advanced-storage.png)
+![A definição de grupo de recursos](../articles/cloud-shell/media/persisting-shell-storage/advanced-storage.png)
 
-### <a name="restrict-resource-creation-with-an-azure-resource-policy"></a>Restrict resource creation with an Azure resource policy
-Storage accounts that you create in Cloud Shell are tagged with `ms-resource-usage:azure-cloud-shell`. If you want to disallow users from creating storage accounts in Cloud Shell, create an [Azure resource policy for tags](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-policy-tags) that are triggered by this specific tag.
+### <a name="restrict-resource-creation-with-an-azure-resource-policy"></a>Restringir a criação de recursos com uma política de recursos do Azure
+As contas de armazenamento que criou na Shell de nuvem são etiquetadas com `ms-resource-usage:azure-cloud-shell`. Se pretender não permitir aos utilizadores criar contas de armazenamento na nuvem Shell, crie um [política de recursos do Azure para etiquetas](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-policy-tags) que são acionadas por esta tag específica.
 
-## <a name="supported-storage-regions"></a>Supported storage regions
-Associated Azure storage accounts must reside in the same region as the Cloud Shell machine that you're mounting them to.
+## <a name="supported-storage-regions"></a>Regiões de armazenamento suportadas
+Associadas têm de residir na mesma região que a máquina de Shell de nuvem que está a montá-los para contas de armazenamento do Azure.
 
-To find your assigned region you may:
-* View the note on the "Advanced storage settings" dialog
-* Refer to the name of the storage account created for you (ex: `cloud-shell-storage-westus`)
-* Run `env` and locate the variable `ACC_LOCATION`
+Para localizar a sua região atribuído, que o utilizador pode:
+* Veja a nota da caixa de diálogo "definições de armazenamento avançada"
+* Consulte o nome da conta de armazenamento criado por si (ex: `cloud-shell-storage-westus`)
+* Executar `env` e localize a variável`ACC_LOCATION`
 
-Cloud Shell machine exist in the following regions:
-|Area|Region|
+Máquina de Shell de nuvem existe nas seguintes regiões:
+|Área|Região|
 |---|---|
-|Americas|East US, South Central US, West US|
-|Europe|North Europe, West Europe|
-|Asia Pacific|India Central, Southeast Asia|
+|Américas|EUA oeste EUA leste, EUA Centro-Sul,|
+|Europa|Europa do Norte, Europa Ocidental|
+|Ásia-Pacífico|Índia Central, Sudeste asiático|
 

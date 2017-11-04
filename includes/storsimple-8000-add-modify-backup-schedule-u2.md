@@ -1,19 +1,19 @@
 
 <!--author=alkohli last changed: 01/02/17-->
 
-#### <a name="to-add-or-modify-a-storsimple-backup-schedule"></a>To add or modify a StorSimple backup schedule
+#### <a name="to-add-or-modify-a-storsimple-backup-schedule"></a>Para adicionar ou modificar uma agenda de cópia de segurança do StorSimple
 
-1. Go to your StorSimple device and click **Backup policy**.
+1. Aceda ao seu dispositivo StorSimple e clique em **Política de cópias de segurança**.
 
-2. In the tabular listing of the policies, select and click the policy that you want to modify. Right-click to invoke the context menu and then select **Add schedule**.
+2. Na tabela listagem das políticas, selecione e clique na política que pretende modificar. Contexto para invocar o menu de contexto e, em seguida, selecione **adicionar agenda**.
 
-    ![manage schedules](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule1.png)
+    ![gerir agendas](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule1.png)
 
-3. In the **Add schedule** blade, modify the snapshot type, backup frequency, retention, and start date and time. Click **Add**.
+3. No **adicionar agenda** painel, modificar o tipo de instantâneo, frequência de cópia de segurança, retenção e iniciar a data e hora. Clique em **Adicionar**.
 
-    ![manage schedules](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule5.png)
+    ![gerir agendas](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule5.png)
 
-4. You are notified when the backup policy creation is complete. The backup policy list is also updated.
+4. Será notificado quando a criação de política de cópia de segurança estiver concluída. Lista de políticas de cópia de segurança também é atualizada.
 
-    ![manage schedules](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule4.png)
+    ![gerir agendas](./media/storsimple-8000-add-modify-backup-schedule-u2/addschedule4.png)
 

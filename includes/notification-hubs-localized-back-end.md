@@ -2,7 +2,7 @@
 
 
 
-When you send template notifications you only need to provide a set of properties, in our case we will send the set of properties containing the localized version of the current news, for instance:
+Enviar notificações de modelo que apenas tem de fornecer um conjunto de propriedades, no nosso caso iremos enviar o conjunto de propriedades que contém a versão localizada do notícias atuais, por exemplo:
 
     {
         "News_English": "World News in English!",
@@ -11,12 +11,12 @@ When you send template notifications you only need to provide a set of propertie
     }
 
 
-This section shows how to send notifications using a console app
+Esta secção mostra como enviar notificações através de uma aplicação de consola
 
-The included code broadcasts to both Windows Store and iOS devices, since the backend can broadcast to any of the supported devices.
+O código incluído difunde para dispositivos loja Windows e iOS, uma vez que o back-end pode difusão para qualquer um dos dispositivos suportados.
 
-### <a name="to-send-notifications-using-a-c-console-app"></a>To send notifications using a C# console app
-Modify the `SendTemplateNotificationAsync` method in the console app you previously created with the following code. Notice how in this case there is no need to send multiple notifications for different locales and platforms.
+### <a name="to-send-notifications-using-a-c-console-app"></a>Para enviar notificações através de uma aplicação de consola c#
+Modificar o `SendTemplateNotificationAsync` método na aplicação de consola que criou anteriormente com o seguinte código. Repare como neste caso, não é necessário para enviar notificações vários para diferentes regiões e plataformas.
 
         private static async void SendTemplateNotificationAsync()
         {
@@ -52,10 +52,10 @@ Modify the `SendTemplateNotificationAsync` method in the console app you previou
         }
 
 
-Note that this simple call will deliver the localized piece of news to **all** your devices, irrespective of the platform, as your Notification Hub builds and delivers the correct native payload to all the devices subscribed to a specific tag.
+Tenha em atenção que esta chamada simple irá fornecer a informação de notícias ao localizada **todos os** os seus dispositivos, irrespective da plataforma, como o Notification Hub baseia-se e fornece o payload nativo correto a todos os dispositivos que subscreveram específico etiqueta.
 
-### <a name="sending-the-notification-with-mobile-services"></a>Sending the notification with Mobile Services
-In your Mobile Service scheduler, you can use the following script:
+### <a name="sending-the-notification-with-mobile-services"></a>Enviar a notificação com os Mobile Services
+No seu agendador do serviço móvel, pode utilizar o script seguinte:
 
     var azure = require('azure');
     var notificationHubService = azure.createNotificationHubService('<hub name>', '<connection string with full access>');

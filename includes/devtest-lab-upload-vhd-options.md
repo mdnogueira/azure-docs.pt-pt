@@ -1,6 +1,6 @@
-## <a name="prerequisites"></a>Prerequisites 
-To complete this tutorial, you must have a VHD file uploaded to the storage account associated with the lab in which you are creating the custom image. Select any of the following links to upload a VHD file:
+## <a name="prerequisites"></a>Pré-requisitos 
+Para concluir este tutorial, tem de ter um ficheiro VHD carregado para a conta de armazenamento associada laboratório no qual está a criar a imagem personalizada. Selecione qualquer uma das ligações seguintes para carregar um ficheiro VHD:
 
-- [Upload using the AzCopy command-line utility](../articles/devtest-lab/devtest-lab-upload-vhd-using-azcopy.md)
-- [Upload using the Microsoft Azure Storage Explorer](../articles/devtest-lab/devtest-lab-upload-vhd-using-storage-explorer.md)
-- [Upload using the PowerShell console](../articles/devtest-lab/devtest-lab-upload-vhd-using-powershell.md)
+- [Carregar utilizando o utilitário de linha de comandos AzCopy](../articles/devtest-lab/devtest-lab-upload-vhd-using-azcopy.md)
+- [Carregar a utilizar o Explorador de armazenamento do Microsoft Azure](../articles/devtest-lab/devtest-lab-upload-vhd-using-storage-explorer.md)
+- [Carregar utilizando a consola do PowerShell](../articles/devtest-lab/devtest-lab-upload-vhd-using-powershell.md)

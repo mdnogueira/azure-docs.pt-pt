@@ -1,26 +1,26 @@
-## <a name="export-an-api-definition"></a>Export an API definition
-You have an OpenAPI definition for your function, from [Create an OpenAPI definition for a function](../articles/azure-functions/functions-openapi-definition.md). The next step in this process is to export the API definition so that PowerApps and Microsoft Flow can use it in a custom API.
+## <a name="export-an-api-definition"></a>Exportar uma definição de API
+Tiver uma definição de OpenAPI para a sua função de [criar uma definição de OpenAPI para uma função](../articles/azure-functions/functions-openapi-definition.md). O próximo passo neste processo é não exportar a definição da API para que PowerApps e Microsoft Flow podem utilizá-lo numa API personalizada.
 
 > [!IMPORTANT]
-> Remember that you must be signed into Azure with the same credentials that you use for your PowerApps and Microsoft Flow tenants. This enables Azure to create the custom API and make it available for both PowerApps and Microsoft Flow.
+> Lembre-se de que esta deve ser iniciada do Azure com as mesmas credenciais que utiliza para a sua PowerApps e Microsoft Flow inquilinos. Isto permite que o Azure para criar a API personalizada e disponibilizá-lo para PowerApps e Flow Microsoft.
 
-1. In the [Azure portal](https://portal.azure.com), click your function app name (like **function-demo-energy**) > **Platform features** > **API definition**.
+1. No [portal do Azure](https://portal.azure.com), clique no nome de aplicação de função (como **demonstração de função energia**) > **funcionalidades da plataforma** > **definição da API** .
 
-    ![API definition](media/functions-export-api-definition/api-definition.png)
+    ![Definição da API](media/functions-export-api-definition/api-definition.png)
 
-1. Click **Export to PowerApps + Flow**.
+1. Clique em **exportar para PowerApps + fluxo**.
 
-    ![API definition source](media/functions-export-api-definition/export-api-1.png)
+    ![Origem de definição de API](media/functions-export-api-definition/export-api-1.png)
 
-1. In the right pane, use the settings as specified in the table.
+1. No painel da direita, utilize as definições conforme especificado na tabela.
 
-    |Setting|Description|
+    |Definição|Descrição|
     |--------|------------|
-    |**Export Mode**|Select **Express** to automatically generate the custom API. Selecting **Manual** exports the API definition, but then you must import it into PowerApps and Microsoft Flow manually. For more information, see [Export to PowerApps and Microsoft Flow](../articles/azure-functions/app-service-export-api-to-powerapps-and-flow.md).|
-    |**Environment**|Select the environment that the custom API should be saved to. For more information, see [Environments overview (PowerApps)](https://powerapps.microsoft.com/tutorials/environments-overview/) or [Environments overview (Microsoft Flow)](https://us.flow.microsoft.com/documentation/environments-overview-admin/).|
-    |**Custom API Name**|Enter a name, like `Turbine Repair`.|
-    |**API Key Name**|Enter the name that app and flow builders should see in the custom API UI. Note that the example includes helpful information.|
+    |**Modo de exportação**|Selecione **Express** para gerar automaticamente a API personalizada. Selecionar **Manual** definição exporta a API, mas, em seguida, tem de o importar para PowerApps e Microsoft Flow manualmente. Para obter mais informações, consulte [exportar PowerApps e Microsoft Flow](../articles/azure-functions/app-service-export-api-to-powerapps-and-flow.md).|
+    |**Ambiente**|Selecione o ambiente em que a API personalizada deve ser guardado. Para obter mais informações, consulte [descrição geral de ambientes (PowerApps)](https://powerapps.microsoft.com/tutorials/environments-overview/) ou [descrição geral de ambientes (Microsoft Flow)](https://us.flow.microsoft.com/documentation/environments-overview-admin/).|
+    |**Nome da API personalizada**|Introduza um nome, como `Turbine Repair`.|
+    |**Nome da chave de API**|Introduza o nome da aplicação e fluxo construtores deverá ver na IU de API personalizada. Tenha em atenção que o exemplo inclui informações úteis.|
  
-    ![Export to PowerApps and Microsoft Flow](media/functions-export-api-definition/export-api-2.png)
+    ![Exportar para as PowerApps e Microsoft Flow](media/functions-export-api-definition/export-api-2.png)
 
-1. Click **OK**. The custom API is now built and added to the environment you specified.
+1. Clique em **OK**. A API personalizada é agora criado e adicionada ao ambiente que especificou.

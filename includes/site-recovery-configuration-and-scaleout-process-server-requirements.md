@@ -6,10 +6,12 @@
 | Espaço livre no disco (cache do servidor de processos) | 600 GB
 | Espaço livre no disco (disco de retenção) | 600 GB|
 | **Software** | |
-| Versão do sistema operativo | Windows Server 2012 R2 |
+| Versão do sistema operativo | Windows Server 2012 R2 <br> Windows Server 2016 |
 | Região do sistema operativo | Inglês (en-us)|
 | Versão do VMware vSphere PowerCLI | [PowerCLI 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1 "PowerCLI 6.0")|
 | Funções do Windows Server | Não ative as seguintes funções: <br> - Active Directory Domain Services <br>- Serviços de Informação da Internet <br> - Hyper-V |
+| Políticas de grupo| As seguintes políticas de grupo não devem estar ativadas no servidor <br> -Impedir o acesso à linha de comandos <br> -Impedir o acesso ao registo ferramentas de edição <br> -Confiar lógica para anexos de ficheiros <br> -Ativar a execução do Script <br> **Nota:** podem encontrar mais informações sobre estas políticas de grupo [aqui](https://technet.microsoft.com/en-us/library/gg176671(v=ws.10).aspx)|
+| Configuração de Service(IIS) de informação Internet | -Qualquer Web site predefinido do pré-existente <br> -Ativar [autenticação anónima](https://technet.microsoft.com/en-us/library/cc731244(v=ws.10).aspx) <br> -Ativar [FastCGI](https://technet.microsoft.com/en-us/library/cc753077(v=ws.10).aspx) definição  <br> -Não existe nenhuma pré-existente websit/aplicação deve ser escutar na porta 443<br>|
 | **Rede** | |
 | Tipo de cartão de interface de rede | VMXNET3 |
 | Tipo de endereço IP | Estático |

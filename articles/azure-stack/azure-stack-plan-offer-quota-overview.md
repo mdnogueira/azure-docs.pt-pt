@@ -1,6 +1,6 @@
 ---
-title: Azure Stack plan, offer, quota, and subscription overview | Microsoft Docs
-description: As a cloud operator, I want to understand Azure Stack plans, offers, quotas, and subscriptions.
+title: "Pilha plano, oferta, quota e subscrição descrição geral do Azure | Microsoft Docs"
+description: "Como um operador da nuvem, pretender compreender os planos de pilha do Azure, ofertas, quotas e subscrições."
 services: azure-stack
 documentationcenter: 
 author: ErikjeMS
@@ -14,69 +14,67 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 8/22/2017
 ms.author: erikje
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
-ms.openlocfilehash: bfed4c557a420eda14cafe5b1cf8ad11476e2d79
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 083ca2f0a06625810d2f90a682ba0b3110032e60
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="plan-offer-quota-and-subscription-overview"></a>Plan, offer, quota, and subscription overview
+# <a name="plan-offer-quota-and-subscription-overview"></a>Plano, oferta, quota e descrição geral da subscrição
 
-*Applies to: Azure Stack Development Kit*
+*Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
-[Azure Stack](azure-stack-poc.md) lets you deliver a wide variety of services, like virtual machines, SQL Server databases, SharePoint, Exchange, and even [Azure Marketplace items](azure-stack-marketplace-azure-items.md). As a cloud operator, you configure and deliver such services in Azure Stack by using plans, offers, and quotas.
+[Pilha do Azure](azure-stack-poc.md) permite fornecer uma ampla variedade de serviços, como máquinas virtuais, bases de dados, SharePoint, Exchange e até mesmo [itens do Azure Marketplace](azure-stack-marketplace-azure-items.md). Como um operador de pilha do Azure, configure e fornecer esses serviços na pilha do Azure através da utilização de esquemas, ofertas e quotas.
 
-Offers contain one or more plans, and each plan includes one or more services. By creating plans and combining them into different offers, you control
-- which services and resources users can access
-- the amount of those resources that users can consume
-- which regions have access to the resources
+As ofertas de conter um ou mais planos e cada plano inclui um ou mais serviços. Ao criar planos e combiná-los em ofertas diferentes, pode controlar
+- podem aceder a que os utilizadores de serviços e recursos
+- a quantidade desses recursos que os utilizadores podem consumir
+- as regiões que tem acesso a recursos
 
-When you deliver a service, you'll follow these high-level steps:
+Quando fornecer um serviço, que terá de seguir estes passos de alto nível:
 
-1. Add a service that you want to deliver to your users.
-2. Create a plan that contains one or more services. When creating a plan, you will select or create quotas that define the resource limits of each service in the plan.
-3. Create an offer that contains one or more plans (including base plans and optional add-on plans).
+1. Adicione um serviço que pretende fornecer aos seus utilizadores.
+2. Crie um plano que contém um ou mais serviços. Ao criar um plano, terá de selecionar ou criar quotas que definem os limites de recursos de cada serviço no plano.
+3. Crie uma oferta que contém um ou mais planos (incluindo planos base e planos de suplemento opcional).
 
-After you have created the offer, your users can subscribe to it to access the services and resources it provides. Users can subscribe to as many offers as they want. The following diagram shows a simple example of a user who has subscribed to two offers. Each offer has a plan or two, and each plan gives them access to services.
+Depois de ter criado a oferta, podem subscrever os seus utilizadores para aceder a serviços e recursos que fornece ao. Os utilizadores podem subscrever para ofertas tantos como pretendem. O diagrama seguinte mostra um exemplo simples de um utilizador que tiver subscrito dois oferece. Cada oferta tem um plano ou dois e cada plano lhes dá acesso aos serviços.
 
 ![](media/azure-stack-key-features/image4.png)
 
-## <a name="plans"></a>Plans
+## <a name="plans"></a>Planos
 
-Plans are groupings of one or more services. As a cloud operator, you [create plans](azure-stack-create-plan.md) to offer to your users. In turn, your users subscribe to your offers to use the plans and services they include. When creating plans, make sure to set your quotas, define your base plans, and consider including optional add-on plans.
+Planos são agrupamentos de um ou mais serviços. Como um operador de pilha do Azure, [criar planos](azure-stack-create-plan.md) para oferecer aos seus utilizadores. Por sua vez, os utilizadores subscrevem as ofertas para utilizar os serviços incluem e planos. Ao criar planos, certifique-se definir as quotas, definir os esquemas de base e considerar, incluindo planos de suplemento opcional.
 
 ### <a name="quotas"></a>Quotas
 
-To help you manage your cloud capacity, you select or create a quota for each service in a plan. Quotas define the upper resource limits that a user subscription can provision or consume. For example, a quota might allow a user to create up to five virtual machines. Quotas can limit a variety of resources, like virtual machines, RAM, and CPU limits.
+Para ajudar a gerir a sua capacidade de nuvem, selecione ou crie uma quota para cada serviço num plano. Quotas definem os limites de recursos superior que uma subscrição de utilizador pode aprovisionar ou consumir. Por exemplo, uma quota pode permitir que um utilizador criar até cinco máquinas virtuais. Quotas podem limitar uma variedade de recursos, como máquinas virtuais, CPU e RAM, limites.
 
-Quotas can be configured by region. For example, a plan containing compute services from Region A could have a quota of two virtual machines, 4-GB RAM, and 10 CPU cores. In the Azure Stack Development Kit, only one region (named *local*) is available.
+Quotas podem ser configuradas por região. Por exemplo, um plano de serviços de computação da região A ter uma quota de duas máquinas virtuais, 4 GB de RAM e 10 núcleos de CPU. No Kit de desenvolvimento de pilha do Azure, apenas uma região (com o nome *local*) está disponível.
 
-### <a name="base-plan"></a>Base plan
+### <a name="base-plan"></a>Plano de base
 
-When creating an offer, the service administrator can include a base plan. These base plans are included by default when a user subscribes to that offer. When a user subscribes, they have access to all the resource providers specified in those base plans (with the corresponding quotas).
+Ao criar uma oferta, o administrador de serviços pode incluir um plano de base. Estes esquemas de base são incluídas por predefinição, quando um utilizador subscreve que oferta. Quando um utilizador subscreve, têm acesso a todos os fornecedores de recursos especificado esses planos base (com as quotas correspondentes).
 
-### <a name="add-on-plans"></a>Add-on plans
+### <a name="add-on-plans"></a>Planos de suplemento
 
-You can also include optional add-on plans in an offer. Add-on plans are not included by default in the subscription. Add-on plans are additional plans (with quotas) available in an offer that a subscriber can add to their subscriptions. For example, you can offer a base plan with limited resources for a trial, and an add-on plan with more substantial resources to customers who decide to adopt the service.
+Também pode incluir planos de suplemento opcional numa oferta. Planos de suplemento não estão incluídos por predefinição na subscrição. Planos de suplemento são planos adicionais (com as quotas) disponíveis numa oferta, que pode adicionar um subscritor para as suas subscrições. Por exemplo, pode oferecer um plano de base com recursos limitados para uma versão de avaliação e um plano de suplemento com recursos mais significativas para os clientes que optar por adotar o serviço.
 
-## <a name="offers"></a>Offers
+## <a name="offers"></a>Ofertas
 
-Offers are groups of one or more plans that you create so that users can subscribe to them. For example, Offer Alpha can contain Plan A containing a set of compute services and Plan B containing a set of storage and network services. 
+Ofertas são grupos de um ou mais planos que criar para que os utilizadores podem subscrever aos mesmos. Por exemplo, oferecem Alpha pode conter um plano de que contém um conjunto de serviços de computação e planear B, que contém um conjunto de serviços de armazenamento e rede. 
 
-When you [create an offer](azure-stack-create-offer.md), you must include at least one base plan, but you can also create add-on plans that users can add to their subscription.
-
-
-## <a name="subscriptions"></a>Subscriptions
-
-A subscription is how users access your offers. If you’re a cloud operator at a service provider, your users (tenants) buy your services by subscribing to your offers. If you’re a cloud operator at an organization, your users (employees) can subscribe to the services you offer without paying. Each combination of a user with an offer is a unique subscription. Thus, a user can have subscriptions to multiple offers, but each subscription applies to only one offer. Plans, offers, and quotas apply only to each unique subscription – they can’t be shared between subscriptions. Each resource that a user creates is associated with one subscription.
+Quando lhe [criar uma oferta](azure-stack-create-offer.md), tem de incluir, pelo menos, um plano de base, mas também pode criar planos de suplemento que podem adicionar utilizadores à sua subscrição.
 
 
-### <a name="default-provider-subscription"></a>Default provider subscription
+## <a name="subscriptions"></a>Subscrições
 
-The Default Provider Subscription is automatically created when you deploy the Azure Stack Development Kit. This subscription can be used to manage Azure Stack, deploy further resource providers, and create plans and offers for users. For security and licensing reasons, it should not be used to run customer workloads and applications. 
+É uma subscrição, como os utilizadores aceder às suas ofertas. Se tiver um operador de pilha do Azure num fornecedor de serviços, os utilizadores (inquilinos) comprar os serviços de ao subscrever as ofertas. Se tiver um operador de pilha do Azure, uma organização, os utilizadores (empregados) podem subscrever os serviços que oferecem sem pagar. Cada combinação de um utilizador com uma oferta é uma subscrição exclusiva. Assim, um utilizador pode ter oferece várias subscrições, mas cada subscrição se aplica apenas uma oferta. Planos, ofertas e quotas aplicam-se apenas a cada subscrição exclusiva – não pode ser partilhadas entre subscrições. Cada recurso que cria um utilizador está associado uma subscrição.
 
-## <a name="next-steps"></a>Next steps
 
-[Create a plan](azure-stack-create-plan.md)
+### <a name="default-provider-subscription"></a>Subscrição do fornecedor predefinido
 
+A subscrição do fornecedor predefinido é criada automaticamente quando implementa o Kit de desenvolvimento de pilha do Azure. Esta subscrição pode ser utilizada para gerir a pilha do Azure, implementar mais fornecedores de recursos e criar planos e as ofertas para os utilizadores. Para segurança e as razões de licenciamento, este não deve ser utilizada para executar aplicações e cargas de trabalho do cliente. 
+
+## <a name="next-steps"></a>Passos seguintes
+
+[Criar um plano](azure-stack-create-plan.md)

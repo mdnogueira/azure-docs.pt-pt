@@ -13,13 +13,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-catalog
-ms.date: 08/05/2017
+ms.date: 10/01/2017
 ms.author: spelluru
-ms.openlocfilehash: 6ba88885805f1a206f01015f7eec5236da517403
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: bda20280e755c69f3d76e5c7dad345b313bd1cc5
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="data-catalog-developer-samples"></a>Exemplos de programador do catálogo de dados
 Começar a desenvolver aplicações do catálogo de dados utilizando a API de REST do catálogo de dados. A API de REST do catálogo de dados é uma API de baseado em REST de mensagens em fila que fornece acesso programático a recursos de catálogo de dados a registar, anotar e procurar recursos de dados através de programação.

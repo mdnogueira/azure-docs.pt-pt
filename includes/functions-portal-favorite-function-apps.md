@@ -1,16 +1,16 @@
-## <a name="favorite-functions-in-the-portal"></a>Favorite Functions in the portal 
+## <a name="favorite-functions-in-the-portal"></a>Funções favoritas no portal 
 
-If you haven't already done so, add Function Apps to your favorites in the Azure portal. This makes it easier to find your function apps. If you have already done this, skip to the next section. 
+Se ainda não o tiver feito, adicione aplicações Function App aos seus favoritos no portal do Azure. Desta forma, é mais fácil encontrar as suas aplicações Function App. Se já o tiver feito, avance para a secção seguinte. 
 
-1. Log in to the [Azure portal](https://portal.azure.com/).
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 
-2. Click the arrow at the bottom left to expand all services, type `Functions` in the **Filter** field, and then click the star next to **Function Apps**.  
+2. Clique na seta no canto inferior esquerdo para expandir todos os serviços, escreva `Functions` no campo **Filtro** e clique na estrela junto a **Aplicações Function App**.  
  
-    ![Create function app in the Azure portal](./media/functions-portal-favorite-function-apps/functions-favorite-function-apps.png)
+    ![Criar uma aplicação de função no portal do Azure](./media/functions-portal-favorite-function-apps/functions-favorite-function-apps.png)
 
-    This adds the Functions icon to the menu on the left of the portal.
+    É adicionado o ícone Functions ao menu no lado esquerdo do portal.
 
-3. Close the menu, then scroll down to the bottom to see the Functions icon. Click this icon to see a list of all your function apps. Click your function app to work with functions in this app. 
+3. Feche o menu e desloque-se para a parte inferior para ver o ícone Functions. Clique neste ícone para ver uma lista de todas as suas aplicações Function App. Clique na sua aplicação Function App para trabalhar com funções nesta aplicação. 
  
     ![](./media/functions-portal-favorite-function-apps/functions-function-apps-hub.png)
  

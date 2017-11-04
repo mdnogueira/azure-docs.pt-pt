@@ -1,32 +1,32 @@
-### <a name="gwipnoconnection"></a> To modify the local network gateway IP address - no gateway connection
+### <a name="gwipnoconnection"></a>Para modificar o endereço IP de gateway de rede local - nenhuma ligação de gateway
 
-Use the example to modify a local network gateway that does not have a gateway connection. When modifying this value, you can also modify the address prefixes at the same time.
+Utilize o exemplo para modificar um gateway de rede local que não tem uma ligação de gateway. Ao modificar este valor, também pode modificar os prefixos de endereços em simultâneo.
 
-1. On the Local Network Gateway resource, in the **Settings** section, click **Configuration**.
-2. In the **IP address** box, modify the IP address.
-3. Click **Save** to save the settings.
+1. No recurso de Gateway de rede Local, no **definições** secção, clique em **configuração**.
+2. No **endereço IP** caixa, modifique o endereço IP.
+3. Clique em **guardar** para guardar as definições.
 
-### <a name="gwipwithconnection"></a>To modify the local network gateway gateway IP address - existing gateway connection
+### <a name="gwipwithconnection"></a>Para modificar o endereço IP de gateway da gateway de rede local - existente a ligação de gateway
 
-To modify a local network gateway that has a connection, you need to first remove the connection. After the connection is removed, you can modify the gateway IP address and recreate a new connection. You can also modify the address prefixes at the same time. This results in some downtime for your VPN connection. When modifying the gateway IP address, you don't need to delete the VPN gateway. You only need to remove the connection.
+Para modificar um gateway de rede local que tenha uma ligação, terá de remover primeiro a ligação. Depois de a ligação ser removida, pode modificar o endereço IP do gateway e recriar uma nova ligação. Também pode modificar os prefixos de endereços em simultâneo. Este procedimento resulta num período de indisponibilidade da ligação VPN. Ao modificar os endereços IP de gateway, não precisa de eliminar o gateway de VPN. Só tem de remover a ligação.
  
-#### <a name="1-remove-the-connection"></a>1. Remove the connection.
+#### <a name="1-remove-the-connection"></a>1. Remova a ligação.
 
-1. On the Local Network Gateway resource, in the **Settings** section, click **Connections**.
-2. Click the **...** on the line for the connection, then click **Delete**.
-3. Click **Save** to save your settings.
+1. No recurso de Gateway de rede Local, no **definições** secção, clique em **ligações**.
+2. Clique em de **...**  na linha para a ligação, em seguida, clique em **eliminar**.
+3. Clique em **guardar** para guardar as definições.
 
-#### <a name="2-modify-the-ip-address"></a>2. Modify the IP address.
+#### <a name="2-modify-the-ip-address"></a>2. Modificar o endereço IP.
 
-You can also modify the address prefixes at the same time.
+Também pode modificar os prefixos de endereços em simultâneo.
 
-1. In the **IP address** box, modify the IP address.
-2. Click **Save** to save the settings.
+1. No **endereço IP** caixa, modifique o endereço IP.
+2. Clique em **guardar** para guardar as definições.
 
-#### <a name="3-recreate-the-connection"></a>3. Recreate the connection.
+#### <a name="3-recreate-the-connection"></a>3. Recrie a ligação.
 
-1. Navigate to the Virtual Network Gateway for your VNet. (Not the Local Network Gateway.)
-2. On the Virtual Network Gateway, in the **Settings** section, click **Connections**.
-3. Click the **+ Add** to open the **Add connection** blade.
-4. Recreate your connection.
-5. Click **OK** to create the connection.
+1. Navegue para o Gateway de rede Virtual para a sua VNet. (Não o Gateway de rede Local.)
+2. No Gateway de rede Virtual, no **definições** secção, clique em **ligações**.
+3. Clique em de **+ adicionar** para abrir o **adicionar ligação** painel.
+4. Recrie a ligação.
+5. Clique em **OK** para criar a ligação.

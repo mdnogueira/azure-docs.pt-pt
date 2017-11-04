@@ -1,6 +1,6 @@
-| Resource | Default Limit | Maximum Limit |
+| Recurso | Limite Predefinido | Limite Máximo |
 | --- | --- | --- |
-| Maximum number of VMs in a scale set |1000 |1000 |
-| Maximum number of VMs based on a custom VM image in a scale set|300 |300 |
-| Maximum number of scale sets in a region |2000 |2000 |
+| Número máximo de VMs num conjunto de dimensionamento |1000 |1000 |
+| Definir o número máximo de VMs com base numa imagem de VM personalizada na escala|300 |300 |
+| Número máximo de conjuntos de dimensionamento numa região |2000 |2000 |
 

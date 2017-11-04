@@ -1,6 +1,6 @@
 ---
-title: Connect Azure Stack to Azure using VPN
-description: How to connect virtual networks in Azure Stack to virtual networks in Azure using VPN.
+title: "Ligar a pilha do Azure ao Azure através da VPN"
+description: "Como ligar redes virtuais na pilha do Azure para redes virtuais no Azure através da VPN."
 services: azure-stack
 documentationcenter: 
 author: ScottNapolitan
@@ -14,220 +14,219 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 9/25/2017
 ms.author: victorh
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: c06eb0bb44bdfeab956e9b5051786b5bc631acf5
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="connect-azure-stack-to-azure-using-vpn"></a>Connect Azure Stack to Azure using VPN
+# <a name="connect-azure-stack-to-azure-using-vpn"></a>Ligar a pilha do Azure ao Azure através da VPN
 
-*Applies to: Azure Stack integrated systems*
+*Aplica-se a: Azure pilha integrado sistemas*
 
-This article shows you how to create a site-to-site VPN to connect a virtual network in Azure Stack to a virtual network in Azure.
+Este artigo mostra como criar uma VPN de site a site para ligar uma rede virtual na pilha do Azure a uma rede virtual no Azure.
 
-### <a name="connection-diagram"></a>Connection diagram
-The following diagram shows what the connection configuration should look like when you’re done:
+### <a name="connection-diagram"></a>Diagrama de ligação
+O diagrama seguinte mostra que a configuração da ligação deve ter o seguinte aspeto quando tiver terminado:
 
-![Site-to-site VPN connection configuration](media/azure-stack-connect-vpn/image2.png)
+![Configuração da ligação VPN site a site](media/azure-stack-connect-vpn/image2.png)
 
-### <a name="before-you-begin"></a>Before you begin
-To complete the connection configuration, make sure you have the following items before you begin:
+### <a name="before-you-begin"></a>Antes de começar
+Para concluir a configuração da ligação, certifique-se de que tem os seguintes itens antes de começar:
 
-* An Azure Stack integrated systems (multi-node) deployment that is directly connected to the Internet. This means that your External Public IP Address range must be directly reachable from the public Internet.
-* A valid Azure subscription.  If you don’t have an Azure subscription, you can create a [free Azure account here](https://azure.microsoft.com/free/?b=17.06).
+* Uma pilha do Azure integrada uma implementação de sistemas (com vários nós) que estejam ligada diretamente à Internet. Isto significa que o intervalo de endereço IP público externo tem de ser diretamente acessível a partir da Internet pública.
+* Uma subscrição do Azure válida.  Se não tiver uma subscrição do Azure, pode criar um [aqui a conta do Azure gratuita](https://azure.microsoft.com/free/?b=17.06).
 
-## <a name="network-example-values-table"></a>Network example values table
-The network example values table shows the sample values that are used in this article. You can use these values or you can refer to them to better understand the examples in this article.
+## <a name="network-example-values-table"></a>Tabela de valores de exemplo de rede
+A tabela de valores de exemplo de rede mostra os valores de exemplo que são utilizados neste artigo. Pode utilizar estes valores ou possa consultá-las para compreender melhor os exemplos neste artigo.
 
-**Network example values table**
+**Tabela de valores de exemplo de rede**
 |   |Azure Stack|Azure|
 |---------|---------|---------|
-|Virtual network name     |Azs-VNet|AzureVNet |
-|Virtual network address space |10.1.0.0/16|10.100.0.0/16|
-|Subnet name     |FrontEnd|FrontEnd|
-|Subnet address range|10.1.0.0/24 |10.100.0.0/24 |
-|Gateway subnet     |10.1.1.0/24|10.100.1.0/24|
+|Nome da rede virtual     |Azs VNet|AzureVNet |
+|Espaço de endereços de rede virtual |10.1.0.0/16|10.100.0.0/16|
+|Nome da sub-rede     |FrontEnd|FrontEnd|
+|Intervalo de endereços da sub-rede|10.1.0.0/24 |10.100.0.0/24 |
+|Sub-rede de gateway     |10.1.1.0/24|10.100.1.0/24|
 
-## <a name="create-the-network-resources-in-azure"></a>Create the network resources in Azure
+## <a name="create-the-network-resources-in-azure"></a>Criar os recursos de rede no Azure
 
-First you create the network resources for Azure. The following instructions show how to create the resources by using the [Azure portal](http://portal.azure.com/).
+Primeiro de criar os recursos de rede do Azure. As instruções seguintes mostram como criar os recursos utilizando o [portal do Azure](http://portal.azure.com/).
 
-### <a name="create-the-virtual-network-and-vm-subnet"></a>Create the virtual network and VM subnet
+### <a name="create-the-virtual-network-and-vm-subnet"></a>Criar a rede virtual e a sub-rede VM
 
-1. Sign in to the [Azure portal](http://portal.azure.com/) using your Azure account.
-2. In the user portal, select **New**.
-3. Go to **Marketplace**, and then select **Networking**.
-4. Select **Virtual network**.
-5. Use the information from the network configuration table to identify the values for Azure **Name**, **Address space**, **Subnet name**, and **Subnet address range**.
-6. For **Resource Group**, create a new resource group or, if you already have one, select **Use existing**.
-7. Select the **Location** of your VNet.  If you're using the example values, select **East US** or use another location if you prefer.
-8. Select **Pin to dashboard**.
-9. Select **Create**.
+1. Iniciar sessão para o [portal do Azure](http://portal.azure.com/) utilizando a sua conta do Azure.
+2. No portal de utilizador, selecione **novo**.
+3. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+4. Selecione **rede Virtual**.
+5. Utilize as informações da tabela de configuração de rede para identificar os valores para o Azure **nome**, **espaço de endereços**, **nome de sub-rede**, e **endereço de sub-rede intervalo**.
+6. Para **grupo de recursos**, crie um novo grupo de recursos ou, se já tiver uma, selecione **utilizar existente**.
+7. Selecione o **localização** da sua VNet.  Se estiver a utilizar os valores de exemplo, selecione **EUA Leste** ou utilize outra localização, se preferir.
+8. Selecione **Afixar ao dashboard**.
+9. Selecione **Criar**.
 
-### <a name="create-the-gateway-subnet"></a>Create the Gateway Subnet
-1. Open the Virtual network resource you created (**AzureVNet**) from the dashboard.
-2. On the **Settings** section, select **Subnets**.
-3. Select  **Gateway subnet** to add a gateway subnet to the virtual network.
-4. The name of the subnet is set to **GatewaySubnet** by default.
-   Gateway subnets are special and must have this specific name to function properly.
-5. In the **Address range** field, verify the address is **10.100.0.0/24**.
-6. Select **OK** to create the gateway subnet.
+### <a name="create-the-gateway-subnet"></a>Criar a Sub-rede de Gateway
+1. Abra o recurso de rede Virtual que criou (**AzureVNet**) partir do dashboard.
+2. No **definições** secção, selecione **sub-redes**.
+3. Selecione **sub-rede do Gateway** para adicionar uma sub-rede de gateway para a rede virtual.
+4. O nome da sub-rede está predefinido como **GatewaySubnet**.
+   As sub-redes de gateway são especiais e têm de ter este nome específico para funcionarem corretamente.
+5. No **intervalo de endereços** campo, certifique-se de que o endereço é **10.100.0.0/24**.
+6. Selecione **OK** para criar a sub-rede do gateway.
 
-### <a name="create-the-virtual-network-gateway"></a>Create the virtual network gateway
-1. In the Azure portal, select **New**.  
-2. Go to **Marketplace**, and then select **Networking**.
-3. From the list of network resources, select **Virtual network gateway**.
-4. In **Name**, type **Azure-GW**.
-5. To choose a virtual network, select **Virtual network**. Then select **AzureVnet** from the list.
-6. Select **Public IP address**. When the **Choose public IP address** section opens, select **Create new**.
-7. In **Name**, type **Azure-GW-PiP**, and then select **OK**.
-8. By default, for **VPN type**, **Route-based** is selected.
-    Keep the **Route-based** VPN type.
-9. Verify that **Subscription** and **Location** are correct. You can pin the resource to the dashboard. Select **Create**.
+### <a name="create-the-virtual-network-gateway"></a>Criar o gateway de rede virtual
+1. No portal do Azure, selecione **novo**.  
+2. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+3. Na lista de recursos de rede, selecione **gateway de rede Virtual**.
+4. No **nome**, tipo **Azure-GW**.
+5. Para escolher uma rede virtual, selecione **rede Virtual**. Em seguida, selecione **AzureVnet** da lista.
+6. Selecione **endereço IP público**. Quando o **escolher endereço IP público** secção se abre, selecione **criar nova**.
+7. No **nome**, tipo **GW-Azure-PiP**e, em seguida, selecione **OK**.
+8. Por predefinição, para **tipo de VPN**, **baseado na rota** está selecionada.
+    Manter o **baseado na rota** tipo de VPN.
+9. Certifique-se de que a **Subscrição** e a **Localização** estão corretas. Pode afixar o recurso ao dashboard. Selecione **Criar**.
 
-### <a name="create-the-local-network-gateway-resource"></a>Create the local network gateway resource
+### <a name="create-the-local-network-gateway-resource"></a>Criar o recurso de gateway de rede local
 
-1. In the Azure portal, select **New**. 
-4. Go to **Marketplace**, and then select **Networking**.
-5. From the list of resources, select **Local network gateway**.
-6. In **Name**, type **Azs-GW**.
-7. In **IP address**, type the public IP address for your Azure Stack Virtual Network Gateway that is listed earlier in the network configuration table.
-8. In **Address Space**, from Azure Stack, type the **10.0.10.0/23** address space for **AzureVNet**.
-9. Verify that your **Subscription**, **Resource Group**, and **Location** are correct, and then select **Create**.
+1. No portal do Azure, selecione **novo**. 
+4. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+5. Na lista de recursos, selecione **gateway de rede Local**.
+6. No **nome**, tipo **Azs-GW**.
+7. No **endereço IP**, escreva o endereço IP público para o Azure pilha de Gateway de rede Virtual que esteja listado anteriormente na tabela de configuração de rede.
+8. No **espaço de endereços**, a partir de pilha do Azure, escreva o **10.0.10.0/23** espaço de endereços **AzureVNet**.
+9. Certifique-se de que o **subscrição**, **grupo de recursos**, e **localização** estão corretos e, em seguida, selecione **criar**.
 
-## <a name="create-the-connection"></a>Create the connection
-1. In the user portal, select **New**. 
-2. Go to **Marketplace**, and then select **Networking**.
-3. From the list of resources, select **Connection**.
-4. On the **Basic** settings section, for the **Connection type**, choose **Site-to-site (IPSec)**.
-5. Select the **Subscription**, **Resource Group**, and **Location**, and then select **OK**.
-6. On the **Settings** section, select **Virtual network gateway**, and then select **Azure-GW**.
-7. Select **Local network gateway**, and then select **Azs-GW**.
-8. In **Connection name**, type **Azure-Azs**.
-9. In **Shared key (PSK)**, type **12345**. If you choose a different value, remember that it *must* match the value for the shared key that you create on the other end of the connection. Select **OK**.
-10. Review the **Summary** section, and then select **OK**.
+## <a name="create-the-connection"></a>Criar a ligação
+1. No portal de utilizador, selecione **novo**. 
+2. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+3. Na lista de recursos, selecione **ligação**.
+4. No **básico** secção de definições para o **tipo de ligação**, escolha **Site a site (IPSec)**.
+5. Selecione o **subscrição**, **grupo de recursos**, e **localização**e, em seguida, selecione **OK**.
+6. No **definições** secção, selecione **gateway de rede Virtual**e, em seguida, selecione **Azure-GW**.
+7. Selecione **gateway de rede Local**e, em seguida, selecione **Azs-GW**.
+8. No **nome da ligação**, tipo **Azure Azs**.
+9. No **chave partilhada (PSK)**, tipo **12345**. Se escolher um valor diferente, lembre-se de que as TI *tem* corresponde ao valor para a chave partilhada que criou na outra extremidade da ligação. Selecione **OK**.
+10. Reveja o **resumo** secção e, em seguida, selecione **OK**.
 
-## <a name="create-a-virtual-machine"></a>Create a virtual machine
-Create a virtual machine in Azure now, and put it on your VM subnet in your virtual network.
+## <a name="create-a-virtual-machine"></a>Criar uma máquina virtual
+Criar uma máquina virtual no Azure agora e colocá-la na sua sub-rede VM na sua rede virtual.
 
-1. In the Azure portal, select **New**.
-2. Go to **Marketplace**, and then select **Compute**.
-3. In the list of virtual machine images, select the **Windows Server 2016 Datacenter Eval** image.
-4. On the **Basics** section, for **Name**, type **AzureVM**.
-5. Type a valid username and password. You use this account to sign in to the virtual machine after it's created.
-6. Provide a **Subscription**, **Resource Group**, and **Location**, and then select **OK**.
-7. On the **Size** section, select a virtual machine size for this instance, and then select **Select**.
-8. On the **Settings** section, you can accept the defaults. Make sure that the **AzureVnet** virtual network is selected, and verify that the subnet is set to **10.0.20.0/24**. Select **OK**.
-9. Review the settings on the **Summary** section, and then select **OK**.
+1. No portal do Azure, selecione **novo**.
+2. Aceda a **Marketplace**e, em seguida, selecione **computação**.
+3. Na lista de imagens da máquina virtual, selecione o **Windows Server 2016 Datacenter Eval** imagem.
+4. No **Noções básicas** secção, para **nome**, tipo **AzureVM**.
+5. Escreva um nome de utilizador válido e palavra-passe. Pode utilizar esta conta para iniciar sessão para a máquina virtual depois de criado.
+6. Forneça um **subscrição**, **grupo de recursos**, e **localização**e, em seguida, selecione **OK**.
+7. No **tamanho** secção, selecione um tamanho de máquina virtual para esta instância e, em seguida, selecione **selecione**.
+8. No **definições** secção, pode aceitar as predefinições. Certifique-se de que o **AzureVnet** rede virtual está selecionada e certifique-se de que a sub-rede está definida como **10.0.20.0/24**. Selecione **OK**.
+9. Reveja as definições no **resumo** secção e, em seguida, selecione **OK**.
 
-## <a name="create-the-network-resources-in-azure-stack"></a>Create the network resources in Azure Stack
-Next you create the network resources in Azure Stack.
+## <a name="create-the-network-resources-in-azure-stack"></a>Criar os recursos de rede na pilha do Azure
+Em seguida, criar os recursos de rede na pilha do Azure.
 
-### <a name="sign-in-as-a-user"></a>Sign in as a user
-A service administrator can sign in as a user to test the plans, offers, and subscriptions that their users might use. If you don’t already have one, [create a user account](azure-stack-add-new-user-aad.md) before you sign in.
+### <a name="sign-in-as-a-user"></a>Inicie sessão como um utilizador
+Um administrador de serviço pode iniciar sessão como um utilizador para testar a planos, ofertas e subscrições que poderão utilizar os seus utilizadores. Se ainda não tiver um, [criar uma conta de utilizador](azure-stack-add-new-user-aad.md) antes de iniciar sessão.
 
-### <a name="create-the-virtual-network-and-vm-subnet"></a>Create the virtual network and VM subnet
-1. Use a user account to sign in to the user portal.
-2. In the user portal, select **New**.
+### <a name="create-the-virtual-network-and-vm-subnet"></a>Criar a rede virtual e a sub-rede VM
+1. Utilize uma conta de utilizador para iniciar sessão no portal de utilizador.
+2. No portal de utilizador, selecione **novo**.
 
-    ![Create new virtual network](media/azure-stack-create-vpn-connection-one-node-tp2/image3.png)
+    ![Criar nova rede virtual](media/azure-stack-create-vpn-connection-one-node-tp2/image3.png)
 
-3. Go to **Marketplace**, and then select **Networking**.
-4. Select **Virtual network**.
-5. For **Name**, **Address space**, **Subnet name**, and **Subnet address range**, use the values from the network configuration table.
-6. In **Subscription**, the subscription that you created earlier appears.
-7. For **Resource Group**, you can either create a resource group or if you already have one, select **Use existing**.
-8. Verify the default location.
-9. Select **Pin to dashboard**.
-10. Select **Create**.
+3. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+4. Selecione **rede Virtual**.
+5. Para **nome**, **espaço de endereços**, **nome de sub-rede**, e **intervalo de endereços da sub-rede**, utilize os valores da tabela de configuração de rede.
+6. No **subscrição**, é apresentada a subscrição que criou anteriormente.
+7. Para **grupo de recursos**, pode criar um grupo de recursos ou se já tiver uma, selecione **utilizar existente**.
+8. Verifique a localização predefinida.
+9. Selecione **Afixar ao dashboard**.
+10. Selecione **Criar**.
 
-### <a name="create-the-gateway-subnet"></a>Create the gateway subnet
-1. On the dashboard, open the Azs-VNet virtual network resource you created.
-2. On the **Settings** section, select **Subnets**.
-3. To add a gateway subnet to the virtual network, select **Gateway Subnet**.
+### <a name="create-the-gateway-subnet"></a>Criar a sub-rede de gateway
+1. No dashboard, abra o recurso de rede virtual Azs VNet que criou.
+2. No **definições** secção, selecione **sub-redes**.
+3. Para adicionar uma sub-rede de gateway para a rede virtual, selecione **sub-rede do Gateway**.
    
-    ![Add gateway subnet](media/azure-stack-create-vpn-connection-one-node-tp2/image4.png)
+    ![Adicionar sub-rede do gateway](media/azure-stack-create-vpn-connection-one-node-tp2/image4.png)
 
-4. By default, the subnet name is set to **GatewaySubnet**.
-   Gateway subnets are special. To function properly, they must use the *GatewaySubnet* name.
-5. In **Address range**, verify that the address is **10.1.1.0/24**.
-6. Select **OK** to create the gateway subnet.
+4. Por predefinição, o nome de sub-rede está definido como **GatewaySubnet**.
+   As sub-redes de gateway são especiais. Para funcionar corretamente, terão de utilizar o *GatewaySubnet* nome.
+5. No **intervalo de endereços**, certifique-se de que o endereço está **10.1.1.0/24**.
+6. Selecione **OK** para criar a sub-rede do gateway.
 
-### <a name="create-the-virtual-network-gateway"></a>Create the virtual network gateway
-1. In the Azure Stack portal, select **New**. 
-2. Go to **Marketplace**, and then select **Networking**.
-3. From the list of network resources, select **Virtual network gateway**.
-4. In **Name**, type **Azs-GW**.
-5. Select the **Virtual network** item to choose a virtual network.
-   Select **Azs-VNet** from the list.
-6. Select the **Public IP address** menu item. When the **Choose public IP address** section opens, select **Create new**.
-7. In **Name**, type **Azs-GW-PiP**, and then select **OK**.
-8.  By default, for **VPN type**, **Route-based** is selected.
-    Keep the **Route-based** VPN type.
-9. Verify that **Subscription** and **Location** are correct. You can pin the resource to the dashboard. Select **Create**.
+### <a name="create-the-virtual-network-gateway"></a>Criar o gateway de rede virtual
+1. No portal do Azure pilha, selecione **novo**. 
+2. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+3. Na lista de recursos de rede, selecione **gateway de rede Virtual**.
+4. No **nome**, tipo **Azs-GW**.
+5. Selecione o **rede Virtual** item para escolher uma rede virtual.
+   Selecione **Azs VNet** da lista.
+6. Selecione o **endereço IP público** item de menu. Quando o **escolher endereço IP público** secção se abre, selecione **criar nova**.
+7. No **nome**, tipo **Azs-GW-PiP**e, em seguida, selecione **OK**.
+8.  Por predefinição, para **tipo de VPN**, **baseado na rota** está selecionada.
+    Manter o **baseado na rota** tipo de VPN.
+9. Certifique-se de que a **Subscrição** e a **Localização** estão corretas. Pode afixar o recurso ao dashboard. Selecione **Criar**.
 
-### <a name="create-the-local-network-gateway"></a>Create the local network gateway
-The notion of a *local network gateway* in Azure Stack is a bit different than in an Azure deployment.
+### <a name="create-the-local-network-gateway"></a>Criar o gateway de rede local
+A noção de um *gateway de rede local* na pilha do Azure é um pouco diferente numa implementação do Azure.
 
-In an Azure deployment, a local network gateway represents an on-premises (at the user location) physical device, that you use to connect to a virtual network gateway in Azure. In Azure Stack, both ends of the connection are virtual network gateways!
+Numa implementação do Azure, um gateway de rede local representa um dispositivo físico no local (a localização do utilizador), que utiliza para ligar a um gateway de rede virtual no Azure. Na pilha do Azure, ambas as extremidades da ligação são gateways de rede virtual!
 
-A way to think about this more generically is that the local network gateway resource always indicates the remote gateway at the other end of the connection. 
+Uma forma de pensar nesta mais genericamente é que o recurso de gateway de rede local indica sempre o gateway remoto no final da ligação. 
 
-### <a name="create-the-local-network-gateway-resource"></a>Create the local network gateway resource
-1. Sign in to the Azure Stack portal.
-2. In the user portal, select **New**.
-3. Go to **Marketplace**, and then select **Networking**.
-4. From the list of resources, select **local network gateway**.
-5. In **Name**, type **Azure-GW**.
-6. In **IP address**, type the Public IP Address for the virtual network gateway in Azure **Azure-GW-PiP**. This address appears earlier in the network configuration table.
-7. In **Address Space**, for the address space of the Azure VNET that you created, type **10.0.20.0/23**.
-8. Verify that your **Subscription**, **Resource Group**, and **location** are correct, and then select **Create**.
+### <a name="create-the-local-network-gateway-resource"></a>Criar o recurso de gateway de rede local
+1. Inicie sessão no portal do Azure pilha.
+2. No portal de utilizador, selecione **novo**.
+3. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+4. Na lista de recursos, selecione **gateway de rede local**.
+5. No **nome**, tipo **Azure-GW**.
+6. No **endereço IP**, escreva o endereço IP público para o gateway de rede virtual no Azure **GW-Azure-PiP**. Este endereço é apresentado anteriormente na tabela de configuração de rede.
+7. No **espaço de endereços**, para o espaço de endereços da VNET do Azure que criou, escreva **10.0.20.0/23**.
+8. Certifique-se de que o **subscrição**, **grupo de recursos**, e **localização** estão corretos e, em seguida, selecione **criar**.
 
-### <a name="create-the-connection"></a>Create the connection
-1. In the user portal, select **New**.
-2. Go to **Marketplace**, and then select **Networking**.
-3. From the list of resources, select **Connection**.
-4. On the **Basics** settings section, for the **Connection type**, select **Site-to-site (IPSec)**.
-5. Select the **Subscription**, **Resource Group**, and **Location**, and then select **OK**.
-6. On the **Settings** section,  select **Virtual network gateway**, and then select **Azs-GW**.
-7. Select **Local network gateway**, and then select **Azure-GW**.
-8. In **Connection Name**, type **Azs-Azure**.
-9. In **Shared key (PSK)**, type **12345**, and then select **OK**.
-10. On the **Summary** section, select **OK**.
+### <a name="create-the-connection"></a>Criar a ligação
+1. No portal de utilizador, selecione **novo**.
+2. Aceda a **Marketplace**e, em seguida, selecione **redes**.
+3. Na lista de recursos, selecione **ligação**.
+4. No **Noções básicas** secção de definições para o **tipo de ligação**, selecione **Site a site (IPSec)**.
+5. Selecione o **subscrição**, **grupo de recursos**, e **localização**e, em seguida, selecione **OK**.
+6. No **definições** secção, selecione **gateway de rede Virtual**e, em seguida, selecione **Azs-GW**.
+7. Selecione **gateway de rede Local**e, em seguida, selecione **Azure-GW**.
+8. No **nome da ligação**, tipo **Azs Azure**.
+9. No **chave partilhada (PSK)**, tipo **12345**e, em seguida, selecione **OK**.
+10. No **resumo** secção, selecione **OK**.
 
-### <a name="create-a-vm"></a>Create a VM
-To validate the data that travels through the VPN connection, you need to create virtual machines on each end to send and receive data through the VPN tunnel. 
+### <a name="create-a-vm"></a>Criar uma VM
+Para validar os dados que circulam através da ligação VPN, terá de criar máquinas virtuais em cada extremidade para enviar e receber dados através do túnel VPN. 
 
-1. In the Azure portal, select **New**.
-2. Go to **Marketplace**, and then select **Compute**.
-3. In the list of virtual machine images, select the **Windows Server 2016 Datacenter Eval** image.
-4. On the **Basics** section, in **Name**, type **Azs-VM**.
-5. Type a valid username and password. You use this account to sign in to the VM after it's created.
-6. Provide a **Subscription**, **Resource Group**, and **Location**, and then select **OK**.
-7. On the **Size** section, for this instance, select a virtual machine size, and then select **Select**.
-8. On the **Settings** section, accept the defaults. Make sure that the **Azs-VNet** virtual network is selected. Verify that the subnet is set to **10.1.0.0/24**. Then select **OK**.
-9. On the **Summary** section, review the settings, and then select **OK**.
+1. No portal do Azure, selecione **novo**.
+2. Aceda a **Marketplace**e, em seguida, selecione **computação**.
+3. Na lista de imagens da máquina virtual, selecione o **Windows Server 2016 Datacenter Eval** imagem.
+4. No **Noções básicas** na secção **nome**, tipo **Azs VM**.
+5. Escreva um nome de utilizador válido e palavra-passe. Pode utilizar esta conta para iniciar sessão para a VM, depois de criado.
+6. Forneça um **subscrição**, **grupo de recursos**, e **localização**e, em seguida, selecione **OK**.
+7. No **tamanho** secção, para esta instância, selecione um tamanho de máquina virtual e, em seguida, selecione **selecione**.
+8. No **definições** secção, aceite as predefinições. Certifique-se de que o **Azs VNet** rede virtual está selecionada. Certifique-se de que a sub-rede está definida como **10.1.0.0/24**. Em seguida, selecione **OK**.
+9. No **resumo** secção, reveja as definições e, em seguida, selecione **OK**.
 
 
-## <a name="test-the-connection"></a>Test the connection
-Now that the site-to-site connection is established, you should validate that you can get traffic flowing through it. To validate, sign in to one of the virtual machines that you created in Azure Stack. Then, ping the virtual machine that you created in Azure. 
+## <a name="test-the-connection"></a>Testar a ligação
+Agora que é estabelecida a ligação de site a site, deve validar que pode obter o tráfego que flui através do mesmo. Para validar, iniciar sessão para uma das máquinas virtuais que criou na pilha do Azure. Em seguida, executar um ping a máquina virtual que criou no Azure. 
 
-To make sure that you send the traffic through the site-to-site connection, ping the Direct IP (DIP) address of the virtual machine on the remote subnet, not the VIP. To do this, find the DIP address on the other end of the connection. Save the address for later use.
+Para se certificar de que enviar o tráfego através da ligação site a site, executar um ping o endereço IP direto (DIP) da máquina virtual na sub-rede remota, não o VIP. Para tal, localize o endereço na outra extremidade da ligação. Guarde o endereço para utilização posterior.
 
-### <a name="sign-in-to-the-user-vm-in-azure-stack"></a>Sign in to the user VM in Azure Stack
-1. Sign in to the Azure Stack portal.
-2. In the left navigation bar, select **Virtual Machines**.
-3. In the list of VMs, find **Azs-VM** that you created previously, and then select it.
-4. On the section for the virtual machine, click **Connect**, and then open the Azs-VM.rdp file.
+### <a name="sign-in-to-the-user-vm-in-azure-stack"></a>Iniciar sessão para o utilizador VM na pilha do Azure
+1. Inicie sessão no portal do Azure pilha.
+2. Na barra de navegação esquerdo, selecione **máquinas virtuais**.
+3. Na lista de VMs, localizar **Azs VM** que criou anteriormente e, em seguida, selecioná-lo.
+4. Na secção para a máquina virtual, clique em **Connect**e, em seguida, abra o ficheiro de Azs VM.rdp.
    
-     ![Connect button](media/azure-stack-create-vpn-connection-one-node-tp2/image17.png)
-5. Sign in with the account that you configured when you created the virtual machine.
-6. Open an elevated **Windows PowerShell** window.
-7. Type **ipconfig /all**.
-8. In the output, find the **IPv4 Address**, and then save the address for later use. This is the address that you will ping from Azure. In the example environment, the address is **10.0.10.4**, but in your environment it might be different. It should fall within the **10.0.10.0/24** subnet that you created previously.
-9. To create a firewall rule that allows the virtual machine to respond to pings, run the following PowerShell command:
+     ![Botão de ligar](media/azure-stack-create-vpn-connection-one-node-tp2/image17.png)
+5. Inicie sessão com a conta que configurou quando criou a máquina virtual.
+6. Abra uma **do Windows PowerShell** janela.
+7. Escreva **ipconfig /all**.
+8. O resultado, localize o **endereço IPv4**e, em seguida, guarde o endereço para utilização posterior. Este é o endereço que vai enviar um ping a partir do Azure. No ambiente de exemplo, o endereço é **10.0.10.4**, mas no seu ambiente poderá ser diferente. Este deve coincidir com o **10.0.10.0/24** sub-rede que criou anteriormente.
+9. Para criar uma regra de firewall que permite que a máquina virtual responder a pings, execute o seguinte comando do PowerShell:
 
    ```powershell
    New-NetFirewallRule `
@@ -235,16 +234,16 @@ To make sure that you send the traffic through the site-to-site connection, ping
     –Protocol ICMPv4
    ```
 
-### <a name="sign-in-to-the-tenant-vm-in-azure"></a>Sign in to the tenant VM in Azure
-1. Sign in to the Azure portal.
-2. In the left navigation bar, click **Virtual Machines**.
-3. From the list of virtual machines, find **Azure-VM** that you created previously, and then select it.
-4. On the section for the virtual machine, click **Connect**.
-5. Sign in with the account that you configured when you created the virtual machine.
-6. Open an elevated **Windows PowerShell** window.
-7. Type **ipconfig /all**.
-8. You should see an IPv4 address that falls within **10.0.20.0/24**. In the example environment, the address is **10.0.20.4**, but your address might be different.
-9. To create a firewall rule that allows the virtual machine to respond to pings, run the following PowerShell command:
+### <a name="sign-in-to-the-tenant-vm-in-azure"></a>Inicie sessão no inquilino do VM no Azure
+1. Inicie sessão no Portal do Azure.
+2. Na barra de navegação esquerdo, clique em **máquinas virtuais**.
+3. Na lista de máquinas virtuais, localizar **VM do Azure** que criou anteriormente e, em seguida, selecioná-lo.
+4. Na secção para a máquina virtual, clique em **Connect**.
+5. Inicie sessão com a conta que configurou quando criou a máquina virtual.
+6. Abra uma **do Windows PowerShell** janela.
+7. Escreva **ipconfig /all**.
+8. Deverá ver um endereço de IPv4 que se encontrem dentro **10.0.20.0/24**. No ambiente de exemplo, o endereço é **10.0.20.4**, mas o seu endereço de poderão ser diferente.
+9. Para criar uma regra de firewall que permite que a máquina virtual responder a pings, execute o seguinte comando do PowerShell:
 
    ```powershell
    New-NetFirewallRule `
@@ -252,21 +251,21 @@ To make sure that you send the traffic through the site-to-site connection, ping
     –Protocol ICMPv4
    ```
 
-10. From the virtual machine in Azure, ping the virtual machine in Azure Stack, through the tunnel. To do this, you ping the DIP that you recorded from Azs-VM.
-   In the example environment, this is **10.0.10.4**, but be sure to ping the address you noted in your lab. You should see a result that looks like the following screenshot:
+10. Da máquina virtual no Azure, executar um ping a máquina virtual na pilha do Azure, através do túnel. Para tal, ping DIP que registou Azs VM.
+   No ambiente de exemplo, isto é **10.0.10.4**, mas certifique-se enviar um ping o endereço que anotou no laboratório. Deverá ver um resultado semelhante à captura de ecrã seguinte:
    
-    ![Successful ping](media/azure-stack-create-vpn-connection-one-node-tp2/image19b.png)
-11. A reply from the remote virtual machine indicates a successful test! You can close the virtual machine window. To test your connection, you can try other kinds of data transfers like a file copy.
+    ![Ping enviado com êxito](media/azure-stack-create-vpn-connection-one-node-tp2/image19b.png)
+11. Uma resposta da máquina virtual remota indica um teste com êxito! Pode fechar a janela de máquina virtual. Para testar a ligação, pode tentar outros tipos de transferências de dados, como uma cópia de ficheiros.
 
-### <a name="viewing-data-transfer-statistics-through-the-gateway-connection"></a>Viewing data transfer statistics through the gateway connection
-If you want to know how much data passes through your site-to-site connection, this information is available on the **Connection** section. This test is also another way to verify that the ping you just sent actually went through the VPN connection.
+### <a name="viewing-data-transfer-statistics-through-the-gateway-connection"></a>Ver estatísticas de transferência de dados através da ligação de gateway
+Se pretender saber a quantidade de dados atravessa a ligação de site a site, esta informação está disponível na **ligação** secção. Este teste também é outra forma de verificar que o ping que acabámos de enviar, na verdade, Ocorreu um erro através da ligação VPN.
 
-1. While you're signed in to the user virtual machine in Azure Stack, use your user account to sign in to the user portal.
-2. Go to **All resources**, and then select the **Azs-Azure** connection. **Connections** appears.
-4. On the **Connection** section, the statistics for **Data in** and **Data out** appear. In the following screenshot, the large numbers are attributed to additional file transfer. You should see some nonzero values there.
+1. Enquanto tem sessão iniciada para a máquina virtual de utilizador na pilha do Azure, utilize a sua conta de utilizador para iniciar sessão no portal de utilizador.
+2. Aceda a **todos os recursos**e, em seguida, selecione o **Azs Azure** ligação. **Ligações** aparece.
+4. No **ligação** secção, as estatísticas de **dados** e **a dados extra** aparecer. Na captura de ecrã seguinte, os números de grandes dimensões são atribuída ao utilizador a transferência de ficheiro adicionais. Deverá ver alguns valores diferentes de zero não existe.
    
-    ![Data in and out](media/azure-stack-connect-vpn/Connection.png)
+    ![Dados de entrada e saída](media/azure-stack-connect-vpn/Connection.png)
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Passos seguintes
 
-[Deploy apps to Azure and Azure Stack](azure-stack-solution-pipeline.md)
+[Implementar aplicações do Azure e Azure pilha](azure-stack-solution-pipeline.md)

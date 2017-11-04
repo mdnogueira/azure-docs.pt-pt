@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: juluk
-ms.openlocfilehash: 44d2ac2fd35621ab8cd8d7584744139ee3bab5c2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 7f5c034df3410fc5563a5ed657f7c1aa0f4135ec
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="overview-of-azure-cloud-shell-preview"></a>Descrição geral da Shell de nuvem do Azure (pré-visualização)
 Shell de nuvem do Azure é uma shell interativa e acessíveis para o browser para a gestão de recursos do Azure.
@@ -44,7 +44,7 @@ Shell de nuvem fica pré-instaladas com ferramentas de linha de comandos popular
 Ver a lista completa de ferramentas para [Bash experiência](features.md#tools) e [experiência com o PowerShell.](features-powershell.md#tools)
 
 ### <a name="automatic-authentication"></a>Autenticação automática
-Shell de nuvem segura autentica automaticamente em cada sessão para instantânea acesso aos recursos através de 2.0 do CLI do Azure.
+Shell de nuvem segura autentica automaticamente em cada sessão para instantânea acesso aos recursos através de Cmdlets do PowerShell e o 2.0 CLI do Azure.
 
 ### <a name="connect-your-azure-file-storage"></a>Ligar o File storage do Azure
 Nuvem Shell máquinas são temporárias e como consequência necessitam de uma partilha de ficheiros do Azure para possível montá-la como `clouddrive` para manter o seu diretório $Home.

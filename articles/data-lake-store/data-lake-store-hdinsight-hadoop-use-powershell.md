@@ -11,13 +11,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/28/2017
+ms.date: 11/01/2017
 ms.author: nitinme
-ms.openlocfilehash: 0e2e0d02677013252b0806558535fe970b5c50b4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 2d601cfa6e2e89ef26d4a2d7824b239a2f6ca7a7
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-data-lake-store-as-additional-storage"></a>Utilizar o Azure PowerShell para criar um cluster do HDInsight com o Data Lake Store (como armazenamento adicional)
 > [!div class="op_single_selector"]
@@ -122,7 +122,7 @@ Siga estes passos para criar um Data Lake Store.
 
 
 ## <a name="set-up-authentication-for-role-based-access-to-data-lake-store"></a>Configurar a autenticação de acesso baseado em funções para o Data Lake Store
-Cada subscrição do Azure está associada um Azure Active Directory. Utilizadores e serviços que acedem aos recursos da subscrição utilizando o Portal clássico do Azure ou a API do Azure Resource Manager, devem primeiro autenticar com o diretório do Azure Active Directory. É concedido acesso aos serviços e subscrições do Azure ao lhes atribuir a função adequada num recurso do Azure.  Para os serviços, um principal de serviço identifica o serviço no Azure Active Directory (AAD). Esta secção ilustra como conceder a um serviço de aplicações, como o HDInsight, acesso a um recurso do Azure (a conta do Azure Data Lake Store que criou anteriormente), criando um principal de serviço para a aplicação e atribuir funções a que através do PowerShell do Azure.
+Cada subscrição do Azure está associada um Azure Active Directory. Utilizadores e serviços que acedem aos recursos da subscrição utilizando o portal do Azure ou a API do Azure Resource Manager, devem primeiro autenticar com o diretório do Azure Active Directory. É concedido acesso aos serviços e subscrições do Azure ao lhes atribuir a função adequada num recurso do Azure.  Para os serviços, um principal de serviço identifica o serviço no Azure Active Directory (AAD). Esta secção ilustra como conceder a um serviço de aplicações, como o HDInsight, acesso a um recurso do Azure (a conta do Azure Data Lake Store que criou anteriormente), criando um principal de serviço para a aplicação e atribuir funções a que através do PowerShell do Azure.
 
 Para configurar a autenticação do Active Directory para o Azure Data Lake, tem de efetuar as seguintes tarefas.
 

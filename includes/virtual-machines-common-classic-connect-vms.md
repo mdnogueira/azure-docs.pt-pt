@@ -1,42 +1,42 @@
 
 
-![Virtual machines in a standalone cloud service](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
+![Máquinas virtuais no serviço autónomo em nuvem](./media/virtual-machines-common-classic-connect-vms/CloudServiceExample.png)
 
-If you place your virtual machines in a virtual network, you can decide how many cloud services you want to use for load balancing and availability sets. Additionally, you can organize the virtual machines on subnets in the same way as your on-premises network and connect the virtual network to your on-premises network. Here's an example:
+Se colocar as máquinas virtuais numa rede virtual, pode decidir quantos serviços em nuvem que pretende utilizar para conjuntos de disponibilidade e balanceamento de carga. Além disso, pode organizar as máquinas virtuais em sub-redes da mesma forma como o local de rede e ligar a rede virtual à sua rede no local. Eis um exemplo:
 
-![Virtual machines in a virtual network](./media/virtual-machines-common-classic-connect-vms/VirtualNetworkExample.png)
+![Máquinas virtuais numa rede virtual](./media/virtual-machines-common-classic-connect-vms/VirtualNetworkExample.png)
 
-Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](../articles/azure-subscription-service-limits.md).
+Redes virtuais são a forma recomendada para ligar a máquinas virtuais no Azure. A melhor prática consiste em configurar cada camada da aplicação no serviço em nuvem separado. No entanto, poderá ter de combinar algumas máquinas virtuais de camadas de aplicação diferente no mesmo serviço em nuvem permanecer dentro do máximo de 200 serviços cloud por subscrição. Para rever esta e outros limites, consulte [subscrição do Azure e limites de serviço, Quotas e restrições](../articles/azure-subscription-service-limits.md).
 
-## <a name="connect-vms-in-a-virtual-network"></a>Connect VMs in a virtual network
-To connect virtual machines in a virtual network:
+## <a name="connect-vms-in-a-virtual-network"></a>Ligar as VMs numa rede virtual
+Ligar máquinas virtuais numa rede virtual:
 
-1. Create the virtual network in the [Azure portal](../articles/virtual-network/virtual-networks-create-vnet-classic-pportal.md) and specify 'classic deployment'.
-2. Create the set of cloud services for your deployment to reflect your design for availability sets and load balancing. In the Azure portal, click **New > Compute > Cloud service** for each cloud service.
+1. Criar a rede virtual no [portal do Azure](../articles/virtual-network/virtual-networks-create-vnet-classic-pportal.md) e especifique 'implementação clássica'.
+2. Crie o conjunto de serviços em nuvem para a implementação refletir o design para conjuntos de disponibilidade e o balanceamento de carga. No portal do Azure, clique em **novo > computação > serviço em nuvem** para cada serviço em nuvem.
 
-  As you fill out the cloud service details, choose the same _resource group_ used with the virtual network.
+  Como preencher os detalhes do serviço de nuvem, selecione a mesma _grupo de recursos_ utilizado com a rede virtual.
 
-3. To create each new virtual machine, click **New > Compute**, then select the appropriate VM image from the **Featured apps**.
+3. Para criar cada nova máquina virtual, clique em **novo > computação**, em seguida, selecione a imagem VM adequada do **aplicações em destaque**.
 
-  In the VM **Basics** blade, choose the same _resource group_ used with the virtual network.
+  Na VM **Noções básicas** painel, selecione a mesma _grupo de recursos_ utilizado com a rede virtual.
 
-  ![VM Basics blade when using a VNet](./media/virtual-machines-common-classic-connect-vms/CreateVM_Basics_VN.png)
+  ![Painel de noções básicas de VM ao utilizar uma VNet](./media/virtual-machines-common-classic-connect-vms/CreateVM_Basics_VN.png)
 
-4. As you fill out the VM **Settings**, choose the correct _Cloud service_ or _virtual network_ for the VM.
+4. Como a preencher a VM **definições**, escolha o correto _serviço em nuvem_ ou _rede virtual_ para a VM.
 
-  Azure will select the other item based on your selection.
+  Azure irá selecionar outro item com base na sua seleção.
 
-  ![VM Settings blade when using a VNet](./media/virtual-machines-common-classic-connect-vms/CreateVM_Settings_VN.png)
+  ![Painel de definições de VM ao utilizar uma VNet](./media/virtual-machines-common-classic-connect-vms/CreateVM_Settings_VN.png)
 
 
-## <a name="connect-vms-in-a-standalone-cloud-service"></a>Connect VMs in a standalone cloud service
-To connect virtual machines in a standalone cloud service:
+## <a name="connect-vms-in-a-standalone-cloud-service"></a>Ligar as VMs num serviço autónomo em nuvem
+Ligar máquinas virtuais no serviço autónomo em nuvem:
 
-1. Create the cloud service in the [Azure portal](http://portal.azure.com). Click **New > Compute > Cloud service**. Or, you can create the cloud service for your deployment when you create your first virtual machine.
-2. When you create the virtual machines, choose the same resource group used with the cloud service.
+1. Criar serviço em nuvem a [portal do Azure](http://portal.azure.com). Clique em **novo > computação > serviço em nuvem**. Em alternativa, pode criar o serviço em nuvem para a sua implementação quando criar a sua primeira máquina virtual.
+2. Quando criar as máquinas virtuais, selecione o mesmo grupo de recursos utilizado com o serviço em nuvem.
 
-  ![Add a virtual machine to an existing cloud service](./media/virtual-machines-common-classic-connect-vms/CreateVM_Basics_SA.png)
+  ![Adicionar uma máquina virtual para um serviço em nuvem existente](./media/virtual-machines-common-classic-connect-vms/CreateVM_Basics_SA.png)
 
-3.  As you fill out the VM details, choose the name of cloud service created in the first step.
+3.  Como preencher os detalhes VM, escolha o nome do serviço em nuvem criado no primeiro passo.
 
-  ![Selecting a cloud service for a virtual machine](./media/virtual-machines-common-classic-connect-vms/CreateVM_Settings_SA.png)
+  ![Selecionar um serviço em nuvem para uma máquina virtual](./media/virtual-machines-common-classic-connect-vms/CreateVM_Settings_SA.png)

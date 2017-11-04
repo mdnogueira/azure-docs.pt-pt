@@ -1,30 +1,30 @@
-## <a name="network-security-group"></a>Network Security Group
-An NSG resource enables the creation of security boundary for workloads, by implementing allow and deny rules. Such rules can be applied to a VM, a NIC, or a subnet.
+## <a name="network-security-group"></a>Grupo de segurança de rede
+Um recurso NSG permite a criação de limite de segurança para cargas de trabalho, através da implementação de permissão e negação regras. Estas regras podem ser aplicadas a uma VM, um NIC ou uma sub-rede.
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **subnets** |List of subnet ids the NSG is applied to. |/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd |
-| **securityRules** |List of security rules that make up the NSG |See [Security rule](#Security-rule) below |
-| **defaultSecurityRules** |List of default security rules present in every NSG |See [Default security rules](#Default-security-rules) below |
+| **sub-redes** |Lista de ids de sub-rede que o NSG é aplicado a. |/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/Providers/Microsoft.Network/virtualNetworks/TestVNet/Subnets/FrontEnd |
+| **securityRules** |Lista de regras de segurança que compõem o NSG |Consulte [regra de segurança](#Security-rule) abaixo |
+| **defaultSecurityRules** |Lista de regras de segurança predefinidas presentes em cada NSG |Consulte [predefinido regras de segurança](#Default-security-rules) abaixo |
 
-* **Security rule** - An NSG can have multiple security rules defined. Each rule can allow or deny different types of traffic.
+* **Regra de segurança** -um NSG pode ter várias regras de segurança definidas. Cada regra pode permitir ou negar os diferentes tipos de tráfego.
 
-### <a name="security-rule"></a>Security rule
-A security rule is a child resource of an NSG containing the properties below.
+### <a name="security-rule"></a>Regra de segurança
+Uma regra de segurança é um recurso de subordinados de um NSG que contém as propriedades abaixo.
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **description** |Description for the rule |Allow inbound traffic for all VMs in subnet X |
-| **protocol** |Protocol to match for the rule |TCP, UDP, or * |
-| **sourcePortRange** |Source port range to match for the rule |80, 100-200, * |
-| **destinationPortRange** |Destination port range to match for the rule |80, 100-200, * |
-| **sourceAddressPrefix** |Source address prefix to match for the rule |10.10.10.1, 10.10.10.0/24, VirtualNetwork |
-| **destinationAddressPrefix** |Destination address prefix to match for the rule |10.10.10.1, 10.10.10.0/24, VirtualNetwork |
-| **direction** |Direction of traffic to match for the rule |inbound or outbound |
-| **priority** |Priority for the rule. Rules are checked int he order of priority, once a rule applies, no more rules are tested for matching. |10, 100, 65000 |
-| **access** |Type of access to apply if the rule matches |allow or deny |
+| **Descrição** |Descrição da regra |Permitir o tráfego de entrada para todas as VMs numa sub-rede X |
+| **protocolo** |Protocolo a corresponder para a regra |TCP, UDP ou * |
+| **sourcePortRange** |O intervalo de portas de origem a corresponder para a regra |80, 100-200, * |
+| **destinationPortRange** |O intervalo de portas de destino a corresponder para a regra |80, 100-200, * |
+| **sourceAddressPrefix** |Prefixo de endereço de origem a corresponder para a regra |10.10.10.1, 10.10.10.0/24, VirtualNetwork |
+| **destinationAddressPrefix** |Prefixo de endereço de destino a corresponder para a regra |10.10.10.1, 10.10.10.0/24, VirtualNetwork |
+| **direção** |Direção do tráfego a corresponder para a regra |De entrada ou de saída |
+| **prioridade** |Prioridade da regra. As regras são verificados por ordem de prioridade, depois de uma regra se aplica, são testadas não mais regras para correspondência. |10, 100, 65000 |
+| **acesso** |Tipo de acesso a aplicar se a regra corresponder |Permitir ou negar |
 
-Sample NSG in JSON format:
+Exemplo NSG no formato JSON:
 
     {
         "name": "NSG-BackEnd",
@@ -67,11 +67,11 @@ Sample NSG in JSON format:
         }
     }
 
-### <a name="default-security-rules"></a>Default security rules
+### <a name="default-security-rules"></a>Regras de segurança predefinidas
 
-Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](../articles/virtual-network/virtual-networks-nsg.md#default-rules) exist.
+Regras de segurança predefinidas têm as mesmas propriedades disponíveis nas regras de segurança. Existem para fornecer conectividade básica entre os recursos que tenham NSGs aplicados às mesmas. Certifique-se de que sabe que [predefinido regras de segurança](../articles/virtual-network/virtual-networks-nsg.md#default-rules) existe.
 
-### <a name="additional-resources"></a>Additional resources
-* Get more information about [NSGs](../articles/virtual-network/virtual-networks-nsg.md).
-* Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163615.aspx) for NSGs.
-* Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163580.aspx) for security rules.
+### <a name="additional-resources"></a>Recursos adicionais
+* Obter mais informações [NSGs](../articles/virtual-network/virtual-networks-nsg.md).
+* Leia o [documentação de referência da REST API](https://msdn.microsoft.com/library/azure/mt163615.aspx) para NSGs.
+* Leia o [documentação de referência da REST API](https://msdn.microsoft.com/library/azure/mt163580.aspx) para regras de segurança.

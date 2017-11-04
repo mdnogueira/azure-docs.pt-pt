@@ -1,5 +1,5 @@
 ---
-title: "Criação de perfis de aplicações web em direto no Azure com o Application Insights | Microsoft Docs"
+title: "Perfil de aplicações web em direto no Azure com o gerador de perfis do Application Insights | Microsoft Docs"
 description: "Identifica o caminho de acesso frequente no seu código de servidor web com um gerador de perfis de requisitos de espaço insuficiente."
 services: application-insights
 documentationcenter: 
@@ -12,140 +12,133 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: mbullwin
-ms.openlocfilehash: f6669d90878398dcd4592df97180dcd59b146350
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
-ms.translationtype: HT
+ms.openlocfilehash: e66dc2af18785c6c8e83815129c8bca5b877d25b
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/03/2017
 ---
-# <a name="profiling-live-azure-web-apps-with-application-insights"></a>Criação de perfis de aplicações web do Azure em direto com o Application Insights
+# <a name="profile-live-azure-web-apps-with-application-insights"></a>Perfil live aplicações web do Azure com o Application Insights
 
-*Esta funcionalidade do Application Insights está GA para serviços de aplicações e na pré-visualização da computação.*
+*Esta funcionalidade do Application Insights está normalmente disponível para o App Service do Azure e está em pré-visualização para os recursos de computação do Azure.*
 
-Saber quanto tempo é gasto a cada método na sua aplicação web em direto utilizando a ferramenta de criação de perfis de [Azure Application Insights](app-insights-overview.md). Mostra-lhe perfis de detalhado de pedidos em direto que foram processados pela sua aplicação e realça o "caminho frequente' que está a utilizar mais tempo. Seleciona automaticamente os exemplos que tenham tempos de resposta diferentes. O gerador de perfis utiliza várias técnicas para minimizar os custos gerais.
+Saber quanto tempo é gasto a cada método na sua aplicação web em direto utilizando [gerador de perfis do Application Insights](app-insights-overview.md). A ferramenta de criação de perfis do Application Insights mostra perfis de detalhado de pedidos em direto que foram processados pela sua aplicação e realça o *caminho frequente* que utiliza mais tempo. O gerador de perfis seleciona automaticamente os exemplos que tenham tempos de resposta diferentes e, em seguida, utiliza várias técnicas para minimizar os custos gerais.
 
-Atualmente, o gerador de perfis funciona para aplicações web ASP.NET em execução nos serviços de aplicações do Azure, no mínimo Basic escalão de preço.
+Atualmente, o gerador de perfis funciona para aplicações web ASP.NET em execução no App Service do Azure,, pelo menos, a camada de serviço básico.
 
-<a id="installation"></a>
-## <a name="enable-the-profiler"></a>Ativar o gerador de perfis
+## <a id="installation"></a>Ativar o gerador de perfis
 
-[Instale o Application Insights](app-insights-asp-net.md) no seu código. Se já estiver instalado, certifique-se de que dispõe da versão mais recente. (Para tal, clique no projeto no Explorador de soluções e escolha pacotes NuGet gerir. Selecione as atualizações e todos os pacotes de atualização.) Implemente novamente a sua aplicação.
+[Instale o Application Insights](app-insights-asp-net.md) no seu código. Se já estiver instalado, certifique-se de que dispõe da versão mais recente. Para verificar a versão mais recente, no Explorador de soluções, clique no seu projeto e, em seguida, selecione **pacotes NuGet gerir** > **atualizações** > **Atualize todos os pacotes**. Em seguida, volte a implementar a aplicação.
 
-*Com o ASP.NET Core? [Verifique aqui](#aspnetcore).*
+*Com o ASP.NET Core? Obter [obter mais informações](#aspnetcore).*
 
-No [https://portal.azure.com](https://portal.azure.com), abra o recurso do Application Insights para a sua aplicação web. Abra **desempenho** e clique em **ativar o gerador de perfis do Application Insights...** .
+No [portal do Azure](https://portal.azure.com), abra o recurso do Application Insights para a sua aplicação web. Selecione **desempenho** > **ativar o gerador de perfis do Application Insights**.
 
-![Clique na faixa do gerador de perfis de ativação][enable-profiler-banner]
+![Selecione a faixa de gerador de perfis de ativação][enable-profiler-banner]
 
-Em alternativa, pode sempre clicar **configurar** para ver o estado, ativar ou desativar o gerador de perfis.
+Em alternativa, pode selecionar **configurar** para ver o estado e ativar ou desativar o gerador de perfis.
 
-![No painel de desempenho, clique em configurar][performance-blade]
+![Em desempenho, configurar, selecione][performance-blade]
 
-Aplicações Web que estão configuradas com o Application Insights estão listadas no painel de configurar. Siga as instruções para instalar o agente do gerador de perfis, se necessário. Se não existe nenhuma aplicação web ainda está configurada com o Application Insights, clique em *adicionar aplicações ligadas*.
+Aplicações Web que estão configuradas com o Application Insights estão listadas na **configurar**. Siga as instruções para instalar o agente do gerador de perfis, se necessário. Se nenhuma aplicação web foram configuradas com o Application Insights, selecione **adicionar aplicações ligadas**.
 
-Utilize o *ativar o gerador de perfis* ou *desativar o gerador de perfis* botões no painel Configurar para controlar o gerador de perfis em todas as suas aplicações web ligado.
+Para controlar o gerador de perfis em todas as suas aplicações web ligado, do **configurar** painel, selecione **ativar o gerador de perfis** ou **desativar o gerador de perfis**.
 
-![Configurar o painel][linked app services]
+![Configurar opções do painel][linked app services]
 
-Ao contrário de aplicações web alojadas através de planos do App Service aplicações alojadas no *computação do Azure* recursos (por ex.: Máquina Virtual, o conjunto de dimensionamento de Máquina Virtual, Service Fabric, os serviços de nuvem) não são geridos diretamente pelo Azure. Neste caso, não há nenhuma aplicação web para ligar a uma aqui e apenas terá de clicar para ativar o gerador de perfis no ecrã.
+Ao contrário das aplicações web alojadas através de planos de serviço de aplicações, as aplicações alojadas nos recursos de computação do Azure (por exemplo, Virtual Machines do Azure, conjuntos de dimensionamento de máquina virtual, do Azure Service Fabric ou Cloud Services do Azure) não são geridas diretamente pelo Azure. Neste caso, não há nenhuma aplicação web para ligar a. Em vez de ligar a uma aplicação, selecione o **ativar o gerador de perfis** botão.
 
 ## <a name="disable-the-profiler"></a>Desativar o gerador de perfis
-Para interromper ou reiniciar o gerador de perfis para uma instância de serviço de aplicações individuais, pode encontrá-la **no recurso de serviço de aplicações**, na **trabalhos Web**. Eliminá-lo, procure em **extensões**.
+Para interromper ou reiniciar o gerador de perfis para uma instância de serviço de aplicações individuais, em **trabalhos Web**, vá para o recurso de serviço de aplicações. Para eliminar o gerador de perfis, aceda a **extensões**.
 
 ![Desativar o gerador de perfis para das tarefas da web][disable-profiler-webjob]
 
-Recomendamos que tenha o gerador de perfis ativado todas as suas aplicações web para detetar problemas de desempenho logo que possível.
+Recomendamos que tenha o gerador de perfis ativado todas as suas aplicações web para detetar como antecipadamente quaisquer problemas de desempenho possível.
 
-Se utilizar o WebDeploy para implementar as alterações à sua aplicação web, certifique-se de que exclua o **App_Data** pasta seja eliminado durante a implementação. Caso contrário, serão eliminados os ficheiros da extensão de gerador de perfis quando junto a implementar a aplicação web no Azure.
+Se utilizar o WebDeploy para implementar as alterações à sua aplicação web, certifique-se de que excluir pasta App_Data seja eliminado durante a implementação. Caso contrário, a extensão de gerador de perfis são eliminados ficheiros da próxima vez que implementar a aplicação web no Azure.
 
-### <a name="using-profiler-with-azure-vms-and-compute-resources-preview"></a>Utilizar o gerador de perfis com as VMs do Azure e recursos de computação (pré-visualização)
+### <a name="using-profiler-with-azure-vms-and-azure-compute-resources-preview"></a>Utilizar o gerador de perfis com as VMs do Azure e recursos de computação do Azure (pré-visualização)
 
-Quando lhe [ativar Application Insights para serviços de aplicações do Azure em tempo de execução](app-insights-azure-web-apps.md#run-time-instrumentation-with-application-insights), o gerador de perfis está automaticamente disponível. (Se já ativou o Application Insights para o recurso, poderá ter de atualizar para a versão mais recente através de **configurar** assistente.)
+Quando lhe [ativar Application Insights para o App Service do Azure no tempo de execução](app-insights-azure-web-apps.md#run-time-instrumentation-with-application-insights), o gerador de perfis do Application Insights está automaticamente disponível. Se já tiver ativado o Application Insights para o recurso, poderá ter de atualizar para a versão mais recente, utilizando o Assistente de configuração.
 
-Não existe um [versão de pré-visualização do gerador de perfis para os recursos de computação do Azure](https://go.microsoft.com/fwlink/?linkid=848155).
+Obter informações um [versão de pré-visualização do gerador de perfis para os recursos de computação do Azure](https://go.microsoft.com/fwlink/?linkid=848155).
 
 
 ## <a name="limitations"></a>Limitações
 
-A retenção de dados predefinido é de 5 dias. Máximo de 10 GB ingerido por dia.
+A retenção de dados predefinido é de cinco dias. Os dados máximos ingeridos diário são de 10 GB.
 
-Não há sem encargos durante o serviço do gerador de perfis. A aplicação web tem de ser alojados em, pelo menos, o escalão básico dos serviços de aplicações.
+Não existem sem custos de utilização do serviço de gerador de perfis. Para utilizar o serviço do gerador de perfis, a aplicação web tem de ser alojados em, pelo menos, o escalão básico do serviço de aplicações.
 
 ## <a name="overhead-and-sampling-algorithm"></a>Sobrecarga e o algoritmo de amostragem
 
-O gerador de perfis executa aleatoriamente 2 minutos a cada hora em cada máquina Virtual que aloja a aplicação com ativado para capturar rastreios de gerador de perfis. Quando estiver a executar o gerador de perfis, adiciona entre 5 e 15% a sobrecarga da CPU no servidor.
-Os mais servidores disponíveis para alojar a aplicação, o menor impacto tem do gerador de perfis no desempenho da aplicação global. Isto é porque o algoritmo de amostragem resulta no gerador de perfis em execução no apenas executado em % 5 de servidores em qualquer momento e mais servidores estará disponíveis para servir pedidos web e os servidores de sobrecarga do gerador de perfis de deslocamento.
+O gerador de perfis aleatoriamente executa dois minutos a cada hora em cada máquina virtual que aloja a aplicação que tenha ativado para capturar rastreios de gerador de perfis. Quando estiver a executar o gerador de perfis, adiciona entre 5% e 15% sobrecarga da CPU no servidor.
+Os mais servidores que estão disponíveis para alojar a aplicação, tem do gerador de perfis o menor impacto no desempenho da aplicação global. Isto acontece porque o algoritmo de amostragem resulta no gerador de perfis em execução em apenas 5% dos servidores em qualquer altura. Estão disponíveis para servir pedidos web e a sobrecarga de servidor causada executando o gerador de perfis de deslocamento mais servidores.
 
 
-## <a name="viewing-profiler-data"></a>Visualizar dados do gerador de perfis
+## <a name="view-profiler-data"></a>Ver dados do gerador de perfis
 
-Abra o painel de desempenho e vá para a lista de operações.
+Vá para o **desempenho** painel e, em seguida, desloque-se para baixo para a lista de operações.
 
+![Coluna de exemplos de painel de informações de desempenho de aplicações][performance-blade-examples]
 
+A tabela de operações tem estas colunas:
 
+* **CONTAGEM**: O número destes pedidos no intervalo de tempo a **CONTAGEM** painel.
+* **MEDIANA**: O típico tempo demora a aplicação para responder a um pedido. Metade de todas as respostas foram mais rápida do que este valor.
+* **PERCENTIL 95TH**: 95% das respostas foram mais rápida do que este valor. Se este valor for substancialmente diferente da mediana, poderá existir um problema intermitente faça com a sua aplicação. (Em alternativa, pode ser explicado por uma funcionalidade de design, como a colocação em cache.)
+* **Os RASTREIOS de gerador de perfis**: um ícone indica que o gerador de perfis tiver capturado os rastreios de pilha para esta operação.
 
-![Painel de informações de desempenho de aplicações coluna de exemplos][performance-blade-examples]
+Selecione **vista** para abrir o Explorador de rastreio. O Explorador de mostra alguns exemplos que foi capturada o gerador de perfis, classificados por tempo de resposta.
 
-As colunas na tabela são:
+Se estiver a utilizar o **desempenho de pré-visualização** painel, vá para o **tomar ações** secção da página para ver os rastreios de gerador de perfis. Selecione o **rastreios de gerador de perfis** botão.
 
-* **Contagem** -o número destes pedidos no intervalo de tempo do painel.
-* **Mediana** - tempo normal a aplicação demora a responder a um pedido. Metade de todas as respostas foram mais rápida do que isto.
-* **percentil 95th** 95% das respostas foram mais rápida do que isto. Se desta figura é muito diferente da mediana, poderá existir um problema intermitente faça com a sua aplicação. (Ou pode ser explicado por uma funcionalidade de estrutura como colocação em cache)
-* **Os rastreios de gerador de perfis** -um ícone indica que o gerador de perfis tiver capturado os rastreios de pilha para esta operação.
-
-Clique no botão de vista para abrir o Explorador de rastreio. O Explorador de mostra alguns exemplos que foi capturada o gerador de perfis, classificados por tempo de resposta.
-
-Se estiver a utilizar o painel de desempenho de pré-visualização, aceda a **tomar ações** secção no canto inferior direito para ver os rastreios de gerador de perfis. Clique no botão de rastreios de gerador de perfis.
-
-![Application Insights desempenho painel pré-visualização rastreios de gerador de perfis][performance-blade-v2-examples]
+![Rastreios de gerador de perfis de pré-visualização de painel de informações de desempenho de aplicações][performance-blade-v2-examples]
 
 Selecione uma amostra para mostrar uma divisão de nível de código de tempo que despende a executar o pedido.
 
 ![Explorador de rastreio do Application Insights][trace-explorer]
 
-**Mostrar caminho frequente** abre o biggest folha nó ou, pelo menos, algo fechar. Na maioria dos casos, este nó será adjacente a um estrangulamento do desempenho.
+O Explorador de rastreio mostra as seguintes informações:
 
-
-
-* **Etiqueta**: O nome de função ou de eventos. A árvore mostra uma combinação de código e os eventos que ocorreram (por exemplo, eventos SQL e http). O evento superior representa a duração de pedido geral.
-* **Decorrido**: O intervalo de tempo entre o início da operação e de fim.
-* **Quando**: mostra quando o evento/função estava a ser executado em relação a outras funções.
+* **Mostrar caminho frequente**: abre o biggest folha nó ou, pelo menos, algo fechar. Na maioria dos casos, este nó está adjacente a um estrangulamento do desempenho.
+* **Etiqueta**: O nome de função ou de eventos. A árvore mostra uma combinação de código e os eventos que ocorreram (como eventos do SQL Server e HTTP). O evento superior representa a duração de pedido geral.
+* **Decorrido**: O intervalo de tempo entre o início da operação e de fim da operação.
+* **Quando**: quando a função ou o evento estava a ser executado em relação a outras funções.
 
 ## <a name="how-to-read-performance-data"></a>Como ler dados de desempenho
 
-Gerador de perfis de serviço de Microsoft utiliza uma combinação de método de amostragem e instrumentação para analisar o desempenho da sua aplicação.
-Quando a coleção de detalhado está em curso, o gerador de perfis de serviço amostras o ponteiro de instrução de cada de CPU do computador em cada milissegundo.
-Cada amostra captura a pilha de chamadas completa do thread actualmente em execução, fornecer informações úteis e detalhadas sobre o que se thread estava a fazer em ambos alta e baixa níveis de abstração. Gerador de perfis de serviço também recolhe outros eventos, tais como eventos de mudança de contexto, TPL eventos e eventos de conjunto de threads para controlar a correlação de atividade e causality.
+Gerador de perfis de serviço da Microsoft utiliza uma combinação de métodos de amostragem e instrumentação para analisar o desempenho da sua aplicação. Quando a coleção de detalhado está em curso, o gerador de perfis de serviço amostras o ponteiro de instrução de cada de CPU do computador em cada milissegundo. Cada amostra captura a pilha de chamadas completa do thread que atualmente está em execução. Fornece informações úteis e detalhadas sobre que nesse thread estava a fazer, um nível elevado e um nível de abstração baixa. O gerador de perfis de serviço também recolhe outros eventos para controlar a correlação de atividade e causality, incluindo o contexto de mudança de eventos, eventos de tarefas paralelas biblioteca (TPL) e eventos de conjunto de threads.
 
-A pilha de chamadas apresentada na vista de linha cronológica é o resultado da amostragem e instrumentação acima. Porque cada amostra captura a pilha de chamadas completa do thread, inclui código a partir do .NET framework, bem como outras estruturas que referenciar.
+A pilha de chamadas que é apresentada na vista de linha cronológica é o resultado da amostragem e instrumentação. Porque cada amostra captura a pilha de chamadas completa do thread, inclui código do Microsoft .NET Framework e a partir de outras estruturas que referenciar.
 
-### <a id="jitnewobj"></a>Alocação de objeto (`clr!JIT\_New or clr!JIT\_Newarr1`)
-`clr!JIT\_New and clr!JIT\_Newarr1`são funções de programa auxiliar no interior do .NET framework que aloca a memória a partir da área dinâmica para dados geridos. `clr!JIT\_New`é invocada quando existe um objeto é alocado. `clr!JIT\_Newarr1`é invocada quando é atribuída uma matriz de objetos. Estas duas funções são, normalmente, muito rápidas em devem tomar relativamente pequeno período de tempo. Se vir `clr!JIT\_New` ou `clr!JIT\_Newarr1` demorar uma quantidade substancial de tempo na sua linha cronológica, é uma indicação de que o código pode alocar muitos objetos e consumir quantidade significativa de memória.
+### <a id="jitnewobj"></a>Alocação de objeto CLR (Common! JIT\_novo ou clr! JIT\_Newarr1)
+**CLR! JIT\_novo** e **clr! JIT\_Newarr1** são funções de programa auxiliar no .NET Framework que alocar memória a partir de uma pilha gerida. **CLR! JIT\_novo** é invocada quando existe um objeto é alocado. **CLR! JIT\_Newarr1** é invocada quando é atribuída uma matriz de objetos. Normalmente, estas duas funções são muito rápidas em tomar relativamente pequenas quantidades de tempo. Se vir **clr! JIT\_novo** ou **clr! JIT\_Newarr1** demorar uma quantidade substancial de tempo na sua linha cronológica, é uma indicação de que o código pode alocar muitos objetos e consumir quantidades significativas de memória.
 
-### <a id="theprestub"></a>Carregar código (`clr!ThePreStub`)
-`clr!ThePreStub`é uma função de programa auxiliar no interior do .NET framework que prepara o código para executar pela primeira vez. Isto inclui normalmente, mas não limitado a, compilação JIT (apenas no tempo). Para cada método c#, `clr!ThePreStub` deve ser invocado no máximo uma vez durante a duração de um processo.
+### <a id="theprestub"></a>Código de carregamento de CLR (Common! ThePreStub)
+**CLR! ThePreStub** é uma função de programa auxiliar no .NET Framework que prepara o código para executar pela primeira vez. Isto normalmente inclui, mas não está limitado a compilação de just-in-time (JIT). Para cada método c#, **clr! ThePreStub** deve ser invocado no máximo uma vez durante a duração de um processo.
 
-Se vir `clr!ThePreStub` demora quantidade significativa de tempo de um pedido, indica que é o primeiro pedido que executa este método e a hora de tempo de execução do .NET framework carregar este método é significativa. Pode considerar um processo de warm-up que executa a que parte do código antes dos utilizadores aceder ao mesmo ou considere executar NGen no seu assemblagens.
+Se **clr! ThePreStub** demora uma quantidade substancial de tempo de um pedido, isto indica que o pedido é o primeiro que executa este método. O tempo de execução .NET Framework para carregar este método é significativo. Poderá considerar a utilização de um processo de aquecimento que executa a que parte do código antes dos utilizadores aceder ao mesmo ou considere executar o gerador de imagens nativas (ngen.exe) com as assemblagens.
 
-### <a id="lockcontention"></a>Bloquear contenção (`clr!JITutil\_MonContention` ou `clr!JITutil\_MonEnterWorker`)
-`clr!JITutil\_MonContention`ou `clr!JITutil\_MonEnterWorker` indicar o thread atual está a aguardar um bloqueio ser libertado. Isto normalmente aparece quando executar uma c# bloqueio instrução, invocar o método Monitor.Enter ou invocar um método com o atributo Methodimploptions. Contenção ocorre normalmente quando o thread A adquire um bloqueio e thread B tenta adquirir o bloqueio mesmo antes de thread A versões-lo.
+### <a id="lockcontention"></a>Contenção CLR (Common! JITutil\_MonContention ou clr! JITutil\_MonEnterWorker)
+**CLR! JITutil\_MonContention** ou **clr! JITutil\_MonEnterWorker** indica que o thread atual está a aguardar um bloqueio ser libertado. Isto normalmente aparece quando executar um c# **bloqueio** declaração, ao invocar o **Monitor.Enter** método, ou ao invocar um método com o **Methodimploptions**atributo. Contenção normalmente ocorre quando o thread A adquire um bloqueio, e thread B tenta adquirir o bloqueio mesmo antes de thread A versões-lo.
 
-### <a id="ngencold"></a>Carregar código (`[COLD]`)
-Se o nome do método contém `[COLD]`, tais como `mscorlib.ni![COLD]System.Reflection.CustomAttribute.IsDefined`, significa que o tempo de execução do .NET framework está a executar o código que não está otimizado por <a href="https://msdn.microsoft.com/library/e7k32f4k.aspx">orientado por perfil otimização</a> pela primeira vez. Para cada método, deve agora mostrar cópias de segurança no máximo uma vez durante a duração do processo.
+### <a id="ngencold"></a>Carregar código ([frio])
+Se o nome do método contém **[amovíveis]**, tais como **mscorlib.ni! [ COLD]System.Reflection.CustomAttribute.IsDefined**, o tempo de execução de .NET Framework está a executar o código para a primeira vez que não está otimizada por <a href="https://msdn.microsoft.com/library/e7k32f4k.aspx">orientado por perfil otimização</a>. Para cada método, deve agora mostrar cópias de segurança no máximo uma vez durante a duração do processo.
 
-Se carregar código demora bastante tempo para um pedido, ele indica esse pedido é o primeiro para executar a parte do método não otimizada. Pode considerar um transfira segurança processo que executa a que parte do código antes dos utilizadores aceder ao mesmo.
+Se carregar código demora uma quantidade substancial de tempo de um pedido, isto indica que o pedido é o primeiro para executar a parte do método não otimizada. Considere a utilização de um processo de aquecimento que executa a que parte do código antes dos utilizadores aceder ao mesmo.
 
 ### <a id="httpclientsend"></a>Enviar o pedido HTTP
-Métodos, tais como `HttpClient.Send` indicar o código está à espera de um pedido HTTP concluir.
+Métodos como **HttpClient.Send** indicar que o código está à espera que um pedido HTTP para ser concluída.
 
 ### <a id="sqlcommand"></a>Operação de base de dados
-Método como SqlCommand.Execute indica o código está à espera que uma operação de base de dados seja concluída.
+Métodos como **SqlCommand.Execute** indicar que o código está à espera que uma operação de base de dados concluir.
 
-### <a id="await"></a>A aguardar (`AWAIT\_TIME`)
-`AWAIT\_TIME`indica que o código está a aguardar a conclusão de outra tarefa. Esta situação ocorre normalmente com c# 'await' da instrução. Quando executa o código de um c# 'await', o thread unwinds e devolve o controlo para o conjunto de threads e não há nenhum thread que está bloqueado a aguardar que o 'await' Concluir. No entanto, logicamente o thread que criou o await é 'Bloqueado' a aguardar a conclusão da operação. O `AWAIT\_TIME` indica o tempo de bloqueados a aguardar a conclusão da tarefa.
+### <a id="await"></a>A aguardar (AWAIT\_tempo)
+**AWAIT\_tempo** indica que o código está a aguardar outra tarefa concluir. Esta situação ocorre normalmente com a c# **AWAIT** instrução. Quando o código um c# **AWAIT**, o thread unwinds e devolve o controlo ao conjunto de threads e não há nenhum thread que está bloqueado a aguardar o **AWAIT** para concluir. No entanto, logicamente, o thread que foi o **AWAIT** é "está bloqueado" e está a aguardar a conclusão da operação. O **AWAIT\_tempo** instrução indica o tempo de bloqueados a aguardar a conclusão da tarefa.
 
 ### <a id="block"></a>Tempo bloqueado
-`BLOCKED_TIME`indica que o código está a aguardar outro recurso estejam disponíveis, tais como a aguardar que um objeto de sincronização, aguardar um thread para estar disponível ou aguardar concluir um pedido.
+**BLOCKED_TIME** indica que o código está a aguardar outro recurso estejam disponíveis. Por exemplo, poderá esperar por um objeto de sincronização, com um thread para estar disponível ou para concluir um pedido.
 
 ### <a id="cpu"></a>Tempo de CPU
 A CPU está ocupada executar as instruções.
@@ -157,84 +150,87 @@ A aplicação está a efetuar operações de disco.
 A aplicação está a efetuar operações de rede.
 
 ### <a id="when"></a>Quando coluna
-Esta é uma visualização de como os exemplos INCLUSIVE recolhidos para um nó variam ao longo do tempo. O intervalo total do pedido está dividido em 32 registos de tempo e exemplos, inclusive para esse nó são acumulados para esses registos 32. Cada registo, em seguida, é representado como uma barra cuja altura representa um valor expandido. Para nós marcado `CPU_TIME` ou `BLOCKED_TIME`, ou onde existe uma relação óbvias de consumir um recurso (cpu, disco, thread), a barra representa consumir um destes recursos para o período de tempo do que o registo. Para estas métricas, pode obter superior a 100% consumir recursos de vários. Por exemplo, se em média utilizar duas CPUs, ao longo de um intervalo, em seguida, pode obter 200%.
+O **quando** coluna é uma visualização de como os exemplos INCLUSIVE recolhidos para um nó variam ao longo do tempo. O intervalo total do pedido está dividido em 32 registos de tempo. Os exemplos inclusive para esse nó são acumulados nesses registos 32. Cada registo é representado como uma barra. A altura da barra representa um valor expandido. Para nós marcado **CPU_TIME** ou **BLOCKED_TIME**, ou onde existe uma relação óbvias de consumir um recurso (CPU, disco, thread), a barra representa consumir um destes recursos para o período de hora desse registo. Para estas métricas, é possível obter um valor superior a 100% de consumir a vários recursos. Por exemplo, se utilizar em média duas CPUs durante um intervalo, obter 200%.
 
 
 ## <a id="troubleshooting"></a>Resolução de Problemas
 
 ### <a name="too-many-active-profiling-sessions"></a>Existem demasiadas sessões ativas de criação de perfis
 
-Atualmente, pode ativar o gerador de perfis no máximo, 4 Web Apps do Azure e as ranhuras de implementação em execução no mesmo plano de serviço. Se vir a tarefa de web de gerador de perfis demasiadas sessões ativas de criação de perfis de relatórios, terá de mover algumas aplicações Web para um plano de serviço diferente.
+Atualmente, pode ativar o gerador de perfis num máximo de quatro aplicações web do Azure e as ranhuras de implementação que estão em execução no mesmo plano de serviço. Se a tarefa do gerador de perfis web está a comunicar demasiadas sessões ativas de criação de perfis, mova algumas aplicações web para um plano de serviço diferente.
 
-### <a name="how-can-i-know-whether-application-insights-profiler-is-running"></a>Como saber se o gerador de perfis do Application Insights está em execução?
+### <a name="how-do-i-determine-whether-application-insights-profiler-is-running"></a>Como determinar se o gerador de perfis do Application Insights está em execução?
 
-O gerador de perfis é executado como um trabalho web contínua na aplicação Web. Pode abrir o recurso de aplicação Web no https://portal.azure.com e verificar o estado de "ApplicationInsightsProfiler" no painel de WebJobs. Se não está em execução, abra **registos** para saber mais.
+O gerador de perfis é executado como um trabalho web contínua na aplicação web. Pode abrir o recurso de aplicação web no [portal do Azure](https://portal.azure.com). No **WebJobs** painel, verifique o estado do **ApplicationInsightsProfiler**. Se não está em execução, abra **registos** para obter mais informações.
 
 ### <a name="why-cant-i-find-any-stack-examples-even-though-the-profiler-is-running"></a>Por que motivo não consigo encontrá qualquer exemplos de pilha, apesar do gerador de perfis está em execução?
 
-Seguem-se algumas coisas, que pode verificar.
+Eis algumas coisas que pode verificar:
 
-1. Certifique-se do plano do serviço Web App escalão básico e superior.
-2. Certifique-se a aplicação Web com o Application Insights SDK 2.2 Beta e acima ativada.
-3. Certifique-se a que sua aplicação Web tem a definição de APPINSIGHTS_INSTRUMENTATIONKEY com a mesma chave de instrumentação utilizada pelo Application Insights SDK.
-4. Certifique-se a sua aplicação Web está em execução no .net Framework 4.6.
-5. Se se tratar de uma aplicação ASP.NET Core, também verifique [dependências necessárias](#aspnetcore).
+* Certifique-se de que o seu plano de serviço de aplicações web é o escalão básico ou superior.
+* Certifique-se de que a aplicação web tem Application Insights SDK 2.2 Beta ou posterior ativado.
+* Certifique-se de que a aplicação web tem o **APPINSIGHTS_INSTRUMENTATIONKEY** definição configurada com a mesma chave de instrumentação que é utilizada pelo Application Insights SDK.
+* Certifique-se de que a aplicação web está em execução no .NET Framework 4.6.
+* Verifique se a sua aplicação web é uma aplicação ASP.NET Core, [dependências necessárias](#aspnetcore).
 
-Depois do gerador de perfis é iniciado, não há um período curto warm-up quando o gerador de perfis recolhe ativamente várias rastreios de desempenho. Depois disso, o gerador de perfis recolhe rastreios de desempenho de dois minutos em cada hora.  
+Depois do gerador de perfis é iniciado, não há um período de aquecimento curto durante os quais o gerador de perfis recolhe ativamente várias rastreios de desempenho. Depois disso, o gerador de perfis recolhe rastreios de desempenho de dois minutos em cada hora.  
 
 ### <a name="i-was-using-azure-service-profiler-what-happened-to-it"></a>Estava a utilizar o gerador de perfis de serviço de Azure. O que aconteceu ao mesmo?  
 
-Quando ativa o gerador de perfis do Application Insights, o agente do gerador de perfis de serviço de Azure está desativada.
+Quando ativa o gerador de perfis do Application Insights, o agente do gerador de perfis de serviço de Azure está desativado.
 
 ### <a id="double-counting"></a>Valor de duplo contando em threads paralelas
 
-Em alguns casos a métrica do tempo total no Visualizador de pilha é maior do que a duração real do pedido.
+Em alguns casos, a métrica do tempo total no Visualizador de pilha é maior do que a duração do pedido.
 
-Isto pode acontecer quando existem duas ou mais threads associadas a um pedido, a funcionar em paralelo. O tempo total de threads, em seguida, é maior do que o tempo decorrido. Em muitos casos, um thread pode aguardar no outro para concluir. O Visualizador tenta detetá-lo e omitir a espera desinteressantes, mas errs ao lado dos mostrar demasiada em vez de omitindo que podem ser informações críticas.  
+Esta situação pode ocorrer quando existem duas ou mais threads associadas a um pedido e que estão a funcionar em paralelo. Nesse caso, o tempo total de threads é maior do que o tempo decorrido. Poderá ser a aguardar um thread no outro seja concluída. O Visualizador tenta detetar esta e omite a espera desinteressantes, mas errs ao lado dos mostrar demasiada em vez de omitindo que poderá ser informações críticas.  
 
-Quando vir threads paralelas nos seus rastreios, terá de determinar os threads estão a aguardar para que possa determinar o caminho de crítico para o pedido. Na maioria dos casos, o thread que rapidamente entra no estado de espera é simplesmente aguardar a resposta de outros threads. Concentrar-se nos outros e ignorar o tempo nos threads de espera.
+Quando vir threads paralelas nos seus rastreios, determine que threads estão a aguardar para que possa determinar o caminho de crítico para o pedido. Na maioria dos casos, o thread que rapidamente entra no estado de espera é simplesmente aguardar a resposta de outros threads. Nos podermos concentrar nos outros threads e ignorar o tempo nos threads de espera.
 
 ### <a id="issue-loading-trace-in-viewer"></a>Não existem dados de criação de perfis
 
-1. Se os dados que está a tentar ver com mais de duas semanas, experimente a limitar o filtro de tempo e tente novamente.
+Eis algumas coisas que pode verificar:
 
-2. Verifique se uma firewall ou proxies ter não bloqueou o acesso à https://gateway.azureserviceprofiler.net.
-
-3. Verificar que a chave de instrumentação do Application Insights está a utilizar na sua aplicação é o mesmo que o recurso do Application Insights que ativou a criação de perfis de com. A chave está normalmente nas Applicationinsights, mas também pode ser encontrada na Web. config ou o App. config.
+* Se os dados que está a tentar ver com mais de duas semanas, experimente a limitar o filtro de tempo e tente novamente.
+* Verifique se uma firewall ou proxies ter não bloqueou o acesso à https://gateway.azureserviceprofiler.net.
+* Verifique que a chave de instrumentação do Application Insights que está a utilizar na sua aplicação é o mesmo que o recurso do Application Insights que utilizou para a criação de perfis ativado. A chave é normalmente no Applicationinsights, mas também pode ser localizada nos ficheiros Web. config ou o App. config.
 
 ### <a name="error-report-in-the-profiling-viewer"></a>Relatório de erros no Visualizador de criação de perfis
 
-Um pedido de suporte do portal de ficheiros. Inclua o ID de correlação da mensagem de erro.
+Submeta um pedido de suporte no portal. Lembre-se de que inclui o ID de correlação da mensagem de erro.
 
-### <a name="deployment-error-directory-not-empty-dhomesitewwwrootappdatajobs"></a>Erro de implementação do não vazio ' D:\\raiz\\site\\wwwroot\\App_Data\\das tarefas
+### <a name="deployment-error-directory-not-empty-dhomesitewwwrootappdatajobs"></a>Erro de implementação: diretório não vazio ' D:\\raiz\\site\\wwwroot\\App_Data\\das tarefas
 
-Se estiver a reimplementação a aplicação web a um recurso de serviços aplicacionais com o gerador de perfis ativada, poderá encontrar o erro semelhante ao seguinte: diretório não vazio ' D:\\raiz\\site\\wwwroot\\App_Data\\das tarefas este erro irá acontecer, se executar o Web Deploy de scripts ou no VSTS implementação Pipeline.
-A solução para este problema é adicionar os seguintes parâmetros de implementação adicional para a tarefa de implementação Web:
+Se estiver a reimplementação a aplicação web a um recurso de serviço de aplicações com o gerador de perfis ativado, poderá ver uma mensagem que se pareça com o seguinte:
+
+Diretório não vazio ' D:\\raiz\\site\\wwwroot\\App_Data\\das tarefas
+
+Este erro ocorre se executar o Web Deploy de scripts ou do Visual Studio Team Services implementação Pipeline. A solução é adicionar os seguintes parâmetros de implementação adicional para a tarefa de implementação Web:
 
 ```
 -skip:Directory='.*\\App_Data\\jobs\\continuous\\ApplicationInsightsProfiler.*' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs\\continuous$' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs$'  -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data$'
 ```
 
-Isto irá eliminar a pasta utilizada pelo gerador de perfis de informações da aplicação e desbloquear o processo da implementar. Não afetará a instância do gerador de perfis em execução.
+Estes parâmetros elimine a pasta que é utilizada pelo gerador de perfis do Application Insights e desbloquear o processo da implementar. Estes não afetam a instância do gerador de perfis que está atualmente em execução.
 
 
 ## <a name="manual-installation"></a>Instalação manual
 
-Quando configura o gerador de perfis, as seguintes atualizações são efetuadas às definições da aplicação Web. Pode fazê-las pessoalmente manualmente se o seu ambiente necessitar, por exemplo, se a aplicação for executada no ambiente de serviço de aplicações do Azure (ASE):
+Quando configura o gerador de perfis, as atualizações são efetuadas às definições da aplicação web. Pode aplicar as atualizações manualmente se requer o seu ambiente-lo. Por exemplo, se a sua aplicação é executada num ambiente de serviço de aplicações para PowerApps.
 
-1. No painel de controlo de aplicação web, abra as definições.
-2. Definir ".Net Framework versão" para v4.6.
-3. Como "Always On" no.
-4. Adicionar definição de aplicação "__APPINSIGHTS_INSTRUMENTATIONKEY__" e defina o valor para a mesma chave de instrumentação utilizada pelo SDK.
-5. Abrir as ferramentas avançadas.
-6. Clique em "Ir" para abrir o Web site do Kudu.
-7. No site do Kudu, selecione "As extensões de Site".
-8. Instalar "__Application Insights__" da galeria.
+1. No painel de controlo de aplicação web, abra **definições**.
+2. Definir **.Net Framework versão** para **v4.6**.
+3. Definir **Always On** para **no**.
+4. Adicionar o __APPINSIGHTS_INSTRUMENTATIONKEY__ aplicação definição e defina o valor para a mesma chave de instrumentação que é utilizada pelo SDK.
+5. Abra **avançadas ferramentas**.
+6. Selecione **aceda** para abrir o Web site do Kudu.
+7. No site do Kudu, selecione **Site extensões**.
+8. Instalar __Application Insights__ na Galeria de aplicações Web do Azure.
 9. Reinicie a aplicação web.
 
-## <a id="aspnetcore"></a>Suporte de núcleo de ASP.NET
+## <a id="aspnetcore"></a>Suporte de ASP.NET Core
 
-Aplicação de ASP.NET Core tem de instalar 2.1.0-beta6 de pacote Microsoft.ApplicationInsights.AspNetCore Nuget ou superior para trabalhar com o gerador de perfis. Já não suportamos as versões inferiores após 27/6/2017.
+Uma aplicação ASP.NET Core tem de instalar o 2.1.0-beta6 de pacote Microsoft.ApplicationInsights.AspNetCore NuGet ou posterior para trabalhar com o gerador de perfis. A partir 27 de Junho de 2017, não suportamos versões anteriores.
 
 ## <a name="next-steps"></a>Passos seguintes
 

@@ -16,17 +16,17 @@ ms.date: 08/15/2017
 ms.author: kgremban
 ms.reviewer: jsnow
 ms.custom: it-pro
-ms.openlocfilehash: 6ff9a341b31e5005949dcc0ecb2591060269846e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 2f43b7c11356b8d553bb593785b7b44ca2d4d285
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 #  <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Integrar a sua infraestrutura de Gateway de ambiente de trabalho remoto utilizando a extensão de servidor de políticas de rede (NPS) e o Azure AD
 
 Este artigo fornece detalhes para integrar a sua infraestrutura de Gateway de ambiente de trabalho remoto com o Azure multi-factor Authentication (MFA) com a extensão de servidor de políticas de rede (NPS) para o Microsoft Azure. 
 
-A extensão de serviço de políticas de rede (NPS) para o Azure permite aos clientes salvaguardar a autenticação de cliente RADIUS Remote Authentication Dial-In User Service () a utilizar o Azure do baseado na nuvem [multi-factor Authentication (MFA)](multi-factor-authentication.md). Esta solução fornece a verificação de dois passos para adicionar uma segunda camada de segurança para inícios de sessão de utilizador e de transações.
+A extensão de servidor de políticas de rede (NPS) para o Azure permite aos clientes salvaguardar a autenticação de cliente RADIUS Remote Authentication Dial-In User Service () a utilizar o Azure do baseado na nuvem [multi-factor Authentication (MFA)](multi-factor-authentication.md). Esta solução fornece a verificação de dois passos para adicionar uma segunda camada de segurança para inícios de sessão de utilizador e de transações.
 
 Este artigo fornece instruções passo a passo para integrar a infraestrutura NPS mfa do Azure com a extensão NPS para o Azure. Isto permite que uma verificação segura para os utilizadores tentam iniciar sessão para um Gateway de ambiente de trabalho remoto. 
 
@@ -37,7 +37,7 @@ A política de rede e dos serviços de acesso (NPS) permite que as organizaçõe
 
 Normalmente, as organizações utilize NPS (RADIUS) para simplificar e centralizar a gestão de VPN políticas. No entanto, muitas organizações também utilizam o NPS para simplificar e centralizar a gestão de políticas de autorização de ligação de ambiente de trabalho de RD (CAPs de RD). 
 
-Organizações também podem integrar o MFA do Azure para melhorar a segurança e fornecem um elevado nível de compatibilidade do NPS. Isto ajuda a garantir que os utilizadores estabelecer a verificação de dois passos para iniciar sessão no Gateway de ambiente de trabalho remoto. Para os utilizadores ser concedido acesso, tem de fornecer as respetivas combinação de nome de utilizador/palavra-passe com informações que o utilizador tem no seu controlo. Estas informações tem de ser fidedigna e não facilmente duplicadas, tais como um número de telemóvel, o número fixo, a aplicação num dispositivo móvel e assim sucessivamente.
+Organizações também podem integrar o MFA do Azure para melhorar a segurança e fornecem um elevado nível de compatibilidade do NPS. Isto ajuda a garantir que os utilizadores estabelecer a verificação de dois passos para iniciar sessão no Gateway de ambiente de trabalho remoto. Para os utilizadores ser concedido acesso, tem de fornecer as respetivas combinação de nome de utilizador/palavra-passe, juntamente com informações que o utilizador tem no seu controlo. Estas informações tem de ser fidedigna e não facilmente duplicadas, tais como um número de telemóvel, o número fixo, a aplicação num dispositivo móvel e assim sucessivamente.
 
 Antes da disponibilidade da extensão NPS para o Azure, os clientes que wished para implementar a verificação de dois passos para ambientes de NPS e o MFA do Azure integradas tinham que configurar e manter um servidor MFA separado no ambiente no local, conforme documentado no [ Gateway de ambiente de trabalho remoto e de servidor de autenticação do multi-factor do Azure com o RADIUS](multi-factor-authentication-get-started-server-rdg.md).
 
@@ -56,7 +56,7 @@ Quando a extensão NPS para o Azure está integrada com o NPS e o Gateway de amb
 3. Se forem satisfeitas as condições conforme especificado no pedido de ligação de NPS e as políticas de rede (por exemplo, a hora do dia ou grupo de restrições de associação), a extensão NPS aciona um pedido de autenticação secundária com a MFA do Azure. 
 4. Azure MFA comunica com o Azure AD, obtém os detalhes do utilizador e efetua a autenticação secundária utilizando o método configurado pelo utilizador (mensagem de texto, aplicação móvel e assim sucessivamente). 
 5. Depois de concluído com sucesso o desafio MFA, o MFA do Azure comunica o resultado para a extensão NPS.
-6. O servidor NPS de onde está instalada a extensão envia uma mensagem de aceitar de acesso RADIUS de mensagens em fila para a política de CAP de RD para o servidor de Gateway de ambiente de trabalho remoto.
+6. O servidor NPS, onde está instalada a extensão, envia uma mensagem de aceitar de acesso RADIUS de mensagens em fila para a política de CAP de RD para o servidor de Gateway de ambiente de trabalho remoto.
 7. O utilizador é concedido acesso ao recurso de rede pedido através do Gateway de RD.
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -66,7 +66,7 @@ Esta secção fornece detalhes sobre os pré-requisitos necessários antes de in
 * Licença do MFA do Azure
 * Software Windows Server
 * Função de política de rede e dos serviços de acesso (NPS)
-* Synched do Azure AD com o AD no local 
+* Synched do Azure Active Directory com o Active Directory no local
 * ID de GUID do Azure Active Directory
 
 ### <a name="remote-desktop-services-rds-infrastructure"></a>Infraestrutura de serviços de ambiente de trabalho (RDS) remoto
@@ -75,10 +75,10 @@ Tem de ter uma infraestrutura de serviços de ambiente de trabalho remoto (RDS) 
 Se pretender criar manualmente uma infraestrutura RDS no local rapidamente para fins de teste, siga os passos para implementar uma. 
 **Saiba mais**: [implementar RDS com início rápido do Azure](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure) e [implementação da infraestrutura de RDS básica](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure). 
 
-### <a name="licenses"></a>Licenças
+### <a name="azure-mfa-license"></a>Licença do MFA do Azure
 Necessário destina-se a uma licença do MFA do Azure, que está disponível através de um Azure AD Premium, o Enterprise Mobility plus segurança (EMS) ou uma subscrição de MFA. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
 
-### <a name="software"></a>Software
+### <a name="windows-server-software"></a>Software Windows Server
 A extensão NPS requer o Windows Server 2008 R2 SP1 ou posterior com o serviço de função NPS instalado. Todos os passos nesta secção foram efetuados com o Windows Server 2016.
 
 ### <a name="network-policy-and-access-services-nps-role"></a>Função de política de rede e dos serviços de acesso (NPS)
@@ -86,11 +86,11 @@ O serviço de função NPS fornece o servidor RADIUS e o cliente funcionalidade,
 
 Para obter informações sobre como instalar a função NPS de serviço do Windows Server 2012 ou anterior, consulte [instalar um servidor de políticas de estado de funcionamento de NAP](https://technet.microsoft.com/library/dd296890.aspx). Para obter uma descrição das melhores práticas para NPS, incluindo a recomendação para instalar NPS num controlador de domínio, consulte [melhores práticas para NPS](https://technet.microsoft.com/library/cc771746).
 
-### <a name="azure-active-directory-synched-with-on-premises-active-directory"></a>Synched do Azure Active Directory com o Active Directory no local 
+### <a name="azure-active-directory-synched-with-on-premises-active-directory"></a>Synched do Azure Active Directory com o Active Directory no local
 Para utilizar a extensão NPS, os utilizadores no local tem de ser sincronizados com o Azure AD e ativados para a MFA. Esta secção assume que os utilizadores no local são synched com o Azure AD com o AD Connect. Para obter informações sobre o Azure AD connect, consulte [integrar os diretórios no local ao Azure Active Directory](../active-directory/connect/active-directory-aadconnect.md). 
 
 ### <a name="azure-active-directory-guid-id"></a>ID de GUID do Azure Active Directory
-Para instalar o NPS, terá de saber o GUID do Azure AD. Abaixo, são fornecidas instruções para localizar o GUID do Azure AD.
+Para instalar a extensão de NPS, terá de saber o GUID do Azure AD. Abaixo, são fornecidas instruções para localizar o GUID do Azure AD.
 
 ## <a name="configure-multi-factor-authentication"></a>Configurar a autenticação Multifator 
 Esta secção fornece instruções para integrar o MFA do Azure com o Gateway de ambiente de trabalho remoto. Como administrador, tem de configurar o serviço MFA do Azure antes dos utilizadores Self-podem registar os seus dispositivos multifator ou aplicações.
@@ -98,7 +98,7 @@ Esta secção fornece instruções para integrar o MFA do Azure com o Gateway de
 Siga os passos no [introdução ao Azure multi-factor Authentication na nuvem](multi-factor-authentication-get-started-cloud.md) para ativar a MFA para os utilizadores do Azure AD. 
 
 ### <a name="configure-accounts-for-two-step-verification"></a>Configurar contas para verificação de dois passos
-Depois de uma conta tiver sido ativada para a MFA, não é possível iniciar sessão aos recursos do MFA política até que configurou com êxito um dispositivo fidedigno para utilizar para o segundo fator de autenticação ter autenticado utilizando a verificação de dois passos.
+Depois de uma conta tiver sido ativada para a MFA, não é possível iniciar sessão no recursos regidos pela política da MFA, até que configurou com êxito um dispositivo fidedigno para utilizar para o segundo fator de autenticação e ter autenticado utilizando a verificação de dois passos.
 
 Siga os passos no [que Azure multi-factor Authentication significa para mim?](./end-user/multi-factor-authentication-end-user.md) para compreender e configurar corretamente os seus dispositivos para a MFA com a sua conta de utilizador.
 
@@ -126,11 +126,11 @@ Instale a extensão NPS no servidor que tenha a função de política de rede e 
 1. Transferir o [extensão NPS](https://aka.ms/npsmfa). 
 2. Copie o ficheiro executável do programa de configuração (NpsExtnForAzureMfaInstaller.exe) para o servidor NPS.
 3. No servidor NPS, faça duplo clique em **NpsExtnForAzureMfaInstaller.exe**. Se lhe for pedido, clique em **executar**.
-4. Na extensão do NPS para a caixa de diálogo de MFA do Azure, reveja os termos de licenciamento de software, consulte **concordo com os termos de licenciamento e as condições**e clique em **instalar**.
+4. Na caixa de diálogo de extensão de NPS para o Azure MFA configuração, reveja os termos de licenciamento de software, consulte **concordo com os termos de licenciamento e as condições**e clique em **instalar**.
  
   ![Configuração do MFA do Azure](./media/nps-extension-remote-desktop-gateway/image2.png)
 
-5. Na extensão do NPS para a caixa de diálogo de MFA do Azure, clique em Fechar. 
+5. Na caixa de diálogo de extensão de NPS para o Azure MFA configuração, clique em **fechar**. 
 
   ![Extensão NPS para o MFA do Azure](./media/nps-extension-remote-desktop-gateway/image3.png)
 
@@ -145,7 +145,7 @@ O script executa as seguintes ações:
 * Concede acesso a chave privada do certificado de utilizador de rede
 * Reinicia o serviço de servidor de políticas de rede
 
-Se pretender utilizar os seus próprios certificados, tem de associar o público do seu certificado para o princípio de serviço no Azure AD e assim sucessivamente.
+Se pretender utilizar os seus próprios certificados, tem de associar a chave pública do certificado para o principal de serviço no Azure AD e assim sucessivamente.
 
 Para utilizar o script, forneça a extensão com as credenciais de administrador do Azure AD e o ID de inquilino do Azure AD que copiou anteriormente. Execute o script em cada servidor NPS onde instalou a extensão NPS. Em seguida, faça o seguinte:
 
@@ -184,7 +184,7 @@ Políticas de autorização de ligações de ambiente de trabalho remoto (CAPs d
 
   ![Nome do servidor](./media/nps-extension-remote-desktop-gateway/image9.png)
 
-4. Na caixa de diálogo Propriedades, selecione o **CAP de RD** separador arquivo.
+4. Na caixa de diálogo Propriedades, selecione o **arquivo de CAPs de RD** separador.
 5. No separador arquivo de CAPs de RD, selecione **servidor Central com NPS**. 
 6. No **introduza um nome ou endereço IP para o servidor com NPS** campo, escreva o nome de servidor ou endereço IP do servidor onde instalou a extensão NPS.
 
@@ -194,7 +194,7 @@ Políticas de autorização de ligações de ambiente de trabalho remoto (CAPs d
 8. No **segredo partilhado** caixa de diálogo, introduza um segredo partilhado e, em seguida, clique em **OK**. Certifique-se de que registe este segredo partilhado e guarde o registo de forma segura.
 
  >[!NOTE]
- >Segredo partilhado é utilizado para estabelecer fidedignidade entre os servidores RADIUS e clientes. Crie uma palavra-passe e complexa.
+ >Segredo partilhado é utilizado para estabelecer fidedignidade entre os servidores RADIUS e clientes. Crie um segredo e complexo.
  >
 
  ![Segredo partilhado](./media/nps-extension-remote-desktop-gateway/image11.png)
@@ -204,7 +204,7 @@ Políticas de autorização de ligações de ambiente de trabalho remoto (CAPs d
 ### <a name="configure-radius-timeout-value-on-remote-desktop-gateway-nps"></a>Configurar o valor de tempo limite RADIUS no NPS de Gateway de ambiente de trabalho remoto
 Para garantir que não há tempo para validar as credenciais dos utilizadores, efetuar a verificação de dois passos, receber respostas e responder a mensagens RADIUS, é necessário ajustar o valor de tempo limite RADIUS.
 
-1. No servidor de Gateway de RD, o Gestor de servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. 
+1. No servidor de Gateway de RD, abra o Gestor de servidor. No menu, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. 
 2. No **NPS (Local)** consola, expanda **clientes RADIUS e servidores**e selecione **servidor RADIUS remoto**.
 
  ![Servidor RADIUS remotos](./media/nps-extension-remote-desktop-gateway/image12.png)
@@ -225,7 +225,7 @@ Para garantir que não há tempo para validar as credenciais dos utilizadores, e
 
  ![Editar servidor Radius](./media/nps-extension-remote-desktop-gateway/image14.png)
 
-8.  Clique duas vezes em OK para fechar as caixas de diálogo.
+8.  Clique em **OK** duas vezes para fechar as caixas de diálogo.
 
 ### <a name="verify-connection-request-policies"></a>Certifique-se de políticas de pedido de ligação 
 Por predefinição, quando configurar o Gateway de RD para utilizar um arquivo de política central de políticas de autorização de ligação, o Gateway de RD está configurado para reencaminhar pedidos de extremidade para o servidor NPS. O servidor NPS com o MFA do Azure de extensão instaladas, processa o pedido de acesso RADIUS. Os passos seguintes mostram como verificar a política de pedido de ligação predefinido. 
@@ -245,7 +245,7 @@ O servidor NPS de onde está instalada a extensão NPS deve ser capaz de trocar 
 ### <a name="register-server-in-active-directory"></a>Registar servidor no Active Directory
 Para funcionarem corretamente neste cenário, o servidor NPS tem de ser registado no Active Directory.
 
-1. Abra **Gestor de servidor**.
+1. No servidor NPS, abra **Gestor de servidor**.
 2. No Gestor de servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. 
 3. Na consola do servidor de políticas de rede, faça duplo clique **NPS (Local)**e, em seguida, clique em **registar servidor no Active Directory**. 
 4. Clique em **OK** duas vezes.
@@ -261,15 +261,15 @@ O Gateway de ambiente de trabalho remoto tem de ser configurado como um cliente 
 
  ![Novos clientes RADIUS](./media/nps-extension-remote-desktop-gateway/image17.png)
 
-2. No **cliente RADIUS novo** diálogo caixa, forneça um nome amigável, tais como _Gateway_e o endereço IP ou nome DNS do servidor de Gateway de ambiente de trabalho remoto. 
+2. No **novo cliente RADIUS** diálogo caixa, forneça um nome amigável, tais como _Gateway_e o endereço IP ou nome DNS do servidor de Gateway de ambiente de trabalho remoto. 
 3. No **segredo partilhado** e **segredo partilhado confirmar** campos, introduza o mesmo segredo que usou antes.
 
  ![Nome e endereço](./media/nps-extension-remote-desktop-gateway/image18.png)
 
-4. Clique em **OK** para fechar a caixa de diálogo de cliente RADIUS novo.
+4. Clique em **OK** para fechar a caixa de diálogo novo cliente RADIUS.
 
 ### <a name="configure-network-policy"></a>Configurar a política de rede
-Recuperar que o servidor NPS com a extensão de MFA do Azure é o arquivo de designado política central para a política de autorização de ligação (CAP). Por conseguinte, terá de implementar um limite no servidor NPS para autorizar os pedidos de ligações válido.  
+Recuperar-se de que o servidor NPS com a extensão de MFA do Azure é o arquivo de designado política central para a política de autorização de ligação (CAP). Por conseguinte, terá de implementar um limite no servidor NPS para autorizar os pedidos de ligações válido.  
 
 1. Na consola do NPS (Local), expanda **políticas**e clique em **políticas de rede**.
 2. Clique com botão direito **ligações para outros servidores de acesso**e clique em **duplicado política**. 
@@ -280,7 +280,7 @@ Recuperar que o servidor NPS com a extensão de MFA do Azure é o arquivo de des
 
  ![Propriedades da rede](./media/nps-extension-remote-desktop-gateway/image20.png)
 
-4. No **cópia de ligações para outros servidores de acesso** caixa de diálogo, no nome da política, introduza um nome adequado, como **RDG_CAP**. Verifique **política ativada**e selecione **conceder acesso**. Opcionalmente, no tipo de acesso à rede, selecione **Gateway de ambiente de trabalho remoto**, ou pode deixá-lo como **não especificado**.
+4. No **cópia de ligações para outros servidores de acesso** caixa de diálogo **nome da política**, introduza um nome adequado, como _RDG_CAP_. Verifique **política ativada**e selecione **conceder acesso**. Opcionalmente, na **tipo de servidor de acesso de rede**, selecione **Gateway de ambiente de trabalho remoto**, ou pode deixá-lo como **não especificado**.
 
  ![Cópia de ligações](./media/nps-extension-remote-desktop-gateway/image21.png)
 
@@ -298,7 +298,7 @@ Recuperar que o servidor NPS com a extensão de MFA do Azure é o arquivo de des
  ![Políticas de rede](./media/nps-extension-remote-desktop-gateway/image24.png)
 
 ## <a name="verify-configuration"></a>Verifique a configuração
-Para verificar a configuração, tem de iniciar sessão no Gateway de ambiente de trabalho remoto com um cliente RDP adequado. Lembre-se de que utilize uma conta que é permitida por políticas de autorização de ligação e está ativada para o MFA do Azure. 
+Para verificar a configuração, tem de iniciar sessão para o Gateway de ambiente de trabalho remoto com um cliente RDP adequado. Lembre-se de que utilize uma conta que é permitida por políticas de autorização de ligação e está ativada para o MFA do Azure. 
 
 Como mostrar na imagem abaixo, pode utilizar o **acesso Web de ambiente de trabalho remoto** página.
 
@@ -319,7 +319,7 @@ Depois de ter autenticadas com êxito utilizando o método de autenticação sec
 ### <a name="view-event-viewer-logs-for-successful-logon-events"></a>Ver registos do Visualizador de eventos para eventos de início de sessão com êxito
 Para ver os eventos de início de sessão com êxito nos registos do Visualizador de eventos do Windows, pode emitir o comando do Windows PowerShell seguinte para consultar os registos de serviços de Terminal do Windows e a segurança do Windows.
 
-Para consultar os eventos de início de sessão com êxito nos registos operacionais Gateway _(Visualizador de eventos e serviços Logs\Microsoft\Windows\TerminalServices-Gateway\Operational_, utilize os seguintes comandos:
+Para consultar os eventos de início de sessão com êxito nos registos operacionais Gateway _(Visualizador de eventos e serviços Logs\Microsoft\Windows\TerminalServices-Gateway\Operational)_, utilize os seguintes comandos do PowerShell:
 
 * _Get-WinEvent - Logname Microsoft-Windows-TerminalServices-Gateway/operacional_ | em que {$ . ID - eq '300'} | FL 
 * Este comando apresenta os eventos do Windows que mostram o cumpridos os requisitos de política de autorização de recursos (RAP de RD) e o utilizador foi concedido acesso.

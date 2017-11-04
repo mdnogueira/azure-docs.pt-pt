@@ -1,12 +1,12 @@
-Use the procedure that matches your back-end project type&mdash;either [.NET back end](#dotnet) or [Node.js back end](#nodejs).
+Utilize o procedimento que corresponde ao seu tipo de projeto de back-end&mdash;ou [.NET back-end](#dotnet) ou [back-end Node.js](#nodejs).
 
-### <a name="dotnet"></a>.NET back-end project
-1. In Visual Studio, right-click the server project, and click **Manage NuGet Packages**. Search for `Microsoft.Azure.NotificationHubs`, and then click **Install**. This installs the Notification Hubs client library.
-2. In the Controllers folder, open TodoItemController.cs and add the following `using` statements:
+### <a name="dotnet"></a>Projeto de back-end do .NET
+1. No Visual Studio, clique com o botão direito no projeto de servidor e clique em **gerir pacotes NuGet**. Procurar `Microsoft.Azure.NotificationHubs`e, em seguida, clique em **instalar**. Esta ação instala a biblioteca de clientes de Notification Hubs.
+2. Na pasta de controladores, abra TodoItemController.cs e adicione o seguinte `using` instruções:
 
         using Microsoft.Azure.Mobile.Server.Config;
         using Microsoft.Azure.NotificationHubs;
-3. Replace the `PostTodoItem` method with the following code:  
+3. Substitua o `PostTodoItem` método com o seguinte código:  
 
         public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
@@ -46,11 +46,11 @@ Use the procedure that matches your back-end project type&mdash;either [.NET bac
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-4. Republish the server project.
+4. Voltar a publicar o projeto de servidor.
 
-### <a name="nodejs"></a>Node.js back-end project
-1. If you haven't already done so, [download the quickstart project](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart), or else use the [online editor in the Azure portal](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
-2. Replace the existing code in the todoitem.js file with the following:
+### <a name="nodejs"></a>Projeto de back-end do node.js
+1. Se ainda não o tiver feito deste modo, [transferir o projeto de início rápido](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart), ou utilize outro o [editor online no portal do Azure](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+2. Substitua o código existente no ficheiro todoitem.js com o seguinte:
 
         var azureMobileApps = require('azure-mobile-apps'),
         promises = require('azure-mobile-apps/src/utilities/promises'),
@@ -95,5 +95,5 @@ Use the procedure that matches your back-end project type&mdash;either [.NET bac
 
         module.exports = table;  
 
-    This sends a GCM notification that contains the item.text when a new todo item is inserted.
-3. When editing the file in your local computer, republish the server project.
+    Esta ação envia uma notificação de GCM que contém o item.text Quando é inserido um novo item de todo.
+3. Ao editar o ficheiro no seu computador local, voltar a publicar o projeto de servidor.

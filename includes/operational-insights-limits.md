@@ -26,5 +26,5 @@ Os limites seguintes aplicam-se a cada área de trabalho do Log Analytics:
 | Categoria | Limites | Comentários
 | --- | --- | --- |
 | API do Recoletor de Dados | O tamanho máximo para um post individual é 30 MB<br>O tamanho máximo para os valores de campos é 32 KB | Dividir volumes maiores em vários posts<br>Os campos com mais de 32 KB são truncados. |
-| API de Pesquisa | 5000 registos devolvidos para dados não agregados<br>500&000; registos para dados agregados | Os dados agregados são uma pesquisa que inclui o comando `measure`
+| API de Pesquisa | 5000 registos devolvidos para dados não agregados<br>500 000 registos para dados agregados | Os dados agregados são uma pesquisa que inclui o comando `measure`
  

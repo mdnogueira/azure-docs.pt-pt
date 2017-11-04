@@ -1,28 +1,28 @@
-## <a name="azure-dns"></a>Azure DNS
-Azure DNS is a hosting service for DNS domains, providing name resolution using Microsoft Azure infrastructure.
+## <a name="azure-dns"></a>DNS do Azure
+O DNS do Azure é um serviço de alojamento de domínios DNS, fornecer a resolução do nome utilizando a infraestrutura do Microsoft Azure.
 
-| Property | Description | Sample Value |
+| Propriedade | Descrição | Valor de exemplo |
 | --- | --- | --- |
-| **DNSzones** |Domain zone information to host DNS records of a particular domain |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com" |
+| **DNSzones** |Informação de zona de domínio para registos do anfitrião de DNS de um determinado domínio |/ subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com " |
 
-### <a name="dns-record-sets"></a>DNS record sets
-DNS zones have a child object named record set. Record sets are a collection of host records by type for a DNS zone. Record types are A, AAAA, CNAME, MX, NS, SOA,SRV and TXT.
+### <a name="dns-record-sets"></a>Conjuntos de registos de DNS
+Zonas DNS tem um objeto subordinado com o nome do conjunto de registos. Os conjuntos de registos são uma coleção de registos de anfitrião por tipo para uma zona DNS. Tipos de registos são A, AAAA, CNAME, MX, NS, SOA, SRV e TXT.
 
-| Property | Description | Sample value |
+| Propriedade | Descrição | Valor da amostra |
 | --- | --- | --- |
-| A |IPv4 record type |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/A/www |
-| AAAA |IPv6 record type |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/AAAA/hostrecord |
-| CNAME |canonical name record type <sup>1</sup> |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/CNAME/www |
-| MX |mail record type |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/MX/mail |
-| NS |name server record type |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/NS/ |
-| SOA |Start of Authority record type <sup>2</sup> |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/SOA |
-| SRV |service record type |/subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/SRV |
+| A |Tipo de registo de IPv4 |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/A/www |
+| AAAA |Tipo de registo de IPv6 |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/aaaa/hostrecord |
+| CNAME |tipo de registo de nome canónico <sup>1</sup> |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/CNAME/www |
+| MX |tipo de registo do correio |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/MX/Mail |
+| NS |tipo de registo do servidor de nome |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/NS/ |
+| SOA |Início do tipo de registo de autoridade <sup>2</sup> |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/SOA |
+| SRV |tipo de registo do serviço |/subscriptions/{GUID}/.../Providers/Microsoft.Network/dnszones/contoso.com/SRV |
 
-<sup>1</sup> only allows one value per record set.
+<sup>1</sup> só permite um valor por conjunto de registos.
 
-<sup>2</sup> only allows one record type SOA per DNS zone. 
+<sup>2</sup> só permite um tipo de registo SOA por zona DNS. 
 
-Sample of DNS zone in Json format:
+Exemplo de zona DNS no formato Json:
 
     {
       "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
@@ -77,8 +77,8 @@ Sample of DNS zone in Json format:
           ]
     }
 
-## <a name="additional-resources"></a>Additional resources
-Read the [REST API documentation for DNS zones ](https://msdn.microsoft.com/library/azure/mt130626.aspx) for more information.
+## <a name="additional-resources"></a>Recursos adicionais
+Leia o [documentação da REST API para zonas DNS ](https://msdn.microsoft.com/library/azure/mt130626.aspx) para obter mais informações.
 
-Read the [REST API documentation for DNS record sets](https://msdn.microsoft.com/library/azure/mt130627.aspx) for more information.
+Leia o [documentação da REST API para conjuntos de registos DNS](https://msdn.microsoft.com/library/azure/mt130627.aspx) para obter mais informações.
 

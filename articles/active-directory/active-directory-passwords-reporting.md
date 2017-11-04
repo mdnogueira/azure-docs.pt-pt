@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 5b28e15d643497dbdf827b3976ad7dcdc73507b1
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
-ms.translationtype: HT
+ms.openlocfilehash: 82b1916a49cd1e04580fdb848545ce7d52299579
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Opções de relatórios para gestão de palavras-passe do Azure AD
 
@@ -31,7 +31,7 @@ Após a implementação de muitas organizações querem saber como ou se SSPR es
 As perguntas seguintes podem ser respondidas pelos relatórios existem no [portal do Azure] (https://portal.azure.com/).
 
 > [!NOTE]
-> Tem de ser [um administrador global](active-directory-assign-admin-roles.md#assign-or-remove-administrator-roles) e tem optar ativamente por participar-para estes dados para ser reunidas em nome da sua organização, visitando os registos de separador ou auditoria Reporting Services, pelo menos, uma vez. Até ao fazê-lo, não serão possível recolher dados para a sua organização
+> Tem de ser [um administrador global](active-directory-assign-admin-roles.md) e tem optar ativamente por participar-para estes dados para ser reunidas em nome da sua organização, visitando os registos de separador ou auditoria Reporting Services, pelo menos, uma vez. Até ao fazê-lo, não serão possível recolher dados para a sua organização
 
 * Como muitas pessoas registou-se para a reposição de palavra-passe?
 * Quem tiver registado para a reposição de palavra-passe?

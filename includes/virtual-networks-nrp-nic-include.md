@@ -1,32 +1,32 @@
 ## <a name="nic"></a>NIC
-A network interface card (NIC) resource provides network connectivity to an existing subnet in a VNet resource. Although you can create a NIC as a stand alone object, you need to associate it to another object to actually provide connectivity. A NIC can be used to connect a VM to a subnet, a public IP address, or a load balancer.  
+Um recurso de cartão (NIC) de interface de rede oferece a conectividade de rede a uma sub-rede existente num recurso VNet. Embora possa criar uma NIC como um objeto de autónomo, tem de associá-la para outro objecto para, efetivamente, fornecer conectividade. Uma NIC pode ser utilizada para ligar uma VM a uma sub-rede, um endereço IP público ou um balanceador de carga.  
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **virtualMachine** |VM the NIC is associated with. |/subscriptions/{guid}/../Microsoft.Compute/virtualMachines/vm1 |
-| **macAddress** |MAC address for the NIC |any value between 4 and 30 |
-| **networkSecurityGroup** |NSG associated to the NIC |/subscriptions/{guid}/../Microsoft.Network/networkSecurityGroups/myNSG1 |
-| **dnsSettings** |DNS settings for the NIC |see [PIP](#Public-IP-address) |
+| **máquina virtual** |VM a NIC está associado. |/subscriptions/{GUID}/../microsoft.Compute/virtualMachines/vm1 |
+| **macAddress** |Endereço MAC para o NIC |qualquer valor entre 4 e 30 |
+| **networkSecurityGroup** |NSG associado para o NIC |/subscriptions/{GUID}/../microsoft.Network/networkSecurityGroups/myNSG1 |
+| **dnsSettings** |Definições de DNS para a NIC |consulte [PIP](#Public-IP-address) |
 
-A Network Interface Card, or NIC, represents a network interface that can be associated to a virtual machine (VM). A VM can have one or more NICs.
+Uma placa de Interface de rede ou NIC, representa uma interface de rede que pode ser associada a uma máquina virtual (VM). Uma VM pode ter um ou vários NICs.
 
-![NIC's on a single VM](./media/resource-groups-networking/Figure3.png)
+![NIC numa única VM](./media/resource-groups-networking/Figure3.png)
 
-### <a name="ip-configurations"></a>IP configurations
-NICs have a child object named **ipConfigurations** containing the following properties:
+### <a name="ip-configurations"></a>Configurações de IP
+Os NICs que têm um objeto subordinado com o nome **ipConfigurations** que contém as seguintes propriedades:
 
-| Property | Description | Sample values |
+| Propriedade | Descrição | Valores de exemplo |
 | --- | --- | --- |
-| **subnet** |Subnet the NIC is onnected to. |/subscriptions/{guid}/../Microsoft.Network/virtualNetworks/myvnet1/subnets/mysub1 |
-| **privateIPAddress** |IP address for the NIC in the subnet |10.0.0.8 |
-| **privateIPAllocationMethod** |IP allocation method |Dynamic or Static |
-| **enableIPForwarding** |Whether the NIC can be used for routing |true or false |
-| **primary** |Whether the NIC is the primary NIC for the VM |true or false |
-| **publicIPAddress** |PIP associated with the NIC |see [DNS Settings](#DNS-settings) |
-| **loadBalancerBackendAddressPools** |Back end address pools the NIC is associated with | |
-| **loadBalancerInboundNatRules** |Inbound load balancer NAT rules the NIC is associated with | |
+| **sub-rede** |A NIC de sub-rede é onnected para. |/subscriptions/{GUID}/../microsoft.Network/virtualNetworks/myvnet1/Subnets/mysub1 |
+| **privateIPAddress** |Endereço IP para o NIC na sub-rede |10.0.0.8 |
+| **privateIPAllocationMethod** |Método de alocação de IP |Dinâmicas ou estáticas |
+| **enableIPForwarding** |Se a NIC pode ser utilizada para o encaminhamento |VERDADEIRO ou FALSO |
+| **primário** |Indica se a NIC está o NIC primário para a VM |VERDADEIRO ou FALSO |
+| **publicIPAddress** |PIP associada com a NIC |consulte [as definições de DNS](#DNS-settings) |
+| **loadBalancerBackendAddressPools** |Fazer uma cópia de conjuntos de endereços de fim que a NIC está associada | |
+| **loadBalancerInboundNatRules** |A NIC está associada de regras de NAT de Balanceador de carga de entrada | |
 
-Sample public IP address in JSON format:
+Exemplo público endereço IP no formato JSON:
 
     {
         "name": "lb-nic1-be",
@@ -72,6 +72,6 @@ Sample public IP address in JSON format:
         }
     }
 
-### <a name="additional-resources"></a>Additional resources
-* Read the [REST API reference documentation](https://msdn.microsoft.com/library/azure/mt163579.aspx) for NICs.
+### <a name="additional-resources"></a>Recursos adicionais
+* Leia o [documentação de referência da REST API](https://msdn.microsoft.com/library/azure/mt163579.aspx) para NICs.
 

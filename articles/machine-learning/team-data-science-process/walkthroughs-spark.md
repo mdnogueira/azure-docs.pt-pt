@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: bradsev
-ms.openlocfilehash: 99b9f047525f46f68dc2c1029f6d53fbda87b69e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 76c9382cc5210bb5ac8551ebb7b16ecabe0dcd39
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="hdinsight-spark-data-science-walkthroughs-using-pyspark-and-scala-on-azure"></a>Instruções de ciência de dados de Spark do HDInsight utilizando PySpark e Scala no Azure
 
-Estas instruções utilizam PySpark e Scala num cluster do Spark do Azure para realizar a Análise Preditiva. Siga os passos descritos no processo de ciência de dados de equipa. Para obter uma descrição geral do processo de ciência de dados de equipa, consulte [o processo de ciência de dados](overview.md). Para obter uma descrição geral do Spark no HDInsight, consulte [introdução para o Spark no HDInsight](../../hdinsight/hdinsight-apache-spark-overview.md).
+Estas instruções utilizam PySpark e Scala num cluster do Spark do Azure para realizar a Análise Preditiva. Siga os passos descritos no processo de ciência de dados de equipa. Para obter uma descrição geral do processo de ciência de dados de equipa, consulte [o processo de ciência de dados](overview.md). Para obter uma descrição geral do Spark no HDInsight, consulte [introdução para o Spark no HDInsight](../../hdinsight/spark/apache-spark-overview.md).
 
 Instruções de ciência de dados adicionais que executar o processo de ciência de dados do agrupamento estão agrupadas pelo **plataforma** que utilizam. Consulte [instruções ao executar o processo de ciência de dados de equipa](walkthroughs.md) para um itemization destes exemplos.
 

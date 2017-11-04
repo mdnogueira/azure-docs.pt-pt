@@ -1,18 +1,18 @@
 
 <!--author=alkohli last changed: 01/02/17-->
 
-#### <a name="to-delete-a-storsimple-backup-policy"></a>To delete a StorSimple backup policy
+#### <a name="to-delete-a-storsimple-backup-policy"></a>Para eliminar uma política de cópia de segurança do StorSimple
 
-1. Go to your StorSimple device and click **Backup policy**.
+1. Aceda ao seu dispositivo StorSimple e clique em **Política de cópias de segurança**.
 
-2. In the tabular listing of backup policies, select the policy you want to delete. Right-click and from the context menu, select **Delete**.
+2. Numa listagem de tabela de políticas de cópia de segurança, selecione a política que pretende eliminar. Clique com botão direito e no menu de contexto, selecione **eliminar**.
 
-    ![Select a backup policy to delete](./media/storsimple-8000-delete-backup-policy/deletebupol1.png)
+    ![Selecione uma política de cópia de segurança a eliminar](./media/storsimple-8000-delete-backup-policy/deletebupol1.png)
 
-3. You will be prompted for confirmation. Keep in mind that deleting a backup policy will delete all the associated backups. Click **Yes** to delete.
+3. Será solicitado para confirmação. Tenha em atenção que eliminar uma política de cópia de segurança irá eliminar todas as cópias de segurança associadas. Clique em **Sim** para eliminar.
 
-    ![Confirm delete](./media/storsimple-8000-delete-backup-policy/deletebupol2.png)
+    ![Confirmar eliminação](./media/storsimple-8000-delete-backup-policy/deletebupol2.png)
 
-The backup policies list will be updated to display the new list of policies.
+A lista de políticas de cópia de segurança será atualizada para apresentar a nova lista de políticas.
 
-![Updated backup policy list](./media/storsimple-8000-delete-backup-policy/deletebupol5.png)
+![Atualizar a lista de política de cópia de segurança](./media/storsimple-8000-delete-backup-policy/deletebupol5.png)

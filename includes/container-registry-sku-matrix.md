@@ -1,0 +1,5 @@
+| SKU | Descrição |
+|---|---|
+| Básica | Um ponto de entrada com otimização de custos para programadores de aprendizagem sobre o registo de contentor do Azure. Os registos do básicos tenham as mesmas capacidades programáticas como Standard e Premium (integração de autenticação do Azure Active Directory, a eliminação de imagem e web hooks), no entanto, existem restrições de utilização e de tamanho. |
+| Standard | O registo padrão oferece as mesmas capacidades como básico, mas com limites de armazenamento maiores e débito de imagem. Os registos do padrão devem satisfazer as necessidades da maioria dos cenários de produção. |
+| Premium | Os registos do Premium têm limites mais elevados em restrições, como o armazenamento e de operações simultâneas, incluindo melhorados capacidades de armazenamento para suportar cenários de elevado volume. Para além de maior capacidade de débito de imagem, Premium adiciona funcionalidades como a georreplicação para gerir um único registo em várias regiões, manter um registo de fecho de rede para cada implementação. |

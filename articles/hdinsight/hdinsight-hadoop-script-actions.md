@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/25/2017
 ms.author: jgao
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0e182e6b43fd2d17524c1da36cf4c204bb1b865a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 1b10887bcfa7f7c25375bd990ec5e97d0fefbacf
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="develop-script-action-scripts-for-hdinsight-windows-based-clusters"></a>Desenvolver scripts de ação de Script para clusters baseados em Windows de HDInsight
 Saiba mais sobre como escrever scripts de ação de Script para o HDInsight. Para obter informações sobre como utilizar os scripts de ação de Script, consulte [clusters do HDInsight de personalizar através da ação de Script](hdinsight-hadoop-customize-cluster.md). Para o mesmo artigo escrito para clusters do HDInsight baseado em Linux, consulte [scripts de ação de Script desenvolver para o HDInsight](hdinsight-hadoop-script-actions-linux.md).
@@ -245,7 +245,7 @@ Eis os passos que pegámos quando preparar para implementar estes scripts:
 
 ## <a name="debug-custom-scripts"></a>Depurar scripts personalizados
 Os registos de erros de script são armazenados, juntamente com outra saída, na conta do Storage predefinida que especificou para o cluster na respetiva criação. Os registos são armazenados numa tabela com o nome *u < \cluster-name-fragment >< \time-stamp > setuplog*. Estes são registos agregados com registos de todos os nós (nó principal e nós de trabalho) em que o script é executado no cluster.
-Uma forma fácil para verificar os registos está a utilizar as ferramentas do HDInsight para Visual Studio. Para instalar as ferramentas, consulte [começar a utilizar as ferramentas Hadoop do Visual Studio para o HDInsight](hdinsight-hadoop-visual-studio-tools-get-started.md#install-data-lake-tools-for-visual-studio)
+Uma forma fácil para verificar os registos está a utilizar as ferramentas do HDInsight para Visual Studio. Para instalar as ferramentas, consulte [começar a utilizar as ferramentas Hadoop do Visual Studio para o HDInsight](hadoop/apache-hadoop-visual-studio-tools-get-started.md#install-data-lake-tools-for-visual-studio)
 
 **Para verificar o registo com o Visual Studio**
 

@@ -1,11 +1,11 @@
-The following table lists the requirements for PolicyBased and RouteBased VPN gateways. This table applies to both the Resource Manager and classic deployment models. For the classic model, PolicyBased VPN gateways are the same as Static gateways, and Route-based gateways are the same as Dynamic gateways.
+A tabela seguinte lista os requisitos para gateways PolicyBased e de RouteBased VPN. Esta tabela aplica-se aos modelos de implementação clássica e Resource Manager. Para o modelo clássico, os gateways de PolicyBased VPN são os mesmos que os gateways estáticos e os gateways baseados na rota são os mesmos que os gateways dinâmicos.
 
-|  | **PolicyBased Basic VPN Gateway** | **RouteBased Basic VPN Gateway** | **RouteBased Standard VPN Gateway** | **RouteBased High Performance VPN Gateway** |
+|  | **Gateway de VPN PolicyBased básico** | **Gateway de VPN RouteBased básico** | **Gateway de VPN RouteBased padrão** | **Gateway de VPN RouteBased elevado desempenho** |
 | --- | --- | --- | --- | --- |
-| **Site-to-Site connectivity   (S2S)** |PolicyBased VPN configuration |RouteBased VPN configuration |RouteBased VPN configuration |RouteBased VPN configuration |
-| **Point-to-Site connectivity (P2S**) |Not supported |Supported (Can coexist with S2S) |Supported (Can coexist with S2S) |Supported (Can coexist with S2S) |
-| **Authentication method** |Pre-shared key |Pre-shared key for S2S connectivity, Certificates for P2S connectivity |Pre-shared key for S2S connectivity, Certificates for P2S connectivity |Pre-shared key for S2S connectivity, Certificates for P2S connectivity |
-| **Maximum number of S2S connections** |1 |10 |10 |30 |
-| **Maximum number of P2S connections** |Not supported |128 |128 |128 |
-| **Active routing support (BGP)** |Not supported |Not supported |Supported |Supported |
+| **Conetividade site a Site (S2S)** |Configuração de PolicyBased VPN |Configuração de RouteBased VPN |Configuração de RouteBased VPN |Configuração de RouteBased VPN |
+| **Conetividade Site a Site (P2S**) |Não suportado |Suportado (pode coexistir com S2S) |Suportado (pode coexistir com S2S) |Suportado (pode coexistir com S2S) |
+| **Método de autenticação** |Chave pré-partilhada |Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S |Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S |Chave pré-partilhada para a conetividade S2S, Certificados para a conetividade P2S |
+| **Número máximo de ligações S2S** |1 |10 |10 |30 |
+| **Número máximo de ligações P2S** |Não suportado |128 |128 |128 |
+| **Suporte de encaminhamento ativo (BGP)** |Não suportado |Não suportado |Suportado |Suportado |
 

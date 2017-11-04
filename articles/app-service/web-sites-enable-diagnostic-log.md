@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 42644bd97443e827b523503989b0b25d3d48028c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 1366cd79248b2e0008234a5da0d87552e6530d80
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="enable-diagnostics-logging-for-web-apps-in-azure-app-service"></a>Ativar o registo de diagnóstico para web apps no App Service do Azure
 ## <a name="overview"></a>Descrição geral
@@ -180,17 +180,17 @@ Para ver uma lista de caminhos disponíveis, utilize o parâmetro - ListPath.
 ### <a name="streaming-with-azure-command-line-interface"></a>Transmissão em fluxo com a Interface de linha de comandos do Azure
 Para transmitir informações de registo, abra uma nova linha de comandos, PowerShell, Bash ou sessão de Terminal e introduza o seguinte comando:
 
-    azure site log tail webappname
+    az webapp log tail --name webappname --resource-group myResourceGroup
 
 Isto irá ligar a aplicação web com o nome 'webappname' e começar a transmissão em fluxo de informações para a janela tal como eventos de registo na aplicação web. Todas as informações de escrita em ficheiros que termina em. txt,. log ou. htm que estão armazenados no diretório /LogFiles (home/d: / logfiles) serão transmitidas para a consola local.
 
 Para filtrar eventos específicos, como erros, utilize o **– filtro** parâmetro. Por exemplo:
 
-    azure site log tail webappname --filter Error
+    az webapp log tail --name webappname --resource-group myResourceGroup --filter Error
 
 Para filtrar os tipos de registo específicos, tal como HTTP, utilize o **– caminho** parâmetro. Por exemplo:
 
-    azure site log tail webappname --path http
+    az webapp log tail --name webappname --resource-group myResourceGroup --path http
 
 > [!NOTE]
 > Se não tiver instalado a Interface de linha de comandos do Azure, ou se não tiver configurado para utilizar a sua subscrição do Azure, consulte [como ao utilizar o Azure da linha de comandos Interface](../cli-install-nodejs.md).

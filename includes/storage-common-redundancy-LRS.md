@@ -1,11 +1,11 @@
-Locally redundant storage (LRS) replicates your data three times within a storage scale unit, which is hosted in a datacenter in the region in which you created your storage account. A write request returns successfully only once it has been written to all three replicas. These three replicas each reside in separate fault domains and upgrade domains within one storage scale unit.
+Armazenamento localmente redundante (LRS) replica os dados três vezes dentro de uma unidade de escala de armazenamento, que está alojado num centro de dados na região na qual criou a conta de armazenamento. Um pedido de escrita com êxito devolve apenas depois de ter sido escrito para todos os três réplicas. Estas três réplicas de cada residirem em domínios de falhas separada e domínios de atualização na unidade de escala de um armazenamento.
 
-A storage scale unit is a collection of racks of storage nodes. A fault domain (FD) is a group of nodes that represent a physical unit of failure and can be considered as nodes belonging to the same physical rack. An upgrade domain (UD) is a group of nodes that are upgraded together during the process of a service upgrade (rollout). The three replicas are spread across UDs and FDs within one storage scale unit to ensure that data is available even if hardware failure impacts a single rack or when nodes are upgraded during a rollout.
+Uma unidade de escala de armazenamento é uma coleção de bastidores de nós de armazenamento. Um domínio de falhas (DF) é um grupo de nós que representam uma unidade física de falha e pode ser considerada como nós que pertencem ao mesmo bastidor físico. Um domínio de atualização (UD) é um grupo de nós que sejam atualizados em conjunto durante o processo de uma atualização do serviço (implementação). As três réplicas são distribuídas por UDs e FDs dentro de uma unidade de escala de armazenamento para garantir que os dados estão disponíveis mesmo se a falha de hardware afeta um bastidor único ou quando nós sejam atualizados durante uma implementação.
 
-LRS is the lowest cost option and offers least durability compared to other options. In the event of a datacenter level disaster (fire, flooding etc.) all three replicas might be lost or unrecoverable. To mitigate this risk, Geo Redundant Storage (GRS) is recommended for most applications.
+LRS é a opção de custo mais baixa e oferece uma durabilidade, pelo menos, em comparação comparada outras opções. Em caso de desastre ao nível do Centro de dados (fire, sobrecarregar etc.) todas as três réplicas poderão ser perdido ou irrecuperáveis. Para mitigar este risco, recomenda-se o armazenamento redundante de Georreplicação (GRS) para a maioria das aplicações.
 
-Locally redundant storage may still be desirable in certain scenarios:
+Armazenamento localmente redundante ainda pode ser preferível em determinados cenários:
 
-* Provides highest maximum bandwidth of Azure Storage replication options.
-* If your application stores data that can be easily reconstructed, you may opt for LRS.
-* Some applications are restricted to replicating data only within a country due to data governance requirements. A paired region could be in another country. For more information on region pairs, see [Azure regions](https://azure.microsoft.com/regions/).
+* Fornece maior largura de banda máxima das opções de replicação de armazenamento do Azure.
+* Se a aplicação armazena os dados que é possível facilmente reconstruir, poderá optar por LRS.
+* Algumas aplicações estão limitadas a replicar dados apenas dentro de um país devido a requisitos de governação de dados. Pode ser uma região emparelhada noutro país. Para obter mais informações sobre os pares de região, consulte [regiões do Azure](https://azure.microsoft.com/regions/).

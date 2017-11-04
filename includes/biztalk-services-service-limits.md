@@ -1,12 +1,12 @@
-| RESOURCE | FREE (PREVIEW) | DEVELOPER | BASIC | STANDARD | PREMIUM |
+| RECURSOS | GRATUITA (PRÉ-VISUALIZAÇÃO) | PROGRAMADOR | BÁSICO | STANDARD | PREMIUM |
 | --- | --- | --- | --- | --- | --- |
-| Scale out |N/A |N/A |Yes, in increments of 1 Basic Unit |Yes, in increments of 1 Standard Unit |Yes, in increments of 1 Premium Unit |
-| Scale Limit |N/A |N/A |Up to 8 units |Up to 8 units |Up to 8 units |
-| EAI Bridges per Unit |N/A |25 |25 |125 |500 |
-| EDI Agreements per Unit |N/A |10 |50 |250 |1000 |
-| Hybrid Connections per Unit |5 |5 |10 |50 |100 |
-| Hybrid Connection Data Transfer (GBs) per Unit |5 |5 |50 |250 |500 |
-| Number of connections using BizTalk Adapter Service per Unit |N/A |1 |2 |5 |25 |
-| Archiving |N/A |Available |N/A |N/A |Available |
-| High Availability |N/A |N/A |Available |Available |Available |
+| Aumentar horizontalmente |N/D |N/D |Sim, em incrementos de 1 unidade básica |Sim, em incrementos de 1 unidade Standard |Sim, em incrementos de 1 unidade Premium |
+| Limite de Escala |N/D |N/D |Até 8 unidades |Até 8 unidades |Até 8 unidades |
+| Bridges EAI por Unidade |N/D |25 |25 |125 |500 |
+| Acordos EDI por Unidade |N/D |10 |50 |250 |1000 |
+| Ligações híbridas por unidade |5 |5 |10 |50 |100 |
+| Transferência de Dados de Ligação Híbrida (GBs) por Unidade |5 |5 |50 |250 |500 |
+| Número de ligações com o BizTalk Adapter Service por unidade |N/D |1 |2 |5 |25 |
+| Arquivo |N/D |Disponível |N/D |N/D |Disponível |
+| Elevada Disponibilidade |N/D |N/D |Disponível |Disponível |Disponível |
 

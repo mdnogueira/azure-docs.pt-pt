@@ -48,7 +48,6 @@
 #### [Exemplos do Azure PowerShell para licenciamento baseado no grupo](active-directory-licensing-ps-examples.md)
 #### [Referência para produtos e planos de serviço em Azure AD](active-directory-licensing-product-and-service-plan-reference.md)
 ### [Gerir perfis de utilizador](active-directory-users-profile-azure-portal.md)
-### [Repor uma palavra-passe](active-directory-users-reset-password-azure-portal.md)
 ### [Gerir as informações de trabalho do utilizador](active-directory-users-work-info-azure-portal.md)
 ### [Contas de partilha](active-directory-sharing-accounts.md)
 
@@ -126,7 +125,6 @@
 ### [SSPR - Relatórios](active-directory-passwords-reporting.md)
 ### Administradores de TI: repor palavras-passe
 #### [Portal do Azure](active-directory-users-reset-password-azure-portal.md)
-#### [Portal Clássico do Azure](active-directory-create-users-reset-password.md)
 ### [Licenciar a SSPR](active-directory-passwords-licensing.md)
 ### [Repetição de escrita de palavras-passe](active-directory-passwords-writeback.md)
 ### [Resolução de problemas](active-directory-passwords-troubleshoot.md)

@@ -1,90 +1,90 @@
-# <a name="azure-service-bus"></a>Azure Service Bus
-Whether an application or service runs in the cloud or on premises, it often needs to interact with other applications or services. To provide a broadly useful way to do this, Azure offers Service Bus. This article takes a look at this technology, describing what it is and why you might want to use it.
+# <a name="azure-service-bus"></a>Service Bus do Azure
+Se uma aplicação ou serviço é executado na nuvem ou de modo local, muitas vezes, tem de interagir com outros serviços ou aplicações. Para fornecer uma forma amplamente útil de efetuar este procedimento, o Azure oferece Service Bus. Este artigo dá uma vista de olhos a esta tecnologia, descreve o que é e por que razão poderá pretender utilizá-la.
 
-## <a name="service-bus-fundamentals"></a>Service Bus fundamentals
-Different situations call for different styles of communication. Sometimes, letting applications send and receive messages through a simple queue is the best solution. In other situations, an ordinary queue isn't enough; a queue with a publish-and-subscribe mechanism is better. And in some cases, all that's really needed is a connection between applications&#151;queues aren't required. Service Bus provides all three options, letting your applications interact in several different ways.
+## <a name="service-bus-fundamentals"></a>Noções básicas sobre o Service Bus
+Situações diferentes exigem estilos diferentes de comunicação. Por vezes, permitir às aplicações enviar e receber mensagens através de uma fila simples é a melhor solução. Noutras situações, uma fila comum não é suficiente e é melhor uma fila com um mecanismo de publicação e subscrição. E, em alguns casos, tudo o que realmente necessário é uma ligação entre aplicações &#151; não são precisas filas. O Service Bus fornece as três opções, permitindo que as aplicações podem interagir de várias maneiras diferentes.
 
-Service Bus is a multi-tenant cloud service, which means that the service is shared by multiple users. Each user, such as an application developer, creates a *namespace*, then defines the communication mechanisms she needs within that namespace. [Figure 1](#Fig1) shows how this looks.
+O Service Bus é um serviço de nuvem multi-inquilino, o que significa que vários utilizadores partilham o serviço. Cada utilizador, como um programador de aplicações, cria um *espaço de nomes*, em seguida, define os mecanismos de comunicação que precisa dentro desse espaço de nomes. [Figura 1](#Fig1) mostra que aspeto.
 
-<a name="Fig1"></a>![Diagram of Azure Service Bus][svc-bus]
+<a name="Fig1"></a>![Diagrama do Service Bus do Azure][svc-bus]
 
-**Figure 1: Service Bus provides a multi-tenant service for connecting applications through the cloud.**
+**Figura 1: O Service Bus fornece um serviço multi-inquilino para ligar aplicações através da nuvem.**
 
-Within a namespace, you can use one or more instances of four different communication mechanisms, each of which connects applications in a different way. The choices are:
+Dentro de um espaço de nomes, pode utilizar uma ou mais instâncias dos quatro diferentes mecanismos de comunicação, os quais ligam aplicações de forma diferente. As opções são:
 
-* *Queues*, which allow one-directional communication. Each queue acts as an intermediary (sometimes called a *broker*) that stores sent messages until they are received. Each message is received by a single recipient.
-* *Topics*, which provide one-directional communication using *subscriptions*-a single topic can have multiple subscriptions. Like a queue, a topic acts as a broker, but each subscription can optionally use a filter to receive only messages that match specific criteria.
-* *Relays*, which provide bi-directional communication. Unlike queues and topics, a relay doesn't store in-flight messages-it's not a broker. Instead, it just passes them on to the destination application.
-* *Event Hubs*, which provide event and telemetry ingress to the cloud at massive scale, with low latency and high reliability.
+* *Filas*, que permitem comunicação unidirecional. Cada fila funciona como um intermediário (por vezes denominado *mediador*) que armazena as mensagens enviadas até serem recebidas. Cada mensagem é recebida por um único destinatário.
+* *Tópicos*, que proporcionam uma comunicação unidirecional através de *subscrições* – um só tópico pode ter várias subscrições. Tal como as filas, o tópico funciona como um mediador, mas cada subscrição pode utilizar opcionalmente um filtro para receber apenas as mensagens que correspondem a critérios específicos.
+* *Reencaminhamentos*, que proporcionam comunicação bidirecional. Ao contrário das filas e tópicos, um reencaminhamento não armazena as mensagens em trânsito - não é um mediador. Simplesmente, transmite-as à aplicação de destino.
+* *Event Hubs*, que proporcionam entrada em grande escala de telemetria e de eventos para a nuvem, com baixa latência e alta fiabilidade.
 
-When you create a queue, topic, relay, or Event Hub, you give it a name. Combined with whatever you called your namespace, this name creates a unique identifier for the object. Applications can provide this name to Service Bus, then use that queue, topic, relay, or Event Hub to communicate with one another. 
+Ao criar uma fila, tópico, reencaminhamento ou Event Hub, atribui-lhe um nome. Quando combinado com o espaço de nomes, cria-se um identificador exclusivo para o objeto. As aplicações podem fornecer este nome ao Service Bus e, em seguida, utilizar essa fila, tópico, reencaminhamento ou Event Hub para comunicar entre si. 
 
-To use any of these objects, Windows applications can use Windows Communication Foundation (WCF). For queues, topics, and Event Hubs Windows applications can also use Service Bus-defined messaging APIs. To make these objects easier to use from non-Windows applications, Microsoft provides SDKs for Java, Node.js, and other languages. You can also access queues, topics, and Event Hubs using REST APIs over HTTP. 
+Para utilizar qualquer um destes objetos, as aplicações do Windows podem utilizar o Windows Communication Foundation (WCF). Para as filas, tópicos e Event Hubs, as aplicações de Windows também podem utilizar as APIs de mensagens definidas pelo Service Bus. Para facilitar a utilização destes objetos a partir de aplicações que não sejam de Windows, a Microsoft disponibiliza SDKs para Java, Node.js e outras linguagens. Também pode aceder às filas, tópicos e Event Hubs utilizando as APIs REST através do HTTP. 
 
-It's important to understand that even though Service Bus itself runs in the cloud (that is, in Microsoft's Azure datacenters), applications that use it can run anywhere. You can use Service Bus to connect applications running on Azure, for example, or applications running inside your own datacenter. You can also use it to connect an application running on Azure or another cloud platform with an on-premises application or with tablets and phones. It's even possible to connect household appliances, sensors, and other devices to a central application or to one other. Service Bus is a generic communication mechanism in the cloud that's accessible from pretty much anywhere. How you use it depends on what your applications need to do.
+É importante compreender que, apesar do Service Bus propriamente dito ser executado na nuvem (ou seja, nos datacenters de Azure da Microsoft), as aplicações que o utilizam podem ser executadas em qualquer lugar. Pode utilizar o Service Bus para ligar aplicações que se executam, por exemplo, no Azure, ou aplicações que se executam dentro do seu próprio datacenter. Também pode utilizá-lo para ligar uma aplicação em execução no Azure ou noutra plataforma na nuvem com uma aplicação no local ou com telemóveis e tablets. Também é possível ligar aparelhos domésticos, sensores e outros dispositivos a uma aplicação central ou entre si. O Service Bus é um mecanismo de comunicação genérico na nuvem que é acessível em praticamente qualquer lugar. O modo como o utiliza depende do que tem de realizar a aplicação.
 
-## <a name="queues"></a>Queues
-Suppose you decide to connect two applications using a Service Bus queue. [Figure 2](#Fig2) illustrates this situation.
+## <a name="queues"></a>Filas
+Suponha que decide ligar duas aplicações com uma fila do Service Bus. [Figura 2](#Fig2) ilustra esta situação.
 
-<a name="Fig2"></a>![Diagram of Service Bus Queues][queues]
+<a name="Fig2"></a>![Diagrama de filas do Service Bus][queues]
 
-**Figure 2: Service Bus queues provide one-way asynchronous queuing.**
+**Figura 2: As filas do Service Bus proporcionam filas unidirecionais assíncronas.**
 
-The process is simple: A sender sends a message to a Service Bus queue, and a receiver picks up that message at some later time. A queue can have just a single receiver, as [Figure 2](#Fig2) shows, or multiple applications can read from the same queue. In the latter situation, each message is read by just one receiver-for a multi-cast service you should use a topic instead.
+O processo é simples: um remetente envia uma mensagem para uma fila do Service Bus e um recetor apanha essa mensagem mais tarde. Uma fila pode ter apenas um único recetor como [figura 2](#Fig2) mostra ou várias aplicações podem ler a partir da mesma fila. Na última situação, cada mensagem é lida por apenas um recetor - para um serviço com multi-difusão deve antes utilizar um tópico.
 
-Each message has two parts: a set of properties, each a key/value pair, and a binary message body. How they're used depends on what an application is trying to do. For example, an application sending a message about a recent sale might include the properties *Seller="Ava"* and *Amount=10000*. The message body might contain a scanned image of the sale's signed contract or, if there isn't one, just remain empty.
+Cada mensagem tem duas partes: um conjunto de propriedades, cada uma delas um par chave/valor, e um corpo de mensagem binário. O modo como são utilizados depende do que a aplicação está a tentar fazer. Por exemplo, uma aplicação que envia uma mensagem sobre uma venda recente pode incluir as propriedades *Vendedor="Ava"* e *Valor= 10000*. O corpo da mensagem poderá conter uma imagem digitalizada do contrato de venda assinado ou, se não existir, pode permanecer vazio.
 
-A receiver can read a message from a Service Bus queue in two different ways. The first option, called *ReceiveAndDelete*, removes a message from the queue and immediately deletes it. This is simple, but if the receiver crashes before it finishes processing the message, the message will be lost. Because it's been removed from the queue, no other receiver can access it. 
+O recetor pode ler uma mensagem da fila do Service Bus de duas formas diferentes. A primeira opção, denominada *ReceiveAndDelete*, remove a mensagem da fila e elimina-a imediatamente. Isto é simples, mas se há uma falha da parte do recetor antes de concluir o processamento da mensagem, esta será perdida. Dado que é removida da fila, nenhum outro recetor pode aceder à mesma. 
 
-The second option, *PeekLock*, is meant to help with this problem. Like ReceiveAndDelete, a PeekLock read removes a message from the queue. It doesn't delete the message, however. Instead, it locks the message, making it invisible to other receivers, then waits for one of three events:
+A segunda opção, *PeekLock*, foi criada para solucionar este problema. Como ReceiveAndDelete, uma leitura PeekLock remove a mensagem da fila. No entanto, não elimina a mensagem. Neste caso, bloqueia a mensagem, pelo que fica invisível para os outros recetores, em seguida, aguarda que um dos três eventos ocorra:
 
-* If the receiver processes the message successfully, it calls *Complete*, and the queue deletes the message. 
-* If the receiver decides that it can't process the message successfully, it calls *Abandon*. The queue then removes the lock from the message and makes it available to other receivers.
-* If the receiver calls neither of these within a configurable period of time (by default, 60 seconds), the queue assumes the receiver has failed. In this case, it behaves as if the receiver had called Abandon, making the message available to other receivers.
+* Se o recetor processar a mensagem com êxito, aquele invoca *Concluir* e a fila elimina a mensagem. 
+* Se o recetor decidir que não é possível processar a mensagem com êxito, aquele invoca *Abandonar*. A fila, em seguida, remove o bloqueio da mensagem e torna-o disponível para outros recetores.
+* Se o recetor não invocar nenhuma destas opções num período de tempo configurável (60 segundos, por predefinição), a fila assume que o recetor falhou. Neste caso, comporta-se como se o recetor invocasse abandono, pelo que a mensagem disponível para outros recetores.
 
-Notice what can happen here: The same message might be delivered twice, perhaps to two different receivers. Applications using Service Bus queues must be prepared for this. To make duplicate detection easier, each message has a unique MessageID property that by default stays the same no matter how many times the message is read from a queue. 
+Tenha em atenção o que pode acontecer aqui: a mesma mensagem poderá ser entregue duas vezes, talvez a dois recetores diferentes. As aplicações que utilizam filas do Service Bus devem estar preparadas para tal. Para facilitar a deteção duplicada, que cada mensagem tem uma propriedade MessageID exclusiva, que, por predefinição, permanece o mesmo, independentemente de como número de vezes que se leia mensagem numa fila. 
 
-Queues are useful in quite a few situations. They let applications communicate even when both aren't running at the same time, something that's especially handy with batch and mobile applications. A queue with multiple receivers also provides automatic load balancing, since sent messages are spread across these receivers.
+As filas são úteis em determinadas situações. Permitem às aplicações comunicar entre si, mesmo quando ambas não estão a ser executadas ao mesmo tempo, algo que é especialmente útil com lotes e aplicações. Uma fila com vários recetores também proporciona um balanceamento de carga automático, uma vez que as mensagens enviadas são distribuídas por estes recetores.
 
-## <a name="topics"></a>Topics
-Useful as they are, queues aren't always the right solution. Sometimes, Service Bus topics are better. [Figure 3](#Fig3) illustrates this idea.
+## <a name="topics"></a>Tópicos
+Ainda que sejam úteis, as filas não sempre são a solução certa. Por vezes, os tópicos do Service Bus são melhores. [Figura 3](#Fig3) ilustra a ideia.
 
-<a name="Fig3"></a>![Diagram of Service Bus Topics and Subscriptions][topics-subs]
+<a name="Fig3"></a>![Diagrama de tópicos de Service Bus e subscrições][topics-subs]
 
-**Figure 3: Based on the filter a subscribing application specifies, it can receive some or all of the messages sent to a Service Bus topic.**
+**Figura 3: Com base no filtro especificado por uma aplicação de subscrição, pode receber algumas ou todas as mensagens enviadas para um tópico do Service Bus.**
 
-A topic is similar in many ways to a queue. Senders submit messages to a topic in the same way that they submit messages to a queue, and those messages look the same as with queues. The big difference is that topics let each receiving application create its own subscription by defining a *filter*. A subscriber will then see only the messages that match that filter. For example, [Figure 3](#Fig3) shows a sender and a topic with three subscribers, each with its own filter:
+Um tópico é semelhante em muitos aspetos a uma fila. Os remetentes submetem mensagens a um tópico da mesma forma que submetem mensagens a uma fila e essas mensagens têm o mesmo aspeto que nas filas. A grande diferença é que os tópicos permitem a cada aplicação de receção criar a sua própria subscrição, definindo um *filtro*. Consequentemente, o subscritor verá apenas as mensagens que correspondem a esse filtro. Por exemplo, [figura 3](#Fig3) mostra um remetente e um tópico com três subscritores, cada um com o seu próprio filtro:
 
-* Subscriber 1 receives only messages that contain the property *Seller="Ava"*.
-* Subscriber 2 receives messages that contain the property *Seller="Ruby"* and/or contain an *Amount* property whose value is greater than 100,000. Perhaps Ruby is the sales manager, and so she wants to see both her own sales and all big sales regardless of who makes them.
-* Subscriber 3 has set its filter to *True*, which means that it receives all messages. For example, this application might be responsible for maintaining an audit trail and therefore it needs to see all the messages.
+* O subscritor 1 recebe apenas as mensagens que contêm a propriedade *Vendedor="Ava"*.
+* O subscritor 2 recebe mensagens que contêm a propriedade *Vendedor="Ruby"* e/ou contem a propriedade *Valor* cujo valor é superior a 100.000. Talvez Ruby seja a gestora de vendas e, por isso que pretende ver a suas próprias vendas e todas as vendas grandes, independentemente de quem as faz.
+* O subscritor 3 definiu o seu filtro como *True*, o que significa que recebe todas as mensagens. Por exemplo, esta aplicação pode ser responsável por manter um registo de auditoria e, por conseguinte, precisa de ver todas as mensagens.
 
-As with queues, subscribers to a topic can read messages using either ReceiveAndDelete or PeekLock. Unlike queues, however, a single message sent to a topic can be received by multiple subscribers. This approach, commonly called *publish and subscribe*, is useful whenever multiple applications might be interested in the same messages. By defining the right filter, each subscriber can tap into just the part of the message stream that it needs to see.
+Tal como acontece com as filas, os subscritores de um tópico podem ler mensagens através de ReceiveAndDelete ou PeekLock. No entanto, ao contrário das filas, uma única mensagem enviada para um tópico pode recebida por vários subscritores. Esta abordagem, geralmente designada por *publicar e subscrever*, é útil quando várias aplicações podem ser interessadas nas mesmas mensagens. Se definir o filtro adequado, cada subscritor pode recuperar apenas a parte do fluxo de mensagens que quer ver.
 
-## <a name="relays"></a>Relays
-Both queues and topics provide one-way asynchronous communication through a broker. Traffic flows in just one direction, and there's no direct connection between senders and receivers. But what if you don't want this? Suppose your applications need to both send and receive messages, or perhaps you want a direct link between them and you don't need a broker to store messages. To address scenarios such as this, Service Bus provides relays, as [Figure 4](#Fig4) shows.
+## <a name="relays"></a>Reencaminhamentos
+Tanto as filas como os tópicos proporcionam comunicação assíncrona unidirecional através de um mediador. O tráfego flui numa única direção e não existe uma ligação direta entre os remetentes e os recetores. Mas e se não o quiser? Suponha que as suas aplicações precisam de enviar e receber mensagens ou talvez pretenda uma ligação direta entre elas e não precisa de um mediador para armazenar as mensagens. Para solucionar como esta, Service Bus proporciona reencaminhamentos, como [figura 4](#Fig4) mostra.
 
-<a name="Fig4"></a>![Diagram of Service Bus Relay][relay]
+<a name="Fig4"></a>![Diagrama de reencaminhamento do Service Bus][relay]
 
-**Figure 4: Service Bus relay provides synchronous, two-way communication between applications.**
+**Figura 4: O reencaminhamento do Service Bus proporciona comunicação síncrona bidirecional entre as aplicações.**
 
-The obvious question to ask about relays is this: Why would I use one? Even if I don't need queues, why make applications communicate via a cloud service rather than just interact directly? The answer is that talking directly can be harder than you might think.
+A questão óbvia sobre os reencaminhamentos que se coloca é esta: por que tenho de utilizar um? Mesmo que não precise de filas, por que motivo fazer com que as aplicações comuniquem através de um serviço em nuvem em vez de apenas interagir diretamente? A resposta é que comunicar diretamente pode ser mais difícil de que se pensa.
 
-Suppose you want to connect two on-premises applications, both running inside corporate datacenters. Each of these applications sits behind a firewall, and each datacenter probably uses network address translation (NAT). The firewall blocks incoming data on all but a few ports, and NAT implies that the machine each application is running on doesn't have a fixed IP address that you can reach directly from outside the datacenter. Without some extra help, connecting these applications over the public Internet is problematic.
+Suponha que pretende ligar duas aplicações no local, ambas em execução dentro dos datacenters empresariais. Cada uma dessas aplicações encontra-se protegida por uma firewall e cada datacenter utiliza provavelmente tradução de endereços de rede (NAT). A firewall bloqueia os dados recebidos em quase todas as portas e NAT significa que a máquina em que se executa cada aplicação não tem um endereço IP fixo ao qual pode aceder diretamente a partir de fora do datacenter. Se não houver ajuda extra, é complicado ligar estas aplicações através da Internet pública.
 
-A Service Bus relay provides this help. To communicate bi-directionally through a relay, each application establishes an outbound TCP connection with Service Bus, then keeps it open. All communication between the two applications will travel over these connections. Because each connection was established from inside the datacenter, the firewall will allow incoming traffic to each application without opening new ports. This approach also gets around the NAT problem, because each application has a consistent endpoint in the cloud throughout the communication. By exchanging data through the relay, the applications can avoid the problems that would otherwise make communication difficult. 
+Um reencaminhamento de Service Bus proporciona esta ajuda. Para comunicar de forma bidirecional através de um reencaminhamento, cada aplicação estabelece uma ligação TCP de saída com o Service Bus e mantém-na aberta. Toda a comunicação entre as duas aplicações percorre essas ligações. Uma vez que cada ligação se estabeleceu de dentro do datacenter, a firewall permitirá o tráfego de entrada para cada aplicação sem abrir novas portas. Esta abordagem também contorna o problema de NAT porque cada aplicação dispõe de um ponto final consistente na nuvem durante toda a duração da comunicação. Ao trocar dados através do reencaminhamento, as aplicações podem evitar os problemas que dificultariam a comunicação. 
 
-To use Service Bus relays, applications rely on Windows Communication Foundation (WCF). Service Bus provides WCF bindings that make it straightforward for Windows applications to interact via relays. Applications that already use WCF can typically just specify one of these bindings, then talk to each other through a relay. Unlike queues and topics, however, using relays from non-Windows applications, while possible, requires some programming effort; no standard libraries are provided.
+Para utilizar os reencaminhamentos do Service Bus, as aplicações baseiam-se no Windows Communication Foundation (WCF). O Service Bus proporciona enlaces WCF que facilitam a interação das aplicações de Windows através dos reencaminhamentos. As aplicações que já utilizam WCF podem normalmente especificar apenas um destes enlaces e depois comunicar entre si através de um reencaminhamento. Todavia, ao contrário das filas e tópicos, a utilização de reencaminhamentos a partir de aplicações que não sejam de Windows, ainda que possível, necessita de algum esforço de programação; não são fornecidas bibliotecas padrão.
 
-Unlike queues and topics, applications don't explicitly create relays. Instead, when an application that wishes to receive messages establishes a TCP connection with Service Bus, a relay is created automatically. When the connection is dropped, the relay is deleted. To let an application find the relay created by a specific listener, Service Bus provides a registry that enables applications to locate a specific relay by name.
+Ao contrário do que acontece com as filas e tópicos, as aplicações não criam reencaminhamentos de forma explícita. Quando uma aplicação que pretende receber mensagens estabelece uma ligação TCP com o Service Bus, é criado automaticamente um reencaminhamento. Este é eliminado quando se abandona a ligação. Para permitir que uma aplicação encontre o reencaminhamento criado por um serviço de escuta específico, o Service Bus fornece um registo que permite às aplicações localizar um reencaminhamento específico por nome.
 
-Relays are the right solution when you need direct communication between applications. For example, consider an airline reservation system running in an on-premises datacenter that must be accessed from check-in kiosks, mobile devices, and other computers. Applications running on all of these systems could rely on Service Bus relays in the cloud to communicate, wherever they might be running.
+Os reencaminhamentos são a solução certa quando precisa de comunicação direta entre aplicações. Por exemplo, imagine um sistema de reserva de uma companhia aérea que se executa num datacenter no local e que tem de ser acedido em quiosques de check-in, dispositivos móveis e outros computadores. As aplicações que se executam em todos estes sistemas poderiam depender dos reencaminhamentos do Service Bus na nuvem para comunicar, independentemente do local em que estão em execução.
 
 ## <a name="event-hubs"></a>Event Hubs
-Event Hubs is a highly scalable ingestion system that can process millions of events per second, enabling your application to process and analyze the massive amounts of data produced by your connected devices and applications. For example, you could use an Event Hub to collect live engine performance data from a fleet of cars. Once collected into Event Hubs, you can transform and store data using any real-time analytics provider or storage cluster. For more information about Event Hubs, see the [Event Hubs overview][Event Hubs overview].
+Os Event Hubs são um serviço de ingestão de dados altamente dimensionável, que pode processar milhões de eventos por segundo para que a sua aplicação possa processar e analisar as quantidades enormes de dados produzidos pelos dispositivos e aplicações ligados. Por exemplo, pode utilizar um Event Hub para recolher dados de desempenho do motor em direto de uma frota de automóveis. Depois de recolhidos nos Event Hubs, pode transformar e armazenar dados em qualquer fornecedor de análise em tempo real ou cluster de armazenamento. Para obter mais informações sobre os Event Hubs, consulte o [descrição geral dos Event Hubs][Event Hubs overview].
 
-## <a name="summary"></a>Summary
-Connecting applications has always been part of building complete solutions, and the range of scenarios that require applications and services to communicate with each other is set to increase as more applications and devices are connected to the Internet. By providing cloud-based technologies for achieving this through queues, topics, relays, and Event Hubs, Service Bus aims to make this essential function easier to implement and more broadly available.
+## <a name="summary"></a>Resumo
+A ligação de aplicações sempre fez parte da criação de soluções completas e a variedade de cenários que precisam que as aplicações e os serviços comuniquem entre si aumentará logo que mais aplicações e dispositivos se liguem à Internet. Ao fornecer tecnologias baseadas na nuvem para consegui-lo através de filas, tópicos, reencaminhamentos e Event Hubs, o Service Bus tem como objetivo tornar essa função essencial mais fácil de implementar e mais amplamente disponível.
 
 [svc-bus]: ./media/hybrid-solutions/SvcBus_01_architecture.png
 [queues]: ./media/hybrid-solutions/SvcBus_02_queues.png

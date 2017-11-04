@@ -1,4 +1,3 @@
-# <a name="scale-agent-nodes-in-a-container-service-cluster"></a>Dimensionar nós de agente num cluster do Container Service
 Depois de [implementar um cluster do Azure Container Service](../articles/container-service/dcos-swarm/container-service-deployment.md), poderá ter de alterar o número de nós de agente. Por exemplo, poderá precisar de mais agentes, de modo a poder executar mais aplicações de contentores ou instâncias. 
 
 Pode utilizar o portal do Azure ou a CLI 2.0 do Azure para alterar o número de nós de agente em clusters do DC/OS, do Docker Swarm ou do Kubernetes. 

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 10/12/2017
 ms.author: v-ruogun
-ms.openlocfilehash: 44ec416a814ff6a5fef79ef21e2f54ce4ce4da17
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
-ms.translationtype: HT
+ms.openlocfilehash: 76e23d85b392f8120914f6170040c6b3c450aba6
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/03/2017
 ---
 #  <a name="transfer-objects-tofrom-azure-blob-storage-using-python"></a>Transferência de objetos para/de Blob storage do Azure com o Python
 Este guia de introdução, irá aprender a utilizar o Python para carregar, transfira e lista de blobs de blocos num contentor de Blob storage do Azure. 
@@ -32,25 +32,7 @@ Para concluir este guia de início rápido:
 
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="create-a-storage-account-using-the-azure-portal"></a>Criar uma conta de armazenamento utilizando o portal do Azure
-
-Em primeiro lugar, crie uma nova conta de armazenamento para fins gerais para utilizar este guia de introdução. 
-
-1. Vá para o [portal do Azure](https://portal.azure.com) e inicie sessão com a sua conta do Azure. 
-2. No Hub menu, selecione **novo** > **armazenamento** > **conta de armazenamento - BLOBs, ficheiro, tabela, fila**. 
-3. Introduza um nome para a conta do Storage. O nome tem de ter entre 3 e 24 carateres de comprimento e conter apenas letras minúsculas e números. Também tem de ser exclusivo.
-4. Definir `Deployment model` para **do Resource manager**.
-5. Definir `Account kind` para **fins gerais**.
-6. Definir `Performance` para **padrão**. 
-7. Definir `Replication` para **armazenamento localmente redundante (LRS)**.
-8. Definir `Storage service encryption` para **desativado**.
-9. Definir `Secure transfer required` para **desativado**.
-10. Selecione a sua subscrição. 
-11. Para `resource group`, crie um novo e atribua um nome exclusivo. 
-12. Selecione o `Location` a utilizar para a sua conta de armazenamento.
-13. Verifique **afixar ao dashboard** e clique em **criar** para criar a conta de armazenamento. 
-
-Depois de criar a sua conta do storage, está afixada ao dashboard. Clique na mesma para abri-lo. Em **definições**, clique em **chaves de acesso**. Selecione uma chave e copie o nome da conta de armazenamento para a área de transferência e, em seguida, cole-o bloco de notas para utilização posterior.
+[!INCLUDE [storage-quickstart-tutorial-create-account-portal](../../../includes/storage-quickstart-tutorial-create-account-portal.md)]
 
 ## <a name="download-the-sample-application"></a>Transferir a aplicação de exemplo
 O [aplicação de exemplo](https://github.com/Azure-Samples/storage-blobs-python-quickstart.git) utilizado neste início rápido é uma aplicação básica do Python.  
@@ -100,8 +82,10 @@ A primeira coisa a fazer é criar as referências a objectos utilizados para ace
 
 Assim que tiver o contentor de Blob de nuvem, pode instanciar o **CloudBlockBlob** objeto que aponta para o blob específico no qual está interessado e efetuar operações como carregamento, a transferência e a cópia.
 
-Nesta secção, instanciar os objetos, criar um novo contentor e, em seguida, definir as permissões no contentor para que os blobs públicos. O contentor é designado por **quickstartblobs**. 
+> [!IMPORTANT]
+> Os nomes de contentor tem de ser em minúsculas. Consulte [nomenclatura e referência de contentores, Blobs e metadados](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) para obter mais informações sobre os nomes de contentor e BLOBs.
 
+Nesta secção, instanciar os objetos, criar um novo contentor e, em seguida, definir as permissões no contentor para que os blobs públicos. O contentor é designado por **quickstartblobs**. 
 
 ```python 
 # Create the BlockBlockService that is used to call the Blob service for the storage account
@@ -156,7 +140,7 @@ print("\nList blobs in the container")
         print("\t Blob name: " + blob.name)
 ```
 
-## <a name="download-the-blobs"></a>Transferir os Blobs
+## <a name="download-the-blobs"></a>Transferir os blobs
 
 Transferir blobs para a sua utilização de disco local da **obter\_blob\_para\_caminho** método. O código seguinte transfere o blob carregado numa secção anterior. "_DOWNLOADED" é adicionado como um sufixo no nome do blob para que possa ver ambos os ficheiros no disco local. 
 

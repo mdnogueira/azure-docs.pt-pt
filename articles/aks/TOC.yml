@@ -37,6 +37,8 @@
       href: kubernetes-helm.md
     - name: Programar aplicações com Draft
       href: kubernetes-draft.md
+    - name: Manter os dados com os Ficheiros do Azure
+      href: azure-files.md
     - name: Utilizar o dashboard do Kubernetes
       href: kubernetes-dashboard.md
     - name: Criar um principal de serviço

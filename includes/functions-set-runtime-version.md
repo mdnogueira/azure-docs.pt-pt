@@ -1,0 +1,2 @@
+
+Para tornar a sua aplicação de função de utilizar a versão de pré-visualização 2.0 do tempo de execução de funções, defina o `FUNCTIONS_EXTENSION_VERSION` definição de aplicação na sua aplicação de função para um valor de `beta`.

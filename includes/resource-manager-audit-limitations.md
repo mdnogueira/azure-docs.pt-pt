@@ -1,4 +1,4 @@
-The activity log contains all write operations (PUT, POST, DELETE) performed on your resources. It does not include read operations (GET). You can use the audit logs to find an error when troubleshooting or to monitor how a user in your organization modified a resource.
+O registo de atividade contém todas as operações de escrita (PUT, POST, DELETE) efetuadas nos seus recursos. Não inclui as operações de leitura (GET). Pode utilizar os registos de auditoria para encontrar um erro quando a resolução de problemas ou para monitorizar a forma como um utilizador na sua organização modificou um recurso.
 
-Activity logs are retained for 90 days. You can query for any range of dates, as long as the starting date is not more than 90 days in the past.
+Registos de atividade são mantidos durante 90 dias. Pode consultar qualquer intervalo de datas, desde que a data de início não é mais de 90 dias no passado.
 

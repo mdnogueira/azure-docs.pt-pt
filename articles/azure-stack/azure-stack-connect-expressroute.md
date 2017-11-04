@@ -1,6 +1,6 @@
 ---
-title: Connect Azure Stack to Azure using ExpressRoute
-description: How to connect virtual networks in Azure Stack to virtual networks in Azure using ExpressRoute.
+title: Ligar a pilha do Azure para o Azure com o ExpressRoute
+description: Como ligar redes virtuais na pilha do Azure para redes virtuais no Azure com o ExpressRoute.
 services: azure-stack
 documentationcenter: 
 author: victorar
@@ -14,182 +14,181 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 9/25/2017
 ms.author: victorh
-ms.translationtype: HT
-ms.sourcegitcommit: c3a2462b4ce4e1410a670624bcbcec26fd51b811
 ms.openlocfilehash: aa6973939c6cfe0688f5781fdcea5d39670249df
-ms.contentlocale: pt-pt
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="connect-azure-stack-to-azure-using-expressroute"></a>Connect Azure Stack to Azure using ExpressRoute
+# <a name="connect-azure-stack-to-azure-using-expressroute"></a>Ligar a pilha do Azure para o Azure com o ExpressRoute
 
-*Applies to: Azure Stack integrated systems and Azure Stack Development Kit*
+*Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
-There are two supported methods to connect virtual networks in Azure Stack to virtual networks in Azure:
-   * **Site-to-Site**
+Existem dois métodos suportados para ligar redes virtuais na pilha do Azure para redes virtuais no Azure:
+   * **Site a Site**
 
-     A VPN connection over IPsec (IKE v1 and IKE v2). This type of connection requires a VPN device or RRAS. For more information, see [Connect Azure Stack to Azure using VPN](azure-stack-connect-vpn.md).
+     Uma ligação VPN através de IPsec (IKE v1 e IKE v2). Este tipo de ligação requer um dispositivo VPN ou RRAS. Para obter mais informações, consulte [ligar a pilha do Azure para o Azure através da VPN](azure-stack-connect-vpn.md).
    * **ExpressRoute**
 
-     A direct connection to Azure from your Azure Stack deployment. ExpressRoute is **not** a VPN connection over the public Internet. For more information about Azure ExpressRoute, see [ExpressRoute overview](../expressroute/expressroute-introduction.md).
+     Uma ligação direta para o Azure da sua implementação de pilha do Azure. O ExpressRoute é **não** uma ligação VPN através da Internet pública. Para obter mais informações sobre o ExpressRoute do Azure, consulte [descrição geral do ExpressRoute](../expressroute/expressroute-introduction.md).
 
-This article shows an example using ExpressRoute to connect Azure Stack to Azure.
-## <a name="requirements"></a>Requirements
-The following are specific requirements to connect Azure Stack and Azure using ExpressRoute:
-* An Azure subscription to create an ExpressRoute circuit and VNets in Azure.
-* A provisioned ExpressRoute circuit through a [connectivity provider](../expressroute/expressroute-locations.md).
-* A router that has the ExpressRoute circuit connected to its WAN ports.
-* The LAN side of the router is linked to the Azure Stack Multitenant Gateway.
-* The router must support Site-to-Site VPN connections between its LAN interface and Azure Stack Multitenant Gateway.
-* If more than one tenant is added in your Azure Stack deployment, the router must be able to create multiple VRFs (Virtual Routing and Forwarding).
+Este artigo mostra um exemplo com o ExpressRoute para ligar a pilha do Azure para o Azure.
+## <a name="requirements"></a>Requisitos
+Seguem-se requisitos específicos para ligar a pilha do Azure e o Azure com o ExpressRoute:
+* Uma subscrição do Azure para criar um circuito do ExpressRoute e as VNets no Azure.
+* A aprovisionado circuito de ExpressRoute através de um [fornecedor de conectividade](../expressroute/expressroute-locations.md).
+* Um router que tenha o circuito de ExpressRoute ligado a portas sua WAN.
+* O lado de LAN do router está ligado ao Gateway de multi-inquilino de pilha do Azure.
+* O router têm de suportar ligações de VPN de Site a Site entre a interface de rede local e o Gateway de multi-inquilino de pilha do Azure.
+* Se mais do que um inquilino for adicionado na sua implementação de pilha do Azure, o router tem de ser capaz de criar várias VRFs (de encaminhamento Virtual e de reencaminhamento).
 
-The following diagram shows a conceptual networking view after you complete the configuration:
+O diagrama seguinte mostra uma vista conceptual de rede depois de concluir a configuração:
 
-![Conceptual diagram](media/azure-stack-connect-expressroute/Conceptual.png)
+![Diagrama conceptual](media/azure-stack-connect-expressroute/Conceptual.png)
 
-**Diagram 1**
+**Diagrama 1**
 
-The following architecture diagram shows how multiple tenants connect from the Azure Stack infrastructure through the ExpressRoute router to Azure at the Microsoft edge:
+O diagrama de arquitetura seguinte mostra como vários inquilinos ligar a partir da infraestrutura de pilha do Azure através de ExpressRoute router para o Azure no limite Microsoft:
 
-![Architecture diagram](media/azure-stack-connect-expressroute/Architecture.png)
+![Diagrama da arquitetura](media/azure-stack-connect-expressroute/Architecture.png)
 
-**Diagram 2**
+**Diagrama de 2**
 
-The example shown in this article uses the same architecture to connect to Azure via ExpressRoute private peering. It is done using a Site-to-Site VPN connection from the virtual network gateway in Azure Stack to an ExpressRoute router. The following steps in this article show how to create an end-to-end connection between two VNets from two different tenants in Azure Stack to their respective VNets in Azure. You can choose to add as many tenant VNets and replicate the steps for each tenant or use this example to deploy just a single tenant VNet.
+O exemplo apresentado neste artigo utiliza a mesma arquitetura para ligar ao Azure através do peering privado do ExpressRoute. É feito utilizando uma ligação de VPN de Site para Site do gateway de rede virtual na pilha do Azure para um router do ExpressRoute. Os seguintes passos neste artigo mostram como criar uma ligação ponto a ponto entre duas VNets de inquilinos diferentes dois na pilha do Azure para as respetivas VNets no Azure. Pode optar por adicionar como muitas VNets de inquilino e replicar os passos para cada inquilino ou utilizam este exemplo para implementar apenas um único inquilino VNet.
 
-## <a name="configure-azure-stack"></a>Configure Azure Stack
-Now you create the resources you need to set up your Azure Stack environment as a tenant. The following steps illustrate what you need to do. These instructions show how to create resources using the Azure Stack portal, but you can also use PowerShell.
+## <a name="configure-azure-stack"></a>Configurar a pilha do Azure
+Agora, criar os recursos que tem de definir configurar o ambiente de pilha do Azure como um inquilino. Os passos seguintes mostram o que precisa de fazer. Estas instruções mostram como criar recursos através do portal do Azure pilha, mas também pode utilizar o PowerShell.
 
-![Network resource steps](media/azure-stack-connect-expressroute/image2.png)
-### <a name="before-you-begin"></a>Before you begin
-Before you start the configuration, you need:
-* An Azure Stack deployment.
+![Passos de recursos de rede](media/azure-stack-connect-expressroute/image2.png)
+### <a name="before-you-begin"></a>Antes de começar
+Antes de iniciar a configuração, tem de:
+* Uma implementação de pilha do Azure.
 
-   For information about deploying Azure Stack Development Kit, see [Azure Stack Development Kit deployment quickstart](azure-stack-deploy-overview.md).
-* An offer on Azure Stack that your user can subscribe to.
+   Para obter informações sobre a implementação do Kit de desenvolvimento de pilha do Azure, consulte [início rápido de implementação do Kit de desenvolvimento de pilha do Azure](azure-stack-deploy-overview.md).
+* Uma oferta no Azure pilha que o utilizador pode subscrever.
 
-  For instructions, see [Make virtual machines available to your Azure Stack users](azure-stack-tutorial-tenant-vm.md).
+  Para obter instruções, consulte [disponibilizar máquinas virtuais para os utilizadores do Azure pilha](azure-stack-tutorial-tenant-vm.md).
 
-### <a name="create-network-resources-in-azure-stack"></a>Create network resources in Azure Stack
+### <a name="create-network-resources-in-azure-stack"></a>Criar recursos de rede na pilha do Azure
 
-Use the following procedures to create the required network resources in Azure Stack for each tenant:
+Utilize os procedimentos seguintes para criar recursos de rede necessários na pilha do Azure para cada inquilino:
 
-#### <a name="create-the-virtual-network-and-vm-subnet"></a>Create the virtual network and VM subnet
-1. Sign in the user portal with a user (tenant) account.
+#### <a name="create-the-virtual-network-and-vm-subnet"></a>Criar a rede virtual e a sub-rede VM
+1. Inicie sessão no portal de utilizador com uma conta de utilizador (inquilino).
 
-2. In the portal, click **New**.
+2. No portal, clique em **novo**.
 
    ![](media/azure-stack-connect-expressroute/MAS-new.png)
 
-3. Select **Networking** from the Marketplace menu.
+3. Selecione **Rede** no menu do Marketplace.
 
-4. Click **Virtual network** on the menu.
+4. Clique em **Rede virtual** no menu.
 
-5. Type the values into the appropriate fields using the following table:
+5. Escreva os valores nos campos adequados utilizando a seguinte tabela:
 
-   |Field  |Value  |
+   |Campo  |Valor  |
    |---------|---------|
-   |Name     |Tenant1VNet1         |
-   |Address space     |10.1.0.0/16|
-   |Subnet name     |Tenant1-Sub1|
-   |Subnet address range     |10.1.1.0/24|
+   |Nome     |Tenant1VNet1         |
+   |Espaço de endereços     |10.1.0.0/16|
+   |Nome da sub-rede     |Tenant1 Sub1|
+   |Intervalo de endereços da sub-rede     |10.1.1.0/24|
 
-6. You should see the Subscription you created earlier populated in the **Subscription** field.
+6. Deverá encontrar a Subscrição que criou anteriormente preenchida no campo **Subscrição**.
 
-    a. For Resource Group, you can either create a Resource Group or if you already have one, select **Use existing**.
+    a. Grupo de recursos, pode criar um grupo de recursos ou se já tiver uma, selecione **utilizar existente**.
 
-    b. Verify the default location.
+    b. Verifique a localização predefinida.
 
-    c. Click **Pin to dashboard**.
+    c. Clique em **afixar ao dashboard**.
 
-    d. Click **Create**.
+    d. Clique em **Criar**.
 
 
 
-#### <a name="create-the-gateway-subnet"></a>Create the gateway subnet
-1. Open the Virtual Network resource you created (Tenant1VNet1) from the dashboard.
-2. On the Settings section, select **Subnets**.
-3. Click **Gateway Subnet** to add a gateway subnet to the virtual network.
+#### <a name="create-the-gateway-subnet"></a>Criar a sub-rede de gateway
+1. Abra o recurso de rede Virtual que criou (Tenant1VNet1) a partir do dashboard.
+2. Na secção de definições, selecione **sub-redes**.
+3. Clique em **Sub-rede de Gateway** para adicionar uma sub-rede de gateway à rede virtual.
    
     ![](media/azure-stack-connect-expressroute/gatewaysubnet.png)
-4. The name of the subnet is set to **GatewaySubnet** by default.
-   Gateway subnets are special and must have this specific name to function properly.
-5. In the **Address range** field, verify the address is **10.1.0.0/24**.
-6. Click **OK** to create the gateway subnet.
+4. O nome da sub-rede está predefinido como **GatewaySubnet**.
+   As sub-redes de gateway são especiais e têm de ter este nome específico para funcionarem corretamente.
+5. No **intervalo de endereços** campo, certifique-se de que o endereço é **10.1.0.0/24**.
+6. Clique em **OK** para criar a sub-rede do gateway.
 
-#### <a name="create-the-virtual-network-gateway"></a>Create the virtual network gateway
-1. In the Azure Stack user portal, click **New**.
+#### <a name="create-the-virtual-network-gateway"></a>Criar o gateway de rede virtual
+1. No portal de utilizador de pilha do Azure, clique em **novo**.
    
-2. Select **Networking** from the Marketplace menu.
-3. Select **Virtual network gateway** from the list of network resources.
-4. In the **Name** field type **GW1**.
-5. Click the **Virtual network** item to choose a virtual network.
-   Select **Tenant1VNet1** from the list.
-6. Click the **Public IP address** menu item. When the **Choose public IP address** section opens click **Create new**.
-7. In the **Name** field, type **GW1-PiP** and click **OK**.
-8. The **VPN type** should have **Route-based** selected by default.
-    Keep this setting.
-9. Verify that **Subscription** and **Location** are correct. You can pin the resource to the Dashboard if you want. Click **Create**.
+2. Selecione **Rede** no menu do Marketplace.
+3. Selecione **Gateway de rede virtual** na lista de recursos de rede.
+4. No campo **Nome**, escreva **GW1**.
+5. Clique no item **Rede virtual** para escolher uma rede virtual.
+   Selecione **Tenant1VNet1** da lista.
+6. Clique no item de menu **Endereço IP público**. Quando o **escolher endereço IP público** secção abre clique **criar nova**.
+7. No campo **Nome**, escreva **GW1-PiP** e clique em **OK**.
+8. O **Tipo de VPN** deve ter a opção **Baseado na rota** selecionada por predefinição.
+    Mantenha esta definição.
+9. Certifique-se de que a **Subscrição** e a **Localização** estão corretas. Pode afixar o recurso para o Dashboard, se pretender. Clique em **Criar**.
 
-#### <a name="create-the-local-network-gateway"></a>Create the local network gateway
+#### <a name="create-the-local-network-gateway"></a>Criar o gateway de rede local
 
-The purpose of the Local network gateway resource is to indicate the remote gateway at the other end of the VPN connection. For this example, the remote side is the LAN subinterface of the ExpressRoute router. For Tenant 1 in this example, the remote address is 10.60.3.255 as shown in Diagram 2.
+O objetivo do recurso de gateway de rede Local é indicar o gateway remoto no final da ligação VPN. Neste exemplo, lado remoto é o subinterface LAN do ExpressRoute router. Para o inquilino 1 neste exemplo, o endereço remoto é 10.60.3.255 conforme mostrado no diagrama 2.
 
-1. Log in to the Azure Stack physical machine.
-2. Sign in to the user portal with your user account and click **New**.
-3. Select **Networking** from the Marketplace menu.
-4. Select **local network gateway** from the list of resources.
-5. In the **Name** field type **ER-Router-GW**.
-6. For the **IP address** field, refer to Diagram 2. The IP address of the ExpressRoute router's LAN subinterface for Tenant 1 is 10.60.3.255. For your own environment, type the IP address of your router's corresponding interface.
-7. In the **Address Space** field, type the address space of the VNets that you want to connect to in Azure. For this example, refer to Diagram 2. For Tenant 1, notice that the required subnets are **192.168.2.0/24** (this is the Hub Vnet in Azure) and **10.100.0.0/16** (this is the Spoke VNet in Azure). Type the corresponding subnets for your own environment.
+1. Inicie sessão no computador físico do Azure Stack.
+2. Inicie sessão no portal de utilizador com a sua conta de utilizador e clique em **novo**.
+3. Selecione **Rede** no menu do Marketplace.
+4. Selecione **Gateway de rede local** na lista de recursos.
+5. No **nome** campo tipo **ER-Router-GW**.
+6. Para o **endereço IP** campo, consulte a 2 de diagrama. O endereço IP do subinterface de LAN do router de ExpressRoute para o inquilino 1 é 10.60.3.255. Para o seu ambiente, escreva o endereço IP da interface do router de correspondente.
+7. No **espaço de endereços** campo, escreva o espaço de endereços das VNets que pretende ligar no Azure. Neste exemplo, consulte o diagrama 2. Para o inquilino 1, tenha em atenção que as sub-redes necessárias são **192.168.2.0/24** (esta é a Vnet Hub no Azure) e **10.100.0.0/16** (esta é a VNet Spoke no Azure). Escreva as sub-redes correspondentes para o seu próprio ambiente.
    > [!IMPORTANT]
-   > This example assumes you are using static routes for the Site-to-Site VPN connection between the Azure Stack gateway and the ExpressRoute router.
+   > Este exemplo assume que está a utilizar rotas estáticas na ligação de VPN de Site a Site entre o gateway de pilha do Azure e o router do ExpressRoute.
 
-8. Verify that your **Subscription**, **Resource Group**, and **Location** are all correct and click **Create**.
+8. Certifique-se de que o **subscrição**, **grupo de recursos**, e **localização** estão corretos e clique em **criar**.
 
-#### <a name="create-the-connection"></a>Create the connection
-1. In the Azure Stack user portal, click **New**.
-2. Select **Networking** from the Marketplace menu.
-3. Select **Connection** from the list of resources.
-4. In the **Basics** settings section, choose **Site-to-site (IPSec)** as the **Connection type**.
-5. Select the **Subscription**, **Resource Group**, and **Location** and click **OK**.
-6. In the **Settings** section,  click **Virtual network gateway** click **GW1**.
-7. Click **Local network gateway**, and click **ER Router GW**.
-8. In the **Connection Name** field, type **ConnectToAzure**.
-9. In the **Shared key (PSK)** field, type **abc123** and click **OK**.
-10. On the **Summary** section, click **OK**.
+#### <a name="create-the-connection"></a>Criar a ligação
+1. No portal de utilizador de pilha do Azure, clique em **novo**.
+2. Selecione **Rede** no menu do Marketplace.
+3. Selecione **Ligação** na lista de recursos.
+4. No **Noções básicas** secção de definições, escolha **Site a site (IPSec)** como o **tipo de ligação**.
+5. Selecione o **subscrição**, **grupo de recursos**, e **localização** e clique em **OK**.
+6. No **definições** secção, clique em **gateway de rede Virtual** clique **GW1**.
+7. Clique em **gateway de rede Local**e clique em **ER Router GW**.
+8. No **nome da ligação** , digite **ConnectToAzure**.
+9. No **chave partilhada (PSK)** , digite **abc123** e clique em **OK**.
+10. No **resumo** secção, clique em **OK**.
 
-    After the connection is created, you can see the public IP address used by the virtual network gateway. To find the address in the Azure Stack portal, browse to your Virtual network gateway. In **Overview**, find the **Public IP address**. Note this address; you will use it as the *Internal IP address* in the next section (if applicable for your deployment).
+    Depois de criar a ligação, pode ver o endereço IP público utilizado pelo gateway de rede virtual. Para localizar o endereço no portal do Azure pilha, navegue para o gateway de rede Virtual. No **descrição geral**, localizar o **endereço IP público**. Tenha em atenção este endereço; irá utilizar como o *endereços IP internos* na secção seguinte (se aplicável para a sua implementação).
 
     ![](media/azure-stack-connect-expressroute/GWPublicIP.png)
 
-#### <a name="create-a-virtual-machine"></a>Create a virtual machine
-To validate data traveling through the VPN Connection, you need virtual machines to send and receive data in the Azure Stack Vnet. Create a virtual machine now and put it in your VM subnet in your virtual network.
+#### <a name="create-a-virtual-machine"></a>Criar uma máquina virtual
+Para validar os dados estiverem em deslocação através da ligação VPN, terá de máquinas virtuais para enviar e receber dados na Vnet de pilha do Azure. Criar uma máquina virtual agora e coloque-o a sub-rede VM na sua rede virtual.
 
-1. In the Azure Stack user portal, click **New**.
-2. Select **Virtual Machines** from the Marketplace menu.
-3. In the list of virtual machine images, select the **Windows Server 2016 Datacenter Eval** image and click **Create**.
-4. On the **Basics** section, in the **Name** field type **VM01**.
-5. Type a valid user name and password. You’ll use this account to log in to the VM after it has been created.
-6. Provide a **Subscription**, **Resource Group**, and **Location** and then click **OK**.
-7. On the **Size** section, click a virtual machine size for this instance and then click **Select**.
-8. On the **Settings** section, you can accept the defaults. But ensure the virtual network selected is **Tenant1VNet1** and the subnet is set to **10.1.1.0/24**. Click **OK**.
-9. Review the settings on the **Summary** section and click **OK**.
+1. No portal de utilizador de pilha do Azure, clique em **novo**.
+2. Selecione **Máquinas Virtuais** no menu do Marketplace.
+3. Na lista de imagens da máquina virtual, selecione o **Windows Server 2016 Datacenter Eval** imagem e clique em **criar**.
+4. No **Noções básicas** na secção de **nome** campo tipo **VM01**.
+5. Escreva um nome de utilizador e uma palavra-passe válidos. Irá utilizar esta conta para iniciar sessão na VM depois de esta ser criada.
+6. Forneça um **subscrição**, **grupo de recursos**, e **localização** e, em seguida, clique em **OK**.
+7. No **tamanho** secção, clique num tamanho de máquina virtual para esta instância e, em seguida, clique em **selecione**.
+8. No **definições** secção, pode aceitar as predefinições. Mas certifique-se de que a rede virtual selecionada está **Tenant1VNet1** e a sub-rede está definida como **10.1.1.0/24**. Clique em **OK**.
+9. Reveja as definições no **resumo** secção e clique em **OK**.
 
-For each tenant VNet you want to connect, repeat the previous steps from **Create the virtual network and VM subnet** through **Create a virtual machine** sections.
+Para cada inquilino VNet que pretende ligar, repita os passos anteriores do **criar a rede virtual e sub-rede VM** através de **criar uma máquina virtual** secções.
 
-### <a name="configure-the-nat-virtual-machine-for-gateway-traversal"></a>Configure the NAT virtual machine for gateway traversal
+### <a name="configure-the-nat-virtual-machine-for-gateway-traversal"></a>Configure a máquina virtual NAT para transversal de gateway
 > [!IMPORTANT]
-> This section is for Azure Stack Development Kit deployments only. The NAT is not needed for multi-node deployments.
+> Esta secção destina-se apenas a implementações do Kit de desenvolvimento de pilha do Azure. O NAT não é necessário para implementações de vários nós.
 
-The Azure Stack Development Kit is self-contained and isolated from the network on which the physical host is deployed. So, the “External” VIP network that the gateways are connected to is not external, but instead is hidden behind a router doing Network Address Translation (NAT).
+O Kit de desenvolvimento de pilha do Azure é autónomo e isolados da rede no qual está implementado anfitrião físico. Por isso, a rede de VIP "External" que os gateways estão ligados ao não seja externa, mas em vez disso, fique oculta atrás de um router de tradução de endereços de rede (NAT) a fazer.
  
-The router is a Windows Server virtual machine (**AzS-BGPNAT01**) running the Routing and Remote Access Services (RRAS) role in the Azure Stack Development Kit infrastructure. You must configure NAT on the AzS-BGPNAT01 virtual machine to allow the Site-to-Site VPN Connection to connect on both ends.
+O router é uma máquina virtual do Windows (**AzS BGPNAT01**) com a função de encaminhamento e dos serviços de acesso remoto (RRAS) na infraestrutura do Kit de desenvolvimento de pilha do Azure. Tem de configurar o NAT na máquina virtual AzS BGPNAT01 para permitir a ligação de VPN de Site a Site ligar em ambas as extremidades.
 
-#### <a name="configure-the-nat"></a>Configure the NAT
+#### <a name="configure-the-nat"></a>Configure o NAT
 
-1. Log in to the Azure Stack physical machine with your administrator account.
-2. Copy and edit the following PowerShell script and run in an elevated Windows PowerShell ISE. Replace your administrator password. The address returned is your *External BGPNAT address*.
+1. Início de sessão para a máquina física de pilha do Azure com a sua conta de administrador.
+2. Copie e edite o seguinte script do PowerShell e execute numa elevada ISE do Windows PowerShell. Substitua a palavra-passe de administrador. O endereço devolvido é sua *endereço externo BGPNAT*.
 
    ```
    cd \AzureStack-Tools-master\connect
@@ -201,9 +200,9 @@ The router is a Windows Server virtual machine (**AzS-BGPNAT01**) running the Ro
     -HostComputer "azs-bgpnat01" `
     -Password $Password
    ```
-4. To configure the NAT, copy and edit the following PowerShell script and run in an elevated Windows PowerShell ISE. Edit the script to replace the *External BGPNAT address* and *Internal IP address* (which you noted previously in the **Create the Connection** section).
+4. Para configurar o NAT, copiar e editar o seguinte script do PowerShell e execute numa elevada ISE do Windows PowerShell. Edite o script para substituir o *endereço externo BGPNAT* e *endereços IP internos* (que apontou anteriormente no **criar a ligação** secção).
 
-   In the example diagrams, the *External BGPNAT address* is 10.10.0.62 and the *Internal IP address* is 192.168.102.1.
+   Nos diagramas de exemplo, o *endereço externo BGPNAT* é 10.10.0.62 e *endereços IP internos* é 192.168.102.1.
 
    ```
    # Designate the external NAT address for the ports that use the IKE authentication.
@@ -245,71 +244,71 @@ The router is a Windows Server virtual machine (**AzS-BGPNAT01**) running the Ro
       -InternalPort 4500}
    ```
 
-## <a name="configure-azure"></a>Configure Azure
-Now that you have completed the Azure Stack configuration, you can deploy some Azure resources. The following diagram shows a sample tenant virtual network in Azure. You can use any name and addressing scheme for your VNet in Azure. However, the address range of the VNets in Azure and Azure Stack must be unique and not overlap.
+## <a name="configure-azure"></a>Configurar o Azure
+Agora que concluiu a configuração de pilha do Azure, pode implementar alguns recursos do Azure. O diagrama seguinte mostra um inquilino de exemplo rede virtual no Azure. Pode utilizar qualquer nome e o esquema de endereçamento para a sua VNet no Azure. No entanto, o intervalo de endereços das VNets no Azure e Azure pilha tem de ser exclusivos e não se podem sobrepor.
 
-![Azure Vnets](media/azure-stack-connect-expressroute/AzureArchitecture.png)
+![Vnets do Azure](media/azure-stack-connect-expressroute/AzureArchitecture.png)
 
-**Diagram 3**
+**Diagrama 3**
 
-The resources you deploy in Azure are similar to the resources you deployed in Azure Stack. Similarly, you deploy:
-* Virtual networks and subnets
-* A gateway subnet
-* A virtual network gateway
-* A connection
-* An ExpressRoute circuit
+Os recursos a que implementar no Azure são semelhantes aos recursos implementados na pilha do Azure. Da mesma forma, implementar:
+* Redes virtuais e sub-redes
+* Uma sub-rede de gateway
+* Um gateway de rede virtual
+* Uma ligação
+* Um circuito do ExpressRoute
 
-The example Azure network infrastructure is configured in the following way:
-* A standard hub (192.168.2.0/24) and spoke (10.100.0.0./16) VNet model is used.
-* The workloads are deployed in the spoke Vnet and the ExpressRoute circuit is connected to the hub VNet.
-* The two VNets are linked using the VNet peering feature.
+A infraestrutura de rede do Azure de exemplo está configurada da seguinte forma:
+* Um hub standard (192.168.2.0/24) and spoke (10.100.0.0./16) VNet modelo é utilizado.
+* As cargas de trabalho são implementadas no spoke Vnet e o circuito ExpressRoute está ligado à hub VNet.
+* As duas VNets estão ligadas utilizando a funcionalidade da VNet peering.
 
-### <a name="configure-vnets"></a>Configure Vnets
-1. Sign in to the Azure portal with your Azure credentials.
-2. Create the hub VNet using the 192.168.2.0/24 address space. Create a subnet using the 192.168.2.0/25 address range, and add a gateway subnet using the 192.168.2.128/27 address range.
-3. Create the spoke VNet and subnet using the 10.100.0.0/16 address range.
+### <a name="configure-vnets"></a>Configurar as Vnets
+1. Inicie sessão no portal do Azure com as suas credenciais do Azure.
+2. Crie a VNet com o espaço de endereços 192.168.2.0/24 do hub. Criar uma sub-rede com o intervalo de endereços 192.168.2.0/25 e adicionar uma sub-rede de gateway com o intervalo de endereços 192.168.2.128/27.
+3. Criar o spoke intervalo de endereços VNet e sub-rede utilizando o 10.100.0.0/16.
 
 
-For more information about creating virtual networks in Azure, see [Create a virtual network with multiple subnets](../virtual-network/virtual-networks-create-vnet-arm-pportal.md).
+Para obter mais informações sobre como criar redes virtuais no Azure, consulte [criar uma rede virtual com várias sub-redes](../virtual-network/virtual-networks-create-vnet-arm-pportal.md).
 
-### <a name="configure-an-expressroute-circuit"></a>Configure an ExpressRoute circuit
+### <a name="configure-an-expressroute-circuit"></a>Configurar um circuito do ExpressRoute
 
-1. Review the ExpressRoute prerequisites in [ExpressRoute prerequisites & checklist](../expressroute/expressroute-prerequisites.md).
-2. Follow the steps in [Create and modify an ExpressRoute circuit](../expressroute/expressroute-howto-circuit-portal-resource-manager.md) to create an ExpressRoute circuit using your Azure subscription.
-3. Share the service key from the previous step with your hoster/provider to provision your ExpressRoute circuit at their end.
-4. Follow the steps in [Create and modify peering for an ExpressRoute circuit](../expressroute/expressroute-howto-routing-portal-resource-manager.md) to configure private peering on the ExpressRoute circuit.
+1. Reveja os pré-requisitos do ExpressRoute na [ExpressRoute pré-requisitos e lista de verificação](../expressroute/expressroute-prerequisites.md).
+2. Siga os passos no [criar e modificar um circuito ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md) para criar um circuito ExpressRoute com a sua subscrição do Azure.
+3. Partilhe a chave do serviço do passo anterior com o seu fornecedor de alojamento fornecedor para aprovisionar o seu circuito de ExpressRoute no respetivo fim.
+4. Siga os passos no [criar e modificar o peering de um circuito ExpressRoute](../expressroute/expressroute-howto-routing-portal-resource-manager.md) para configurar o peering privado no circuito do ExpressRoute.
 
-### <a name="create-the-virtual-network-gateway"></a>Create the virtual network gateway
+### <a name="create-the-virtual-network-gateway"></a>Criar o gateway de rede virtual
 
-* Follow the steps in [Configure a virtual network gateway for ExpressRoute using PowerShell](../expressroute/expressroute-howto-add-gateway-resource-manager.md) to create a virtual network gateway for ExpressRoute in the hub VNet.
+* Siga os passos no [configurar um gateway de rede virtual para o ExpressRoute com o PowerShell](../expressroute/expressroute-howto-add-gateway-resource-manager.md) para criar um gateway de rede virtual para o ExpressRoute na hub VNet.
 
-### <a name="create-the-connection"></a>Create the connection
+### <a name="create-the-connection"></a>Criar a ligação
 
-* To link the ExpressRoute circuit to the hub VNet, follow the steps in [Connect a virtual network to an ExpressRoute circuit](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md).
+* Para ligar o circuito de ExpressRoute para o hub de VNet, siga os passos no [ligar uma rede virtual para um circuito ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md).
 
-### <a name="peer-the-vnets"></a>Peer the Vnets
+### <a name="peer-the-vnets"></a>Elemento as Vnets
 
-* Peer the Hub and Spoke VNets using the steps in [Create a virtual network peering using the Azure portal](../virtual-network/virtual-networks-create-vnetpeering-arm-portal.md). When configuring VNet peering, ensure you select the following options:
-   * From hub to spoke: **Allow gateway transit**
-   * From spoke to hub: **Use remote gateway**
+* Ponto do Hub e as VNets Spoke utilizando os passos no [criar um peering de rede virtual com o portal do Azure](../virtual-network/virtual-networks-create-vnetpeering-arm-portal.md). Quando configurar o VNet peering, certifique-se de que seleciona as seguintes opções:
+   * Do hub para spoke: **permitir trânsito do gateway**
+   * De spoke ao hub: **gateway remoto de utilização**
 
-### <a name="create-a-virtual-machine"></a>Create a virtual machine
+### <a name="create-a-virtual-machine"></a>Criar uma máquina virtual
 
-* Deploy your workload virtual machines into the spoke VNet.
+* Implemente as máquinas de virtuais de carga de trabalho para o spoke VNet.
 
-Repeat these steps for any additional tenant VNets you want to connect in Azure through their respective ExpressRoute circuits.
+Repita estes passos para nenhum inquilino adicional VNets que pretende ligar no Azure através do respetivos circuitos do ExpressRoute correspondentes.
 
-## <a name="configure-the-router"></a>Configure the router
+## <a name="configure-the-router"></a>Configurar o router
 
-You can use the following end-to-end infrastructure diagram to guide the configuration of your ExpressRoute Router. This diagram shows two tenants (Tenant 1 and Tenant 2) with their respective Express Route circuits. Each is linked to their own VRF (Virtual Routing and Forwarding) in the LAN and WAN side of the ExpressRoute router to ensure end-to-end isolation between the two tenants. Note the IP addresses used in the router interfaces as you follow the sample configuration.
+Pode utilizar o seguinte diagrama de infraestrutura de ponto a ponto para a configuração do seu ExpressRoute Router. Este diagrama apresenta dois inquilinos (inquilino 1 e 2 do inquilino), com os seus respetivos circuitos do Expressroute. Cada está ligada à sua própria VRF (de encaminhamento Virtual e de reencaminhamento) no lado de LAN e WAN do router ExpressRoute assegure o isolamento de ponto a ponto entre os dois inquilinos. Tenha em atenção os endereços IP utilizados nas interfaces de router, siga a configuração de exemplo.
 
-![End to end diagram](media/azure-stack-connect-expressroute/EndToEnd.png)
+![Fim para o final do diagrama](media/azure-stack-connect-expressroute/EndToEnd.png)
 
-**Diagram 4**
+**Diagrama de 4**
 
-You can use any router that supports IKEv2 VPN and BGP to terminate the Site-to-Site VPN connection from Azure Stack. The same router is used to connect to Azure using an ExpressRoute circuit. 
+Pode utilizar qualquer router que suporta IKEv2 VPN e BGP para terminar a ligação de VPN de Site para Site de pilha do Azure. O router do mesmo é utilizado para ligar ao Azure através de um circuito ExpressRoute. 
 
-Here is a sample configuration from a Cisco ASR 1000 that supports the network infrastructure shown in Diagram 4:
+Eis uma configuração de exemplo de um 1000 de ASR Cisco que suporta a infraestrutura de rede mostrada no diagrama 4:
 
 ```
 ip vrf Tenant 1
@@ -528,14 +527,14 @@ route-map VNET-ONLY permit 10
 !
 ```
 
-## <a name="test-the-connection"></a>Test the connection
+## <a name="test-the-connection"></a>Testar a ligação
 
-Test your connection after establishing the Site-to-Site connection and the ExpressRoute circuit. This task is simple.  Log on to one of the virtual machines you created in your Azure VNet and ping the virtual machine you created in the Azure Stack environment, or vice versa. 
+Teste a ligação depois de estabelecer a ligação de Site a Site e o circuito ExpressRoute. Esta tarefa é simple.  Inicie sessão para uma das máquinas virtuais que criou no seu Azure VNet e enviar um ping a máquina virtual criada no ambiente de pilha do Azure, ou vice versa. 
 
-To ensure you are sending the traffic through the Site-to-Site and ExpressRoute connections, you must ping the dedicated IP (DIP) address of the virtual machine at both ends and not the VIP address of the virtual machine. So, you must find and note the address on the other end of the connection.
+Para garantir que está a enviar o tráfego através do Site a Site e as ligações do ExpressRoute, deve executar um ping do endereço IP (DIP) dedicado da máquina virtual em ambos os ends e não o endereço VIP da máquina virtual. Por isso, tem de localizar e tenha em atenção o endereço na outra extremidade da ligação.
 
-### <a name="allow-icmp-in-through-the-firewall"></a>Allow ICMP in through the firewall
-By default, Windows Server 2016 does not allow ICMP packets in through the firewall. So, for every virtual machine you use in the test, run the following cmdlet in an elevated PowerShell window:
+### <a name="allow-icmp-in-through-the-firewall"></a>Permitir o protocolo ICMP em através da firewall
+Por predefinição, o Windows Server 2016 não permite a pacotes ICMP em através da firewall. Por isso, para cada máquina virtual que utilizar no teste, execute o seguinte cmdlet numa janela elevada do PowerShell:
 
 
    ```
@@ -544,26 +543,26 @@ By default, Windows Server 2016 does not allow ICMP packets in through the firew
     –Protocol ICMPv4
    ```
 
-### <a name="ping-the-azure-stack-virtual-machine"></a>Ping the Azure Stack virtual machine
+### <a name="ping-the-azure-stack-virtual-machine"></a>Enviar um ping a máquina virtual de pilha do Azure
 
-1. Sign in to the Azure Stack user portal using a tenant account.
-2. Click **Virtual Machines** in the left navigation bar.
-3. Find the virtual machine that you previously created and click it.
-4. On the section for the virtual machine, click **Connect**.
-5. Open an elevated PowerShell window, and type **ipconfig /all**.
-6. Find the IPv4 Address in the output and note it. Ping this address from the virtual machine in the Azure VNet. In the example environment, the address is from the 10.1.1.x/24 subnet. In your environment, the address might be different. However, it should be within the subnet you created for the Tenant VNet subnet.
+1. Inicie sessão no portal de utilizador de pilha do Azure com uma conta de inquilino.
+2. Clique em **Máquinas Virtuais** na barra de navegação esquerda.
+3. Localizar a máquina virtual que criou anteriormente e clique no mesmo.
+4. Na secção para a máquina virtual, clique em **Connect**.
+5. Abra um PowerShell elevado janela e escreva **ipconfig/all**.
+6. Localizar o endereço IPv4 no resultado e anote-lo. Ping este endereço da máquina virtual na VNet do Azure. No ambiente de exemplo, o endereço é da sub-rede 10.1.1.x/24. No seu ambiente, o endereço poderão ser diferente. No entanto, deve estar na sub-rede que criou para a sub-rede de inquilino VNet.
 
 
-### <a name="view-data-transfer-statistics"></a>View data transfer statistics
+### <a name="view-data-transfer-statistics"></a>Estatísticas de transferência de dados de vista
 
-If you want to know how much traffic is passing through your connection, you can find this information on the Connection section in the Azure Stack user portal. This information is also another good way to verify that the ping you just sent actually went through the VPN and ExpressRoute connections.
+Se pretender saber quanto tráfego é a transmissão através da ligação, pode encontrar estas informações na secção de ligação no portal de utilizador de pilha do Azure. Estas informações são também outra boa forma de verificar que o ping que acabámos de enviar, na verdade, ocorreu através de ligações VPN e ExpressRoute.
 
-1. Sign in to the Microsoft Azure Stack user portal using your tenant account.
-2. Navigate to the resource group where your VPN Gateway was created and select the **Connections** object type.
-3. Click the **ConnectToAzure** connection in the list.
-4. On the **Connection** section, you can see statistics for **Data in** and **Data out**. You should see some non-zero values there.
+1. Inicie sessão no portal de utilizador de pilha do Microsoft Azure com a sua conta de inquilino.
+2. Navegue para o grupo de recursos onde foi criado o Gateway de VPN e selecione o **ligações** tipo de objeto.
+3. Clique em de **ConnectToAzure** ligação na lista.
+4. No **ligação** secção, pode ver as estatísticas de **dados** e **a dados extra**. Deverá ver alguns valores diferentes de zero aí.
 
-   ![Data In Data Out](media/azure-stack-connect-expressroute/DataInDataOut.png)
+   ![Dados em dados de saída](media/azure-stack-connect-expressroute/DataInDataOut.png)
 
-## <a name="next-steps"></a>Next steps
-[Deploy apps to Azure and Azure Stack](azure-stack-solution-pipeline.md)
+## <a name="next-steps"></a>Passos seguintes
+[Implementar aplicações do Azure e Azure pilha](azure-stack-solution-pipeline.md)

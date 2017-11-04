@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2017
 ms.author: arramac
-ms.openlocfilehash: a6124a8fa630424558c0812edbf12d5ad25d6bf6
-ms.sourcegitcommit: d6ad3203ecc54ab267f40649d3903584ac4db60b
-ms.translationtype: HT
+ms.openlocfilehash: 5ea254110a24ea3315d614ebca2d43bda0e1a674
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="use-the-azure-cosmos-db-emulator-for-local-development-and-testing"></a>Utilizar o emulador de BD do Cosmos do Azure para desenvolvimento local e o teste
 
@@ -86,7 +86,7 @@ O emulador de BD do Azure Cosmos tem os seguintes requisitos de hardware e softw
   * 10 GB de espaço em disco de rígido disponível
 
 ## <a name="installation"></a>Instalação
-Pode transferir e instalar o emulador de BD do Azure Cosmos do [Microsoft Download Center](https://aka.ms/cosmosdb-emulator) ou pode executar o emulador no Docker para Windows. Para obter instruções sobre como utilizar o emulador no Docker para Windows, consulte [em execução no Docker](#running-on-docer). 
+Pode transferir e instalar o emulador de BD do Azure Cosmos do [Microsoft Download Center](https://aka.ms/cosmosdb-emulator) ou pode executar o emulador no Docker para Windows. Para obter instruções sobre como utilizar o emulador no Docker para Windows, consulte [em execução no Docker](#running-on-docker). 
 
 > [!NOTE]
 > Para instalar, configurar e executar o emulador de BD do Cosmos do Azure, tem de ter privilégios administrativos no computador.

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/15/2017
 ms.author: deguhath;bradsev;gokuma
-ms.openlocfilehash: 85424a00b34b4bccf7dc38b2bae1cfe31b2507d9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 9ff633b4543fbc537ffdb721756706e8de5e8e88
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Operacionalizar modelos de incorporadas do Spark machine learning
 [!INCLUDE [machine-learning-spark-modeling](../../../includes/machine-learning-spark-modeling.md)]
@@ -118,7 +118,7 @@ O kernel do PySpark fornece algumas predefinidas "magia", que são comandos espe
 * **% % -o SQL Server<variable name>** 
 * Executa uma consulta do Hive contra o sqlContext. Se o parâmetro -o é transmitido, o resultado da consulta é continuado no % % contexto de Python local como uma dataframe Pandas.
 
-Para obter mais informações sobre os kernels para blocos de notas do Jupyter e predefinidos "magics" que fornecem, consulte [clusters Kernels disponíveis para blocos de notas do Jupyter com o HDInsight Spark Linux no HDInsight](../../hdinsight/hdinsight-apache-spark-jupyter-notebook-kernels.md).
+Para obter mais informações sobre os kernels para blocos de notas do Jupyter e predefinidos "magics" que fornecem, consulte [clusters Kernels disponíveis para blocos de notas do Jupyter com o HDInsight Spark Linux no HDInsight](../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md).
 
 ## <a name="ingest-data-and-create-a-cleaned-data-frame"></a>Ingestão de dados e criar um intervalo de dados apagado
 Esta secção contém o código para uma série de tarefas necessárias para incorporar os dados para classificar. Ler um exemplo de 0.1% associados do taxi viagem e fare ficheiro (armazenado como um ficheiro de .tsv), formato os dados e, em seguida, cria um período de limpar dados.
@@ -527,7 +527,7 @@ BoostedTreeClassificationFileLoc: GradientBoostingTreeClassification_2016-05-031
 BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.860740.txt
 
 ## <a name="consume-spark-models-through-a-web-interface"></a>Consumir Spark modelos através de uma interface web
-O Spark fornece um mecanismo remotamente submeter tarefas de lote ou consultas interativas através de uma interface REST com um componente denominado Livy. O Livy está ativado por predefinição no seu cluster do HDInsight Spark. Para obter mais informações sobre o Livy, consulte: [tarefas submeter Spark remotamente com o Livy](../../hdinsight/hdinsight-apache-spark-livy-rest-interface.md). 
+O Spark fornece um mecanismo remotamente submeter tarefas de lote ou consultas interativas através de uma interface REST com um componente denominado Livy. O Livy está ativado por predefinição no seu cluster do HDInsight Spark. Para obter mais informações sobre o Livy, consulte: [tarefas submeter Spark remotamente com o Livy](../../hdinsight/spark/apache-spark-livy-rest-interface.md). 
 
 Pode utilizar o Livy remotamente submeter uma tarefa de lote pontuações um ficheiro que é armazenado num blob do Azure e, em seguida, escreve os resultados para o blob de outro. Para tal, carregar o script de Python do  
 [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) para o blob do cluster do Spark. Pode utilizar uma ferramenta como o **Explorador de armazenamento do Microsoft Azure** ou **AzCopy** para copiar o script para o blob de cluster. No nosso caso, iremos carregado o script para ***wasb:///example/python/ConsumeGBNYCReg.py***.   
