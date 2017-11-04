@@ -14,13 +14,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 07/25/2017
+ms.date: 11/03/2017
 ms.author: genli
-ms.openlocfilehash: f7810d519da500a33c2e1cd15b8de54835f304d4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 74beeffe04fa4b6dba4db8687bdebe79e0d750f4
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-remote-desktop-connections-to-an-azure-virtual-machine"></a>Resolver problemas de ligações de ambiente de trabalho remoto para uma máquina virtual do Azure
 A ligação de protocolo RDP (Remote Desktop Protocol) ao seu baseados em Windows máquina virtual do Azure (VM) pode falhar por diversos motivos, deixando não é possível aceder à VM. O problema pode ser com o serviço de ambiente de trabalho remoto em VM, a ligação de rede ou o cliente de ambiente de trabalho remoto no computador anfitrião. Este artigo orienta-o através de alguns dos métodos mais comuns para resolver problemas de ligação de RDP. 

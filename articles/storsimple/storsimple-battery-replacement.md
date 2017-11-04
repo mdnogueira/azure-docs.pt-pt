@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 08/17/2016
+ms.date: 11/02/2017
 ms.author: alkohli
-ms.openlocfilehash: f8b89b3f6851ec9ee0570f551b5407419fdba2d6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d1646d800692d93d7dfc2e9a9c48c3671c280e02
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="replace-the-backup-battery-module-on-your-storsimple-device"></a>Substitua o módulo de bateria cópia de segurança no dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [substituir o módulo de bateria cópia de segurança no dispositivo StorSimple](storsimple-8000-battery-replacement.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 A inclusão principal energia e arrefecimento módulo (PCM) no dispositivo StorSimple do Microsoft Azure tem um pacote de bateria adicionais. Este pacote fornece power para que o dispositivo StorSimple pode guardar os dados se houver perda de energia de AC para o bastidor primário. Este pacote de bateria é referido como o *módulo de cópia de segurança de bateria*. O módulo de cópia de segurança de bateria existe apenas para o bastidor primário no dispositivo StorSimple (o bastidor EBOD não contém um módulo de bateria cópia de segurança). 
 

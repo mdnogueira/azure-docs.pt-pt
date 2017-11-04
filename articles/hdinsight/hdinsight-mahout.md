@@ -14,13 +14,13 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/14/2017
+ms.date: 11/03/2017
 ms.author: larryfr
-ms.openlocfilehash: 569aeef58e601174aa9f28dc3ba39ebae17c17f8
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 8f40beb4e3eb8020a65eac6e43ffefe4fedfcee2
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="generate-movie-recommendations-by-using-apache-mahout-with-hadoop-in-hdinsight-powershell"></a>Gerar recomendações de filmes ao utilizar o Apache Mahout com o Hadoop no HDInsight (PowerShell)
 
@@ -56,11 +56,11 @@ O exemplo seguinte é uma passagem simplificada como funciona o processo de reco
 
 ### <a name="understanding-the-data"></a>Compreender os dados
 
-[GroupLens Research] [ movielens] fornece dados de classificação de filmes num formato que é compatível com o Mahout. Estes dados ficarem disponíveis no armazenamento de predefinido para o cluster em `/HdiSamples//HdiSamples/MahoutMovieData`.
+[GroupLens Research] [ movielens] fornece dados de classificação de filmes num formato que é compatível com o Mahout. Estes dados ficarem disponíveis no armazenamento de predefinido para o cluster em `/HdiSamples/HdiSamples/MahoutMovieData`.
 
 Existem dois ficheiros, `moviedb.txt` (informações sobre os filmes) e `user-ratings.txt`. O `user-ratings.txt` ficheiro é utilizado durante a análise. O `moviedb.txt` ficheiro é utilizado para fornecer intuitivo texto quando se apresenta os resultados da análise.
 
-Os dados contidos no utilizador ratings.txt tem uma estrutura de `userID`, `movieID`, `userRating`, e `timestamp`, que informa-nos como altamente cada utilizador classificados um filme. Eis um exemplo dos dados:
+Os dados contidos no utilizador ratings.txt tem uma estrutura de `userID`, `movieID`, `userRating`, e `timestamp`, que indica como altamente cada utilizador classificados um filme. Eis um exemplo dos dados:
 
     196    242    3    881250949
     186    302    3    891717742

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/25/2017
+ms.date: 11/03/2017
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: be3631db20ae744965f9f6677c536ade45e34c49
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 16ce69855aa7505f52cd9d01dcd0843784fcb706
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="controls-in-azure-active-directory-conditional-access"></a>Controlos de acesso condicional do Azure Active Directory 
 
@@ -101,7 +101,7 @@ Pode criar controlos personalizados no acesso condicional que redireciona os uti
 
 ## <a name="custom-controls"></a>Controlos personalizados
 
-Controlos personalizados no acesso condicional redirecionar os utilizadores a um serviço compatível para satisfazer a requisitos fora do Azure Active Directory. Para satisfazer este controlo, browser do utilizador é redirecionado para o serviço externo, efetua qualquer autenticação necessária ou de atividades de validação e, em seguida, é redirecionado para o Azure Active Directory. Azure Active Directory verifica a resposta e, se o utilizador foi autenticado ou validado com sucesso, o utilizador continua no fluxo de acesso condicional.
+Controlos personalizados são uma funcionalidade da edição do Azure Active Directory Premium P2. Ao utilizar controlos personalizados, os utilizadores são redirecionados para um serviço compatível para satisfazer a requisitos fora do Azure Active Directory. Para satisfazer este controlo, browser do utilizador é redirecionado para o serviço externo, efetua qualquer autenticação necessária ou de atividades de validação e, em seguida, é redirecionado para o Azure Active Directory. Azure Active Directory verifica a resposta e, se o utilizador foi autenticado ou validado com sucesso, o utilizador continua no fluxo de acesso condicional.
 
 Estes controlos permitem a utilização de determinados serviços externos ou personalizadas como controlos de acesso condicional e geralmente expandem as capacidades de acesso condicional.
 

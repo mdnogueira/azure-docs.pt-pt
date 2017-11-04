@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/03/2017
+ms.date: 11/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 77f06b6ef146bdea8dc2f6cb920979e827626e35
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: f870df32bed8213f6252c70b2f687f436dbd71b8
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="configure-multipath-io-for-your-storsimple-device"></a>Configurar o Multipath i / o para o dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [configurar Multipath i / o para o dispositivo StorSimple](storsimple-8000-configure-mpio-windows-server.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 Microsoft incorporada suporte para a funcionalidade Multipath i / o (MPIO) no Windows Server para ajuda compilação altamente disponíveis, com tolerância a falhas SAN configurações. MPIO utiliza os componentes de caminho físico redundantes, placas, cabos e comutadores — para criar caminhos lógicos entre o servidor e o dispositivo de armazenamento. Se existir uma falha de componente, fazendo com que um caminho lógico falhe, a lógica de multipathing utiliza um caminho alternativo de e/s para que as aplicações ainda podem aceder aos respetivos dados. Além disso, dependendo da configuração, MPIO pode também melhorar o desempenho ao novamente balanceamento de carga em todos os estes caminhos. Para obter mais informações, consulte [descrição geral do MPIO](https://technet.microsoft.com/library/cc725907.aspx "MPIO descrição geral e funcionalidades").  
 
 Para elevada disponibilidade da solução StorSimple, MPIO deve ser configurado no dispositivo StorSimple. Quando é instalado MPIO nos servidores de anfitrião com o Windows Server 2012 R2, os servidores, em seguida, podem tolerar uma ligação, a rede ou a falha de interface. 

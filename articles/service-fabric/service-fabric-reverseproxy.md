@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: required
-ms.date: 08/08/2017
+ms.date: 11/03/2017
 ms.author: bharatn
-ms.openlocfilehash: 3168a8129e2e73d7ab1de547679aabd10d8f7112
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7f29860519d4dce76f0b7f866852484b93ce7b02
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Proxy inverso no Azure Service Fabric
 Proxy inverso incorporado no Service Fabric do Azure ajuda-o em execução num cluster de Service Fabric micro-serviços detetar e comunicar com outros serviços que tenham pontos finais de http.
@@ -114,9 +114,7 @@ O gateway, em seguida, irá reencaminhar estes pedidos para o URL do serviço:
 * `http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/api/users/6`
 
 ## <a name="special-handling-for-port-sharing-services"></a>Tratamento especial para a partilha de porta de serviços
-Gateway de aplicação do Azure tenta resolver novamente um endereço de serviço e repita o pedido quando não é possível aceder um serviço. Esta é uma vantagem principal de Gateway de aplicação porque o código de cliente não precisa de implementar a suas próprias resolução de serviço e resolver o ciclo.
-
-Geralmente, quando não é possível aceder um serviço, a instância de serviço ou a réplica foi movido para um nó diferente como parte do respetivo ciclo de vida normal. Quando isto acontecer, o Gateway de aplicação pode receber um erro de ligação de rede que indica que um ponto final já não está aberto no endereço originalmente resolvido.
+O proxy inverso do Service Fabric tenta resolver novamente um endereço de serviço e repita o pedido quando não é possível aceder um serviço. Geralmente, quando não é possível aceder um serviço, a instância de serviço ou a réplica foi movido para um nó diferente como parte do respetivo ciclo de vida normal. Quando isto acontecer, o proxy reverso poderá receber um erro de ligação de rede que indica que um ponto final já não está aberto no endereço originalmente resolvido.
 
 No entanto, as réplicas ou instâncias de serviço, pode partilhar um processo de anfitrião e também podem partilhar uma porta quando alojada por um servidor web com base em http.sys, incluindo:
 
@@ -124,21 +122,21 @@ No entanto, as réplicas ou instâncias de serviço, pode partilhar um processo 
 * [WebListener de núcleo de ASP.NET](https://docs.asp.net/latest/fundamentals/servers.html#weblistener)
 * [Katana](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
 
-Nesta situação, é provável que o servidor web está disponível no processo de anfitrião e responder a pedidos, mas a instância de serviço resolvido ou a réplica já não está disponível no anfitrião. Neste caso, o gateway irá receber uma resposta de HTTP 404 do servidor web. Assim, um HTTP 404 tem dois significados distintos:
+Nesta situação, é provável que o servidor web está disponível no processo de anfitrião e responder a pedidos, mas a instância de serviço resolvido ou a réplica já não está disponível no anfitrião. Neste caso, o gateway irá receber uma resposta de HTTP 404 do servidor web. Assim, uma resposta de HTTP 404 pode ter dois significados distintos:
 
 - Caso #1: O endereço de serviço está correto, mas o recurso que o utilizador solicitou não existe.
 - Caso #2: O endereço do serviço está incorreto e o recurso que o utilizador solicitou pode existir num nó diferente.
 
-O primeiro caso é um HTTP 404 normal, que é considerado um erro de utilizador. No entanto, no segundo caso, o utilizador solicitou um recurso que existe. Gateway de aplicação não foi possível localizá-la porque moveu o próprio serviço. Gateway de aplicação tem de resolver o endereço novamente e repita o pedido.
+O primeiro caso é um HTTP 404 normal, que é considerado um erro de utilizador. No entanto, no segundo caso, o utilizador solicitou um recurso que existe. O proxy reverso não foi possível localizá-la porque moveu o próprio serviço. O proxy inverso tem de resolver o endereço novamente e repita o pedido.
 
-Gateway de aplicação, por isso, precisa de uma forma para distinguir entre estas duas casos. Para se certificar de que distinção, é necessária uma sugestão do servidor.
+O proxy inverso, por isso, precisa de uma forma para distinguir entre estas duas casos. Para se certificar de que distinção, é necessária uma sugestão do servidor.
 
-* Por predefinição, o Gateway de aplicação é caso #2 e tenta resolver e emitir o pedido novamente.
-* Para indicar caso #1 para o Gateway de aplicação, o serviço deverá devolver o cabeçalho de resposta HTTP seguinte:
+* Por predefinição, o proxy reverso assume caso #2 e tenta resolver e emitir o pedido novamente.
+* Para indicar caso #1 para o proxy inverso, o serviço deverá devolver o cabeçalho de resposta HTTP seguinte:
 
   `X-ServiceFabric : ResourceNotFound`
 
-Este cabeçalho de resposta HTTP indica uma situação de HTTP 404 normal em que o recurso pedido não existe e Gateway de aplicação não irá tentar resolver o endereço de serviço novo.
+Este cabeçalho de resposta HTTP indica uma situação de HTTP 404 normal em que o recurso pedido não existe e o proxy reverso não irá tentar resolver o endereço de serviço novo.
 
 ## <a name="setup-and-configuration"></a>Instalação e configuração
 

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: vm-multiple
 ms.workload: big-compute
 ms.date: 10/14/2016
 ms.author: danlep
-ms.openlocfilehash: 9336743b92130e37b1df2992aab806696f8276aa
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8031c9bae923e19574b7189a97cb71a148b63d77
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="add-on-demand-burst-nodes-to-an-hpc-pack-cluster-in-azure"></a>Adicionar nós pedido "rajada" para um cluster HPC Pack no Azure
 Se configurar um [Microsoft HPC Pack](https://technet.microsoft.com/library/cc514029) cluster no Azure, poderá pretender que uma forma rapidamente aumentar a capacidade de cluster ou para baixo, sem mantendo um conjunto de nó de computação pré-configurada VMs. Este artigo mostra como adicionar nós pedido "rajada" (instâncias de função de trabalho em execução num serviço em nuvem) como recursos de computação para um nó principal no Azure. 
@@ -42,10 +42,10 @@ Os passos neste artigo que ajudam adicionar nós do Azure rapidamente a um basea
 * **Quota de núcleos** -poderá ter de aumentar a quota de núcleos, especialmente se optar por implementar vários nós do Azure com tamanhos especializados. Para aumentar uma quota [abrir um pedido de suporte ao cliente online](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) , sem encargos.
 
 ## <a name="step-1-create-a-cloud-service-and-a-storage-account-for-the-azure-nodes"></a>Passo 1: Criar um serviço em nuvem e de uma conta de armazenamento para os nós do Azure
-Utilize o portal clássico do Azure ou ferramentas equivalentes para configurar os seguintes recursos que são necessários para implementar os nós do Azure:
+Utilize o portal do Azure ou ferramentas equivalentes para configurar os seguintes recursos que são necessários para implementar os nós do Azure:
 
-* Um novo serviço em nuvem do Azure
-* Uma nova conta de armazenamento do Azure
+* Um novo serviço em nuvem do Azure (clássica)
+* Uma nova conta de armazenamento do Azure (clássica)
 
 > [!NOTE]
 > Não reutilize um serviço em nuvem existente na sua subscrição. 
@@ -60,7 +60,11 @@ Utilize o portal clássico do Azure ou ferramentas equivalentes para configurar 
 ## <a name="step-2-configure-an-azure-management-certificate"></a>Passo 2: Configurar um certificado de gestão do Azure
 Para adicionar nós do Azure como recursos de computação, é necessário um certificado de gestão no nó principal e carregar um correspondentes de certificados para a subscrição do Azure utilizada para a implementação.
 
-Para este cenário, pode escolher o **certificado de gestão do Azure de HPC predefinido** que HPC Pack instala e configura automaticamente no nó principal. Este certificado é útil para implementações de prova do conceito e fins de teste. Para utilizar este certificado, carregue o ficheiro C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer do nó principal do VM para a subscrição. Para carregar o certificado no [portal clássico do Azure](https://manage.windowsazure.com), clique em **definições** > **certificados de gestão**.
+Para este cenário, pode escolher o **certificado de gestão do Azure de HPC predefinido** que HPC Pack instala e configura automaticamente no nó principal. Este certificado é útil para implementações de prova do conceito e fins de teste. Para utilizar este certificado, carregue o ficheiro C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer do nó principal do VM para a subscrição. Para carregar o certificado no [portal do Azure](https://portal.azure.com):
+
+1. Clique em **subscrições** > *your_subscription_name*.
+
+2. Clique em **certificados de gestão** > **carregar**.
 
 Para obter opções adicionais para configurar o certificado de gestão, consulte [cenários para configurar o certificado de gestão do Azure para o Azure Burst implementações](http://technet.microsoft.com/library/gg481759.aspx).
 

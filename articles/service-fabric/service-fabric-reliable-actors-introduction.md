@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/29/2017
+ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: e89be04a0d6fe90a89e293e67d42f0204eb7000a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 640e051a909b1b9457b20cbd507b418342297c6e
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="introduction-to-service-fabric-reliable-actors"></a>Introdução aos Reliable Actors do Service Fabric
 Reliable Actors é uma estrutura de aplicação de Service Fabric com base no [Ator Virtual](http://research.microsoft.com/en-us/projects/orleans/) padrão. A API de Atores fiável fornece um único thread modelo de programação incorporado nas garantias de escalabilidade e fiabilidade fornecidas pelo Service Fabric.
@@ -143,7 +143,7 @@ O tempo de execução de Atores permite reentrancy por predefinição. Isto sign
 O tempo de execução de Atores fornece estes garantias de concorrência em situações em que controla a invocação de um destes métodos. Por exemplo, fornece estes garantias para as invocações de método que são efetuadas em resposta a um pedido de cliente, bem como para chamadas de retorno de temporizador e lembretes. No entanto, se o código de ator invoca diretamente estes métodos fora dos mecanismos de fornecidos pelo tempo de execução de Atores, em seguida, o tempo de execução não é possível fornecer quaisquer garantias de concorrência. Por exemplo, se o método é invocado no contexto de algumas tarefas que não esteja associado a tarefa devolvida através dos métodos de ator, em seguida, o tempo de execução não é possível fornecer garantias de concorrência. Se o método é invocado a partir de um thread que o ator cria no seu próprio, em seguida, o tempo de execução também não é possível fornecer garantias de concorrência. Por conseguinte, para efetuar operações em segundo plano, atores devem utilizar [temporizadores de ator e lembretes de ator](service-fabric-reliable-actors-timers-reminders.md) que Respeitamos a concorrência com base em ativar.
 
 ## <a name="next-steps"></a>Passos seguintes
-* Introdução ao criar o primeiro serviço Reliable Actors:
+Introdução ao criar o primeiro serviço Reliable Actors:
    * [Introdução a Reliable Actors no .NET](service-fabric-reliable-actors-get-started.md)
    * [Introdução a Reliable Actors em Java](service-fabric-reliable-actors-get-started-java.md)
 

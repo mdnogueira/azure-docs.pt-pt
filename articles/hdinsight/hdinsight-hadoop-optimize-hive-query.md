@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 04/26/2016
+ms.date: 11/03/2017
 ms.author: jgao
-ms.openlocfilehash: 56c00c3ea885bd1f431613ea90868dc65c98818b
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 4bd7f5b584030f9c1554b56895493837d2eac357
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="optimize-hive-queries-in-azure-hdinsight"></a>Otimizar as consultas do Hive no Azure HDInsight
 
@@ -51,9 +51,9 @@ Tez é mais rápida porque:
 * **Evita escritas desnecessárias**. Devido a várias tarefas que está a ser puserem para a mesma consulta do Hive no motor de MapReduce, o resultado de cada tarefa é escrito HDFS para dados intermédios. Uma vez que minimiza o número de tarefas para cada consulta do Hive no Tez é capaz de evitar escrita desnecessária.
 * **Minimiza os atrasos de arranque**. Tez melhor é capaz de forma a minimizar o atraso de arranque ao reduzir o número de mappers tem de iniciar e também melhorar otimização ao longo.
 * **Reutiliza contentores**. Sempre que possível Tez é possa reutilizar contentores para se certificar de que a latência devido a iniciar contentores é reduzida.
-* **Técnicas de otimização contínua**. Tradicionalmente otimização foi efetuada durante a fase de compilação. No entanto, estão disponíveis mais informações sobre as entradas que permitem de otimização melhor durante o tempo de execução. Tez utiliza técnicas de otimização contínua, que permite otimizar ainda mais o plano para a fase de tempo de execução.
+* **Técnicas de otimização contínua**. Tradicionalmente otimização foi efetuada durante a fase de compilação. No entanto, estão disponíveis mais informações sobre as entradas que permitem de otimização melhor durante o tempo de execução. Tez utiliza técnicas de otimização contínua, que lhe permite otimizar ainda mais o plano para a fase de tempo de execução.
 
-Para obter mais detalhes sobre estes conceitos, consulte [Apache TEZ](http://hortonworks.com/hadoop/tez/).
+Para obter mais informações sobre estes conceitos, consulte [Apache TEZ](http://hortonworks.com/hadoop/tez/).
 
 Pode efetuar qualquer consulta do Hive no Tez ativado por lhe o prefixo a consulta com a definição abaixo:
 
@@ -110,7 +110,7 @@ Assim que a tabela particionada for criada, pode criar partições estático ou 
               L_QUANTITY as L_QUANTITY, L_EXTENDEDPRICE as L_EXTENDEDPRICE,
              L_DISCOUNT as L_DISCOUNT, L_TAX as L_TAX, L_RETURNFLAG as           L_RETURNFLAG, L_LINESTATUS as L_LINESTATUS, L_SHIPDATE as           L_SHIPDATE_PS, L_COMMITDATE as L_COMMITDATE, L_RECEIPTDATE as      L_RECEIPTDATE, L_SHIPINSTRUCT as L_SHIPINSTRUCT, L_SHIPMODE as      L_SHIPMODE, L_COMMENT as L_COMMENT, L_SHIPDATE as L_SHIPDATE FROM lineitem;
 
-Para obter mais detalhes, consulte [tabelas Particionadas](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-PartitionedTables).
+Para obter mais informações, consulte [tabelas Particionadas](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-PartitionedTables).
 
 ## <a name="use-the-orcfile-format"></a>Utilize o formato de ORCFile
 Hive suporta formatos de ficheiro diferente. Por exemplo:

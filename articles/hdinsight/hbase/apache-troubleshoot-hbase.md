@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 7/7/2017
 ms.author: nitinver
-ms.openlocfilehash: f661aa5eb6ba87671a83b41aa25621da405aa335
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: cd6315c192ad3c33d43406993b1a3e6bd6ec7e4d
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-hbase-by-using-azure-hdinsight"></a>Resolver problemas de HBase utilizando o Azure HDInsight
 
 Saiba mais sobre os principais problemas e as resoluções ao trabalhar com múltiplos payloads Apache HBase no Apache Ambari.
 
-## <a name="how-do-i-run-hbck-command-reports-with-multiple-unassigned-regions"></a>Como executar relatórios de comando hbck a com várias regiões não atribuídas
+## <a name="how-do-i-run-hbck-command-reports-with-multiple-unassigned-regions"></a>Como executar relatórios de comando hbck a com várias regiões não atribuídas?
 
 Uma mensagem de erro comuns que poderá ver quando executa o `hbase hbck` comando é "várias regiões a ser não atribuídas ou holes na cadeia de regiões."
 
@@ -41,7 +41,7 @@ Para colocar as regiões não atribuídas um estado normal, conclua os seguintes
 6. Execute o `hbase hbck` comando novamente (sem quaisquer opções). Verifique o resultado deste comando para se certificar de que todas as regiões estão a ser atribuídas.
 
 
-## <a name="how-do-i-fix-timeout-issues-with-hbck-commands-for-region-assignments"></a>Como corrigir problemas de limite de tempo quando utilizar comandos de hbck a existência de atribuições de região
+## <a name="how-do-i-fix-timeout-issues-with-hbck-commands-for-region-assignments"></a>Como corrigir problemas de limite de tempo quando utilizar comandos de hbck a existência de atribuições de região?
 
 ### <a name="issue"></a>Problema
 
@@ -56,7 +56,7 @@ Uma causa potencial de problemas de tempo limite ao utilizar o `hbck` comando po
 5. Na IU do Ambari, reinicie o serviço de mestre de HBase do Active Directory.
 6. Execute o `hbase hbck -fixAssignments` novamente o comando.
 
-## <a name="how-do-i-force-disable-hdfs-safe-mode-in-a-cluster"></a>Como posso force-desativar modo de segurança do HDFS num cluster
+## <a name="how-do-i-force-disable-hdfs-safe-mode-in-a-cluster"></a>Como posso force-desativar modo de segurança do HDFS num cluster?
 
 ### <a name="issue"></a>Problema
 
@@ -211,7 +211,7 @@ O cluster do HDInsight tem foi escalado para baixo até um muito alguns nós. O 
    ```
 
 
-## <a name="how-do-i-fix-jdbc-or-sqlline-connectivity-issues-with-apache-phoenix"></a>Como corrija a conectividade de JDBC ou SQLLine problemas com o Apache Phoenix
+## <a name="how-do-i-fix-jdbc-or-sqlline-connectivity-issues-with-apache-phoenix"></a>Como corrija a conectividade de JDBC ou SQLLine problemas com o Apache Phoenix?
 
 ### <a name="resolution-steps"></a>Passos de resolução
 
@@ -262,7 +262,7 @@ Pode demorar até cinco minutos para que o serviço de mestre de HBase para stab
 Quando o sistema. Tabela de catálogo para normal, o problema de conectividade para Phoenix deve ser resolvido automaticamente.
 
 
-## <a name="what-causes-a-master-server-to-fail-to-start"></a>O que faz com que um servidor principal falhar ao iniciar
+## <a name="what-causes-a-master-server-to-fail-to-start"></a>O que faz com que um servidor principal falhar ao iniciar?
 
 ### <a name="error"></a>Erro 
 
@@ -344,7 +344,7 @@ Este é um problema conhecido com o serviço de HMaster. Tarefas de arranque do 
 2. Reinicie os serviços necessários (HMaster e possivelmente outros serviços do HBase).  
 
 
-## <a name="what-causes-a-restart-failure-on-a-region-server"></a>O que causa uma falha de reinício num servidor de região
+## <a name="what-causes-a-restart-failure-on-a-region-server"></a>O que causa uma falha de reinício num servidor região?
 
 ### <a name="issue"></a>Problema
 
@@ -421,3 +421,5 @@ Devido um encerramento abrupto, a porta associada ao processo poderá não ser l
    sudo su - hbase -c "/usr/hdp/current/hbase-regionserver/bin/hbase-daemon.sh start regionserver"   
    ```
 
+### <a name="see-also"></a>Veja Também
+[Resolver problemas utilizando o Azure HDInsight](../../hdinsight/hdinsight-troubleshoot-guide.md)

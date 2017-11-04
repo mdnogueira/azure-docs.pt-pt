@@ -11,16 +11,20 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/10/2017
+ms.date: 11/02/2017
 ms.author: jingwang
-ms.openlocfilehash: 74a4fca2ff5a0f913b5cb195f42482339e6200cb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: aab7dfff0b77b5f09a1388c9bac9bdd63ebd8b17
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="copy-data-from-dynamics-365dynamics-crm-using-azure-data-factory"></a>Copiar dados de Dynamics 365 / Dynamics CRM utilizando o Azure Data Factory
+
 Este artigo descreve como utilizar a atividade de cópia no Azure Data Factory para copiar dados de Dynamics 365 / Dynamics CRM. Baseia-se no [copiar descrição geral da atividade](copy-activity-overview.md) artigo que apresenta uma descrição geral da atividade de cópia.
+
+> [!NOTE]
+> Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço do Data Factory, o que é geralmente disponível (DG), consulte [atividade de cópia no V1](v1/data-factory-data-movement-activities.md).
 
 ## <a name="supported-scenarios"></a>Cenários suportados
 
@@ -39,6 +43,7 @@ Especificamente, este conector Dynamics suporta abaixo versões de Dynamics e ti
 > Para utilizar o conector de Dynamics, armazene a palavra-passe no Cofre de chaves do Azure e permitem a solicitação de concentre ADF cópia a partir daí, quando efetuar a cópia de dados. Veja como configurar no [ligado propriedades do serviço](#linked-service-properties) secção.
 
 ## <a name="getting-started"></a>Introdução
+
 Pode criar um pipeline com atividade de cópia com o .NET SDK, o Python SDK, o Azure PowerShell, o REST API ou o modelo Azure Resource Manager. Consulte [tutorial de atividade de cópia](quickstart-create-data-factory-dot-net.md) para obter instruções passo a passo Criar um pipeline com uma atividade de cópia.
 
 As secções seguintes fornecem detalhes sobre as propriedades que são utilizados para definir o Dynamics entidades do Data Factory específicas.

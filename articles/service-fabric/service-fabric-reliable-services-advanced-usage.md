@@ -12,13 +12,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/29/2017
+ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: a87924faaf5c6c43716b06b6d70ab5100c61f097
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 694d75807d978ece6296b945bf348f08688d3b5d
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="advanced-usage-of-the-reliable-services-programming-model"></a>Avançadas utilização dos serviços fiável de modelo de programação
 Azure Service Fabric simplifica escrever e gerir serviços sem monitorização de estado e com monitorização de estado fiáveis. Este guia aborda as utilizações avançadas de Reliable Services para obter mais controlo e flexibilidade de TI sobre os serviços. Antes de ler este guia, familiarize-se com [o modelo de programação Reliable Services](service-fabric-reliable-services-introduction.md).

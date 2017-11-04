@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 7/26/2017
+ms.date: 11/03/2017
 ms.author: v-six
-ms.openlocfilehash: 29529978a2f6a1454c7a97b5f5baac214a90d63b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 944a29aebf7abfe32a7789ab239718b1cd2d7b15
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-cloud-service-deployment-problems"></a>Resolver problemas de implementação do serviço de nuvem
 Quando implementar um pacote de aplicação de serviço em nuvem do Azure, pode obter informações sobre a implementação do **propriedades** painel no portal do Azure. Pode utilizar os detalhes neste painel para o ajudar a resolver problemas relacionados com o serviço em nuvem, e pode fornecer estas informações para suportar o Azure ao abrir um novo pedido de suporte.

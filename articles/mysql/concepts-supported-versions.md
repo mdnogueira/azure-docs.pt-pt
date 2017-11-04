@@ -8,15 +8,15 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 05/10/2017
-ms.openlocfilehash: da7a5b48a68626f06aef23729f55ba52029779d7
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.date: 11/02/2017
+ms.openlocfilehash: dc9f98218a95f1f24a45f208b0da7b945f4c9663
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Suportado base de dados do Azure para as versões de servidor MySQL
-Base de dados do Azure para MySQL foi desenvolveu MySQL Comunidade edição [MySQL Comunidade edição](https://www.mysql.com/products/community/), utilizando o motor de InnoDB.  Base de dados do Azure para MySQL, atualmente, suporta as seguintes versões.
+Base de dados do Azure para MySQL foi desenvolveu MySQL Comunidade edição [MySQL Comunidade edição](https://www.mysql.com/products/community/), utilizando o motor de InnoDB.  Base de dados do Azure para MySQL atualmente suporta as seguintes versões:
 
 ## <a name="mysql-version-5635"></a>Versão de MySQL 5.6.35
 Consulte o MySQL [documentação] (https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-35.html), para saber mais sobre os melhoramentos e correções MySQL 5.6.35.

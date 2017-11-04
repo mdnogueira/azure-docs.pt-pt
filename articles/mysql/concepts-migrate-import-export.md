@@ -8,12 +8,12 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 06/13/2017
-ms.openlocfilehash: 2164562af60442375b96a51f820a65d4d4a6f257
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/02/2017
+ms.openlocfilehash: 36ffa7082ce60093cbd90d0c12187e28f517646d
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Migrar a base de dados MySQL, utilizando a importação e exportação
 Este artigo explica duas abordagens comuns para importar e exportar dados para uma base de dados do Azure para o servidor de MySQL utilizando MySQL Workbench. 
@@ -45,7 +45,7 @@ Adicione as informações de ligação à MySQL Workbench.
 Utilize ferramentas de MySQL para importar e exportar bases de dados na base de dados do Azure MySQL nos seguintes cenários. Noutros cenários, poderá beneficiar da utilização de [informação do Estado e restaurar](concepts-migrate-dump-restore.md) abordagem em vez disso. 
 
 - Quando tem de escolher seletivamente alguns tabelas para importar a partir de uma base de dados MySQL existente na base de dados do Azure MySQL, é melhor utilizar a importação e exportação técnica.  Ao fazê-lo, pode omitir quaisquer tabelas desnecessárias da migração para poupar tempo e recursos. Por exemplo, utilizar o `--include-tables` ou `--exclude-tables` mudar com [mysqlpump](https://dev.mysql.com/doc/refman/5.7/en/mysqlpump.html#option_mysqlpump_include-tables) e `--tables` mudar com [mysqldump](https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_tables).
-- Quando estiver a mover os objetos de base de dados diferente de tabelas, explicitamente crie-os. Inclua restrições (chave primária, chave externa, índices), vistas, funções, procedimentos, acionadores e quaisquer outros objetos de base de dados que pretende migrar.
+- Quando estiver a mover os objetos de base de dados diferente de tabelas, crie explicitamente esses objetos. Inclua restrições (chave primária, chave externa, índices), vistas, funções, procedimentos, acionadores e quaisquer outros objetos de base de dados que pretende migrar.
 - Quando estiver a migrar dados a partir de origens de dados externos que não seja uma base de dados MySQL, criar ficheiros simples e importá-los utilizando [mysqlimport](https://dev.mysql.com/doc/refman/5.7/en/mysqlimport.html).
 
 Certifique-se de que todas as tabelas na base de dados utilizam o motor de armazenamento InnoDB quando estiver a carregar os dados na base de dados do Azure para MySQL. Base de dados do Azure para MySQL suporta apenas InnoDB motor de armazenamento, pelo que não suporta os motores de armazenamento alternativo. Se as tabelas necessitam de motores de armazenamento alternativo, lembre-se de que convertê-los para utilizar o formato do motor de InnoDB antes da migração para a base de dados do Azure para MySQL. 

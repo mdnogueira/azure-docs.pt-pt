@@ -4,23 +4,26 @@ description: "A API de pesquisa de registo de análise do registo permite que qu
 services: log-analytics
 documentationcenter: 
 author: bwren
-manager: jwhit
+manager: carmonm
 editor: tysonn
 ms.service: log-analytics
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/28/2017
+ms.date: 11/03/2017
 ms.author: bwren
-ms.openlocfilehash: 56d7c6dc648a01e7b0efc167cb65c94bac5468ec
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a8a4ec7a6ddf2daeca6ead11460fa076a7eb5c94
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="retrieve-data-from-log-analytics-with-a-python-script"></a>Obter dados de análise de registos com um script de Python
 O [API de pesquisa do registo de análise do registo](log-analytics-log-search-api.md) permite que qualquer cliente de REST API obter dados a partir de uma área de trabalho de análise de registos.  Este artigo apresenta um exemplo de script de Python que utiliza a API de pesquisa de registo de análise do registo.  
+
+>[!NOTE]
+> Este artigo utiliza a API de pesquisa de registo para o idioma de consulta legado na análise de registos.  Uma atualização será fornecida a este artigo para áreas de trabalho que tenham sido atualizadas para o [idioma de consulta de análise de registos nova](log-analytics-log-search-upgrade.md).
 
 ## <a name="authentication"></a>Autenticação
 Este script utiliza um principal de serviço no Azure Active Directory para autenticar para a área de trabalho.  Principais de serviço permitem uma aplicação de cliente pedir que o serviço de autenticar uma conta, mesmo que o cliente não tem o nome da conta. Antes de executar este script, tem de criar um principal de serviço com o processo em [portal de utilização para criar um Azure Active Directory principal de serviço e aplicação que pode aceder aos recursos](../azure-resource-manager/resource-group-create-service-principal-portal.md).  Terá de fornecer o ID da aplicação, o ID de inquilino e a chave de autenticação para o script. 

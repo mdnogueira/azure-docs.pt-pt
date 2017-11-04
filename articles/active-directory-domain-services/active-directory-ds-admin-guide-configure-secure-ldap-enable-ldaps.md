@@ -4,7 +4,7 @@ description: "Configurar o LDAP seguro (LDAPS) para um domínio gerido dos servi
 services: active-directory-ds
 documentationcenter: 
 author: mahesh-unnikrishnan
-manager: stevenpo
+manager: mahesh-unnikrishnan
 editor: curtand
 ms.assetid: c6da94b6-4328-4230-801a-4b646055d4d7
 ms.service: active-directory-ds
@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2017
+ms.date: 11/03/2017
 ms.author: maheshu
-ms.openlocfilehash: 245ad4948cf4b8c2d44a0dafb61923b0b4267856
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d2ef65bb4dc8e12a18265ae8264def2bb32e191f
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="configure-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Configurar segura LDAP (LDAPS) para um domínio gerido dos serviços de domínio do Azure AD
 
@@ -48,8 +48,8 @@ Para ativar o LDAP segura, execute os seguintes passos de configuração:
     ![Ativar LDAP seguro](./media/active-directory-domain-services-admin-guide/secure-ldap-blade-configure.png)
 5. Por predefinição, o acesso LDAP seguro ao seu domínio gerido através da internet está desativado. Ativar/desativar **permitir acesso LDAP seguro através da internet** para **ativar**, se assim o desejar. 
 
-    > [!TIP]
-    > Se ativar o acesso LDAP seguro através da internet, é recomendável configurar um NSG para bloquear o acesso aos intervalos de endereços IP de origem necessários. Consulte as instruções para [bloqueio para baixo de acesso LDAPS ao seu domínio gerido através da internet](#task-5---lock-down-ldaps-access-to-your-managed-domain-over-the-internet).
+    > [!WARNING]
+    > Quando ativar o acesso LDAP seguro através da internet, o domínio é suscetível a ataques de força bruta de palavra-passe através da internet. Por conseguinte, é recomendável configurar um NSG para bloquear o acesso aos intervalos de endereços IP de origem necessários. Consulte as instruções para [bloqueio para baixo de acesso LDAPS ao seu domínio gerido através da internet](#task-5---lock-down-secure-ldap-access-to-your-managed-domain-over-the-internet).
     >
 
 6. Clique em seguinte de ícone pasta **. Ficheiro PFX com certificado LDAP seguro**. Especifique o caminho para o ficheiro PFX com o certificado para proteger o acesso LDAP para o domínio gerido.
@@ -79,7 +79,7 @@ Antes de começar esta tarefa, certifique-se de que concluiu os passos descritos
 
 Assim que tiver ativado o acesso LDAP seguro através da internet para o seu domínio gerido, tem de atualizar o DNS para que os computadores cliente possam localizar este domínio gerido. No final da tarefa 3, um endereço IP externo é apresentado no **propriedades** separador **IP endereço para LDAPS acesso externo**.
 
-Configure o fornecedor DNS externo para que o nome DNS do domínio gerido (por exemplo, ' ldaps.contoso100.com') aponta para este endereço IP externo. No nosso exemplo, temos de criar a entrada DNS seguinte:
+Configure o fornecedor DNS externo para que o nome DNS do domínio gerido (por exemplo, ' ldaps.contoso100.com') aponta para este endereço IP externo. Por exemplo, crie a seguinte entrada DNS:
 
     ldaps.contoso100.com  -> 52.165.38.113
 
@@ -91,9 +91,9 @@ Já está - agora está pronto para ligar ao domínio gerido utilizando o LDAP s
 >
 
 
-## <a name="task-5---lock-down-ldaps-access-to-your-managed-domain-over-the-internet"></a>Tarefa 5 – acesso LDAPS bloqueio pendente para o seu domínio gerido através da internet
+## <a name="task-5---lock-down-secure-ldap-access-to-your-managed-domain-over-the-internet"></a>Tarefa 5 – bloqueio para baixo de acesso LDAP seguro ao seu domínio gerido através da internet
 > [!NOTE]
-> **Tarefas opcionais** - se não tiver ativado o acesso LDAPS domínio gerido através da internet, ignorar esta tarefa de configuração.
+> Se não tiver ativado o acesso LDAPS domínio gerido através da internet, ignore esta tarefa de configuração.
 >
 >
 
@@ -101,13 +101,28 @@ Antes de começar esta tarefa, certifique-se de que concluiu os passos descritos
 
 A exposição do seu domínio gerido para o acesso LDAPS através da internet representa uma ameaça de segurança. O domínio gerido é acessível a partir da internet, a porta utilizada para o LDAP seguro (ou seja, porta 636). Por conseguinte, pode optar por restringir o acesso ao domínio gerido para os endereços IP conhecidos específicos. Para segurança melhorada, crie um grupo de segurança de rede (NSG) e associá-lo com a sub-rede onde tiver ativado os serviços de domínio do Azure AD.
 
-A tabela seguinte ilustra um exemplo NSG, pode configurar, para bloquear o acesso LDAP seguro através da internet. O NSG contém um conjunto de regras que permitem acesso de entrada de LDAPS através da porta TCP 636 apenas a partir de um conjunto especificado de endereços IP. A regra predefinida do 'DenyAll' aplica-se a todos os outro o tráfego de entrada da internet. A regra NSG para permitir o acesso LDAPS através da internet a partir de endereços IP especificados tem uma prioridade mais alta do que a regra de DenyAll NSG.
+A tabela seguinte ilustra um exemplo NSG, pode configurar, para bloquear o acesso LDAP seguro através da internet. O NSG contém um conjunto de regras que permitem acesso de entrada seguro de LDAP através da porta TCP 636 apenas a partir de um conjunto especificado de endereços IP. A regra predefinida do 'DenyAll' aplica-se a todos os outro o tráfego de entrada da internet. A regra NSG para permitir o acesso LDAPS através da internet a partir de endereços IP especificados tem uma prioridade mais alta do que a regra de DenyAll NSG.
 
 ![Exemplo NSG para proteger o acesso a LDAPS através da internet](./media/active-directory-domain-services-admin-guide/secure-ldap-sample-nsg.png)
 
 **Obter mais informações** - [grupos de segurança de rede](../virtual-network/virtual-networks-nsg.md).
 
 <br>
+
+
+## <a name="troubleshooting"></a>Resolução de problemas
+Se tiver problemas de ligação ao domínio gerido utilizando LDAP segura, execute os seguintes passos de resolução de problemas:
+* Certifique-se de que a cadeia de emissor do certificado LDAP seguro é considerado fidedigno no cliente. Pode optar por adicionar a autoridade de certificação de raiz para o arquivo de certificados de raiz fidedigna no cliente para estabelecer a fidedignidade.
+* Certifique-se de que o certificado LDAP seguro não é emitido por uma autoridade de certificação intermediárias que não é fidedigno por predefinição num computador windows raiz.
+* Certifique-se de que o cliente LDAP (por exemplo, ldp.exe) liga-se para o ponto final LDAP seguro com um nome DNS, não é o endereço IP.
+* Verifique o nome DNS, que o cliente LDAP liga ao seja resolvido para o endereço IP público para o LDAP seguro no domínio gerido.
+* Certifique-se de que o certificado LDAP seguro para o seu domínio gerido tem o nome DNS no assunto ou o atributo de nomes de alternativo do requerente.
+
+Se ainda tiver problemas de ligação ao domínio gerido utilizando LDAP seguro, [contacte a equipa de produto](active-directory-ds-contact-us.md) para obter ajuda. Inclua as seguintes informações para ajudar a diagnosticar melhor o problema:
+* Captura de ecrã de ldp.exe efetuar a ligação e a falhar.
+* O ID de inquilino do Azure AD e o nome de domínio DNS do seu domínio gerido.
+* Nome de utilizador exato que está a tentar vincular como.
+
 
 ## <a name="related-content"></a>Conteúdo relacionado
 * [Serviços de domínio do Azure AD - guia de introdução](active-directory-ds-getting-started.md)

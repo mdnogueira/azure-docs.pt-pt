@@ -14,17 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/06/2017
 ms.author: fimguy
-ms.openlocfilehash: 98eb9b3a58737da2436eed591d69a900166c6af9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e6df124a38c748294e92183df272dc266a0afc51
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="connector-version-release-history"></a>Histórico de Versões do Conector
 Os conectores do Forefront Identity Manager (FIM) e o Microsoft Identity Manager (MIM) são atualizados com frequência.
 
 > [!NOTE]
 > Este tópico é apenas no FIM e de MIM. Estes conectores não são suportados para instalar no Azure AD Connect. Conectores lançados são pré-instalada em AADConnect quando atualizar para especificar a compilação.
+
 
 Este tópico lista todas as versões dos conectores que tenham sido publicadas.
 
@@ -37,6 +38,29 @@ Ligações relacionadas:
 * [Conector de PowerShell](active-directory-aadconnectsync-connector-powershell.md) documentação de referência
 * [Lotus Domino Connector](active-directory-aadconnectsync-connector-domino.md) documentação de referência
 
+## <a name="116490-aadconnect-116490"></a>1.1.649.0 (AADConnect 1.1.649.0)
+
+### <a name="fixed-issues"></a>Fixos problemas:
+
+* Notas de Lotus:
+  * Filtragem de opção certifiers personalizado
+  * Importação da classe ImportOperations foi corrigida a definição das operações que podem ser executadas em modo de 'Vistas' e que no modo de "Procurar".
+* LDAP genérico:
+  * Diretório de OpenLDAP utiliza DN como âncora em vez de entryUUI. Nova opção para o conector GLDAP que permite para modificar âncora
+* SQL genérico:
+  * Exportação fixa no campo que tem o tipo de varbinary (Max).
+  * Ao adicionar dados binários de uma origem de dados ao objeto CSEntry, DataTypeConversion a função falhou em zero bytes. Função DataTypeConversion fixa da classe CSEntryOperationBase.
+
+
+
+
+### <a name="enhancements"></a>Melhoramentos:
+
+* SQL genérico:
+  * A capacidade de configurar o modo de execução do procedimento com parâmetros denominados armazenado ou não tem um nome é adicionado numa janela de configuração do agente de gestão do SQL genérico na página 'Global Parameters'. Na página 'Global Parameters' não existe é a caixa de verificação com a etiqueta 'Use parâmetros nomeado para executar um procedimento armazenado' que é responsável pela modo para o procedimento armazenado de execução com parâmetros nomeada ou não.
+    * Atualmente, a capacidade de executar o procedimento armazenado com os parâmetros com nome funciona apenas para as bases de dados IBM DB2 e MSSQL. Para bases de dados Oracle e o MySQL não funciona esta abordagem: 
+      * Os sintaxes SQL de MySQL não suporta parâmetros com nome em procedimentos armazenados.
+      * O controlador ODBC para o Oracle não suporta parâmetros com nome para os parâmetros com nome em procedimentos armazenados)
 
 ## <a name="116040-aadconnect-116140"></a>1.1.604.0 (AADConnect 1.1.614.0)
 
@@ -203,6 +227,22 @@ Antes de Março de 2016, os conectores foram lançados como tópicos de suporte.
 * [KB2932635](https://support.microsoft.com/kb/2932635) -5.3.1003, Fevereiro de 2014  
 * [KB2899874](https://support.microsoft.com/kb/2899874) -5.3.0721, Outubro de 2013
 * [KB2875551](https://support.microsoft.com/kb/2875551) -5.3.0534, Agosto de 2013
+
+## <a name="troubleshooting"></a>Resolução de problemas 
+
+> [!NOTE]
+> Ao atualizar o Microsoft Identity Manager ou do AADConnect com utilização de qualquer um dos conectores ECMA2. 
+
+Tem de atualizar a definição de conector após a atualização para fazer corresponder ou receberá o erro seguinte no início de registo de eventos de aplicação para comunicar o aviso ID 6947: "versão de assemblagem na configuração do conector do AAD ("X.X.XXX. X") é anterior à versão real ("X.X.XXX. X)"de"C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll".
+
+Para atualizar a definição:
+* Abra as propriedades para a instância do conector
+* Clique em ligação / ligar para o separador
+  * Introduza a palavra-passe da conta do conector
+* Clique em cada um dos separadores propriedade, por sua vez
+  * Se este tipo de conector têm um separador de partições, com um botão de atualização, clique no botão de atualização desse separador
+* Depois de tem sido acedidos todos os separadores de propriedade, clique no botão OK para guardar as alterações.
+
 
 ## <a name="next-steps"></a>Passos seguintes
 Saiba mais sobre o [sincronização do Azure AD Connect](active-directory-aadconnectsync-whatis.md) configuração.

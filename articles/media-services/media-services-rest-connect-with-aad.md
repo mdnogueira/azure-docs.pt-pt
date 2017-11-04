@@ -11,13 +11,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/17/2017
-ms.author: willzhan;juliako
-ms.openlocfilehash: 1c62857699fb29b3583363e1c6f2dc7874635f40
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/02/2017
+ms.author: willzhan;juliako;johndeu
+ms.openlocfilehash: e5d7a5ec1c28a552420aba5e2cd6c8c7bbf4213d
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="use-azure-ad-authentication-to-access-the-azure-media-services-api-with-rest"></a>Utilize a autenticação do Azure AD para aceder à API de serviços de suporte de dados do Azure com REST
 
@@ -86,21 +86,14 @@ Seguem-se os mapeamentos entre os atributos a JWT e a quatro aplicações ou ser
 |Tipo de aplicação |Aplicação |Atributo JWT |
 |---|---|---|
 |Cliente |Aplicação de cliente ou solução |AppID: "02ed1e8e-af8b-477e-af3d-7e7219a99ac6". O ID de cliente de uma aplicação que irá registar com o Azure AD na secção seguinte. |
-|Fornecedor de identidade (IDP) | Azure AD como IDP |IDP: "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/".  O GUID é o inquilino de ID da Microsoft (microsoft.onmicrosoft.com). Cada inquilino tem um ID próprio, exclusivo. |
+|Fornecedor de identidade (IDP) | Azure AD como IDP |IDP: "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/" o GUID é o inquilino de ID da Microsoft (microsoft.onmicrosoft.com). Cada inquilino tem um ID próprio, exclusivo. |
 |Proteger o serviço de Token (STS) / servidor OAuth |Azure AD como STS | iss: "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/". O GUID é o inquilino de ID da Microsoft (microsoft.onmicrosoft.com). |
 |Recurso | API REST dos Serviços de Multimédia |aud: "https://rest.media.azure.net". O destinatário ou o público-alvo do token de acesso. |
 
 ## <a name="steps-for-setup"></a>Passos de configuração
 
-Para registar e configurar uma aplicação do Azure AD para a autenticação do Azure AD e obter um token de acesso para chamar o ponto final de API de REST dos serviços de suporte de dados do Azure, execute os seguintes passos:
+Registar e configurar uma aplicação do Azure Active Directory (AAD) e obter chaves para chamar o ponto final de API de REST dos serviços de suporte de dados do Azure, consulte o artigo [começar com a autenticação do Azure AD através do portal do Azure](media-services-portal-get-started-with-aad.md)
 
-1.  No [portal clássico do Azure](http://go.microsoft.com/fwlink/?LinkID=213885), registar uma aplicação do Azure AD (por exemplo, wzmediaservice) para o inquilino do Azure AD (por exemplo, microsoft.onmicrosoft.com). Não interessa se registado como aplicação web ou aplicação nativa. Além disso, pode escolher qualquer URL de início de sessão e o URL de resposta (por exemplo, http://wzmediaservice.com para ambos).
-2. No [portal clássico do Azure](http://go.microsoft.com/fwlink/?LinkID=213885), vá para o **configurar** separador da sua aplicação. Tenha em atenção o **ID de cliente**. Em seguida, em **chaves**, gerar uma **chave cliente** (segredo do cliente). 
-
-    > [!NOTE] 
-    > Tome nota do segredo do cliente. Este não será apresentado novamente.
-    
-3.  No [portal do Azure](http://ms.portal.azure.com), aceda a conta de Media Services. Selecione o **controlo de acesso** painel (IAM). Adicione um novo membro que tem o proprietário ou a função de contribuinte. Para o principal, procure o nome da aplicação que registou no passo 1 (neste exemplo, wzmediaservice).
 
 ## <a name="info-to-collect"></a>Informações a recolher
 
@@ -138,9 +131,9 @@ O projeto de exemplo tem três funcionalidades:
 
 Poderão pedir-lhe algumas leitores: onde está o token de atualização? Por que motivo não utilizar um token de atualização aqui?
 
-O objetivo de um token de atualização não é um token de acesso de atualização. Em vez disso, foi concebido para ignorar a intervenção do utilizador ou de autenticação de utilizador final e receber um token de acesso válido quando expira um token anteriormente. Um nome melhor para um token de atualização poderá ser algo como "Ignorar re-sessão-no token de utilizador do".
+O objetivo de um token de atualização não é um token de acesso de atualização. Foi concebido para ignorar a autenticação de utilizador final e receber um token de acesso válido quando expira um token de anterior. Um nome melhor para um token de atualização poderá ser algo como "Ignorar re-sessão-no token de utilizador do".
 
-Se utilizar o fluxo (nome de utilizador e palavra-passe, agir em nome de um utilizador) de concessão de autorização do OAuth 2.0, um token de atualização ajuda a obter um acesso renovado token sem pedir intervenção do utilizador. No entanto, para o OAuth 2.0 fluxo dita neste artigo de concessão de credenciais do cliente, o cliente funciona no seu próprio nome. Não precisa de intervenção do utilizador de todo, e o servidor de autorização não precisa (e não serão) dão-lhe um token de atualização. Se a depuração de **GetUrlEncodedJWT** método, tenha em atenção que a resposta do ponto final do token tem um token de acesso, mas nenhum token de atualização.
+Se utilizar o fluxo (nome de utilizador e palavra-passe, agir em nome de um utilizador) de concessão de autorização do OAuth 2.0, um token de atualização ajuda a obter um acesso renovado token sem pedir intervenção do utilizador. No entanto, para o OAuth 2.0 fluxo descrita neste artigo de concessão de credenciais do cliente, o cliente funciona no seu próprio nome. Não precisa de intervenção do utilizador em todas as e o servidor de autorização não precisa de fornecer um token de atualização. Se a depuração de **GetUrlEncodedJWT** método, tenha em atenção que a resposta do ponto final do token tem um token de acesso, mas nenhum token de atualização.
 
 ## <a name="next-steps"></a>Passos seguintes
 

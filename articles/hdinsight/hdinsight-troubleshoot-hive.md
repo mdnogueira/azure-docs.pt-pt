@@ -13,20 +13,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 7/7/2017
+ms.date: 11/2/2017
 ms.author: dharmeshkakadia
-ms.openlocfilehash: 53e9685458190efe6a586504721b8e7baadaed60
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 398cc7cd0fa815f12ba5b503a1328688e1159eee
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="troubleshoot-hive-by-using-azure-hdinsight"></a>Resolver problemas do ramo de registo utilizando o Azure HDInsight
 
 Saiba mais sobre as questões superiores e as resoluções ao trabalhar com Apache Hive payloads no Apache Ambari.
 
 
-## <a name="how-do-i-export-a-hive-metastore-and-import-it-on-another-cluster"></a>Como exportar um metastore do Hive e importá-la para outro cluster
+## <a name="how-do-i-export-a-hive-metastore-and-import-it-on-another-cluster"></a>Como exportar um metastore do Hive e importá-la para outro cluster?
 
 
 ### <a name="resolution-steps"></a>Passos de resolução
@@ -54,7 +54,7 @@ O código nos passos de resolução parte do princípio de que os caminhos de da
 - [Ligar a um cluster do HDInsight através de SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 
-## <a name="how-do-i-locate-hive-logs-on-a-cluster"></a>Como se localizar registos do Hive num cluster
+## <a name="how-do-i-locate-hive-logs-on-a-cluster"></a>Como se localizar registos do Hive num cluster?
 
 ### <a name="resolution-steps"></a>Passos de resolução
 
@@ -83,7 +83,7 @@ O código nos passos de resolução parte do princípio de que os caminhos de da
 - [Ligar a um cluster do HDInsight através de SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 
-## <a name="how-do-i-launch-the-hive-shell-with-specific-configurations-on-a-cluster"></a>Como iniciar a shell do Hive com as configurações específicas num cluster
+## <a name="how-do-i-launch-the-hive-shell-with-specific-configurations-on-a-cluster"></a>Como iniciar a shell do Hive com as configurações específicas num cluster?
 
 ### <a name="resolution-steps"></a>Passos de resolução
 
@@ -110,7 +110,7 @@ O código nos passos de resolução parte do princípio de que os caminhos de da
 - [Propriedades de configuração do ramo de registo](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
 
-## <a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Como analisar os dados de Tez DAG num caminho críticas para o cluster
+## <a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Como analisar os dados de Tez DAG num caminho críticas para o cluster?
 
 
 ### <a name="resolution-steps"></a>Passos de resolução
@@ -150,7 +150,7 @@ O código nos passos de resolução parte do princípio de que os caminhos de da
 - [Ligar a um cluster do HDInsight através de SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 
-## <a name="how-do-i-download-tez-dag-data-from-a-cluster"></a>Como transferir dados Tez DAG a partir de um cluster
+## <a name="how-do-i-download-tez-dag-data-from-a-cluster"></a>Como transferir dados Tez DAG a partir de um cluster?
 
 
 #### <a name="resolution-steps"></a>Passos de resolução
@@ -177,6 +177,8 @@ Existem duas formas para recolher os dados de Tez DAG:
 [Ligar a um cluster do HDInsight através de SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 
+### <a name="see-also"></a>Veja Também
+[Resolver problemas utilizando o Azure HDInsight](hdinsight-troubleshoot-guide.md)
 
 
 

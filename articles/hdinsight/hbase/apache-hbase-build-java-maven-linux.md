@@ -13,13 +13,13 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/07/2017
+ms.date: 11/03/2017
 ms.author: larryfr
-ms.openlocfilehash: 0a2f5d2c757e61919202c486a2f66a03b8ca4f8d
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 07f6d49b6d5c0a5b77ef5a7a7395a37e79419955
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Criar aplicações de Java para o Apache HBase
 
@@ -414,7 +414,9 @@ Os passos seguintes utilize `scp` para copiar o JAR ao nó principal do principa
 
 5. Para eliminar a tabela, utilize o seguinte comando:
 
-    
+    ```bash
+    yarn jar hbaseapp-1.0-SNAPSHOT.jar com.microsoft.examples.DeleteTable
+    ```
 
 ## <a name="upload-the-jar-and-run-jobs-powershell"></a>Carregar o JAR e executar tarefas (PowerShell)
 

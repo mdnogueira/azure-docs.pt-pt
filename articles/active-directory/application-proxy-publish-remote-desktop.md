@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/06/2017
+ms.date: 11/03/2017
 ms.author: kgremban
 ms.custom: it-pro
 ms.reviewer: harshja
-ms.openlocfilehash: fa8f63c8da5019ed42ea8ec067d3d3d174976dd8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5eb681e5f5c3b5944ff2d101056ae7c7cd60fac2
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Publicar o ambiente de trabalho remoto com o Proxy de aplicações do Azure AD
 
@@ -49,9 +49,6 @@ Numa implementação RDS, a função da Web de RD e a função de Gateway de RD 
 - Já deverá ter [implementado RDS](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure), e [ativado a Proxy da aplicação](active-directory-application-proxy-enable.md).
 
 - Este cenário pressupõe que os utilizadores finais aceda através do Internet Explorer em ambientes de trabalho Windows 7 ou Windows 10 que se ligam através da página Web de RD. Se precisar de suportar outros sistemas operativos, consulte [suporte para outras configurações de cliente](#support-for-other-client-configurations).
-
-  >[!NOTE]
-  >Atualização do Windows 10 Creator não é atualmente suportada.
 
 - No Internet Explorer, ative o suplemento do RDS ActiveX.
 
