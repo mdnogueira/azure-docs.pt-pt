@@ -1,24 +1,24 @@
 ---
 title: "Gerir atualizações para várias máquinas virtuais do Azure | Microsoft Docs"
-description: "Carregue máquinas virtuais do Azure para gerir atualizações."
-services: operations-management-suite
+description: "Este tópico descreve como gerir atualizações para as máquinas virtuais do Azure."
+services: automation
 documentationcenter: 
 author: eslesar
 manager: carmonm
 editor: 
 ms.assetid: 
-ms.service: operations-management-suite
+ms.service: automation
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/25/2017
-ms.author: eslesar
-ms.openlocfilehash: 89bf87f27fdf276068cba261fc6ae1660307e0b7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 10/31/2017
+ms.author: magoedte;eslesar
+ms.openlocfilehash: 80a6caff51631637825d560d270198be0336e806
+ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="manage-updates-for-multiple-azure-virtual-machines"></a>Gerir atualizações para várias máquinas virtuais do Azure
 
@@ -27,10 +27,46 @@ A partir da sua conta de [Automatização do Azure](automation-offering-get-star
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para executar os passos descritos neste guia, precisará de:
+Para utilizar a gestão de Atualizações, precisa de:
 
-* Uma conta de Automatização do Azure. Para obter instruções sobre como criar uma conta Run As de Automatização do Azure, veja [Conta Run As do Azure](automation-sec-configure-azure-runas-account.md).
-* Uma máquina virtual do Azure Resource Manager (não Clássica). Para obter instruções sobre como criar uma VM, veja [Criar a sua primeira máquina virtual do Windows no portal do Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md)
+* Uma conta de Automatização do Azure. Para obter instruções sobre como criar uma conta Run As de Automatização do Azure, veja a [Introdução à Automatização do Azure](automation-offering-get-started.md).
+
+* Uma máquina virtual ou um computador que tenha instalado um dos sistemas operativos suportados.
+
+## <a name="supported-operating-systems"></a>Sistemas operativos suportados
+
+A gestão de atualizações é suportada nos sistemas operativos seguintes.
+
+### <a name="windows"></a>Windows
+
+* Windows Server 2008 e versões posteriores, e implementações de atualizações no Windows Server 2008 R2 SP1 e versões posteriores.  Não são suportadas opções de instalação Server Core e Nano Server.
+
+    > [!NOTE]
+    > O suporte para implementar atualizações no Windows Server 2008 R2 SP1 requer o .NET Framework 4.5 e o WMF 5.0 ou posterior.
+    > 
+* Não são suportados os sistemas operativos cliente.
+
+Os agentes do Windows têm de ser configurados para comunicar com um Windows Server Update Services (WSUS) ou de ter acesso ao Microsoft Update.
+
+> [!NOTE]
+> O agente do Windows não pode ser gerido em simultâneo pelo System Center Configuration Manager.
+>
+
+### <a name="linux"></a>Linux
+
+* CentOS 6 (x86/x64) e 7 (x64)  
+* Red Hat Enterprise 6 (x86/x64) e 7 (x64)  
+* SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)  
+* Ubuntu 12.04 LTS e mais recente x86/x64   
+
+> [!NOTE]  
+> Para evitar que as atualizações sejam aplicadas fora da janela de manutenção no Ubuntu, reconfigure o pacote Unattended-Upgrade para desativar as atualizações automáticas. Para obter informações sobre como configurar, veja [Automatic Updates topic in the Ubuntu Server Guide](https://help.ubuntu.com/lts/serverguide/automatic-updates.html) (Tópico de Atualizações Automáticas no Guia do Ubuntu Server).
+
+Os agentes do Linux têm de ter acesso a um repositório de atualização.
+
+> [!NOTE]
+> Esta solução não suporta um Agente do OSM para Linux configurado para reportar para várias áreas de trabalho do OMS.  
+>
 
 ## <a name="enable-update-management-for-azure-virtual-machines"></a>Ativar a gestão de atualização para máquinas virtuais do Azure
 
@@ -45,9 +81,36 @@ Para executar os passos descritos neste guia, precisará de:
 
 A gestão de atualizações é ativada para a máquina virtual.
 
+## <a name="enable-update-management-for-non-azure-virtual-machines-and-computers"></a>Ativar a gestão de atualização para máquinas virtuais e computadores não Azure
+
+Para obter instruções sobre como ativar a gestão de atualizações para máquinas virtuais e computadores não Azure, veja [Connect Windows computers to the Log Analytics service in Azure (Ligar computadores Windows ao serviço do Log Analytics no Azure)](../log-analytics/log-analytics-windows-agents.md).
+
+Para obter instruções sobre como ativar a gestão de atualizações para máquinas virtuais e computadores Linux não Azure, veja [Connect your Linux Computers to Operations Management Suite (OMS) (Ligar Computadores Linux ao Operations Management Suite [OMS])](../log-analytics/log-analytics-agent-linux.md).
+
 ## <a name="view-update-assessment"></a>Ver avaliação de atualizações
 
 Depois de **Gestão de atualizações** ser ativada, o ecrã **Gestão de atualizações** aparece. Pode ver uma lista de atualizações em falta no separador **Atualizações em falta**.
+
+## <a name="data-collection"></a>Recolha de dados
+
+Os agentes instalados nas máquinas virtuais e computadores recolhem dados sobre as atualizações e enviam-nos para a gestão de atualizações do Azure.
+
+### <a name="supported-agents"></a>Agentes suportados
+
+A tabela seguinte descreve as origens ligadas que são suportadas por esta solução.
+
+| Origem Ligada | Suportado | Descrição |
+| --- | --- | --- |
+| Agentes do Windows |Sim |A gestão de atualizações recolhe informações sobre as atualizações do sistema de agentes do Windows e inicia a instalação das atualizações necessárias. |
+| Agentes do Linux |Sim |A gestão de atualizações recolhe informações sobre as atualizações do sistema a partir dos agentes do Linux e inicia a instalação das atualizações obrigatórias em distribuições suportadas. |
+| Grupo de gestão do Operations Manager |Sim |A gestão de atualizações recolhe informações sobre atualizações do sistema de agentes num grupo de gestão ligado. |
+| Conta de armazenamento do Azure |Não |O armazenamento do Azure não inclui informações sobre atualizações do sistema. |
+
+### <a name="collection-frequency"></a>Frequência da recolha
+
+Em cada computador Windows gerido, é feita uma análise duas vezes por dia. A cada 15 minutos, a API do Windows é chamada para consultar a hora da última atualização para determinar se o estado foi alterado e, se for esse o caso, é iniciada uma análise de conformidade.  Em cada computador Linux gerido, é feita uma análise de três em três horas.
+
+O dashboard pode demorar entre 30 minutos a seis horas a apresentar os dados atualizados a partir dos computadores geridos.
 
 ## <a name="schedule-an-update-deployment"></a>Agendar uma implementação de atualizações
 
@@ -106,6 +169,8 @@ Clique em **Todos os registos** para ver todas as entradas de registo que a impl
 Clique no mosaico **Saída** para ver o fluxo de tarefas do runbook responsável pela gestão da implementação da atualização na máquina virtual de destino.
 
 Clique em **Erros** para ver informações detalhadas sobre os erros da implementação.
+
+Para obter informações detalhadas sobre os registos, a saída e as informações de erro, veja a [Gestão de Atualizações](../operations-management-suite/oms-solution-update-management.md).
 
 ## <a name="next-steps"></a>Passos seguintes
 

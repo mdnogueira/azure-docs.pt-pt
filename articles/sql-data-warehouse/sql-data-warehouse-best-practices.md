@@ -13,13 +13,13 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: performance
-ms.date: 10/31/2016
+ms.date: 10/31/2017
 ms.author: shigu;barbkess
-ms.openlocfilehash: b3a7755281ceb2818f80e0e6b31cf51a46c8f650
-ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
+ms.openlocfilehash: ef6abba371d3a22d1cbaeb88dbd242f9f97b361c
+ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="best-practices-for-azure-sql-data-warehouse"></a>Melhores práticas do Azure SQL Data Warehouse
 Este artigo é uma coleção de muitas das melhores práticas que o irão ajudar a obter um desempenho otimizado do Azure SQL Data Warehouse.  Alguns dos conceitos neste artigo são básicos e fáceis de explicar, outros conceitos são mais avançados e apenas falamos por alto neste artigo.  O objetivo deste artigo é proporcionar alguma orientação básica e consciencialização de áreas de foco importantes ao criar o seu armazém de dados.  Cada secção apresenta um conceito e, em seguida, encaminha-o para artigos mais detalhados que abordam o conceito de forma mais aprofundada.
@@ -82,7 +82,7 @@ Quando está temporariamente a colocar dados no SQL Data Warehouse, utilizar uma
 Veja também [Temporary tables][Temporary tables] (Tabelas temporárias), [CREATE TABLE][CREATE TABLE] e [CREATE TABLE AS SELECT][CREATE TABLE AS SELECT]
 
 ## <a name="optimize-clustered-columnstore-tables"></a>Otimizar tabelas columnstore em cluster
-Os índices columnstore em cluster são uma das formas mais eficientes de armazenar os seus dados no Azure SQL Data Warehouse.  Por predefinição, as tabelas no SQL Data Warehouse são criadas como ColumnStore em Cluster.  Para obter o melhor desempenho das consultas em tabelas columnstore, ter uma boa qualidade de segmento é importante.  Quando as linhas são escritas em tabelas columnstore sob pressão de memória, a qualidade de segmento de columnstore poderá sofrer consequências.  A qualidade de segmento pode ser medida pelo número de linhas num Grupo de Linhas comprimido.  Veja [Causes of poor columnstore index quality][Causes of poor columnstore index quality] (Causas da má qualidade do índice columnstore) no artigo [Table indexes][Table indexes] (Índices de tabela) para obter instruções passo a passo sobre como detetar e melhorar a qualidade do segmento para tabelas columnstore em cluster.  Uma vez que é importante a elevada qualidade dos segmentos de columnstore, é uma boa ideia utilizar os IDs de utilizadores que pertencem à classe de recursos média ou grande para carregar os dados.  Quantos menos DWUs utilizar, maior será a classe de recursos que pretende atribuir ao seu utilizador de carregamento.
+Os índices columnstore em cluster são uma das formas mais eficientes de armazenar os seus dados no SQL Data Warehouse.  Por predefinição, as tabelas no SQL Data Warehouse são criadas como ColumnStore em Cluster.  Para obter o melhor desempenho das consultas em tabelas columnstore, ter uma boa qualidade de segmento é importante.  Quando as linhas são escritas em tabelas columnstore sob pressão de memória, a qualidade de segmento de columnstore poderá sofrer consequências.  A qualidade de segmento pode ser medida pelo número de linhas num Grupo de Linhas comprimido.  Veja [Causes of poor columnstore index quality][Causes of poor columnstore index quality] (Causas da má qualidade do índice columnstore) no artigo [Table indexes][Table indexes] (Índices de tabela) para obter instruções passo a passo sobre como detetar e melhorar a qualidade do segmento para tabelas columnstore em cluster.  Uma vez que é importante a elevada qualidade dos segmentos de columnstore, é uma boa ideia utilizar os IDs de utilizadores que pertencem à classe de recursos média ou grande para carregar os dados. A utilização de [níveis de serviço](performance-tiers.md#service-levels) inferiores significa que pretende atribuir uma classe de recursos maior ao utilizador de carregamento.
 
 Uma vez que as tabelas columnstore geralmente não enviam dados para um segmento de columnstore comprimido até que existam mais de 1 milhão de linhas por tabela e cada tabela do SQL Data Warehouse esteja dividida em 60 tabelas, como regra, as tabelas columnstore não beneficiam uma consulta se a tabela não tiver mais de 60 milhões de linhas.  Para tabelas com menos de 60 milhões de linhas, pode não fazer qualquer sentido ter um índice columnstore.  Também poderá não prejudicar.  Além disso, se dividir os dados, deverá ter em consideração que cada partição tem de ter 1 milhão de linhas para beneficiar de um índice columnstore em cluster.  Se uma tabela tiver 100 partições, terá de ter, pelo menos, 6 milhões de linhas para beneficiar de um arquivo de colunas em cluster (60 distribuições * 100 partições * 1 milhão de linhas).  Se a sua tabela não tiver 6 mil milhões de linhas neste exemplo, reduza o número de partições ou considere a utilização de uma tabela de área dinâmica para dados.  Também poderá ser útil experimentar, para ver se consegue obter um melhor desempenho com uma tabela de área dinâmica para dados com índices secundários, em vez de uma tabela columnstore.  As tabelas Columnstore ainda não suportam índices secundários.
 

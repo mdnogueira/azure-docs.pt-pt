@@ -1,19 +1,14 @@
 
-# <a name="azure-and-internet-of-things"></a>Azure e Internet das Coisas
+# <a name="azure-and-the-internet-of-things"></a>Azure e Internet das Coisas
 
-Bem-vindo ao Microsoft Azure e à Internet das Coisas (IoT). Este artigo apresenta as características comuns de uma solução de IoT que poderá implementar com os serviços do Azure. As soluções de IoT precisam de comunicações bidirecionais seguras entre as vastas quantidades de dispositivos e um back-end de soluções. Por exemplo, o back-end de soluções poderá utilizar a análise preditiva automatizada para desvendar informações do seu fluxo de eventos entre os dispositivos e a cloud.
-
-O [Hub Azure IoT][lnk-iot-hub] é um bloco modular fundamental de qualquer solução de IoT que utiliza os serviços do Azure. O Hub IoT é um serviço totalmente gerido que permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e um back-end de soluções. 
-
-O [Azure IoT Suite][lnk-iot-suite] fornece implementações ponto a ponto completas desta arquitetura para cenários de IoT específicos. Por exemplo:
-
-* A solução de *monitorização remota* permite-lhe monitorizar o estado dos dispositivos, como máquinas de venda automática.
-* A solução de *manutenção preditiva* ajuda-o a prever as necessidades de manutenção dos dispositivos, como as bombas de estações de bombagem remotas, e a evitar períodos de indisponibilidade não agendados.
-* A solução da *fábrica ligada* ajuda-o a ligar e monitorizar os dispositivos industriais.
+Bem-vindo ao Microsoft Azure e à Internet das Coisas (IoT). Este artigo descreve as características comuns de uma solução IoT na cloud. As soluções de IoT necessitam de comunicação bidirecional e segura entre dispositivos, possivelmente com números na casa dos milhões e um back-end de solução. Por exemplo, uma solução poderá utilizar a análise preditiva automatizada para descobrir informações a partir da transmissão de eventos do dispositivo para a cloud.
 
 ## <a name="iot-solution-architecture"></a>Arquitetura da solução de IoT
 
-O diagrama seguinte mostra uma arquitetura da solução de IoT típica. O diagrama não inclui os nomes de quaisquer serviços específicos do Azure, mas descreve os elementos essenciais numa arquitetura da solução de IoT genérica. Nesta arquitetura, os dispositivos IoT recolhem dados que enviam para um gateway de nuvem. O gateway da cloud disponibiliza os dados para processamento por parte de outros serviços de back-end. O back-end de soluções fornece dados às aplicações de linha de negócio ou aos operadores humanos através de um dashboard ou relatório.
+O diagrama seguinte mostra os principais elementos de uma arquitetura da solução IoT típica. O diagrama desconhece os detalhes específicos da implementação, como os serviços do Azure utilizados e os sistemas operativos dos dispositivos. Nesta arquitetura, os dispositivos IoT recolhem dados que enviam para um gateway de nuvem. O gateway da cloud disponibiliza os dados para processamento por parte de outros serviços de back-end. Estes serviços de back-end podem fornecer dados para:
+
+* Outras aplicações de linha de negócio.
+* Operadores humanos através de um dashboard ou outro dispositivo de apresentação.
 
 ![Arquitetura da solução de IoT][img-solution-architecture]
 
@@ -22,11 +17,11 @@ O diagrama seguinte mostra uma arquitetura da solução de IoT típica. O diagra
 
 ### <a name="device-connectivity"></a>Conectividade dos dispositivos
 
-Nesta solução de IoT, os dispositivos enviam telemetria, como as leituras dos sensores de uma estação de bombagem, para um ponto final da cloud para armazenamento e processamento. Num cenário de manutenção preventiva, o back-end de solução poderá utilizar o fluxo de dados dos sensores para determinar quando uma bomba específica precisa de manutenção. Os dispositivos também podem receber e responder a mensagens da cloud para o dispositivo, lendo as mensagens a partir de um ponto final da cloud. Por exemplo, no cenário de manutenção preventiva, o back-end da solução poderá enviar mensagens a outras bombas na estação de bombagem para que comecem a reencaminhar os fluxos imediatamente antes do início previsto da manutenção. Este procedimento asseguraria que o engenheiro de manutenção poderia começar a corrigir o problema de imediato.
+Numa arquitetura da solução IoT, normalmente os dispositivos enviam telemetria para a cloud, para armazenamento e processamento. Por exemplo, num cenário de manutenção preventiva, o back-end da solução poderá utilizar o fluxo de dados dos sensores para determinar quando uma bomba específica precisa de manutenção. Os dispositivos também podem receber e responder a mensagens da cloud para o dispositivo, lendo as mensagens a partir de um ponto final da cloud. No mesmo exemplo, o back-end da solução poderá enviar mensagens a outras bombas na estação de bombagem para que comecem a reencaminhar os fluxos imediatamente antes do início previsto da manutenção. Este procedimento assegura que o engenheiro de manutenção poderia começar assim que chegasse.
 
-Um dos maiores desafios de projetos IoT consiste na ligação fiável e segura de dispositivos à solução de back-end. Os dispositivos IoT têm características diferentes em comparação a outros clientes, como browsers e aplicações móveis. Os dispositivos IoT:
+A ligação segura e fiável de dispositivos é, frequentemente, o maior desafio para as soluções IoT. Isto deve-se ao facto de os dispositivos IoT terem características diferentes, em comparação a outros clientes, como browsers e aplicações móveis. Especificamente, os dispositivos IoT:
 
-* São frequentemente sistemas integrados sem nenhum operador humano.
+* São, frequentemente, sistemas incorporados sem nenhum operador humano (ao contrário de um telefone).
 * Podem ser implementados em localizações remotas, onde o acesso físico é dispendioso.
 * Podem apenas ser acessíveis através do back-end da solução. Não há outro modo de interagir com o dispositivo.
 * Podem ter potência e recursos de processamento limitados.
@@ -34,28 +29,36 @@ Um dos maiores desafios de projetos IoT consiste na ligação fiável e segura d
 * Podem ter de utilizar protocolos de aplicação proprietários, personalizados ou específicos da indústria.
 * Podem ser criados utilizando um grande conjunto de plataformas de hardware e software populares.
 
-Para além dos requisitos identificados acima, qualquer solução de IoT deverá também proporcionar dimensionamento, segurança e fiabilidade. A implementação do conjunto de requisitos de conectividade resultante com tecnologias tradicionais, como contentores Web e mediadores de mensagens, é difícil e morosa. O Hub IoT do Azure e o Azure IoT device SDKs facilitam a implementação das soluções que cumpram estes requisitos.
+Além das restrições anteriores, qualquer solução IoT também tem de ser dimensionável, segura e fiável.
 
-Um dispositivo pode comunicar diretamente com um ponto final de gateway da cloud. Se o dispositivo não conseguir utilizar nenhum dos protocolos de comunicações suportados pelo gateway da cloud, pode ligar-se através de um gateway intermédio. Por exemplo, o [gateway de protocolo do Azure IoT][lnk-protocol-gateway] pode efetuar a tradução do protocolo se os dispositivos não puderem utilizar qualquer um dos protocolos que o Hub IoT suporta.
+Consoante o protocolo de comunicação e a disponibilidade de rede, um dispositivo pode comunicar diretamente ou através de um gateway intermédio com a cloud. As arquiteturas de IoT têm, frequentemente, uma combinação desses dois padrões de comunicação.
 
 ### <a name="data-processing-and-analytics"></a>Processamento e análise dos dados
 
-Na cloud, a maior parte do processamento de dados ocorre num back-end de soluções de IoT. O back-end da solução de IoT:
+Em soluções IoT modernas, o processamento de dados pode ocorrer na cloud ou do lado do dispositivo. O processamento do lado do dispositivo é referido como *Computação periférica*. A escolha de onde processar os dados depende de fatores como:
 
-* Recebe a telemetria à escala dos seus dispositivos e determina como processar e armazenar esses dados. 
-* Pode permitir o envio de comandos a partir da cloud para dispositivos específicos.
-* Fornece capacidades de registo de dispositivos que lhe permitem aprovisionar os dispositivos e controlar quais são os dispositivos que podem ligar-se à sua infraestrutura.
-* Permite-lhe acompanhar o estado dos seus dispositivos e monitorizar as respetivas atividades.
+* Restrições de rede. Se a largura de banda entre os dispositivos e a cloud for limitada, há um incentivo para fazer mais processamento periférico.
+* Tempo de resposta. Se existir um requisito para agir sobre um dispositivo quase em tempo real, poderá ser melhor processar a resposta no próprio dispositivo. Por exemplo, o braço de um robot que tem de ser parado numa emergência.
+* Ambiente regulamentar. Alguns dados não podem ser enviados para a cloud.
 
-No cenário de manutenção preditiva, o back-end da solução armazena os dados de telemetria históricos. O back-end de soluções pode utilizar estes dados para identificar padrões que indiciam a necessidade de proceder à manutenção de uma bomba específica.
+Em geral, o processamento de dados na periferia e na cloud são uma combinação das seguintes funcionalidades:
 
-As soluções de IoT podem incluir ciclos de feedback automáticos. Por exemplo, um módulo de análise no back-end de solução pode identificar, com base na telemetria, que a temperatura de uma máquina específica está acima dos níveis de funcionamento normais. A solução pode, em seguida, enviar um comando ao dispositivo, instruindo-o para tomar uma ação corretiva.
+* Receber a telemetria à escala dos seus dispositivos e determinar como processar e armazenar esses dados.
+* Analisar a telemetria para fornecer informações, quer sejam em tempo real ou após o facto.
+* Enviar comandos a partir da cloud ou de um dispositivo de gateway para um dispositivo específico.
+
+Além disso, um back-end da cloud da IoT deve fornecer:
+
+* Capacidades de registo de dispositivos que lhe permitem:
+    * Aprovisionar dispositivos.
+    * Controlar os dispositivos que estão autorizados a ligar à sua infraestrutura.
+* Gestão de dispositivos para controlar o estado dos seus dispositivos e monitorizar as respetivas atividades.
+
+Por exemplo, num cenário de manutenção preditiva, o back-end da cloud armazena os dados de telemetria históricos. A solução utiliza estes dados para identificar potenciais comportamentos anómalos em bombas específicas antes de poderem provocar um problema real. Com a análise de dados, poderá identificar que a solução preventiva deve enviar um comando de volta para o dispositivo, para uma ação corretiva. Este processo gera um ciclo de comentários automatizado entre o dispositivo e a cloud, que aumenta significativamente a eficiência da solução.
 
 ### <a name="presentation-and-business-connectivity"></a>Apresentação e conectividade empresarial
 
-A camada de apresentação e conectividade empresarial permite aos utilizadores finais interagirem com os dispositivos e soluções de IoT. Permite que os utilizadores vejam e analisem os dados recolhidos a partir dos dispositivos. Estas vistas podem apresentar-se sob a forma de dashboards ou relatórios capazes de mostrar dados históricos ou dados quase em tempo real. Por exemplo, um operador pode verificar o estado de uma estação de bombagem específica e ver todos os alertas gerados pelo sistema. Esta camada também permite a integração do back-end da solução de IoT com aplicações da linha de negócio existentes para se ligarem a processos empresariais ou fluxos de trabalho da empresa. Por exemplo, a solução de manutenção preditiva pode integrar-se com um sistema de agendamento. Quando a solução identifica uma bomba a precisar de manutenção, o sistema de agendamento marca a visita de um engenheiro à estação de bombagem.
-
-![Dashboard da solução de IoT][img-dashboard]
+A camada de apresentação e conectividade empresarial permite aos utilizadores finais interagirem com os dispositivos e soluções de IoT. Permite que os utilizadores vejam e analisem os dados recolhidos a partir dos dispositivos. Estas vistas podem ter a forma de dashboards ou de relatórios do BI e podem apresentar dados históricos ou dados quase em tempo real. Por exemplo, um operador pode verificar o estado de uma estação de bombagem específica e ver todos os alertas gerados pelo sistema. Esta camada também permite a integração do back-end da solução IoT com aplicações de linha de negócio existentes para se ligarem a processos empresariais ou fluxos de trabalho da empresa. Por exemplo, uma solução da manutenção preventiva pode ser integrada num sistema de agendamento para marcar a visita de um técnico a uma estação de bombagem quando é identificada uma bomba a precisar de manutenção.
 
 [img-solution-architecture]: ./media/iot-azure-and-iot/iot-reference-architecture.png
 [img-dashboard]: ./media/iot-azure-and-iot/iot-suite.png
