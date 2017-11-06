@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: danlep
-ms.openlocfilehash: f6dc9657e64160be1e68a7356863b53131e9b3c3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ad5c13723eef352148a40e3e7f4f2ff616867296
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="set-up-a-hybrid-high-performance-computing-hpc-cluster-with-microsoft-hpc-pack-and-on-demand-azure-compute-nodes"></a>Configurar um cluster (HPC) com o Microsoft HPC Pack e os nós de computação do Azure a pedido de computação de alto no desempenho por híbrida
 Utilize o Microsoft HPC Pack 2012 R2 e o Azure para configurar um pequeno, híbrida computação de alto desempenho cluster (HPC). O cluster apresentado neste artigo é composta por um nó principal de pacote HPC no local e alguns computação nós implementar a pedido num Azure serviço em nuvem. Em seguida, pode executar tarefas de computação no cluster híbrida.
@@ -87,7 +87,9 @@ Pacote HPC instala um certificado autoassinado no nó principal, denominado o ce
 
 2. Clique em **subscrições** > *your_subscription_name*.
 
-3. Clique em **certificados de gestão** > **carregar**.4. Procure no nó principal para o ficheiro C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer. Em seguida, clique em **carregar**.
+3. Clique em **certificados de gestão** > **carregar**.
+
+4. Procure no nó principal para o ficheiro C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer. Em seguida, clique em **carregar**.
 
    
 O **predefinido HPC Azure Management** certificado aparece na lista de certificados de gestão.
