@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: denlee
-ms.openlocfilehash: 8ecbb478c81cde25bbd0d1c9ee07ae02b07f8cc7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7500ed798519671ba864cc185efffa0f93a8be70
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-the-spark-to-azure-cosmos-db-connector"></a>Acelerar a análise de macrodados em tempo real com o Spark para o conector Azure Cosmos DB
 
@@ -44,7 +44,7 @@ O conector utiliza os seguintes componentes:
 
 * [Apache Spark](http://spark.apache.org/) é um motor de processamento de open source para poderosas que está construído em torno de velocidade, facilidade de utilização e efetuar análises sofisticadas.
 
-* [Apache Spark no Azure HDInsight](../hdinsight/hdinsight-apache-spark-jupyter-spark-sql.md) que pode implementar o Apache Spark na nuvem para implementações fundamentais utilizando [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/apache-spark/).
+* [Apache Spark no Azure HDInsight](../hdinsight/spark/apache-spark-jupyter-spark-sql.md) que pode implementar o Apache Spark na nuvem para implementações fundamentais utilizando [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/apache-spark/).
 
 Oficialmente as versões suportadas:
 
@@ -351,4 +351,4 @@ Se ainda não o fez, transfira o Spark para o conector Azure Cosmos BD a partir 
 * [Exemplos de agregações distribuída](https://github.com/Azure/azure-cosmosdb-spark/wiki/Aggregations-Examples)
 * [Scripts de exemplo e blocos de notas](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples)
 
-Pode também querer rever o [Apache Spark SQL, DataFrames e conjuntos de dados guia](http://spark.apache.org/docs/latest/sql-programming-guide.html) e [Apache Spark no Azure HDInsight](../hdinsight/hdinsight-apache-spark-jupyter-spark-sql.md) artigo.
+Pode também querer rever o [Apache Spark SQL, DataFrames e conjuntos de dados guia](http://spark.apache.org/docs/latest/sql-programming-guide.html) e [Apache Spark no Azure HDInsight](../hdinsight/spark/apache-spark-jupyter-spark-sql.md) artigo.
