@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/29/2017
+ms.date: 11/01/2017
 ms.author: arramac
-ms.openlocfilehash: c184b02f46ac2ad66c6ce607967a687c82d31477
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6a399a3a7979f6165d26eb48505242976d51e64f
+ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Introdução ao Azure Cosmos DB: Table API
 
@@ -38,10 +38,10 @@ Recomendamos que veja o vídeo seguinte, onde Aravind Ramachandran explica como 
 > 
 > 
 
-## <a name="premium-and-standard-table-apis"></a>APIs de Tabela premium e standard
-Se utilizar atualmente o Armazenamento de tabelas, beneficia das vantagens seguintes se mudar para a pré-visualização de “tabelas premium” do Azure Cosmos DB:
+## <a name="table-offerings"></a>Ofertas de Tabelas
+Se utilizar atualmente o Armazenamento de Tabelas do Azure, beneficia das vantagens seguintes se mudar para a API de Tabela do Azure Cosmos DB (pré-visualização):
 
-| | Armazenamento de Tabelas do Azure | Azure Cosmos DB: Armazenamento de tabelas (pré-visualização) |
+| | Table Storage do Azure | API de Tabela do Azure Cosmos DB (pré-visualização) |
 | --- | --- | --- |
 | Latência | Rápida, mas sem limites superiores. | Latência de milissegundos de um só dígito para leituras e escritas, suportada por leituras de latência inferiores a 10 ms e a escritas de latência inferiores a 15 ms no percentil 99, em qualquer escala e em qualquer parte do mundo. |
 | Débito | Modelo de débito variável. As tabelas têm um limite de escalabilidade de 20 000 operações/s. | Altamente dimensionável, com [débito reservado dedicado por tabela](request-units.md), com suporte dos SLAs. As contas não têm limite superior relativamente ao débito e suportam mais de dez milhões de operações/s por tabela. |

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/17/2017
+ms.date: 10/31/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: dcdd8b5830edb542cb99d07f1b0087629d374264
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 3b8653b3bddd8bf2ee01c2e68da763e803711633
+ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="sign-in-activity-report-error-codes-in-the-azure-active-directory-portal"></a>Códigos de erro dos relatórios de atividades de início de sessão no portal do Azure Active Directory
 
@@ -58,16 +58,17 @@ A secção seguinte proporciona-lhe uma descrição geral completa de todos os p
 
 | Erro| Descrição |
 | --- | --- |
-| 50001| O principal de serviço com o nome X não foi encontrado no inquilino com o nome Y. Este erro pode acontecer se a aplicação não tiver sido instalada pelo administrador do inquilino. Ou se o principal do recurso não tiver sido encontrado no diretório ou for inválido|
+| 50001| O principal de serviço com o nome X não foi encontrado no inquilino com o nome Y. Este erro pode acontecer se a aplicação não tiver sido instalada pelo administrador do inquilino. Ou se o principal do Recurso não tiver sido encontrado no diretório ou for inválido.|
 | 50008| As asserções SAML estão em falta ou estão mal configuradas no token.|
 | 50011| O endereço de resposta está em falta, está mal configurado ou não corresponde ao endereço de resposta configurado para a aplicação.|
+| 50012| Fraude reportada pelo utilizador durante a autenticação Multifator.|
 | 50053| A aplicação foi bloqueada porque o utilizador tentou iniciar sessão demasiadas vezes com um ID de utilizador ou uma palavra-passe inválida.|
 | 50054| Foi utilizada uma palavra-passe antiga para a autenticação.|
 | 50055| Palavra-passe inválida; palavra-passe expirada introduzida.|
 | 50057| A conta de utilizador está desativada.|
 | 50058| Não foram encontradas informações sobre a identidade do utilizador entre as credenciais fornecidas, ou o utilizador não foi encontrado no inquilino, ou um pedido de início de sessão silencioso foi enviado, mas nenhum utilizador tem sessão iniciada ou o serviço não conseguiu autenticar o utilizador.|
-| 50074| A autenticação forte (segundo fator) é necessária.|
-| 50079| O utilizador tem de se inscrever na autenticação de segundo fator|
+| 50074| O utilizador não passou na submissão da MFA.|
+| 50079| O utilizador tem de se inscrever na autenticação de segundo fator.|
 | 50126| O nome de utilizador ou a palavra-passe é inválida ou o nome de utilizador ou a palavra-passe no local é inválida.|
 | 50131| Utilizado em vários erros de acesso condicional. Por exemplo, estado do dispositivo Windows, pedido bloqueado devido a atividades suspeitas, decisões de políticas de acesso e políticas de segurança.|
 | 50133| A sessão é inválida devido à palavra-passe ter expirado ou ter sido alterada recentemente.|
@@ -75,13 +76,14 @@ A secção seguinte proporciona-lhe uma descrição geral completa de todos os p
 | 65001| A aplicação X não tem permissão para aceder à aplicação Y ou a permissão foi revogada. Ou o utilizador ou o administrador não permitiu utilizar a aplicação com o ID X. Envie um pedido de autorização interativo para este utilizador e este recurso. Ou o utilizador ou o administrador não permitiu utilizar a aplicação com o ID X. Envie um pedido de autorização ao administrador do seu inquilino para agir em nome da Aplicação :Y para o Recurso : Z.|
 | 65005| A lista de acesso a recursos necessária para a aplicação não contém aplicações detetáveis pelo recurso, ou a aplicação cliente pediu acesso a um recurso que não foi especificado nesta lista de acesso a recursos necessária, ou o serviço Graph devolveu um pedido inválido ou o recurso não foi encontrado.|
 | 70001| A aplicação com o nome X não foi encontrada no inquilino com o nome Y. Este erro pode acontecer se a aplicação não tiver sido instalada pelo administrador do inquilino ou não tiver sido permitida por qualquer utilizador do inquilino. Poderá ter enviado o pedido de autenticação para o inquilino errado.|
-| 80001| Não existe nenhum Agente de Autenticação disponível.|
+| 80001| O Agente de Autenticação não se consegue ligar ao Active Directory.|
 | 80002| O pedido de validação da palavra-passe do Agente de Autenticação atingiu o tempo limite.|
 | 80003| O Agente de Autenticação recebeu uma resposta inválida.|
 | 80004| Foi utilizado um Nome Principal de Utilizador (UPN) no pedido de início de sessão.|
 | 80005| Agente de Autenticação: ocorreu um erro.|
-| 80007| O Agente de Autenticação não se consegue ligar ao Active Directory.|
+| 80007| O Agente de Autenticação não conseguiu validar a palavra-passe do utilizador.|
 | 80010| O Agente de Autenticação não conseguiu desencriptar a palavra-passe.|
+| 80011| O Agente de Autenticação não conseguiu obter a chave de desencriptação.|
 | 81001| A permissão do Kerberos do utilizador é demasiado grande.|
 | 81002| Não é possível validar a permissão do Kerberos do utilizador.|
 | 81003| Não é possível validar a permissão do Kerberos do utilizador.|
@@ -94,6 +96,7 @@ A secção seguinte proporciona-lhe uma descrição geral completa de todos os p
 | 81013| Não é possível encontrar o objeto de utilizador com base nas informações na permissão do Kerberos do utilizador.|
 | 90014| Utilizado em vários casos nos quais um campo que era esperado não está presente na credencial.|
 | 90093| O Graph devolveu com um código de erro proibido para o pedido.|
+
 
 
 
