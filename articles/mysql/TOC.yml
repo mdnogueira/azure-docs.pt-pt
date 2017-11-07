@@ -79,8 +79,8 @@
       href: concepts-monitoring.md
     - name: Desenvolvimento
       items:
-        - name: Bibliotecas de ligação
-          href: concepts-connection-libraries.md
+        - name: Compatibilidade de controladores e ferramentas
+          href: concepts-compatibility.md
         - name: Programação de aplicações
           href: concepts-database-application-development.md
     - name: Migrar a base de dados

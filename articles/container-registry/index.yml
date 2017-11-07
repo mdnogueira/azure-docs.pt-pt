@@ -45,7 +45,7 @@ sections:
         items:
           - html: <a href="/azure/container-registry/container-registry-tutorial-prepare-registry">Georreplicação do Container Registry (pré-visualização)</a>
           - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Container Registry com Azure Container Instances</a>
-          - html: <a href="/azure/container-service/kubernetes/container-service-tutorial-kubernetes-prepare-app">Container Registry com Azure Container Instances</a>
+          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Container Registry com Azure Container Instances (AKS)</a>
           - html: <a href="/azure/service-fabric/service-fabric-tutorial-create-container-images">Container Registry com o Service Fabric (Container Registry with Service Fabric)</a>
   - title: Referência
     items:
