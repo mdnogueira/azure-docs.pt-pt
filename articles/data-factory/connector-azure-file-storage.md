@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/02/2017
 ms.author: jingwang
-ms.openlocfilehash: 97ce45f93964ac6759a40f4496256167d99190d4
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: edbab30d949daa8d564ec60e9f1650f38b01d942
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="copy-data-from-or-to-azure-file-storage-by-using-azure-data-factory"></a>Copiar os dados de ou para o File Storage do Azure utilizando o Azure Data Factory
 
@@ -26,7 +26,7 @@ Este artigo descreve como utilizar a atividade de cópia no Azure Data Factory p
 > [!NOTE]
 > Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço do Data Factory, o que é geralmente disponível (DG), consulte [atividade de cópia no V1](v1/data-factory-data-movement-activities.md).
 
-## <a name="supported-scenarios"></a>Cenários suportados
+## <a name="supported-capabilities"></a>Capacidades suportadas
 
 Pode copiar dados de File Storage do Azure para qualquer arquivo de dados suportados sink ou copiar dados a partir de qualquer arquivo de dados de origem suportada para o File Storage do Azure. Para obter uma lista dos arquivos de dados que são suportados como origens/sinks pela atividade de cópia, consulte o [arquivos de dados suportados](copy-activity-overview.md#supported-data-stores-and-formats) tabela.
 
@@ -48,7 +48,11 @@ As seguintes propriedades são suportadas para o serviço ligado de File Storage
 | anfitrião | Especifica o ponto final do File Storage do Azure como `"host": "\\\\<storage name>.file.core.windows.net\\<file service name>"`. | Sim |
 | ID de utilizador | Especifique o utilizador aceder ao armazenamento de ficheiros do Azure como `"userid": "AZURE\\<storage name>"`. | Sim |
 | palavra-passe | Especifique a chave de acesso de armazenamento. Marcar este campo como SecureString.<br/> | Sim |
-| connectVia | O [integração Runtime](concepts-integration-runtime.md) para ser utilizado para ligar ao arquivo de dados. Pode utilizar o Runtime de integração Self-hosted ou Runtime de integração do Azure (se o arquivo de dados acessível publicamente). Se não for especificado, utiliza a predefinição de Runtime de integração do Azure. |Não |
+| connectVia | O [integração Runtime](concepts-integration-runtime.md) para ser utilizado para ligar ao arquivo de dados. Pode utilizar o Runtime de integração do Azure ou o tempo de execução do Self-hosted integração (se o arquivo de dados esteja localizado numa rede privada). Se não for especificado, utiliza a predefinição de Runtime de integração do Azure. |Não |
+
+>[!TIP]
+> - Para copiar para o armazenamento de ficheiros do Azure com o tempo de execução de integração do Azure, explicitamente [criar uma resposta a incidentes Azure](create-azure-integration-runtime.md#create-azure-ir) com a localização do armazenamento de ficheiros e associar no serviço ligado do exemplo seguinte.
+> - Para copiar de/para armazenamento de ficheiros do Azure com o tempo de execução de integração de Self-hosted fora do Azure, lembre-se abrir a porta TCP de saída 445 na sua rede local.
 
 **Exemplo:**
 
@@ -72,9 +76,6 @@ As seguintes propriedades são suportadas para o serviço ligado de File Storage
     }
 }
 ```
-
-> [!TIP]
-> Quando utiliza o tempo de execução de integração de Self-hosted fora do Azure para copiar dados de/para o File Storage do Azure, lembre-se abrir a porta TCP de saída 445 na sua rede local.
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
 

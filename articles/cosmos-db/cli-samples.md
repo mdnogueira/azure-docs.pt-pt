@@ -13,13 +13,13 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: database
-ms.date: 06/07/2017
+ms.date: 11/02/2017
 ms.author: mimig
-ms.openlocfilehash: 189034b049e776a3b929930be937ec60bc1db241
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 989ef9915028c42a4da817bf2dd3aa5ad2beb2ef
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db"></a>Exemplos da CLI do Azure para a base de dados do Azure Cosmos
 
@@ -28,7 +28,7 @@ A tabela seguinte inclui ligações para scripts da CLI do Azure de exemplo para
 | |  |
 |---|---|
 |**Criar conta de base de dados do Azure Cosmos, base de dados e contentores**||
-|[Criar uma conta DocumentDB API, gráfico ou tabela API](scripts/create-database-account-collections-cli.md?toc=%2fcli%2fazure%2ftoc.json)| Cria uma única conta de API de BD do Cosmos do Azure, base de dados e um contentor para utilização com o DocumentDB, gráfico ou APIs de tabela. |
+|[Criar uma conta de DocumentDB API](scripts/create-database-account-collections-cli.md?toc=%2fcli%2fazure%2ftoc.json)| Cria uma única conta de API de BD do Cosmos do Azure, base de dados e um contentor para utilização com a API do DocumentDB. |
 | [Criar uma conta de API do MongoDB](scripts/create-mongodb-database-account-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Cria uma única API do Azure Cosmos DB MongoDB conta, base de dados e coleção. |
 |**Dimensionar Cosmos BD do Azure**||
 | [Débito do contentor de escala](scripts/scale-collection-throughput-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Altera o througput aprovisionado num contentor.|

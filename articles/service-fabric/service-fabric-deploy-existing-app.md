@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 07/02/2017
 ms.author: mfussell;mikhegn
-ms.openlocfilehash: a8579c66cbfb0968a3659316aa5f03b798f4e332
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c851e1f756957d58d5f7372098620e4b7129b089
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="deploy-a-guest-executable-to-service-fabric"></a>Implementar um executável de convidado para o Service Fabric
 Pode executar qualquer tipo de código, tal como o Node.js, Java ou C++ no Service Fabric do Azure como um serviço. Service Fabric refere-se para estes tipos de serviços como convidado executáveis.
@@ -349,6 +349,6 @@ Se navegar para o diretório ao utilizar o Explorador de servidores, pode encont
 Neste artigo, aprendeu como um executável de convidado do pacote e implementá-la para o Service Fabric. Consulte os artigos seguintes para informações relacionadas e tarefas.
 
 * [Exemplo de empacotamento e implementação de um executável de convidado](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started), incluindo uma hiperligação para a pré-lançamento da ferramenta de empacotamento
-* [Exemplo de dois convidado executáveis (c# e nodejs) comunicar através do serviço de nomes através de REST](https://github.com/Azure-Samples/service-fabric-dotnet-containers)
+* [Exemplo de dois convidado executáveis (c# e nodejs) comunicar através do serviço de nomes através de REST](https://github.com/Azure-Samples/service-fabric-containers)
 * [Implementar vários executáveis convidados](service-fabric-deploy-multiple-apps.md)
 * [Criar a primeira aplicação de Service Fabric com o Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)

@@ -1,6 +1,6 @@
 ---
-title: Tutorial de REST do Service Bus com o reencaminhamento do Azure | Microsoft Docs
-description: "Crie uma aplicação de anfitrião reencaminhamento simple Service Bus do Azure expõe uma interface baseada em REST."
+title: Tutorial de REST utilizando o reencaminhamento do Azure | Microsoft Docs
+description: "Crie uma simples aplicação anfitriã de reencaminhamento do Azure Service Bus que expõe uma interface baseada em REST."
 services: service-bus-relay
 documentationcenter: na
 author: sethmanheim
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/17/2017
+ms.date: 11/06/2017
 ms.author: sethm
-ms.openlocfilehash: 0db9dbd2d2743907e3f0b259228201d4f5d0c3c2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7a5a2916514a125d0b7443ced42e5ec600c68857
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-wcf-relay-rest-tutorial"></a>Tutorial de REST de reencaminhamento de WCF do Azure
 
 Este tutorial descreve como criar uma simples aplicação anfitriã de reencaminhamento do Azure que expõe uma interface baseada em REST. O REST permite que um cliente web, como um navegador, aceda às APIs do Service Bus através de pedidos de HTTP.
 
-O tutorial utiliza o Windows Communication Foundation (WCF) modelo de programação REST para construir um serviço REST no Service Bus. Para obter mais informações, consulte o artigo [Modelo de Programação REST de WCF](/dotnet/framework/wcf/feature-details/wcf-web-http-programming-model) e [Desenho e Implementação de Serviços](/dotnet/framework/wcf/designing-and-implementing-services) na documentação do WCF.
+O tutorial utiliza o Windows Communication Foundation (WCF) modelo de programação REST para construir um serviço REST no reencaminhamento do Azure. Para obter mais informações, consulte o artigo [Modelo de Programação REST de WCF](/dotnet/framework/wcf/feature-details/wcf-web-http-programming-model) e [Desenho e Implementação de Serviços](/dotnet/framework/wcf/designing-and-implementing-services) na documentação do WCF.
 
 ## <a name="step-1-create-a-namespace"></a>Passo 1: Criar um espaço de nomes
 
@@ -32,9 +32,9 @@ Para começar a utilizar as funcionalidades do reencaminhamento no Azure, deve c
 
 ## <a name="step-2-define-a-rest-based-wcf-service-contract-to-use-with-azure-relay"></a>Passo 2: Definir um contrato de serviço WCF baseado em REST para utilizar com o reencaminhamento do Azure
 
-Quando cria um serviço de estilo REST de WCF, tem de definir o contrato. O contrato especifica quais as operações suportadas pelo anfitrião. Uma operação de serviço pode considerar-se como um método de serviço web. Os contratos são criados através da definição de uma interface em C++, C# ou Visual Basic. Cada método da interface corresponde a uma operação de serviço específica. O atributo [ServiceContractAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicecontractattribute.aspx) tem de ser aplicado a cada interface e o atributo [OperationContractAttribute](https://msdn.microsoft.com/library/system.servicemodel.operationcontractattribute.aspx) tem de ser aplicado a cada operação. Se um método numa interface que tem [ServiceContractAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicecontractattribute.aspx) não tem [OperationContractAttribute](https://msdn.microsoft.com/library/system.servicemodel.operationcontractattribute.aspx), esse método não será exposto. O código utilizado para estas tarefas é mostrado no exemplo que segue o procedimento.
+Quando cria um serviço de estilo REST de WCF, tem de definir o contrato. O contrato especifica quais as operações suportadas pelo anfitrião. Uma operação de serviço pode considerar-se como um método de serviço web. Os contratos são criados através da definição de uma interface em C++, C# ou Visual Basic. Cada método da interface corresponde a uma operação de serviço específica. O atributo [ServiceContractAttribute](/dotnet/api/system.servicemodel.servicecontractattribute) tem de ser aplicado a cada interface e o atributo [OperationContractAttribute](/dotnet/api/system.servicemodel.operationcontractattribute) tem de ser aplicado a cada operação. Se um método numa interface que tem [ServiceContractAttribute](/dotnet/api/system.servicemodel.servicecontractattribute) não tem [OperationContractAttribute](/dotnet/api/system.servicemodel.operationcontractattribute), esse método não será exposto. O código utilizado para estas tarefas é mostrado no exemplo que segue o procedimento.
 
-A principal diferença entre um contrato WCF e um contrato de estilo REST consiste na adição de uma propriedade para o [OperationContractAttribute](https://msdn.microsoft.com/library/system.servicemodel.operationcontractattribute.aspx): [WebGetAttribute](https://msdn.microsoft.com/library/system.servicemodel.web.webgetattribute.aspx). Esta propriedade permite-lhe mapear um método na sua interface para um método no outro lado da interface. Neste caso, utilizaremos [WebGetAttribute](https://msdn.microsoft.com/library/system.servicemodel.web.webgetattribute.aspx) para ligar um método a HTTP GET. Isto permite que o Service Bus obtenha e interprete com precisão os comandos enviados para a interface.
+A principal diferença entre um contrato WCF e um contrato de estilo REST consiste na adição de uma propriedade para o [OperationContractAttribute](/dotnet/api/system.servicemodel.operationcontractattribute): [WebGetAttribute](/dotnet/api/system.servicemodel.web.webgetattribute). Esta propriedade permite-lhe mapear um método na sua interface para um método no outro lado da interface. Este exemplo utiliza o [WebGetAttribute](/dotnet/api/system.servicemodel.web.webgetattribute) atributo para ligar um método a HTTP GET. Isto permite que o Service Bus com precisão obtenha e interprete comandos enviados para a interface.
 
 ### <a name="to-create-a-contract-with-an-interface"></a>Para criar um contrato com uma interface
 
@@ -56,7 +56,7 @@ A principal diferença entre um contrato WCF e um contrato de estilo REST consis
     using System.IO;
     ```
    
-    [System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) é o espaço de nomes que permite o acesso através de programação a funcionalidades básicas do WCF. Reencaminhamento de WCF utiliza muitos dos objetos e atributos de WCF para definir os contratos de serviço. Utilizará este espaço de nomes na maioria das suas aplicações de reencaminhamento. Da mesma forma, [Channels](https://msdn.microsoft.com/library/system.servicemodel.channels.aspx) ajuda a definir o canal, que é o objeto através do qual se comunica com o reencaminhamento do Azure e o browser cliente. Por último, [System.ServiceModel.Web](https://msdn.microsoft.com/library/system.servicemodel.web.aspx) contém os tipos que permitem criar aplicações baseadas na Web.
+    [System.ServiceModel](/dotnet/api/system.servicemodel) é o espaço de nomes que permite o acesso através de programação a funcionalidades básicas do WCF. Reencaminhamento de WCF utiliza muitos dos objetos e atributos de WCF para definir os contratos de serviço. Utilize este espaço de nomes na maioria das suas aplicações de reencaminhamento. Da mesma forma, [Channels](/dotnet/api/system.servicemodel.channels) ajuda a definir o canal, que é o objeto através do qual se comunica com o reencaminhamento do Azure e o browser cliente. Por último, [System.ServiceModel.Web](/dotnet/api/system.servicemodel.web) contém os tipos que permitem criar aplicações baseadas na Web.
 7. Mude o nome de espaço de nomes de `ImageListener` para **Microsoft.ServiceBus.Samples**.
    
     ```csharp
@@ -98,7 +98,7 @@ A principal diferença entre um contrato WCF e um contrato de estilo REST consis
     public interface IImageChannel : IImageContract, IClientChannel { }
     ```
     
-    Um canal é o objeto de WCF através do qual o serviço e o cliente passam informações entre si. Mais tarde, criará o canal na sua aplicação anfitriã. Reencaminhamento do Azure, em seguida, utiliza este canal para passar os pedidos de HTTP GET do navegador para sua **GetImage** implementação. O reencaminhamento também utiliza o canal para tirar o **GetImage** devolve o valor e convertê-lo em HTTP GETRESPONSE para o browser cliente.
+    Um canal é o objeto de WCF através do qual o serviço e o cliente passam informações entre si. Posteriormente, criar o canal na sua aplicação anfitriã. Reencaminhamento do Azure, em seguida, utiliza este canal para passar os pedidos de HTTP GET do navegador para sua **GetImage** implementação. O reencaminhamento também utiliza o canal para tirar o **GetImage** devolve o valor e convertê-lo em HTTP GETRESPONSE para o browser cliente.
 12. No menu **Compilar**, clique em **Compilar Solução** para confirmar a precisão do seu trabalho até ao momento.
 
 ### <a name="example"></a>Exemplo
@@ -149,7 +149,7 @@ Tal como acontece com os passos anteriores, há poucas diferenças entre a imple
     }
     ```
     Tal como noutras implementações de interface, pode implementar a definição num ficheiro diferente. No entanto, neste tutorial, a implementação aparece no mesmo ficheiro que a definição de interface e o método`Main()`.
-2. Aplique o atributo [ServiceBehaviorAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicebehaviorattribute.aspx) à classe **IImageService** para indicar que a classe é uma implementação de um contrato de WCF.
+2. Aplique o atributo [ServiceBehaviorAttribute](/dotnet/api/system.servicemodel.servicebehaviorattribute) à classe **IImageService** para indicar que a classe é uma implementação de um contrato de WCF.
    
     ```csharp
     [ServiceBehavior(Name = "ImageService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
@@ -158,12 +158,12 @@ Tal como acontece com os passos anteriores, há poucas diferenças entre a imple
     }
     ```
    
-    Como se mencionou anteriormente, este espaço de nomes não é um espaço de nomes tradicional. Em vez disso, forma parte da arquitetura de WCF que identifica o contrato. Para obter mais informações, consulte o tópico [Nomes de Contrato de Dados](https://msdn.microsoft.com/library/ms731045.aspx) na documentação de WCF.
+    Como se mencionou anteriormente, este espaço de nomes não é um espaço de nomes tradicional. Em vez disso, forma parte da arquitetura de WCF que identifica o contrato. Para obter mais informações, consulte o [nomes de contrato de dados](https://msdn.microsoft.com/library/ms731045.aspx) artigo na documentação de WCF.
 3. Adicione uma imagem. jpg ao seu projeto.  
    
     Trata-se de uma imagem que o serviço apresenta no navegador recetor. Com o botão direito clique no projeto em seguida clique em **Adicionar**. Em seguida, clique em **Item Existente**. Utilize a caixa de diálogo **Adicionar Item Existente** para navegar para um ficheiro. jpg adequadas e, em seguida, clique em **Adicionar**.
    
-    Ao adicionar o ficheiro, certifique-se de que a opção **Todos os Ficheiros** está selecionada na lista pendente junto ao campo **Nome de ficheiro:**. O resto deste tutorial parte do princípio de que o nome da imagem é "image.jpg". Se tiver um ficheiro diferente, terá de mudar o nome da imagem ou alterar o código para compensar.
+    Ao adicionar o ficheiro, certifique-se de que a opção **Todos os Ficheiros** está selecionada na lista pendente junto ao campo **Nome de ficheiro:**. O resto deste tutorial parte do princípio de que o nome da imagem é "image.jpg". Se tiver um ficheiro diferente, tem de mudar o nome da imagem ou alterar o código para compensar.
 4. Certifique-se de que o serviço em execução pode localizar o ficheiro de imagem, em **Explorador de Soluções** clique com o botão direito no ficheiro de imagem e, em seguida, clique em **Propriedades**. No painel **Propriedades**, definir **Copiar para o diretório de saída** para **Copiar se for mais recente**.
 5. Adicione uma referência à assemblagem **System.Drawing.dll** do projeto e adicione também as seguintes instruções `using` associadas.  
    
@@ -558,7 +558,7 @@ Depois de compilar a solução, faça o seguinte procedimento para executar a ap
 3. Quando tiver terminado, prima **Enter** na janela da linha de comandos para fechar a aplicação.
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que compilou uma aplicação que utiliza o serviço de reencaminhamento do Service Bus, consulte os artigos seguintes para obter mais informações sobre o reencaminhamento do Azure:
+Agora que compilou uma aplicação que utiliza o serviço de reencaminhamento do Azure, consulte os artigos seguintes para obter mais informações:
 
 * [Descrição de geral da arquitetura Service Bus do Azure](../service-bus-messaging/service-bus-fundamentals-hybrid-solutions.md)
 * [Descrição Geral do Reencaminhamento do Azure](relay-what-is-it.md)

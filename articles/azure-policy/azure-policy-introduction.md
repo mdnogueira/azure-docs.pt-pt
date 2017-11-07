@@ -5,16 +5,16 @@ services: azure-policy
 keywords: 
 author: Jim-Parker
 ms.author: jimpark; nini
-ms.date: 10/25/2017
+ms.date: 11/06/2017
 ms.topic: overview
 ms.service: azure-policy
 manager: jochan
 ms.custom: mvc
-ms.openlocfilehash: 82721fe984ff7b3c7440b11d7526a9413b0770de
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: b784c79166eb614988d84b4553bb95e4d1e457af
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="what-is-azure-policy"></a>O que é a política do Azure?
 
@@ -55,7 +55,7 @@ Para saber mais sobre as estruturas de definições de política, consulte este 
 
 ## <a name="policy-assignment"></a>Atribuição de política
 
-Uma atribuição de política é uma definição de política que tenha sido atribuída para ocorrer dentro de um âmbito específico. Este âmbito foi intervalo de um grupo de gestão a um grupo de recursos. Atribuições de políticas são herdadas por todos os recursos subordinados. Por isso, se uma política é aplicada a um grupo de recursos, é aplicada a todos os recursos nesse grupo de recursos. O termo *âmbito* refere-se a todos os grupos de recursos, subscrições ou grupos de gestão que está atribuída a definição de política.
+Uma atribuição de política é uma definição de política que tenha sido atribuída para ocorrer dentro de um âmbito específico. Este âmbito foi intervalo de um grupo de gestão a um grupo de recursos. O termo *âmbito* refere-se a todos os grupos de recursos, subscrições ou grupos de gestão que está atribuída a definição de política. Atribuições de políticas são herdadas por todos os recursos subordinados. Por isso, se uma política é aplicada a um grupo de recursos, é aplicada a todos os recursos nesse grupo de recursos. No entanto, pode excluir um subscope de atribuição de política. Por exemplo, no âmbito de subscrição, pode atribuir uma política que impede a criação de recursos de rede. No entanto, excluir um grupo de recursos dentro da subscrição que destina-se a infraestrutura de rede. Conceder acesso a este grupo de recursos de rede para os utilizadores que considere de confiança, com a criação de recursos de rede.
 
 Para obter mais informações sobre definições de política de configuração e atribuições, consulte [criar uma atribuição de política para identificar recursos incompatíveis no seu ambiente do Azure](assign-policy-definition.md).
 

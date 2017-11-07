@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: support-article
 ms.date: 11/03/2017
 ms.author: genli
-ms.openlocfilehash: c950fe5444d4eacf3568d355a8dc9c5699645229
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 2e821c0369c6f01a7f09361c1093259429a79fa6
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="requestdisallowedbypolicy-error-with-azure-resource-policy"></a>Erro de RequestDisallowedByPolicy com a política de recursos do Azure
 
@@ -64,4 +64,4 @@ Para resolver este problema, trabalhar com o seu departamento de TI para rever a
 Para obter mais informações, veja os artigos seguintes:
 
 - [Descrição geral da política de recurso](resource-manager-policy.md)
-- [Atribuições de política do Vista através do portal](resource-manager-policy-portal.md#view-policy-assignments)
+- [Atribuições de política do Vista através do portal](resource-manager-policy-portal.md)

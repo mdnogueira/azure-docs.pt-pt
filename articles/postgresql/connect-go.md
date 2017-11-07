@@ -10,12 +10,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.devlang: go
 ms.topic: quickstart
-ms.date: 06/29/2017
-ms.openlocfilehash: 1a581752e3803e9c9aba826b23db14a76080b4ec
-ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.date: 11/03/2017
+ms.openlocfilehash: 8b52aeaadf7ba94d6b79ef447600cd7b57e70dfa
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-database-for-postgresql-use-go-language-to-connect-and-query-data"></a>Base de Dados do Azure para PostgreSQL: utilize a linguagem Go para ligar e consultar dados
 Este início rápido explica como se pode ligar a uma Base de Dados do Azure para PostgreSQL através de código escrito na linguagem [Go](https://golang.org/) (golang). Explica como utilizar as instruções SQL para consultar, inserir, atualizar e eliminar dados na base de dados. Este artigo pressupõe que esteja familiarizado com o desenvolvimento que utiliza o Go, mas que nunca trabalhou com a base de dados do Azure para PostgreSQL.
@@ -88,8 +88,8 @@ Obtenha as informações de ligação necessárias para se ligar à Base de Dado
 5. Caso se tenha esquecido das informações de início de sessão do seu servidor, navegue até à página **Descrição geral** e visualize o nome de início de sessão de administrador do Servidor. Se necessário, reponha a palavra-passe.
 
 ## <a name="build-and-run-go-code"></a>Criar e executar código Go 
-1. Para escrever o código Golang, pode utilizar um editor de textos simples, como o Blobo de Notas no Microsoft Windows, o [vi](http://manpages.ubuntu.com/manpages/xenial/man1/nvi.1.html#contenttoc5) ou o [Nano](https://www.nano-editor.org/) no Ubuntu ou o TextEdit em macOS. Se preferir um Ambiente de Desenvolvimento Interativo (IDE) rico, experimente o [Gogland](https://www.jetbrains.com/go/), da Jetbrains, o [Visual Studio Code](https://code.visualstudio.com/), da Microsoft, ou o [Atom](https://atom.io/).
-2. Cole o código Golang das secções seguintes em ficheiros de texto e guarde-os na pasta do projeto com a extensão de ficheiro \*.go, como, por exemplo, o caminho do Windows `%USERPROFILE%\go\src\postgresqlgo\createtable.go` ou o caminho do Linux `~/go/src/postgresqlgo/createtable.go`.
+1. Escrever código Golang, pode utilizar um editor de texto simples, como o bloco de notas no Microsoft Windows, [vi](http://manpages.ubuntu.com/manpages/xenial/man1/nvi.1.html#contenttoc5) ou [Nano](https://www.nano-editor.org/) no Ubuntu ou TextEdit no macOS. Se preferir um Ambiente de Desenvolvimento Interativo (IDE) rico, experimente o [Gogland](https://www.jetbrains.com/go/), da Jetbrains, o [Visual Studio Code](https://code.visualstudio.com/), da Microsoft, ou o [Atom](https://atom.io/).
+2. Cole o código de Golang as secções seguintes ficheiros de texto e guarde no pasta do projeto com a extensão de ficheiro \*.go, tais como o caminho do Windows `%USERPROFILE%\go\src\postgresqlgo\createtable.go` ou caminho de Linux `~/go/src/postgresqlgo/createtable.go`.
 3. Localize as constantes `HOST`, `DATABASE`, `USER` e `PASSWORD` no código e substitua os valores de exemplo pelos seus próprios valores.  
 4. Inicie a linha de comandos ou a shell de bash. Altere o diretório para a pasta do projeto . Por exemplo, no Windows `cd %USERPROFILE%\go\src\postgresqlgo\`. No Linux, `cd ~/go/src/postgresqlgo/`. Alguns dos ambientes IDE mencionados oferecem capacidades de depuração e runtime sem que sejam necessários comandos da shell.
 5. Execute o código com o comando `go run createtable.go`, para compilar a aplicação e executá-la. 
@@ -166,7 +166,7 @@ Utilize o código seguinte para se ligar e ler dados com uma instrução SQL **S
 
 O código importa três pacotes: o [pacote SQL Server](https://golang.org/pkg/database/sql/), a [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor de PostgreSQL e o [fmt pacote](https://golang.org/pkg/fmt/) para a entrada impressos e saída na linha de comandos.
 
-O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. A consulta select é executada chamando o método [db. Query ()](https://golang.org/pkg/database/sql/#DB.Query), e as linhas resultantes são mantidas numa variável do tipo [linhas](https://golang.org/pkg/database/sql/#Rows). O código lê os valores de dados de coluna na linha atual através do método [rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) e cria ciclos nas linhas através do iterador [rows.Next()](https://golang.org/pkg/database/sql/#Rows.Next) até não existirem mais linhas. Os valores de coluna de cada linha são impressos na consola. Sempre que um método de checkError() personalizado está a utilizar para verificar se Ocorreu um erro e panic para sair se ocorrer um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. A consulta select é executada chamando o método [db. Query ()](https://golang.org/pkg/database/sql/#DB.Query), e as linhas resultantes são mantidas numa variável do tipo [linhas](https://golang.org/pkg/database/sql/#Rows). O código lê os valores de dados de coluna na linha atual através do método [rows.Scan()](https://golang.org/pkg/database/sql/#Rows.Scan) e cria ciclos nas linhas através do iterador [rows.Next()](https://golang.org/pkg/database/sql/#Rows.Next) até não existirem mais linhas. Os valores de coluna de cada linha são impressos na consola. Sempre que um método checkError() personalizada é utilizado para verificar se Ocorreu um erro e panic para sair se ocorrer um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 
@@ -286,7 +286,7 @@ Utilize o código seguinte para se ligar e eliminar os dados com a instrução S
 
 O código importa três pacotes: o [pacote sql](https://golang.org/pkg/database/sql/), o [pacote pq](http://godoc.org/github.com/lib/pq) como um controlador para comunicar com o servidor Postgres e o [pacote fmt](https://golang.org/pkg/fmt/) para entrada e saída de dados impressos na linha de comandos.
 
-O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. As chamadas de código a [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) método a executar a instrução de SQL que elimina uma linha da tabela. Um método checkError() personalizado é utilizado para verificar se Ocorreu um erro e ocorre panic para sair se um erro.
+O código chama o método [sql. Open ()](http://godoc.org/github.com/lib/pq#Open) para ligar à base de dados do Azure para a base de dados PostgreSQL e verifica a ligação utilizando o método [db. Ping()](https://golang.org/pkg/database/sql/#DB.Ping). É utilizado um [identificador de base de dados](https://golang.org/pkg/database/sql/#DB) ao manter o conjunto de ligações para o servidor da base de dados. As chamadas de código a [Exec()](https://golang.org/pkg/database/sql/#DB.Exec) método a executar a instrução de SQL que elimina uma linha da tabela. Um método checkError() personalizada é utilizado para verificar se Ocorreu um erro e panic para sair se ocorrer um erro.
 
 Substitua os parâmetros `HOST`, `DATABASE`, `USER` e `PASSWORD` pelos seus próprios valores. 
 ```go

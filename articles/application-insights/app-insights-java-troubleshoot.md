@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/16/2016
 ms.author: mbullwin
-ms.openlocfilehash: 5a729139e122693b4199607919c876bda45fd4b5
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 6b1cfa2b52e8e9e2b6a8ab87be6d4269cbe3f1cf
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java"></a>Resolução de problemas e Perguntas e Respostas para o Application Insights para Java
 Questões ou problemas com [Azure Application Insights em Java][java]? Eis algumas sugestões.
@@ -124,6 +124,13 @@ Na sua firewall poderá ter de abrir as portas TCP 80 e 443 para tráfego de sa�
 **Quanto os dados são mantidos no portal? É seguro?**
 
 Consulte [retenção de dados e privacidade][data].
+
+## <a name="debug-logging"></a>O registo de depuração
+Application Insights utiliza `org.apache.http`. Isto foi reposicionado no Application Insights core v7 sob o espaço de nomes `com.microsoft.applicationinsights.core.dependencies.http`. Isto permite que o Application Insights processar cenários onde diferentes versões do mesmo `org.apache.http` existe na base de um código. 
+
+>[!NOTE]
+>Se ativar o registo de nível de depuração para todos os espaços de nomes na aplicação, será cumprido pela todos os módulos em execução, incluindo `org.apache.http` mudar o nome como `com.microsoft.applicationinsights.core.dependencies.http`. Application Insights não conseguirá aplicar a filtragem para essas chamadas porque a chamada de registo está a ser efetuada através da biblioteca do Apache. Registo de nível de depuração produzir uma quantidade considerável de dados de registo e não é recomendado para instâncias de produção em direto.
+
 
 ## <a name="next-steps"></a>Passos seguintes
 **Posso configurar Application Insights para a aplicação my server de Java. Pessoa que posso fazer?**

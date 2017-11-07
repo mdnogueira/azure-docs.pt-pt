@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/26/2017
+ms.date: 11/03/2017
 ms.author: terrylan
-ms.openlocfilehash: 35aa45ce09b756dd7413a1df3d3c7b0c428b7a97
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e71d407050f210c770bcac30259b9c2f2fb27aa3
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-security-center-frequently-asked-questions-faq"></a>Perguntas mais frequentes (FAQ) do Centro de Segurança do Azure
 Estas perguntas mais frequentes respondem a dúvidas sobre o Centro de segurança do Azure, um serviço que o ajuda a evitar, detetar e responder a ameaças com uma maior visibilidade e controlo sobre a segurança dos seus recursos do Microsoft Azure.
@@ -127,6 +127,15 @@ Centro de segurança do Azure tem visibilidade antimalware instalada através de
 
 ### <a name="why-do-i-get-the-message-missing-scan-data-for-my-vm"></a>Por que motivo devo proceder para que a mensagem de "Dados de análise em falta" para a minha VM?
 Esta mensagem é apresentada quando não existem dados de análise para uma VM. Pode demorar algum tempo (menos de uma hora) de dados de análise para preencher após a recolha de dados está ativada no Centro de segurança do Azure. Depois do número inicial de dados de análise, poderá receber esta mensagem porque existe sem dados de análise de todo ou não recentes dados de análise. Análises não preencher para uma VM no estado parado. Esta mensagem também pode aparecer se os dados de análise não foi preenchido recentemente (em conformidade com a política de retenção para o agente do Windows, que tem um valor predefinido de 30 dias).
+
+### <a name="how-often-does-security-center-scan-for-operating-system-vulnerabilities-system-updates-and-endpoint-protection-issues"></a>Frequência análise do Centro de segurança de vulnerabilidades de sistema operativo, atualizações do sistema e problemas de proteção de ponto final?
+A latência no Centro de segurança verifica a existência de vulnerabilidades, atualizações, e é de problemas:
+
+- Vulnerabilidades do sistema operativo (pela Microsoft) – os dados são atualizados no prazo de 48 horas
+- Atualizações do sistema – dados são atualizadas dentro de 24 horas
+- Problemas do Endpoint Protection – os dados são atualizados dentro de 8 horas
+
+Centro de segurança, normalmente, verifica a existência de novos dados a cada hora. Os valores de latência acima são um cenário pior onde não é uma análise recente ou uma análise falhou.
 
 ### <a name="why-do-i-get-the-message-vm-agent-is-missing"></a>Por que motivo devo proceder para que a mensagem "O agente VM está em falta?"
 O agente da VM tem de ser instalado em VMs para ativar a recolha de dados. O Agente de VM é instalado por predefinição em VMs que são implementadas a partir do Azure Marketplace. Para obter informações sobre como instalar o agente da VM em outras VMs, consulte a mensagem de blogue [extensões e agente da VM](https://azure.microsoft.com/blog/vm-agent-and-extensions-part-2/).

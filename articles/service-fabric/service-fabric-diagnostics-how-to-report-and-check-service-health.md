@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/19/2017
+ms.date: 11/2/2017
 ms.author: dekapur
-ms.openlocfilehash: 83981d5bec14c06c509f1a8a4153dc23298f5ce0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a8c1ac57d38ae504e677c44c6fec08164b9b74ce
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="report-and-check-service-health"></a>Comunicar e verificar o estado de funcionamento dos serviços
 Quando os serviços de encontrarem problemas, a capacidade de responder a e corrigir incidentes e falhas depende da sua capacidade para detetar os problemas rapidamente. Se comunicar problemas e falhas para o Gestor de estado de funcionamento do Service Fabric do Azure a partir do seu código de serviço, pode utilizar o estado de funcionamento padrão ferramentas que o Service Fabric fornece para verificar o estado de funcionamento de monitorização.

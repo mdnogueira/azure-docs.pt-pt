@@ -16,11 +16,11 @@ ms.date: 08/15/2017
 ms.author: joflore
 ms.reviewer: jsnow
 ms.custom: it-pro
-ms.openlocfilehash: 92b95b91073ef0a53a936bea53a7c63fe37f1746
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 8bb4c754f7bf22198b997ded7a994ccf0e4ad265
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Integrar a sua infraestrutura de VPN com a MFA do Azure utilizando a extensão de servidor de políticas de rede do Azure
 
@@ -99,7 +99,7 @@ Esta secção fornece detalhes sobre os pré-requisitos que devem ser concluído
 Este artigo pressupõe que tem uma infraestrutura VPN de trabalho que utiliza o Microsoft Windows Server 2016 e que o servidor VPN não estão configurado para pedidos de ligação direta para um servidor RADIUS. O artigo, deve configurar a infraestrutura VPN para utilizar um servidor RADIUS central.
 
 Se não tiver uma infraestrutura VPN de trabalho no local, pode criar rapidamente um ao seguir as orientações nos vários tutoriais de configuração VPN que pode encontrar no Microsoft e sites de terceiros. 
-
+            
 ### <a name="the-network-policy-and-access-services-role"></a>A função Serviços de acesso e política de rede
 
 Serviços de acesso de política de rede e fornece a funcionalidade de servidor e cliente RADIUS. Este artigo pressupõe que já instalou a função Serviços de acesso e política de rede num servidor membro ou controlador de domínio no seu ambiente. Neste guia, configure RADIUS para uma configuração de VPN. Instalar a função Serviços de acesso e política de rede num servidor *diferente de* seu servidor VPN.
@@ -108,7 +108,7 @@ Para obter informações sobre como instalar a função Serviços de acesso e po
 
 ### <a name="azure-mfa-license"></a>Licença do MFA do Azure
 
-É necessária uma licença para o multi-factor Authentication do Azure e está disponível através de um Azure AD Premium, o Enterprise Mobility + segurança ou uma subscrição de multi-factor Authentication. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
+É necessária uma licença para o multi-factor Authentication do Azure e está disponível através de um Azure AD Premium, o Enterprise Mobility + segurança ou uma subscrição de multi-factor Authentication. Com base no consumo de licenças do MFA do Azure, como por utilizador ou por licenças de autenticação não são compatíveis com a extensão NPS. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
 
 ### <a name="windows-server-software"></a>Software Windows Server
 

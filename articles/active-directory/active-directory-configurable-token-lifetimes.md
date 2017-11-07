@@ -16,11 +16,11 @@ ms.date: 07/20/2017
 ms.author: billmath
 ms.custom: aaddev
 ms.reviewer: anchitn
-ms.openlocfilehash: d23721eba308096a05211eb6e26e1338a69cae0c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8f1c601f5de440346d35e25299f6f800f3e3c10d
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-public-preview"></a>Durações de token configuráveis no Azure Active Directory (pré-visualização pública)
 Pode especificar a duração de um token emitido pelo Azure Active Directory (Azure AD). Pode definir token durações para todas as aplicações na sua organização, para uma aplicação de (multi organização) de multi-inquilino ou para um principal de serviço específicos na sua organização.
@@ -58,9 +58,9 @@ Clientes públicos segura não é possível armazenar uma palavra-passe do clien
 Tokens de ID são transferidos para sites e clientes nativos. Tokens de ID contêm informações de perfil sobre um utilizador. Um token de ID está vinculado a uma combinação específica do utilizador e de cliente. Tokens de ID são considerados válidos até que a respetiva expiração. Normalmente, uma aplicação web corresponde a um utilizador da duração de sessão na aplicação para a duração do ID token emitido para o utilizador. Pode ajustar a duração de um token de ID para controlar a frequência a aplicação web expira a sessão de aplicação e frequência com exige que o utilizador a possível reautenticar com o Azure AD (silenciosamente ou interativamente).
 
 ### <a name="single-sign-on-session-tokens"></a>Tokens de sessão de início de sessão único
-Quando um utilizador efetua a autenticação com o Azure AD e seleciona a **manter a minha sessão iniciada** caixa de verificação, é estabelecida uma sessão de início de início de sessão único (SSO) com o browser do utilizador e o Azure AD. O token SSO, sob a forma de um cookie representa esta sessão. Tenha em atenção que o token de sessão SSO não está vinculado a uma aplicação de cliente/recursos específico. Os tokens de sessão SSO podem ser revogados e respetiva validade é verificada sempre que são utilizados.
+Quando um utilizador efetua a autenticação com o Azure AD, é estabelecida uma sessão de início de início de sessão único (SSO) com o browser do utilizador e o Azure AD. O token SSO, sob a forma de um cookie representa esta sessão. Tenha em atenção que o token de sessão SSO não está vinculado a uma aplicação de cliente/recursos específico. Os tokens de sessão SSO podem ser revogados e respetiva validade é verificada sempre que são utilizados.
 
-AD do Azure utiliza dois tipos de tokens de sessão SSO: nonpersistent e persistente. Tokens de sessão persistentes são armazenados como os cookies persistentes pelo browser. Tokens de sessão nonpersistent são armazenados como cookies de sessão. (Cookies de sessão serão destruídos quando o browser é fechado.)
+AD do Azure utiliza dois tipos de tokens de sessão SSO: nonpersistent e persistente. Tokens de sessão persistentes são armazenados como os cookies persistentes pelo browser. Tokens de sessão nonpersistent são armazenados como cookies de sessão. (Cookies de sessão serão destruídos quando o browser é fechado.) Normalmente, um token de sessão nonpersistent é armazenado. No entanto, quando o utilizador seleciona o **manter a minha sessão iniciada** caixa de verificação durante a autenticação, um token de sessão persistentes é armazenada.
 
 Tokens de sessão nonpersistent têm uma duração de 24 horas. Persistentes tokens têm uma duração de 180 dias. Sempre que é utilizado um token de sessão do SSO no seu período de validade, o período de validade é expandido outro 24 horas ou 180 dias, consoante o tipo de token. Se um token de sessão SSO não é utilizado no seu período de validade, é considerada expirou e já não é aceite.
 

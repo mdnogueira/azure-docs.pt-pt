@@ -8,12 +8,12 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 11/02/2017
-ms.openlocfilehash: 7396b8f66dc65cfad497e336887978fa487c42f6
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.date: 11/03/2017
+ms.openlocfilehash: ae7e57e9b40f5194c15525a48843060bbccaa956
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-database-for-mysql-options-and-performance-understand-whats-available-in-each-pricing-tier"></a>Base de dados do Azure para MySQL opções e desempenho: compreender o que está disponível em cada escalão de preço
 Quando cria uma base de dados do Azure para o servidor de MySQL, decida três escolhas principais para configurar os recursos alocados para esse servidor. Estas opções afetam o desempenho e a escala do servidor.
@@ -96,10 +96,10 @@ Inicialmente, escolha o nível de desempenho e o escalão de preço ao criar a b
 
 As unidades de computação de dimensionamento é feito independentemente do tamanho máximo de armazenamento que escolheu.
 
-Nos bastidores, alterar o nível de desempenho de uma base de dados cria uma cópia da base de dados original ao nível de desempenho do novo e, em seguida, passa ligações para o servidor copiado. Não se tenha perdido nenhum dado durante este processo. Durante o momento em breve quando o sistema passa para a nova cópia do servidor, as ligações à base de dados estão desativadas, para que alguns as transações em trânsito podem ser revertidas. Esta janela varia, mas demora em média em 4 segundos, e em mais de 99% dos casos, demora menos de 30 segundos. Se existir um grande número de transações em voo no momento em que as ligações são desativadas, esta janela pode demorar mais.
+Nos bastidores, alterar o nível de desempenho de um servidor de cria uma cópia do servidor original ao nível de desempenho do novo e, em seguida, passa ligações para o servidor copiado. Não se tenha perdido nenhum dado durante este processo. Durante o momento em breve quando o sistema passa para a nova cópia do servidor, as ligações à base de dados estão desativadas, para que alguns as transações em trânsito podem ser revertidas. Esta janela varia, mas demora em média em 4 segundos, e em mais de 99% dos casos, demora menos de 30 segundos. Se existir um grande número de transações em voo no momento em que as ligações são desativadas, esta janela pode demorar mais.
 
 A duração do processo de escala completa depende do tamanho tanto escalão do servidor de preços antes e após a alteração. Por exemplo, um servidor que está a alterar unidades de computação dentro do escalão de preço padrão, deve ser concluído dentro de alguns minutos. Novas propriedades para o servidor não são aplicadas até que as alterações foram concluídas.
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 - Para mais informações sobre unidades de computação, consulte [explicar unidades de computação](concepts-compute-unit-and-storage.md)
 - Saiba como [monitorizar e dimensionar uma base de dados do Azure para o servidor de MySQL utilizando a CLI do Azure](scripts/sample-scale-server.md)

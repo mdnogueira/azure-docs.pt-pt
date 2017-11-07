@@ -14,25 +14,93 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/31/2017
 ms.author: cawa
-ms.openlocfilehash: c1a3370d29b47da752e4ab1ea67ccc1a4cdd94df
-ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.openlocfilehash: cf077fef6df2fd21cf51f6b4fd4e26a4b5081247
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="microsoft-azure-storage-explorer-preview-release-notes"></a>Notas de versão do Explorador de armazenamento do Microsoft Azure (pré-visualização)
 
-Este artigo contém a versão de lançamento de notas do Explorador de armazenamento do Azure 0.9.0 (pré-visualização), bem como as notas de versão para versões anteriores.
+Este artigo contém a versão de lançamento de notas do Explorador de armazenamento do Azure 0.9.2 (pré-visualização), bem como as notas de versão para versões anteriores.
 
 [Explorador de armazenamento do Microsoft Azure (pré-visualização)](./vs-azure-tools-storage-manage-with-storage-explorer.md) é uma aplicação autónoma que lhe permite trabalhar facilmente com dados de armazenamento do Azure no Windows, macOS e Linux.
 
+## <a name="version-092"></a>Versão 0.9.2
+11/01/2017
+
+### <a name="download-azure-storage-explorer-092-preview"></a>Transferir o Explorador de armazenamento do Azure 0.9.2 (pré-visualização)
+- [Explorador de armazenamento do Azure 0.9.2 (pré-visualização) para Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
+- [Explorador de armazenamento do Azure 0.9.2 (pré-visualização) para Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
+- [Explorador de armazenamento do Azure 0.9.2 (pré-visualização) para Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
+
+### <a name="hotfixes"></a>Correções
+* Alterações de dados inesperado foram possíveis ao editar Edm.DateTime valores para as entidades da tabela, consoante o fuso horário local. O editor de utiliza uma caixa de texto simples, dar controlo preciso, consistente Edm.DateTime valores.
+* Um grupo de blobs quando anexada com o nome e a chave de carregamento/transferência não arrancam. Esta correção.
+* Anteriormente, Explorador de armazenamento só iria solicitar-lhe para voltar uma conta obsoleta se um ou mais subscrições da conta foi selecionado. Agora Explorador de armazenamento pedirá, mesmo se a conta é totalmente filtrada.
+* O domínio de pontos finais para o Azure US Government estava incorreto. Foi corrigido.
+* Por vezes, foi difícil de clique no botão aplicar no painel Gerir contas. Já não deverá ocorrer.
+
+### <a name="new"></a>novo
+* Suporte de pré-visualização para a base de dados do Azure Cosmos:
+    * [Documentação online](./cosmos-db/tutorial-documentdb-and-mongodb-in-storage-explorer.md)
+    * Criar bases de dados e de coleções
+    * Manipular dados
+    * Consultar, criar ou eliminar documentos
+    * Atualizar os procedimentos armazenados, funções definidas pelo utilizador ou acionadores
+    * Utilize as cadeias de ligação para ligar a e gerir as bases de dados
+* Melhoria do desempenho de carregamento/transferir blobs pequenos muitos.
+* Adicionar uma ação de "All Repita" se houver falhas num grupo de carregamento de blob ou grupo de transferências de blob.
+* Explorador de armazenamento será agora colocado em pausa iteração durante o carregamento de blob/transferência se detetar que a ligação de rede foi perdida. Em seguida, pode retomar iteração assim que a ligação de rede foi restabelecida.
+* Foi adicionada a capacidade para "Fechar All", "Feche outros" e "Fechar" separadores através do menu de contexto.
+* Agora, o Explorador de armazenamento utiliza caixas de diálogo nativas e menus de contexto nativo.
+* Explorador de armazenamento é agora mais acessível. Melhoramentos incluem:
+    * Suporte de leitor de ecrã melhorada, para NVDA no Windows e para VoiceOver no Mac
+    * Temas melhorada elevado contraste
+    * Correções de foco do teclado tabbing e teclado
+
+### <a name="fixes"></a>Correções
+* Se tentou abrir ou transferir um blob com um nome de ficheiro inválido do Windows, a operação falhará. Explorador de armazenamento será detetar se um nome de blob é inválido e peça se gostaria de codificá-lo ou ignorar o blob. Explorador de armazenamento também Deteta se um nome de ficheiro parece ser codificados e pedir-lhe se pretende descodificá-lo antes de carregar.
+* Durante o carregamento de blob, o editor do contentor do blob de destino seria, por vezes, não corretamente atualizar. Esta correção.
+* O suporte de várias formas de cadeias de ligação e SAS URIs regressed. Podemos ter resolvidos todos os problemas conhecidos, mas envie comentários, se ainda ocorrerem problemas.
+* A notificação de atualização foi interrompida para alguns utilizadores numa 0.9.0. Corrigir este problema e para os que são afetados pelos erros, pode transferir manualmente a versão mais recente do Explorador de armazenamento [aqui](https://azure.microsoft.com/en-us/features/storage-explorer/).
+
+### <a name="known-issues"></a>Problemas conhecidos
+* Explorador de armazenamento não suporta contas ADFS.
+* Teclas de atalho para "Explorador de vista" e "Vista de gestão de contas" devem ser Ctrl / Cmd + Shift + E e Ctrl / Cmd + Shift + A respetivamente.
+* Quando a filtrar a pilha do Azure, carregar determinados ficheiros como blobs de acréscimo pode falhar.
+* Depois de clicar em "Cancelar" uma tarefa, pode demorar um pouco para essa tarefa Cancelar. Isto acontece porque está a utilizar a solução de filtro de cancelar descrita aqui.
+* Se escolher o certificado PIN/smart card errado, terá de reiniciar para ter o Explorador de armazenamento se esqueça de que decisão.
+* O painel de definições de conta pode mostrar que terá de reintroduzir as credenciais para filtrar as subscrições.
+* Mudar o nome de blobs (individualmente ou dentro de um contentor do blob cujo nome foi alterado) não preserva a instantâneos. Todas as outras propriedades e metadados para blobs, ficheiros e entidades são preservados durante uma mudança de nome.
+* Embora a pilha do Azure atualmente não suporta partilhas de ficheiros, um nó de partilhas de ficheiros continua a aparecer sob uma conta de armazenamento de pilha do Azure ligada.
+* A shell de Electron utilizada pelo Explorador de armazenamento tem problemas com algumas aceleração de hardware da GPU (unidade de processamento de gráficos). Se o Explorador de armazenamento apresenta uma janela de principal (vazia) em branco, pode tentar iniciar o Explorador de armazenamento na linha de comandos e desativar a aceleração de GPU adicionando o `--disable-gpu` comutador:
+```
+./StorageExplorer.exe --disable-gpu
+```
+* Para os utilizadores no Ubuntu 14.04, terá de garantir GCC é atualizada - Isto pode ser efetuado executando os comandos seguintes e, em seguida, reiniciar o computador:
+
+    ```
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get dist-upgrade
+    ```
+
+* Para os utilizadores no Ubuntu 17.04, terá de instalar GConf - Isto pode ser efetuado executando os comandos seguintes e, em seguida, reiniciar o computador:
+
+    ```
+    sudo apt-get install libgconf-2-4
+    ```
+
+
+
 ## <a name="version-091--090-preview"></a>Versão 0.9.1 / 0.9.0 (pré-visualização)
 10/20/2017
-
 ### <a name="download-azure-storage-explorer-091-preview"></a>Transferir o Explorador de armazenamento do Azure 0.9.1 (pré-visualização)
-- [Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Windows](https://go.microsoft.com/fwlink/?LinkId=708343)
-- [Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Mac](https://go.microsoft.com/fwlink/?LinkId=708342)
-- [Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Linux](https://go.microsoft.com/fwlink/?LinkId=722418)
+* [Transferir o Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Windows](https://go.microsoft.com/fwlink/?LinkId=809306)
+* [Transferir o Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Mac](https://go.microsoft.com/fwlink/?LinkId=809307)
+* [Transferir o Explorador de armazenamento do Azure 0.9.1 (pré-visualização) para Linux](https://go.microsoft.com/fwlink/?LinkId=809308)
 
 ### <a name="new"></a>novo
 * Suporte de pré-visualização para a base de dados do Azure Cosmos:
@@ -86,13 +154,30 @@ Este artigo contém a versão de lançamento de notas do Explorador de armazenam
     sudo apt-get install libgconf-2-4
     ```
 
-## <a name="version-0816-preview"></a>Versão 0.8.16 (pré-visualização)
-8/21/2017
 
-### <a name="download-azure-storage-explorer-0816-preview"></a>Transferir o Explorador de armazenamento do Azure 0.8.16 (pré-visualização)
-* [Transferir o Explorador de armazenamento do Azure 0.8.16 (pré-visualização) para Windows](https://go.microsoft.com/fwlink/?LinkId=809306)
-* [Transferir o Explorador de armazenamento do Azure 0.8.16 (pré-visualização) para Mac](https://go.microsoft.com/fwlink/?LinkId=809307)
-* [Transferir o Explorador de armazenamento do Azure 0.8.16 (pré-visualização) para Linux](https://go.microsoft.com/fwlink/?LinkId=809308)
+
+## <a name="previous-releases"></a>Versões anteriores
+
+* [Versão 0.8.16](#version-0816)
+* [Versão 0.8.14](#version-0814)
+* [Versão 0.8.13](#version-0813)
+* [Versão 0.8.12 / 0.8.11 / 0.8.10](#version-0812--0811--0810)
+* [Versão 0.8.9 / 0.8.8](#version-089--088)
+* [Versão 0.8.7](#version-087)
+* [Versão 0.8.6](#version-086)
+* [Versão 0.8.5](#version-085)
+* [Versão 0.8.4](#version-084)
+* [Versão 0.8.3](#version-083)
+* [Versão 0.8.2](#version-082)
+* [Versão 0.8.0](#version-080)
+* [Versão 0.7.20160509.0](#version-07201605090)
+* [Versão 0.7.20160325.0](#version-07201603250)
+* [Versão 0.7.20160129.1](#version-07201601291)
+* [Versão 0.7.20160105.0](#version-07201601050)
+* [Versão 0.7.20151116.0](#version-07201511160)
+
+## <a name="version-0816"></a>Versão 0.8.16
+8/21/2017
 
 ### <a name="new"></a>novo
 * Quando abre um blob, Explorador de armazenamento irá solicitar-lhe carregar o ficheiro transferido, desde que seja detetada uma alteração
@@ -130,26 +215,6 @@ Este artigo contém a versão de lançamento de notas do Explorador de armazenam
     ```
     sudo apt-get install libgconf-2-4
     ```
-
-## <a name="previous-releases"></a>Versões anteriores
-
-* [Versão 0.8.14](#version-0814)
-* [Versão 0.8.13](#version-0813)
-* [Versão 0.8.12 / 0.8.11 / 0.8.10](#version-0812--0811--0810)
-* [Versão 0.8.9 / 0.8.8](#version-089--088)
-* [Versão 0.8.7](#version-087)
-* [Versão 0.8.6](#version-086)
-* [Versão 0.8.5](#version-085)
-* [Versão 0.8.4](#version-084)
-* [Versão 0.8.3](#version-083)
-* [Versão 0.8.2](#version-082)
-* [Versão 0.8.0](#version-080)
-* [Versão 0.7.20160509.0](#version-07201605090)
-* [Versão 0.7.20160325.0](#version-07201603250)
-* [Versão 0.7.20160129.1](#version-07201601291)
-* [Versão 0.7.20160105.0](#version-07201601050)
-* [Versão 0.7.20151116.0](#version-07201511160)
-
 
 ### <a name="version-0814"></a>Versão 0.8.14
 06/22/2017

@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 08/10/2017
-ms.openlocfilehash: 3a76e816f9b1fa484789f548899d7e8e7043febb
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.date: 11/03/2017
+ms.openlocfilehash: b78009a4b2683bb7ee881808ddbbc792d66dea6c
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="create-an-azure-database-for-postgresql-server-in-the-azure-portal"></a>Criar uma base de dados do Azure para o servidor de PostgreSQL no portal do Azure
 
@@ -124,7 +124,7 @@ Estão disponíveis diversas aplicações para ligar à sua Base de Dados do Azu
 
     parâmetro psql |Valor sugerido|Descrição
     ---|---|---
-    --host | Nome do servidor | O valor de nome de servidor que utilizou quando criou a base de dados do Azure para o servidor de PostgreSQL anteriormente. Servidor nosso exemplo mostrado é **mypgserver 20170401.postgres.database.azure.com.** Utilize o nome de domínio completamente qualificado (**\*. postgres.database.azure.com**) conforme mostrado no exemplo. Se não se lembrar do nome do servidor, siga os passos na secção anterior para obter as informações da ligação. 
+    --host | Nome do servidor | O valor de nome de servidor que utilizou quando criou a base de dados do Azure para o servidor de PostgreSQL anteriormente. O servidor de exemplo mostrado **mypgserver 20170401.postgres.database.azure.com.** Utilize o nome de domínio completamente qualificado (**\*. postgres.database.azure.com**) conforme mostrado no exemplo. Se não se lembrar do nome do servidor, siga os passos na secção anterior para obter as informações da ligação. 
     --port | 5432 | A porta a utilizar ao ligar à base de dados do Azure para o servidor de PostgreSQL. 
     --username | Nome de início de sessão de administração do servidor |O servidor admin início de sessão nome de utilizador que especificou quando criou a base de dados do Azure para o servidor de PostgreSQL anteriormente. Não se lembra seu nome de utilizador, siga os passos na secção anterior para obter as informações de ligação. O formato é *username@servername*.
     --dbname | *postgres* | A predefinição, o nome de base de dados gerado pelo sistema que foi criada para a primeira ligação. Mais tarde, pode criar a sua própria base de dados.
@@ -199,13 +199,13 @@ Para ligar ao servidor do Azure PostgreSQL utilizando pgAdmin de ferramenta GUI:
 
 6. No **Browser** painel à esquerda, expanda o **servidores** nós. Selecione o seu servidor, por exemplo, **Azure PostgreSQL servidor**. Clique para ligar ao mesmo.
 
-7. Expanda o nó de servidor e, em seguida, expanda **Bases de Dados** sob o mesmo. A lista deve incluir existentes *postgres* base de dados e qualquer utilizador recentemente criado base de dados, tais como **mypgsqldb**, que criámos na secção anterior. Tenha em atenção que pode criar várias bases de dados por servidor com base de dados do Azure para PostgreSQL.
+7. Expanda o nó de servidor e, em seguida, expanda **Bases de Dados** sob o mesmo. A lista deve incluir existentes *postgres* base de dados e qualquer utilizador recentemente criado base de dados, tais como **mypgsqldb**, que foi criado na secção anterior. Tenha em atenção que pode criar várias bases de dados por servidor com base de dados do Azure para PostgreSQL.
 
 8. Clique com botão direito **bases de dados**, escolha o **criar** e, em seguida, selecione **base de dados**.
 
 9. Escreva um nome de base de dados da sua preferência no **base de dados** campo, tal como **mypgsqldb**, conforme mostrado no exemplo.
 
-10. Selecione o **proprietário** para a base de dados de caixa de listagem. Escolha o seu servidor de nome de início de sessão de administrador, como o nosso exemplo, **mylogin**.
+10. Selecione o **proprietário** para a base de dados de caixa de listagem. Escolha o seu servidor de nome de início de sessão de administrador, como exemplo, **mylogin**.
 
 11. Selecione **guardar** para criar uma nova base de dados em branco.
 
@@ -221,9 +221,9 @@ Para ligar ao servidor do Azure PostgreSQL utilizando pgAdmin de ferramenta GUI:
 > Outros Guias de Introdução desta coleção compilados com base neste Guia de Introdução. Se pretender continuar a trabalhar com Guias de Introdução, não limpe os recursos que criou neste Guia de Introdução. Se não pretender continuar, siga estes passos para eliminar os recursos que foram criados por este guia de introdução no portal.
 
 Para eliminar o grupo de recursos completo, incluindo o servidor recentemente criado:
-1. Localize o grupo de recursos no portal. No menu à esquerda, selecione **grupos de recursos**. Em seguida, selecione o nome do grupo de recursos, tais como o nosso exemplo, **myresourcegroup**.
+1. Localize o grupo de recursos no portal. No menu à esquerda, selecione **grupos de recursos**. Em seguida, selecione o nome do grupo de recursos, tais como exemplo, **myresourcegroup**.
 
-2. Na página do grupo de recursos, selecione **Eliminar**. Escreva o nome do grupo de recursos, tais como o nosso exemplo, **myresourcegroup**, na caixa de texto para confirmar a eliminação. Selecione **Eliminar**.
+2. Na página do grupo de recursos, selecione **Eliminar**. Escreva o nome do grupo de recursos, tais como exemplo, **myresourcegroup**, na caixa de texto para confirmar a eliminação. Selecione **Eliminar**.
 
 Para eliminar apenas o servidor recentemente criado:
 1. Localize o seu servidor no portal, não se este estiver aberto. No menu à esquerda, selecione **todos os recursos**. Em seguida, procure o servidor que criou.
@@ -232,7 +232,7 @@ Para eliminar apenas o servidor recentemente criado:
 
     ![O botão "Eliminar"](./media/quickstart-create-database-portal/12-delete.png)
 
-3. Confirmar o nome do servidor que pretende eliminar e ver as bases de dados em são afetados. Escreva o nome do servidor na caixa de texto, como o nosso exemplo, **mypgserver 20170401**. Selecione **Eliminar**.
+3. Confirmar o nome do servidor que pretende eliminar e ver as bases de dados em são afetados. Escreva o nome do servidor na caixa de texto, tal como exemplo, **mypgserver 20170401**. Selecione **Eliminar**.
 
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]

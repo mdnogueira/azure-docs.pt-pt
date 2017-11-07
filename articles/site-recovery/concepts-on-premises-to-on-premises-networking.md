@@ -1,10 +1,10 @@
 ---
-title: "Conectividade VM após a ativação pós-falha para um site secundário com o Azure Site Recovery | Microsoft Docs"
+title: "A ligação para as VMs após a ativação pós-falha para um site secundário com o Azure Site Recovery | Microsoft Docs"
 description: "Orientações de rede para ligar a VMs após a ativação pós-falha para um site secundário com o Azure Site Recovery."
 services: site-recovery
 documentationcenter: 
 author: rayne-wiselman
-manager: carmonm
+manager: prateek9us
 editor: 
 ms.assetid: 67d73590-185c-49b2-a097-597bf54747a9
 ms.service: site-recovery
@@ -12,15 +12,15 @@ ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2017
-ms.author: raynew
-ms.openlocfilehash: 7b27fc568c77b44ab2366d297ca9e7685439143e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/05/2017
+ms.author: pratshar
+ms.openlocfilehash: ce33a90a303a10de8ff198754e8e39c334035537
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
-# <a name="vm-connectivity-after-failover-to-a-secondary-site"></a>Conectividade de VMs após a ativação pós-falha para um site secundário
+# <a name="connecting-to-vms-after-failover-to-a-secondary-site"></a>A ligação para as VMs após a ativação pós-falha para um site secundário
 
 Depois de rever os pré-requisitos de implementação, leia este artigo para planear o funcionamento em rede quando replicar máquinas virtuais de Hyper-V (VMs) geridas em nuvens do System Center Virtual Machine Manager (VMM), para um site secundário utilizando [do Azure Site Recovery](site-recovery-overview.md) no portal do Azure. 
 

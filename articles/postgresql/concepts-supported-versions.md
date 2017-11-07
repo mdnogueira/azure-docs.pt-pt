@@ -8,14 +8,16 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 07/06/2017
-ms.openlocfilehash: cdc8f570c66630e210efa3163f8ee419337df3a1
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/03/2017
+ms.openlocfilehash: 646e95f5c3c7bc9bb175a5532435b28bb998b49b
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="supported-postgresql-database-versions"></a>Versões de base de dados PostgreSQL suportados
+Microsoft visa suportar n-2 versões do motor PostgreSQL a base de dados do Azure PostgreSQL serviço, que significa que a versão principal atualmente lançada (n) e as dois principais as versões anteriores (-2).
+
 Base de dados do Azure para PostgreSQL atualmente suporta as seguintes versões:
 
 ## <a name="postgresql-version-962"></a>Versão PostgreSQL 9.6.2

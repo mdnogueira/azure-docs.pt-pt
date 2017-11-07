@@ -12,18 +12,24 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2017
+ms.date: 11/02/2017
 ms.author: juluk
-ms.openlocfilehash: 7f5c034df3410fc5563a5ed657f7c1aa0f4135ec
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 3acea56ea414f0c43333a02274e91226db29d454
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="overview-of-azure-cloud-shell-preview"></a>Descrição geral da Shell de nuvem do Azure (pré-visualização)
 Shell de nuvem do Azure é uma shell interativa e acessíveis para o browser para a gestão de recursos do Azure.
 Proporciona a flexibilidade de escolher a experiência de shell que melhor se adapta da forma que trabalha.
 Os utilizadores de Linux podem optar por uma experiência de Bash, ao passo que os utilizadores de Windows podem escolher o PowerShell.
+
+Iniciar através do portal do Azure do ícone Shell de Cloud:
+
+![Início do portal](media/overview/portal-launch-icon.png)
+
+Tirar partido das Bash ou o PowerShell na lista pendente de Seletor de shell:
 
 ![Bash na Shell de nuvem](media/overview/overview-bash-pic.png)
 
@@ -44,7 +50,7 @@ Shell de nuvem fica pré-instaladas com ferramentas de linha de comandos popular
 Ver a lista completa de ferramentas para [Bash experiência](features.md#tools) e [experiência com o PowerShell.](features-powershell.md#tools)
 
 ### <a name="automatic-authentication"></a>Autenticação automática
-Shell de nuvem segura autentica automaticamente em cada sessão para instantânea acesso aos recursos através de Cmdlets do PowerShell e o 2.0 CLI do Azure.
+Shell de nuvem segura autentica automaticamente em cada sessão para instantânea acesso aos recursos através dos cmdlets do Azure CLI 2.0 ou o Azure PowerShell.
 
 ### <a name="connect-your-azure-file-storage"></a>Ligar o File storage do Azure
 Nuvem Shell máquinas são temporárias e como consequência necessitam de uma partilha de ficheiros do Azure para possível montá-la como `clouddrive` para manter o seu diretório $Home.

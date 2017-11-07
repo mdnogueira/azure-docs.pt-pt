@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/17/2017
+ms.date: 11/02/2017
 ms.author: dekapur
-ms.openlocfilehash: 5773361fdec4cb8ee54fa2856f6aa969d5dac4e9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c05cfec995538a95d99451155cf269d33e2716d0
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Agregação de eventos e coleção utilizando o Windows Azure Diagnostics
 > [!div class="op_single_selector"]
@@ -174,7 +174,7 @@ Depois de modificar o ficheiro Template, tal como descrito, voltar a publicar o 
 
 Eventos de métricos de estado de funcionamento e a carga a partir de com a versão 5.4 do Service Fabric, estão disponíveis para a coleção. Estes eventos refletir os eventos gerados pelo sistema ou o seu código utilizando o estado de funcionamento ou carregar APIs de relatórios, tais como [ReportPartitionHealth](https://msdn.microsoft.com/library/azure/system.fabric.iservicepartition.reportpartitionhealth.aspx) ou [ReportLoad](https://msdn.microsoft.com/library/azure/system.fabric.iservicepartition.reportload.aspx). Isto permite para agregar e visualizar o estado de funcionamento do sistema ao longo do tempo e para alertas com base em eventos de estado de funcionamento ou de carregamento. Para ver estes eventos no Visualizador de eventos de diagnóstico do Visual Studio adicionar "Microsoft-ServiceFabric:4:0x4000000000000008" à lista de fornecedores ETW.
 
-Para recolher os eventos, modifique o modelo do Resource Manager para incluir
+Para recolher eventos do cluster, modifique o `scheduledTransferKeywordFilter` no WadCfg do seu modelo do Resource Manager `4611686018427387912`.
 
 ```json
   "EtwManifestProviderConfiguration": [
@@ -191,11 +191,15 @@ Para recolher os eventos, modifique o modelo do Resource Manager para incluir
 
 ## <a name="collect-reverse-proxy-events"></a>Recolher eventos de proxy inverso
 
-Começando com a versão 5.7 do Service Fabric, [proxy inverso](service-fabric-reverseproxy.md) estão disponíveis para a recolha de eventos.
-Proxy inverso emite eventos em dois canais, um contentor de eventos de erro ao refletir falhas e outro aquele que contém eventos verbosos sobre todos os pedidos de processamento de pedidos processados no proxy inverso. 
+Começando com a versão 5.7 do Service Fabric, [proxy inverso](service-fabric-reverseproxy.md) eventos estão disponíveis para a coleção através dos canais de mensagens & dados. 
 
-1. Recolher eventos de erro: para ver estes eventos no Visualizador de eventos de diagnóstico do Visual Studio adicionar "Microsoft-ServiceFabric:4:0x4000000000000010" à lista de fornecedores ETW.
-Para recolher eventos de clusters do Azure, modifique o modelo do Resource Manager para incluir
+O proxy reverso pushes apenas eventos de erro através do canal de mensagens & dados principal - ao refletir o pedido de processamento falhas e os problemas críticos. O canal de detalhado contém eventos verbosos sobre todos os pedidos processados do proxy inverso. 
+
+Para ver os eventos de erro no Visualizador de eventos de diagnóstico do Visual Studio adicionar "Microsoft-ServiceFabric:4:0x4000000000000010" à lista de fornecedores ETW. Para a telemetria de pedido, atualizar a entrada de Microsoft ServiceFabric na lista de fornecedor ETW para "Microsoft-ServiceFabric:4:0x4000000000000020".
+
+Para clusters em execução no Azure:
+
+Para recolher rastreios de canal de mensagens & dados principal, modifique o `scheduledTransferKeywordFilter` valor WadCfg do seu modelo do Resource Manager `4611686018427387920`.
 
 ```json
   "EtwManifestProviderConfiguration": [
@@ -210,8 +214,7 @@ Para recolher eventos de clusters do Azure, modifique o modelo do Resource Manag
     }
 ```
 
-2. Recolher todos os eventos de pedidos de processamento: Visualizador de eventos diagnóstico do Visual Studio, atualização Microsoft-ServiceFabric entrada na lista de fornecedor ETW para "Microsoft-ServiceFabric:4:0x4000000000000020".
-Para o Azure Service Fabric clusters, modifique o modelo do resource manager para incluir
+Para recolher eventos de todo o processamento de pedido, ative o serviço de mensagens - & dados detalhadas canal alterando o `scheduledTransferKeywordFilter` valor WadCfg do seu modelo do Resource Manager `4611686018427387936`.
 
 ```json
   "EtwManifestProviderConfiguration": [
@@ -225,9 +228,8 @@ Para o Azure Service Fabric clusters, modifique o modelo do resource manager par
       }
     }
 ```
-> Recomenda-se para ativar judiciously recolher eventos deste canal conforme este recolhe todo o tráfego através do proxy inverso e rapidamente pode consumir a capacidade de armazenamento.
 
-Para clusters de Service Fabric do Azure, os eventos de todos os nós são recolhidos e agregados no SystemEventTable.
+Ativar a recolha de eventos deste detalhadas resultados de canal em muitos rastreios a ser gerado rapidamente e pode consumir a capacidade de armazenamento. Apenas ative esta opção quando for absolutamente necessário.
 Resolução de erros detalhada os eventos de proxy inverso, consulte o [guia de diagnóstico de proxy inverso](service-fabric-reverse-proxy-diagnostics.md).
 
 ## <a name="collect-from-new-eventsource-channels"></a>Recolher novos canais de EventSource

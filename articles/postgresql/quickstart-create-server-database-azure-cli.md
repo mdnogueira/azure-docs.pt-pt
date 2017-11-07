@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.devlang: azure-cli
 ms.topic: quickstart
-ms.date: 06/13/2017
-ms.openlocfilehash: f51964687e2fbbcca4f5623b56997dc8acfa78a6
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.date: 11/03/2017
+ms.openlocfilehash: a47e0c98593f92af6988795779700dc641f3011c
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="create-an-azure-database-for-postgresql-using-the-azure-cli"></a>Criar uma Base de Dados do Azure para PostgreSQL com a CLI do Azure
 A Base de Dados do Azure para o PostgreSQL é um serviço gerido que lhe permite executar, gerir e dimensionar as bases de dados de alta disponibilidade do PostgreSQL na cloud. A CLI do Azure é utilizada para criar e gerir recursos do Azure a partir da linha de comandos ou em scripts. Este guia de introdução mostra-lhe como criar uma Base de Dados do Azure para o servidor PostgreSQL num [grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) com a CLI do Azure.
@@ -23,14 +23,14 @@ Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se optar por instalar e utilizar a CLI localmente, este artigo requer que está a executar a CLI do Azure versão 2.0 ou posterior. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 Se estiver a executar o CLI localmente, terá de iniciar sessão na sua conta ao utilizar o [início de sessão az](/cli/azure/authenticate-azure-cli?view=interactive-log-in) comando.
 ```azurecli-interactive
 az login
 ```
 
-Se tiver várias subscrições, escolha a subscrição adequada na qual o recurso vai ser cobrado. Selecione um ID de subscrição específica na sua conta com o comando [az account set](/cli/azure/account#set).
+Se tiver várias subscrições, escolha a subscrição adequada na qual o recurso deve ser-lhe faturado. Selecione um ID de subscrição específica na sua conta com o comando [az account set](/cli/azure/account#set).
 ```azurecli-interactive
 az account set --subscription 00000000-0000-0000-0000-000000000000
 ```

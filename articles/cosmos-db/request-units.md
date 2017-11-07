@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2017
+ms.date: 11/02/2017
 ms.author: mimig
-ms.openlocfilehash: 83cbc622975344ec2a5700d2e10a5c77371e9899
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: fc544a776293e94114d8c07d89df588a17aa1962
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Unidades no Azure Cosmos DB de pedido
 Agora disponível: BD do Azure do Cosmos [Calculadora de unidade de pedido](https://www.documentdb.com/capacityplanner). Saiba mais em [estimar o débito tem](request-units.md#estimating-throughput-needs).
@@ -26,7 +26,7 @@ Agora disponível: BD do Azure do Cosmos [Calculadora de unidade de pedido](http
 ![Calculadora de débito][5]
 
 ## <a name="introduction"></a>Introdução
-[BD do Azure do Cosmos](https://azure.microsoft.com/services/cosmos-db/) é globalmente múltiplos modelo base de dados distribuída da Microsoft. Com base de dados do Azure Cosmos, não terá alugar máquinas virtuais, implementar software ou monitorizar bases de dados. BD do Azure do Cosmos é operada e monitorizado continuamente por engenheiros superiores da Microsoft para fornecer proteção de dados, desempenho e disponibilidade de classe do mundo. Pode aceder os dados através de APIs à sua escolha, como [SQL do DocumentDB](documentdb-sql-query.md) (documento), MongoDB (documento), [Table Storage do Azure](https://azure.microsoft.com/services/storage/tables/) (chave-valor), e [Gremlin](https://tinkerpop.apache.org/gremlin.html) (graph) todos os suportado nativamente. A moeda de base de dados do Azure Cosmos é o pedido unidade (RU). Com RUs, não terá as capacidades de leitura/escrita ou aprovisionar CPU, memória e IOPS de reserva.
+[BD do Azure do Cosmos](https://azure.microsoft.com/services/cosmos-db/) é globalmente múltiplos modelo base de dados distribuída da Microsoft. Com base de dados do Azure Cosmos, não terá alugar máquinas virtuais, implementar software ou monitorizar bases de dados. BD do Azure do Cosmos é operada e monitorizado continuamente por engenheiros superiores da Microsoft para fornecer proteção de dados, desempenho e disponibilidade de classe do mundo. Pode aceder os dados através de APIs à sua escolha, tal como o SQL Server através do [DocumentDB API](documentdb-introduction.md), APIs do MongoDB, [API de tabela](table-introduction.md)e Gremlin através o [Graph API](graph-introduction.md) -são todos os nativamente suportado. A moeda de base de dados do Azure Cosmos é o pedido unidade (RU). Com RUs, não terá as capacidades de leitura/escrita ou o aprovisionar da CPU, memória e IOPS de reserva.
 
 BD do Azure do Cosmos suporta um número de APIs com operações diferentes de leituras simples e escreve consultas complexas de gráfico. Uma vez que nem todos os pedidos são iguais, são atribuídas uma quantidade normalizada de **unidades de pedido** com base na quantidade de computação necessária para servir o pedido. O número de unidades de pedido de uma operação é determinista e pode controlar o número de unidades de pedido utilizada por todas as operações do BD Azure Cosmos através de um cabeçalho de resposta. 
 
@@ -39,7 +39,7 @@ Depois de ler este artigo, poderá responder às seguintes questões:
 * Como estimar que tem de unidade de pedido da minha aplicação?
 * O que acontece se posso exceder a capacidade de unidade de pedido de uma coleção?
 
-BD do Cosmos do Azure é uma base de dados com múltiplos modelo, é importante ter em atenção que iremos dar um coleção de documentos para um documento de API, um gráfico de nó de um gráfico de API e uma tabela entidade para API de tabela. Ao longo deste documento, será generalizar os conceitos do contentor/item.
+BD do Cosmos do Azure é uma base de dados com múltiplos modelo, é importante ter em atenção que este artigo se refira a um coleção de documentos para um documento API, um gráfico de nó de um gráfico de API e uma tabela entidade para a API de tabela. Este artigo se refira ao conceito de uma coleção, o gráfico ou a tabela como um contentor e um um documento, um nó ou uma entidade como um item.
 
 ## <a name="request-units-and-request-charges"></a>Unidades de pedido e custos de pedido
 BD do Azure do Cosmos oferece um desempenho previsível, rápido por *reservar* recursos para satisfazer as necessidades de débito da sua aplicação.  Porque a aplicação de carga e alteração de padrões ao longo do tempo de acesso, base de dados do Azure Cosmos permite-lhe facilmente aumentar ou diminuir a quantidade de débito reservado disponível para a aplicação.
@@ -55,7 +55,7 @@ Recomendamos que comece por ver o vídeo seguinte, onde Aravind Ramachandran exp
 ## <a name="specifying-request-unit-capacity-in-azure-cosmos-db"></a>Especificar a capacidade de unidade de pedido na base de dados do Azure Cosmos
 Ao iniciar uma nova coleção, a tabela ou o gráfico, especifique o número de unidades de pedido por segundo (RU por segundo) que pretende reservado. Com base no débito aprovisionado, base de dados do Azure Cosmos aloca partições físicas para alojar a sua coleção e divisões/rebalances dados em partições à medida que o que aumenta.
 
-BD do Azure do Cosmos requer uma chave de partição de ser especificado quando uma coleção é aprovisionada com 2500 unidades de pedido ou superior. Também é necessária uma chave de partição para aumentar o débito da sua coleção para além de 2500 unidades de pedido no futuro. Por conseguinte, recomenda-se vivamente para configurar um [chave de partição](partition-data.md) ao criar um contentor, independentemente da sua débito inicial. Uma vez que os dados poderão ter para serem divididas entre várias partições, é necessário escolher uma chave de partição tem uma cardinalidade elevada (100 para milhões de valores distintos) para que a tabela/coleção/gráfico e pedidos podem ser escalados para uniformemente por base de dados do Azure Cosmos. 
+BD do Azure do Cosmos requer uma chave de partição de ser especificado quando uma coleção é aprovisionada com 2500 unidades de pedido ou superior. Também é necessária uma chave de partição para aumentar o débito da sua coleção para além de 2500 unidades de pedido no futuro. Por conseguinte, recomenda-se vivamente para configurar um [chave de partição](partition-data.md) ao criar um contentor, independentemente da sua débito inicial. Uma vez que os dados poderão ter para serem divididas entre várias partições, é necessário escolher uma chave de partição tem uma cardinalidade elevada (100 para milhões de valores distintos). Ao selecionar uma chave de partição com vários valores distintos, certifique-se de que a tabela/coleção/gráfico e pedidos podem ser escalados uniformemente por base de dados do Azure Cosmos. 
 
 > [!NOTE]
 > Uma chave de partição é um limite de lógico e não um físico. Por conseguinte, não é necessário limitar o número de valores de chave de partição distintos. Na realidade é melhor ter distintos mais valores de chaves de partição que inferior, como base de dados do Azure Cosmos tem mais opções de balanceamento de carga.
@@ -96,23 +96,23 @@ Não há nenhum impacto sobre a disponibilidade do seu contentor quando altera o
 ## <a name="request-unit-considerations"></a>Considerações de unidade de pedido
 Quando a estimar o número de unidades de pedido para reservar para o contentor do Azure Cosmos DB, é importante considerar as seguintes variáveis em consideração:
 
-* **Tamanho do item**. À medida que o tamanho aumenta as unidades consumidas para ler ou escrever que os dados também irão aumentar.
-* **Contagem de propriedade do item**. Partindo do princípio de indexação de predefinição de todas as propriedades, as unidades consumidas para escrever um documento/nó/ntity irá aumentar à medida que aumenta de contagem de propriedade.
-* **Consistência dos dados**. Quando utilizar os níveis de consistência de dados de forte ou tem um vínculo vinculada, unidades adicionais serão consumidas ler itens.
+* **Tamanho do item**. À medida que o tamanho aumenta as unidades consumidas para ler ou escrever que os dados também aumenta.
+* **Contagem de propriedade do item**. Partindo do princípio de indexação predefinido de todas as propriedades, as unidades consumidas para escrever um aumento de nó/documento/entidade à medida que aumenta de contagem de propriedade.
+* **Consistência dos dados**. Quando utilizar os níveis de consistência de dados de forte ou tem um vínculo vinculada, unidades adicionais são consumidas ler itens.
 * **Indexada propriedades**. Uma política de índice em cada contentor determina as propriedades que são indexadas por predefinição. Pode reduzir o consumo de unidade de pedido ao limitar o número de propriedades indexadas ou ao ativar a indexação lento.
-* **A indexação de documento**. Por predefinição a que cada item automaticamente está indexada, irá consumir menos unidades de pedido, se optar por não indexar alguns dos seus itens.
+* **A indexação de documento**. Por predefinição a cada item é automaticamente indexado. Consumir unidades de pedido de menos se optar por não indexar alguns dos seus itens.
 * **Padrões de consulta**. A complexidade de uma consulta afeta o número de unidades de pedido são consumidas para uma operação. O número de predicados, natureza os predicados, projeções, número de UDFs e o tamanho do conjunto de dados de origem todos os influenciar o custo das operações de consulta.
 * **Utilização do script**.  Tal como acontece com consultas, acionadores e procedimentos armazenados consumam unidades de pedido com base na complexidade das operações que está a ser executadas. Como desenvolver a sua aplicação, Inspecione o cabeçalho de encargos de pedido para compreender melhor a forma como cada operação está a consumir capacidade de unidade de pedido.
 
 ## <a name="estimating-throughput-needs"></a>A estimar necessidades de débito
-Uma unidade de pedido é uma medida de custo de processamento de pedidos normalizada. Uma unidade de pedido único representa a capacidade de processamento necessária para ler (através da ligação automática ou id) de um único 1KB por item de 10 valores de propriedade exclusivo (excluindo as propriedades do sistema). Um pedido para criar (insert), substituir ou eliminar o item mesmo irá consumir mais processamento do serviço e, deste modo, mais unidades de pedido.   
+Uma unidade de pedido é uma medida de custo de processamento de pedidos normalizada. Uma unidade de pedido único representa a capacidade de processamento necessária para ler (através da ligação automática ou id) de um único 1 KB por item de 10 valores de propriedade exclusivo (excluindo as propriedades do sistema). Um pedido para criar (insert), substituir ou eliminar o item mesmo irá consumir mais processamento do serviço e, deste modo, mais unidades de pedido.   
 
 > [!NOTE]
-> A linha de base da unidade de pedido de 1 para um 1KB item corresponde a uma ação obter simple através da ligação automática ou id do item.
+> A linha de base da unidade de pedido de 1 para um item de 1 KB corresponde a uma ação obter simple através da ligação automática ou id do item.
 > 
 > 
 
-Por exemplo, aqui está uma tabela que mostra o número de unidades de pedido para aprovisionar em três tamanhos de item diferentes (de 1KB, 4KB e 64KB) e dois níveis de desempenho diferentes (500 lidas por segundo + 100 escritas por segundo e 500 lidas por segundo + 500 escritas por segundo). A consistência de dados foi configurada na sessão e a política de indexação foi definida como None.
+Por exemplo, aqui está uma tabela que mostra o número de unidades de pedido para aprovisionar em três tamanhos de item diferentes (de 1 KB, 4 KB e 64 KB) e dois níveis de desempenho diferentes (500 lidas por segundo + 100 escritas por segundo e 500 lidas por segundo + 500 escritas por segundo). A consistência de dados foi configurada na sessão e a política de indexação foi definida como None.
 
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
@@ -162,7 +162,7 @@ Por exemplo, aqui está uma tabela que mostra o número de unidades de pedido pa
 </table>
 
 ### <a name="use-the-request-unit-calculator"></a>Utilizar a Calculadora de unidade de pedido
-Para ajudar os clientes bem otimizar as estimativas de débito, existe um baseado na web [Calculadora de unidade de pedido](https://www.documentdb.com/capacityplanner) para ajudar a estimar os requisitos da unidade de pedido para operações comuns, incluindo:
+Para ajudar a otimizar as estimativas de débito de clientes, não há uma conta baseada na web [Calculadora de unidade de pedido](https://www.documentdb.com/capacityplanner) para ajudar a estimar os requisitos da unidade de pedido para operações comuns, incluindo:
 
 * Item cria (escritas)
 * Leituras de item
@@ -197,7 +197,7 @@ Cada resposta do serviço de base de dados do Azure Cosmos inclui um cabeçalho 
 Com isto em mente, um método para estimar a quantidade de débito reservado exigido pela sua aplicação é a taxa de unidade de pedido associada com operações em execução típicas contra um item representativo utilizado pela sua aplicação e, em seguida, fazer uma estimativa de registo o número de operações que antecipa efetuar por segundo.  Lembre-se de que medir e incluir consultas típicas e a utilização de script de base de dados do Azure Cosmos bem.
 
 > [!NOTE]
-> Se tiver de tipos de itens que variam significativamente em termos de tamanho e o número de propriedades indexadas, em seguida, registe a taxa de unidade de pedido de operação aplicável associada a cada *tipo* do item típica.
+> Se tiver de tipos de itens de que diferem significativamente em termos de tamanho e o número de propriedades indexadas, em seguida, registe a taxa de unidade de pedido de operação aplicável associada a cada *tipo* do item típica.
 > 
 > 
 
@@ -243,7 +243,7 @@ A forma mais simples para obter uma estimativa boa de pedido de encargos de unid
 ![API de métricas de portais do MongoDB][6]
 
 ## <a name="a-request-unit-estimation-example"></a>Um exemplo de estimativa de unidade de pedido
-Considere o seguinte documento de ~ 1KB:
+Considere o seguinte documento de ~ 1 KB:
 
 ```json
 {
@@ -296,7 +296,7 @@ Considere o seguinte documento de ~ 1KB:
 ```
 
 > [!NOTE]
-> Documentos são minified na base de dados do Azure Cosmos, pelo que o sistema calcular o tamanho do documento acima é ligeiramente inferior a 1KB.
+> Documentos são minified na base de dados do Azure Cosmos, pelo que o sistema calcular o tamanho do documento acima é ligeiramente inferior a 1 KB.
 > 
 > 
 
@@ -322,7 +322,7 @@ Além disso, esta tabela mostra pedido aproximado encargos de unidade para consu
 > 
 > 
 
-Com esta informação, iremos pode estimar os requisitos de RU para esta aplicação dado o número de operações e consultas que Esperamos por segundo:
+Com estas informações, pode estimar os requisitos de RU para esta aplicação dado o número de operações e consultas de que esperar por segundo:
 
 | Consulta/operação | Número estimado por segundo | RUs necessárias |
 | --- | --- | --- |
@@ -332,10 +332,10 @@ Com esta informação, iremos pode estimar os requisitos de RU para esta aplica�
 | Selecione pelo grupo prato |10 |700 |
 | Selecione 10 principais |15 |Total de 150 |
 
-Neste caso, esperamos que seja um requisito de débito médio de 1,275 RU/s.  Arredondamento até 100 mais próximo, iremos seria aprovisionar 1.300 RU/s para a recolha esta aplicação.
+Neste caso, o que esperava um requisito de débito médio de 1,275 RU/s.  Arredondamento até 100 mais próximo, teria de aprovisionar 1.300 RU/s para a recolha esta aplicação.
 
 ## <a id="RequestRateTooLarge"></a>Exceder os limites de débito reservado do BD Azure Cosmos
-Recuperar-se de que o consumo de unidade de pedido é avaliado como uma taxa por segundo, se a atribuição de está vazia. Para aplicações que excedem a taxa de unidade de pedido aprovisionado para um contentor, os pedidos para essa coleção serão limitados até que a taxa de ignora abaixo do nível reservado. Quando ocorre uma limitação, o servidor irá preventivamente terminar o pedido com RequestRateTooLargeException (código de estado HTTP 429) e devolver o cabeçalho x-ms-repetição-após-ms que indica a quantidade de tempo, em milissegundos, que o utilizador terá de aguardar antes de reattempting o pedido.
+Recuperar-se de que o consumo de unidade de pedido é avaliado como uma taxa por segundo, se a atribuição de está vazia. Para aplicações que excedem a taxa de unidade de pedido aprovisionado para um contentor, pedidos para essa coleção limitados até que a taxa de ignora abaixo do nível reservado. Quando ocorre uma limitação, o servidor preventivamente termina o pedido com RequestRateTooLargeException (código de estado HTTP 429) de colunas e devolve o cabeçalho x-ms-repetição-após-ms que indica a quantidade de tempo, em milissegundos, que o utilizador terá de aguardar antes de reattempting o pedido.
 
     HTTP Status 429
     Status Line: RequestRateTooLarge
