@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 05/01/2017
 ms.author: dastrock
 ms.custom: aaddev
-ms.openlocfilehash: 1e286044fb1a1b367fcac2dc14c47f68d5ed120d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a6a7c6bdf3deaee3a3949fe409a7fab6b7664695
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="sign-in-microsoft-account--azure-ad-users-in-a-single-app"></a>Início de sessão Microsoft Account & utilizadores do Azure AD numa única aplicação
 No passado, um programador de aplicações que pretendiam para suportar ambas as contas pessoais da Microsoft e funcionam contas do Azure Active Directory foi necessários para integrar com dois sistemas separados.  O **ponto final de v 2.0 do Azure AD** introduz uma nova versão de API de autenticação permite-lhe iniciar sessão em ambos os tipos de contas utilizando uma integração simple.  As aplicações que utilizem o ponto final v 2.0 também podem consumir APIs REST do [Microsoft Graph](https://graph.microsoft.io) utilizando qualquer tipo de conta.
@@ -49,13 +49,8 @@ Estas hiperligações serão úteis para explorar a plataforma em profundidade:
 * [Âmbitos e consentimento no ponto final v 2.0](active-directory-v2-scopes.md)
 * [O Microsoft Graph](https://graph.microsoft.io)
 
-## <a name="help--support"></a>Ajuda e Suporte
-Estes são os melhores locais para obter ajuda com o desenvolvimento do Azure Active Directory.
-
-* [Etiquetas do Stack Overflow `azure-active-directory` e `adal`](http://stackoverflow.com/questions/tagged/azure-active-directory+or+adal)
-* [Comentários sobre o Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/category/164757-developer-experiences)
-
-
 > [!NOTE]
 > Se só precisa de iniciar sessão em contas profissionais e escolares do Azure Active Directory, deve começar com o nosso [guia para programadores do Azure AD](active-directory-developers-guide.md).  O ponto final v 2.0 destina-se a programadores que necessitem explicitamente para iniciar sessão em contas pessoais da Microsoft.
 
+
+[!INCLUDE  [Help and Support Options](../../../includes/active-directory-develop-help-support-include.md)]

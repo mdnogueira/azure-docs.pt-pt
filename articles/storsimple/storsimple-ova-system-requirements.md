@@ -12,13 +12,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/10/2017
+ms.date: 10/16/2017
 ms.author: alkohli
-ms.openlocfilehash: 4dc228ce8a7a73dd32bde77d529698bdcb7f490c
-ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
+ms.openlocfilehash: 8cae0577d950e3968bc25083e59d637963e6b442
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Requisitos de sistema da Matriz Virtual StorSimple
 ## <a name="overview"></a>Descrição geral
@@ -50,7 +50,7 @@ Os requisitos de software incluem informações sobre os browsers suportados, as
 | Memória mínima de memória (RAM) |8 GB <br> Para um servidor de ficheiros, 8 GB para os ficheiros de menos de milhões de 2 e 16 GB para 2-4 milhões de ficheiros|
 | Espaço em disco<sup>1</sup> |Disco do SO - 80 GB <br></br>Disco de dados - 500 GB para 8 TB |
 | Número mínimo de interfaces de rede |1 |
-| Largura de banda de Internet mínima<sup>2</sup> |5 Mbps |
+| Largura de banda de Internet<sup>2</sup> |Largura de banda mínima necessária: 5 Mbps <br> Recomendado largura de banda: 100 Mbps <br> A velocidade de escalas de transferência de dados com a largura de banda de Internet. Por exemplo, 100 GB de dados demora 2 dias para transferir Mbps 5 levar a falhas de cópia de segurança porque as cópias de segurança diárias não seriam concluída num dia. Com uma largura de banda de 100 Mbps, 100 GB de dados pode ser transferido em 2,5 horas.   |
 
 <sup>1</sup> - dinâmico aprovisionado
 
@@ -113,7 +113,7 @@ Recomendamos que defina as regras de firewall para o tráfego de saída, com bas
 > [!NOTE]
 > 
 > * O dispositivo (origem) IPs deve ser sempre definido para todas as interfaces de rede ativado para a nuvem. 
-> * O destino IPs deve ser definido como [intervalos IP do datacenter do Azure](https://www.microsoft.com/en-us/download/confirmation.aspx?id=41653).
+> * O destino IPs deve ser definido como [intervalos IP do datacenter do Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653).
 > 
 > 
 
@@ -128,6 +128,5 @@ Recomendamos que defina as regras de firewall para o tráfego de saída, com bas
 | `https://*.partners.extranet.microsoft.com/*` |Pacote de suporte |
 | `http://*.data.microsoft.com ` |Serviço de telemetria no Windows, consulte o [atualização para a experiência do cliente e telemetria de diagnóstico](https://support.microsoft.com/en-us/kb/3068708) |
 
-## <a name="next-step"></a>Passo seguinte
+## <a name="next-steps"></a>Passos seguintes
 * [Preparar o portal para implementar a matriz de Virtual StorSimple](storsimple-virtual-array-deploy1-portal-prep.md)
-

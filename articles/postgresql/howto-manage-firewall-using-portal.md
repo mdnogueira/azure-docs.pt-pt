@@ -8,12 +8,12 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 05/10/2017
-ms.openlocfilehash: 5d62a138313ae3568470cbf5a8eb191321cd6cc7
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.date: 11/03/2017
+ms.openlocfilehash: 96e917d1ea147e3b53b00002675ed16facb69255
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="create-and-manage-azure-database-for-postgresql-firewall-rules-using-the-azure-portal"></a>Criar e gerir a base de dados do Azure para as regras de firewall de PostgreSQL no portal do Azure
 Regras de firewall ao nível do servidor permitem que os administradores aceder a uma base de dados do Azure para o servidor de PostgreSQL de um endereço IP especificado ou intervalo de endereços IP. 
@@ -23,11 +23,11 @@ Para seguir este guia de procedimentos, tem de:
 - Um servidor [criar uma base de dados do Azure para PostgreSQL](quickstart-create-server-database-portal.md)
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Criar uma regra de firewall ao nível do servidor no portal do Azure
-1. No painel de servidor PostgreSQL, em definições, clique em **segurança de ligação** para abrir o painel de segurança de ligação da base de dados do Azure para PostgreSQL.
+1. Na página de servidor PostgreSQL, em definições, clique em **segurança de ligação** para abrir a página de segurança de ligação da base de dados do Azure para PostgreSQL.
 
   ![Portal do Azure – clique em segurança de ligação](./media/howto-manage-firewall-using-portal/1-connection-security.png)
 
-2. Clique em **Adicionar IP do meu** na barra de ferramentas. Automaticamente Isto irá criar uma regra de firewall com o endereço IP público do seu computador, como percetível pelo sistema do Azure.
+2. Selecione **Adicionar IP do meu** na barra de ferramentas. Esta ação cria automaticamente uma regra de firewall com o endereço IP público do seu computador, como percetível pelo sistema do Azure.
 
   ![Portal do Azure – clique em Adicionar meu IP](./media/howto-manage-firewall-using-portal/2-add-my-ip.png)
 
@@ -36,7 +36,7 @@ Utilize um motor de busca ou outra ferramenta online para verificar o seu própr
 
   ![Pesquisa do Bing para saber o que é o meu IP](./media/howto-manage-firewall-using-portal/3-what-is-my-ip.png)
 
-4. Adicione intervalos de endereços adicionais. Nas regras da firewall para a base de dados do Azure para PostgreSQL, pode especificar um único endereço IP ou um intervalo de endereços. Se pretender limitar a regra para um único endereço IP, escreva o mesmo endereço no campo para o IP inicial e final IP. Abrir a firewall permite que os administradores, utilizadores e aplicações para início de sessão para uma base de dados no servidor PostgreSQL aos quais têm credenciais válidas.
+4. Adicione intervalos de endereços adicionais. Nas regras da firewall para a base de dados do Azure para PostgreSQL, pode especificar um único endereço IP ou um intervalo de endereços. Se pretender limitar a regra para um único endereço IP, escreva o mesmo endereço no campo para o IP inicial e final IP. Abrir a firewall permite que os administradores, utilizadores e aplicações para iniciar sessão para uma base de dados no servidor PostgreSQL aos quais têm credenciais válidas.
 
   ![Portal do Azure – regras de firewall ](./media/howto-manage-firewall-using-portal/4-specify-addresses.png)
 

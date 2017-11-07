@@ -14,11 +14,11 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 046ce7af40301014746c6aef07d08d81ab4adcc2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 31f80e93dc741d41a00826c9c8b7ab061c0ca414
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="guide-to-create-a-virtual-machine-image-for-the-azure-marketplace"></a>Guia para criar uma imagem de máquina virtual para o Azure Marketplace
 Neste artigo, **passo 2**, explica como preparar os discos rígidos virtuais (VHDs) que vai implementar no Azure Marketplace. Os VHDs são a base do SKU. O processo é diferente dependendo se está a fornecer um SKU baseado em Windows ou baseado em Linux. Este artigo abrange ambos os cenários. Este processo pode ser executado em paralelo com [conta criação e registo][link-acct-creation].
@@ -289,6 +289,8 @@ Depois de concluir o questionário, pode fornecer informações adicionais, tais
 Durante o processo de publicação, especifique os identificadores de recurso uniforme (URI) que levar a cada um dos VHDs que criou para o SKU. A Microsoft precisa de aceder a estes VHDs durante o processo de certificação. Por conseguinte, terá de criar uma URI de assinatura de acesso partilhado para cada VHD. Este é o URI que deve ser introduzido no **imagens** separador no Portal de publicação.
 
 A assinatura de acesso partilhado que URI criado deve cumprir os requisitos seguintes:
+
+Nota: as instruções seguintes são aplicáveis apenas para os discos não geridos que são o único tipo suportado.
 
 * Quando a gerar a assinatura de acesso partilhado URIs para os seus VHDs, permissões de leitura e de lista são suficientes. Não forneça acesso de Escrita ou de Eliminação.
 * A duração de acesso deve ter um mínimo de três (3) semanas a partir do quando é criada a assinatura de acesso partilhado URI.

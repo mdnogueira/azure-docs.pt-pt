@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: 1adf219dc4ca9ba91dc1ffc1ae98b764c9ef61b5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ebe489b6e0993dad42950acdafac48e662da7f77
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Criar um peering de rede virtual - diferentes modelos de implementação, a mesma subscrição 
 
@@ -33,42 +33,13 @@ Os passos para criar um peering de rede virtual são diferentes, dependendo se a
 |[O Gestor de recursos](create-peering-different-subscriptions.md) |Diferentes|
 |[Um Gestor de recursos, um clássico](create-peering-different-deployment-models-subscriptions.md) |Diferentes|
 
-Só é possível criar uma rede virtual peering entre duas redes virtuais que existe na mesma região do Azure.
+Não é possível criar uma rede virtual peering entre duas redes virtuais implementadas através do modelo de implementação clássica. Se pretender ligar redes virtuais que foram criados através do modelo de implementação clássica, pode utilizar um Azure [Gateway de VPN](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) para ligar as redes virtuais. 
 
-  > [!WARNING]
-  > Criar uma peering entre redes virtuais em diferentes regiões de rede virtual está atualmente em pré-visualização. Pode registar a sua subscrição para a pré-visualização abaixo. Peerings de rede virtual criada neste cenário, não pode ter o mesmo nível de disponibilidade e fiabilidade como criar uma peering em cenários em geral, a versão de disponibilidade de rede virtual. Peerings de rede virtual criadas neste cenário não são suportadas, poderá ter restrita capacidades e poderão não estar disponíveis em todas as regiões do Azure. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
-
-Não é possível criar uma rede virtual peering entre duas redes virtuais implementadas através do modelo de implementação clássica. Se pretender ligar redes virtuais que foram criados através do modelo de implementação clássica, ou que existe em diferentes regiões do Azure, pode utilizar um Azure [Gateway de VPN](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) para ligar as redes virtuais. 
+Este tutorial elementos redes virtuais na mesma região. A capacidade de elemento redes virtuais em diferentes regiões está atualmente em pré-visualização. Execute os passos do [registar para peering de rede virtual global](#register) antes de tentar elemento redes virtuais em diferentes regiões ou a falha de peering. A capacidade de ligar redes virtuais em diferentes regiões com um Azure [Gateway de VPN](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) estiver geralmente disponível e não necessita de registo.
 
 Pode utilizar o [portal do Azure](#portal), o Azure [interface de linha de comandos](#cli) (CLI), Azure [PowerShell](#powershell), ou um [modelo Azure Resource Manager](#template)para criar um peering de rede virtual. Clique em qualquer uma das ligações de ferramenta anterior para ir diretamente para os passos para criar um peering de rede virtual com a ferramenta de escolha.
 
-## <a name="register"></a>Registar-se para a pré-visualização Global VNet Peering
-
-Elemento redes virtuais em regiões, registar-se para a pré-visualização, conclua os passos que se seguem para ambas as subscrições que contêm as redes virtuais que pretende ponto. A ferramenta só que pode utilizar para se registar para a pré-visualização é o PowerShell.
-
-1. Instale a versão mais recente do módulo [AzureRm](https://www.powershellgallery.com/packages/AzureRM/) do PowerShell. Se não estiver familiarizado com o Azure PowerShell, consulte a [Descrição geral do Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json).
-2. Iniciar uma sessão do PowerShell e inicie sessão no Azure com o `Login-AzureRmAccount` comando.
-3. Registe a sua subscrição para a pré-visualização, introduzindo os seguintes comandos:
-
-    ```powershell
-    Register-AzureRmProviderFeature `
-      -FeatureName AllowGlobalVnetPeering `
-      -ProviderNamespace Microsoft.Network
-    
-    Register-AzureRmResourceProvider `
-      -ProviderNamespace Microsoft.Network
-    ```
-    Não efetue os passos nas secções Portal, a CLI do Azure ou o PowerShell deste artigo até o **RegistrationState** receberá depois de introduzir o seguinte comando de saída **registada** para ambos subscrições:
-
-    ```powershell    
-    Get-AzureRmProviderFeature `
-      -FeatureName AllowGlobalVnetPeering `
-      -ProviderNamespace Microsoft.Network
-    ```
-  > [!WARNING]
-  > Criar uma peering entre redes virtuais em diferentes regiões de rede virtual está atualmente em pré-visualização. Peerings de rede virtual criada neste cenário, poderá ter restrita capacidades e poderão não estar disponíveis em todas as regiões do Azure. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
-
-## <a name="cli"></a>Criar peering - Portal
+## <a name="create-peering---azure-portal"></a>Criar peering - portal do Azure
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com). A conta que iniciar sessão com tem de ter as permissões necessárias para criar um peering de rede virtual. Consulte o [permissões](#permissions) secção deste artigo para obter mais detalhes.
 2. Clique em **+ novo**, clique em **redes**, em seguida, clique em **rede Virtual**.
@@ -294,6 +265,56 @@ Quando tiver terminado neste tutorial, pode querer eliminar os recursos que crio
 
     > [!WARNING]
     > Importar um ficheiro de configuração foi alterada de rede pode fazer com que as alterações às redes virtuais existentes (clássica) na sua subscrição. Certifique-se apenas a remover a rede virtual anterior e que não alterar ou remover quaisquer outras redes virtuais existentes da sua subscrição. 
+
+## <a name="register"></a>Registar-se para a pré-visualização de peering de rede virtual global
+
+A capacidade de elemento redes virtuais em diferentes regiões está atualmente em pré-visualização. A capacidade está disponível um conjunto limitado de regiões (inicialmente, EUA oeste Central, Canadá Central e dos EUA oeste 2). Peerings de rede virtual criada entre redes virtuais em regiões diferentes poderão não ter o mesmo nível de disponibilidade e fiabilidade como um peering entre redes virtuais na mesma região. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
+
+A ponto redes virtuais em regiões, primeiro tem de registar para a pré-visualização, concluindo os seguintes passos (dentro da subscrição cada rede virtual que pretende elemento está no) utilizando o Azure PowerShell ou a CLI do Azure:
+
+### <a name="powershell"></a>PowerShell
+
+1. Instale a versão mais recente do módulo [AzureRm](https://www.powershellgallery.com/packages/AzureRM/) do PowerShell. Se não estiver familiarizado com o Azure PowerShell, consulte a [Descrição geral do Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json).
+2. Iniciar uma sessão do PowerShell e inicie sessão no Azure com o `Login-AzureRmAccount` comando.
+3. Registe a subscrição que cada rede virtual que pretende ponto destina-se na pré-visualização, introduzindo os comandos seguintes:
+
+    ```powershell
+    Register-AzureRmProviderFeature `
+      -FeatureName AllowGlobalVnetPeering `
+      -ProviderNamespace Microsoft.Network
+    
+    Register-AzureRmResourceProvider `
+      -ProviderNamespace Microsoft.Network
+    ```
+4. Confirme que são registadas para a pré-visualização, introduzindo o seguinte comando:
+
+    ```powershell    
+    Get-AzureRmProviderFeature `
+      -FeatureName AllowGlobalVnetPeering `
+      -ProviderNamespace Microsoft.Network
+    ```
+
+    Não efetue os passos nas secções de Portal, CLI do Azure, PowerShell ou Gestor de recursos do modelo deste artigo até o **RegistrationState** recebe depois de introduzir o comando anterior é de saída **registada**  para ambas as subscrições.
+
+### <a name="azure-cli"></a>CLI do Azure
+
+1. [Instalar e configurar a CLI do Azure](/cli/azure/install-azure-cli?toc=%2Fazure%2Fvirtual-network%2Ftoc.json).
+2. Certifique-se de que está a utilizar a versão 2.0.18 ou superior da CLI do Azure, introduzindo o `az --version` comando. Se não tiver, instale a versão mais recente.
+3. Inicie sessão no Azure com o `az login` comando.
+4. Registar-se para a pré-visualização, introduzindo os seguintes comandos:
+
+    ```azurecli-interactive
+    az feature register --name AllowGlobalVnetPeering --namespace Microsoft.Network
+    az provider register --name Microsoft.Network
+    ```
+
+5. Confirme que são registadas para a pré-visualização, introduzindo o seguinte comando:
+
+    ```azurecli-interactive
+    az feature show --name AllowGlobalVnetPeering --namespace Microsoft.Network
+    ```
+
+    Não efetue os passos nas secções de Portal, CLI do Azure, PowerShell ou Gestor de recursos do modelo deste artigo até o **RegistrationState** recebe depois de introduzir o comando anterior é de saída **registada**  para ambas as subscrições.
 
 ## <a name="next-steps"></a>Passos seguintes
 

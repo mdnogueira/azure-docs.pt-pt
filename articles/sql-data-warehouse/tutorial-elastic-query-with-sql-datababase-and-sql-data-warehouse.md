@@ -1,25 +1,25 @@
 ---
 title: "Tutorial de consulta elástico com o armazém de dados SQL do Azure | Microsoft Docs"
-description: "Saiba como utilizar a consulta elástico com o Azure SQL Data Warehouse "
+description: "Saiba como utilizar a consulta elástico com o Azure SQL Data Warehouse"
 services: sql-data-warehouse
 documentationcenter: NA
 author: hirokib
 manager: johnmac
 editor: 
-ms.assetid: e2dc8f3f-10e3-4589-a4e2-50c67dfcf67f
+ms.assetid: e2dc8f3f-10e3-4589-a4e2-50c67dfcf67g
 ms.service: sql-data-warehouse
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: integrate
-ms.date: 09/18/2017
+ms.date: 11/03/2017
 ms.author: elbutter
-ms.openlocfilehash: 8698dace1b7308fc60178d97e134cb708ff02255
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a13b81213b7a47cb7209bc914f514fa10aede5c4
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="configure-elastic-query-with-sql-data-warehouse"></a>Configurar consulta elástica com o SQL Data Warehouse
 
@@ -119,7 +119,11 @@ Os próximos passos, irá criar uma tabela no nosso instância de armazém de da
    ,   [CustomerID] [int] NOT NULL 
    ) 
    WITH 
-   (DATA_SOURCE = EnterpriseDwSrc)
+   (
+        DATA_SOURCE = EnterpriseDwSrc
+   ,    SCHEMA_NAME = N'dbo'
+   ,    OBJECT_NAME = N'OrderInformation'
+   )
    ```
 
 5. Reparar que tem agora uma definição de tabela externa sua **instância de base de dados do SQL Server**.

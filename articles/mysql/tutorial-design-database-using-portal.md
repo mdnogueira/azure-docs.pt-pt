@@ -8,13 +8,13 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: tutorial
-ms.date: 06/06/2017
+ms.date: 11/03/2017
 ms.custom: mvc
-ms.openlocfilehash: 92ae809646cb956b0b7cb71cf2a21610bb2d610f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a7f38484e000b05a57cad9bc95abb255414d0162
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="design-your-first-azure-database-for-mysql-database"></a>Conceber a sua primeira base de dados do Azure para a base de dados MySQL
 A Base de Dados do Azure para MySQL é um serviço gerido que lhe permite executar, gerir e dimensionar as bases de dados MySQL de alta disponibilidade na cloud. No portal do Azure, pode facilmente gerir o seu servidor e crie uma base de dados.
@@ -41,7 +41,7 @@ Abra o browser Favoritos e visite o [portal do Microsoft Azure](https://portal.a
 
 2. Clique em **base de dados do Azure para MySQL** mosaico e, em seguida, clique em **criar**.
 
-No nosso exemplo, preencha o formulário de MySQL com as seguintes informações da base de dados do Azure:
+Neste exemplo, preencha o formulário de MySQL com as seguintes informações da base de dados do Azure:
 
 | **Definição** | **Valor sugerido** | **Descrição do Campo** |
 |---|---|---|
@@ -98,9 +98,9 @@ USE mysampledb;
 ```
 
 ## <a name="create-tables-in-the-database"></a>Criar tabelas na base de dados
-Agora que sabe como ligar à base de dados do Azure para a base de dados MySQL, iremos pode passam como concluir algumas tarefas básicas.
+Agora que sabe como ligar à base de dados do Azure para a base de dados MySQL, pode concluir algumas tarefas básicas:
 
-Em primeiro lugar, iremos criar uma tabela e carregue-a com alguns dados. Vamos criar uma tabela que armazena informações de inventário.
+Em primeiro lugar, crie uma tabela e carregá-lo com alguns dados. Vamos criar uma tabela que armazena informações de inventário.
 ```sql
 CREATE TABLE inventory (
     id serial PRIMARY KEY, 
@@ -110,7 +110,7 @@ CREATE TABLE inventory (
 ```
 
 ## <a name="load-data-into-the-tables"></a>Carregar dados para as tabelas
-Agora que temos uma tabela, iremos pode inserir alguns dados para a mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
+Agora que tem uma tabela, inserir alguns dados na mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
 ```sql
 INSERT INTO inventory (id, name, quantity) VALUES (1, 'banana', 150); 
 INSERT INTO inventory (id, name, quantity) VALUES (2, 'orange', 154);

@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3062c7c060c3730c5edef3ada16f3a5077cf5558
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6a96e52bad725acb70a429c8eaafd6942b13d9b8
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="use-storsimple-device-manager-to-manage-alerts-for-the-storsimple-virtual-array"></a>Utilize o Gestor de dispositivo StorSimple para gerir alertas para a matriz de Virtual StorSimple
 
@@ -146,6 +146,11 @@ As tabelas seguintes listam alguns dos alertas StorSimple que poderá encontrar,
 |:--- |:--- |:--- |
 | Cópia de segurança de <*nome de dispositivo*> não foi possível concluir. |Falha da tarefa de cópia de segurança. |Não foi possível criar uma cópia de segurança. Considere um dos seguintes:<ul><li>Problemas de conectividade podem estar a impedir a operação de cópia de segurança a conclusão com êxito. Certifique-se de que existem não existem problemas de conectividade. Para obter mais informações sobre como resolver problemas de conectividade, vá para o [IU da web do local](storsimple-ova-web-ui-admin.md) para o dispositivo virtual.</li><li>Atingiu o limite de armazenamento disponível. Para libertar espaço, considere eliminar quaisquer cópias de segurança que já não são necessárias.</li></ul> Resolva os problemas, limpe o alerta e repita a operação. |
 | Clonar de <*nome de dispositivo*> não foi possível concluir. |Falha da tarefa de clone. |Não foi possível criar um clone. Considere um dos seguintes:<ul><li>A lista de cópia de segurança pode não ser válida. Atualize a lista para verificar ainda é válida.</li><li>Problemas de conectividade podem estar a impedir a conclusão com êxito da operação clone. Certifique-se de que existem não existem problemas de conectividade.</li><li>Atingiu o limite de armazenamento disponível. Para libertar espaço, considere eliminar quaisquer cópias de segurança que já não são necessárias.</li></ul>Resolva os problemas, limpe o alerta e repita a operação. |
+
+### <a name="networking-alerts"></a>Alertas de redes
+| Texto de alerta | Evento | Obter mais informações / as ações recomendadas |
+|:--- |:--- |:--- |
+| Não foi possível ligar ao serviço de autenticação. |Erro de DataPath |O URL que é utilizado para autenticar não está acessível. Certifique-se de que as regras de firewall incluem os padrões de URL especificados para o dispositivo StorSimple. Para obter mais informações sobre os padrões de URL no portal do Azure, aceda a [matriz Virtual StorSimple requisitos de rede](storsimple-ova-system-requirements.md#url-patterns-for-firewall-rules).|
 
 ### <a name="performance-alerts"></a>Alertas de desempenho
 

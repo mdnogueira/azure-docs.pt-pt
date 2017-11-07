@@ -1,9 +1,9 @@
 ---
-title: "Replicar VMs de VMware ou servidores físicos para outro site (portal clássico do Azure) | Microsoft Docs"
-description: "Utilize este artigo para replicar VMs de VMware ou Windows/Linux servidores físicos para um site secundário com o Azure Site Recovery."
+title: "Configurar a recuperação após desastre de VMs de VMware ou servidores físicos para um site secundário | Microsoft Docs"
+description: "Este artigo explica como replicar servidores físicos no local as VMs VMware ou Windows/Linux para um site secundário, com o serviço do Azure Site Recovery."
 services: site-recovery
 documentationcenter: 
-author: nsoneji
+author: rayne-wiselman
 manager: jwhit
 editor: 
 ms.assetid: b2cba944-d3b4-473c-8d97-9945c7eabf63
@@ -12,33 +12,33 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/11/2017
-ms.author: nisoneji
-ms.openlocfilehash: 01a6f35fe61290f8c7275c34273d66956a53d3f9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/05/2017
+ms.author: raynew
+ms.openlocfilehash: 8cfaa56735c1f4e2e01b58fdde2ad0e77b388762
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
-# <a name="replicate-on-premises-vmware-virtual-machines-or-physical-servers-to-a-secondary-site-in-the-classic-azure-portal"></a>Replicar máquinas virtuais VMware no local ou servidores físicos para um site secundário no portal clássico do Azure
+# <a name="set-up-disaster-recovery-of-vmware-virtual-machines-or-physical-servers-to-a-secondary-site"></a>Configurar a recuperação após desastre de máquinas virtuais VMware ou servidores físicos para um site secundário
 
-## <a name="overview"></a>Descrição geral
-InMage Scout no Azure Site Recovery fornece em tempo real replicação entre sites do VMware no local. InMage Scout está incluído no subscrições de serviços do Azure Site Recovery. 
 
-## <a name="prerequisites"></a>Pré-requisitos
-**Conta do Azure**: irá precisar de um [Microsoft Azure](https://azure.microsoft.com/) conta. Pode começar com uma [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/). [Saiba mais](https://azure.microsoft.com/pricing/details/site-recovery/) sobre os preços da Recuperação de Sites.
+InMage Scout no Azure Site Recovery fornece em tempo real replicação entre sites do VMware no local. InMage Scout está incluído no subscrições de serviços do Azure Site Recovery.
 
-## <a name="step-1-create-a-vault"></a>Passo 1: Criar um cofre
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+Se não tiver uma subscrição do Azure, [criar uma conta gratuita](https://azure.microsoft.com/pricing/free-trial/) antes de começar.
+
+
+## <a name="create-a-vault"></a>Criar um cofre
+1. Inicie sessão no [portal do Azure](https://portal.azure.com/) > **Serviços de Recuperação**.
 2. Clique em Novo > gestão > cópia de segurança e recuperação de sites (OMS). Em alternativa, pode clicar em Procurar > cofre dos serviços de recuperação > Adicionar.
 3. Em **Nome**, introduza um nome amigável para identificar o cofre. Se tiver mais do que uma subscrição, selecione uma delas.
 4. No **grupo de recursos** criar um novo grupo de recursos ou selecione um existente. Especifique uma região do Azure para concluir os campos obrigatórios.
 5. No **localização**, selecione a região geográfica do cofre. Para verificar as regiões suportadas, consulte [preços do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 6. Se quiser para aceder rapidamente ao Cofre no Dashboard do clique em Afixar ao dashboard e, em seguida, clique em criar.
-7. O novo cofre é apresentado no Dashboard > todos os recursos e nos serviços de recuperação principal cofres dos painel.
+7. O novo cofre é apresentado no Dashboard > todos os recursos e nos serviços de recuperação principal cofres dos página.
 
-## <a name="step-2-configure-the-vault-and-download-inmage-scout-components"></a>Passo 2: Configurar o Cofre e transferir os componentes de InMage Scout
-1. No painel de cofres dos serviços de recuperação seleciona o Cofre e clique em definições.
+## <a name="configure-the-vault-and-download-inmage-scout-components"></a>Configurar o Cofre e transferir os componentes de InMage Scout
+1. Nos serviços de recuperação cofres de página, selecione o cofre em clique em **definições**.
 2. No **definições** > **introdução** clique **recuperação de Site** > Passo 1: **preparar infraestrutura**  >  **Objetivo de proteção**.
 3. No **objetivo de proteção** selecione ao site de recuperação e selecione Sim, com o VMware vSphere hipervisor. Em seguida, clique em OK.
 4. No **configuração Scout**, clique em chave de software e o registo do InMage Scout 8.0.1 GA de transferência para transferir. Os ficheiros de configuração para todos os componentes necessários estão no ficheiro. zip transferido.
@@ -46,7 +46,7 @@ InMage Scout no Azure Site Recovery fornece em tempo real replicação entre sit
 ## <a name="step-3-install-component-updates"></a>Passo 3: Instalar atualizações de componentes
 Leia sobre a versão mais recente [atualizações](#updates). Irá instalar os ficheiros de atualização nos servidores pela seguinte ordem:
 
-1. Servidor RX se existir um
+1. Servidor RX se forem relevantes
 2. Servidores de configuração
 3. Servidores de processos
 4. Servidores de destino mestre
@@ -69,7 +69,7 @@ Instale as atualizações da seguinte forma:
 5. **Para o servidor de destino principal do Windows**: para atualizar o agente unificado, copie **UA_Windows_8.0.5.0_GA_Update_5_11525802_20Apr17.exe** para o servidor de destino principal. Faça duplo clique para executá-la. Tenha em atenção que o agente unificado também é aplicável ao servidor de origem se a origem não for atualizada até Update4. Deve instalá-lo no servidor de origem bem, tal como mencionado mais tarde nesta lista.<br>
 6. **Para o servidor vContinuum**: cópia **vCon_Windows_8.0.5.0_GA_Update_5_11525767_20Apr17.exe** para o servidor vContinuum.  Certifique-se de que tiver fechado o Assistente de vContinuum. Faça duplo clique no ficheiro executá-la.<br>
 7. **Para o servidor de destino principal do Linux**: para atualizar o agente unificado, copie **UA_RHEL6 64_8.0.4.0_GA_Update_4_9035261_26Sep16.tar.gz** ao mestre de servidor de destino e extraia. A pasta extraída, execute **/instalar**.<br>
-8. **Para o servidor de origem do Windows**: não é necessário instalar o agente de atualização 5 origem se IDs já se encontra no update4. Se for inferior a update4, aplicam-se o agente de atualização 5.
+8. **Para o servidor de origem do Windows**: não é necessário instalar o agente de atualização 5 na origem se já estiver a executar a atualização 4. Se tiver o menor do que a atualização 4, aplicam-se o agente de atualização 5.
 Para atualizar o agente unificado, copie **UA_Windows_8.0.5.0_GA_Update_5_11525802_20Apr17.exe** ao servidor de origem. Faça duplo clique para executá-la. <br>
 9. **Para o servidor de origem do Linux**: para atualizar o agente unificado, copie versão correspondente do ficheiro UA para o servidor Linux e extraia. A pasta extraída, execute **/instalar**.  Exemplo: Para o servidor do RHEL 6.7 64 bits, copie **UA_RHEL6 64_8.0.4.0_GA_Update_4_9035261_26Sep16.tar.gz** para o servidor e extraia. A pasta extraída, execute **/instalar**.
 
@@ -86,7 +86,7 @@ Para atualizar o agente unificado, copie **UA_Windows_8.0.5.0_GA_Update_5_115258
 ## <a name="updates"></a>Atualizações
 ### <a name="azure-site-recovery-scout-801-update-5"></a>Do Azure Site Recovery Scout 8.0.1 atualização 5
 Atualização Scout 5 é uma atualização cumulativa. Tem todas as correções de atualização1 até update4 e seguintes correções de erros novas e melhorias.
-Correções que são adicionadas a partir de ASR Scout update4 para update5 são específicas para componentes de destino mestre e vContinuum. Se todos os seus servidores de origem, destino principal, o servidor de configuração, o servidor de processos e o RX já estão no ASR Scout update4, em seguida, terá de aplicar a atualização 5 apenas no servidor de destino mestre. 
+Correções que são adicionadas a partir de update4 Scout de recuperação de Site para update5 são específicas para componentes de destino mestre e vContinuum. Se todos os seus servidores de origem, destino principal, o servidor de configuração, o servidor de processos e o RX já estejam nesse update4 Scout de recuperação de Site terá de aplicar a atualização 5 apenas no servidor de destino mestre. 
 
 **Novo suporte de plataforma**
 * SUSE Linux Enterprise Server 11 4(SP4) do Service Pack
@@ -109,11 +109,11 @@ Correções que são adicionadas a partir de ASR Scout update4 para update5 são
 
 > [!NOTE]
 > 
-> * Acima P2V cluster correções são aplicáveis a apenas esses MSCS cluster físico raiz protegidos com update5 ASR Scout. Para beneficiar do cluster corrige no cluster do P2V MSCS já protegido com atualizações anteriores, tem de seguir os passos de atualização que são mencionados na secção 12, atualização protegidos cluster P2V MSCS Scout Update5 de [notas de versão ASR Scout](https://aka.ms/asr-scout-release-notes).
+> * Acima P2V cluster correções são aplicáveis a apenas esses MSCS clusters físicos que estão protegidos raiz com update5 Scout de recuperação de Site. Para beneficiar do cluster corrige no cluster do P2V MSCS já protegido com atualizações anteriores, tem de seguir os passos de atualização que são mencionados na secção 12, atualização protegidos clusters de P2V MSCS para Scout atualização 5 do [notas de versão](https://aka.ms/asr-scout-release-notes) .
 > 
-> * Voltar a proteger de cluster do MSCS físico pode reutilizar discos de destino existente, apenas se o momento da reativação da proteção, o mesmo conjunto de discos estão ativas em cada um de nós do cluster sejam idênticos quando inicialmente protegido. Se não, em seguida, existem passos manuais tal como mencionado na secção 12 [notas de versão ASR Scout](https://aka.ms/asr-scout-release-notes) para mover os discos do lado do destino para o caminho de arquivo de dados correto para utilizar novamente durante a reativação da proteção. Se Proteja novamente o cluster do MSCS no modo de P2V sem os seguintes passos de atualização, irá criar o novo disco no servidor de ESXi do destino. Terá de eliminar manualmente os discos antigos do arquivo de dados.
+> * Voltar a proteger de cluster do MSCS físico pode reutilizar discos de destino existente, apenas se o momento da reativação da proteção, o mesmo conjunto de discos estão ativas em cada um de nós do cluster sejam idênticos quando inicialmente protegido. Se não, em seguida, existem passos manuais tal como mencionado na secção 12 o [notas de versão](https://aka.ms/asr-scout-release-notes) para mover os discos do lado do destino para o caminho de arquivo de dados correto para utilizar novamente durante a reativação da proteção. Se Proteja novamente o cluster do MSCS no modo de P2V sem os seguintes passos de atualização, irá criar o novo disco no servidor de ESXi do destino. Terá de eliminar manualmente os discos antigos do arquivo de dados.
 > 
-> * Sempre que a origem SLES11 ou SLES11 com qualquer servidor de pacote de serviço é reiniciado corretamente, em seguida, deve marcar manualmente o **raiz** pares de replicação para sincronizar novamente de disco não será notificado na placa CX IU. Se não o ' marque o disco de raiz para ressincronização, poderá ver os problemas de integridade (DI) de dados.
+> * Sempre que a origem SLES11 ou SLES11 com qualquer servidor de pacote de serviço é reiniciado corretamente, em seguida, deve marcar manualmente o **raiz** pares de replicação para sincronizar novamente de disco não será notificado na placa CX IU. Se não marcou o disco de raiz para ressincronização, poderá ver os problemas de integridade (DI) de dados.
 > 
 
 ### <a name="azure-site-recovery-scout-801-update-4"></a>Do Azure Site Recovery Scout 8.0.1 atualização 4
@@ -144,7 +144,7 @@ Scout atualização 4 é uma atualização cumulativa. Tem todas as correções 
 * Ligação de transferência do VMware vCLI 6.0 é adicionada ao programa de instalação base do destino principal do Windows.
 * Adicionar mais verificações e os registos para alterações de configurações de rede durante a ativação pós-falha e aprofunda de DR.
 * Informações de retenção sometime não foi reportadas para a placa CX.  
-* Para um cluster físico, volume tamanho novamente a operação através do Assistente de vContinuum está a falhar quando foi efetuada a operação de encolhimento de volume de origem.
+* Para um cluster físico, o volume tamanho novamente a operação através do Assistente de vContinuum falha quando ocorre a operação de encolhimento de volume de origem.
 * A proteção do cluster falhou com o erro "Falha ao localizar a assinatura do disco" quando o disco de cluster é disco PRDM.
 * Falha do servidor de transporte cxps devido à exceção de fora do intervalo.
 * Nome do servidor e colunas IP estão agora redimensionáveis na página de instalação push do Assistente de vContinuum.
@@ -164,7 +164,7 @@ Scout atualização 4 é uma atualização cumulativa. Tem todas as correções 
 A atualização 3 inclui as seguintes correções de erros e melhoramentos:
 
 * O servidor de configuração e RX falhar registar no Cofre de recuperação de Site quando forem atrás do proxy.
-* O número de horas que o objetivo de ponto de recuperação (RPO) não for cumprido não é obter atualizado no relatório de estado de funcionamento.
+* O número de horas que ainda não foi cumprido o objetivo de ponto de recuperação (RPO) não está atualizado no relatório de estado de funcionamento.
 * O servidor de configuração não está a sincronizar com RX quando os detalhes de hardware do ESX ou detalhes da rede contém caracteres UTF-8.
 * Os controladores de domínio do Windows Server 2008 R2 não conseguem efetuar o arranque após a recuperação.
 * Sincronização offline não está a funcionar conforme esperado.

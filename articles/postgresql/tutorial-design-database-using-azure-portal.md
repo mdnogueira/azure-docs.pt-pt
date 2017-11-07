@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
-ms.date: 05/10/2017
-ms.openlocfilehash: 9f1c8241d0d7e68abd175c7c1c3b023d18b24a68
-ms.sourcegitcommit: 9c3150e91cc3075141dc2955a01f47040d76048a
+ms.date: 11/03/2017
+ms.openlocfilehash: 1a210f813319a4f21c7c246002c968b8093f8a4e
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="design-your-first-azure-database-for-postgresql-using-the-azure-portal"></a>Conceber a sua primeira base de dados do Azure para PostgreSQL no portal do Azure
 
@@ -71,13 +71,13 @@ Siga estes passos para criar uma Base de Dados do Azure para o servidor PostgreS
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Configurar uma regra de firewall ao nível do servidor
 
-A Base de Dados do Azure para o serviço PostgreSQL cria uma firewall ao nível do servidor. Por predefinição, este firewall impede que todas as aplicações externas e ferramentas de ligar ao servidor e quaisquer bases de dados no servidor, a menos que é criada uma regra de firewall para abrir a firewall para um intervalo de endereço IP específico. 
+A base de dados do Azure para o serviço de PostgreSQL utiliza uma firewall ao nível do servidor. Por predefinição, este firewall impede que todas as aplicações externas e ferramentas de ligar ao servidor e quaisquer bases de dados no servidor, a menos que é criada uma regra de firewall para abrir a firewall para um intervalo de endereço IP específico. 
 
 1.  Depois de concluída a implementação, clique em **Todos os Recursos**, no menu esquerdo, e escreva o nome **mypgserver 20170401** para procurar o servidor recentemente criado. Clique no nome do servidor listado no resultado da pesquisa. É apresentada a página **Descrição Geral** do servidor, que fornece opções para configuração adicional.
  
  ![Base de Dados do Azure para o PostgreSQL – Procurar o servidor ](./media/tutorial-design-database-using-azure-portal/4-locate.png)
 
-2.  No painel do servidor, selecione **segurança de ligação**. 
+2.  Na página do servidor, selecione **Segurança da ligação**. 
 3.  Clique na caixa de texto em **Nome da Regra** e adicione uma nova regra de firewall para colocar na lista de permissões o intervalo IP para conectividade. Para este tutorial, vamos permitir que todos os IPs escrevendo na **nome da regra = AllowAllIps**, **IP inicial = 0.0.0.0** e **final IP = 255.255.255.255** e, em seguida, clique em **guardar**. Pode definir uma regra de firewall específicas que abrange um intervalo IP mais pequeno para efetuar a ligação da sua rede.
  
  ![Base de Dados do Azure para o PostgreSQL – Criar a Regra de Firewall](./media/tutorial-design-database-using-azure-portal/5-firewall-2.png)
@@ -85,19 +85,20 @@ A Base de Dados do Azure para o serviço PostgreSQL cria uma firewall ao nível 
 4.  Clique em **guardar** e, em seguida, clique em de **X** para fechar o **segurança ligações** página.
 
   > [!NOTE]
-  > O servidor PostgreSQL do Azure comunica através da porta 5432. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 5432 poderá não ser permitido pela firewall da rede. Se assim for, não poderá ligar ao servidor da Base de Dados SQL do Azure, a menos que o departamento de TI abra a porta 5432.
+  > O servidor PostgreSQL do Azure comunica através da porta 5432. Se estiver a tentar ligar a partir de uma rede empresarial, o tráfego de saída através da porta 5432 poderá não ser permitido pela firewall da rede. Se assim for, não é possível ligar ao servidor da SQL Database do Azure, a menos que o departamento de TI abre porta 5432.
   >
 
 
 ## <a name="get-the-connection-information"></a>Obter as informações da ligação
 
-Quando criámos a nossa Base de Dados do Azure para o servidor PostgreSQL, também é criada a base de dados **postgres** predefinida. Para ligar ao servidor da base de dados, terá de fornecer as credenciais de acesso e as informações de anfitrião.
+Quando criou a base de dados do Azure para o servidor de PostgreSQL, a predefinição **postgres** também foi criada a base de dados. Para ligar ao servidor da base de dados, terá de fornecer as credenciais de acesso e as informações de anfitrião.
 
 1. No menu da esquerda no portal do Azure, clique em **todos os recursos** e procure o servidor que acabou de criar **mypgserver 20170401**.
 
   ![Base de Dados do Azure para o PostgreSQL – Procurar o servidor ](./media/tutorial-design-database-using-azure-portal/4-locate.png)
 
 3. Clique no nome do servidor **mypgserver 20170401**.
+
 4. Selecione a página **Descrição Geral** do servidor. Anote o **Nome do servidor** e **Nome de início de sessão de administrador do servidor**.
 
  ![Base de Dados do Azure para o PostgreSQL – Início de Sessão de Administrador do Servidor](./media/tutorial-design-database-using-azure-portal/6-server-name.png)
@@ -136,9 +137,9 @@ Na linha de comandos, execute o comando seguinte para mudar a ligação para a b
 \c mypgsqldb
 ```
 ## <a name="create-tables-in-the-database"></a>Criar tabelas na base de dados
-Agora que sabe como ligar à base de dados do Azure para PostgreSQL, iremos pode passam como concluir algumas tarefas básicas.
+Agora que sabe como ligar à base de dados do Azure para PostgreSQL, pode concluir algumas tarefas básicas:
 
-Em primeiro lugar, iremos criar uma tabela e carregue-a com alguns dados. Vamos criar uma tabela que controla as informações de inventário.
+Em primeiro lugar, crie uma tabela e carregá-lo com alguns dados. Vamos criar uma tabela que controla as informações de inventário com este código SQL:
 ```sql
 CREATE TABLE inventory (
     id serial PRIMARY KEY, 
@@ -153,7 +154,7 @@ Agora, pode ver a tabela criada recentemente na lista de tabelas, escrevendo:
 ```
 
 ## <a name="load-data-into-the-tables"></a>Carregar dados para as tabelas
-Agora que temos uma tabela, iremos pode inserir alguns dados para a mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
+Agora que tem uma tabela, inserir alguns dados na mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
 ```sql
 INSERT INTO inventory (id, name, quantity) VALUES (1, 'banana', 150); 
 INSERT INTO inventory (id, name, quantity) VALUES (2, 'orange', 154);
@@ -191,7 +192,7 @@ Imagine que tenha eliminado acidentalmente nesta tabela. Esta situação é algo
   - **Escalão de preço**: não é possível alterar este valor ao restaurar um servidor. É igual ao servidor de origem. 
 3.  Clique em **OK** [restaurar o servidor para um ponto no tempo](./howto-restore-server-portal.md) antes da tabela foi eliminada. Restaurar um servidor para um outro ponto no tempo cria um novo servidor duplicado como o servidor original a partir do ponto no tempo que especificar, desde que esteja dentro do período de retenção para sua [camada de serviço](./concepts-service-tiers.md).
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 Neste tutorial, aprendeu a utilizar o portal do Azure e outros utilitários para:
 > [!div class="checklist"]
 > * Criar uma Base de Dados do Azure para o servidor PostgreSQL

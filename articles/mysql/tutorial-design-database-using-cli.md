@@ -5,16 +5,17 @@ services: mysql
 author: v-chenyh
 ms.author: v-chenyh
 manager: jhubbard
+editor: jasonwhowell
 ms.service: mysql
 ms.devlang: azure-cli
 ms.topic: tutorial
-ms.date: 06/13/2017
+ms.date: 11/03/2017
 ms.custom: mvc
-ms.openlocfilehash: 0e6a92eeb9711b086359ab2cd1aea87a57f1fc36
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dcd59442c0b3aa5d6ed1a9ef287949d1d17fa80f
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="design-your-first-azure-database-for-mysql-database"></a>Conceber a sua primeira base de dados do Azure para a base de dados MySQL
 
@@ -23,7 +24,7 @@ Base de dados do Azure para MySQL é um serviço de base de dados relacional em 
 > [!div class="checklist"]
 > * Criar uma base de dados do Azure para MySQL
 > * Configurar a firewall do servidor
-> * Utilize [ferramenta de linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) para criar uma base de dados
+> * Utilize [ferramenta da linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) para criar uma base de dados
 > * Carregar dados de exemplo
 > * Consultar dados
 > * Atualizar dados
@@ -33,7 +34,7 @@ Pode utilizar a Shell de nuvem do Azure no browser, ou [instalar o Azure CLI 2.0
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se optar por instalar e utilizar a CLI localmente, este artigo requer que está a executar a CLI do Azure versão 2.0 ou posterior. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 Se tiver várias subscrições, escolha a subscrição adequada na qual o recurso existe ou é cobrado. Selecione um ID de subscrição específica na sua conta com o comando [az account set](/cli/azure/account#set).
 ```azurecli-interactive
@@ -102,7 +103,7 @@ O resultado está no formato JSON. Aponte o **fullyQualifiedDomainName** e o **a
 ```
 
 ## <a name="connect-to-the-server-using-mysql"></a>Ligar ao servidor utilizando o mysql
-Utilize [ferramenta de linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) estabelecer uma ligação à base de dados do Azure para o servidor de MySQL. Neste exemplo, o comando é:
+Utilize o [ferramenta da linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) estabelecer uma ligação à base de dados do Azure para o servidor de MySQL. Neste exemplo, o comando é:
 ```cmd
 mysql -h mycliserver.database.windows.net -u myadmin@mycliserver -p
 ```
@@ -119,9 +120,9 @@ mysql> USE mysampledb;
 ```
 
 ## <a name="create-tables-in-the-database"></a>Criar tabelas na base de dados
-Agora que sabe como ligar à base de dados do Azure para a base de dados MySQL, iremos pode passam como concluir algumas tarefas básicas.
+Agora que sabe como ligar à base de dados do Azure para a base de dados MySQL, conclua algumas tarefas básicas:
 
-Em primeiro lugar, iremos criar uma tabela e carregue-a com alguns dados. Vamos criar uma tabela que armazena informações de inventário.
+Em primeiro lugar, crie uma tabela e carregá-lo com alguns dados. Vamos criar uma tabela que armazena informações de inventário.
 ```sql
 CREATE TABLE inventory (
     id serial PRIMARY KEY, 
@@ -131,7 +132,7 @@ CREATE TABLE inventory (
 ```
 
 ## <a name="load-data-into-the-tables"></a>Carregar dados para as tabelas
-Agora que temos uma tabela, iremos pode inserir alguns dados para a mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
+Agora que tem uma tabela, inserir alguns dados na mesma. A janela de linha de comandos aberta, execute a seguinte consulta para inserir alguns linhas de dados.
 ```sql
 INSERT INTO inventory (id, name, quantity) VALUES (1, 'banana', 150); 
 INSERT INTO inventory (id, name, quantity) VALUES (2, 'orange', 154);
@@ -158,7 +159,7 @@ SELECT * FROM inventory;
 ## <a name="restore-a-database-to-a-previous-point-in-time"></a>Restaurar uma base de dados para um ponto anterior no tempo
 Imagine que tenha eliminado acidentalmente nesta tabela. Este é algo que facilmente não consegue recuperar. Base de dados do Azure para MySQL permite-lhe voltar atrás para qualquer ponto no tempo no último até 35 dias e restaurar este ponto no tempo para um novo servidor. Pode utilizar este servidor novo para recuperar os dados eliminados. Os seguintes passos restaurar o servidor de exemplo para um ponto antes da tabela foi adicionada.
 
-Para o restauro terá as seguintes informações:
+Para o restauro, terá as seguintes informações:
 
 - Ponto de restauro: selecione um ponto no tempo que ocorre antes do servidor foi alterado. Tem de ser maior que ou igual ao valor de cópia de segurança mais antigo a origem da base de dados.
 - Servidor de destino: forneça um novo nome de servidor que pretende restaurar para
@@ -176,7 +177,7 @@ Neste tutorial, que aprendeu a:
 > [!div class="checklist"]
 > * Criar uma base de dados do Azure para MySQL
 > * Configurar a firewall do servidor
-> * Utilize [ferramenta de linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) para criar uma base de dados
+> * Utilize [ferramenta da linha de comandos mysql](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) para criar uma base de dados
 > * Carregar dados de exemplo
 > * Consultar dados
 > * Atualizar dados

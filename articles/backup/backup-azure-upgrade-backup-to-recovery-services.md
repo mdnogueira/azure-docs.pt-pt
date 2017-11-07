@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 08/03/2017
 ms.author: sogup;markgal;arunak
-ms.openlocfilehash: c7eb4514dca806d6e6470091423785b30a7d4bcb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7347301cd34979df9b3acc59f623ab346dbe41f6
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="upgrade-a-backup-vault-to-a-recovery-services-vault"></a>Atualizar um cofre de cópia de segurança para um cofre dos serviços de recuperação
 
@@ -120,7 +120,7 @@ Depois de atualizar para um cofre dos serviços de recuperação, configure os r
 Não. As cópias de segurança em curso continuam sem interrupções durante e após a atualização.
 
 **Se não planear a sobre a atualização em breve, o que acontece ao meu cofres?**</br>
-Uma vez que todas as novas funcionalidades aplicam apenas aos cofres dos serviços de recuperação, recomendamos vivamente a atualizar os cofres. Microsoft, eventualmente, irá Preterir o portal clássico. A partir de 1 de Setembro de 2017, Microsoft começará cofres de cópia de segurança a atualização automática para os cofres dos serviços de recuperação. Até 1 de Novembro de 2017, a Microsoft irá concluir o processo de atualização. O Cofre pode ser atualizado automaticamente qualquer altura durante Setembro ou Outubro. A Microsoft recomenda a que atualizar o seu Cofre logo que possível.
+Uma vez que todas as novas funcionalidades aplicam apenas aos cofres dos serviços de recuperação, recomendamos vivamente a atualizar os cofres. Microsoft, eventualmente, irá Preterir o portal clássico. A partir de 1 de Setembro de 2017, Microsoft começará cofres de cópia de segurança a atualização automática para os cofres dos serviços de recuperação. Até 30 de Novembro de 2017, a Microsoft irá concluir o processo de atualização. O Cofre pode ser atualizado automaticamente qualquer altura entre. A Microsoft recomenda a que atualizar o seu Cofre logo que possível.
 
 **O que faz esta atualização média para os meus ferramentas existentes?**</br>
 Atualize as ferramentas para o modelo de implementação Resource Manager. Os serviços de recuperação cofres foram criadas para utilizar no modelo de implementação Resource Manager. Planeamento para o modelo de implementação Resource Manager e a gestão de contas para a diferença na sua cofres é importante. 

@@ -1,6 +1,6 @@
 ---
 title: "Novidades Notas de versão para o Azure Active Directory | Microsoft Docs"
-description: "Utilize estas versão notas para se manter entre em contacto com as versões mais recentes, problemas conhecidos, erros correções, preterido funcionalidade e planos para alterações no Azure Active Directory (Azure AD)."
+description: "Saiba o que há de novo no Azure Active Directory (Azure AD), incluindo notas de versão mais recentes, problemas, correções de erros, funcionalidade preterida e as alterações futuras conhecidos."
 services: active-directory
 documentationcenter: 
 author: MarkusVi
@@ -12,23 +12,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/03/2017
+ms.date: 11/06/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 54a6f197de82e5c4ae93d196a532aec7793bbd4c
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 0fd0ee5bb0bc3e9dcda9db291a1f9dbac6a2e7dc
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="whats-new-in-azure-active-directory"></a>O que é novo no Azure Active Directory?
 
 
----
 
-Se manter atualizado em relação às quais são as novidades no Azure Active Directory ao subscrever este [feed](https://docs.microsoft.com/api/search/rss?search=%22what%27s%20new%20in%20azure%20active%20directory%3%22&locale=en-us) no seu favorito leitor de feed RSS.
 
----
+> Se manter atualizado em relação às quais são as novidades no Azure Active Directory ao subscrever este [feed](https://docs.microsoft.com/api/search/rss?search=%22what%27s%20new%20in%20azure%20active%20directory%3F%22&locale=en-us) no seu favorito leitor de feed RSS.
+
 
 
 Iremos estão melhorar o Azure Active Directory numa base contínua. Para ativar a se manter atualizado com os desenvolvimentos mais recentes, este tópico fornece informações sobre:

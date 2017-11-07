@@ -14,13 +14,13 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2017
+ms.date: 11/06/2017
 ms.author: larryfr
-ms.openlocfilehash: c8a992e84d770295a6c7008cfa85ca947fb8fca5
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 65d6dc7bf96666f004038c6dae00d2f4e9ea5d7f
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="generate-movie-recommendations-by-using-apache-mahout-with-linux-based-hadoop-in-hdinsight-ssh"></a>Gerar recomendações de filmes utilizando Mahout do Apache com Hadoop baseado em Linux no HDInsight (SSH)
 
@@ -59,9 +59,9 @@ O seguinte fluxo de trabalho é um exemplo simplificado que utiliza dados de fil
 
 Comodamente, [GroupLens Research] [ movielens] fornece dados de classificação de filmes num formato que é compatível com o Mahout. Estes dados ficarem disponíveis no armazenamento de predefinido do cluster em `/HdiSamples/HdiSamples/MahoutMovieData`.
 
-Existem dois ficheiros, `moviedb.txt` e `user-ratings.txt`. O utilizador ratings.txt é utilizado durante a análise, enquanto moviedb.txt é utilizado para fornecer informações de texto intuitivo quando se apresenta os resultados da análise.
+Existem dois ficheiros, `moviedb.txt` e `user-ratings.txt`. O `user-ratings.txt` ficheiro é utilizado durante a análise. O `moviedb.txt` é utilizado para fornecer as informações de texto intuitivo ao visualizar os resultados.
 
-Os dados contidos no utilizador ratings.txt tem uma estrutura de `userID`, `movieID`, `userRating`, e `timestamp`, que informa-nos como altamente cada utilizador classificados um filme. Eis um exemplo dos dados:
+Os dados contidos no utilizador ratings.txt tem uma estrutura de `userID`, `movieID`, `userRating`, e `timestamp`, que indica como altamente cada utilizador classificados um filme. Eis um exemplo dos dados:
 
     196    242    3    881250949
     186    302    3    891717742
@@ -97,7 +97,7 @@ mahout recommenditembased -s SIMILARITY_COOCCURRENCE -i /HdiSamples/HdiSamples/M
 
     A primeira coluna é a `userID`. Os valores contidos em ' [' e ']' são `movieId`:`recommendationScore`.
 
-2. Pode utilizar a saída, juntamente com o moviedb.txt, para fornecer mais informações sobre as recomendações. Em primeiro lugar, temos de copiar os ficheiros localmente com os seguintes comandos:
+2. Pode utilizar a saída, juntamente com o moviedb.txt, para fornecer mais informações sobre as recomendações. Em primeiro lugar, copie os ficheiros localmente, utilizando os seguintes comandos:
 
     ```bash
     hdfs dfs -get /example/data/mahoutout/part-r-00000 recommendations.txt

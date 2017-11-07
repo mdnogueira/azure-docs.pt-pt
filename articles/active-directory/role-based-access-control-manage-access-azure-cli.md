@@ -14,11 +14,11 @@ ms.workload: identity
 ms.date: 07/12/2017
 ms.author: andredm
 ms.reviewer: rqureshi
-ms.openlocfilehash: 77315171754304c965f296670fbba3a4751a3656
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 88a5fe33d048814d956a1221802f059cfbcccb0a
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="manage-role-based-access-control-with-the-azure-command-line-interface"></a>Gerir o controlo de acesso baseado em funções com a interface de linha de comandos do Azure
 > [!div class="op_single_selector"]
@@ -150,7 +150,7 @@ O exemplo, em seguida, remove a atribuição de função de um grupo na subscri�
 ## <a name="create-a-custom-role"></a>Criar uma função personalizada
 Para criar uma função personalizada, utilize:
 
-    azure role definition create --role-definition <file path>
+    azure role create --inputfile <file path>
 
 O exemplo seguinte cria uma função personalizada denominada *operador de Máquina Virtual*. Esta função personalizada concede acesso a todas as operações de leitura de *Microsoft. Compute*, *Microsoft*, e *Network* recursos fornecedores e concede acesso a iniciar, reiniciar e monitorizar máquinas virtuais. Esta função personalizada pode ser utilizada em duas subscrições. Este exemplo utiliza um ficheiro JSON como entrada.
 
@@ -159,9 +159,9 @@ O exemplo seguinte cria uma função personalizada denominada *operador de Máqu
 ![Linha de comandos do Azure RBAC - função do azure criar - captura de ecrã](./media/role-based-access-control-manage-access-azure-cli/2-azure-role-create-2.png)
 
 ## <a name="modify-a-custom-role"></a>Modificar uma função personalizada
-Para modificar uma função personalizada, primeiro use o `azure role definition list` comando para obter a definição de função. Segundo, efetue as alterações pretendidas para o ficheiro de definição de função. Por último, utilize `azure role definition update` para guardar a definição de função modificadas.
+Para modificar uma função personalizada, primeiro use o `azure role list` comando para obter a definição de função. Segundo, efetue as alterações pretendidas para o ficheiro de definição de função. Por último, utilize `azure role set` para guardar a definição de função modificadas.
 
-    azure role definition update --role-definition <file path>
+    azure role set --inputfile <file path>
 
 O exemplo seguinte adiciona o *Microsoft.Insights/diagnosticSettings/* operação para o **ações**e uma subscrição do Azure para o **AssignableScopes** da Máquina Virtual função operador de personalizado.
 
@@ -170,7 +170,7 @@ O exemplo seguinte adiciona o *Microsoft.Insights/diagnosticSettings/* operaçã
 ![Captura de ecrã de linha de comandos - conjunto de função do azure - de RBAC Azure](./media/role-based-access-control-manage-access-azure-cli/3-azure-role-set2.png)
 
 ## <a name="delete-a-custom-role"></a>Eliminar uma função personalizada
-Para eliminar uma função personalizada, utilize o `azure role definition list` o comando para determinar o **ID** da função. Em seguida, utilize o `azure role definition delete` comando para eliminar a função especificando o **ID**.
+Para eliminar uma função personalizada, utilize o `azure role list` o comando para determinar o **ID** da função. Em seguida, utilize o `azure role delete` comando para eliminar a função especificando o **ID**.
 
 O exemplo a seguir remove o *operador de Máquina Virtual* função personalizada.
 
@@ -182,7 +182,7 @@ Para listar as funções que estão disponíveis para atribuição a um âmbito,
 O comando seguinte apresenta uma lista de todas as funções que estão disponíveis para atribuição na subscrição selecionada.
 
 ```
-azure role definition list --json | jq '.[] | {"name":.properties.roleName, type:.properties.type}'
+azure role list --json | jq '.[] | {"name":.properties.roleName, type:.properties.type}'
 ```
 
 ![Captura de ecrã de linha de comandos - lista de funções do azure - de RBAC Azure](./media/role-based-access-control-manage-access-azure-cli/5-azure-role-list1.png)
@@ -190,7 +190,7 @@ azure role definition list --json | jq '.[] | {"name":.properties.roleName, type
 No exemplo seguinte, o *operador de Máquina Virtual* função personalizada não está disponível no *Production4* subscrição porque essa subscrição não está no **AssignableScopes** da função.
 
 ```
-azure role definition list --json | jq '.[] | if .properties.type == "CustomRole" then .properties.roleName else empty end'
+azure role list --json | jq '.[] | if .properties.type == "CustomRole" then .properties.roleName else empty end'
 ```
 
 ![Captura de ecrã de linha de comandos - lista de funções do azure para funções personalizadas - de RBAC Azure](./media/role-based-access-control-manage-access-azure-cli/5-azure-role-list2.png)

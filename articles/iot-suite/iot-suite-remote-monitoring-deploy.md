@@ -12,11 +12,11 @@ ms.topic: article
 ms.devlang: NA
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.openlocfilehash: b16990d41b691c13b01d61aa0cde7d14e533e440
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 1442f6ccc1d4ec349bb20d302faabd6788ff9253
+ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="deploy-the-remote-monitoring-preconfigured-solution"></a>Implementar a solução pré-configurada de monitorização remota
 
@@ -39,9 +39,13 @@ Se não tiver uma conta, pode criar uma de avaliação gratuita em apenas alguns
 
 Antes de implementar a solução pré-configurada à sua subscrição do Azure, tem de escolher algumas opções de configuração:
 
-1. Inicie sessão no [azureiotsuite.com](https://www.azureiotsuite.com) utilizando o Azure credenciais de contas e clique em  **+**  para criar uma solução.
+1. Inicie sessão no [azureiotsuite.com](https://www.azureiotsuite.com) utilizando o Azure credenciais de contas e clique em  **+**  para criar uma nova solução:
 
-1. Clique em **Selecionar** no mosaico **Monitorização remota**.
+    ![Criar uma nova solução](media/iot-suite-remote-monitoring-deploy/createnewsolution.png)
+
+1. Clique em **selecione** no **pré-visualização de monitorização remota** mosaico.
+
+    ![Escolha a monitorização remota](media/iot-suite-remote-monitoring-deploy/remotemonitoring.png)
 
 1. No **solução de monitorização remota criar** página, introduza um **nome da solução** para solução pré-configurada de monitorização remota.
 
@@ -53,7 +57,9 @@ Antes de implementar a solução pré-configurada à sua subscrição do Azure, 
 
 1. Selecione a **Subscrição** e a **Região** que quer utilizar para aprovisionar a solução.
 
-1. Clique em **Criar Solução** para iniciar o processo de aprovisionamento. Este processo ação demora vários minutos para ser executado.
+1. Clique em **Criar Solução** para iniciar o processo de aprovisionamento. Este processo normalmente demora vários minutos a executar:
+
+    ![Detalhes de solução de monitorização remota](media/iot-suite-remote-monitoring-deploy/createform.png)
 
 Para informações de resolução de problemas, consulte [o que fazer quando ocorre uma falha de uma implementação](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide#what-to-do-when-a-deployment-fails) no repositório GitHub.
 
@@ -61,12 +67,16 @@ Para informações de resolução de problemas, consulte [o que fazer quando oco
 
 Quando o processo de aprovisionamento estiver concluído, pode iniciar sessão sua solução pré-configurada de monitorização remota.
 
-1. No **aprovisionado soluções** página, escolha a sua nova solução de monitorização remota.
+1. No **aprovisionado soluções** página, escolha a sua nova solução de monitorização remota:
+
+    ![Escolha a nova solução](media/iot-suite-remote-monitoring-deploy/choosenew.png)
 
 1. Pode ver informações sobre a sua solução de monitorização remota, no painel que aparece. Escolha **dashboard da solução** para ligar à sua solução de monitorização remota.
 
     > [!NOTE]
     > Pode eliminar a solução de monitorização remota neste painel quando tiver terminado com o mesmo.
+
+    ![Painel de solução](media/iot-suite-remote-monitoring-deploy/solutionpanel.png)
 
 1. Apresenta o dashboard de solução de monitorização remota no seu browser.
 

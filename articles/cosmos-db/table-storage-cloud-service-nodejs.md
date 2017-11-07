@@ -1,5 +1,5 @@
 ---
-title: "Aplicação Web com o armazenamento de tabelas (Node.js) | Microsoft Docs"
+title: "Table storage do Azure: criar uma aplicação web Node.js | Microsoft Docs"
 description: "Um tutorial que se baseia-se a aplicação Web com o tutorial rápida através da adição de serviços de armazenamento do Azure e o módulo do Azure."
 services: cosmos-db
 documentationcenter: nodejs
@@ -12,15 +12,17 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
-ms.date: 12/08/2016
+ms.date: 11/03/2017
 ms.author: mimig
-ms.openlocfilehash: b802f880c1131abb7eb9ba00dd8f2e65017bc802
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2e931f0457511963b87c1b14fe873593bcb000c7
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
-# <a name="nodejs-web-application-using-storage"></a>Aplicação Web node.js utilizando o armazenamento
+# <a name="azure-table-storage-nodejs-web-application"></a>Table storage do Azure: aplicação Web Node.js
+[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
+
 ## <a name="overview"></a>Descrição geral
 Neste tutorial, a aplicação que criou no [aplicação Web Node.js utilizando rápida] tutorial é expandido com as bibliotecas de cliente do Microsoft Azure para Node.js para trabalhar com os serviços de gestão de dados. Expandir a sua aplicação através da criação de uma aplicação de lista de tarefas baseada na web que pode implementar no Azure. A lista de tarefas permite que um utilizador obter tarefas, adicionar novas tarefas e marcar tarefas como concluído.
 

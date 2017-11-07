@@ -15,11 +15,11 @@ ms.workload: identity
 ms.date: 05/09/2017
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 6df64f4820f8409bd8897d5ac24f81bffeeef102
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b59c44e351c3b3aa74557d0d1625495277b1bc1a
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 ## <a name="test-your-code"></a>Testar o seu código
 
@@ -45,3 +45,5 @@ Deverá ver os resultados de uma chamada para o Microsoft Graph API 'me' ponto f
 Requer o Microsoft Graph API do `user.read` âmbito para ler o perfil do utilizador. Este âmbito é adicionado automaticamente por predefinição em todas as aplicações que está a ser registada no nosso portal de registo. Algumas outras APIs para o Microsoft Graph, bem como APIs personalizadas para o servidor de back-end poderá exigir âmbitos adicionais. Por exemplo, para o Microsoft Graph, o âmbito `Calendars.Read` é necessário para a lista de calendários do utilizador. Para poder aceder ao calendário do utilizador num contexto de uma aplicação, terá de adicionar o `Calendars.Read` delegado permissão para informações de registo de aplicação e, em seguida, adicione o `Calendars.Read` âmbito para o `acquireTokenSilentAsync` chamada. Poderá ser pedido ao utilizador para consents adicionais como aumentar o número de âmbitos.
 
 <!--end-collapse-->
+
+[!INCLUDE  [Help and Support Options](../../../../includes/active-directory-develop-help-support-include.md)]

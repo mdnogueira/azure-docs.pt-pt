@@ -9,17 +9,17 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
 ms.date: 09/26/2017
-ms.openlocfilehash: 7d6f13336b3913299433e25c69a41f8c94f598b2
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: f371d5cd4e20096d5101fadf9066e3a135218d0b
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="connection-libraries-for-azure-database-for-postgresql"></a>Bibliotecas de ligação para base de dados do Azure para PostgreSQL
-Este tópico apresenta uma lista de bibliotecas e controladores que os programadores podem utilizar para programar aplicações para ligar e consultar a base de dados do Azure para PostgreSQL.
+Este artigo apresenta uma lista de bibliotecas e controladores que os programadores podem utilizar para desenvolver aplicações para ligar e consultar a base de dados do Azure para PostgreSQL.
 
 ## <a name="client-interfaces"></a>Interfaces de cliente
-A maioria das bibliotecas de cliente de idioma utilizadas para ligar ao servidor PostgreSQL são projetos externos e são distribuídas de forma independente. Estas são suportadas nas plataformas Windows, Linux e Mac. Alguns dos controladores cliente mais populares estão listados na seguinte tabela:
+A maioria das bibliotecas de cliente de idioma utilizadas para ligar ao servidor PostgreSQL são projetos externos e são distribuídas de forma independente. As bibliotecas listadas são suportadas nas plataformas Windows, Linux e Mac, para ligar à base de dados do Azure para PostgreSQL. Vários exemplos de início rápido estão listados na secção passos seguinte.
 
 | **Idioma** | **Interface do cliente** | **Informações adicionais** | **Transferência** |
 |--------------|----------------------------------------------------------------|-------------------------------------|--------------------------------------------------------------------|

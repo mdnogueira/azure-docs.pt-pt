@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/01/2017
 ms.author: andret
-ms.openlocfilehash: c888760ab311e8ac08b1e625bb837f91047db645
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e10e5bbb035878eb62d9295b91263602f8128230
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 ## <a name="test-your-code"></a>Testar o seu código
 
@@ -62,3 +62,5 @@ Requer o Microsoft Graph API do `user.read` âmbito para ler o perfil do utiliza
 Se um API de back-end não necessita de um âmbito (não recomendado), pode utilizar o `clientId` como o âmbito no `acquireTokenSilent` e/ou `acquireTokenRedirect` chamadas.
 
 <!--end-collapse-->
+
+[!INCLUDE  [Help and Support Options](../../../../includes/active-directory-develop-help-support-include.md)]
