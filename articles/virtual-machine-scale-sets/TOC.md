@@ -36,6 +36,7 @@
 #### [Utilizar CLI 2.0 do Azure](virtual-machine-scale-sets-manage-cli.md)
 #### [Utilizar o Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md)
 ### [Dimensionamento vertical num conjunto de dimensionamento](virtual-machine-scale-sets-vertical-scale-reprovision.md)
+### [Atualizações automáticas do SO](virtual-machine-scale-sets-automatic-upgrade.md)
 ### [Atualizações para conjuntos de dimensionamento](virtual-machine-scale-sets-upgrade-scale-set.md)
 ### [Com o DSC e conjuntos de dimensionamento](virtual-machine-scale-sets-dsc.md)
 ### [Funcionamento em rede para conjuntos de dimensionamento](virtual-machine-scale-sets-networking.md)

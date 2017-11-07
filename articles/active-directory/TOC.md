@@ -240,6 +240,7 @@
 ### [Vários diretórios](active-directory-licensing-directory-independence.md)
 ### [Diretórios O365](active-directory-manage-o365-subscription.md)
 ### [Inscrição self-service](active-directory-self-service-signup.md)
+#### [Assumir um diretório não gerido](domains-admin-takeover.md)
 ### [Roaming de Estado Empresarial](active-directory-windows-enterprise-state-roaming-overview.md)
 #### [Ativar](active-directory-windows-enterprise-state-roaming-enable.md)
 #### [Definições da política de grupo](active-directory-windows-enterprise-state-roaming-group-policy-settings.md)
