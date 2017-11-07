@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/09/2017
+ms.date: 10/01/2017
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1ffa1c0d062d1c8ff1fc8e20e37d105fdbaaeaa4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 37eb7b728bebcec5c389a8bdf68be6baf97f3c38
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="move-data-to-and-from-sql-server-on-premises-or-on-iaas-azure-vm-using-azure-data-factory"></a>Mover dados para e do SQL Server no local ou no IaaS (VM do Azure) utilizando o Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -554,7 +554,7 @@ O pipeline contém uma atividade de cópia que está configurado para utilizar e
 3. Na janela do mesma, faça duplo clique em **TCP/IP** iniciar **propriedades de TCP/IP** janela.
 4. Mudar para o **endereços IP** separador. Desloque para baixo para ver **IPAll** secção. Tome nota o * * a porta TCP * * (predefinição é **1433**).
 5. Criar um **regra da Firewall do Windows** no computador para permitir tráfego de entrada através desta porta.  
-6. **Verificar ligação**: para ligar ao SQL Server com o nome completamente qualificado, utilize o SQL Server Management Studio de um computador diferente. Por exemplo: "<machine>.<domain>. Corp.<company>empresa>.com, 1433. "
+6. **Verificar ligação**: para ligar ao SQL Server com o nome completamente qualificado, utilize o SQL Server Management Studio de um computador diferente. Por exemplo: "<machine>.<domain>.corp.<company>.com,1433."
 
    > [!IMPORTANT]
 
