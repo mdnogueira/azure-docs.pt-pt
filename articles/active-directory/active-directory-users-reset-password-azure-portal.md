@@ -16,11 +16,11 @@ ms.date: 11/01/2017
 ms.author: joflore
 ms.reviewer: sahenry
 ms.custom: it-pro
-ms.openlocfilehash: 3dede0f026ab38bae64df664d190b47937416d2d
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: bea082081e3f3f52ba78188903a9536fe9de9392
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="reset-the-password-for-a-user-in-azure-active-directory"></a>Repor a palavra-passe de um utilizador no Azure Active Directory
 
@@ -37,6 +37,9 @@ Os administradores poderão ter de repor a palavra-passe de um utilizador em cas
     
 6. No **Repor palavra-passe**, selecione **Repor palavra-passe**.
 7. Uma palavra-passe temporária é apresentada a que, em seguida, pode fornecer ao utilizador. O utilizador será pedido para alterar a palavra-passe da próxima vez que iniciar sessão. 
+
+   > [!NOTE]
+   > Esta palavra-passe temporária não tem uma hora de expiração para que esta será válida até que iniciar sessão e que são, em seguida, são forçadas para alterá-la. 
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Adicionar um utilizador](active-directory-users-create-azure-portal.md)
