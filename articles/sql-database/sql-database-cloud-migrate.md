@@ -14,13 +14,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: Active
-ms.date: 02/08/2017
+ms.date: 11/07/2017
 ms.author: carlrab
-ms.openlocfilehash: f27d2fbeb8ec514419bd0d208429e3d3de2d07ea
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 4e22a512f7ee11dde14f8eac818506b59791e17f
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="sql-server-database-migration-to-sql-database-in-the-cloud"></a>Migração de bases de dados do SQL Server para a Base de Dados SQL na cloud
 Neste artigo, saiba mais sobre os dois métodos primários para migrar um SQL Server 2005 ou posterior para a Base de Dados SQL do Azure. O primeiro método é mais simples, mas necessita de algum, possivelmente substancial, período de indisponibilidade durante a migração. O segundo método é mais complexo, mas elimina significativamente o período de indisponibilidade durante a migração.
@@ -28,7 +28,7 @@ Neste artigo, saiba mais sobre os dois métodos primários para migrar um SQL Se
 Em ambos os casos, terá de garantir que a base de dados de origem é compatível com a SQL Database do Azure utilizando o [através do Assistente de dados de migração (DMA)](https://www.microsoft.com/download/details.aspx?id=53595). Se aproxima da SQL Database V12 [paridade da funcionalidade](sql-database-features.md) com o SQL Server, que não sejam problemas relacionados com operações ao nível do servidor e entre bases de dados. Bases de dados e aplicações que dependem de [funções parcialmente suportadas ou não suportadas](sql-database-transact-sql-information.md) precisam de alguma [reengenharia para corrigir estas incompatibilidades](sql-database-cloud-migrate.md#resolving-database-migration-compatibility-issues) antes que as bases de dados do SQL Server possam ser migradas.
 
 > [!NOTE]
-> Para migrar uma base de dados não SQL Server, incluindo Microsoft Access, Sybase, MySQL Oracle e DB2 para a Base de Dados SQL do Azure, veja [SQL Server Migration Assistant (Assistente de Migração do SQL Server)](https://blogs.msdn.microsoft.com/datamigration/2016/12/22/released-sql-server-migration-assistant-ssma-v7-2/).
+> Para migrar uma base de dados não SQL Server, incluindo Microsoft Access, Sybase, MySQL Oracle e DB2 para a Base de Dados SQL do Azure, veja [SQL Server Migration Assistant (Assistente de Migração do SQL Server)](https://blogs.msdn.microsoft.com/datamigration/2017/09/29/release-sql-server-migration-assistant-ssma-v7-6/).
 > 
 
 ## <a name="method-1-migration-with-downtime-during-the-migration"></a>Método 1: migração com período de indisponibilidade durante a migração
@@ -39,12 +39,11 @@ A lista seguinte contém o fluxo de trabalho geral para uma migração de base d
 
   ![Diagrama de migração de VSSSDT](./media/sql-database-cloud-migrate/azure-sql-migration-sql-db.png)
 
-1. Avalie a base de dados quanto à compatibilidade com a versão mais recente do [Assistente de Migração de Dados (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
+1. [Avaliar](https://docs.microsoft.com/en-us/sql/dma/dma-assesssqlonprem) a base de dados para compatibilidade utilizando a versão mais recente do [através do Assistente de dados de migração (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
 2. Prepare quaisquer correções necessárias como scripts do Transact-SQL.
-3. Faça uma cópia transacional consistente da base de dados de origem que está a ser migrada - e certifique-se de que não estão a ser efetuadas mais alterações na base de dados de origem (ou pode aplicar as alterações manualmente após a conclusão da migração). Existem vários métodos para silenciar uma base de dados, desde desativar a conectividade de cliente a criar um [instantâneo de base de dados](https://msdn.microsoft.com/library/ms175876.aspx).
+3. Efetue uma cópia de uma forma consistente da base de dados de origem que está a ser migrados - e certifique-se de que estão a ser efetuadas sem alterações adicionais para a base de dados de origem (ou pode aplicar manualmente essas alterações após a conclusão da migração). Existem vários métodos para silenciar uma base de dados, desde desativar a conectividade de cliente a criar um [instantâneo de base de dados](https://msdn.microsoft.com/library/ms175876.aspx).
 4. Implemente os scripts do Transact-SQL para aplicar as correções na cópia da base de dados.
-5. [Exportar](sql-database-export.md) a cópia da base de dados para um ficheiro BACPAC numa unidade local.
-6. [Importar](sql-database-import.md) o ficheiro BACPAC como uma nova SQL database do Azure utilizando qualquer um dos vários BACPAC importar ferramentas, com SQLPackage.exe a ser a ferramenta recomendada para um melhor desempenho.
+5. [Migrar](https://docs.microsoft.com/en-us/sql/dma/dma-migrateonpremsql) a cópia da base de dados para uma nova SQL Database do Azure utilizando o Assistente de migração de dados.
 
 ### <a name="optimizing-data-transfer-performance-during-migration"></a>Otimizar o desempenho da transferência de dados durante a migração 
 
@@ -94,7 +93,7 @@ Com a replicação transacional, todas as alterações aos seus dados ou esquema
 ### <a name="some-tips-and-differences-for-migrating-to-sql-database"></a>Algumas sugestões e diferenças de migração para a Base de Dados SQL
 
 1. Utilizar um distribuidor local 
-   - Isto provoca um impacto no desempenho no servidor. 
+   - Se o fizer, faz com que um impacto no desempenho no servidor. 
    - Se o impacto no desempenho for inaceitável pode utilizar outro servidor, mas aumenta a complexidade na gestão e na administração.
 2. Quando seleciona uma pasta de instantâneos, certifique-se de que a pasta que seleciona é suficientemente grande para conter um BCP de cada tabela que pretende replicar. 
 3. A criação do instantâneo bloqueia as tabelas associadas até estar concluída, por isso, agende adequadamente o instantâneo. 

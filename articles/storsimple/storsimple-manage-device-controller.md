@@ -12,15 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/11/2016
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 67dbb0c4066002256efbab6061157c641527e441
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8182d0ccf9fb57a9dba383d376d1c557845bcc8a
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="manage-your-storsimple-device-controllers"></a>Gerir os controladores de dispositivo do StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [gerir os controladores de dispositivo do StorSimple](storsimple-8000-manage-device-controller.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 Este tutorial descreve as operações diferentes que podem ser efetuadas nos controladores de dispositivo StorSimple. Os controladores de dispositivo StorSimple são controladores redundante (ponto a ponto) uma configuração de ativo-passivo. Num determinado momento, apenas um controlador está ativo e está a processar todas as operações de disco e rede. O controlador de outro está num modo passivo. Se o controlador de Active Directory falhar, o controlador passivo fica ativo automaticamente.
 

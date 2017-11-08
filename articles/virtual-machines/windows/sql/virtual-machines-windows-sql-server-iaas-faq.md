@@ -16,11 +16,11 @@ ms.workload: iaas-sql-server
 ms.date: 10/04/2017
 ms.author: v-shysun
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 88c54293b4a9b470febeda3c0e9a1755ad3b0638
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8d692d806bab072fc2c4b734677223bad4142561
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-windows-azure-virtual-machines"></a>Perguntas mais frequentes para o SQL Server em máquinas virtuais do Microsoft Azure
 
@@ -60,6 +60,9 @@ Este tópico fornece respostas a algumas perguntas mais comuns sobre a execuçã
       Ocorreu um erro relacionado com a rede ou específico da instância ao estabelecer uma ligação ao SQL Server. O servidor não foi encontrado ou não estava acessível.
 
    Se optar por desinstalar a instância predefinida, também desinstalar o [extensão de agente do SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md) bem.
+   
+   >[!NOTE]
+   >Uma máquina virtual do Azure do SQL Server é faturada conforme descrito em [preços orientação para as VMs do SQL do Azure](virtual-machines-windows-sql-server-pricing-guidance.md). Se remover o SQL Server, os encargos de utilização continuam. Se já não necessita do SQL Server, pode implementar uma nova máquina virtual e migrar os dados e aplicações para a nova máquina virtual. Em seguida, pode remover a máquina virtual do SQL Server.
 
 1. **Como atualizar para uma nova versão/edição do SQL Server numa VM do Azure?**
 

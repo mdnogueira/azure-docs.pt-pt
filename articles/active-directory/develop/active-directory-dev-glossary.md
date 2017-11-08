@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/19/2017
+ms.date: 11/07/2017
 ms.author: bryanla
 ms.custom: aaddev
-ms.openlocfilehash: d7bc694b05ed1eb3915ba913afdb3cc39e048ca7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1002ce29ff0d9ee2a6eac44c6e4402fc7e9ade31
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="azure-active-directory-developer-glossary"></a>Glossário de programador do Azure Active Directory
 Este artigo contém definições para alguns dos principais do Azure Active Directory (AD) para programadores conceitos, que são úteis para saber mais sobre o desenvolvimento de aplicações do Azure AD.
@@ -153,13 +153,13 @@ A função de início de sessão de uma aplicação é normalmente utilizada par
 O processo de autenticação não associados a um utilizador final, desanexar o estado do utilizador com o [aplicação cliente](#client-application) sessão durante [início de sessão](#sign-in)
 
 ## <a name="tenant"></a>Inquilino
-Uma instância de um diretório do Azure AD é referida como um inquilino do Azure AD. Fornece uma variedade de funcionalidades, incluindo:
+Uma instância de um diretório do Azure AD é referida como um inquilino do Azure AD. Fornece várias funcionalidades, incluindo:
 
 * um serviço de registo para aplicações integradas
 * autenticação de contas de utilizador e aplicações registadas
 * Pontos finais REST necessários para suportar vários protocolos, incluindo o OAuth2 e SAML, incluindo o [ponto final de autorização](#authorization-endpoint), [ponto final de tokens](#token-endpoint) e o ponto final "comuns" utilizado pelo [aplicações multi-inquilino](#multi-tenant-application).
 
-Um inquilino está também associado um Azure AD ou a subscrição do Office 365 durante o aprovisionamento da subscrição, que fornece funcionalidades de identidade e gestão de acesso para a subscrição. Consulte [como obter um inquilino do Azure Active Directory] [ AAD-How-To-Tenant] para obter detalhes sobre as várias formas poder obter acesso a um inquilino. Consulte [subscrições do Azure como estão associadas ao Azure Active Directory] [ AAD-How-Subscriptions-Assoc] para obter detalhes sobre a relação entre subscrições e um inquilino do Azure AD.
+Inquilinos do Azure AD são criados/associada ao subscrições do Azure e o Office 365 durante a inscrição, fornecer serviços de identidade e gestão de acesso funcionalidades para a subscrição. Os administradores da subscrição do Azure também podem criar adicionais inquilinos do Azure AD através do portal do Azure. Consulte [como obter um inquilino do Azure Active Directory] [ AAD-How-To-Tenant] para obter detalhes sobre as várias formas poder obter acesso a um inquilino. Consulte [subscrições do Azure como estão associadas ao Azure Active Directory] [ AAD-How-Subscriptions-Assoc] para obter detalhes sobre a relação entre subscrições e um inquilino do Azure AD.
 
 ## <a name="token-endpoint"></a>ponto final de tokens
 Um dos pontos finais implementados pelo [servidor autorização](#authorization-server) para suportar o OAuth2 [concede autorização](#authorization-grant). Consoante a concessão, podem ser utilizado para adquirir um [token de acesso](#access-token) (e de token 'atualizar' relacionados) para um [cliente](#client-application), ou [ID token](#ID-token) quando utilizado com o [OpenID Connect] [ OpenIDConnect] protocolo.

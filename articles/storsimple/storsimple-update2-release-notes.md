@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 09/25/2017
+ms.date: 11/03/2017
 ms.author: v-sharos
-ms.openlocfilehash: d03e45b839e3630e7f5df4b3144b823955920088
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 285c5abf574544737f3d30981a6c5b8f9548922a
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="storsimple-8000-series-update-2-release-notes"></a>Notas de versão de atualização 2 do StorSimple 8000 série
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 As notas de versão seguintes descrevem as novas funcionalidades e identificam os problemas abertos críticos para a atualização 2 do StorSimple 8000 série. Também contêm uma lista de software, controlador e atualizações de firmware de disco incluídas nesta versão do StorSimple. 
 
@@ -87,7 +90,7 @@ A tabela seguinte fornece um resumo dos problemas conhecidos desta versão.
 | 12 |Migração |Depois de concluída a migração, o dispositivo de séries 5000/7000 não têm de aceder os contentores de dados migrados. |Recomendamos que elimina os contentores de dados migrados após a migração estar concluída e consolidada. |Sim |Não |
 | 13 |Clone e DR |Um dispositivo StorSimple com o Update 1 não é possível clonar ou efetuar a recuperação de desastres num dispositivo com o software de pré-atualização 1. |Terá de atualizar o dispositivo de destino a atualizar 1 para permitir estas operações |Sim |Sim |
 | 14 |Migração |Cópia de segurança de configuração para a migração poderá falhar num dispositivo séries 5000 7000 quando existem grupos de volume com nenhuma volumes associados. |Elimine todos os grupos de volume vazio com nenhuma volumes associados e, em seguida, repita a cópia de segurança de configuração. |Sim |Não |
-| 15 |Cmdlets do PowerShell do Azure e volumes localmente afixados |Não é possível criar um volume localmente afixado através de cmdlets do Azure PowerShell. (Qualquer volume que criar através do Azure PowerShell irá ser colocado em camadas.) Além disso não utilize os cmdlets do PowerShell do Azure para modificar quaisquer propriedades de um volume localmente afixado, como o efeito indesejado de modificar o tipo de volume pode ter a em camadas. |Utilize sempre o serviço StorSimple Manager para configurar ou modificar volumes localmente afixados. |Sim |Não |
+| 15 |Cmdlets do PowerShell do Azure e volumes localmente afixados |Não é possível criar um volume localmente afixado através de cmdlets do Azure PowerShell. (Qualquer volume que criar através do Azure PowerShell irá ser colocado em camadas.) |Utilize sempre o serviço StorSimple Manager para configurar volumes localmente afixados. |Sim |Não |
 | 16 |Espaço disponível para volumes afixados localmente |Se eliminar um volume localmente afixado, o espaço disponível para novos volumes não pode ser atualizado imediatamente. O serviço StorSimple Manager atualiza o espaço local disponível aproximadamente a cada hora. |Aguarde uma hora antes de tentar criar o novo volume. |Sim |Não |
 | 17 |Volumes localmente afixados |A tarefa de restauro expõe a cópia de segurança do instantâneo temporário no catálogo de cópias de segurança, mas apenas para a duração da tarefa de restauro. Além disso, expõe um grupo de disco virtual com o prefixo **tmpCollection** no **políticas de cópia de segurança** página, mas apenas para a duração da tarefa de restauro. |Este comportamento pode ocorrer se a tarefa de restauro tem apenas localmente afixado volumes ou uma combinação de volumes localmente afixados e em camadas. Se a tarefa de restauro inclui apenas os volumes em camadas, em seguida, este comportamento não ocorrerá. Não é necessária nenhuma intervenção do utilizador. |Sim |Não |
 | 18 |Volumes localmente afixados |Se cancelar uma tarefa de restauro e uma ativação pós-falha controlador ocorre imediatamente posteriormente, a tarefa de restauro irá mostrar **falha** em vez de **cancelado**. Se uma tarefa de restauro falhar e uma ativação pós-falha controlador ocorre imediatamente posteriormente, a tarefa de restauro irá mostrar **cancelado** em vez de **falha**. |Este comportamento pode ocorrer se a tarefa de restauro tem apenas localmente afixado volumes ou uma combinação de volumes localmente afixados e em camadas. Se a tarefa de restauro inclui apenas os volumes em camadas, em seguida, este comportamento não ocorrerá. Não é necessária nenhuma intervenção do utilizador. |Sim |Não |

@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 53075d20aff073ff46dcd6dccaefea5fc8ec3483
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 14c565bb67480681e1d398a0a21a11448f405e4e
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="password-management-frequently-asked-questions"></a>Gestão de palavras-passe perguntas mais frequentes
 
@@ -176,6 +176,11 @@ Estas FAQ é dividida nas seguintes secções:
   > **R:** a duração de sessão para a reposição de palavra-passe é de 15 minutos. A partir do início da operação de reposição de palavra-passe, o utilizador tem de 15 minutos para repor a palavra-passe. Mensagem de e-mail e código de acesso Monouso SMS são inválidos após este período de tempo expira.
   >
   >
+* **P: posso bloquear os utilizadores de repor a palavra-passe?**
+
+  > **R:** Sim, se estiver a utilizar um grupo para ativar a reposição de palavra-passe self-service pode removê-los a partir do grupo que lhes permite esta capacidade.
+  >
+  >
 
 ## <a name="password-change"></a>Alteração de palavra-passe
 
@@ -187,6 +192,11 @@ Estas FAQ é dividida nas seguintes secções:
 * **P: os meus utilizadores notificados no Portal do Office quando expira a palavra-passe no local?**
 
   > **R:** isto é possível hoje se estiver a utilizar o AD FS ao seguir as instruções aqui: [enviar afirmações de política de palavra-passe com ADFS](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/configure-ad-fs-to-send-password-expiry-claims?f=255&MSPPError=-2147217396). Se estiver a utilizar sincronização de hash de palavra-passe, isto não é possível hoje. Isto acontece porque não estamos sincronizar a políticas de palavra-passe no local, pelo que não é possível-na colocar as notificações de expiração para experiências de nuvem. Em ambos os casos, é também possível [notificar os utilizadores cujas palavras-passe está prestes a expirar utilizando o PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/23313.notify-active-directory-users-about-password-expiry-using-powershell.aspx).
+  >
+  >
+* **P: posso bloquear os utilizadores alterem a palavra-passe?**
+
+  > **R:** para os utilizadores apenas na nuvem, esta não pode ser bloqueada. Para os utilizadores no local pode definir `User cannot change password` a opção estiver marcada e os utilizadores não poderá alterar a palavra-passe.
   >
   >
 
@@ -263,14 +273,14 @@ Estas FAQ é dividida nas seguintes secções:
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [Quais são as opções de política com SSPR?](active-directory-passwords-policy.md)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Como comunicar na atividade na SSPR](active-directory-passwords-reporting.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Julgo que algo está danificado. Como posso resolver problemas SSPR?](active-directory-passwords-troubleshoot.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Como posso comunicar a atividade da SSPR?](active-directory-passwords-reporting.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Creio que algo está a funcionar incorretamente. Como posso resolver problemas da SSPR?](active-directory-passwords-troubleshoot.md)

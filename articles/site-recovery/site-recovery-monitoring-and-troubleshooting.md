@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 06/05/2017
 ms.author: rajanaki
-ms.openlocfilehash: 2d033e5af13660c99aba813c58b743bf94a6b95a
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: ad1e0bcb2e2c073c8fb186f5a9d8bcb0bac588a0
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="monitor-and-troubleshoot-protection-for-virtual-machines-and-physical-servers"></a>Monitorizar e resolver problemas de proteção para máquinas virtuais e servidores físicos
 Este guia de resolução de problemas e de monitorização ajuda-o a saber como controlar o estado de funcionamento de replicação e técnicas de resolução de problemas para o Azure Site Recovery.
 
 ## <a name="understand-the-components"></a>Compreender os componentes
 ### <a name="vmware-virtual-machine-or-physical-server-site-deployment-for-replication-between-on-premises-and-azure"></a>Máquina virtual VMware ou implementação de site do servidor físico para a replicação entre no local e o Azure
-Para configurar a recuperação de base de dados entre uma máquina de virtual do VMware no local ou o servidor físico e o Azure, terá de configurar o servidor de configuração, o servidor de destino principal e os componentes de servidor de processo da máquina virtual ou o servidor. Quando ativar a proteção para o servidor de origem, o Azure Site Recovery instala a funcionalidade de Mobile Apps do App Service do Microsoft Azure. Após uma falha no local e depois da origem de servidor de ativação pós-falha para o Azure, os clientes precisam para configurar um servidor de processos no Azure e um servidor de destino principal no local para reconstruir o servidor de origem no local.
+Para configurar a recuperação de base de dados entre uma máquina de virtual do VMware no local ou o servidor físico e o Azure, terá de configurar o servidor de configuração, o servidor de destino principal e os componentes de servidor de processo da máquina virtual ou o servidor. Quando ativar a proteção para o servidor de origem, o Azure Site Recovery instala o serviço de mobilidade do servidor de processos que escolheu se uma versão atualizada já não está implementada. Após uma falha no local e depois da origem de servidor de ativação pós-falha para o Azure, os clientes precisam para configurar um servidor de processos no Azure e um servidor de destino principal no local para reconstruir o servidor de origem no local.
 
 ![Implementação de site VMware/físico para a replicação entre no local e o Azure](media/site-recovery-monitoring-and-troubleshooting/image18.png)
 

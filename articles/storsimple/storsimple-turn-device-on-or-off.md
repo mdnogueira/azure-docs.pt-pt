@@ -12,16 +12,17 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 06/29/2017
+ms.date: 11/03/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0577c837e0c47ba37a4f586603b0f5b951f1b549
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e6a6b0ab5c493aa99438f27222d1112053951c97
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="turn-on-or-turn-off-your-storsimple-8000-series-device"></a>Ativar ou desativar o dispositivo de série 8000 do StorSimple
+
 ## <a name="overview"></a>Descrição geral
 Não é necessário como parte da operação do sistema normal encerrar um dispositivo de Microsoft Azure StorSimple. No entanto, terá de ativar um novo dispositivo ou um dispositivo que tiveram de ser encerrada. Geralmente, é necessário um encerramento nos casos em que deve substituir o hardware falhada, fisicamente mover uma unidade ou demorar um dispositivo de serviço fora de. Este tutorial descreve o procedimento necessário para ativar e encerrar o dispositivo StorSimple em cenários diferentes.
 

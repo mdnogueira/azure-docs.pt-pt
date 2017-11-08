@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2017
 ms.author: magoedte;banders
-ms.openlocfilehash: 1b0d0fa1afc94d5261443f6b08cb6f0c3518f3eb
-ms.sourcegitcommit: 3e3a5e01a5629e017de2289a6abebbb798cec736
+ms.openlocfilehash: a1214d8327075ee081124d42aeb78846e09ff588
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview-in-log-analytics"></a>Monitorizar a base de dados do SQL do Azure através da análise do SQL do Azure (pré-visualização) no Log Analytics
 
@@ -102,7 +102,16 @@ Selecionar qualquer uma dos mosaicos, abre-se de um relatório de desagregação
 
 Cada perspetiva, fornece resumos na subscrição, o servidor, o conjunto elástico e o nível de base de dados. Além disso, cada perspetiva mostra o relatório de específica de perspetiva à direita. Selecionar a subscrição, o servidor, o conjunto ou base de dados da lista continua a desagregação para baixo.
 
-| Perspetiva | Descrição | | Recurso por tipo | Perspetiva contagens de todos os recursos monitorizados. Desagregar fornece o resumo das métricas DTU e GB. | | Insights | Fornece hierárquica desagregar para Insights inteligente. Saiba mais sobre as informações inteligentes. | | Erros | Fornece desagregar hierárquica erros de SQL que ocorreram nas bases de dados. | | Tempos limite | Fornece hierárquica desagregar para tempos limite SQL que ocorreram nas bases de dados. | | Blockings | Fornece hierárquica desagregar para blockings SQL que ocorreram nas bases de dados. | | Base de dados aguarda | Fornece hierárquica desagregar para estatísticas de espera SQL no nível da base de dados. Inclui resumos de tempo de espera total e o tempo de espera por tipo de espera. | | Duração de consulta | Fornece hierárquica desagregar para as estatísticas de execução da consulta como a utilização da CPU, duração de consulta, utilização de registo e/s e utilização de dados e/s. | | Consultar aguarda | Fornece hierárquica desagregar para as estatísticas de espera de consulta por categoria de espera. |
+| Perspetiva | Descrição |
+| --- | --- |
+| Recurso por tipo | Perspetiva contagens de todos os recursos monitorizados. Desagregar fornece o resumo das métricas DTU e GB. |
+| Informações | Fornece hierárquica desagregar para Insights inteligente. Saiba mais sobre as informações inteligentes. |
+| Erros | Fornece desagregar hierárquica erros de SQL que ocorreram nas bases de dados. |
+| Tempos limite | Fornece hierárquica desagregar para tempos limite SQL que ocorreram nas bases de dados. |
+| Blockings | Fornece hierárquica desagregar para blockings SQL que ocorreram nas bases de dados. |
+| Tem de aguardar de base de dados | Fornece hierárquica desagregar para estatísticas de espera SQL no nível da base de dados. Inclui resumos de tempo de espera total e o tempo de espera por tipo de espera. |
+| duração de consulta | Fornece hierárquica desagregar para as estatísticas de execução da consulta como a utilização da CPU, duração de consulta, utilização de registo e/s e utilização de dados e/s. |
+| Tem de aguardar de consulta | Fornece hierárquica desagregar para as estatísticas de espera de consulta por categoria de espera. |
 
 ### <a name="intelligent-insights-report"></a>Relatório de Insights inteligente
 

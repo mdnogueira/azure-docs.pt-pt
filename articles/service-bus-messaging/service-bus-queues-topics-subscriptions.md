@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/28/2017
+ms.date: 11/07/2017
 ms.author: sethm
-ms.openlocfilehash: 00f9f38fbae028486270053dedb4df580a3f1a44
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5bea3b56cea81362b25e696a672bf2a00e26d3ef
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Filas, tópicos e subscrições do Service Bus
 
-Microsoft Azure Service Bus suporta um conjunto de tecnologias de middleware baseado na nuvem, orientado para a mensagem, incluindo a colocação de mensagens fiável e durável publicação de mensagens. Estas capacidades de mensagens "mediadas" podem considerar como desassociada funcionalidades de mensagens que o suporte de publicação-subscrição, desacoplamento temporal e cenários de utilização de recursos de infraestrutura de mensagens do Service Bus de balanceamento de carga. A comunicação desacoplada tem muitas vantagens; por exemplo, os clientes e os servidores podem ligar-se conforme necessário e efetuar as operações de forma assíncrona.
+Microsoft Azure Service Bus suporta um conjunto de tecnologias de middleware baseado na nuvem, orientado para a mensagem, incluindo a colocação de mensagens fiável e durável publicação de mensagens. Estas capacidades de mensagens "mediadas" podem considerar como desassociada funcionalidades de mensagens que o suporte de publicação-subscrição, desacoplamento temporal e cenários utilizando a carga de trabalho mensagens do Service Bus de balanceamento de carga. A comunicação desacoplada tem muitas vantagens; por exemplo, os clientes e os servidores podem ligar-se conforme necessário e efetuar as operações de forma assíncrona.
 
 As entidades de mensagens que formam a core das capacidades de mensagens no Service Bus são filas, tópicos e subscrições e regras/ações.
 
@@ -30,7 +30,7 @@ As entidades de mensagens que formam a core das capacidades de mensagens no Serv
 
 As filas oferecem *First In, Out primeiro* entrega de mensagens (FIFO) para um ou mais consumidores concorrentes. Ou seja, mensagens normalmente deverão ser recebidas e processadas pelos recetores pela ordem em que foram adicionadas à fila e cada mensagem é recebida e processada por apenas um consumidor de mensagens. Uma vantagem de utilizar as filas é obter "desacoplamento temporal" dos componentes da aplicação. Por outras palavras, os produtores (remetentes) e os consumidores (recetores) não dispõe de enviar e receber mensagens ao mesmo tempo, porque as mensagens são armazenadas de maneira duradoura na fila. Além disso, o produtor não tem de aguardar uma resposta do consumidor para poder continuar a processar e enviar mensagens.
 
-Uma vantagem relacionada é "nivelamento de carga," que permite aos produtores e consumidores enviar e receber mensagens a taxas diferentes. Em muitas aplicações, a carga de sistema varia ao longo do tempo; No entanto, o tempo de processamento necessário para cada unidade de trabalho é geralmente constante. A intermediação de mensagem de produtores e consumidores através de uma fila significa que a aplicação de consumo só tem de ser aprovisionada para conseguir processar a carga média em vez de pico de carga. A profundidade da fila aumenta e contrai à medida que a carga a receber varia. Tal poupa diretamente dinheiro em relação a quantidade de infraestrutura necessária para a carga de aplicação de serviço. À medida que a carga aumenta, mais processos de trabalho podem ser adicionados a leitura da fila. Cada mensagem é processada apenas por um dos processos de trabalho. Além disso, este balanceamento de carga baseado na solicitação permite a utilização ideal dos computadores de trabalho, mesmo se os computadores de trabalho diferirem em relação a potência de processamento, como que transmitirão as mensagens na sua própria taxa máxima. Este padrão é frequentemente denominado padrão o padrão "competir consumidor".
+Uma vantagem relacionada é "nivelamento de carga," que permite aos produtores e consumidores enviar e receber mensagens a taxas diferentes. Em muitas aplicações, a carga de sistema varia ao longo do tempo; No entanto, o tempo de processamento necessário para cada unidade de trabalho é geralmente constante. A intermediação de mensagem de produtores e consumidores através de uma fila significa que a aplicação de consumo só tem de ser aprovisionada para conseguir processar a carga média em vez de pico de carga. A profundidade da fila aumenta e contrai à medida que a carga a receber varia. Tal poupa diretamente dinheiro em relação a quantidade de infraestrutura necessária para a carga de aplicação de serviço. À medida que a carga aumenta, mais processos de trabalho podem ser adicionados a leitura da fila. Cada mensagem é processada apenas por um dos processos de trabalho. Além disso, este balanceamento de carga baseado na solicitação permite que uma utilização ideal dos computadores de trabalho, mesmo se os computadores de trabalho diferirem em relação a potência de processamento, como estas mensagens de extração na sua própria taxa máxima. Este padrão é frequentemente denominado padrão o padrão "competir consumidor".
 
 Utilizar filas para intermédio entre mensagem produtores e consumidores fornece um coupling soltas inerente entre os componentes. Porque os produtores e consumidores não têm conhecimento entre si, um consumidor possa ser atualizado sem ter qualquer efeito no produtor.
 
@@ -52,7 +52,7 @@ MessagingFactory factory = MessagingFactory.Create(ServiceBusEnvironment.CreateS
 QueueClient myQueueClient = factory.CreateQueueClient("TestQueue");
 ```
 
-Em seguida, pode enviar mensagens para a fila. Por exemplo, se tiver uma lista de mensagens mediadas chamado `MessageList`, o código apresentado de forma semelhante ao seguinte:
+Em seguida, pode enviar mensagens para a fila. Por exemplo, se tiver uma lista de mensagens mediadas chamado `MessageList`, o código apresentado de forma semelhante ao seguinte exemplo:
 
 ```csharp
 for (int count = 0; count < 6; count++)
@@ -82,7 +82,7 @@ No [PeekLock](/dotnet/api/microsoft.servicebus.messaging.receivemode) modo, a op
 
 Se a aplicação não é possível processar a mensagem por algum motivo, pode chamar o [abandonar](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Abandon) método à mensagem recebida (em vez de [concluída](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Complete)). Isto permite que o Service Bus desbloqueie a mensagem e disponibilizá-lo ser novamente recebida, através do consumidor mesmo ou outro consumidor concorrente. Lugar, existe um tempo limite associado o bloqueio e se a aplicação não conseguir processar a mensagem antes do bloqueio de tempo limite expirar (por exemplo, se a falha da aplicação), então o Service Bus desbloqueia a mensagem e torna a mesma disponível para ser recebida novamente (essencialmente efetuar um [abandonar](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_Abandon) operação por predefinição).
 
-Tenha em atenção que no caso de falha da aplicação após o processamento da mensagem, mas antes o **concluída** pedido é emitido, a mensagem é reenviada para a aplicação quando esta reiniciar. Isto é frequentemente designado *, pelo menos, uma vez* processamento; ou seja, cada mensagem é processada pelo menos uma vez. No entanto, em determinadas situações a mesma mensagem poderá ser reenviada. Se o cenário não conseguir tolerar o processamento duplicado, em seguida, é necessária a aplicação para detetar os duplicados que podem ser conseguidos com base na lógica adicional a **MessageId** propriedade da mensagem, que permanece constante nas tentativas de entrega. Isto é conhecido como *exatamente uma vez* processamento.
+Tenha em atenção que no caso de falha da aplicação após o processamento da mensagem, mas antes o **concluída** pedido é emitido, a mensagem é reenviada para a aplicação quando esta reiniciar. Isto é frequentemente designado *, pelo menos, uma vez* processamento; ou seja, cada mensagem é processada pelo menos uma vez. No entanto, em determinadas situações a mesma mensagem poderá ser reenviada. Se o cenário não pode tolerar o processamento duplicado, em seguida, é necessário lógica adicional na aplicação para detetar duplicados, que pode ser conseguido com base no **MessageId** propriedade da mensagem, que permanece constante em tentativas de entrega. Isto é conhecido como *exatamente uma vez* processamento.
 
 ## <a name="topics-and-subscriptions"></a>Tópicos e subscrições
 Contrariamente filas, em que cada mensagem é processada por um único consumidor, *tópicos* e *subscrições* proporcionar uma forma de um-para-muitos de comunicação, um *publicar/subscrever* padrão. Útil para dimensionamento para um grande número de destinatários, cada mensagem publicada é disponibilizada para cada subscrição registada juntamente com o tópico. As mensagens enviadas para um tópico e entregar uma ou mais subscrições associadas, consoante as regras de filtro que podem ser definidas numa base por subscrição. As subscrições podem utilizar filtros adicionais para restringir as mensagens que pretende receber. As mensagens são enviadas para um tópico da mesma forma são enviadas para uma fila, mas mensagens não são recebidas do tópico diretamente. Em vez disso, são recebidos de subscrições. Uma subscrição de tópico é semelhante uma fila virtual que recebe cópias das mensagens que são enviadas para o tópico. As mensagens são recebidas a partir uma subscrição de forma idêntica ao modo como o que são recebidos a partir de uma fila.
@@ -155,7 +155,7 @@ namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFi
 
 Com este filtro de subscrição no local, apenas as mensagens com a `StoreName` propriedade definida como `Store1` são copiados para a fila virtual para o `Dashboard` subscrição.
 
-Para obter mais informações sobre os valores de filtro possíveis, consulte a documentação para o [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) e [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) classes. Além disso, consulte o [mensagens mediadas: filtros avançados](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749) e [filtros de tópico](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters) amostras.
+Para obter mais informações sobre os valores de filtro possíveis, consulte a documentação para o [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) e [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) classes. Além disso, consulte o [mensagens mediadas: filtros avançados](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749) e [filtros de tópico](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/TopicFilters) amostras.
 
 ## <a name="next-steps"></a>Passos seguintes
 Consulte os seguintes tópicos para obter mais informações e exemplos de como utilizar mensagens do Service Bus de avançadas.
@@ -163,6 +163,5 @@ Consulte os seguintes tópicos para obter mais informações e exemplos de como 
 * [Descrição geral das mensagens do Service Bus](service-bus-messaging-overview.md)
 * [Tutorial de .NET de mensagens mediadas do Service Bus](service-bus-brokered-tutorial-dotnet.md)
 * [Tutorial de REST de mensagens mediadas do Service Bus](service-bus-brokered-tutorial-rest.md)
-* [Exemplo de filtros de tópico](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/TopicFilters)
 * [Mensagens mediadas: Exemplo de filtros de avançadas](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 

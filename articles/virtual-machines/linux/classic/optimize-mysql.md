@@ -15,17 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2017
 ms.author: ningk
-ms.openlocfilehash: 8f2ec884fa98e989448ac11675e71f39aa21fa7f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7e7582a31cb3e74fd8c3cd0dd54961392d9c53bb
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="optimize-mysql-performance-on-azure-linux-vms"></a>Otimizar o desempenho de MySQL em VMs do Linux do Azure
 Existem muitos fatores que afetam o desempenho de MySQL no Azure, tanto na seleção de virtual hardware e a configuração de software. Este artigo incida no otimizar o desempenho através de armazenamento, sistema e configurações de base de dados.
 
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [do Azure Resource Manager](../../../resource-manager-deployment-model.md) e clássico. Este artigo cobre a utilização do modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager. Para obter informações sobre as otimizações de VM com Linux com o modelo do Resource Manager, consulte [otimizar a VM com Linux no Azure](../optimization.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 ## <a name="utilize-raid-on-an-azure-virtual-machine"></a>Utilizar RAID numa máquina virtual do Azure
 O armazenamento é o fator chave que afeta o desempenho de base de dados em ambientes de nuvem. Em comparação com um único disco, RAID pode fornecer um acesso mais rápido através de concorrência. Para obter mais informações, consulte [níveis de RAID padrão](http://en.wikipedia.org/wiki/Standard_RAID_levels).   

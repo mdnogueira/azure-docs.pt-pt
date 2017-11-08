@@ -12,32 +12,39 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/09/2017
+ms.date: 10/30/2017
 ms.author: andredm
-ms.openlocfilehash: 22b62be1773c5042ecf6ee078e68a4ffdf791d53
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cb6e5a398a1d7e20efbcc4a8900f9e8dea43ad2c
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="elevate-access-as-a-tenant-admin-with-role-based-access-control"></a>Elevar o acesso como um administrador inquilino com controlo de acesso baseado em funções
 
 Controlo de acesso baseado em funções ajuda os administradores inquilinos a obter Elevações temporárias do acesso para que estes podem conceder permissões superiores que o habitual. Um administrador de inquilino pode efetuar a elevação herself para a função de administrador de acesso do utilizador quando necessário. Essa função fornece o inquilino permissões de administrador para conceder herself ou outras funções no âmbito "/".
 
-Esta funcionalidade é importante porque permite que o administrador de inquilino ver todas as subscrições que existem numa organização. Também permite que aplicações de automatização (por exemplo, faturação e auditoria) para aceder a todas as subscrições e fornecer uma vista exata do Estado da organização para a gestão de faturação ou elemento.  
+Esta funcionalidade é importante porque permite que o administrador de inquilino ver todas as subscrições que existem numa organização. Também permite que aplicações de automatização, como faturação e de auditoria para aceder a todas as subscrições e fornecer uma vista exata do Estado da organização para a gestão de recursos ou de faturação.  
 
-## <a name="how-to-use-elevateaccess-for-tenant-access-with-azure-ad-admin-center"></a>Como utilizar elevateAccess para acesso de inquilino com o Centro de administração do Azure AD
+## <a name="use-elevateaccess-for-tenant-access-with-azure-ad-admin-center"></a>Utilizar elevateAccess para acesso de inquilino com o Centro de administração do Azure AD
 
-No [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) pode invocar esta funcionalidade do **propriedades**.
-A funcionalidade é denominada **Administrador Global pode gerir subscrições do Azure**. A impressão é que esta é uma propriedade Global do Azure Active Directory, no entanto, funciona numa base por utilizador para o utilizador atualmente com sessão iniciada. Quando tiver direitos de Administrador Global no Azure Active Directory, pode invocar a funcionalidade de elevateAccess para o utilizador que tem sessão iniciada no Centro de administração do Azure Active Directory.
+1. Vá para o [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) e inicie sessão com que as credenciais.
 
-Selecionar **Sim** e, em seguida, **guardar**: Isto **atribui** o **administrador de acesso de utilizador** função na raiz "/" (âmbito de raiz) para o utilizador com o que tem sessão iniciada no Portal.
+2. Escolha **propriedades** do Azure AD deixado menu.
 
-Selecionar **não** e, em seguida, **guardar**: Isto **remove** o **administrador de acesso de utilizador** função na raiz "/" (âmbito de raiz) para o utilizador com o que tem sessão iniciada no Portal.
+3. No **propriedades** painel, localizar **Administrador Global pode gerir subscrições do Azure**, escolha **Sim**, em seguida, **guardar**.
+    > [!IMPORTANT] 
+    > Quando escolhe **Sim**, atribui o **administrador de acesso de utilizador** função na raiz "/" (âmbito de raiz) para o utilizador com a qual tem sessão iniciada no Portal. **Isto permite ao utilizador ver todas as outras subscrições do Azure.**
+    
+    > [!NOTE] 
+    > Quando escolhe **não**, remove o **administrador de acesso de utilizador** função na raiz "/" (âmbito de raiz) para o utilizador com a qual tem sessão iniciada no Portal.
+
+> [!TIP] 
+> A impressão é que esta é uma propriedade Global do Azure Active Directory, no entanto, funciona numa base por utilizador para o utilizador atualmente com sessão iniciada. Quando tiver direitos de Administrador Global no Azure Active Directory, pode invocar a funcionalidade de elevateAccess para o utilizador que tem sessão iniciada no Centro de administração do Azure Active Directory.
 
 ![Globaladmin de centro de administração - propriedades - do Azure AD pode gerir a subscrição do Azure - captura de ecrã](./media/role-based-access-control-tenant-admin-access/aad-azure-portal-global-admin-can-manage-azure-subscriptions.png)
 
-## <a name="how-to-use-elevateaccess-to-give-tenant-access-with-the-rest-api"></a>Como utilizar elevateAccess para dar acesso do inquilino com a API REST
+## <a name="use-elevateaccess-to-give-tenant-access-with-the-rest-api"></a>Utilizar elevateAccess para dar acesso do inquilino com a API REST
 
 O processo básico funciona com os seguintes passos:
 
@@ -70,47 +77,56 @@ O processo básico funciona com os seguintes passos:
 
 Quando chamar *elevateAccess* cria uma atribuição de função para si, por isso revogar esses privilégios terá de eliminar a atribuição.
 
-1.  Chamar [GET roleDefinitions](/rest/api/authorization/roledefinitions#RoleDefinitions_Get) onde roleName = administrador de acesso de utilizador para determinar o nome do GUID da função de administrador de acesso de utilizador. A resposta deve ter o seguinte aspeto:
+1.  OBTER definições de funções de chamada onde roleName = administrador de acesso de utilizador para determinar o nome do GUID da função de administrador de acesso de utilizador.
+    1.  OBTER *filtro de $ https://management.azure.com/providers/Microsoft.Authorization/roleDefinitions?api-version=2015-07-01& = roleName + eq + "utilizador + + ao administrador de acesso*
 
-    ```
-    {"value":[{"properties":{
-    "roleName":"User Access Administrator",
-    "type":"BuiltInRole",
-    "description":"Lets you manage user access to Azure resources.",
-    "assignableScopes":["/"],
-    "permissions":[{"actions":["*/read","Microsoft.Authorization/*","Microsoft.Support/*"],"notActions":[]}],
-    "createdOn":"0001-01-01T08:00:00.0000000Z",
-    "updatedOn":"2016-05-31T23:14:04.6964687Z",
-    "createdBy":null,
-    "updatedBy":null},
-    "id":"/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
-    "type":"Microsoft.Authorization/roleDefinitions",
-    "name":"18d7d88d-d35e-4fb5-a5c3-7773c20a72d9"}],
-    "nextLink":null}
-    ```
+        ```
+        {"value":[{"properties":{
+        "roleName":"User Access Administrator",
+        "type":"BuiltInRole",
+        "description":"Lets you manage user access to Azure resources.",
+        "assignableScopes":["/"],
+        "permissions":[{"actions":["*/read","Microsoft.Authorization/*","Microsoft.Support/*"],"notActions":[]}],
+        "createdOn":"0001-01-01T08:00:00.0000000Z",
+        "updatedOn":"2016-05-31T23:14:04.6964687Z",
+        "createdBy":null,
+        "updatedBy":null},
+        "id":"/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
+        "type":"Microsoft.Authorization/roleDefinitions",
+        "name":"18d7d88d-d35e-4fb5-a5c3-7773c20a72d9"}],
+        "nextLink":null}
+        ```
 
-    Guarde o GUID do *nome* parâmetro, neste caso, **18d7d88d-d35e-4fb5-a5c3-7773c20a72d9**.
+        Guarde o GUID do *nome* parâmetro, neste caso, **18d7d88d-d35e-4fb5-a5c3-7773c20a72d9**.
 
-2. Chamar [GET roleAssignments](/rest/api/authorization/roleassignments#RoleAssignments_Get) onde principalId = o seus próprios ObjectId. Isto apresenta uma lista de todas as suas atribuições no inquilino. Procure o onde está o âmbito "/" e o em RoleDefinitionId termina com o nome da função GUID que encontrar no passo 1. A atribuição de função deve ter o seguinte aspeto:
+2. Também precisa de listar a atribuição de função de administrador inquilino no âmbito de inquilino. Liste todas as atribuições de âmbito de inquilino para o PrincipalId de TenantAdmin que efetuou o acesso de elevate chamada. Isto irá listar todas as atribuições de inquilino para o ObjectID. 
+    1. OBTER *filtro de $ https://management.azure.com/providers/Microsoft.Authorization/roleAssignments?api-version=2015-07-01& = principalId + eq + {objectid}*
+    
+        >[!NOTE] 
+        >Um administrador inquilino não deve ter muitos atribuições, se a consulta acima devolve demasiadas atribuições, também pode consultar para todas as atribuições de apenas ao nível do âmbito de inquilino e filtrar os resultados: obter *https://management.azure.com/providers/ Microsoft.Authorization/roleAssignments? api-version = 2015-07-01 & $filter=atScope()*
+        
+    2. As chamadas acima devolvem uma lista de atribuições de funções. Localizar a atribuição de função em que o âmbito é "/" e o em RoleDefinitionId termina com o nome da função GUID que encontrar no passo 1 e PrincipalId corresponde o ObjectId de administrador inquilino. A atribuição de função tem o seguinte aspeto:
 
-    ```
-    {"value":[{"properties":{
-    "roleDefinitionId":"/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
-    "principalId":"{objectID}",
-    "scope":"/",
-    "createdOn":"2016-08-17T19:21:16.3422480Z",
-    "updatedOn":"2016-08-17T19:21:16.3422480Z",
-    "createdBy":"93ce6722-3638-4222-b582-78b75c5c6d65",
-    "updatedBy":"93ce6722-3638-4222-b582-78b75c5c6d65"},
-    "id":"/providers/Microsoft.Authorization/roleAssignments/e7dd75bc-06f6-4e71-9014-ee96a929d099",
-    "type":"Microsoft.Authorization/roleAssignments",
-    "name":"e7dd75bc-06f6-4e71-9014-ee96a929d099"}],
-    "nextLink":null}
-    ```
+        ```
+        {"value":[{"properties":{
+        "roleDefinitionId":"/providers/Microsoft.Authorization/roleDefinitions/18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
+        "principalId":"{objectID}",
+        "scope":"/",
+        "createdOn":"2016-08-17T19:21:16.3422480Z",
+        "updatedOn":"2016-08-17T19:21:16.3422480Z",
+        "createdBy":"93ce6722-3638-4222-b582-78b75c5c6d65",
+        "updatedBy":"93ce6722-3638-4222-b582-78b75c5c6d65"},
+        "id":"/providers/Microsoft.Authorization/roleAssignments/e7dd75bc-06f6-4e71-9014-ee96a929d099",
+        "type":"Microsoft.Authorization/roleAssignments",
+        "name":"e7dd75bc-06f6-4e71-9014-ee96a929d099"}],
+        "nextLink":null}
+        ```
+        
+        Novamente, guarde o GUID do *nome* parâmetro, neste caso, **e7dd75bc-06f6-4e71-9014-ee96a929d099**.
 
-    Novamente, guarde o GUID do *nome* parâmetro, neste caso, **e7dd75bc-06f6-4e71-9014-ee96a929d099**.
+    3. Por fim, utilize o realçado **RoleAssignment ID** para eliminar a atribuição adicionada por elevar o acesso:
 
-3. Por fim, chamar [eliminar roleAssignments](/rest/api/authorization/roleassignments#RoleAssignments_DeleteById) onde roleAssignmentId = o nome do GUID que encontrar no passo 2.
+        Eliminar https://management.azure.com /providers/Microsoft.Authorization/roleAssignments/e7dd75bc-06f6-4e71-9014-ee96a929d099?api-version=2015-07-01
 
 ## <a name="next-steps"></a>Passos seguintes
 

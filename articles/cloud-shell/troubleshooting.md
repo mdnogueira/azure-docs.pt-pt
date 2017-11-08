@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/2/2017
 ms.author: damaerte
-ms.openlocfilehash: 1bf0acdfad04a55d5b85aabee150526836062002
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: 89d5d8df9327c6136fbd00078f6a34f78d85032e
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="troubleshooting-azure-cloud-shell"></a>Resolução de problemas de Shell de nuvem do Azure
 
@@ -37,6 +37,18 @@ Conhecidos resoluções para problemas na Shell de nuvem do Azure incluem:
 ### <a name="terminal-output---error-failed-to-connect-terminal-websocket-cannot-be-established-press-enter-to-reconnect"></a>Terminal de saída - erro: Falha ao ligar o terminal: não é possível estabelecer o websocket. Prima `Enter` para restabelecer a ligação.
  - **Detalhes**: nuvem Shell requer a capacidade para estabelecer uma ligação de websocket a infraestrutura de nuvem Shell.
  - **Resolução**: Verifique que configurou as definições de rede para permitir o envio pedidos de https e pedidos de websocket para domínios em *. console.azure.com.
+
+## <a name="bash-resolutions"></a>Bash resoluções
+
+### <a name="cannot-run-az-login"></a>Não é possível executar o início de sessão az
+
+- **Detalhes**: executar `az login` não irá funcionar conforme já estão autenticados sob a conta utilizada para iniciar sessão no portal do Azure ou do Shell de nuvem.
+- **Resolução**: utilizar a conta utilizada para iniciar ou terminar sessão e voltar com a sua conta do Azure que se destinam.
+
+### <a name="cannot-run-the-docker-daemon"></a>Não é possível executar o daemon de docker
+
+- **Detalhes**: um contentor para alojar o seu ambiente de shell utiliza a Shell de nuvem, como resultado a executar o daemon não é permitida.
+- **Resolução**: utilizar [docker máquina](https://docs.docker.com/machine/overview/), que é instalada por predefinição, para gerir os contentores de docker de um anfitrião remoto do Docker.
 
 ## <a name="powershell-resolutions"></a>Resoluções de PowerShell
 

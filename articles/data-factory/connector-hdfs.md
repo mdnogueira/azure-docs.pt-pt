@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2017
 ms.author: jingwang
-ms.openlocfilehash: b76dcae1bcf0c45238cadfdbb76615db2caa85f4
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: a81d3264964b2433a2c93034ab815493548f0753
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="copy-data-from-and-to-hdfs-using-azure-data-factory"></a>Copiar dados de origem e de HDFS utilizando o Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -67,11 +67,9 @@ As seguintes propriedades são suportadas para o serviço ligado do HDFS:
 ```json
 {
     "name": "HDFSLinkedService",
-    "properties":
-    {
+    "properties": {
         "type": "Hdfs",
-        "typeProperties":
-        {
+        "typeProperties": {
             "url" : "http://<machine>:50070/webhdfs/v1/",
             "authenticationType": "Anonymous",
             "userName": "hadoop"
@@ -89,11 +87,9 @@ As seguintes propriedades são suportadas para o serviço ligado do HDFS:
 ```json
 {
     "name": "HDFSLinkedService",
-    "properties":
-    {
+    "properties": {
         "type": "Hdfs",
-        "typeProperties":
-        {
+        "typeProperties": {
             "url" : "http://<machine>:50070/webhdfs/v1/",
             "authenticationType": "Windows",
             "userName": "<username>@<domain>.com (for Kerberos auth)",
@@ -388,4 +384,4 @@ Existem duas opções para configurar o ambiente no local, de modo a utilizar a 
 
 
 ## <a name="next-steps"></a>Passos seguintes
-Para obter uma lista dos arquivos de dados suportados como origens e sinks pela atividade de cópia no Azure Data Factory, consulte [arquivos de dados suportados](copy-activity-overview.md##supported-data-stores-and-formats).
+Para obter uma lista dos arquivos de dados suportados como origens e sinks pela atividade de cópia no Azure Data Factory, consulte [arquivos de dados suportados](copy-activity-overview.md#supported-data-stores-and-formats).

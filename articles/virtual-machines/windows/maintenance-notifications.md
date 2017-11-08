@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2017
 ms.author: zivr
-ms.openlocfilehash: fec64b3c499577af6b1d6eddb1c761ee0af73772
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: cf9a624574cc5d63e17537d07d23bf38cc9d442a
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="handling-planned-maintenance-notifications-for-windows-virtual-machines"></a>Notificações de manutenção de processamento planeada para máquinas virtuais do Windows
 
@@ -72,7 +72,7 @@ As seguintes propriedades são devolvidas em MaintenanceRedeployStatus:
 Também pode obter o estado de manutenção para todas as VMs num grupo de recursos utilizando [Get-AzureRmVM](/powershell/module/azurerm.compute/get-azurermvm) e não especificar uma VM.
  
 ```powershell
-Get-AzureRmVM -ResourceGroupName rgName --Status
+Get-AzureRmVM -ResourceGroupName rgName -Status
 ```
 
 A seguinte função do PowerShell assume o ID de subscrição e imprime fora de uma lista de VMs que se encontram agendadas para manutenção.

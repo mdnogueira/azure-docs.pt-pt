@@ -71,7 +71,6 @@
 
 ## Definir políticas de recursos
 ### [O que são políticas de recursos?](resource-manager-policy.md)
-### [Utilizar scripts para atribuir a política](resource-manager-policy-create-assign.md)
 ### Exemplos
 #### [Etiquetas](resource-manager-policy-tags.md)
 #### [Convenções de nomenclatura](resource-manager-policy-naming-convention.md)

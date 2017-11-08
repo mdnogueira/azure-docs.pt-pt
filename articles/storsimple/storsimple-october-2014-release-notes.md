@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 09/21/2016
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 4dfd3973593a94adfc15a6e15d69c697e13998af
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 642a416c167d8a1795a0c33987cec8836f2db0aa
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="storsimple-8000-series-update-01-release-notes--october-2014"></a>Notas de versão 0.1 de atualização de série de 8000 do StorSimple – Outubro de 2014
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 As seguintes notas de versão identificam os problemas abertos críticos para a atualização de série 8000 do StorSimple 0.1 lançada em Outubro de 2014. Também contêm uma lista das atualizações de software e firmware StorSimple incluído nesta versão. Esta é a primeira versão depois da versão de lançamento de série 8000 do StorSimple foi disponibilizada geralmente em Julho de 2014 e corresponde à versão do software 6.3.9600.17312.  
 

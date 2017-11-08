@@ -10,11 +10,11 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 10/20/2017
-ms.openlocfilehash: 5b5da758e966cc5ca536d7b291be74409f02ca73
-ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
+ms.openlocfilehash: 9aa24dd10ef29c716c05cafeb84e0beb23d50628
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="what-is-azure-database-for-postgresql"></a>O que é a base de dados do Azure para PostgreSQL?
 
@@ -39,7 +39,7 @@ Para um conjunto de exemplos de CLI do Azure, consulte:
 - [Exemplos da CLI do Azure para a base de dados do Azure para PostgreSQL](./sample-scripts-azure-cli.md)
 
 ## <a name="adjust-performance-and-scale-within-seconds"></a>Ajustar o desempenho e dimensionamento em segundos
-Pré-visualização, a base de dados do Azure para o serviço de MySQL oferece dois escalões de serviço: básico e padrão. Cada camada oferece capacidades para suportar até pesadas da base de dados as cargas de trabalho e de desempenho diferentes. Pode criar a sua primeira aplicação numa base de dados pequena para alguns utilizados no mês e, em seguida, ajustar a escala para satisfazer as necessidades da sua solução. Escalabilidade dinâmica permite que a base de dados transparente responder a mudar rapidamente os requisitos de recursos. Apenas paga pelos recursos necessário e apenas quando que precisar. Consulte [escalões de preço](concepts-service-tiers.md) para obter mais detalhes.
+Pré-visualização, a base de dados do Azure para o serviço de PostgreSQL oferece dois escalões de serviço: básico e padrão. Cada camada oferece capacidades para suportar até pesadas da base de dados as cargas de trabalho e de desempenho diferentes. Pode criar a sua primeira aplicação numa base de dados pequena para alguns utilizados no mês e, em seguida, ajustar a escala para satisfazer as necessidades da sua solução. Escalabilidade dinâmica permite que a base de dados transparente responder a mudar rapidamente os requisitos de recursos. Apenas paga pelos recursos necessário e apenas quando que precisar. Consulte [escalões de preço](concepts-service-tiers.md) para obter mais detalhes.
 
 ## <a name="monitoring-and-alerting"></a>Monitorização e alertas
 Como a decidir quando aumentar e reduzir verticalmente? Utilize o desempenho incorporado, monitorização e alertas de funcionalidades, juntamente com as classificações de desempenho com base em unidades de computação. Utilizar estas ferramentas, pode avaliar rapidamente o impacto da computação unidades de dimensionamento cópias de segurança ou para baixo com base nas suas necessidades de desempenho atual ou prevista. Consulte [alertas](howto-alert-on-metric.md) para obter mais detalhes.
