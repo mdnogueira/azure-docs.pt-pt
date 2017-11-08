@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2016
 ms.author: dariagrigoriu
-ms.openlocfilehash: 010e7dc492abefaa3afe814c0322af9f6fe5acd2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 04d1d226093f131a521f32f47c333ff9aefc6f3b
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="sync-content-from-a-cloud-folder-to-azure-app-service"></a>Conteúdo de sincronização a partir de uma pasta de cloud App Service do Azure
 Este tutorial mostra como implementar [App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714) por a sincronizar o seu conteúdo a partir de serviços de armazenamento de nuvem populares, como o Dropbox e OneDrive. 
@@ -46,5 +46,5 @@ Para ativar a sincronização de conteúdo do [Portal do Azure](https://portal.a
    
     ![Histórico de implementação](./media/app-service-deploy-content-sync/onedrive_sync.png)
 
-Estão disponíveis em mais informações para a implementação da Dropbox [implementar da Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). 
+Obter mais informações para a implementação da Dropbox estão disponíveis em [implementar da Dropbox] (https://azure.microsoft.com/en-in/blog/new-deploy-to-windows-azure-web-sites-from-dropbox/).
 

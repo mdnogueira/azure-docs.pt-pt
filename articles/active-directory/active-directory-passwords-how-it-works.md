@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 71310534ec62b62bcd408d75060859c79bc470cf
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: fd9515120049dd3837a43c95de8a9b6822719e19
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="self-service-password-reset-in-azure-ad-deep-dive"></a>Self-service reposição palavra-passe na descrição profunda do Azure AD
 
@@ -88,6 +88,23 @@ Esta opção determina o número mínimo de portas de um utilizador tem de passa
 Os utilizadores podem optar por fornecer mais métodos de autenticação, caso estejam ativados pelo administrador.
 
 Se um utilizador não tem os métodos necessários mínimos registados, verá uma página de erro que são direcionados para pedir um administrador para repor a palavra-passe.
+
+#### <a name="changing-authentication-methods"></a>A alteração de métodos de autenticação
+
+Se começar com uma política que tem apenas um método de autenticação necessário para repor ou desbloquear registado e alterar a que a dois o que acontece?
+
+| Número de métodos registado | Número de métodos necessários | resultado |
+| :---: | :---: | :---: |
+| 1 ou mais | 1 | **Capaz de** para repor ou desbloquear |
+| 1 | 2 | **Não é possível** para repor ou desbloquear |
+| 2 ou mais | 2 | **Capaz de** para repor ou desbloquear |
+
+Se alterar os tipos de métodos de autenticação que um utilizador pode utilizar inadvertidamente poderão impedir que os utilizadores a capacidade de utilizar SSPR se não tiver a quantidade mínima de dados disponíveis.
+
+Exemplo: 
+1. Política original configurada com 2 métodos de autenticação necessários utilizar perguntas de segurança e o telefone office apenas. 
+2. Administrador altera a política para deixar de utilizar perguntas de segurança, mas permitir a utilização de telemóvel e correio eletrónico alternativo.
+3. Os utilizadores sem telemóvel e campos de correio eletrónico alternativo preenchidos não é possível repor as palavras-passe.
 
 ### <a name="how-secure-are-my-security-questions"></a>Como protegem são os meus perguntas de segurança
 
@@ -169,6 +186,7 @@ Quando esta estiver desativada os utilizadores podem registar manualmente as res
 > [!NOTE]
 > Os utilizadores podem ignorar o portal de registo de reposição de palavra-passe ao clicar em Cancelar ou fechar a janela mas recebem sempre que iniciar sessão até à sua conclusão de registo.
 >
+> Não tal irá interromper a ligação do utilizador que se encontrem alreay com sessão iniciada.
 
 ### <a name="number-of-days-before-users-are-asked-to-reconfirm-their-authentication-information"></a>Número de dias antes de ser pedido aos utilizadores que voltem a confirmar as informações de autenticação
 
@@ -190,7 +208,7 @@ Exemplo: Existem quatro administradores num ambiente. Administrador "A" repõe a
 
 ## <a name="on-premises-integration"></a>Integração no local
 
-Se tiver instalado, configurado e ativado o Azure AD Connect, terá as seguintes opções adicionais para integrações no local.
+Se tiver instalado, configurado e ativado o Azure AD Connect, terá as seguintes opções adicionais para integrações no local. Se estas opções são greyed escalamento, em seguida, repetição de escrita não foi corretamente configurada consulte [configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para obter mais informações.
 
 ### <a name="write-back-passwords-to-your-on-premises-directory"></a>Repetição de escrita palavras-passe para o seu diretório no local
 
@@ -215,21 +233,24 @@ Reposição de palavra-passe e de alterações são totalmente suportadas com to
 
 Para testar este cenário, aceda à http://passwordreset.microsoftonline.com com um destes utilizadores do parceiro. Desde tenham um correio eletrónico alternativo ou o e-mail de autenticação definido, a palavra-passe reposição funciona conforme esperado.
 
+> [!NOTE]
+> Contas Microsoft que tenham sido concedidas acesso de convidado para o seu Azure AD de inquilino, tais como as da Hotmail.com, Outlook.com, ou outros endereços de e-mail pessoais não são capazes de utilizar o Azure AD SSPR e terão de repor a palavra-passe utilizando a informação foi encontrada no artigo [quando não é possível iniciar sessão na sua conta Microsoft](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
+
 ## <a name="next-steps"></a>Passos seguintes
 
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [Quais são as opções de política com SSPR?](active-directory-passwords-policy.md)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Como comunicar na atividade na SSPR](active-directory-passwords-reporting.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Julgo que algo está danificado. Como posso resolver problemas SSPR?](active-directory-passwords-troubleshoot.md)
-* [Tenho uma pergunta que não foi abrangida algures senão](active-directory-passwords-faq.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Como posso comunicar a atividade da SSPR?](active-directory-passwords-reporting.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Creio que algo está a funcionar incorretamente. Como posso resolver problemas da SSPR?](active-directory-passwords-troubleshoot.md)
+* [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)
 
-[Authentication]: ./media/active-directory-passwords-how-it-works/sspr-authentication-methods.png "Métodos de autenticação do AD disponíveis do Azure e a quantidade necessária"
+[Authentication]: ./media/active-directory-passwords-how-it-works/sspr-authentication-methods.png "Métodos de autenticação do Azure AD disponíveis e a quantidade necessária"

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/9/2017
 ms.author: subramar
-ms.openlocfilehash: cf7b0dd3a81c35be4907dbba85b72ce4f87e3a9f
-ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
+ms.openlocfilehash: 7464611e669165d9ec1f0de7422b20b3f3b8c2b5
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="using-volume-plugins-and-logging-drivers-in-your-container"></a>Utilizar o plug-ins de volume e registo de controladores no contentor de
 
@@ -29,7 +29,7 @@ Suporta a especificação de Service Fabric [plug-ins de volume do Docker](https
 Se o controlador de volume/registo de Docker não está instalado no computador, instale manualmente através de RDP/SSH-utilize no computador ou através de um script de arranque VMSS. Por exemplo, na ordem para instalar o controlador de Volume do Docker, SSH para a máquina e execute:
 
 ```bash
-docker plugin install --alias azure --grant-all-permissions docker4x/17.09.0-ce-azure1  \
+docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:17.09.0-ce-azure1  \
     CLOUD_PLATFORM=AZURE \
     AZURE_STORAGE_ACCOUNT="[MY-STORAGE-ACCOUNT-NAME]" \
     AZURE_STORAGE_ACCOUNT_KEY="[MY-STORAGE-ACCOUNT-KEY]" \
@@ -77,7 +77,7 @@ No exemplo anterior, o `Source` etiqueta para o `Volume` refere-se para a pasta 
 Quando especificar um plug-in de volume, o Service Fabric cria automaticamente o volume utilizando os parâmetros especificados. O `Source` etiqueta é o nome do volume e o `Driver` tag Especifica o plug-in de controlador do volume. Podem ser especificadas opções utilizando o `DriverOption` tag conforme mostrado no seguinte fragmento:
 
 ```xml
-<Volume Source="myvolume1" Destination="c:\testmountlocation4" Driver="azurefile" IsReadOnly="true">
+<Volume Source="myvolume1" Destination="c:\testmountlocation4" Driver="azure" IsReadOnly="true">
            <DriverOption Name="share" Value="models"/>
 </Volume>
 ```

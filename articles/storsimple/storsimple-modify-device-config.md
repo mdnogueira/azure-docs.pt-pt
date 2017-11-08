@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 07/19/2017
+ms.date: 11/03/2017
 ms.author: v-sharos
-ms.openlocfilehash: 5bfbeb038dbedae2bf77016abbc19458c3dc22c9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5025dc2643f9e57c0d8fa919b7d601f184d74431
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="use-the-storsimple-manager-service-to-modify-your-storsimple-device-configuration"></a>Utilizar o serviço StorSimple Manager para modificar a configuração do dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [utilizar o serviço StorSimple Manager para modificar a configuração do dispositivo StorSimple](storsimple-8000-modify-device-config.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 Portal clássico do Azure **configurar** página contém todos os parâmetros de dispositivo que pode reconfigurar num dispositivo StorSimple que é gerido por um serviço StorSimple Manager. Este tutorial explica como pode utilizar o **configurar** página para efetuar as seguintes tarefas ao nível do dispositivo:
 

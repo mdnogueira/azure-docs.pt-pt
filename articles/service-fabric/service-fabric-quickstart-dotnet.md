@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 10/02/2017
 ms.author: mikhegn
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 3be8836ae6b877bc4caa98f0467147b008c42aa2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cdb5fdb094a185db12ee08969a12e556dab96389
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="create-a-net-service-fabric-application-in-azure"></a>Criar uma aplicação .NET Service Fabric no Azure
 O Azure Service Fabric é uma plataforma de sistemas distribuídos par implementar e gerir microsserviços e contentores dimensionáveis e fiáveis. 
@@ -57,12 +57,14 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 ## <a name="run-the-application-locally"></a>Executar a aplicação localmente
 Faça duplo clique no ícone de Visual Studio, no Menu Iniciar e escolha **executar como administrador**. Para ligar o depurador aos seus serviços, terá de executar o Visual Studio como administrador.
 
-Abra o **Voting.sln** solução do Visual Studio do repositório que clonou.
+Abra o **Voting.sln** solução do Visual Studio do repositório que clonou.  
+
+Por predefinição, a aplicação de voto estiver definida para escutar numa porta 8080.  A porta de aplicação está definida */VotingWeb/PackageRoot/ServiceManifest.xml* ficheiro.  Pode alterar a porta de aplicação, atualizando o **porta** atributo do **Endpoint** elemento.  Para implementar e executar a aplicação localmente, a porta de aplicação tem de ser aberta e disponível no seu computador.  Se alterar a porta de aplicação, substitua o novo valor de porta de aplicação para "8080" ao longo deste artigo.
 
 Para implementar a aplicação, prima **F5**.
 
 > [!NOTE]
-> Na primeira vez, executar e implementar a aplicação, o Visual Studio cria um cluster local para a depuração. Esta operação pode demorar algum tempo. O estado da criação do cluster aparece na janela de saída do Visual Studio.
+> Na primeira vez, executar e implementar a aplicação, o Visual Studio cria um cluster local para a depuração. Esta operação pode demorar algum tempo. O estado da criação do cluster aparece na janela de saída do Visual Studio.  Na saída, verá a mensagem "O URL da aplicação não está definido ou não é um URL de HTTP/HTTPS para que o browser não será aberto na aplicação."  Esta mensagem não indicar um erro, mas que um browser será não auto-iniciar.
 
 Quando a implementação estiver concluída, iniciar um browser e abra esta página: `http://localhost:8080` -web front-end da aplicação.
 
@@ -114,14 +116,15 @@ Para ver o que acontece no código, conclua os seguintes passos:
 Para parar a sessão de depuração, prima **Shift + F5**.
 
 ## <a name="deploy-the-application-to-azure"></a>Implementar a aplicação no Azure
-Para implementar a aplicação para um cluster no Azure, pode optar por criar o seu próprio cluster ou utilizar um Cluster de terceiros.
+Para implementar a aplicação no Azure, terá de um cluster do Service Fabric que executa a aplicação. 
 
-Os party clusters são clusters do Service Fabric gratuitos, limitados temporalmente, alojados no Azure e executados pela equipa do Service Fabric, nos quais qualquer pessoa pode implementar aplicações e saber mais sobre a plataforma. Para obter acesso a um Party Cluster, [siga as instruções](http://aka.ms/tryservicefabric). 
+### <a name="join-a-party-cluster"></a>Aderir a um cluster de terceiros
+Os party clusters são clusters do Service Fabric gratuitos, limitados temporalmente, alojados no Azure e executados pela equipa do Service Fabric, nos quais qualquer pessoa pode implementar aplicações e saber mais sobre a plataforma. 
 
-Para obter informações sobre como criar o seu próprio cluster, veja [Crie o seu primeiro cluster do Service Fabric no Azure](service-fabric-get-started-azure-cluster.md).
+A iniciar sessão e [aderir a um cluster do Windows](http://aka.ms/tryservicefabric). Lembre-se a **ponto final de ligação** valor, que é utilizado nos seguintes passos.
 
 > [!Note]
-> O serviço de front-end da web está configurado para escutar na porta 8080 para o tráfego de entrada. Certifique-se de que a porta está aberta no seu cluster. Se estiver a utilizar o Cluster de terceiros, esta porta é aberta.
+> Por predefinição, o serviço de front-end da web está configurado para escutar na porta 8080 para o tráfego de entrada. A porta 8080 está aberta no Cluster de terceiros.  Se precisar de alterar a porta de aplicação, alterá-la a uma das portas que estão abertas no Cluster de terceiros.
 >
 
 ### <a name="deploy-the-application-using-visual-studio"></a>Implementar a aplicação com o Visual Studio
@@ -131,7 +134,9 @@ Agora que a aplicação está pronta, pode implementá-la num cluster diretament
 
     ![Caixa de diálogo Publicar](./media/service-fabric-quickstart-dotnet/publish-app.png)
 
-2. Introduza o Ponto Final da Ligação do cluster no campo **Ponto Final da Ligação** e clique em **Publicar**. Quando inscrever-se para o Cluster de terceiros, o ponto final da ligação é fornecido no browser. -Por exemplo, `winh1x87d1d.westus.cloudapp.azure.com:19000`.
+2. Copiar o **ponto final de ligação** da página de cluster de terceiros para o **ponto final de ligação** campo e clique em **publicar**. Por exemplo, `winh1x87d1d.westus.cloudapp.azure.com:19000`.
+
+    Cada aplicação no cluster tem de ter um nome exclusivo.  Clusters intervenientes são um ambiente público, partilhado no entanto e pode existir um conflito com uma aplicação existente.  Se houver um conflito de nomes, mudar o nome do projeto do Visual Studio e implemente novamente.
 
 3. Abra um browser e tipo no foolowed de endereço do cluster por ': 8080' para obter a aplicação no cluster - por exemplo, `http://winh1x87d1d.westus.cloudapp.azure.com:8080`. Deverá ver a aplicação em execução no cluster no Azure.
 

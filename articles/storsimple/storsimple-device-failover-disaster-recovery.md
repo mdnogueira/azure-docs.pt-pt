@@ -12,15 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/16/2016
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: bf92ffdb16b86c4033cc96ae2abb060d90f9505e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 02373633f2a30c6cd50e30b77a9faac2922926e6
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="failover-and-disaster-recovery-for-your-storsimple-device"></a>Ativação pós-falha e recuperação após desastre para o dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [ativação pós-falha e recuperação após desastre para o dispositivo StorSimple](storsimple-8000-device-failover-disaster-recovery.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 Este tutorial descreve os passos necessários para efetuar a ativação pós-falha de um dispositivo StorSimple no caso de desastre. Uma ativação pós-falha permitirá migrar os dados a partir de um dispositivo de origem no Centro de dados para outra físico ou mesmo um dispositivo virtual localizado no mesmo ou outra localização geográfica. 
 

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: dekapur
-ms.openlocfilehash: c05cfec995538a95d99451155cf269d33e2716d0
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: e417458a16a5f23d8b89cbf87ab2713fab352046
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Agregação de eventos e coleção utilizando o Windows Azure Diagnostics
 > [!div class="op_single_selector"]
@@ -254,27 +254,9 @@ Para recolher contadores de desempenho ou os registos de eventos, modifique o mo
 
 ## <a name="collect-performance-counters"></a>Recolher contadores de desempenho
 
-Para recolher métricas de desempenho do seu cluster, adicione os contadores de desempenho para o seu "WadCfg > DiagnosticMonitorConfiguration" no modelo do Resource Manager para o cluster. Consulte [contadores de desempenho de recursos de infraestrutura de serviço](service-fabric-diagnostics-event-generation-perf.md) para contadores de desempenho, recomendamos a recolher.
-
-Por exemplo, aqui iremos definir um contador de desempenho, a cada 15 segundos de objeto de amostragem (Isto pode ser alterado e respeita o formato de "PT\<tempo >\<unidade >", por exemplo, PT3M seria amostra em intervalos de três minutos) e transferidos para o tabela de armazenamento adequado cada um minuto.
-
-  ```json
-  "PerformanceCounters": {
-      "scheduledTransferPeriod": "PT1M",
-      "PerformanceCounterConfiguration": [
-          {
-              "counterSpecifier": "\\Processor(_Total)\\% Processor Time",
-              "sampleRate": "PT15S",
-              "unit": "Percent",
-              "annotation": [
-              ],
-              "sinks": ""
-          }
-      ]
-  }
-  ```
+Para recolher métricas de desempenho do seu cluster, adicione os contadores de desempenho para o seu "WadCfg > DiagnosticMonitorConfiguration" no modelo do Resource Manager para o cluster. Consulte [monitorização de desempenho com WAD](service-fabric-diagnostics-perf-wad.md) para obter os passos sobre a modificação do `WadCfg` para recolher contadores de desempenho específicos. Referência [contadores de desempenho de recursos de infraestrutura de serviço](service-fabric-diagnostics-event-generation-perf.md) para contadores de uma lista de desempenho, recomendamos a recolher.
   
-Se estiver a utilizar um receptor de Application Insights, conforme descrito na secção abaixo e pretender que estas métricas apareçam no Application Insights, em seguida, certifique-se de que adiciona o nome de receptores na secção "sinks", conforme mostrado acima. Além disso, considere criar uma tabela separada para enviar os contadores de desempenho para, pelo que não crowd saída dos dados provenientes de outros canais de registo que tiver ativado.
+Se estiver a utilizar um receptor de Application Insights, conforme descrito na secção abaixo e pretender que estas métricas apareçam no Application Insights, em seguida, certifique-se de que adiciona o nome de receptores na secção "sinks", conforme mostrado acima. Isto irá enviar automaticamente os contadores de desempenho que são configurados individualmente para o recurso do Application Insights.
 
 
 ## <a name="send-logs-to-application-insights"></a>Enviar registos ao Application Insights

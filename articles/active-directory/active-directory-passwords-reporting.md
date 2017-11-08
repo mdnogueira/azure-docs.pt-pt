@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 82b1916a49cd1e04580fdb848545ce7d52299579
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 1e715b54c78d42d88d2082e9b0e9f942bec72abd
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Opções de relatórios para gestão de palavras-passe do Azure AD
 
@@ -78,13 +78,7 @@ Atualmente, os relatórios do Azure AD e a API de eventos obtém até **75,000 e
 
 Se precisar de obter ou armazenar os dados para além desta janela, sugerimos a persistência-la numa base de dados externa e utilizando a API para as diferenças que resultam de consulta. É a nossa recomendação para começar a obter estes dados, quando começar a utilizar SSPR na sua organização, manter-externamente e, em seguida, continue a controlar as diferenças a partir deste ponto.
 
-## <a name="how-to-download-password-reset-registration-events-quickly-with-powershell"></a>Como transferir eventos de registo de reposição de palavra-passe rapidamente com o PowerShell
-
-Além de utilizar os relatórios do Azure AD e a API de eventos diretamente, também pode utilizar o script do PowerShell para eventos de registo recentes no seu diretório abaixo. Isto é útil em caso de pretender ver quem registou recentemente ou gostaria de se certificar de que a sua implementação de reposição de palavra-passe é ocorrer como esperado.
-
-* [Script do PowerShell do Azure AD SSPR registo actividade](https://gallery.technet.microsoft.com/scriptcenter/azure-ad-self-service-e31b8aee)
-
-### <a name="description-of-report-columns-in-azure-portal"></a>Descrição das colunas de relatório no portal do Azure
+## <a name="description-of-report-columns-in-azure-portal"></a>Descrição das colunas de relatório no portal do Azure
 
 A lista seguinte explica cada uma das colunas de relatório em detalhe:
 
@@ -93,7 +87,7 @@ A lista seguinte explica cada uma das colunas de relatório em detalhe:
 * **Data e hora** – a data e hora da tentativa.
 * **Dados registada** – registo de reposição dos dados de autenticação que o utilizador fornecido durante a palavra-passe.
 
-### <a name="description-of-report-values-in-azure-portal"></a>Descrição de valores de relatório no portal do Azure
+## <a name="description-of-report-values-in-azure-portal"></a>Descrição de valores de relatório no portal do Azure
 
 A tabela seguinte descreve os diferentes valores permitidos para cada coluna:
 
@@ -198,16 +192,16 @@ A lista seguinte explica esta atividade detalhadamente:
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [Quais são as opções de política com SSPR?](active-directory-passwords-policy.md)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Julgo que algo está danificado. Como posso resolver problemas SSPR?](active-directory-passwords-troubleshoot.md)
-* [Tenho uma pergunta que não foi abrangida algures senão](active-directory-passwords-faq.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Creio que algo está a funcionar incorretamente. Como posso resolver problemas da SSPR?](active-directory-passwords-troubleshoot.md)
+* [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)
 
 [Reporting]: ./media/active-directory-passwords-reporting/sspr-reporting.png "Exemplo de auditoria de atividade SSPR inicia sessão no Azure AD"

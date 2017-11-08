@@ -12,15 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/21/2016
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 22924da07434a06f4c822d97a2afd02ea982e0e0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dcca578b2993c025e62f1eca7ecec0e62a092479
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="use-the-storsimple-manager-service-to-administer-your-storsimple-device"></a>Utilizar o serviço StorSimple Manager para administrar o dispositivo StorSimple
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [utilizam o serviço StorSimple Manager para administrar o dispositivo StorSimple](storsimple-8000-manager-service-administration.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 Este artigo descreve a interface de serviço StorSimple Manager, incluindo como ligar a, as várias opções disponíveis e ligações de saída para os fluxos de trabalho específicas que podem ser efetuadas através deste IU. Esta orientação é aplicável a ambos; físico StorSimple e o dispositivo virtual.
 

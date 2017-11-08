@@ -15,18 +15,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/23/2017
 ms.author: echuvyrov
-ms.openlocfilehash: d8c357474e040f2e35c51dec0c7785cf98381a37
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 533add8948544e37dc27623a2f51aad1054b1bef
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="install-and-configure-terraform-to-provision-vms-and-other-infrastructure-into-azure"></a>Instalar e configurar Terraform para aprovisionar as VMs e outra infraestrutura no Azure
  
 Terraform fornece uma forma fácil de definir, de pré-visualização e implementar a infraestrutura de nuvem utilizando um [idioma templating simples](https://www.terraform.io/docs/configuration/syntax.html). Este artigo descreve os passos necessários para utilizar Terraform para Aprovisionar recursos no Azure. 
 
 > [!TIP]
-> Terraform faz parte o [experiência Bash de Shell de nuvem do Azure](/azure/cloud-shell/quickstart)e pré-configurado com as credenciais e [módulos do Azure Terraform](https://registry.terraform.io/modules/Azure).
+> Terraform é instalado por predefinição no [Bash na experiência da Shell de nuvem do Azure](/azure/cloud-shell/quickstart). Também é pré-configurar com as credenciais e [módulos do Azure Terraform](https://registry.terraform.io/modules/Azure). Utilizando a Shell de nuvem, pode ignorar as partes de instalação/configuração deste documento.
 
 ## <a name="install-terraform"></a>Instalar Terraform
 
@@ -47,9 +47,7 @@ Existem várias formas para criar uma aplicação do Azure AD e um serviço do A
 
 A iniciar sessão para administrar a sua subscrição do Azure através da emissão do comando seguinte:
 
-```azurecli-interactive
-az login
-```
+   `az login`
 
 Se tiver várias subscrições do Azure, os detalhes são devolvidos pelo `az login` comando. Definir o `SUBSCRIPTION_ID` variável de ambiente para conter o valor da devolvido `id` campo da subscrição que pretende utilizar. 
 

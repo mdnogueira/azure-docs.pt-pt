@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 5c33f08e54d522e0eea13a3e267f14f407fc59b6
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 9d61f46070e6956c60f1135b98a9ebe71011b922
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Políticas de palavra-passe e restrições no Azure Active Directory
 
@@ -94,7 +94,7 @@ A tabela seguinte descreve as definições de política de palavra-passe dispon�
 
 ## <a name="set-password-expiration-policies-in-azure-active-directory"></a>Definir políticas de expiração de palavra-passe no Azure Active Directory
 
-Um administrador global para um serviço em nuvem da Microsoft pode utilizar o Microsoft Azure Active Directory módulo para o Windows PowerShell para configurar palavras-passe do utilizador para não expirarem. Também pode utilizar cmdlets do Windows PowerShell para remover o nunca-expira a configuração ou para ver o que utilizador palavras-passe estão configuradas para não expirarem. Esta orientação aplica-se para outros fornecedores de serviços como o Microsoft Intune e o Office 365, que também pode confiar no Microsoft Azure Active Directory para serviços de identidade e de diretório.
+Um administrador global para um serviço em nuvem da Microsoft pode utilizar o Microsoft Azure Active Directory módulo para o Windows PowerShell para configurar palavras-passe do utilizador para não expirarem. Também pode utilizar cmdlets do Windows PowerShell para remover o nunca-expira a configuração ou para ver o que utilizador palavras-passe estão configuradas para não expirarem. Esta orientação aplica-se para outros fornecedores de serviços como o Microsoft Intune e o Office 365, que também pode confiar no Microsoft Azure Active Directory para serviços de identidade e de diretório. Esta é a parte apenas da política que pode ser alterada.
 
 > [!NOTE]
 > Apenas as palavras-passe para contas de utilizador que não estão sincronizadas através de sincronização de diretórios podem ser configuradas para não expirarem. Para obter mais informações sobre a sincronização de diretórios consulte[Connect AD com o Azure AD](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
@@ -128,18 +128,21 @@ Para começar, terá de [transferir e instalar o módulo Azure AD PowerShell](ht
    * Para definir a palavra-passe de um utilizador para nunca expirar, execute o seguinte cmdlet utilizando o nome principal de utilizador (UPN) ou o ID de utilizador do utilizador:`Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires $true`
    * Para definir as palavras-passe de todos os utilizadores numa organização nunca expirem, execute o seguinte cmdlet:`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires $true`
 
+   > [!WARNING]
+   > Se definir `-PasswordNeverExpires $true` a palavra-passe será ainda idade com base no `pwdLastSet` atributo. Isto significa que, se definir palavras-passe nunca expira e, em seguida, 90 dias aceda com base no `pwdLastSet` e alterar `-PasswordNeverExpires $false` todas as palavras-passe que tenham um `pwdLastSet` mais antiga do que 90 dias, terá de alterar no próximo início de sessão. Esta alteração pode afetar um grande número de utilizadores. 
+
 ## <a name="next-steps"></a>Passos seguintes
 
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Como comunicar na atividade na SSPR](active-directory-passwords-reporting.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Julgo que algo está danificado. Como posso resolver problemas SSPR?](active-directory-passwords-troubleshoot.md)
-* [Tenho uma pergunta que não foi abrangida algures senão](active-directory-passwords-faq.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Como posso comunicar a atividade da SSPR?](active-directory-passwords-reporting.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Creio que algo está a funcionar incorretamente. Como posso resolver problemas da SSPR?](active-directory-passwords-troubleshoot.md)
+* [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)

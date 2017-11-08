@@ -14,11 +14,11 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 31f80e93dc741d41a00826c9c8b7ab061c0ca414
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: e37c55dbcc8de49aee32272b2f51b0792bef132c
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="guide-to-create-a-virtual-machine-image-for-the-azure-marketplace"></a>Guia para criar uma imagem de máquina virtual para o Azure Marketplace
 Neste artigo, **passo 2**, explica como preparar os discos rígidos virtuais (VHDs) que vai implementar no Azure Marketplace. Os VHDs são a base do SKU. O processo é diferente dependendo se está a fornecer um SKU baseado em Windows ou baseado em Linux. Este artigo abrange ambos os cenários. Este processo pode ser executado em paralelo com [conta criação e registo][link-acct-creation].
@@ -432,7 +432,7 @@ Seguem-se os passos para gerar o URL de SAS, utilizando a CLI do Azure
 
 2.  Uma vez é transferido, instale o
 
-3.  Criar um ficheiro de PowerShell com o seguinte código e guardá-lo no local
+3.  Criar um PowerShell (ou outro executável de script) de ficheiros com o seguinte código e guardá-lo localmente
 
           $conn="DefaultEndpointsProtocol=https;AccountName=<StorageAccountName>;AccountKey=<Storage Account Key>"
           azure storage container list vhds -c $conn
@@ -444,9 +444,9 @@ Seguem-se os passos para gerar o URL de SAS, utilizando a CLI do Azure
 
     b. **`<Storage Account Key>`**: Dê a sua chave de conta do storage
 
-    c. **`<Permission Start Date>`**: Para salvaguardar para a hora UTC, selecione o dia anterior à data atual. Por exemplo, se a data atual for 26 de Outubro de 2016, em seguida, valor deve ser 25/10/2016
+    c. **`<Permission Start Date>`**: Para salvaguardar para a hora UTC, selecione o dia anterior à data atual. Por exemplo, se a data atual for 26 de Outubro de 2016, em seguida, valor deve ser 25/10/2016. Se utilizar o Azure CLI 2.0 (az command), forneça a data e a hora no início e fim de datas, por exemplo: 10-25-2016T00:00:00Z.
 
-    d. **`<Permission End Date>`**: Selecione uma data que seja, pelo menos, 3 semanas após o **data de início**. Em seguida, o valor deve ser **11/02/2016**.
+    d. **`<Permission End Date>`**: Selecione uma data que seja, pelo menos, 3 semanas após o **data de início**. O valor deve ser **11/02/2016**. Se utilizar o Azure CLI 2.0 (az command), forneça a data e a hora no início e fim de datas, por exemplo: 11-02-2016T00:00:00Z.
 
     Segue-se o código de exemplo depois de atualizar os parâmetros corretos
 
@@ -454,7 +454,7 @@ Seguem-se os passos para gerar o URL de SAS, utilizando a CLI do Azure
           azure storage container list vhds -c $conn
           azure storage container sas create vhds rl 11/02/2016 -c $conn --start 10/25/2016  
 
-4.  Abra o editor de Powershell com o modo de "Executar como administrador" e abra o ficheiro no passo 3 de #.
+4.  Abra o editor de Powershell com o modo de "Executar como administrador" e abra o ficheiro no passo 3 de #. Pode utilizar qualquer editor de scripts que está disponível no seu SO.
 
 5.  Execute o script e é-lhe o URL de SAS para o acesso ao nível do contentor
 
@@ -517,7 +517,7 @@ Depois de ter criado a sua oferta e SKU, deverá introduzir os detalhes da image
 |Falha ao copiar imagens - "SP2 = rl" não está num SAS url|Falha: Copiar as imagens. Não é possível transferir BLOBs utiliza fornecidas Uri de SAS|Atualizar o Url de SAS com definido como "Leitura" & "lista de permissões|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 |Falha ao copiar imagens - SAS url tem espaços em branco no nome do vhd|Falha: Copiar as imagens. Não é possível transferir BLOBs utiliza fornecidas Uri de SAS.|Atualizar o Url de SAS, sem espaços em branco|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 |Falha ao copiar imagens – erro de autorização de Url SAS|Falha: Copiar as imagens. Não é possível transferir BLOBs devido a erro de autorização|Voltar a gerar o Url SAS|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-
+|Falha ao copiar imagens – o Url de SAS "st" e "zar" parâmetros não dispõe de especificação de data / hora completa|Falha: Copiar as imagens. Não é possível transferir BLOBs devido ao Url de SAS incorreto |Parâmetros de início do Url de SAS e a data de fim ("st", "zar") são necessários para ter a especificação de completa de data / hora, tal como 11-02-2017T00:00:00Z e não apenas a data ou versões reduzidas durante o período de tempo. É possível encontrar este cenário através do Azure CLI 2.0 (az command). Lembre-se de que fornecem a especificação de data / hora completa e voltar a gerar o Url de SAS.|[https://Azure.microsoft.com/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 
 ## <a name="next-step"></a>Passo seguinte
 Depois de terminar com os detalhes do SKU, pode avançar para o [Guia do Azure Marketplace marketing conteúdo][link-pushstaging]. Esse passo do processo de publicação, deve fornecer o conteúdo de marketing, preço e outras informações necessárias antes **passo 3: testar a sua VM oferecem no modo de transição**, onde testar vários cenários de caso de utilização antes de implementar o oferta no Azure Marketplace para visibilidade pública e compra.  

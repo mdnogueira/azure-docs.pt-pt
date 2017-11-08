@@ -9,11 +9,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.date: 10/12/2017
-ms.openlocfilehash: 1d92ffc03b60695c5ff7b6c3d2ac54808c527efd
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: a87877f4b213365442400d113a67964ef942341f
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="azure-key-vault-storage-account-keys"></a>Chaves de conta de armazenamento do Cofre de chaves do Azure
 
@@ -134,15 +134,15 @@ O resultado do comando anterior irá incluir o ServicePrincipal que receberá um
 
 ### <a name="set-permissions"></a>Defina as permissões
 
-Certifique-se de que tem as permissões de armazenamento definidas como *todos os*. Pode obter yourKeyVaultServicePrincipalId e definir as permissões no cofre utilizando os seguintes comandos.
+Certifique-se de que tem as permissões de armazenamento definidas como *todos os*. Pode obter youruserPrincipalId e definir as permissões no cofre utilizando os seguintes comandos.
 
 ```powershell
-Get-AzureRmADUser -SearchString "your name"
+$youruserPrincipalId = (Get-AzureRmADUser -SearchString "your user principal name").Id
 ```
 Agora procurar o nome e obtenha o ObjectId relacionado, o que irá utilizar ao definir as permissões no cofre.
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName 'yourtest1' -ObjectId $yourKeyVaultServicePrincipalId -PermissionsToStorage all
+Set-AzureRmKeyVaultAccessPolicy -VaultName 'yourtest1' -ObjectId $youruserPrincipalId -PermissionsToStorage all
 ```
 
 ### <a name="allow-access"></a>Permitir o acesso

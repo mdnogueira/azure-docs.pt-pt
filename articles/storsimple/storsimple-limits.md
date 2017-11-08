@@ -12,16 +12,19 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 02/27/2017
+ms.date: 11/03/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3e4f7bfd117696ddb25156e027e29c0d21f27804
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2adefbe89108bc5a807b7413e821f8fcd0f3f325
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="what-are-storsimple-8000-series-system-limits"></a>Quais são os limites de sistema de série 8000 do StorSimple?
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [quais são os limites de sistema de série 8000 do StorSimple?](storsimple-8000-limits.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 StorSimple fornece armazenamento dimensionável e flexível para o seu centro de dados. No entanto, existem alguns limites que deve ter em consideração, como planear, implementar e operar solução StorSimple. A tabela seguinte descreve estes limites e fornece algumas recomendações para que pode obter o máximo partido da solução StorSimple.
 

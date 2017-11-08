@@ -6,13 +6,13 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: article
-ms.date: 10/20/2017
+ms.date: 11/02/2017
 ms.author: babanisa
-ms.openlocfilehash: e798a1e751cb9e789bc479a6f842fb7f8f703bbf
-ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.openlocfilehash: a0bcc9650fda10c099887b74b408551b12cde667
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="an-introduction-to-azure-event-grid"></a>Uma introdução à grelha de eventos do Azure
 
@@ -50,6 +50,8 @@ Aqui estão algumas das principais funcionalidades do Azure grelha de evento:
 * **Débito elevado** -criar cargas de trabalho de elevado volume na grelha de eventos com suporte para milhões de eventos por segundo.
 * **Eventos incorporados** - obter cópias de segurança e executar rapidamente com recurso definido eventos incorporados.
 * **Eventos personalizados** -utilizar rotas de grelha de eventos, de filtro e fiável de eventos personalizados entregar na sua aplicação.
+
+Para ver uma comparação de grelha de eventos, os Event Hubs e Service Bus, consulte [escolha entre os serviços do Azure que entregar mensagens](compare-messaging-services.md).
 
 ## <a name="built-in-publisher-and-handler-integration"></a>Integração de fabricante e o processador incorporada
 
@@ -100,14 +102,6 @@ O Event Grid permite-lhe acelerar a automatização e simplificar a aplicação 
 ![Integração de aplicações](./media/overview/app_integration.png)
 
 O Event Grid liga a sua aplicação a outros serviços. Por exemplo, criar um tópico personalizado para enviar dados de eventos da aplicação à grelha de evento e tirar partido das respetiva entrega fiável, avançada encaminhamento e integração direta com o Azure. Em alternativa, pode utilizar o Event Grid com o Logic Apps para processar dados em qualquer local sem ter de escrever código. 
-
-## <a name="how-is-event-grid-different-from-other-azure-integration-services"></a>Como grelha de evento é diferente de outros serviços de integração do Azure?
-
-Grelha de eventos é um backplane eventos CCM que permite a programação condicionada por eventos, reativa. Este está profundamente integrado com serviços do Azure e pode ser integrado com serviços de terceiros. A mensagem de evento contém as informações que necessárias para reagir a alterações em serviços e aplicações. Grelha de eventos não é um pipeline de dados e não fornecer o objecto real que foi atualizado.
-
-O Service Bus é convém a aplicações empresariais tradicionais que necessitam de transações, ordenação, deteção duplicada e consistência instantânea. Grelha de eventos é concebida para a velocidade, o dimensionamento, o volume e de baixo custo de um modelo reativa. É também adequada à arquitetura sem servidor.
-
-Grelha de evento complementa a outros serviços do Azure, como as Logic Apps e Hubs de eventos. Grelha de evento aciona a aplicação lógica para iniciar o fluxo de trabalho. Os Event Hubs funciona com o evento grelha, permitindo reagir a eventos de captura de Hubs de eventos e criar pipelines de entrada e de transformação de dados.
 
 ## <a name="how-much-does-event-grid-cost"></a>Quanto custo grelha de evento?
 

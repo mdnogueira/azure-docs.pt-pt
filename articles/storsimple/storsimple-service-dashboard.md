@@ -12,15 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/24/2016
+ms.date: 11/03/2017
 ms.author: v-sharos
-ms.openlocfilehash: 596431b7279b753ca4da838eb028cdde2022ce02
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 62273c0093876f136d97eedf5a509f0b306a1379
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="use-the-storsimple-manager-service-dashboard"></a>Utilize o dashboard do serviço StorSimple Manager
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [utilizar o dashboard do serviço StorSimple Manager](storsimple-8000-service-dashboard.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 A página de dashboard do serviço StorSimple Manager fornece um resumo de todos os dispositivos que estão ligados ao serviço StorSimple Manager, realce aqueles que necessitam de atenção um administrador de sistema. Este tutorial apresenta a página do dashboard, explica o conteúdo de dashboard e a função e descreve as tarefas que pode realizar a partir desta página.
 

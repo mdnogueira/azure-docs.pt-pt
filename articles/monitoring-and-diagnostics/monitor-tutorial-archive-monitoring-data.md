@@ -10,15 +10,23 @@ ms.topic: tutorial
 ms.date: 09/25/2017
 ms.author: johnkem
 ms.custom: mvc
-ms.openlocfilehash: 445901a740920a74f259aaa9c6b862680c1c807e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: f19cf8fddd9ffcf08b8ce18db070a7482ce012df
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="archive-azure-monitoring-data"></a>Azure de arquivar dados de monitorização
 
 Várias camadas do seu ambiente do Azure produzem registo e os dados métricos que podem ser arquivados para uma conta de armazenamento do Azure. Poderá fazê-lo para manter um histórico dos dados de monitorização ao longo do tempo de um arquivo de económico, não pesquisável depois dos dados passou o respetivo período de retenção de Monitor de Azure ou de análise de registos. Este tutorial passos durante o processo de configuração do seu ambiente do Azure para arquivar dados para uma conta de armazenamento.
+
+> [!div class="checklist"]
+> * Criar uma conta de armazenamento para armazenar dados de monitorização
+> * Registos de subscrição de rota ao mesmo 
+> * Dados de recursos de rota ao mesmo 
+> * Dados da máquina virtual (SO convidado) rota ao mesmo 
+> * Ver os dados de monitorização no mesmo 
+> * Apague os seus recursos 
 
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
@@ -158,7 +166,18 @@ Pode agora definiu com êxito dados de monitorização para ser arquivados para 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Neste tutorial, aprendeu a configurar dados de monitorização do seu ambiente do Azure (subscrição, recursos e SO convidado) sejam arquivadas, para uma conta de armazenamento. Para tornar mais significado fora os dados e derivar insights, tente enviar os dados para análise de registos, bem como.
+Neste tutorial, aprendeu a configurar dados de monitorização do seu ambiente do Azure (subscrição, recursos e SO convidado) sejam arquivadas, para uma conta de armazenamento. 
+
+
+> [!div class="checklist"]
+> * Criar uma conta de armazenamento para armazenar dados de monitorização
+> * Registos de subscrição de rota ao mesmo 
+> * Dados de recursos de rota ao mesmo 
+> * Dados da máquina virtual (SO convidado) rota ao mesmo 
+> * Ver os dados de monitorização no mesmo 
+> * Apague os seus recursos 
+
+Para obter mais informações sobre os dados e derivar informações adicionais, também envie os dados para análise de registos.
 
 > [!div class="nextstepaction"]
 > [Introdução à análise de registos](../log-analytics/log-analytics-get-started.md)

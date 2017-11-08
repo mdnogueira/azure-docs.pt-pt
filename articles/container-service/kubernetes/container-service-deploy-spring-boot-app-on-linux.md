@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 08/04/2017
 ms.author: asirveda;robmcm
 ms.custom: mvc
-ms.openlocfilehash: daa0ed81a6b9f20e146698947099a991da42cd6d
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: fd071dc8ce568602db3d96d4bcaa5f421bd16513
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>Implementar uma aplicação de arranque de mola no Linux no serviço de contentor do Azure
 
@@ -128,11 +128,19 @@ Os seguintes passos guiá-lo no portal do Azure para criar um registo de content
 1. Adicionar as definições de acesso do registo de contentor do Azure da secção anterior deste tutorial para o `<servers>` coleção no *settings.xml* ficheiro; por exemplo:
 
    ```xml
+   <settings>
+       <pluginGroups>
+           <pluginGroup>com.spotify</pluginGroup>
+       </pluginGroups>
+   </settings>
    <servers>
       <server>
          <id>wingtiptoysregistry</id>
          <username>wingtiptoysregistry</username>
          <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
+         <configuration>
+            <email>foo@foo.bar</email>
+         </configuration>
       </server>
    </servers>
    ```
@@ -157,7 +165,7 @@ Os seguintes passos guiá-lo no portal do Azure para criar um registo de content
       <version>0.4.11</version>
       <configuration>
          <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <dockerDirectory>src/main/docker</dockerDirectory>
+         <dockerDirectory>${project.basedir}</dockerDirectory>
          <resources>
             <resource>
                <targetPath>/</targetPath>

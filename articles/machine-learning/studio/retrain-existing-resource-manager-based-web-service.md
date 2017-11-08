@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/11/2017
+ms.date: 11/07/2017
 ms.author: v-donglo
-ms.openlocfilehash: e7663f931594c0626a173562b846f3f9324d8ba3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 40079da0e04520477771a11a1e4111768cf18280
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="retrain-an-existing-predictive-web-service"></a>Reparametrização de um serviço web preditiva existente
 Este documento descreve o processo reparametrização para o seguinte cenário:
@@ -86,9 +86,10 @@ No **informações de consumo básico** secção o **Consume** página, localize
 ### <a name="update-the-azure-storage-information"></a>Atualizar as informações de armazenamento do Azure
 O código de exemplo BES carrega um ficheiro a partir de uma unidade local (por exemplo, "C:\temp\CensusIpnput.csv") ao Storage do Azure, os processos que e escreve os resultados de volta ao Storage do Azure.  
 
-Para atualizar as informações de armazenamento do Azure, terá de obter o nome da conta de armazenamento, chave e informações de contentor para a sua conta de armazenamento a partir do portal clássico do Azure e, em seguida, atualize o correspondi depois de executar a sua experimentação, o fluxo de trabalho resultante deve ser semelhante ao seguinte:
+Para atualizar as informações de armazenamento do Azure, terá de obter o nome da conta de armazenamento, chave e informações de contentor para a sua conta de armazenamento a partir do portal clássico do Azure e, em seguida, atualize os valores correspondentes no código.
+Depois de executar a experimentação, o fluxo de trabalho resultante deve ser semelhante ao seguinte:
 
-![Fluxo de trabalho resultante após a execução][4]valores de ng no código.
+![Fluxo de trabalho resultante após a execução][4]
 
 1. Inicie sessão no Portal Clássico do Azure.
 2. Na coluna de navegação esquerdo, clique em **armazenamento**.
@@ -119,7 +120,9 @@ Quando especificar a localização de saída no Payload de pedido, a extensão d
             }
         },
 
-Segue-se um exemplo de saída reparametrização: ![reparametrização saída][6]
+Segue-se um exemplo de saída reparametrização:
+
+![Reparametrização saída][6]
 
 ## <a name="evaluate-the-retraining-results"></a>Avaliar os resultados reparametrização
 Quando executar a aplicação, o resultado inclui o URL e o token de assinaturas de acesso partilhado são necessários para os resultados da avaliação de acesso.

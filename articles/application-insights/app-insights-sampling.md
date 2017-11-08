@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: mbullwin
-ms.openlocfilehash: 0ed612a0e2101397fb1074de61db07d2361f8463
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: af184574bdfa7d3a11baf75d8cdfbf80f1544dde
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="sampling-in-application-insights"></a>Amostragem no Application Insights
 
@@ -57,7 +57,7 @@ Como outros tipos de amostragem, o algoritmo mantém os itens de telemetria rela
 
 Pontos de dados que são rejeitados pelo amostragem não estão disponíveis em qualquer funcionalidade do Application Insights, tais como [exportação contínua](app-insights-export-telemetry.md).
 
-A amostragem de ingestão não funciona enquanto amostragem adaptável ou -taxa com base no SDK está na operação. Se a frequência de amostragem, o SDK é inferior a 100%, em seguida, a frequência de amostragem de ingestão que definir é ignorada.
+A amostragem de ingestão não funciona enquanto amostragem adaptável ou -taxa com base no SDK está na operação. Tenha em atenção que a amostragem adaptável está ativada por predefinição quando o ASP.NET SDK está ativado no Visual Studio ou utilizando o Monitor de estado e amostragem da ingestão está desativada. Se a frequência de amostragem, o SDK é inferior a 100%, em seguida, a frequência de amostragem de ingestão que definir é ignorada.
 
 > [!WARNING]
 > O valor mostrado no mosaico indica o valor que definiu para a amostragem da ingestão. -Não representa a frequência de amostragem real amostragem SDK esteja na operação.

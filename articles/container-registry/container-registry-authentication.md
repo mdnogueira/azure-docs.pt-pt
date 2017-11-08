@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 11/05/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 51fb72fc3c0e9b9e261f19883820f5d7399a57ab
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 37514e7b90afe1162aa4bbd2869326a691f75c4e
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Autenticar com um registo de contentor do Docker privado
 
@@ -39,7 +39,7 @@ Ao trabalhar com o registo diretamente, tais como extrair imagens para e enviar 
 az acr login --name <acrName>
 ```
 
-Quando iniciar sessão com `az acr login`, a CLI utiliza o token criado quando é executada `az login` perfeitamente autenticar a sua sessão com o seu registo. Assim que tiver a sessão iniciada desta forma, as suas credenciais estão em cache e subsequentes `docker` comandos não necessitam de um nome de utilizador ou palavra-passe. Se o seu token expira, pode atualizá-lo utilizando o `az acr login` comando novamente para voltar.
+Quando iniciar sessão com `az acr login`, a CLI utiliza o token criado quando é executada `az login` perfeitamente autenticar a sua sessão com o seu registo. Assim que tiver a sessão iniciada desta forma, as suas credenciais estão em cache e subsequentes `docker` comandos não necessitam de um nome de utilizador ou palavra-passe. Se o seu token expira, pode atualizá-lo utilizando o `az acr login` comando novamente para voltar. Utilizar `az acr login` com identidades do Azure fornece [acesso baseado em funções](../active-directory/role-based-access-control-configure.md).
 
 ## <a name="service-principal"></a>Principal de serviço
 
@@ -75,6 +75,10 @@ Dependendo da versão do Docker tiver instalado, poderá ver um aviso de seguran
 
 Cada registo de contentor inclui uma conta de utilizador administrador, que está desativada por predefinição. Pode permitir que o utilizador de admin e gerir as suas credenciais no [portal do Azure](container-registry-get-started-portal.md#create-a-container-registry), ou utilizando a CLI do Azure.
 
+> [!IMPORTANT]
+> A conta de administrador foi concebida para um único utilizador aceder ao registo, principalmente para fins de teste. Recomendamos que não as credenciais da conta de administrador de partilha com vários utilizadores. Todos os utilizadores a autenticação com a conta de administrador são apresentados como um único utilizador com acesso de push e pull no registo. Alterar ou desativar esta conta desativa para todos os utilizadores que utilizam as respetivas credenciais de acesso ao registo. Identidade individuais é recomendada para utilizadores e de principais de serviço para cenários sem interface.
+>
+
 A conta de administrador é fornecida com duas palavras-passe, que podem ser novamente geradas. Duas palavras-passe permitem-lhe manter a ligação ao registo, utilizando uma palavra-passe enquanto volta a gerar a outra. Se estiver ativada a conta de administrador, pode passar o nome de utilizador e a palavra-passe para o `docker login` comando para a autenticação básica para o registo. Por exemplo:
 
 ```
@@ -92,10 +96,6 @@ az acr update -n <acrName> --admin-enabled true
 Pode ativar o utilizador de administrador no portal do Azure, navegando o registo, selecionar **chaves de acesso** em **definições**, em seguida, **ativar** em **Admin utilizador**.
 
 ![Permitir que o utilizador de admin da IU no portal do Azure][auth-portal-01]
-
-> [!IMPORTANT]
-> A conta de administrador foi concebida para um único utilizador aceder ao registo, principalmente para fins de teste. Recomendamos que não as credenciais da conta de administrador de partilha com vários utilizadores. Todos os utilizadores a autenticação com a conta de administrador são apresentados como um único utilizador no registo. Alterar ou desativar esta conta desativa para todos os utilizadores que utilizam as respetivas credenciais de acesso ao registo.
->
 
 ## <a name="next-steps"></a>Passos seguintes
 

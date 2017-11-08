@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: oanapl
-ms.openlocfilehash: b02b1260cedcade9bf69a99453ab0f5aa2c3c7b1
-ms.sourcegitcommit: 76a3cbac40337ce88f41f9c21a388e21bbd9c13f
+ms.openlocfilehash: 42dca05c4d7d104ed0e7e21f1e53411e5983cd38
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Utilizar relatórios de estado de funcionamento do sistema para resolver problemas
 Componentes do Service Fabric do Azure fornecem relatórios de estado de funcionamento do sistema em todas as entidades do cluster à direita da box. O [arquivo de estado de funcionamento](service-fabric-health-introduction.md#health-store) cria e elimina as entidades com base nos relatórios de sistema. É também organiza-los numa hierarquia que capture as interações de entidade.
@@ -55,6 +55,18 @@ O relatório Especifica o tempo limite de concessão global, como o time-to-live
 * **SourceId**: System.Federation
 * **Propriedade**: começa com **Neighborhood** e inclui informações do nó.
 * **Próximos passos**: investigar por que motivo o neighborhood é perdido, por exemplo, verifique a comunicação entre nós de cluster.
+
+### <a name="rebuild"></a>Reconstrução
+
+O **Failover Manager** serviço (**FM**) gere informações sobre os nós do cluster. Quando FM perde os dados e entra no perda de dados que não pode garantir que tem as informações mais atualizadas sobre os nós do cluster. Neste caso, o sistema realiza uma **reconstruir**, e **System.FM** recolhe dados de todos os nós do cluster para reconstruir o seu estado. Por vezes, devido à rede ou problemas de nó, reconstrução foi possível obter bloqueada ou parada. O mesmo pode acontecer com o **mestre do Gestor de ativação pós-falha** serviço (**FMM**). O **FMM** é um serviço de sistema sem monitorização de estado mantém um registo dos onde todos os **FMs** estão no cluster. O **FMMs** principal é sempre o nó com o ID mais próximo de 0. Se esse nó obtém ignorado, uma **reconstruir** é acionada.
+Quando uma das condições anteriores ocorrem, **System.FM** ou **System.FMM** sinalizador-lo através de um relatório de erros. A reconstrução pode estar bloqueada em uma de duas fases:
+
+* A aguardar para difusão: **FM/FMM** aguarda que a resposta de mensagens de difusão de outros nós. **Próximos passos:** investigar se houver um problema de ligação de rede entre os nós.   
+* A aguardar para nós: **FM/FMM** já recebeu uma resposta de difusão outros nós e está a aguardar uma resposta de nós específicos. O relatório de estado de funcionamento indica os nós para o qual o **FM/FMM** está a aguardar uma resposta. **Próximos passos:** investigar a ligação de rede entre o **FM/FMM** e os nós listadas. Investigue cada nó listado para outros problemas possíveis.
+
+* **SourceID**: System.FM ou System.FMM
+* **Propriedade**: Reconstruir.
+* **Próximos passos**: investigar a ligação de rede entre os nós, bem como o estado de todos os nós específicos que estão listados na descrição do relatório de estado de funcionamento.
 
 ## <a name="node-system-health-reports"></a>Relatórios de estado de funcionamento do sistema de nó
 **System.FM**, que representa o serviço do Gestor de ativação pós-falha, é a autoridade que gere informações sobre nós de cluster. Cada nó deve ter um relatório de System.FM que mostra o estado. As entidades de nó são removidas quando o estado do nó é removido. Para obter mais informações, consulte [RemoveNodeStateAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.clustermanagementclient.removenodestateasync).

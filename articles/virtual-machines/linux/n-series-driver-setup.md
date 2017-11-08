@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 10/10/2017
+ms.date: 11/06/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3f8cd4fc37caca7fa6094a4780078d9ed882ba3c
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: 96e429ae0e9462e6046a4aaabc5ab9281f2e67ce
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Instalar controladores de NVIDIA GPU em VMs de série N executar Linux
 
@@ -205,13 +205,13 @@ Este ficheiro pode ser invocado como raiz no arranque através da criação de u
 
 ## <a name="install-cuda-drivers-for-nc-vms"></a>Instalar controladores CUDA para VMs de NC
 
-Seguem-se passos para instalar controladores NVIDIA em VMs de NC Linux do 8.0 do NVIDIA CUDA Toolkit. 
+Seguem-se passos para instalar controladores NVIDIA em VMs de NC Linux do Toolkit de CUDA NVIDIA. 
 
 Os programadores C e C++, opcionalmente, podem instalar o Toolkit de completo para criar aplicações acelerados de GPU. Para obter mais informações, consulte o [guia de instalação CUDA](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
 
 
 > [!NOTE]
-> Ligações de transferência do controlador CUDA fornecido aqui estão atualizadas no momento da publicação. Para os controladores mais recentes do CUDA, visite o [NVIDIA](http://www.nvidia.com/) Web site.
+> Ligações de transferência do controlador CUDA fornecido aqui estão atualizadas no momento da publicação. Para os controladores mais recentes do CUDA, visite o [NVIDIA](https://developer.nvidia.com/cuda-zone) Web site.
 >
 
 Para instalar o Toolkit de CUDA, efetue uma ligação SSH cada VM. Para verificar que o sistema tem uma GPU compatível com CUDA, execute o seguinte comando:
@@ -273,20 +273,16 @@ sudo reboot
 
 ### <a name="centos-based-73-or-red-hat-enterprise-linux-73"></a>Com base em centOS 7.3 ou Red Hat Enterprise Linux 7.3
 
-> [!IMPORTANT]
-> Não execute `sudo yum update` para atualizar a versão de kernel em CentOS 7.3 ou 7.3 do Red Hat Enterprise Linux. Atualmente, a instalação de controlador e as atualizações não funcionam se o kernel é atualizado.
->
-
 1. Instale os serviços de integração mais recentes do Linux para Hyper-V.
 
   > [!IMPORTANT]
-  > Se tiver instalado uma imagem com base em CentOS HPC numa NC24r VM, avance para o passo 3. Como controladores de RDMA do Azure e os serviços de integração Linux são pré-instaladas na imagem, os LIS não deve ser atualizados e atualizações de kernel estão desativadas por predefinição.
+  > Se tiver instalado uma imagem com base em CentOS HPC numa NC24r VM, avance para o passo 3. Como controladores de RDMA do Azure e os serviços de integração Linux são pré-instaladas na imagem HPC, os LIS não deve ser atualizados e atualizações de kernel estão desativadas por predefinição.
   >
 
   ```bash
-  wget http://download.microsoft.com/download/6/8/F/68FE11B8-FAA4-4F8D-8C7D-74DA7F2CFC8C/lis-rpms-4.2.3.tar.gz
+  wget http://download.microsoft.com/download/6/8/F/68FE11B8-FAA4-4F8D-8C7D-74DA7F2CFC8C/lis-rpms-4.2.3-1.tar.gz
  
-  tar xvzf lis-rpms-4.2.3.tar.gz
+  tar xvzf lis-rpms-4.2.3-1.tar.gz
  
   cd LISISO
  
@@ -304,7 +300,7 @@ sudo reboot
 
   sudo yum install dkms
 
-  CUDA_REPO_PKG=cuda-repo-rhel7-9-0-local-9.0.176-1.x86_64.rpm
+  CUDA_REPO_PKG=cuda-repo-rhel7-9.0.176-1.x86_64.rpm
 
   wget http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 

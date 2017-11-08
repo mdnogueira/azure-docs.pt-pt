@@ -12,15 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/18/2016
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: a87624b5706c1d9b8c2b9926e5580996a89ce984
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 320569e302d145d695f3be9684e97786fa82e80b
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="use-the-storsimple-manager-service-to-manage-access-control-records"></a>Utilizar o serviço StorSimple Manager para gerir registos de controlo de acesso
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para ver a versão deste artigo para o novo portal do Azure, aceda a [utilizar o serviço StorSimple Manager para gerir registos de controlo de acesso](storsimple-8000-manage-acrs.md). Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 ## <a name="overview"></a>Descrição geral
 Registos de controlo de acesso (ACRs) permitem-lhe especificar os anfitriões que podem ligar a um volume no dispositivo StorSimple. ACRs estão definidas para um volume específico e incluem os nomes de qualificado iSCSI (IQNs) de anfitriões. Quando um anfitrião tenta ligar a um volume, o dispositivo verificará se existe o ACR associados a esse volume para o nome IQN e se existir uma correspondência, em seguida, a ligação for estabelecida. O controlo de acesso regista secção no **configurar** página apresenta todos os registos de controlo de acesso com os IQNs correspondentes dos anfitriões.
 

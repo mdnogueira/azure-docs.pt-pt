@@ -1,8 +1,8 @@
 ---
 title: "Exemplos de início rápido do Azure PowerShell do Monitor. | Microsoft Docs"
 description: "Utilize o PowerShell para aceder às funcionalidades de monitorização do Azure, tais como o dimensionamento automático, alertas, webhooks e procure-os registos de atividade."
-author: kamathashwin
-manager: orenr
+author: rboucher
+manager: carmonm
 editor: 
 services: monitoring-and-diagnostics
 documentationcenter: monitoring-and-diagnostics
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/09/2017
-ms.author: ashwink
-ms.openlocfilehash: 48f064884c2a6d0a55cc58a44169ed03c62de46d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: robb
+ms.openlocfilehash: 60048ab8e0118bc67850aa6ad91c82dcf8122b1d
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Exemplos de início rápido do Azure PowerShell de Monitor
-Este artigo apresenta o exemplo comandos do PowerShell para o ajudar a aceder às funcionalidades de monitorização do Azure. Monitor do Azure permite-lhe para serviços de Cloud de dimensionamento automático, as máquinas virtuais e aplicações Web e enviar notificações de alerta ou chamar URLs web com base nos valores de dados de telemetria configurado.
+Este artigo apresenta o exemplo comandos do PowerShell para o ajudar a aceder às funcionalidades de monitorização do Azure. Monitor do Azure permite-lhe para serviços de Cloud de dimensionamento automático, as máquinas virtuais e aplicações Web. Também permite-lhe enviar notificações de alerta ou chamar URLs web com base nos valores de dados de telemetria configurado.
 
 > [!NOTE]
-> Monitor do Azure é o novo nome para o que foi chamado "Informações do Azure" até 25th de Setembro de 2016. No entanto, os espaços de nomes e, consequentemente, os seguintes comandos de conter as "informações".
+> Monitor do Azure é o novo nome para o que foi chamado "Informações do Azure" até 25th de Setembro de 2016. No entanto, os espaços de nomes e, consequentemente, os seguintes comandos de conter a palavra "informações".
 > 
 > 
 
@@ -41,13 +41,13 @@ Primeiro, inicie sessão sua subscrição do Azure.
 Login-AzureRmAccount
 ```
 
-Isto requer que inicie sessão. Quando o fizer, a conta, são apresentadas TenantID e ID de subscrição predefinido. Todos os cmdlets do Azure funciona no contexto da sua subscrição predefinida. Para ver a lista de subscrições tiver acesso, utilize o seguinte comando.
+Verá um ecrã de início de sessão. Uma vez que iniciar sessão na sua conta, TenantID, e são apresentados o ID de subscrição predefinido. Todos os cmdlets do Azure funciona no contexto da sua subscrição predefinida. Para ver a lista de subscrições tiver acesso, utilize o seguinte comando:
 
 ```PowerShell
 Get-AzureRmSubscription
 ```
 
-Para alterar o contexto de trabalho para uma subscrição diferente, utilize o seguinte comando.
+Para alterar o contexto de trabalho para uma subscrição diferente, utilize o seguinte comando:
 
 ```PowerShell
 Set-AzureRmContext -SubscriptionId <subscriptionid>
@@ -141,7 +141,7 @@ Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/
 ## <a name="create-metric-alerts"></a>Criar métricas alertas
 Pode utilizar o `Add-AlertRule` cmdlet para criar, atualizar ou desativar uma regra de alerta.
 
-Pode criar propriedades de e-mail e webhook utilizando `New-AzureRmAlertRuleEmail` e `New-AzureRmAlertRuleWebhook`, respetivamente. O cmdlet de regra de alerta, atribuir como ações para o **ações** propriedade de regra de alerta.
+Pode criar propriedades de e-mail e webhook utilizando `New-AzureRmAlertRuleEmail` e `New-AzureRmAlertRuleWebhook`, respetivamente. O cmdlet de regra de alerta, atribuir estas propriedades como ações para o **ações** propriedade de regra de alerta.
 
 A tabela seguinte descreve os parâmetros e valores utilizados para criar um alerta utilizando uma métrica.
 
@@ -201,10 +201,10 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 Uma lista completa das opções disponíveis para `Get-AzureRmMetricDefinition` está disponível em [Get-MetricDefinitions](https://msdn.microsoft.com/library/mt282458.aspx).
 
 ## <a name="create-and-manage-autoscale-settings"></a>Criar e gerir definições de dimensionamento automático
-Um recurso, tal como uma aplicação Web, VM, o serviço em nuvem ou o conjunto de dimensionamento da Máquina Virtual pode ter apenas uma definição de dimensionamento automático configurada para ele.
+Um recurso (uma aplicação Web, VM, o serviço em nuvem ou conjunto de dimensionamento da Máquina Virtual) pode ter apenas uma definição de dimensionamento automático configurada para ele.
 No entanto, cada definição de dimensionamento automático pode ter vários perfis. Por exemplo, um para um perfil de escala com base no desempenho e um segundo para um perfil com base na agenda. Cada perfil pode ter várias regras configuradas no mesmo. Para mais informações sobre o dimensionamento automático, consulte [como uma aplicação de dimensionamento automático](../cloud-services/cloud-services-how-to-scale.md).
 
-Eis os passos que iremos utilizar:
+Eis os passos a utilizar:
 
 1. Crie Regra (s).
 2. Crie perfis mapeamento as regras que criou anteriormente para os perfis.
@@ -213,13 +213,13 @@ Eis os passos que iremos utilizar:
 
 Os exemplos seguintes mostram como pode criar uma definição de dimensionamento automático para um conjunto de dimensionamento de Máquina Virtual para um sistema operativo do Windows com base com a métrica de utilização da CPU.
 
-Em primeiro lugar, crie uma regra para escalamento, com um aumento da contagem de instâncias.
+Em primeiro lugar, crie uma regra para aumentar horizontalmente, com um aumento da contagem de instâncias.
 
 ```PowerShell
 $rule1 = New-AzureRmAutoscaleRule -MetricName "Percentage CPU" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 60 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Increase -ScaleActionValue 1
 ```        
 
-Em seguida, crie uma regra para escala-in, com um diminuir de contagem de instâncias.
+Em seguida, crie uma regra de dimensionamento, com um diminuir de contagem de instâncias.
 
 ```PowerShell
 $rule2 = New-AzureRmAutoscaleRule -MetricName "Percentage CPU" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 30 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Decrease -ScaleActionValue 1
@@ -243,7 +243,7 @@ Crie a propriedade de notificação para a definição de dimensionamento autom�
 $notification1= New-AzureRmAutoscaleNotification -CustomEmails ashwink@microsoft.com -SendEmailToSubscriptionAdministrators SendEmailToSubscriptionCoAdministrators -Webhooks $webhook_scale
 ```
 
-Por fim, crie a definição de dimensionamento automático para adicionar o perfil que criou acima.
+Por fim, crie a definição de dimensionamento automático para adicionar o perfil que criou anteriormente. 
 
 ```PowerShell
 Add-AzureRmAutoscaleSetting -Location "East US" -Name "MyScaleVMSSSetting" -ResourceGroup big2 -TargetResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -AutoscaleProfiles $profile1 -Notifications $notification1
@@ -289,7 +289,7 @@ Remove-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting
 ```
 
 ## <a name="manage-log-profiles-for-activity-log"></a>Gerir perfis de registo para o registo de atividade
-Pode criar um *registo perfil* e exportar dados do seu registo de atividade para uma conta de armazenamento e podem configurar a retenção de dados para o mesmo. Opcionalmente, também pode transmitir os dados para o Hub de eventos. Tenha em atenção que esta funcionalidade está atualmente em pré-visualização e só pode criar um perfil de registo por subscrição. Pode utilizar os seguintes cmdlets com a sua subscrição atual para criar e gerir perfis de registo. Também pode escolher uma determinada subscrição. Embora as predefinições do PowerShell na subscrição atual, pode sempre alterar esse utilizando `Set-AzureRmContext`. Pode configurar o registo de atividade para dados de rota para qualquer conta de armazenamento ou Hub de eventos dentro dessa subscrição. Dados são escritos como ficheiros do blob no formato JSON.
+Pode criar um *registo perfil* e exportar dados do seu registo de atividade para uma conta de armazenamento e podem configurar a retenção de dados para o mesmo. Opcionalmente, também pode transmitir os dados para o Hub de eventos. Esta funcionalidade está atualmente em pré-visualização e só pode criar um perfil de registo por subscrição. Pode utilizar os seguintes cmdlets com a sua subscrição atual para criar e gerir perfis de registo. Também pode escolher uma determinada subscrição. Embora as predefinições do PowerShell na subscrição atual, pode sempre alterar esse utilizando `Set-AzureRmContext`. Pode configurar o registo de atividade para dados de rota para qualquer conta de armazenamento ou Hub de eventos dentro dessa subscrição. Dados são escritos como ficheiros do blob no formato JSON.
 
 ### <a name="get-a-log-profile"></a>Obter um perfil de registo
 Para obter os seus perfis de registo existente, utilize o `Get-AzureRmLogProfile` cmdlet.
@@ -312,14 +312,19 @@ Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s
 ```
 
 ### <a name="add-log-profile-with-retention-and-eventhub"></a>Adicionar perfil de registo com retenção e EventHub
-Além do encaminhamento dados da sua conta de armazenamento, também pode transmiti-lo para um Hub de eventos. Tenha em atenção que esta versão de pré-visualização e o armazenamento a configuração da conta é obrigatória, mas a configuração do Hub de eventos é opcional.
+Além do encaminhamento dados da sua conta de armazenamento, também pode transmiti-lo para um Hub de eventos. Esta versão de pré-visualização, a configuração de conta de armazenamento é obrigatória, mas a configuração do Hub de eventos é opcional.
 
 ```PowerShell
 Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia -RetentionInDays 90
 ```
 
 ## <a name="configure-diagnostics-logs"></a>Configurar os registos de diagnóstico
-Muitos serviços do Azure fornecem registos adicionais e telemetria que pode ser configurada para guardar os dados na sua conta do Storage do Azure, enviar para os Event Hubs, e/ou enviada para uma área de trabalho de análise de registos do OMS. Essa operação só pode ser efetuada num nível de recursos e o hub de conta ou evento de armazenamento deve estar presente na mesma região que o recurso de destino em que está configurada a definição de diagnóstico.
+Muitos serviços do Azure fornecem registos adicionais e telemetria que pode fazer um ou mais dos seguintes procedimentos: 
+ - ser configurado para guardar os dados na sua conta do Storage do Azure
+ - enviados para os Event Hubs
+ - enviados para uma área de trabalho de análise de registos do OMS. 
+
+A operação só pode ser efetuada num nível de recursos. O hub de conta ou evento de armazenamento deve estar presente na mesma região que o recurso de destino em que está configurada a definição de diagnóstico.
 
 ### <a name="get-diagnostic-setting"></a>Obter a definição de diagnóstico
 ```PowerShell

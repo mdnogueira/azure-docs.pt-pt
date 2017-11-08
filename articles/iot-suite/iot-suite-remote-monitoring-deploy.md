@@ -12,11 +12,11 @@ ms.topic: article
 ms.devlang: NA
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.openlocfilehash: 1442f6ccc1d4ec349bb20d302faabd6788ff9253
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: 159397ba4fc93628acbf2bb53edf5eb88fd0cac7
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="deploy-the-remote-monitoring-preconfigured-solution"></a>Implementar a solução pré-configurada de monitorização remota
 
@@ -49,7 +49,7 @@ Antes de implementar a solução pré-configurada à sua subscrição do Azure, 
 
 1. No **solução de monitorização remota criar** página, introduza um **nome da solução** para solução pré-configurada de monitorização remota.
 
-1. Selecione um **básico** ou **padrão** implementação. Se estiver deplying a solução para saber como funciona ou para executar uma demonstração, escolha o **básico** opção para minimizar os custos.
+1. Selecione um **básico** ou **padrão** implementação. Se estiver a implementar a solução para saber como funciona ou para executar uma demonstração, escolha o **básico** opção para minimizar os custos.
 
 1. Escolha o **Java** ou **.NET** como o idioma. Todos os micro-serviços estão disponíveis como implementações de Java ou .NET.
 

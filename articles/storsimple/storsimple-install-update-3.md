@@ -12,29 +12,31 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 02/27/2017
+ms.date: 11/03/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 72b004a6c2604e0fc20b71b4b69217622f8f9ea0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2b99b9cd52dd28f7f62b5d8d5ffe32339a67f82a
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="install-update-3-on-your-storsimple-8000-series-device"></a>Instalar a atualização 3 no seu dispositivo de série 8000 do StorSimple
+
+> [!NOTE]
+> O portal clássico para StorSimple foi preterido. Os gestores de dispositivo do StorSimple será automaticamente mudada para o novo portal do Azure de acordo com a agenda de preterição. Irá receber uma mensagem de e-mail e uma notificação de movimentação do portal. Este documento também será descontinuado em breve. Para quaisquer perguntas sobre a mudança, consulte [FAQ: mover para o portal do Azure](storsimple-8000-move-azure-portal-faq.md).
+
 
 ## <a name="overview"></a>Descrição geral
 
 Este tutorial explica como instalar a atualização 3 num dispositivo StorSimple em execução uma versão anterior do software através do portal clássico do Azure e utilizar o método de correção. O método de correção é utilizado quando um gateway é configurado numa interface de rede que não sejam dados 0 do dispositivo StorSimple e está a tentar atualizar a partir de uma versão do software de 1 anterior à atualização.
 
-A atualização 3 incluem software de dispositivos, o controlador de LSI e firmware, Storport e atualizações de Spaceport. Se a atualização a partir do Update 2 ou uma versão anterior, também será necessário para aplicar a iSCSI, WMI e em certos casos, as atualizações de firmware do disco. O software de dispositivos, WMI, iSCSI, LSI controlador, Spaceport e Storport correções atualizações não acontece e podem ser aplicadas através do portal clássico do Azure. As atualizações de firmware do disco são atualizações acontece e só podem ser aplicadas através da interface do Windows PowerShell do dispositivo. 
+A atualização 3 incluem software de dispositivos, o controlador de LSI e firmware, Storport e atualizações de Spaceport. Se a atualização a partir do Update 2 ou uma versão anterior, também tem de aplicar o iSCSI, WMI e em certos casos, as atualizações de firmware do disco. O software de dispositivos, WMI, iSCSI, LSI controlador, Spaceport e Storport correções são atualizações não acontece. Estas atualizações podem ser aplicadas através do portal clássico do Azure. As atualizações de firmware do disco são atualizações acontece e só podem ser aplicadas através da interface do Windows PowerShell do dispositivo.
 
 > [!IMPORTANT]
 > * Um conjunto de pré-verificações de manuais e automáticas terminado antes da instalação para determinar o estado de funcionamento do dispositivo em termos de conectividade de rede e estado de hardware. Estas verificações prévias são efetuadas apenas se aplicar as atualizações do portal clássico do Azure.
-> * Recomendamos que instale as atualizações de software e do controlador através do portal clássico do Azure. Só deve passar para a interface do Windows PowerShell do dispositivo (para instalar atualizações) se falhar a verificação de pré-atualização de gateway no portal. Consoante a versão que está a atualizar, as atualizações poderão demorar horas 1.5 2.5 instalar. As atualizações de modo de manutenção tem de ser instaladas através da interface do Windows PowerShell do dispositivo. As atualizações de modo de manutenção acontece atualizações, estas resultará na indisponíveis para o seu dispositivo.
+> * Recomendamos que instale as atualizações de software e do controlador através do portal clássico do Azure. Aceda à interface do Windows PowerShell do dispositivo (para instalar atualizações) apenas se a verificação de pré-atualização gateway falhar no portal. Consoante a versão que está a atualizar, as atualizações poderão demorar horas 1.5 2.5 instalar. As atualizações de modo de manutenção tem de ser instaladas através da interface do Windows PowerShell do dispositivo. Como as atualizações de modo de manutenção são atualizações acontece, o dispositivo ocorrer no período de indisponibilidade.
 > * Se executar opcional Snapshot Manager do StorSimple, certifique-se de que a atualização a versão do Snapshot Manager para a atualização 2 antes de atualizar o dispositivo.
-> 
-> 
 
 [!INCLUDE [storsimple-preparing-for-update](../../includes/storsimple-preparing-for-updates.md)]
 
@@ -42,15 +44,14 @@ A atualização 3 incluem software de dispositivos, o controlador de LSI e firmw
 Execute os seguintes passos para atualizar o seu dispositivo para [atualização 3](storsimple-update3-release-notes.md).
 
 > [!NOTE]
-> Se aplicar a atualização 2 ou posterior (incluindo 2.1 de atualização), Microsoft será capaz de informações de diagnóstico adicionais do dispositivo. Como resultado, quando a nossa equipa de operações identifica dispositivos que estão a ter problemas, estamos melhor equipped recolher informações do dispositivo e diagnosticar problemas. Ao aceitar atualização 2 ou posterior, permitem-na fornecer este suporte proativa.
-> 
-> 
+> Se aplicar a atualização 2 ou posterior (incluindo 2.1 de atualização), Microsoft será capaz de informações de diagnóstico adicionais do dispositivo. Estes dados ajudam a identificar dispositivos StorSimple que estão a ter problemas e ajudas diagnosticar problemas. Ao aceitar atualização 2 ou posterior, permitem-na fornecer este suporte proativa.
+
 
 [!INCLUDE [storsimple-install-update2-via-portal](../../includes/storsimple-install-update2-via-portal.md)]
 
-Certifique-se de que o dispositivo está em execução **StorSimple 8000 série Update 3 (6.3.9600.17759)**. O **atualizado pela última vez data** também deverá ser modificado. 
-   - Se estão a atualizar a partir de uma versão antes da atualização 2, também verá que as atualizações de modo de manutenção estão disponíveis (esta mensagem poderá continuar a apresentar para até 24 horas depois de instalar as atualizações).
-     As atualizações de modo de manutenção são atualizações acontece resultam num período de indisponibilidade do dispositivo e só podem ser aplicadas através da interface do Windows PowerShell do seu dispositivo. Em alguns casos quando estiver a executar 1.2 de atualização, o firmware do disco já pode ser atualizado, caso em que não precisa de instalar quaisquer atualizações de modo de manutenção.
+Certifique-se de que o dispositivo está em execução **StorSimple 8000 série Update 3 (6.3.9600.17759)**. O **atualizado pela última vez data** está modificado. 
+   - Se estão a atualizar a partir de uma versão antes da atualização 2, verá que as atualizações de modo de manutenção estão disponíveis. Esta mensagem poderá continuar a ser apresentado até 24 horas depois de instalar as atualizações.
+     As atualizações de modo de manutenção são atualizações acontece que resultam num período de indisponibilidade do dispositivo. Estas atualizações só podem ser aplicadas através da interface do Windows PowerShell do seu dispositivo. Em alguns casos quando estiver a executar 1.2 de atualização, o firmware do disco já pode ser atualizado e não precisa de instalar quaisquer atualizações de modo de manutenção.
    - Se estiver a atualizar a partir da atualização 2 ou posterior, o dispositivo deve ser atualizado. Pode ignorar o passo seguinte.
 
 Transferir as atualizações de modo de manutenção utilizando os passos apresentados na [para transferir as correções](#to-download-hotfixes) para procurar e transferir KB3121899, as atualizações de firmware de disco instala (as atualizações de outras já devem estar instaladas por agora). Siga os passos apresentados na [instalar e certifique-se correções do modo de manutenção](#to-install-and-verify-maintenance-mode-hotfixes) para instalar o modo de manutenção de atualizações. 
