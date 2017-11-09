@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 09/23/2017
 ms.author: saurabhsensharma;markgal;
 ms.custom: 
-ms.openlocfilehash: f81f23862e783de07b5ec5aebad7f0a781168bd1
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7caf1dd3fa5ef295c2472cc11deb2895fc2a7111
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="back-up-windows-server-to-azure"></a>Faça uma Cópia de Segurança do Windows Server para o Azure
 
@@ -116,23 +116,19 @@ Utilize o agente dos serviços de recuperação do Microsoft Azure para agendar 
 
 3. Clique em **seguinte** para navegar para o **selecionar itens para cópia segurança** página.
 
-4. Clique em **adicionar itens** e na caixa de diálogo que se abre selecione **estado do sistema** e ficheiros ou pastas que pretende criar cópias de segurança. Em seguida, clique em **OK**.
+4. Clique em **adicionar itens** e na caixa de diálogo que se abre, selecione **estado do sistema** e ficheiros ou pastas que pretende criar cópias de segurança. Em seguida, clique em **OK**.
 
 5. Clique em **Seguinte**.
 
-6. No **Especificar agenda de cópia de segurança** página, especifique as horas do dia ou quando as cópias de segurança tem de ser acionado para ficheiros e pastas de semana. Agenda de cópia de segurança do Estado do sistema é automaticamente configurada. 
+6. No **Especificar agenda de cópia de segurança (estado do sistema)** página, especifique a hora do dia ou semana quando as cópias de segurança tem de ser acionado para o estado do sistema e clique em **seguinte** 
 
-    ![preparar infraestrutura](./media/tutorial-backup-windows-server-to-azure/mars-schedule-backup.png)
- 
-
-
-7.  No **selecionar política de retenção** página, selecione a política de retenção para a cópia de segurança de ficheiros e pastas. O período de retenção de cópias de segurança do Estado do sistema é automaticamente definido para 60 dias.
+7.  No **selecionar política de retenção (estado do sistema)** página, selecione a política de retenção para a cópia de segurança para o estado do sistema e clique em **seguinte**
+8. Da mesma forma, selecione a política de agendamento e de retenção de cópia de segurança de ficheiros e pastas selecionados. 
 8.  No **escolha inicial cópia de segurança tipo** página, deixe a opção **automaticamente através da rede** selecionada e, em seguida, clique em **seguinte**.
 9.  No **confirmação** página, reveja as informações e, em seguida, clique em **concluir**.
 10. Depois de o assistente ter criado a agenda da cópia de segurança, clique em **Fechar**.
 
 ## <a name="perform-an-ad-hoc-back-up"></a>Efetuar a cópia de segurança ad-hoc
-
 
 Tem de estabelecer a agenda quando executar tarefas de cópia de segurança. No entanto, não efetuou cópia de segurança do servidor. É uma prática de melhor de recuperação após desastre para executar uma cópia de segurança a pedido para se certificar de resiliência de dados para o servidor.
 
@@ -140,8 +136,9 @@ Tem de estabelecer a agenda quando executar tarefas de cópia de segurança. No 
 
     ![preparar infraestrutura](./media/tutorial-backup-windows-server-to-azure/mars-schedule-backup.png)
 
-2.  No **confirmação** , reveja as definições que o **cópia de segurança agora** utiliza o Assistente para fazer uma cópia de segurança do servidor. Em seguida, clique em **Efetuar Cópia de Segurança**.
-3.  Clique em **Fechar** para fechar o assistente. Se fechar o assistente antes do cópia de segurança de processo de conclusão, o assistente continua em execução em segundo plano.
+2.  No **cópia de segurança agora** um assistente, selecione de **ficheiros e pastas** ou **estado do sistema** que pretende criar cópias de segurança e clique em **seguinte** 
+3. No **confirmação** , reveja as definições que o **cópia de segurança agora** utiliza o Assistente para fazer uma cópia de segurança do servidor. Em seguida, clique em **Efetuar Cópia de Segurança**.
+4.  Clique em **Fechar** para fechar o assistente. Se fechar o assistente antes do cópia de segurança de processo de conclusão, o assistente continua em execução em segundo plano.
 4.  Uma vez concluída a cópia de segurança inicial, **tarefa foi concluída** estado é apresentado no **tarefas** painel da consola de agente MARS.
 
 

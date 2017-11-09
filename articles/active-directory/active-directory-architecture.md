@@ -12,18 +12,18 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/31/2017
+ms.date: 11/08/2017
 ms.author: markvi
-ms.openlocfilehash: 3030336f5efca5029e0e790372495df11cdc8aeb
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: fa25f0435df79a78d39e8f89d702d3b64db79d65
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="understand-azure-active-directory-architecture"></a>Compreender a arquitetura do Azure Active Directory
-O Azure Active Directory (Azure AD) permite-lhe gerir de forma segura o acesso dos seus utilizadores aos serviços e recursos do Azure. Incluído com o Azure AD está um conjunto completo de capacidades de gestão de identidades. Para obter informações sobre as funcionalidades do Azure AD, veja [What is Azure Active Directory?](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) (O que é o Azure Active Directory?)
+O Azure Active Directory (Azure AD) permite-lhe gerir de forma segura o acesso dos seus utilizadores aos serviços e recursos do Azure. Incluído com o Azure AD está um conjunto completo de capacidades de gestão de identidades. Para obter informações sobre as funcionalidades do Azure AD, veja [What is Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) (O que é o Azure Active Directory?)
 
-Com o Azure AD, pode criar e gerir utilizadores e grupos e ativar permissões para permitir e recusar o acesso a recursos empresariais. Para obter informações sobre a gestão de identidades, veja [The fundamentals of Azure identity management](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals-identity) (Noções básicas da gestão de identidades do Azure).
+Com o Azure AD, pode criar e gerir utilizadores e grupos e ativar permissões para permitir e recusar o acesso a recursos empresariais. Para obter informações sobre a gestão de identidades, veja [The fundamentals of Azure identity management](https://docs.microsoft.com/azure/active-directory/fundamentals-identity) (Noções Básicas da gestão de identidades do Azure).
 
 ## <a name="azure-ad-architecture"></a>Arquitetura do Azure AD
 A arquitetura geograficamente distribuída do Azure AD combina extensas capacidades de monitorização, redirecionamento automatizado, ativação pós-falha e recuperação, o que nos permite proporcionar aos nossos clientes disponibilidade e desempenho de nível empresarial.
@@ -79,7 +79,7 @@ O Azure AD mantém um [Objetivo de Tempo de Recuperação (RTO)](https://en.wiki
 
 ### <a name="data-centers"></a>Datacenters
 
-As réplicas do Azure AD são armazenadas nos datacenters localizados em todo o mundo. Para obter mais informações, veja [Datacenters do Azure](https://azure.microsoft.com/en-us/overview/datacenters).
+As réplicas do Azure AD são armazenadas nos datacenters localizados em todo o mundo. Para obter mais informações, veja [Datacenters do Azure](https://azure.microsoft.com/overview/datacenters).
 
 O Azure AD funciona em datacenters que têm as características seguintes:
 
@@ -113,8 +113,8 @@ Se um serviço do Azure AD não estiver a funcionar como o esperado, tomamos med
 
 **Operações seguras**
 
-Empregamos controlos operacionais, como a autenticação multifator (MFA), em qualquer operação, bem como auditoria de todas as operações. Além disso, utilizamos um sistema de elevação just-in-time para conceder o acesso temporário necessário a qualquer tarefa a pedido operacional de forma contínua. Para obter mais informações, veja [A Cloud de Confiança](https://azure.microsoft.com/en-us/support/trust-center).
+Empregamos controlos operacionais, como a autenticação multifator (MFA), em qualquer operação, bem como auditoria de todas as operações. Além disso, utilizamos um sistema de elevação just-in-time para conceder o acesso temporário necessário a qualquer tarefa a pedido operacional de forma contínua. Para obter mais informações, veja [A Cloud Fidedigna](https://azure.microsoft.com/support/trust-center).
 
 ## <a name="next-steps"></a>Passos seguintes
-[Guia para programadores do Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-developers-guide)
+[Guia para programadores do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)
 

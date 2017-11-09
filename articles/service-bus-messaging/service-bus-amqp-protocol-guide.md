@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/07/2017
+ms.date: 11/08/2017
 ms.author: clemensv;hillaryc;sethm
-ms.openlocfilehash: 2ef07d78a9d81fac933f2c3359e9ee48f86e6790
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4e1fa9db3b4801103069163c55a9b342a27d00ac
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # AMQP 1.0 no guia de protocolo do Service Bus do Azure e do Event Hubs
 
@@ -32,7 +32,7 @@ Este artigo resumidamente resume os conceitos principais do AMQP 1.0 mensagens e
 
 O objetivo é para qualquer programador utilizando qualquer pilha de cliente AMQP 1.0 existente em qualquer plataforma ser capazes de interagir com o Azure Service Bus através de AMQP 1.0.
 
-Comuns pilhas AMQP 1.0 para fins gerais, tais como o Apache Proton ou AMQP.NET Lite, já implementam todos os gestos de núcleos AMQP 1.0. Esses gestos básico, por vezes, são moldados com uma API de nível mais elevada; Apache Proton mesmo oferece dois, a API do Messenger imperativo e a API de Reactor reativa.
+Comuns pilhas AMQP 1.0 para fins gerais, tais como o Apache Proton ou AMQP.NET Lite, já implementam todos os protocolos de núcleos AMQP 1.0. Esses gestos básico, por vezes, são moldados com uma API de nível mais elevada; Apache Proton mesmo oferece dois, a API do Messenger imperativo e a API de Reactor reativa.
 
 No debate seguinte, vamos partem do princípio de que a gestão de ligações, sessões e ligações AMQP e o processamento de moldura transferências e controlo de fluxo são processadas pela pilha de respetiva (como o Apache Proton-C) e não necessitam de atenção muito se qualquer específica aos programadores de aplicações. Modo abstrato presumimos a existência de alguns API primitivos como a capacidade para ligar e criar alguma forma de *remetente* e *recetor* objetos de abstração, que depois de ter alguma forma de `send()` e `receive()` operações, respetivamente.
 
@@ -238,13 +238,13 @@ As secções seguintes explicam as propriedades das secções de mensagem AMQP s
 Esta secção abrange as capacidades avançadas do Service Bus do Azure que são baseadas em extensões de rascunho para AMQP, atualmente a ser desenvolvidas no AD técnica OASIS para AMQP. Barramento de serviço implementa as versões mais recentes destes rascunhos e adopts alterações introduzidas como esses rascunhos alcancem estado padrão.
 
 > [!NOTE]
-> Mensagens do Service Bus são suportadas operações avançadas através de um padrão de pedido/resposta. Os detalhes destas operações são descritos no documento [AMQP 1.0 no Service Bus: operações de pedido-resposta baseados em](service-bus-amqp-request-response.md).
+> Mensagens do Service Bus são suportadas operações avançadas através de um padrão de pedido/resposta. Os detalhes destas operações são descritos no artigo [AMQP 1.0 no Service Bus: operações de pedido-resposta baseados em](service-bus-amqp-request-response.md).
 > 
 > 
 
 ### Gestão de AMQP
 
-A especificação de gestão AMQP é o primeiro as extensões de rascunho abordados aqui. Esta especificação define um conjunto de protocolo gestos em camadas sobre o protocolo AMQP que permite interações de gestão com a infraestrutura de mensagens através de AMQP. A especificação define operações genéricas como *criar*, *ler*, *atualizar*, e *eliminar* para a gestão de entidades no interior de uma infraestrutura de mensagens e um conjunto de operações de consulta.
+A especificação de gestão AMQP é o primeiro as extensões de rascunho abordadas neste artigo. Esta especificação define um conjunto de protocolos em camadas sobre o protocolo AMQP que permite interações de gestão com a infraestrutura de mensagens através de AMQP. A especificação define operações genéricas como *criar*, *ler*, *atualizar*, e *eliminar* para a gestão de entidades no interior de uma infraestrutura de mensagens e um conjunto de operações de consulta.
 
 Todas essas gestos exigem a interação entre o cliente e a infraestrutura de mensagens para um pedido/resposta e, por conseguinte, a especificação define como modelo padrão que interação em cima AMQP: o cliente liga-se para a infraestrutura de mensagens, inicia uma sessão e, em seguida, cria um par de ligações. Uma ligação, o cliente funciona como remetente no outro atua como recetor, assim, criar um par de ligações que podem atuar como um canal bidirecional.
 

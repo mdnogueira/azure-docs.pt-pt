@@ -3,7 +3,7 @@ title: "Extensões de máquina virtual e funcionalidades do Linux | Microsoft Do
 description: "Saiba que extensões estão disponíveis para máquinas virtuais do Azure, agrupadas por que forneça ou melhorar."
 services: virtual-machines-linux
 documentationcenter: 
-author: neilpeterson
+author: danielsollondon
 manager: timlt
 editor: 
 tags: azure-service-management,azure-resource-manager
@@ -14,12 +14,12 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
-ms.author: nepeters
-ms.openlocfilehash: 8a5b39351f665c51ae7d83f755329e54ff3cf786
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: danis
+ms.openlocfilehash: 59f718e0e547ed9374152985e706acad4421b35b
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Extensões de máquina virtual e funcionalidades para Linux
 

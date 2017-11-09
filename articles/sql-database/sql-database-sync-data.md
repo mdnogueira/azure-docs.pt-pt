@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 06/27/2017
 ms.author: douglasl
 ms.reviewer: douglasl
-ms.openlocfilehash: c53eabfeb9ee1a7c50340bbfc65674b478068c75
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 5c4509bc1d05bc422f6bc5599d4635020ded63e9
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/08/2017
 ---
-# <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados do SQL Server
+# <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-azure-sql-data-sync-preview"></a>Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados de SQL do Azure (pré-visualização)
 
 Sincronização de dados do SQL Server é um serviço incorporado numa base de dados do SQL do Azure que permite-lhe sincronizar os dados que selecionar bidirecional entre várias bases de dados SQL e instâncias do SQL Server.
 
@@ -44,7 +44,7 @@ Sincronização de dados utiliza uma topologia hub- and -spoke para sincronizar 
 -   O **base de dados de sincronização** contém os metadados e o registo de sincronização de dados. A base de dados de sincronização tem de ser que uma base de dados do SQL do Azure localizado na mesma região que a base de dados do Hub. A base de dados de sincronização é criado de cliente e cliente pertencentes à empresa.
 
 > [!NOTE]
-> Se estiver a utilizar uma base de dados no local, terá de [configura um agente local.](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-get-started-sql-data-sync)
+> Se estiver a utilizar uma base de dados no local, terá de [configura um agente local.](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-sql-data-sync)
 
 ![Sincronizar os dados entre bases de dados](media/sql-database-sync-data/sync-data-overview.png)
 
@@ -115,7 +115,7 @@ Depois de exportar uma base de dados como um `.bacpac` de ficheiros e importar o
 
 -   Os nomes dos objetos (bases de dados, tabelas e colunas) não podem conter o período de caracteres imprimíveis (.), à esquerda parêntesis Reto ([), ou Reto direito square (]).
 
--   Isolamento do instantâneo tem de estar ativado. Para obter mais informações, consulte [isolamento do instantâneo no SQL Server](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
+-   Isolamento do instantâneo tem de estar ativado. Para obter mais informações, consulte [isolamento do instantâneo no SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
 
 ### <a name="general-considerations"></a>Considerações gerais
 
@@ -155,7 +155,9 @@ Sincronização de dados utiliza insere, atualizar e eliminar acionadores para c
 
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
--   [Introdução à sincronização de dados do SQL Server](sql-database-get-started-sql-data-sync.md)
+-   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
+-   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
 
 -   Conclua os exemplos do PowerShell que mostram como configurar a sincronização de dados do SQL Server:
     -   [Utilizar o PowerShell para sincronizar entre várias bases de dados SQL do Azure](scripts/sql-database-sync-data-between-sql-databases.md)
@@ -166,5 +168,4 @@ Para obter mais informações sobre a sincronização de dados do SQL Server, co
 Para obter mais informações sobre a base de dados SQL, consulte:
 
 -   [Descrição geral da base de dados do SQL Server](sql-database-technical-overview.md)
-
 -   [Gestão de ciclo de vida de base de dados](https://msdn.microsoft.com/library/jj907294.aspx)

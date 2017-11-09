@@ -15,15 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/03/17
 ms.author: cynthn
-ms.openlocfilehash: d7c9740f1866fdccb83be29a7ac335ff0a2e9407
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: 54548ff2e8b881030bdbee3511b7ac13ddf67d99
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="create-a-custom-virtual-machine-running-windows-using-the-classic-deployment-model"></a>Criar uma máquina virtual personalizada com o Windows utilizando o modelo de implementação clássica
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager.
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 

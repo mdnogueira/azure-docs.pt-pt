@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 10/24/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 3cf0007f09c40fbccf58fbaee32df7be9bb2fa1a
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 22aa6c82aec7b8f6a16131878943fadd7762c1c0
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="deploy-and-use-azure-container-registry"></a>Implementar e utilizar o registo de contentor do Azure
 
@@ -60,7 +60,7 @@ Em todo o resto deste tutorial, utilizamos `<acrname>` como um marcador de posi�
 
 ## <a name="container-registry-login"></a>Início de sessão de registo de contentor
 
-Utilize o [início de sessão do az acr](https://docs.microsoft.com/en-us/cli/azure/acr#az_acr_login) comando para iniciar sessão para a instância ACR. Tem de fornecer o nome exclusivo especificado no registo do contentor quando foi criado.
+Utilize o [início de sessão do az acr](https://docs.microsoft.com/cli/azure/acr#az_acr_login) comando para iniciar sessão para a instância ACR. Tem de fornecer o nome exclusivo especificado no registo do contentor quando foi criado.
 
 ```azurecli
 az acr login --name <acrName>

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: On Demand
 ms.date: 10/11/2017
 ms.author: carlrab
-ms.openlocfilehash: 3bd39b9a63cd4a18eabee3d1737daac56b3e37df
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 469db4f3faf12cbd778f18b7bc74ec6b86b412c7
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="create-and-manage-azure-sql-database-servers-and-databases"></a>Criar e gerir servidores SQL Database do Azure e as bases de dados
 
@@ -35,7 +35,7 @@ Pode ser uma base de dados SQL do Azure:
 - Parte de um conjunto de bases de dados que participam num [padrão de estrutura de SaaS multi-inquilino](sql-database-design-patterns-multi-tenancy-saas-applications.md), e cujas bases de dados podem ser individuais ou agrupadas (ou ambas) 
 
 > [!TIP]
-> Para nomes de bases de dados válidos, veja [Database Identifiers](https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-identifiers) (Identificadores de Bases de Dados). 
+> Para nomes de bases de dados válidos, veja [Database Identifiers](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) (Identificadores de Bases de Dados). 
 >
  
 - O agrupamento de base de dados predefinido utilizado pela Base de Dados SQL do Microsoft Azure é **SQL_LATIN1_GENERAL_CP1_CI_AS**, onde **LATIN1_GENERAL** é inglês (Estados Unidos), **CP1** é o código de página 1252, **CI** é sensível a maiúsculas e minúsculas e **AS** é sensível a acentos. Para obter mais informações sobre como definir o agrupamento, veja [COLLATE (Transact-SQL)](https://msdn.microsoft.com/library/ms184391.aspx).
@@ -126,7 +126,7 @@ Para criar e gerir o servidor SQL do Azure, as bases de dados e firewalls com o 
 |[Novo-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)|Cria um grupo de recursos]
 |[Novo AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver)|Cria um servidor|
 |[Get AzureRmSqlServer](/powershell/module/azurerm.sql/get-azurermsqlserver)|Devolve informações sobre servidores|
-|[Conjunto AzureRmSqlServer](https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlserver)|Modifica as propriedades de um servidor|
+|[Conjunto AzureRmSqlServer](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqlserver)|Modifica as propriedades de um servidor|
 |[Remover AzureRmSqlServer](/powershell/module/azurerm.sql/remove-azurermsqlserver)|Remove um servidor|
 |[New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule)|Cria uma regra de firewall ao nível do servidor |
 |[Get-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/get-azurermsqlserverfirewallrule)|Obtém as regras de firewall para um servidor|

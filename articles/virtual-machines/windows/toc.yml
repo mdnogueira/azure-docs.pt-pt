@@ -380,6 +380,8 @@
           href: how-to-use-perfInsights.md
         - name: Extensão de VM de Diagnóstico de Desempenho
           href: performance-diagnostics-vm-extension.md
+        - name: Utilizar a virtualização aninhada
+          href: troubleshoot-vm-by-use-nested-virtualization.md
 - name: Referência
   items:
     - name: CLI do Azure

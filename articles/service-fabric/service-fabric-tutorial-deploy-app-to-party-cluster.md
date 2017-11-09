@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 08/09/2017
 ms.author: mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 5766ef2097b0da295d42e7c5909efc524049f418
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d7496b0578301713ebae7381e9a54642e226eb96
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="deploy-an-application-to-a-party-cluster-in-azure"></a>Implementar uma aplicação para um Cluster de terceiros no Azure
 Este tutorial é parte dois de uma série e mostra-lhe como implementar uma aplicação de Service Fabric do Azure para um Cluster de terceiros no Azure.
@@ -58,24 +58,6 @@ Pode utilizar o seu próprio cluster em vez do Cluster de terceiros, se pretende
 
 > [!NOTE]
 > Não são protegidos clusters intervenientes, para que as suas aplicações e dados que colocar nas mesmas podem ser visíveis para outros utilizadores. Não implementa qualquer coisa que não pretende que os outros possam ver. Não se esqueça de ler sobre nossos termos de utilização para todos os detalhes.
-
-## <a name="configure-the-listening-port"></a>Configurar a porta de escuta
-Quando o serviço de front-end VotingWeb é criado, o Visual Studio seleciona aleatoriamente uma porta para o serviço de escuta no.  O serviço de VotingWeb atua como o front-end para esta aplicação e aceita o tráfego externo, por isso, vamos vincular que o serviço para fixa e conhecer bem porta. No Explorador de soluções, abra *VotingWeb/PackageRoot/ServiceManifest.xml*.  Localizar o **Endpoint** recurso no **recursos** secção e altere o **porta** valor a 80.
-
-```xml
-<Resources>
-    <Endpoints>
-      <!-- This endpoint is used by the communication listener to obtain the port on which to 
-           listen. Please note that if your service is partitioned, this port is shared with 
-           replicas of different partitions that are placed in your code. -->
-      <Endpoint Protocol="http" Name="ServiceEndpoint" Type="Input" Port="80" />
-    </Endpoints>
-  </Resources>
-```
-
-Também de atualizar o valor da propriedade URL da aplicação no projeto de voto, para que um web browser abre-se para a porta correta quando depurar a utilizar 'F5'.  No Explorador de soluções, selecione o **voto** projeto e atualize o **URL da aplicação** propriedade.
-
-![URL da aplicação](./media/service-fabric-tutorial-deploy-app-to-party-cluster/application-url.png)
 
 ## <a name="deploy-the-app-to-the-azure"></a>Implementar a aplicação do Azure
 Agora que a aplicação esteja pronta, pode implementá-la para o Cluster de terceiros direta a partir do Visual Studio.

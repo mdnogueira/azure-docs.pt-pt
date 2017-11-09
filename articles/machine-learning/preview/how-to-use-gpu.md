@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: 7c0dab5ab2d7342ce4de8899040478a6143c184b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2501113fe75f20602059927a4e0a50cecd86b187
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="how-to-use-gpu-in-azure-machine-learning"></a>Como utilizar GPU no Azure Machine Learning
 Unidade de processamento gráfico (GPU) em grande escala é utilizada para processar tarefas viáveis intensivas que, normalmente, podem acontecer quando se prepara determinados modelos de rede neuronal profundo. Ao utilizar GPUs, pode reduzir o tempo de preparação dos modelos significativamente. Neste documento, irá aprender a configurar o Azure ML Workbench utilizar [DSVM (máquina de Virtual de ciência de dados)](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/overview) equipados com GPUs como destino de execução. 
@@ -116,7 +116,7 @@ dependencies:
   - python=3.5.2
   - pip: 
     # use the Linux build of Microsoft Cognitive Toolkit 2.1 with GPU support
-    - https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-win_amd64.whl
+    - https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-linux_x86_64.whl
 ```
 
 Também pode utilizar a versão de bits SGD 1 do Toolkit cognitivos Microsoft que fornece melhorias de desempenho em GPU de várias VMs. Tenha em atenção [o requisito de licença para 1 bit-SGD](https://docs.microsoft.com/en-us/cognitive-toolkit/cntk-1bit-sgd-license).

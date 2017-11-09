@@ -29,12 +29,15 @@
       href: concepts-service.md
     - name: Conceitos de segurança
       href: concepts-security.md
+    - name: Segurança
 - name: Guias de procedimentos
   items:
     - name: Gerir inscrições de dispositivos
       href: how-to-manage-enrollments.md
     - name: Utilizar o HSM com o SDK
       href: use-hsm-with-sdk.md
+    - name: Controlar o acesso ao Serviço de Aprovisionamento
+      href: how-to-control-access.md
 - name: Referência
   items:
     - name: REST

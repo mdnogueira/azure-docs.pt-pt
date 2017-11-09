@@ -15,16 +15,17 @@ ms.devlang: python
 ms.topic: article
 ms.date: 05/31/2017
 ms.author: huvalo
-ms.openlocfilehash: 283a296fb39863c2801be1093cc4f56904786abd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 01fa162d41e03e29f3b6f0ca128e7cc49aa91abb
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="django-hello-world-web-app-on-a-windows-server-vm"></a>Aplicação de web Django Olá, mundo numa VM do Windows
 
 > [!IMPORTANT] 
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [do Azure Resource Manager e o modelo de implementação clássica](../../../resource-manager-deployment-model.md). Este artigo descreve o modelo de implementação clássica. Recomendamos que as implementações mais novas utilizem o modelo do Resource Manager.
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 Este tutorial mostra como alojar um Web site baseado em Django no Windows Server em Azure Virtual Machines. O tutorial, partimos sem experiência anterior com o Azure. Quando concluir o tutorial, pode ter uma aplicação Django com base em cópia de segurança e em execução na nuvem.
 

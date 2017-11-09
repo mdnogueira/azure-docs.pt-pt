@@ -13,13 +13,13 @@ ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: quickstart
-ms.date: 01/26/2017
-ms.author: elbutter;barbkess
-ms.openlocfilehash: 39efa954fa1eb3d7d93dbeceac48b96d865349ab
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/06/2017
+ms.author: elbutter
+ms.openlocfilehash: 791990b6c544a416fc73bea69dc884e0b49d088e
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="get-started-with-sql-data-warehouse"></a>Introdução ao SQL Data Warehouse
 
@@ -198,7 +198,7 @@ Está agora pronto para carregar dados para o seu armazém de dados. Este passo 
     WITH
     (
         TYPE = Hadoop,
-        LOCATION = 'wasbs://2013@nytpublic.blob.core.windows.net/'
+        LOCATION = 'wasbs://2013@nytaxiblob.blob.core.windows.net/'
     );
     ```
 
@@ -239,7 +239,7 @@ Está agora pronto para carregar dados para o seu armazém de dados. Este passo 
     ```
 5. Crie as tabelas externas. Estas tabelas referenciam dados armazenados no Armazenamento de Blobs do Azure. Execute os comandos T-SQL seguintes para criar várias tabelas externas que apontem para o blob do Azure que definimos anteriormente na origem de dados externa.
 
-```sql
+  ```sql
     CREATE EXTERNAL TABLE [ext].[Date] 
     (
         [DateID] int NOT NULL,
@@ -405,14 +405,14 @@ Está agora pronto para carregar dados para o seu armazém de dados. Este passo 
     )
     WITH
     (
-        LOCATION = 'Weather2013',
+        LOCATION = 'Weather',
         DATA_SOURCE = NYTPublic,
         FILE_FORMAT = uncompressedcsv,
         REJECT_TYPE = value,
         REJECT_VALUE = 0
     )
     ;
-```
+  ```
 
 ### <a name="import-the-data-from-azure-blob-storage"></a>Importe os dados do armazenamento de blobs do Azure.
 
@@ -430,7 +430,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     AS SELECT * FROM [ext].[Date]
     OPTION (LABEL = 'CTAS : Load [dbo].[Date]')
     ;
-    
+
     CREATE TABLE [dbo].[Geography]
     WITH
     ( 
@@ -441,7 +441,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     SELECT * FROM [ext].[Geography]
     OPTION (LABEL = 'CTAS : Load [dbo].[Geography]')
     ;
-    
+
     CREATE TABLE [dbo].[HackneyLicense]
     WITH
     ( 
@@ -451,7 +451,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     AS SELECT * FROM [ext].[HackneyLicense]
     OPTION (LABEL = 'CTAS : Load [dbo].[HackneyLicense]')
     ;
-    
+
     CREATE TABLE [dbo].[Medallion]
     WITH
     (
@@ -461,7 +461,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     AS SELECT * FROM [ext].[Medallion]
     OPTION (LABEL = 'CTAS : Load [dbo].[Medallion]')
     ;
-    
+
     CREATE TABLE [dbo].[Time]
     WITH
     (
@@ -471,7 +471,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     AS SELECT * FROM [ext].[Time]
     OPTION (LABEL = 'CTAS : Load [dbo].[Time]')
     ;
-    
+
     CREATE TABLE [dbo].[Weather]
     WITH
     ( 
@@ -481,7 +481,7 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     AS SELECT * FROM [ext].[Weather]
     OPTION (LABEL = 'CTAS : Load [dbo].[Weather]')
     ;
-    
+
     CREATE TABLE [dbo].[Trip]
     WITH
     (
@@ -495,9 +495,9 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
 
 2. Veja os dados à medida que são carregados.
 
-   Está a carregar vários GBs de dados e a comprimi-los em Índices columnstore em cluster de elevado desempenho. Execute a seguinte consulta que utiliza vistas de gestão dinâmica (DMVs) para mostrar o estado do carregamento. Depois de iniciar a consulta, agarre num café e num snack enquanto o SQL Data Warehouse faz alguns carregamentos pesados.
-    
-    ```sql
+  Está a carregar vários GBs de dados e a comprimi-los em Índices columnstore em cluster de elevado desempenho. Execute a seguinte consulta que utiliza vistas de gestão dinâmica (DMVs) para mostrar o estado do carregamento. Depois de iniciar a consulta, agarre num café e num snack enquanto o SQL Data Warehouse faz alguns carregamentos pesados.
+
+  ```sql
     SELECT
         r.command,
         s.request_id,
@@ -523,7 +523,8 @@ O SQL Data Warehouse suporta uma instrução de chave denominada CREATE TABLE AS
     ORDER BY
         nbr_files desc, 
         gb_processed desc;
-    ```
+  ```
+
 
 3. Veja todas as consultas de sistema.
 
@@ -563,7 +564,7 @@ Primeiro, vamos reduzir para 100 DWUs, para termos uma ideia de como o nó de co
     > [!NOTE]
     > Não é possível executar consultas ao alterar o dimensionamento. O dimensionamento **termina** as consultas atualmente em execução. Pode reiniciá-las quando a operação estiver concluída.
     >
-    
+
 5. Faça uma operação de análise aos dados das viagens, selecionando o primeiro milhão de entradas de todas as colunas. Se quiser avançar mais depressa, pode selecionar menos linhas. Aponte o tempo que a execução desta operação demorou.
 
     ```sql
@@ -626,11 +627,11 @@ Primeiro, vamos reduzir para 100 DWUs, para termos uma ideia de como o nó de co
 
     > [!NOTE]
     > O SQL DW não gere as estatísticas automaticamente por si. Estas são importantes para o desempenho da consulta e é vivamente recomendado que as crie e atualize.
-    > 
+    >
     > **Vai beneficiar mais com estatísticas em colunas envolvidas em associações, colunas utilizadas na cláusula WHERE e colunas que se encontram em GROUP BY.**
     >
 
-3. Execute novamente a consulta dos Pré-requisitos e repare nas diferenças no desempenho. Embora as diferenças no desempenho da consulta não sejam tão significativas como no aumento vertical, deverá notar uma aceleração. 
+4. Execute novamente a consulta dos Pré-requisitos e repare nas diferenças no desempenho. Embora as diferenças no desempenho da consulta não sejam tão significativas como no aumento vertical, deverá notar uma aceleração. 
 
 ## <a name="next-steps"></a>Passos seguintes
 

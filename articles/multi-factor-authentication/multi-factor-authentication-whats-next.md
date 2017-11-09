@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/02/2017
 ms.author: joflore
 ms.reviewer: alexwe
-ms.openlocfilehash: 8ff991ffb05bb92f047cc8dfc40e80b704379898
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.openlocfilehash: 723bd7135a59bcc0bce648460f871a841a684d3c
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="configure-azure-multi-factor-authentication-settings---public-preview"></a>Configurar definições de multi-factor Authentication do Azure - pré-visualização pública
 
@@ -29,6 +29,7 @@ Este artigo ajuda-o a gerir o Azure multi-factor Authentication agora que já es
 
 | Funcionalidade | Descrição | 
 |:--- |:--- |
+| [Bloquear/desbloquear utilizadores](#block/unblock-users) |Bloquear/desbloquear utilizadores podem impedir os utilizadores de receber pedidos de autenticação. |
 | [Alerta de fraude](#fraud-alert) |Alerta de fraude pode ser configurada e configurar para que os utilizadores podem comunicar fraudulenta tenta aceder aos respetivos recursos. |
 | [Omissão de uso individual](#one-time-bypass) |Uma omissão de uso individual permite ao utilizador autenticar uma única vez, "Ignorar" multi-factor authentication. |
 | [Mensagens de voz personalizadas](#custom-voice-messages) |Mensagens de voz personalizadas permitem-lhe utilizar as suas próprias gravações ou saudações com multi-factor authentication. |
@@ -37,6 +38,23 @@ Este artigo ajuda-o a gerir o Azure multi-factor Authentication agora que já es
 | [Palavras-passe de aplicação](#app-passwords) |Uma palavra-passe de aplicação permite que uma aplicação que não seja MFA com suporte para ignorar a multi-factor authentication e continuar a trabalhar. |
 | [Lembre-se de multi-factor Authentication para browsers e dispositivos memorizados](#remember-multi-factor-authentication-for-devices-that-users-trust) |Permite-lhe não se esqueça de dispositivos para um número definido de dias após um utilizador tiver sessão com êxito através do MFA. |
 | [Métodos de verificação selecionável](#selectable-verification-methods) |Permite-lhe escolher os métodos de autenticação que estão disponíveis para os utilizadores utilizem. |
+
+## <a name="blockunblock-users"></a>Bloquear/desbloquear utilizadores
+Bloquear/desbloquear utilizadores podem ser utilizados para impedir que os utilizadores receber pedidos de autenticação. Quaisquer tentativas de autenticação para utilizadores bloqueados serão rejeitadas automaticamente. Utilizadores bloqueados irão permanecer bloqueados para 90 dias desde o momento em estão bloqueados.
+
+### <a name="block-a-user"></a>Bloquear um utilizador
+1. Inicie sessão no [portal do Azure](https://portal.azure.com) como administrador.
+2. Navegue para **do Azure Active Directory** > **servidor MFA** > **bloquear/desbloquear utilizadores**.
+3. Clique em **adicionar** para bloquear um utilizador.
+4. Selecione o **grupo de replicação**, introduza o nome de utilizador bloqueado como  **username@domain.com** e introduza um comentário no **razão** campo.
+5. Clique em **adicionar** para concluir a bloquear o utilizador.
+
+### <a name="unblock-a-user"></a>Desbloquear um utilizador
+1. Inicie sessão no [portal do Azure](https://portal.azure.com) como administrador.
+2. Navegue para **do Azure Active Directory** > **servidor MFA** > **bloquear/desbloquear utilizadores**.
+3. Clique em **desbloqueio** no **ação** coluna junto ao utilizador que pretende desbloquear.
+4. Introduza um comentário no **pelo motivo para desbloquear** campo.
+5. Clique em **desbloqueio** para concluir a desbloquear o utilizador.
 
 ## <a name="fraud-alert"></a>Alerta de fraude
 Alerta de fraude pode ser configurada e configurar para que os utilizadores podem comunicar fraudulenta tenta aceder aos respetivos recursos.  Os utilizadores podem comunicar fraude com a aplicação móvel ou através do seu telefone.

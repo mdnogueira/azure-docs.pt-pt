@@ -8,15 +8,17 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: 6101dfa4bc74acf5045975f6513886fa135fe833
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 7492fffd1c18a149ef12174c79d64b47afbaa3e4
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/08/2017
 ---
-# <a name="best-practices-for-sql-data-sync"></a>Melhores práticas para a sincronização de dados do SQL Server 
+# <a name="best-practices-for-azure-sql-data-sync-preview"></a>Melhores práticas para a sincronização de dados de SQL do Azure (pré-visualização) 
 
 Este artigo descreve as melhores práticas para a sincronização de dados do SQL Server (pré-visualização).
+
+Para obter uma descrição geral da sincronização de dados do SQL Server, consulte [sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados de SQL do Azure (pré-visualização)](sql-database-sync-data.md).
 
 ## <a name="security-and-reliability"></a>Segurança e fiabilidade
 
@@ -221,3 +223,21 @@ Não tente remover uma base de dados de um grupo de sincronização e, em seguid
 Em primeiro lugar, remova uma base de dados de um grupo de sincronização. Em seguida, implementar a alteração e aguarde aprovisionamento automatizados. para concluir. Depois de concluída a esta operação, pode editar o grupo de sincronização e implementar as alterações.
 
 Se tentar remover uma base de dados e, em seguida, edite um grupo de sincronização sem a implementar primeiro as alterações, um ou a outra operação falha e pode obter a interface de portal num estado inconsistente. Neste caso, pode atualizar a página para restaurar o estado correto.
+
+## <a name="next-steps"></a>Passos seguintes
+Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
+
+-   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
+-   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
+
+-   Conclua os exemplos do PowerShell que mostram como configurar a sincronização de dados do SQL Server:
+    -   [Utilizar o PowerShell para sincronizar entre várias bases de dados SQL do Azure](scripts/sql-database-sync-data-between-sql-databases.md)
+    -   [Utilizar o PowerShell para sincronizar entre uma base de dados do SQL do Azure e uma base de dados do SQL Server no local](scripts/sql-database-sync-data-between-azure-onprem.md)
+
+-   [Transferir a documentação da API de REST de sincronização de dados SQL](https://github.com/Microsoft/sql-server-samples/raw/master/samples/features/sql-data-sync/Data_Sync_Preview_REST_API.pdf?raw=true)
+
+Para obter mais informações sobre a base de dados SQL, consulte:
+
+-   [Descrição geral da base de dados do SQL Server](sql-database-technical-overview.md)
+-   [Gestão de ciclo de vida de base de dados](https://msdn.microsoft.com/library/jj907294.aspx)

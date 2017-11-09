@@ -15,15 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2017
 ms.author: cynthn
-ms.openlocfilehash: 6032263848c469ce2f416306e5c91c29f4cb30e4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6fa6d3099d8427a186e6095fdcbbc327d1acab7f
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="capture-an-image-of-an-azure-windows-virtual-machine-created-with-the-classic-deployment-model"></a>Capturar uma imagem de uma máquina virtual do Windows no Azure criada com o modelo de implementação clássica.
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager. Para informações de modelo do Resource Manager, consulte [capturar uma imagem gerida de uma VM no Azure generalizada](../capture-image-resource.md).
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 Este artigo mostra como capturar uma máquina virtual do Azure a executar o Windows, para que possa utilizar como uma imagem para criar outras máquinas virtuais. Esta imagem inclui o disco de sistema operativo e qualquer discos de dados que estão anexados à máquina virtual. Não inclui as configurações de rede, pelo que terá de configurar as configurações de rede quando cria as outras máquinas virtuais que utilizam a imagem.
 

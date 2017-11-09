@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/05/2017
+ms.date: 11/08/2017
 ms.author: tomfitz
-ms.openlocfilehash: 8b90885583c411e5b1e513188a636fe54ec74b7b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2b7ec44b820e510d1e8bd99ef195546a519c365c
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Um valor numérico funções para modelos Azure Resource Manager
 
@@ -122,11 +122,13 @@ Devolve o índice de um ciclo de iteração.
 
 ### <a name="remarks"></a>Observações
 
-Esta função é sempre utilizada com um **cópia** objeto. Se não for fornecido nenhum valor para **desvio**, é devolvido o valor atual de iteração. O valor de iteração inicia-se em zero.
+Esta função é sempre utilizada com um **cópia** objeto. Se não for fornecido nenhum valor para **desvio**, é devolvido o valor atual de iteração. O valor de iteração inicia-se em zero. Pode utilizar os ciclos de iteração quando definir os recursos ou variáveis.
 
 O **loopName** propriedade permite-lhe especificar se copyIndex faz referência a um iteração do recurso ou iteração de propriedade. Se não for fornecido nenhum valor para **loopName**, a atual iteração de tipo de recurso é utilizada. Forneça um valor para **loopName** quando iterating numa propriedade. 
  
 Para obter uma descrição completa de como utilizar **copyIndex**, consulte [criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md).
+
+Para obter um exemplo de utilização **copyIndex** ao definir uma variável, consulte [variáveis](resource-group-authoring-templates.md#variables).
 
 ### <a name="example"></a>Exemplo
 

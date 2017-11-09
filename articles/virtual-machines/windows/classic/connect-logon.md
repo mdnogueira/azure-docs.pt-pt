@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2017
 ms.author: cynthn
-ms.openlocfilehash: 43d54de7e875de9212c23c49ad0539bf2272a312
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 510b394256bbe86a5eb5bfbc3af4681670b89de3
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="log-on-to-a-windows-virtual-machine-using-the-azure-portal"></a>Iniciar sessão numa máquina virtual do Windows através do portal do Azure
 No portal do Azure, utilize o **Connect** botão para iniciar uma sessão de ambiente de trabalho remoto e inicie sessão numa VM do Windows.
@@ -33,6 +33,7 @@ Learn how to [perform these steps using new Azure portal](../connect-logon.md?to
 
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager. Para obter informações sobre como iniciar sessão a uma VM com o modelo do Resource Manager, consulte [aqui](../connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 ## <a name="connect-to-the-virtual-machine"></a>Ligar à máquina virtual
 1. Inicie sessão no Portal do Azure.

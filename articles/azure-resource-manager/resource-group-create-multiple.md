@@ -12,18 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/26/2017
+ms.date: 11/08/2017
 ms.author: tomfitz
-ms.openlocfilehash: ed8e3081d2b2e07938d7cf3aa5f95f6dde81bc66
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8e6d68612be4b7d4e1d6cea13e0f29636931abd8
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="deploy-multiple-instances-of-a-resource-or-property-in-azure-resource-manager-templates"></a>Implementar várias instâncias de um recurso ou a propriedade de modelos Azure Resource Manager
 Este tópico mostra como iterar no seu modelo do Azure Resource Manager para criar várias instâncias de um recurso, ou várias instâncias de uma propriedade num recurso.
 
 Se precisar de adicionar lógica para o modelo que lhe permite especificar se um recurso é implementado, consulte [condicionalmente implementar recursos](#conditionally-deploy-resource).
+
+Para obter um exemplo de criação de vários elementos de uma variável de matriz, consulte [variáveis](resource-group-authoring-templates.md#variables).
 
 ## <a name="resource-iteration"></a>Iteração de recursos
 Para criar várias instâncias de um tipo de recurso, adicione um `copy` elemento para que o tipo de recurso. No elemento de cópia, especifique o número de iterações e um nome para este ciclo. O valor da contagem tem de ser um número inteiro positivo e não pode exceder 800. Gestor de recursos cria os recursos em paralelo. Por conseguinte, não é garantida a ordem em que são criados. Para criar recursos iterated na sequência, consulte [cópia série](#serial-copy). 

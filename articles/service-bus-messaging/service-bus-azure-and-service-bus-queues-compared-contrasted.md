@@ -1,24 +1,24 @@
 ---
-title: As filas de armazenamento do Azure e filas do Service Bus - comparados e contrasted | Microsoft Docs
+title: As filas de armazenamento do Azure e filas do Service Bus comparados e contrasted | Microsoft Docs
 description: "Analisa as diferenças e semelhanças entre dois tipos de filas oferecidas pelo Azure."
 services: service-bus-messaging
 documentationcenter: na
 author: sethmanheim
 manager: timlt
-editor: tysonn
+editor: 
 ms.assetid: f07301dc-ca9b-465c-bd5b-a0f99bab606b
 ms.service: service-bus-messaging
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 08/07/2017
+ms.date: 11/08/2017
 ms.author: sethm
-ms.openlocfilehash: 555759073507219188b59af76a82be74b112c57c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d566b74429bf158e0c9cc51419ba35c9e6c32f64
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>As filas de armazenamento e de filas do Service Bus - comparados e contrasted
 Este artigo analisa as diferenças e semelhanças entre os dois tipos de filas oferecidas pelo Microsoft Azure hoje: as filas de armazenamento e de filas do Service Bus. A utilização destas informações permite-lhe comparar e contrastar as respetivas tecnologias, e tomar uma decisão mais informada quanto à solução que melhor responde às suas necessidades.
@@ -33,7 +33,7 @@ Azure suporta dois tipos de mecanismos de fila: **as filas de armazenamento** e 
 Embora ambas as tecnologias de colocação existirem em simultâneo, as filas de armazenamento foram introduzidas em primeiro lugar, como um mecanismo de armazenamento dedicado fila desenvolvido com serviços de armazenamento do Azure. Filas do Service Bus são criadas com base a infraestrutura de "mensagens" mais ampla concebida para integrar aplicações ou componentes da aplicação que podem abranger vários protocolos de comunicação, contratos de dados, os domínios de confiança, e/ou ambientes de rede.
 
 ## <a name="technology-selection-considerations"></a>Considerações de seleção de tecnologia
-As filas de armazenamento e de filas do Service Bus são implementações da mensagem de colocação em fila de serviço atualmente disponibilizado no Microsoft Azure. Cada um tem um conjunto de funcionalidades ligeiramente diferentes, o que significa que pode escolher um ou outro, ou ambos, consoante as necessidades da sua solução específica ou um problema de negócio/técnica que são resolver.
+As filas de armazenamento e de filas do Service Bus são implementações da mensagem de colocação em fila de serviço atualmente oferecido pelo Microsoft Azure. Cada um tem um conjunto de funcionalidades ligeiramente diferentes, o que significa que pode escolher um ou outro, ou ambos, consoante as necessidades da sua solução específica ou um problema de negócio/técnica que são resolver.
 
 Ao determinar o objetivo de uma determinada solução se adequa a tecnologia que colocação, aos programadores e arquitetos de soluções, devem considerar as recomendações abaixo. Para obter mais detalhes, consulte a secção seguinte.
 
@@ -49,7 +49,7 @@ Como um arquiteto de solução/programador, **deve considerar a utilização de 
 * A solução requer a fila para fornecer um garantida primeiro-na-primeiro-out (FIFO) ordenada de entrega.
 * Pretende uma experiência simétrica no Azure e no Windows Server (nuvem privada). Para obter mais informações, consulte [barramento de serviço para o Windows Server](https://msdn.microsoft.com/library/dn282144.aspx).
 * A solução tem de ser capaz de suportar a deteção automática de duplicados.
-* Pretender que a aplicação para processar mensagens como fluxos de longa execução paralelas (mensagens estão associadas a um fluxo utilizando o [SessionId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_BrokeredMessage_SessionId) propriedade na mensagem). Neste modelo, cada nó na aplicação de consumo compete para fluxos, por oposição a mensagens. Quando recebe uma transmissão em fluxo para um nó de consumo, o nó pode examinar o estado do fluxo do Estado da aplicação através de transações.
+* Pretender que a aplicação para processar mensagens como fluxos de longa execução paralelas (mensagens estão associadas a um fluxo utilizando o [SessionId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid) propriedade na mensagem). Neste modelo, cada nó na aplicação de consumo compete para fluxos, por oposição a mensagens. Quando recebe uma transmissão em fluxo para um nó de consumo, o nó pode examinar o estado do fluxo do Estado da aplicação através de transações.
 * A solução requer comportamento transacional e atomicity ao enviar ou receber várias mensagens numa fila.
 * A time-to-live (TTL) uma característica da carga de trabalho específicas da aplicação pode exceder o período de 7 dias.
 * A aplicação processa mensagens que podem exceder 64 KB, mas irá limitar abordagem é improvável 256 KB.
@@ -61,7 +61,7 @@ Como um arquiteto de solução/programador, **deve considerar a utilização de 
 * Gostaria de conseguir publicar e consumir lotes de mensagens em fila.
 
 ## <a name="comparing-storage-queues-and-service-bus-queues"></a>Comparar as filas de armazenamento e de filas do Service Bus
-As tabelas nas secções seguintes fornecem um agrupamento lógico das funcionalidades de fila e permitem-lhe comparar, de forma rápida, as funcionalidades disponíveis em filas de armazenamento e de filas do Service Bus.
+As tabelas nas secções seguintes fornecem um agrupamento lógico das funcionalidades de fila e permitem-lhe comparar, de forma rápida, as funcionalidades disponíveis em filas de armazenamento do Azure e filas do Service Bus.
 
 ## <a name="foundational-capabilities"></a>Capacidades fundamentais sobre
 Esta secção compara algumas das capacidades de colocação fundamentais fornecidas as filas de armazenamento e de filas do Service Bus.
@@ -121,7 +121,7 @@ Esta secção compara as capacidades avançadas disponibilizadas pelas filas de 
 * Fila auto-reencaminhamento permite milhares de filas para auto-reencaminhar as mensagens para uma fila única, a partir da qual a aplicação recetora consome a mensagem. Pode utilizar este mecanismo para alcançar a segurança, controlar o fluxo e isolar armazenamento entre cada fabricante de mensagem.
 * As filas de armazenamento fornecem suporte para atualizar o conteúdo da mensagem. Pode utilizar esta funcionalidade para as informações de estado persistentes e atualizações incrementais de progresso para a mensagem para que possam ser processado a partir do último ponto de verificação conhecido, em vez de a partir do zero. Com as filas do Service Bus, pode ativar o cenário mesmo através da utilização de sessões de mensagens. Sessões permitem-lhe guardar e obter o estado de processamento de aplicação (através da utilização de [SetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.setstate#Microsoft_ServiceBus_Messaging_MessageSession_SetState_System_IO_Stream_) e [GetState](/dotnet/api/microsoft.servicebus.messaging.messagesession.getstate#Microsoft_ServiceBus_Messaging_MessageSession_GetState)).
 * [Inutilizado lettering](service-bus-dead-letter-queues.md), que é apenas suportado por filas do Service Bus, pode ser útil para isolar as mensagens que não é possível processar com êxito pela aplicação recetora ou quando as mensagens não consegue contactar o seu destino devido a um expirada (time-to-live Propriedade TTL). O valor TTL especifica quanto uma mensagem permanece na fila. Com o Service Bus, a mensagem será movida para uma fila especial chamada $DeadLetterQueue quando o período TTL expire.
-* Para localizar "nocivas" mensagens nas filas de armazenamento, quando dequeuing uma mensagem a aplicação examina o  **[DequeueCount](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueuemessage.dequeuecount.aspx)**  propriedade da mensagem. Se **DequeueCount** é maior do que um determinado limiar, a aplicação move a mensagem para uma fila definido pela aplicação "entregues".
+* Para localizar "nocivas" mensagens nas filas de armazenamento, quando dequeuing uma mensagem a aplicação examina o [DequeueCount](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueuemessage.dequeuecount.aspx) propriedade da mensagem. Se **DequeueCount** é maior do que um determinado limiar, a aplicação move a mensagem para uma fila definido pela aplicação "entregues".
 * As filas de armazenamento permitem-lhe obter um registo detalhado de todas as transações executadas contra a fila, como as métricas agregadas, bem como. Estas opções são úteis para depuração e compreender a forma como a aplicação utiliza as filas de armazenamento. Também são úteis para a aplicação otimização de desempenho e reduzir os custos de utilização de filas.
 * O conceito de "sessões de mensagens" suportado pelo Service Bus permite que as mensagens que pertencem a um determinado grupo lógico estar associado um determinado recetor, que por sua vez, cria uma afinidade de sessão como entre as mensagens e os respetivos recetores. Pode ativar esta avançada funcionalidade do Service Bus, definindo o [SessionID](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid#Microsoft_ServiceBus_Messaging_BrokeredMessage_SessionId) propriedade de uma mensagem. Recetores, em seguida, podem escutar num ID de específica de sessão e receber mensagens que partilham o identificador de sessão especificado.
 * A funcionalidade de deteção de duplicação suportada pelo filas do Service Bus automaticamente remove duplicadas mensagens enviadas para uma fila ou um tópico, com base no valor da [MessageId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.messageid#Microsoft_ServiceBus_Messaging_BrokeredMessage_MessageId) propriedade.
@@ -133,7 +133,7 @@ Esta secção compara as filas de armazenamento e de filas do Service Bus da per
 | --- | --- | --- |
 | Tamanho máximo da fila |**500 TB**<br/><br/>(limitado a um [única capacidade das contas de armazenamento](../storage/common/storage-introduction.md#queue-storage)) |**1 GB para 80 GB**<br/><br/>(definido após a criação de uma fila e [ativar a criação de partições](service-bus-partitioning.md) – consulte a secção "Informações adicionais") |
 | Tamanho da mensagem máximo |**64 KB**<br/><br/>(48 KB quando utilizar **Base64** codificação)<br/><br/>Azure suporta mensagens grandes através da combinação de filas e blobs – ponto em que pode colocar em fila até 200GB para um único item. |**256 KB** ou **1 MB**<br/><br/>(incluindo o cabeçalho e corpo, tamanho do cabeçalho máximo: 64 KB).<br/><br/>Depende do [camada de serviço](service-bus-premium-messaging.md). |
-| TTL da mensagem máximo |**7 dias** |**`TimeSpan.Max`** |
+| TTL da mensagem máximo |**7 dias** |**TimeSpan.Max** |
 | Número máximo de filas |**Ilimitado** |**10,000**<br/><br/>(por espaço de nomes de serviço, pode ser aumentada) |
 | Número máximo de clientes em simultâneo |**Ilimitado** |**Ilimitado**<br/><br/>(limite de ligações simultâneas 100 apenas se aplica a comunicação baseada no protocolo TCP) |
 

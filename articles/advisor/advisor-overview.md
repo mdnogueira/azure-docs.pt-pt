@@ -14,15 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: 96925f251cf4984a11516a962740e19a7b9589dc
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 906450f75557820bb27762707c3328b08b23cccb
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="introduction-to-azure-advisor"></a>Introdução ao Advisor do Azure
 
-Saiba mais sobre o Advisor do Azure e as respetivas capacidades de chaves e obtenha respostas às perguntas mais frequentes.
+Saiba mais sobre as principais funcionalidades do Advisor do Azure e obtenha respostas às perguntas mais frequentes.
 
 ## <a name="what-is-advisor"></a>O que é o Advisor?
 Advisor é um consultor de nuvem personalizado que o ajuda a seguir as melhores práticas para otimizar as implementações do Azure. Este analisa a telemetria de utilização e configuração do recurso e, em seguida, recomenda soluções que podem ajudar a melhorar a eficácia de custo, desempenho, elevada disponibilidade e segurança dos seus recursos Azure.
@@ -32,43 +32,38 @@ Com o Advisor, pode:
 * Melhorar o desempenho, a segurança e a elevada disponibilidade dos seus recursos, à medida que identificar oportunidades para reduzir o Azure geral passam.
 * Obtenha recomendações com ações proposto inline.
 
-Pode aceder ao Advisor através de [portal do Azure](https://aka.ms/azureadvisordashboard). Iniciar sessão para o [portal](https://portal.azure.com), selecione **procurar**e, em seguida, desloque-se para **Azure Advisor**. O dashboard do Advisor apresenta personalizadas recomendações para a subscrição selecionada. 
+Pode aceder ao Advisor através de [portal do Azure](https://aka.ms/azureadvisordashboard). Iniciar sessão para o [portal](https://portal.azure.com), localize **Advisor** no menu de navegação ou procure-lo no **mais serviços** menu.
 
-As recomendações são divididas em quatro categorias: 
+O dashboard do Advisor apresenta recomendações personalizadas para todas as subscrições.  Pode aplicar os filtros para apresentar as recomendações para as subscrições específicas e tipos de recursos.  As recomendações são divididas em quatro categorias: 
 
 * **Elevada disponibilidade**: Certifique-se e melhorar a continuidade das suas aplicações empresariais vitais. Para obter mais informações, consulte [recomendações de elevada disponibilidade do Advisor](advisor-high-availability-recommendations.md).
-
 * **Segurança**: para detetar ameaças e vulnerabilidades que possam levar a falhas de segurança. Para obter mais informações, consulte [recomendações de segurança do Advisor](advisor-security-recommendations.md).
-
 * **Desempenho**: para melhorar a velocidade das suas aplicações. Para obter mais informações, consulte [recomendações de desempenho do Advisor](advisor-performance-recommendations.md).
+* **Custo**: para otimizar e reduzir os gastos global do Azure. Para obter mais informações, consulte [recomendações do Advisor custo](advisor-cost-recommendations.md).
 
-* **Custo**: para otimizar e reduzir o Azure geral passam. Para obter mais informações, consulte [recomendações do Advisor custo](advisor-cost-recommendations.md).
-
-  ![Tipos de recomendação do Advisor](./media/advisor-overview/advisor-all-tab-examples.png)
+  ![Tipos de recomendação do Advisor](./media/advisor-overview/advisor-dashboard.png)
 
 > [!NOTE]
-> Para obter recomendações do Assistente de acesso, primeiro tem *registar a sua subscrição* com o Advisor. Uma subscrição é registada quando um *subscrição proprietário* inicia o dashboard do Advisor e clica no **obter recomendações** botão. Este é um *operação única*. Depois da subscrição está registada, pode aceder recomendações do assistente como *proprietário*, *contribuinte*, ou *leitor* para uma subscrição, um grupo de recursos ou um recurso específico.
+> Para utilizar o Advisor do Azure com uma subscrição, uma subscrição *proprietário* tem de iniciar o dashboard do Advisor.  Esta ação regista a subscrição com o Advisor.  Partir desse ponto, de qualquer subscrição *proprietário*, *contribuinte*, ou *leitor* pode aceder às recomendações do Advisor para a subscrição. 
 
-Pode clicar uma recomendação para saber mais acerca do mesmo. Também pode saber mais sobre as ações que pode efetuar para tirar partido de uma oportunidade ou resolver um problema. 
+Pode clique numa categoria para ver a lista de recomendações dentro dessa categoria e selecione uma recomendação para saber mais acerca do mesmo.  Também pode saber mais sobre as ações que pode efetuar para tirar partido de uma oportunidade ou resolver um problema.
 
-Advisor oferece recomendações com ações de inline ou ligações de documentação. Clicar uma ação de inline leva-o através de um "journey utilizador orientada" para implementá-las. Ao clicar numa ligação de documentação aponta a documentação que descreve como implementar manualmente a ação. 
+![Categoria de recomendação do Advisor](./media/advisor-overview/advisor-ha-category-example.png) 
 
-Advisor as atualizações de recomendações por hora. Se não pretender tome medidas imediatas numa recomendação, pode snooze-lo durante um período de tempo especificado ou dispensá-lo. 
+Selecione a ação recomendada para uma recomendação implementar a recomendação.  Uma interface simples abrirá que lhe permite implementar a recomendação ou consulte a documentação que ajuda a com a implementação.  Depois de implementar uma recomendação, pode demorar até ao dia para o Advisor reconhecer que.
+
+Se não pretender tome medidas imediatas numa recomendação, pode snooze-lo durante um período de tempo especificado ou dispensá-lo.  Se não pretender receber recomendações para uma subscrição específica ou grupo de recursos, pode configurar o Advisor só gerar recomendações para especificado subscrições e grupos de recursos.
 
 ## <a name="frequently-asked-questions"></a>Perguntas mais frequentes
 
 ### <a name="how-do-i-access-advisor"></a>Como posso aceder Advisor?
-Pode aceder ao Advisor através de [portal do Azure](https://aka.ms/azureadvisordashboard). Iniciar sessão para o [portal](https://portal.azure.com), selecione **procurar**e, em seguida, desloque-se para **Azure Advisor**. O dashboard do Advisor apresenta personalizadas recomendações para a subscrição selecionada. 
+Pode aceder ao Advisor através de [portal do Azure](https://aka.ms/azureadvisordashboard). Iniciar sessão para o [portal](https://portal.azure.com), localize **Advisor** no menu de navegação ou procure-lo no **mais serviços** menu.
 
-Também pode ver as recomendações do Advisor através do painel de recursos da máquina virtual. Escolha uma máquina virtual e, em seguida, desloque-se para obter recomendações do assistente no menu. 
+Também pode ver as recomendações do Advisor através da interface de recurso de máquina virtual. Escolha uma máquina virtual e, em seguida, desloque-se para obter recomendações do assistente no menu. 
 
 ### <a name="what-permissions-do-i-need-to-access-advisor"></a>Que permissões é necessário aceder do Advisor
 
-Para obter recomendações do Assistente de acesso, primeiro tem *registar a sua subscrição* com o Advisor. Uma subscrição é registada quando um *subscrição proprietário* inicia o dashboard do Advisor e clica no **obter recomendações** botão. Este é um *operação única*. Depois da subscrição está registada, pode aceder recomendações do assistente como *proprietário*, *contribuinte*, ou *leitor* para uma subscrição, um grupo de recursos ou um recurso específico.
-
-### <a name="how-often-are-advisor-recommendations-updated"></a>Com que frequência são atualizadas obter recomendações do Assistente?
-
-Recomendações do assistente são atualizadas por hora.
+Para obter recomendações do Assistente para uma subscrição, tem primeiro de registar a subscrição do Advisor. Uma subscrição é registada quando uma subscrição *proprietário* inicia o dashboard do Advisor. Esta é uma operação única. Depois da subscrição está registada, pode aceder recomendações do assistente como *proprietário*, *contribuinte*, ou *leitor* de uma subscrição.
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Que recursos Advisor fornecer recomendações para?
 
@@ -76,7 +71,7 @@ Advisor fornece recomendações para máquinas virtuais, conjuntos de disponibil
 
 ### <a name="can-i-snooze-or-dismiss-a-recommendation"></a>Pode snooze ou ignorar uma recomendação?
 
-Para snooze ou ignorar uma recomendação, clique o **Snooze** botão ou a ligação. Pode especificar um tempo de suspensão período ou selecione **nunca** para dispensar a recomendação.
+Para snooze ou ignorar uma recomendação, clique o **Snooze** ligação. Pode especificar um tempo de suspensão período ou selecione **nunca** para dispensar a recomendação.
 
 ## <a name="next-steps"></a>Passos seguintes
 

@@ -12,11 +12,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 06/12/2017
 ms.author: mbullwin
-ms.openlocfilehash: e11d431c03be0d2aff05b2ceda8d3df41441a7ec
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 3edaefa942b834a070c55fe28daf60c74ea9f59d
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="investigate-and-share-usage-data-with-interactive-workbooks-in-application-insights"></a>Analisar e partilhar dados de utilização com os livros interativos no Application Insights
 
@@ -117,7 +117,7 @@ Para afixar uma hiperligação para um livro para um Dashboard do Azure:
 ## <a name="next-steps"></a>Passos seguintes
 
 ## <a name="next-steps"></a>Passos seguintes
-- Para ativar as experiências de utilização, começar a enviar [eventos personalizados](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) ou [vistas de página](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
+- Para ativar as experiências de utilização, começar a enviar [eventos personalizados](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) ou [vistas de página](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Se já enviar eventos personalizados ou vistas de página, explore as ferramentas de utilização para saber como os utilizadores utilizam o serviço.
     - [Utilizadores, Sessões, Eventos](app-insights-usage-segmentation.md)
     - [Funis](usage-funnels.md)

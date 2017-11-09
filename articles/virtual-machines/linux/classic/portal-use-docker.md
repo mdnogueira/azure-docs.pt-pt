@@ -15,25 +15,26 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/27/2016
 ms.author: rasquill
-ms.openlocfilehash: 932744208d9d53c87e31dcdf9e34539750be4bdb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a5c1822b7304c0360da866ddb504483f5a53432f
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="using-the-docker-vm-extension-with-the-azure-classic-portal"></a>Utilizar a Extensão VM do Docker com o portal clássico do Azure
 > [!IMPORTANT] 
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager.
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 [Docker](https://www.docker.com/) é uma das abordagens de Virtualização mais populares, que utiliza [Linux contentores](http://en.wikipedia.org/wiki/LXC) em vez de máquinas virtuais como uma forma de isolando os dados e computação em recursos partilhados. Pode utilizar a extensão de VM de Docker gerida pelo [agente Linux do Azure] para criar uma VM de Docker que aloja qualquer número de contentores para as suas aplicações no Azure.
 
 > [!NOTE]
-> Este tópico descreve como criar uma VM de Docker do portal clássico do Azure. Para ver como criar uma VM de Docker na linha de comandos, consulte [como utilizar a extensão da VM de linha de comandos Interface do Azure (Azure CLI) Docker]. Para ver um debate de alto nível de contentores e as vantagens, consulte o [Whiteboard de nível elevado de Docker](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
+> Este tópico descreve como criar uma VM de Docker do portal do Azure. Para ver como criar uma VM de Docker na linha de comandos, consulte [como utilizar a extensão da VM de linha de comandos Interface do Azure (Azure CLI) Docker]. Para ver um debate de alto nível de contentores e as vantagens, consulte o [Whiteboard de nível elevado de Docker](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
 > 
 > 
 
 ## <a name="create-a-new-vm-from-the-image-gallery"></a>Criar uma nova VM a partir da Galeria de imagem
-O primeiro passo necessita de uma VM do Azure a partir de uma imagem de Linux que suporte a extensão da VM Docker, utilizando uma imagem de Ubuntu 14.04 LTS na galeria do imagem como uma imagem de servidor de exemplo e ambiente de trabalho do Ubuntu 14.04 como um cliente. No portal, clique em **+ novo** no canto inferior esquerdo para criar uma nova instância VM e selecionar uma imagem de Ubuntu 14.04 LTS as seleções disponíveis ou a Galeria de imagem completa, conforme mostrado abaixo.
+O primeiro passo necessita de uma VM do Azure a partir de uma imagem de Linux que suporte a extensão da VM Docker, utilizando uma imagem de Ubuntu 14.04 LTS na galeria do imagem como uma imagem de servidor de exemplo e ambiente de trabalho do Ubuntu 14.04 como um cliente. No portal, clique em **+ novo** para criar uma nova instância VM e selecionar uma imagem de Ubuntu 14.04 LTS as seleções disponíveis ou a Galeria de imagem completa, conforme mostrado abaixo.
 
 > [!NOTE]
 > Atualmente, apenas Ubuntu 14.04 LTS imagens mais recentes de Julho de 2014 suportam a extensão de VM de Docker.
@@ -67,11 +68,6 @@ Na linha de comandos, utilize  **`base64`**  ou outra ferramenta de codificaçã
 
 ## <a name="add-the-docker-vm-extension"></a>Adicionar a extensão VM de Docker
 Para adicionar a extensão de VM de Docker, localize a instância VM que criou e desloque para baixo até **extensões** e clique na mesma para trazer as extensões de VM, conforme mostrado abaixo.
-
-> [!NOTE]
-> Esta funcionalidade é suportada no portal de pré-visualização apenas: https://portal.azure.com/
-> 
-> 
 
 ![](media/portal-use-docker/ClickExtensions.png)
 

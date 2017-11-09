@@ -15,11 +15,11 @@ ms.workload: storage-backup-recovery
 ms.date: 11/01/2017
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 90f9fe5775f493298dad3b12f2be9d6da6cb480e
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: b4b39cd23557093edaec97f7ef7a3e354f1ecd03
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="about-site-recovery"></a>Sobre o Site Recovery
 
@@ -67,7 +67,6 @@ O Site Recovery pode gerir a replicação de:
 **Que regiões são suportadas pelo Site Recovery?** | [Regiões suportadas](https://azure.microsoft.com/regions/services/) |
 **Quais são os sistemas operativos de que as máquinas replicadas precisam?** | [Requisitos da VM do Azure](site-recovery-support-matrix-azure-to-azure.md#support-for-replicated-machine-os-versions)</br></br>[Requisitos de VMs VMware](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions)<br/><br/> Para VMs Hyper-V, qualquer [SO convidado](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) suportado pelo Azure e Hyper-V é suportado.<br/><br/> [Requisitos do servidor físico](site-recovery-support-matrix-to-azure.md#support-for-replicated-machine-os-versions)
 **De que servidores/anfitriões de VMware preciso?** | As VMs VMware podem estar localizadas em [anfitriões vSphere/servidores vCenter suportados](site-recovery-support-matrix-to-azure.md#support-for-datacenter-management-servers).
-
 **Que cargas de trabalho posso replicar?** | Pode replicar qualquer carga de trabalho em execução numa máquina de replicação suportada. Além disso, a equipa do Site Recovery executou testes específicos da aplicação a [várias aplicações](site-recovery-workload.md#workload-summary).
 
 

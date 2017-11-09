@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/16/2017
 ms.author: stevelas
-ms.openlocfilehash: 630bc088fcb6d3c7e5bb3a9713107c3fb6653ec6
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: dae97084bdaab77efd38169cdf7e70c827b0b5ab
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-container-registry-skus"></a>SKUs de registo de contentor do Azure
 
@@ -43,21 +43,7 @@ O registo de clássico SKU ativada a edição inicial do serviço de registo de 
 
 A tabela seguinte fornece detalhes sobre as funcionalidades e limites de escalões de serviço básico, Standard e Premium.
 
-| Funcionalidade | Básica | Standard | Premium |
-|---|---|---|---|---|
-| Armazenamento | 10 giB | 100 giB| 500 giB |
-| ReadOps por minuto<sup>1, 2</sup> | 1k | 300k | 10 000 k |
-| WriteOps por minuto<sup>1, 3</sup> | 100 | 500 | k de 2 |
-| Transferir a largura de banda MBps<sup>1</sup> | 30 | 60 | 100 |
-| Carregar MBps da largura de banda<sup>1</sup> | 10 | 20 | 50 |
-| Webhooks | 2 | 10 | 100 |
-| Georreplicação | N/D | N/D | [Suportado *(pré-visualização)*](container-registry-geo-replication.md) |
-
-<sup>1</sup> *ReadOps*, *WriteOps*, e *largura de banda* são estimativas mínimo. ACR strives melhorar o desempenho porque requer a utilização.
-
-<sup>2</sup> [solicitação docker](https://docs.docker.com/registry/spec/api/#pulling-an-image) traduz-se várias operações de leitura, com base no número de camadas na imagem, mais a obtenção de manifesto.
-
-<sup>3</sup> [docker push](https://docs.docker.com/registry/spec/api/#pushing-an-image) traduz-se várias operações de escrita, com base no número de camadas tem de ser instalada. A `docker push` inclui *ReadOps* para obter um manifesto para uma imagem existente.
+[!INCLUDE [container-instances-limits](../../includes/container-registry-limits.md)]
 
 ## <a name="manage-registry-size"></a>Gerir o tamanho do registo
 As restrições de armazenamento de cada SKU destinam-se para alinhar com um cenário típico: básica para começar a trabalhar, Standard para a maioria das aplicações de produção e Premium para desempenho de hiper escala e [georreplicação](container-registry-geo-replication.md). Ao longo da vida do seu registo, deve gerir o seu tamanho eliminando periodicamente o conteúdo não utilizado.

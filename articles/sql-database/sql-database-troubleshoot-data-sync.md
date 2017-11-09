@@ -8,15 +8,17 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: d0cbe02e5a99fc62869256ed86e774aa2729f7e6
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: bbfcac5a54f04f20dbdeeecef7c06b91128b8c6a
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/08/2017
 ---
-# <a name="troubleshoot-issues-with-azure-sql-data-sync"></a>Resolver problemas com a sincronização de dados SQL do Azure
+# <a name="troubleshoot-issues-with-azure-sql-data-sync-preview"></a>Resolver problemas com a sincronização de dados de SQL do Azure (pré-visualização)
 
 Este artigo descreve como resolver problemas atuais que são conhecidos para a equipa de sincronização de dados do SQL Server (pré-visualização). Se existir uma solução para um problema, é fornecido aqui.
+
+Para obter uma descrição geral da sincronização de dados do SQL Server, consulte [sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados de SQL do Azure (pré-visualização)](sql-database-sync-data.md).
                                                            
 ## <a name="my-client-agent-doesnt-work"></a>Agente do cliente não funciona
 
@@ -487,3 +489,20 @@ Qualquer uma das seguintes condições pode resultar num grupo de sincronizaçã
 
 Se não for possível corrigir o problema, é possível repor o estado do seu grupo de sincronização pelo suporte da Microsoft. Para ter o estado da reposição, crie uma mensagem num fórum no [fórum da SQL Database do Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=ssdsgetstarted)e inclui o ID de subscrição e o ID do grupo de sincronização para o grupo que tem de ser reposto. Um engenheiro de suporte da Microsoft irá responder a sua publicação e informá-lo quando o estado foi reposto.
 
+## <a name="next-steps"></a>Passos seguintes
+Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
+
+-   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
+-   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
+
+-   Conclua os exemplos do PowerShell que mostram como configurar a sincronização de dados do SQL Server:
+    -   [Utilizar o PowerShell para sincronizar entre várias bases de dados SQL do Azure](scripts/sql-database-sync-data-between-sql-databases.md)
+    -   [Utilizar o PowerShell para sincronizar entre uma base de dados do SQL do Azure e uma base de dados do SQL Server no local](scripts/sql-database-sync-data-between-azure-onprem.md)
+
+-   [Transferir a documentação da API de REST de sincronização de dados SQL](https://github.com/Microsoft/sql-server-samples/raw/master/samples/features/sql-data-sync/Data_Sync_Preview_REST_API.pdf?raw=true)
+
+Para obter mais informações sobre a base de dados SQL, consulte:
+
+-   [Descrição geral da base de dados do SQL Server](sql-database-technical-overview.md)
+-   [Gestão de ciclo de vida de base de dados](https://msdn.microsoft.com/library/jj907294.aspx)

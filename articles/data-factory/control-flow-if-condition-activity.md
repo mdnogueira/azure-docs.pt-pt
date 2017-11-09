@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/03/2017
 ms.author: shlo
-ms.openlocfilehash: 0eb4f03a5d53da771a550bd5d79607ff7f0f52d3
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: d6f198f7376bf2fdbc812373721571162a8c4402
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Se a condição atividade no Azure Data Factory
 A atividade de condição se fornece a mesma funcionalidade que um se instrução fornece linguagens de programação. Avalia um conjunto de atividades quando a condição for avaliada como `true` e outro conjunto de atividades quando a condição for avaliada como `false`. 
@@ -76,10 +76,13 @@ expressão | Expressão que tem de avaliar como VERDADEIRO ou FALSO | Sim
 ifTrueActivities | Conjunto de atividades que são executados quando avalia a expressão para `true`. | Sim
 ifFalseActivities | Conjunto de atividades que são executados quando avalia a expressão para `false`. | Sim
 
-## <a name="sample"></a>Exemplo
+## <a name="example"></a>Exemplo
 O pipeline neste exemplo copia dados a partir de uma pasta de entrada para uma pasta de saída. A pasta de saída é determinada pelo valor do parâmetro de pipeline: routeSelection. Se o valor de routeSelection for VERDADEIRO, os dados são copiados para outputPath1. Além disso, se o valor de routeSelection for FALSO, os dados são copiados para outputPath2. 
 
-### <a name="pipeline-with-if-condition-activity"></a>Pipeline com atividade Condition se
+> [!NOTE]
+> Esta secção fornece definições de JSON e comandos do PowerShell de exemplo para executar o pipeline. Para obter instruções com instruções passo a passo para criar um pipeline de fábrica de dados utilizando as definições do Azure PowerShell e JSON, consulte [tutorial: criar uma fábrica de dados utilizando o Azure PowerShell](quickstart-create-data-factory-powershell.md).
+
+### <a name="pipeline-with-if-condition-activity-adfv2quickstartpipelinejson"></a>Pipeline com atividade de condição se (Adfv2QuickStartPipeline.json)
 
 ```json
 {
@@ -190,7 +193,7 @@ Outro exemplo para a expressão é:
 ```
 
 
-### <a name="azure-storage-linked-service"></a>Serviço ligado do Storage do Azure
+### <a name="azure-storage-linked-service-azurestoragelinkedservicejson"></a>Serviço ligado do Storage do Azure (AzureStorageLinkedService.json)
 
 ```json
 {
@@ -207,7 +210,7 @@ Outro exemplo para a expressão é:
 }
 ```
 
-### <a name="parameterized-azure-blob-dataset"></a>Conjunto de dados de Blobs do Azure parametrizado
+### <a name="parameterized-azure-blob-dataset-blobdatasetjson"></a>Parametrizada conjunto de dados de Blobs do Azure (BlobDataset.json)
 Os conjuntos de pipeline de **folderPath** para o valor do **outputPath1** ou **outputPath2** parâmetro do pipeline. 
 
 ```json
@@ -234,7 +237,7 @@ Os conjuntos de pipeline de **folderPath** para o valor do **outputPath1** ou **
 }
 ```
 
-### <a name="pipeline-parameter-json"></a>Parâmetro de pipeline JSON
+### <a name="pipeline-parameter-json-pipelineparametersjson"></a>Parâmetro de pipeline JSON (PipelineParameters.json)
 
 ```json
 {
@@ -246,10 +249,11 @@ Os conjuntos de pipeline de **folderPath** para o valor do **outputPath1** ou **
 ```
 
 ### <a name="powershell-commands"></a>Comandos do PowerShell
+Estes comandos pressupõem que guardou os ficheiros JSON para a pasta: C:\ADF. 
 
 ```powershell
-# Login-AzureRmAccount
-# Select-AzureRmSubscription "<Your subscription name>"
+Login-AzureRmAccount
+Select-AzureRmSubscription "<Your subscription name>"
 
 $resourceGroupName = "<Resource Group Name>"
 $dataFactoryName = "<Data Factory Name. Must be globally unique>";

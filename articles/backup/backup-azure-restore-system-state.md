@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 8/18/2017
 ms.author: saurse;trinadhk;markgal;
-ms.openlocfilehash: 320c85f8045d9b72cf7f430d2e2736ba8e5ec269
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 971f7979ca27bce5d147a9d479248c808dc658e3
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="restore-system-state-to-windows-server"></a>Restaurar estado do sistema para o Windows Server
 
-Este artigo explica como restaurar cópias de segurança do Estado do sistema do Windows Server a partir de um cofre dos serviços de recuperação do Azure. Para restaurar estado do sistema, tem de ter uma cópia de segurança do Estado do sistema (criada utilizando as instruções em [cópia de segurança do Estado do sistema](backup-azure-system-state.md#back-up-windows-server-system-state-preview)) e certifique-se de que instalou o [versão mais recente do agente dos serviços de recuperação do Azure (MARS) da Microsoft](http://aka.ms/azurebackup_agent). Recuperar dados de estado do sistema do Windows Server a partir de um cofre dos serviços de recuperação do Azure é um processo de dois passos:
+Este artigo explica como restaurar cópias de segurança do Estado do sistema do Windows Server a partir de um cofre dos serviços de recuperação do Azure. Para restaurar estado do sistema, tem de ter uma cópia de segurança do Estado do sistema (criada utilizando as instruções em [cópia de segurança do Estado do sistema](backup-azure-system-state.md#back-up-windows-server-system-state)e certifique-se de que instalou o [versão mais recente do Microsoft Azure Recovery Services (MARS) agente](http://aka.ms/azurebackup_agent). Recuperar dados de estado do sistema do Windows Server a partir de um cofre dos serviços de recuperação do Azure é um processo de dois passos:
 
 1. Restaure estado do sistema como ficheiros de cópia de segurança do Azure. Ao restaurar o estado do sistema de ficheiros de cópia de segurança do Azure, pode:
   * Restaurar estado do sistema do mesmo servidor em que foram efetuadas as cópias de segurança, ou
