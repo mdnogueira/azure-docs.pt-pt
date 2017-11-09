@@ -14,11 +14,11 @@ ms.workload: identity
 ms.date: 04/07/2017
 ms.author: dastrock
 ms.custom: aaddev
-ms.openlocfilehash: dce813b885d492343428428056a2e8aada27b461
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1baf98616eb48bd3ae45b78ab1ac31e711fa655d
+ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/06/2017
 ---
 # <a name="azure-active-directory-for-developers"></a>Azure Active Directory para programadores
 O Azure Active Directory é um serviço de identidade em cloud que permite que os programadores iniciem a sessão de qualquer utilizador de forma segura com uma conta profissional ou escolar ,segura pela Microsoft.  A documentação presente mostra-lhe como adicionar suporte do Azure AD à aplicação através de protocolos de autenticação padrão da indústria, o OAuth e o OpenID Connect.
@@ -59,16 +59,9 @@ Estes artigos fornecem informações detalhadas sobre APIs, mensagens de protoco
 | [Glossário](active-directory-dev-glossary.md)                                      | Terminologia e definições de palavras utilizadas nesta documentação |
 | [Mais m...](active-directory-developers-guide-index.md#reference)|     |
 
-## <a name="help--support"></a>Ajuda e Suporte
-Estes são os melhores locais para obter ajuda com o desenvolvimento do Azure Active Directory.
-
-|  |  
-|---|
-|[Etiquetas do Stack Overflow `azure-active-directory` e `adal`](http://stackoverflow.com/questions/tagged/azure-active-directory+or+adal)      |
-|[Comentários sobre o Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/category/164757-developer-experiences)|
-| [Experimente o Microsoft Dev Chat (gratuito por um período limitado)](http://aka.ms/devchat) |
-
-<br />
 
 > [!NOTE]
 > Caso precise de iniciar sessão em contas pessoais Microsoft, poderá querer considerar a utilização do [ponto final do Azure AD v2.0](active-directory-appmodel-v2-overview.md).  O ponto final do Azure ADv 2.0 é unificação de contas pessoais e contas profissionais da Microsoft (a partir do Azure AD) num sistema de autenticação único.
+
+
+[!INCLUDE  [Help and Support Options](../../../includes/active-directory-develop-help-support-include.md)]

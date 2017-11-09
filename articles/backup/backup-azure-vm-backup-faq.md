@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 7/18/2017
 ms.author: trinadhk;pullabhk;
-ms.openlocfilehash: d3178413e894c095235dde067b369e3554375aa6
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.openlocfilehash: 85d6ec20fb0447165c672ba267569994e3a96e45
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="questions-about-the-azure-vm-backup-service"></a>Perguntas sobre o serviço Azure VM Backup
 Este artigo tem respostas a perguntas comuns para o ajudar a compreender rapidamente os componentes do Azure VM Backup. Em algumas das respostas, existem ligações para os artigos que incluem informação abrangente. Também pode publicar perguntas sobre o serviço de Backup do Azure no [fórum de debate](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -48,6 +48,9 @@ Sim, as cópias de segurança funcionam sem problemas e não tem necessidade de 
 
 ### <a name="my-vm-is-shut-down-will-an-on-demand-or-a-scheduled-backup-work"></a>A minha VM está a ser encerrado. Será uma pedido ou um trabalho de cópia de segurança agendado?
 Sim. Mesmo quando uma máquina é encerrada cópias de segurança funcionam e o ponto de recuperação está marcado como falhas consistente. Para obter mais detalhes, consulte a secção de consistência de dados em [neste artigo](backup-azure-vms-introduction.md#how-does-azure-back-up-virtual-machines)
+
+### <a name="can-i-cancel-an-in-progress-backup-job"></a>Pode cancelar uma tarefa de cópia de segurança em curso?
+Sim. Pode cancelar a tarefa de cópia de segurança se estiver na fase "Criar instantâneo". **Não é possível cancelar uma tarefa de transferência de dados de instantâneo esteja em curso**. 
 
 ## <a name="restore"></a>Restauro
 ### <a name="how-do-i-decide-between-restoring-disks-versus-full-vm-restore"></a>Como posso decidir entre o restauro de discos e o restauro de VMs completo?

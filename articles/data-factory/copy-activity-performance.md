@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2017
+ms.date: 11/08/2017
 ms.author: jingwang
-ms.openlocfilehash: 3f2b95e57e34905bf1128e9aee2862110a598f75
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b0351e4c4dcf19f9e4b6ec11c59c4dd00f0013a2
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Copie o desempenho de atividade e o guia de otimização
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -53,7 +53,7 @@ Como uma referência, a tabela abaixo mostra o número de débito de cópia **em
 ![Matriz de desempenho](./media/copy-activity-performance/CopyPerfRef.png)
 
 >[!IMPORTANT]
->No Azure Data Factory versão 2, quando a atividade de cópia é executada num tempo de execução de integração do Azure, a nuvem mínima unidades de movimento de dados é dois.
+>No Azure Data Factory versão 2, quando a atividade de cópia é executada num tempo de execução de integração do Azure, as unidades de movimento de dados em nuvem permitidos mínima é dois. Se não for especificado, consulte unidades de movimento de dados predefinido a ser utilizadas numa [unidades de movimento de dados de nuvem](#cloud-data-movement-units).
 
 Pontos a ter em atenção:
 
@@ -84,13 +84,12 @@ Pontos a ter em atenção:
 
 A **unidade de movimento de dados de nuvem (DMU)** é uma medida que representa a potência (uma combinação de CPU, memória e alocação de recursos de rede) de uma única unidade na fábrica de dados. **DMU apenas se aplica a [Runtime de integração do Azure](concepts-integration-runtime.md#azure-integration-runtime)**, mas não [Self-hosted integração Runtime](concepts-integration-runtime.md#self-hosted-integration-runtime).
 
-**As unidades de movimento de dados de nuvem mínima atribuir a cópia de execução da atividade é dois.** A tabela seguinte lista os DMUs predefinido utilizados em cenários de cópia diferentes.
+**As unidades de movimento de dados de nuvem mínima atribuir a cópia de execução da atividade é dois.** Se não for especificado, a tabela seguinte lista os DMUs predefinido utilizados em cenários de cópia diferentes:
 
 | Cenário de cópia | DMUs predefinido determinados pelo serviço |
 |:--- |:--- |
-| Copiar dados entre os arquivos de ficheiros | Entre 2 e 16 consoante o número e tamanho dos ficheiros. |
-| Copiar dados do Salesforce/Dynamics | 4 |
-| Todos os outros cenários de cópia | 2 |
+| Copiar dados entre os arquivos de ficheiros | Entre 4 e 16 consoante o número e tamanho dos ficheiros. |
+| Todos os outros cenários de cópia | 4 |
 
 Para substituir esta predefinição, especifique um valor para o **cloudDataMovementUnits** propriedade da seguinte forma. O **valores permitidos** para o **cloudDataMovementUnits** propriedade são 2, 4, 8, 16, 32. O **número real de nuvem DMUs** que a operação de cópia utiliza em tempo de execução é igual ou inferior ao valor configurado, dependendo do seu padrão de dados. Para obter informações sobre o nível de ganhos de desempenho poderá obter quando configurar mais unidades para uma origem de cópia específico e o sink, consulte o [referência de desempenho](#performance-reference).
 

@@ -11,13 +11,13 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/30/2017
+ms.date: 11/02/2017
 ms.author: robinsh
-ms.openlocfilehash: 1046e407bb4e9d07e91014384e9eba7b0c7020a8
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: d3f70880e58a21a1ae61577b04e3155c5fec6552
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="using-azure-powershell-with-azure-storage"></a>Utilizar o Azure PowerShell com o Storage do Azure
 
@@ -165,7 +165,7 @@ Para voltar a gerar a chave de outra, utilize `key2` como o nome da chave em vez
 Voltar a gerar uma das suas chaves e, em seguida, obtenha-lo novamente para ver o novo valor.
 
 > [!NOTE] 
-> Deve efetuar o planeamento cuidado antes de voltar a gerar a chave para uma conta de armazenamento de produção. Regenerar chaves de um ou ambos os irá invalidar o acesso para qualquer aplicação utilizando a chave que foi regenerada. Para obter mais informações, consulte [chaves de acesso de armazenamento Regenate](storage-create-storage-account.md#regenerate-storage-access-keys).
+> Deve efetuar o planeamento cuidado antes de voltar a gerar a chave para uma conta de armazenamento de produção. Regenerar chaves de um ou ambos os irá invalidar o acesso para qualquer aplicação utilizando a chave que foi regenerada. Para obter mais informações, consulte [voltar a gerar chaves de acesso de armazenamento](storage-create-storage-account.md#regenerate-storage-access-keys).
 
 
 ### <a name="delete-a-storage-account"></a>Eliminar uma conta do Storage 
@@ -216,6 +216,12 @@ Agora que sabe como gerir a sua conta de armazenamento com o PowerShell, pode ut
 * [Como gerir os blobs com o PowerShell](../blobs/storage-how-to-use-blobs-powershell.md)
 * [Como gerir ficheiros com o PowerShell](../files/storage-how-to-use-files-powershell.md)
 * [Como gerir filas com o PowerShell](../queues/storage-powershell-how-to-use-queues.md)
+* [Efetuar operações de armazenamento de tabelas do Azure com o PowerShell](../../cosmos-db/table-storage-how-to-use-powershell.md)
+
+API de tabela de base de dados do Azure Cosmos fornece as funcionalidades premium para armazenamento de tabelas como chave na mão distribuição global, leituras de latência baixa e escritas, indexação secundário automática e débito dedicado. 
+
+* Para obter mais informações, consulte [API de tabela de base de dados do Azure Cosmos](../../cosmos-db/table-introduction.md). 
+* Para saber como utilizar o PowerShell para efetuar operações de API de tabela do Azure Cosmos DB, consulte o artigo [operações efetuar Cosmos DB tabela API do Azure com o PowerShell](../../cosmos-db/table-powershell.md).
 
 ## <a name="azures-independently-deployed-clouds"></a>Nuvens de implementadas de forma independente do Azure
 
@@ -234,7 +240,7 @@ Se tiver criado um novo grupo de recursos e uma conta de armazenamento para este
 ```powershell
 Remove-AzureRmResourceGroup -Name $resourceGroup
 ```
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Este artigo procedimentos abrange operações comuns utilizando os cmdlets de plane de gestão para gerir contas de armazenamento. Aprendeu a: 
 

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/01/2017
+ms.date: 11/07/2017
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 8cde8e10b6789e930ea1deda2f4aa0d4a5e7ea97
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 316157a7a8ed920e9f3b15e24e15035db4cefc6c
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="azure-active-directory-conditional-access-technical-reference"></a>Referência técnica do Azure Active Directory acesso condicional
 
@@ -82,11 +82,7 @@ Para além das aplicações em nuvem da Microsoft, pode atribuir uma política d
 
 ## <a name="device-platform-condition"></a>Condição de plataforma do dispositivo
 
-Uma política de acesso condicional, pode configurar a condição de plataforma de dispositivo para associar a política para o sistema operativo num cliente.
-
-![Associar a política de acesso para o SO de cliente](./media/active-directory-conditional-access-technical-reference/41.png)
-
-Acesso condicional do Azure AD suporta as seguintes plataformas de dispositivos:
+Uma política de acesso condicional, pode configurar a condição de plataforma de dispositivo para associar a política para o sistema operativo num cliente. Acesso condicional do Azure AD suporta as seguintes plataformas de dispositivos:
 
 - Android
 
@@ -96,7 +92,12 @@ Acesso condicional do Azure AD suporta as seguintes plataformas de dispositivos:
 
 - Windows
 
-- macOS (pré-visualização)
+- macOS
+
+
+![Associar a política de acesso para o SO de cliente](./media/active-directory-conditional-access-technical-reference/41.png)
+
+
 
 
 
@@ -131,8 +132,8 @@ Na sua política de acesso condicional, os seguintes browsers são suportados:
 | Windows Server 2016    | Chrome                      | Brevemente |
 | Windows Server 2012 R2 | Internet Explorer, Chrome   | ![Marcar][1] |
 | Windows Server 2008 R2 | Internet Explorer, Chrome   | ![Marcar][1] |
-| macOS                  | Safari                      | ![Marcar][1] |
-| macOS                  | Chrome                      | Brevemente |
+| macOS                  | Chrome, Safari              | ![Marcar][1] |
+
 
 > [!NOTE]
 > Para obter suporte do Chrome, tem de utilizar o Windows 10 criadores Update (versão 1703) ou posterior.<br>
@@ -153,7 +154,7 @@ Os clientes de ambiente de trabalho e as seguintes aplicações móveis suportam
 | Aplicação do Dynamics CRM| Dynamics CRM| Windows 10, Windows 8.1, Windows 7, iOS e Android|
 | Aplicação de correio/calendário/pessoas, Outlook 2016, Outlook 2013 (com a autenticação moderna)| Office 365 Exchange Online| Windows 10|
 | Política de MFA e a localização para aplicações. Não são suportadas políticas de dispositivo baseada-se.| Qualquer serviço de aplicações de aplicações My| Android e iOS|
-| Serviços de equipas da Microsoft - Isto controla todos os serviços que suportam Teams da Microsoft e todas as respetivas aplicações de cliente - ambiente de trabalho do Windows, iOS, Android, WP e cliente web| Microsoft Teams| Windows 10, Windows 8.1, Windows 7, iOS e Android|
+| Serviços de equipas da Microsoft - Isto controla todos os serviços que suportam Teams da Microsoft e todas as respetivas aplicações de cliente - ambiente de trabalho do Windows, iOS, Android, WP e cliente web| Microsoft Teams| Windows 10, Windows 8.1, Windows 7, iOS, Android e macOS|
 | Cliente de sincronização de aplicações do Office 2016, Office 2013 (com a autenticação moderna), no OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))| Office 365 SharePoint Online| Windows 8.1, Windows 7|
 | Aplicações do Office 2016, Universal Office aplicações, Office 2013 (com a autenticação moderna), cliente de sincronização do OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)), o suporte de grupos do Office é planeado para o futuro, suporte para aplicações do SharePoint é planeada para o futuro| Office 365 SharePoint Online| Windows 10|
 | Office 2016 para macOS (Word, Excel, PowerPoint, OneNote apenas). OneDrive para empresas o suporte para o futuro| Office 365 SharePoint Online| Mac OS X|
@@ -165,6 +166,7 @@ Os clientes de ambiente de trabalho e as seguintes aplicações móveis suportam
 | Aplicação do Power BI. A aplicação Power BI para Android não suporta acesso condicional baseado no dispositivo.| Serviço do Power BI| Windows 10, Windows 8.1, Windows 7 e iOS|
 | Skype para empresas| Office 365 Exchange Online| Android, IOS|
 | Visual Studio Team Services aplicação| Visual Studio Team Services| Windows 10, Windows 8.1, Windows 7, iOS e Android|
+
 
 
 

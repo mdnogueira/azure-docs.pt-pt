@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/29/2017
 ms.author: hangzh;bradsev
-ms.openlocfilehash: 238b7d6bb6289b5f2e8d2a20f4335724087dfd48
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1be39ab258235740c7e0875a5c0c29ee4a665a71
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="the-team-data-science-process-in-action-use-azure-hdinsight-hadoop-clusters"></a>O processo de ciência de dados de equipa em ação: utilização do Azure HDInsight Hadoop clusters
 Esta explicação passo a passo, utilizamos o [processo de ciência de dados de equipa (TDSP)](overview.md) um cenário ponto-a-ponto utilizando um [cluster Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) para armazenar, explore e funcionalidade dados engenheiro do publicamente disponível [NYC Taxi viagens](http://www.andresmh.com/nyctaxitrips/) conjunto de dados e para os dados de exemplo para baixo. Modelos dos dados são criados com o Azure Machine Learning para processar várias classes e binárias classificação e regressão preditivos tarefas.
@@ -59,15 +59,15 @@ Seguem-se exemplos de três dos problemas de predição que iremos abordar esta 
 
 1. **Classificação binária**: prever ou não uma sugestão foi paga para uma viagem, ou seja, um *sugestão\_quantidade* que é superior ao $0 é um exemplo positivo, enquanto um *sugestão\_quantidade* $ 0 é um exemplo negativo.
    
-        Class 0 : tip_amount = $0
-        Class 1 : tip_amount > $0
+        Class 0: tip_amount = $0
+        Class 1: tip_amount > $0
 2. **Classificação de várias classes**: prever o intervalo de quantidades de sugestão paga para a viagem. Iremos dividir os *sugestão\_quantidade* em cinco intervalos binários ou classes:
    
-        Class 0 : tip_amount = $0
-        Class 1 : tip_amount > $0 and tip_amount <= $5
-        Class 2 : tip_amount > $5 and tip_amount <= $10
-        Class 3 : tip_amount > $10 and tip_amount <= $20
-        Class 4 : tip_amount > $20
+        Class 0: tip_amount = $0
+        Class 1: tip_amount > $0 and tip_amount <= $5
+        Class 2: tip_amount > $5 and tip_amount <= $10
+        Class 3: tip_amount > $10 and tip_amount <= $20
+        Class 4: tip_amount > $20
 3. **Tarefa de regressão**: para prever a quantidade de sugestão paga para uma viagem.  
 
 ## <a name="setup"></a>Configurar um cluster do HDInsight Hadoop para análise avançada
@@ -132,7 +132,7 @@ Os dados devem agora no Blob Storage do Azure e pronto a ser consumidos dentro d
 > 
 > 
 
-Para aceder ao nó principal do cluster para análises exploratórias dados e para baixo amostragem dos dados, siga o procedimento descrito no [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md#headnode).
+Para aceder ao nó principal do cluster para análises exploratórias dados e para baixo amostragem dos dados, siga o procedimento descrito no [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md).
 
 Esta explicação passo a passo, utilizamos principalmente consultas escritas em [Hive](https://hive.apache.org/), uma linguagem de consulta como o SQL Server, para efetuar explorations dados preliminar. As consultas do Hive são armazenadas em ficheiros .hql. Vamos, em seguida, para baixo de exemplo estes dados a utilizar no Azure Machine Learning para criar modelos.
 
@@ -723,17 +723,17 @@ Como pré-requisitos para emitir Hive as consultas no [importar dados] [ import-
 
 Alguns detalhes sobre o [importar dados] [ import-data] módulo e os parâmetros de entrada:
 
-**URI do servidor de HCatalog**: se o nome do cluster é abc123, em seguida, isto é simplesmente: https://abc123.azurehdinsight.net
+**URI do servidor de HCatalog**: se o nome do cluster é abc123, isto é simplesmente: https://abc123.azurehdinsight.net
 
-**Nome de conta de utilizador do Hadoop** : O nome de utilizador escolhido para o cluster (**não** o nome de utilizador de acesso remoto)
+**Nome de conta de utilizador do Hadoop**: O nome de utilizador escolhido para o cluster (**não** o nome de utilizador de acesso remoto)
 
-**Palavra-passe de conta do Hadoop ser** : A palavra-passe escolhida para o cluster (**não** a palavra-passe de acesso remoto)
+**Palavra-passe de conta do Hadoop ser**: A palavra-passe escolhida para o cluster (**não** a palavra-passe de acesso remoto)
 
-**Localização dos dados de saída** : Isto é escolhido para ser o Azure.
+**Localização dos dados de saída**: Isto é escolhido para ser o Azure.
 
-**Nome da conta de armazenamento do Azure** : nome da conta do storage predefinida associada com o cluster.
+**Nome da conta de armazenamento do Azure**: nome da conta do storage predefinida associada com o cluster.
 
-**Nome do contentor do Azure** : Este é o nome do contentor predefinido para o cluster e, normalmente é o mesmo que o nome do cluster. Para um cluster chamado "abc123", o que é abc123 apenas.
+**Nome do contentor do Azure**: Este é o nome do contentor predefinido para o cluster e, normalmente é o mesmo que o nome do cluster. Para um cluster chamado "abc123", o que é abc123 apenas.
 
 > [!IMPORTANT]
 > **Qualquer tabela pretendemos consultar através de [importar dados] [ import-data] módulo no Azure Machine Learning tem de ser uma tabela interna.** Segue-se uma sugestão para determinar se uma tabela T numa base de dados D.db é uma tabela interna.
@@ -795,7 +795,7 @@ b. Para esta fase experimental, utilizamos uma matriz de confusão para observar
 
 ![Matriz de confusão](./media/hive-walkthrough/cxFmErM.png)
 
-Tenha em atenção que ao nosso accuracies de classe em classes de prevalente atualmente é bastante boa, o modelo não fazer um bom trabalho de "learning" nas classes rarer.
+Tenha em atenção que ao nosso accuracies de classe em classes de prevalente atualmente são bastante boas, o modelo não fazer um bom trabalho de "learning" nas classes rarer.
 
 **3. Tarefa de regressão**: para prever a quantidade de sugestão paga para uma viagem.
 
@@ -814,12 +814,12 @@ b. Para problemas de regressão, iremos medir accuracies do nosso predição obs
 Vemos que sobre o coeficiente de determinação é 0.709, implying cerca de 71% da variância é explicado por nossa coefficients de modelo.
 
 > [!IMPORTANT]
-> Para saber mais sobre o Azure Machine Learning e como aceder e utilizá-lo, consulte [o que é o Machine Learning?](../studio/what-is-machine-learning.md). Um recurso muito útil para reproduzir com um bunch de experimentações de Machine Learning no Azure Machine Learning é o [galeria da Cortana Intelligence](https://gallery.cortanaintelligence.com/). A Galeria abrange uma gama de experimentações e fornece uma introdução de detalhado para o leque de funcionalidades do Azure Machine Learning.
+> Para saber mais sobre o Azure Machine Learning e como aceder e utilizá-lo, consulte [o que é o Machine Learning](../studio/what-is-machine-learning.md). Um recurso muito útil para reproduzir com um bunch de experimentações de Machine Learning no Azure Machine Learning é o [galeria da Cortana Intelligence](https://gallery.cortanaintelligence.com/). A Galeria abrange uma gama de experimentações e fornece uma introdução de detalhado para o leque de funcionalidades do Azure Machine Learning.
 > 
 > 
 
 ## <a name="license-information"></a>Informações de licença
-Estas instruções de exemplo e os respetivos scripts associadas são partilhados com a licença MIT pela Microsoft. Verifique o ficheiro LICENSE.txt no diretório do código de exemplo no GitHub para obter mais detalhes.
+Estas instruções de exemplo e os respetivos scripts associadas são partilhados com a licença MIT pela Microsoft. Verifique o ficheiro de LICENSE.txt no diretório do código de exemplo no GitHub para obter mais detalhes.
 
 ## <a name="references"></a>Referências
 • [Andrés Monroy NYC Taxi viagens página de transferência](http://www.andresmh.com/nyctaxitrips/)  

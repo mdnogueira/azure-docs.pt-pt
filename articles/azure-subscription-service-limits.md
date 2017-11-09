@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: byvinyal
-ms.openlocfilehash: 2cdf7ad766fe47f2d2848815860ad545b43aec72
-ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
+ms.openlocfilehash: ee021f5679d3c5a37cd8a795732721b37aaf66ea
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Subscrição do Azure e limites de serviço, quotas e restrições
 Este documento apresenta uma lista algumas dos limites mais comuns de Microsoft Azure, que também por vezes, são chamados quotas. Este documento atualmente não abrange todos os serviços do Azure. Ao longo do tempo, a lista será expandida e atualizada para cobrir mais da plataforma.
@@ -27,10 +27,10 @@ Este documento apresenta uma lista algumas dos limites mais comuns de Microsoft 
 Visite [descrição geral de preços do Azure](https://azure.microsoft.com/pricing/) para obter mais informações sobre preços do Azure. Aqui, pode estimar os custos com o [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/) ou, visitando a página de detalhes de preços para um serviço (por exemplo, [VMs do Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows)). Para sugestões ajudar a gerir os custos, consulte [evitar custos inesperados com faturação do Azure e custos de gestão](billing/billing-getting-started.md).
 
 > [!NOTE]
-> Se pretende aumentar o limite ou acima da quota de **limite predefinido**, [abrir um pedido de suporte online do cliente, sem encargos](azure-supportability/resource-manager-core-quotas-request.md). Não podem ser gerados os limites acima o **limite máximo** valor mostrado nas seguintes tabelas. Se não houver nenhuma **limite máximo** coluna, em seguida, o recurso não têm limites ajustável. 
-> 
+> Se pretende aumentar o limite ou acima da quota de **limite predefinido**, [abrir um pedido de suporte online do cliente, sem encargos](azure-supportability/resource-manager-core-quotas-request.md). Não podem ser gerados os limites acima o **limite máximo** valor mostrado nas seguintes tabelas. Se não houver nenhuma **limite máximo** coluna, em seguida, o recurso não têm limites ajustável.
+>
 > As subscrições de avaliação gratuitas não são elegíveis para o limite ou aumenta a quota. Se tiver uma versão de avaliação gratuita, pode atualizar para um [pay as you go](https://azure.microsoft.com/offers/ms-azr-0003p/) subscrição. Para obter mais informações, consulte [atualizar avaliação gratuita do Azure para pay as you go](billing/billing-upgrade-azure-subscription.md).
-> 
+>
 
 ## <a name="limits-and-the-azure-resource-manager"></a>Limites e o Gestor de recursos do Azure
 Agora é possível combinar vários recursos do Azure num único grupo de recursos do Azure. Quando utilizar grupos de recursos, os limites que uma vez foram global passará a ser geridos a um nível regional com o Azure Resource Manager. Para obter mais informações sobre grupos de recursos do Azure, consulte [descrição geral do Azure Resource Manager](azure-resource-manager/resource-group-overview.md).
@@ -41,8 +41,8 @@ Os limites abaixo, uma nova tabela foi adicionada para refletir as diferenças n
 > É importante realçar que as quotas para os recursos em grupos de recursos do Azure estão por regiões acessível através da sua subscrição e não estão por subscrição, como as quotas de gestão de serviço. Vamos utilizar quotas de núcleos como exemplo. Se precisar de pedir um aumento de quota com suporte para núcleos, terá de decidir quantos núcleos que pretende utilizar em que regiões e, em seguida, efetue um pedido específico para quotas de núcleo do grupo de recursos do Azure para as quantidades e regiões que pretende. Por conseguinte, se tiver de utilizar 30 núcleos na Europa Ocidental para executar a aplicação não existe; especificamente o utilizador deve pedir 30 núcleos na Europa Ocidental. Mas não terá uma quota de núcleos aumentam a qualquer outra região – apenas Europa Ocidental terão a quota de núcleos de 30.
 > <!-- -->
 > Como resultado, pode útil considerar a decidir o que as quotas de grupo de recursos do Azure tem de ser para a carga de trabalho em qualquer região de um e pedir que quantidade em cada região na qual estiver a considerar implementação. Consulte [resolução de problemas de implementação](resource-manager-common-deployment-errors.md) para obter mais ajuda a detetar as quotas atuais para regiões específicas.
-> 
-> 
+>
+>
 
 ## <a name="service-specific-limits"></a>Limites de serviço específicos
 * [Active Directory](#active-directory-limits)
@@ -60,6 +60,7 @@ Os limites abaixo, uma nova tabela foi adicionada para refletir as diferenças n
 * [CDN](#cdn-limits)
 * [Serviços Cloud](#cloud-services-limits)
 * [Container Instances](#container-instances-limits)
+* [Container Registry](#container-registry-limits)
 * [Data Factory](#data-factory-limits)
 * [Data Lake Analytics](#data-lake-analytics-limits)
 * [Data Lake Store](#data-lake-store-limits)
@@ -117,8 +118,13 @@ Os seguintes limites aplicam-se ao utilizar o Azure Resource Manager e os grupos
 ### <a name="virtual-machine-scale-sets-limits"></a>Limites de conjuntos de dimensionamento de máquina virtual
 [!INCLUDE [virtual-machine-scale-sets-limits](../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-### <a name="container-instances-limits"></a>Os limites de instâncias de contentor
+### <a name="container-instances-limits"></a>Limites de instâncias de contentor
 [!INCLUDE [container-instances-limits](../includes/container-instances-limits.md)]
+
+### <a name="container-registry-limits"></a>Limites de registo do contentor
+A tabela seguinte fornece detalhes sobre as funcionalidades e limites do básicas, Standard e Premium [escalões de serviço](./container-registry/container-registry-skus.md).
+
+[!INCLUDE [container-registry-limits](../includes/container-registry-limits.md)]
 
 ### <a name="networking-limits"></a>Limites de rede
 [!INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
@@ -141,7 +147,7 @@ Os seguintes limites aplicam-se ao utilizar o Azure Resource Manager e os grupos
 ### <a name="storage-limits"></a>Limites de armazenamento
 Para obter detalhes adicionais sobre os limites de conta de armazenamento, consulte [metas de desempenho e escalabilidade do Storage do Azure](storage/common/storage-scalability-targets.md).
 
-<!--like # storage accts --> 
+<!--like # storage accts -->
 [!INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
 [!INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
@@ -164,7 +170,7 @@ Para obter detalhes adicionais sobre os limites de ficheiros do Azure, consulte 
 [!INCLUDE [storage-tables-scale-targets](../includes/storage-tables-scale-targets.md)]
 
 <!-- conceptual info about disk limits -- applies to unmanaged and managed -->
-#### <a name="virtual-machine-disk-limits"></a>Limites de disco de máquina virtual 
+#### <a name="virtual-machine-disk-limits"></a>Limites de disco de máquina virtual
 [!INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
 Consulte [tamanhos de Máquina Virtual](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para obter detalhes adicionais.

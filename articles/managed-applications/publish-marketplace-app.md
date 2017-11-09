@@ -8,13 +8,13 @@ ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 10/20/2017
+ms.date: 11/08/2017
 ms.author: gauravbh
-ms.openlocfilehash: b4fda06f85c7dab52ff38558b0d928193e0694f6
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: 41eaff13cf55d58f58b33bc05d39a6665d51ea29
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-managed-applications-in-the-marketplace"></a>Aplicações geridas do Azure no Marketplace
 
@@ -122,7 +122,7 @@ Um SKU aparece sob a oferta de principal no marketplace. É apresentado como o s
    Preencha os campos seguintes:
 
    * **Versão atual**: introduza uma versão para o pacote que carrega. Deverá estar no formato `{number}.{number}.{number}{number}`.
-   * **Selecione um ficheiro de pacote**: Este pacote contém o ficheiro comprimido para um pacote. zip. Para obter mais informações, consulte [Criar aplicação do catálogo de serviço](publish-service-catalog-app.md).
+   * **Selecione um ficheiro de pacote**: Este pacote contém dois ficheiros necessários comprimidos para um pacote. zip. Um ficheiro é um modelo do Resource Manager que define os recursos a implementar a aplicação gerida. O ficheiro de outro define o [interface de utilizador](create-uidefinition-overview.md) para implementar a aplicação gerida através do portal de consumidores. Na interface de utilizador, especifique os elementos que permitem que os consumidores fornecer valores de parâmetros.
    * **PrincipalId**: Esta propriedade é o identificador do Azure Active Directory (Azure AD) de um utilizador, o grupo de utilizadores ou a aplicação que é concedida acesso aos recursos na subscrição do cliente. A definição de função descreve as permissões.
    * **Definição de função**: Esta propriedade é uma lista de todos os as controlo de acesso baseado em funções (RBAC) funções incorporadas fornecidas pelo Azure AD. Pode selecionar a função que é mais adequada utilizar para gerir os recursos em nome do cliente.
 
@@ -197,5 +197,5 @@ Depois de preencher todas as secções, selecione **publicar** para iniciar o pr
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* Para uma introdução para aplicações geridas, consulte [descrição geral de aplicações gerido](overview.md).
+* Para obter uma introdução às aplicações geridas, veja [Descrição geral das aplicações geridas](overview.md).
 * Para obter informações sobre como publicar uma aplicação do catálogo de serviço geridas, consulte [criar e publicar uma aplicação do catálogo de serviço geridas](publish-service-catalog-app.md).

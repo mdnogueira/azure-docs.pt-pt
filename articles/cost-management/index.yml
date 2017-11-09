@@ -37,3 +37,4 @@ sections:
           - html: <a href="tutorial-review-usage">Rever a utilização e os custos para detetar anomalias e eficiências</a>
           - html: <a href="tutorial-user-access">Atribuir acesso aos dados da Gestão de Custos</a>
           - html: <a href="tutorial-forecast-spending">Prever despesas futuras</a>
+          - html: <a href="tutorial-manage-costs">Gerir os custos com relatórios de alocação e análise de custos e encargos de custos</a>

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: cynthn
-ms.openlocfilehash: 11850e5ce20efae88a7af9c1d2e4761ed2b70cd7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e4135f96027cc25e1e0a149857ace1672570fc4b
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="install-mysql-on-a-virtual-machine-created-with-the-classic-deployment-model-running-windows-server-2016"></a>Instalar o MySQL numa máquina virtual criada com o modelo de implementação clássica com o Windows Server 2016
 [MySQL](https://www.mysql.com) é um código aberto popular, a base de dados SQL. Este tutorial mostra como instalar e executar o **versão de Comunidade do MySQL 5.7.18** como um servidor de MySQL numa máquina virtual em execução **Windows Server 2016**. A experiência poderão ser ligeiramente diferente para outras versões de MySQL ou Windows Server.
@@ -28,6 +28,7 @@ Para obter instruções sobre como instalar o MySQL no Linux, consulte: [como in
 
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager.
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 ## <a name="create-a-virtual-machine-running-windows-server-2016"></a>Criar uma máquina virtual com o Windows Server 2016
 Se ainda não tiver uma VM com o Windows Server 2016, pode utilizá-lo [tutorial](./tutorial.md) para criar a máquina virtual.

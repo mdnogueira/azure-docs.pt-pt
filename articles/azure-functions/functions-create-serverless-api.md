@@ -11,11 +11,11 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: e4fe86b80d8a786da15cdea37619e54e55102e3f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 630d9022da0d51e533534ea43f50f27e8eb09a78
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="create-a-serverless-api-using-azure-functions"></a>Criar uma API sem servidor através das funções do Azure
 
@@ -61,7 +61,8 @@ Em seguida, teste a sua função para vê-lo a trabalhar com a superfície de AP
 1. Navegue de volta para a página de desenvolvimento ao clicar no nome da função na navegação à esquerda.
 1. Clique em **obter URL de função** e copie o URL. Deverá ver que utiliza o `/api/hello` encaminhar agora.
 1. Copie o URL para um novo separador do browser ou o cliente REST preferencial. Browsers utilizará GET por predefinição.
-1. Execute a função e confirme que está a funcionar. Terá de fornecer o parâmetro "nome" como uma cadeia de consulta para satisfazer o código de início rápido.
+1. Adicionar parâmetros para a cadeia de consulta no seu URL, por exemplo`/api/hello/?name=John`
+1. Atingiu o introduza para confirmar que está a funcionar. Deverá ver a resposta "*Hello João*"
 1. Também pode tentar chamar o ponto final com outro método HTTP para confirmar que a função não está a ser executada. Para tal, terá de utilizar um cliente REST, tais como cURL, Postman ou Fiddler.
 
 ## <a name="proxies-overview"></a>Descrição geral de proxies
@@ -85,9 +86,8 @@ Nesta secção, irá criar um novo proxy que funciona como front-end à sua API 
 Repita os passos para [criar uma aplicação de função](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function#create-a-function-app) para criar uma nova aplicação de função que vai criar o proxy. URL da aplicação nova irá servir como o front-end para a nossa API e a aplicação de função que foram anteriormente editar irá servir como um back-end.
 
 1. Navegue para a nova aplicação de função de front-end no portal.
-1. Selecione **definições**. Em seguida, ative **ativar Proxies de funções do Azure (pré-visualização)** para "Em".
-1. Selecione **definições plataforma** e escolha **definições da aplicação**.
-1. Desloque para baixo até **as definições de aplicação** e criar uma nova definição com a chave "HELLO_HOST". Defina o respetivo valor para o anfitrião da sua aplicação de função de back-end, tais como `<YourBackendApp>.azurewebsites.net`. Esta é a parte do URL que copiou anteriormente ao testar a sua função HTTP. Irá referenciar esta definição na configuração mais tarde.
+1. Selecione **funcionalidades da plataforma** e escolha **definições da aplicação**.
+1. Desloque para baixo até **definições da aplicação** onde os pares chave/valor são armazenados e crie uma nova definição com a chave "HELLO_HOST". Defina o respetivo valor para o anfitrião da sua aplicação de função de back-end, tais como `<YourBackendApp>.azurewebsites.net`. Esta é a parte do URL que copiou anteriormente ao testar a sua função HTTP. Irá referenciar esta definição na configuração mais tarde.
 
     > [!NOTE] 
     > As definições de aplicação são recomendadas para a configuração do anfitrião evitar uma dependência de ambiente hard-coded para o proxy. Utilizar as definições de aplicação significa que pode mover a configuração de proxy entre ambientes e serão aplicadas as definições de aplicação específico do ambiente.
@@ -120,7 +120,7 @@ Repita os passos para [criar uma aplicação de função](https://docs.microsoft
 
 Em seguida, irá utilizar um proxy para criar uma API mock para a sua solução. Isto permite que o desenvolvimento de cliente para curso, sem necessidade de back-end totalmente implementado. Mais tarde no desenvolvimento, pode criar uma nova aplicação de função que suporte esta lógica e redirecionar o proxy para a mesma.
 
-Para criar esta API mock, vamos criar um novo proxy, este tempo, utilizando o [Editor do serviço de aplicações](https://github.com/projectkudu/kudu/wiki/App-Service-Editor). Para começar a utilizar, navegue até à sua aplicação de função no portal. Selecione **funcionalidades da plataforma** e localizar **Editor do serviço de aplicações**. Clicar em Isto irá abrir o Editor de serviço de aplicações num novo separador.
+Para criar esta API mock, vamos criar um novo proxy, este tempo, utilizando o [Editor do serviço de aplicações](https://github.com/projectkudu/kudu/wiki/App-Service-Editor). Para começar a utilizar, navegue até à sua aplicação de função no portal. Selecione **funcionalidades da plataforma** e, em **ferramentas de desenvolvimento** localizar **Editor do serviço de aplicações**. Clicar em Isto irá abrir o Editor de serviço de aplicações num novo separador.
 
 Selecione `proxies.json` no painel de navegação esquerdo. Este é o ficheiro que armazena a configuração para todos os seus proxies. Se utilizar um do [funciona métodos de implementação](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment), este é o ficheiro vai manter o controlo de origem. Para obter mais informações sobre este ficheiro, consulte o artigo [Proxies advanced configuration](https://docs.microsoft.com/azure/azure-functions/functions-proxies#advanced-configuration).
 
@@ -178,7 +178,7 @@ Em seguida irá adicionar a API mock. Substitua o ficheiro proxies.json com o se
 
 Esta ação adiciona um novo proxy, "GetUserByName", sem a propriedade backendUri. Em vez de chamar outro recurso, modifica a resposta de predefinição do Proxies utilizando uma substituição de resposta. Substituições de pedido e resposta também podem ser utilizadas em conjunto com um URL de back-end. Isto é particularmente útil quando a funcionalidade de proxy para um sistema legado, onde poderá ter de modificar cabeçalhos, consultar parâmetros, etc. Para saber mais sobre o pedido e resposta substituições, consulte o artigo [modificar pedidos e respostas no Proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies#a-namemodify-requests-responsesamodifying-requests-and-responses).
 
-Testar a sua API mock ao chamar o `/api/users/{username}` ponto final utilizando um browser ou o cliente REST favorito. Não se esqueça de substituir _{username}_ com um valor de cadeia representando um nome de utilizador.
+Testar a sua API mock ao chamar o `<YourProxyApp>.azurewebsites.net/api/users/{username}` ponto final utilizando um browser ou o cliente REST favorito. Não se esqueça de substituir _{username}_ com um valor de cadeia representando um nome de utilizador.
 
 ## <a name="next-steps"></a>Passos seguintes
 

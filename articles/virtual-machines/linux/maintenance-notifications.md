@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2017
 ms.author: zivr
-ms.openlocfilehash: be062ce9cfbe7486ef500dd9d27418cbf245d6e0
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: b31955e19883f9fe2e7ed6cf7f5076eaf52577c0
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="handling-planned-maintenance-notifications-for-linux-virtual-machines"></a>Notificações de manutenção de processamento planeada para máquinas virtuais do Linux
 
@@ -65,6 +65,8 @@ Os seguintes valores são devolvidos em MaintenanceRedeployStatus:
 | LastOperationResultCode               | O resultado da última tentativa para iniciar a manutenção da VM ||
 
 
+
+
 ## <a name="start-maintenance-on-your-vm-using-cli"></a>Iniciar manutenção na VM a utilizar a CLI
 
 A seguinte chamada iniciará manutenção numa VM, se `IsCustomerInitiatedMaintenanceAllowed` está definido como true.
@@ -74,6 +76,28 @@ az vm perform-maintenance rgName vmName
 ```
 
 [!INCLUDE [virtual-machines-common-maintenance-notifications](../../../includes/virtual-machines-common-maintenance-notifications.md)]
+
+## <a name="classic-deployments"></a>Implementações clássicas
+
+Se ainda tiver legadas VMs que foram implementados utilizando o modelo de implementação clássica, pode utilizar CLI 1.0 a consulta para as VMs e iniciar a manutenção.
+
+Certifique-se de que está no modo correto para trabalhar com VMS clássicas, escrevendo:
+
+```
+azure config mode asm
+```
+
+Para obter o estado de manutenção de uma VM chamada *myVM*, tipo:
+
+```
+azure vm show myVM 
+``` 
+
+Para iniciar a manutenção VMS clássicas chamada *myVM* no *myService* serviço e *myDeployment* implementação, escreva:
+
+```
+azure compute virtual-machine initiate-maintenance --service-name myService --name myDeployment --virtual-machine-name myVM
+```
 
 
 ## <a name="faq"></a>FAQ

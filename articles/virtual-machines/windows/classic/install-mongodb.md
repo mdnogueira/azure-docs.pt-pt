@@ -15,15 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/07/2017
 ms.author: iainfou
-ms.openlocfilehash: 6b5af18d02fd508a21cdc21b38b1c16e79f07ecb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d70194f30b7866cab38cfbbe1ea06664b0ddc1f5
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="install-mongodb-on-a-windows-vm-in-azure"></a>Instalar MongoDB no Windows VM no Azure
 > [!IMPORTANT]
 > O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../../../resource-manager-deployment-model.md).  Este artigo abrange utilizando o modelo de implementação clássica. A Microsoft recomenda que as implementações mais novas utilizem o modelo Resource Manager. Para instalar e configurar o MongoDB utilizando o modelo de implementação Resource Manager, consulte o artigo [neste artigo](../install-mongodb.md).
+> [!INCLUDE [virtual-machines-common-classic-createportal](../../../../includes/virtual-machines-classic-portal.md)]
 
 [MongoDB] [ MongoDB] é um popular open source e de elevado desempenho base de dados NoSQL. Este artigo orienta-o a criar uma máquina virtual (VM) do Windows Server utilizando o [portal do Azure][AzurePortal]. Em seguida, criar e anexar um disco de dados para a VM antes de instalar e configurar o MongoDB. Se tiver uma VM existente no Azure que pretende utilizar, pode ir diretamente para [instalar e configurar o MongoDB](#install-and-run-mongodb-on-the-virtual-machine).
 

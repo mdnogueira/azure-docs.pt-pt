@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/29/2017
 ms.author: bradsev
-ms.openlocfilehash: c90c3d3c0effd68a4a5962d4d097fccbdc3fee56
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
-ms.translationtype: MT
+ms.openlocfilehash: 1eee39135dca98db205677072d79421eadcdd85e
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Criar as tabelas do Hive e carregar dados do Blob Storage do Azure
 Este tópico apresenta genéricas consultas do Hive que criar tabelas do Hive e carregar dados do blob storage do Azure. Algumas orientações também são fornecidas na criação de partições de tabelas do Hive e sobre como utilizar o otimizada linha Columnar (ORC) formatação para melhorar o desempenho de consulta.
@@ -32,7 +32,7 @@ Este artigo pressupõe que tem:
 
 * Criar uma conta de armazenamento do Azure. Se precisar de instruções, consulte [contas do storage do Azure sobre](../../storage/common/storage-create-storage-account.md).
 * Aprovisionar um cluster de Hadoop personalizado com o serviço de HDInsight.  Se precisar de instruções, consulte [personalizar o Azure HDInsight Hadoop clusters para análise avançada](customize-hadoop-cluster.md).
-* Acesso remoto ativado para o cluster, tem sessão iniciada e abrir a consola da linha de comandos do Hadoop. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md#headnode).
+* Acesso remoto ativado para o cluster, tem sessão iniciada e abrir a consola da linha de comandos do Hadoop. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md).
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Carregar dados para armazenamento de Blobs do Azure
 Se criar uma máquina virtual do Azure ao seguir as instruções fornecidas [configurar uma máquina virtual do Azure para análise avançada](../data-science-virtual-machine/setup-virtual-machine.md), este ficheiro de script deve ter sido transferido para o *c:\\utilizadores \\ \<nome de utilizador\>\\documentos\\Scripts de ciência de dados* diretório na máquina virtual. Estas consultas do Hive apenas requerem que ligue no seu próprio esquema de dados e a configuração de armazenamento de Blobs do Azure no campos apropriados para estar preparado para submissão.

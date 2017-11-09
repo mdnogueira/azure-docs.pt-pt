@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 10/02/2017
 ms.author: mikhegn
 ms.custom: mvc, devcenter
-ms.openlocfilehash: cdb5fdb094a185db12ee08969a12e556dab96389
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: 40b29ccb454caf5462807d6c24ca3f470865d368
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="create-a-net-service-fabric-application-in-azure"></a>Criar uma aplicação .NET Service Fabric no Azure
 O Azure Service Fabric é uma plataforma de sistemas distribuídos par implementar e gerir microsserviços e contentores dimensionáveis e fiáveis. 
@@ -87,30 +87,30 @@ Quando votar na aplicação ocorrem os seguintes eventos:
 3. O serviço de back-end demora o pedido de entrada e armazena o resultado atualizado num dictionary fiável, que obtém replicado para múltiplos nós dentro do cluster e persistentes no disco. Dados da aplicação são armazenados no cluster, pelo que não é necessária nenhuma base de dados.
 
 ## <a name="debug-in-visual-studio"></a>Depuração no Visual Studio
-Quando a depuração de aplicações no Visual Studio, está a utilizar um cluster de desenvolvimento do Service Fabric local. Tem a opção para ajustar a sua experiência de depuração para o seu cenário. Nesta aplicação, podemos armazenar dados no nosso serviço de back-end, utilizando um dicionário fiável. Visual Studio remove a aplicação por predefinição, quando parar o depurador. Remover a aplicação faz com que os dados no serviço de back-end para também ser removido. Para manter os dados entre sessões de depuração, pode alterar o **modo de depuração da aplicação** como uma propriedade no **voto** projeto no Visual Studio.
+Quando a depuração de aplicações no Visual Studio, está a utilizar um cluster de desenvolvimento do Service Fabric local. Tem a opção para ajustar a sua experiência de depuração para o seu cenário. Nesta aplicação, os dados são armazenados no serviço de back-end através de um dicionário fiável. Visual Studio remove a aplicação por predefinição, quando parar o depurador. Remover a aplicação faz com que os dados no serviço de back-end para também ser removido. Para manter os dados entre sessões de depuração, pode alterar o **modo de depuração da aplicação** como uma propriedade no **voto** projeto no Visual Studio.
 
 Para ver o que acontece no código, conclua os seguintes passos:
-1. Abra o **VotesController.cs** de ficheiros e defina um ponto de interrupção na web da API **colocar** método (linha 47) - pode procurar o ficheiro no Explorador de soluções no Visual Studio.
+1. Abra o **/VotingWeb/Controllers/VotesController.cs** de ficheiros e defina um ponto de interrupção na web da API **colocar** método (linha 47) - pode procurar o ficheiro no Explorador de soluções no Visual Studio.
 
-2. Abra o **VoteDataController.cs** de ficheiros e defina um ponto de interrupção da API web **colocar** método (50 de linha).
+2. Abra o **/VotingData/ControllersVoteDataController.cs** de ficheiros e defina um ponto de interrupção da API web **colocar** método (50 de linha).
 
 3. Voltar para o browser e clique numa opção de voto ou adicionar uma nova opção de voto. Atingiu o primeiro ponto de interrupção no controlador de api do web frente-fim.
     - Este é onde o JavaScript no browser envia um pedido para o controlador da API web no serviço de front-end.
     
     ![Adicionar serviço de front-end de voto](./media/service-fabric-quickstart-dotnet/addvote-frontend.png)
 
-    - Primeiro vamos construir o URL para o ReverseProxy para o nosso serviço de back-end **(1)**.
-    - Em seguida, enviar-lhe o colocar pedido de HTTP para o ReverseProxy **(2)**.
-    - Por fim, o que enviamos a resposta do serviço de back-end para o cliente **(3)**.
+    - Em primeiro lugar, construir o URL para o ReverseProxy para o nosso serviço de back-end **(1)**.
+    - Em seguida, enviar o colocar pedido de HTTP para o ReverseProxy **(2)**.
+    - Por último, regresse a resposta do serviço de back-end para o cliente **(3)**.
 
 4. Prima **F5** para continuar
     - Está agora no ponto de interrupção no serviço de back-end.
     
     ![Adicionar serviço de Back-End de voto](./media/service-fabric-quickstart-dotnet/addvote-backend.png)
 
-    - Na primeira linha no método **(1)** estamos a utilizar o `StateManager` obter ou adicionar um dicionário fiável chamado `counts`.
+    - Na primeira linha no método **(1)** o `StateManager` obtém ou adiciona um dicionário fiável chamado `counts`.
     - Todas as interações com valores num dictionary fiável necessitam de uma transação, esta utilizando instrução **(2)** cria esse transação.
-    - A transação, vamos, em seguida, atualize o valor da chave relevante para a opção de voto e consolida a operação **(3)**. Depois da consolidação método devolve, os dados é atualizado no dicionário e replicados para outros nós do cluster. Os dados estão agora armazenados em segurança no cluster e o serviço de back-end pode falhar relativamente aos outros nós, ainda que os dados disponíveis.
+    - A transação, atualize o valor da chave relevante para a opção de voto e consolidar a operação **(3)**. Depois da consolidação método devolve, os dados é atualizado no dicionário e replicados para outros nós do cluster. Os dados estão agora armazenados em segurança no cluster e o serviço de back-end pode falhar relativamente aos outros nós, ainda que os dados disponíveis.
 5. Prima **F5** para continuar
 
 Para parar a sessão de depuração, prima **Shift + F5**.
@@ -138,12 +138,12 @@ Agora que a aplicação está pronta, pode implementá-la num cluster diretament
 
     Cada aplicação no cluster tem de ter um nome exclusivo.  Clusters intervenientes são um ambiente público, partilhado no entanto e pode existir um conflito com uma aplicação existente.  Se houver um conflito de nomes, mudar o nome do projeto do Visual Studio e implemente novamente.
 
-3. Abra um browser e tipo no foolowed de endereço do cluster por ': 8080' para obter a aplicação no cluster - por exemplo, `http://winh1x87d1d.westus.cloudapp.azure.com:8080`. Deverá ver a aplicação em execução no cluster no Azure.
+3. Abra um browser e escreva o endereço de cluster seguidos de ': 8080' para obter a aplicação no cluster - por exemplo, `http://winh1x87d1d.westus.cloudapp.azure.com:8080`. Deverá ver a aplicação em execução no cluster no Azure.
 
 ![Front-end da aplicação](./media/service-fabric-quickstart-dotnet/application-screenshot-new-azure.png)
 
 ## <a name="scale-applications-and-services-in-a-cluster"></a>Dimensionar aplicações e serviços num cluster
-Serviços do Service Fabric facilmente podem ser ampliados através de um cluster para acomodar uma alteração da carga nos serviços. Para dimensionar um serviço, tem de alterar o número de instâncias em execução no cluster. Tem várias formas de dimensionamento os seus serviços, pode utilizar os scripts ou comandos do PowerShell ou a CLI de recursos de infraestrutura de serviço (sfctl). Neste exemplo, estamos a utilizar Service Fabric Explorer.
+Serviços do Service Fabric facilmente podem ser ampliados através de um cluster para acomodar uma alteração da carga nos serviços. Para dimensionar um serviço, tem de alterar o número de instâncias em execução no cluster. Tem várias formas de dimensionamento os seus serviços, pode utilizar os scripts ou comandos do PowerShell ou a CLI de recursos de infraestrutura de serviço (sfctl). Neste exemplo, utilize o Service Fabric Explorer.
 
 Explorador de recursos de infraestrutura de serviço é executado em todos os clusters de Service Fabric e podem ser acedido a partir de um browser, ao navegar para a porta de gestão de clusters HTTP (19080), por exemplo, `http://winh1x87d1d.westus.cloudapp.azure.com:19080`.
 
@@ -161,22 +161,17 @@ Para dimensionar o serviço de front-end da Web, execute os seguintes passos:
 
     ![Escala de Explorador de recursos de infraestrutura do serviço](./media/service-fabric-quickstart-dotnet/service-fabric-explorer-scaled-service.png)
 
-    Agora, pode ver que o serviço tem duas instâncias e na vista de árvore ver quais as instâncias de executam os nós.
+    Após um atraso, pode ver que o serviço tem duas instâncias.  Na vista de árvore, ver os nos quais as instâncias de executam.
 
-Através desta simples tarefa de gestão, duplicámos os recursos disponíveis para o nosso serviço de front-end processar a carga de utilizador. É importante compreender que não precisa de várias instâncias de um serviço para o executar de forma fiável. Se um serviço falhar, o Service Fabric certifica-se de que uma nova instância de serviço é executado no cluster.
+Por esta tarefa de gestão simples, os recursos disponíveis duplicada para o serviço de front-end processar a carga de utilizador. É importante compreender que não precisa de várias instâncias de um serviço para o executar de forma fiável. Se um serviço falhar, o Service Fabric certifica-se de que uma nova instância de serviço é executado no cluster.
 
 ## <a name="perform-a-rolling-application-upgrade"></a>Efetuar uma atualização sem interrupção da aplicação
 Quando implementar novas atualizações à sua aplicação, o Service Fabric lança a atualização de uma forma segura. A anular atualizações dá-lhe sem períodos de indisponibilidade durante a atualização, bem como a reversão automática devem ocorrer erros.
 
 Para atualizar a aplicação, efetue o seguinte:
 
-1. Abra o **Index. cshtml** ficheiro no Visual Studio – pode procurar o ficheiro no Explorador de soluções no Visual Studio.
-2. Altere o título na página adicionando algum texto - por exemplo.
-    ```html
-        <div class="col-xs-8 col-xs-offset-2 text-center">
-            <h2>Service Fabric Voting Sample v2</h2>
-        </div>
-    ```
+1. Abra o **/VotingWeb/Views/Home/Index.cshtml** ficheiro no Visual Studio.
+2. Alterar o <h2> cabeçalho da página ao adicionar ou atualizar o texto. Por exemplo, altere o cabeçalho para "V2 de exemplo de voto de recursos de infraestrutura de serviço".
 3. Guarde o ficheiro.
 4. Clique com botão direito **voto** no Explorador de soluções e escolha **publicar**. É apresentada a caixa de diálogo Publicar.
 5. Clique em de **manifesto versão** botão para alterar a versão do serviço e aplicação.
@@ -187,7 +182,7 @@ Para atualizar a aplicação, efetue o seguinte:
 
     ![Caixa de diálogo Publicar atualizar a definição](./media/service-fabric-quickstart-dotnet/upgrade-app.png)
 8. Abra o browser e navegue para o endereço do cluster na porta 19080 - por exemplo, `http://winh1x87d1d.westus.cloudapp.azure.com:19080`.
-9. Clique em de **aplicações** nó na vista de árvore e, em seguida, **atualizações em curso** no painel da direita. Pode ver como a atualização se faz através de domínios de atualização do cluster, certificar-se de que cada domínio está em bom estado antes de avançar para o seguinte.
+9. Clique em de **aplicações** nó na vista de árvore e, em seguida, **atualizações em curso** no painel da direita. Pode ver como a atualização se faz através de domínios de atualização do cluster, certificar-se de que cada domínio está em bom estado antes de avançar para o seguinte. Um domínio de atualização na barra de progresso é apresentada a verde quando o estado de funcionamento do domínio ter sido verificado.
     ![Vista de atualização no Service Fabric Explorer](./media/service-fabric-quickstart-dotnet/upgrading.png)
 
     Service Fabric faz com que as atualizações seguro ao aguardar dois minutos depois de atualizar o serviço em cada nó no cluster. Esperam que a atualização demore aproximadamente oito minutos completa.

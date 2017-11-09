@@ -14,17 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: 995a1f37a3fd68b39c14a95d46109c0f7814018d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e32723cd3ef13829890a630f4bff308164e17674
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="advisor-performance-recommendations"></a>Recomendações de desempenho do Assistente
 
 Recomendações de desempenho do Assistente do Azure ajudam a melhorar a velocidade e a capacidade de resposta das suas aplicações empresariais vitais. Pode obter recomendações de desempenho do Advisor no **desempenho** separador do dashboard do Advisor.
-
-![Separador de desempenho do Advisor](./media/advisor-performance-recommendations/advisor-performance-tab.png)
 
 ## <a name="improve-database-performance-with-sql-db-advisor"></a>Melhorar o desempenho de base de dados com o Assistente de base de dados SQL
 
@@ -34,8 +32,6 @@ Advisor disponibiliza uma vista consolidada consistente de recomendações para 
 > Para obter recomendações, uma base de dados tem de ter sobre uma semana de utilização e dentro dessa semana tem de existir alguma atividade consistente. Pode otimizar a SQL Database Advisor mais facilmente para padrões de consulta consistente que para bursts aleatórias de atividade.
 
 Para obter mais informações sobre o Advisor de base de dados do SQL Server, consulte [SQL Database Advisor](https://azure.microsoft.com/en-us/documentation/articles/sql-database-advisor/).
-
-![Recomendações de base de dados do SQL Server](./media/advisor-performance-recommendations/advisor-performance-sql.png)
 
 ## <a name="improve-redis-cache-performance-and-reliability"></a>Melhorar a fiabilidade e desempenho da Cache de Redis
 
@@ -49,23 +45,12 @@ Advisor do Azure integra-se as recomendações das melhores práticas para melho
 * Deteção de instâncias onde collocating recursos que as aplicações web e bases de dados pode melhorar o desempenho e custo mais baixo. 
 
 Para obter mais informações sobre as recomendações de serviços de aplicações, consulte [melhores práticas para o App Service do Azure](https://azure.microsoft.com/en-us/documentation/articles/app-service-best-practices/).
-![Recomendações de serviços de aplicação](./media/advisor-performance-recommendations/advisor-performance-app-service.png)
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Como aceder recomendações de desempenho no Advisor
 
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+1. Iniciar sessão para o [portal do Azure](https://portal.azure.com)e, em seguida, abra [Advisor](https://aka.ms/azureadvisordashboard).
 
-2. No painel esquerdo, clique em **mais serviços**.
-
-3. No painel de menu de serviço, em **monitorização e gestão**, clique em **Azure Advisor**.  
- É apresentado o dashboard do Advisor.
-
-4. No dashboard do Advisor, clique em de **desempenho** separador.
-
-5. Selecione a subscrição para o qual pretende receber recomendações e, em seguida, clique em **obter recomendações**.
-
-> [!NOTE]
-> Para obter recomendações do Assistente de acesso, primeiro tem *registar a sua subscrição* com o Advisor. Uma subscrição é registada quando um *subscrição proprietário* inicia o dashboard do Advisor e clica no **obter recomendações** botão. Este é um *operação única*. Depois da subscrição está registada, pode aceder recomendações do assistente como *proprietário*, *contribuinte*, ou *leitor* para uma subscrição, um grupo de recursos ou um recurso específico.
+2.  No dashboard do Advisor, clique em de **desempenho** separador.
 
 ## <a name="next-steps"></a>Passos seguintes
 

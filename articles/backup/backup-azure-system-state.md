@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/31/2017
 ms.author: saurse;markgal
-ms.openlocfilehash: 6fbd96935f444d8b0c6d068ebd0d28e612f19816
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5477068ddab46bbe0fdbdda754227642ed97bb36
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="back-up-windows-system-state-in-resource-manager-deployment"></a>Cópia de segurança de estado do sistema Windows na implementação do Resource Manager
 Este artigo explica como criar cópias de segurança do Estado do sistema do Windows Server para o Azure. É um tutorial que se destina a explicar as noções básicas.
@@ -29,7 +29,7 @@ Se pretender saber mais sobre o Backup do Azure, leia esta [descrição geral](b
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) que lhe permite aceder a qualquer serviço do Azure.
 
 ## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos serviços de recuperação
-Para efetuar uma cópia de segurança de ficheiros e pastas, tem de criar um cofre dos Serviços de Recuperação na região onde pretende armazenar os dados. Também precisa de determinar como pretende que o seu armazenamento seja replicado.
+Para fazer uma cópia de segurança do Estado de sistema do Windows Server, terá de criar um cofre dos serviços de recuperação na região onde pretende armazenar os dados. Também precisa de determinar como pretende que o seu armazenamento seja replicado.
 
 ### <a name="to-create-a-recovery-services-vault"></a>Para criar um cofre dos Serviços de Recuperação
 1. Se ainda não o fez, inicie sessão no [Portal do Azure](https://portal.azure.com/) através da sua subscrição do Azure.
@@ -135,6 +135,9 @@ Agora que criou um cofre, configurá-la para cópias de segurança do Estado do 
     As credenciais do cofre são transferidas para a pasta Transferências. Depois de as credenciais do cofre serem transferidas, verá um pop-up a perguntar se quer abrir ou guardar as credenciais. Clique em **Guardar**. Se clicar acidentalmente em **Abrir**, deixe a caixa de diálogo que tenta abrir as credenciais do cofre falhar. Não é possível abrir as credenciais do cofre. Avance para o passo seguinte. As credenciais do cofre estão na pasta Transferências.   
 
     ![as credenciais do cofre terminaram de ser transferidas](./media/backup-try-azure-backup-in-10-mins/vault-credentials-downloaded.png)
+> [!NOTE]
+> As credenciais do cofre tem de ser guardadas apenas para uma localização local para o Windows Server em que pretende utilizar o agente. 
+>
 
 ## <a name="install-and-register-the-agent"></a>Instalar e registar o agente
 
@@ -163,40 +166,13 @@ Agora que criou um cofre, configurá-la para cópias de segurança do Estado do 
 
 O agente está agora instalado e a máquina está registada no cofre. Está pronto para configurar e agendar a cópia de segurança.
 
-## <a name="back-up-windows-server-system-state-preview"></a>Cópia de segurança de estado do sistema do Windows Server (pré-visualização)
-A cópia de segurança inicial inclui três tarefas:
+## <a name="back-up-windows-server-system-state"></a>Fazer cópia de segurança do Estado do Sistema Windows Server 
+A cópia de segurança inicial inclui duas tarefas:
 
-* Ativar a cópia de segurança do Estado do sistema utilizando o agente de cópia de segurança do Azure
 * Agendar a cópia de segurança
-* Efetuar a cópia de segurança de ficheiros e pastas pela primeira vez
+* Criar cópias de segurança do Estado do sistema pela primeira vez
 
 Para concluir a cópia de segurança inicial, utilize o agente dos Serviços de Recuperação do Microsoft Azure.
-
-### <a name="to-enable-system-state-backup-using-the-azure-backup-agent"></a>Para ativar a cópia de segurança do Estado do sistema utilizando o agente de cópia de segurança do Azure
-
-1. Numa sessão do PowerShell, execute o seguinte comando para parar o motor de cópia de segurança do Azure.
-
-  ```
-  PS C:\> Net stop obengine
-  ```
-
-2. Abra o registo do Windows.
-
-  ```
-  PS C:\> regedit.exe
-  ```
-
-3. Adicione a seguinte chave de registo com o valor DWord especificado.
-
-  | Caminho do registo | Chave de registo | Valor DWord |
-  |---------------|--------------|-------------|
-  | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Backup\Config\CloudBackupProvider do Azure | TurnOffSSBFeature | 2 |
-
-4. Reinicie o motor de cópia de segurança executando o seguinte comando numa linha de comandos elevada.
-
-  ```
-  PS C:\> Net start obengine
-  ```
 
 ### <a name="to-schedule-the-backup-job"></a>Para agendar a tarefa de cópia de segurança
 
@@ -216,11 +192,7 @@ Para concluir a cópia de segurança inicial, utilize o agente dos Serviços de 
 
 6. Clique em **Seguinte**.
 
-7. A agenda de cópia de segurança de estado de sistema e a retenção é automaticamente definida para efetuar cópias de segurança cada domingo no momento da 9:00 PM local e o período de retenção é definido como 60 dias.
-
-   > [!NOTE]
-   > Política de cópia de segurança e retenção de estado do sistema é automaticamente configurada. Se a cópia de segurança de ficheiros e pastas para além do Estado do sistema do Windows Server, especifique apenas a cópia de segurança e retenção política para cópias de segurança do ficheiro do assistente. 
-   >
+7. Selecione a frequência de cópia de segurança necessária e a política de retenção para as cópias de segurança do Estado do sistema nas páginas subsequentes. 
 
 8. Na página de Confirmação, reveja as informações e, em seguida, clique em **Concluir**.
 
@@ -234,88 +206,21 @@ Para concluir a cópia de segurança inicial, utilize o agente dos Serviços de 
 
     ![Efetuar a cópia de segurança do Windows Server agora](./media/backup-try-azure-backup-in-10-mins/backup-now.png)
 
-3. Na página de Confirmação, reveja as definições que o Assistente Efetuar Cópia de Segurança Agora irá utilizar para efetuar uma cópia de segurança da máquina. Em seguida, clique em **Efetuar Cópia de Segurança**.
+3. Selecione **estado do sistema** no **selecionar Item de cópia de segurança** ecrã que aparece e clique em **seguinte**.
+
+4. Na página de Confirmação, reveja as definições que o Assistente Efetuar Cópia de Segurança Agora irá utilizar para efetuar uma cópia de segurança da máquina. Em seguida, clique em **Efetuar Cópia de Segurança**.
 
 4. Clique em **Fechar** para fechar o assistente. Se fechar este assistente antes de o processo de cópia de segurança estar concluído, o assistente continua a ser executado em segundo plano.
 
-5. Se a cópia de segurança de ficheiros e pastas no seu servidor, para além do Estado do sistema do Windows Server, o Assistente de cópia de segurança agora irá apenas cópia de segurança de ficheiros. Para efetuar um Estado do sistema ad hoc cópia de segurança, utilize o seguinte comando do PowerShell:
 
-    ```
-    PS C:\> Start-OBSystemStateBackup
-    ```
-
-  Depois de concluída a cópia de segurança inicial, o estado **Tarefa concluída** é apresentado na consola de Cópia de Segurança.
+Depois de concluída a cópia de segurança inicial, o estado **Tarefa concluída** é apresentado na consola de Cópia de Segurança.
 
   ![IV concluídos](./media/backup-try-azure-backup-in-10-mins/ircomplete.png)
-
-## <a name="frequently-asked-questions"></a>Perguntas mais frequentes
-
-As seguintes perguntas e respostas fornecem informações suplementares.
-
-### <a name="what-is-the-staging-volume"></a>O que é o Volume de teste?
-
-O Volume de transição representa a localização intermédia em que a disponível nativamente, a cópia de segurança do Windows Server prepara a cópia de segurança do Estado do sistema. Agente de cópia de segurança do Azure, em seguida, comprime e encripta esta cópia de segurança intermédia e envia-a através do protocolo HTTPS seguro para o Cofre de serviços de recuperação configurado. **Recomendamos vivamente que estabelecer o Volume de transição de um volume de não-Windows-OS. Se observar problemas com cópias de segurança do sistema de estado, a verificar se a localização do seu Volume de transição é o primeiro passo de resolução de problemas.** 
-
-### <a name="how-can-i-change-the-staging-volume-path-specified-in-the-azure-backup-agent"></a>Como posso alterar o caminho do Volume de transição especificado no agente do Backup do Azure?
-
-Por predefinição, o Volume de transição está localizado na pasta de cache. 
-
-1. Para alterar esta localização, utilize o seguinte comando (na linha de comandos elevada):
-  ```
-  PS C:\> Net stop obengine
-  ```
-
-2. Em seguida, Atualize as seguintes entradas de registo com o caminho para a nova pasta de transição de Volume.
-
-  |Caminho do registo|Chave de registo|Valor|
-  |-------------|------------|-----|
-  |HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Backup\Config\CloudBackupProvider do Azure | SSBStagingPath | nova localização de transição de volume |
-
-O caminho de transição é sensível a maiúsculas e minúsculas e têm de ser a exactas mesma como o que existe no servidor. 
-
-3. Depois de alterar o caminho do volume de transição, reinicie o motor de cópia de segurança:
-  ```
-  PS C:\> Net start obengine
-  ```
-4. Para recolher o caminho alterado, abra o agente dos serviços de recuperação do Microsoft Azure e acione uma cópia de segurança ad hoc do Estado do sistema.
-
-### <a name="why-is-the-system-state-default-retention-set-to-60-days"></a>Por que razão a retenção da predefinição de estado do sistema está definida para 60 dias?
-
-A vida útil de uma cópia de segurança do Estado do sistema é o mesmo que a definição de "duração tombstone" para a função do Windows Server Active Directory. O valor predefinido para a entrada de duração tombstone é de 60 dias. Este valor pode ser definido no objeto de configuração do serviço de diretório (NTDS).
-
-### <a name="how-do-i-change-the-default-backup-and-retention-policy-for-system-state"></a>Como alterar a predefinição cópia de segurança e a política de retenção para o estado do sistema?
-
-Para alterar a predefinição cópia de segurança e a política de retenção para o estado do sistema:
-1. Pare o motor de cópia de segurança. Execute o seguinte comando numa linha de comandos elevada.
-
-  ```
-  PS C:\> Net stop obengine
-  ```
-
-2. Adicionar ou atualizar as entradas de chave de registo seguinte no HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider.
-
-  |Nome do registo|Descrição|Valor|
-  |-------------|-----------|-----|
-  |SSBScheduleTime|Utilizado para configurar a hora da cópia de segurança. Predefinição é a hora local do 9 PM.|DWord: Formato HHMM (Decimal), por exemplo 2130 durante o período de tempo do 9:30 da Tarde local|
-  |SSBScheduleDays|Utilizado para configurar os dias quando a cópia de segurança de estado de sistema deve ser efetuada no momento especificado. Dígitos individuais especifique dias da semana. 0 representa Domingo, 1 é segunda-feira, etc. Dia de predefinido para cópia de segurança é Domingo.|DWord: dias da semana para executar a cópia de segurança (decimal), por exemplo 1230 as agendas de cópias de segurança na segunda, Terça, quarta-feira e Domingo.|
-  |SSBRetentionDays|Utilizado para configurar os dias para reter cópia de segurança. Valor predefinido é de 60. Valor máximo permitido é de 180.|DWord: Dias para reter cópia de segurança (decimal).|
-
-3. Utilize o seguinte comando para reiniciar o motor de cópia de segurança.
-    ```
-    PS C:\> Net start obengine
-    ```
-
-4. Abra o agente dos serviços de recuperação do Microsoft.
-
-5. Clique em **Agendar cópia de segurança** e, em seguida, clique em **seguinte** até ver as alterações serão refletidas.
-
-6. Clique em **concluir** para aplicar as alterações.
-
 
 ## <a name="questions"></a>Tem dúvidas?
 Se tiver dúvidas ou se houver alguma funcionalidade que gostaria de ver incluída, [envie-nos comentários](http://aka.ms/azurebackup_feedback).
 
 ## <a name="next-steps"></a>Passos seguintes
 * Obtenha mais detalhes sobre como [efetuar a cópia de segurança das máquinas Windows](backup-configure-vault.md).
-* Agora que criou uma segurança dos seus ficheiros e pastas, pode [gerir os cofres e os servidores](backup-azure-manage-windows-server.md).
+* Agora que criou uma cópia de segurança do Estado do sistema do Windows Server, pode [gerir os cofres e os servidores](backup-azure-manage-windows-server.md).
 * Se precisar de restaurar uma cópia de segurança, utilize este artigo para [restaurar ficheiros para uma máquina Windows](backup-azure-restore-windows-server.md).

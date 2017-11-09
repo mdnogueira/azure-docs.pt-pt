@@ -13,13 +13,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/23/2017
+ms.date: 11/08/2017
 ms.author: mimig
-ms.openlocfilehash: cf7ba26369b3978bb0c2ad5e903a7aee804017ca
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: MT
+ms.openlocfilehash: a34c47efbe811bec2ebe2c43abb9516cdab492bd
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="performance-tips-for-azure-cosmos-db"></a>Sugestões de desempenho para a base de dados do Azure Cosmos
 BD do Cosmos do Azure é um rápido e flexível base de dados distribuída que dimensiona de forma totalmente integrada com latência garantida e débito. Não é necessário efetuar alterações de arquitetura de principais ou escrever código complexo para dimensionar a base de dados com base de dados do Cosmos. Aumentar e reduzir verticalmente é tão fácil como fazer uma única chamada API ou [a chamada de método SDK](set-throughput.md#set-throughput-sdk). No entanto, porque a BD do Cosmos é acedida através de chamadas de rede existem otimizações de lado do cliente que pode efetuar para alcançar um desempenho das horas de ponta.
@@ -165,7 +165,7 @@ Para que o se estiver a pedir "como posso melhorar o meu desempenho de base de d
 
     BD do cosmos oferece um vasto conjunto de operações de base de dados, incluindo consultas relacionais e hierárquicas com tudo funcionar em documentos de uma coleção de base de dados – acionadores, UDFs e procedimentos armazenados. Os custos associados a cada uma destas operações variam consoante a CPU, a e/s e a memória necessária para concluir a operação. Em vez de ter em consideração e a gerir recursos de hardware, pode considerar uma unidade de pedido (RU) como uma medida único para os recursos necessários para desempenhar várias operações de base de dados e um pedido de aplicação de serviço.
 
-    [Unidades de pedido](request-units.md) são aprovisionados para cada conta de base de dados com base no número de unidades de capacidade que compra. Consumo de unidade de pedido é avaliado como uma taxa por segundo. Aplicações que excedem a taxa de pedidos de aprovisionamento de unidade para a conta é limitada até que a taxa de ignora abaixo do nível reservado para a conta. Se a sua aplicação requer um nível mais elevado de débito, pode comprar unidades de capacidade adicional.
+    Débito aprovisionado com base na quantidade de [unidades de pedido](request-units.md) definido para cada contentor. Consumo de unidade de pedido é avaliado como uma taxa por segundo. Aplicações que excedem a taxa de pedidos de aprovisionamento de unidade para a conta é limitada até que a taxa de ignora abaixo do nível reservado para a conta. Se a sua aplicação requer um nível mais elevado de débito, pode aumentar o débito ao aprovisionamento unidades de pedido adicionais. 
 
     A complexidade de uma consulta afeta o número de unidades de pedido são consumidas para uma operação. O número de predicados, natureza os predicados, número de UDFs e o tamanho do conjunto de dados de origem todos os influenciar o custo das operações de consulta.
 

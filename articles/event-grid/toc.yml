@@ -4,6 +4,8 @@
   items:
     - name: Sobre o Event Grid
       href: overview.md
+    - name: Comparar serviços de mensagens
+      href: compare-messaging-services.md
 - name: Inícios rápidos
   items:
     - name: Encaminhar eventos de armazenamento de Blobs - CLI do Azure

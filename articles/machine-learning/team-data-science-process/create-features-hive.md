@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: hangzh;bradsev
-ms.openlocfilehash: 0c8c2ab8c7daceb13fd39d2a109148a40430d59a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a967a8fccfe0dc051a7cf3a4a2fcefad2a2f187f
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="create-features-for-data-in-an-hadoop-cluster-using-hive-queries"></a>Criar características para dados num cluster do Hadoop com consultas do Hive
 Este documento mostra como criar funcionalidades para os dados armazenados num cluster do Azure HDInsight Hadoop através de consultas do Hive. Estas consultas do Hive utilizam incorporados do Hive funções definidas pelo utilizador (UDFs), os scripts que são fornecidos.
@@ -37,18 +37,18 @@ Este artigo pressupõe que tem:
 * Criar uma conta de armazenamento do Azure. Se precisar de instruções, consulte [criar uma conta de armazenamento do Azure](../../storage/common/storage-create-storage-account.md#create-a-storage-account)
 * Aprovisionar um cluster de Hadoop personalizado com o serviço de HDInsight.  Se precisar de instruções, consulte [personalizar Azure HDInsight Clusters do Hadoop para análise avançada](customize-hadoop-cluster.md).
 * Os dados terem sido carregados para as tabelas do Hive no Azure HDInsight Hadoop clusters. Se não tiver, siga [criar e carregar dados para as tabelas do Hive](move-hive-tables.md) carregar dados para as tabelas do Hive primeiro.
-* Ativar o acesso remoto para o cluster. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md#headnode).
+* Ativar o acesso remoto para o cluster. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md).
 
 ## <a name="hive-featureengineering"></a>Geração de funcionalidade
 São vários os exemplos das formas em que a funcionalidades podem gerar utilizar consultas do Hive descritos nesta secção. Depois de ter gerado funcionalidades adicionais, pode adicioná-los como colunas à tabela existente ou criar uma nova tabela com as funcionalidades adicionais e a chave primária, o que, em seguida, pode ser associado com a tabela original. Seguem-se exemplos apresentados:
 
-1. [Frequência baseada geração de funcionalidade](#hive-frequencyfeature)
+1. [Funcionalidade com base em frequência de geração](#hive-frequencyfeature)
 2. [Riscos de variáveis Categórico na classificação binária](#hive-riskfeature)
 3. [Extrair as funcionalidades do campo Datetime](#hive-datefeatures)
 4. [Extrair as funcionalidades do campo de texto](#hive-textfeatures)
 5. [Calcular a distância entre GPS coordenadas](#hive-gpsdistance)
 
-### <a name="hive-frequencyfeature"></a>Frequência baseada geração de funcionalidade
+### <a name="hive-frequencyfeature"></a>Funcionalidade com base em frequência de geração
 Muitas vezes, é útil calcular as frequências dos níveis de uma variável categórico ou as frequências de determinados combinações de níveis de várias variáveis categórico. Os utilizadores podem utilizar o seguinte script para calcular estes frequências:
 
         select
@@ -63,7 +63,7 @@ Muitas vezes, é útil calcular as frequências dos níveis de uma variável cat
 
 
 ### <a name="hive-riskfeature"></a>Riscos de variáveis Categórico na classificação binária
-Classificação do binária, precisamos de converter variáveis categórico não numéricos em funcionalidades numérico quando os modelos que está a ser utilizados apenas o funcionalidades numérico. Isto é feito ao substituir a cada nível de não sejam numéricos por um risco de um valor numérico. Nesta secção, mostramos algumas consultas do Hive genéricas que calcular os valores de risco (registo odds) de uma variável categórico.
+Classificação do binária, precisamos de converter variáveis categórico não numéricos em funcionalidades numérico quando os modelos que está a ser utilizados apenas o funcionalidades numérico. Isto é feito ao substituir a cada nível de não sejam numéricos por um risco de um valor numérico. Esta secção mostra algumas consultas do Hive genéricas que calcular os valores de risco (registo odds) de uma variável categórico.
 
         set smooth_param1=1;
         set smooth_param2=20;
@@ -83,12 +83,12 @@ Classificação do binária, precisamos de converter variáveis categórico não
             group by <column_name1>, <column_name2>
             )b
 
-Neste exemplo, as variáveis `smooth_param1` e `smooth_param2` estão definidas como smooth os valores de risco calculados a partir dos dados. Riscos tem um intervalo entre -Inf e Inf. A riscos > 0 indica que a probabilidade de que o destino é igual a 1 é superior ao 0,5.
+Neste exemplo, as variáveis `smooth_param1` e `smooth_param2` estão definidas como smooth os valores de risco calculados a partir dos dados. Riscos tem um intervalo entre -Inf e Inf. Um risco > 0 indica que a probabilidade de que o destino é igual a 1 é superior ao 0,5.
 
 Depois do risco é calculado tabela, os utilizadores podem atribuir valores de risco a uma tabela ao associá-lo com a tabela de risco. O ramo de registo a associar a consulta foi fornecida na secção anterior.
 
 ### <a name="hive-datefeatures"></a>Extrair as funcionalidades dos campos Datetime
-Ramo de registo é fornecido com um conjunto de UDFs para processar os campos datetime. Ramo de registo, o formato de datetime predefinido é ' aaaa-MM-dd 00:00:00 ' ('1970-01-01-12:21:32 ' por exemplo). Nesta secção, mostramos exemplos que extrair o dia de um mês, o mês de um campo datetime e outros exemplos para converter uma cadeia de datetime num formato que o formato predefinido para uma cadeia de datetime predefinidas no formato.
+Ramo de registo é fornecido com um conjunto de UDFs para processar os campos datetime. Ramo de registo, o formato de datetime predefinido é ' aaaa-MM-dd 00:00:00 ' ('1970-01-01-12:21:32 ' por exemplo). Esta secção mostra exemplos que extrair o dia de um mês, o mês de um campo datetime e outros exemplos para converter uma cadeia de datetime num formato que o formato predefinido para uma cadeia de datetime predefinidas no formato.
 
         select day(<datetime field>), month(<datetime field>)
         from <databasename>.<tablename>;
@@ -114,7 +114,7 @@ Quando a tabela de Hive tem um campo de texto que contém uma cadeia de palavras
         from <databasename>.<tablename>;
 
 ### <a name="hive-gpsdistance"></a>Calcular as distâncias entre conjuntos de coordenadas GPS
-A consulta indicada nesta secção pode ser aplicada diretamente aos dados NYC Taxi viagem. O objetivo desta consulta é mostrar como aplicar um funções matemática incorporado no ramo de registo para gerar funcionalidades.
+A consulta indicada nesta secção pode ser aplicada diretamente aos dados NYC Taxi viagem. O objetivo desta consulta é mostrar como aplicar uma função de matemática incorporada no ramo de registo para gerar funcionalidades.
 
 Os campos que são utilizados nesta consulta são as coordenadas GPS das localizações de recolha e dropoff, com o nome *recolha\_longitude*, *recolha\_latitude*,  *dropoff\_longitude*, e *dropoff\_latitude*. As consultas que calcular a distância direta entre as coordenadas de recolha e dropoff são:
 
@@ -143,20 +143,20 @@ Uma lista completa de ramo de registo UDFs incorporados podem ser encontrados no
 ## <a name="tuning"></a>Tópicos de avançadas: otimizar parâmetros de ramo de registo para melhorar a velocidade de consulta
 Os parâmetros predefinidos de cluster do ramo de registo poderão não ser adequados para as consultas do Hive e os dados que são de processamento de consultas. Nesta secção, vamos discutir alguns parâmetros que os utilizadores podem otimizar que melhoram o desempenho das consultas do Hive. Os utilizadores necessitam adicionar o parâmetro de otimização de consultas antes das consultas de processamento de dados.
 
-1. **Espaço de área dinâmica para dados de Java**: para consultas que envolvem grandes conjuntos de dados de associação ou processar registos longos, **a ficar sem espaço de pilha** é um erro comum. Isto pode ser otimizado ao definir os parâmetros *mapreduce.map.java.opts* e *mapreduce.task.io.sort.mb* para valores pretendidos. Segue-se um exemplo:
+1. **Espaço de área dinâmica para dados de Java**: para consultas que envolvem grandes conjuntos de dados de associação ou processar registos longos, **a ficar sem espaço de pilha** é um dos erros comuns. Isto pode ser otimizado ao definir os parâmetros *mapreduce.map.java.opts* e *mapreduce.task.io.sort.mb* para valores pretendidos. Segue-se um exemplo:
    
         set mapreduce.map.java.opts=-Xmx4096m;
         set mapreduce.task.io.sort.mb=-Xmx1024m;
 
     Este parâmetro atribui 4GB de memória para o espaço de área dinâmica para dados de Java e também facilita a ordenação mais eficiente ao alocar mais memória para o mesmo. É uma boa ideia para reproduzir com estas alocações se existirem todas as tarefas relacionadas com o espaço de área dinâmica para dados de erros de falha.
 
-1. **Tamanho do bloco de DFS** : este parâmetro define a unidade de dados que armazena o sistema de ficheiros mais pequena. Por exemplo, se o tamanho do bloco DFS é de 128MB, em seguida, todos os dados de tamanho menor e até 128MB é armazenado num único bloco, enquanto os dados que são maiores do que 128MB é atribuído blocos adicionais. Escolher um tamanho de bloco muito pequenos faz com que grandes sobrecargas no Hadoop, uma vez que o nó nome tem de processar mais pedidos de muitos para localizar o bloco relevante relativas ao ficheiro. Uma definição recomendada quando lidar com gigabytes (ou superior) os dados são:
+1. **Tamanho do bloco de DFS**: este parâmetro define a unidade de dados que armazena o sistema de ficheiros mais pequena. Por exemplo, se o tamanho do bloco DFS é de 128MB, em seguida, todos os dados de tamanho menor e até 128MB é armazenado num único bloco, enquanto os dados que são maiores do que 128MB é atribuído blocos adicionais. Escolher um tamanho de bloco muito pequenos faz com que grandes sobrecargas no Hadoop, uma vez que o nó nome tem de processar mais pedidos de muitos para localizar o bloco relevante relativas ao ficheiro. Uma definição recomendada quando lidar com gigabytes (ou superior) os dados são:
    
         set dfs.block.size=128m;
-2. **Otimizar a operação de associação no ramo** : enquanto as operações de associação no mapa/reduza framework normalmente ocorrer na fase de reduza, por vezes, os ganhos de bastantes podem ser conseguidos agendando associações na fase de mapa (também denominada "mapjoins"). Para direcionar o ramo de registo para efetuar este procedimento sempre que possível, iremos pode definir:
+2. **Otimizar a operação de associação no ramo**: enquanto as operações de associação no mapa/reduza framework normalmente ocorrer na fase de reduza, por vezes, os ganhos de bastantes podem ser conseguidos agendando associações na fase de mapa (também denominada "mapjoins"). Para direcionar o ramo de registo para efetuar este procedimento sempre que possível, defina:
    
         set hive.auto.convert.join=true;
-3. **Especifica o número de mappers ao ramo** : Hadoop enquanto permite que o utilizador definir o número de reducers, o número de mappers é normalmente não definido pelo utilizador. Um truque que permite que algumas grau de controlo deste número é escolher as variáveis de Hadoop, *mapred.min.split.size* e *mapred.max.split.size* como o tamanho do mapa de cada tarefa é determinada por:
+3. **Especifica o número de mappers ao ramo**: Hadoop enquanto permite que o utilizador definir o número de reducers, o número de mappers é normalmente não definido pelo utilizador. Um truque que permite que algumas grau de controlo deste número é escolher as variáveis de Hadoop, *mapred.min.split.size* e *mapred.max.split.size* como o tamanho do mapa de cada tarefa é determinada por:
    
         num_maps = max(mapred.min.split.size, min(mapred.max.split.size, dfs.block.size))
    

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: bradsev
-ms.openlocfilehash: dc5cbbf8db46607179e8b0e8657462afac21f7da
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e808d86900bcb855c65c73b9ab39060d3948befd
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="explore-data-in-hive-tables-with-hive-queries"></a>Explorar dados em tabelas do Hive com consultas do Hive
 Este documento fornece scripts do Hive de exemplo que são utilizados para explorar dados em tabelas do Hive num cluster do HDInsight Hadoop.
@@ -33,7 +33,7 @@ Este artigo pressupõe que tem:
 * Criar uma conta de armazenamento do Azure. Se precisar de instruções, consulte [criar uma conta de armazenamento do Azure](../../storage/common/storage-create-storage-account.md#create-a-storage-account)
 * Aprovisionar um cluster de Hadoop personalizado com o serviço de HDInsight. Se precisar de instruções, consulte [personalizar Azure HDInsight Clusters do Hadoop para análise avançada](customize-hadoop-cluster.md).
 * Os dados terem sido carregados para as tabelas do Hive no Azure HDInsight Hadoop clusters. Se não tiver, siga as instruções em [criar e carregar dados para as tabelas do Hive](move-hive-tables.md) carregar dados para as tabelas do Hive primeiro.
-* Ativar o acesso remoto para o cluster. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md#headnode).
+* Ativar o acesso remoto para o cluster. Se precisar de instruções, consulte [aceder a Head nó de Cluster do Hadoop](customize-hadoop-cluster.md).
 * Se precisar de obter instruções sobre como submeter consultas do Hive, consulte [como submeter consultas do Hive](move-hive-tables.md#submit)
 
 ## <a name="example-hive-query-scripts-for-data-exploration"></a>Scripts de consulta de Hive de exemplo para a exploração de dados

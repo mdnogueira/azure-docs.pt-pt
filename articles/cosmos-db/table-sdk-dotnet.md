@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: mimig
-ms.openlocfilehash: 1b61ed9e4ccbf6961ee465461eab3dce2b758a1c
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: 25b0d65797b623f96d623d692ee7707b4452860c
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>Cosmos Azure API de .NET de tabela de base de dados: Transferir e notas de versão
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/06/2017
 |---|---|
 |**Transferência do SDK**|[NuGet](https://aka.ms/acdbtablenuget)|
 |**Documentação da API**|[Documentação de referência da API de .NET](https://aka.ms/acdbtableapiref)|
-|**Início rápido**|[Azure Cosmos DB: criar uma aplicação com o .NET e a API de tabela] (criar-table-dotnet.md|
+|**Início rápido**|[Azure Cosmos DB: Criar uma aplicação com o .NET e a tabela de API](create-table-dotnet.md)|
 |**Tutorial**|[Azure CosmosDB: Criar um contentor com a Graph API](tutorial-develop-graph-dotnet.md)|
 |**Arquitetura suportada atual**|[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)|
 

@@ -14,39 +14,25 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: bb690bf86743136778e01b480b98c9cc08211839
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ea6fc67a0f5bdfe09435a00c4d2651f312695d25
+ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/08/2017
 ---
 # <a name="advisor-security-recommendations"></a>Recomendações de segurança do Advisor
 
 Advisor do Azure fornece-lhe uma vista consolidada consistente de recomendações para todos os seus recursos do Azure. É integrado no Centro de segurança do Azure para colocar a recomendações de segurança. Pode obter recomendações de segurança do **segurança** separador no dashboard do Advisor.
 
-![O botão de segurança do Advisor](./media/advisor-security-recommendations/advisor-security-tab.png)
-
 O Centro de Segurança ajuda-o a evitar, detetar e responder a ameaças com uma maior visibilidade e controlo sobre a segurança dos seus recursos Azure. Analisa periodicamente o estado de segurança dos seus recursos Azure. Quando o Centro de Segurança identifica potenciais vulnerabilidades de segurança, cria recomendações. As recomendações ajudá-lo durante o processo de configurar os controlos que precisa. 
-
-![O separador de segurança do Advisor](./media/advisor-security-recommendations/advisor-security-recommendations.png)
 
 Para mais informações sobre as recomendações de segurança, consulte [gerir recomendações de segurança no Centro de segurança do Azure](https://azure.microsoft.com/en-us/documentation/articles/security-center-recommendations/).
 
 ## <a name="how-to-access-security-recommendations-in-azure-advisor"></a>Como aceder recomendações de segurança no Azure Advisor
 
-1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+1. Iniciar sessão para o [portal do Azure](https://portal.azure.com)e, em seguida, abra [Advisor](https://aka.ms/azureadvisordashboard).
 
-2. No painel esquerdo, clique em **mais serviços**.
-
-3. No painel de menu de serviço, em **monitorização e gestão**, clique em **Azure Advisor**.  
- É apresentado o dashboard do Advisor.
-
-4. No dashboard do Advisor, clique em de **segurança** separador.
-
-5. Selecione a subscrição para o qual pretende receber recomendações e, em seguida, clique em **obter recomendações**.
-
-> [!NOTE]
-> Para obter recomendações do Assistente de acesso, primeiro tem *registar a sua subscrição* com o Advisor. Uma subscrição é registada quando um *subscrição proprietário* inicia o dashboard do Advisor e clica no **obter recomendações** botão. Este é um *operação única*. Depois da subscrição está registada, pode aceder recomendações do assistente como *proprietário*, *contribuinte*, ou *leitor* para uma subscrição, um grupo de recursos ou um recurso específico.
+2.  No dashboard do Advisor, clique em de **segurança** separador.
 
 ## <a name="next-steps"></a>Passos seguintes
 
