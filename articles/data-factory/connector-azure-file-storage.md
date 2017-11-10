@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/02/2017
+ms.date: 11/09/2017
 ms.author: jingwang
-ms.openlocfilehash: edbab30d949daa8d564ec60e9f1650f38b01d942
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: c0a6a19cffafb940b13135fb3df4d7bdf57aa7ce
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="copy-data-from-or-to-azure-file-storage-by-using-azure-data-factory"></a>Copiar os dados de ou para o File Storage do Azure utilizando o Azure Data Factory
 
@@ -48,11 +48,11 @@ As seguintes propriedades são suportadas para o serviço ligado de File Storage
 | anfitrião | Especifica o ponto final do File Storage do Azure como `"host": "\\\\<storage name>.file.core.windows.net\\<file service name>"`. | Sim |
 | ID de utilizador | Especifique o utilizador aceder ao armazenamento de ficheiros do Azure como `"userid": "AZURE\\<storage name>"`. | Sim |
 | palavra-passe | Especifique a chave de acesso de armazenamento. Marcar este campo como SecureString.<br/> | Sim |
-| connectVia | O [integração Runtime](concepts-integration-runtime.md) para ser utilizado para ligar ao arquivo de dados. Pode utilizar o Runtime de integração do Azure ou o tempo de execução do Self-hosted integração (se o arquivo de dados esteja localizado numa rede privada). Se não for especificado, utiliza a predefinição de Runtime de integração do Azure. |Não |
+| connectVia | O [integração Runtime](concepts-integration-runtime.md) para ser utilizado para ligar ao arquivo de dados. Pode utilizar o Runtime de integração do Azure ou o tempo de execução do Self-hosted integração (se o arquivo de dados esteja localizado numa rede privada). Se não for especificado, utiliza a predefinição de Runtime de integração do Azure. |Não para a origem, Sim para sink |
 
->[!TIP]
-> - Para copiar para o armazenamento de ficheiros do Azure com o tempo de execução de integração do Azure, explicitamente [criar uma resposta a incidentes Azure](create-azure-integration-runtime.md#create-azure-ir) com a localização do armazenamento de ficheiros e associar no serviço ligado do exemplo seguinte.
-> - Para copiar de/para armazenamento de ficheiros do Azure com o tempo de execução de integração de Self-hosted fora do Azure, lembre-se abrir a porta TCP de saída 445 na sua rede local.
+>[!IMPORTANT]
+> - Para copiar dados para armazenamento de ficheiros do Azure com o tempo de execução de integração do Azure, explicitamente [criar uma resposta a incidentes Azure](create-azure-integration-runtime.md#create-azure-ir) com a localização do armazenamento de ficheiros e associar no serviço ligado do exemplo seguinte.
+> - Para copiar dados de/para armazenamento de ficheiros do Azure com o tempo de execução de integração de Self-hosted fora do Azure, lembre-se abrir a porta TCP de saída 445 na sua rede local.
 
 **Exemplo:**
 

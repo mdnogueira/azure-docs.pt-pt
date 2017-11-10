@@ -1,4 +1,6 @@
 
+Otimização de memória oferta de tamanhos VM numa proporção de memória a CPU elevada que são ótimos para servidores de base de dados relacional, caches médias e grandes e análise de memória. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como o desempenho de débito e da rede de armazenamento para cada tamanho neste agrupamento. 
+
 * A série M oferece a contagem de vCPU mais alta (até 128 vCPUs) e a maior capacidade de memória (até 2.0 TiB) de qualquer VM na cloud.  É ideal para bases de dados muito grandes ou outras aplicações que tiram partido de contagens altas de vCPU e grandes quantidades de memória.
 
 * As séries Dv2, D, G e as variantes DS/GS são ideais para aplicações que exigem vCPUs mais rápidas, melhor desempenho de armazenamento temporário ou memórias com mais capacidade.  Proporcionam uma combinação poderosa para inúmeras aplicações empresariais.

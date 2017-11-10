@@ -17,15 +17,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/25/2017
 ms.author: nitinme
-ms.openlocfilehash: 7b6b551fa1009da744598715b09f13355ded2884
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 4f6c27fb651fc13877a889c26aa47903985625a0
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Utilize a API de REST do Apache Spark para submeter as tarefas remotas para um cluster do Spark do HDInsight
 
-Saiba como utilizar o Livy, a API de REST do Apache Spark, que é utilizado para submeter as tarefas remotas para um cluster do Azure HDInsight Spark. Para obter documentação detalhada, consulte [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server).
+Saiba como utilizar o Livy, a API de REST do Apache Spark, que é utilizado para submeter as tarefas remotas para um cluster do Azure HDInsight Spark. Para obter documentação detalhada, consulte [http://livy.incubator.apache.org/](http://livy.incubator.apache.org/).
 
 Pode utilizar o Livy executar Spark interativo shells ou submeter as tarefas de lote para ser executado no Spark. Este artigo aborda com o Livy para submeter tarefas de lote. Os fragmentos neste artigo utilizam cURL para efetuar chamadas de REST API para o ponto final Livy Spark.
 
@@ -189,6 +189,7 @@ Seguem-se alguns problemas que possam ser executadas com o Livy para submissão 
 
 ## <a name="next-step"></a>Passo seguinte
 
+* [Documentação da API de REST Livy](http://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Gerir recursos para o cluster do Apache Spark no Azure HDInsight](apache-spark-resource-manager.md)
 * [Controlar e depurar tarefas em execução num cluster do Apache Spark do HDInsight](apache-spark-job-debugging.md)
 

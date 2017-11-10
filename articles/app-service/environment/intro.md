@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
-ms.openlocfilehash: 322cf2ebbe83d00fcebcec618e07141d26f4f255
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 63e2256ca6d392a0cd284269e8c2d059f94e9139
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="introduction-to-app-service-environments"></a>Introdução ao ambientes do App Service #
  
@@ -67,6 +67,8 @@ ASE pode ser o acesso à internet com um endereço IP público ou interno com ac
 Aplicações frequentemente também tem de aceder a recursos empresariais, tais como bases de dados internos e serviços web. Se implementar o ASE numa rede virtual que tenha uma ligação VPN à rede no local, as aplicações a ASE podem aceder os recursos no local. Esta capacidade é verdadeira, independentemente se a VPN é uma [site para site](https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/) ou [Azure ExpressRoute](http://azure.microsoft.com/services/expressroute/) VPN.
 
 Para obter mais informações sobre como ASEs trabalhar com redes virtuais e redes no local, consulte [considerações de rede do ambiente de serviço de aplicações][ASENetwork].
+
+> [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-Application-Service-Environments-v2-Private-PaaS-Environments-in-the-Cloud/player]
 
 ## <a name="app-service-environment-v1"></a>Ambiente do Serviço de Aplicações v1 ##
 

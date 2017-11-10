@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: b9fd985c23558596408e78eadae00dd0f95c4214
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 18eac72d75680ab12c4a0bea9dfc5ac8a5fce566
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="biztalk-services-issuer-name-and-issuer-key"></a>BizTalk Services: Nome e Chave do Emissor
 
@@ -76,13 +76,9 @@ Mais no [New-AzureSBNamespace](https://msdn.microsoft.com/library/dn495165.aspx)
 Nome do emissor de barramento de serviço e a chave do emissor são utilizados pelo BizTalk Services do adaptador. No seu projeto dos BizTalk Services no Visual Studio, utilize o adaptador de BizTalk Services para ligar a um sistema de linha de negócio (LOB) no local. Para ligar, pode criar o reencaminhamento de LOB e introduza os detalhes de sistema LOB. Ao fazê-lo, também é introduzir o nome do emissor de barramento de serviço e a chave do emissor.
 
 ### <a name="to-retrieve-the-service-bus-issuer-name-and-issuer-key"></a>Para obter o nome do emissor de barramento de serviço e a chave do emissor
-1. Inicie sessão no [Portal Clássico do Azure](http://go.microsoft.com/fwlink/p/?LinkID=213885).
-2. No painel de navegação esquerdo, selecione **Service Bus**.
-3. Selecione o seu espaço de nomes. Na barra de tarefas, selecione **informações de ligação**. Esta ação apresenta os **predefinido emissor** (nome do emissor) e **predefinido chave** (Issuer Key). Podem ser copiados os respetivos valores.  
-
-Resumindo:  
-Nome do emissor = emissor predefinido  
-Chave do emissor = chave predefinida
+1. Inicie sessão no [Portal do Azure](http://portal.azure.com).
+2. Procurar **Service Bus**e selecione o seu espaço de nomes. 
+3. Abra o **políticas de acesso partilhado** propriedades, selecione a política e ver o **cadeia de ligação** para o nome e valores de chave.  
 
 ## <a name="next"></a>Seguinte
 Tópicos de BizTalk Services do Azure adicionais:
@@ -95,7 +91,7 @@ Tópicos de BizTalk Services do Azure adicionais:
 ## <a name="see-also"></a>Veja Também
 * [Como: utilizar o serviço de gestão de ACS para configurar as identidades de serviço](http://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
 * [Os BizTalk Services: Programador, básicas, Standard e Premium gráfico de edições](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-* [BizTalk Services: Portal clássico do Azure através de aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+* [Os BizTalk Services: aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
 * [Serviços BizTalk: Gráfico de Estado de Aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
 * [Serviços BizTalk: Separadores Dashboard, Monitorizar e Dimensionar](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
 * [Serviços BizTalk: Cópia de segurança e Restauro](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>

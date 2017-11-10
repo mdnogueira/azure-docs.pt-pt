@@ -1,5 +1,6 @@
+Armazenamento oferecem débito elevado de disco e e/s otimizados tamanhos de VM e são ideais para macrodados, NoSQL e SQL, bases de dados. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como o desempenho de débito e da rede de armazenamento para cada tamanho neste agrupamento. 
 
-A série Ls é otimizada para cargas de trabalho que precisam de armazenamento temporário de baixa latência, como bases de dados NoSQL (incluindo, Cassandra, MongoDB, Cloudera e Redis). A série Ls oferece até 32 vCPUs, com o [processador Intel® Xeon® E5 v3 família](http://www.intel.com/content/www/us/en/processors/xeon/xeon-e5-solutions.html). A série Ls tem o mesmo desempenho de CPU que a série G/GS e dispõe de 8 GiB de memória por vCPU.  
+A série Ls oferece até 32 vCPUs, com o [processador Intel® Xeon® E5 v3 família](http://www.intel.com/content/www/us/en/processors/xeon/xeon-e5-solutions.html). A série Ls tem o mesmo desempenho de CPU que a série G/GS e dispõe de 8 GiB de memória por vCPU.  
 
 ## <a name="ls-series"></a>Série Ls
 

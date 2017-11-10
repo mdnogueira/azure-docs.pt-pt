@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 09/13/2017
+ms.date: 11/10/2017
 ms.author: pajosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e817e327b8890c91bd7db640b083fd6c5c11aa14
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 40433df5ebe90aec3a9294f2c5a6083c4567b161
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configure-azure-backup-reports"></a>Configurar relatórios do Azure Backup
 Este artigo aborda os passos para configurar os relatórios para cópia de segurança do Azure com o Cofre de serviços de recuperação e para aceder a estes relatórios através do Power BI. Depois de efetuar estes passos, pode ir diretamente para o Power BI para ver todos os relatórios, personalizar e criar relatórios. 
@@ -29,6 +29,7 @@ Este artigo aborda os passos para configurar os relatórios para cópia de segur
 2. Relatórios de SQL do Azure, o DPM e o servidor de cópia de segurança do Azure não são suportados neste momento.
 3. Pode visualizar relatórios em cofres e em subscrições, se a mesma conta de armazenamento está configurada para cada uma dos cofres. Conta de armazenamento selecionada deve ser na mesma região que o Cofre de serviços de recuperação.
 4. A frequência de atualização agendada para os relatórios é de 24 horas no Power BI. Também pode efetuar uma atualização do ad-hoc dos relatórios no Power BI, na qual maiúsculas dados mais recentes na conta de armazenamento do cliente são utilizados para composição de relatórios. 
+5. Relatórios de cópia de segurança do Azure não são atualmente suportados em nuvens nacionais.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 1. Criar um [conta do storage do Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account) configurá-la para relatórios. Esta conta de armazenamento é utilizada para armazenar dados relacionados de relatórios.
@@ -50,19 +51,26 @@ Utilize os seguintes passos para configurar a conta de armazenamento para o Cofr
 2. Na lista de itens que é apresentado em cofre, clique em **relatórios de cópia de segurança** na secção monitorização e relatórios para configurar a conta de armazenamento para relatórios.
 
       ![Selecione os relatórios de cópia de segurança menu item passo 2](./media/backup-azure-configure-reports/backup-reports-settings.PNG)
-3. No painel de relatórios de cópia de segurança, clique em **configurar** botão. Esta ação abre o painel do Azure Application Insights que é utilizado para enviar dados para a conta de armazenamento do cliente.
+3. No painel de relatórios de cópia de segurança, clique em **as definições de diagnóstico** ligação. Esta ação abre as IU que é utilizado para enviar dados para a conta de armazenamento do cliente de definições de diagnóstico.
 
-      ![Configurar conta de armazenamento passo 3](./media/backup-azure-configure-reports/configure-storage-account.PNG)
-4. Definir o botão de alternar o estado **no** e selecione **arquivo para uma conta de armazenamento** caixa de verificação, para que os relatórios de dados podem começar a fluir em à conta de armazenamento.
+      ![Ative o diagnóstico passo 3](./media/backup-azure-configure-reports/backup-azure-configure-reports.png)
+4. Clique na ligação **ative os diagnósticos**. Abre a IU para configurar a conta de armazenamento. 
 
-      ![Ative o diagnóstico passo 4](./media/backup-azure-configure-reports/set-status-on.png)
-5. Clique em selecionador de conta de armazenamento e selecione a conta de armazenamento na lista para armazenar dados de relatórios e clique em **OK**.
+      ![Ativar o passo de diagnóstico 4](./media/backup-azure-configure-reports/enable-diagnostics.png)
+5. Introduza o nome da definição no campo **nome** e selecione **arquivo para uma conta de armazenamento** caixa de verificação, para que os relatórios de dados podem começar a fluir em à conta de armazenamento.
 
-      ![Selecione o passo de conta de armazenamento 5](./media/backup-azure-configure-reports/select-storage-account.png)
-6. Selecione **AzureBackupReport** caixa de verificação e também mover o controlo de deslize para período de retenção Selecione para este relatório de dados. Relatórios de dados na conta de armazenamento é mantido durante o período selecionado utilizar este controlo de deslize.
+      ![Ative o diagnóstico passo 5](./media/backup-azure-configure-reports/select-setting-name.png)
+6. Clique em selecionador de conta de armazenamento e selecione a conta de armazenamento e de subscrição relevante na lista para armazenar dados de relatórios e clique em **OK**.
 
-      ![Selecione o passo de conta de armazenamento 6](./media/backup-azure-configure-reports/save-configuration.png)
-7. Reveja a todas as alterações e clique em **guardar** botão na parte superior, conforme mostrado na figura acima. Esta ação garante que todas as alterações são guardadas e conta de armazenamento está agora configurada para armazenar dados de relatórios.
+      ![Selecione o passo de conta de armazenamento 6](./media/backup-azure-configure-reports/select-subscription-sa.png)
+7. Selecione **AzureBackupReport** caixa na secção de registo de verificação e mova o controlo de deslize para o período de retenção Selecione para este dados de relatórios. Relatórios de dados na conta de armazenamento é mantido durante o período selecionado utilizar este controlo de deslize.
+
+      ![Guardar o passo de conta de armazenamento 7](./media/backup-azure-configure-reports/save-diagnostic-settings.png)
+8. Reveja a todas as alterações e clique em **guardar** botão na parte superior, conforme mostrado na figura acima. Esta ação garante que todas as alterações são guardadas e conta de armazenamento está agora configurada para armazenar dados de relatórios.
+
+9. A tabela de definições de diagnóstico deve agora mostrar a nova definição ativada para o cofre. Se este não for apresentada, atualize a tabela para ver a definição atualizada.
+
+      ![Passo 9 da definição de diagnóstico de vista](./media/backup-azure-configure-reports/diagnostic-setting-row.png)
 
 > [!NOTE]
 > Depois de configurar os relatórios ao guardar a conta de armazenamento, deve **Aguarde 24 horas** para enviar por push dados iniciais concluir. Deve importar o pacote de conteúdos de cópia de segurança do Azure no Power BI apenas após esse tempo. Consulte [secção das FAQ](#frequently-asked-questions) para obter mais detalhes. 

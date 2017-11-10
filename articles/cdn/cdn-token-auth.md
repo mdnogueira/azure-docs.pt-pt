@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 11/03/2017
 ms.author: mezha
-ms.openlocfilehash: 700f4c49bbcda1eccbcc7eafc703e625697fa2b4
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: 2f62c0c6783c3cdaf1ffda3299673071b8e4a6f2
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="securing-azure-content-delivery-network-assets-with-token-authentication"></a>Proteger recursos de rede de entrega de conteúdos do Azure com a autenticação de token
 
@@ -30,7 +30,7 @@ Autenticação de token é um mecanismo que permite-lhe impedir que a rede Azure
 
 ## <a name="how-it-works"></a>Como funciona
 
-Autenticação de token verifica pedidos são gerados por um site fidedigno, exigindo que os pedidos de modo a conter um valor de token que contém codificado sobre o autor do pedido. Conteúdo é fornecido para um autor de pedido apenas se as informações codificadas cumprem os requisitos; caso contrário, os pedidos são negados. Pode configurar os requisitos, utilizando um ou mais dos seguintes parâmetros:
+Autenticação de token verifica que os pedidos são gerados por um site fidedigno, exigindo que os pedidos de modo a conter um valor de token que contém codificado informações sobre o autor do pedido. Conteúdo é fornecido para um autor de pedido apenas se as informações codificadas cumprem os requisitos; caso contrário, os pedidos são negados. Pode configurar os requisitos, utilizando um ou mais dos seguintes parâmetros:
 
 - País: Permitir ou negar pedidos provenientes de países/regiões especificados pelo respetivo [indicativo de país](https://msdn.microsoft.com/library/mt761717.aspx).
 - URL: Permitir apenas os pedidos que correspondam a ativo especificado ou o caminho.
@@ -41,8 +41,6 @@ Autenticação de token verifica pedidos são gerados por um site fidedigno, exi
 - Hora de expiração: atribuir um período de data e hora para se certificar de que uma ligação permanece válida apenas para um período de tempo limitado.
 
 Para obter mais informações, consulte os exemplos de configuração detalhados para cada parâmetro [ao configurar a autenticação de token](#setting-up-token-authentication).
-
-Depois de gerar um token encriptado, acrescentá-la como uma cadeia de consulta ao fim do caminho de URL de ficheiro. Por exemplo, `http://www.domain.com/content.mov?a4fbc3710fd3449a7c99986b`.
 
 ## <a name="reference-architecture"></a>Arquitetura de referência
 
@@ -64,15 +62,21 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
 
 2. Coloque o cursor sobre **HTTP grande**e, em seguida, clique em **Token Auth** no flyout. Pode, em seguida, configurar os parâmetros de encriptação e a chave de encriptação da seguinte forma:
 
-    1. Introduza uma chave de encriptação exclusivo no **chave primária** caixa e, opcionalmente, introduza uma chave de cópia de segurança no **chave de cópia de segurança** caixa.
-
-        ![Chave de configuração de autenticação de token de CDN](./media/cdn-token-auth/cdn-token-auth-setupkey.png)
+    1. Crie uma ou mais chaves de encriptação. Uma chave de encriptação é sensível e pode conter qualquer combinação de carateres alfanuméricos. Quaisquer outros tipos de carateres, incluindo espaços, não são permitidos. O comprimento máximo é 250 caracteres. Para se certificar de que as chaves de encriptação aleatórias, recomenda-se que os criar utilizando a ferramenta de OpenSSL. A ferramenta de OpenSSL tem a seguinte sintaxe: `rand -hex <key length>`. Por exemplo, `OpenSSL> rand -hex 32`. Para evitar períodos de indisponibilidade, crie um servidor principal e uma chave de cópia de segurança. Uma chave de cópia de segurança proporciona ininterrupto acesso ao conteúdo, quando está a ser atualizado a sua chave primária.
     
-    2. Configure parâmetros de encriptação com a ferramenta de encriptar. Com a ferramenta de encriptar, pode permitir ou negar pedidos com base no tempo de expiração, o país, o referência, o protocolo e o IP de cliente (em qualquer combinação). 
+    2. Introduza uma chave de encriptação exclusivo no **chave primária** caixa e, opcionalmente, introduza uma chave de cópia de segurança no **chave de cópia de segurança** caixa.
 
-        ![Ferramenta de encriptar de CDN](./media/cdn-token-auth/cdn-token-auth-encrypttool.png)
+    3. Selecione a versão mínima de encriptação para cada chave a partir da respetiva **versão mínima de encriptação** pendente lista, em seguida, clique em **atualização**:
+       - **V2**: indica que a chave pode ser utilizada para gerar tokens de versão 2.0 e 3.0. Utilize esta opção apenas se estão a mudar a partir de uma chave de encriptação de legado versão 2.0 para uma chave de versão 3.0.
+       - **V3**: (recomendado) indica que a chave apenas pode ser utilizada para gerar tokens de versão 3.0.
 
-       Introduza valores para uma ou mais dos seguintes parâmetros de encriptação no **encriptar ferramenta** área:  
+    ![Chave de configuração de autenticação de token de CDN](./media/cdn-token-auth/cdn-token-auth-setupkey.png)
+    
+    4. Utilize a ferramenta de encriptar configurar parâmetros de encriptação e de gerar um token. Com a ferramenta de encriptar, pode permitir ou negar pedidos com base no tempo de expiração, o país, o referência, o protocolo e o IP de cliente (em qualquer combinação). Embora não exista nenhum limite para o número e a combinação de parâmetros que podem ser combinados para formar um token, o comprimento total de um token está limitado a 512 caracteres. 
+
+       ![Ferramenta de encriptar de CDN](./media/cdn-token-auth/cdn-token-auth-encrypttool.png)
+
+       Introduza valores para uma ou mais dos seguintes parâmetros de encriptação no **encriptar ferramenta** secção:  
 
        - **ec_expire**: atribui uma hora de expiração a um token, após o qual expira o token. Pedidos submetidos após a hora de expiração são negadas. Este parâmetro utiliza um timestamp Unix, o que é baseada no número de segundos desde a época padrão de `1/1/1970 00:00:00 GMT`. (Pode utilizar ferramentas online a conversão entre a hora padrão e a hora de Unix.) Por exemplo, se pretender que o token para expirarem `12/31/2016 12:00:00 GMT`, utilize o valor de carimbo de Unix `1483185600`, da seguinte forma. 
     
@@ -98,7 +102,7 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
     
        - **ec_ref_allow**: apenas permite pedidos de referência especificada. Uma referência identifica o URL da página web que está ligada ao recurso que está a ser solicitado. Não inclua o protocolo no valor de parâmetro de referência. Os seguintes tipos de entrada são permitidos para o valor do parâmetro:
            - Um nome de anfitrião ou um nome de anfitrião e um caminho.
-           - Vários referrers. Para adicionar vários referrers, separe cada referência com uma vírgula. Se especificar um valor de referência, mas as informações de referência não são enviadas no pedido devido a configuração do browser, esses pedidos são negados por predefinição. 
+           - Vários referrers. Para adicionar vários referrers, separe cada referência com uma vírgula. Se especificar um valor de referência, mas as informações de referência não são enviadas no pedido devido a configuração do browser, o pedido é negado por predefinição. 
            - Pedidos com informações de referência em falta. Para permitir que estes tipos de pedidos, introduza o texto "em falta" ou introduza um valor em branco. 
            - Subdomínios. Para permitir que os subdomínios, introduza um asterisco (\*). Por exemplo, para permitir que os subdomínios de `consoto.com`, introduza `*.consoto.com`. 
            
@@ -116,13 +120,17 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
             
          ![Exemplo de ec_clientip CDN](./media/cdn-token-auth/cdn-token-auth-clientip.png)
 
-    3. Depois de concluída a introduzir os valores de parâmetro de encriptação, selecione o tipo de chave para encriptar (se tiver criado um site primário e uma chave de cópia de segurança) a **chave para encriptar** lista, uma versão de encriptação do  **Versão de encriptação** lista, em seguida, clique em **encriptar**.
+    5. Depois de concluída a introduzir os valores de parâmetro de encriptação, selecione uma chave para encriptar (se tiver criado um site primário e uma chave de cópia de segurança) a **chave para encriptar** lista.
+    
+    6. Selecione uma versão de encriptação do **encriptação versão** lista: **V2** para versão 2 ou **V3** para a versão 3 (recomendado). Em seguida, clique em **encriptar** para gerar o token.
+
+    Depois do token é gerado, é apresentada no **gerados tokens** caixa. Para utilizar o token, anexe como uma cadeia de consulta para o fim do ficheiro no seu caminho de URL. Por exemplo, `http://www.domain.com/content.mov?a4fbc3710fd3449a7c99986b`.
         
-    4. Opcionalmente, pode teste o seu token com a ferramenta de desencriptação. Colar o valor do token no **Token para desencriptar** caixa. Selecione o tipo de chave de encriptação para desencriptar a partir de **chave para desencriptar** pendente lista, em seguida, clique em **desencriptar**.
+    7. Opcionalmente, pode teste o seu token com a ferramenta de desencriptação. Colar o valor do token no **Token para desencriptar** caixa. Selecione a utilização de chave de encriptação do **chave para desencriptar** pendente lista, em seguida, clique em **desencriptar**.
 
-    5. Opcionalmente, personalize o tipo de código de resposta que é devolvido quando um pedido é negado. Selecione o código a partir de **código de resposta** na lista pendente e clique em **guardar**. O **403** código de resposta (proibido) está selecionado por predefinição. Alguns códigos de resposta, também pode introduzir o URL da sua página de erro no **valor do cabeçalho** caixa. 
+    Depois do token é desencriptado, os parâmetros são apresentados no **parâmetros Original** caixa.
 
-    6. Depois de ter gerado um token encriptado, pode acrescentá-lo como uma cadeia de consulta ao fim do ficheiro no seu caminho de URL. Por exemplo, `http://www.domain.com/content.mov?a4fbc3710fd3449a7c99986b`.
+    8. Opcionalmente, personalize o tipo de código de resposta que é devolvido quando um pedido é negado. Selecione o código a partir de **código de resposta** na lista pendente e clique em **guardar**. O **403** código de resposta (proibido) está selecionado por predefinição. Alguns códigos de resposta, também pode introduzir o URL da sua página de erro no **valor do cabeçalho** caixa. 
 
 3. Em **HTTP grande**, clique em **motor de regras**. Utilize o motor de regras para definir caminhos para aplicar a funcionalidade, ativar a funcionalidade de autenticação de token e ativar funcionalidades relacionadas com autenticação de token adicionais. Para obter mais informações, consulte [regras motor referência](cdn-rules-engine-reference.md).
 
@@ -151,4 +159,4 @@ Idiomas disponíveis incluem:
 
 ## <a name="azure-cdn-features-and-provider-pricing"></a>Funcionalidades da CDN do Azure e o fornecedor de preços
 
-Para informações, consulte [descrição geral da CDN](cdn-overview.md).
+Para obter informações sobre as funcionalidades, consulte [descrição geral da CDN](cdn-overview.md). Para obter informações sobre preços, consulte [preços de rede de entrega de conteúdos](https://azure.microsoft.com/pricing/details/cdn/).

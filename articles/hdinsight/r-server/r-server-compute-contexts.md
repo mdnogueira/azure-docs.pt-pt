@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 06/19/2017
 ms.author: bradsev
-ms.openlocfilehash: e15a263879ddc0edabc301201019f4209eee1058
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 24df96f55b0f207d8576bd05c2c83a884e7fc2bd
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="compute-context-options-for-r-server-on-hdinsight"></a>As opções de contexto para o servidor R no HDInsight de computação
 
@@ -42,7 +42,7 @@ O *'local'* e *'localpar'* diferem opções apenas em como **rxExec** chamadas s
 
 A tabela seguinte resume as várias opções de contexto de computação para definir a forma como as chamadas são executadas:
 
-| Contexto de computação  | Como definir                      | Contexto de execução                        |
+| Contexto de cálculo  | Como definir                      | Contexto de execução                        |
 | ---------------- | ------------------------------- | ---------------------------------------- |
 | Local sequencial | rxSetComputeContext('local')    | Execução paralelizada em todos os núcleos do servidor de nó edge, exceto as chamadas rxExec, que são executados serialmente |
 | Paralelo local   | rxSetComputeContext('localpar') | Execução paralelizada em todos os núcleos do servidor edge nó |
@@ -83,6 +83,5 @@ Neste artigo, aprendeu sobre as opções que estão disponíveis para especifica
 
 * [Descrição geral do R Server para o Hadoop](r-server-overview.md)
 * [Introdução ao servidor R para o Hadoop](r-server-get-started.md)
-* [Adicionar servidor RStudio para o HDInsight (se não for adicionado durante a criação do cluster)](r-server-install-r-studio.md)
 * [Azure Storage options for R Server on HDInsight (Opções do Armazenamento do Azure para o R Server no HDInsight)](r-server-storage.md)
 

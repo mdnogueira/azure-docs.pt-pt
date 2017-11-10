@@ -14,27 +14,29 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: c0c83361f94ffd9c30d7fcc551ff4b85ad7d6fa5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7d3a357e1a3929153288a9d99e21f2379bcac891
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="biztalk-services-troubleshoot-using-operation-logs"></a>BizTalk Services: Resolver problemas com os registos de operações
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
+> [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
+
 ## <a name="what-are-the-operation-logs"></a>Quais são os registos de operação
-Os registos de operações é uma funcionalidade de serviços de gestão disponível no portal clássico do Azure que permite ver o histórico de registos de operações executadas nos seus serviços do Azure, incluindo os BizTalk Services. Isto permite-lhe visualizar dados históricos relacionadas com operações de gestão na sua subscrição do BizTalk Service até 180 dias.
+Os registos de operações é uma funcionalidade de serviços de gestão que lhe permite ver o histórico de registos de operações executadas nos seus serviços do Azure, incluindo os BizTalk Services. Isto permite-lhe visualizar dados históricos relacionadas com operações de gestão na sua subscrição do BizTalk Service até 180 dias.
 
 > [!NOTE]
-> Esta funcionalidade só captura registos para operações de Gestão BizTalk Services, tal como quando o serviço foi iniciado, efetuada até, e assim sucessivamente. Operações são controladas independentemente se são efetuadas no portal clássico do Azure ou utilizando o [APIs REST do BizTalk Service](http://msdn.microsoft.com/library/azure/dn232347.aspx). Para obter uma lista completa de operações que são controlados utilizando os serviços de gestão, consulte [operações registadas utilizando serviços do Azure gestão](#bizops).<br/><br/>
+> Esta funcionalidade só captura registos para operações de Gestão BizTalk Services, tal como quando o serviço foi iniciado, efetuada até, e assim sucessivamente. Operações são controladas utilizando o [APIs REST do BizTalk Service](http://msdn.microsoft.com/library/azure/dn232347.aspx). Para obter uma lista completa de operações que são controlados utilizando os serviços de gestão, consulte [operações registadas utilizando serviços do Azure gestão](#bizops).<br/><br/>
 > Isto não capturar os registos para atividades relacionadas com o tempo de execução do BizTalk Service (como de mensagens processados pelo pontes e etc.). Para ver estes registos, utilize a vista de controlo do portal do BizTalk Services. Para obter mais informações, consulte [controlo mensagens](http://msdn.microsoft.com/library/azure/hh949805.aspx).
 > 
 > 
 
 ## <a name="view-biztalk-services-operation-logs"></a>Ver os registos de operações de serviços BizTalk
-1. No portal clássico do Azure, selecione **dos serviços de gestão**e, em seguida, selecione o **os registos de operações** separador.
+1. No portal, selecione **dos serviços de gestão**e, em seguida, selecione o **os registos de operações** separador.
 2. Pode filtrar os registos com base nos parâmetros diferentes, como a subscrição, intervalo de datas, o tipo de serviço (por exemplo, os BizTalk Services), o nome do serviço ou o estado da operação (com êxito, falha).
 3. Selecione a marca de verificação para ver a lista filtrada. A imagem seguinte mostra as atividades relacionadas com testbiztalkservice: ![ver os registos de operações][ViewLogs] 
 4. Para ver mais sobre uma operação específica, selecione a linha e, em **detalhes** na barra de tarefas na parte inferior.
@@ -64,7 +66,7 @@ A tabela seguinte lista as operações que são controladas utilizando os servi�
 * [Serviço de cópia de segurança de BizTalk](http://go.microsoft.com/fwlink/p/?LinkID=325584)
 * [Restaurar o BizTalk Service a partir de cópia de segurança](http://go.microsoft.com/fwlink/p/?LinkID=325582)
 * [Os BizTalk Services: Programador, básicas, Standard e Premium gráfico de edições](http://go.microsoft.com/fwlink/p/?LinkID=302279)
-* [BizTalk Services: Portal clássico do Azure através de aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)
+* [Os BizTalk Services: aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)
 * [Serviços BizTalk: Gráfico de Estado de Aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=329870)
 * [Serviços BizTalk: Separadores Dashboard, Monitorizar e Dimensionar](http://go.microsoft.com/fwlink/p/?LinkID=302281)
 * [Serviços BizTalk: limitação](http://go.microsoft.com/fwlink/p/?LinkID=302282)

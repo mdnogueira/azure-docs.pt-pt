@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/29/2017
+ms.date: 11/04/2017
 ms.author: bradsev
-ms.openlocfilehash: 2d0c36990ba897bef83601bd4295518618224733
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 323861d078e9beeb197333dc7e2d0314014dfdb0
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="move-data-to-an-azure-sql-database-for-azure-machine-learning"></a>Mover dados para uma Base de Dados SQL do Azure para o Azure Machine Learning
 Este tópico descreve as opções para mover dados de ficheiros simples (formatos de CSV ou TSV) ou a partir dos dados armazenados num local no SQL Server para uma base de dados SQL do Azure. Estas tarefas para mover dados para a nuvem fazem parte do processo de ciência de dados de equipa.

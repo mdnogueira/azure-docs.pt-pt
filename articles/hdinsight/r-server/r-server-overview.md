@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/19/2017
 ms.author: bradsev
-ms.openlocfilehash: 47896493fdaf651b8cf74a1ddf4fcffdd51d2972
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 57e28215124bc0330517c541e4cb74a66d939ff5
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 #<a name="introduction-to-r-server-and-open-source-r-capabilities-on-hdinsight"></a>Introdução ao servidor R e as capacidades de R de open source do HDInsight
 
@@ -44,7 +44,9 @@ Tem a opção de adição de acesso para o Blob adicional e armazena o Data lake
 Também pode utilizar [ficheiros do Azure](../../storage/files/storage-how-to-use-files-linux.md) como uma opção de armazenamento para utilização no nó de extremidade. Ficheiros do Azure permite-lhe montar uma partilha de ficheiros que foi criada no armazenamento do Azure para o sistema de ficheiros do Linux. Para obter mais informações sobre estas opções de armazenamento de dados para o servidor R num cluster do HDInsight, consulte [as opções de armazenamento do Azure para clusters de servidor R no HDInsight](r-server-storage.md).
 
 ## <a name="access-r-server-on-the-cluster"></a>Acesso R Server no cluster
-Pode ligar ao servidor R no nó de extremidade com um browser, desde que escolheu incluir RStudio servidor durante o processo de aprovisionamento. Se não tiver instalado, quando o cluster de aprovisionamento, pode adicioná-lo mais tarde. Para obter informações sobre como instalar o servidor de RStudio depois de criar um cluster, consulte [instalar servidor RStudio nos clusters do HDInsight](r-server-install-r-studio.md). Também pode ligar ao servidor R utilizando SSH/PuTTY para aceder à consola do R. 
+Pode ligar ao servidor R no nó de extremidade utilizando um browser. É instalado por predefinição durante a criação do cluster. Para obter mais informações, consulte [obter stared com o servidor R no HDInsight](r-server-get-started.md).
+
+Também pode ligar ao servidor R da linha de comandos utilizando SSH/PuTTY para aceder à consola do R. 
 
 ## <a name="develop-and-run-r-scripts"></a>Desenvolver e executar scripts de R
 Os scripts de R criar e executar podem utilizar qualquer um dos 8000 + open source para R pacotes além rotinas paralelizadas e distribuídas disponíveis na biblioteca ScaleR. Em geral, um script que é executado com o servidor R num nó de extremidade é executado dentro do interpretador de R nesse nó. As exceções são esses passos que tem de chamar uma função de ScaleR com um contexto de computação que está definido para o Hadoop mapa reduzir (RxHadoopMR) ou Spark (RxSpark). Neste caso, a função é executada de forma distribuída entre os nós do cluster de dados (tarefas) que estão associados com os dados referenciados. Para obter mais informações sobre as opções de contexto de computação diferentes, consulte [computação as opções de contexto para o servidor R no HDInsight](r-server-compute-contexts.md).
@@ -87,7 +89,7 @@ Manutenção para aplicar patches de SO e outras atualizações é efetuada nas 
 Uma vez que os nós principais são redundantes e nem todos os nós de dados são afetados, as tarefas que estão em execução durante este tempo, poderão abrandar. Eles devem continuar a executar a conclusão, no entanto. Qualquer personalizadas de software ou dados locais que tiver são preservados entre estes eventos de manutenção ocorra uma falha catastrófica que necessita de uma reconstrução do cluster.
 
 ## <a name="learn-about-ide-options-for-r-server-on-an-hdinsight-cluster"></a>Saiba mais sobre as opções de IDE para o servidor R num cluster do HDInsight
-O nó de extremidade de Linux de um cluster do HDInsight é a zona de destino para a análise baseada em R. Recentes versões do HDInsight fornecem uma opção de instalar a versão de Comunidade do predefinida [RStudio servidor](https://www.rstudio.com/products/rstudio-server/) no nó de extremidade como um IDE baseada no browser. Utilização do RStudio Server como um IDE para o desenvolvimento e a execução de scripts de R podem ser consideravelmente mais produtivos e permite que apenas utilizando a consola do R. Se optar por não adicionar o servidor de RStudio ao criar o cluster, mas pretende adicioná-lo mais tarde, consulte [instalar o R Studio Server nos clusters do HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-install-r-studio). +
+O nó de extremidade de Linux de um cluster do HDInsight é a zona de destino para a análise baseada em R. Recentes versões do HDInsight fornecem uma instalação padrão do servidor do RStudio no nó de extremidade como um IDE baseada no browser. Utilização do RStudio Server como um IDE para o desenvolvimento e a execução de scripts de R podem ser consideravelmente mais produtivos e permite que apenas utilizando a consola do R.
 
 Outra opção IDE completa é instalar um IDE de ambiente de trabalho e utilizá-lo para aceder ao cluster através da utilização de um contexto de computação de reduzir o mapa ou Spark remoto. As opções incluem da Microsoft [R Tools para Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) (RTVS), do RStudio e Walware baseado no Eclipse [StatET](http://www.walware.de/goto/statet).
 
@@ -100,6 +102,5 @@ As taxas associadas um cluster do HDInsight com o servidor de R estão estrutura
 Para saber mais sobre como utilizar o R Server com clusters do HDInsight, consulte os seguintes tópicos:
 
 * [Introdução ao servidor R no HDInsight](r-server-get-started.md)
-* [Add RStudio Server to HDInsight (if not installed during cluster creation) [Adicionar o RStudio Server ao HDInsight (se não for instalado durante a criação do cluster)]](r-server-install-r-studio.md)
 * [Compute context options for R Server on HDInsight (Opções do contexto de cálculo para o R Server no HDInsight)](r-server-compute-contexts.md)
 * [Azure Storage options for R Server on HDInsight (Opções do Armazenamento do Azure para o R Server no HDInsight)](r-server-storage.md)

@@ -14,13 +14,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/15/2017
+ms.date: 11/08/2017
 ms.author: larryfr
-ms.openlocfilehash: 27ecba06f2251aaf742f2221982cad5cb9602769
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: c828a7b63e70669ed38ecea898442a3978e67ba7
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="run-pig-jobs-using-the-net-sdk-for-hadoop-in-hdinsight"></a>Executar tarefas do Pig utilizando o SDK .NET para o Hadoop no HDInsight
 
@@ -57,7 +57,7 @@ O SDK .NET do HDInsight fornece bibliotecas de cliente .NET, que torna mais fác
 
 3. Clique em **OK** para criar o projeto.
 
-4. Do **ferramentas** menu, selecione **Gestor de pacotes de biblioteca** ou **Gestor de pacotes Nuget**e, em seguida, selecione **consola do Gestor de pacotes**.
+4. Do **ferramentas** menu, selecione **Gestor de pacotes de biblioteca** ou **Gestor de pacotes NuGet**e, em seguida, selecione **consola do Gestor de pacotes**.
 
 5. Para instalar os pacotes de SDK do .NET, utilize o seguinte comando:
 
@@ -121,10 +121,6 @@ O SDK .NET do HDInsight fornece bibliotecas de cliente .NET, que torna mais fác
 7. Para iniciar a aplicação, prima **F5**.
 
 8. Para sair da aplicação, prima **ENTER**.
-
-## <a name="summary"></a>Resumo
-
-Como pode ver, o SDK .NET para o Hadoop permite-lhe criar aplicações de .NET que submeter as tarefas do Pig a um cluster do HDInsight e monitorizar o estado da tarefa.
 
 ## <a name="next-steps"></a>Passos seguintes
 

@@ -3,22 +3,22 @@ title: "Armazenamento do Azure da pilha: Diferenças e as considerações"
 description: "Compreenda as diferenças entre o armazenamento de pilha do Azure e Storage do Azure, juntamente com considerações de implementação de pilha do Azure."
 services: azure-stack
 documentationcenter: 
-author: xiaofmao
-manager: 
-editor: 
+author: jeffgilb
+manager: femila
+ms.reviwer: xiaofmao
 ms.assetid: 
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 9/25/2017
-ms.author: xiaofmao
-ms.openlocfilehash: 4d6fb44fd6fd2261059ca45093d8b49345adfa74
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.date: 11/08/2017
+ms.author: jeffgilb
+ms.openlocfilehash: 1dc099fa234e217b682c88f2214fe271c916eec2
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-stack-storage-differences-and-considerations"></a>Armazenamento do Azure da pilha: Diferenças e as considerações
 
@@ -33,7 +33,7 @@ Este artigo resume as diferenças de armazenamento do Azure pilha conhecidas do 
 | Funcionalidade | Azure (global) | Azure Stack |
 | --- | --- | --- |
 |Armazenamento de ficheiros|Baseado na nuvem partilhas de ficheiros SMB suportadas|Ainda não suportado
-|Dados na encriptação de Inativos|encriptação AES de 256 bits|Ainda não suportado
+|Encriptação do Serviço de Armazenamento do Azure para Dados Inativos|encriptação AES de 256 bits|Ainda não suportado
 |Tipo de conta de armazenamento|Contas do Blob storage do Azure e para fins gerais|Para fins gerais apenas
 |Opções de replicação|Armazenamento localmente redundante, o armazenamento georredundante, o armazenamento georredundante com acesso de leitura e o armazenamento com redundância de zona|Armazenamento localmente redundante
 |Armazenamento Premium|Totalmente suportado|Pode ser aprovisionado, mas sem limite de desempenho ou garantir

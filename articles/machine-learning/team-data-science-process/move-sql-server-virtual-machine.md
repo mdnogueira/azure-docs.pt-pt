@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/24/2017
+ms.date: 11/04/2017
 ms.author: bradsev
-ms.openlocfilehash: bd9289ea528c3a80f63380daf52161d2477a6771
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b8c936163e8e0880d3518f44dba107a0393fd11f
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="move-data-to-sql-server-on-an-azure-virtual-machine"></a>Mover dados para o SQL Server numa máquina virtual do Azure
 Este tópico descreve as opções para mover dados de ficheiros simples (formatos de CSV ou TSV) ou de um servidor de SQL no local para o SQL Server numa máquina virtual do Azure. Estas tarefas para mover dados para a nuvem fazem parte do processo de ciência de dados de equipa.

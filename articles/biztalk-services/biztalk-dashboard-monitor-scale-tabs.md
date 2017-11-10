@@ -1,6 +1,6 @@
 ---
 title: "Dashboard, monitorizar, a escala, configurar e as ligações híbridas nos BizTalk Services | Microsoft Docs"
-description: "Saiba mais sobre os controlos e monitorizar o desempenho nos separadores do portais clássicos dos BizTalk Services: Dashboard, monitorização, dimensionamento, configurar e ligações híbridas. MABS, WABS"
+description: Saiba mais sobre os controlos e monitorizar o desempenho dos BizTalk Services
 services: biztalk-services
 documentationcenter: 
 author: MandiOhlinger
@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 62bef0ee0141f6a7a92146ef230f0766a85aee5e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 351809cd5f165a863dc02bfadf78fa59cbaabfd7
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="review-the-dashboard-monitor-scale-configure-and-hybrid-connection-tabs"></a>Reveja os separadores do Dashboard, Monitor, Escala, Configurar e Ligação Híbrida
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 10/11/2017
 
 Depois de criar o seu BizTalk Service e implementar a sua aplicação, pode alterar algumas das definições do BizTalk Service e monitorizar o desempenho da aplicação. 
 
-Quando abrir o portal clássico do Azure, são automaticamente colocados no **todos os itens** separador. Para ver o seu BizTalk Service, selecione o seu BizTalk Service no **todos os itens** separador ou selecione o **BIZTALK SERVICES** separador; e, em seguida, selecione o nome do seu BizTalk Service.
+> [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 Esta ação abre uma nova janela com os seguintes separadores. Este tópico descreve os seguintes separadores.
 
@@ -84,9 +84,9 @@ Por exemplo, pretende que o BizTalk Service para utilizar uma nova chave primár
 <br/><br/>
 <ol>
 <li>Selecione o seu BizTalk Service e selecione <strong>sincronizar chaves</strong>. Selecione a chave secundária. Ao fazê-lo, o BizTalk Service é iniciado utilizando a chave secundária.</li>
-<li>No portal clássico do Azure, selecione a sua conta de armazenamento e voltar a gerar a chave primária. Lembre-se de que o BizTalk Service está a utilizar a chave secundária.</li>
+<li>Selecione a sua conta de armazenamento e voltar a gerar a chave primária. Lembre-se de que o BizTalk Service está a utilizar a chave secundária.</li>
 <li>Selecione o seu BizTalk Service e selecione <strong>sincronizar chaves</strong>. Agora, selecione a chave primária. Esta é a nova chave primária que será gerada.</li>
-<li>No portal clássico do Azure, selecione a sua conta de armazenamento e voltar a gerar a chave secundária.</li>
+<li>Selecione a sua conta de armazenamento e voltar a gerar a chave secundária.</li>
 </ol>
 <br/>
 Este processo é denominado "chaves de rollover". O objetivo é permitir que os utilizadores alternar entre a chave primária e a chave secundária sem perturbar o BizTalk Service.</td>
@@ -169,7 +169,7 @@ Para obter uma descrição estas métricas de desempenho, aceda a [as métricas 
 </tr>
 <tr>
 <td><strong>Nome da subscrição</strong></td>
-<td>Apresenta uma lista a subscrição que aloja o seu BizTalk Service. A subscrição é regida pelas acesso ao portal clássico do Azure.</td>
+<td>Apresenta uma lista a subscrição que aloja o seu BizTalk Service. A subscrição é regida pelas acesso.</td>
 </tr>
 <tr>
 <td><strong>ID de subscrição</strong></td>
@@ -177,7 +177,7 @@ Para obter uma descrição estas métricas de desempenho, aceda a [as métricas 
 </tr>
 </table>
 
-[BizTalk Services: Aprovisionamento portal clássico do Azure utilizando](http://go.microsoft.com/fwlink/p/?LinkID=302280) apresenta os passos para criar um BizTalk Service.
+[BizTalk Services: Aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280) apresenta os passos para criar um BizTalk Service.
 
 ##### <a name="manage-connection-information-sync-keys-and-delete-in-the-task-bar"></a>Gerir informações de ligação, chaves de sincronização e eliminar na barra de tarefas:
 <table border="1">
@@ -206,9 +206,9 @@ Por exemplo, pretende que o BizTalk Service para utilizar uma nova chave primár
 <br/><br/>
 <ol>
 <li>Selecione o seu BizTalk Service e selecione <strong>sincronizar chaves</strong>. Selecione a chave secundária. Ao fazê-lo, o BizTalk Service é iniciado utilizando a chave secundária.</li>
-<li>No portal clássico do Azure, selecione a sua conta de armazenamento e voltar a gerar a chave primária. Lembre-se de que o BizTalk Service está a utilizar a chave secundária.</li>
+<li>Selecione a sua conta de armazenamento e voltar a gerar a chave primária. Lembre-se de que o BizTalk Service está a utilizar a chave secundária.</li>
 <li>Selecione o seu BizTalk Service e selecione <strong>sincronizar chaves</strong>. Agora, selecione a chave primária. Esta é a nova chave primária que será gerada.</li>
-<li>No portal clássico do Azure, selecione a sua conta de armazenamento e voltar a gerar a chave secundária.</li>
+<li>Selecione a sua conta de armazenamento e voltar a gerar a chave secundária.</li>
 </ol>
 <br/>
 Este processo é denominado "chaves de rollover". O objetivo é permitir que os utilizadores alternar entre a chave primária e a chave secundária sem perturbar o BizTalk Service.</td>
@@ -329,7 +329,7 @@ Define o estado de cópia de segurança como None ou automático. Se estiver def
 [BizTalk Services: Cópia de segurança e restaurar](biztalk-backup-restore.md) fornece os detalhes. 
 
 ## <a name="HybridConnections"></a>Ligações híbridas
-As ligações híbridas ligar uma aplicação do Azure, como as Web Apps ou Mobile Apps no App Service do Azure, a um recurso no local que utiliza uma porta TCP estática, como o SQL Server, MySQL, APIs da Web HTTP e a maioria dos serviços Web personalizados. As ligações híbridas são geridas na BizTalk Services no portal clássico do Azure.
+As ligações híbridas ligar uma aplicação do Azure, como as Web Apps ou Mobile Apps no App Service do Azure, a um recurso no local que utiliza uma porta TCP estática, como o SQL Server, MySQL, APIs da Web HTTP e a maioria dos serviços Web personalizados. As ligações híbridas são geridas na BizTalk Services.
 
 Para criar ou gerir ligações híbridas no BizTalk Services do Azure, consulte [ligações híbridas](integration-hybrid-connection-overview.md).
 
@@ -343,7 +343,7 @@ Agora que está familiarizado com os diferentes separadores, pode saber mais sob
 ## <a name="see-also"></a>Veja Também
 * [Ligações Híbridas](integration-hybrid-connection-overview.md)  
 * [Os BizTalk Services: Programador, básicas, Standard e Premium gráfico de edições](biztalk-editions-feature-chart.md)  
-* [BizTalk Services: Portal clássico do Azure através de aprovisionamento](biztalk-provision-services.md)  
+* [Os BizTalk Services: aprovisionamento](biztalk-provision-services.md)  
 * [BizTalk Services: Gráfico de estado do serviço BizTalk](biztalk-service-state-chart.md)  
 * [Como posso começar a utilizar o SDK dos Serviços BizTalk do Azure](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 

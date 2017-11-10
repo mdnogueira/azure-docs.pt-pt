@@ -8,11 +8,11 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: e1099d2cd7eeccbe76d762028a0c5d5f95f53026
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: 5a0d25d698ddb15b4ba88d322c07a28b329c4add
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="monitor-azure-sql-data-sync-preview-with-oms-log-analytics"></a>Monitor SQL do Azure de sincronização de dados (pré-visualização) com a análise de registos do OMS 
 
@@ -24,19 +24,19 @@ Para obter uma descrição geral da sincronização de dados do SQL Server, cons
 
 Já não precisam de examine os registos de cada grupo de sincronização individualmente para procurar problemas. Pode monitorizar todos os grupos de sincronização de qualquer uma das suas subscrições no local através da utilização de uma vista personalizada do OMS (Operations Management Suite). Esta vista apresenta as informações que mais lhe interessam para clientes de sincronização de dados do SQL Server.
 
-![Dashboard de monitorização de sincronização de dados](media/sql-database-sync-monitor-oms/sync-monitoring-dashboard.jpg)
+![Dashboard de monitorização de sincronização de dados](media/sql-database-sync-monitor-oms/sync-monitoring-dashboard.png)
 
 ## <a name="automated-email-notifications"></a>Notificações de correio eletrónico automatizadas
 
-Já não precisam de verificar o registo manualmente no Portal do Azure ou através do PowerShell ou a API REST. Ao tirar partido [análise de registos do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview), pode criar alertas diretamente para os endereços de e-mail de aqueles que necessitam para vê-los na eventualidade de ocorrer um erro.
+Já não precisam de verificar o registo manualmente no portal do Azure ou através do PowerShell ou a API REST. Com [análise de registos do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview), pode criar alertas diretamente para os endereços de e-mail das pessoas que necessitam para vê-los quando ocorre um erro.
 
-![Notificações de correio eletrónico de sincronização de dados](media/sql-database-sync-monitor-oms/sync-email-notifications.jpg)
+![Notificações de correio eletrónico de sincronização de dados](media/sql-database-sync-monitor-oms/sync-email-notifications.png)
 
-## <a name="how-do-you-set-this-up"></a>Como pode configurar isto? 
+## <a name="how-do-you-set-up-these-monitoring-features"></a>Como pode configurar estas funcionalidades de monitorização? 
 
-Implemente uma solução de monitorização para a sincronização de dados do SQL Server em menos de uma hora, efetuando os seguintes procedimentos OMS personalizado.
+Implemente uma solução de monitorização para a sincronização de dados do SQL Server em menos de uma hora, efetuando os seguintes procedimentos OMS personalizado:
 
-Terá de configurar 3 componentes:
+Terá de configurar os três componentes:
 
 -   Um runbook do PowerShell para o feed de dados de registo de sincronização de dados do SQL Server para OMS.
 
@@ -70,7 +70,7 @@ Para obter mais informações sobre como criar um runbook, consulte [o meu prime
 
 1.  Na sua conta de automatização do Azure, selecione o **Runbooks** separador em automatização de processos.
 
-2.  Selecione **adicionar um Runbooks** no canto superior esquerdo da página de Runbooks.
+2.  Selecione **adicionar um Runbook** no canto superior esquerdo da página de Runbooks.
 
 3.  Selecione **importar um Runbook existente**.
 
@@ -80,13 +80,13 @@ Para obter mais informações sobre como criar um runbook, consulte [o meu prime
 
 6.  Na sua conta de automatização do Azure, selecione o **variáveis** separador em recursos partilhados.
 
-7.  Selecione **adicionar uma variável** na página de variáveis. É necessário criar uma variável para armazenar o último tempo de execução para o runbook. Se tiver vários runbooks, precisa de uma variável para cada runbook.
+7.  Selecione **adicionar uma variável** na página de variáveis. Crie uma variável para armazenar o último tempo de execução para o runbook. Se tiver vários runbooks, precisa de uma variável para cada runbook.
 
 8.  Definir o nome da variável como `DataSyncLogLastUpdatedTime` e defina o respetivo tipo como valor DateTime.
 
 9.  Selecione o runbook e clique no botão Editar no topo da página.
 
-10. Efetue as alterações necessárias para a sua conta e a configuração de sincronização de dados do SQL Server. (Consulte o script de exemplo para obter informações mais detalhadas.)
+10. Efetue as alterações necessárias para a sua conta e a configuração de sincronização de dados do SQL Server. (Para obter informações mais detalhadas, consulte o script de exemplo).
 
     1.  Informações do Azure.
 
@@ -96,7 +96,7 @@ Para obter mais informações sobre como criar um runbook, consulte [o meu prime
 
 11. Execute o runbook no painel de teste. Verifique para se certificar de que foi efetuada com êxito.
 
-    Se tiverem erros, certifique-se de que tem o módulo do PowerShell mais recente instalado. Pode fazê-lo do **Galeria de módulos** na sua conta de automatização.
+    Se tiverem erros, certifique-se de que tem o módulo do PowerShell mais recente instalado. Pode instalar o módulo PowerShell mais recente no **Galeria de módulos** na sua conta de automatização.
 
 12. Clique em **publicar**
 
@@ -118,7 +118,7 @@ Agendar o runbook:
 
 ### <a name="check-the-automation"></a>Verificação de automatização
 
-Para monitorizar se o seu automatização está em execução conforme esperado em **descrição geral** para a sua conta de automatização, localizar o **estatísticas de tarefa** ver em **monitorização**. Afixe este ao seu dashboard para uma visualização mais fácil. É executado com êxito de mostrar o runbook como "Concluída" e falha executa mostra como "Falhado".
+Para monitorizar se o seu automatização está em execução conforme esperado em **descrição geral** para a sua conta de automatização, localizar o **estatísticas de tarefa** ver em **monitorização**. Afixe esta vista para o seu dashboard para uma visualização mais fácil. É executado com êxito de mostrar o runbook como "Concluída" e falha executa mostra como "Falhado".
 
 ## <a name="create-an-oms-log-reader-alert-for-email-notifications"></a>Criar um alerta de leitor de registos do OMS para notificações por E-Mail
 
@@ -136,7 +136,7 @@ Para criar um alerta que utiliza a análise de registos do OMS, efetue os seguin
 
     1.  Defina o valor de agregação **maior**.
 
-    2.  Depois de **maior**, introduza o limiar de decorrer antes de poder receber notificações. Erros transitórios são esperados sincronização de dados. Recomendamos que defina o limiar para 5 para reduzir o ruído.
+    2.  Depois de **maior**, introduza o limiar de decorrer antes de poder receber notificações. Erros transitórios são esperados sincronização de dados. Para reduzir o ruído, defina o limiar para 5.
 
 5.  Em **ações**, defina **notificação por E-Mail** como "Yes". Introduza os destinatários de e-mail pretendido.
 
@@ -168,7 +168,7 @@ Para configurar a vista do OMS, efetue os seguintes procedimentos:
 
         2.  Nos mosaicos para cada grupo de sincronização, atualize os nomes de grupo de sincronização.
 
-    3.  Onn cada peça de mosaico, atualize o título, conforme necessário.
+    3.  Cada mosaico, atualize o título, conforme necessário.
 
 4.  Clique em **guardar** e a vista está pronta.
 
@@ -189,10 +189,11 @@ Transfira os exemplos de código descritos neste artigo das seguintes localizaç
 -   [Vista OMS de registo de sincronização de dados](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/DataSyncLogOmsView.omsview)
 
 ## <a name="next-steps"></a>Passos seguintes
-ou obter mais informações sobre a sincronização de dados do SQL Server, consulte:
+Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
 -   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
 
 -   Conclua os exemplos do PowerShell que mostram como configurar a sincronização de dados do SQL Server:
