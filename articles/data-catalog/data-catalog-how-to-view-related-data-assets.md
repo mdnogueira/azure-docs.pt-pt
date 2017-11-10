@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-catalog
 ms.date: 11/01/2017
 ms.author: maroche
-ms.openlocfilehash: 0623847ea1e79c3a45a8fbdcc1d3a551864aefd6
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: da7ac8f323f9b2ec6303fbc85aa570373a538bcf
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="how-to-view-related-data-assets-in-azure-data-catalog"></a>Como ver dados relacionados ativos no catálogo de dados do Azure?
 Catálogo de dados do Azure permite-lhe ver os recursos de dados relacionados com um relações de recurso e a vista de dados selecionados entre eles. 
@@ -30,6 +30,9 @@ Quando registar recursos de dados das seguintes origens de dados, o catálogo de
 - Base de Dados SQL do Azure
 - MySQL
 - Oracle
+
+> [!NOTE]
+> Catálogo de dados importar a relação entre os recursos de dados de dois, tem de registar os dois recursos ao mesmo tempo. Se tinha adicionado um deles separadamente, adicione-a novamente e os outros recursos de dados para importar a relação entre eles.
 
 ## <a name="view-related-data-assets"></a>Ver dados relacionados ativos
 Para ver os recursos de dados que estão relacionados com um conjunto de dados selecionado, utilize o **relações** separador conforme mostrado na imagem seguinte: 

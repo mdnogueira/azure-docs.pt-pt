@@ -11,11 +11,11 @@ ms.workload: data-services
 ms.custom: mvc, tutorial, azure
 ms.topic: article
 ms.date: 09/21/2017
-ms.openlocfilehash: 4918a820ca07a7d83dfb544ee9f0bbeb66d22722
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: acd61e9980b143ebbb81d2d144bdac9134e20a11
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="bike-share-tutorial-advanced-data-preparation-with-azure-machine-learning-workbench"></a>Tutorial de partilha de bicicleta: avançadas preparação de dados com o Azure Machine Learning Workbench
 Serviços de Machine Learning do Azure (pré-visualização) é um ciência de dados ponto-a-ponto integrada e a solução de análise avançadas para cientistas de dados professional preparar os dados, experimentações de desenvolver e implementar modelos na escala da nuvem.
@@ -347,7 +347,6 @@ Alterar os dados nas colunas numéricas para um intervalo de 0-1 permite alguns 
     > O script espera que os nomes de coluna utilizados anteriormente neste tutorial. Se tiver diferentes nomes de coluna, tem de alterar os nomes do script.
 
    ```python
-   maxVal = max(df["HOURLYDRYBULBTEMPF_Mean"])
    maxVal = max(df["HOURLYDRYBULBTEMPF_Mean"])
    minVal = min(df["HOURLYDRYBULBTEMPF_Mean"])
    df["HOURLYDRYBULBTEMPF_Mean"] = (df["HOURLYDRYBULBTEMPF_Mean"]-minVal)/(maxVal-minVal)

@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/13/2017
 ms.author: ryanwi
-ms.openlocfilehash: 8ff8c425189efdd7ea21984528bf7ea765e17955
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: e28ea6df24b9df144552739427427ee14e998584
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="deploy-api-management-with-service-fabric"></a>Implementar a gestão de API com o Service Fabric
-Este tutorial é parte dois de uma série. Este tutorial mostra como configurar [API Management do Azure](../api-management/api-management-key-concepts.md) com o Service Fabric para encaminhar o tráfego para um serviço de back-end no Service Fabric.  Quando tiver terminado, ter implementado a API Management para uma VNET, configurada uma operação de API para enviar o tráfego para serviços sem monitorização de estado de back-end. Para saber mais sobre os cenários de API Management do Azure com o Service Fabric, consulte o [descrição geral](service-fabric-api-management-overview.md) artigo.
+Este tutorial é parte três de uma série.  Implementar a gestão de API do Azure com o Service Fabric é um cenário avançado, útil quando tem de publicar APIs com um vasto conjunto de regras de encaminhamento para os serviços de recursos de infraestrutura do serviço de back-end. Este tutorial mostra como configurar [API Management do Azure](../api-management/api-management-key-concepts.md) com o Service Fabric para encaminhar o tráfego para um serviço de back-end no Service Fabric.  Quando tiver terminado, ter implementado a API Management para uma VNET, configurada uma operação de API para enviar o tráfego para serviços sem monitorização de estado de back-end. Para saber mais sobre os cenários de API Management do Azure com o Service Fabric, consulte o [descrição geral](service-fabric-api-management-overview.md) artigo.
 
 Neste tutorial, ficará a saber como:
 
@@ -63,6 +63,10 @@ az account set --subscription <guid>
 Aplicações em nuvem, normalmente, precisam de um gateway de front-end para fornecer um único ponto de entrada para os utilizadores, dispositivos ou outras aplicações. No Service Fabric, um gateway pode ser qualquer serviço sem monitorização de estado como uma aplicação ASP.NET Core ou outro serviço concebida para a entrada de tráfego, como os Event Hubs, o IoT Hub ou API Management do Azure. Este tutorial é uma introdução à utilização de API Management do Azure como um gateway para as aplicações de Service Fabric. Gestão de API integra-se diretamente com o Service Fabric, permitindo-lhe publicar APIs com um vasto conjunto de regras de encaminhamento para os serviços de recursos de infraestrutura do serviço de back-end. 
 
 Agora que tem um segura [cluster do Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) ou [Linux cluster](service-fabric-tutorial-create-vnet-and-linux-cluster.md) no Azure, implementar a gestão de API para a rede virtual (VNET) na sub-rede e NSG designado para a gestão de API. Para este tutorial, o modelo de Gestor de recursos de gestão de API está pré-configurada para utilizar os nomes da VNET, uma sub-rede e um NSG que configurou no anterior [tutorial de cluster do Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) ou [tutorial do Linux cluster](service-fabric-tutorial-create-vnet-and-linux-cluster.md). 
+
+Este tutorial implementa a seguinte topologia para o Azure no qual API Management e de recursos de infraestrutura de serviço estão em sub-redes da mesma rede Virtual:
+
+ ![Legenda de imagem][sf-apim-topology-overview]
 
 Transfira o ficheiro de modelo e os parâmetros de Gestor de recursos seguinte:
  
@@ -404,3 +408,6 @@ Neste tutorial, ficou a saber como:
 
 [cluster-arm]: https://github.com/Azure-Samples/service-fabric-api-management/blob/master/cluster.json
 [cluster-parameters-arm]: https://github.com/Azure-Samples/service-fabric-api-management/blob/master/cluster.parameters.json
+
+<!-- pics -->
+[sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png

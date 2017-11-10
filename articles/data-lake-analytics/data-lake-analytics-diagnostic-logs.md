@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 07/31/2017
+ms.date: 11/08/2017
 ms.author: larryfr
-ms.openlocfilehash: 6c74db1659742aa41306388273bec46800ba7609
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5bab7a0646d34de3b6d71370a0fa4216845ee6a2
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Aceder a registos de diagnóstico para o Azure Data Lake Analytics
 
@@ -36,11 +36,9 @@ Registo de diagnóstico permite-lhe recolher registos de auditoria de acesso de 
 
     ![Ative os diagnósticos para recolher a auditoria e registos de pedidos](./media/data-lake-analytics-diagnostic-logs/turn-on-logging.png)
 
-3. De __as definições de diagnóstico__, defina o estado como __no__ e selecione as opções de registo.
+3. De __as definições de diagnóstico__, introduza um __nome__ para esta configuração de registo e as opções de registo, em seguida, selecione.
 
     ![Ative os diagnósticos para recolher a auditoria e registos de pedidos](./media/data-lake-analytics-diagnostic-logs/enable-diagnostic-logs.png "ativar registos de diagnóstico")
-
-   * Definir **estado** para **no** para ativar o registo de diagnóstico.
 
    * Pode optar por loja/processe os dados de três formas diferentes.
 
@@ -58,34 +56,14 @@ Registo de diagnóstico permite-lhe recolher registos de auditoria de acesso de 
         > [!NOTE]
         > Tem de selecionar um __arquivo para uma conta de armazenamento__, __fluxo para um Hub de eventos__ ou __enviar ao Log Analytics__ antes de clicar no __guardar__ botão.
 
-Assim que tiver ativado as definições de diagnóstico, poderá regressar ao __registos de diagnóstico__ painel para ver os registos.
-
-## <a name="view-logs"></a>Ver registos
-
-### <a name="use-the-data-lake-analytics-view"></a>Utilize a vista de Data Lake Analytics
-
-1. Do seu Data Lake Analytics conta painel, em **monitorização**, selecione **os registos de diagnóstico** e, em seguida, selecione uma entrada para apresentar os registos para.
-
-    ![Registo de diagnóstico de vista](./media/data-lake-analytics-diagnostic-logs/view-diagnostic-logs.png "ver registos de diagnóstico")
-
-2. Os registos são categorizados por **registos de auditoria** e **pedido registos**.
-
-    ![entradas de registo](./media/data-lake-analytics-diagnostic-logs/diagnostic-log-entries.png)
-
-   * Registos de pedidos capturam todos os pedidos de API efetuados na conta de Data Lake Analytics.
-   * Os registos de auditoria são semelhantes aos registos de pedidos mas fornece uma repartição muito mais detalhada das operações. Por exemplo, uma chamada de API de carregamento única num registo de pedido pode resultar em várias operações de "Acrescentar" no respetivo registo de auditoria.
-
-3. Clique em de **transferir** ligação para uma entrada de registo transferir esse registo.
-
 ### <a name="use-the-azure-storage-account-that-contains-log-data"></a>Utilizar a conta de armazenamento do Azure que contém dados de registo
 
-1. Abrir o painel de conta de armazenamento do Azure associado ao Data Lake Analytics para o registo e, em seguida, clique em __Blobs__. O **serviço Blob** painel apresenta uma lista de dois contentores.
-
-    ![Registo de diagnóstico de vista](./media/data-lake-analytics-diagnostic-logs/view-diagnostic-logs-storage-account.png "ver registos de diagnóstico")
+1. Para apresentar os contentores de BLOBs que contêm dados de registo, abra a conta de armazenamento do Azure utilizada para o Data Lake Analytics para o registo e, em seguida, clique em __Blobs__.
 
    * O contentor **insights-registos de auditoria** contém os registos de auditoria.
    * O contentor **pedidos de registos insights** com os registos de pedido.
-2. Dentro destes contentores, os registos são armazenados na estrutura seguinte:
+
+2. Dentro os contentores, os registos são armazenados sob a seguinte estrutura de ficheiros:
 
         resourceId=/
           SUBSCRIPTIONS/

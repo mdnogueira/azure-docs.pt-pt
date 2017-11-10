@@ -12,20 +12,20 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/01/2016
+ms.date: 11/08/2017
 ms.author: markvi
-ms.openlocfilehash: 4edac05325ad12596d982d113df0db7461124b12
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b00f756fdbd059b917ac7d28f24b1a0ec22594a9
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-ad-connect-sync-understand-and-customize-synchronization"></a>Sincronização do Azure AD Connect: Noções e personalizar a sincronização
 Os serviços de sincronização do Azure Active Directory Connect (sincronização do Azure AD Connect) é um componente principal do Azure AD Connect. Trata-se de que todas as operações relacionadas com a sincronizar dados de identidade entre o seu ambiente no local e o Azure AD. Sincronização do Azure AD Connect é o sucessor do DirSync, Azure AD Sync e Forefront Identity Manager com o conector Azure Active Directory configurado.
 
 Este tópico é a base para **sincronização do Azure AD Connect** (também denominado **motor de sincronização**) e apresenta uma lista de ligações para todos os outros tópicos relacionados com o mesmo. Para ligações ao Azure AD Connect, consulte [integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md).
 
-O serviço de sincronização é composta por dois componentes, o local **sincronização do Azure AD Connect** componente e do lado do serviço no Azure AD chamado **serviço de sincronização do Azure AD Connect**. O serviço é comum para DirSync, Azure AD Sync e o Azure AD Connect.
+O serviço de sincronização é composta por dois componentes, o local **sincronização do Azure AD Connect** componente e do lado do serviço no Azure AD chamado **serviço de sincronização do Azure AD Connect**. 
 
 ## <a name="azure-ad-connect-sync-topics"></a>Tópicos de sincronização do Azure AD Connect
 | Tópico | O que abrange a e a ler |

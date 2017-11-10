@@ -17,11 +17,11 @@ ms.workload: database
 ms.date: 07/31/2017
 ms.author: jognanay
 ms.reviewer: douglasl
-ms.openlocfilehash: b96fc9525110729c618469665a697a4a2887f0bc
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 531379bf9836825ca75f4901b07685f21f7b5309
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="use-powershell-to-sync-between-multiple-azure-sql-databases"></a>Utilizar o PowerShell para sincronizar entre várias bases de dados SQL do Azure
  
@@ -369,6 +369,7 @@ Para obter mais informações sobre a sincronização de dados do SQL Server, co
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](../sql-database-sync-data.md)
 -   [Introdução à sincronização de dados SQL do Azure](../sql-database-get-started-sql-data-sync.md)
 -   [Melhores práticas para a sincronização de dados SQL do Azure](../sql-database-best-practices-data-sync.md)
+-   [Monitor sincronização de dados SQL do Azure com a análise de registos do OMS](../sql-database-sync-monitor-oms.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](../sql-database-troubleshoot-data-sync.md)
 
 -   Conclua os exemplos do PowerShell que mostram como configurar a sincronização de dados do SQL Server:

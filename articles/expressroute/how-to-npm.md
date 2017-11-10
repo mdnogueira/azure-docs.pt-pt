@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/01/2017
 ms.author: cherylmc
-ms.openlocfilehash: aff54b86da6a8a062a3f1c76aa69e32c60008274
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 35dd3c6be2fb2fa5ec4d14eefce1c16005210364
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configure-network-performance-monitor-for-expressroute-preview"></a>Configurar o Monitor de desempenho de rede para o ExpressRoute (pré-visualização)
 
@@ -88,14 +88,14 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
   >O agente Linux não é atualmente suportado para o ExpressRoute monitorização.
   >
   >
-2. Em seguida, copie e cole o **ID da área de trabalho** e **chave primária** para bloco de notas.
+2. Em seguida, copie o **ID da área de trabalho** e **chave primária** para bloco de notas.
 3. No **configurar agentes** secção, transfira o Script do Powershell. O script do PowerShell ajuda-o a abrir a porta de firewall relevantes para as transações de TCP.
 
   ![Script do PowerShell](.\media\how-to-npm\7.png)
 
 ### <a name="installagent"></a>2.2: instalar um agente de monitorização em cada servidor de monitorização
 
-1. Executar **configuração** para instalar o agente em cada servidor que pretende utilizar para a monitorização do ExpressRoute. O servidor que utiliza para a monitorização pode ser uma VM ou no local e tem de ter acesso à Internet. Tem de instalar pelo menos um agente no local e um em cada segmento de rede que pretende monitorizar no Azure.
+1. Executar **configuração** para instalar o agente em cada servidor que pretende utilizar para a monitorização do ExpressRoute. O servidor que utiliza para a monitorização pode ser uma VM ou no local e tem de ter acesso à Internet. Terá de instalar pelo menos um agente no local e um agente em cada segmento de rede que pretende monitorizar no Azure.
 2. No **boas-vindas** página, clique em **seguinte**.
 3. No **termos de licenciamento** página, leia a licença e, em seguida, clique em **concordo**.
 4. No **pasta de destino** página, altere ou mantenha a pasta de instalação predefinida e, em seguida, clique em **seguinte**.
@@ -116,7 +116,7 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
 
 ### <a name="proxy"></a>2.3: Configurar definições de proxy (opcionais)
 
-Se estiver a utilizar um proxy web para aceder à Internet, utilize os seguintes passos para configurar definições de proxy para o Microsoft Monitoring Agent. Terá de executar estes passos para cada servidor. Se tiver vários servidores que necessita configurar, poderá considerar mais fácil utilizar um script para automatizar este processo. Se Sim, consulte [para configurar definições de proxy para o Microsoft Monitoring Agent utilizando um script](../log-analytics/log-analytics-windows-agents.md#to-configure-proxy-settings-for-the-microsoft-monitoring-agent-using-a-script).
+Se estiver a utilizar um proxy web para aceder à Internet, utilize os seguintes passos para configurar definições de proxy para o Microsoft Monitoring Agent. Execute estes passos para cada servidor. Se tiver vários servidores que necessita configurar, poderá considerar mais fácil utilizar um script para automatizar este processo. Se Sim, consulte [para configurar definições de proxy para o Microsoft Monitoring Agent utilizando um script](../log-analytics/log-analytics-windows-agents.md#to-configure-proxy-settings-for-the-microsoft-monitoring-agent-using-a-script).
 
 Para configurar definições de proxy para o Microsoft Monitoring Agent através do painel de controlo:
 
@@ -140,7 +140,7 @@ Pode facilmente verificar se os agentes estão a comunicar.
 
 ### <a name="firewall"></a>2.5: abrir as portas de firewall nos servidores de agente de monitorização
 
-Para utilizar o protocolo TCP, terá de abrir portas de firewall para se certificar de que os agentes de monitorização podem comunicar.
+Para utilizar o protocolo TCP, é necessário abrir as portas de firewall para se certificar de que os agentes de monitorização podem comunicar.
 
 Pode executar um script do PowerShell que cria as chaves do registo necessárias para o Monitor de desempenho de rede, bem como a criação de regras de Firewall do Windows para permitir a monitorização de agentes para criar ligações TCP entre si. As chaves de registo criadas pelo script também especificar se pretende registar os registos de depuração e o caminho para o ficheiro de registos. Também define a porta TCP de agente utilizada para comunicação. Os valores para estas chaves são configurados automaticamente pelo script de, pelo que não deve alterar manualmente estas chaves.
 
@@ -157,7 +157,7 @@ Nos servidores de agente, abra uma janela do PowerShell com privilégios adminis
 
 ## <a name="opennsg"></a>Passo 3: Configurar regras de grupo de segurança de rede
 
-Para monitorizar os servidores de agente que se encontrem no Azure, terá de configurar regras para permitir tráfego TCP uma porta utilizada pelo NPM para transações sintéticas (NSG) do grupo de segurança de rede. A porta predefinida é 8084. Isto permite que um agente de monitorização instalado na VM do Azure para comunicar com um local agente de monitorização.
+Para monitorizar os servidores de agente que se encontrem no Azure, tem de configurar regras para permitir tráfego TCP uma porta utilizada pelo NPM para transações sintéticas (NSG) do grupo de segurança de rede. A porta predefinida é 8084. Isto permite que um agente de monitorização instalado na VM do Azure para comunicar com um local agente de monitorização.
 
 Para mais informações sobre o NSG, consulte [grupos de segurança de rede](../virtual-network/virtual-networks-create-nsg-arm-portal.md).
 
@@ -168,8 +168,7 @@ Para mais informações sobre o NSG, consulte [grupos de segurança de rede](../
 >
 >
 
-Antes de começar a utilizar a funcionalidade de monitorização do ExpressRoute de NPM, tem de solicitar para ter a sua área de trabalho na lista de permissões. [Clique aqui para ir para a página e preencher o formulário de pedido](https://go.microsoft.com/fwlink/?linkid=862263). (Sugestão: pretende abrir esta ligação numa nova janela ou separador). O processo de adicionar à lista branca pode demorar um dia útil ou mais. Iremos enviar-lhe uma mensagem de e-mail depois de concluída a adicionar à lista branca.
-
+Antes de começar a utilizar a funcionalidade de monitorização do ExpressRoute de NPM, tem de solicitar para ter a sua área de trabalho na lista de permissões. [Clique aqui para ir para a página e preencher o formulário de pedido](https://go.microsoft.com/fwlink/?linkid=862263). (Sugestão: pretende abrir esta ligação numa nova janela ou separador). O processo de adicionar à lista branca pode demorar um dia útil ou mais. Depois do adicionar à lista branca estiver concluída, receberá uma mensagem de e-mail.
 
 ## <a name="setupmonitor"></a>Passo 5: Configurar NPM para monitorização do ExpressRoute
 
@@ -189,7 +188,7 @@ Depois de concluir as secções anteriores e certifique-se de que foram na lista
 3. Na página de configuração, navegue até ao separador 'ExpressRoute Peerings', localizado no painel do lado esquerdo. Clique em **detetar agora**.
 
   ![Detetar](.\media\how-to-npm\13.png)
-4. Quando tiver concluído a deteção, consulte as regras para o nome exclusivo do circuito e nome da VNet. Inicialmente, estas regras estão desativadas. Terá de ativar as regras de, em seguida, selecione os agentes de monitorização e os valores de limiar.
+4. Quando tiver concluído a deteção, consulte as regras para o nome exclusivo do circuito e nome da VNet. Inicialmente, estas regras estão desativadas. Ative as regras de, em seguida, selecione os agentes de monitorização e os valores de limiar.
 
   ![regras](.\media\how-to-npm\14.png)
 5. Depois de ativar as regras e selecionar os valores e os agentes que pretende monitorizar, há um Aguarde aproximadamente 30-60 minutos para os valores começar a preencher e **ExpressRoute monitorização** mosaicos fique disponível. Depois de ver os mosaicos de monitorização, os circuitos ExpressRoute e recursos de ligação estão a ser monitorizados pelo NPM.
@@ -229,6 +228,7 @@ Pode aumentar o nível de visibilidade para incluir saltos no local, movendo a b
 
 ![filtros](.\media\how-to-npm\topology.png)
 
-#### <a name="detailed-topology-view-of-a-particular-expressroute-circuit---with-vnet-connections"></a>Vista detalhada da topologia de um determinado circuito de ExpressRoute - com ligações VNet
+#### <a name="detailed-topology-view-of-a-circuit"></a>Vista detalhada da topologia de um circuito
 
+Esta vista mostra as ligações VNet.
 ![topologia de detalhado](.\media\how-to-npm\17.png)

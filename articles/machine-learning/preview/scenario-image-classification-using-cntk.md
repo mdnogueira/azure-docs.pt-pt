@@ -9,11 +9,11 @@ ms.reviewer: mawah, marhamil, mldocs
 ms.service: machine-learning
 ms.topic: article
 ms.date: 10/17/2017
-ms.openlocfilehash: eefede6196bedf208d9b14cee63632922223a6d6
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
-ms.translationtype: HT
+ms.openlocfilehash: 336d3ffaee21040a95366e0317cecdb83977ce97
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="image-classification-using-azure-machine-learning-workbench"></a>Classificação de imagem com o Azure Machine Learning Workbench
 
@@ -91,12 +91,10 @@ Este tutorial utiliza como executar. por exemplo um dataset texture do corpo sup
 
 O script `0_downloadData.py` transfere todas as imagens para a *imagens/DATA_DIR/fashionTexture/* diretório. Alguns dos 428 URLs sejam provavelmente interrompidas. Não é um problema e tal significa que temos um pouco menos imagens para formação e testar.
 
-A figura seguinte mostra exemplos de atributos delimitada por pontos (esquerda duas colunas), repartidas (média duas colunas) e leopard (à direita duas colunas). Foram efetuadas anotações, de acordo com o item de clothing corpo superior.
+A figura seguinte mostra exemplos para os atributos separada por pontos (esquerda), repartido (médio) e leopard (direita). Foram efetuadas anotações, de acordo com o item de clothing corpo superior.
 
 <p align="center">
-<img src="media/scenario-image-classification-using-cntk/examples_dotted.jpg"  alt="alt text" height="200">
-<img src="media/scenario-image-classification-using-cntk/examples_striped.jpg" alt="alt text" height="200">
-<img src="media/scenario-image-classification-using-cntk/examples_leopard.jpg" alt="alt text" height="200">
+<img src="media/scenario-image-classification-using-cntk/examples_all.jpg"  alt="alt text" width="700">
 </p>
 
 

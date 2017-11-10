@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: c55d1ab124441c42101b4ad60924a9ea28231408
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 45365092f5bcd1a8d309c10404a7437c494a8967
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="biztalk-services-backup-and-restore"></a>BizTalk Services: Cópia de segurança e Restauro
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
-BizTalk Services do Azure inclui capacidades de cópia de segurança e restauro. Este tópico descreve como criar cópias de segurança e restaurar os BizTalk Services utilizando o portal clássico do Azure.
+BizTalk Services do Azure inclui capacidades de cópia de segurança e restauro. 
 
-Também pode criar uma cópia dos BizTalk Services utilizando o [API de REST do BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325584). 
+> [!INCLUDE [Use APIs to manage MABS](../../includes/biztalk-services-retirement-azure-classic-portal.md)]
 
 > [!NOTE]
 > As ligações híbridas não são guardados em cópia de segurança, independentemente da edição. Tem de recriar as ligações híbridas.
@@ -34,7 +34,6 @@ Também pode criar uma cópia dos BizTalk Services utilizando o [API de REST do 
 
 ## <a name="before-you-begin"></a>Antes de começar
 * Cópia de segurança e restauro poderão não estar disponíveis em todas as edições. Consulte [dos BizTalk Services: gráfico de edições](biztalk-editions-feature-chart.md).
-* Utilizar o portal clássico do Azure, pode criar uma cópia de segurança a pedido ou criar uma cópia de segurança agendada. 
 * É possível restaurar a cópia de segurança conteúdo para o mesmo serviço BizTalk ou para um novo serviço BizTalk. Para restaurar o BizTalk Service com o mesmo nome, o serviço BizTalk existente tem de ser eliminado e o nome tem de estar disponível. Depois de eliminar um BizTalk Service, pode demorar mais tempo do que pretendia para o mesmo nome para estar disponível. Se não puder aguardar para o mesmo nome para estar disponível, em seguida, restaure para um novo serviço BizTalk.
 * BizTalk Services podem ser restaurados para a mesma edição ou uma edição superior. Restaurar os BizTalk Services para uma edição inferior, de quando foi feita a cópia de segurança, não é suportada.
   
@@ -46,70 +45,10 @@ Também pode criar uma cópia dos BizTalk Services utilizando o [API de REST do 
 * Opcional: No Portal de serviços do BizTalk, pare a quaisquer operações de gestão.
 
 ## <a name="create-a-backup"></a>Criar uma cópia de segurança
-Uma cópia de segurança pode ser executada em qualquer altura e é totalmente controlada por si. Esta secção lista os passos para criar cópias de segurança utilizando o portal clássico do Azure, incluindo:
-
-[Numa cópia de segurança a pedido](#backupnow)
-
-[Agendar uma cópia de segurança](#backupschedule)
-
-#### <a name="backupnow"></a>Numa cópia de segurança a pedido
-1. No portal clássico do Azure, selecione **BizTalk Services**e, em seguida, selecione o BizTalk Service que pretende efetuar cópia de segurança.
-2. No **Dashboard** separador, selecione **cópia de segurança** na parte inferior da página.
-3. Introduza um nome de cópia de segurança. Por exemplo, introduza *myBizTalkService*BU*data*.
-4. Escolha uma conta do blob storage e selecione a marca de verificação para iniciar a cópia de segurança.
-
-Uma vez concluída a cópia de segurança, é criado um contentor com o nome de cópia de segurança que introduzir na conta de armazenamento. Este contentor contém a configuração de cópia de segurança do BizTalk Service.
-
-#### <a name="backupschedule"></a>Agendar uma cópia de segurança
-1. No portal clássico do Azure, selecione **BizTalk Services**, selecione o nome do BizTalk Service para agendar a cópia de segurança e, em seguida, selecione o **configurar** separador.
-2. Definir o **estado de cópia de segurança** para **automática**. 
-3. Selecione o **conta de armazenamento** para armazenar a cópia de segurança, introduza o **frequência** para criar cópias de segurança e quanto tempo para manter as cópias de segurança (**retenção dias**):
-   
-    ![][AutomaticBU]
-   
-    **Notas**     
-   
-   * No **retenção dias**, o período de retenção tem de ser superior à frequência da cópia de segurança.
-   * Selecione **mantenha sempre, pelo menos, uma cópia de segurança**, mesmo se for passado o período de retenção.
-4. Selecione **Guardar**.
-
-Quando uma tarefa de cópia de segurança agendada é executada, cria um contentor (para armazenar dados de cópia de segurança) na conta de armazenamento que introduziu. O nome do contentor é denominado *nome-data / hora de BizTalk Service*. 
-
-Se o dashboard do BizTalk Service mostra um **falha** Estado:
-
-![Último Estado de cópia de segurança agendado][BackupStatus] 
-
-A hiperligação abre os registos de operação de serviços de gestão para ajudar a resolver. Consulte [BizTalk Services: resolver problemas com os registos de operações](http://go.microsoft.com/fwlink/p/?LinkId=391211).
+Uma cópia de segurança pode ser executada em qualquer altura e é totalmente controlada por si. Para criar uma cópia de segurança, utilize o [API REST para gerir os BizTalk Services no Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx).
 
 ## <a name="restore"></a>Restauro
-Pode restaurar cópias de segurança do portal clássico do Azure ou a partir de [API REST do serviço BizTalk restaurar](http://go.microsoft.com/fwlink/p/?LinkID=325582). Esta secção lista os passos para restaurar a utilizar o portal clássico.
-
-#### <a name="before-restoring-a-backup"></a>Antes de restaurar uma cópia de segurança
-* Novo controlo, arquivar e arquivos de monitorização, podem ser introduzidos ao restaurar um BizTalk Service.
-* Os mesmos dados EDI Runtime são restaurados. A cópia de segurança do tempo de execução EDI armazena os números de controlo. Os números de controlo restaurada são na sequência do momento da cópia de segurança. Se as mensagens são processadas após a última cópia de segurança, restaurar este conteúdo de cópia de segurança pode fazer com que os números de controlo duplicado.
-
-#### <a name="restore-a-backup"></a>Restaurar uma cópia de segurança
-1. No portal clássico do Azure, selecione **novo** > **serviços aplicacionais** > **BizTalk Service** > **restaurar**:
-   
-    ![Restaurar uma cópia de segurança][Restore]
-2. No **URL de cópia de segurança**, selecione o ícone de pasta e expanda a conta de armazenamento do Azure que armazena a cópia de segurança de configuração do BizTalk Service. Expanda o contentor e no painel direito, selecione o correspondente de cópia de segurança de ficheiro. txt. 
-   <br/><br/>
-   Selecione **abra**.
-3. No **restaurar o BizTalk Service** página, introduza um **nome do BizTalk Service** e certifique-se a **URL do domínio**, **edição**, e **região** para o BizTalk Service restaurada. **Criar uma nova instância de base de dados do SQL Server** para a base de dados de controlo:
-   
-    ![][RestoreBizTalkService]
-   
-    Selecione a seta seguinte.
-4. Verifique o nome da base de dados SQL, introduza o servidor físico onde será criada a base de dados do SQL Server e uma nome de utilizador/palavra-passe para esse servidor.
-
-    Selecione se pretende configurar a edição de base de dados do SQL Server, tamanho e outras propriedades, **configurar definições avançadas da base de dados**. 
-
-    Selecione a seta seguinte.
-
-1. Criar uma nova conta de armazenamento ou introduza uma conta de armazenamento existente para o BizTalk Service.
-2. Selecione a marca de verificação para iniciar o restauro.
-
-Depois do restauro concluir com êxito, um novo serviço BizTalk é listado num estado suspenso na página de BizTalk Services no portal clássico do Azure.
+Para restaurar uma cópia de segurança, utilize o [API REST para gerir os BizTalk Services no Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx).
 
 ### <a name="postrestore"></a>Depois de restaurar uma cópia de segurança
 O BizTalk Service está sempre restaurado num **suspenso** estado. Neste estado, pode efetuar alterações de configuração antes do novo ambiente está funcional, incluindo:
@@ -118,8 +57,6 @@ O BizTalk Service está sempre restaurado num **suspenso** estado. Neste estado,
 * Restaurar um BizTalk Service para replicar num ambiente existente do BizTalk Service. Nesta situação, se existirem contratos configurados no portal do BizTalk Services original que utilizam uma pasta de origem do FTP, se pretender atualizar os contratos no ambiente recentemente restaurado para utilizar uma pasta FTP de origem diferente. Caso contrário, poderão existir dois contratos diferentes ao tentar efetuar obter a mesma mensagem.
 * Se os tiver restaurado ter vários ambientes do BizTalk Service, certifique-se de que o ambiente correto no aplicações do Visual Studio, os cmdlets do PowerShell, REST APIs ou APIs de OM de gestão de parceiros comerciais de destino.
 * É uma boa prática configurar cópias de segurança automatizadas no ambiente de serviço BizTalk recentemente restaurado.
-
-Para iniciar o BizTalk Service no portal clássico do Azure, selecione o BizTalk Service restaurada e selecione **retomar** na barra de tarefas. 
 
 ## <a name="what-gets-backed-up"></a>O que obtém uma cópia de segurança
 Quando é criada uma cópia de segurança, os itens seguintes são uma cópia de segurança:
@@ -194,13 +131,13 @@ Se a base de dados de controlo é eliminado e as necessidades de base de dados r
 </table>
 
 ## <a name="next"></a>Seguinte
-Para criar os BizTalk Services do Azure no portal clássico do Azure, aceda a [BizTalk Services: portal clássico do Azure de utilizar o aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280). Para começar a criar aplicações, veja [BizTalk Services do Azure](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Para criar os BizTalk Services do Azure, aceda a [BizTalk Services: aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280). Para começar a criar aplicações, veja [BizTalk Services do Azure](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="see-also"></a>Veja Também
 * [Serviço de cópia de segurança de BizTalk](http://go.microsoft.com/fwlink/p/?LinkID=325584)
 * [Restaurar o BizTalk Service a partir de cópia de segurança](http://go.microsoft.com/fwlink/p/?LinkID=325582)
 * [Os BizTalk Services: Programador, básicas, Standard e Premium gráfico de edições](http://go.microsoft.com/fwlink/p/?LinkID=302279)
-* [BizTalk Services: Portal clássico do Azure através de aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)
+* [Os BizTalk Services: aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=302280)
 * [Serviços BizTalk: Gráfico de Estado de Aprovisionamento](http://go.microsoft.com/fwlink/p/?LinkID=329870)
 * [Serviços BizTalk: Separadores Dashboard, Monitorizar e Dimensionar](http://go.microsoft.com/fwlink/p/?LinkID=302281)
 * [Serviços BizTalk: limitação](http://go.microsoft.com/fwlink/p/?LinkID=302282)

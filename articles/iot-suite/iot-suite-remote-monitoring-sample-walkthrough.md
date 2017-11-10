@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/24/2017
 ms.author: dobett
-ms.openlocfilehash: a4b28e8a1269374a24e169f9363401109bacc471
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 6a90eb0eae6855cd0fbede65a024b5ff6490cce0
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="remote-monitoring-preconfigured-solution-architecture"></a>Arquitetura da solução pré-configurada de monitorização remota
 
@@ -42,7 +42,7 @@ O diagrama a seguir descreve os componentes da solução pré-configurada monito
 Arquitetura de nuvem tem evoluiu e deu lugar, uma vez que a Microsoft lançou as primeira soluções pré-configuradas. [Micro-serviços](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/) ter emerged como prática comprovada para alcançar a escala e a flexibilidade sem sacrificar a velocidade de desenvolvimento. Vários serviços do Microsoft utilizam este padrão da arquitetura internamente com resultados de escalabilidade e fiabilidade excelente. As soluções pré-configuradas atualizadas colocar estes learnings na prática, para que possa também tirar partido dos mesmos.
 
 > [!TIP]
-> Para saber mais sobre as arquiteturas de microsserviço, consulte [arquitetura da aplicação .NET](https://www.microsoft.com/net/learn/architecture) e [micro-serviços: uma rotações de aplicação que utiliza a tecnologia de nuvem](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/).
+> Para saber mais sobre as arquiteturas de microsserviços, veja [.NET Application Architecture](https://www.microsoft.com/net/learn/architecture) (Arquitetura de Aplicações .NET) e [Microservices: An application revolution powered by the cloud](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/) (Microsserviços: uma revolução nas aplicações com tecnologia da cloud).
 
 ## <a name="device-connectivity"></a>Conectividade dos dispositivos
 
@@ -141,5 +141,6 @@ Se pretende explorar a documentação de código e o programador da origem, come
 
 * [Solução para com o Azure IoT (.NET) de monitorização remota pré-configurada](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/).
 * [Solução de monitorização remota com o Azure IoT (Java) pré-configurada](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java).
+* [Solução de arquitetura de monitorização remota pré-configurada de)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Architecture).
 
 Para obter mais informações concetuais sobre a solução pré-configurada de monitorização remota, consulte [personalizar a solução pré-configurada](iot-suite-remote-monitoring-customize.md).

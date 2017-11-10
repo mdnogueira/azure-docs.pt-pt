@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/27/2017
 ms.author: raynew
-ms.openlocfilehash: 27491e34ad9e47aec2f424cfc439fad614f0e435
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4a846cc3e2f06199bdef9e597198f309801d5c75
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Recuperação de continuidade e desastre de negócio (BCDR): Azure emparelhado regiões
 
@@ -48,7 +48,8 @@ Figura 1 – diagrama par regional do Azure
 | Europa |Europa do Norte |Europa Ocidental |
 | Japão |Leste do Japão |Oeste do Japão |
 | Brasil |Sul do Brasil (1) |EUA Centro-Sul |
-| Governo dos Estados Unidos da América |Gov (US) - Iowa |Gov (US) - Virginia |
+| Governo dos Estados Unidos da América |E.u. a US Iowa (2) |Gov (US) - Virginia |
+| Governo dos Estados Unidos da América |E.u. a US Virginia (3) |Gov (US) - Texas |
 | Governo dos Estados Unidos da América |Gov (US) - Arizona |Gov (US) - Texas |
 | E.u. a departamento da defesa |US DoD Leste |US DoD Centro |
 | RU |Reino Unido Oeste |Reino Unido Sul |
@@ -57,6 +58,10 @@ Figura 1 – diagrama par regional do Azure
 Tabela 1 - mapeamento de pares de regionais do Azure
 
 > (1) sul do Brasil é exclusivo, porque esta se encontra emparelhada com uma região fora da sua própria geografia. Região secundária do Sul do Brasil for Sul Central dos EUA, mas da Sul Central-nos região secundária não sul do Brasil.
+>
+> (2) região secundária da e.u. a US Iowa for Virginia us-nos, mas região secundária de US-nos Virginia não Iowa us-nos.
+> 
+> (3) região secundária de Virginia us e.u. a for us-nos Texas, mas região secundária dos EUA us Texas não Virginia us-nos.
 
 
 Recomendamos que replicar as cargas de trabalho em pares regionais beneficiar das políticas de isolamento e de disponibilidade do Azure. Por exemplo, as atualizações do sistema do Azure planeada são implementadas sequencialmente (e não ao mesmo tempo) em regiões emparelhadas. Isto significa que mesmo no evento raro de uma atualização defeituoso, ambas as regiões não serão afetadas em simultâneo. Além disso, na improvável eventualidade de uma falha de abrangente, recuperação de, pelo menos, uma região sem cada par é definida.

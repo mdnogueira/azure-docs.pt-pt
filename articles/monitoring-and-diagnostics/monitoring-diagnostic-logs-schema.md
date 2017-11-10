@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2017
 ms.author: johnkem
-ms.openlocfilehash: 2e99b7afa4e458e9ef62314e65d9e386657a747b
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: f571a723d91db060a1aff5e14bc452d56794db6c
+ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Serviços suportados, esquemas e categorias de registos de diagnóstico do Azure
 
@@ -56,20 +56,36 @@ O esquema para os registos de diagnóstico de recurso varia consoante a categori
 ## <a name="supported-log-categories-per-resource-type"></a>Suportado categorias de registo por tipo de recurso
 |Tipo de Recurso|Categoria|Nome a apresentar categoria|
 |---|---|---|
+|Microsoft.AnalysisServices/servers|Motor|Motor|
+|Microsoft.AnalysisServices/servers|Serviço|Serviço|
 |Microsoft.ApiManagement/service|GatewayLogs|Registos relacionados com o Gateway de ApiManagement|
 |Microsoft.Automation/automationAccounts|JobLogs|Registos da tarefa|
 |Microsoft.Automation/automationAccounts|JobStreams|Fluxos de trabalho|
 |Microsoft.Automation/automationAccounts|DscNodeStatus|Estado do nó DSC|
 |Microsoft.Batch/batchAccounts|ServiceLog|Registos do serviço|
-|Microsoft.Cdn/profiles/endpoints|CoreAnalytics|Obtém as métricas do ponto final, por exemplo, a largura de banda, saída, etc.|
 |Microsoft.CustomerInsights/hubs|AuditEvents|AuditEvents|
+|Microsoft.DataFactory/factories|ActivityRuns|Registo de execuções de atividade do pipeline|
+|Microsoft.DataFactory/factories|PipelineRuns|Registo de execução de pipeline|
+|Microsoft.DataFactory/factories|TriggerRuns|Registo de execução do acionador|
 |Microsoft.DataLakeAnalytics/accounts|Auditoria|Registos de Auditoria|
 |Microsoft.DataLakeAnalytics/accounts|Pedidos|Registos de pedido|
 |Microsoft.DataLakeStore/accounts|Auditoria|Registos de Auditoria|
 |Microsoft.DataLakeStore/accounts|Pedidos|Registos de pedido|
+|Microsoft.Devices/IotHubs|Ligações|Ligações|
+|Microsoft.Devices/IotHubs|DeviceTelemetry|Telemetria do dispositivo|
+|Microsoft.Devices/IotHubs|C2DCommands|Comandos de C2D|
+|Microsoft.Devices/IotHubs|DeviceIdentityOperations|Operações de identidade de dispositivo|
+|Microsoft.Devices/IotHubs|FileUploadOperations|Operações de carregamento de ficheiros|
+|Microsoft.Devices/IotHubs|Rotas|Rotas|
+|Microsoft.Devices/IotHubs|D2CTwinOperations|D2CTwinOperations|
+|Microsoft.Devices/IotHubs|C2DTwinOperations|Operações de duplo C2D|
+|Microsoft.Devices/IotHubs|TwinQueries|Consultas de duplo|
+|Microsoft.Devices/IotHubs|JobsOperations|Operações de tarefas|
+|Microsoft.Devices/IotHubs|DirectMethods|Métodos diretos|
 |Microsoft.Devices/provisioningServices|DeviceOperations|Operações de dispositivo|
 |Microsoft.Devices/provisioningServices|ServiceOperations|Operações de serviço|
 |Microsoft.DocumentDB/databaseAccounts|DataPlaneRequests|DataPlaneRequests|
+|Microsoft.DocumentDB/databaseAccounts|MongoRequests|MongoRequests|
 |Microsoft.EventHub/namespaces|ArchiveLogs|Registos de arquivo|
 |Microsoft.EventHub/namespaces|OperationalLogs|Registos operacionais|
 |Microsoft.EventHub/namespaces|AutoScaleLogs|Registos de escala automática|
@@ -78,6 +94,7 @@ O esquema para os registos de diagnóstico de recurso varia consoante a categori
 |Microsoft.Logic/integrationAccounts|IntegrationAccountTrackingEvents|Eventos de registo de conta de integração|
 |Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent|Eventos do grupo de segurança de rede|
 |Microsoft.Network/networksecuritygroups|NetworkSecurityGroupRuleCounter|Contador de regras do grupo de segurança de rede|
+|Microsoft.Network/networksecuritygroups|NetworkSecurityGroupFlowEvent|Eventos de fluxo de regra de grupo de segurança de rede|
 |Microsoft.Network/loadBalancers|LoadBalancerAlertEvent|Eventos de alerta de Balanceador de carga|
 |Microsoft.Network/loadBalancers|LoadBalancerProbeHealthStatus|Estado de funcionamento de sonda de Balanceador de carga|
 |Microsoft.Network/publicIPAddresses|DDoSProtectionNotifications|Notificações de proteção DDoS|
@@ -85,6 +102,11 @@ O esquema para os registos de diagnóstico de recurso varia consoante a categori
 |Network/applicationgateways|ApplicationGatewayAccessLog|Registo de acesso do Gateway de aplicação|
 |Network/applicationgateways|ApplicationGatewayPerformanceLog|Registo de desempenho do Gateway de aplicação|
 |Network/applicationgateways|ApplicationGatewayFirewallLog|Registo de Firewall de Gateway de aplicação|
+|Microsoft.Network/virtualNetworkGateways|GatewayDiagnosticLog|Registos de diagnóstico do gateway|
+|Microsoft.Network/virtualNetworkGateways|TunnelDiagnosticLog|Registos de diagnóstico de túnel|
+|Microsoft.Network/virtualNetworkGateways|RouteDiagnosticLog|Registos de diagnóstico de rota|
+|Microsoft.Network/trafficManagerProfiles|ProbeHealthStatusEvents|Evento de resultados de estado de funcionamento de sonda de Gestor de tráfego|
+|Microsoft.Network/expressRouteCircuits|GWMCountersTable|Tabela de contadores GWM|
 |Microsoft.RecoveryServices/Vaults|AzureBackupReport|Cópia de segurança do Azure, dados de relatórios|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryJobs|Tarefas de recuperação de sites do Azure|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryEvents|Eventos de recuperação de sites do Azure|
@@ -93,7 +115,6 @@ O esquema para os registos de diagnóstico de recurso varia consoante a categori
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryRecoveryPoints|Pontos de recuperação do Azure Site Recovery|
 |Microsoft.Search/searchServices|OperationLogs|Registos de operações|
 |Microsoft.ServiceBus/namespaces|OperationalLogs|Registos operacionais|
-|Microsoft.Sql/servers/databases|QueryStore|Arquivo de Consultas|
 |Microsoft.Sql/servers/databases|QueryStoreRuntimeStatistics|Estatísticas de tempo de execução do arquivo de consultas|
 |Microsoft.Sql/servers/databases|QueryStoreWaitStatistics|Estatísticas de espera de arquivo de consultas|
 |Microsoft.Sql/servers/databases|Erros|Erros|

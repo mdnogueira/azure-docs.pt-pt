@@ -3,7 +3,7 @@ title: "Script de ação - pacotes de instalar o Python com o Jupyter no Azure H
 description: "Instruções passo a passo sobre como utilizar a ação de script para configurar disponíveis blocos de notas do Jupyter com clusters do HDInsight Spark para utilizar pacotes de python externo."
 services: hdinsight
 documentationcenter: 
-author: maxluk
+author: nitinme
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2017
-ms.author: maxluk
-ms.openlocfilehash: 57ee87b848e30f33b816d1d0564394ecc998e6b5
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.author: nitinme
+ms.openlocfilehash: ab1d48188d4e0ef1274eb175b49bafd1d63b8480
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="use-script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Utilize a ação de Script para instalar pacotes de Python externos para blocos de notas do Jupyter nos clusters do Apache Spark no HDInsight
 > [!div class="op_single_selector"]

@@ -4,7 +4,7 @@ description: "Saiba mais sobre os kernels PySpark, PySpark3 e Spark para o bloco
 keywords: Bloco de notas do jupyter no spark, spark do jupyter
 services: hdinsight
 documentationcenter: 
-author: maxluk
+author: nitinme
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/07/2017
-ms.author: maxluk
-ms.openlocfilehash: 74c761caf1a4d51f199ba0315535ccac63eaf37a
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.author: nitinme
+ms.openlocfilehash: 8ac45408dab31566be3089cbf2cd7d31d54b1655
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="kernels-for-jupyter-notebook-on-spark-clusters-in-azure-hdinsight"></a>Kernels para bloco de notas do Jupyter nos clusters do Spark no Azure HDInsight 
 
