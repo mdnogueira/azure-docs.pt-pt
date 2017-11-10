@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2016
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 39b5c70c8740bc06beded42e9066e3be196741a1
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 7eb4f6c8c7ddfe0cb0d8a37e27d4e697e760107a
+ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Azure máquinas virtuais de planeamento e implementação de SAP NetWeaver
 [767598]:https://launchpad.support.sap.com/#/notes/767598
@@ -942,7 +942,7 @@ Se a VM está preparada suficientemente ser genérico e, eventualmente, independ
 >
 > É o último passo para iniciar sessão a uma VM com uma conta de administrador. Abra uma janela de comandos do Windows como *administrador*. Aceda a %windir%\windows\system32\sysprep e executar sysprep.exe.
 > Será apresentada uma janela de pequena. É importante verificar o **Generalize** opção (a predefinição é não marcada) e altere a opção de encerramento da predefinido de 'Reiniciar' para 'encerramento'. Este procedimento assume que o processo de sysprep é executado no local no SO convidado de uma VM.
-> Se pretender efetuar o procedimento com uma VM já em execução no Azure, siga os passos descritos no [neste artigo](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).
+> Se pretender efetuar o procedimento com uma VM já em execução no Azure, siga os passos descritos no [neste artigo](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
 >
 > ![Linux][Logo_Linux] Linux
 >
