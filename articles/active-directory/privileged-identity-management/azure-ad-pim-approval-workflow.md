@@ -14,27 +14,24 @@ ms.workload: identity
 ms.date: 04/28/2017
 ms.author: barclayn
 ms.custom: pim
-ms.openlocfilehash: cf6a9213fa0a1cba8725aabb42abe51b805ece7a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 90aec90edcbbfb7833efd85752afc8f1937f5b5a
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="approvals-preview"></a>Aprovações (pré-visualização)
+# <a name="approvals"></a>Aprovações
 
 ## <a name="overview"></a>Descrição geral
 
 Com aprovações para Privileged Identity Management, pode configurar funções para exigir a aprovação para a ativação e escolher um ou vários utilizadores ou grupos como aprovadores delegados. Manter a ler para saber como configurar as funções e selecione aprovadores.
 
->[!NOTE]
-. Tenha em atenção que esta funcionalidade ainda está em desenvolvimento e poderá encontrar erros. A funcionalidade, incluindo texto convenções de nomenclatura estão sujeitos a alterações e não devem ser consideradas final.
 
-
-## <a name="key-terminology"></a>Terminologia-chave
+## <a name="new-terminology"></a>Terminologia nova
 
 *Elegíveis de função de utilizador* – um utilizador elegível função é um utilizador na sua organização que está atribuído a uma função do Azure AD como elegíveis (função necessita de ativação).
 
-*Delegado aprovador* – um aprovador delegado é um ou vários utilizadores individuais ou grupos no seu Azure AD que são responsáveis pela aprovação de pedidos de ativação de função.
+*Delegado aprovador* – um aprovador delegado é um ou vários utilizadores individuais ou grupos no seu Azure AD responsável pela aprovação de pedidos para o ativar funções.
 
 ## <a name="scenarios"></a>Cenários
 

@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
-ms.openlocfilehash: 63e2256ca6d392a0cd284269e8c2d059f94e9139
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.openlocfilehash: 2a619943abaf8835e591872cba0ed046d4c6c4a9
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="introduction-to-app-service-environments"></a>Introdução ao ambientes do App Service #
  
@@ -48,13 +48,13 @@ ASE é composto por front-ends e profissionais. Front-ends são responsáveis po
 
 Os funcionários são as funções que alojam aplicações de cliente. Os funcionários estão disponíveis em três tamanhos fixos:
 
-* Um núcleo/3.5 GB de RAM
-* Dois núcleos por dia, 7 GB de RAM
-* Quatro core/14 GB de RAM
+* Um vCPU/3.5 GB de RAM
+* Dois vCPU por dia, 7 GB de RAM
+* Quatro vCPU/14 GB de RAM
 
 Os clientes não precisam de gerir o front-ends e profissionais. Todos os infraestrutura é adicionado automaticamente como clientes de ampliação os respetivos planos de serviço de aplicações. Medida planos de serviço de aplicações que são criados ou ampliados está num ASE, a infraestrutura necessária é adicionada ou removida conforme adequada.
 
-Há uma taxa mensal flat para ASE que pays para a infraestrutura e não altera o tamanho do ASE. Além disso, não há um custo por núcleo do plano de serviço de aplicações. Todas as aplicações alojadas num ASE estão em Isolated SKU de preço. Para obter informações sobre os preços para ASE, consulte o [preços do serviço de aplicações] [ Pricing] e rever as opções disponíveis para ASEs da página.
+Há uma taxa mensal flat para ASE que pays para a infraestrutura e não altera o tamanho do ASE. Além disso, não há um custo por vCPU do plano de serviço de aplicações. Todas as aplicações alojadas num ASE estão em Isolated SKU de preço. Para obter informações sobre os preços para ASE, consulte o [preços do serviço de aplicações] [ Pricing] e rever as opções disponíveis para ASEs da página.
 
 ## <a name="virtual-network-support"></a>Suporte de rede virtual ##
 
@@ -76,7 +76,7 @@ Ambiente de serviço de aplicações tem duas versões: ASEv1 e ASEv2. As inform
 
 ASEv1, é necessário gerir todos os recursos manualmente. Que inclui o front-ends, funcionários e endereços IP utilizados para SSL baseado em IP. Antes de pode ampliar o plano de serviço de aplicações, terá primeiro aumentar horizontalmente o conjunto de trabalho onde pretende alojá-la.
 
-ASEv1 utiliza um modelo de preços diferentes de ASEv2. ASEv1, paga para cada núcleos alocados. Isto inclui núcleos utilizados para front-ends ou trabalhadores que não alojam quaisquer cargas de trabalho. ASEv1, o tamanho de dimensionamento máximo predefinido de ASE é 55 total de anfitriões. Que inclui os trabalhadores e front-ends. Uma vantagem em ASEv1 é que pode ser implementada numa rede virtual clássica e uma rede virtual do Gestor de recursos. Para saber mais sobre ASEv1, consulte o artigo [introdução do ambiente de serviço de aplicações v1][ASEv1Intro].
+ASEv1 utiliza um modelo de preços diferentes de ASEv2. ASEv1, paga para cada vCPU atribuído. Que inclui vCPUs utilizado para front-ends ou trabalhadores que não alojam quaisquer cargas de trabalho. ASEv1, o tamanho de dimensionamento máximo predefinido de ASE é 55 total de anfitriões. Que inclui os trabalhadores e front-ends. Uma vantagem em ASEv1 é que pode ser implementada numa rede virtual clássica e uma rede virtual do Gestor de recursos. Para saber mais sobre ASEv1, consulte o artigo [introdução do ambiente de serviço de aplicações v1][ASEv1Intro].
 
 <!--Links-->
 [Intro]: ./intro.md

@@ -16,11 +16,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/30/2017
 ms.author: glenga
-ms.openlocfilehash: 74933d9c3535ab71f47c792e20bfbc35e589ec08
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: 7d22a6749216486de6132a6d39e2dcf683d0e678
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Conceitos de enlaces e acionadores de funções do Azure
 As funções do Azure permite-lhe escrever código em resposta a eventos no Azure e outros serviços, através de *acionadores* e *enlaces*. Este artigo é uma descrição geral conceptual dos acionadores e enlaces para todos os suportados linguagens de programação. As funcionalidades que são comuns a todos os enlaces são descritas aqui.
@@ -243,7 +243,7 @@ Por exemplo, um acionador de fila de armazenamento do Azure suporta as seguintes
 
 Detalhes das propriedades de metadados para cada acionador são descritos no tópico de referência correspondente. Também está disponível na documentação sobre o **integrar** separador do portal, no **documentação** secção abaixo da área de configuração do enlace.  
 
-Por exemplo, uma vez que os acionadores de blob têm alguns atrasos, pode utilizar um acionador de fila para executar a função (consulte [acionador de armazenamento de BLOBs](functions-bindings-storage-blob.md#storage-blob-trigger)). A mensagem da fila iria conter o nome de ficheiro do blob para acionar. Utilizar o `queueTrigger` propriedade de metadados, pode especificar este comportamento todos na sua configuração, em vez de código.
+Por exemplo, uma vez que os acionadores de blob têm alguns atrasos, pode utilizar um acionador de fila para executar a função (consulte [acionador de armazenamento de BLOBs](functions-bindings-storage-blob.md#blob-storage-trigger)). A mensagem da fila iria conter o nome de ficheiro do blob para acionar. Utilizar o `queueTrigger` propriedade de metadados, pode especificar este comportamento todos na sua configuração, em vez de código.
 
 ```json
   "bindings": [

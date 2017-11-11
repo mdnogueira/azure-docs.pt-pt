@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 06/12/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cb6ade65879b245bf44800da3352354ba274ee5a
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 423eee65040a11695d9f6c18d64948e4c3d3aafe
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="azure-functions-hosting-plans-comparison"></a>Comparação de planos de alojamento das funções do Azure
 
@@ -68,7 +68,7 @@ Uma VM desassocia custo de número de execuções, tempo de execução e memóri
 
 Com um plano de serviço de aplicações, pode manualmente aumentar horizontalmente adicionando mais instâncias VM ou, pode ativar o dimensionamento automático. Para obter mais informações, consulte [dimensionar a contagem de instâncias manual ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service-web%2ftoc.json). Também pode aumentar verticalmente ao escolher um plano de serviço aplicacional diferente. Para obter mais informações, consulte [aumentar verticalmente a uma aplicação no Azure](../app-service/web-sites-scale.md). 
 
-Se estiver a planear executar funções JavaScript um plano de serviço de aplicações, deve escolher um plano que tenha menos núcleos. Para obter mais informações, consulte o [referência de JavaScript para funções](functions-reference-node.md#choose-single-core-app-service-plans).  
+Se estiver a planear executar funções JavaScript um plano de serviço de aplicações, deve escolher um plano que tenha menos vCPUs. Para obter mais informações, consulte o [escolha planos de serviços aplicacionais single-core](functions-reference-node.md#considerations-for-javascript-functions).  
 
 <!-- Note: the portal links to this section via fwlink https://go.microsoft.com/fwlink/?linkid=830855 --> 
 <a name="always-on"></a>
@@ -93,7 +93,7 @@ Quando utiliza o consumo de plano de alojamento, ficheiros de código de funçã
 > [!NOTE]
 > Quando estiver a utilizar um acionador de blob um plano de consumo, podem existir até um atraso de 10 minutos processar novos blobs, se uma aplicação de função tornou-se inativo. Depois da aplicação de função está em execução, blobs são processados imediatamente. Para evitar este atraso inicial, considere uma das seguintes opções:
 > - O anfitrião da aplicação de função no plano de serviço de aplicações, com o Always On ativado.
-> - Utilize outro mecanismo para acionar o blob processar, tais como uma mensagem de fila que contém o nome do blob. Por exemplo, consulte [enlace de entrada de Acionador de fila com o blob](functions-bindings-storage-blob.md#input-sample).
+> - Utilize outro mecanismo para acionar o blob processar, tais como uma mensagem de fila que contém o nome do blob. Por exemplo, consulte o [script do c# e exemplos de JavaScript para o blob de entrada e saída enlaces](functions-bindings-storage-blob.md#input--output---example).
 
 ### <a name="runtime-scaling"></a>Dimensionamento de tempo de execução
 

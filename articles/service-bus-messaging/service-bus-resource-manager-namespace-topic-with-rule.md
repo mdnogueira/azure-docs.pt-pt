@@ -12,17 +12,17 @@ ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/07/2017
+ms.date: 11/10/2017
 ms.author: sethm;shvija
-ms.openlocfilehash: 35e67d86b42358c4ce28b41beae1ee8e1896e939
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 976c7b425dd17f8ed38f18b6ffa50b4368ab44b3
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-a-service-bus-namespace-with-topic-subscription-and-rule-using-an-azure-resource-manager-template"></a>Criar um espaço de nomes do Service Bus com o tópico, subscrição e a regra através de um modelo Azure Resource Manager
 
-Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um espaço de nomes do Service Bus com um tópico, subscrição e regra (filtro). Saiba como definir quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades
+Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um espaço de nomes do Service Bus com um tópico, subscrição e regra (filtro). O artigo explica como especificar quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades
 
 Para obter mais informações sobre a criação de modelos, consulte [Authoring Azure Resource Manager templates][Authoring Azure Resource Manager templates] (Criar modelos do Azure Resource Manager).
 
@@ -50,7 +50,7 @@ Com este modelo, implemente um espaço de nomes do Service Bus com o tópico, su
 
 ## <a name="what-are-rules-filters"></a>O que são regras (filtros)?
 
-Em vários cenários, as mensagens com características específicas tem de ser processadas de formas diferentes. Para ativar esta opção, pode configurar subscrições para localizar mensagens de que tem as propriedades específicas e, em seguida, efetuar as modificações para essas propriedades. Embora as subscrições do Service Bus ver todas as mensagens enviadas para o tópico, só poderá copiar um subconjunto dessas mensagens para a fila virtual da subscrição. Isto é conseguido utilizando filtros de subscrição. Para obter mais informações sobre regras (filtros), consulte [regras e ações](service-bus-queues-topics-subscriptions.md#rules-and-actions).
+Em vários cenários, as mensagens com características específicas tem de ser processadas de formas diferentes. Para ativar este processamento personalizado, pode configurar subscrições para localizar mensagens de que tem as propriedades específicas e, em seguida, efetuar as modificações para essas propriedades. Embora as subscrições do Service Bus ver todas as mensagens enviadas para o tópico, só poderá copiar um subconjunto dessas mensagens para a fila virtual da subscrição. Isto é conseguido utilizando filtros de subscrição. Para obter mais informações sobre regras (filtros), consulte [regras e ações](service-bus-queues-topics-subscriptions.md#rules-and-actions).
 
 Para executar automaticamente a implementação, clique no seguinte botão:
 
@@ -100,9 +100,12 @@ O nome do rule(filter) criado no espaço de nomes de barramento de serviço.
 A versão de API do Service Bus do modelo.
 
 ```json
-"serviceBusApiVersion": {
-"type": "string"
-}
+"serviceBusApiVersion": { 
+       "type": "string", 
+       "defaultValue": "2017-04-01", 
+       "metadata": { 
+           "description": "Service Bus ApiVersion used by the template" 
+       }
 ```
 ## <a name="resources-to-deploy"></a>Recursos a implementar
 Cria um espaço de nomes do Service Bus padrão do tipo **mensagens**, tópico e subscrição e as regras.

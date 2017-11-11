@@ -14,16 +14,16 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/31/2017
+ms.date: 11/09/2017
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: 41c3a449b39d6ef77e1dd0cf10699f8debcad475
-ms.sourcegitcommit: 54fd091c82a71fbc663b2220b27bc0b691a39b5b
+ms.openlocfilehash: 0f824dad7ba5b661941e952383025e5171f32e55
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="mounting-an-azure-file-share-with-azure-container-instances"></a>Montar uma partilha de ficheiros do Azure com instâncias de contentor do Azure
+# <a name="mount-an-azure-file-share-with-azure-container-instances"></a>Montar uma partilha de ficheiros do Azure com instâncias de contentor do Azure
 
 Por predefinição, as instâncias de contentor do Azure são sem monitorização de estado. Se o contentor de falhas de ou para, todos os respetivo estado é perdido. Para manter o estado para além da duração do contentor, tem de montar um volume de um arquivo de externo. Este artigo mostra como montar uma partilha de ficheiros do Azure para utilização com instâncias de contentor do Azure.
 
@@ -185,16 +185,16 @@ Inserir os valores no ficheiro de parâmetros:
 Com o modelo definido, pode criar o contentor e montar o volume utilizando a CLI do Azure. Partindo do princípio de que o ficheiro de modelo é denominado *azuredeploy. JSON* e de que o ficheiro de parâmetros é denominado *azuredeploy.parameters.json*, em seguida, a linha de comando é:
 
 ```azurecli-interactive
-az group deployment create --name hellofilesdeployment --template-file azuredeploy.json --parameters @azuredeploy.parameters.json --resource-group myResourceGroup
+az group deployment create --name hellofilesdeployment --template-file azuredeploy.json --parameters @azuredeploy.parameters.json --resource-group $ACI_PERS_RESOURCE_GROUP
 ```
 
-Depois do contentor é iniciado, pode utilizar a aplicação web simples implementada através de **aci/seanmckenna-hellofiles** imagem, para gerir os ficheiros na partilha de ficheiros do Azure no caminho de montagem que especificou. Obter o endereço IP para a aplicação web através do seguinte:
+Depois do contentor é iniciado, pode utilizar a aplicação web simples implementada através de **aci/seanmckenna-hellofiles** imagem para gerir os ficheiros na partilha de ficheiros do Azure no caminho de montagem que especificou. Obter o endereço IP da aplicação web com o [mostrar de contentor az](/cli/azure/container#az_container_show) comando:
 
 ```azurecli-interactive
-az container show --resource-group myResourceGroup --name hellofiles -o table
+az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles -o table
 ```
 
-Pode utilizar uma ferramenta como o [Explorador de armazenamento do Microsoft Azure](http://storageexplorer.com) para obter e Inspecione o ficheiro de escrita à partilha de ficheiros.
+Pode utilizar uma ferramenta como o [Explorador de armazenamento do Microsoft Azure](https://storageexplorer.com) para obter e Inspecione o ficheiro de escrita à partilha de ficheiros.
 
 >[!NOTE]
 > Para saber mais sobre como utilizar os modelos Azure Resource Manager, consulte os ficheiros de parâmetro e a implementação com a CLI do Azure, [implementar recursos com modelos do Resource Manager e a CLI do Azure](../azure-resource-manager/resource-group-template-deploy-cli.md).

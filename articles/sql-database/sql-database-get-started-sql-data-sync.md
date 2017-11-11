@@ -1,6 +1,6 @@
 ---
-title: "Introdução à sincronização de dados de SQL do Azure (pré-visualização) | Microsoft Docs"
-description: "Este tutorial ajuda-o a começar com sincronização de dados de SQL do Azure (pré-visualização)"
+title: "Configurar a sincronização de dados de SQL do Azure (pré-visualização) | Microsoft Docs"
+description: "Este tutorial mostra como configurar a sincronização de dados de SQL do Azure (pré-visualização)"
 services: sql-database
 documentationcenter: 
 author: douglaslms
@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 06/08/2017
 ms.author: douglasl
 ms.reviewer: douglasl
-ms.openlocfilehash: 0dc34a8e08ea75a84d1553963bdb892c84dacdb7
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: d0b3f3b188bc5da91414efb763b5165377009191
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="get-started-with-azure-sql-data-sync-preview"></a>Introdução à sincronização de dados de SQL do Azure (pré-visualização)
+# <a name="set-up-sql-data-sync-preview"></a>Configurar a sincronização de dados do SQL Server (pré-visualização)
 Neste tutorial, irá aprender a configurar a sincronização de dados SQL do Azure através da criação de um grupo de sincronização de híbridos que contenha as instâncias de SQL Database do Azure e SQL Server. O novo grupo de sincronização está completamente configurado e sincroniza na agenda que definir.
 
 Este tutorial parte do princípio de que tem, pelo menos, de alguma experiência anterior com a base de dados SQL e com o SQL Server. 
@@ -110,7 +110,7 @@ No **configurar a base de dados do Azure** página, efetue os seguintes procedim
 
     ![Novo membro de sincronização da base de dados SQL foi adicionado](media/sql-database-get-started-sql-data-sync/datasync-preview-memberadded.png)
 
-### <a name="add-an-on-premises-sql-server-database"></a>Adicionar uma base de dados do SQL Server no local
+### <a name="add-on-prem"></a>Adicionar uma base de dados do SQL Server no local
 
 No **base de dados do membro** secção, opcionalmente, adicione um servidor de SQL no local para o grupo de sincronização selecionando **adicionar uma base de dados do On-Premises**. O **configurar On-Premises** é aberta a página.
 

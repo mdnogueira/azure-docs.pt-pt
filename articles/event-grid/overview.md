@@ -6,13 +6,13 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: article
-ms.date: 11/02/2017
+ms.date: 11/06/2017
 ms.author: babanisa
-ms.openlocfilehash: a0bcc9650fda10c099887b74b408551b12cde667
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 5b522b40b136e354c6ca83a56ac7ad690151ad7d
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="an-introduction-to-azure-event-grid"></a>Uma introdução à grelha de eventos do Azure
 
@@ -25,6 +25,30 @@ Na versão anterior, o Event Grid suporta as localizações **westus2** e **west
 Este artigo fornece uma descrição geral da grelha de eventos do Azure. Se pretender começar a grelha de eventos, consulte [criar e rota eventos personalizados com o Azure eventos grelha](custom-event-quickstart.md).
 
 ![Modelo de funcional de grelha de eventos](./media/overview/event-grid-functional-model.png)
+
+## <a name="event-publishers"></a>Publicadores de eventos
+
+Atualmente, os seguintes serviços do Azure têm suporte do Editor incorporados para a grelha de evento:
+
+* Grupos de recursos (operações de gestão)
+* Subscrições do Azure (operações de gestão)
+* Event Hubs
+* Blob de armazenamento
+* Tópicos personalizados
+
+Outros serviços do Azure serão adicionados este ano.
+
+## <a name="event-handlers"></a>Processadores de eventos
+
+Atualmente, os seguintes serviços do Azure tem suporte de processador incorporados para a grelha de evento: 
+
+* Funções do Azure
+* Aplicações Lógicas
+* Automatização do Azure
+* WebHooks
+* Fluxo da Microsoft
+
+Outros serviços do Azure serão adicionados este ano.
 
 ## <a name="concepts"></a>Conceitos
 
@@ -52,34 +76,6 @@ Aqui estão algumas das principais funcionalidades do Azure grelha de evento:
 * **Eventos personalizados** -utilizar rotas de grelha de eventos, de filtro e fiável de eventos personalizados entregar na sua aplicação.
 
 Para ver uma comparação de grelha de eventos, os Event Hubs e Service Bus, consulte [escolha entre os serviços do Azure que entregar mensagens](compare-messaging-services.md).
-
-## <a name="built-in-publisher-and-handler-integration"></a>Integração de fabricante e o processador incorporada
-
-Azure oferece suporte de evento incorporada com vários serviços, incluindo editores e os processadores.
-
-### <a name="publishers"></a>Editores
-
-Atualmente, os seguintes serviços do Azure têm suporte do Editor incorporados para a grelha de evento:
-
-* Grupos de recursos (operações de gestão)
-* Subscrições do Azure (operações de gestão)
-* Event Hubs
-* Blob de armazenamento
-* Tópicos personalizados
-
-Outros serviços do Azure serão adicionados este ano.
-
-### <a name="handlers"></a>Processadores
-
-Atualmente, os seguintes serviços do Azure tem suporte de processador incorporados para a grelha de evento: 
-
-* Funções do Azure
-* Aplicações Lógicas
-* Automatização do Azure
-* WebHooks
-* Fluxo da Microsoft
-
-Outros serviços do Azure serão adicionados este ano.
 
 ## <a name="what-can-i-do-with-event-grid"></a>O que posso fazer com grelha de evento?
 

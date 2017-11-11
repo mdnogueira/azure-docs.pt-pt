@@ -12,17 +12,17 @@ ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/07/2017
+ms.date: 11/10/2017
 ms.author: sethm;shvija
-ms.openlocfilehash: 4358130a2c8e897a0fdd1f9560f766d6e22db4d2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2ac9bb07a1b690681e0b263eea233cd5373d990b
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-a-service-bus-namespace-and-a-queue-using-an-azure-resource-manager-template"></a>Criar um espaço de nomes de barramento de serviço e uma fila com um modelo Azure Resource Manager
 
-Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um espaço de nomes de barramento de serviço e uma fila dentro desse espaço de nomes. Ficará a saber como definir quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades.
+Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um espaço de nomes de barramento de serviço e uma fila dentro desse espaço de nomes. O artigo explica como especificar quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades.
 
 Para obter mais informações sobre a criação de modelos, consulte [modelos Authoring Azure Resource Manager][Authoring Azure Resource Manager templates].
 
@@ -36,13 +36,13 @@ Para o modelo completo, consulte o [modelo de espaço de nomes e a fila do Servi
 > * [Criar um espaço de nomes do Service Bus](service-bus-resource-manager-namespace.md)
 > * [Criar um espaço de nomes do Service Bus com o tópico, subscrição e a regra](service-bus-resource-manager-namespace-topic-with-rule.md)
 > 
-> Para verificar os modelos mais recentes, visite o [modelos de início rápido do Azure] [ Azure Quickstart Templates] Galeria e procure "Service Bus".
+> Para verificar os modelos mais recentes, visite o [modelos de início rápido do Azure] [ Azure Quickstart Templates] Galeria e procure **Service Bus**.
 > 
 > 
 
 ## <a name="what-will-you-deploy"></a>O que irá implementar?
 
-Com este modelo, irá implementar um espaço de nomes do Service Bus através de uma fila.
+Com este modelo, implemente um espaço de nomes do Service Bus através de uma fila.
 
 [Filas do Service Bus](service-bus-queues-topics-subscriptions.md#queues) oferecem primeiro no, entrega de mensagens First Out (FIFO) para um ou mais consumidores concorrentes.
 
@@ -81,9 +81,12 @@ O nome da fila criada no espaço de nomes de barramento de serviço.
 A versão de API do Service Bus do modelo.
 
 ```json
-"serviceBusApiVersion": {
-"type": "string"
-}
+"serviceBusApiVersion": { 
+       "type": "string", 
+       "defaultValue": "2017-04-01", 
+       "metadata": { 
+           "description": "Service Bus ApiVersion used by the template" 
+       }
 ```
 
 ## <a name="resources-to-deploy"></a>Recursos a implementar

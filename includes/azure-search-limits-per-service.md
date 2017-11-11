@@ -11,7 +11,6 @@ O armazenamento é limitado pelo espaço em disco ou por um limite restritivo no
 | Indexadores máximos |3 |5 |50 |200 |200 |Sem suporte de indexador |
 | Origens de dados máximas |3 |5 |50 |200 |200 |Sem suporte de indexador |
 | Documentos máximos |10,000 |1 milhão |15 milhões por partição ou 180 milhões por serviço |60 milhões por partição ou 720 milhões por serviço |120 milhões por partição ou 1,4 biliões por serviço |1 milhão por índice ou 200 milhões por partição |
-| Consultas estimadas por segundo (QPS) |N/D |~3 por réplica |~15 por réplica |~60 por réplica |~60 por réplica |>60 por réplica |
 
 <sup>1</sup> funcionalidades de pré-visualização e o escalão gratuito não são fornecidos com os contratos de nível de serviço (SLAs). Para todos os escalões faturáveis, SLAs entram em vigor quando aprovisionar redundância suficiente para o seu serviço. Dois ou mais réplicas são necessárias para o SLA de consulta (leitura). Três ou mais réplicas são necessárias para consulta e indexação SLA (leitura / escrita). O número de partições não é uma consideração de SLA. 
 

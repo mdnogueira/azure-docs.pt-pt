@@ -2,19 +2,19 @@
 title: Como utilizar os Jupyter Notebooks no Azure Machine Learning Workbench | Microsoft Docs
 description: "Guia para a utilização da funcionalidade de blocos de notas do Jupyter do Workbench do Azure Machine Learning"
 services: machine-learning
-author: jopela
-ms.author: jopela
+author: rastala
+ms.author: roastala
 manager: haining
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
-ms.date: 09/20/2017
-ms.openlocfilehash: 93850a7c9e3d9d69b0da22ebd0656ae40cee2e63
-ms.sourcegitcommit: 3e3a5e01a5629e017de2289a6abebbb798cec736
+ms.date: 11/09/2017
+ms.openlocfilehash: 80cdd07bff865776a68897a7b8c1b3fe66b76b18
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="how-to-use-jupyter-notebook-in-azure-machine-learning-workbench"></a>Como utilizar o bloco de notas do Jupyter no Azure Machine Learning Workbench
 
@@ -31,12 +31,12 @@ Um nível elevado, arquitetura de bloco de notas do Jupyter inclui três compone
 - **Servidor**: servidor web que aloja os ficheiros de bloco de notas (.ipynb ficheiros)
 - **Kernel**: o ambiente de tempo de execução onde ocorre a execução real das células de bloco de notas
 
-Para obter mais detalhes, consulte oficial [Jupyter documentação](http://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html). Fowllowing é um diagrama que mostram como mapeiam este cliente, o servidor e a arquitetura de kernel para os componentes do Azure ML.
+Para obter mais detalhes, consulte oficial [Jupyter documentação](http://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html). Segue-se um diagrama que mostram como mapeiam este cliente, o servidor e a arquitetura de kernel para os componentes do Azure ML.
 
 ![arquitetura de bloco de notas](media/how-to-use-jupyter-notebooks/how-to-use-jupyter-notebooks-architecture.png)
 
 ## <a name="kernels-in-azure-ml-workbench-notebook"></a>Kernels no bloco de notas do Workbench do Azure ML
-Pode aceder a muitas kernels diferentes no Azure ML Workbench ao simplesmente configurar configurações de execução e computação destinos no `aml_config` pasta no seu projeto. A adição de um destino de cálculo nova ao emitir `az ml computetarget attach` comando é o equivalente a adicionar um novo kernel.
+Pode aceder a muitas kernels diferentes no Azure ML Workbench configurando as configurações de execução e computação destinos no `aml_config` pasta no seu projeto. A adição de um destino de cálculo nova ao emitir `az ml computetarget attach` comando é o equivalente a adicionar um novo kernel.
 
 >[!NOTE]
 >Reveja o [configurar execução](experimentation-service-configuration.md) para obter mais detalhes sobre executado configurações e destinos de computação.
@@ -49,6 +49,9 @@ Atualmente, o Workbench suporta os seguintes tipos de kernels.
 ### <a name="local-python-kernel"></a>Local kernel do Python
 Este kernel Python suporta a execução no computador local. Está integrado com o suporte de histórico de execuções do Azure Machine Learning. O nome do kernel está normalmente "my_project_name local".
 
+>[!NOTE]
+>Não utilize o kernel "Python 3". É um kernel autónomo fornecida pelo Jupyter por predefinição. Não está integrada com as capacidades do Azure Machine Learning.
+
 ### <a name="python-kernel-in-docker-local-or-remote"></a>Kernel Python no Docker (locais ou remotos)
 Este kernel Python é executado num contentor Docker no seu computador local ou numa VM com Linux remoto. O nome do kernel está normalmente "my_project docker". Associada `docker.runconfig` ficheiro tem o `Framework` campo definido como `Python`.
 
@@ -59,7 +62,7 @@ Este kernel do PySpark executa scripts num contexto de Spark em execução no co
 Este kernel é executado no cluster de HDInsight remoto que anexados como um destino de computação para o seu projeto. O nome de kernel é normalmente "my_project my_hdi". 
 
 >[!IMPORTANT]
->No `.compute` ficheiro o HDI computação destino, tem de alterar o `yarnDeployMode` campo para `client` (o valor predefinido é `cluster`) para utilizar este kernel. 
+>No `.compute` ficheiro para o HDI computação destino, tem de alterar o `yarnDeployMode` campo para `client` (o valor predefinido é `cluster`) para utilizar este kernel. 
 
 ## <a name="start-jupyter-server-from-the-workbench"></a>Iniciar o Jupyter servidor a partir do Workbench
 Do Workbench do Azure Machine Learning, blocos de notas podem ser acedidos através do Workbench **blocos de notas** separador. O _classificar Iris_ projeto de exemplo inclui uma `iris.ipynb` bloco de notas do exemplo.
@@ -104,6 +107,33 @@ O browser predefinido é iniciada de forma automática com o servidor de Jupyter
 Agora pode clicar num `.ipynb` ficheiro do bloco de notas, abrir, defina o kernel (se ainda não foi definido) e iniciar a sessão interativa.
 
 ![dashboard do projeto](media/how-to-use-jupyter-notebooks/how-to-use-jupyter-notebooks-08.png)
+
+## <a name="use-magic-commands-to-manage-experiments"></a>Utilizar comandos mágicos para gerir as experimentações
+
+Pode utilizar [mágica comandos](http://ipython.readthedocs.io/en/stable/interactive/magics.html) nas células bloco de notas para controlar o histórico de execução e guardar saídas, tais como modelos ou conjuntos de dados.
+
+Para controlar o bloco de notas individuais célula é executado, utilize "% azureml histórico em" mágica comando. Depois de ativar o histórico, cada execução de célula será apresentado como entrada de histórico de execução.
+
+```
+%azureml history on
+from azureml.logging import get_azureml_logger
+logger = get_azureml_logger()
+logger.log("Cell","Load Data")
+```
+
+Para desativar célula executar controlo, utilize o comando mágica "% azureml histórico desativar".
+
+Pode utilizar o comando mágica "% azureml carregamento" para guardar os ficheiros de modelo e os dados da sua execução. Objetos guardados aparecem como saídas na vista do histórico de execução para fornecido executar.
+
+```
+modelpath = os.path.join("outputs","model.pkl")
+with open(modelpath,"wb") as f:
+    pickle.dump(model,f)
+%azureml upload outputs/model.pkl
+```
+
+>[!NOTE]
+>As saídas tem de ser guardadas para uma pasta denominada "saídas"
 
 ## <a name="next-steps"></a>Passos Seguintes
 - Para saber como utilizar o bloco de notas do Jupyter, visite o [documentação oficial do Jupyter](http://jupyter-notebook.readthedocs.io/en/latest/).    

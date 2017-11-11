@@ -13,23 +13,23 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 06/07/2017
+ms.date: 11/09/2017
 ms.author: heidist
-ms.openlocfilehash: 60e63401e3915e62e1ec5ac03cd548c291580b24
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3deb0ff81114c840798c5927ad7311d7e603813d
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="service-limits-in-azure-search"></a>Limites de serviço da Azure Search
 Máximo limita-se no armazenamento, as cargas de trabalho e quantidades de índices, documentos, e outros objetos dependem se [aprovisionar da Azure Search](search-create-service-portal.md) num **livres**, **básico**, ou **padrão** escalão de preço.
 
-* **Livre** é um serviço partilhado do multi-inquilino que vem com a sua subscrição do Azure. É uma opção de não custos adicionais para subscritores existentes que permite-lhe experimentar o serviço antes de inscrever-se recursos dedicados.
+* **Livre** é um serviço partilhado do multi-inquilino que vem com a sua subscrição do Azure. 
 * **Básico** fornece recursos de informática dedicados para cargas de trabalho de produção em escala mais pequena.
-* **Standard** é executado em máquinas dedicadas, com mais capacidade de armazenamento e processamento em cada nível. Standard, é apresentada no quatro níveis: S1, S2, S3 e S3 alta densidade (S3 HD).
+* **Standard** é executado em máquinas dedicadas com mais capacidade de armazenamento e processamento em cada nível. Standard, é apresentada no quatro níveis: S1, S2, S3 e S3 alta densidade (S3 HD).
 
 > [!NOTE]
-> Um serviço é aprovisionado em nenhum escalão específico. Se precisar de ir camadas para obter mais capacidade, terá de aprovisionar um novo serviço (não há nenhuma atualização no local). Para obter mais informações, consulte [escolha um SKU ou camada](search-sku-tier.md). Para obter mais informações sobre como ajustar capacidade dentro de um serviço que já tenha sido já aprovisionada, consulte [Dimensionar níveis de recursos de consulta e cargas de trabalho de indexação](search-capacity-planning.md).
+> Um serviço é aprovisionado em nenhum escalão específico. Jumping camadas para obterem capacidade envolve o aprovisionamento de um novo serviço (não há nenhuma atualização no local). Para obter mais informações, consulte [escolha um SKU ou camada](search-sku-tier.md). Para obter mais informações sobre como ajustar capacidade dentro de um serviço que já tenha sido já aprovisionada, consulte [Dimensionar níveis de recursos de consulta e cargas de trabalho de indexação](search-capacity-planning.md).
 >
 
 ## <a name="per-subscription-limits"></a>Por limites de subscrição
@@ -66,16 +66,11 @@ Refere-se ao tamanho máximo do documento ao chamar uma API de índice. O tamanh
 
 Para manter o tamanho do documento para baixo, lembre-se excluir os dados não consultável do pedido. Imagens e outros dados binários não são diretamente consultável e não devem ser armazenados no índice. Para integrar os dados não consultável os resultados da pesquisa, defina um campo não pesquisáveis que armazena uma referência de URL para o recurso.
 
-## <a name="workload-limits-queries-per-second"></a>Limites de carga de trabalho (consultas por segundo)
-| Recurso | Gratuito | Básica | S1 | S2 | S3 | S3 HD |
-| --- | --- | --- | --- | --- | --- | --- |
-| QPS |N/D |~3 por réplica |~15 por réplica |~60 por réplica |>60 por réplica |>60 por réplica |
+## <a name="queries-per-second-qps"></a>Consultas por segundo (QPS)
 
-As consultas por segundo (QPS) é uma aproximação do seu com base no heurística, utilizando as cargas de trabalho do cliente simulada e real derivar valores estimados. Débito exato de QPS varia consoante os dados e a natureza da consulta.
+Calcula QPS tem de ter sido programada independentemente por cada cliente. Índice de tamanho e complexidade, tamanho de consulta e complexidade e a quantidade de tráfego são determinants primários de QPS. Não é possível para oferecer estimativas significativas quando esses fatores são desconhecidos.
 
-Embora estimativas aproximadas são fornecidas acima, uma taxa real é difícil determinar, especialmente no serviço partilhado livre onde débito baseia-se na largura de banda disponível e disputa pelos recursos do sistema. No escalão gratuito, computação e recursos de armazenamento são partilhados por vários subscritores, pelo que QPS para a sua solução sempre irá variar, dependendo de como muitas outras cargas de trabalho são executadas em simultâneo.
-
-Ao nível do padrão, pode fazer a estimativa QPS mais detalhadamente porque tem controlo sobre mais dos parâmetros. Consulte a secção de melhores práticas [gerir a sua solução de pesquisa](search-manage.md) para obter orientações sobre como calcular QPS para as cargas de trabalho.
+Calcula é mais previsível quando calculado nos serviços em execução em recursos dedicados (escalões básico e padrão). Pode fazer a estimativa QPS mais detalhadamente porque tem controlo sobre mais dos parâmetros. Para obter orientações sobre a estimativa da abordagem, consulte [desempenho de pesquisa do Azure e a otimização de](search-performance-optimization.md).
 
 ## <a name="api-request-limits"></a>Limites de pedido de API
 * Máximo de 16 MB por pedido <sup>1</sup>

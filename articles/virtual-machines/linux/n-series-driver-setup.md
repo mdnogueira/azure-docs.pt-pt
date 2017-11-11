@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/06/2017
+ms.date: 11/09/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 46f8b2c20d9ce31ef3f782d098de09952701bbcc
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 99989d57a0a9b9cc50d0fd9067e6cb9622764965
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Instalar controladores de NVIDIA GPU em VMs de série N executar Linux
 
@@ -70,11 +70,11 @@ Para instalar controladores de grelha NVIDIA em NV VMs, faça uma ligação SSH 
 5. Transfira e instale o controlador da grelha:
 
   ```bash
-  wget -O NVIDIA-Linux-x86_64-367.106-grid.run https://go.microsoft.com/fwlink/?linkid=849941  
+  wget -O NVIDIA-Linux-x86_64-384.73-grid.run https://go.microsoft.com/fwlink/?linkid=849941  
 
-  chmod +x NVIDIA-Linux-x86_64-367.106-grid.run
+  chmod +x NVIDIA-Linux-x86_64-384.73-grid.run
 
-  sudo ./NVIDIA-Linux-x86_64-367.106-grid.run
+  sudo ./NVIDIA-Linux-x86_64-384.73-grid.run
   ``` 
 
 6. Quando estiver a pedido que pretende executar o utilitário de nvidia xconfig para atualizar o ficheiro de configuração X, selecione **Sim**.
@@ -139,11 +139,11 @@ Para instalar controladores de grelha NVIDIA em NV VMs, faça uma ligação SSH 
 5. Transfira e instale o controlador da grelha:
 
   ```bash
-  wget -O NVIDIA-Linux-x86_64-367.106-grid.run https://go.microsoft.com/fwlink/?linkid=849941  
+  wget -O NVIDIA-Linux-x86_64-384.73-grid.run https://go.microsoft.com/fwlink/?linkid=849941  
 
-  chmod +x NVIDIA-Linux-x86_64-367.106-grid.run
+  chmod +x NVIDIA-Linux-x86_64-384.73-grid.run
 
-  sudo ./NVIDIA-Linux-x86_64-367.106-grid.run
+  sudo ./NVIDIA-Linux-x86_64-384.73-grid.run
   ``` 
 6. Quando estiver a pedido que pretende executar o utilitário de nvidia xconfig para atualizar o ficheiro de configuração X, selecione **Sim**.
 
@@ -165,7 +165,7 @@ Para instalar controladores de grelha NVIDIA em NV VMs, faça uma ligação SSH 
 
 Para consultar o estado do dispositivo para a GPU, SSH para a VM e execute o [nvidia smi](https://developer.nvidia.com/nvidia-system-management-interface) instalado com o controlador o utilitário da linha de comandos. 
 
-É apresentado o resultado semelhante ao seguinte:
+É apresentado o resultado semelhante ao seguinte. A versão do controlador e detalhes GPU poderão ser diferentes das mostrado.
 
 ![Estado do dispositivo NVIDIA](./media/n-series-driver-setup/smi-nv.png)
  
@@ -352,7 +352,7 @@ Implemente NC24r VMs de uma das seguintes imagens no Azure Marketplace que supor
 
 * Não há um problema conhecido com controladores CUDA em VMs do Azure de N série com o kernel do Linux 4.4.0-75 no Ubuntu 16.04 LTS. Se estiver a atualizar a partir de uma versão anterior de kernel, atualize para, pelo menos, 4.4.0-77 da versão de kernel.
 
-* Pode definir o modo de persistência nvidia smi a utilizar para a saída do comando é mais rápido quando precisar de cartões de consulta. Para definir o modo de persistência, execute `nvidia-smi -pm 1`. Tenha em atenção que se a VM é reiniciada, a definição de modo desaparecerá. Pode sempre script a definição de modo a executar após o arranque.
+* Pode definir a utilizar o modo de persistência `nvidia-smi` , de modo a saída do comando é mais rápida quando precisar de cartões de consulta. Para definir o modo de persistência, execute `nvidia-smi -pm 1`. Tenha em atenção que se a VM é reiniciada, a definição de modo desaparecerá. Pode sempre script a definição de modo a executar após o arranque.
 
 
 ## <a name="next-steps"></a>Passos seguintes

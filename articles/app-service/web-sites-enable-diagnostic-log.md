@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 1366cd79248b2e0008234a5da0d87552e6530d80
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: a9c5743c92ac48202c19c2f6f024238c147d8444
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="enable-diagnostics-logging-for-web-apps-in-azure-app-service"></a>Ativar o registo de diagnóstico para web apps no App Service do Azure
 ## <a name="overview"></a>Descrição geral
-O Azure oferece incorporado diagnóstico para ajudar a depurar uma [aplicação web do app Service](http://go.microsoft.com/fwlink/?LinkId=529714). Este artigo irá aprender como ativar o registo de diagnóstico e adicionar instrumentação à sua aplicação, bem como aceder as informações registadas pelo Azure.
+O Azure oferece incorporado diagnóstico para ajudar a depurar uma [aplicação web do app Service](http://go.microsoft.com/fwlink/?LinkId=529714). Neste artigo, saiba como ativar o registo de diagnóstico e adicionar instrumentação à sua aplicação, bem como aceder as informações registadas pelo Azure.
 
-Este artigo utiliza o [Portal do Azure](https://portal.azure.com), Azure PowerShell e a Interface de linha de comandos do Azure (CLI do Azure) para trabalhar com registos de diagnóstico. Para obter informações sobre como trabalhar com registos de diagnóstico com o Visual Studio, consulte [Azure de resolução de problemas no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
+Este artigo utiliza o [portal do Azure](https://portal.azure.com), Azure PowerShell e a Interface de linha de comandos do Azure (CLI do Azure) para trabalhar com registos de diagnóstico. Para obter informações sobre como trabalhar com registos de diagnóstico com o Visual Studio, consulte [Azure de resolução de problemas no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -43,24 +43,24 @@ Diagnóstico de aplicação permite-lhe capturar informações produzidas por um
 
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-No tempo de execução pode obter estes registos para ajudar a resolver problemas. Para obter mais informações, consulte [web apps do Azure de resolução de problemas no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
+Em runtime, pode obter estes registos para ajudar a resolver problemas. Para obter mais informações, consulte [web apps do Azure de resolução de problemas no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 Web apps do App Service também registar informações de implementação quando publicar conteúdo para uma aplicação web. Isto ocorre automaticamente e não existem sem definições de configuração para o registo de implementação. Registo de implementação permite-lhe determinar por que motivo uma implementação falhou. Por exemplo, se estiver a utilizar um script de implementação personalizada, poderá utilizar o registo de implementação para determinar por que razão o script está a falhar.
 
 ## <a name="enablediag"></a>Como ativar o diagnóstico
-Para ativar o diagnóstico no [Portal do Azure](https://portal.azure.com), aceda ao painel da sua aplicação web e clique em **definições > registos de diagnóstico**.
+Para ativar o diagnóstico no [portal do Azure](https://portal.azure.com), aceda à página para a sua aplicação web e clique em **definições > registos de diagnóstico**.
 
 <!-- todo:cleanup dogfood addresses in screenshot -->
 ![Parte de registos](./media/web-sites-enable-diagnostic-log/logspart.png)
 
-Quando ativa **diagnóstico de aplicação** também optar pelo **nível**. Esta definição permite-lhe filtrar as informações capturadas para **informativa**, **aviso** ou **erro** informações. Definir este como **verboso** regista todas as informações produzidas pela aplicação.
+Quando ativa **diagnóstico de aplicação**, também optar pelo **nível**. Esta definição permite-lhe filtrar as informações capturadas para **informativa**, **aviso**, ou **erro** informações. Definir este como **verboso** regista todas as informações produzidas pela aplicação.
 
 > [!NOTE]
 > Ao contrário de alterar o ficheiro Web. config, ativar o diagnóstico de aplicação ou alterar os níveis de registo de diagnóstico não recicle o domínio de aplicação que a aplicação é executada no.
 >
 >
 
-No [portal clássico](https://manage.windowsazure.com) aplicação Web **configurar** separador, pode selecionar **armazenamento** ou **sistema de ficheiros** para **registo de servidor web** . Selecionar **armazenamento** permite-lhe selecionar uma conta de armazenamento e, em seguida, um contentor do blob que os registos serão escritos. Todos os outros registos para **site diagnóstico** são escritos para o sistema de ficheiros apenas.
+No [portal clássico](https://manage.windowsazure.com) aplicação Web **configurar** separador, pode selecionar **armazenamento** ou **sistema de ficheiros** para **registo de servidor web** . Selecionar **armazenamento** permite-lhe selecionar uma conta de armazenamento e, em seguida, um contentor do blob que os registos são escritos para. Todos os outros registos para **site diagnóstico** são escritos para o sistema de ficheiros apenas.
 
 O [portal clássico](https://manage.windowsazure.com) aplicação Web **configurar** separador também tem definições adicionais para o application diagnostics:
 
@@ -113,7 +113,7 @@ Para transferir os ficheiros de registo, inicie uma nova instância do Azure Pow
 
     Save-AzureWebSiteLog -Name webappname
 
-Isto irá guardar os registos da aplicação web especificada pelo **-nome** parâmetro para um ficheiro denominado **logs.zip** no diretório atual.
+Este comando guarda os registos da aplicação web especificada pelo **-nome** parâmetro para um ficheiro denominado **logs.zip** no diretório atual.
 
 > [!NOTE]
 > Se não tiver instalado o Azure PowerShell ou não tiver configurado para utilizar a sua subscrição do Azure, consulte [como utilizar o Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
@@ -125,7 +125,7 @@ Para transferir os ficheiros de registo utilizando a Interface de linha de coman
 
     azure site log download webappname
 
-Isto irá guardar os registos da aplicação web com o nome 'webappname' para um ficheiro denominado **diagnostics.zip** no diretório atual.
+Este comando guarda os registos da aplicação web com o nome 'webappname' para um ficheiro denominado **diagnostics.zip** no diretório atual.
 
 > [!NOTE]
 > Se não tiver instalado a Interface de linha de comandos do Azure (CLI do Azure) ou não tiver configurado para utilizar a sua subscrição do Azure, consulte [como utilizar o Azure CLI](../cli-install-nodejs.md).
@@ -136,11 +136,11 @@ Isto irá guardar os registos da aplicação web com o nome 'webappname' para um
 Visual Studio Application Insights fornece ferramentas para filtrar e procurar os registos e para correlacionar os registos com pedidos e outros eventos.
 
 1. Adicione o Application Insights SDK ao projeto no Visual Studio.
-   * No Explorador de soluções, clique com o botão direito do rato em projeto e escolha adicionar o Application Insights. Será guiado através de passos que incluem a criação de um recurso do Application Insights. [Saiba mais](../application-insights/app-insights-asp-net.md)
+   * No Explorador de soluções, clique no seu projeto e escolha adicionar o Application Insights. A interface orienta-o pelos passos que incluem a criação de um recurso do Application Insights. [Saiba mais](../application-insights/app-insights-asp-net.md)
 2. Adicione o pacote de serviço de escuta de rastreio ao seu projeto.
-   * Clique com o botão direito do rato em projeto e selecione gerir pacotes NuGet. Selecione `Microsoft.ApplicationInsights.TraceListener` [Saiba mais](../application-insights/app-insights-asp-net-trace-logs.md)
+   * Clique no seu projeto e selecione gerir pacotes NuGet. Selecione `Microsoft.ApplicationInsights.TraceListener` [Saiba mais](../application-insights/app-insights-asp-net-trace-logs.md)
 3. Carregar o projeto e execute-o para gerar dados de registo.
-4. No [Portal do Azure](https://portal.azure.com/), navegue para o novo recurso do Application Insights e abra **pesquisa**. Verá os dados de registo, juntamente com o pedido, utilização e outra telemetria. Alguma telemetria poderá demorar alguns minutos a chegada: clique em Atualizar. [Saiba mais](../application-insights/app-insights-diagnostic-search.md)
+4. No [portal do Azure](https://portal.azure.com/), navegue para o novo recurso do Application Insights e abra **pesquisa**. Deverá ver os dados de registo, juntamente com o pedido, utilização e outra telemetria. Alguma telemetria poderá demorar alguns minutos a chegada: clique em Atualizar. [Saiba mais](../application-insights/app-insights-diagnostic-search.md)
 
 [Saiba mais sobre o desempenho de controlo com o Application Insights](../application-insights/app-insights-azure-web-apps.md)
 
@@ -151,7 +151,7 @@ Ao desenvolver uma aplicação, muitas vezes, é útil ver informações de regi
 > Alguns tipos de memória intermédia de registo de escrita para o ficheiro de registo, o que pode resultar em eventos fora de ordem na sequência. Por exemplo, uma entrada de registo de aplicação que ocorre quando um utilizador visita uma página poderão ser apresentada no fluxo antes da entrada de registo HTTP correspondente para o pedido de página.
 >
 > [!NOTE]
-> Registo de transmissão em fluxo também irá transmitir informações escritas para qualquer ficheiro de texto armazenado no **D:\\raiz\\LogFiles\\**  pasta.
+> Registo de transmissão em fluxo também fluxos informações escritas para qualquer ficheiro de texto armazenado no **D:\\raiz\\LogFiles\\**  pasta.
 >
 >
 
@@ -160,7 +160,7 @@ Para transmitir informações de registo, inicie uma nova instância do Azure Po
 
     Get-AzureWebSiteLog -Name webappname -Tail
 
-Isto irá ligar para a aplicação web especificada pelo **-nome** parâmetro e começar a transmissão em fluxo de informações para a janela do PowerShell como de registo de eventos ocorre na aplicação web. Todas as informações de escrita em ficheiros que termina em. txt,. log ou. htm que estão armazenados no diretório /LogFiles (home/d: / logfiles) serão transmitidas para a consola local.
+Este comando liga à aplicação web especificada pelo **-nome** parâmetro e começar a transmissão em fluxo de informações para a janela do PowerShell como de registo de eventos ocorre na aplicação web. Todas as informações de escrita em ficheiros que termina em. txt,. log ou. htm que estão armazenados no diretório /LogFiles (home/d: / logfiles) é transmitida em fluxo para a consola local.
 
 Para filtrar eventos específicos, como erros, utilize o **-mensagem** parâmetro. Por exemplo:
 
@@ -182,7 +182,7 @@ Para transmitir informações de registo, abra uma nova linha de comandos, Power
 
     az webapp log tail --name webappname --resource-group myResourceGroup
 
-Isto irá ligar a aplicação web com o nome 'webappname' e começar a transmissão em fluxo de informações para a janela tal como eventos de registo na aplicação web. Todas as informações de escrita em ficheiros que termina em. txt,. log ou. htm que estão armazenados no diretório /LogFiles (home/d: / logfiles) serão transmitidas para a consola local.
+Este comando liga-se para a aplicação web com o nome 'webappname' e começar a transmissão em fluxo de informações para a janela tal como eventos de registo na aplicação web. Todas as informações de escrita em ficheiros que termina em. txt,. log ou. htm que estão armazenados no diretório /LogFiles (home/d: / logfiles) é transmitida em fluxo para a consola local.
 
 Para filtrar eventos específicos, como erros, utilize o **– filtro** parâmetro. Por exemplo:
 
@@ -203,15 +203,15 @@ Diagnóstico de aplicação armazena informações num formato específico para 
 
 **Sistema de Ficheiros**
 
-Cada linha com sessão iniciada para o sistema de ficheiros ou recebidas utilizando a transmissão em fluxo estará no seguinte formato:
+Cada linha com sessão iniciada para o sistema de ficheiros ou recebidas utilizando a transmissão em fluxo é o seguinte formato:
 
-    {Date}  PID[{process id}] {event type/level} {message}
+    {Date}  PID[{process ID}] {event type/level} {message}
 
 Por exemplo, um evento de erro, aparece semelhante ao seguinte:
 
     2014-01-30T16:36:59  PID[3096] Error       Fatal error on the page!
 
-O registo para o sistema de ficheiros fornece as informações mais básicas dos três métodos disponíveis, fornecendo apenas o tempo, id do processo, ao nível do evento e a mensagem.
+O registo para o sistema de ficheiros fornece as informações mais básicas dos três métodos disponíveis, fornecendo apenas o tempo, ID do processo, ao nível do evento e a mensagem.
 
 **Armazenamento de tabelas**
 
@@ -253,12 +253,12 @@ Os dados armazenados num blob seriam ter um aspeto semelhantes ao seguinte:
     2014-01-30T16:36:52,Error,mywebapp,6ee38a,635266966128818593,0,3096,9,An error occurred
 
 > [!NOTE]
-> A primeira linha do registo irá conter os cabeçalhos de coluna, conforme representado neste exemplo.
+> A primeira linha do registo contém os cabeçalhos de coluna, conforme representado neste exemplo.
 >
 >
 
 ### <a name="failed-request-traces"></a>Falha de rastreios de pedido
-Os rastreios de pedidos falhados são armazenados nos ficheiros XML com o nome **. XML de # # # fr**. Para tornar mais fácil ver as informações com sessão iniciada, uma folha de estilos XSL chamada **freb.xsl** é fornecido no mesmo diretório que os ficheiros XML. Abrir um dos ficheiros XML no Internet Explorer irá utilizar para fornecer uma apresentação formatada as informações de rastreio de folha de estilos XSL. Isto irá aparecer semelhante ao seguinte:
+Os rastreios de pedidos falhados são armazenados nos ficheiros XML com o nome **. XML de # # # fr**. Para tornar mais fácil ver as informações com sessão iniciada, uma folha de estilos XSL chamada **freb.xsl** é fornecido no mesmo diretório que os ficheiros XML. Se abrir um dos ficheiros XML no Internet Explorer, o Internet Explorer utiliza folha de estilos XSL para fornecer uma apresentação formatada as informações de rastreio. Isto parece ser semelhante ao seguinte:
 
 ![pedidos falhados visualizados no browser](./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png)
 
@@ -282,7 +282,3 @@ Os registos do servidor web são formatados com o [formato de ficheiro de regist
 > Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
 >
 >
-
-## <a name="whats-changed"></a>O que mudou
-* Para obter um guia da alteração de Web sites para o App Service, consulte: [App Service do Azure e o Respetivo Impacto nos Serviços do Azure Existentes](http://go.microsoft.com/fwlink/?LinkId=529714)
-* Para obter um guia da alteração do portal antigo para o novo portal, consulte: [referência para navegação do portal do Azure](http://go.microsoft.com/fwlink/?LinkId=529715)

@@ -8,13 +8,13 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: 5a0d25d698ddb15b4ba88d322c07a28b329c4add
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: ace0eb671556dc980836464a365731d6100eab25
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="monitor-azure-sql-data-sync-preview-with-oms-log-analytics"></a>Monitor SQL do Azure de sincronização de dados (pré-visualização) com a análise de registos do OMS 
+# <a name="monitor-sql-data-sync-preview-with-oms-log-analytics"></a>Monitor SQL de sincronização de dados (pré-visualização) com a análise de registos do OMS 
 
 Verifique o registo de atividade de sincronização de dados do SQL Server e detetar erros e avisos, que tinha anteriormente verificar a sincronização de dados SQL manualmente no portal do Azure ou utilizar o PowerShell ou a API REST. Siga os passos neste artigo para configurar uma solução personalizada que melhora a experiência de monitorização de sincronização de dados. Pode personalizar esta solução para que se adeque ao seu cenário.
 
@@ -92,7 +92,7 @@ Para obter mais informações sobre como criar um runbook, consulte [o meu prime
 
     2.  Informações do grupo de sincronização.
 
-    3.  Informações do OMS. Encontrar estas informações no Portal do OMS | Definições | Origens ligadas. Para obter mais informações sobre o envio de dados para análise de registos, consulte [enviar dados para análise de registos com a API de Recoletor de dados de HTTP (pré-visualização pública)](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api).
+    3.  Informações do OMS. Encontrar estas informações no Portal do OMS | Definições | Origens ligadas. Para obter mais informações sobre o envio de dados para análise de registos, consulte [enviar dados para análise de registos com a API de Recoletor de dados de HTTP (pré-visualização pública)](../log-analytics/log-analytics-data-collector-api.md).
 
 11. Execute o runbook no painel de teste. Verifique para se certificar de que foi efetuada com êxito.
 
@@ -192,7 +192,7 @@ Transfira os exemplos de código descritos neste artigo das seguintes localizaç
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
--   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Configurar a sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
 -   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
 

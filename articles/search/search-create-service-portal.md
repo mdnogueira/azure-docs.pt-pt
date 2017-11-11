@@ -11,17 +11,17 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 05/01/2017
+ms.date: 11/07/2017
 ms.author: heidist
-ms.openlocfilehash: 58f4eab190e40e16ed261c165ffdfc8155eeb434
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: eaf317b42026298cc42edcc907bc48169f869460
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Criar um serviço da Azure Search no portal
 
-Este artigo explica como criar ou o aprovisionar um serviço da Azure Search no portal. Para obter instruções de PowerShell, consulte [gerir da Azure Search com o PowerShell](search-manage-powershell.md).
+Saiba como criar ou o aprovisionar um serviço da Azure Search no portal. Para obter instruções de PowerShell, consulte [gerir da Azure Search com o PowerShell](search-manage-powershell.md).
 
 ## <a name="subscribe-free-or-paid"></a>Subscrever (gratuita ou paga)
 
@@ -34,20 +34,21 @@ Em alternativa, [ativar os benefícios de subscritor do MSDN](https://azure.micr
 2. Clique no sinal ("+") no canto superior esquerdo.
 3. Selecione **Web + móvel** > **a Azure Search**.
 
-![](./media/search-create-service-portal/find-search2.png)
+![](./media/search-create-service-portal/find-search3.png)
 
 ## <a name="name-the-service-and-url-endpoint"></a>Nome do serviço e o ponto final do URL
 
-Um nome de serviço faz parte do ponto final do URL em relação às quais são emitidas chamadas da API. Escreva o nome do serviço no **URL** campo. 
+Um nome de serviço faz parte do ponto final do URL na qual API chamadas são emitidas: `https://your-service-name.search.windows.net`. Introduza o nome do serviço no **URL** campo. 
 
 Requisitos de nome de serviço:
+   * Tem de ser exclusivo no espaço de nomes search.windows.net
    * 2 e 60 carateres de comprimento
-   * letras minúsculas, dígitos ou traços ("-")
-   * Não existem traço ("-") como o primeiro 2 carateres ou o último caráter único
-   * sem traços consecutivos ("-")
+   * Utilizar letras minúsculas, dígitos ou traços ("-")
+   * Evitar traços ("-") nos primeiro 2 carateres ou como o último caráter único
+   * Sem traços consecutivos ("-") em qualquer lugar
 
 ## <a name="select-a-subscription"></a>Selecionar uma subscrição
-Se tiver mais do que uma subscrição, escolha uma também com os serviços de armazenamento de dados ou ficheiro. A pesquisa do Azure pode deteção automática armazenamento de tabelas do Azure e BLOBs, base de dados do SQL Server e base de dados do Azure Cosmos para indexação através de *indexadores*, mas apenas para serviços na mesma subscrição.
+Se tiver mais do que uma subscrição, escolha uma também com os serviços de armazenamento de dados ou ficheiro. A pesquisa do Azure pode deteção automática armazenamento de tabelas do Azure e BLOBs, base de dados do SQL Server e base de dados do Azure Cosmos para indexação através de [ *indexadores*](search-indexer-overview.md), mas apenas para serviços na mesma subscrição.
 
 ## <a name="select-a-resource-group"></a>Selecionar um grupo de recursos
 Um grupo de recursos é uma coleção de serviços do Azure e os recursos utilizados em conjunto. Por exemplo, se estiver a utilizar para uma base de dados do SQL Server de índice da Azure Search, ambos os serviços devem fazer parte do mesmo grupo de recursos.
@@ -63,11 +64,13 @@ Como um serviço do Azure, a pesquisa do Azure podem ser alojada nos centros de 
 
 Nestas instruções, escolhemos o escalão padrão para o nosso serviço.
 
+Um escalão de preço não pode ser alterado depois do serviço é criado. Se precisar de um escalão superior ou inferior posterior, terá de voltar a criar o serviço.
+
 ## <a name="create-your-service"></a>Criar o seu serviço
 
 Lembre-se afixar o seu serviço para o dashboard para facilitar o acesso sempre que iniciar sessão.
 
-![](./media/search-create-service-portal/new-service2.png)
+![](./media/search-create-service-portal/new-service3.png)
 
 ## <a name="scale-your-service"></a>Dimensionar o serviço
 Pode demorar alguns minutos para criar um serviço (15 minutos ou mais consoante a camada). Depois do seu serviço é aprovisionado, pode dimensionar para satisfazer as suas necessidades. Porque o escalão padrão que escolheu para o seu serviço da Azure Search, pode dimensionar o serviço em duas dimensões: réplicas e de partições. Tinha escolhido o escalão básico, só é possível adicionar réplicas. Se o serviço gratuito que aprovisionou, o dimensionamento não está disponível.
@@ -79,7 +82,7 @@ Pode demorar alguns minutos para criar um serviço (15 minutos ou mais consoante
 > [!Important]
 > Tem de ter um serviço [2 réplicas para SLA só de leitura e 3 réplicas para leitura/escritam SLA](https://azure.microsoft.com/support/legal/sla/search/v1_0/).
 
-1. Aceda ao painel do serviço de pesquisa no portal do Azure.
+1. Aceda à sua página de serviço de pesquisa no portal do Azure.
 2. No painel de navegação esquerdo, selecione **definições** > **escala**.
 3. Utilize o slidebar para adicionar as réplicas ou partições.
 
@@ -105,9 +108,7 @@ Embora a maioria dos clientes utilizam apenas um serviço, redundância de servi
 Um segundo serviço não é necessário para elevada disponibilidade. Elevada disponibilidade para consultas é conseguida ao utilizar 2 ou mais réplicas no mesmo serviço. Atualizações de réplicas são sequenciais, o que significa que, pelo menos, um se encontra operacional quando uma atualização de serviço é implementada. Para obter mais informações sobre a disponibilidade, consulte [contratos de nível de serviço](https://azure.microsoft.com/support/legal/sla/search/v1_0/).
 
 ## <a name="next-steps"></a>Passos seguintes
-Após o aprovisionamento de um serviço da Azure Search, estará pronto para [definir um índice](search-what-is-an-index.md) para que possa carregar e os dados de pesquisa.
+Após o aprovisionamento de um serviço da Azure Search, estará pronto para [definir um índice](search-what-is-an-index.md) para que possa carregar e os dados de pesquisa. 
 
-Para aceder ao serviço de código ou script, forneça o URL (*nome do serviço*. search.windows.net) e uma chave. Chaves de administração conceder acesso total; chaves de consulta de conceder acesso só de leitura. Consulte [como utilizar a pesquisa do Azure no .NET](search-howto-dotnet-sdk.md) para começar a utilizar.
-
-Consulte [compilar e consultar o índice da primeira](search-get-started-portal.md) para um tutorial rápido baseado no portal.
-
+> [!div class="nextstepaction"]
+> [Como utilizar a pesquisa do Azure no .NET](search-howto-dotnet-sdk.md)

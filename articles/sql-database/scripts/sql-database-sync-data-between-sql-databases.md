@@ -1,5 +1,5 @@
 ---
-title: "Exemplo de PowerShell-Sync entre várias bases de dados SQL do Azure | Microsoft Docs"
+title: "Exemplo de PowerShell-Sync entre várias bases de dados de SQL do Azure | Microsoft Docs"
 description: "Script de exemplo do PowerShell do Azure para sincronizar entre várias bases de dados SQL do Azure"
 services: sql-database
 documentationcenter: sql-database
@@ -17,13 +17,13 @@ ms.workload: database
 ms.date: 07/31/2017
 ms.author: jognanay
 ms.reviewer: douglasl
-ms.openlocfilehash: 531379bf9836825ca75f4901b07685f21f7b5309
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 81bec820bd815f0a8826f3a5dc46b1924aa07772
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="use-powershell-to-sync-between-multiple-azure-sql-databases"></a>Utilizar o PowerShell para sincronizar entre várias bases de dados SQL do Azure
+# <a name="use-powershell-to-sync-between-multiple-sql-databases"></a>Utilizar o PowerShell para sincronizar entre várias bases de dados do SQL Server
  
 Neste exemplo do PowerShell configura a sincronização de dados a sincronização entre várias bases de dados SQL do Azure.
 
@@ -367,7 +367,7 @@ Exemplos de script do PowerShell de base de dados do SQL adicionais podem ser en
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](../sql-database-sync-data.md)
--   [Introdução à sincronização de dados SQL do Azure](../sql-database-get-started-sql-data-sync.md)
+-   [Configurar a sincronização de dados SQL do Azure](../sql-database-get-started-sql-data-sync.md)
 -   [Melhores práticas para a sincronização de dados SQL do Azure](../sql-database-best-practices-data-sync.md)
 -   [Monitor sincronização de dados SQL do Azure com a análise de registos do OMS](../sql-database-sync-monitor-oms.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](../sql-database-troubleshoot-data-sync.md)

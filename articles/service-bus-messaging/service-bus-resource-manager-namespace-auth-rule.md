@@ -1,5 +1,5 @@
 ---
-title: "Criar regra de autorização de barramento de serviço utilizando o modelo Azure Resource Manager | Microsoft Docs"
+title: "Criar uma regra de autorização de barramento de serviço utilizando o modelo Azure Resource Manager | Microsoft Docs"
 description: "Criar uma regra de autorização de barramento de serviço para o espaço de nomes e fila utilizando o modelo Azure Resource Manager"
 services: service-bus-messaging
 documentationcenter: .net
@@ -12,17 +12,17 @@ ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/07/2017
+ms.date: 11/10/2017
 ms.author: sethm;shvija
-ms.openlocfilehash: fbd2372829a1aefa2c080c0a8a72b9ff4375b16f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 384a2fce4bf338ffc4ab6690980c12ad7ff34a6e
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-a-service-bus-authorization-rule-for-namespace-and-queue-using-an-azure-resource-manager-template"></a>Criar uma regra de autorização de barramento de serviço para o espaço de nomes e fila utilizando um modelo Azure Resource Manager
 
-Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um [regra de autorização](service-bus-authentication-and-authorization.md#shared-access-signature-authentication) para um espaço de nomes de barramento de serviço e fila. Ficará a saber como definir quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades.
+Este artigo mostra como utilizar um modelo Azure Resource Manager que cria um [regra de autorização](service-bus-authentication-and-authorization.md#shared-access-signature-authentication) para um espaço de nomes de barramento de serviço e fila. O artigo explica como especificar quais os recursos são implementados e como definir os parâmetros que são especificados quando a implementação é executada. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades.
 
 Para obter mais informações sobre a criação de modelos, consulte [modelos Authoring Azure Resource Manager][Authoring Azure Resource Manager templates].
 
@@ -36,12 +36,13 @@ Para o modelo completo, consulte o [modelo de regra de autorização do Service 
 > * [Criar um espaço de nomes do Service Bus com o tópico e uma subscrição](service-bus-resource-manager-namespace-topic.md)
 > * [Criar um espaço de nomes do Service Bus com o tópico, subscrição e a regra](service-bus-resource-manager-namespace-topic-with-rule.md)
 > 
-> Para verificar os modelos mais recentes, visite o [modelos de início rápido do Azure] [ Azure Quickstart Templates] Galeria e procure "Service Bus".
+> Para verificar os modelos mais recentes, visite o [modelos de início rápido do Azure] [ Azure Quickstart Templates] Galeria e procure **Service Bus**.
 > 
 > 
 
 ## <a name="what-will-you-deploy"></a>O que irá implementar?
-Com este modelo, irá implementar uma regra de autorização de barramento de serviço para um espaço de nomes e a entidade de mensagens (neste caso, uma fila).
+
+Com este modelo, implemente uma regra de autorização de barramento de serviço para um espaço de nomes e a entidade de mensagens (neste caso, uma fila).
 
 Este modelo utiliza [assinatura de acesso partilhado (SAS)](service-bus-sas.md) para autenticação. SAS permite que as aplicações autenticar para o Service Bus, utilizando uma chave de acesso configurada no espaço de nomes ou na entidade Serviço de mensagens (fila ou um tópico) que estão associados direitos específicos. Em seguida, pode utilizar esta chave para gerar um token SAS que os clientes por sua vez podem utilizar para autenticar para o Service Bus.
 
@@ -86,9 +87,12 @@ O nome da fila no espaço de nomes de barramento de serviço.
 A versão de API do Service Bus do modelo.
 
 ```json
-"serviceBusApiVersion": {
-"type": "string"
-}
+"serviceBusApiVersion": { 
+       "type": "string", 
+       "defaultValue": "2017-04-01", 
+       "metadata": { 
+           "description": "Service Bus ApiVersion used by the template" 
+       }
 ```
 
 ## <a name="resources-to-deploy"></a>Recursos a implementar

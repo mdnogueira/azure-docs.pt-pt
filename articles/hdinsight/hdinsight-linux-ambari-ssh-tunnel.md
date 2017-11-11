@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/21/2017
+ms.date: 11/10/2017
 ms.author: larryfr
-ms.openlocfilehash: 4b606ea3797d685b9deacf72f1bd31e0ef007f98
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7f55abc84a8afea398cf0e95761d922b77e1c248
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="use-ssh-tunneling-to-access-ambari-web-ui-jobhistory-namenode-oozie-and-other-web-uis"></a>Utilizar o túnel SSH para aceder à IU da web do Ambari, JobHistory, NameNode, Oozie e outras web UIs
 
@@ -48,7 +48,7 @@ Se utilizar ações de Script ao personalizar o seu cluster, quaisquer serviços
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um cliente SSH. Para obter mais informações, veja [Utilizar SSH com o HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).
+* Um cliente SSH. A maioria dos sistemas de operativos fornecem um cliente SSH através de `ssh` comando. Para obter mais informações, veja [Utilizar SSH com o HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 * Um browser que pode ser configurado para utilizar um proxy SOCKS5.
 
@@ -74,9 +74,9 @@ Este comando cria uma ligação que encaminha o tráfego para a porta local 9876
 * **C** -comprimir todos os dados, porque o tráfego web é principalmente texto.
 * **2** -force SSH para experimentar apenas a versão 2 do protocolo.
 * **q** -modo silencioso.
-* **T** -desativar alocação pseudo-tty, uma vez que vamos está a reencaminhar apenas uma porta.
-* **n**-Impedi a leitura de STDIN, uma vez que vamos está a reencaminhar apenas uma porta.
-* **N** -não é executar um comando remoto, uma vez que vamos está a reencaminhar apenas uma porta.
+* **T** -desativar alocação pseudo-tty, uma vez que está a reencaminhar apenas uma porta.
+* **n**-Impedi a leitura de STDIN, uma vez que está a reencaminhar apenas uma porta.
+* **N** -não é executar um comando remoto, uma vez que está a reencaminhar apenas uma porta.
 * **f** -executar em segundo plano.
 
 Depois do comando for concluído, o tráfego enviado para a porta 9876 no computador local é encaminhado para o nó principal do cluster.

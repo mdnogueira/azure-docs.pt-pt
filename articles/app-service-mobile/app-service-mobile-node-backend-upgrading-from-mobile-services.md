@@ -14,16 +14,16 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: glenga
-ms.openlocfilehash: 5fc61fed674f0d2fc64bc29c064e7e872b4f2e68
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 888717afe14f29fd50da6478c2bba077616a5379
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="upgrade-your-existing-nodejs-azure-mobile-service-to-app-service"></a>Atualizar o seu serviço móvel do Azure de Node.js atual para o App Service
 Serviço de aplicações móveis é uma nova forma de criar aplicações móveis com o Microsoft Azure. Para obter mais informações, consulte [que são Mobile Apps?].
 
-Este tópico descreve como atualizar uma aplicação de back-end Node.js existente de Mobile Services do Azure para um novo Mobile Apps do App Service. Enquanto executa esta atualização, a aplicação de Mobile Services existente pode continuar a funcionar.  Se precisar de atualizar uma aplicação de back-end Node.js, consulte [atualizar os Mobile Services do .NET](app-service-mobile-net-upgrading-from-mobile-services.md).
+Este artigo descreve como atualizar uma aplicação de back-end Node.js existente de Mobile Services do Azure para um novo Mobile Apps do App Service. Enquanto executa esta atualização, a aplicação de Mobile Services existente pode continuar a funcionar.  Se precisar de atualizar uma aplicação de back-end Node.js, consulte [atualizar os Mobile Services do .NET](app-service-mobile-net-upgrading-from-mobile-services.md).
 
 Quando um back-end móvel é atualizado para o App Service do Azure, tem acesso a todas as funcionalidades do serviço de aplicações e são cobrados de acordo com [preços do serviço de aplicações], não Mobile Services preços.
 
@@ -44,7 +44,7 @@ Atualizar para o novo [SDK de aplicações móveis](https://www.npmjs.com/packag
 * Incorporado para o desenvolvimento de plataforma e local, o SDK de aplicações móveis podem ser desenvolvido e executar localmente em plataformas Windows, Linux e no OSX. Agora é fácil de utilizar técnicas de programação de nó comuns, como em execução [Mocha](https://mochajs.org/) testes antes da implementação.
 
 ## <a name="overview"></a>Descrição geral básica de atualização
-Para ajudar a atualizar um back-end do Node.js, o App Service do Azure tiver fornecido um pacote de compatibilidade.  Após a atualização, terá de um site de niew que pode ser implementado para um novo site do serviço de aplicações.
+Para ajudar a atualizar um back-end do Node.js, o App Service do Azure tiver fornecido um pacote de compatibilidade.  Após a atualização, terá um novo site que pode ser implementado para um novo site do serviço de aplicações.
 
 O cliente de Mobile Services SDKs são **não** compatível com o novo servidor de aplicações móveis do SDK. Para fornecer a continuidade do serviço para a sua aplicação, não deve publicar as alterações a um site publicados clientes atualmente a funcionar. Em vez disso, deve criar uma nova aplicação móvel que funciona como um duplicado. Pode colocar esta aplicação no mesmo plano de serviço de aplicações para evitar incorrer em custos financeiros adicionais.
 
@@ -56,7 +56,7 @@ O contorno completo para o processo de atualização é o seguinte:
 2. Converta o projeto para uma aplicação de Mobile do Azure utilizando o pacote de compatibilidade.
 3. Corrija quaisquer diferenças (tais como definições de autenticação).
 4. Implemente o projeto de aplicação móvel do Azure convertido para um novo serviço de aplicações.
-5. Uma nova versão da aplicação cliente que utilizam a nova aplicação móvel de versão.
+5. Uma nova versão da aplicação cliente que utiliza a nova aplicação móvel de versão.
 6. (Opcional) Elimine a aplicação de serviço móvel migrado original.
 
 A eliminação pode ocorrer quando não vir qualquer tráfego no seu serviço móvel migrado original.
@@ -98,12 +98,12 @@ Durante a implementação, terá de fazer o seguinte:
 3. Para o **Grupo de Recursos**, selecione um grupo de recursos existente ou crie um novo (utilizando o mesmo nome que a sua aplicação).
 
     Pode selecionar outro plano do Serviço de Aplicações ou criar um novo. Para mais informações sobre serviços aplicacionais planos e como criar um novo plano num preço diferente camada e na localização pretendida, consulte [descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
-4. Para o **Plano do Serviço de Aplicações**, encontra-se selecionado o plano predefinido (no [Escalão Standard](https://azure.microsoft.com/pricing/details/app-service/)). Pode ainda selecionar um plano diferente ou [criar um novo](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md#create-an-app-service-plan). As definições do plano do Serviço de Aplicações determinam [a localização, as funcionalidades, o custo e os recursos de computação](https://azure.microsoft.com/pricing/details/app-service/) associados à aplicação.
+4. Para o **Plano do Serviço de Aplicações**, encontra-se selecionado o plano predefinido (no [Escalão Standard](https://azure.microsoft.com/pricing/details/app-service/)). Também pode selecionar um plano diferente ou [criar um novo](../app-service/app-service-plan-manage.md#create-an-app-service-plan). Definições do plano de serviço de aplicações determinam o [localização, funcionalidades, custos e recursos de computação](https://azure.microsoft.com/pricing/details/app-service/) associados à aplicação.
 
     Depois de decidir o plano, clique em **Criar**. Esta ação cria o back-end da Aplicação Móvel.
 
 ### <a name="run-createviewssql"></a>Executar CreateViews.SQL
-A aplicação estruturada contém um ficheiro chamado `createViews.sql`.  Este script tem de ser executado na base de dados de destino.  A cadeia de ligação da base de dados de destino pode ser obtida a partir do seu serviço móvel migrado do **definições** painel em **cadeias de ligação**.  É denominado `MS_TableConnectionString`.
+A aplicação estruturada contém um ficheiro chamado `createViews.sql`.  Este script tem de ser executado na base de dados de destino.  A cadeia de ligação da base de dados de destino pode ser obtida a partir do seu serviço móvel migrado do **definições** página em **cadeias de ligação**.  É denominado `MS_TableConnectionString`.
 
 Pode executar este script do SQL Server Management Studio ou Visual Studio.
 
@@ -116,7 +116,7 @@ Ligar a base de dados existente para o serviço de aplicações:
 * Na lista pendente, selecione **base de dados SQL**
 * Em **base de dados SQL**, selecione a base de dados existente, em seguida, clique em **selecione**.
 * Em **cadeia de ligação**, introduza o nome de utilizador e palavra-passe para a base de dados, em seguida, clique em **OK**.
-* No **adicione ligações de dados** painel, clique em **OK**.
+* No **adicione ligações de dados** página, clique em **OK**.
 
 O nome de utilizador e palavra-passe podem ser encontradas visualizando a cadeia de ligação da base de dados de destino no seu serviço móvel migrados.
 

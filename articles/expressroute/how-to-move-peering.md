@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/09/2017
 ms.author: cherylmc
-ms.openlocfilehash: f48e270054ba45211c2a1517593d5d7b22925d0a
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 4fd0f1cbba36957ae5ecc1b7436d1f1734a3ef79
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Mover um peering público para peering da Microsoft
 
@@ -34,7 +34,7 @@ Este artigo ajuda-o a mover uma configuração do peering público para peering 
 
 * Para ligar ao peering da Microsoft, tem de configurar e gerir o NAT. O fornecedor de conectividade pode configurar e gerir o NAT como um serviço gerido. Se estiver a planear aceder ao Azure PaaS e serviços SaaS do Azure em peering da Microsoft, é importante para o tamanho do conjunto de IP do NAT corretamente. Para obter mais informações sobre NAT para o ExpressRoute, consulte o [requisitos do NAT para peering da Microsoft](expressroute-nat.md#nat-requirements-for-microsoft-peering).
 
-* Se tiver atualmente uma lista de controlo de acesso (ACL) de rede para o recurso de serviço de Azure PaaS existe no peering público do Azure, tem de certificar-se de que o IP do NAT agrupamento **intervalo de endereços** está incluído na ACL de Firewall para a Microsoft peering.
+* Se estiver a utilizar o peering público e ter atualmente regras de rede de IP para endereços IP públicos que são utilizados para aceder ao [Storage do Azure](../storage/common/storage-network-security.md) ou [SQL Database do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md), tem de certificar-se de que o conjunto de IP do NAT configurado com a Microsoft, peering está incluído na lista de endereços IP públicos para a conta de armazenamento do Azure ou a conta de SQL do Azure.
 
 * Para mover para peering da Microsoft com sem períodos de indisponibilidade, utilize os passos neste artigo na ordem em que são apresentados.
 

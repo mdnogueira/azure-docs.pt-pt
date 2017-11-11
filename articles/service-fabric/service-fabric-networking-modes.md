@@ -14,23 +14,23 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/9/2017
 ms.author: subramar
-ms.openlocfilehash: 1ecded3af6396f50e67dc5d2a9ef8337699046ea
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 855e315f66858210875039f91f7f05055ff7d9b9
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="service-fabric-container-networking-modes"></a>Modos de funcionamento em rede de contentor do Service Fabric
 
-A predefinição oferecido do modo de funcionamento em rede no cluster de Service Fabric para serviços de contentor é o `nat` modo de funcionamento em rede. Com o `nat` modo de funcionamento em rede, tendo mais do que um serviço de contentores a escutar os mesmos resultados de porta erros de implementação. Para executar vários serviços que escuta na mesma porta, o Service Fabric suporta o `open` modo de funcionamento em rede (versão 5.7 ou superior). Com o `open` modo de funcionamento em rede, cada serviço de contentor obtém um endereço IP atribuído dinamicamente internamente permitindo que vários serviços de escuta à mesma porta.   
+A predefinição oferecido do modo de funcionamento em rede no cluster de Service Fabric para serviços de contentor é o `nat` modo de funcionamento em rede. Com o `nat` modo de funcionamento em rede, tendo mais do que um serviço de contentores a escutar os mesmos resultados de porta erros de implementação. Para executar vários serviços que escuta na mesma porta, o Service Fabric suporta o `Open` modo de funcionamento em rede (versão 5.7 ou superior). Com o `Open` modo de funcionamento em rede, cada serviço de contentor obtém um endereço IP atribuído dinamicamente internamente permitindo que vários serviços de escuta à mesma porta.   
 
-Assim, com um tipo de serviço única com um ponto de final estático definido no manifesto de serviço, novos serviços podem ser criados e eliminados sem erros de implementação utilizando o `open` modo de funcionamento em rede. Da mesma forma, um pode utilizar o mesmo `docker-compose.yml` ficheiro com os mapeamentos de porta estática para criar vários serviços.
+Assim, com um tipo de serviço única com um ponto de final estático definido no manifesto de serviço, novos serviços podem ser criados e eliminados sem erros de implementação utilizando o `Open` modo de funcionamento em rede. Da mesma forma, um pode utilizar o mesmo `docker-compose.yml` ficheiro com os mapeamentos de porta estática para criar vários serviços.
 
 Utilizar o IP dinamicamente atribuído para detetar serviços não é recomendado porque as alterações do endereço IP quando o serviço é reiniciado ou movido para outro nó. Utilizar apenas o **serviço Service Fabric Naming** ou **serviço DNS** para a deteção do serviço. 
 
 
 > [!WARNING]
-> Apenas um total de 4096 IPs são permitidas por vNET no Azure. Assim, a soma do número de nós e o número de instâncias de serviço de contentor (com `open` redes) não pode exceder 4096 numa vNET. Para esses cenários high-density, o `nat` recomenda-se o modo de funcionamento em rede.
+> Apenas um total de 4096 IPs são permitidas por vNET no Azure. Assim, a soma do número de nós e o número de instâncias de serviço de contentor (com `Open` redes) não pode exceder 4096 numa vNET. Para esses cenários high-density, o `nat` recomenda-se o modo de funcionamento em rede.
 >
 
 ## <a name="setting-up-open-networking-mode"></a>Configurar o modo de funcionamento em rede aberto
@@ -183,7 +183,7 @@ Utilizar o IP dinamicamente atribuído para detetar serviços não é recomendad
    |     2000 | Custom_Dns | VirtualNetwork | VirtualNetwork | DNS (UDP/53) | Permitir  |
 
 
-4. Especificar o modo de funcionamento em rede no manifesto da aplicação para cada serviço `<NetworkConfig NetworkType="open">`.  O modo `open` resulta no serviço de obter um endereço IP dedicado. Se não está especificado um modo, assume como o basic `nat` modo. Assim, no exemplo a seguir manifesto, `NodeContainerServicePackage1` e `NodeContainerServicePackage2` pode cada escuta à mesma porta (ambos os serviços estão à escuta em `Endpoint1`).
+4. Especificar o modo de funcionamento em rede no manifesto da aplicação para cada serviço `<NetworkConfig NetworkType="Open">`.  O modo `Open` resulta no serviço de obter um endereço IP dedicado. Se não está especificado um modo, assume como o basic `nat` modo. Assim, no exemplo a seguir manifesto, `NodeContainerServicePackage1` e `NodeContainerServicePackage2` pode cada escuta à mesma porta (ambos os serviços estão à escuta em `Endpoint1`). Quando o `Open` modo de rede é specied, `PortBinding` folhas não podem ser especificadas.
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -197,8 +197,7 @@ Utilizar o IP dinamicamente atribuído para detetar serviços não é recomendad
         <ServiceManifestRef ServiceManifestName="NodeContainerServicePackage1" ServiceManifestVersion="1.0"/>
         <Policies>
           <ContainerHostPolicies CodePackageRef="NodeContainerService1.Code" Isolation="hyperv">
-           <NetworkConfig NetworkType="open"/>
-           <PortBinding ContainerPort="8905" EndpointRef="Endpoint1"/>
+           <NetworkConfig NetworkType="Open"/>
           </ContainerHostPolicies>
         </Policies>
       </ServiceManifestImport>
@@ -206,14 +205,13 @@ Utilizar o IP dinamicamente atribuído para detetar serviços não é recomendad
         <ServiceManifestRef ServiceManifestName="NodeContainerServicePackage2" ServiceManifestVersion="1.0"/>
         <Policies>
           <ContainerHostPolicies CodePackageRef="NodeContainerService2.Code" Isolation="default">
-            <NetworkConfig NetworkType="open"/>
-            <PortBinding ContainerPort="8910" EndpointRef="Endpoint1"/>
+            <NetworkConfig NetworkType="Open"/>
           </ContainerHostPolicies>
         </Policies>
       </ServiceManifestImport>
     </ApplicationManifest>
     ```
-Pode combinar e misturar os modos de rede diferentes nos vários serviços dentro de uma aplicação para um cluster do Windows. Assim, pode ter alguns serviços no `open` modo e alguns no `nat` modo de funcionamento em rede. Quando um serviço está configurado com `nat`, a porta que está a escutar tem de ser exclusiva. A combinação de modos de funcionamento em rede para serviços diferentes não é suportada nos clusters do Linux. 
+Pode combinar e misturar os modos de rede diferentes nos vários serviços dentro de uma aplicação para um cluster do Windows. Assim, pode ter alguns serviços no `Open` modo e alguns no `nat` modo de funcionamento em rede. Quando um serviço está configurado com `nat`, a porta que está a escutar tem de ser exclusiva. A combinação de modos de funcionamento em rede para serviços diferentes não é suportada nos clusters do Linux. 
 
 
 ## <a name="next-steps"></a>Passos seguintes
