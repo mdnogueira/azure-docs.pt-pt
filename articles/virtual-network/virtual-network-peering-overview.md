@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: narayan;anavin
-ms.openlocfilehash: f055f1e87e73733b3f2ecfa87e4d372ade8a7868
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 7d3e6a34b5851a5a35a530b18efc3db3e2249274
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="virtual-network-peering"></a>Peering de rede virtual
 
@@ -35,7 +35,7 @@ As vantagens da utilização do peering de redes virtuais incluem:
 
 ## <a name="requirements-constraints"></a>Requisitos e limitações
 
-* O peering de redes virtuais na mesma região encontra-se em disponibilidade geral. O peering de redes virtuais em diferentes regiões encontra-se atualmente em pré-visualização nas regiões E.U.A. Centro-Oeste, Canadá Central e E.U.A. Oeste 2. Pode [registar a sua subscrição](virtual-network-create-peering.md) na pré-visualização.
+* O peering de redes virtuais na mesma região encontra-se em disponibilidade geral. O peering de redes virtuais em diferentes regiões encontra-se atualmente em pré-visualização nas regiões E.U.A. Centro-Oeste, Canadá Central e E.U.A. Oeste 2. Antes de fazer o peering de redes virtuais em diferentes regiões, tem de, primeiro, [registar a sua subscrição](virtual-network-create-peering.md#register) na pré-visualização. A tentativa de criar o peering entre redes virtuais em diferentes regiões falhará se não tiver concluído o registo na pré-visualização.
     > [!WARNING]
     > Os peerings de redes virtuais criados entre regiões podem não ter o mesmo nível de disponibilidade e fiabilidade do que os peerings numa versão de disponibilidade geral. Os peerings de redes virtuais podem ter capacidades restringidas e não estar disponíveis em todas as regiões do Azure. Para obter as notificações mais atualizadas sobre a disponibilidade e o estado desta funcionalidade, veja a página [Atualizações de Rede Virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
@@ -65,7 +65,7 @@ Ao configurar o peering de rede virtual, pode abrir ou fechar as regras do grupo
 
 Para ativar o encadeamento de serviços, pode configurar rotas definidas pelo utilizador que apontem para máquinas virtuais em redes virtuais em modo de peering como o endereço IP de "próximo salto". O encadeamento se serviços permite-lhe encaminhar o tráfego de uma rede virtual para um dispositivo de rede numa rede virtual em modo de peering através de rotas definidas pelo utilizador.
 
-Também pode criar, eficazmente, ambientes de tipo “hub-and-spoke”, onde o concentrador pode alojar componentes da infraestrutura, como um aplicação virtual de rede. Todas as redes virtuais “spoke” podem, então, configurar o peering com a rede virtual do concentrador. O tráfego pode fluir dos dispositivos de rede virtual que estão em execução na rede virtual do concentrador. Em suma, o peering de rede virtual permite que o endereço IP de próximo salto na rota definida pelo utilizador seja o endereço IP de uma máquina virtual na rede virtual em modo de peering. Para saber mais sobre as rotas definidas pelo utilizador, veja [Descrição geral das rotas definidas pelo utilizador](virtual-networks-udr-overview.md). Para saber como criar uma topologia de rede hub-and-spoke, veja [Topologia de rede hub-and-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual network-peering)
+Também pode criar, eficazmente, ambientes de tipo “hub-and-spoke”, onde o concentrador pode alojar componentes da infraestrutura, como um aplicação virtual de rede. Todas as redes virtuais “spoke” podem, então, configurar o peering com a rede virtual do concentrador. O tráfego pode fluir dos dispositivos de rede virtual que estão em execução na rede virtual do concentrador. Em suma, o peering de rede virtual permite que o endereço IP de próximo salto na rota definida pelo utilizador seja o endereço IP de uma máquina virtual na rede virtual em modo de peering. Para saber mais sobre as rotas definidas pelo utilizador, veja [Descrição geral das rotas definidas pelo utilizador](virtual-networks-udr-overview.md). Para saber como criar uma topologia de rede hub-and-spoke, veja [Topologia de rede hub-and-spoke](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual network-peering).
 
 ## <a name="gateways-and-on-premises-connectivity"></a>Gateways e conetividade no local
 

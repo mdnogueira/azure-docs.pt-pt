@@ -1,6 +1,6 @@
 ---
-title: "Implementar um Modelo dos serviços do Azure Machine Learning (pré-visualização) | Microsoft Docs"
-description: "Este tutorial completo mostra como utilizar os serviços do Azure Machine Learning (pré-visualização) ponto a ponto. Esta é a parte 3 sobre como implementar o modelo."
+title: "Implementar um modelo dos serviços do Azure Machine Learning (pré-visualização) | Microsoft Docs"
+description: "Este tutorial completo mostra como utilizar os serviços do Azure Machine Learning (pré-visualização) ponto a ponto. Esta é a parte três e aborda o modelo de implementação."
 services: machine-learning
 author: raymondl
 ms.author: raymondl, aashishb
@@ -10,49 +10,49 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: hero-article
-ms.date: 09/27/2017
-ms.openlocfilehash: 048d734277f855086a48ad00a52b873adbf419b4
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.date: 11/2/2017
+ms.openlocfilehash: b6cdd135d2d264c8b4ede1592c686cdeea3d0a59
+ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/07/2017
 ---
-# <a name="classifying-iris-part-3-deploy-a-model"></a>Classificar Íris, parte 3: implementar um modelo
-Os serviços do Azure Machine Learning (pré-visualização) são uma solução de análise avançada e ciência de dados ponto a ponto integrada para os cientistas de dados profissionais prepararem dados, desenvolverem experimentações e implementarem modelos à escala da cloud.
+# <a name="classify-iris-part-3-deploy-a-model"></a>Classificar Íris, parte 3: implementar um modelo
+Os serviços do Azure Machine Learning (pré-visualização) são uma solução de análise avançada e ciência de dados completa e integrada para os cientistas de dados profissionais. Os cientistas de dados podem utilizá-los para preparar dados, desenvolver experimentações e implementar modelos à escala da cloud.
 
-Este tutorial é a parte três de uma série de três partes. Nesta parte do tutorial, vai utilizar os serviços do Azure Machine Learning (pré-visualização) para aprender a:
+Este tutorial é a parte três de uma série de três partes. Nesta parte do tutorial, vai utilizar os serviços do Azure Machine Learning (pré-visualização) para:
 
 > [!div class="checklist"]
-> * Localizar o ficheiro de modelo
-> * Gerar um script de classificação e um ficheiro de esquema
-> * Preparar o ambiente
-> * Criar um serviço Web em tempo real
-> * Executar o serviço Web em tempo real
-> * Examinar os dados de blob de saída 
+> * Localizar o ficheiro de modelo.
+> * Gerar um script de classificação e um ficheiro de esquema.
+> * Preparar o ambiente.
+> * Criar um serviço Web em tempo real.
+> * Executar o serviço Web em tempo real.
+> * Examinar os dados de blob de saída. 
 
- Para simplificar, este tutorial utiliza o intemporal [conjunto de dados flor de Iris](https://en.wikipedia.org/wiki/iris_flower_data_set). As capturas de ecrã são específicas do Windows, mas a experiência de macOS é praticamente idêntica.
+ Este tutorial utiliza o [conjunto de dados flor de Iris](https://en.wikipedia.org/wiki/iris_flower_data_set) intemporal. As capturas de ecrã são específicas do Windows, mas a experiência em macOS é praticamente idêntica.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Conclua as duas primeiras partes desta série de tutoriais.
 
-1. Siga o [tutorial Prepare data (Preparar dados)](tutorial-classifying-iris-part-1.md) para criar recursos do Azure Machine Learning e instalar a aplicação Azure Machine Learning Workbench.
+   * Siga o [tutorial Prepare data](tutorial-classifying-iris-part-1.md) (Preparar dados) para criar recursos do Machine Learning e instalar a aplicação Azure Machine Learning Workbench.
 
-2. Siga o [Tutorial Build a model (Criar um modelo)](tutorial-classifying-iris-part-2.md) para criar um modelo de regressão logística no Azure Machine Learning.
+   * Siga o [Tutorial Build a model](tutorial-classifying-iris-part-2.md) (Criar um modelo) para criar um modelo de regressão logística no Azure Machine Learning.
 
-3. É necessário o motor de Docker instalado e em execução localmente. Em alternativa, pode implementar um cluster do Azure Container Service no Azure.
+É necessário um motor do Docker instalado e em execução localmente. Em alternativa, pode implementar um cluster do Azure Container Service no Azure.
 
 ## <a name="download-the-model-pickle-file"></a>Transferir o ficheiro pickle do modelo
-Na parte anterior do tutorial, o script **iris_sklearn.py** foi executado no Azure Machine Learning Workbench localmente. Esta ação serializou o modelo de regressão logística ao utilizar o popular pacote de serialização de objetos do Python, o **[pickle](https://docs.python.org/2/library/pickle.html)**. 
+Na parte anterior do tutorial, o script **iris_sklearn.py** foi executado no Machine Learning Workbench localmente. Essa ação serializou o modelo de regressão logística mediante a utilização do popular pacote de serialização de objetos do Python, o [pickle](https://docs.python.org/2/library/pickle.html). 
 
-1. Inicie a aplicação **Azure Machine Learning Workbench** e abra o projeto **myIris** que criou na parte anterior da série de tutoriais.
+1. Abra a aplicação Machine Learning Workbench e abra o projeto **myIris** que criou na parte anterior da série do tutorial.
 
-2. Quando o projeto estiver aberto, clique no botão **Ficheiros** (ícone de pasta), na barra de ferramentas do lado esquerdo no Azure Machine Learning Workbench, para abrir a lista de ficheiros na pasta do seu projeto.
+2. Quando o projeto estiver aberto, selecione o botão **Ficheiros** (ícone de pasta), no painel do lado esquerdo, para abrir a lista de ficheiros na pasta do projeto.
 
-3. Selecione o ficheiro **iris_sklearn.py** e o código de Python abre-se num novo separador do editor de texto dentro do Workbench.
+3. Selecione o ficheiro **iris_sklearn.py**. O código de Python abre-se num novo separador do editor de texto dentro do Workbench.
 
-4. Reveja o ficheiro **iris_sklearn.py** para ver onde o ficheiro pickle foi gerado. Utilize Control+F para abrir a caixa de diálogo Localizar e localize a palavra **pickle** no código de Python.
+4. Reveja o ficheiro **iris_sklearn.py** para ver onde o ficheiro pickle foi gerado. Selecione Control+F para abrir a caixa de diálogo **Localizar** e localize a palavra **pickle** no código de Python.
 
-   Este fragmento de código mostra como o ficheiro de saída pickled foi gerado. Tenha em atenção que o ficheiro pickle de saída é denominado **model.pkl** no disco. 
+   Este fragmento de código mostra como o ficheiro de saída de pickle foi gerado. O ficheiro pickle de saída é denominado **model.pkl** no disco. 
 
    ```python
    print("Export the model to model.pkl")
@@ -65,45 +65,43 @@ Na parte anterior do tutorial, o script **iris_sklearn.py** foi executado no Azu
    
    Quando executou o script **iris_sklearn.py**, o ficheiro de modelo foi escrito na pasta **saídas** com o nome **model.pkl**. Esta pasta reside no ambiente de execução no qual escolheu executar o script e não na pasta do projeto local. 
    
-   - Para localizar o ficheiro, utilize a aplicação Azure Machine Learning Workbench e clique no botão **Execuções** (ícone de relógio), na barra de ferramentas do lado esquerdo, para abrir a listagem de **Todas as Execuções**.  
-   - O separador **Todas as Execuções** abre-se. Na tabela de Execuções, selecione uma das execuções recentes em que o destino era **local** e o nome do script **iris_sklearn.py**. 
-   - A página **Propriedades da Execução** abre-se. No canto superior direito da página, repare na secção **Saídas**. 
-   - Transfira o ficheiro pickle ao selecionar a caixa de verificação junto ao ficheiro **model.pkl** e clique no botão **Transferir**. Guarde-o na raiz da pasta do projeto. É necessário em passos subsequentes.
+   - Para localizar o ficheiro, selecione o botão **Execuções** (ícone de relógio), no painel do lado esquerdo, para abrir a lista de **Todas as Execuções**.  
+   - O separador **Todas as Execuções** abre-se. Na tabela de execuções, selecione uma das execuções recentes em que o destino era **local** e o nome do script **iris_sklearn.py**. 
+   - Abre-se o painel **Propriedades da Execução**. No canto superior direito do painel, repare na secção **Saídas**. 
+   - Para transferir o ficheiro pickle, selecione a caixa de verificação junto ao ficheiro **model.pkl** e selecione o botão **Transferir**. Guarde-o na raiz da pasta do projeto. O ficheiro é necessário nos passos seguintes.
 
    ![Transferir o ficheiro pickle](media/tutorial-classifying-iris/download_model.png)
 
-   Leia mais sobre a pasta **saídas** no artigo [How to read and write large data files (Como ler e escrever ficheiros de dados grandes)](how-to-read-write-files.md).
+   Leia mais sobre a pasta `outputs` no artigo [How to read and write large data files](how-to-read-write-files.md) (Como ler e escrever ficheiros de dados grandes).
 
-## <a name="get-scoring-and-schema-files"></a>Obter os ficheiros de classificação e de esquema
+## <a name="get-the-scoring-script-and-schema-files"></a>Obter os ficheiros de script de classificação e de esquema
 Para implementar o serviço Web, juntamente com o ficheiro do modelo, também precisa de um script de classificação e, opcionalmente, de um esquema para os dados de entrada do serviço Web. O script de classificação carrega o ficheiro **model.pkl** a partir da pasta atual e utiliza-o para produzir uma classe de Íris recentemente prevista.  
 
-1. Inicie a aplicação **Azure Machine Learning Workbench** e abra o projeto **myIris** que criou na parte anterior da série de tutoriais.
+1. Abra a aplicação Azure Machine Learning Workbench e abra o projeto **myIris** que criou na parte anterior da série do tutorial.
 
-2. Quando o projeto estiver aberto, clique no botão **Ficheiros** (ícone de pasta), na barra de ferramentas do lado esquerdo no Azure Machine Learning Workbench, para abrir a lista de ficheiros na pasta do seu projeto.
+2. Quando o projeto estiver aberto, selecione o botão **Ficheiros** (ícone de pasta), no painel do lado esquerdo, para abrir a lista de ficheiros na pasta do projeto.
 
-3. Selecione o ficheiro **iris_score.py**. É aberto o script de Python. Este ficheiro é utilizado como o ficheiro de classificação.
+3. Selecione o ficheiro **score_iris.py**. É aberto o script de Python. Este ficheiro é utilizado como o ficheiro de classificação.
 
-   ![Ficheiro de Classificação](media/tutorial-classifying-iris/model_data_collection.png)
+   ![Ficheiro de classificação](media/tutorial-classifying-iris/model_data_collection.png)
 
-4. Para obter o ficheiro de esquema, execute o script. Escolha o ambiente **local** e o script **iris-score.py** na barra de comandos e clique no botão **Executar**. 
+4. Para obter o ficheiro de esquema, execute o script. Selecione o ambiente **local** e o script **score_iris.py** na barra de comandos e selecione o botão **Executar**. 
 
-5. Este script cria um ficheiro JSON na pasta **saídas**, que captura o esquema de dados de entrada de que o modelo precisa.
+5. Este script cria um ficheiro JSON na secção **Saídas**, que captura o esquema de dados de entrada de que o modelo precisa.
 
-6. Repare no painel Trabalhos, no lado direito da janela do Machine Learning Workbench. Aguarde até que o último trabalho de **iris-score.py** apresente o estado verde **Concluído**. Em seguida, clique na hiperligação **iris-score.py [1]** relativa à última execução de tarefa para ver os detalhes da execução de **iris-score.py**. 
+6. Repare no painel **Tarefas**, no lado direito do painel **Dashboard do Projeto**. Aguarde até que o último trabalho de **score_iris.py** apresente o estado verde **Concluído**. Em seguida, selecione a hiperligação **score_iris.py [1]** relativa à última execução de tarefa para ver os detalhes da execução de **score_iris.py**. 
 
-7. Na página Propriedades da Execução, na secção **Saídas**, selecione o ficheiro recém-criado **service_schema.json**. **Verifique** o ficheiro e clique em **Transferir**. Guarde o ficheiro na pasta de raiz do projeto.
+7. No painel **Propriedades da Execução**, na secção **Saídas**, selecione o ficheiro recém-criado **service_schema.json**.  Selecione a caixa de verificação junto ao nome do ficheiro e selecione **Transferir**. Guarde o ficheiro na pasta de raiz do projeto.
 
-8. Regresse ao separador anterior, onde abriu o script **iris-score.py**. 
+8. Regresse ao separador anterior, onde abriu o script **score_iris.py**. Mediante a utilização da recolha de dados, pode capturar as entradas e as previsões do modelo a partir do serviço Web. Os passos seguintes são particularmente interessantes para a recolha de dados:
 
-   Aponte a utilização de recolha de dados que lhe permite capturar as entradas e as previsões do modelo a partir do serviço Web. Os pontos seguintes são particularmente interessantes para a recolha de dados:
-
-9. Reveja o código na parte superior da classe de importação de ficheiros ModelDataCollector que contém a funcionalidade de recolha de dados do modelo:
+9. Reveja o código na parte superior da classe de importação de ficheiros **ModelDataCollector**, porque este contém a funcionalidade de recolha de dados do modelo:
 
    ```python
    from azureml.datacollector import ModelDataCollector
    ```
 
-10. Reveja as linhas de código seguintes na função **init()** que instancia ModelDataCollector:
+10. Reveja as linhas de código seguintes na função **init()** que instancia **ModelDataCollector:**
 
    ```python
    global inputs_dc, prediction_dc
@@ -111,7 +109,7 @@ Para implementar o serviço Web, juntamente com o ficheiro do modelo, também pr
    prediction_dc = ModelDataCollector('model.pkl', identifier="prediction")`
    ```
 
-11. Reveja as linhas de código seguintes na função **run(input_df)** que recolhe dados de entrada e de predição:
+11. Reveja as linhas de código seguintes na função **run(input_df)**, que recolhe os dados de entrada e de predição:
 
    ```python
    global clf2, inputs_dc, prediction_dc
@@ -127,21 +125,22 @@ Agora, está pronto para preparar o ambiente para operacionalizar o modelo.
 ## <a name="prepare-to-operationalize-locally"></a>Preparar para operacionalizar localmente
 Utilize a implementação de _modo local_ para executar em contentores do Docker no seu computador local.
 
-Pode utilizar o _modo local_ para desenvolvimento e testes. O motor do Docker tem de estar em execução localmente para concluir os passos seguintes de modo a operacionalizar o modelo. Pode utilizar o sinalizador `-h` no fim dos comandos para obter ajuda do comando.
+Pode utilizar o _modo local_ para desenvolvimento e testes. O motor do Docker tem de estar em execução localmente para concluir os passos seguintes de modo a operacionalizar o modelo. Pode utilizar o sinalizador `-h` no fim dos comandos para obter a Ajuda dos mesmos.
 
 >[!NOTE]
 >Se não tiver o motor do Docker localmente, pode, mesmo assim, continuar, mediante a criação de um cluster no Azure para a implementação. Certifique-se apenas de que elimina o cluster a seguir ao tutorial, para que não incorra em custos contínuos.
 
-1. Abra a Interface de Linha de Comandos no Azure Machine Learning Workbench e, no menu Ficheiro, clique em **Abrir Linha de Comandos**.
+1. Abra a interface de linha de comandos (CLI).
+   Na aplicação Azure Machine Learning Workbench, no menu **Ficheiro**, selecione **Abrir Linha de Comandos**.
 
    A linha de comandos abre-se na localização da pasta do seu projeto atual, **c:\temp\myIris>**.
 
-2. Certifique-se de que o fornecedor de recursos do Azure **Microsoft.ContainerRegistry** está registado na sua subscrição. Registe este fornecedor de recursos antes de poder criar um ambiente no passo 3. Pode utilizar o comando seguinte para confirmar se já está registado:
+2. Certifique-se de que o fornecedor de recursos do Azure **Microsoft.ContainerRegistry** está registado na sua subscrição. Tem de registar este fornecedor de recursos antes de poder criar um ambiente no passo 3. Pode utilizar o comando seguinte para confirmar se já está registado:
    ``` 
    az provider list --query "[].{Provider:namespace, Status:registrationState}" --out table 
    ``` 
 
-   Deverá ver uma saída semelhante a: 
+   Deverá ver um resultado como este: 
    ```
    Provider                                  Status 
    --------                                  ------
@@ -156,24 +155,24 @@ Pode utilizar o _modo local_ para desenvolvimento e testes. O motor do Docker te
    ``` 
    az provider register --namespace Microsoft.ContainerRegistry 
    ```
-   O registo pode demorar alguns minutos e pode verificar o estado do mesmo com o comando **az provider list**, anterior, ou com o seguinte:
+   O registo pode demorar alguns minutos. Pode verificar o estado do mesmo com o comando **az provider list** anterior ou com o seguinte:
    ``` 
    az provider show -n Microsoft.ContainerRegistry 
    ``` 
 
-   A terceira linha da saída apresenta **"registrationState": "Registering"**. Aguarde uns momentos e repita o comando show, até que a saída apresente **"registrationState": "Registered"**.
+   A terceira linha da saída apresenta **"registrationState": "Registering"**. Aguarde uns momentos e repita o comando **show**, até que a saída apresente **"registrationState": "Registered"**.
 
-3. Crie o ambiente. Este passo tem de ser executado uma vez por ambiente (por exemplo, uma vez por ambiente de desenvolvimento e uma vez por ambiente de produção). Utilize o _modo local_ para o primeiro. (Pode experimentar o comutador `-c` ou `--cluster` no comando seguinte para configurar um ambiente no _modo de cluster_ mais tarde.)
+3. Crie o ambiente. Tem de executar este passo uma vez por ambiente. Por exemplo, execute-o uma vez para o ambiente de desenvolvimento e outra para produção. Utilize o _modo local_ para o primeiro. Pode experimentar o comutador `-c` ou `--cluster` no comando seguinte para configurar um ambiente no _modo de cluster_ mais tarde:
 
    ```azurecli
    az ml env setup -n <new deployment environment name> --location <e.g. eastus2>
    ```
    
-   Siga as instruções no ecrã para aprovisionar uma conta de armazenamento para armazenar as imagens do Docker, um registo do ACR (Azure Container Registry) para listar as imagens do Docker e uma conta do AppInsight para recolher telemetria. Se tiver utilizado o comutador `-c`, este também cria um cluster do ACS (Azure Container Service).
+   Siga as instruções no ecrã para aprovisionar uma conta de armazenamento para armazenar as imagens do Docker, um registo do Azure Container Registry que lista as imagens do Docker e uma conta do AppInsight que recolhe telemetria. Se tiver utilizado o comutador `-c`, este também cria um cluster do Azure Container Service.
    
    O nome do cluster é uma forma de identificar o ambiente. A localização deve ser a mesma da localização da conta de Gestão de Modelos que criou no portal do Azure.
 
-4. Criar uma conta de Gestão de Modelos (esta é uma configuração única)  
+4. Crie uma conta de Gestão de Modelos. (Esta é uma configuração única.)  
    ```azurecli
    az ml account modelmanagement create --location <e.g. eastus2> -n <new model management account name> -g <existing resource group name> --sku-name S1
    ```
@@ -184,7 +183,9 @@ Pode utilizar o _modo local_ para desenvolvimento e testes. O motor do Docker te
    ```
 
 6. Defina o ambiente.
-Depois de concluída a configuração, defina as variáveis de ambiente necessárias para operacionalizar através do comando seguinte. Utilize o mesmo nome de ambiente que utilizou anteriormente no passo 4. Utilize o mesmo nome de grupo de recursos que foi produzido na janela do comando quando o processo de configuração foi concluído.
+
+   Depois de concluída a configuração, utilize o comando seguinte para definir as variáveis de ambiente necessárias para operacionalizar o ambiente. Utilize o mesmo nome de ambiente que utilizou anteriormente no passo 4. Utilize o mesmo nome de grupo de recursos que foi produzido na janela do comando quando o processo de configuração foi concluído.
+
    ```azurecli
    az ml env set -n <deployment environment name> -g <existing resource group name>
    ```
@@ -201,36 +202,38 @@ Agora, está pronto para criar o serviço Web em tempo real.
 >Pode reutilizar a conta de Gestão de Modelos e o ambiente para implementações subsequentes de serviços Web. Não terá de criá-los para cada serviço Web. Uma conta ou um ambiente pode ter vários serviços Web associados.
 
 ## <a name="create-a-real-time-web-service-in-one-command"></a>Criar um serviço Web em tempo real com um único comando
-1. Utilize o comando seguinte para criar um serviço Web em tempo real:
+1. Para criar um serviço Web em tempo real, utilize o comando seguinte:
 
    ```azurecli
-   az ml service create realtime -f iris-score.py --model-file model.pkl -s service_schema.json -n irisapp -r python --collect-model-data true 
+   az ml service create realtime -f score_iris.py --model-file model.pkl -s service_schema.json -n irisapp -r python --collect-model-data true 
    ```
-   É gerado um ID de serviço Web que pode utilizar mais tarde.
+   Este comando gera um ID de serviço Web que pode utilizar mais tarde.
 
    Os comutadores seguintes são utilizados com o comando **az ml service create realtime**:
-   * -n: nome da aplicação, tem de estar em minúsculas.
-   * -f: nome do ficheiro do script de classificação
-   * --model-file: ficheiro do modelo; neste caso é o ficheiro model.pkl pickled
-   * -r: tipo de modelo; neste caso, é um modelo de Python
-   * --collect-model-data true: ativa a recolha de dados
+   * `-n`: o nome da aplicação, tem de estar todo em minúsculas.
+   * `-f`: o nome do ficheiro de script de classificação.
+   * `--model-file`: o ficheiro de modelo. Neste caso, é o ficheiro model.pkl de pickle.
+   * `-r`: o tipo de modelo. Neste caso, é um modelo de Python.
+   * `--collect-model-data true`: permite a recolha de dados.
 
    >[!IMPORTANT]
-   >O nome do serviço (que também é o nome da imagem do Docker nova) tem de estar em minúsculas, caso contrário, é devolvido um erro. 
+   >O nome do serviço, que também é o nome da imagem do Docker nova, tem de estar em minúsculas. Caso contrário, recebe um erro. 
 
-2. Quando executa o comando, o modelo e o ficheiro de classificação são carregados para a conta de armazenamento que criou como parte da configuração do ambiente. O processo de implementação cria uma imagem do Docker com o modelo, o esquema, o ficheiro de classificação no mesmo, e envia-o para o registo do ACR: **\<ACR_name\>.azureacr.io/\<imagename\>:\<version\>**. 
+2. Quando executa o comando, o modelo e o ficheiro de classificação são carregados para a conta de armazenamento que criou como parte da configuração do ambiente. O processo de implementação cria uma imagem do Docker com o modelo, o esquema e o ficheiro de classificação no mesmo e envia-o para o registo do Azure Container Registry: **\<ACR_name\>.azureacr.io/\<imagename\>:\<version\>**. 
 
-   Depois, extrai a imagem localmente para o computador e inicia um contentor do Docker com base na mesma. Se o seu ambiente estiver configurado no modo de cluster, o contentor do Docker é implementado no cluster Kubernetes do ACS.
+   O comando extrai a imagem localmente para o computador e inicia um contentor do Docker com base na mesma. Se o seu ambiente estiver configurado no modo de cluster, o contentor do Docker é implementado no cluster do Kubernetes dos Serviços Cloud do Azure.
 
-   Como parte da implementação, é criado um ponto final REST HTTP para o serviço Web no seu computador local. Após alguns minutos, o comando deve ser concluído com uma mensagem de êxito e o serviço Web está pronto para a ação!
+   Como parte da implementação, é criado um ponto final REST HTTP para o serviço Web no seu computador local. Após alguns minutos, o comando deve ser concluído com uma mensagem de êxito e o serviço Web está pronto para a ação.
 
-3. Pode utilizar o comando **docker ps** para ver o contentor do Docker em execução:
+3. Para ver o contentor do Docker que está em execução, utilize o comando **docker ps**:
    ```azurecli
    docker ps
    ```
 
-## <a name="create-a-real-time-web-service-using-separate-commands"></a>Criar um serviço Web em tempo real com comandos separados
-Como alternativa ao comando **az ml service create realtime** mostrado acima, também pode realizar os passos em separado. Primeiro, registe o modelo, gere o manifesto, crie a imagem do Docker e crie o serviço Web. Esta abordagem passo a passo dá-lhe mais flexibilidade a cada passo. Além disso, pode reutilizar as entidades geradas no passo anterior e recriá-las apenas quando necessário.
+## <a name="create-a-real-time-web-service-by-using-separate-commands"></a>Criar um serviço Web em tempo real com comandos separados
+Como alternativa ao comando **az ml service create realtime** mostrado anteriormente, também pode realizar os passos em separado. 
+
+Em primeiro lugar, registe o modelo. Em seguida, gere o manifesto, crie a imagem do Docker e crie o serviço Web. Esta abordagem passo a passo dá-lhe mais flexibilidade a cada passo. Além disso, pode reutilizar as entidades geradas no passo anterior e recriá-las apenas quando necessário.
 
 1. Indique o nome do ficheiro pickle para registar o modelo.
 
@@ -239,27 +242,27 @@ Como alternativa ao comando **az ml service create realtime** mostrado acima, ta
    ```
    Este comando gera um ID de modelo.
 
-2. Crie o manifesto.
+2. Crie um manifesto.
 
-   Para criar um manifesto, utilize este comando e indique a saída do ID de modelo do passo anterior:
+   Para criar um manifesto, utilize o comando seguinte e indique a saída do ID de modelo do passo anterior:
 
    ```azurecli
-   az ml manifest create --manifest-name <new manifest name> -f iris-score.py -r python -i <model ID> -s service_schema.json
+   az ml manifest create --manifest-name <new manifest name> -f score_iris.py -r python -i <model ID> -s service_schema.json
    ```
    Este comando gera um ID de manifesto.
 
 3. Crie uma imagem do Docker.
 
-   Para criar uma imagem do Docker, utilize este comando e indique a saída do valor de ID de manifesto do passo anterior:
+   Para criar uma imagem do Docker, utilize o comando seguinte e indique a saída do valor de ID de manifesto do passo anterior:
 
    ```azurecli
    az ml image create -n irisimage --manifest-id <manifest ID>
    ```
    Este comando gera um ID de imagem do Docker.
    
-4. Criar o serviço
+4. Crie o serviço.
 
-   Para criar um serviço, utilize o comando listado e indique a saída de ID de imagem do passo anterior:
+   Para criar um serviço, utilize o comando seguinte e indique a saída do ID de manifesto do passo anterior:
 
    ```azurecli
    az ml service create realtime --image-id <image ID> -n irisapp --collect-model-data true
@@ -270,9 +273,9 @@ Está agora pronto para executar o serviço Web.
 
 ## <a name="run-the-real-time-web-service"></a>Executar o serviço Web em tempo real
 
-Teste o serviço Web **irisapp** que está em execução. Para tal, alimente-o com um registo codificado JSON que contenha uma matriz de quatro números aleatórios.
+Para testar o serviço Web **irisapp** que está em execução, utilize um registo codificado JSON que contenha uma matriz de quatro números aleatórios:
 
-1. A criação do serviço Web incluía dados de exemplo. Quando em execução no modo local, pode chamar o comando **az ml service show realtime**. Esta chamada obtém um comando de execução de exemplo que é útil para testar o serviço. Também obtém o url de classificação que pode utilizar para incorporar o serviço na sua própria aplicação personalizada:
+1. O serviço Web inclui os dados de exemplo. Quando em execução no modo local, pode chamar o comando **az ml service show realtime**. Esta chamada obtém um comando de execução de exemplo que é útil para testar o serviço. Também obtém o url de classificação que pode utilizar para incorporar o serviço na sua própria aplicação personalizada:
 
    ```azurecli
    az ml service show realtime -i <web service ID>
@@ -285,28 +288,32 @@ Teste o serviço Web **irisapp** que está em execução. Para tal, alimente-o c
    ```
    O resultado é **"2",**, que é a classe prevista. (O seu resultado poderá ser diferente.) 
 
-3. Se quiser executar o serviço fora da CLI, tem de obter as chaves para a autenticação:
+3. Para executar o serviço fora da CLI, tem de obter as chaves para a autenticação:
 
    ```azurecli
    az ml service keys realtime -i <web service ID>
    ```
 
-## <a name="view-the-collected-data-in-azure-blob-storage"></a>Ver os dados recolhidos no armazenamento de blobs do Azure
+## <a name="view-the-collected-data-in-azure-blob-storage"></a>Ver os dados recolhidos no armazenamento de Blobs do Azure
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
 
-2. Localize as suas Contas de Armazenamento. Para tal, clique em **Mais Serviços**.
+2. Localize as suas contas de armazenamento. Para tal, selecione **Mais Serviços**.
 
-3. Na caixa de pesquisa, escreva **Contas de armazenamento** e prima **Enter**.
+3. Na caixa de pesquisa, introduza **Contas de armazenamento** e selecione **Introduzir**.
 
-4. Na página de pesquisa das **Contas de armazenamento**, selecione o recurso **Conta de armazenamento** que corresponde ao seu ambiente. 
+4. Na caixa de pesquisa das **Contas de armazenamento**, selecione o recurso **Conta de armazenamento** que corresponde ao seu ambiente. 
 
    > [!TIP]
-   > Para determinar que conta de armazenamento está a ser utilizada: abra o Azure Machine Learning Workbench, selecione o projeto em que está a trabalhar e abra a linha de comandos do menu **Ficheiro**. Na linha de comandos, escreva `az ml env show -v` e assinale o valor *storage_account*. Este é o nome da sua conta de armazenamento
+   > Para determinar que conta de armazenamento está a ser utilizada:
+   > 1. Abra o Azure Machine Learning Workbench.
+   > 2. Selecione o projeto em que está a trabalhar.
+   > 3. Abra uma linha de comandos a partir do menu **Ficheiro**.
+   > 4. Na linha de comandos, introduza `az ml env show -v` e verifique o valor *storage_account*. Este é o nome da sua conta de armazenamento.
 
-5. Quando a página **Conta de armazenamento** se abrir, clique no item **Contentores**, na lista do lado esquerdo. Localizar o contentor com o nome **modeldata**. 
+5. Depois de aberto o painel **Conta de armazenamento**, selecione **Contentores**, na lista do lado esquerdo. Localizar o contentor com o nome **modeldata**. 
  
-   Se não vir quaisquer dados, poderá ter de aguardar até dez minutos após o primeiro pedido de serviço Web para ver os dados começarem a ser propagados para a conta de armazenamento.
+   Se não vir quaisquer dados, poderá ter de aguardar até dez minutos após o primeiro pedido de serviço Web para ver os dados serem propagados para a conta de armazenamento.
 
    Os dados fluem para os blobs com o caminho de contentor seguinte:
 
@@ -314,32 +321,31 @@ Teste o serviço Web **irisapp** que está em execução. Para tal, alimente-o c
    /modeldata/<subscription_id>/<resource_group_name>/<model_management_account_name>/<webservice_name>/<model_id>-<model_name>-<model_version>/<identifier>/<year>/<month>/<day>/data.csv
    ```
 
-6. Pode consumir estes dados a partir dos blobs do Azure. Existem diversas ferramentas, quer na utilização de software Microsoft e de código aberto, como:
+6. Pode consumir estes dados a partir do armazenamento de Blobs do Azure. Existem diversas ferramentas que utilizam, tanto o software Microsoft, como ferramentas de código aberto, como:
 
-   - Azure ML Workbench: abra o ficheiro csv no Azure ML Workbench ao adicioná-lo como origem de dados. 
-   - Excel: abra os ficheiros csv diários como uma folha de cálculo.
-   - [Power BI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/): crie gráficos com os dados extraídos a partir dos dados do csv nos blobs.
-   - [Hive](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-tutorial-get-started): carregue os dados do csv para uma tabela do Hive e execute consultas SQL diretamente no blob.
-   - [Spark](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-overview): crie um dataframe com uma grande quantidade de dados do csv.
+   - Azure Machine Learning: abra o ficheiro CSV, adicionando-o como uma origem de dados. 
+   - Excel: abra os ficheiros CSV diários como uma folha de cálculo.
+   - [Power BI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/): crie gráficos com os dados extraídos a partir dos dados do CSV nos blobs.
+   - [Hive](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-tutorial-get-started): carregue os dados do CSV para uma tabela do Hive e execute consultas SQL diretamente nos blobs.
+   - [Spark](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-overview): crie um dataframe com uma grande quantidade de dados do CSV.
 
       ```python
       var df = spark.read.format("com.databricks.spark.csv").option("inferSchema","true").option("header","true").load("wasb://modeldata@<storageaccount>.blob.core.windows.net/<subscription_id>/<resource_group_name>/<model_management_account_name>/<webservice_name>/<model_id>-<model_name>-<model_version>/<identifier>/<year>/<month>/<date>/*")
       ```
 
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 Nesta terceira parte da série do tutorial de três partes, aprendeu a utilizar os serviços do Azure Machine Learning para:
 > [!div class="checklist"]
-> * Localizar o ficheiro de modelo
-> * Gerar um script de classificação e um ficheiro de esquema
-> * Preparar o ambiente
-> * Criar um serviço Web em tempo real
-> * Executar o serviço Web em tempo real
-> * Examinar os dados de blob de saída 
+> * Localizar o ficheiro de modelo.
+> * Gerar um script de classificação e um ficheiro de esquema.
+> * Preparar o ambiente.
+> * Criar um serviço Web em tempo real.
+> * Executar o serviço Web em tempo real.
+> * Examinar os dados de blob de saída. 
 
 Executou com êxito um script de preparação em vários ambientes de computação, criou um modelo, serializou-o e operacioanalizou-o através de um serviço Web baseado no Docker. 
 
-Está preparado para fazer preparação de dados avançada:
+Está agora preparado para fazer preparação de dados avançada:
 > [!div class="nextstepaction"]
 > [Preparação de dados avançada](tutorial-bikeshare-dataprep.md)
-

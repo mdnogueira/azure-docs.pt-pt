@@ -12,13 +12,13 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/10/2017
+ms.date: 11/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 1ece5b1b2ba8e4d26fe633fe7c7c60f4187f9d6b
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 46b1be5bdd4fa400f437bca274e7f3f6e0dfec08
+ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/09/2017
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Implementar e gerir uma StorSimple Cloud Appliance no Azure (Atualização 3 e posterior)
 
@@ -183,6 +183,18 @@ Execute os seguintes passos para criar um ponto final público na aplicação da
 [!INCLUDE [Create public endpoints on a cloud appliance](../../includes/storsimple-8000-create-public-endpoints-cloud-appliance.md)]
 
 Recomendamos que ligue a partir de outra máquina virtual dentro da mesma rede virtual, porque esta prática minimiza o número de pontos finais públicos na rede virtual. Neste caso, ligue à máquina virtual através de uma sessão de Ambiente de Trabalho Remoto e, em seguida, configure a máquina virtual para ser utilizada tal como faria com qualquer outro cliente Windows numa rede local. Não é necessário acrescentar o número de porta, porque a porta já é conhecida.
+
+## <a name="get-private-ip-for-the-cloud-appliance"></a>Obter o IP privado da aplicação da cloud
+
+Para que a aplicação da cloud se ligue ao servidor anfitrião na mesma rede virtual, precisa do endereço IP privado ou interno dessa aplicação. Execute os passos seguintes para obter o endereço IP privado da aplicação da cloud
+
+1. Aceda à máquina virtual subjacente da sua aplicação da cloud. A máquina virtual tem o mesmo nome que a sua aplicação da cloud. Aceda a **Todos os Recursos**, indique o nome da aplicação da cloud e da subscrição e selecione o tipo como “máquinas virtuais”. Na lista de máquinas virtuais apresentadas, selecione e clique naquela que corresponde à aplicação da cloud.
+
+     ![Selecione a máquina virtual da sua aplicação da cloud.](./media/storsimple-8000-cloud-appliance-u2/sca-vm.png)
+
+2. Aceda a **Definições > Rede**. No painel do lado direito, pode ver o endereço IP privado da aplicação de cloud. Tome nota do mesmo.
+
+    ![Obter o endereço IP privado da sua aplicação da cloud](./media/storsimple-8000-cloud-appliance-u2/sca-private-ip-vm-networking.png)
 
 ## <a name="work-with-the-storsimple-cloud-appliance"></a>Trabalhe com a StorSimple Cloud Appliance
 

@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/10/2017
 ms.author: shlo
-ms.openlocfilehash: c319979cce23da69965d4fbab037919461f67b3a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6f4c0b11039bbdaf29c90ec2358934dc1c24af90
+ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/04/2017
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Execução de pipelines e acionadores no Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -177,7 +177,7 @@ Para que o acionador Scheduler arranque uma execução de pipeline, inclua uma r
         "interval": <<int>>,             // optional, how often to fire (default to 1)
         "startTime": <<datetime>>,
         "endTime": <<datetime>>,
-        "timeZone": <<default UTC>>
+        "timeZone": "UTC"
         "schedule": {                    // optional (advanced scheduling specifics)
           "hours": [<<0-24>>],
           "weekDays": ": [<<Monday-Sunday>>],
@@ -189,6 +189,7 @@ Para que o acionador Scheduler arranque uma execução de pipeline, inclua uma r
                     "occurrence": <<1-5>>
                }
            ] 
+        }
       }
     },
    "pipelines": [
@@ -202,7 +203,7 @@ Para que o acionador Scheduler arranque uma execução de pipeline, inclua uma r
                         "type": "Expression",
                         "value": "<parameter 1 Value>"
                     },
-                    "<parameter 2 Name> : "<parameter 2 Value>"
+                    "<parameter 2 Name>" : "<parameter 2 Value>"
                 }
            }
       ]
@@ -210,17 +211,57 @@ Para que o acionador Scheduler arranque uma execução de pipeline, inclua uma r
 }
 ```
 
+> [!IMPORTANT]
+>  A propriedade **parameters** é uma propriedade obrigatória dentro dos **pipelines**. Mesmo que o seu pipeline não assuma nenhum parâmetro, inclua um json vazio para os parâmetros, pois a propriedade tem de existir.
+
+
 ### <a name="overview-scheduler-trigger-schema"></a>Descrição geral: esquema do acionador Scheduler
 A tabela seguinte mostra uma descrição geral de alto nível dos principais elementos relacionados com a periodicidade e o agendamento nos acionadores:
 
 Propriedade JSON |     Descrição
 ------------- | -------------
 startTime | startTime é uma Data-Hora. Para agendas simples, startTime é a primeira ocorrência. Para agendas complexas, o acionador não é iniciado antes de startTime.
+endTime | Especifica a data-hora de fim do acionador. O acionador não é executado após esta hora. endTime não pode ser uma hora no passado.
+timeZone | Atualmente, só é suportado UTC. 
 recurrence | O objeto de periodicidade especifica as regras de periodicidade do acionador. O objeto de periodicidade suporta os elementos frequência, intervalo, endTime, contagem e agenda. Se a periodicidade for definida, a frequência é necessária; os outros elementos de periodicidade são opcionais.
 frequência | Representa a unidade da frequência com que o acionador voltar a ocorrer. Os valores suportados são `minute`, `hour`, `day`, `week`, ou `month`.
 intervalo | O intervalo é um número inteiro positivo. Indica o intervalo da frequência que determina quantas vezes o acionador é executado. Por exemplo, se o intervalo for 3 e a frequência "semanal", o acionador repete-se de três em três semanas.
-endTime | Especifica a data-hora de fim do acionador. O acionador não é executado após esta hora. endTime não pode ser uma hora no passado.
 agenda | Os acionadores que tenham uma frequência especificada alteram a repetição com base numa agenda de periodicidade. As agendas contêm modificações baseadas em minutos, horas, dias de semana, dias do mês e número da semana.
+
+
+### <a name="schedule-trigger-example"></a>Exemplo de acionador Schedule
+
+```json
+{
+    "properties": {
+        "name": "MyTrigger",
+        "type": "ScheduleTrigger",
+        "typeProperties": {
+            "recurrence": {
+                "frequency": "Hour",
+                "interval": 1,
+                "startTime": "2017-11-01T09:00:00-08:00",
+                "endTime": "2017-11-02T22:00:00-08:00"
+            }
+        },
+        "pipelines": [{
+                "pipelineReference": {
+                    "type": "PipelineReference",
+                    "referenceName": "SQLServerToBlobPipeline"
+                },
+                "parameters": {}
+            },
+            {
+                "pipelineReference": {
+                    "type": "PipelineReference",
+                    "referenceName": "SQLServerToAzureSQLPipeline"
+                },
+                "parameters": {}
+            }
+        ]
+    }
+}
+```
 
 ### <a name="overview-scheduler-trigger-schema-defaults-limits-and-examples"></a>Descrição geral: predefinições, limites e exemplos de esquema do acionador Scheduler
 
@@ -251,7 +292,7 @@ Finalmente, se um acionador tiver uma agenda e se não forem definidas as horas 
 ### <a name="deep-dive-schedule"></a>Descrição aprofundada: agenda
 Por um lado, as agendas podem limitar o número de execuções de acionadores. Por exemplo, se um acionador com a frequência “mês” tiver uma agenda que só é executada no dia 31, o acionador só é executado nos meses que têm 31 dias.
 
-Por outro lado, também podem expandir o número de execuções de acionadores. Por exemplo, se um acionador com a frequência “mês” tiver uma agenda que é executada nos dias 1 e 2, o acionador é executado no primeiro e no segundo dias do mês em vez de uma vez por mês.
+Por outro lado, as agendas também podem expandir o número de execuções de acionadores. Por exemplo, se um acionador com a frequência “mês” tiver uma agenda que é executada nos dias 1 e 2, o acionador é executado no primeiro e no segundo dias do mês em vez de uma vez por mês.
 
 Se forem especificados vários elementos de agenda, a ordem de avaliação é do maior para o mais pequeno – número da semana, dia do mês, dia da semana, hora e minuto.
 
@@ -262,9 +303,9 @@ Nome JSON | Descrição | Valores válidos
 --------- | ----------- | ------------
 minutes | Minutos da hora em que o acionador é executado. | <ul><li>Número inteiro</li><li>Matriz de números inteiros</li></ul>
 hours | Horas do dia em que o acionador é executado. | <ul><li>Número inteiro</li><li>Matriz de números inteiros</li></ul>
-weekDays | Dias da semana em que o acionador é executado. Só podem ser especificados com uma frequência semanal. | <ul><li>Segunda-feira, terça-feira, quarta-feira, quinta-feira, sexta-feira, sábado ou domingo</li><li>Matriz de qualquer um dos valores acima (tamanho da matriz máximo 7)</li></p>Não sensíveis a maiúsculas e minúsculas</p>
+weekDays | Dias da semana em que o acionador é executado. Só podem ser especificados com uma frequência semanal. | <ul><li>Segunda-feira, terça-feira, quarta-feira, quinta-feira, sexta-feira, sábado ou domingo</li><li>Matriz de qualquer um dos valores (tamanho da matriz máximo 7)</li></p>Não sensíveis a maiúsculas e minúsculas</p>
 monthlyOccurrences | Determina em que dias do mês o acionador é executado. Só podem ser especificadas com uma frequência semanal. | Matriz de objetos de monthlyOccurence: `{ "day": day,  "occurrence": occurence }`. <p> O dia é o dia da semana em que o acionador é executado; por exemplo, `{Sunday}` é cada domingo do mês. Necessário.<p>A ocorrência é a ocorrência do dia durante o mês; por exemplo, `{Sunday, -1}` é o último domingo do mês. Opcional.
-monthDays | Dia do mês em que o acionador é executado. Só podem ser especificadas com uma frequência semanal. | <ul><li>Qualquer valor <= -1 e >= -31</li><li>Qualquer valor >= 1 e <= 31</li><li>Uma matriz dos valores acima</li>
+monthDays | Dia do mês em que o acionador é executado. Só podem ser especificadas com uma frequência semanal. | <ul><li>Qualquer valor <= -1 e >= -31</li><li>Qualquer valor >= 1 e <= 31</li><li>Uma matriz de valores</li>
 
 
 ## <a name="examples-recurrence-schedules"></a>Exemplos: agendas de periodicidade
