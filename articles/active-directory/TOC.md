@@ -87,7 +87,6 @@
 #### [Referência para produtos e planos de serviço em Azure AD](active-directory-licensing-product-and-service-plan-reference.md)
 ### [Configurar a expiração de grupos do Office 365](active-directory-groups-lifecycle-azure-portal.md)
 ### [Ver todos os grupos](active-directory-groups-view-azure-portal.md)
-### [Ativar grupos dedicados](active-directory-accessmanagement-dedicated-groups.md)
 ### [Adicionar acesso do grupo às aplicações SaaS](active-directory-accessmanagement-group-saasapps.md)
 ### [Restaurar um grupo do Office 365 eliminado](active-directory-groups-restore-azure-portal.md)
 ### Gerir definições do grupo
@@ -254,7 +253,6 @@
 ##### [Portal clássico](active-directory-add-manage-domain-names.md)
 ### [Administrar o seu diretório](active-directory-administer.md)
 ### [Vários diretórios](active-directory-licensing-directory-independence.md)
-### [Diretórios O365](active-directory-manage-o365-subscription.md)
 ### [Inscrição self-service](active-directory-self-service-signup.md)
 #### [Assumir um diretório não gerido](domains-admin-takeover.md)
 ### [Roaming de Estado Empresarial](active-directory-windows-enterprise-state-roaming-overview.md)
