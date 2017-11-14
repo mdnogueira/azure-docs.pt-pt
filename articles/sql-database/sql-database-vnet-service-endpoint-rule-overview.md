@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: On Demand
-ms.date: 10/30/2017
+ms.date: 11/13/2017
 ms.author: genemi
-ms.openlocfilehash: 69059b6169e1fac4d0abea2770b0de502f816113
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: e1bb3e9f09ca7f5463228da4079b06ad2e771def
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database"></a>Utilizar pontos finais do serviço de rede Virtual e as regras para a SQL Database do Azure
 
@@ -141,6 +141,9 @@ Para a base de dados SQL do Azure, a funcionalidade de regras de rede virtual te
 - Cada servidor da SQL Database do Azure pode ter até 128 entradas ACL para qualquer determinada rede virtual.
 
 - Regras de rede virtual são aplicadas apenas a redes virtuais do Azure Resource Manager; e não a [modelo de implementação clássica] [ arm-deployment-model-568f] redes.
+
+- Pontos finais do serviço de rede virtual no desativar para a SQL Database do Azure também permite que os pontos finais para os serviços MySQL e PostGres Azure. No entanto, com pontos finais no, as tentativas para ligar a partir de pontos finais para as instâncias de MySQL ou Postgres irão falhar.
+    - O motivo subjacente é essa MySQL e PostGres não suportam atualmente a ACL da.
 
 - Na firewall, intervalos de endereços IP aplicam-se aos seguintes itens de rede, mas não as regras de rede virtual:
     - [Rede privada virtual (VPN) site a Site (S2S)][vpn-gateway-indexmd-608y]

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 10/30/2017
 ms.author: raynew
-ms.openlocfilehash: c0f86e13e21f2af323e0a306b381054b6eb76755
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: da120d8e325867eaf9eb8b9be1ae8d9152db54c4
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="support-matrix-for-replication-to-a-secondary-site-with-azure-site-recovery"></a>Matriz de suporte para a replicação para um site secundário com o Azure Site Recovery
 
@@ -28,7 +28,7 @@ Este artigo resume o que é suportado quando utiliza o [do Azure Site Recovery](
 
 **Implementação** | **Detalhes** 
 --- | ---
-**VMware para VMware** | Recuperação de desastre de VMs de VMware no local para o site VMware secundário.<br/><br/> Transferir o [Guia do utilizador InMage Scout](http://download.microsoft.com/download/E/0/8/E08B3BCE-3631-4CED-8E65-E3E7D252D06D/InMage_Scout_Standard_User_Guide_8.0.1.pdf)
+**VMware para VMware** | Recuperação de desastre de VMs de VMware no local para o site VMware secundário.<br/><br/> Transferir o [Guia do utilizador InMage Scout](https://aka.ms/asr-scout-user-guide)
 **Hyper-V para Hyper-V** | Recuperação de desastre de VMs de Hyper-V no local em nuvens VMM para uma nuvem VMM secundária.<br></br> Não é suportado sem o VMM.
 
 
@@ -39,7 +39,7 @@ Este artigo resume o que é suportado quando utiliza o [do Azure Site Recovery](
 
 **Implementação** | **Suporte**
 --- | ---
-**Servidor de VM de VMware/físico** | vCenter 5.5 ou 6.0 (suporte para 5.5 funcionalidades apenas)
+**Servidor de VM de VMware/físico** | vCenter 5.5, 6.0 e 6.5 (suporte para 5.5 funcionalidades apenas)
 **Hyper-V com o VMM** | Windows Server 2016 e o Windows Server 2012 R2 com as atualizações mais recentes.<br/><br/> Anfitriões do Windows Server 2016 devem ser geridos pelo VMM 2016.<br/><br/> Atualmente não são suportadas nuvens do VMM 2016 com uma mistura de anfitriões de R2 de 2012 e Windows Server 2016.<br/><br/> Implementação que incluem uma atualização de um existente VMM 2012 R2 para o System Center 2016 não são atualmente suportadas.
 
 
@@ -49,7 +49,7 @@ A tabela seguinte resume suporte do sistema operativo para máquinas replicados 
 
 **Servidor VMware/físico** | **Hyper-V (com o VMM)**
 --- | ---
-64-bit Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 com, pelo menos, SP1<br/><br/> Red Hat Enterprise Linux 6.7, 7.1, 7.2 <br/><br/> Centos 6.5, 6.6 6.7, 7.0, 7.1, 7.2 <br/><br/> Kernel compatível de Enterprise Linux 6.4 ou 6.5 com Red Hat Oracle ou Unbreakable Enterprise Kernel versão 3 (UEK3) <br/><br/> SP3 do SUSE Linux Enterprise Server 11 | Qualquer sistema operativo de convidado [suportadas pelo Hyper-V](https://technet.microsoft.com/library/mt126277.aspx)
+64 bits do Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 com, pelo menos, SP1<br/><br/> Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1, 7.2 <br/><br/> Centos 6.5, 6.6 6.7, 6.8, 6.9, 7.0, 7.1, 7.2 <br/><br/> Oracle Enterprise Linux 6.4, 6.5, 6.8 com o kernel compatível do Red Hat ou Unbreakable Enterprise Kernel versão 3 (UEK3) <br/><br/> SUSE Linux Enterprise Server 11 SP3 11 SP4  | Qualquer sistema operativo de convidado [suportadas pelo Hyper-V](https://technet.microsoft.com/library/mt126277.aspx)
 
 ## <a name="linux-machine-storage"></a>Armazenamento de máquina do Linux
 
@@ -104,15 +104,15 @@ VHD/VHDX | N/D | Sim (até 16 discos)
 Ger 2 VM | N/D | Sim
 Disco de cluster partilhado | Sim  | Não
 Disco encriptado | Não | Não
-UEFI| Não | N/D
+UEFI| Sim | N/D
 NFS | Não | Não
 SMB 3.0 | Não | Não
 RDM | Sim | N/D
-Disco > 1 TB | Não | Sim
+Disco > 1 TB | Sim | Sim
 Volume com o disco repartidos > 1 TB<br/><br/> LVM | Sim | Sim
 Espaços de armazenamento | Não | Sim
-Disco frequente Adicionar/remover | Não | Não
-Excluir o disco | Não | Sim
+Disco frequente Adicionar/remover | Sim | Não
+Excluir o disco | Sim | Sim
 Caminho multi (o MPIO) | N/D | Sim
 
 ## <a name="vaults"></a>cofres

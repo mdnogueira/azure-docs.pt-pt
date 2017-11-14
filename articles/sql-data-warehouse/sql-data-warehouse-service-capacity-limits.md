@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: reference
-ms.date: 10/31/2016
+ms.date: 11/10/2017
 ms.author: kevin;barbkess
-ms.openlocfilehash: 52026a58a5b6e26a660f9e1374e67036c67ac525
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d10d06edfc75594854d8f4da5cf29d6c2fd5ed24
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="sql-data-warehouse-capacity-limits"></a>Limites de capacidade do SQL Data Warehouse
 As tabelas seguintes contêm os valores máximos permitidos para vários componentes do Azure SQL Data Warehouse.
@@ -27,12 +27,12 @@ As tabelas seguintes contêm os valores máximos permitidos para vários compone
 ## <a name="workload-management"></a>Gestão de cargas de trabalhos
 | Categoria | Descrição | Máximo |
 |:--- |:--- |:--- |
-| [Unidades do Data Warehouse (DWU)][Data Warehouse Units (DWU)] |DWU máx. para um SQL Data Warehouse único |6000 |
-| [Unidades do Data Warehouse (DWU)][Data Warehouse Units (DWU)] |DWU máx. para um único servidor SQL |6000 por predefinição<br/><br/> Por predefinição, cada SQL server (por exemplo, myserver.database.windows.net) tem uma Quota de DTU de 45.000 que permite até 6000 DWU. Esta quota é apenas um limite de segurança. Pode aumentar a quota por [criar um pedido de suporte] [ creating a support ticket] e selecionando *Quota* como o tipo de pedido.  Para calcular a DTU tem, multiplique a 7.5 pelo total que DWU necessário. Pode ver o consumo de DTU atual a partir do painel SQL Server no portal. Tanto as bases de dados em pausa como as que não estão em pausa contam para a quota de DTU. |
-| Ligação de base de dados |Sessões abertas em simultâneo |1024<br/><br/>Iremos suportar um máximo de ligações ativas 1024, cada um dos quais pode submeter pedidos para uma base de dados do armazém de dados do SQL Server ao mesmo tempo. Tenha em atenção que existem limites no número de consultas que, na verdade, pode executar em simultâneo. Quando o limite de concorrência for excedido, o pedido entra uma fila interna onde deve aguardar para ser processado. |
-| Ligação de base de dados |Memória máxima instruções preparado |20 MB |
-| [Gestão de carga de trabalho][Workload management] |Consultas em simultâneo máximas |32<br/><br/> Por predefinição, o SQL Data Warehouse pode ser executado um máximo de 32 consultas em simultâneo e filas restantes consultas.<br/><br/>O nível de concorrência pode diminuir quando os utilizadores são atribuídos a uma classe de recursos mais elevada ou quando o SQL Data Warehouse está configurado com baixa DWU. Algumas consultas, como consultas DMV, sempre estão autorizadas a executar. |
-| [Tempdb][Tempdb] |Tamanho máx. de Tempdb |399 GB por DW100. Por conseguinte em DWU1000 Tempdb é dimensionados de forma a 3.99 TB |
+| [Unidades do Data Warehouse (DWU)][Data Warehouse Units (DWU)] |DWU máx. para um SQL Data Warehouse único | Otimizado para elasticidade [camada de desempenho](performance-tiers.md): DW6000<br></br>Otimizado para computação [camada de desempenho](performance-tiers.md): DW30000c |
+| [Unidades do Data Warehouse (DWU)][Data Warehouse Units (DWU)] |Predefinição DTU por servidor |54,000<br></br>Por predefinição, cada SQL server (por exemplo, myserver.database.windows.net) tem uma Quota de DTU de 54,000, que permite até DW6000c. Esta quota é apenas um limite de segurança. Pode aumentar a quota por [criar um pedido de suporte] [ creating a support ticket] e selecionando *Quota* como o tipo de pedido.  Para calcular a DTU necessita de, multiplique a 7.5 pelo total que DWU necessários, ou multiplicar 9.0 pelo cDWU total necessário. Por exemplo:<br></br>DW6000 x 7.5 = 45.000 DTUs<br></br>DW600c x 9.0 = 54,000 DTUs.<br></br>Pode ver o consumo de DTU atual a partir da opção de servidor do SQL Server no portal. Bases de dados em pausa e retomadas contam para a quota DTU. |
+| Ligação à base de dados |Sessões abertas em simultâneo |1024<br/><br/>Cada um das sessões ativas 1024 pode submeter pedidos para uma base de dados do armazém de dados do SQL Server ao mesmo tempo. Tenha em atenção de que existem limites sobre o número de consultas que podem ser executados em simultâneo. Quando o limite de concorrência for excedido, o pedido entra uma fila interna onde deve aguardar para ser processado. |
+| Ligação à base de dados |Memória máxima instruções preparado |20 MB |
+| [Gestão de carga de trabalho][Workload management] |Consultas em simultâneo máximas |32<br/><br/> Por predefinição, o SQL Data Warehouse pode ser executado um máximo de 32 consultas em simultâneo e filas restantes consultas.<br/><br/>O número de consultas em simultâneo pode descrease quando os utilizadores são atribuídos aos superiores classes de recursos ou quando o SQL Data Warehouse tem um inferior [nível de serviço](performance-tiers.md#service-levels). Algumas consultas, como consultas DMV, sempre estão autorizadas a executar. |
+| [tempdb][Tempdb] |Máximo GB |399 GB por DW100. Por conseguinte, DWU1000, tempdb é dimensionados de forma a 3.99 TB |
 
 ## <a name="database-objects"></a>Objetos de base de dados
 | Categoria | Descrição | Máximo |
@@ -42,7 +42,7 @@ As tabelas seguintes contêm os valores máximos permitidos para vários compone
 | Tabela |Tabelas por base de dados |2 mil milhões |
 | Tabela |Colunas por tabela |1024 colunas |
 | Tabela |Bytes por coluna |Depende de coluna [tipo de dados][data type].  Limite é 8000 para tipos de dados char, 4000 para nvarchar, ou 2 GB para os tipos de dados máxima. |
-| Tabela |Bytes por linha, tamanho definido |8060 bytes<br/><br/>O número de bytes por linha é calculado da mesma forma como está para o SQL Server com compressão de página. Como o SQL Server, o armazém de dados do SQL Server suporta o armazenamento de capacidade excedida de linha que lhe permite **colunas de comprimento variável** para fazer o Push consecutivos. Quando as linhas de comprimento variável são enviadas por push consecutivos, apenas 24 bytes raiz é armazenado no registo principal. Para obter mais informações, consulte o [excesso de linha dados exceder 8 KB] [ Row-Overflow Data Exceeding 8 KB] artigo da MSDN. |
+| Tabela |Bytes por linha, tamanho definido |8060 bytes<br/><br/>O número de bytes por linha é calculado da mesma forma como está para o SQL Server com compressão de página. Como o SQL Server, do armazém de dados do SQL Server suporta o armazenamento de capacidade excedida de linha, que permite **colunas de comprimento variável** para fazer o Push consecutivos. Quando as linhas de comprimento variável são enviadas por push consecutivos, apenas 24 bytes raiz é armazenado no registo principal. Para obter mais informações, consulte o [exceder de dados de capacidade excedida de linha 8-KB][Row-Overflow Data Exceeding 8 KB]. |
 | Tabela |Partições por tabela |15,000<br/><br/>Para elevado desempenho, recomendamos a minimizar o número de partições necessário enquanto ainda suportar os requisitos de negócio. À medida que cresce o número de partições, a sobrecarga para operações de linguagem de definição de dados (DDL) e de idioma de manipulação de dados (DML) que vai crescendo e faz com que um desempenho mais lento. |
 | Tabela |Carateres por valor de limite de partição. |4000 |
 | Índice |Índices não em cluster por tabela. |999<br/><br/>Aplica-se apenas a tabelas rowstore. |
@@ -58,7 +58,7 @@ As tabelas seguintes contêm os valores máximos permitidos para vários compone
 ## <a name="loads"></a>Carrega
 | Categoria | Descrição | Máximo |
 |:--- |:--- |:--- |
-| O Polybase cargas |MB por linha |1<br/><br/>O Polybase cargas estão limitadas a carregar linhas de ambas as menor que 1MB e não é possível carregar VARCHR(MAX), nvarchar (Max) ou varbinary (Max).<br/><br/> |
+| O Polybase cargas |MB por linha |1<br/><br/>O Polybase carrega apenas para linhas que são mais pequeno do que 1 MB e não é possível carregar varchar (Max), nvarchar (Max) ou varbinary (Max).<br/><br/> |
 
 ## <a name="queries"></a>Consultas
 | Categoria | Descrição | Máximo |

@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.date: 11/01/2017
 ms.author: v-rogara
 ms.custom: mvc
-ms.openlocfilehash: b096b9d79c049d8659a4171a0cbb42a99e245776
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: 2a825e59093b64ab56110f9a045b0325728b39b2
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="transfer-objects-tofrom-azure-blob-storage-using-java"></a>Transferência de objetos de armazenamento de Blobs do Azure utilizando Java /
 
@@ -85,19 +85,23 @@ Depois de verificar que os ficheiros, prima a tecla enter para concluir a demons
 
 ## <a name="understand-the-sample-code"></a>Compreender o código de exemplo
 
+Em seguida, iremos guiá-o código de exemplo, para que possa compreender como funciona.
+
+### <a name="get-references-to-the-storage-objects"></a>Obter referências para os objetos de armazenamento
+
 A primeira coisa a fazer é criar as referências a objectos utilizados para aceder e gerir o armazenamento de Blobs. Criar estes objetos entre si – cada um é utilizada pela seguinte na lista.
 
 * Criar uma instância do **CloudStorageAccount** objeto apontar para o [conta de armazenamento](/java/api/com.microsoft.azure.management.storage._storage_account).
 
-O **CloudStorageAccount** objeto é uma representação da conta de armazenamento e permite-lhe definir e aceder às propriedades da conta de armazenamento através de programação. Utilizar o **CloudStorageAccount** objeto pode criar uma instância do **CloudBlobClient**, que é necessário para aceder ao serviço blob.
+    O **CloudStorageAccount** objeto é uma representação da conta de armazenamento e permite-lhe definir e aceder às propriedades da conta de armazenamento através de programação. Utilizar o **CloudStorageAccount** objeto pode criar uma instância do **CloudBlobClient**, que é necessário para aceder ao serviço blob.
 
 * Criar uma instância do **CloudBlobClient** objeto, que aponta para o [serviço Blob](/java/api/com.microsoft.azure.storage.blob._cloud_blob_client) na sua conta de armazenamento.
 
-O **CloudBlobClient** fornece-lhe um ponto de acesso ao serviço blob, permitindo-lhe definir e aceder às propriedades de armazenamento de BLOBs através de programação. Utilizar o **CloudBlobClient** pode criar uma instância do **CloudBlobContainer** objeto, que é necessário para criar contentores.
+    O **CloudBlobClient** fornece-lhe um ponto de acesso ao serviço blob, permitindo-lhe definir e aceder às propriedades de armazenamento de BLOBs através de programação. Utilizar o **CloudBlobClient** pode criar uma instância do **CloudBlobContainer** objeto, que é necessário para criar contentores.
 
 * Criar uma instância do **CloudBlobContainer** objeto que representa o [contentor](/java/api/com.microsoft.azure.storage.blob._cloud_blob_container) estão a aceder. Contentores são utilizados para organizar os blobs como utilizar as pastas no seu computador para organizar os seus ficheiros.    
 
-Assim que tiver o **CloudBlobContainer**, pode criar uma instância do **CloudBlockBlob** objeto que aponta para o específicos [blob](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob) no qual está interessado, e efetue um carregamento, transferência, copiar, operação etc.
+    Assim que tiver o **CloudBlobContainer**, pode criar uma instância do **CloudBlockBlob** objeto que aponta para o específicos [blob](/java/api/com.microsoft.azure.storage.blob._cloud_block_blob) no qual está interessado, e efetue um carregamento, transferência, copiar, operação etc.
 
 > [!IMPORTANT]
 > Os nomes de contentor tem de ser em minúsculas. Consulte [nomenclatura e referência de contentores, Blobs e metadados](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) para obter mais informações sobre os nomes de contentor e BLOBs.

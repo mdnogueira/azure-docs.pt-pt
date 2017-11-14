@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: saeeda
-ms.openlocfilehash: e8b28bc9ccc12b280b1746272519bd4c9ea9e4a4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: bed51dc1216b40f6602fae6d32bc8bd7aa517605
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>O Azure AD B2C: Perguntas mais frequentes (FAQ) 
 Esta página respostas a perguntas mais frequentes sobre o Azure Active Directory (Azure AD) B2C. Manter a verificação de volta para atualizações.
@@ -66,11 +66,11 @@ Pode utilizar o [corporativa funcionalidade](../active-directory/active-director
 
 A assinatura de e-mail contém o nome do inquilino do B2C que forneceu quando criou o inquilino do B2C. Pode alterar o nome a utilizar estas instruções:
 
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com/) como Administrador da Subscrição.
-1. Navegue para o inquilino do B2C.
-1. Clique no separador **Configurar**.
-1. Alterar o **nome** campo sob o **propriedades do** secção.
-1. Clique em **Guardar** na parte inferior da página.
+1. Iniciar sessão para o [portal do Azure](https://portal.azure.com/) como administrador da subscrição.
+1. Abra o **do Azure Active Directory** painel.
+1. Clique em de **propriedades** separador.
+1. Alterar o **nome** campo.
+1. Clique em **guardar** na parte superior da página.
 
 Atualmente não é possível alterar o "de:" campo na mensagem de correio eletrónico. Votar em [feedback.azure.com](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/15334335-fully-customizable-verification-emails) estiver interessado em Personalizar o corpo da mensagem de e-mail de verificação.
 

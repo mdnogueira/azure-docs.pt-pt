@@ -7,13 +7,13 @@ manager: routlaw
 ms.service: virtual-machines-linux
 ms.custom: devops
 ms.topic: article
-ms.date: 11/09/2017
+ms.date: 11/13/2017
 ms.author: tarcher
-ms.openlocfilehash: 859c0a2f2cf315e9168ed9828061c03da6b8e0a4
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: 2435d694e6a1671a234d02f90860e5cafe98c2df
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="create-a-vm-cluster-with-terraform-and-hcl"></a>Criar um cluster VM com Terraform e HCL
 
@@ -35,7 +35,7 @@ Neste tutorial:
 
 Nesta secção, gerar um principal de serviço do Azure e dois Terraform os ficheiros de configuração que contém as credenciais do principal de segurança.
 
-1. [Configurar um principal de serviço do Azure AD](/azure/virtual-machines/linux/terraform-install-configure#set-up-terraform-access-to-azure) para ativar Terraform para Aprovisionar recursos no Azure. Ao criar o principal, tome nota dos valores para o ID de subscrição, o ID do inquilino, o displayName e a palavra-passe.
+1. [Configurar um principal de serviço do Azure AD](/azure/virtual-machines/linux/terraform-install-configure#set-up-terraform-access-to-azure) para ativar Terraform para Aprovisionar recursos no Azure. Ao criar o principal, tome nota dos valores para o ID de subscrição, o inquilino, o appId e a palavra-passe.
 
 2. Abra uma linha de comandos.
 
@@ -236,7 +236,7 @@ Para inicializar Terraform, execute o seguinte comando:
 
 O [comandos de plano terraform](https://www.terraform.io/docs/commands/plan.html) é utilizado para criar um plano de execução. Para gerar um plano de execução, Terraform agrega todos os `.tf` ficheiros no diretório atual. 
 
-Se estiver a trabalhar num ambiente de colaboração, onde a configuração pode ser alterado entre a hora de criação do plano de execução e a hora de aplicar o plano de execução, deve utilizar o [do comando de plano terraform-parâmetroout](https://www.terraform.io/docs/commands/plan.html#out-path)e o plano de execução para um ficheiro de saída. Caso contrário, se estiver a trabalhar num ambiente única pessoa, pode omitir o `-out` parâmetro.
+Se estiver a trabalhar num ambiente de colaboração, onde a configuração pode ser alterado entre a hora de criação do plano de execução e a hora de aplicar o plano de execução, deve utilizar o [do comando de plano terraform-parâmetroout](https://www.terraform.io/docs/commands/plan.html#out-path)para guardar o plano de execução para um ficheiro. Caso contrário, se estiver a trabalhar num ambiente única pessoa, pode omitir o `-out` parâmetro.
 
 Se o nome do ficheiro Terraform variáveis não é `terraform.tfvars` e não siga a `*.auto.tfvars` padrão, tem de especificar o nome de ficheiro utilizando o [parâmetro de ficheiro - var do comando de plano terraform](https://www.terraform.io/docs/commands/plan.html#var-file-foo) ao executar o `terraform plan`comando.
 

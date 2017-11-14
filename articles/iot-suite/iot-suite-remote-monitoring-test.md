@@ -12,11 +12,11 @@ ms.topic: article
 ms.devlang: NA
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.openlocfilehash: 04e8f1fe5b48b545b8095563eb726b54fa42a6f2
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 426b7ff6114fd0b79a6af71a78705f11b80862bf
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="test-your-solution-with-simulated-devices"></a>Testar a sua solução com dispositivos simulados
 
@@ -173,7 +173,7 @@ O `lightbulb-01.json` ficheiro define as características do tipo, tais como a t
       "SwitchOff": {
         "Type": "javascript",
         "Path": "SwitchOff-method.js"
-      },
+      }
     }
     ```
 
@@ -299,12 +299,12 @@ Os passos seguintes mostram como encontrar os ficheiros que definem incorporada 
 1. Se ainda não o tiver feito, utilize o seguinte comando para clonar o **simulação de dispositivo** repositório do GitHub para o computador local:
 
     ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet.git
+    git clone https://github.com/Azure/device-simulation-dotnet.git
     ```
 
-1. Cada tipo de dispositivo tem um ficheiro de modelo JSON e scripts associados no `data/devicemodels` pasta. Os ficheiros que definem a simulada **Chiller** são do tipo de dispositivo:
-    * `data/devicemodels/chiller-01.json`
-    * `data/devicemodels/scripts/chiller-01-state.js`
+1. Cada tipo de dispositivo tem um ficheiro de modelo JSON e scripts associados no `Services/data/devicemodels` pasta. Os ficheiros que definem a simulada **Chiller** são do tipo de dispositivo:
+    * `Services/data/devicemodels/chiller-01.json`
+    * `Services/data/devicemodels/scripts/chiller-01-state.js`
 
 ### <a name="specify-the-new-telemetry-type"></a>Especifique o novo tipo de telemetria
 

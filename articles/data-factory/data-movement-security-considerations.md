@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/24/2017
 ms.author: abnarain
-ms.openlocfilehash: 61ccae3c77533037de1d8d8e3963d7beb3e07a65
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: bba2781d43aff9e462246cfe21961695e48196d8
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>O Azure Data Factory - considerações de segurança para o movimento de dados
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -31,7 +31,7 @@ Este artigo descreve a infraestrutura de básicos de segurança que utilizam ser
 
 Numa solução do Data Factory, pode criar um ou mais [pipelines](concepts-pipelines-activities.md) de dados. Os pipelines são agrupamentos lógicos de atividades que, em conjunto, realizam uma tarefa. Estes pipelines de residir na região onde foi criada a fábrica de dados. 
 
-Apesar de fábrica de dados só está disponível em **EUA Leste** e **EUA Leste 2** região (pré-visualização versão 2), o serviço de movimento de dados está disponível [global em várias regiões](concepts-integration-runtime.md#azure-ir). Se o serviço de movimento de dados ainda não está implementado nessa região, o serviço fábrica de dados garante que os dados deixe uma área geográfica / região, a menos que o serviço para utilizar uma região alternativa instruir explicitamente. 
+Apesar de fábrica de dados só está disponível em **EUA Leste**, **EUA Leste 2**, e **Europa Ocidental** regiões (versão 2 pré-visualização), o serviço de movimento de dados está disponível [global em várias regiões](concepts-integration-runtime.md#azure-ir). Se o serviço de movimento de dados ainda não está implementado nessa região, o serviço fábrica de dados garante que os dados deixe uma área geográfica / região, a menos que o serviço para utilizar uma região alternativa instruir explicitamente. 
 
 O Azure Data Factory propriamente dito não armazena quaisquer dados, exceto as credenciais de serviço ligado para os arquivos de dados de nuvem, que são encriptados utilizando certificados. Permite-lhe criar fluxos de trabalho condicionados por dados para orquestrar o movimento dos dados entre [arquivos de dados suportados](copy-activity-overview.md#supported-data-stores-and-formats) e o processamento de dados com [serviços de computação](compute-linked-services.md) noutras regiões ou num ambiente no local. Também permite-lhe monitorizar e gerir fluxos de trabalho utilizando SDKs e Monitor do Azure.
 

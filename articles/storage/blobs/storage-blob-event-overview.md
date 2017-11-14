@@ -8,11 +8,11 @@ ms.author: cbrooks
 ms.date: 08/25/2017
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: f7a43d0a7255b326cd550fbcbb92bba93905d293
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: a56e6026ed0c2c873030625fa7a9b35b92faf930
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="reacting-to-blob-storage-events-preview"></a>A agir os eventos de armazenamento de BLOBs (pré-visualização)
 
@@ -80,7 +80,7 @@ Eis um exemplo de um evento de BlobCreated:
 
 ```
 
-Para obter mais informações, consulte [esquema de eventos de armazenamento de BLOBs](../../event-grid/event-schema.md#azure-blob-storage).
+Para obter mais informações, consulte [esquema de eventos de armazenamento de BLOBs](../../event-grid/event-schema-blob-storage.md).
 
 ## <a name="filtering-events"></a>Filtragem de eventos
 Subscrições de eventos de blob podem ser filtradas com base no tipo de evento e o nome do contentor e o nome do blob do objeto que foi criado ou eliminado.  Filtros de requerente em projetos de grelha de eventos com base em "começa com" e "termina com" correspondências, para que os eventos com um assunto correspondente são entregues para o subscritor.

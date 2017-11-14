@@ -3,56 +3,35 @@ title: "Guia de introdução do Azure - objetos de transferência da Blob storag
 description: "Saiba rapidamente a transferência de objetos do Blob storage do Azure através do .NET"
 services: storage
 documentationcenter: storage
-author: robinsh
-manager: timlt
-editor: tysonn
-ms.assetid: 
+author: tamram
+manager: jeconnoc
 ms.custom: mvc
 ms.service: storage
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/01/2017
-ms.author: robinsh
-ms.openlocfilehash: fdba4588fbb2c46efb3fc4de1a9e53414264444a
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
-ms.translationtype: HT
+ms.date: 11/10/2017
+ms.author: tamram
+ms.openlocfilehash: 1eac4165c35cb116a359c074bd629c918b58097c
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="transfer-objects-tofrom-azure-blob-storage-using-net"></a>Transferência de objetos para/de Blob storage do Azure através do .NET
 
-Este guia de introdução, irá aprender a utilizar o C# .NET para carregar, transfira e blobs de blocos de lista num contentor no Blob storage do Azure no Windows.
+Este guia de introdução, irá aprender a utilizar a biblioteca de cliente do .NET para o Storage do Azure para carregar, transfira e lista de blobs de blocos num contentor.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para concluir este guia de início rápido:
-
-* Instalar [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) com a carga de trabalho seguinte:
+Para concluir este guia de introdução, instalar [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) com a carga de trabalho seguinte:
+    
     - **Desenvolvimento do Azure**
 
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="create-a-storage-account-using-the-azure-portal"></a>Criar uma conta de armazenamento utilizando o portal do Azure
-
-Em primeiro lugar, crie uma nova conta de armazenamento para fins gerais para utilizar este guia de introdução. 
-
-1. Vá para o [portal do Azure](https://portal.azure.com) e inicie sessão com a sua conta do Azure. 
-2. No Hub menu, selecione **novo** > **armazenamento** > **conta de armazenamento - BLOBs, ficheiro, tabela, fila**. 
-3. Introduza um nome para a conta do Storage. O nome tem de ter entre 3 e 24 carateres de comprimento e conter apenas letras minúsculas e números. Também tem de ser exclusivo.
-4. Definir `Deployment model` para **do Resource manager**.
-5. Definir `Account kind` para **fins gerais**.
-6. Definir `Performance` para **padrão**. 
-7. Definir `Replication` para **armazenamento localmente redundante (LRS)**.
-8. Definir `Storage service encryption` para **desativado**.
-9. Definir `Secure transfer required` para **desativado**.
-10. Selecione a sua subscrição. 
-11. Para `resource group`, crie um novo e atribua um nome exclusivo. 
-12. Selecione o `Location` a utilizar para a sua conta de armazenamento.
-13. Verifique **afixar ao dashboard** e clique em **criar** para criar a conta de armazenamento. 
-
-Depois de criar a sua conta do storage, está afixada ao dashboard. Clique na mesma para abri-lo. Em definições, clique em **chaves de acesso**. Selecione uma chave e copie a cadeia de ligação para a área de transferência e, em seguida, cole-o num editor de texto para utilização posterior.
+[!INCLUDE [storage-quickstart-tutorial-create-account-portal](../../../includes/storage-quickstart-tutorial-create-account-portal.md)]
 
 ## <a name="download-the-sample-application"></a>Transferir a aplicação de exemplo
 
@@ -104,7 +83,11 @@ Também pode utilizar uma ferramenta como o [Explorador de armazenamento do Azur
 
 Depois de verificar que os ficheiros, prima qualquer tecla para concluir a demonstração e eliminar os ficheiros de teste. Agora que sabe o que faz o exemplo, abra o ficheiro Program.cs para ver o código. 
 
-## <a name="get-references-to-the-storage-objects"></a>Obter referências para os objetos de armazenamento
+## <a name="understand-the-sample-code"></a>Compreender o código de exemplo
+
+Em seguida, iremos guiá-o código de exemplo, para que possa compreender como funciona.
+
+### <a name="get-references-to-the-storage-objects"></a>Obter referências para os objetos de armazenamento
 
 A primeira coisa a fazer é criar as referências a objectos utilizados para aceder e gerir o armazenamento de Blobs. Criar estes objetos entre si – cada um é utilizada pela seguinte na lista.
 
@@ -115,6 +98,9 @@ A primeira coisa a fazer é criar as referências a objectos utilizados para ace
 * Criar uma instância do **CloudBlobContainer** objeto que representa o contentor que está a aceder. Contentores são utilizados para organizar os blobs como utilizar as pastas no seu computador para organizar os seus ficheiros.
 
 Assim que tiver o **CloudBlobContainer**, pode criar uma instância do **CloudBlockBlob** objeto que aponta para o blob específico no qual está interessado e efetuar um carregamento, transferência, copiar, etc. operação.
+
+> [!IMPORTANT]
+> Os nomes de contentor tem de ser em minúsculas. Consulte [nomenclatura e referência de contentores, Blobs e metadados](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) para obter mais informações sobre os nomes de contentor e BLOBs.
 
 Nesta secção, criar uma instância dos objetos, criar um novo contentor e, em seguida, definir as permissões no contentor para que os blobs são públicos e podem ser acedidos com apenas um URL. O contentor é designado por **quickstartblobs**. 
 
@@ -139,7 +125,7 @@ permissions.PublicAccess = BlobContainerPublicAccessType.Blob;
 await cloudBlobContainer.SetPermissionsAsync(permissions);
 ```
 
-## <a name="upload-blobs-to-the-container"></a>Carregar os blobs no contentor
+### <a name="upload-blobs-to-the-container"></a>Carregar os blobs no contentor
 
 O armazenamento de blobs suporta blobs de blocos, blobs de acréscimo e blobs de páginas. Os blobs de blocos são utilizados mais frequentemente e que é o que é utilizado neste guia de introdução. 
 
@@ -163,7 +149,7 @@ Existem vários métodos de carregamento que pode utilizar com o Blob storage. P
 
 Os blobs de blocos podem ser qualquer tipo de ficheiro binário ou de texto. Os blobs de páginas são utilizados principalmente para os ficheiros VHD utilizados para fazer uma cópia de VMs de IaaS. Acrescentar blobs são utilizados para registo, por exemplo, se pretender escrever um ficheiro e, em seguida, mantenha a adição de mais informações. A maioria dos objetos armazenados no Blob storage são blobs de blocos.
 
-## <a name="list-the-blobs-in-a-container"></a>Listar os blobs num contentor
+### <a name="list-the-blobs-in-a-container"></a>Listar os blobs num contentor
 
 Pode obter uma lista de ficheiros no contentor com [CloudBlobContainer.ListBlobsSegmentedAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobssegmentedasync). O código seguinte obtém a lista de blobs, em seguida, repetido ao longo, que mostra os URIs dos blobs encontrados. Pode copiar o URI a partir da janela de comando e cole-o num browser para ver o ficheiro.
 
@@ -183,7 +169,7 @@ do
 } while (blobContinuationToken != null);
 ```
 
-## <a name="download-blobs"></a>Transferir blobs
+### <a name="download-blobs"></a>Transferir blobs
 
 Transferir blobs para a sua utilização de disco local [CloudBlob.DownloadToFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblob.downloadtofileasync).
 
@@ -199,7 +185,7 @@ Console.WriteLine("Downloading blob to {0}", fileAndPath2);
 await cloudBlockBlob.DownloadToFileAsync(fileAndPath2, FileMode.Create);
 ```
 
-## <a name="clean-up-resources"></a>Limpar recursos
+### <a name="clean-up-resources"></a>Limpar recursos
 
 Se já não necessita de blobs carregados este início rápido, pode eliminar o contentor inteiro utilizando [CloudBlobContainer.DeleteAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.deleteasync). Também elimine os ficheiros criados se já não são necessárias.
 
@@ -215,5 +201,7 @@ Este guia de introdução, aprendeu como transferir ficheiros entre um disco loc
 
 > [!div class="nextstepaction"]
 > [Procedimentos de operações de armazenamento de BLOBs](storage-dotnet-how-to-use-blobs.md)
+
+Para exemplos de código de armazenamento do Azure adicionais que pode transferir e executar, consulte a lista de [exemplos de armazenamento do Azure através do .NET](../common/storage-samples-dotnet.md).
 
 Para obter mais informações sobre o Explorador de armazenamento e Blobs, consulte [recursos de armazenamento de Blobs do Azure de gerir com o Explorador de armazenamento](../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).

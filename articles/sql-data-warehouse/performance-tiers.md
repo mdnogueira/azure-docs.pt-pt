@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-services
 ms.custom: performance
-ms.date: 10/23/2017
+ms.date: 11/10/2017
 ms.author: jrj;barbkess
-ms.openlocfilehash: ffeaec73a38939783174c71641c3618f4f8a3c1b
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: c403a73d03fd5152e2c0617b3e3784926c28f5c3
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="azure-sql-data-warehouse-performance-tiers-preview"></a>Escalões de desempenho do armazém de dados SQL do Azure (pré-visualização)
 O SQL Data Warehouse oferece dois escalões de desempenho que estão otimizados para cargas de trabalho analíticas. Este artigo explica os conceitos das camadas de desempenho para o ajudar a escolher o escalão de desempenho mais adequado para a carga de trabalho. 
@@ -55,7 +55,7 @@ WITH
 ## <a name="memory-maximums"></a>Valores máximos de memória
 Os escalões de desempenho tem os perfis de memória diferente, traduz-se em período diferentes de memória por consulta. Optimized para a camada de desempenho de computação fornece 2,5 x mais memória por consulta que Optimized para a camada de desempenho de elasticidade. Esta memória adicional ajuda Optimized, para a camada de desempenho de computação, fornecer o desempenho dele incrivelmente rápido. Memória adicional por consulta também permite-lhe executar consultas mais em simultâneo, uma vez que podem utilizar consultas inferior [classes de recurso](resource-classes-for-workload-management.md). 
 
-### <a name="optimized-for-elasticity"></a>Otimizado para elasticidade
+### <a name="optimized-for-elasticity"></a>Otimizado para Elasticidade
 
 Os níveis de serviço para Optimized para o intervalo de camada de desempenho do elasticidade entre DW100 a DW6000. 
 
@@ -148,7 +148,7 @@ A tabela seguinte mostra as consultas em simultâneo máximas e ranhuras de conc
 | DW15000c      | 32                         |  600                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
 | DW30000c      | 32                         | 1200                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
 
-### <a name="optimized-for-elasticity"></a>Otimizado para elasticidade
+### <a name="optimized-for-elasticity"></a>Otimizado para Elasticidade
 A tabela seguinte mostra as consultas em simultâneo máximas e ranhuras de concorrência para cada [classe de recursos dinâmicos](resource-classes-for-workload-management.md).  Estas aplicam-se para Optimized para a camada de desempenho de elasticidade.
 
 **Classes de recursos dinâmicos**

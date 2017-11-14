@@ -1,6 +1,6 @@
 ---
 title: Como de leitura ou escrita particionada dados no Azure Data Factory | Microsoft Docs
-description: "Saiba como ler ou escrever dados particionados versão 2 do Azure Data Factory."
+description: "Saiba como ler ou escrever dados particionados no Azure Data Factory versão 2."
 services: data-factory
 documentationcenter: 
 author: sharonlo101
@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: shlo
-ms.openlocfilehash: ee83fce3eeef4bde6dc8e0ea6f17b40396619412
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: 2066847feb3dcdf36ead8901a679d8cae7a6acde
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="how-to-read-or-write-partitioned-data-in-azure-data-factory-version-2"></a>Como de leitura ou escrita particionada dados no Azure Data Factory versão 2
 Na versão 1, o Azure Data Factory suportado ler ou escrever dados particionados utilizando variáveis de sistema do SliceStart/SliceEnd/WindowStart/WindowEnd. Na versão 2, pode conseguir este comportamento, utilizando um parâmetro de pipeline e agendada/hora a hora de início do acionador como um valor do parâmetro. 
@@ -38,19 +38,19 @@ Para obter mais informações sobre a propriedade partitonedBy, consulte [conect
 
 Na versão 2, uma forma de alcançar este comportamento é para executar as seguintes ações: 
 
-1. Definir um **pipeline parâmetro** do tipo cadeia. No exemplo seguinte, o nome do parâmetro de pipeline está **ScheduledRunTime**. 
-2. Definir **folderPath** na definição do conjunto de dados para o valor do parâmetro de pipeline para como mostrado no exemplo. 
+1. Definir um **pipeline parâmetro** do tipo cadeia. No exemplo seguinte, o nome do parâmetro de pipeline está **scheduledRunTime**. 
+2. Definir **folderPath** na definição do conjunto de dados para o valor do parâmetro do pipeline. 
 3. Transmita um valor de codificado para o parâmetro antes de executar o pipeline. Ou, transmita de início um acionador tempo ou hora agendada dinamicamente durante a execução. 
 
 ```json
 "folderPath": {
-      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.ScheduledRunTime, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.ScheduledRunTime, '%M'), '/dayno=', formatDateTime(pipeline().parameters.ScheduledRunTime, '%d'), '/')",
+      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%M'), '/dayno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%d'), '/')",
       "type": "Expression"
 },
 ```
 
 ## <a name="pass-in-value-from-a-trigger"></a>Passar no valor de um acionador
-Na definição do acionador seguinte, a hora agendada do acionador é transmitida como um valor para o parâmetro de pipeline ScheduledRunTime: 
+Na definição do acionador seguinte, a hora agendada do acionador é transmitida como um valor para o **scheduledRunTime** de pipeline de parâmetro: 
 
 ```json
 {
@@ -64,7 +64,7 @@ Na definição do acionador seguinte, a hora agendada do acionador é transmitid
                 "referenceName": "MyPipeline"
             },
             "parameters": {
-                "ScheduledRunTime": "@trigger().scheduledTime"
+                "scheduledRunTime": "@trigger().scheduledTime"
             }
         }
     }
@@ -80,7 +80,7 @@ Segue-se uma definição de conjunto de dados de exemplo (que utiliza um parâme
   "type": "AzureBlob",
   "typeProperties": {
     "folderPath": {
-      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.date, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.date, '%M'), '/dayno=', formatDateTime(pipeline().parameters.date, '%d'), '/')",
+      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%M'), '/dayno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%d'), '/')",
       "type": "Expression"
     },
     "format": {
@@ -134,15 +134,15 @@ Definição de pipeline:
                         "type": "Expression"
                     },
                     "Year": {
-                        "value": "@formatDateTime(pipeline().parameters.date, 'yyyy')",
+                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy')",
                         "type": "Expression"
                     },
                     "Month": {
-                        "value": "@formatDateTime(pipeline().parameters.date, '%M')",
+                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, '%M')",
                         "type": "Expression"
                     },
                     "Day": {
-                        "value": "@formatDateTime(pipeline().parameters.date, '%d')",
+                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, '%d')",
                         "type": "Expression"
                     }
                 }
@@ -154,7 +154,7 @@ Definição de pipeline:
             "name": "HivePartitionGameLogs"
         }],
         "parameters": {
-            "date": {
+            "scheduledRunTime": {
                 "type": "String"
             },
             "blobStorageAccount": {

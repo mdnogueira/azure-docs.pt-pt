@@ -14,14 +14,14 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/24/2017
+ms.date: 11/11/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 22aa6c82aec7b8f6a16131878943fadd7762c1c0
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: fabfbe51f9486c69d795b04bd668b50971157820
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="deploy-and-use-azure-container-registry"></a>Implementar e utilizar o registo de contentor do Azure
 
@@ -44,10 +44,10 @@ Este tutorial requer que está a executar a CLI do Azure versão 2.0.20 ou poste
 
 Quando implementar um registo de contentor do Azure, primeiro precisa de um grupo de recursos. Um grupo de recursos do Azure é um contentor lógico no qual os recursos do Azure são implementados e geridos.
 
-Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Neste exemplo, um grupo de recursos denominado `myResourceGroup` é criado no `westus2` região.
+Crie um grupo de recursos com o comando [az group create](/cli/azure/group#create). Neste exemplo, um grupo de recursos denominado `myResourceGroup` é criado no `eastus` região.
 
 ```azurecli
-az group create --name myResourceGroup --location westus2
+az group create --name myResourceGroup --location eastus
 ```
 
 Criar um registo de contentor do Azure com o [az acr criar](/cli/azure/acr#create) comando. O nome de um registo de contentor **têm de ser exclusivos**.

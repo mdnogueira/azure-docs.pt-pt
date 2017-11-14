@@ -12,19 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2017
+ms.date: 11/13/2017
 ms.author: helaw
-ms.openlocfilehash: ffad7bfd4ffcd9159dea23b70640f0ee761fbae0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b9109c58b29d5f09f1a86068a87c5e7f839228af
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="azure-resource-manager-template-considerations"></a>Considerações sobre os modelos Azure Resource Manager
 
 *Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
 Como desenvolver a sua aplicação, é importante certificar-se a portabilidade de modelo entre o Azure e pilha do Azure.  Este tópico fornece considerações para o desenvolvimento do Azure Resource Manager [modelos](http://download.microsoft.com/download/E/A/4/EA4017B5-F2ED-449A-897E-BD92E42479CE/Getting_Started_With_Azure_Resource_Manager_white_paper_EN_US.pdf), para poder criar protótipos a implementação de aplicação e teste no Azure sem acesso a um ambiente de pilha do Azure.
+
+## <a name="resource-provider-availability"></a>Disponibilidade do fornecedor de recursos
+O modelo que estiver a planear implementar têm de utilizar um serviço do Microsoft Azure que já se encontra disponível ou em pré-visualização na pilha do Azure.
 
 ## <a name="public-namespaces"></a>Espaços de nomes públicos
 Porque a pilha do Azure está alojada no seu centro de dados, tem espaços de nomes de ponto final de outro serviço de nuvem pública do Azure. Como resultado, os pontos finais públicos codificado em modelos do Resource Manager falharem quando tenta implementá-las à pilha do Azure. Em vez disso, pode utilizar o *referência* e *concatenar* função para criar dinamicamente o ponto final de serviço com base nos valores obtidos a partir do fornecedor de recursos durante a implementação. Por exemplo, em vez de especificar *w* no seu modelo, obter o [primaryEndpoints.blob](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/101-simple-windows-vm/azuredeploy.json#L201) definir dinamicamente o *osDisk.URI* ponto final:
@@ -36,7 +39,7 @@ Porque a pilha do Azure está alojada no seu centro de dados, tem espaços de no
 ## <a name="api-versioning"></a>Controlo de versões de API
 Versões do serviço do Azure podem divergir entre o Azure e pilha do Azure. Cada recurso requer o atributo apiVersion, que define as capacidades disponibilizadas. Para garantir a compatibilidade da versão de API na pilha do Azure, seguem-se válido versões de API para cada fornecedor de recursos:
 
-| Fornecedor de recursos | apiVersion |
+| Fornecedor de Recursos | apiVersion |
 | --- | --- |
 | Computação |`'2015-06-15'` |
 | Rede |`'2015-06-15'`, `'2015-05-01-preview'` |
@@ -73,7 +76,6 @@ Modelos do Resource Manager utilizam um atributo de localização para colocar r
       }
     }
     ]
-
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Implementar modelos com o PowerShell](azure-stack-deploy-template-powershell.md)

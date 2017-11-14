@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2017
 ms.author: danha; mbullwin
-ms.openlocfilehash: 50161c71443a3cc0192ab2db771bb258058e233c
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 0ca5c8b19f4699548a8551ec673e4a067d4e5fad
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="using-analytics-in-application-insights"></a>Através da análise no Application Insights
 [Análise de](app-insights-analytics.md) é a funcionalidade de pesquisa poderoso de [Application Insights](app-insights-overview.md). Estas páginas descrevem o idioma de consulta de análise de registos.
@@ -38,7 +38,7 @@ Não existe um [ainda mais extensiva apresentação aqui](app-insights-analytics
 ### <a name="write-a-query"></a>Escrever uma consulta
 ![Apresentação de esquema](./media/app-insights-analytics-using/150.png)
 
-Começar com os nomes de qualquer uma das tabelas listadas no lado esquerdo (ou o [intervalo](https://docs.loganalytics.io/queryLanguage/query_language_rangeoperator.html) ou [union](https://docs.loganalytics.io/queryLanguage/query_language_unionoperator.html) operadores). Utilize `|` para criar um pipeline de [operadores](https://docs.loganalytics.io/learn/cheatsheets/useful_operators.html). 
+Começar com os nomes de qualquer uma das tabelas listadas no lado esquerdo (ou o [intervalo](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/range-operator) ou [union](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/union-operator) operadores). Utilize `|` para criar um pipeline de [operadores](https://docs.loganalytics.io/docs/Learn/References/Useful-operators). 
 
 O IntelliSense pede-lhe com os operadores e os elementos de expressão que pode utilizar. Clique no ícone de informações (ou prima CTRL + espaço) para obter uma descrição mais e exemplos sobre como utilizar cada elemento.
 
@@ -49,7 +49,7 @@ Consulte o [apresentação da linguagem de análise](app-insights-analytics-tour
 
 1. Pode utilizar as quebras de linha única numa consulta.
 2. Coloque o cursor no interior ou no final da consulta que pretende executar.
-3. Verifique o intervalo de tempo da sua consulta. (Pode alterá-la ou substitui-lo, incluindo as suas próprias [ `where...timestamp...` ](https://docs.loganalytics.io/concepts/concepts_datatypes_timespan.html) cláusula na sua consulta.)
+3. Verifique o intervalo de tempo da sua consulta. (Pode alterá-la ou substitui-lo, incluindo as suas próprias [ `where...timestamp...` ](https://docs.loganalytics.io/docs/Learn/Tutorials/Date-and-time-operations) cláusula na sua consulta.)
 3. Clique em Ir para executar a consulta.
 4. Não coloque linhas em branco na sua consulta. Pode manter várias consultas separados por um separador de consulta, separando-as com as linhas em branco. Apenas a consulta que tenha o cursor é executado.
 
@@ -71,7 +71,7 @@ Pode ordenar, filtrar, de paginação e agrupar os resultados devolvidos da sua 
 > [!NOTE]
 > Volte a ordenação, agrupamentos e filtragens no browser não executam a consulta. Estes reorganizar apenas os resultados que foram devolvidos pela última consulta. 
 > 
-> Para efetuar estas tarefas no servidor antes dos resultados são devolvidos, escrever a consulta com o [ordenação](https://docs.loganalytics.io/queryLanguage/query_language_sortoperator.html), [resumir](https://docs.loganalytics.io/queryLanguage/query_language_summarizeoperator.html) e [onde](https://docs.loganalytics.io/queryLanguage/query_language_whereoperator.html) operadores.
+> Para efetuar estas tarefas no servidor antes dos resultados são devolvidos, escrever a consulta com o [ordenação](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/sort-operator), [resumir](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/summarize-operator) e [onde](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/where-operator) operadores.
 > 
 > 
 
@@ -99,7 +99,7 @@ Se considerar que não está a ver todos os resultados que o esperado, existem a
 
     No entanto, pode alterar o intervalo de tempo filtro utilizando o menu pendente.
 
-    Ou pode substituir o intervalo automático, incluindo as suas próprias [ `where  ... timestamp ...` cláusula](https://docs.loganalytics.io/queryLanguage/query_language_whereoperator.html) na sua consulta. Por exemplo:
+    Ou pode substituir o intervalo automático, incluindo as suas próprias [ `where  ... timestamp ...` cláusula](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/where-operator) na sua consulta. Por exemplo:
 
     `requests | where timestamp > ago('2d')`
 
@@ -107,10 +107,10 @@ Se considerar que não está a ver todos os resultados que o esperado, existem a
 
     É recomendável para evitar atingir o limite. Utilize o filtro de intervalo de tempo, ou operadores, tais como:
 
-  * [primeiros 100 por timestamp](https://docs.loganalytics.io/queryLanguage/query_language_topoperator.html) 
-  * [tirar 100](https://docs.loganalytics.io/queryLanguage/query_language_takeoperator.html)
-  * [resumir](https://docs.loganalytics.io/queryLanguage/query_language_summarizeoperator.html) 
-  * [onde timestamp > ago(3d)](https://docs.loganalytics.io/queryLanguage/query_language_whereoperator.html)
+  * [primeiros 100 por timestamp](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/top-operator) 
+  * [tirar 100](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/take-operator)
+  * [resumir](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/summarize-operator) 
+  * [onde timestamp > ago(3d)](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/where-operator)
 
 (Mais de 10 linhas de k que pretende? Considere a utilização de [exportação contínua](app-insights-export-telemetry.md) em vez disso. Análise de foi concebida para análise, em vez de ao obter dados não processados.)
 
@@ -121,7 +121,7 @@ Selecione o tipo de que gostaria de diagrama:
 
 Se tiver várias colunas dos tipos de direita, pode escolher o x e y eixos e uma coluna de dimensões de dividir os resultados por.
 
-Por predefinição, os resultados são apresentados inicialmente como uma tabela e selecione o diagrama manualmente. Mas pode utilizar o [compor diretiva](https://docs.loganalytics.io/queryLanguage/query_language_renderoperator.html) no final de uma consulta para selecionar um diagrama.
+Por predefinição, os resultados são apresentados inicialmente como uma tabela e selecione o diagrama manualmente. Mas pode utilizar o [compor diretiva](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/render-operator) no final de uma consulta para selecionar um diagrama.
 
 ### <a name="analytics-diagnostics"></a>Diagnóstico de análise
 

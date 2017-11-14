@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2017
+ms.date: 11/11/2017
 ms.author: helaw
-ms.openlocfilehash: 3b40a657ee8eb391d14a38cb95acc0729a8dda21
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 0a8e871a3a44cb14503832d2f3a096712f8112a7
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="microsoft-azure-stack-troubleshooting"></a>Resolução de problemas de pilha do Microsoft Azure
 
@@ -37,16 +37,6 @@ Se ocorrer uma falha durante a instalação, pode utilizar utilize a opção par
 
 ### <a name="at-the-end-of-the-deployment-the-powershell-session-is-still-open-and-doesnt-show-any-output"></a>No final da implementação, a sessão do PowerShell é aberta e não mostra resultados
 Este comportamento é, provavelmente, apenas o resultado do comportamento predefinido de uma janela de comando do PowerShell, quando foi selecionada. A implementação do kit de desenvolvimento, na verdade, é concluída com êxito, mas o script foi colocada em pausa quando selecionar a janela. Pode verificar que for este o caso, procurando a palavra "selecionar" no titlebar da janela de comando.  Prima a tecla ESC para anular-a e a mensagem de conclusão deve ser apresentada depois.
-
-## <a name="templates"></a>Modelos
-### <a name="azure-template-wont-deploy-to-azure-stack"></a>Modelo do Azure não irá implementar a pilha do Azure
-Certifique-se de que:
-
-* O modelo tem de utilizar um serviço do Microsoft Azure que já se encontra disponível ou em pré-visualização na pilha do Azure.
-* As APIs utilizadas para um recurso específico são suportadas pela instância local do Azure pilha e que são direcionado para uma localização válida ("local" no kit de desenvolvimento de pilha do Azure, vs o "EUA Leste" ou "Sul da Índia" no Azure).
-* Reveja [neste artigo](https://github.com/Azure/AzureStack-QuickStart-Templates/blob/master/README.md) sobre os cmdlets de teste-AzureRmResourceGroupDeployment que catch pequenas diferenças na sintaxe do Azure Resource Manager.
-
-Também pode utilizar os modelos de pilha do Azure já fornecidos no [repositório do GitHub](http://aka.ms/AzureStackGitHub/) para ajudar a começar.
 
 ## <a name="virtual-machines"></a>Máquinas virtuais
 ### <a name="default-image-and-gallery-item"></a>Item de imagem e galeria predefinido
@@ -75,20 +65,6 @@ Pode ler mais sobre como configurar a recuperação de limiar e a pedido de rete
 ## <a name="storage"></a>Armazenamento
 ### <a name="storage-reclamation"></a>Recuperação de armazenamento
 Pode demorar até fourteen horas para a capacidade de reclamada a aparecer no portal. Recuperação de espaço depende de vários fatores, incluindo a percentagem de utilização dos ficheiros de contentor interno no arquivo de blob de bloco. Por conseguinte, dependendo da quantidade de dados é eliminado, não há nenhuma garantia, a quantidade de espaço que foi recuperado quando executa o recoletor de lixo.
-
-## <a name="powershell"></a>PowerShell
-### <a name="resource-providers-not-registered"></a>Fornecedores de recursos não registados
-Ao ligar a subscrições do inquilino com o PowerShell, irá reparar que os fornecedores de recursos não estão registados automaticamente. Utilize o [Connect módulo](https://github.com/Azure/AzureStack-Tools/tree/master/Connect), ou execute o seguinte comando do PowerShell (depois [instalar e ligar](azure-stack-connect-powershell.md) como um inquilino): 
-  
-       Get-AzureRMResourceProvider | Register-AzureRmResourceProvider
-
-## <a name="cli"></a>CLI
-
-* Revertidos de modo interativo CLI o `az interactive` comando ainda não é suportado na pilha do Azure.
-* Para obter a lista de imagens da máquina virtual disponíveis na pilha do Azure, utilize o `az vm images list --all` comando, em vez do `az vm image list` comando. Especificar o `--all` opção certifica-se de que a resposta devolve apenas as imagens que estão disponíveis no seu ambiente de pilha do Azure. 
-* Aliases de imagem de máquina virtual que estão disponíveis no Azure podem não ser aplicáveis a pilha do Azure. Quando utilizar imagens da máquina virtual, tem de utilizar o parâmetro URN completo (Canonical: UbuntuServer:14.04.3-LTS:1.0.0) em vez do alias de imagem. Este URNmust de coincidir com as especificações de imagem como derivado o `az vm images list` comando.
-* Por predefinição, o CLI 2.0 utiliza "Standard_DS1_v2" como o tamanho predefinido da imagem de máquina virtual. No entanto, este tamanho não está ainda disponível na pilha do Azure, por isso, tem de especificar o `--size` parâmetro explicitamente quando criar uma máquina virtual. Pode obter a lista de tamanhos de máquinas virtuais que estão disponíveis na pilha do Azure utilizando o `az vm list-sizes --location <locationName>` comando.
-
 
 ## <a name="windows-azure-pack-connector"></a>Conector do Windows Azure Pack
 * Se alterar a palavra-passe da conta azurestackadmin depois de implementar o kit de desenvolvimento de pilha do Azure, já não pode configurar o modo de cloud multi. Por conseguinte, não é possível estabelecer ligação ao ambiente do Windows Azure Pack de destino.

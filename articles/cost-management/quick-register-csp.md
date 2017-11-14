@@ -5,16 +5,16 @@ services: cost-management
 keywords: 
 author: bandersmsft
 ms.author: banders
-ms.date: 10/11/2017
+ms.date: 11/13/2017
 ms.topic: quickstart
 ms.custom: mvc
 ms.service: cost-management
 manager: carmonm
-ms.openlocfilehash: bcb072a2f2ab8c0e5097fca2c95309464483cb53
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: 84f2fec61f791d4fc9264eaa01e24180696da853
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="register-with-the-csp-partner-program-and-view-cost-data"></a>Registar com o programa de parceiro de CSP e a vista de dados de custos
 
@@ -22,7 +22,13 @@ Como um parceiro CSP, pode registar com o Azure custo Management Cloudyn. O regi
 
 
 >[!NOTE]
->Para concluir o registo, tem de ser um administrador do programa de parceiros com acesso à API de centro de parceiros. Não é necessária para a autenticação e acesso a dados a configuração da API de centro de parceiros. Para obter mais informações, consulte [ligar para a API do Centro de parceiros](https://msdn.microsoft.com/library/partnercenter/mt709136.aspx). Além disso, os utilizadores CSP indiretos só podem utilizar Cloudyn quando o seu revendedor a partir do CSP direta regista com Cloudyn para fornecer acesso aos respetivos clientes e subscrições.
+
+>Apenas CSP direta parceiros e fornecedores Indireta CSP podem concluir o registo de Cloudyn.
+>
+>É necessário para autenticação e acesso a dados configurar a API do Centro de parceiros. É necessária uma conta de Administrador Global do parceiro Center para aprovisionar o acesso à API.
+Para obter mais informações, consulte [ligar para a API do Centro de parceiros](https://msdn.microsoft.com/library/partnercenter/mt709136.aspx).
+>
+>Acesso a Cloudyn pode ser disponibilizado para revendedores Indireta CSP após o respetivo fornecedor Indireta de CSP regista com Cloudyn. Revendedores Indireta de CSP, em seguida, pode fornecer Cloudyn acesso para clientes do Azure e as subscrições.
 
 ## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 

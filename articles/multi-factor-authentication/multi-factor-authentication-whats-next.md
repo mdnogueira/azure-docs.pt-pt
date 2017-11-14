@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/02/2017
 ms.author: joflore
 ms.reviewer: alexwe
-ms.openlocfilehash: 723bd7135a59bcc0bce648460f871a841a684d3c
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 5da47bf2f48b0f5df5f7fa19f1f626fbdca2b8db
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="configure-azure-multi-factor-authentication-settings---public-preview"></a>Configurar definições de multi-factor Authentication do Azure - pré-visualização pública
 
@@ -29,7 +29,7 @@ Este artigo ajuda-o a gerir o Azure multi-factor Authentication agora que já es
 
 | Funcionalidade | Descrição | 
 |:--- |:--- |
-| [Bloquear/desbloquear utilizadores](#block/unblock-users) |Bloquear/desbloquear utilizadores podem impedir os utilizadores de receber pedidos de autenticação. |
+| [Bloquear e desbloquear utilizadores](#block-and-unblock) |Bloquear/desbloquear utilizadores podem impedir os utilizadores de receber pedidos de autenticação. |
 | [Alerta de fraude](#fraud-alert) |Alerta de fraude pode ser configurada e configurar para que os utilizadores podem comunicar fraudulenta tenta aceder aos respetivos recursos. |
 | [Omissão de uso individual](#one-time-bypass) |Uma omissão de uso individual permite ao utilizador autenticar uma única vez, "Ignorar" multi-factor authentication. |
 | [Mensagens de voz personalizadas](#custom-voice-messages) |Mensagens de voz personalizadas permitem-lhe utilizar as suas próprias gravações ou saudações com multi-factor authentication. |
@@ -39,7 +39,7 @@ Este artigo ajuda-o a gerir o Azure multi-factor Authentication agora que já es
 | [Lembre-se de multi-factor Authentication para browsers e dispositivos memorizados](#remember-multi-factor-authentication-for-devices-that-users-trust) |Permite-lhe não se esqueça de dispositivos para um número definido de dias após um utilizador tiver sessão com êxito através do MFA. |
 | [Métodos de verificação selecionável](#selectable-verification-methods) |Permite-lhe escolher os métodos de autenticação que estão disponíveis para os utilizadores utilizem. |
 
-## <a name="blockunblock-users"></a>Bloquear/desbloquear utilizadores
+## <a name="block-and-unblock"></a>Bloquear e desbloquear
 Bloquear/desbloquear utilizadores podem ser utilizados para impedir que os utilizadores receber pedidos de autenticação. Quaisquer tentativas de autenticação para utilizadores bloqueados serão rejeitadas automaticamente. Utilizadores bloqueados irão permanecer bloqueados para 90 dias desde o momento em estão bloqueados.
 
 ### <a name="block-a-user"></a>Bloquear um utilizador
@@ -56,7 +56,7 @@ Bloquear/desbloquear utilizadores podem ser utilizados para impedir que os utili
 4. Introduza um comentário no **pelo motivo para desbloquear** campo.
 5. Clique em **desbloqueio** para concluir a desbloquear o utilizador.
 
-## <a name="fraud-alert"></a>Alerta de fraude
+## <a name="fraud-alert"></a>Alerta de Fraude
 Alerta de fraude pode ser configurada e configurar para que os utilizadores podem comunicar fraudulenta tenta aceder aos respetivos recursos.  Os utilizadores podem comunicar fraude com a aplicação móvel ou através do seu telefone.
 
 ### <a name="turn-on-fraud-alert"></a>Ativar o alerta de fraude
@@ -70,7 +70,7 @@ Alerta de fraude pode ser configurada e configurar para que os utilizadores pode
 
 ### <a name="configuration-options"></a>Opções de configuração
 
-- **Bloquear utilizador quando é reportada fraude** - se um fraude de relatórios do utilizador, a conta está bloqueada.
+- **Bloquear utilizador quando é reportada fraude** - se um fraude de relatórios do utilizador, a conta está bloqueada durante 90 dias, ou até que um administrador unblocks a respetiva conta. Um administrador pode rever os inícios de sessão utilizando o relatório de início de sessão e tome as medidas necessárias para evitar fraude futura. Um administrador pode, em seguida, [desbloquear](#unblock-a-user) a conta de utilizador.
 - **Código para reportar fraude durante a saudação inicial** - quando os utilizadores recebem uma chamada telefónica para efetuar a verificação de dois passos, normalmente prima # para confirmar o seu início de sessão. Se pretende reportar fraude, ele introduzir um código antes de premir #. Este código é **0** por predefinição, mas pode personalizá-lo.
 
 > [!NOTE]
@@ -188,7 +188,7 @@ Se IPs fidedignos está ativada ou não, a verificação é necessária para flu
 
 ![IPs Fidedignos](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
-## <a name="app-passwords"></a>Palavras-passe de aplicação
+## <a name="app-passwords"></a>Palavras-passe de Aplicação
 Algumas aplicações, como o Office 2010 ou anterior e Apple Mail, não suportam a verificação de dois passos. Estas não estão configuradas para aceitar uma verificação de segundo. Para utilizar estas aplicações, tem de utilizar "palavras-passe de aplicação" em vez da palavra-passe tradicional. A palavra-passe de aplicação permite que a aplicação ignorar a verificação de dois passos e continuar a trabalhar.
 
 > [!NOTE]
@@ -296,7 +296,7 @@ Quando das respetivas contas de inscrever os seus utilizadores para a MFA, se es
 |:--- |:--- |
 | Ligar para telefone |Coloca uma chamada de voz automatizada. O utilizador atende a chamada e prime # no teclado do telefone para se autenticar. Este número de telefone não está sincronizado para o Active Directory no local. |
 | Mensagem de texto para telefone |Envia uma mensagem de texto que contém um código de verificação. É pedido ao utilizador que responda à mensagem de texto com o código de verificação ou introduzir o código de verificação para a interface de início de sessão. |
-| Notificação através de aplicações móveis |Envia uma notificação push para o seu telefone ou dispositivo registado. O utilizador vê a notificação e seleciona **verifique** para concluir a verificação. <br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
+| Notificação através de aplicação móvel |Envia uma notificação push para o seu telefone ou dispositivo registado. O utilizador vê a notificação e seleciona **verifique** para concluir a verificação. <br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
 | Código de verificação da aplicação móvel |A aplicação Microsoft Authenticator gera um novo código de verificação de OATH cada trinta segundos. O utilizador introduz este código de verificação para a interface de início de sessão.<br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
 
 ### <a name="how-to-enabledisable-authentication-methods"></a>Como ativar/desativar os métodos de autenticação

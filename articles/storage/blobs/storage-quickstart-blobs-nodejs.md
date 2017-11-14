@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 10/30/2017
 ms.author: gwallace
-ms.openlocfilehash: 9ea7f77d3bbe45de49c798fe3d51151e1a5a6658
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: dd4d3abf082767c40760d020c0997b365452e769
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="transfer-objects-tofrom-azure-blob-storage-using-nodejs"></a>Transferência de objetos para/de Blob storage do Azure com o Node.js
 
@@ -103,7 +103,11 @@ Também pode utilizar uma ferramenta como o [Explorador de armazenamento do Azur
 
 Depois de verificar que os ficheiros, prima qualquer tecla para concluir a demonstração e eliminar os ficheiros de teste. Agora que sabe o que faz o exemplo, abra o ficheiro de index.js para ver o código. 
 
-## <a name="get-references-to-the-storage-objects"></a>Obter referências para os objetos de armazenamento
+## <a name="understand-the-sample-code"></a>Compreender o código de exemplo
+
+Em seguida, iremos guiá-o código de exemplo, para que possa compreender como funciona.
+
+### <a name="get-references-to-the-storage-objects"></a>Obter referências para os objetos de armazenamento
 
 A primeira coisa a fazer é criar a referência para o `BlobService` utilizado para aceder e gerir o armazenamento de Blobs. Criar estes objetos entre si – cada um é utilizada pela seguinte na lista.
 
@@ -120,7 +124,7 @@ blobService.createContainerIfNotExists(blockBlobContainerName, { 'publicAccessLe
     if (error) return callback(error);
 ```
 
-## <a name="upload-blobs-to-the-container"></a>Carregar os blobs no contentor
+### <a name="upload-blobs-to-the-container"></a>Carregar os blobs no contentor
 
 O armazenamento de blobs suporta blobs de blocos, blobs de acréscimo e blobs de páginas. Os blobs de blocos são mais frequentemente utilizados. Estes são ideais para armazenar o texto e os dados binários, que é o motivo pelo qual que são utilizados neste guia de introdução.
 
@@ -141,7 +145,7 @@ console.log('   Uploaded Blob URL:', blobService.getUrl(CONTAINER_NAME, BLOCK_BL
 
 Existem vários métodos de carregamento que pode utilizar com o Blob storage. Por exemplo, se tiver uma sequência de memória, pode utilizar o [createBlockBlobFromStream](/nodejs/api/azure-storage/blobservice?view=azure-node-2.2.0#azure_storage_BlobService_createBlockBlobFromStream) método vez [createBlockBlobFromLocalFile](/nodejs/api/azure-storage/blobservice?view=azure-node-2.2.0#azure_storage_BlobService_createBlockBlobFromLocalFile).
 
-## <a name="list-the-blobs-in-a-container"></a>Listar os blobs num contentor
+### <a name="list-the-blobs-in-a-container"></a>Listar os blobs num contentor
 
 Em seguida, a aplicação obtém uma lista de ficheiros no contentor com [listBlobsSegmented](/nodejs/api/azure-storage/blobservice?view=azure-node-2.2.0#azure_storage_BlobService_listBlobsSegmented). O código seguinte obtém a lista de blobs, em seguida, repetido ao longo, que mostra os URIs dos blobs encontrados. Pode copiar o URI a partir da janela de comando e cole-o num browser para ver o ficheiro.
 
@@ -158,7 +162,7 @@ blobService.listBlobsSegmented(CONTAINER_NAME, null, function (error, data) {
     console.log('\n');
 ```
 
-## <a name="download-blobs"></a>Transferir blobs
+### <a name="download-blobs"></a>Transferir blobs
 
 Transferir blobs para a sua utilização de disco local [getBlobToLocalFile](/nodejs/api/azure-storage/blobservice?view=azure-node-2.2.0#azure_storage_BlobService_getBlobToLocalFile).
 
@@ -171,7 +175,7 @@ handleError(error);
 console.log('   Downloaded File:', DOWNLOADED_FILE_PATH, '\n');
 ```
 
-## <a name="clean-up-resources"></a>Limpar recursos
+### <a name="clean-up-resources"></a>Limpar recursos
 
 Se já não necessita de blobs carregados este início rápido, pode eliminar o contentor inteiro utilizando [deleteBlobIfExists](/nodejs/api/azure-storage/blobservice#azure_storage_BlobService_deleteBlobIfExists) e [deleteContainerIfExists](/nodejs/api/azure-storage/blobservice#azure_storage_BlobService_deleteContainerIfExists). Também elimine os ficheiros criados se já não são necessárias. Isto está Tratado na aplicação ao premir introduza para sair da aplicação.
 

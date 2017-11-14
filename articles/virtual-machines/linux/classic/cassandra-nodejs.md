@@ -3,7 +3,7 @@ title: Executar Cassandra com Linux no Azure | Microsoft Docs
 description: "Como executar um cluster de Cassandra em Linux no Azure as máquinas virtuais a partir de uma aplicação Node.js"
 services: virtual-machines-linux
 documentationcenter: nodejs
-author: tomarcher
+author: craigshoemaker
 manager: routlaw
 editor: 
 tags: azure-service-management
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: tarcher
-ms.openlocfilehash: 1ff3d77ced6c9d90029b251490c05e52d9b43515
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: cshoe
+ms.openlocfilehash: 28eb281d8d301fa5478afb0925c74349de92ca58
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="running-cassandra-with-linux-on-azure-and-accessing-it-from-nodejs"></a>Executar o Cassandra com o Linux no Azure e Aceder a partir de Node.js
 > [!IMPORTANT] 
@@ -146,8 +146,8 @@ Introduza as seguintes informações no ecrã "configuração de Máquina Virtua
 <tr><td> NOVO NOME DE UTILIZADOR             </td><td> localadmin                       </td><td> "admin" é um nome de utilizador reservado no Ubuntu 12. xx e depois</td><tr>
 <tr><td> AUTENTICAÇÃO         </td><td> Clique em caixa de verificação                 </td><td>Verifique se pretende proteger com uma chave SSH </td><tr>
 <tr><td> CERTIFICADO             </td><td> nome de ficheiro do certificado de chave pública </td><td> Utilize a chave pública gerada anteriormente</td><tr>
-<tr><td> Nova palavra-passe    </td><td> palavra-passe segura </td><td> </td><tr>
-<tr><td> Confirmar palavra-passe    </td><td> palavra-passe segura </td><td></td><tr>
+<tr><td> Nova Palavra-passe    </td><td> palavra-passe segura </td><td> </td><tr>
+<tr><td> Confirmar Palavra-passe    </td><td> palavra-passe segura </td><td></td><tr>
 </table>
 
 Introduza as seguintes informações no ecrã "configuração de Máquina Virtual" #2:
@@ -327,7 +327,7 @@ Dados e sub-redes Web podem ser protegidas através de grupos de segurança de r
 **Passo 2: Aprovisionar máquinas** utilizando a imagem criada anteriormente, iremos criar as seguintes máquinas virtuais no servidor de cloud "hk-c-svc-Oeste" e vinculá-los para as respetivas sub-redes, como mostrado abaixo:
 
 <table>
-<tr><th>Nome do computador    </th><th>Subrede    </th><th>Endereço IP    </th><th>Conjunto de disponibilidade</th><th>DC/Rack</th><th>Seed?</th></tr>
+<tr><th>Nome do Computador    </th><th>Subrede    </th><th>Endereço IP    </th><th>Conjunto de disponibilidade</th><th>DC/Rack</th><th>Seed?</th></tr>
 <tr><td>HK-c1--EUA oeste    </td><td>dados    </td><td>10.1.2.4    </td><td>HK-c-aset-1    </td><td>DC = WESTUS bastidor = rack1 </td><td>Sim</td></tr>
 <tr><td>HK-c2--EUA oeste    </td><td>dados    </td><td>10.1.2.5    </td><td>HK-c-aset-1    </td><td>DC = WESTUS bastidor = rack1    </td><td>Não </td></tr>
 <tr><td>HK-c3--EUA oeste    </td><td>dados    </td><td>10.1.2.6    </td><td>HK-c-aset-1    </td><td>DC = WESTUS bastidor = rack2    </td><td>Sim</td></tr>
@@ -464,7 +464,7 @@ Irá tirar partido de implementação única região concluída e repita o mesmo
 Inicie sessão no portal clássico do Azure e criar uma rede Virtual com a mostrar os atributos na tabela. Consulte [configurar uma rede Virtual Cloud-Only no portal clássico do Azure](../../../virtual-network/virtual-networks-create-vnet-classic-pportal.md) para obter passos detalhados do processo.      
 
 <table>
-<tr><th>Nome do atributo    </th><th>Valor    </th><th>Observações</th></tr>
+<tr><th>Nome do Atributo    </th><th>Valor    </th><th>Observações</th></tr>
 <tr><td>Nome    </td><td>vnet-cass-Leste-nos</td><td></td></tr>
 <tr><td>Região    </td><td>EUA Leste</td><td></td></tr>
 <tr><td>Servidores DNS        </td><td></td><td>Ignore esta indicação como podemos não estiver a utilizar um servidor DNS</td></tr>
@@ -523,7 +523,7 @@ No portal clássico do Azure, utilize o menu de "DASHBOARD" das redes virtuais p
 ### <a name="step-8-create-the-virtual-machines-in-region-2"></a>Passo 8: Criar as máquinas virtuais na região #2
 Criar a imagem do Ubuntu conforme descrito na implementação de região #1 ao seguir os mesmos passos ou copiar o ficheiro VHD de imagem para a conta de armazenamento do Azure localizado numa região #2 e criar a imagem. Utilizar esta imagem e crie a seguinte lista de máquinas virtuais para um novo serviço em nuvem hk-c-svc-leste--na:
 
-| Nome do computador | Subrede | Endereço IP | Conjunto de disponibilidade | DC/Rack | Seed? |
+| Nome do Computador | Subrede | Endereço IP | Conjunto de disponibilidade | DC/Rack | Seed? |
 | --- | --- | --- | --- | --- | --- |
 | HK-c1-Leste-nos |dados |10.2.2.4 |HK-c-aset-1 |DC = EASTUS bastidor = rack1 |Sim |
 | HK-c2-Leste-nos |dados |10.2.2.5 |HK-c-aset-1 |DC = EASTUS bastidor = rack1 |Não |

@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/01/2017
+ms.date: 11/13/2017
 ms.author: cherylmc
-ms.openlocfilehash: 35dd3c6be2fb2fa5ec4d14eefce1c16005210364
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: b041244b28d76de4bac2822c115482e31d073a22
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="configure-network-performance-monitor-for-expressroute-preview"></a>Configurar o Monitor de desempenho de rede para o ExpressRoute (pré-visualização)
 
@@ -39,21 +39,27 @@ Pode:
 
 * Consulte o estado do sistema ExpressRoute de um ponto anterior no tempo
 
-**Como funciona?**
+## <a name="regions"></a>Regiões suportadas
+
+Pode monitorizar os circuitos do ExpressRoute em qualquer parte do mundo através de uma área de trabalho que está alojada das regiões do seguintes:
+
+* Europa Ocidental 
+* EUA Leste 
+* Sudeste Asiático 
+
+## <a name="workflow"></a>Fluxo de trabalho
 
 Se encontram instalados agentes de monitorização em vários servidores, no local e no Azure. Os agentes de comunicarem entre si, mas não enviam dados, enviam pacotes de handshake TCP. A comunicação entre os agentes permite ao Azure mapear a topologia de rede e o caminho que o tráfego pode demorar algum.
 
-**Fluxo de trabalho**
-
-1. Crie uma área de trabalho de NPM na região Central EUA oeste. Atualmente, esta é a única região onde esta pré-visualização é suportada.
+1. Criar uma área de trabalho de NPM num do [regiões suportadas](#regions).
 2. Instalar e configurar agentes de software: 
     * Instale agentes de monitorização de servidores no local e as VMs do Azure.
     * Configure as definições nos servidores do agente de monitorização para permitir que os agentes de monitorização comunicar. (As portas de firewall aberta, etc.)
 3. Configurar regras para permitir que o agente de monitorização instalado em VMs do Azure para comunicar com no local (NSG) do grupo de segurança de rede os agentes de monitorização.
-4. Pedido de lista branca sua área de trabalho de NPM
+4. O pedido para a lista branca sua área de trabalho do NPM.
 5. Configurar a monitorização: detetar automaticamente e gerir quais as redes são visíveis no NPM.
 
-Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os outros objetos ou os serviços e já tiver a área de trabalho Central EUA oeste, pode ignorar o passo 1 e o passo 2 e iniciar a configuração com o passo 3.
+Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os outros objetos ou os serviços e já tiver área de trabalho de uma das regiões suportadas, pode ignorar o passo 1 e o passo 2 e iniciar a configuração com o passo 3.
 
 ## <a name="configure"></a>Passo 1: Criar uma área de trabalho
 
@@ -66,7 +72,7 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
   * Área de trabalho OMS - escreva um nome para a sua área de trabalho.
   * Subscrição - se tiver várias subscrições, selecione aquela que pretende associar à área de trabalho de novo.
   * Grupo de recursos - criar um grupo de recursos ou utilize uma já existente.
-  * Localização - tem de selecionar Central EUA oeste para esta pré-visualização
+  * Localização - tem de selecionar um [suportado região](#regions).
   * Escalão de preço - Selecione 'livres'
 
   ![Área de trabalho](.\media\how-to-npm\4.png)<br><br>

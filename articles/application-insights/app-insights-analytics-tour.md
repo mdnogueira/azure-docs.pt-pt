@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/06/2017
 ms.author: mbullwin
-ms.openlocfilehash: 26a5854735bd197fb114fce409a093251dc5c2f0
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: a33fedd765acde666eef280ba7dfa72536bf1bd2
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="a-tour-of-analytics-in-application-insights"></a>A introdução de análise no Application Insights
 [Análise de](app-insights-analytics.md) é a funcionalidade de pesquisa poderoso de [Application Insights](app-insights-overview.md). Estas páginas descrevem o idioma de consulta de análise de registos.
@@ -54,7 +54,7 @@ Expanda qualquer item para ver os detalhes:
 ![Escolha a tabela e utilize configurar colunas](./media/app-insights-analytics-tour/040.png)
 
 > [!NOTE]
-> Clique no cabeçalho da coluna para reordenar os resultados disponíveis no browser. Mas tenha em atenção que para um conjunto de resultados grande, o número de linhas transferido para o browser é limitado. Desta forma a ordenação não sempre mostra-lhe os itens de mais ou menor reais. Para ordenar itens de forma fiável, utilize o `top` ou `sort` operador.
+> Clique no cabeçalho de uma coluna para reordenar os resultados disponíveis no browser. Mas tenha em atenção que para um conjunto de resultados grande, o número de linhas transferido para o browser é limitado. Desta forma simplesmente ordena o conjunto de resultados devolvido e ordenação sempre não mostra os itens de mais ou menor reais. Para ordenar itens de forma fiável, utilize o `top` ou `sort` operador.
 >
 >
 
@@ -92,7 +92,7 @@ Mostra as primeiras n linhas, ordenadas por uma coluna específica:
 
 O resultado seria o mesmo, mas iria executar um pouco mais lentamente. (Também poderia escrever `order`, que é um alias de `sort`.)
 
-Os cabeçalhos de coluna na vista de tabela também podem ser utilizados para ordenar os resultados no ecrã. Mas de decorrer, se utilizou `take` ou `top` obter apenas parte de uma tabela irá apenas reordenar os registos tiver obtido.
+Os cabeçalhos de coluna na vista de tabela também podem ser utilizados para ordenar os resultados no ecrã. Mas de decorrer, se utilizou `take` ou `top` obter apenas a parte de uma tabela, clicando no cabeçalho da coluna será apenas reordenar os registos tiver obtido.
 
 ## <a name="wherehttpsdocsloganalyticsioquerylanguagequerylanguagewhereoperatorhtml-filtering-on-a-condition"></a>[Onde](https://docs.loganalytics.io/queryLanguage/query_language_whereoperator.html): numa condição de filtragem
 
@@ -115,8 +115,9 @@ O `where` operador aceita uma expressão booleana. Eis alguns pontos chaves sobr
 
 <!---Read all about [scalar expressions]().--->
 
-### <a name="getting-the-right-type"></a>Obter o tipo correto
-Localize pedidos sem êxito:
+### <a name="find-unsuccessful-requests"></a>Localizar pedidos sem êxito
+
+Converter um valor de cadeia para um número inteiro para utilizar maior-de comparação:
 
 ```AIQL
 
@@ -240,7 +241,7 @@ Ou, iremos foi separar o resultado em pedidos de nomes diferentes:
 
 ![](./media/app-insights-analytics-tour/420.png)
 
-`Summarize`recolhe os pontos de dados no fluxo em grupos para os quais o `by` cláusula avalia igualmente. Cada valor de `by` expressão - cada nome de operação de exemplo acima - resulta numa linha na tabela de resultados.
+`Summarize`recolhe os pontos de dados no fluxo em grupos para os quais o `by` cláusula avalia igualmente. Cada valor de `by` expressão - cada nome de operação exclusivos no exemplo acima - resulta numa linha na tabela de resultados.
 
 Ou, iremos foi agrupar os resultados por hora do dia:
 

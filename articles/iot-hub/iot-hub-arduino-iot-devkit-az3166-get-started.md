@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2017
 ms.author: xshi
-ms.openlocfilehash: 0b8ae318fab2eaa186dca050ce2710b1ff232783
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: da757085e55fa0d8ca883f8ed64f30ea81e973f7
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub-in-the-cloud"></a>Ligar IoT DevKit AZ3166 ao IoT Hub do Azure na nuvem
 
@@ -29,7 +29,7 @@ Pode utilizar o [MXChip IoT DevKit](https://microsoft.github.io/azure-iot-develo
 ## <a name="what-you-do"></a>O que fazer
 Ligar o [DevKit](https://microsoft.github.io/azure-iot-developer-kit/) para um hub IoT do Azure que criar, recolher os dados relativos à temperatura e humidade de sensores e enviar os dados para o IoT hub.
 
-Não tem um DevKit ainda? [Obter uma](https://aka.ms/iot-devkit-purchase).
+Não tem um DevKit ainda? [Repita o simulador](https://aka.ms/iot-devkit-simulator) ou [obter uma](https://aka.ms/iot-devkit-purchase).
 
 ## <a name="what-you-learn"></a>O que irá aprender
 

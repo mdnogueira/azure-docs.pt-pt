@@ -1,5 +1,5 @@
 ---
-title: "Gerir dispositivos através do Azure portal - pré-visualização | Microsoft Docs"
+title: "Gerir dispositivos através do portal do Azure | Microsoft Docs"
 description: Saiba como utilizar o portal do Azure para gerir dispositivos.
 services: active-directory
 documentationcenter: 
@@ -12,19 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/24/2017
+ms.date: 11/11/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 4b46e1627a229b0649d9ccd2550cd28fda9849f8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6ac076917092caa8b3c14ab179515c0693fc89bf
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
-# <a name="managing-devices-using-the-azure-portal---preview"></a>Gerir dispositivos através do Azure portal - preview
-
->[!NOTE]
->Esta capacidade está atualmente em pré-visualização pública. Esteja preparado para reverter ou remover quaisquer alterações. A funcionalidade está disponível em qualquer subscrição do Azure Active Directory (Azure AD) durante a pré-visualização pública. No entanto, quando a funcionalidade torna-se geralmente disponível, alguns aspetos da funcionalidade poderão necessitar de uma subscrição do Azure Active Directory premium.
+# <a name="managing-devices-using-the-azure-portal"></a>Gestão de dispositivos no portal do Azure
 
 
 Gestão de dispositivos no Azure Active Directory (Azure AD), pode certificar-se de que os utilizadores acedem aos seus recursos dos dispositivos que cumprem as normas de segurança e conformidade. 
@@ -36,21 +33,17 @@ Neste tópico:
 - Fornece informações sobre como gerir os seus dispositivos no portal do Azure
 
 
-Para gerir dispositivos no portal do Azure, tem de clicar em **dispositivos** no **gerir** secção ao **do Azure Active Directory** painel.
-
-![Gerir um dispositivo do Intune](./media/device-management-azure-portal/11.png)
-
-
-
 
 ## <a name="configure-device-settings"></a>Configurar definições do dispositivo
 
-Para gerir os dispositivos no portal do Azure, têm de estar registado ou associado para o Azure AD. Como administrador, pode ajustar o processo de registar e associação de dispositivos ao configurar as definições do dispositivo.
+Para gerir os seus dispositivos no portal do Azure, os seus dispositivos tem de ser registado ou associado para o Azure AD. Como administrador, pode ajustar o processo de registar e associação de dispositivos ao configurar as definições do dispositivo. 
 
-![Gerir um dispositivo do Intune](./media/device-management-azure-portal/22.png)
+![Configurar definições do dispositivo](./media/device-management-azure-portal/22.png)
 
+A página de definições do dispositivo permite-lhe configurar:
 
-O painel de definições do dispositivo permite-lhe configurar:
+![Gerir um dispositivo do Intune](./media/device-management-azure-portal/21.png)
+
 
 - **Os utilizadores podem associar dispositivos ao Azure AD** - esta definições permite-lhe selecionar os utilizadores podem associar dispositivos ao Azure AD. A predefinição é **todos os**.
 
@@ -65,14 +58,13 @@ O painel de definições do dispositivo permite-lhe configurar:
 - **Os utilizadores poderão sincronizar as definições e dados da aplicação em todos os dispositivos** -por predefinição, esta definição está definida como **NONE**. A seleção de utilizadores específicos ou grupos ou todos os permite as ao utilizador definições e dados da aplicação a sincronização entre os dispositivos Windows 10. Saiba mais sobre o funcionamento da sincronização no Windows 10.
 Esta opção é uma capacidade de premium disponível através de produtos como o Azure AD Premium ou Enterprise Mobility Suite (EMS).
  
-    ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/21.png)
 
 
 
 
 ## <a name="locate-devices"></a>Localizar os dispositivos
 
-Como administrador, no portal do Azure, tem duas opções para localizar os dispositivos registados e associado ao:
+Tem duas opções para localizar os dispositivos registados e associado ao:
 
 - **Todos os dispositivos** no **gerir** secção o **dispositivos** painel  
 
@@ -103,45 +95,73 @@ Com ambas as opções, pode obter uma vista que:
 Como administrador, pode gerir os dispositivos registados ou associados. Esta secção fornece informações sobre tarefas comuns de gestão de dispositivos.
 
 
-**Gerir um dispositivo de Intune** -se um administrador do Intune, pode gerir dispositivos marcados como **Microsoft Intune**. Um administrador pode ver adicionais do dispositivo 
+### <a name="manage-an-intune-device"></a>Gerir um dispositivo do Intune
+
+Se for um administrador do Intune, pode gerir dispositivos marcados como **Microsoft Intune**. Um administrador pode ver adicionais do dispositivo 
 
 ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/31.png)
 
 
-**Ativar / desativar um dispositivo do Azure AD**
+### <a name="enable--disable-an-azure-ad-device"></a>Ativar / desativar um dispositivo do Azure AD
 
-Para ativar ou desativar um dispositivo, tem de ser um administrador global no Azure AD. Desativar um dispositivo impede que um dispositivo aceder aos seus recursos do Azure AD.  Para desativar o dispositivo, pode clicar em *...* Clique no dispositivo para obter detalhes adicionais.
+Para ativar / desativar um dispositivo, tem duas opções:
 
+- O menu de tarefas ("...") no **todos os dispositivos** página
+
+    ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/71.png)
+
+- Barra de ferramentas no **dispositivos** página
+
+    ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/32.png)
+
+
+**Comentários:**
+
+- Tem de ser um administrador global no Azure AD para ativar / desativar um dispositivo. 
+- Desativar um dispositivo impede que um dispositivo aceder aos seus recursos do Azure AD. 
+
+
+
+### <a name="delete-an-azure-ad-device"></a>Eliminar um dispositivo do Azure AD
+
+Para eliminar um dispositivo, tem duas opções:
+
+- O menu de tarefas ("...") no **todos os dispositivos** página
+
+    ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/72.png)
+
+- Barra de ferramentas no **dispositivos** página
+
+    ![Eliminar um dispositivo](./media/device-management-azure-portal/34.png)
+
+
+**Comentários:**
+
+- Tem de ser um administrador global no Azure AD para eliminar um dispositivo.  
+
+- Eliminar um dispositivo:
  
-![Gerir um dispositivo do Intune](./media/device-management-azure-portal/33.png)
+    - Impede que um dispositivo de aceder aos seus recursos do Azure AD. 
 
-Desativar um dispositivo altera o estado no **ATIVADO** coluna **não**.
+    - Remove todos os detalhes que estão ligados ao dispositivo, por exemplo, as chaves do BitLocker para dispositivos Windows.  
 
-![Desativar um dispositivo](./media/device-management-azure-portal/32.png)
-
-
-**Eliminar um dispositivo do Azure AD** - para eliminar um dispositivo, tem de ser um administrador global no Azure AD.  
-Eliminar um dispositivo:
- 
-- Impede que um dispositivo aceder aos seus recursos do Azure AD 
-
-- Remove todos os detalhes que estão ligados ao dispositivo, por exemplo, as chaves do BitLocker para dispositivos Windows  
-
-- Representa uma atividade não recuperável e não é recomendado, exceto se for necessário
+    - Representa uma atividade não recuperável e não é recomendado, exceto se for necessário.
 
 Se um dispositivo é gerido por outra autoridade de gestão (por exemplo, o Microsoft Intune), certifique-se de que o dispositivo foi limpo / extinto antes de eliminar o dispositivo no Azure AD.
 
-Pode selecionar "..." Para eliminar o dispositivo ou clique no dispositivo para obter detalhes adicionais
  
-![Eliminar um dispositivo](./media/device-management-azure-portal/34.png)
 
 
-**Ver ou copie o ID de dispositivo** -pode utilizar um ID de dispositivo para verificar os detalhes de ID de dispositivo no dispositivo ou através do PowerShell durante a resolução de problemas. Para aceder a opção de cópia, clique no dispositivo.
+### <a name="view-or-copy-device-id"></a>Ver ou copie o ID de dispositivo
+
+Pode utilizar um ID de dispositivo para verificar os detalhes de ID de dispositivo no dispositivo ou através do PowerShell durante a resolução de problemas. Para aceder a opção de cópia, clique no dispositivo.
 
 ![Ver um ID de dispositivo](./media/device-management-azure-portal/35.png)
   
 
-**Ver ou copie as chaves do BitLocker** -se de que é um administrador, pode ver e copiar as chaves do BitLocker para ajudar os utilizadores recuperem a respetiva unidade encriptada. Estas chaves só estão disponíveis para dispositivos Windows que são encriptados e tem as suas chaves armazenados no Azure AD. Pode copiar estas chaves quando aceder aos detalhes do dispositivo.
+### <a name="view-or-copy-bitlocker-keys"></a>Ver ou copie as chaves do BitLocker
+
+Se for um administrador, pode ver e copiar as chaves do BitLocker para ajudar os utilizadores recuperem a respetiva unidade encriptada. Estas chaves só estão disponíveis para dispositivos Windows que são encriptados e tem as suas chaves armazenados no Azure AD. Pode copiar estas chaves quando aceder aos detalhes do dispositivo.
  
 ![Ver as chaves do BitLocker](./media/device-management-azure-portal/36.png)
 
@@ -165,7 +185,7 @@ O ponto de entrada para os dados de auditorias é **registos de auditoria** no *
 
 Um registo de auditoria tem uma vista de lista predefinida que mostra:
 
-- a data e hora da ocorrência
+- A data e hora da ocorrência
 
 - os destinos
 
@@ -186,7 +206,7 @@ Para limitar os dados comunicados a um nível que funcione para si, pode filtrar
 - Tipo de recurso de atividade
 - Atividade
 - Intervalo de datas
-- destino
+- Alvo
 - Iniciado pelo (Ator)
 
 Para além dos filtros, pode procurar entradas específicas.

@@ -3,7 +3,7 @@ title: Novidades da Azure Search | Microsoft Docs
 description: "A pesquisa do Azure é um serviço de pesquisa de nuvem alojado completamente gerido. Saiba mais nesta descrição geral da funcionalidade."
 services: search
 manager: jhubbard
-author: ashmaka
+author: HeidiSteen
 documentationcenter: 
 ms.assetid: 50bed849-b716-4cc9-bbbc-b5b34e2c6153
 ms.service: search
@@ -11,18 +11,18 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 06/26/2017
-ms.author: ashmaka
-ms.openlocfilehash: 9893be47ec0c2f58ca206ec7c1bce13734513390
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.date: 11/10/2017
+ms.author: heidist
+ms.openlocfilehash: 63c7bcc1bf4e650f913d31e5687c31257a85bfee
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="what-is-azure-search"></a>O que é o Azure Search?
-A pesquisa do Azure é uma solução de nuvem de pesquisa-como-um-serviço que fornece aos programadores APIs e ferramentas para adicionar uma experiência de pesquisa avançadas sobre os dados em aplicações web, móveis e enterprise.
+A pesquisa do Azure é uma solução de nuvem de pesquisa-como-um-serviço que fornece aos programadores APIs e ferramentas para adicionar uma experiência de pesquisa avançadas sobre o conteúdo em aplicações web, móveis e enterprise.
 
-A funcionalidade está exposta através de uma simples [REST API](/rest/api/searchservice/) ou [.NET SDK](search-howto-dotnet-sdk.md) que dissimula a complexidade inerente tecnologia de pesquisa. Para além das APIs, o portal do Azure fornece e suporte de fazer o protótipo da administração. Infraestrutura e disponibilidade são geridos pela Microsoft.
+A funcionalidade está exposta através de uma simples [REST API](/rest/api/searchservice/) ou [.NET SDK](search-howto-dotnet-sdk.md) que dissimula a complexidade inerente de obtenção de informações. Para além das APIs, o portal do Azure fornece suportem de administração e gestão de conteúdos, com as ferramentas para fazer o protótipo e consultar os índices. Porque o serviço é executado na nuvem, disponibilidade e de infraestrutura são geridos pela Microsoft.
 
 <a name="feature-drilldown"></a>
 
@@ -70,7 +70,7 @@ Os clientes peça, muitas vezes, como a pesquisa do Azure compara com outras sol
 
 | Em comparação com | Principais diferenças |
 |--|--|
-|Bing | [API de pesquisa do Bing Web](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/) procura os índices em Bing.com termos correspondentes submeter. Os índices são criados a partir de HTML, XML e outros conteúdos de web sites público. [Pesquisa do Bing personalizada](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/) oferece a mesma tecnologia de crawler para web tipos de conteúdo, no âmbito de web sites individuais.<br/><br/>A pesquisa do Azure procura um índice que definir, preenchida com dados e os documentos que possui, muitas vezes, de diversas fontes. A pesquisa do Azure tem crawler capabilies para algumas origens de dados através de [indexadores](search-indexer-overview.md), mas pode enviar quaisquer documentos JSON que está em conformidade com o esquema de índice para um recurso pesquisável único e consolidado. |
+|Bing | [API de pesquisa do Bing Web](https://docs.microsoft.com/azure/cognitive-services/bing-web-search/) procura os índices em Bing.com termos correspondentes submeter. Os índices são criados a partir de HTML, XML e outros conteúdos de web sites público. [Pesquisa do Bing personalizada](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/) oferece a mesma tecnologia de crawler para web tipos de conteúdo, no âmbito de web sites individuais.<br/><br/>A pesquisa do Azure procura um índice que definir, preenchida com dados e os documentos que possui, muitas vezes, de diversas fontes. A pesquisa do Azure tem capacidades de crawler para algumas origens de dados através de [indexadores](search-indexer-overview.md), mas pode enviar quaisquer documentos JSON que está em conformidade com o esquema de índice para um recurso pesquisável único e consolidado. |
 |Pesquisa de base de dados | [Pesquisa em texto completo do SQL Server](https://docs.microsoft.com/sql/relational-databases/search/full-text-search) é para conteúdo interno para o DBMS, nas tabelas SQL. <br/><br/>A pesquisa do Azure armazena conteúdo a partir de origens heterogéneos e oferece texto especializado processamento funcionalidades, tais como análise linguístico e personalizada. O [motor de pesquisa de texto completo](search-lucene-query-architecture.md) na Azure Search está incorporado no Apache Lucene, uma norma na obtenção de informações da indústria. <br/><br/>Utilização de recursos é outro ponto de inflection. Pesquisa de linguagem natural é frequentemente viáveis intensiva. Descarregar procura uma solução dedicado preserva recursos para o processamento de transações. Pela pesquisa externalizing, pode ajustar facilmente escala para fazer corresponder o volume de consulta.|
 |Solução de pesquisa dedicado | No local ou na nuvem soluções de serviço são pesquisa dedicado soluções com a funcionalidade do espetro completa. Tecnologias de pesquisa, normalmente, oferecem controlo sobre pipelines de indexação e consulta, de acesso para consultar mais rico e filtragem de sintaxe, controlam sobre a classificação e relevância e funcionalidades para pesquisa auto-direcionada e inteligente. <br/><br/>Pode encontrar soluções de pesquisa dedicado oferecidas como uma nuvem de serviço ou como um servidor autónomo alojado no local ou numa máquina virtual. Um serviço em nuvem é a escolha certa se pretender que um [ative chave solução com overhead mínimo e a manutenção e a escala ajustável](#cloud-service-advantage). <br/><br/>Dentro paradigma na nuvem, vários fornecedores de oferecem funcionalidades de linha de base comparável, com pesquisa de texto completo, georreplicação pesquisa e a capacidade de processar um determinado nível de ambiguidade em entradas de pesquisa. Normalmente, tem um [funcionalidade especializada](#feature-drilldown), ou de facilidade e simplicidade geral de APIs, ferramentas e gestão que determina a melhor opção. |
 

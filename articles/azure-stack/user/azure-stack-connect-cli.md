@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/18/2017
+ms.date: 11/11/2017
 ms.author: sngun
-ms.openlocfilehash: 5ef64e727615d17ae550efbc7ea427936d7d4c3b
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: 60b06cf41ea632219d2f16b29607899bd2e8d789
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="install-and-configure-cli-for-use-with-azure-stack"></a>Instalar e configurar a CLI para utilização com a pilha do Azure
 
@@ -204,6 +204,15 @@ az group create \
 Se o grupo de recursos é criado com êxito, o comando anterior produz as seguintes propriedades do recurso recentemente criado:
 
 ![Saída de criar grupo de recursos](media/azure-stack-connect-cli/image1.png)
+
+## <a name="known-issues"></a>Problemas conhecidos
+Existem alguns problemas conhecidos que deve ter em mente quando utilizar a CLI na pilha do Azure:
+
+* Revertidos de modo interativo CLI o `az interactive` comando ainda não é suportado na pilha do Azure.
+* Para obter a lista de imagens da máquina virtual disponíveis na pilha do Azure, utilize o `az vm images list --all` comando, em vez do `az vm image list` comando. Especificar o `--all` opção certifica-se de que a resposta devolve apenas as imagens que estão disponíveis no seu ambiente de pilha do Azure. 
+* Aliases de imagem de máquina virtual que estão disponíveis no Azure podem não ser aplicáveis a pilha do Azure. Quando utilizar imagens da máquina virtual, tem de utilizar o parâmetro URN completo (Canonical: UbuntuServer:14.04.3-LTS:1.0.0) em vez do alias de imagem. Este URN deve corresponder às especificações de imagem derivado o `az vm images list` comando.
+* Por predefinição, o CLI 2.0 utiliza "Standard_DS1_v2" como o tamanho predefinido da imagem de máquina virtual. No entanto, este tamanho não está ainda disponível na pilha do Azure, por isso, tem de especificar o `--size` parâmetro explicitamente quando criar uma máquina virtual. Pode obter a lista de tamanhos de máquinas virtuais que estão disponíveis na pilha do Azure utilizando o `az vm list-sizes --location <locationName>` comando.
+
 
 ## <a name="next-steps"></a>Passos seguintes
 
