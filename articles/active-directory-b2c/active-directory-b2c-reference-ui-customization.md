@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: saeedakhter-msft
-ms.openlocfilehash: 37e9f06555063ceea00b9162c79344130414b82e
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: 23a2996a5eaa41af5dc66558d2a70dd3e4a4fe3f
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-b2c-customize-the-azure-ad-b2c-user-interface-ui"></a>O Azure Active Directory B2C: Personalizar a interface de utilizador (IU) do Azure AD B2C
 
 Experiência de utilizador é essencial no cliente com acesso à aplicação.  Aumente o seu cliente base por experiências de utilizador com o aspeto e funcionalidade da sua marca de composição. O Azure Active Directory B2C (Azure AD B2C) permite-lhe personalizar a edição do perfil de inscrição, início de sessão, e páginas com controlo de pixel perfeita de reposição de palavra-passe.
 
 > [!NOTE]
-> A funcionalidade da página IU personalização descrita neste artigo não se aplica a política de apenas início de sessão, o associada página de reposição de palavra-passe e verificação e-mails.  Utilizam estas funcionalidades de [corporativa funcionalidade](../active-directory/active-directory-add-company-branding.md) em vez disso.
+> A funcionalidade da página IU personalização descrita neste artigo não se aplica a política de apenas início de sessão, o associada página de reposição de palavra-passe e verificação e-mails.  Utilizam estas funcionalidades de [corporativa funcionalidade](../active-directory/customize-branding.md) em vez disso.
 >
-> Da mesma forma, se um utilizador intiates uma política de perfil de edição *antes* iniciar sessão, o utilizador será redirecionado para uma página que pode ser personalizada utilizando a [corporativa funcionalidade](../active-directory/active-directory-add-company-branding.md).
+> Da mesma forma, se um utilizador intiates uma política de perfil de edição *antes* iniciar sessão, o utilizador será redirecionado para uma página que pode ser personalizada utilizando a [corporativa funcionalidade](../active-directory/customize-branding.md).
 
 Este artigo abrange os seguintes tópicos:
 

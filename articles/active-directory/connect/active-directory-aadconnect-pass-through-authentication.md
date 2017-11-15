@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: billmath
-ms.openlocfilehash: 96a33547329931903d264d5ec4ea8da76e36a0a0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6987ad8f36de55ac49785b41bb193721aa78321b
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Utilizador inicie sessão com a autenticação pass-through do Active Directory do Azure
 
@@ -55,7 +55,7 @@ Pode combinar autenticação pass-through com o [totalmente integrada Single Sig
 
 - Suporta a sessão do utilizador em todas as aplicações baseadas no browser do web e para as aplicações de cliente do Microsoft Office que utilizam [autenticação moderna](https://aka.ms/modernauthga).
 - Início de sessão de nomes de utilizador podem ser ambos o nome de utilizador de predefinição de no local (`userPrincipalName`) ou outro atributo configurado no Azure AD Connect (conhecido como `Alternate ID`).
-- A funcionalidade funciona na perfeição com [acesso condicional](../active-directory-conditional-access.md) funcionalidades como o multi-factor Authentication (MFA) para ajudar a proteger os seus utilizadores.
+- A funcionalidade funciona na perfeição com [acesso condicional](../active-directory-conditional-access-azure-portal.md) funcionalidades como o multi-factor Authentication (MFA) para ajudar a proteger os seus utilizadores.
 - Integrado com baseado na nuvem [gestão de palavra-passe self-service](../active-directory-passwords-overview.md), incluindo a repetição de escrita de palavras-passe para no local do Active Directory e a proteção de palavra-passe por banning palavras-passe utilizadas frequentemente.
 - Ambientes de várias florestas são suportadas se existirem fidedignidades de floresta entre as florestas do AD e se o encaminhamento de sufixo de nome se encontra corretamente configurado.
 - É uma funcionalidade livre e não precisa de quaisquer edições pagas do Azure AD para utilizá-lo.

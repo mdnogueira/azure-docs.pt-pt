@@ -15,17 +15,13 @@ ms.date: 08/23/2017
 ms.author: kgremban
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 1b08a0b376cbcae8522364c9b6ef22e9c0176438
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 477f20bd552460176be92f1db70bb0f76de8bac1
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Publicar aplicações em redes separadas e localizações utilizar grupos de conector
-> [!div class="op_single_selector"]
-> * [Portal do Azure](active-directory-application-proxy-connectors-azure-portal.md)
-> * [Portal Clássico do Azure](active-directory-application-proxy-connectors.md)
->
 
 Os clientes utilizam o Proxy de aplicações do Azure AD para mais cenários e aplicações. Por isso que fizemos do Proxy de aplicação ainda mais flexível Ativando topologias mais. Pode criar grupos de conetor da Proxy da aplicação para que pode atribuir conectores específicos para servirem aplicações específicas. Esta capacidade dá-lhe mais controlo e formas para otimizar a implementação de Proxy de aplicações. 
 

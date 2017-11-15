@@ -1,6 +1,6 @@
 ---
-title: "Clustering SAP (A) SCS instância no Cluster de ativação pós-falha do Windows utilizando o Cluster de disco no Azure partilhado | Microsoft Docs"
-description: "Clustering SAP (A) SCS instância no Cluster de ativação pós-falha do Windows utilizando o Cluster de disco partilhado"
+title: "Uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows utilizando um disco partilhado de cluster no Azure | Microsoft Docs"
+description: "Saiba como uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows utilizando um disco partilhado de cluster."
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: goraco
@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b7706b6f0adce89775f1cb3cffb102510772a101
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: d9eec2d28b436b97cbdaaf4e0e5f154a6ef15fe8
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/14/2017
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -185,92 +185,96 @@ ms.lasthandoff: 10/27/2017
 > ![Windows][Logo_Windows] Windows
 >
 
-# <a name="clustering-sap-ascs-instance-on-windows-failover-cluster-using-cluster-shared-disk-on-azure"></a>Clustering SAP (A) SCS instância no Cluster de ativação pós-falha do Windows utilizando o Cluster partilhado disco no Azure
+# <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-cluster-shared-disk-in-azure"></a>Uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows utilizando um disco partilhado de cluster no Azure
 
 Clustering de ativação pós-falha do Windows Server é a base de uma elevada disponibilidade SAP ASCS/SCS instalação e DBMS no Windows.
 
-Um cluster de ativação pós-falha é um grupo de 1 + n independente servidores (nós) que trabalham em conjunto para aumentar a disponibilidade de aplicações e serviços. Se ocorrer uma falha de nó, o Clustering de ativação pós-falha do Windows Server calcula o número de falhas que podem ocorrer, mantendo em simultâneo um cluster de bom estado de funcionamento para fornecer aplicações e serviços. Pode escolher entre modos diferentes de quórum para conseguir o clustering de ativação pós-falha.
+Um cluster de ativação pós-falha é um grupo de 1 + n independente servidores (nós) que trabalham em conjunto para aumentar a disponibilidade de aplicações e serviços. Se ocorrer uma falha de nó, o clustering de ativação pós-falha do Windows Server calcula o número de falhas que podem ocorrer e continuar a manter um bom estado de funcionamento cluster para fornecer aplicações e serviços. Pode escolher entre modos diferentes de quórum para conseguir o clustering de ativação pós-falha.
 
-## <a name="prerequisite"></a>Pré-requisito
-Certifique-se de que revê estes documentos antes de iniciar com este documento:
+## <a name="prerequisites"></a>Pré-requisitos
+Antes de iniciar as tarefas neste artigo, consulte o artigo seguinte:
 
 * [Cenários para SAP NetWeaver e arquitetura de elevada disponibilidade de máquinas virtuais do Azure][sap-high-availability-architecture-scenarios]
 
 
-## <a name="windows-server-failover-clustering-in-azure"></a>Windows Server Clustering de ativação pós-falha no Azure
+## <a name="windows-server-failover-clustering-in-azure"></a>Windows clustering de ativação pós-falha no Azure
 
-Em comparação com bare implementações de nuvem privada ou metal, Virtual Machines do Azure requer passos adicionais para configurar o Clustering de ativação pós-falha do Windows Server. Quando criar um cluster, tem de definir vários endereços IP e nomes de anfitrião virtual para a instância do SAP ASCS/SCS.
+Em comparação com as implementações de nuvem privada ou de bare-metal, Virtual Machines do Azure requer passos adicionais para configurar o clustering de ativação pós-falha do Windows Server. Quando criar um cluster, tem de definir vários endereços IP e nomes de anfitrião virtual para a instância do SAP ASCS/SCS.
 
-### <a name="name-resolution-in-azure-and-cluster-virtual-host-name"></a>Resolução de nomes no nome de anfitrião Virtual do Azure e o Cluster
+### <a name="name-resolution-in-azure-and-the-cluster-virtual-host-name"></a>Resolução de nomes no Azure e o nome de anfitrião virtual de cluster
 
-A plataforma de nuvem do Azure não oferece a opção para configurar endereços IP virtuais, tais como endereços IP flutuante. É necessário uma solução alternativa para configurar um endereço IP virtual para alcançar o recurso de cluster na nuvem. O Azure tem um **Balanceador de carga interno** no serviço de Balanceador de carga do Azure. Com o Balanceador de carga interno, os clientes conseguirem contactar o cluster através do endereço IP virtual do cluster. Tem de implementar o Balanceador de carga interno no grupo de recursos que contém nós de cluster. Em seguida, configure todas as portas necessárias reencaminhamento regras com a pesquisa de portas do Balanceador de carga interno. Os clientes podem ligar através do nome de anfitrião virtual. O servidor DNS resolve o endereço IP do cluster e a porta de identificadores de Balanceador de carga interno de reencaminhamento para o nó ativo do cluster.
+A plataforma de nuvem do Azure não oferece a opção para configurar endereços IP virtuais, tais como endereços IP flutuante. É necessário uma solução alternativa para configurar um endereço IP virtual para alcançar o recurso de cluster na nuvem. 
 
-![Figura 1: Clustering de ativação pós-falha do Windows Server configuração no Azure sem um disco partilhado][sap-ha-guide-figure-1001]
+O serviço de Balanceador de carga do Azure fornece um *Balanceador de carga interno* para o Azure. Com o Balanceador de carga interno, os clientes conseguirem contactar o cluster através do endereço IP virtual do cluster. 
 
-_**Figura 1:** configuração Clustering de ativação pós-falha do Windows Server no Azure sem um disco partilhado_
+Implemente o Balanceador de carga interno no grupo de recursos que contém nós de cluster. Em seguida, configure todas as portas necessárias reencaminhamento regras utilizando a pesquisa de portas do Balanceador de carga interno. Os clientes podem ligar através do nome de anfitrião virtual. O servidor DNS resolve o endereço IP do cluster e a porta de identificadores de Balanceador de carga interno de reencaminhamento para o nó ativo do cluster.
 
-### <a name="sap-ascs-ha-with-cluster-shared-disks"></a>O SAP (A) SCS HA com Cluster discos partilhados
-No **Windows**, um **SAP (A) SCS** contém a instância não só **serviços centrais SAP**, **servidor de mensagens SAP**, e  **os processos do servidor de colocar em fila**, mas também **anfitrião GLOBAL SAP** ficheiros utilizados para armazenar ficheiros centrais para todo o sistema SAP.
+![Figura 1: Windows clustering de ativação pós-falha configuração no Azure sem um disco partilhado][sap-ha-guide-figure-1001]
 
-Por conseguinte, temos dois componentes de uma instância SCS SAP (A) os seguintes:
+_**Figura 1:** configuração no Azure sem um disco partilhado de cluster de ativação pós-falha do Windows Server_
 
-* **Serviços centrais SAP** com:
-    * Dois **processos**, servidor de mensagem e colocar em fila, e **< (A) SCSVirtualHostName >** utilizado para aceder a estes dois processos
-    * **Estrutura de ficheiros** S:\usr\sap\\&lt;SID&gt;\(A) SCS<InstanceNumber>
+### <a name="sap-ascsscs-ha-with-cluster-shared-disks"></a>SAP ASCS/SCS HA com discos partilhados de cluster
+No Windows, uma instância do SAP ASCS/SCS contém serviços centrais SAP, o servidor de mensagens SAP, os processos do servidor de colocar em fila e SAP anfitrião global ficheiros. Ficheiros de anfitrião global SAP armazenam ficheiros centrais para todo o sistema do SAP.
 
+Uma instância do SAP ASCS/SCS tem os seguintes componentes:
 
-* **ANFITRIÃO GLOBAL SAP** ficheiros com **partilha de ficheiros sapmnt**:
-    * **Estrutura de ficheiros** S:\usr\sap\\&lt;SID&gt;\SYS\....
-    * **partilha de ficheiros sapmnt**, que permite o acesso a estes S:\usr\sap global\\&lt;SID&gt;\SYS\.. ficheiros com o caminho UNC:
-
-     \\\\< (a) SCSVirtualHostName > \sapmnt\\&lt;SID&gt;\SYS\....
+* Serviços de SAP centrais:
+    * Dois processos, uma mensagem e o servidor de colocar em fila e um < nome de anfitrião virtual ASCS/SCS, > que é utilizada para aceder a estes dois processos.
+    * Estrutura de ficheiros: S:\usr\sap\\&lt;SID&gt;\ASCS/SCS\<número de instância\>
 
 
-![Figura 2: Processos, estrutura de ficheiros e anfitrião GLOBAL sapmnt partilha de ficheiros de uma instância SCS SAP (A)][sap-ha-guide-figure-8001]
+* Ficheiros do SAP anfitrião global:
+    * Estrutura de ficheiros: S:\usr\sap\\&lt;SID&gt;\SYS\....
+    * A partilha de ficheiros sapmnt, que permite o acesso a estes S:\usr\sap global\\&lt;SID&gt;\SYS\.… ficheiros utilizando o seguinte caminho UNC:
 
-_**Figura 2:** processos, estrutura de ficheiros e partilha de ficheiros do anfitrião GLOBAL sapmnt de uma instância SCS SAP (A)_
+     \\\\< nome de anfitrião virtual ASCS/SCS > \sapmnt\\&lt;SID&gt;\SYS\....
 
-Na definição de elevada disponibilidade, iremos são clustering instâncias SCS SAP (A). Estamos a utilizar **discos partilhados de cluster** (S:\ unidade no nosso exemplo), para colocar ficheiros de SAP (A) SCS e ficheiros do anfitrião GLOBAL SAP.
 
-![Figura 3: SAP (A) HA do SCS arquitetura com o disco partilhado][sap-ha-guide-figure-8002]
+![Figura 2: Processos, estrutura de ficheiros e anfitrião global sapmnt partilha de ficheiros de uma instância do SAP ASCS/SCS][sap-ha-guide-figure-8001]
 
-_**Figura 3:** SAP (A) HA do SCS arquitetura com o disco partilhado_
+_**Figura 2:** processos, estrutura de ficheiros e partilha de ficheiros do anfitrião global sapmnt de uma instância do SAP ASCS/SCS_
+
+Uma definição de elevada disponibilidade, cluster instâncias SAP ASCS/SCS. Utilizamos *discos partilhados de cluster* (unidade S, no nosso exemplo), colocar o SAP ASCS/SCS e SAP global alojar ficheiros.
+
+![Figura 3: SAP ASCS/SCS HA arquitetura com o disco partilhado][sap-ha-guide-figure-8002]
+
+_**Figura 3:** SAP ASCS/SCS HA arquitetura com o disco partilhado_
 
 > [!IMPORTANT]
->Como estes dois componentes executado sob a mesma instância SCS SAP (A):
->* O mesmo **< (A) SCSVirtualHostName >** é utilizado para a mensagem SAP de acesso e os processos do servidor de colocar em fila, bem como ficheiros do anfitrião GLOBAL SAP através de sapmnt partilha de ficheiros.
->* O mesmo **disco partilhado de cluster s:\**  é partilhado entre eles
+> Estes dois componentes a ser executados sob a mesma instância do SAP ASCS/SCS:
+>* O mesmo < ASCS/SCS nome de anfitrião virtual > é utilizado para aceder as SAP mensagem e colocar os processos do servidor e os ficheiros de anfitrião global de SAP através da partilha de ficheiros sapmnt.
+>* O mesmo cluster partilhado unidade de disco que s é partilhado entre eles.
 >
 
 
-![Figura 4: SAP (A) HA do SCS arquitetura com o disco partilhado][sap-ha-guide-figure-8003]
+![Figura 4: SAP ASCS/SCS HA arquitetura com o disco partilhado][sap-ha-guide-figure-8003]
 
-_**Figura 4:** SAP (A) HA do SCS arquitetura com o disco partilhado_
+_**Figura 4:** SAP ASCS/SCS HA arquitetura com o disco partilhado_
 
-### <a name="shared-disk-in-azure-with-sios-datakeeper"></a>Partilhar o disco no Azure com SIOS DataKeeper
+### <a name="shared-disks-in-azure-with-sios-datakeeper"></a>Partilhado discos no Azure com SIOS DataKeeper
 
 Precisa de cluster armazenamento partilhado para uma instância do SAP ASCS/SCS de elevada disponibilidade.
 
 Pode utilizar o software de terceiros SIOS DataKeeper Cluster Edition para criar um armazenamento espelhado que simula o armazenamento partilhado de cluster. A solução SIOS fornece replicação síncrona de dados em tempo real.
 
-Pode criar um recurso de disco partilhado para um cluster seguindo estes passos:
+Para criar um recurso de disco partilhado para um cluster:
 
-1. Anexe um disco adicional para cada uma das máquinas virtuais (VMs) numa configuração de cluster do Windows.
+1. Anexe um disco adicional para cada uma das máquinas virtuais numa configuração de cluster do Windows.
 2. Execute SIOS DataKeeper Cluster Edition em ambos os nós de máquina virtual.
-3. Configure SIOS DataKeeper Cluster Edition para que este reflete o conteúdo do volume da máquina virtual de origem adicionais disco ligado ao volume de disco adicionais ligado da máquina virtual de destino. SIOS DataKeeper deduz volumes locais de origem e de destino e, em seguida, apresenta-os para Clustering de ativação pós-falha no Windows Server como um disco partilhado.
+3. Configure SIOS DataKeeper Cluster Edition para que este reflete o conteúdo do volume da máquina virtual de origem adicionais disco ligado ao volume de disco adicionais ligado da máquina virtual de destino. SIOS DataKeeper deduz volumes locais de origem e de destino e, em seguida, apresenta-os ao Windows clustering de ativação pós-falha como um disco partilhado.
 
 Obter mais informações [SIOS DataKeeper](http://us.sios.com/products/datakeeper-cluster/).
 
-![Figura 5: Configuração de Clustering de ativação pós-falha do Windows Server no Azure com SIOS DataKeeper][sap-ha-guide-figure-1002]
+![Figura 5: Windows Server clustering de ativação pós-falha configuração no Azure com SIOS DataKeeper][sap-ha-guide-figure-1002]
 
-_**Figura 5:** configuração de Clustering de ativação pós-falha do Windows Server no Azure com SIOS DataKeeper_
+_**Figura 5:** configuração no Azure com SIOS DataKeeper de clustering de ativação pós-falha Windows_
 
 > [!NOTE]
-> Não precisa de discos partilhados para elevada disponibilidade com alguns produtos DBMS, como o SQL Server. SQL Server Always On replica ficheiros de registo e dados DBMS do disco local de um nó de cluster para o disco local de outro nó de cluster. Neste caso, a configuração de cluster do Windows não necessita de um disco partilhado.
+> Não precisa de discos partilhados para elevada disponibilidade com alguns produtos DBMS, como o SQL Server. SQL Server AlwaysOn replica ficheiros de registo e dados DBMS do disco local de um nó de cluster para disco local de outro nó de cluster. Neste caso, a configuração de cluster do Windows não necessita de um disco partilhado.
 >
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 
-* [Preparação de infraestrutura do Azure para SAP HA utilizando o Cluster de ativação pós-falha do Windows e o disco partilhado para a instância de SCS SAP (A)][sap-high-availability-infrastructure-wsfc-shared-disk]
+* [Preparar a infraestrutura do Azure para HA do SAP através da utilização de um cluster de ativação pós-falha do Windows e o disco partilhado para uma instância do SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 
-* [SAP NetWeaver HA instalação no Cluster de ativação pós-falha do Windows e o disco partilhado para a instância SCS SAP (A)][sap-high-availability-installation-wsfc-shared-disk]
+* [Instalar o SAP NetWeaver HA num cluster de ativação pós-falha do Windows e disco partilhado para uma instância do SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

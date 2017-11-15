@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/07/2017
 ms.author: mikkelhegn
-ms.openlocfilehash: 3f6a47a15b74a7ceb6504b2834be62e76ab70bcc
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 81814ef07cfab06855b3bfbf0eb6ef51b8dfce4f
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="use-visual-studio-to-simplify-writing-and-managing-your-service-fabric-applications"></a>Utilizar o Visual Studio para simplificar a escrever e gestão das suas aplicações de Service Fabric
 Pode gerir as suas aplicações do Azure Service Fabric e serviços através do Visual Studio. Assim que tiver [configurar o ambiente de desenvolvimento](service-fabric-get-started.md), pode utilizar o Visual Studio para criar aplicações de Service Fabric, adicionar serviços, ou o pacote, registar e implementar aplicações no seu cluster de desenvolvimento local.
@@ -32,7 +32,7 @@ Por predefinição, a implementar uma aplicação combina os seguintes passos pa
 4. Remover quaisquer instâncias de aplicações em execução
 5. Criar uma instância de aplicação
 
-No Visual Studio, premindo **F5** implementa a aplicação e anexe o depurador para todas as instâncias da aplicação. Pode utilizar **Ctrl + F5** para implementar uma aplicação sem depuração, ou pode publicar um cluster local ou remoto, utilizando o perfil de publicação. Para obter mais informações, consulte [publicar uma aplicação para um cluster remoto, utilizando o Visual Studio](service-fabric-publish-app-remote-cluster.md).
+No Visual Studio, premindo **F5** implementa a aplicação e anexe o depurador para todas as instâncias da aplicação. Pode utilizar **Ctrl + F5** para implementar uma aplicação sem depuração, ou pode publicar um cluster local ou remoto, utilizando o perfil de publicação. 
 
 ### <a name="application-debug-mode"></a>Modo de depuração de aplicações
 Visual Studio fornecem uma propriedade denominada **modo de depuração da aplicação**, que controla a forma como pretende estúdios Visual para lidar com a implementação de aplicações como parte de depuração.

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: Identity
 ms.date: 07/13/2017
 ms.author: billmath
-ms.openlocfilehash: 4041cacd72b1db74012497287030faf5d05ee6bf
-ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.openlocfilehash: 53a0f766de9db7e6ee48b6659aad378620c0d727
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-ad-connect-design-concepts"></a>O Azure AD Connect: Conceitos de Design
 O objetivo deste tópico é descrever áreas que devem considerar durante a estrutura de implementação do Azure AD Connect. Este tópico é uma descrição profunda sobre algumas áreas e estes conceitos uma breve descrição, bem como outros tópicos.
@@ -172,7 +172,7 @@ Suponha que tiver implementado o Azure AD Connect com a funcionalidade de Consis
 
 ![A adição de novos diretórios a implementação existente](./media/active-directory-aadconnect-design-concepts/consistencyGuid-04.png)
 
-## <a name="azure-ad-sign-in"></a>Azure AD início de sessão
+## <a name="azure-ad-sign-in"></a>Início de sessão no Azure AD
 Ao integrar o seu diretório no local com o Azure AD, é importante compreender a forma como as definições de sincronização podem afetar o utilizador de forma efetua a autenticação. Azure AD utiliza userPrincipalName (UPN) para autenticar o utilizador. No entanto, quando sincroniza os seus utilizadores, tem de escolher o atributo a ser utilizado para o valor do userPrincipalName cuidadosamente.
 
 ### <a name="choosing-the-attribute-for-userprincipalname"></a>Escolher o atributo para userPrincipalName
@@ -191,7 +191,7 @@ O João é um utilizador em contoso.com. Pretende que o João para utilizar o UP
 ### <a name="non-routable-on-premises-domains-and-upn-for-azure-ad"></a>Domínios não encaminhável no local e o UPN para o Azure AD
 Algumas organizações têm domínios não encaminháveis internos, como contoso. local, ou domínios de etiqueta única simples, como contoso. Não é possível verificar um domínio não encaminháveis internos no Azure AD. O Azure AD Connect pode sincronizar a apenas um domínio verificado no Azure AD. Quando cria um diretório do Azure AD, cria um domínio encaminhável que torna-se o domínio predefinido do Azure AD, por exemplo, contoso.onmicrosoft.com. Por conseguinte, torna-se verificar qualquer outro domínio encaminhável neste cenário, no caso de não quiser sincronizar para o domínio onmicrosoft.com predefinido que é necessário.
 
-Leitura [adicionar o seu nome de domínio personalizado ao Azure Active Directory](../active-directory-add-domain.md) para obter mais informações sobre adicionar e verificar domínios.
+Leitura [adicionar o seu nome de domínio personalizado ao Azure Active Directory](../active-directory-domains-add-azure-portal.md) para obter mais informações sobre adicionar e verificar domínios.
 
 O Azure AD Connect Deteta se estiver a executar num ambiente de domínio não encaminháveis internos e iria adequadamente avisá-lo de aceder diretamente com as definições rápidas. Se estão a funcionar num domínio não encaminháveis internos, em seguida, é provável que o UPN dos utilizadores têm também sufixos não encaminháveis internos. Por exemplo, se estiver a executar em contoso. local, o Azure AD Connect sugere que utilize definições personalizadas, em vez de utilizar definições expressas. Utilizar as definições personalizadas, é capazes de especificar o atributo que deve ser utilizado como o UPN para iniciar sessão no Azure depois dos utilizadores são sincronizados com o Azure AD.
 

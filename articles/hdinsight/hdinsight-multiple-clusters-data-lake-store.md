@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2017
 ms.author: nitinme
-ms.openlocfilehash: 08f860dcf0f1d6c69cee02261b2a4989fc5c694a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 92339548768878d03b864853172f3e94ad899693
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-store-account"></a>Utilizar vários clusters do HDInsight com uma conta do Azure Data Lake Store
 
@@ -52,7 +52,7 @@ Na tabela,
 - **Principal de serviço** é o principal de serviço do Azure Active Directory (AAD) associado à conta.
 - **FINGRP** é um grupo de utilizadores criado no AAD que contenha os utilizadores da organização do departamento financeiro.
 
-Para obter instruções sobre como criar uma aplicação AAD (que também cria um Principal de serviço), consulte [criar uma aplicação AAD](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). Para obter instruções sobre como criar um grupo de utilizadores no AAD, consulte [gerir grupos no Azure Active Directory](../active-directory/active-directory-accessmanagement-manage-groups.md).
+Para obter instruções sobre como criar uma aplicação AAD (que também cria um Principal de serviço), consulte [criar uma aplicação AAD](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). Para obter instruções sobre como criar um grupo de utilizadores no AAD, consulte [gerir grupos no Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md).
 
 Alguns pontos chaves a considerar.
 

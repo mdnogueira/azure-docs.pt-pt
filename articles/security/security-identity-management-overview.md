@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/09/2017
 ms.author: terrylan
-ms.openlocfilehash: 8d00882caf5411240c5f0a3533c78c3dbe361ef2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6e816f151ea1f71770f00d6d77b65395fe080da3
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-identity-management-security-overview"></a>Descrição geral de segurança de gestão de identidade do Azure
 Microsoft identidades e acessos soluções ajuda da gestão de IT proteger o acesso a aplicações e recursos em todo o datacenter empresarial e para a nuvem, permitindo níveis adicionais de validação, tais como autenticação multifator e políticas de acesso condicional. Monitorização de atividade suspeita através de segurança avançada, auditoria e relatórios de alerta ajuda a mitigar potenciais problemas de segurança. [Azure Active Directory Premium](../active-directory/active-directory-editions.md) fornece início de sessão único a milhares de nuvem aplicações (SaaS) e acesso a aplicações web é executado no local.
@@ -57,7 +57,7 @@ Saiba mais:
 
 * [Descrição geral sobre o início de sessão único](https://azure.microsoft.com/documentation/videos/overview-of-single-sign-on/)
 * [O que é o acesso a aplicações e início de sessão no Azure Active Directory?](../active-directory/active-directory-appssoaccess-whatis.md)
-* [Integrar aplicações SaaS do Azure Active Directory-início de sessão único](../active-directory/active-directory-sso-integrate-saas-apps.md)
+* [Integrar aplicações SaaS do Azure Active Directory-início de sessão único](../active-directory/active-directory-enterprise-apps-manage-sso.md)
 
 ## <a name="reverse-proxy"></a>Proxy inverso
 Proxy de aplicações do Azure AD permite-lhe publicar aplicações no local, tais como [SharePoint](https://support.office.com/article/What-is-SharePoint-97b915e6-651b-43b2-827d-fb25777f446f?ui=en-US&rs=en-US&ad=US) sites, [Outlook Web App](https://technet.microsoft.com/library/jj657718.aspx), e [IIS](http://www.iis.net/)-com base em aplicações dentro da sua rede privada e proporciona acesso seguro aos utilizadores fora da rede. Proxy de aplicações fornece-início de sessão único (SSO) e acesso remoto para muitos tipos de aplicações web no local, com milhares de aplicações SaaS que suporte do Azure AD. Os funcionários podem iniciar sessão nas suas aplicações de casa dos seus próprios dispositivos e autenticar através deste proxy baseado na nuvem.
@@ -67,7 +67,7 @@ Saiba mais:
 * [Ativar o Proxy de aplicações do Azure AD](../active-directory/active-directory-application-proxy-enable.md)
 * [Publicar aplicações através do Proxy de aplicações do Azure AD](../active-directory/active-directory-application-proxy-publish.md)
 * [Single-sign-on com o Proxy da aplicação](../active-directory/active-directory-application-proxy-sso-using-kcd.md)
-* [Trabalhar com acesso condicional](../active-directory/active-directory-application-proxy-conditional-access.md)
+* [Trabalhar com acesso condicional](../active-directory/application-proxy-enable-remote-access-sharepoint.md)
 
 ## <a name="multi-factor-authentication"></a>Multi-Factor Authentication
 Azure multi-factor authentication (MFA) é um método de autenticação que requer a utilização de mais do que um método de verificação e adiciona uma segunda camada crítica de segurança aos inícios de sessão de utilizador e de transações. MFA ajuda a salvaguardar o acesso a dados e aplicações, cumprindo o pedido do utilizador para um processo de início de sessão simple. Fornece autenticação forte através de uma gama de opções de verificação — chamada telefónica, mensagem de texto ou aplicação móvel notificação ou da verificação de código e de terceiros OAuth tokens.

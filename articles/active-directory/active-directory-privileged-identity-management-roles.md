@@ -15,11 +15,11 @@ ms.workload: identity
 ms.date: 07/31/2017
 ms.author: billmath
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: c20aca4202319154b01d6398570f745636120f49
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e3f67b978ff66cbb71709f2f8d66986a33149ae6
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="different-administrative-role-in-azure-active-directory-pim"></a>Função administrativa diferentes no Azure Active Directory PIM
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
@@ -29,7 +29,7 @@ Pode atribuir utilizadores na sua organização para diferentes funções admini
 > [!IMPORTANT]
 > A Microsoft recomenda que faça a gestão do Azure AD com o [centro de administração do Azure AD](https://aad.portal.azure.com) no portal do Azure em vez de utilizar o portal clássico do Azure referenciado neste artigo.
 
-Um administrador global pode atualizar-se que os utilizadores são **permanentemente** atribuídos a funções no Azure AD, utilizando cmdlets do PowerShell como `Add-MsolRoleMember` e `Remove-MsolRoleMember`, ou através do portal clássico, conforme descrito em [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles.md).
+Um administrador global pode atualizar-se que os utilizadores são **permanentemente** atribuídos a funções no Azure AD, utilizando cmdlets do PowerShell como `Add-MsolRoleMember` e `Remove-MsolRoleMember`, ou através do portal clássico, conforme descrito em [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md).
 
 O Azure AD Privileged Identity Management (PIM) gere as políticas de acesso privilegiado para os utilizadores no Azure AD. PIM atribui os utilizadores a uma ou mais funções no Azure AD e pode atribuir a alguém ser permanentemente a função, ou elegíveis para a função. Quando um utilizador é permanentemente atribuído a uma função ou ativa uma atribuição de função elegíveis, em seguida, pode gerir do Azure Active Directory, Office 365 e outras aplicações com as permissões atribuídas às respetivas funções.
 
@@ -53,7 +53,7 @@ Privileged Identity Management permite-lhe atribuir utilizadores a funções de 
 * **Administrador do SharePoint** tenha acesso administrativo ao SharePoint Online através do Centro de administração do SharePoint Online e pode realizar quase qualquer tarefa no SharePoint Online.
 * **Skype para o administrador da empresa** tenha acesso administrativo ao Skype para empresas através do Skype para o Centro de administração de negócio e pode realizar quase todas as tarefas no Skype para empresas Online.
 
-Ler estes artigos para obter mais detalhes sobre [atribuir funções de administrador no Azure AD](active-directory-assign-admin-roles.md) e [atribuir funções de administrador no Office 365](https://support.office.com/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504).
+Ler estes artigos para obter mais detalhes sobre [atribuir funções de administrador no Azure AD](active-directory-assign-admin-roles-azure-portal.md) e [atribuir funções de administrador no Office 365](https://support.office.com/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504).
 
 <!--**PLACEHOLDER: The above article may not be the one we want since PIM gets roles from places other that Office 365**-->
 

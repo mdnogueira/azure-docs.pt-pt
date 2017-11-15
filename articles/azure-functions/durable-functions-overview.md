@@ -1,5 +1,5 @@
 ---
-title: "Descrição geral de funções durável - Azure"
+title: "Durável descrição geral das funções - Azure (pré-visualização)"
 description: "Introdução à extensão de funções durável para as funções do Azure."
 services: functions
 author: cgillum
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 04d660d5fdd878788c09e46b078b2e2b043b7dbb
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: fa0d5cf7469a1a36fe0ab9a712cd4f8c963ceb48
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/14/2017
 ---
-# <a name="durable-functions-overview-azure-functions"></a>Descrição geral das funções durável (funções do Azure)
+# <a name="durable-functions-overview-preview"></a>Descrição geral das funções durável (pré-visualização)
 
 *Funções duráveis* é uma extensão da [das funções do Azure](functions-overview.md) e [WebJobs do Azure](../app-service/web-sites-create-web-jobs.md) que lhe permite escrever funções de monitorização de estado num ambiente sem servidor. A extensão de estado, os pontos de verificação e reinícios gere de automaticamente.
 
@@ -31,7 +31,7 @@ A extensão permite-lhe definir fluxos de trabalho com monitorização de estado
 * Estes automaticamente ponto de verificação progresso em sempre que a função awaits. Estado local nunca é perdido se o processo recicla ou a VM é reiniciado.
 
 > [!NOTE]
-> Funções duráveis é uma extensão avançada para as funções do Azure e não é adequadas para todas as aplicações. O resto deste artigo pressupõe que tem uma forte familiaridade com [das funções do Azure](functions-overview.md) conceitos e desafios envolvidos no desenvolvimento da aplicação sem servidor.
+> Funções duráveis está em pré-visualização e é uma extensão avançada para as funções do Azure que não é adequado para todas as aplicações. O resto deste artigo pressupõe que tem uma forte familiaridade com [das funções do Azure](functions-overview.md) conceitos e desafios envolvidos no desenvolvimento da aplicação sem servidor.
 
 O principal caso de utilização funções durável é simplificar problemas de coordenação complexas, com monitorização de estado nas aplicações sem servidor. As secções seguintes descrevem algumas padrões de aplicação típica podem beneficiar das funções durável.
 
@@ -261,7 +261,7 @@ Há uma grande quantidade de dados estruturados útil packed para o `customDimen
 
 Devido ao comportamento de repetição do dispatcher durável tarefas Framework, que pode esperava entradas de registo redundante de ações reproduzidas. Isto pode ser útil compreender o comportamento de repetição do motor principal. O [diagnóstico](durable-functions-diagnostics.md) artigo mostra exemplos de consultas que filtragem os registos de repetição para que possa ver apenas os registos de "em tempo real".
 
-## <a name="storage-and-scalability"></a>Armazenamento e a escalabilidade
+## <a name="storage-and-scalability"></a>Armazenamento e escalabilidade
 
 A extensão de funções durável utiliza as filas de armazenamento do Azure, tabelas e os blobs para manter a execução histórico acionador e estado de execução de função. A conta de armazenamento predefinido para a aplicação de função pode ser utilizada ou pode configurar uma conta de armazenamento separada. Pode querer uma conta separada devido a limites de débito de armazenamento. O código de orchestrator escrita não precisa (e não devem) interagir com as entidades nestas contas de armazenamento. As entidades são geridas diretamente pelo Framework tarefas durável, como um detalhe de implementação.
 

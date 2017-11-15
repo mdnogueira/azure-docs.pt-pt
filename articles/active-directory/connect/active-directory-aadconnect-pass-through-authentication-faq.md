@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: billmath
-ms.openlocfilehash: e1bd58797124210f7c31e90fb20d728289a04ba2
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 821d70ec7236e165d4f60ed6217c49d10de1cfc3
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Authentication do Azure Active Directory pass-through: Perguntas mais frequentes
 
@@ -36,7 +36,7 @@ A autenticação pass-through é uma funcionalidade livre e não precisa de quai
 
 A autenticação pass-through não, apenas está disponível na instância em todo o mundo do Azure AD.
 
-## <a name="does-conditional-accessactive-directory-conditional-accessmd-work-with-pass-through-authentication"></a>Does [acesso condicional](../active-directory-conditional-access.md) funcionam com a autenticação pass-through?
+## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>Does [acesso condicional](../active-directory-conditional-access-azure-portal.md) funcionam com a autenticação pass-through?
 
 Sim, todas as capacidades de acesso condicional, incluindo o multi-factor Authentication do Azure, trabalham com a autenticação pass-through.
 

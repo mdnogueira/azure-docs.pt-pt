@@ -3,7 +3,7 @@ title: "A aplicação de teste de carga utilizando o Visual Studio Team Services
 description: "Saiba como realçar teste as aplicações de Service Fabric do Azure utilizando o Visual Studio Team Services."
 services: service-fabric
 documentationcenter: na
-author: cawams
+author: rwike77
 manager: timlt
 editor: 
 ms.assetid: fc743585-0d1b-483f-981d-493f4552ac07
@@ -13,12 +13,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 11/18/2016
-ms.author: cawa
-ms.openlocfilehash: e8e270ce865d4da3ee219958b308db2c1c89b11b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: ryanwi
+ms.openlocfilehash: 42cd4fc0f7a8d1efdc4afff9c51693e756a1d1e3
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="load-test-your-application-by-using-visual-studio-team-services"></a>A aplicação de teste de carga utilizando o Visual Studio Team Services
 Este artigo mostra como utilizar funcionalidades de teste de carga do Microsoft Visual Studio para realçar o teste de uma aplicação. Utiliza um Azure Service Fabric com monitorização de estado do serviço de back-end e um sem monitorização de estado do serviço web front-end. A aplicação de exemplo utilizada aqui está um simulador de localização de avião. Forneça um ID de avião, tempo de partida e de destino. Back-end da aplicação processa os pedidos e o front-end apresenta num mapa avião que corresponde aos critérios.
@@ -32,7 +32,7 @@ Antes de começar a utilizar, precisa de fazer o seguinte:
 
 * Obter uma conta do Visual Studio Team Services. Pode obter uma gratuitamente em [Visual Studio Team Services](https://www.visualstudio.com).
 * Obter e instalar o Visual Studio 2013 ou Visual Studio 2015. Este artigo utiliza a edição do Visual Studio 2015 Enterprise, mas o Visual Studio 2013 e outras edições deverão funcionar da mesma forma.
-* Implemente a sua aplicação para um ambiente de teste. Consulte [como implementar aplicações para um cluster remoto, utilizando o Visual Studio](service-fabric-publish-app-remote-cluster.md) para obter informações sobre esta.
+* Implemente a sua aplicação para um ambiente de teste. Consulte [como implementar aplicações para um cluster remoto, utilizando o Visual Studio](service-fabric-manage-application-in-visual-studio.md) para obter informações sobre esta.
 * Compreenda o padrão de utilização da sua aplicação. Estas informações são utilizadas para simular o padrão de carga.
 * Compreenda o objetivo de para o teste de carga. Isto ajuda a interpretar e analise os resultados de teste de carga.
 

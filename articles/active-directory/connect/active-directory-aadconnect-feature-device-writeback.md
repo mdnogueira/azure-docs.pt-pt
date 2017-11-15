@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2017
 ms.author: billmath
-ms.openlocfilehash: 7af8fadca15e07e178f12db27fec2467f43c5d36
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ac5c39eac34221992803f3b27db241263f828b36
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>O Azure AD Connect: Ativar a repetição de escrita do dispositivo
 > [!NOTE]
@@ -30,7 +30,7 @@ A seguinte documentação fornece informações sobre como ativar a funcionalida
 
 * Ativar o acesso condicional com base nos dispositivos para AD FS (2012 R2 ou superior) aplicações (confianças de entidades confiadoras) protegidas.
 
-Esta opção fornece segurança adicional e garantia que é concedido acesso a aplicações apenas a dispositivos fidedignos. Para obter mais informações sobre o acesso condicional, consulte [gerir o risco com o acesso condicional](../active-directory-conditional-access.md) e [configurar o acesso condicional no local utilizando o registo de dispositivos do Azure Active Directory](../active-directory-conditional-access-automatic-device-registration-setup.md).
+Esta opção fornece segurança adicional e garantia que é concedido acesso a aplicações apenas a dispositivos fidedignos. Para obter mais informações sobre o acesso condicional, consulte [gerir o risco com o acesso condicional](../active-directory-conditional-access-azure-portal.md) e [configurar o acesso condicional no local utilizando o registo de dispositivos do Azure Active Directory](../active-directory-conditional-access-automatic-device-registration-setup.md).
 
 > [!IMPORTANT]
 > <li>Dispositivos devem estar localizados na mesma floresta que os utilizadores. Uma vez que os dispositivos têm de ser escritos novamente para uma floresta única, esta funcionalidade não suporta atualmente uma implementação com várias florestas de utilizador.</li>
@@ -140,8 +140,8 @@ Verifique a configuração no Active Directory:
 
 ![Resolver problemas, verifique as permissões na configuração de registo do dispositivo](./media/active-directory-aadconnect-feature-device-writeback/troubleshoot6.png)
 
-## <a name="additional-information"></a>Informações adicionais
-* [Gerir o risco com o acesso condicional](../active-directory-conditional-access.md)
+## <a name="additional-information"></a>Informações Adicionais
+* [Gerir o risco com o acesso condicional](../active-directory-conditional-access-azure-portal.md)
 * [Configurar o acesso condicional no local utilizando o registo de dispositivos do Azure Active Directory](../active-directory-device-registration-on-premises-setup.md)
 
 ## <a name="next-steps"></a>Passos seguintes

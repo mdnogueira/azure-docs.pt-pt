@@ -16,11 +16,11 @@ ms.date: 09/29/2017
 ms.author: curtand
 ms.reviewer: piotrci
 ms.custom: H1Hack27Feb2017;it-pro
-ms.openlocfilehash: 5e101c4b92868181a6b627d060a9c8e72a7837c4
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 0bf6177bc34b6f7daf9c14a22c3b381025f0f825
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="create-attribute-based-rules-for-dynamic-group-membership-in-azure-active-directory"></a>Criar regras baseadas em atributos para filiação dinâmica em grupos no Azure Active Directory
 No Azure Active Directory (Azure AD), pode criar regras avançadas para ativar complexas baseadas em atributos filiação dinâmica para grupos. Este artigo fornece detalhes sobre os atributos e a sintaxe para criar regras de associação dinâmica para utilizadores ou dispositivos.
@@ -78,10 +78,10 @@ O comprimento total do corpo da sua regra avançada não pode exceder 2048 carat
 ## <a name="supported-expression-rule-operators"></a>Operadores de regra de expressão suportados
 A tabela seguinte apresenta uma lista de todos os operadores de regra de expressão suportados e os respetivos sintaxe a ser utilizado no corpo da regra avançada:
 
-| operador | Sintaxe |
+| Operador | Sintaxe |
 | --- | --- |
 | Não é igual a |-ne |
-| igual a |-eq |
+| É igual a |-eq |
 | Não começa com |-notStartsWith |
 | Começa por |-startsWith |
 | Não contém |-notContains |
@@ -296,7 +296,7 @@ Também pode criar uma regra que seleciona objetos de dispositivo para a associa
 ## <a name="changing-dynamic-membership-to-static-and-vice-versa"></a>A alteração de associação dinâmica para estático e vice versa
 É possível alterar como é gerida a associação num grupo. Isto é útil quando pretender manter o mesmo nome de grupo e ID no sistema, todas as referências existentes para o grupo ainda são válidas; criar um novo grupo seria necessários atualizar essas referências.
 
-Estamos no processo de atualização do portal do Azure para suportar esta funcionalidade. Entretanto, pode utilizar o [portal clássico do Azure](https://manage.windowsazure.com) (siga as instruções [aqui](active-directory-accessmanagement-groups-with-advanced-rules.md)) ou utilizar cmdlets do PowerShell, conforme mostrado abaixo.
+Estamos no processo de atualização do portal do Azure para suportar esta funcionalidade. Entretanto, pode utilizar o [portal clássico do Azure](https://manage.windowsazure.com) (siga as instruções [aqui](active-directory-groups-dynamic-membership-azure-portal.md)) ou utilizar cmdlets do PowerShell, conforme mostrado abaixo.
 
 > [!WARNING]
 > Quando alterar um grupo estático existente para um grupo dinâmico, todos os membros existentes serão removidos do grupo e, em seguida, será processada a regra de associação para adicionar novos membros. Se o grupo é utilizado para controlar o acesso a aplicações ou recursos, os membros originais podem perder o acesso até que a regra de associação é totalmente processada.

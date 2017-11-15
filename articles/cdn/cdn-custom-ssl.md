@@ -1,5 +1,5 @@
 ---
-title: "Ativar ou desativar HTTPS num domínio personalizado de rede de entrega de conteúdos do Azure | Microsoft Docs"
+title: "Configure o HTTPS um domínio personalizado de rede de entrega de conteúdos do Azure | Microsoft Docs"
 description: "Saiba como ativar ou desativar HTTPS no ponto final de CDN do Azure com um domínio personalizado."
 services: cdn
 documentationcenter: 
@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: casoper
-ms.openlocfilehash: 68a171ee6da58e6d84b466daf573577c909c7f5c
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: 82de79cde208cdce1ed7cbd600f1e804ff1d45ff
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/14/2017
 ---
-# <a name="enable-or-disable-https-on-an-azure-content-delivery-network-custom-domain"></a>Ativar ou desativar HTTPS num domínio personalizado de rede de entrega de conteúdos do Azure
+# <a name="configure-https-on-an-azure-content-delivery-network-custom-domain"></a>Configure o HTTPS um domínio personalizado de rede de entrega de conteúdos do Azure
 
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]
 
-Suporte HTTPS para domínios personalizados de rede de entrega (CDN) do Microsoft Azure conteúdo permite-lhe fornecer segura do conteúdo através de SSL com o seu próprio nome de domínio para melhorar a segurança dos dados em trânsito. O fluxo de trabalho ponto-a-ponto para ativar HTTPS para o domínio personalizado é simplificado através de ativação de um clique, gestão de certificados concluída e todos os sem custos adicionais.
+Microsoft suporta o protocolo HTTPS para domínios personalizados na rede de entrega de conteúdos (CDN) do Azure. Com suporte de domínio personalizado de HTTPS, pode fornecer segura do conteúdo através de SSL com o seu próprio nome de domínio para melhorar a segurança dos dados em trânsito. O fluxo de trabalho para ativar HTTPS para o domínio personalizado é simplificado através de ativação de um clique e gestão de certificados completo, todos os sem custos adicionais.
 
-É fundamental para garantir a privacidade e a integridade dos dados de todos os seus dados de confidenciais de aplicações web em trânsito. Utilizando o protocolo HTTPS garante que os dados sensíveis são encriptados quando é enviado através da internet. Fornece confiança de autenticação e protege as suas aplicações web contra ataques. CDN do Azure suporta HTTPS no ponto final da CDN por predefinição. Por exemplo, se criar um ponto final da CDN do Azure CDN (por exemplo, `https://contoso.azureedge.net`), HTTPS é ativado automaticamente. Além disso, com suporte HTTPS de domínio personalizado, pode ativar a entrega segura para um domínio personalizado (por exemplo, `https://www.contoso.com`) bem. 
+É fundamental para garantir a privacidade e a integridade dos dados de dados confidenciais da sua aplicação web enquanto esta se encontra em trânsito. Ao utilizar o protocolo HTTPS, certifique-se de que os dados sensíveis são encriptados quando é enviado através da internet. Fornece confiança de autenticação e protege as suas aplicações web contra ataques. Por predefinição, a CDN do Azure suporta HTTPS no ponto final da CDN. Por exemplo, se criar um ponto final da CDN do Azure CDN (por exemplo, `https://contoso.azureedge.net`), HTTPS é ativado automaticamente. Além disso, com suporte HTTPS de domínio personalizado, também pode ativar a entrega segura para um domínio personalizado (por exemplo, `https://www.contoso.com`). 
 
 Alguns dos principais atributos da funcionalidade HTTPS são:
 
@@ -41,7 +41,7 @@ Alguns dos principais atributos da funcionalidade HTTPS são:
 
 ## <a name="enabling-https"></a>Ativar HTTPS
 
-Para ativar HTTPS, siga estes passos:
+Para ativar HTTPS, um domínio personalizado, siga estes passos:
 
 ### <a name="step-1-enable-the-feature"></a>Passo 1: Ativar a funcionalidade 
 
@@ -66,7 +66,7 @@ Para ativar HTTPS, siga estes passos:
 Depois de ativar HTTPS no seu domínio personalizado, a autoridade de certificação (AC) de DigiCert valida a propriedade do seu domínio ao contactar o respetivo registrant, de acordo com o domínio [WHOIS](http://whois.domaintools.com/) informações registrant. Contacte é efetuada através do endereço de e-mail (por predefinição) ou o número de telefone listados no registo WHOIS. 
 
 >[!NOTE]
->Se tiver um registo de autorização de autoridade de certificado (CAA) com o seu fornecedor DNS, tem de incluir DigiCert como uma AC válida. Um registo de CAA permite que os proprietários de domínio especificar os seus fornecedores de serviços de DNS que as ACs estão autorizados a emitir certificados para os domínios. Se uma AC recebe uma ordem de um certificado para um domínio que tenha um registo de CAA e essa AC não está indicada como um emissor autorizado, é proibido de emitir o certificado para esse domínio ou um subdomínio.
+>Se tiver um registo de autorização de autoridade de certificado (CAA) com o seu fornecedor DNS, tem de incluir DigiCert como uma AC válida. Um registo de CAA permite que os proprietários de domínio especificar os seus fornecedores de serviços de DNS que as ACs estão autorizados a emitir certificados para os domínios. Se uma AC recebe uma ordem de um certificado para um domínio que tenha um registo de CAA e essa AC não está indicada como um emissor autorizado, é proibido de emitir o certificado para esse domínio ou um subdomínio. Para obter informações sobre como gerir registos de CAA, consulte [registos gerir CAA](https://support.dnsimple.com/articles/manage-caa-record/). Para obter uma ferramenta de registo CAA, consulte [CAA registo auxiliar](https://sslmate.com/caa/).
 
 ![Registo WHOIS](./media/cdn-custom-ssl/whois-record.png)
 
@@ -82,7 +82,7 @@ Deverá receber uma mensagem de e-mail dentro de alguns minutos, semelhantes ao 
     
 ![Correio eletrónico de validação do domínio](./media/cdn-custom-ssl/domain-validation-email.png)
 
-Ao clicar na ligação de aprovação, será direcionado para o seguinte formato de aprovação online: 
+Ao clicar na ligação de aprovação, o utilizador é direcionado para o seguinte formato de aprovação online: 
     
 ![Formulário de validação do domínio](./media/cdn-custom-ssl/domain-validation-form.png)
 
@@ -128,7 +128,7 @@ We encountered an unexpected error while processing your HTTPS request. Please t
 
 ## <a name="disabling-https"></a>Desativar HTTPS
 
-Após ativar HTTPS, pode desativá-lo mais tarde. Para desativar o HTTPS, siga estes passos:
+Depois de ter ativado HTTPS um domínio personalizado, pode desativá-lo mais tarde. Para desativar o HTTPS, siga estes passos:
 
 ### <a name="step-1-disable-the-feature"></a>Passo 1: Desativar a funcionalidade 
 

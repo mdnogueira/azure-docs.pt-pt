@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/05/2017
 ms.author: ryanwi
-ms.openlocfilehash: 6d0f85a839171c43d226741f54e0dc954b85601d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5a1279ba9626ece30491c8fc899054873f6359e2
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Implementar e remover aplicações utilizando o PowerShell
 > [!div class="op_single_selector"]
+> * [Resource Manager](service-fabric-application-arm-resource.md)
 > * [PowerShell](service-fabric-deploy-remove-applications.md)
-> * [Visual Studio](service-fabric-publish-app-remote-cluster.md)
-> * [APIs FabricClient](service-fabric-deploy-remove-applications-fabricclient.md)
 > * [CLI do Service Fabric](service-fabric-application-lifecycle-sfctl.md)
+> * [APIs FabricClient](service-fabric-deploy-remove-applications-fabricclient.md)
 
 <br/>
 
@@ -41,7 +41,7 @@ Depois de uma aplicação é implementada e está em execução uma instância n
 2. O registo do tipo de aplicação já não é necessário
 3. Remova o pacote de aplicações do arquivo de imagens
 
-Se utilizar [Visual Studio para implementar e depurar aplicações](service-fabric-publish-app-remote-cluster.md) no seu cluster de desenvolvimento local, todos os passos anteriores são processados automaticamente através de um script do PowerShell.  Este script está localizado no *Scripts* pasta do projeto de aplicação. Este artigo fornece em segundo plano que esse script está a fazer para que possam executar as mesmas operações fora do Visual Studio. 
+Se utilizar o Visual Studio para implementar e depurar aplicações no seu cluster de desenvolvimento local, todos os passos anteriores são processados automaticamente através de um script do PowerShell.  Este script está localizado no *Scripts* pasta do projeto de aplicação. Este artigo fornece em segundo plano que esse script está a fazer para que possam executar as mesmas operações fora do Visual Studio. 
  
 ## <a name="connect-to-the-cluster"></a>Ligar ao cluster
 Antes de executar os comandos do PowerShell neste artigo, inicie sempre utilizando [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) para ligar ao cluster do Service Fabric. Para ligar ao cluster de desenvolvimento local, execute o seguinte:

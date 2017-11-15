@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 0cab39bb3ce5c42fac543171baea498eb894c502
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c9ff22c7b4793112da5211162ed9cd58ac86d238
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Gerir e personalizar os serviços de Federação do Active Directory utilizando o Azure AD Connect
 Este artigo descreve como gerir e personalizar os serviços de Federação do Active Directory (AD FS), utilizando o Azure Active Directory (Azure AD) Connect. Também inclui outras tarefas comuns do AD FS que poderá ter de fazer para toda a configuração de um farm do AD FS.
@@ -60,7 +60,7 @@ Pode utilizar o Azure AD Connect para verificar o estado de funcionamento atual 
 
     O **pronto para configurar** página mostra a lista de ações que serão executadas para reparar a confiança.
 
-    ![Pronto para configurar](media/active-directory-aadconnect-federation-management/RepairADTrust5.PNG)
+    ![Preparado para configurar](media/active-directory-aadconnect-federation-management/RepairADTrust5.PNG)
 
 4. Clique em **instalar** para reparar a confiança.
 
@@ -102,9 +102,9 @@ Configurar o ID de início de sessão alternativo para o AD FS consiste em dois 
 
 4. O Azure AD Connect pergunta da palavra-passe do ficheiro PFX fornecido ao configurar o seu novo farm do AD FS com o Azure AD Connect. Clique em **introduza a palavra-passe** para fornecer a palavra-passe para o ficheiro PFX.
 
-   ![Palavra-passe do certificado](media/active-directory-aadconnect-federation-management/AddNewADFSServer4.PNG)
+   ![Palavra-passe de certificado](media/active-directory-aadconnect-federation-management/AddNewADFSServer4.PNG)
 
-    ![Especifique o certificado SSL](media/active-directory-aadconnect-federation-management/AddNewADFSServer5.PNG)
+    ![Especificar certificado SSL](media/active-directory-aadconnect-federation-management/AddNewADFSServer5.PNG)
 
 5. No **servidores do AD FS** página, introduza o nome do servidor ou endereço IP a ser adicionado ao farm do AD FS.
 
@@ -112,7 +112,7 @@ Configurar o ID de início de sessão alternativo para o AD FS consiste em dois 
 
 6. Clique em **seguinte**e percorra o final **configurar** página. Depois do Azure AD Connect terminou a adicionar os servidores no farm do AD FS, terá a opção para verificar a conectividade.
 
-   ![Pronto para configurar](media/active-directory-aadconnect-federation-management/AddNewADFSServer7.PNG)
+   ![Preparado para configurar](media/active-directory-aadconnect-federation-management/AddNewADFSServer7.PNG)
 
     ![Instalação concluída](media/active-directory-aadconnect-federation-management/AddNewADFSServer8.PNG)
 
@@ -132,7 +132,7 @@ Configurar o ID de início de sessão alternativo para o AD FS consiste em dois 
 3. No **certificado SSL especificar** página, forneça a palavra-passe para o ficheiro PFX que indicou quando configurou o farm do AD FS com o Azure AD Connect.
    ![Palavra-passe do certificado](media/active-directory-aadconnect-federation-management/WapServer3.PNG)
 
-    ![Especifique o certificado SSL](media/active-directory-aadconnect-federation-management/WapServer4.PNG)
+    ![Especificar certificado SSL](media/active-directory-aadconnect-federation-management/WapServer4.PNG)
 
 4. Adicione o servidor para ser adicionado como um servidor do WAP. Porque o servidor do WAP não pode ser associado ao domínio, o assistente pede-lhe credenciais administrativas para o servidor que está a ser adicionado.
 
@@ -140,11 +140,11 @@ Configurar o ID de início de sessão alternativo para o AD FS consiste em dois 
 
 5. No **as credenciais de fidedignidade do Proxy** página, forneça as credenciais administrativas para configurar o proxy de confiam e acedam ao servidor primário do farm AD FS.
 
-   ![Credenciais de fidedignidade do proxy](media/active-directory-aadconnect-federation-management/WapServer6.PNG)
+   ![Credenciais de confiança do proxy](media/active-directory-aadconnect-federation-management/WapServer6.PNG)
 
 6. No **pronto para configurar** página, o assistente mostra a lista de ações que serão executados.
 
-   ![Pronto para configurar](media/active-directory-aadconnect-federation-management/WapServer7.PNG)
+   ![Preparado para configurar](media/active-directory-aadconnect-federation-management/WapServer7.PNG)
 
 7. Clique em **instalar** para concluir a configuração. Depois de concluída a configuração, o assistente fornece-lhe a opção para verificar a conectividade aos servidores. Clique em **verifique** para verificar a conectividade.
 
@@ -170,11 +170,11 @@ Configurar o ID de início de sessão alternativo para o AD FS consiste em dois 
 
    ![Domínio do Azure AD](media/active-directory-aadconnect-federation-management/AdditionalDomain4.PNG)
 
-    Depois de escolher o domínio, o assistente fornece-lhe as informações adequadas sobre mais ações que o assistente executará e o impacto da configuração. Em alguns casos, se selecionar um domínio que ainda não está a ser verificado no Azure AD, o assistente fornece-lhe informações para ajudar a verificar o domínio. Consulte [adicionar o seu nome de domínio personalizado ao Azure Active Directory](../active-directory-add-domain.md) para obter mais detalhes.
+    Depois de escolher o domínio, o assistente fornece-lhe as informações adequadas sobre mais ações que o assistente executará e o impacto da configuração. Em alguns casos, se selecionar um domínio que ainda não está a ser verificado no Azure AD, o assistente fornece-lhe informações para ajudar a verificar o domínio. Consulte [adicionar o seu nome de domínio personalizado ao Azure Active Directory](../active-directory-domains-add-azure-portal.md) para obter mais detalhes.
 
 5. Clique em **Seguinte**. O **pronto para configurar** página mostra a lista de ações que o Azure AD Connect irá realizar. Clique em **instalar** para concluir a configuração.
 
-   ![Pronto para configurar](media/active-directory-aadconnect-federation-management/AdditionalDomain5.PNG)
+   ![Preparado para configurar](media/active-directory-aadconnect-federation-management/AdditionalDomain5.PNG)
 
 > [!NOTE]
 > Utilizadores do domínio federado adicionado têm de ser sincronizados antes de poder iniciar sessão com o Azure AD.

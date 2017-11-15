@@ -15,11 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: identity
 ms.date: 05/23/2017
 ms.author: sasubram
-ms.openlocfilehash: bfedbbf8b26e1b129584a6a644e64a15635f5723
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 0e3ae7f176f41b4b0984dbef0748451c7ebff9e7
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Colaboração B2B do Active Directory Azure perguntas mais frequentes
 
@@ -29,7 +29,7 @@ Estas perguntas mais frequentes (FAQ) sobre a colaboração do Azure Active Dire
 Não. Funcionalidades de colaboração do Azure AD B2B só estão disponíveis no [portal do Azure](https://portal.azure.com) e no [painel de acesso](https://myapps.microsoft.com/). 
 
 ### <a name="can-we-customize-our-sign-in-page-so-it-is-more-intuitive-for-our-b2b-collaboration-guest-users"></a>Iremos pode personalizar a nossa página de início de sessão para que seja mais intuitiva dos nossos utilizadores de convidados de colaboração B2B?
-Absolutamente! Consulte a nossa [blogue sobre esta funcionalidade](https://blogs.technet.microsoft.com/enterprisemobility/2017/04/07/improving-the-branding-logic-of-azure-ad-login-pages/). Para obter mais informações sobre como personalizar a página de início de sessão da sua organização, consulte [adicionar imagem corporativa para iniciar sessão e painel de acesso](active-directory-add-company-branding.md).
+Absolutamente! Consulte a nossa [blogue sobre esta funcionalidade](https://blogs.technet.microsoft.com/enterprisemobility/2017/04/07/improving-the-branding-logic-of-azure-ad-login-pages/). Para obter mais informações sobre como personalizar a página de início de sessão da sua organização, consulte [adicionar imagem corporativa para iniciar sessão e painel de acesso](customize-branding.md).
 
 ### <a name="can-b2b-collaboration-users-access-sharepoint-online-and-onedrive"></a>Os utilizadores de colaboração do B2B podem aceder SharePoint Online e OneDrive?
 Sim. No entanto, é a capacidade de pesquisar utilizadores convidados existentes no SharePoint Online utilizando o selecionador de pessoas **desativar** por predefinição. Para ativar a opção para procurar utilizadores convidados existentes, defina **ShowPeoplePickerSuggestionsForGuestUsers** para **no**. Pode ativar esta definição ao nível do inquilino ou ao nível da coleção de sites. Pode alterar esta definição, utilizando os cmdlets Set-SPOTenant e SPOSite de conjunto. Com estes cmdlets, membros podem procurar todos os utilizadores convidados existentes no diretório. As alterações no âmbito de inquilino não afetam os sites do SharePoint Online que já foram aprovisionados.

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/02/2017
 ms.author: alexwun
-ms.openlocfilehash: 49003c16c262180afcdba22c5557c91297cb2840
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 723cf7d98022e8bbb4f1e3c8c0836a4c53c6a078
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="understand-the-imagestoreconnectionstring-setting"></a>Compreender a definição de ImageStoreConnectionString
 
@@ -44,7 +44,7 @@ Que aloja o arquivo de imagens num serviço de sistema do cluster em si elimina 
 
 O fornecedor do sistema de ficheiros é utilizado em vez do serviço de arquivo de imagens para clusters de caixa de um locais, durante o desenvolvimento arranque ligeiramente mais rapidamente o cluster. A diferença é pequena, normalmente, mas é uma otimização útil para a maioria dos utilizadores durante o desenvolvimento. É possível implementar um cluster de caixa de um local com os outros fornecedor tipos de armazenamento bem, mas não existe, normalmente, nenhum motivo para tal, uma vez que o fluxo de trabalho de desenvolver/teste permanece igual independentemente do fornecedor. Diferente esta utilização, os fornecedores de sistema de ficheiros e armazenamento do Azure existem apenas para o suporte legacy.
 
-Por isso, enquanto o ImageStoreConnectionString é configurável, é geralmente apenas utilizar a predefinição. Ao publicar no Azure através de [Visual Studio][12], o parâmetro é automaticamente definido para si em conformidade. Para a implementação programática para clusters alojado no Azure, a cadeia de ligação é sempre "fabric: arquivo de imagens". Embora quando em dúvida, o valor sempre pode ser verificado ao obter o manifesto do cluster por [PowerShell](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricclustermanifest), [.NET](https://msdn.microsoft.com/library/azure/mt161375.aspx), ou [REST](https://docs.microsoft.com/rest/api/servicefabric/get-a-cluster-manifest). Teste no local e clusters de produção, devem sempre ser configuradas para utilizar o fornecedor de serviço de arquivo de imagens.
+Por isso, enquanto o ImageStoreConnectionString é configurável, é geralmente apenas utilizar a predefinição. Quando a publicação no Azure através do Visual Studio, o parâmetro é automaticamente definido para si em conformidade. Para a implementação programática para clusters alojado no Azure, a cadeia de ligação é sempre "fabric: arquivo de imagens". Embora quando em dúvida, o valor sempre pode ser verificado ao obter o manifesto do cluster por [PowerShell](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricclustermanifest), [.NET](https://msdn.microsoft.com/library/azure/mt161375.aspx), ou [REST](https://docs.microsoft.com/rest/api/servicefabric/get-a-cluster-manifest). Teste no local e clusters de produção, devem sempre ser configuradas para utilizar o fornecedor de serviço de arquivo de imagens.
 
 ### <a name="next-steps"></a>Passos seguintes
 [Implementar e remover aplicações utilizando o PowerShell][10]
@@ -55,4 +55,4 @@ Por isso, enquanto o ImageStoreConnectionString é configurável, é geralmente 
 
 [10]: service-fabric-deploy-remove-applications.md
 [11]: service-fabric-cluster-creation-via-portal.md
-[12]: service-fabric-publish-app-remote-cluster.md
+

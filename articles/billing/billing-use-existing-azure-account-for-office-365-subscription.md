@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/03/2017
 ms.author: cjiang
-ms.openlocfilehash: c1bf73bce96d231990bd42b4f840d97ce518dc9e
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: cd6103924571ea6fee0cb1e696884a6106082d7a
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="sign-up-for-an-office-365-subscription-with-your-azure-account"></a>Inscreva-se uma subscrição do Office 365 com a sua conta do Azure
-Se tiver de subscritor do Azure, pode utilizar a sua conta do Azure para se inscrever para uma subscrição do Office 365. Se a parte de uma organização que tenha uma subscrição do Azure, pode criar subscrições do Office 365 para os utilizadores no seu existente do Azure Active Directory (Azure AD). Inscrever-se ao Office 365, utilizando uma conta que tenha permissões de Administrador Global ou de administrador de faturação no seu inquilino do Azure Active Directory. Para obter mais informações, consulte [verificar as minhas permissões de conta no Azure AD](#RoleInAzureAD) e [atribuir funções de administrador no Azure Active Directory](../active-directory/active-directory-assign-admin-roles.md).
+Se tiver de subscritor do Azure, pode utilizar a sua conta do Azure para se inscrever para uma subscrição do Office 365. Se a parte de uma organização que tenha uma subscrição do Azure, pode criar subscrições do Office 365 para os utilizadores no seu existente do Azure Active Directory (Azure AD). Inscrever-se ao Office 365, utilizando uma conta que tenha permissões de Administrador Global ou de administrador de faturação no seu inquilino do Azure Active Directory. Para obter mais informações, consulte [verificar as minhas permissões de conta no Azure AD](#RoleInAzureAD) e [atribuir funções de administrador no Azure Active Directory](../active-directory/active-directory-assign-admin-roles-azure-portal.md).
 
 Se já tiver uma conta do Office 365 e uma subscrição do Azure, pode [associar um inquilino do Office 365 para uma subscrição do Azure](billing-add-office-365-tenant-to-azure-subscription.md).
 

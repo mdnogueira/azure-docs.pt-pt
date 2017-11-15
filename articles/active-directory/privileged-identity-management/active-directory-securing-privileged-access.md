@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 09/17/2017
 ms.author: kgremban
 ms.custom: pim
-ms.openlocfilehash: 278aa67013eb2cabcf5efa7e0de21e9cff0519ba
-ms.sourcegitcommit: 9c3150e91cc3075141dc2955a01f47040d76048a
+ms.openlocfilehash: 00fc998666574f0b85b968cba174d328a300e861
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="securing-privileged-access-in-azure-ad"></a>Proteger o acesso privilegiado no Azure AD
 Proteger o acesso privilegiado é o primeiro passo crítico para ajudar a proteger os ativos de negócio numa organização moderna. Contas com privilégios são contas que administre e gira os sistemas de TI. Os atacantes de informático estas contas para obter acesso aos dados de uma organização e sistemas de destino. Para proteger o acesso privilegiado, deve isolar as contas e os sistemas do risco de que está a ser expostos a um utilizador mal intencionado.
@@ -66,7 +66,7 @@ Com o controlo de acesso condicional, o Azure Active Directory verifica as condi
 * Ativar [multi-factor Authentication do Azure](../../multi-factor-authentication/multi-factor-authentication-get-started-cloud.md)
 * Ativar [do Azure AD Privileged Identity Management](../active-directory-privileged-identity-management-configure.md)
 * Ativar [do Azure AD Identity Protection](../active-directory-identityprotection.md)
-* Ativar [controlos de acesso condicional](../active-directory-conditional-access.md)
+* Ativar [controlos de acesso condicional](../active-directory-conditional-access-azure-portal.md)
 
 Para obter mais informações sobre como criar um plano de segurança completa, consulte a secção "responsabilidades do cliente e plano" o [Microsoft Cloud Security para o Enterprise Arquitetos](http://aka.ms/securecustomer) documento. Para obter mais informações no envolvimento dos serviços da Microsoft para melhorar a qualquer um destes tópicos, contacte o seu representante da Microsoft ou visite a nossa [página de soluções atuais](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx).
 

@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: fashah;garye;bradsev
-ms.openlocfilehash: e56c9e74c3413f8780295678273ea2ba06caad77
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.openlocfilehash: 97d344fd31d711454f3e4aa251361b86351cc283
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="heading"></a>Dados em contentores de Blobs do Azure SQL Server, de exemplo e tabelas de ramo de registo
-Este documento ligações para tópicos que abrange como dados que estão armazenados das três localizações do Azure diferentes de exemplo:
+Ligações neste documento para artigos que abrangem como dados que estão armazenados das três localizações do Azure diferentes de exemplo:
 
 * **Dados de contentor do blob do Azure** é objeto de amostragem por transferindo-a através de programação e, em seguida, fazendo a amostragem-lo com o código de Python de exemplo.
 * **Dados do SQL Server** é convertidas utilizando o SQL Server e a linguagem de programação do Python. 

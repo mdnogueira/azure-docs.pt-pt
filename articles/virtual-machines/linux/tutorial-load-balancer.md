@@ -13,14 +13,14 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/11/2017
+ms.date: 11/13/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 25e2538e220327a078a6527e667dfcd6cb838b1e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dc25d6106ad67710660b1a5c48270a7082688d51
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="how-to-load-balance-linux-virtual-machines-in-azure-to-create-a-highly-available-application"></a>Como carregar equilibrar os computadores virtuais Linux no Azure para criar uma aplicação altamente disponível
 Balanceamento de carga fornece um nível mais elevado de disponibilidade propagando-se os pedidos recebidos em várias máquinas virtuais. Neste tutorial, pode saber mais sobre os diferentes componentes do Balanceador de carga do Azure que distribui o tráfego de e para fornecem elevada disponibilidade. Saiba como:
@@ -162,10 +162,13 @@ for i in `seq 1 3`; do
 done
 ```
 
+Quando todos os NICs virtuais três são criados, avançar para o passo seguinte
+
+
 ## <a name="create-virtual-machines"></a>Criar máquinas virtuais
 
 ### <a name="create-cloud-init-config"></a>Criar a configuração de nuvem init
-Um tutorial anterior em [como personalizar uma máquina virtual do Linux no primeiro arranque](tutorial-automate-vm-deployment.md), aprendeu a automatizar a personalização de VM com init de nuvem. Pode utilizar o mesmo ficheiro de configuração de nuvem init para instalar NGINX e executar uma aplicação Node.js "Olá, mundo" simples.
+Um tutorial anterior em [como personalizar uma máquina virtual do Linux no primeiro arranque](tutorial-automate-vm-deployment.md), aprendeu a automatizar a personalização de VM com init de nuvem. Pode utilizar o mesmo ficheiro de configuração de nuvem init para instalar NGINX e executar um simples "Olá, mundo" aplicação Node.js no próximo passo. Para ver o Balanceador de carga em ação, no final do tutorial, vai aceder a esta aplicação simple num web browser.
 
 Na sua shell atual, crie um ficheiro denominado *nuvem init.txt* e cole a seguinte configuração. Por exemplo, crie o ficheiro na Shell na nuvem não no seu computador local. Introduza `sensible-editor cloud-init.txt` para criar o ficheiro e ver uma lista de editores disponíveis. Certifique-se de que o ficheiro de toda a nuvem-init é copiado corretamente, especialmente a primeira linha:
 
@@ -253,7 +256,7 @@ az network public-ip show \
     --output tsv
 ```
 
-Em seguida, pode introduzir o endereço IP público para um web browser. Lembre-se - demora alguns minutos às VMs para estar pronto antes de começa o Balanceador de carga distribuir o tráfego aos mesmos. A aplicação é apresentada, incluindo o nome do anfitrião da VM que o Balanceador de carga distribuído tráfego como no exemplo seguinte:
+Em seguida, pode introduzir o endereço IP público para um web browser. Lembre-se - demora alguns minutos para que as VMs para estar pronto antes de começa o Balanceador de carga distribuir o tráfego aos mesmos. A aplicação é apresentada, incluindo o nome do anfitrião da VM que o Balanceador de carga distribuído tráfego como no exemplo seguinte:
 
 ![Aplicação Node.js em execução](./media/tutorial-load-balancer/running-nodejs-app.png)
 
@@ -277,6 +280,24 @@ az network nic ip-config address-pool remove \
 
 Para ver o Balanceador de carga distribuir o tráfego entre as restantes duas VMs, executar a sua aplicação, pode forçar-atualizar o browser. Agora pode efetuar a manutenção da VM, tais como instalar atualizações do SO ou efetuar um reinício VM.
 
+Para ver uma lista de VMs com NICs virtuais ligadas ao balanceador de carga, utilize [mostrar de conjunto de endereços do az rede lb](/cli/azure/network/lb/address-pool#show). Consultar e filtrar o ID de virtual NIC da seguinte forma:
+
+```azurecli-interactive
+az network lb address-pool show \
+    --resource-group myResourceGroupLoadBalancer \
+    --lb-name myLoadBalancer \
+    --name myBackEndPool \
+    --query backendIpConfigurations \
+    --output tsv | cut -f4
+```
+
+O resultado será semelhante ao exemplo seguinte, que mostra que o NIC virtual para a VM 2 já não faz parte do conjunto de endereços back-end:
+
+```bash
+/subscriptions/<guid>/resourceGroups/myResourceGroupLoadBalancer/providers/Microsoft.Network/networkInterfaces/myNic1/ipConfigurations/ipconfig1
+/subscriptions/<guid>/resourceGroups/myResourceGroupLoadBalancer/providers/Microsoft.Network/networkInterfaces/myNic3/ipConfigurations/ipconfig1
+```
+
 ### <a name="add-a-vm-to-the-load-balancer"></a>Adicionar uma VM para o Balanceador de carga
 Depois de efetuar a manutenção VM, ou se precisa de expandir a capacidade, pode adicionar uma VM para o conjunto de endereços de back-end com [az nic configuração de ip-conjunto de endereços rede adicionar](/cli/azure/network/nic/ip-config/address-pool#add). O exemplo seguinte adiciona o NIC virtual para **myVM2** para *myLoadBalancer*:
 
@@ -288,6 +309,8 @@ az network nic ip-config address-pool add \
     --lb-name myLoadBalancer \
     --address-pool myBackEndPool
 ```
+
+Para verificar que o virtual NIC está ligado ao conjunto de endereços back-end, utilize [mostrar de conjunto de endereços do az rede lb](/cli/azure/network/lb/address-pool#show) novamente a partir do passo anterior.
 
 
 ## <a name="next-steps"></a>Passos seguintes

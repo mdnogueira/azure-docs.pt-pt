@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 10/19/2017
 ms.author: raynew
-ms.openlocfilehash: 0b2a36c293e899ebed9d1220dff043a85321cacf
-ms.sourcegitcommit: 76a3cbac40337ce88f41f9c21a388e21bbd9c13f
+ms.openlocfilehash: ad6f70cf9c2f420e887031c8b240d2f831e6c359
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>O Azure Site Recovery: Perguntas mais frequentes (FAQ)
 Este artigo inclui perguntas mais frequentes sobre o Azure Site Recovery. Se tiver questões depois de ler este artigo, publique-los no [fórum de serviços de recuperação do Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
@@ -75,22 +75,7 @@ Para proteger as VMs VMware precisará de um hipervisor vSphere e de máquinas v
 Sim. Quando utilizar a recuperação de sites para orquestrar a replicação e ativação pós-falha das sucursais, obterá uma orquestração unificada e a vista de todas as suas sucursais office cargas de trabalho numa localização central. Pode facilmente executar as ativações pós-falha e administrar a recuperação após desastre de todas as sucursais a partir da sede, sem visitar as sucursais.
 
 ## <a name="pricing"></a>Preços
-
-### <a name="what-charges-do-i-incur-while-using-azure-site-recovery"></a>Os encargos implicar ao utilizar o Azure Site Recovery?
-Quando utilizar a recuperação de Site, pode implicar custos para a licença de recuperação de sites, armazenamento do Azure, transações de armazenamento e transferência de dados de saída. [Saiba mais](https://azure.microsoft.com/pricing/details/site-recovery).
-
-A licença de recuperação de sites está por instância protegida, em que uma instância é uma VM ou um servidor físico.
-
-- Se um disco da VM é replicada para uma conta de armazenamento standard, os encargos de armazenamento do Azure é para o consumo de armazenamento. Por exemplo, se o tamanho do disco de origem é 1 TB e 400 GB é utilizado, a recuperação de Site cria um VHD de 1 TB no Azure, mas o armazenamento cobrado 400 GB (além da quantidade de espaço de armazenamento utilizado para os registos de replicação).
-- Se um disco da VM é replicada para uma conta de armazenamento premium, os encargos de armazenamento do Azure é para o tamanho de armazenamento aprovisionada, arredondado para a opção de disco de armazenamento premium mais próximo. Por exemplo, se o tamanho do disco de origem é 50 GB, a recuperação de Site cria um disco de 50 GB no Azure e Azure isto mapeia para o disco de armazenamento premium (P10) mais próximo.  Os custos são calculados P10 e não o tamanho do disco de 50 GB.  [Saiba mais](https://aka.ms/premium-storage-pricing).  Se estiver a utilizar o premium storage, também é necessária uma conta de armazenamento standard para o registo de replicação e a quantidade de espaço de armazenamento standard utilizado para estes registos também é faturada.
-- Não existem discos são criados até uma ativação pós-falha de teste ou de uma ativação pós-falha. No estado de replicação, armazenamento cobra sob a categoria de "blob de página e o disco" como pelo [Calculadora de preços do Storage](https://azure.microsoft.com/en-in/pricing/calculator/) são cobradas. Estes custos baseiam-se no armazenamento do tipo de premium/padrão e a redundância de dados, escreva - LRS, GRS, etc RA-GRS.
-- Se estiver selecionada a opção para utilizar discos geridos numa ativação pós-falha, [custos de discos geridos](https://azure.microsoft.com/en-in/pricing/details/managed-disks/) aplicar após uma ativação pós-falha de ativação pós-falha de teste. Gerido não são aplicáveis encargos durante a replicação de discos.
-- Se não estiver selecionada a opção para utilizar discos geridos numa ativação pós-falha, armazenamento cobra sob a categoria de "blob de página e o disco" como pelo [Calculadora de preços do Storage](https://azure.microsoft.com/en-in/pricing/calculator/) são cobradas após a ativação pós-falha. Estes custos baseiam-se no armazenamento do tipo de premium/padrão e a redundância de dados, escreva - LRS, GRS, etc RA-GRS.
-- Transações de armazenamento são-lhe cobradas durante a replicação de estado de repouso e para operações normais de VM após uma ativação pós-falha / ativação pós-falha de teste. Mas estes custos negligenciável.
-
-Os custos também são cobrados durante a ativação pós-falha de teste, onde serão aplicados as VM, armazenamento, saída e os custos de transações.
-
-
+Para perguntas relacionadas com os preços, consulte as FAQ em [preços do Azure Site Recovery](https://azure.microsoft.com/en-in/pricing/details/site-recovery/).
 
 ## <a name="security"></a>Segurança
 ### <a name="is-replication-data-sent-to-the-site-recovery-service"></a>Os dados de replicação são enviados para o serviço de Recuperação de Sites?

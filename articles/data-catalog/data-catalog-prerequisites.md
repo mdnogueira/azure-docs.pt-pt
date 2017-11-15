@@ -15,11 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: data-catalog
 ms.date: 10/01/2017
 ms.author: maroche
-ms.openlocfilehash: cf32ef4c80fa0ee68ce3dc1289467a419aab39c9
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 7d4ed0cc06e8b218b2b63c1d899701ba2eafd648
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-data-catalog-prerequisites"></a>Pré-requisitos do Catálogo de Dados do Azure
 
@@ -28,7 +28,7 @@ Terá algumas coisas asseguramos antes de poder configurar o catálogo de dados 
 ## <a name="azure-subscription"></a>Subscrição do Azure
 Para configurar o catálogo de dados, tem de ser o proprietário ou coproprietário de uma subscrição do Azure.
 
-As subscrições do Azure ajudam-na organizar acesso aos recursos do serviço em nuvem, tais como o catálogo de dados. As subscrições também ajudam a controlar como a utilização de recursos é comunicada, faturada e paga para. Cada subscrição pode ter uma configuração de faturação e pagamento separada, para que possa ter subscrições e planos variam consoante o departamento, projeto, escritório regional e assim sucessivamente. Cada serviço em nuvem pertence a uma subscrição e tem de ter uma subscrição antes de configurar o catálogo de dados. Para saber mais, veja [Gerir contas, subscrições e funções administrativas](../active-directory/active-directory-assign-admin-roles.md).
+As subscrições do Azure ajudam-na organizar acesso aos recursos do serviço em nuvem, tais como o catálogo de dados. As subscrições também ajudam a controlar como a utilização de recursos é comunicada, faturada e paga para. Cada subscrição pode ter uma configuração de faturação e pagamento separada, para que possa ter subscrições e planos variam consoante o departamento, projeto, escritório regional e assim sucessivamente. Cada serviço em nuvem pertence a uma subscrição e tem de ter uma subscrição antes de configurar o catálogo de dados. Para saber mais, veja [Gerir contas, subscrições e funções administrativas](../active-directory/active-directory-assign-admin-roles-azure-portal.md).
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 Para configurar o catálogo de dados, tem de ser assinado com uma conta de utilizador do Azure Active Directory (Azure AD).
