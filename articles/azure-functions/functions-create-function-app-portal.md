@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 04/11/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 3e4eef12c1d19be6e0f1051caaa5cf2e98626aef
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4f9882ebc86b8119e6e683c7442ee3448a8d111b
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="create-a-function-app-from-the-azure-portal"></a>Criar uma aplicação de função a partir do portal do Azure
 
@@ -40,7 +40,7 @@ Depois da aplicação de função é criada, pode criar funções individuais nu
 
 As funções do Azure tem dois planos de serviço diferente: plano de consumo e o plano de serviço de aplicações. O plano de consumo atribui automaticamente a capacidade de computação quando o código está em execução, escalamento escalas conforme necessário para processar carga e, em seguida, escalas-ao código não está em execução. Plano do App Service permite o acesso de aplicação de função para todas as instalações do App Service. Tem de escolher o plano de serviço quando é criada a sua aplicação de função e atualmente não pode ser alterada. Para obter mais informações, consulte [escolha das funções do Azure plano de alojamento](functions-scale.md).
 
-Se estiver a planear executar funções JavaScript um plano de serviço de aplicações, deve escolher um plano com menos núcleos. Para obter mais informações, consulte o [referência de JavaScript para funções](functions-reference-node.md#choose-single-core-app-service-plans).
+Se estiver a planear executar funções JavaScript um plano de serviço de aplicações, deve escolher um plano com menos núcleos. Para obter mais informações, consulte o [referência de JavaScript para funções](functions-reference-node.md#choose-single-vcpu-app-service-plans).
 
 <a name="storage-account-requirements"></a>
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.date: 10/24/2016
 ms.author: heidist
-ms.openlocfilehash: f9f3a7b2369818791ffac1c8eeccef45216c2ff0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 781683f27c943e25d5629dd846da357f51c9d4f9
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="choose-a-sku-or-pricing-tier-for-azure-search"></a>Escolher um SKU ou escalão de preço para o Azure Search
 Na Azure Search, um [serviço é aprovisionado](search-create-service-portal.md) num escalão de preço específico ou SKU. As opções incluem **livres**, **básico**, ou **padrão**, onde **padrão** está disponível em várias configurações e as capacidades.
@@ -43,9 +43,9 @@ Capacidade e os custos de executar o serviço aceda à mão na mão. Informaçõ
 
 * Número e tamanho de planear a criação de índices
 * Número e tamanho dos documentos para carregar
-* Alguns ideia do volume de consulta, em termos de consultas por segundo (QPS)
+* Alguns ideia do volume de consulta, em termos de consultas por segundo (QPS). Para obter orientações, consulte [desempenho de pesquisa do Azure e a otimização de](search-performance-optimization.md).
 
-Número e tamanho são importantes porque os limites máximos são atingidos através de um disco rígido limite o número de índices ou documentos num serviço ou nos recursos (armazenamento ou réplicas) utilizados pelo serviço. O limite real para o seu serviço é que obtém a gastar primeiro: recursos ou objetos.
+Número e tamanho são importantes porque os limites máximos são atingidos através de um limite rígido a contagem de índices por serviço, ou em recursos (armazenamento ou réplicas) utilizados pelo serviço. O limite real para o seu serviço é que obtém a gastar primeiro: recursos ou objetos.
 
 Estimativas no lado, os seguintes passos devem simplificar o processo de:
 
@@ -60,10 +60,10 @@ A tabela seguinte fornece descrições de cada camada.
 | --- | --- |
 | **Livre** |Um serviço partilhado, sem encargos, utilizado para avaliação, investigação ou pequenas cargas de trabalho. Porque é partilhado com outros subscritores, débito de consulta e indexação varia com base na pessoa que está a utilizar o serviço. A capacidade é pequena (50 MB ou 3 índices com segurança 10 000 documentos cada o). |
 | **Básica** |Cargas de trabalho de produção de pequena no hardware dedicado. Elevada disponibilidade. A capacidade é até 3 réplicas e de 1 partição (2 GB). |
-| **S1** |1 padrão suporta flexíveis combinações de partições (12) e as réplicas (12), utilizadas para cargas de trabalho de produção médio no hardware dedicado. Pode atribuir partições e réplicas em combinações suportadas por um número máximo 36 facturável de unidades de pesquisa. Este nível, as partições são 25 GB e QPS é cerca de 15 consultas por segundo. |
-| **S2** |2 padrão executa cargas de trabalho de produção maior utilizando as unidades de 36 pesquisa mesmo que S1, mas com partições de tamanho superiores e as réplicas. Este nível, as partições são 100 GB e QPS está prestes a 60 consultas por segundo. |
-| **S3** |3 padrão executa cargas de trabalho de produção proporcionalmente maiores nos sistemas de fim superiores, em configurações de até 12 partições ou 12 réplicas unidades de pesquisa em 36. Este nível, as partições são 200 GB e QPS é mais de 60 consultas por segundo. |
-| **S3 HD** |Standard 3 alta densidade foi concebida para um grande número de índices mais pequenos. Pode ter até 3 partições, em 200 GB. QPS é mais de 60 consultas por segundo. |
+| **S1** |1 padrão suporta flexíveis combinações de partições (12) e as réplicas (12), utilizadas para cargas de trabalho de produção médio no hardware dedicado. Pode atribuir partições e réplicas em combinações suportadas por um número máximo 36 facturável de unidades de pesquisa. Este nível, partições são 25 GB. |
+| **S2** |2 padrão executa cargas de trabalho de produção maior utilizando as unidades de 36 pesquisa mesmo que S1, mas com partições de tamanho superiores e as réplicas. Este nível, partições são 100 GB. |
+| **S3** |3 padrão executa cargas de trabalho de produção proporcionalmente maiores nos sistemas de fim superiores, em configurações de até 12 partições ou 12 réplicas unidades de pesquisa em 36. Este nível, partições são 200 GB. |
+| **S3 HD** |Standard 3 alta densidade foi concebida para um grande número de índices mais pequenos. Pode ter até 3 partições, em 200 GB.|
 
 > [!NOTE]
 > Valores máximos de partição e réplica são faturados enviados como unidades de pesquisa (36 unidade máxima por serviço), que impõe um limite inferior eficaz a que o máximo implica no valor de letra. Por exemplo, para utilizar o número máximo de 12 réplicas, pode ter no máximo de 3 partições (3 * 12 = 36 unidades). Da mesma forma, para utilizar partições máximas, reduza as réplicas para 3. Consulte [Dimensionar níveis de recursos de consulta e indexação cargas de trabalho na Azure Search](search-capacity-planning.md) de um gráfico de combinações permitidos.
@@ -81,7 +81,6 @@ O gráfico seguinte é um subconjunto dos limites de [limites de serviço da Azu
 | Partições máximas |N/D |1 |12 |12 |12 |3 <sup>2</sup> |
 | Tamanho da partição |Total de 50 MB |2 GB por serviço |25 GB por partição |100 GB por partição (até um máximo de 1.2 TB por serviço) |200 GB por partição (até um máximo de 2.4 TB por serviço) |200 GB (até um máximo de 600 GB por serviço) |
 | Réplicas máximas |N/D |3 |12 |12 |12 |12 |
-| Consultas por segundo |N/D |~3 por réplica |~15 por réplica |~60 por réplica |>60 por réplica |>60 por réplica |
 
 <sup>1</sup> funcionalidades de pré-visualização e o escalão gratuito não são fornecidos com os contratos de nível de serviço (SLAs). Para todos os escalões faturáveis, SLAs entram em vigor quando aprovisionar redundância suficiente para o seu serviço. Dois ou mais réplicas são necessárias para o SLA de consulta (leitura). Três ou mais réplicas são necessárias para consulta e indexação SLA (leitura / escrita). O número de partições não é uma consideração de SLA. 
 

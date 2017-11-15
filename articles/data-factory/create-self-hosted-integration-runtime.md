@@ -3,7 +3,7 @@ title: "Criar o tempo de execução de integração personalizada alojada no Azu
 description: "Saiba como criar o tempo de execução de integração personalizada alojada no Azure Data Factory, o que lhe permite fábricas de dados aceder aos arquivos de dados de uma rede privada."
 services: data-factory
 documentationcenter: 
-author: spelluru
+author: nabhishek
 manager: jhubbard
 editor: monicar
 ms.service: data-factory
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2017
-ms.author: spelluru
-ms.openlocfilehash: 63e4bb600d053a43c500b601a3942eb96ac16b07
-ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
+ms.author: abnarain
+ms.openlocfilehash: 0fcc245369d90042066cbfc516a8c32db7272bd3
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="how-to-create-and-configure-self-hosted-integration-runtime"></a>Como criar e configurar o tempo de execução do Self-hosted integração
 O tempo de execução de integração (IR) é a infraestrutura de computação utilizada pelo Azure Data Factory para fornecer capacidades de integração de dados entre ambientes de rede diferentes. Para obter detalhes sobre a resposta a incidentes, consulte [descrição geral de tempo de execução de integração](concepts-integration-runtime.md).
@@ -103,11 +103,11 @@ Tempo de execução automática alojada integração pode ser instalado ao trans
 
 
 ## <a name="high-availability-and-scalability"></a>Elevada disponibilidade e escalabilidade
-Um tempo de execução de integração Self-hosted pode ser associateed para várias máquinas no local. Estas máquinas são denominadas nós. Pode ter até quatro nós associado um tempo de execução de integração Self-hosted. Os benefícios de ter vários nós (máquinas no local com o gateway instalado) para um gateway lógico são:
+Um tempo de execução de integração Self-hosted pode ser associado a várias máquinas no local. Estas máquinas são denominadas nós. Pode ter até quatro nós associado um tempo de execução de integração Self-hosted. Os benefícios de ter vários nós (máquinas no local com o gateway instalado) para um gateway lógico são:
 1. Maior disponibilidade de um tempo de execução de Self-hosted integração para que já não esteja o ponto único de falha na sua integração de dados de macrodados solução ou na nuvem, com o Azure Data Factory, garantindo a continuidade com até 4 nós.
 2. Desempenho e débito de melhorados durante o movimento de dados no local e na nuvem arquivos de dados. Obter mais informações sobre [comparações de desempenho](copy-activity-performance.md).
 
-Pode associar vários nós instalando o software de tempo de execução de integração de Self-hosted simplesmente o [Centro de transferências](https://www.microsoft.com/download/details.aspx?id=39717) e registando-lo por qualquer um dos obtainined chaves de autenticação do Cmdlet de novo AzureRmDataFactoryV2IntegrationRuntimeKey conforme descrito no [Tutorial](tutorial-hybrid-copy-powershell.md)
+Pode associar vários nós instalando o software de tempo de execução de integração de Self-hosted simplesmente o [Centro de transferências](https://www.microsoft.com/download/details.aspx?id=39717) e registando-lo por qualquer uma das chaves de autenticação obtido a partir do Cmdlet de novo AzureRmDataFactoryV2IntegrationRuntimeKey conforme descrito no [Tutorial](tutorial-hybrid-copy-powershell.md)
 
 > [!NOTE]
 > Não é necessário criar um novo Runtime de integração Self-hosted para associar cada nó.

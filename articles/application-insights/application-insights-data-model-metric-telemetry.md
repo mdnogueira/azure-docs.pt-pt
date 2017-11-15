@@ -12,11 +12,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: mbullwin
-ms.openlocfilehash: 4cfdf3b70f6fdb2ddd5f89a72c931d3b6be54132
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: bd09e2a21c25097fa4b378cb2dbe2787edbb1967
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Telemetria de métrica: modelo de dados do Application Insights
 
@@ -24,7 +24,7 @@ Existem dois tipos de telemetria métrica suportado pelo [Application Insights](
 
 Telemetria de métrica previamente agregada assume esse período de agregação foi um minuto.
 
-Existem vários nomes de métricos conhecidos suportados pelo Application Insights. 
+Existem vários nomes de métricos conhecidos suportados pelo Application Insights. Estas métricas juntar performanceCounters tabela.
 
 Métrica que representa os contadores de sistema e do processo:
 
@@ -65,6 +65,8 @@ Valor máximo da métrica agregada. Não deve ser definida para uma medida.
 Desvio-padrão da métrica agregada. Não deve ser definida para uma medida.
 
 ## <a name="custom-properties"></a>Propriedades personalizadas
+
+Métrica com a propriedade personalizada `CustomPerfCounter` definido como `true` indicar que a métrica representa o contador de desempenho do windows. Estas métricas colocados na tabela de performanceCounters. Não se encontra na customMetrics. Também o nome desta métrica é analisado para extrair categoria, o contador e os nomes de instâncias.
 
 [!INCLUDE [application-insights-data-model-properties](../../includes/application-insights-data-model-properties.md)]
 

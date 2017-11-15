@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: On Demand
 ms.date: 06/28/2017
 ms.author: daredis
-ms.openlocfilehash: d25a0461bf194808f9bd66ddbd120448620eeba0
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 90c03f1538197e1cd1c90165417a4ec74c9c5961
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="secure-your-azure-sql-database"></a>Proteger a base de dados SQL do Azure
 
@@ -242,7 +242,7 @@ Por exemplo, a deteção de ameaças Deteta determinadas atividades de base de d
 Neste tutorial, aprendeu a melhorar a proteção da base de dados contra utilizadores mal intencionados ou acesso não autorizado com apenas alguns passos simples.  Aprendeu a: 
 
 > [!div class="checklist"]
-> * Configurar regras de firewall para o seu servidor e ou base de dados
+> * Configurar regras de firewall para o servidor e/ou da base de dados
 > * Ligar à base de dados através de uma cadeia de ligação segura
 > * Gerir o acesso de utilizador
 > * Proteger os seus dados com a encriptação

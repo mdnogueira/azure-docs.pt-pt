@@ -15,38 +15,39 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 
 ms.author: haroldw
-ms.openlocfilehash: c91b7232b2f87e0b4b5e659126b96a6ef8b4202c
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: 159f30fc59a050b9a4ff983e8ac84e424104b484
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="deploy-openshift-container-platform-in-azure"></a>Implementar OpenShift contentor plataforma no Azure
 
-Existem várias formas de implementar OpenShift contentor plataforma no Azure. Pode implementar manualmente todos os componentes de infraestrutura do Azure necessários e, em seguida, siga a plataforma de contentor OpenShift [documentação](https://docs.openshift.com/container-platform/3.6/welcome/index.html).
-Também pode utilizar um modelo do Resource Manager existente que simplifica a implementação do cluster OpenShift contentor plataforma. Assim que esse modelo for localizado [aqui](https://github.com/Microsoft/openshift-container-platform/).
+Pode utilizar um dos vários métodos para implementar o contentor de OpenShift plataforma no Azure:
 
-Outra opção consiste em utilizar o [oferta do Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
+- Pode implementar manualmente os componentes de infraestrutura do Azure necessários e, em seguida, siga a plataforma de contentor OpenShift [documentação](https://docs.openshift.com/container-platform/3.6/welcome/index.html).
+- Também pode utilizar um existente [modelo do Resource Manager](https://github.com/Microsoft/openshift-container-platform/) que simplifica a implementação do cluster OpenShift contentor plataforma.
+- Outra opção consiste em utilizar o [oferta Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
 
-Para ambas as opções, é necessária uma subscrição do Red Hat. Durante a implementação, a instância RHEL é registada para a subscrição do Red Hat e ligada para o ID do conjunto que contém a elegibilidade para a plataforma de contentor OpenShift.
-Certifique-se de que tem um nome de utilizador do Red Hat subscrição Manager, palavra-passe e ID do conjunto (RHSM nomedeutilizador, palavra-passe de RHSM e ID do conjunto) válido. Pode verificar as informações, iniciando sessão no https://access.redhat.com.
+Para todas as opções, é necessária uma subscrição do Red Hat. Durante a implementação, a instância do Red Hat Enterprise Linux é registada para a subscrição do Red Hat e ligada para o ID do conjunto que contém a elegibilidade para a plataforma de contentor OpenShift.
+Certifique-se de que tem um nome de utilizador válido do Red Hat subscrição Manager (RHSM), a palavra-passe e o ID do conjunto. Pode verificar esta informação ao iniciar sessão https://access.redhat.com.
 
-## <a name="deploy-using-the-openshift-container-platform-resource-manager-template"></a>Implementar utilizando o modelo do Resource Manager OpenShift contentor plataforma
+## <a name="deploy-by-using-the-openshift-container-platform-resource-manager-template"></a>Implementar utilizando o modelo do Resource Manager OpenShift contentor plataforma
 
-Para implementar com o modelo do Resource Manager, um ficheiro de parâmetros é utilizado para fornecer todos os parâmetros de entrada. Se pretender personalizar qualquer um dos itens de implementação que não são abrangidos utilizando os parâmetros de entrada, bifurcação o repositório do github e alterar os itens adequados.
+Para implementar utilizando o modelo do Resource Manager, pode utilizar um ficheiro de parâmetros para fornecer os parâmetros de entrada. Para personalizar qualquer um dos itens de implementação que não são abrangidos utilizando os parâmetros de entrada, bifurcar o repositório do GitHub e altere os itens adequados.
 
-Algumas opções de personalização comuns incluem (mas não se limitando):
+Algumas opções de personalização comuns incluem, mas não estão limitadas a:
 
-- CIDR de VNet [variável no azuredeploy. JSON]
-- Tamanho da VM de bastion [variável no azuredeploy. JSON]
-- Convenções de nomenclatura [variáveis em azuredeploy. JSON]
-- Informações específicas de cluster OpenShift - modificadas através do ficheiro de anfitriões [deployOpenShift.sh]
+- Rede virtual CIDR (variável no azuredeploy. JSON)
+- Tamanho da VM de bastion (variável no azuredeploy. JSON)
+- Convenções de nomenclatura (variáveis no azuredeploy. JSON)
+- Especificações do cluster OpenShift, modificada através do ficheiro de anfitriões (deployOpenShift.sh)
 
-### <a name="configure-parameters-file"></a>Configurar o ficheiro de parâmetros
+### <a name="configure-the-parameters-file"></a>Configurar o ficheiro de parâmetros
 
 Utilize o `appId` valor o principal de serviço que criou anteriormente para o `aadClientId` parâmetro. 
 
-O exemplo seguinte cria um ficheiro de parâmetros com o nome **azuredeploy.parameters.json** com todas as entradas necessárias.
+O exemplo seguinte cria um ficheiro de parâmetros com o nome azuredeploy.parameters.json com todas as entradas necessárias.
 
 ```json
 {
@@ -132,14 +133,14 @@ O exemplo seguinte cria um ficheiro de parâmetros com o nome **azuredeploy.para
 }
 ```
 
-Substitua itens entre {} com as suas informações pertinentes.
+Substitua os itens entre parênteses com as suas informações específicas.
 
-### <a name="deploy-using-azure-cli"></a>Implementar utilizando a CLI do Azure
+### <a name="deploy-by-using-azure-cli"></a>Implementar utilizando a CLI do Azure
 
 > [!NOTE] 
-> O seguinte comando requer a CLI do Azure 2.0.8 ou posterior. Pode verificar o az CLI versão com o `az --version` comando. Para atualizar a versão do CLI, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli).
+> O seguinte comando requer a CLI do Azure 2.0.8 ou posterior. Pode verificar a versão do CLI com o `az --version` comando. Para atualizar a versão do CLI, consulte [instalar o Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latesti).
 
-O exemplo seguinte implementa o cluster de OpenShift e todos os recursos relacionados para um grupo de recursos com o nome myResourceGroup com um nome de implementação de myOpenShiftCluster. O modelo é referenciado diretamente a partir do repositório github e o nome de um ficheiro de parâmetros local **azuredeploy.parameters.json** ficheiro é utilizado.
+O exemplo seguinte implementa o cluster de OpenShift e todos os recursos relacionados para um grupo de recursos com o nome myResourceGroup, com um nome de implementação de myOpenShiftCluster. O modelo é referenciado diretamente a partir de um local parâmetros azuredeploy.parameters.json ficheiro com o nome de ficheiro é utilizado e o repositório do GitHub.
 
 ```azurecli 
 az group deployment create -g myResourceGroup --name myOpenShiftCluster \
@@ -147,7 +148,7 @@ az group deployment create -g myResourceGroup --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-A implementação demora menos de 30 minutos a concluir consoante o número total de nós implementados. O URL da consola OpenShift e nome de DNS do mestre de OpenShift está impresso ao terminal quando concluir a implementação.
+A implementação demora menos de 30 minutos para concluir, dependendo do número total de nós implementados. O URL da consola do OpenShift e o nome DNS das impressões mestres OpenShift para o terminal quando a conclusão da implementação.
 
 ```json
 {
@@ -156,21 +157,21 @@ A implementação demora menos de 30 minutos a concluir consoante o número tota
 }
 ```
 
-## <a name="deploy-using-openshift-container-platform-marketplace-offer"></a>Implementar utilizando oferta do marketplace de OpenShift contentor plataforma
+## <a name="deploy-by-using-the-openshift-container-platform-azure-marketplace-offer"></a>Implementar utilizando a oferta OpenShift contentor plataforma Azure Marketplace
 
-A forma mais simples de implementar OpenShift contentor plataforma no Azure está a utilizar o [oferta do Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
+A forma mais simples de implementar OpenShift contentor plataforma no Azure está a utilizar o [oferta Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
 
-Esta opção é a mais simples, mas também tem capacidades limitadas de personalização. A oferta inclui três opções de configuração:
+Esta é a opção mais simples, mas também tem capacidades limitadas de personalização. A oferta inclui três opções de configuração:
 
-- Breve: Implementa um não-HA cluster com um nó principal, um nó de infraestrutura, dois nós de aplicação e um nó de Bastion. Todos os nós são os tamanhos de Standard DS2v2 VM. Este cluster necessita de 10 núcleos totais e é ideal para testes de pequena escala.
-- Média: Implementa um cluster do HA com três nós mestre, dois nós de infraestrutura, quatro nós de aplicação e um nó de Bastion. Todos os nós exceto o Bastion são os tamanhos de Standard DS3v2 VM. O nó de Bastion é uma DS2v2 padrão. Este cluster necessita de 38 núcleos.
-- Grande: Implementa um HA Cluster com três nós mestre, dois nós de infraestrutura, seis nós de aplicação e um nó de Bastion. O principal e os nós de infraestrutura são os tamanhos de Standard DS3v2 VM, os nós de aplicação são os tamanhos de VM de DS4v2 padrão e o nó de Bastion for um DS2v2 padrão. Este cluster necessita de 70 núcleos.
+- **Pequeno**: implementa um cluster de não ser de elevada disponibilidade (HA) com um nó principal, o nó de uma infraestrutura, dois nós de aplicação e nó de um bastion. Todos os nós são os tamanhos de VM de DS2v2 padrão. Este cluster necessita de 10 núcleos totais e é ideal para testes em pequena escala.
+- **Média**: implementa um cluster do HA com três nós principais, dois nós de infraestrutura, quatro nós de aplicação e um bastion nó. Todos os nós exceto o nó de bastion são os tamanhos de VM de DS3v2 padrão. O nó de bastion é uma DS2v2 padrão. Este cluster necessita de 38 núcleos.
+- **Grande**: implementa um cluster do HA com três nós principais, dois nós de infraestrutura, seis nós de aplicação e um bastion nó. Os nós de infraestrutura e o mestre de são os tamanhos de VM de DS3v2 padrão. Os nós de aplicação são os tamanhos de VM de DS4v2 padrão e o nó de bastion for um DS2v2 padrão. Este cluster necessita de 70 núcleos.
 
-Configuração do fornecedor de nuvem do Azure é opcional para médio e grande tamanhos de cluster. O tamanho do cluster pequeno não atribua uma opção para configurar o fornecedor de nuvem do Azure.
+Configuração do fornecedor de solução de nuvem do Azure é opcional para tamanhos de cluster de média e grande. O tamanho do cluster pequeno não atribua uma opção para configurar o fornecedor de solução em nuvem do Azure.
 
 ## <a name="connect-to-the-openshift-cluster"></a>Ligar ao OpenShift cluster
 
-Quando a implementação estiver concluída, ligar a consola OpenShift através do browser, utilizando o `OpenShift Console Uri`. Em alternativa, pode ligar ao mestre de OpenShift utilizando o seguinte comando:
+Quando a conclusão da implementação, ligar à consola do OpenShift com o seu browser, utilizando o `OpenShift Console Uri`. Em alternativa, pode ligar ao mestre de OpenShift usando o seguinte comando:
 
 ```bash
 $ ssh clusteradmin@myopenshiftmaster.cloudapp.azure.com -p 2200
@@ -178,7 +179,7 @@ $ ssh clusteradmin@myopenshiftmaster.cloudapp.azure.com -p 2200
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando já não é necessário, pode utilizar o [eliminação do grupo de az](/cli/azure/group#delete) comando para remover o grupo de recursos, de cluster de OpenShift e todos os recursos relacionados.
+Utilize o [eliminação do grupo de az](/cli/azure/group#delete) comando para remover o grupo de recursos, de cluster de OpenShift e todos os recursos relacionados quando já não forem necessárias.
 
 ```azurecli 
 az group delete --name myResourceGroup
@@ -186,6 +187,6 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Publicar tarefas de implementação](./openshift-post-deployment.md)
-- [Resolução de problemas de implementação de OpenShift](./openshift-troubleshooting.md)
+- [Tarefas de pós-implementação](./openshift-post-deployment.md)
+- [Resolver problemas de implementação de OpenShift no Azure](./openshift-troubleshooting.md)
 - [Introdução à plataforma de contentor OpenShift](https://docs.openshift.com/container-platform/3.6/getting_started/index.html)

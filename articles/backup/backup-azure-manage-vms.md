@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2016
 ms.author: trinadhk;markgal
-ms.openlocfilehash: 35a21cb99ca4bad124a9f764cef9da453e1fe47f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 597d8e12377ca19b0c58eb2fc8bdb7597c1c6c07
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="manage-azure-virtual-machine-backups"></a>Gerir cópias de segurança de máquinas virtuais do Azure
 > [!div class="op_single_selector"]
@@ -32,10 +32,10 @@ Este artigo fornece orientações para a gestão de cópias de segurança da VM 
 ## <a name="manage-vaults-and-protected-virtual-machines"></a>Gerir cofres e as máquinas virtuais protegidas
 No portal do Azure, o dashboard do cofre dos serviços de recuperação fornece acesso a informações sobre o cofre, incluindo:
 
-* o instantâneo de cópia de segurança mais recente, que também é o ponto de restauro mais recente < br\>
-* a política de cópia de segurança < br\>
-* tamanho total de todos os instantâneos de cópia de segurança < br\>
-* número de máquinas virtuais que estão protegidas com o Cofre < br\>
+* o instantâneo de cópia de segurança mais recente, que também é o último ponto de restauro
+* a política de cópia de segurança
+* tamanho total de todos os instantâneos de cópia de segurança
+* número de máquinas virtuais que estão protegidos com o Cofre
 
 Várias tarefas de gestão com uma cópia de segurança da máquina virtual começam por abrir o Cofre no dashboard. No entanto, porque cofres podem ser utilizados para proteger vários itens (ou várias VMs), para ver detalhes sobre uma VM específica, abra o dashboard do cofre item. O procedimento seguinte mostra como abrir o *dashboard do cofre* e, em seguida, avance para o *dashboard do cofre item*. Existem "sugestões" em ambos os procedimentos de ponto sobre como adicionar o Cofre e utilizando o Pin para o comando de dashboard do cofre item para o dashboard do Azure. Afixar ao dashboard é uma forma de criar um atalho para o cofre ou item. Também pode executar comandos comuns do atalho.
 
@@ -50,11 +50,11 @@ Várias tarefas de gestão com uma cópia de segurança da máquina virtual come
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. No menu Hub, clique em **Procurar** e na lista de recursos, escreva **Serviços de Recuperação**. À medida que começa a escrever, a lista filtra com base na sua entrada. Clique em **Cofre dos Serviços de Recuperação**.
 
-    ![Passo 1 da Criação de um Cofre dos Serviços de Recuperação](./media/backup-azure-manage-vms/browse-to-rs-vaults.png) <br/>
+    ![Passo 1 da Criação de um Cofre dos Serviços de Recuperação](./media/backup-azure-manage-vms/browse-to-rs-vaults.png)
 
     É apresentada a lista dos cofres dos Serviços de Recuperação.
 
-    ![Lista de serviços de recuperação cofres dos ](./media/backup-azure-manage-vms/list-o-vaults.png) <br/>
+    ![Lista de serviços de recuperação cofres dos ](./media/backup-azure-manage-vms/list-o-vaults.png)
 
    > [!TIP]
    > Se fixar um cofre para o Dashboard do Azure, que Cofre é imediatamente acessível quando abrir o portal do Azure. Para afixar um cofre para o dashboard, na lista de cofre, faça duplo clique no cofre e selecione **afixar ao dashboard**.
@@ -89,13 +89,13 @@ No procedimento anterior abrir o dashboard do cofre. Para abrir o dashboard do c
 
     A partir do dashboard de item cofre, pode realizar muitas tarefas de gestão de chaves, tais como:
 
-   * alterar políticas ou criar uma nova política de cópia de segurança < br\>
-   * ver os pontos de restauro e ver o respetivo estado de consistência < br\>
-   * cópia de segurança a pedido de uma máquina virtual < br\>
-   * parar a proteção de máquinas virtuais < br\>
-   * retomar a proteção de uma máquina virtual < br\>
-   * eliminar uma cópia de segurança dados (ou ponto de recuperação) < br\>
-   * [restaurar a cópia de segurança discos](backup-azure-arm-restore-vms.md#restore-backed-up-disks) < br\>
+   * alterar políticas ou criar uma nova política de cópia de segurança
+   * ver os pontos de restauro e ver o respetivo estado de consistência
+   * Cópia de segurança a pedido de uma máquina virtual
+   * Parar a proteção de máquinas virtuais
+   * Retomar a proteção de uma máquina virtual
+   * eliminar uma cópia de segurança dados (ou ponto de recuperação)
+   * [restaurar a cópia de segurança discos](backup-azure-arm-restore-vms.md#restore-backed-up-disks)
 
 Para obter os procedimentos seguintes, o ponto de partida é o item de dashboard do cofre.
 
@@ -110,7 +110,7 @@ Para obter os procedimentos seguintes, o ponto de partida é o item de dashboard
     ![Painel política de cópia de segurança](./media/backup-azure-manage-vms/backup-policy-blade.png)
 3. Do **escolher a política de cópia de segurança** menu:
 
-   * Para alterar as políticas, selecione uma política diferente e clique em **guardar**. A nova política é imediatamente aplicada ao cofre. < br\>
+   * Para alterar as políticas, selecione uma política diferente e clique em **guardar**. A nova política é imediatamente aplicada ao cofre.
    * Para criar uma política, selecione **criar novo**.
 
      ![Cópia de segurança da máquina virtual](./media/backup-azure-manage-vms/backup-policy-create-new.png)
@@ -148,7 +148,7 @@ Para acionar uma cópia de segurança a pedido de uma máquina virtual:
 Se optar por deixar de proteger uma máquina virtual, é-lhe perguntado se pretende manter os pontos de recuperação. Existem duas formas de parar a proteção de máquinas virtuais:
 
 * todas as tarefas de cópia de segurança futuras de parar e eliminar todos os pontos de recuperação, ou
-* parar todas as tarefas de cópia de segurança futuras, mas deixe os pontos de recuperação <br/>
+* parar todas as tarefas de cópia de segurança futuras, mas deixe os pontos de recuperação
 
 Não há um custo associado deixando os pontos de recuperação no armazenamento. No entanto, a vantagem de abandonar o fileparser os pontos de recuperação é que possível restaurar a máquina virtual mais tarde, se assim o desejar. Para informações sobre o custo de abandonar o fileparser os pontos de recuperação, consulte o [detalhes de preços](https://azure.microsoft.com/pricing/details/backup/). Se optar por eliminar todos os pontos de recuperação, não é possível restaurar a máquina virtual.
 

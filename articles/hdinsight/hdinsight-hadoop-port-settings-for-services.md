@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/23/2017
+ms.date: 11/13/2017
 ms.author: larryfr
-ms.openlocfilehash: d474cce902dad1390d55ed7bad556d9b0610605f
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: a55180b5d65b268d7c9b51307581a5fe777a26fe
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="ports-used-by-hadoop-services-on-hdinsight"></a>Portas utilizadas pelos serviços do Hadoop no HDInsight
 
@@ -79,7 +79,7 @@ Todos os serviços publicamente expostos na internet têm de ser autenticados:
 
 ### <a name="ambari"></a>Ambari
 
-| Serviço | Nós | Porta | Caminho de URL | Protocolo | 
+| Serviço | Nós | Porta | Caminho do URL | Protocolo | 
 | --- | --- | --- | --- | --- |
 | IU da web do Ambari | Nós de cabeçalho | 8080 | / | HTTP |
 | API de REST do Ambari | Nós de cabeçalho | 8080 | / api/v1 | HTTP |
@@ -166,11 +166,11 @@ Exemplos:
 
 ### <a name="spark-ports"></a>Portas do Spark
 
-| Serviço | Nós | Porta | Protocolo | Caminho de URL | Descrição |
+| Serviço | Nós | Porta | Protocolo | Caminho do URL | Descrição |
 | --- | --- | --- | --- | --- | --- |
 | Servidores de Thrift de Spark |Nós de cabeçalho |10002 |Thrift | &nbsp; | Serviço para estabelecer a ligação para o Spark SQL (Thrift/JDBC) |
-| Servidor Livy | Nós de cabeçalho | 8998 | HTTP | /Batches | Serviço para executar instruções, tarefas e aplicações |
+| Servidor Livy | Nós de cabeçalho | 8998 | HTTP | &nbsp; | Serviço para executar instruções, tarefas e aplicações |
 
 Exemplos:
 
-* O Livy: `curl "http://10.0.0.11:8998/batches"`. Neste exemplo, `10.0.0.11` é o endereço IP do headnode que aloja o serviço de Livy.
+* O Livy: `curl -u admin -G "http://10.0.0.11:8998/"`. Neste exemplo, `10.0.0.11` é o endereço IP do headnode que aloja o serviço de Livy.

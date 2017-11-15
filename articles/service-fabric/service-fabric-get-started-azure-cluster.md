@@ -1,6 +1,6 @@
 ---
 title: Configurar um cluster do Azure Service Fabric | Microsoft Docs
-description: "Guia de introdução - criar um cluster do Service Fabric do Windows ou Linux no Azure."
+description: "Este início rápido ajuda-o a criar um cluster do Service Fabric do Windows ou do Linux no Azure."
 services: service-fabric
 documentationcenter: .net
 author: rwike77
@@ -14,62 +14,62 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2017
 ms.author: ryanwi
-ms.openlocfilehash: facb9643e0bb848f0ea9aadf447f05af218fdd0f
-ms.sourcegitcommit: a7c01dbb03870adcb04ca34745ef256414dfc0b3
+ms.openlocfilehash: caf76bb739fa92982c511c8e3e6c6aaf2bf9d6c1
+ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="create-your-first-service-fabric-cluster-on-azure"></a>Crie o primeiro cluster Service Fabric no Azure
-Um [cluster do Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os microsserviços são implementados e geridos. Este guia de introdução ajuda-o a criar um cluster de cinco nós, em execução no Windows ou Linux, através do [Azure PowerShell](https://msdn.microsoft.com/library/dn135248) ou do [portal do Azure](http://portal.azure.com) em apenas alguns minutos.  
+Os [clusters do Azure Service Fabric](service-fabric-deploy-anywhere.md) são um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os seus microsserviços são implementados e geridos. Este guia de introdução ajuda-o a criar um cluster de cinco nós, em execução no Windows ou no Linux, através do [Azure PowerShell](https://msdn.microsoft.com/library/dn135248) ou do [portal do Azure](http://portal.azure.com) em apenas alguns minutos. Também pode utilizar a CLI do Azure para esta tarefa.  
 
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 
 ## <a name="use-the-azure-portal"></a>Utilizar o portal do Azure
 
-Inicie sessão no portal do Azure em [http://portal.azure.com](http://portal.azure.com).
+Inicie sessão no portal do Azure, em [http://portal.azure.com](http://portal.azure.com).
 
 ### <a name="create-the-cluster"></a>Criar o cluster
 
-1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
-2. Procure **Service Fabric** e selecione **Cluster do Service Fabric** do **Cluster do Service Fabric** nos resultados devolvidos.  Clique em **Criar**.
-3. Preencha o formulário **Informações básicas** do Service Fabric. Para o **Sistema operativo**, selecione a versão do Windows ou do Linux que pretende que os nós do cluster executem. O nome de utilizador e palavra-passe introduzidos aqui são utilizados para iniciar sessão na máquina virtual. Para o **Grupo de recursos** crie um novo. Um grupo de recursos é um contentor lógico no qual os recursos do Azure são criados e geridos coletivamente. Quando terminar, clique em **OK**.
+1. No canto superior esquerdo do portal do Azure, selecione **Novo**.
+2. Procure **Service Fabric** e selecione **Cluster do Service Fabric** nos resultados devolvidos. Em seguida, selecione **Criar**.
+3. Preencha o formulário **Informações básicas** do Service Fabric. Para o **Sistema operativo**, selecione a versão do Windows ou do Linux que pretende que os nós do cluster executem. O nome de utilizador e a palavra-passe introduzidos aqui são utilizados para iniciar sessão na máquina virtual. Para o **Grupo de recursos** crie um novo. Um grupo de recursos é um contentor lógico no qual os recursos do Azure são criados e geridos coletivamente. Quando tiver terminado, selecione **OK**.
 
-    ![Saída do programa de configuração do cluster][cluster-setup-basics]
+    ![Captura de ecrã do resultado da configuração do cluster][cluster-setup-basics]
 
-4. Preencha o formulário **Configuração de cluster**.  Para a **contagem do tipo de Nó**, introduza "1".
+4. Preencha o formulário **Configuração de cluster**. Para **Contagem do tipo de nó**, introduza **1**.
 
-5. Selecione **Tipo de Nó 1 (Primário)** e preencha o formulário **Configuração do tipo de nó**.  Introduza um nome de tipo de nó e defina o [Escalão de durabilidade](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) para "Bronze."  Selecione um tamanho de VM.
+5. Selecione **Tipo de nó 1 (Primário)** e preencha o formulário **Configuração do tipo de nó**. Introduza um nome de tipo de nó e defina o [Escalão de durabilidade](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) como **Bronze**. Depois, selecione um tamanho de VM.
 
-    Os tipos de nós definem o tamanho da VM, o número de VMs, os pontos finais personalizados e outras definições para as VMs desse tipo. Cada tipo de nó definido é configurado como um conjunto de dimensionamento de máquinas virtuais separado, que é utilizado para implementar e gerir as máquinas virtuais como um conjunto. Cada tipo de nó pode ser aumentado ou reduzido verticalmente de forma independente, pode ter conjuntos diferentes de portas abertas e ter métricas de capacidade diferente.  O primeiro, ou primário, tipo de nó é onde os serviços do sistema do Service Fabric estão alojados e devem ter cinco ou mais VMs.
+    Os tipos de nós definem o tamanho da VM, o número de VMs, os pontos finais personalizados e outras definições para as VMs desse tipo. Cada tipo de nó definido é configurado como um conjunto de dimensionamento de máquinas virtuais separado, que é utilizado para implementar e gerir as máquinas virtuais como um conjunto. Cada tipo de nó pode ser aumentado ou reduzido verticalmente de forma independente, pode ter conjuntos diferentes de portas abertas e ter métricas de capacidade diferente. O primeiro, ou primário, tipo de nó é onde os serviços do sistema do Service Fabric estão alojados. Este tipo de nó tem de ter cinco ou mais VMs.
 
-    Para qualquer implementação de produção, o [planeamento da capacidade](service-fabric-cluster-capacity.md) é um passo importante.  Para este guia de introdução, no entanto, não está a executar aplicações, pelo que deve selecionar um tamanho da VM *DS1_v2 Standard* .  Selecione "Prata" para o [escalão de fiabilidade](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) e uma capacidade do conjunto de dimensionamento de máquinas virtuais inicial de cinco.  
+    Para qualquer implementação de produção, o [planeamento da capacidade](service-fabric-cluster-capacity.md) é um passo importante. Neste início rápido, no entanto, não está a executar aplicações, pelo que deve selecionar o tamanho de VM *DS1_v2 Standard* . Selecione **Prata** no [escalão de fiabilidade](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) e especifique uma capacidade do conjunto de dimensionamento de máquinas virtuais inicial de cinco.  
 
-    Os pontos finais personalizados abrem portas no balanceador de carga do Azure para que se possa ligar a aplicações em execução no cluster.  Introduza "80, 8172" para abrir as portas 80 e 8172.
+    Os pontos finais personalizados abrem portas no Balanceador de Carga do Azure, para que se possa ligar a aplicações em execução no cluster.  Introduza **80, 8172** para abrir as portas 80 e 8172.
 
-    Não assinale a caixa **Configurar definições avançadas**, que é utilizada para personalizar os pontos finais de gestão TCP/HTTP, os intervalos de portas de aplicação, as [restrições de posicionamento](service-fabric-cluster-resource-manager-configure-services.md#placement-constraints) e as [propriedades de capacidade](service-fabric-cluster-resource-manager-metrics.md).    
-
-    Selecione **OK**.
-
-6. No formulário **Configuração de cluster**, defina os **Diagnósticos** como **Ativados**.  Para este guia de introdução, não tem de introduzir quaisquer propriedades de [definição de recursos de infraestrutura](service-fabric-cluster-fabric-settings.md).  Na **versão dos Recursos de infraestrutura**, selecione o modo de atualização **Automático**, para que a Microsoft atualize automaticamente a versão do código dos recursos de infraestrutura em execução no cluster.  Defina o modo para **Manual**, se pretender [escolher uma versão suportada](service-fabric-cluster-upgrade.md) para se atualizar. 
-
-    ![Configuração do tipo de nó][node-type-config]
+    Não selecione a caixa **Configurar definições avançadas**, que é utilizada para personalizar os pontos finais de gestão TCP/HTTP, os intervalos de portas de aplicação, as [restrições de posicionamento](service-fabric-cluster-resource-manager-configure-services.md#placement-constraints) e as [propriedades de capacidade](service-fabric-cluster-resource-manager-metrics.md).    
+    
+    ![Captura de ecrã da Configuração do tipo de nó][node-type-config]
 
     Selecione **OK**.
 
-7. Preencha o formulário **Segurança**.  Para este guia de introdução, selecione **Inseguro**.  É altamente recomendado que crie um cluster seguro para cargas de trabalho de produção, uma vez que qualquer pessoa pode ligar a um cluster inseguro anonimamente e realizar operações de gestão.  
-
-    Os certificados são utilizados no Service Fabric para fornecer autenticação e encriptação para proteger diferentes aspetos de um cluster e as respetivas aplicações. Para obter mais informações sobre como os certificados são utilizados no Service Fabric, consulte [Service Fabric cluster security scenarios (Cenários de segurança do cluster do Service Fabric)](service-fabric-cluster-security.md).  Para ativar a autenticação de utilizador com o Azure Active Directory ou configurar certificados para a segurança da aplicação, [crie um cluster a partir de um modelo do Resource Manager](service-fabric-cluster-creation-via-arm.md).
+6. No formulário **Configuração de cluster**, defina os **Diagnósticos** como **Ativados**. Para este guia de introdução, não tem de introduzir quaisquer propriedades de [definição de recursos de infraestrutura](service-fabric-cluster-fabric-settings.md).  Na **versão dos Recursos de infraestrutura**, selecione o modo de atualização **Automático**, para que a Microsoft atualize automaticamente a versão do código dos recursos de infraestrutura em execução no cluster.  Defina o modo para **Manual**, se pretender [escolher uma versão suportada](service-fabric-cluster-upgrade.md) para se atualizar.     
 
     Selecione **OK**.
 
-8. Reveja o resumo.  Se gostaria de transferir um modelo do Resource Manager criado a partir das definições que introduziu, selecione **Transferir modelo e parâmetros**.  Selecione **Criar** para criar o cluster.
+7. Preencha o formulário **Segurança**. Neste início rápido, selecione **Inseguro**. Tenha em conta que, de um modo geral, deve criar um cluster seguro para cargas de trabalho de produção. Qualquer pessoa se pode ligar anonimamente a um cluster inseguro e realizar operações de gestão.  
 
-    Pode ver o progresso da criação nas notificações. (Clique no ícone de "Sino", junto a barra de estado no canto superior direito do ecrã.) Se clicou em **Afixar ao Startboard** ao criar o cluster, verá **Implementar o Cluster do Service Fabric** afixado ao painel de **Início**.
+   O Service Fabric utiliza certificados para fornecer autenticação e encriptação para proteger diferentes aspetos de um cluster e as respetivas aplicações. Para obter mais informações, veja [Service Fabric cluster security scenarios](service-fabric-cluster-security.md) (Cenários de segurança de clusters do Service Fabric). Para ativar a autenticação de utilizador mediante a utilização do Azure Active Directory ou para configurar certificados para a segurança das aplicações, veja[Create a cluster from a Resource Manager template](service-fabric-cluster-creation-via-arm.md) (Criar um cluster a partir de um modelo do Resource Manager).
 
-### <a name="connect-to-the-cluster-using-powershell"></a>Ligar ao cluster com o PowerShell
-Certifique-se de que o cluster está em execução ao ligar ao PowerShell.  O módulo do ServiceFabric PowerShell é instalado com o [SDK do Service Fabric](service-fabric-get-started.md).  O cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) estabelece uma ligação ao cluster.   
+    Selecione **OK**.
+
+8. Reveja o resumo. Se quiser transferir um modelo do Azure Resource Manager criado a partir das definições que introduziu, selecione **Transferir modelo e parâmetros**. Selecione **Criar** para criar o cluster.
+
+    Pode ver o progresso da criação nas notificações. (Selecione o ícone de "Sino", junto à barra de estado no canto superior direito do ecrã.) Se tiver selecionado **Afixar ao Startboard** ao criar o cluster, verá **Implementar o Cluster do Service Fabric** afixado ao painel **Início**.
+
+### <a name="connect-to-the-cluster-by-using-powershell"></a>Ligar ao cluster com o PowerShell
+Ligue através do PowerShell para verificar se o cluster está em execução. O módulo do Service Fabric do PowerShell é instalado com o [SDK do Service Fabric](service-fabric-get-started.md). O cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) estabelece uma ligação ao cluster.   
 
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint quickstartcluster.westus2.cloudapp.azure.com:19000
@@ -89,17 +89,19 @@ NodeDeactivationInfo NodeName     IpAddressOrFQDN NodeType  CodeVersion  ConfigV
 ```
 
 ### <a name="remove-the-cluster"></a>Remover o cluster
-Um cluster do Service Fabric é constituído por outros recursos do Azure, além do próprio recurso do cluster. Por isso, para eliminar completamente um cluster do Service Fabric também tem de eliminar todos os recursos de que é constituído. A forma mais simples de eliminar o cluster e todos os recursos que consome é eliminando o grupo de recursos. Para outras formas de eliminar um cluster ou para eliminar alguns (embora não todos) recursos num grupo de recursos, consulte [Delete a cluster (Eliminar um cluster)](service-fabric-cluster-delete.md)
+Um cluster do Service Fabric é constituído por outros recursos do Azure, além do próprio recurso do cluster. Para eliminar completamente um cluster do Service Fabric também tem de eliminar todos os recursos de que é constituído. A forma mais simples de eliminar o cluster e todos os recursos que consome é eliminando o grupo de recursos. Para outras formas de eliminar um cluster ou para eliminar alguns (embora não todos) recursos num grupo de recursos, veja [Delete a cluster (Eliminar um cluster)](service-fabric-cluster-delete.md)
 
 Eliminar um grupo de recursos no portal do Azure:
 1. Navegue para o cluster do Service Fabric que pretende eliminar.
-2. Clique no nome **Grupo de Recursos** na página de conceitos básicos do cluster.
-3. Na página **Conceitos Básicos do Grupo de Recursos**, clique em **Eliminar grupo de recursos** e siga as instruções nessa página para concluir a eliminação do grupo de recursos.
-    ![Eliminar o grupo de recursos][cluster-delete]
+2. Na página Essentials do cluster, selecione o nome **Grupo de Recursos**.
+3. Na página **Essentials do Grupo de Recursos**, selecione **Eliminar grupo de recursos**. Depois, siga as instruções nessa página para concluir a eliminação do grupo de recursos.
+    ![Captura de ecrã da página Essentials do Grupo de Recursos, com Eliminar grupo de recursos realçado][cluster-delete]
 
 
-## <a name="use-azure-powershell"></a>Utilizar o Azure Powershell
-1. Transfira o [módulo Azure Powershell versão 4.0 ou superior](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) para o computador.
+## <a name="use-azure-powershell"></a>Utilizar o Azure PowerShell
+Outra forma de criar o cluster é utilizar o PowerShell. Eis como:
+
+1. Transfira o [módulo do Azure PowerShell versão 4.0 ou superior](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) para o seu computador.
 
 2. Execute o cmdlet [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/new-azurermservicefabriccluster) para criar um cluster do Service Fabric com cinco nós, protegido por um certificado x.509. O comando cria um certificado autoassinado e carrega-o para um novo cofre de chaves. O certificado é também copiado para um diretório local. Defina o parâmetro *-OS* para escolher a versão do Windows ou Linux que é executada nos nós do cluster. Personalize os parâmetros conforme necessário. 
 
@@ -138,9 +140,9 @@ Eliminar um grupo de recursos no portal do Azure:
     -OS WindowsServer2016DatacenterwithContainers -VmSku $vmsku -KeyVaultName $vaultname
     ```
 
-    O comando pode demorar de 10 minutos a 30 minutos a concluir e, no final do mesmo, deverá obter um resultado semelhante ao seguinte. A saída contém informações sobre o certificado, o KeyVault para onde foi carregado e a pasta local onde o certificado é copiado.     
+    O comando pode demorar entre 10 a 30 minutos a concluir. A saída contém informações sobre o certificado, o cofre de chaves para onde foi carregado e a pasta local para onde é copiado.     
 
-3. Copie a saída completa e guarde num ficheiro de texto porque temos de consultá-la. Tome nota das seguintes informações da saída. 
+3. Copie a saída completa e guarde num ficheiro de texto (vai consultá-lo mais tarde). Tome nota das informações seguintes da saída: 
 
     - CertificateSavedLocalPath
     - CertificateThumbprint
@@ -149,7 +151,7 @@ Eliminar um grupo de recursos no portal do Azure:
 
 ### <a name="install-the-certificate-on-your-local-machine"></a>Instalar o certificado no computador local
   
-Para ligar ao cluster, terá de instalar o certificado no arquivo pessoal (O meu) do utilizador atual. 
+Para ligar ao cluster, instale o certificado no arquivo Pessoal (Meu) do utilizador atual. 
 
 Execute o seguinte:
 
@@ -199,8 +201,9 @@ $groupname="mysfclustergroup"
 Remove-AzureRmResourceGroup -Name $groupname -Force
 ```
 ## <a name="use-azure-cli"></a>Utilizar a CLI do Azure
+Outra forma de criar o cluster é utilizar a CLI. Eis como:
 
-1. Instale o [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) no seu computador.
+1. Instale a [CLI 2.0 do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) no seu computador.
 2. Inicie sessão no Azure e selecione a subscrição na qual pretende criar o cluster.
    ```azurecli
    az login
@@ -228,7 +231,7 @@ Remove-AzureRmResourceGroup -Name $groupname -Force
 
     # Create secure five node Linux cluster. Creates a key vault in a resource group
     # and creates a certficate in the key vault. The certificate's subject name must match 
-    # the domain that you use to access the Service Fabric cluster.  The certificate is downloaded locally.
+    # the domain that you use to access the Service Fabric cluster. The certificate is downloaded locally.
     az sf cluster create --resource-group $ResourceGroupName --location $Location --certificate-output-folder . \
         --certificate-password $Password --certificate-subject-name $Subject --cluster-name $ClusterName \
         --cluster-size 5 --os UbuntuServer1604 --vault-name $VaultName --vault-resource-group $VaultGroupName \
@@ -236,7 +239,7 @@ Remove-AzureRmResourceGroup -Name $groupname -Force
     ```
     
 ### <a name="connect-to-the-cluster"></a>Ligar ao cluster
-Execute o seguinte comando da CLI para ligar ao cluster com o certificado.  Quando utilizar um certificado de cliente para autenticação, os detalhes do certificado têm de coincidir com um certificado implementado nos nós do cluster.  Utilize a opção `--no-verify` para um certificado autoassinado.
+Execute o seguinte comando da CLI para ligar ao cluster com o certificado.  Se utilizar um certificado de cliente para autenticação, confirme que os detalhes do certificado coincidem com um certificado implementado nos nós do cluster. Utilize a opção `--no-verify` para um certificado autoassinado.
 
 ```azurecli
 az sf cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 --pem ./linuxcluster201709161647.pem --no-verify
@@ -250,7 +253,7 @@ az sf cluster health
 
 ### <a name="connect-to-the-nodes-directly"></a>Ligar diretamente aos nós 
 
-Para ligar aos nós num cluster do Linux, pode utilizar o SSH ao especificar um número de porta de 3389 em diante. Por exemplo, para o cluster de cinco nós criado anteriormente, os comandos seriam os seguintes:
+Para ligar aos nós num cluster do Linux, pode utilizar o comando do secure shell (SSH). Especifique um número de porta de 3389 ou superior. Por exemplo, para o cluster de cinco nós criado anteriormente, os comandos seriam os seguintes:
 ```bash
 ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3389
 ssh sfadminuser@aztestcluster.southcentralus.cloudapp.azure.com -p 3390

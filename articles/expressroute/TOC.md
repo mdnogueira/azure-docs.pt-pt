@@ -36,12 +36,19 @@
 ### [Portal do Azure](how-to-routefilter-portal.md)
 ### [Azure PowerShell](how-to-routefilter-powershell.md)
 ### [CLI do Azure](how-to-routefilter-cli.md)
+## [Mover de peering público para o peering da Microsoft](how-to-move-peering.md)
 ## [Mover um circuito de clássico para o Resource Manager](expressroute-howto-move-arm.md)
 ## [Migrar redes virtuais associadas do clássico para o Resource Manager](expressroute-migration-classic-resource-manager.md)
 ## Configurar um router para o ExpressRoute
 ### [Configurar um router](expressroute-config-samples-routing.md)
 ### [Exemplos de configuração de router para NAT](expressroute-config-samples-nat.md)
 ## [Configurar o Monitor de Desempenho de Rede para o ExpressRoute](how-to-npm.md)
+## Artigos sobre o modelo de implementação clássica
+### [Modificar um circuito](expressroute-howto-circuit-classic.md)
+### [Criar e modificar a configuração de peering](expressroute-howto-routing-classic.md)
+### [Ligue uma rede virtual a um circuito do ExpressRoute](expressroute-howto-linkvnet-classic.md)
+### [Configurar ligações coexistentes do ExpressRoute e S2S](expressroute-howto-coexist-classic.md)
+### [Adicionar um gateway a uma VNet](expressroute-howto-add-gateway-classic.md)
 
 ## Melhores práticas
 ### [Melhores práticas para segurança de rede e serviços cloud](../best-practices-network-security.md)

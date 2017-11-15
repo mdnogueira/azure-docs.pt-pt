@@ -51,12 +51,14 @@
       href: /rest/api/aks
 - name: Recursos
   items:
-    - name: Mapa do Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Preços
-      href: 'https://azure.microsoft.com/pricing/details/container-service/'
     - name: Disponibilidade de região
       href: 'https://azure.microsoft.com/regions/services/'
+    - name: Preços
+      href: 'https://azure.microsoft.com/pricing/details/container-service/'
+    - name: Mapa
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Fornecer comentários sobre o produto
+      href: 'https://github.com/Azure/AKS/issues'
     - name: Stack Overflow
       href: 'http://stackoverflow.com/questions/tagged/azure-container-service'
     - name: Vídeos

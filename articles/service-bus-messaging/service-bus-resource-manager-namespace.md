@@ -14,17 +14,17 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 08/07/2017
 ms.author: sethm;shvija
-ms.openlocfilehash: 0598ee93a38c07aa7b1102cdaf228c2a4b4dcf71
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c8a42638c79a8a53f80102fc344eccb521e4c1c5
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-a-service-bus-namespace-using-an-azure-resource-manager-template"></a>Criar um espaço de nomes do Service Bus através de um modelo Azure Resource Manager
 
 Este artigo descreve como utilizar um modelo Azure Resource Manager que cria um espaço de nomes de barramento de serviço do tipo **mensagens** com um SKU Standard. O artigo também define os parâmetros especificados para a execução da implementação. Pode utilizar este modelo para as suas próprias implementações ou personalizá-lo para satisfazer as suas necessidades.
 
-Para obter mais informações sobre a criação de modelos, consulte [modelos Authoring Azure Resource Manager][Authoring Azure Resource Manager templates].
+Para obter mais informações sobre a criação de modelos, consulte [Authoring Azure Resource Manager templates][Authoring Azure Resource Manager templates] (Criar modelos do Azure Resource Manager).
 
 Para o modelo completo, consulte o [modelo de espaço de nomes do Service Bus] [ Service Bus namespace template] no GitHub.
 
@@ -48,9 +48,9 @@ Para executar automaticamente a implementação, clique no seguinte botão:
 [![Implementar no Azure](./media/service-bus-resource-manager-namespace/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-servicebus-create-namespace%2Fazuredeploy.json)
 
 ## <a name="parameters"></a>Parâmetros
-Com o Azure Resource Manager, define parâmetros para os valores que pretende especificar quando o modelo é implementado. O modelo inclui uma secção denominada `Parameters` que contém todos os valores de parâmetro. Deve definir um parâmetro para esses valores que irão variar com base no projeto que está a implementar ou com base no ambiente que esteja a implementar. Não defina parâmetros para valores que irão sempre permaneça igual. Cada valor de parâmetro é utilizado no modelo para definir os recursos que são implementados.
+Com o Azure Resource Manager, define parâmetros para os valores que pretende especificar quando o modelo é implementado. O modelo inclui uma secção denominada `Parameters` que contém todos os valores de parâmetro. Deverá definir um parâmetro para esses valores que variam com base no projeto ou no ambiente que está a implementar. Não defina parâmetros para valores que permanecem sempre iguais. Cada valor de parâmetro é utilizado no modelo para definir os recursos que são implementados.
 
-Este modelo define os parâmetros seguintes.
+Este modelo define os seguintes parâmetros:
 
 ### <a name="servicebusnamespacename"></a>serviceBusNamespaceName
 O nome do espaço de nomes de barramento de serviço para criar.
@@ -81,7 +81,7 @@ O nome do Service Bus [SKU](https://azure.microsoft.com/pricing/details/service-
 
 ```
 
-O modelo define os valores que são permitidos para este parâmetro (Standard ou Premium) e atribui um valor predefinido (Standard), se for especificado nenhum valor.
+O modelo define os valores que são permitidos para este parâmetro (Standard ou Premium). Se for especificado nenhum valor, o Gestor de recursos atribui um valor predefinido (Standard).
 
 Para obter mais informações sobre preços do Service Bus, consulte [Service Bus preços e faturação][Service Bus pricing and billing].
 
@@ -91,7 +91,7 @@ A versão de API do Service Bus do modelo.
 ```json
 "serviceBusApiVersion": { 
        "type": "string", 
-       "defaultValue": "2015-08-01", 
+       "defaultValue": "2017-04-01", 
        "metadata": { 
            "description": "Service Bus ApiVersion used by the template" 
        } 

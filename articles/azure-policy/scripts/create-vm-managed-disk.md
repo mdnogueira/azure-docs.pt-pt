@@ -1,5 +1,5 @@
 ---
-title: "Exemplo de json de política do Azure - criar VM, a utilização de disco gerido | Microsoft Docs"
+title: "Exemplo de json de política do Azure - VM de auditoria não utilizar o disco gerido | Microsoft Docs"
 description: "Este exemplo de json auditorias quando é criada uma máquina virtual que utiliza discos geridos."
 services: azure-policy
 documentationcenter: 
@@ -15,13 +15,13 @@ ms.workload:
 ms.date: 10/30/2017
 ms.author: banders
 ms.custom: mvc
-ms.openlocfilehash: d581280981ce93382ee48c38d74ed6eefa4403fd
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 576cb49eee9404cfb09bc4374c4f8544b6db377a
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/13/2017
 ---
-# <a name="create-vm-using-managed-disk"></a>Criar a VM com o disco gerido
+# <a name="audit-when-vm-does-not-use-managed-disk"></a>Auditoria quando a VM não utiliza geridos disco
 
 Auditorias quando é criada uma máquina virtual que utiliza discos geridos.
 

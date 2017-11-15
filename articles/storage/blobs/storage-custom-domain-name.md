@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2017
 ms.author: tamram
-ms.openlocfilehash: cbc8654bf1755826afa2cf83e5476e88903e0854
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4dfca37e3a369fdfb41b4064b72ccd027bd8cbd3
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="configure-a-custom-domain-name-for-your-blob-storage-endpoint"></a>Configurar um nome de domínio personalizado para o ponto final do Armazenamento de Blobs
 
@@ -55,7 +55,7 @@ O processo de mapeamento do domínio personalizado para um ponto final do blob p
 O método intermediário é abordado [registar um domínio personalizado utilizando a *asverify* subdomínio](#register-a-custom-domain-using-the-asverify-subdomain).
 
 ## <a name="register-a-custom-domain"></a>Registar um domínio personalizado
-Utilize este procedimento para registar o domínio personalizado, se tiver sem preocupações sobre o indisponível por breves instantes aos seus utilizadores de domínio ou se o domínio personalizado não aloja atualmente uma aplicação.
+Utilize este procedimento para registar o domínio personalizado, se tiver sem preocupações sobre o indisponível por breves instantes aos seus utilizadores de domínio ou se o domínio personalizado não aloja atualmente uma aplicação. Pode utilizar o DNS do Azure para configurar um nome DNS personalizado para o arquivo de Blob do Azure. Para obter mais informações, consulte [DNS do Azure de utilização para fornecer definições de domínio personalizado para um serviço do Azure](https://docs.microsoft.com/azure/dns/dns-custom-domain#blob-storage).
 
 Se o domínio personalizado atualmente é o suporte para uma aplicação que não pode ter qualquer período de inatividade, siga o procedimento descrito no [registar um domínio personalizado utilizando a *asverify* subdomínio](#register-a-custom-domain-using-the-asverify-subdomain).
 

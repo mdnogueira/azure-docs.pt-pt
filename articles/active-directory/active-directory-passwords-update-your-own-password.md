@@ -13,18 +13,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/27/2017
+ms.date: 11/13/2017
 ms.author: barlan
 ms.custom: end-user
-ms.openlocfilehash: 8f175f5711b9798153d209f6645aa8bae9f2a00b
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 763248b1b7adf821d37f2308195a0934a0aee152
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/13/2017
 ---
-# <a name="help-i-forgot-my-azure-ad-password"></a>Obter ajuda, esqueci minha palavra-passe do Azure AD
+# <a name="reset-your-work-or-school-password"></a>Repor a palavra-passe de conta escolar ou profissional
 
-Se se tiver esquecido da sua palavra-passe, o seu departamento de TI nunca lhe enviou uma, a sua conta foi bloqueada ou se quiser alterá-la, podemos ajudá-lo. Se conhecer a palavra-passe e apenas necessário para alterar esta continuar para baixo para a secção [alterar a minha palavra-passe](#change-my-password) abaixo.
+Se esqueceu a sua palavra-passe, nunca recebeu um do seu suporte de empresa, foi bloqueado fora da sua conta, ou pretender alterá-la, podemos ajudar. Se conhecer a palavra-passe e apenas necessário para alterar esta continuar para baixo para a secção [alterar a minha palavra-passe](#change-my-password) abaixo.
 
    > [!NOTE]
    > Se estiver a tentar voltar à sua conta pessoal, como a Xbox, hotmail.com ou outlook.com tente o [sugestões encontrada neste artigo](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant)
@@ -64,7 +64,7 @@ Siga os passos que se seguem para aceder à reposição de palavra-passe self-se
    ![Verifique os dados de autenticação][Verification]
 
 4. O seu departamento de TI poderá precisar de mais confirmações, pelo que é possível que tenha de repetir o passo 3 com outra opção.
-5. Na página **Escolher uma nova palavra-passe**, introduza uma palavra-passe nova, confirme-a e, em seguida, clique em **Concluir**. Sugerimos que a palavra-passe tenha entre 8 e 16 carateres com letras maiúsculas e minúsculas, números e carateres especiais.
+5. Na página **Escolher uma nova palavra-passe**, introduza uma palavra-passe nova, confirme-a e, em seguida, clique em **Concluir**. A palavra-passe de conta escolar ou profissional pode ter determinados requisitos; sugerimos a que sua palavra-passe ser 8-16 carateres com carateres em maiúsculas e minúsculas, números e carateres especiais.
 6. Quando vir **A sua palavra-passe foi reposta**, pode iniciar sessão com a mesma.
 
     ![A palavra-passe do utilizador foi reposta][Complete]
@@ -102,7 +102,7 @@ Utilize este método se aceder às suas aplicações através do Portal de Acess
 | Caso de erro| O erro vir?| Solução |
 | --- | --- | --- |
 | Posso obter uma página ". Contacte o administrador" depois de introduzir o meu ID de utilizador | Contacte o administrador <br> <br> Detetámos que a palavra-passe da conta de utilizador não é gerida pela Microsoft. Como resultado, não conseguimos automaticamente repor a palavra-passe. <br> <br> Terá de contactar a sua equipa de TI para obter mais assistência. | Está a ver esta mensagem porque a sua equipa de TI gere a palavra-passe no seu ambiente no local e não permite-lhe repor a palavra-passe do não é possível aceder a ligação de conta. <br> <br> Para repor a palavra-passe, contacte a equipa de TI diretamente para obter ajuda e informar de que pretende repor a palavra-passe, pelo que podem ativar esta funcionalidade para si.|
-| Posso obter um erro "a conta não está ativada para a reposição de palavra-passe" depois de introduzir o meu ID de utilizador | A sua conta não permite reposição da palavra-passe <br> <br> Lamentamos, mas a sua equipa de TI não tenha configurado a sua conta para utilização com este serviço. <br> <br> Se quiser, podemos contactá um administrador na sua organização para repor a palavra-passe por si. | Está a ver esta mensagem porque a sua equipa de TI não activou a reposição da sua organização de palavra-passe de não é possível aceder a ligação de conta ou ainda não está licenciado para utilizar a funcionalidade. <br> <br> Para repor a palavra-passe, clique o contacto uma ligação de administrador para enviar uma mensagem de e-mail da sua empresa e informar de que pretende repor a palavra-passe, pelo que podem ativar esta funcionalidade para si da equipa de TI. |
+| Posso obter um erro "a conta não está ativada para a reposição de palavra-passe" depois de introduzir o meu ID de utilizador | A conta não está ativada para a reposição de palavra-passe <br> <br> Lamentamos, mas a sua equipa de TI não tenha configurado a sua conta para utilização com este serviço. <br> <br> Se quiser, podemos contactá um administrador na sua organização para repor a palavra-passe por si. | Está a ver esta mensagem porque a sua equipa de TI não activou a reposição da sua organização de palavra-passe de não é possível aceder a ligação de conta ou ainda não está licenciado para utilizar a funcionalidade. <br> <br> Para repor a palavra-passe, clique o contacto uma ligação de administrador para enviar uma mensagem de e-mail da sua empresa e informar de que pretende repor a palavra-passe, pelo que podem ativar esta funcionalidade para si da equipa de TI. |
 | Posso obter um erro de "pode não verificar a sua conta" depois de introduzir o meu ID de utilizador | Não foi possível verificar a sua conta <br> <br> Se quiser, podemos contactá um administrador na sua organização para repor a palavra-passe por si. | Está a ver esta mensagem porque estão ativados para a reposição de palavra-passe, mas não tiver registado para utilizar o serviço. Para registar para a reposição de palavra-passe, aceda ao http://aka.ms/ssprsetup após ter recuperou o acesso à sua conta. <br> <br> Para repor a palavra-passe, clique o contacto uma ligação de administrador para enviar uma mensagem de e-mail da sua empresa equipa de TI. |
 
 ## <a name="next-steps"></a>Passos seguintes

@@ -15,22 +15,24 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 
 ms.author: haroldw
-ms.openlocfilehash: 1a40c4cc064b32aced7e976f40f6ed6a57e62204
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: 1860ede19202566947b68b715e6bd354f64c1085
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="deploy-openshift-origin-in-azure"></a>Implementar OpenShift origem no Azure
 
-Existem várias formas de implementar OpenShift origem no Azure. Pode implementar manualmente todos os componentes de infraestrutura do Azure necessários e, em seguida, siga a origem de OpenShift [documentação](https://docs.openshift.org/3.6/welcome/index.html).
-Também pode utilizar um modelo do Resource Manager existente que simplifica a implementação do cluster OpenShift origem. Assim que esse modelo for localizado [aqui](https://github.com/Microsoft/openshift-origin).
+Pode utilizar uma das duas formas de implementar OpenShift origem no Azure:
 
-## <a name="deploy-using-the-openshift-origin-template"></a>Implementar utilizando o modelo de origem OpenShift
+- Pode implementar manualmente todos os componentes de infraestrutura do Azure necessários e, em seguida, siga a origem de OpenShift [documentação](https://docs.openshift.org/3.6/welcome/index.html).
+- Também pode utilizar um existente [modelo do Resource Manager](https://github.com/Microsoft/openshift-origin) que simplifica a implementação do cluster OpenShift origem.
+
+## <a name="deploy-by-using-the-openshift-origin-template"></a>Implementar utilizando o modelo de origem OpenShift
 
 Utilize o `appId` valor o principal de serviço que criou anteriormente para o `aadClientId` parâmetro.
 
-O exemplo seguinte cria um ficheiro de parâmetros com o nome **azuredeploy.parameters.json** com todas as entradas necessárias.
+O exemplo seguinte cria um ficheiro de parâmetros com o nome azuredeploy.parameters.json com todas as entradas necessárias.
 
 ```json
 {
@@ -92,13 +94,13 @@ O exemplo seguinte cria um ficheiro de parâmetros com o nome **azuredeploy.para
 }
 ```
 
-### <a name="deploy-using-azure-cli"></a>Implementar utilizando a CLI do Azure
+### <a name="deploy-by-using-azure-cli"></a>Implementar utilizando a CLI do Azure
 
 
 > [!NOTE] 
-> O seguinte comando requer a CLI do Azure 2.0.8 ou posterior. Pode verificar o az CLI versão com o `az --version` comando. Para atualizar a versão do CLI, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli).
+> O seguinte comando requer a CLI do Azure 2.0.8 ou posterior. Pode verificar a versão do CLI com o `az --version` comando. Para atualizar a versão do CLI, consulte [instalar o Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-O exemplo seguinte implementa o cluster de OpenShift e todos os recursos relacionados para um grupo de recursos com o nome myResourceGroup com um nome de implementação de myOpenShiftCluster. O modelo é referenciado diretamente a partir do repositório github e o nome de um ficheiro de parâmetros local **azuredeploy.parameters.json** ficheiro é utilizado.
+O exemplo seguinte implementa o cluster de OpenShift e todos os recursos relacionados para um grupo de recursos com o nome myResourceGroup, com um nome de implementação de myOpenShiftCluster. O modelo é referenciado diretamente a partir do repositório GitHub utilizando um ficheiro de parâmetros local com o nome azuredeploy.parameters.json.
 
 ```azurecli 
 az group deployment create -g myResourceGroup --name myOpenShiftCluster \
@@ -106,7 +108,7 @@ az group deployment create -g myResourceGroup --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-A implementação demora menos de 25 minutos a concluir, dependendo do número total de nós implementados. O URL da consola OpenShift e nome de DNS do mestre de OpenShift está impresso ao terminal quando concluir a implementação.
+A implementação demora menos de 25 minutos a concluir, dependendo do número total de nós implementados. O URL da consola do OpenShift e o nome DNS das impressões mestres OpenShift para o terminal quando a conclusão da implementação.
 
 ```json
 {
@@ -117,7 +119,7 @@ A implementação demora menos de 25 minutos a concluir, dependendo do número t
 
 ## <a name="connect-to-the-openshift-cluster"></a>Ligar ao OpenShift cluster
 
-Quando a implementação estiver concluída, ligar a consola OpenShift através do browser, utilizando o `OpenShift Console Uri`. Em alternativa, pode ligar ao mestre de OpenShift utilizando o seguinte comando:
+Quando a conclusão da implementação, ligar à consola do OpenShift com o seu browser, utilizando o `OpenShift Console Uri`. Em alternativa, pode ligar ao mestre de OpenShift usando o seguinte comando:
 
 ```bash
 $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
@@ -125,7 +127,7 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando já não é necessário, pode utilizar o [eliminação do grupo de az](/cli/azure/group#delete) comando para remover o grupo de recursos, de cluster de OpenShift e todos os recursos relacionados.
+Utilize o [eliminação do grupo de az](/cli/azure/group#delete) comando para remover o grupo de recursos, de cluster de OpenShift e todos os recursos relacionados quando já não forem necessárias.
 
 ```azurecli 
 az group delete --name myResourceGroup
@@ -133,6 +135,6 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Publicar tarefas de implementação](./openshift-post-deployment.md)
-- [Resolução de problemas de implementação de OpenShift](./openshift-troubleshooting.md)
-- [Introdução ao OpenShift origem](https://docs.openshift.org/latest/getting_started/index.html)
+- [Tarefas de pós-implementação](./openshift-post-deployment.md)
+- [Resolver problemas de implementação de OpenShift](./openshift-troubleshooting.md)
+- [Introdução ao OpenShift Origin](https://docs.openshift.org/latest/getting_started/index.html)

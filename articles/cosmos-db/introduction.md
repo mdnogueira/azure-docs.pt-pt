@@ -15,11 +15,11 @@ ms.topic: overview
 ms.date: 07/14/2017
 ms.author: mimig
 ms.custom: mvc
-ms.openlocfilehash: d5ae2a68f749310d4d6a2514055fb258978eec9c
-ms.sourcegitcommit: d03907a25fb7f22bec6a33c9c91b877897e96197
+ms.openlocfilehash: 804b20111ea99892201079657d6d3602ececdd28
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Bem-vindo ao Azure Cosmos DB
 
@@ -42,7 +42,7 @@ Como um serviço de base de dados de distribuição global, o Azure Cosmos DB pr
     * As APIs para os modelos de dados seguintes são suportadas com os SDKs disponíveis em várias linguagens:
         * [API de DocumentDB](documentdb-introduction.md): um motor de base de dados JSON sem esquema com capacidades de consulta de SQL.
         * [API de MongoDB](mongodb-introduction.md): serviço de base de dados de A MongoDB desenvolvida com base de dados do Cosmos. É compatível com existente MongoDB bibliotecas, controladores, ferramentas e aplicações.
-        * [API de tabela](table-introduction.md): um serviço de base de dados de armazenamento de chave-valor criado para fornecer capacidades de premium para aplicações de armazenamento de tabelas do Azure.
+        * [API de tabela](table-introduction.md): um serviço de base de dados de chave-valor criado para fornecer capacidades de premium para aplicações de armazenamento de tabelas do Azure.
         * [Graph API (Gremlin)](graph-introduction.md): um seguinte de serviço criado de base de dados de gráfico a [especificação do Apache TinkerPop](http://tinkerpop.apache.org/).
         * Modelos de dados adicionais disponíveis em breve!
 

@@ -1,5 +1,5 @@
 ---
-title: "Melhores práticas de sincronização de dados SQL do Azure | Microsoft Docs"
+title: "Melhores práticas para a sincronização de dados SQL do Azure | Microsoft Docs"
 description: "Obter as melhores práticas para configurar e executar a sincronização de dados SQL do Azure"
 services: sql-database
 ms.date: 11/2/2017
@@ -8,13 +8,13 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: 51ef421e0761be81681728daba9c2b6300e702c4
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: d23bd186300d451186dd4f3644290cb4178417a2
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="best-practices-for-azure-sql-data-sync-preview"></a>Melhores práticas para a sincronização de dados de SQL do Azure (pré-visualização) 
+# <a name="best-practices-for-sql-data-sync-preview"></a>Melhores práticas para a sincronização de dados do SQL Server (pré-visualização) 
 
 Este artigo descreve as melhores práticas para a sincronização de dados do SQL Server (pré-visualização).
 
@@ -228,7 +228,7 @@ Se tentar remover uma base de dados e, em seguida, edite um grupo de sincroniza�
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
--   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Configurar a sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
 -   [Monitor sincronização de dados SQL do Azure com a análise de registos do OMS](sql-database-sync-monitor-oms.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
 

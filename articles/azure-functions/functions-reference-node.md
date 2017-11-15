@@ -16,11 +16,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/25/2017
 ms.author: glenga
-ms.openlocfilehash: 1aaeeed2740179555c024792562a950f4fd6b29d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8050e116a48c69b2fccd6bdc1cf029dfdd6e6f28
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Guia para programadores do JavaScript de funções do Azure
 [!INCLUDE [functions-selector-languages](../../includes/functions-selector-languages.md)]
@@ -317,9 +317,9 @@ function GetEnvironmentVariable(name)
 
 Quando trabalha com funções JavaScript, lembre-se de que as considerações em duas secções seguintes.
 
-### <a name="choose-single-core-app-service-plans"></a>Escolha um núcleo planos de serviços aplicacionais
+### <a name="choose-single-vcpu-app-service-plans"></a>Escolha único vCPU planos de serviços aplicacionais
 
-Quando cria uma aplicação de função que utiliza o plano do App Service, recomendamos que selecione um plano do single-core, em vez de um plano com vários núcleos. Hoje em dia, funções é executado funções JavaScript de forma mais eficiente em VMs single-core, e utilizar VMs maior não produz os melhoramentos de desempenho esperadas. Quando for necessário, manualmente pode aumentar horizontalmente adicionando mais instâncias VM single-core, ou pode ativar o dimensionamento automático. Para obter mais informações, consulte [dimensionar a contagem de instâncias manual ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service-web%2ftoc.json).    
+Quando cria uma aplicação de função que utiliza o plano do App Service, recomendamos que selecione um plano do single-vCPU, em vez de um plano com vários vCPUs. Hoje em dia, funções é executado funções JavaScript de forma mais eficiente em VMs único vCPU, e utilizar VMs maior não produz os melhoramentos de desempenho esperadas. Quando for necessário, manualmente pode aumentar horizontalmente adicionando mais instâncias VM única vCPU, ou pode ativar o dimensionamento automático. Para obter mais informações, consulte [dimensionar a contagem de instâncias manual ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service-web%2ftoc.json).    
 
 ### <a name="typescript-and-coffeescript-support"></a>Suporte typeScript e CoffeeScript
 Porque o suporte direto ainda não existe para compilar o automática TypeScript ou CoffeeScript através de tempo de execução, esse suporte tem de ser processada fora do tempo de execução, no momento da implementação. 

@@ -13,13 +13,13 @@ ms.devlang: rest-api
 ms.workload: search
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 06/18/2017
+ms.date: 11/09/2017
 ms.author: heidist
-ms.openlocfilehash: c293de5b43103c8cbec01f61a26b8b28ac7e9116
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 916a08aacca428530bc4f728d5de422e04bed8bc
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="service-administration-for-azure-search-in-the-azure-portal"></a>Administração de serviço para a Azure Search no portal do Azure
 > [!div class="op_single_selector"]
@@ -34,13 +34,10 @@ A pesquisa do Azure é um serviço completamente gerido, baseado na nuvem de pes
 * Ajuste a capacidade de serviço alterando a atribuição de partições e réplicas.
 * Monitorizar a utilização de recursos, relativo aos limites máximos de camada de serviços.
 
-**Não está no âmbito** 
+Repare que *atualizar* não está indicada como uma tarefa administrativa. Porque os recursos são atribuídos quando o serviço é aprovisionado, a mudança para uma camada diferente exige um novo serviço. Para obter mais informações, consulte [criar um serviço da Azure Search](search-create-service-portal.md).
 
-*Gestão de conteúdo* (ou gestão de índice) refere-se para operações como analisar o tráfego de pesquisa para compreender o volume de consulta, detetar os termos de licenciamento para, e como são os resultados da pesquisa com êxito ao servir pelos clientes a documentos específicos no seu índice de pesquisa de pessoas. Para obter ajuda nesta área, consulte [análise de tráfego de pesquisa do Azure Search](search-traffic-analytics.md).
-
-*Desempenho de consulta* também está fora do âmbito deste artigo. Para obter mais informações, consulte [monitorizar métricas de utilização e a consulta](search-monitor-usage.md) e [desempenho e a otimização de](search-performance-optimization.md).
-
-*Atualizar* não é uma tarefa administrativa. Porque os recursos são atribuídos quando o serviço é aprovisionado, a mudança para uma camada diferente exige um novo serviço. Para obter mais informações, consulte [criar um serviço da Azure Search](search-create-service-portal.md).
+> [!Tip]
+> Está à procura de ajuda sobre como analisar o desempenho de tráfego ou consulta de pesquisa? Ganhos aprofundadas volume de consulta, quais as pessoas de termos de pesquisa para, e os resultados da pesquisa como êxito são ao servir pelos clientes a documentos específicos no seu índice. Para obter orientações, consulte [análise de tráfego de pesquisa do Azure Search](search-traffic-analytics.md), [monitorizar métricas de utilização e a consulta](search-monitor-usage.md), e [desempenho e a otimização de](search-performance-optimization.md).
 
 <a id="admin-rights"></a>
 
@@ -113,15 +110,10 @@ Ver as permissões de acesso de outra forma consiste em clicar em **funções** 
 ## <a name="monitor-resource-usage"></a>Monitorizar a utilização de recursos
 No dashboard de monitorização de recursos está limitada às informações mostradas no dashboard do serviço e métricas alguns que pode obter consultando o serviço. No dashboard do serviço, na secção de utilização, pode determinar rapidamente se os níveis de recursos de partição são adequadas para a sua aplicação.
 
-Utilizar a API do serviço de pesquisa, pode obter uma contagem em índices e documentos. Existem os limites fixos associados estas contagens com base no escalão de preço. Para obter mais informações, consulte [limites do serviço de pesquisa](search-limits-quotas-capacity.md). 
+Utilizando a API de REST do serviço de pesquisa, pode obter uma contagem em índices e documentos através de programação: 
 
 * [Obter estatísticas de índice](https://docs.microsoft.com/rest/api/searchservice/Get-Index-Statistics)
 * [Contagem de documentos](https://docs.microsoft.com/rest/api/searchservice/count-documents)
-
-> [!NOTE]
-> Colocação em cache comportamentos pode overstate temporariamente um limite. Por exemplo, quando utilizar o serviço partilhado, poderá ver um documento contagem supera o limite de 10 000 documentos do disco rígido. O overstatement é temporário e será detetado na verificação de imposição de limite seguinte. 
-> 
-> 
 
 ## <a name="disaster-recovery-and-service-outages"></a>Falhas de serviço e de recuperação de desastre
 

@@ -11,19 +11,19 @@ ms.devlang: NA
 ms.workload: search
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 10/26/2016
+ms.date: 11/09/2017
 ms.author: ashmaka
-ms.openlocfilehash: 33897e7966de5d467602f6cb36fe16caf0786ffd
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: 622ae64e118dd2498aff0bf2e9f6c1dbfb0ab045
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="design-patterns-for-multitenant-saas-applications-and-azure-search"></a>Padrões para aplicações de SaaS multi-inquilino e da Azure Search de conceção
 Uma aplicação multi-inquilino é aquele que fornece as mesmas serviços e recursos para qualquer número de inquilinos que não é possível ver ou partilhar os dados de qualquer outro inquilino. Este documento descreve as estratégias de isolamento de inquilino para multi-inquilino aplicações criadas com a Azure Search.
 
 ## <a name="azure-search-concepts"></a>Conceitos de pesquisa do Azure
-Como uma solução de pesquisa-como-um-serviço da Azure Search permite aos programadores adicionar experiências de pesquisa avançada para aplicações sem qualquer infraestrutura de gestão ou se tornar um especialista na pesquisa. Dados são carregados para o serviço e, em seguida, armazenados na nuvem. Utilizar pedidos simples para a API da Azure Search, os dados podem, em seguida, ser modificados e pesquisados. Uma descrição geral do serviço pode ser encontrada na [neste artigo](http://aka.ms/whatisazsearch). Antes de debater padrões de conceção, é importante compreender alguns conceitos na Azure Search.
+Como uma solução de pesquisa-como-um-serviço da Azure Search permite aos programadores adicionar experiências de pesquisa avançada para aplicações sem qualquer infraestrutura de gestão ou se tornar um especialista na obtenção de informações. Dados são carregados para o serviço e, em seguida, armazenados na nuvem. Utilizar pedidos simples para a API da Azure Search, os dados podem, em seguida, ser modificados e pesquisados. Uma descrição geral do serviço pode ser encontrada na [neste artigo](http://aka.ms/whatisazsearch). Antes de debater padrões de conceção, é importante compreender alguns conceitos na Azure Search.
 
 ### <a name="search-services-indexes-fields-and-documents"></a>Serviços de pesquisa, índices, campos e documentos
 Ao utilizar a pesquisa do Azure, uma subscreve um *serviço de pesquisa*. Como são carregados dados para a Azure Search, esta está armazenada num *índice* no âmbito do serviço de pesquisa. Pode ser um número de índices dentro de um único serviço. Para utilizar os conceitos familiares de bases de dados, o serviço de pesquisa pode ser likened para uma base de dados enquanto os índices dentro de um serviço podem ser likened a tabelas dentro de uma base de dados.

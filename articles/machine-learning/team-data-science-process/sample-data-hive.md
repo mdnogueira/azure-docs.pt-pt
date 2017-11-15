@@ -4,7 +4,7 @@ description: Para baixo a amostragem de dados nas tabelas do Hive do Azure HDIns
 services: machine-learning,hdinsight
 documentationcenter: 
 author: bradsev
-manager: jhubbard
+manager: cgronlun
 editor: cgronlun
 ms.assetid: f31e8d01-0fd4-4a10-b1a7-35de3c327521
 ms.service: machine-learning
@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/24/2017
-ms.author: hangzh;bradsev
-ms.openlocfilehash: 357307a034b277e8c37e99bda1ed6a9a76e13f41
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/13/2017
+ms.author: bradsev
+ms.openlocfilehash: d765c2adc8a3aa77d903490875c7f8ad622ef4d2
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="sample-data-in-azure-hdinsight-hive-tables"></a>Dados de exemplo em tabelas do Hive do HDInsight
-Neste artigo, vamos descrevem como os dados armazenados nas tabelas do Hive do Azure HDInsight através de consultas do Hive de exemplo para baixo. Iremos abranger três métodos de amostragem popularmente utilizado:
+Este artigo descreve como armazenados nas tabelas do Hive do Azure HDInsight através de consultas do Hive reduzir para um tamanho mais gerível para análise de dados de exemplo para baixo. Abrangem os três métodos de amostragem popularmente utilizado:
 
 * Uniform amostragem aleatória
 * Amostragem aleatória por grupos
@@ -32,15 +32,15 @@ O seguinte **menu** ligações para tópicos que descrevem como dados de vários
 [!INCLUDE [cap-sample-data-selector](../../../includes/cap-sample-data-selector.md)]
 
 **Os dados de exemplo por que motivo?**
-Se o conjunto de dados que pretende analisar for grande, normalmente, é uma boa ideia baixo-sample os dados para reduzir para um tamanho mais pequeno, mas representativo e mais fácil gerir. Isto facilita a compreensão de dados, exploração e engenharia da funcionalidade. A função no processo de ciência de dados de equipa é permitir o rápido fazer o protótipo das funções de processamento de dados e modelos de machine learning.
+Se o conjunto de dados que pretende analisar for grande, normalmente, é uma boa ideia baixo-sample os dados para reduzir para um tamanho mais pequeno, mas representativo e mais fácil gerir. Baixo amostragem facilita a compreensão de dados, exploração e engenharia da funcionalidade. A função no processo de ciência de dados de equipa é permitir o rápido fazer o protótipo das funções de processamento de dados e modelos de machine learning.
 
 Esta tarefa de amostragem é um passo de [processo de ciência de dados de equipa (TDSP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
 
 ## <a name="how-to-submit-hive-queries"></a>Como submeter consultas do Hive
-Podem ser submetidas consultas do Hive a partir da consola de linha de comandos do Hadoop no nó principal do cluster de Hadoop. Para tal, inicie sessão no nó principal do cluster de Hadoop, abra a consola de linha de comandos do Hadoop e submeter consultas do Hive a partir daí. Para obter instruções sobre como submeter consultas do Hive na consola de linha de comandos do Hadoop, consulte [como submeter consultas do Hive](move-hive-tables.md#submit).
+Podem ser submetidas consultas do Hive a partir da consola da linha de comandos do Hadoop no nó principal do cluster de Hadoop. Para tal, inicie sessão no nó principal do cluster de Hadoop, abra a consola da linha de comandos do Hadoop e submeter consultas do Hive a partir daí. Para obter instruções sobre como submeter consultas do Hive na consola da linha de comandos do Hadoop, consulte [como submeter consultas do Hive](move-hive-tables.md#submit).
 
 ## <a name="uniform"></a>Uniform amostragem aleatória
-A amostragem aleatória Uniform significa que cada linha no conjunto de dados tem hipóteses de que está a ser objeto de amostragem. Isto pode ser implementado, adicionando um campo adicional rand() para o conjunto de dados na consulta "selecionar" interna e na consulta "selecionar" externa essa condição nesse campo aleatório.
+A amostragem aleatória Uniform significa que cada linha no conjunto de dados tem hipóteses de que está a ser objeto de amostragem. Pode ser implementado, adicionando um campo adicional rand() para o conjunto de dados na consulta "selecionar" interna e na consulta "selecionar" externa essa condição nesse campo aleatório.
 
 Eis um exemplo de consulta:
 
@@ -58,8 +58,7 @@ Eis um exemplo de consulta:
 Aqui, `<sample rate, 0-1>` Especifica a proporção de registos que pretendem que os utilizadores para a amostragem.
 
 ## <a name="group"></a>Amostragem aleatória por grupos
-Quando dados categóricos de amostragem, poderá pretender incluir ou excluir todas as instâncias de um valor específico de uma variável categórico. Este é o que destina-se por "amostragem pelo grupo".
-Por exemplo, se tiver uma categórico variável "State", que tem valores NY MA, AC, NJ, PA, etc., pretende que os registos do mesmo Estado estar sempre em conjunto, se são amostragem ou não.
+Quando dados categóricos de amostragem, poderá pretender incluir ou excluir todas as instâncias de um valor da variável categórico. Este tipo de amostragem é chamado "amostragem pelo grupo". Por exemplo, se tiver uma categórico variável "*estado*", que tem valores como NY, MA, AC, NJ e PA, se pretende que os registos de cada Estado para ser em conjunto, se são amostragem ou não.
 
 Eis um exemplo de consulta que amostras por grupo:
 
@@ -88,7 +87,7 @@ Eis um exemplo de consulta que amostras por grupo:
     on b.catfield=c.catfield
 
 ## <a name="stratified"></a>Amostragem stratified
-Amostragem aleatória é stratified relativamente a uma variável categórico quando os exemplos obtidos têm valores que categórico que estão no mesmo rácio como a população de principal a partir da qual as amostras foram obtidas. Utilizando o mesmo exemplo como acima, suponha que os seus dados têm populações secundárias por Estados, diga NJ tem as 100 observações, NY tem as 60 observações e WA tem as 300 observações. Se especificar a frequência de amostragem stratified ser 0,5, em seguida, o exemplo obtido deve ter aproximadamente 50, 30 e as 150 observações de NJ, NY e WA, respetivamente.
+Amostragem aleatória é stratified relativamente a uma variável categórico quando os exemplos obtidos têm valores categórico que estejam presentes no rácio do mesmo, tal como estavam da população de principal. Utilizar o mesmo exemplo acima indicadas, suponha que os seus dados têm as de observações seguintes por Estados: NJ tem as 100 observações, NY tem as 60 observações e WA tem as 300 observações. Se especificar a frequência de amostragem stratified ser 0,5, em seguida, o exemplo obtido deve ter aproximadamente 50, 30 e as 150 observações de NJ, NY e WA, respetivamente.
 
 Eis um exemplo de consulta:
 

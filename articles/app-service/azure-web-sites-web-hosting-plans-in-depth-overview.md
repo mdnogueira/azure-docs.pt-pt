@@ -1,11 +1,11 @@
 ---
-title: Planos do App Service nas Web Apps do Azure App Service | Microsoft Docs
+title: "Descrição geral de plano de serviço de aplicações do Azure | Microsoft Docs"
 description: "Saiba como planos do App Service para o trabalho do App Service do Azure e, como a sua experiência de gestão possam beneficiam."
-keywords: "serviço de aplicações, serviço de aplicações do azure, dimensionar, dimensionável, plano do serviço de aplicações, custo do serviço de aplicações"
+keywords: "serviço de aplicações, o serviço de aplicações do azure, o dimensionamento, dimensionável, escalabilidade, o plano do app service, o custo do serviço de aplicações"
 services: app-service
 documentationcenter: 
-author: btardif
-manager: erikre
+author: cephalin
+manager: cfowler
 editor: 
 ms.assetid: dea3f41e-cf35-481b-a6bc-33d7fc9d01b1
 ms.service: app-service
@@ -13,151 +13,108 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/02/2016
-ms.author: byvinyal
-ms.openlocfilehash: fb5b782f09bdd8c8a862eddfbd65b0f86ef8d08c
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.date: 11/09/2017
+ms.author: cephalin
+ms.openlocfilehash: 0815c4d826d9ee09f2e787d9b27258149c55d400
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="app-service-plans-in-azure-app-service-web-apps"></a>Planos do App Service nas Web Apps do Azure App Service
+# <a name="azure-app-service-plan-overview"></a>Descrição geral de plano de serviço de aplicações do Azure
 
-Planos de serviços aplicacionais representam a coleção de recursos físicos utilizados para alojar as suas aplicações.
+No App Service, uma aplicação é executada num _plano do App Service_. Um plano de serviço aplicacional define um conjunto de recursos de computação para uma aplicação web ser executada. Estes de recursos são análogos a computação o [ _farm de servidores_ ](https://wikipedia.org/wiki/Server_farm) no alojamento web convencional. Uma ou mais aplicações podem ser configuradas para executar os mesmos recursos informáticos (ou no mesmo plano de serviço de aplicações). 
 
-Os planos do Serviço de Aplicações definem:
+Quando cria um plano de serviço de aplicações numa determinada região (por exemplo, Europa Ocidental), é criado um conjunto de recursos de computação para esse plano nessa região. Qualquer aplicações inserida este plano de serviço de aplicações com estes recursos de computação conforme definido pelo seu plano de serviço de aplicações. Define a cada plano do App Service:
 
 - Região (EUA oeste, EUA leste, etc.)
-- Contagem de escalas (um, dois, três instâncias, etc.)
-- Tamanho da instância (pequena, média, grande)
-- SKU (livres partilhado, básico, Standard, Premium, PremiumV2, isolada)
+- Número de instâncias VM
+- Tamanho de instâncias VM (pequena, média, grande)
+- Escalão de preço (gratuito, partilhados, básico, Standard, Premium, PremiumV2, Isolated, consumo de)
 
-Web Apps, Mobile Apps, API Apps, aplicações de função (ou funções), no [App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714) todos os execução num plano do serviço de aplicações.  Aplicações na mesma subscrição e região podem partilhar um plano de serviço de aplicações. 
+O _escalão de preço_ de um serviço de aplicações plano determina quais as funcionalidades de serviço de aplicações, obter e quanto paga para o plano. Existem algumas categorias de escalões de preço:
 
-Todas as aplicações atribuídas a um **plano do App Service** partilhar recursos definidos por. Esta partilha poupa dinheiro quando alojar várias aplicações num único plano de serviço de aplicações.
+- **Computação partilhados**: **livres** e **partilhados**, as duas camadas, executa uma aplicação na VM do Azure mesmo como outras aplicações de serviço de aplicações, incluindo aplicações de outros clientes de base. Estas camadas alocar quotas de CPU para cada aplicação que é executado nos recursos partilhados e os recursos não é possível aumentar horizontalmente.
+- **Computação dedicada**: O **básico**, **padrão**, **Premium**, e **PremiumV2** camadas executam as aplicações no Azure dedicado VMs. Apenas as aplicações no mesmo plano do App Service partilham os mesmos recursos de computação. Quanto maior for a camada, as instâncias de VM mais estão disponíveis para si para Escalamento horizontal.
+- **Isolado**: esta camada é executado dedicado VMs do Azure dedicada redes virtuais do Azure, que fornece isolamento de rede por cima de isolamento de computação para as suas aplicações. Fornece as capacidades de escalamento horizontal máximas.
+- **Consumo**: só está disponível para esta camada [funcionar aplicações](../azure-functions/functions-overview.md). -Dimensiona as funções de forma dinâmica consoante a carga de trabalho. Para obter mais informações, consulte [que alojam as funções do Azure planos de comparação](../azure-functions/functions-scale.md).
 
-O **plano do App Service** pode dimensionar desde **livres** e **partilhados** camadas para **básico**, **padrão**,  **Premium**, e **Isolated** camadas. Cada escalão superior dá-lhe acesso às mais recursos e funcionalidades.
+Cada camada também fornece um subconjunto específico de funcionalidades do App Service. Estas funcionalidades incluem os domínios personalizados e certificados SSL, dimensionamento automático, as ranhuras de implementação, as cópias de segurança, integração do Gestor de tráfego e muito mais. Quanto maior for a camada, as funcionalidades mais estão disponíveis. Para saber quais as funcionalidades são suportadas em cada escalão de preço, consulte [detalhes do plano de serviço de aplicações](https://azure.microsoft.com/pricing/details/app-service/plans/).
 
-Se o seu plano de serviço de aplicações está definido como **básico** escalão ou superior, em seguida, pode controlar o **tamanho** e dimensionar a contagem das VMs.
+<a name="new-pricing-tier-premiumv2"></a>
 
-Por exemplo, se o seu plano está configurado para utilizar duas instâncias "pequenas" no **padrão** camada, todas as aplicações no plano de que executam em ambas as instâncias. As aplicações têm também acesso para o **padrão** camada funcionalidades. Instâncias do plano em que aplicações estão em execução são completamente gerido e altamente disponível.
+> [!NOTE]
+> A nova **PremiumV2** escalão de preço fornece [Dv2 série VMs](../virtual-machines/windows/sizes-general.md#dv2-series) com processadores mais rápidos, o armazenamento SSD e o rácio de memória de núcleo duplo em comparação comparada **padrão** camada. **PremiumV2** também suporta uma escala maior através do aumento de instâncias, proporcionando ainda, todas as funcionalidades avançadas encontradas no plano de padrão. Todas as funcionalidades disponíveis no existente **Premium** camada estão incluídos no **PremiumV2**.
+>
+> Semelhantes para outros escalões dedicados, três tamanhos VM estão disponíveis para esta camada de:
+>
+> - Breve (um núcleo de CPU, 3.5 GiB de memória) 
+> - Média (dois núcleos de CPU, GiB 7 de memória) 
+> - Grande (quatro núcleos de CPU, 14 GiB de memória)  
+>
+> Para **PremiumV2** obter informações sobre preços, consulte [preços do App Service](/pricing/details/app-service/).
+>
+> Para começar a utilizar com o novo **PremiumV2** escalão de preço, consulte [configurar PremiumV2 camada de serviço de aplicações](app-service-configure-premium-tier.md).
 
-> [!IMPORTANT]
-> O escalão de preço (SKU) do plano do App Service determina o custo e não o número de aplicações alojadas no mesmo.
+## <a name="how-does-my-app-run-and-scale"></a>Como que a minha aplicação é executada e dimensionar?
 
-Este artigo explicar as características de chaves de um plano de serviço de aplicações, tais como preços camadas e dimensionamento e como funcionam quando gere as suas aplicações.
+No **livres** e **partilhados** camadas, uma aplicação recebe minutos de CPU numa instância de VM partilhada e não é possível aumentar horizontalmente. Outros escalões, uma aplicação é executada e dimensiona de forma.
 
-## <a name="new-pricing-tier-premiumv2"></a>Novo escalão de preço: PremiumV2
+Quando criar uma aplicação no App Service, é colocado para um plano de serviço de aplicações. Quando a aplicação é executada, é executado em todas as instâncias VM configuradas no plano de serviço de aplicações. Se várias aplicações estão no mesmo plano de serviço de aplicações, todos os partilham as mesmas instâncias VM. Se tiver várias ranhuras de implementação para uma aplicação, todas as ranhuras de implementação também ser executados as mesmas instâncias VM. Se ativar registos de diagnóstico, efetuar cópias de segurança ou executar WebJobs, também utilizam ciclos da CPU e memória estas instâncias de VM.
 
-A nova **PremiumV2** escalão de preço fornece [Dv2 série VMs](../virtual-machines/windows/sizes-general.md#dv2-series) com processadores mais rápidos, o armazenamento SSD e o rácio de memória de núcleo duplo em comparação comparada **padrão** camada. **PremiumV2** também suporta uma escala maior através do aumento de instâncias, proporcionando ainda, todas as funcionalidades avançadas encontradas no plano de padrão. Todas as funcionalidades disponíveis no existente **Premium** camada estão incluídos no **PremiumV2**.
+Desta forma, o plano de serviço de aplicações é a unidade de escala das aplicações do serviço de aplicações. Se o plano é configurado para executar cinco instâncias de VM, então, todas as aplicações no plano de executam em todas as instâncias de cinco. Se o plano está configurado para efetuar o dimensionamento automático, em seguida, todas as aplicações no plano de são ampliar em conjunto com base nas definições de dimensionamento automático.
 
-Semelhantes para outros escalões dedicados, três tamanhos VM estão disponíveis para esta camada de:
+Para obter informações sobre como aumentar horizontalmente uma aplicação, consulte [dimensionar a contagem de instâncias manual ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md).
 
-- Breve (1 núcleo de CPU, memória do 3.5 GiB) 
-- Média (2 núcleos de CPU, memória de GiB 7) 
-- Grande (4 núcleos de CPU, memória 14 de GiB)  
+<a name="cost"></a>
 
-Para **PremiumV2** obter informações sobre preços, consulte [preços do App Service](/pricing/details/app-service/).
+## <a name="how-much-does-my-app-service-plan-cost"></a>Quanto custo meu plano do App Service?
 
-Para começar a utilizar com o novo **PremiumV2** escalão de preço, consulte [configurar PremiumV2 camada de serviço de aplicações](app-service-configure-premium-tier.md).
+Esta secção descreve como aplicações do App Service são cobradas. Para informações de preços detalhadas, a região específicos, consulte [preços do App Service](https://azure.microsoft.com/pricing/details/app-service/).
 
-## <a name="apps-and-app-service-plans"></a>As aplicações e os planos de serviços aplicacionais
+Com exceção do **livres** camada, um plano de serviço aplicacional acarreta um custo por hora nos recursos de computação utiliza.
 
-Uma aplicação no App Service pode ser associada com apenas um plano de serviço de aplicações em qualquer momento.
+- No **partilhados** cada aplicação de camada recebe uma quota de minutos de CPU, por isso, _cada aplicação_ é cobrada de hora a hora para a quota de CPU.
+- O dedicado em camadas de computação (**básico**, **padrão**, **Premium**, **PremiumV2**), plano do App Service define o número de VM instâncias de aplicações são ampliadas, pelo que _cada instância VM_ no App Service plano tem um custo por hora. Estas instâncias VM são-lhe cobradas as mesmas, independentemente como muitas aplicações estão em execução nos mesmos. Para evitar encargos inesperados, consulte [limpar um plano de serviço aplicacional](app-service-plan-manage.md#delete).
+- No **Isolated** camada, ambiente de serviço de aplicação define o número de isolado trabalhadores que executam as suas aplicações e _cada trabalho_ é cobrada por hora. Além disso, não há uma taxa por hora base para a executar o ambiente de serviço de aplicação em si. 
+- (Apenas funções do azure) O **consumo** camada dinamicamente aloca instâncias VM para a carga de trabalho de uma aplicação de função de serviço e é-lhe cobrada dinamicamente por segundo pelo Azure. Para obter mais informações, consulte [preços de funções do Azure](https://azure.microsoft.com/pricing/details/functions/).
 
-As aplicações e planos estão contidos num **grupo de recursos**. Um grupo de recursos serve como o limite de ciclo de vida para todos os recursos que se encontra dentro do mesmo. Pode utilizar grupos de recursos para gerir todas as partes de uma aplicação em conjunto.
+Não obter-lhe cobrados para utilizar as funcionalidades do serviço de aplicações que estão disponíveis para si (configurar domínios personalizados, certificados SSL, as ranhuras de implementação, as cópias de segurança, etc.). As exceções são:
 
-Devido um grupo de recursos única pode ter vários planos de serviço de aplicações, pode alocar aplicações diferentes em diferentes recursos físicos.
+- Domínios de serviço de aplicações - paga ao adquirir um no Azure e quando, renove-o por ano.
+- Certificados de serviço de aplicações - paga ao adquirir um no Azure e quando, renove-o por ano.
+- Ligações de SSL baseada em IP - daí de um custo de hora a hora para cada ligação de SSL baseado em IP, mas algumas **padrão** escalão ou superior dá-lhe uma ligação SSL baseado em IP gratuitamente. Ligações de SSL com base em SNI estão livres.
 
-Por exemplo, pode separar recursos entre ambientes de desenvolvimento, teste e produção. Ter ambientes separados para produção e de desenvolvimento/teste permite-lhe isolar os recursos. Desta forma, com uma nova versão das suas aplicações de teste de carga não competem para ter os mesmos recursos que as aplicações de produção, que estão a funcionar clientes reais.
+> [!NOTE]
+> Se integrar o serviço de aplicações com outro serviço do Azure, poderá ter em consideração os encargos destes outros serviços. Por exemplo, se utilizar o Traffic Manager do Azure para dimensionar a sua aplicação geograficamente, Gestor de tráfego do Azure também os encargos, baseada na sua utilização. Para estimar os custos de entre serviços no Azure, consulte o artigo [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/). 
+>
+>
 
-Quando tiver vários planos de um grupo de recursos única, também pode definir uma aplicação que abranja regiões geográficas.
+## <a name="what-if-my-app-needs-more-capabilities-or-features"></a>E se a minha aplicação necessita de mais funções ou funcionalidades?
 
-Por exemplo, uma aplicação de disponibilidade elevada em execução em duas regiões inclui planos de, pelo menos, dois, um para cada região e uma aplicação associada a cada plano. Numa situação, todas as cópias da aplicação, em seguida, estão contidas num grupo de recursos única. Ter um grupo de recursos com vários esquemas e várias aplicações torna mais fácil de gerir, controlar e ver o estado de funcionamento da aplicação.
+O plano de serviço de aplicações pode ser escalado para cima e para baixo em qualquer altura. É tão simple como alterar o escalão de preço do plano. Pode escolher um escalão de preço inferior em primeiro lugar e aumentar verticalmente mais tarde quando precisar de mais funcionalidades do serviço de aplicações.
 
-## <a name="create-an-app-service-plan-or-use-existing-one"></a>Criar um plano de serviço de aplicações ou utilizar um existente
+Por exemplo, pode começar a testar a sua aplicação web num **livres** do serviço de aplicações do plano e paga nada. Quando pretender adicionar o [nome DNS personalizado](app-service-web-tutorial-custom-domain.md) na aplicação web, basta dimensione o seu plano até **partilhados** camada. Posteriormente, quando pretender adicionar um [certificado SSL personalizado](app-service-web-tutorial-custom-ssl.md), dimensionar o seu plano até **básico** camada. Quando pretender ter [ambientes de teste](web-sites-staged-publishing.md), dimensionar até **padrão** camada. Quando precisar de mais núcleos, memória ou o armazenamento, aumentar verticalmente para um maior tamanho da VM na mesma camada.
 
-Ao criar uma nova aplicação Web no App Service, pode partilhar recursos alojamento colocando a aplicação para um plano de serviço aplicacional existente. Para determinar que se a nova aplicação tiver os recursos necessários, tem de compreender a capacidade do plano de serviço de aplicações existente e a carga esperada para a nova aplicação. Excessiva atribuir recursos pode provocar, potencialmente, o período de indisponibilidade para as suas aplicações novas e existentes.
+O mesmo funciona a reversão. Quando considerar já não necessita das capacidades ou funcionalidades de uma camada superior, pode reduzir verticalmente a uma camada inferior, que poupa dinheiro.
 
-Recomendamos isolar a sua aplicação para um novo serviço de aplicações quando planear:
+Para obter informações sobre como aumentar verticalmente plano do App Service, consulte [aumentar verticalmente a uma aplicação no Azure](web-sites-scale.md).
+
+Se a aplicação fica no mesmo plano de serviço de aplicações com outras aplicações, poderá pretender melhorar o desempenho da aplicação ao isolar os recursos de computação. Pode fazê-lo ao mover a aplicação para um plano do App Service separado. Para obter mais informações, consulte [mover uma aplicação para outro plano do App Service](app-service-plan-manage.md#move).
+
+## <a name="should-i-put-an-app-in-a-new-plan-or-an-existing-plan"></a>Deve colocar uma aplicação de um novo plano ou um plano existente?
+
+Uma vez que lhe pagar os recursos de computação seu plano de serviço aplicacional aloca (consulte [que é que o meu custo de plano do App Service?](#cost)), potencialmente pode poupar dinheiro colocando a várias aplicações para um plano de serviço aplicacional. Pode continuar a adicionar aplicações a um plano existente, desde que o plano tem recursos suficientes para processar a carga. No entanto, tenha em atenção que as aplicações no plano do App Service mesmo que todos partilham os mesmos recursos de computação. Para determinar se a nova aplicação tem os recursos necessários, terá de compreender a capacidade do plano de serviço de aplicações existente e a carga esperada para a nova aplicação. A sobrecarga de um plano de serviço aplicacional pode provocar, potencialmente, o período de indisponibilidade para as suas aplicações novas e existentes.
+
+Isole quando planear a sua aplicação para um novo serviço de aplicações:
 
 - A aplicação está consome.
-- Aplicação Web tem diferentes fatores de dimensionamento de outras aplicações alojadas num plano existente.
-- Aplicação precisa de recursos na região geográfica diferente.
+- Pretende dimensionar a aplicação de forma independente de outras aplicações do plano existente.
+- A aplicação precisa de recursos na região geográfica diferente.
 
 Desta forma pode atribuir um novo conjunto de recursos para a sua aplicação e obter maior controlo das suas aplicações.
 
-## <a name="create-an-app-service-plan"></a>Crie um plano do Serviço de Aplicações
+## <a name="manage-an-app-service-plan"></a>Gerir um plano de serviço de aplicações
 
-> [!TIP]
-> Se tiver um ambiente de serviço de aplicações, consulte [criar um plano de serviço de aplicações num ambiente de serviço de aplicações](../app-service/environment/app-service-web-how-to-create-a-web-app-in-an-ase.md#createplan).
-
-Pode criar um plano de serviço de aplicações vazio ou como parte da criação da aplicação.
-
-No [portal do Azure](https://portal.azure.com), clique em **novo** > **Web + móvel**e, em seguida, selecione **aplicação Web** ou outro tipo de aplicação de serviço de aplicações.
-
-![Crie uma aplicação no portal do Azure.][createWebApp]
-
-Em seguida, pode selecionar ou criar o plano de serviço de aplicações para a nova aplicação.
-
- ![Crie um plano de serviço de aplicações.][createASP]
-
-Para criar um plano de serviço de aplicações, clique em **[+] criar novos**, tipo de **plano do App Service** nome e, em seguida, selecione um adequado **localização**. Clique em **escalão de preço**e, em seguida, selecione um escalão de preço adequado para o serviço. Selecione **ver todos os** para ver mais preços opções, tais como **livres** e **partilhados**. Depois de selecionar o escalão de preço, clique em de **selecione** botão.
-
-## <a name="move-an-app-to-a-different-app-service-plan"></a>Mover uma aplicação para um plano de serviço aplicacional diferente
-
-Pode mover uma aplicação para um plano de serviço aplicacional diferente no [portal do Azure](https://portal.azure.com). Pode mover as aplicações entre planos, desde que os planos estão no _mesmo grupo de recursos e a região geográfica_.
-
-Para mover uma aplicação para outro plano:
-
-- Navegue para a aplicação que pretende mover.
-- No **Menu**, procure o **plano do App Service** secção.
-- Selecione **plano de serviço de aplicações de alteração** para iniciar o processo.
-
-**Plano de serviço aplicacional alteração** abre o **plano do App Service** Seletor. Neste momento, pode escolher um plano existente para mover esta aplicação para. São apresentados apenas planos no mesmo grupo de recursos e região.
-
-![Seletor do plano de serviço de aplicações.][change]
-
-Cada plano tem o seu próprio escalão de preço. Por exemplo, mover um site de um escalão gratuito para um escalão Standard, permite que todas as aplicações atribuídas para utilizar as funcionalidades e recursos do escalão Standard.
-
-## <a name="clone-an-app-to-a-different-app-service-plan"></a>Clonar uma aplicação para um plano de serviço de aplicações diferente
-
-Se pretender mover a aplicação numa região diferente, uma alternativa é aplicação clonagem. A clonagem efetua uma cópia da sua aplicação num plano de serviço aplicacional novo ou existente em qualquer região.
-
-Pode encontrar **Clone aplicação** no **ferramentas de desenvolvimento** secção do menu.
-
-> [!IMPORTANT]
-> A clonagem tem algumas limitações que pode ler sobre em [clonagem de aplicação do serviço de aplicações do Azure](app-service-web-app-cloning.md).
-
-## <a name="scale-an-app-service-plan"></a>Dimensionar um plano de serviço de aplicações
-
-Existem três formas de um plano de escala:
-
-- **O plano de alteração do escalão de preço**. Um plano na camada básica pode ser convertido para Standard e todas as aplicações atribuídas para utilizar as funcionalidades do escalão Standard.
-- **Alterar tamanho da instância do plano**. Por exemplo, um plano na camada básica que utiliza instâncias pequenas pode ser alterado para utilizar instâncias grandes. Todas as aplicações que estão associadas esse plano agora podem utilizar a memória adicional e os recursos de CPU que oferece o maior tamanho da instância.
-- **Alterar a contagem de instâncias do plano**. Por exemplo, um plano padrão que aumentados horizontalmente para três instâncias pode ser ampliado para 10 instâncias. Um plano de Premium pode ser ampliado para 20 instâncias (sujeitos a disponibilidade). Todas as aplicações que estão associadas esse plano agora podem utilizar a memória adicional e os recursos de CPU que oferece a maior contagem de instâncias.
-
-Pode alterar o tamanho da instância e o escalão de preço clicando a **aumentar verticalmente** item em definições para a aplicação ou o plano de serviço de aplicações. As alterações se aplicam ao plano do App Service e afetam todas as aplicações nele alojado.
-
- ![Definir valores para aumentar verticalmente a uma aplicação.][pricingtier]
-
-## <a name="app-service-plan-cleanup"></a>Limpeza do plano de serviço de aplicações
-
-> [!IMPORTANT]
-> **Planos do App Service** que não tem aplicações associadas aos mesmos ainda pagar, uma vez que podem continuar para a capacidade de cálculo de reserva.
-
-Para evitar encargos inesperados, ao eliminar a última aplicação alojada num plano do serviço de aplicações, o plano de serviço de aplicações vazio resultante também é eliminado por predefinição.
-
-## <a name="summary"></a>Resumo
-
-Planos de serviços aplicacionais representam um conjunto de funcionalidades e capacidades que pode partilhar entre as aplicações. Planos de serviço de aplicações dão-lhe a flexibilidade para alocar aplicações específicas a um conjunto de recursos e otimizar ainda mais a sua utilização de recursos do Azure. Desta forma, se quiser poupar dinheiro no seu ambiente de teste, pode partilhar um plano por várias aplicações. Também pode maximizar o débito para o seu ambiente de produção ao aumentá-lo em várias regiões e planos.
-
-## <a name="whats-changed"></a>O que mudou
-
-- Para obter um guia da alteração de Web sites para o serviço de aplicações, consulte: [App Service do Azure e o respetivo impacto nos serviços do Azure existentes](http://go.microsoft.com/fwlink/?LinkId=529714)
-
-[pricingtier]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/appserviceplan-pricingtier.png
-[assign]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/assing-appserviceplan.png
-[change]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/change-appserviceplan.png
-[createASP]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-appserviceplan.png
-[createWebApp]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-web-app.png
+> [!div class="nextstepaction"]
+> [Aumentar verticalmente a uma aplicação no Azure](app-service-plan-manage.md)

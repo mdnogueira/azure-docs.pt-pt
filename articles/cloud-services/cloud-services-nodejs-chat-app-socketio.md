@@ -3,7 +3,7 @@ title: "Aplicação node.js com Socket.io | Microsoft Docs"
 description: "Saiba como utilizar socket.io numa aplicação node.js alojada no Azure."
 services: cloud-services
 documentationcenter: nodejs
-author: TomArcher
+author: craigshoemaker
 manager: routlaw
 editor: 
 ms.assetid: 7f9435e0-7732-4aa1-a4df-ea0e894b847f
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: tarcher
-ms.openlocfilehash: a85d4348a13b79b5b7542362de9956aa3398375a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: cshoe
+ms.openlocfilehash: 0b4c3c540e27ba06a722cfec4f0c079f19ce7f67
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Criar uma aplicação de Node.js Chat com Socket.IO num serviço em nuvem do Azure
 Socket.IO fornece em tempo real comunicação entre o entre o servidor de node.js e clientes. Este tutorial irá guiá-lo através de alojamento um socket. E/s baseado em aplicações de chat no Azure. Para obter mais informações sobre Socket.IO, consulte <http://socket.io/>.
@@ -72,7 +72,7 @@ Para este projeto, utilizamos o exemplo de chat do [repositório do Socket.IO Gi
 Antes de testar a aplicação no emulador do Azure, mas tem de se algumas alterações secundárias. Execute os seguintes passos para o ficheiro de server.js:
 
 1. Abra o **server.js** ficheiro no Visual Studio ou num editor de texto.
-2. Localizar o **dependências de módulo** secção no início de server.js e altere a linha que contém **sio = require('..//..lib//socket.IO')** para **sio = require('socket.io')** conforme mostrado abaixo:
+2. Localizar o **dependências de módulo** secção no início de server.js e altere a linha que contém **sio = require('.. //.. lib//socket.IO')** para **sio = require('socket.io')** conforme mostrado abaixo:
    
        var express = require('express')
          , stylus = require('stylus')

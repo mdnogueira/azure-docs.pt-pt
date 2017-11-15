@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/17/2017
 ms.author: cshoe
 ms.custom: aaddev
-ms.openlocfilehash: a0b8ff6894a1f30fd8d18beef234737573691af9
-ms.sourcegitcommit: d6ad3203ecc54ab267f40649d3903584ac4db60b
+ms.openlocfilehash: 6f67a2cf2baabfa10c6a8e81b085ca6991b981dd
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="secure-nodejs-web-api-with-azure-active-directory"></a>Proteger Web de Node.js API no Azure Active Directory
 
@@ -53,7 +53,7 @@ Uma vez `package.json` é criado, execute `npm install` na sua linha de comandos
 
 ### <a name="configure-the-project-to-use-active-directory"></a>Configurar o projeto para utilizar o Active Directory
 
-Para começar a configurar a aplicação, existem alguns valores específicos da conta pode obter a CLI do Azure. A forma mais fácil para começar com o CLI está a utilizar a Shell de nuvem do Azure.
+Para começar a configurar a aplicação, existem alguns valores específicos da conta que pode obter a partir da CLI do Azure. A forma mais fácil para começar com o CLI está a utilizar a Shell de nuvem do Azure.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -76,7 +76,7 @@ Antes de poder ligar ao Azure Active Directory, terá as seguintes informações
 | Nome  | Descrição | Nome da variável no ficheiro de configuração |
 | ------------- | ------------- | ------------- |
 | Nome do inquilino  | [Nome do inquilino](active-directory-howto-tenant.md) que pretende utilizar para autenticação | `tenantName`  |
-| ID de cliente  | ID de cliente é o termo de OAuth utilizado para o AAD _ID da aplicação_. |  `clientID`  |
+| ID do Cliente  | ID de cliente é o termo de OAuth utilizado para o AAD _ID da aplicação_. |  `clientID`  |
 
 Da resposta de registo na Shell de nuvem do Azure, copie o `appId` valor e criar um novo ficheiro designado `config.js`. Em seguida, adicione o seguinte código e substitua os valores com os tokens entre parênteses:
 

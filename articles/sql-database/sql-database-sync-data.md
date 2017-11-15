@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 06/27/2017
 ms.author: douglasl
 ms.reviewer: douglasl
-ms.openlocfilehash: c69fab3f711e2a650d088ccec1c05ec29e0e567b
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: fe11926cb7f6b2a80913895b685acfcc433e9805
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-azure-sql-data-sync-preview"></a>Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados de SQL do Azure (pré-visualização)
+# <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync-preview"></a>Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados do SQL Server (pré-visualização)
 
 Sincronização de dados do SQL Server é um serviço incorporado numa base de dados do SQL do Azure que permite-lhe sincronizar os dados que selecionar bidirecional entre várias bases de dados SQL e instâncias do SQL Server.
 
@@ -44,7 +44,7 @@ Sincronização de dados utiliza uma topologia hub- and -spoke para sincronizar 
 -   O **base de dados de sincronização** contém os metadados e o registo de sincronização de dados. A base de dados de sincronização tem de ser que uma base de dados do SQL do Azure localizado na mesma região que a base de dados do Hub. A base de dados de sincronização é criado de cliente e cliente pertencentes à empresa.
 
 > [!NOTE]
-> Se estiver a utilizar uma base de dados no local, terá de [configura um agente local.](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-sql-data-sync)
+> Se estiver a utilizar uma base de dados no local, terá de [configura um agente local](sql-database-get-started-sql-data-sync.md#add-on-prem).
 
 ![Sincronizar os dados entre bases de dados](media/sql-database-sync-data/sync-data-overview.png)
 
@@ -155,7 +155,7 @@ Sincronização de dados utiliza insere, atualizar e eliminar acionadores para c
 
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
--   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Configurar a sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
 -   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
 -   [Monitor sincronização de dados SQL do Azure com a análise de registos do OMS](sql-database-sync-monitor-oms.md)
 -   [Resolver problemas com a sincronização de dados SQL do Azure](sql-database-troubleshoot-data-sync.md)

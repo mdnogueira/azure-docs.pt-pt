@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2017
 ms.author: JeffGo
-ms.openlocfilehash: 329970d8717053ab7126fb8fb6a4a119ccbff6b7
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 6e65af68dcd2306aabda65efdf8fe056c0d9b4a4
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="use-sql-databases-on-microsoft-azure-stack"></a>Utilizar bases de dados do SQL Server na pilha do Microsoft Azure
 
@@ -74,7 +74,7 @@ O script efetua estes passos:
 - Registe o fornecedor de recursos com o local do Azure Resource Manager (utilizador e administrador).
 
 > [!NOTE]
-> Se a instalação demora mais de 90 minutos, poderá falhar e verá uma mensagem de falha no ecrã e no ficheiro de registo, mas a implementação é repetida do passo falhar. Sistemas que não cumprem as especificações de núcleo e de memória recomendadas poderão não conseguir implementar o SQL Server RP.
+> Se a instalação demora mais de 90 minutos, poderá falhar e verá uma mensagem de falha no ecrã e no ficheiro de registo, mas a implementação é repetida do passo falhar. Sistemas que não cumprem as especificações recomendadas de memória e vCPU poderão não conseguir implementar o SQL Server RP.
 >
 
 Eis um exemplo que pode executar a partir do PowerShell solicitar (mas alterar as informações de conta e as palavras-passe, conforme necessário):

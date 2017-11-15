@@ -118,6 +118,8 @@
           href: scenario-tdsp-biomedical-recognition.md
         - name: Classificação de receitas dos E.U.A. - projeto de TDSP
           href: scenario-tdsp-classifying-us-incomes.md
+        - name: Classificação de imagens com o CNTK
+          href: scenario-image-classification-using-cntk.md
 - name: Referência
   items:
     - name: Preparação de dados
@@ -162,6 +164,8 @@
       items:
         - name: Sprint 0 - Outubro de 2017
           href: release-notes-sprint-0.md
+        - name: Sprint 1 - Novembro de 2017
+          href: release-notes-sprint-1.md
 - name: Recursos
   items:
     - name: Perguntas mais frequentes

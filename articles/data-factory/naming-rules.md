@@ -12,19 +12,19 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/14/2017
+ms.date: 11/09/2017
 ms.author: shlo
-ms.openlocfilehash: 8f0207853097a3d31e06a722025f3964678414bf
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: 085328a9bbe304004f25f46ba5c366e911ac3836
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="azure-data-factory---naming-rules"></a>O Azure Data Factory - as regras de nomenclatura
 A tabela seguinte fornece regras de nomenclatura artefactos do Data Factory de dados.
 
 > [!NOTE]
-> Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço Data Factory, que é geralmente disponível (DG), consulte [nomenclatura regras no Data Factory version1](v1/data-factory-naming-rules.md).
+> Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço do Data Factory, o que é geralmente disponível (DG), consulte [nomenclatura regras no Data Factory version1](v1/data-factory-naming-rules.md).
 
 | Nome | Exclusividade de nome | Verificações de validação |
 |:--- |:--- |:--- |
@@ -33,4 +33,4 @@ A tabela seguinte fornece regras de nomenclatura artefactos do Data Factory de d
 | Grupo de Recursos |Exclusivo em todo o Microsoft Azure. Os nomes são sensível. |<ul><li>Número máximo de carateres: 1000.</li><li>O nome pode conter letras, dígitos e os seguintes carateres: "-", "_",","e"."</li></ul> |
 
 ## <a name="next-steps"></a>Passos seguintes
-Saiba como criar fábricas de dados, siga o passo a passo insturctions no [início rápido: criar uma fábrica de dados](quickstart-create-data-factory-powershell.md) artigo. 
+Saiba como criar fábricas de dados ao seguir as instruções passo a passo em [início rápido: criar uma fábrica de dados](quickstart-create-data-factory-powershell.md) artigo. 

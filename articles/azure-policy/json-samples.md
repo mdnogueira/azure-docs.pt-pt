@@ -13,24 +13,24 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: 
 ms.workload: 
-ms.date: 10/30/2017
+ms.date: 11/13/2017
 ms.author: banders
 ms.custom: mvc
-ms.openlocfilehash: bb0d996b950a31e3eaaaa9d90a6b96617b58192f
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 875c8c87f62ecf0e7459dfcec22089854ad95594
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="templates-for-azure-policy"></a>Modelos de política do Azure
 
-A tabela seguinte inclui ligações para modelos json para a política do Azure.
+A tabela seguinte inclui ligações para modelos json para a política do Azure. Estes exemplos que se encontram no [repositório de amostras de política do Azure](https://github.com/Azure/azure-policy).
 
 | | |
 |---|---|
 |**Computação**||
 | [Imagens VM aprovadas](scripts/allowed-custom-images.md) | Requer que apenas aprovados personalizado imagens no seu ambiente. Especifique uma matriz de IDs de imagem aprovada. |
-| [Criar a VM com o disco geridos](scripts/create-vm-managed-disk.md) | Auditorias quando é criada uma máquina virtual que utiliza discos geridos.|
+| [Auditoria quando a VM não utiliza disco geridos](scripts/create-vm-managed-disk.md) | Auditorias quando é criada uma máquina virtual que utiliza discos geridos.|
 | [Auditoria se a extensão não existe](scripts/audit-ext-not-exist.md) | Auditorias se uma extensão não estiver implementada com uma máquina virtual. Especifique o fabricante de extensão e o tipo para verificar se esta foi implementada. |
 | [Permitir que a imagem VM personalizada de um grupo de recursos](scripts/allow-custom-vm-image.md) |  Requer que as imagens personalizadas ser proveniente de um grupo de recursos aprovados. Especifique o nome do grupo de recursos aprovados. |
 | [Negar a vantagem de utilizar híbrida](scripts/deny-hybrid-use.md) | Proíbe a utilização do Azure híbrida utilizar benefício (AHUB). Utilize quando não pretender permitir a utilização das licenças no local. |
@@ -39,6 +39,11 @@ A tabela seguinte inclui ligações para modelos json para a política do Azure.
 | [Criar a VM com o disco geridos](scripts/use-managed-disk-vm.md) | Requer que as máquinas virtuais utilizam discos geridos.|
 |**Monitorização**||
 | [Definição de diagnóstico de auditoria](scripts/audit-diag-setting.md) | Auditorias se as definições de diagnóstico não ativadas para especificar tipos de recursos. Especifique uma matriz de tipos de recurso para verificar se as definições de diagnóstico estão ativadas. |
+|**Convenções de texto e nome**||
+| [Permitir que vários padrões de nome](scripts/allow-multiple-name-patterns.md) | Permitir que um dos muitos padrões de nome a utilizar para recursos. |
+| [Exigir como padrão](scripts/enforce-like-pattern.md) | Certifique-se de que os nomes de recursos satisfazem a condição like para um padrão. |
+| [Exigir correspondência de padrão](scripts/enforce-match-pattern.md) | Certifique-se de que os nomes de recursos correspondem o padrão de nomenclatura. |
+| [Exigir padrão de correspondência de etiqueta](scripts/enforce-tag-match-pattern.md) | Certifique-se de que um valor de etiqueta corresponde a um padrão de texto. |
 |**Rede**||
 | [Permitido SKUs de Gateway de aplicação](scripts/allowed-app-gate-sku.md) | Requer que os gateways de aplicação utilizem um SKU aprovado. Especifique uma matriz de SKUs aprovados. |
 | [Se o observador de rede não está ativada para a região de auditoria](scripts/net-watch-not-enabled.md) | Auditorias se observador de rede não está ativada para uma região especificada. Especifique o nome da região para verificar se o observador de rede está ativada. |

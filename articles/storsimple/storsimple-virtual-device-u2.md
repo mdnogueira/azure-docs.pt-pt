@@ -12,15 +12,18 @@ ms.devlang: NA
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/07/2017
+ms.date: 11/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 29f33d01cc6b640a566dc371f4b9c704978da091
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 98892a0919b1ba49308fd3bc51c735977bbff437
+ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="deploy-and-manage-a-storsimple-virtual-device-in-azure"></a>Implementar e gerir um dispositivo virtual StorSimple no Azure
+> [!NOTE]
+> O portal clássico do StorSimple foi preterido. Os Gestores de Dispositivos do StorSimple vão ser migrados automaticamente para o portal do Azure novo, de acordo com a agenda de preterição. Receberá uma mensagem de e-mail e uma notificação no portal relativamente a esta migração. Este documento também será descontinuado em breve. Para ver a versão deste artigo do novo portal do Azure, aceda a [Implementar e gerir um dispositivo virtual StorSimple no Azure](storsimple-8000-cloud-appliance-u2.md). Relativamente a perguntas sobre a migração, veja [FAQ: Move to Azure portal](storsimple-8000-move-azure-portal-faq.md) (FAQ: migrar para o portal do Azure).
+
 ## <a name="overview"></a>Descrição geral
 O dispositivo virtual da série 8000 do StorSimple é uma capacidade adicional que é fornecida com a solução do Microsoft Azure StorSimple. O dispositivo virtual StorSimple é executado numa máquina virtual numa rede virtual do Microsoft Azure e pode utilizá-lo para efetuar cópias de segurança e clonar dados a partir dos anfitriões. Este tutorial descreve como implementar e gerir um dispositivo virtual no Azure, sendo isso aplicável a todos os dispositivos virtuais que executam a versão da Atualização 2 e a versão inferior do software.
 
@@ -33,7 +36,7 @@ O dispositivo virtual StorSimple está disponível em dois modelos, um 8010 conv
 | **VM do Azure** |Standard_A3 (4 núcleos, 7 GB de memória) |Standard_DS3 (4 núcleos, 14 GB de memória) |
 | **Compatibilidade de versões** |Versões em execução anteriores ou posteriores à Atualização 2 |Versões em execução da Atualização 2 ou posteriores |
 | **Disponibilidade por regiões** |Todas as regiões do Azure |Todas as regiões do Azure que suportam o Armazenamento Premium e VMs DS3 do Azure<br></br> Utilize [esta lista](https://azure.microsoft.com/en-us/regions/services) para ver se ambas as *Máquinas Virtuais > série DS* e o *Armazenamento > Armazenamento em Disco* estão disponíveis na sua região. |
-| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/common/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../virtual-machines/windows/premium-storage.md) |
+| **Tipo de armazenamento** |Utiliza o armazenamento padrão do Azure para discos locais<br></br> Saiba como [criar uma conta do Storage padrão](../storage/common/storage-create-storage-account.md) |Utiliza o Armazenamento Premium do Azure para discos locais<sup>2</sup> <br></br>Saiba como [criar uma conta de Premium Storage](../storage/common/storage-premium-storage.md) |
 | **Orientações para a carga de trabalho** |Obtenção ao nível de item dos ficheiros a partir de cópias de segurança |Cenários de Cloud dev e test, baixa latência, cargas de trabalho de desempenho superior <br></br>Dispositivo secundário para a recuperação após desastre |
 
 <sup>1</sup> *Anteriormente conhecido como 1100*.
@@ -63,7 +66,7 @@ A tabela seguinte mostra algumas diferenças fundamentais entre o dispositivo vi
 | **Chave de encriptação dos dados do serviço** |Volte a gerá-la no dispositivo físico e, em seguida, atualize o dispositivo virtual com a nova chave. |Não é possível voltar a gerar a chave a partir do dispositivo virtual. |
 
 ## <a name="prerequisites-for-the-virtual-device"></a>Pré-requisitos para o dispositivo virtual
-As secções seguintes explicam os pré-requisitos de configuração para o dispositivo virtual StorSimple. Antes de implementar um dispositivo virtual, consulte as [considerações de segurança para a utilização de um dispositivo virtual](storsimple-security.md).
+As secções seguintes explicam os pré-requisitos de configuração para o dispositivo virtual StorSimple. Antes de implementar um dispositivo virtual, consulte as [considerações de segurança para a utilização de um dispositivo virtual](storsimple-8000-security.md#storsimple-cloud-appliance-security).
 
 #### <a name="azure-requirements"></a>Requisitos do Azure
 Antes de aprovisionar o dispositivo virtual, terá de efetuar os seguintes preparativos no ambiente do Azure:
@@ -82,7 +85,7 @@ Antes de aprovisionar o dispositivo virtual, terá de efetuar os seguintes prepa
 Efetue as seguintes atualizações no serviço Azure StorSimple antes de criar um dispositivo virtual:
 
 * Adicionar [registos de controlo de acesso](storsimple-manage-acrs.md) para as VMs que serão servidores de anfitrião para o dispositivo virtual.
-* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/common/storage-create-storage-account.md) ou uma [conta do Premium Storage](../virtual-machines/windows/premium-storage.md)
+* Utilizar uma [Conta do Storage](storsimple-manage-storage-accounts.md#add-a-storage-account) na mesma região que o dispositivo virtual. As contas do Storage em regiões diferentes poderão ter um fraco desempenho. Pode utilizar uma conta Standard ou Premium com o dispositivo virtual. Pode obter mais informações sobre como criar uma [Conta do Storage Standard](../storage/common/storage-create-storage-account.md) ou uma [conta do Premium Storage](../storage/common/storage-premium-storage.md)
 * Utilize uma conta do Storage diferente para a criação do dispositivo virtual a partir da conta utilizada para os seus dados. Com a mesma conta do Storage, poderá obter um fraco desempenho.
 
 Certifique-se de que tem as seguintes informações antes de começar:

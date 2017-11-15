@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2016
 ms.author: dariagrigoriu
-ms.openlocfilehash: a65b50a90a67b718f2a0cdd8657194d9740b3bd4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 251ce238b745734bdfb508b30097304a9a650a8c
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="best-practices-for-azure-app-service"></a>Melhores Práticas do Serviço de Aplicações do Azure
 Este artigo resume as melhores práticas para utilizar [App Service do Azure](http://go.microsoft.com/fwlink/?LinkId=529714). 
@@ -40,7 +40,26 @@ Quando Repare que uma aplicação consome CPU mais que o esperado ou experiênci
 Para obter mais informações sobre aplicações "sem monitorização de estado" do "statefull" vs pode ver este vídeo: [planeamento de uma aplicação de várias camadas dimensionável ponto-a-ponto na aplicação do Microsoft Azure Web](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B414#fbid=?hashlink=fbid). Para obter mais informações sobre as opções de dimensionamento e o dimensionamento automático do serviço de aplicações, leia: [dimensionar uma aplicação Web no App Service do Azure](web-sites-scale.md).  
 
 ## <a name="socketresources"></a>Quando os recursos de socket ficam esgotados
-Um motivo comum esgotar os ligações de TCP de saída é a utilização de bibliotecas de cliente que não são implementadas para reutilizar ligações TCP ou no caso de um protocolo de nível superior como HTTP - ligação Keep-Alive não a ser utilizada. Reveja a documentação de cada uma das bibliotecas referenciadas pelas aplicações no seu plano do App Service para garantir que estão configurados ou acedidos no seu código para reutilização eficiente de ligações de saída. Siga também as orientações de documentação de biblioteca para criação adequada e a versão ou a limpeza para evitar a fuga de dados de ligações. Embora estas bibliotecas de cliente são as investigações no impacto de progresso podem ser mitigadas ao aumentar horizontalmente a várias instâncias.  
+Um motivo comum esgotar os ligações de TCP de saída é a utilização de bibliotecas de cliente que não são implementadas para reutilizar ligações TCP ou no caso de um protocolo de nível superior como HTTP - ligação Keep-Alive não a ser utilizada. Reveja a documentação de cada uma das bibliotecas referenciadas pelas aplicações no seu plano do App Service para garantir que estão configurados ou acedidos no seu código para reutilização eficiente de ligações de saída. Siga também as orientações de documentação de biblioteca para criação adequada e a versão ou a limpeza para evitar a fuga de dados de ligações. Embora estas bibliotecas de cliente são as investigações no impacto de progresso podem ser mitigadas ao aumentar horizontalmente a várias instâncias.
+
+### <a name="nodejs-and-outgoing-http-requests"></a>NODE.js e pedidos de http de saída
+Ao trabalhar com o Node.js e muitos pedidos de http de saída, lidar com HTTP - Keep-Alive, é extremamente importante. Pode utilizar o [agentkeepalive](https://www.npmjs.com/package/agentkeepalive) `npm` pacote para o facilitar no seu código.
+
+Sempre deve processar o `http` resposta, mesmo se o fizer nada do processador. Se não processar a resposta corretamente, a aplicação acaba por ficar bloqueada porque não existem mais sockets estão disponíveis.
+
+Por exemplo, quando trabalhar com o `http` ou `https` pacote:
+
+```
+var request = https.request(options, function(response) {
+    response.on('data', function() { /* do nothing */ });
+});
+```
+
+Se estiver a executar no App Service no Linux num computador com vários núcleos, outro procedimento recomendado é utilizar PM2 iniciar vários processos de Node.js para executar a aplicação. Pode fazê-lo especificando um comando de arranque para o contentor.
+
+Por exemplo, para iniciar a quatro instâncias:
+
+`pm2 start /home/site/wwwroot/app.js --no-daemon -i 4`
 
 ## <a name="appbackup"></a>Quando a aplicação criar cópias de segurança começa a falhar
 As duas razões mais comuns são por que motivo de falha de cópia de segurança de aplicação: definições de armazenamento inválido e a configuração de base de dados inválido. Estas falhas acontecer, normalmente, quando existem alterações a recursos de armazenamento ou base de dados ou alterações como aceder a estes recursos (por exemplo, as credenciais atualizados para a base de dados selecionado nas definições de cópia de segurança). Normalmente, as cópias de segurança com base numa agenda e necessitam de acesso a armazenamento (para exportar a cópia de segurança de ficheiros) e bases de dados (para copiar e ler conteúdo sejam incluídos na cópia de segurança). O resultado da não consegue aceder a estes recursos seria falhas de cópia de segurança consistente. 

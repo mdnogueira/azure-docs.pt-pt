@@ -1,25 +1,25 @@
 ---
-title: "Pedidos de aumentar a quota de núcleos de Gestor de recursos do Azure | Microsoft Docs"
-description: "Pedidos de aumentar a quota de núcleos de Gestor de recursos do Azure"
+title: Aumentar a quota do Azure Resource Manager vCPU pedidos | Microsoft Docs
+description: Pedidos de aumento de quota vCPU do Gestor de recursos do Azure
 author: ganganarayanan
 ms.author: gangan
 ms.date: 1/18/2017
 ms.topic: article
 ms.service: microsoft-docs
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: cb6c5b3e86f126d4110d1cd29d8c9891e356e414
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c22a6dde0067385a1bf8d889cc76178bb44dd0ac
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
-# <a name="resource-manager-core-quota-increase-requests"></a>Pedidos de aumentar a quota de núcleos de Gestor de recursos
+# <a name="resource-manager-vcpu-quota-increase-requests"></a>Pedidos de aumento de quota vCPU do Gestor de recursos
 
-Quotas do Gestor de recursos principais são impostas o nível de região e o nível de família do SKU.
+Quotas do Gestor de recursos vCPU são impostas o nível de região e o nível de família do SKU.
 Obter mais informações sobre como as quotas são aplicadas no [subscrição do Azure e limites de serviço](http://aka.ms/quotalimits) página.
 Para obter mais informações sobre famílias de SKU, pode comparar custo e desempenho no [preços das Virtual Machines](http://aka.ms/pricingcompute) página.
 
-Para pedir um aumento, crie um incidente de suporte de Quota de núcleos no portal do Azure, [https://portal.azure.com](https://portal.azure.com).
+Para pedir um aumento, crie um incidente de suporte de Quota para vCPUs no portal do Azure, [https://portal.azure.com](https://portal.azure.com).
 
 > [!NOTE]
 > Saiba como [criar um pedido de suporte](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) no portal do Azure

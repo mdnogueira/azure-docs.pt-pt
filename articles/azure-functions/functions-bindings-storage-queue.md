@@ -1,6 +1,6 @@
 ---
-title: "Enlaces de armazenamento de fila de funções do Azure | Microsoft Docs"
-description: "Compreenda como utilizar o armazenamento do Azure acionadores e enlaces das funções do Azure."
+title: "Enlaces de armazenamento de filas de funções do Azure"
+description: "Compreenda como utilizar o acionador de armazenamento de filas do Azure e de saída do enlace das funções do Azure."
 services: functions
 documentationcenter: na
 author: ggailey777
@@ -8,80 +8,59 @@ manager: cfowler
 editor: 
 tags: 
 keywords: "das funções do Azure, funções, processamento de eventos, computação dinâmica, arquitetura sem servidor"
-ms.assetid: 4e6a837d-e64f-45a0-87b7-aa02688a75f3
 ms.service: functions
 ms.devlang: multiple
 ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/30/2017
+ms.date: 10/23/2017
 ms.author: glenga
-ms.openlocfilehash: b68ce106ceb25d19ee0bbde287891d553a448560
-ms.sourcegitcommit: 963e0a2171c32903617d883bb1130c7c9189d730
+ms.openlocfilehash: 9cf506d571c8d67a1e48ce34860db3dbc3445509
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="azure-functions-queue-storage-bindings"></a>Enlaces de armazenamento de filas de funções do Azure
-[!INCLUDE [functions-selector-bindings](../../includes/functions-selector-bindings.md)]
 
-Este artigo descreve como configurar e enlaces de armazenamento de filas do Azure de código das funções do Azure. Funções do Azure suporta acionam e de saída enlaces para as filas do Azure. Para as funcionalidades que estão disponíveis em todos os enlaces, consulte [acionadores de funções do Azure e conceitos de enlaces](functions-triggers-bindings.md).
+Este artigo explica como trabalhar com enlaces de armazenamento de filas do Azure das funções do Azure. Funções do Azure suporta acionam e enlaces para filas de saída.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-<a name="trigger"></a>
-
 ## <a name="queue-storage-trigger"></a>Acionador de armazenamento de filas
-O acionador de armazenamento de filas do Azure permite-lhe monitorizar um armazenamento de filas para novas mensagens e reagir aos mesmos. 
 
-Definir um acionador de fila utilizando o **integrar** separador no portal de funções. O portal cria a seguinte definição no **enlaces** secção *function.json*:
+Utilize o acionador de fila para iniciar uma função quando é recebido um novo item de uma fila. A mensagem da fila é fornecida como entrada para a função.
 
-```json
+## <a name="trigger---example"></a>Acionador - exemplo
+
+Veja o exemplo de específicas do idioma:
+
+* [Pré-compilada c#](#trigger---c-example)
+* [Script do c#](#trigger---c-script-example)
+* [JavaScript](#trigger---javascript-example)
+
+### <a name="trigger---c-example"></a>Acionador - c# exemplo
+
+O seguinte exemplo mostra [pré-compilada c#](functions-dotnet-class-library.md) código que consulta o `myqueue-items` fila e escreve um registo de cada vez que um item de fila é processado.
+
+```csharp
+public static class QueueFunctions
 {
-    "type": "queueTrigger",
-    "direction": "in",
-    "name": "<The name used to identify the trigger data in your code>",
-    "queueName": "<Name of queue to poll>",
-    "connection":"<Name of app setting - see below>"
+    [FunctionName("QueueTrigger")]
+    public static void QueueTrigger(
+        [QueueTrigger("myqueue-items")] string myQueueItem, 
+        TraceWriter log)
+    {
+        log.Info($"C# function processed: {myQueueItem}");
+    }
 }
 ```
 
-* O `connection` propriedade tem de conter o nome de uma definição de aplicação que contém uma cadeia de ligação de armazenamento. No portal do Azure, o editor padrão no **integrar** separador configura esta definição de aplicação para, quando seleciona uma conta de armazenamento.
+### <a name="trigger---c-script-example"></a>Acionador - exemplo de script do c#
 
-Definições adicionais que podem ser fornecidas num [host.json ficheiro](https://github.com/Azure/azure-webjobs-sdk-script/wiki/host.json) para aperfeiçoar ainda mais os acionadores de armazenamento de filas. Por exemplo, pode alterar a fila de intervalo na host.json de consulta.
+O exemplo seguinte mostra um acionador de blob enlace num *function.json* ficheiro e [c# script](functions-reference-csharp.md) código que utiliza o enlace. Os inquéritos de função a `myqueue-items` fila e escreve um registo de cada vez que um item de fila é processado.
 
-<a name="triggerusage"></a>
-
-## <a name="using-a-queue-trigger"></a>Utilizar um acionador de fila
-Funções de Node.js, aceder a dados de fila utilizando `context.bindings.<name>`.
-
-
-O payload de fila utilizando um parâmetro de método como aceder a funções de .NET, `CloudQueueMessage paramName`. Aqui, `paramName` é o valor especificado no [configuração acionador](#trigger). A mensagem da fila pode anular a serialização para qualquer um dos seguintes tipos:
-
-* Objeto POCO. Utilize se o payload de fila é um objeto JSON. O tempo de execução de funções deserializes o payload para o objeto POCO. 
-* `string`
-* `byte[]`
-* [`CloudQueueMessage`]
-
-<a name="meta"></a>
-
-### <a name="queue-trigger-metadata"></a>Metadados de Acionador de fila
-O acionador de fila fornece várias propriedades de metadados. Estas propriedades podem ser utilizadas como parte das expressões de enlace noutros enlaces ou como parâmetros no seu código. Os valores têm a mesma semântica como [ `CloudQueueMessage` ].
-
-* **QueueTrigger** -payload de fila (se for uma cadeia válida)
-* **DequeueCount** -tipo `int`. O número de vezes que esta mensagem foi removida.
-* **ExpirationTime** -tipo `DateTimeOffset?`. A hora de expiração a mensagem.
-* **ID** -tipo `string`. ID de mensagem de fila.
-* **InsertionTime** -tipo `DateTimeOffset?`. O tempo que a mensagem foi adicionada à fila.
-* **NextVisibleTime** -tipo `DateTimeOffset?`. O tempo que a mensagem seguinte será visível.
-* **PopReceipt** -tipo `string`. Receção pop da mensagem.
-
-Ver como utilizar os metadados de fila no [exemplo acionador](#triggersample).
-
-<a name="triggersample"></a>
-
-## <a name="trigger-sample"></a>Exemplo de Acionador
-Suponha que tem o seguinte function.json que define um acionador de fila:
+Eis o *function.json* ficheiro:
 
 ```json
 {
@@ -92,20 +71,16 @@ Suponha que tem o seguinte function.json que define um acionador de fila:
             "direction": "in",
             "name": "myQueueItem",
             "queueName": "myqueue-items",
-            "connection":"MyStorageConnectionString"
+            "connection":"MyStorageConnectionAppSetting"
         }
     ]
 }
 ```
 
-Consulte o exemplo de específicas do idioma que obtém e registos de metadados de fila de espera.
+O [configuração](#trigger---configuration) secção explica estas propriedades.
 
-* [C#](#triggercsharp)
-* [Node.js](#triggernodejs)
+Eis o código de script do c#:
 
-<a name="triggercsharp"></a>
-
-### <a name="trigger-sample-in-c"></a>Exemplo de Acionador em c# #
 ```csharp
 #r "Microsoft.WindowsAzure.Storage"
 
@@ -133,17 +108,32 @@ public static void Run(CloudQueueMessage myQueueItem,
 }
 ```
 
-<!--
-<a name="triggerfsharp"></a>
-### Trigger sample in F# ## 
-```fsharp
+O [utilização](#trigger---usage) secção explica `myQueueItem`, que é designado pelo `name` propriedade no function.json.  O [secção de metadados da mensagem](#trigger---message-metadata) explica todas as outras variáveis mostradas.
 
+### <a name="trigger---javascript-example"></a>Acionador - exemplo de JavaScript
+
+O exemplo seguinte mostra um acionador de blob enlace num *function.json* ficheiro e uma [JavaScript função](functions-reference-node.md) que utiliza o enlace. Os inquéritos de função a `myqueue-items` fila e escreve um registo de cada vez que um item de fila é processado.
+
+Eis o *function.json* ficheiro:
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "type": "queueTrigger",
+            "direction": "in",
+            "name": "myQueueItem",
+            "queueName": "myqueue-items",
+            "connection":"MyStorageConnectionAppSetting"
+        }
+    ]
+}
 ```
--->
 
-<a name="triggernodejs"></a>
+O [configuração](#trigger---configuration) secção explica estas propriedades.
 
-### <a name="trigger-sample-in-nodejs"></a>Exemplo de Acionador no Node.js
+Eis o código JavaScript:
 
 ```javascript
 module.exports = function (context) {
@@ -152,58 +142,144 @@ module.exports = function (context) {
     context.log('expirationTime =', context.bindingData.expirationTime);
     context.log('insertionTime =', context.bindingData.insertionTime);
     context.log('nextVisibleTime =', context.bindingData.nextVisibleTime);
-    context.log('id=', context.bindingData.id);
+    context.log('id =', context.bindingData.id);
     context.log('popReceipt =', context.bindingData.popReceipt);
     context.log('dequeueCount =', context.bindingData.dequeueCount);
     context.done();
 };
 ```
 
-### <a name="handling-poison-queue-messages"></a>Processamento de mensagens nocivas fila
-Quando uma função de Acionador de fila falha, as funções do Azure tentará novamente essa função até cinco vezes para uma mensagem de fila especificado, incluindo a primeira tentativa. Se a todas as tentativas de cinco falharem, o tempo de execução de funções adiciona uma mensagem para um armazenamento de filas com o nome  *&lt;originalqueuename >-nocivas*. Pode escrever uma função para processar mensagens da fila nocivas pelo registá-los ou enviar uma notificação que atenção manual é necessária. 
+O [utilização](#trigger---usage) secção explica `myQueueItem`, que é designado pelo `name` propriedade no function.json.  O [secção de metadados da mensagem](#trigger---message-metadata) explica todas as outras variáveis mostradas.
 
-Para processar mensagens nocivas manualmente, verifique o `dequeueCount` da mensagem de fila (consulte [metadados de Acionador de fila](#meta)).
+## <a name="trigger---attributes-for-precompiled-c"></a>Acionador - atributos para pré-compilada c#
+ 
+Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize os seguintes atributos para configurar um acionador de fila:
 
-<a name="output"></a>
+* [QueueTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/QueueTriggerAttribute.cs), definida no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs)
+
+  O construtor do atributo utiliza o nome da fila para monitorizar, conforme mostrado no exemplo seguinte:
+
+  ```csharp
+  [FunctionName("QueueTrigger")]
+  public static void Run(
+      [QueueTrigger("myqueue-items")] string myQueueItem, 
+      TraceWriter log)
+  ```
+
+  Pode definir o `Connection` propriedade para especificar a conta de armazenamento a utilizar, conforme mostrado no exemplo seguinte:
+
+  ```csharp
+  [FunctionName("QueueTrigger")]
+  public static void Run(
+      [QueueTrigger("myqueue-items", Connection = "StorageConnectionAppSetting")] string myQueueItem, 
+      TraceWriter log)
+  ```
+ 
+* [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs), definida no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs)
+
+  Outra forma para especificar a conta de armazenamento a utilizar. O construtor tem o nome de uma definição de aplicação que contém uma cadeia de ligação de armazenamento. O atributo pode ser aplicado no parâmetro, método ou nível de classe. O exemplo seguinte mostra o nível de classe e o nível de método:
+
+  ```csharp
+  [StorageAccount("ClassLevelStorageAppSetting")]
+  public static class AzureFunctions
+  {
+      [FunctionName("QueueTrigger")]
+      [StorageAccount("FunctionLevelStorageAppSetting")]
+      public static void Run( //...
+  ```
+
+A conta de armazenamento a utilizar é determinada pela seguinte ordem:
+
+* O `QueueTrigger` do atributo `Connection` propriedade.
+* O `StorageAccount` atributo aplicado para o mesmo parâmetro como o `QueueTrigger` atributo.
+* O `StorageAccount` atributo aplicado à função.
+* O `StorageAccount` atributo aplicado à classe.
+* A definição de aplicação "AzureWebJobsStorage".
+
+## <a name="trigger---configuration"></a>Acionador - configuração
+
+A tabela seguinte explica as propriedades de configuração de enlace que definir no *function.json* ficheiros e o `QueueTrigger` atributo.
+
+|propriedade de Function.JSON | Propriedade de atributo |Descrição|
+|---------|---------|----------------------|
+|**tipo** | n/d| tem de ser definido como `queueTrigger`. Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure.|
+|**direção**| n/d | No *function.json* apenas de ficheiros. tem de ser definido como `in`. Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure. |
+|**nome** | n/d |O nome da variável que representa a fila no código da função.  | 
+|**queueName** | **QueueName**| O nome da fila para consultar. | 
+|**ligação** | **Ligação** |O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.<br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+
+## <a name="trigger---usage"></a>Acionador - utilização
+ 
+Em c# e c# script, aceder aos dados blob utilizando um parâmetro de método como `Stream paramName`. No script do c#, `paramName` é o valor especificado no `name` propriedade *function.json*. É possível vincular a qualquer um dos seguintes tipos:
+
+* POCO objeto - funções o tempo de execução deserializes um payload JSON para um objeto de POCO. 
+* `string`
+* `byte[]`
+* [CloudQueueMessage]
+
+Em JavaScript, utilize `context.bindings.<name>` para aceder ao payload de item de fila. Se o payload JSON, este é anular a serialização para um objeto.
+
+## <a name="trigger---message-metadata"></a>Acionador - mensagem metadados
+
+O acionador de fila fornece várias propriedades de metadados. Estas propriedades podem ser utilizadas como parte das expressões de enlace noutros enlaces ou como parâmetros no seu código. Os valores têm a mesma semântica como [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage).
+
+|Propriedade|Tipo|Descrição|
+|--------|----|-----------|
+|`QueueTrigger`|`string`|Payload de fila (se for uma cadeia válida). Se a fila de mensagens payload como uma cadeia, `QueueTrigger` tem o mesmo valor que a variável com o nome de `name` propriedade no *function.json*.|
+|`DequeueCount`|`int`|O número de vezes que esta mensagem foi removida.|
+|`ExpirationTime`|`DateTimeOffset?`|A hora de expiração a mensagem.|
+|`Id`|`string`|ID de mensagem de fila.|
+|`InsertionTime`|`DateTimeOffset?`|O tempo que a mensagem foi adicionada à fila.|
+|`NextVisibleTime`|`DateTimeOffset?`|O tempo que a mensagem seguinte será visível.|
+|`PopReceipt`|`string`|Receção pop da mensagem.|
+
+## <a name="trigger---poison-messages"></a>Acionador - mensagens nocivas
+
+Quando uma função de Acionador de fila falha, as funções do Azure tentará novamente a função de até cinco vezes para uma mensagem de fila especificado, incluindo a primeira tentativa. Se a todas as tentativas de cinco falharem, o tempo de execução de funções adiciona uma mensagem para uma fila com o nome  *&lt;originalqueuename >-nocivas*. Pode escrever uma função para processar mensagens da fila nocivas pelo registá-los ou enviar uma notificação que atenção manual é necessária.
+
+Para processar mensagens nocivas manualmente, verifique o [dequeueCount](#trigger---message-metadata) da mensagem de fila.
+
+## <a name="trigger---hostjson-properties"></a>Acionador - host.json propriedades
+
+O [host.json](functions-host-json.md#queues) ficheiro contém definições que controlam o comportamento de Acionador de fila.
+
+[!INCLUDE [functions-host-json-queues](../../includes/functions-host-json-queues.md)]
 
 ## <a name="queue-storage-output-binding"></a>Armazenamento de filas de enlace de saída
-O armazenamento de filas do Azure enlace de saída permite-lhe escrever mensagens a uma fila. 
 
-Definir uma saída de fila enlace utilizando o **integrar** separador no portal de funções. O portal cria a seguinte definição no **enlaces** secção *function.json*:
+Utilize a saída de armazenamento de filas do Azure para guardar as mensagens de uma fila de enlace.
 
-```json
+## <a name="output---example"></a>De saída - exemplo
+
+Veja o exemplo de específicas do idioma:
+
+* [Pré-compilada c#](#output---c-example)
+* [Script do c#](#output---c-script-example)
+* [JavaScript](#output---javascript-example)
+
+### <a name="output---c-example"></a>Saída - c# exemplo
+
+O seguinte exemplo mostra [pré-compilada c#](functions-dotnet-class-library.md) código que cria uma mensagem de fila para cada pedido HTTP recebido.
+
+```csharp
+[StorageAccount("AzureWebJobsStorage")]
+public static class QueueFunctions
 {
-   "type": "queue",
-   "direction": "out",
-   "name": "<The name used to identify the trigger data in your code>",
-   "queueName": "<Name of queue to write to>",
-   "connection":"<Name of app setting - see below>"
+    [FunctionName("QueueOutput")]
+    [return: Queue("myqueue-items")]
+    public static string QueueOutput([HttpTrigger] dynamic input,  TraceWriter log)
+    {
+        log.Info($"C# function processed: {input.Text}");
+        return input.Text;
+    }
 }
 ```
 
-* O `connection` propriedade tem de conter o nome de uma definição de aplicação que contém uma cadeia de ligação de armazenamento. No portal do Azure, o editor padrão no **integrar** separador configura esta definição de aplicação para, quando seleciona uma conta de armazenamento.
+### <a name="output---c-script-example"></a>Saída - exemplo de script do c#
 
-<a name="outputusage"></a>
+O exemplo seguinte mostra um acionador de blob enlace num *function.json* ficheiro e [c# script](functions-reference-csharp.md) código que utiliza o enlace. A função cria um item de fila com um payload POCO para cada pedido HTTP recebido.
 
-## <a name="using-a-queue-output-binding"></a>Utilizar uma fila de saída do enlace
-Funções de Node.js, vai aceder a fila de saída utilizando `context.bindings.<name>`.
-
-Nas funções de .NET, o utilizador pode apresentar a qualquer um dos seguintes tipos. Quando existe um parâmetro de tipo `T`, `T` tem de ser um dos tipos de saída suportado, tal como `string` ou um POCO.
-
-* `out T`(serializado como JSON)
-* `out string`
-* `out byte[]`
-* `out` [`CloudQueueMessage`] 
-* `ICollector<T>`
-* `IAsyncCollector<T>`
-* [`CloudQueue`](/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue)
-
-Também pode utilizar o tipo de retorno do método que o enlace de saída.
-
-<a name="outputsample"></a>
-
-## <a name="queue-output-sample"></a>Exemplo de saída da fila
-O seguinte *function.json* define um acionador HTTP com uma fila de saída do enlace:
+Eis o *function.json* ficheiro:
 
 ```json
 {
@@ -224,23 +300,17 @@ O seguinte *function.json* define um acionador HTTP com uma fila de saída do en
       "direction": "out",
       "name": "$return",
       "queueName": "outqueue",
-      "connection": "MyStorageConnectionString",
+      "connection": "MyStorageConnectionAppSetting",
     }
   ]
 }
 ``` 
 
-Consulte o exemplo de específicas do idioma que produz uma mensagem de fila com o payload HTTP de entrada.
+O [configuração](#output---configuration) secção explica estas propriedades.
 
-* [C#](#outcsharp)
-* [Node.js](#outnodejs)
-
-<a name="outcsharp"></a>
-
-### <a name="queue-output-sample-in-c"></a>Exemplo de saída da fila em c# #
+Eis c# código de script que cria uma mensagem de fila única:
 
 ```cs
-// C# example of HTTP trigger binding to a custom POCO, with a queue output binding
 public class CustomQueueMessage
 {
     public string PersonName { get; set; }
@@ -253,19 +323,53 @@ public static CustomQueueMessage Run(CustomQueueMessage input, TraceWriter log)
 }
 ```
 
-Para enviar mensagens múltiplas, utilize um `ICollector`:
+Pode enviar mensagens de vários em simultâneo utilizando um `ICollector` ou `IAsyncCollector` parâmetro. Script código c# Eis que envia mensagens vários, uma com os dados do pedido de HTTP e uma com valores hard-coded:
 
 ```cs
-public static void Run(CustomQueueMessage input, ICollector<CustomQueueMessage> myQueueItem, TraceWriter log)
+public static void Run(
+    CustomQueueMessage input, 
+    ICollector<CustomQueueMessage> myQueueItem, 
+    TraceWriter log)
 {
     myQueueItem.Add(input);
     myQueueItem.Add(new CustomQueueMessage { PersonName = "You", Title = "None" });
 }
 ```
 
-<a name="outnodejs"></a>
+### <a name="output---javascript-example"></a>Saída - exemplo de JavaScript
 
-### <a name="queue-output-sample-in-nodejs"></a>Exemplo de saída de fila no Node.js
+O exemplo seguinte mostra um acionador de blob enlace num *function.json* ficheiro e uma [JavaScript função](functions-reference-node.md) que utiliza o enlace. A função cria um item de fila para cada pedido HTTP recebido.
+
+Eis o *function.json* ficheiro:
+
+```json
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "authLevel": "function",
+      "name": "input"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "return"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "$return",
+      "queueName": "outqueue",
+      "connection": "MyStorageConnectionAppSetting",
+    }
+  ]
+}
+``` 
+
+O [configuração](#output---configuration) secção explica estas propriedades.
+
+Eis o código JavaScript:
 
 ```javascript
 module.exports = function (context, input) {
@@ -273,22 +377,76 @@ module.exports = function (context, input) {
 };
 ```
 
-Ou, para enviar mensagens de vários
+Pode enviar várias mensagens ao mesmo tempo que define uma matriz de mensagem para o `myQueueItem` vínculo de saída. O seguinte código JavaScript envia duas mensagens de fila com valores hard-coded para cada pedido HTTP recebido.
 
 ```javascript
 module.exports = function(context) {
-    // Define a message array for the myQueueItem output binding. 
     context.bindings.myQueueItem = ["message 1","message 2"];
     context.done();
 };
 ```
 
+## <a name="output---attributes-for-precompiled-c"></a>Saída - atributos para pré-compilada c#
+ 
+Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [QueueAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/QueueAttribute.cs), que está definido no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs).
+
+O atributo aplica-se a um `out` parâmetro ou o valor de retorno da função. O construtor do atributo utiliza o nome da fila, conforme mostrado no exemplo seguinte:
+
+```csharp
+[FunctionName("QueueOutput")]
+[return: Queue("myqueue-items")]
+public static string Run([HttpTrigger] dynamic input,  TraceWriter log)
+```
+
+Pode definir o `Connection` propriedade para especificar a conta de armazenamento a utilizar, conforme mostrado no exemplo seguinte:
+
+```csharp
+[FunctionName("QueueOutput")]
+[return: Queue("myqueue-items, Connection = "StorageConnectionAppSetting")]
+public static string Run([HttpTrigger] dynamic input,  TraceWriter log)
+```
+
+Pode utilizar o `StorageAccount` atributo para especificar a conta de armazenamento ao nível de classe, método ou parâmetro. Para obter mais informações, consulte [acionador - atributos para pré-compilada c#](#trigger---attributes-for-precompiled-c).
+
+## <a name="output---configuration"></a>De saída - configuração
+
+A tabela seguinte explica as propriedades de configuração de enlace que definir no *function.json* ficheiros e o `Queue` atributo.
+
+|propriedade de Function.JSON | Propriedade de atributo |Descrição|
+|---------|---------|----------------------|
+|**tipo** | n/d | tem de ser definido como `queue`. Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure.|
+|**direção** | n/d | tem de ser definido como `out`. Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure. |
+|**nome** | n/d | O nome da variável que representa a fila no código da função. Definido como `$return` para referenciar o valor de retorno da função.| 
+|**queueName** |**QueueName** | O nome da fila. | 
+|**ligação** | **Ligação** |O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.<br>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+
+## <a name="output---usage"></a>Saída - utilização
+ 
+Em c# e c# script, gravar uma mensagem de fila única utilizando um parâmetro de método como `out T paramName`. No script do c#, `paramName` é o valor especificado no `name` propriedade *function.json*. Pode utilizar o tipo de retorno do método em vez de um `out` parâmetro, e `T` pode ser qualquer um dos seguintes tipos:
+
+* Um POCO serializável como JSON
+* `string`
+* `byte[]`
+* [CloudQueueMessage] 
+
+Em c# e c# script, escreva vários de fila de mensagens através de um dos seguintes tipos: 
+
+* `ICollector<T>` ou `IAsyncCollector<T>`
+* [CloudQueue](/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue)
+
+Funções de JavaScript, utilizar `context.bindings.<name>` para aceder a mensagem da fila de saída. Pode utilizar uma cadeia ou um objeto JSON serializável para o payload de item de fila.
+
 ## <a name="next-steps"></a>Passos seguintes
 
-Para obter um exemplo de uma função que utiliza os acionadores de armazenamento de filas e os enlaces, consulte [criar uma função acionada por armazenamento de filas do Azure](functions-create-storage-queue-triggered-function.md).
+> [!div class="nextstepaction"]
+> [Ir para um guia de introdução que utiliza um acionador de armazenamento de filas](functions-create-storage-queue-triggered-function.md)
 
-[!INCLUDE [next steps](../../includes/functions-bindings-next-steps.md)]
+> [!div class="nextstepaction"]
+> [Ir para um tutorial que utiliza um armazenamento de filas de enlace de saída](functions-integrate-storage-queue-output-binding.md)
+
+> [!div class="nextstepaction"]
+> [Saiba mais sobre as funções do Azure acionadores e enlaces](functions-triggers-bindings.md)
 
 <!-- LINKS -->
 
-['CloudQueueMessage']: /dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage
+[CloudQueueMessage]: /dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage

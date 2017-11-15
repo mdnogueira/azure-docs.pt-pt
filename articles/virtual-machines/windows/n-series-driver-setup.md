@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/07/2017
+ms.date: 11/09/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b480d10df777a2757c073ff77e1845d33d63163a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b16e57e06d5055fc0c2750385630a908e10bd217
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="set-up-gpu-drivers-for-n-series-vms-running-windows-server"></a>Configurar controladores GPU para VMs N série com o Windows Server
 Para tirar partido das capacidades de GPU de VMs de série N do Azure com o Windows Server 2016 ou o Windows Server 2012 R2, instale controladores de gráficos NVIDIA suportados. Este artigo fornece os passos de configuração de controlador depois de implementar uma VM de série N. As informações de configuração do controlador também estão disponíveis para [VMs com Linux](../linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -50,7 +50,7 @@ Para consultar o estado do dispositivo para a GPU, execute o [nvidia smi](https:
 
 1. Abra uma linha de comandos e mude para o **c:\Programas\Microsoft Files\NVIDIA Corporation\NVSMI** diretório.
 
-2. Executar **nvidia smi**. Se o controlador estiver instalado, verá o resultado semelhante abaixo. Tenha em atenção que **GPU Util** mostra **0%** , a menos que estiver a executar uma carga de trabalho para a GPU na VM.
+2. Execute `nvidia-smi`. Se o controlador estiver instalado, verá o resultado semelhante ao seguinte. Tenha em atenção que **GPU Util** mostra **0%** , a menos que estiver a executar uma carga de trabalho para a GPU na VM. A versão do controlador e detalhes GPU poderão ser diferentes das mostrado.
 
 ![Estado do dispositivo NVIDIA](./media/n-series-driver-setup/smi.png)  
 

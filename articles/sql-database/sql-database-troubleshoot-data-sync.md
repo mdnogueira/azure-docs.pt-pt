@@ -8,13 +8,13 @@ ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
-ms.openlocfilehash: 29fb935ada4aa7f2571b128f82d4c037bbb88eb1
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 8c59e6ad42109c7df64fd651a012a56446daaad0
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="troubleshoot-issues-with-azure-sql-data-sync-preview"></a>Resolver problemas com a sincronização de dados de SQL do Azure (pré-visualização)
+# <a name="troubleshoot-issues-with-sql-data-sync-preview"></a>Resolver problemas com a sincronização de dados do SQL Server (pré-visualização)
 
 Este artigo descreve como resolver problemas atuais que são conhecidos para a equipa de sincronização de dados do SQL Server (pré-visualização). Se existir uma solução para um problema, é fornecido aqui.
 
@@ -493,7 +493,7 @@ Se não for possível corrigir o problema, é possível repor o estado do seu gr
 Para obter mais informações sobre a sincronização de dados do SQL Server, consulte:
 
 -   [Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados SQL do Azure](sql-database-sync-data.md)
--   [Introdução à sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
+-   [Configurar a sincronização de dados SQL do Azure](sql-database-get-started-sql-data-sync.md)
 -   [Melhores práticas para a sincronização de dados SQL do Azure](sql-database-best-practices-data-sync.md)
 -   [Monitor sincronização de dados SQL do Azure com a análise de registos do OMS](sql-database-sync-monitor-oms.md)
 

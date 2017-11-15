@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2016
 ms.author: andrl
-ms.openlocfilehash: 8cddc7a8c9aa677b9c93bee3a7e05c226cc1f655
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ef191c3c8d85afa389859956d30b5ac0275053d2
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="azure-cosmos-db-server-side-programming-stored-procedures-database-triggers-and-udfs"></a>Programação do lado do servidor de base de dados do Cosmos do Azure: e procedimentos armazenados, acionadores de base de dados, UDFs
 Saiba como idioma da BD do Azure Cosmos integrados, execução transacional do JavaScript permite aos programadores escrever **procedimentos armazenados**, **acionadores** e **(UDFs)defunçõesdefinidaspeloutilizador** nativamente num [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/) JavaScript. Isto permite-lhe escrever a lógica de aplicação de programa de base de dados que pode ser fornecida e executada diretamente nas partições de armazenamento de base de dados. 
@@ -681,7 +681,7 @@ Para além da API do DocumentDB para [Node.js](documentdb-sdk-node.md) tem de cl
     document.Year = 1949;
 
     // execute stored procedure
-    Document createdDocument = await client.ExecuteStoredProcedureAsync<Document>(UriFactory.CreateStoredProcedureUri("db", "coll", "sproc"), document, 1920);
+    Document createdDocument = await client.ExecuteStoredProcedureAsync<Document>(UriFactory.CreateStoredProcedureUri("db", "coll", "ValidateDocumentAge"), document, 1920);
 
 
 Este exemplo mostra como utilizar o [API .NET do DocumentDB](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet) para criar um acionador de pré-lançamento e criar um documento com o acionador ativado. 

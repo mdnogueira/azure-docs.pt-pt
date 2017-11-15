@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
-ms.openlocfilehash: cdaf09d5558e0453b826b9a3e52500379ced5422
-ms.sourcegitcommit: a7c01dbb03870adcb04ca34745ef256414dfc0b3
+ms.openlocfilehash: b3829f0e1b87451bf0706edc268359be5c4480bc
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Criar ASE utilizando um modelo Azure Resource Manager
 
@@ -150,7 +150,7 @@ Ambiente de serviço de aplicações tem duas versões: ASEv1 e ASEv2. As inform
 
 No ASEv1, pode gere todos os recursos manualmente. Que inclui o front-ends, funcionários e endereços IP utilizados para SSL baseado em IP. Antes de pode ampliar o plano de serviço de aplicações, tem de ampliar o conjunto de trabalho que pretende alojá-la.
 
-ASEv1 utiliza um modelo de preços diferentes de ASEv2. ASEv1, paga para cada núcleos alocados. Isto inclui núcleos que são utilizados para front-ends ou trabalhadores que não alojam quaisquer cargas de trabalho. ASEv1, o tamanho de dimensionamento máximo predefinido de ASE é 55 total de anfitriões. Que inclui os trabalhadores e front-ends. Uma vantagem em ASEv1 é que pode ser implementada numa rede virtual clássica e uma rede virtual do Gestor de recursos. Para saber mais sobre ASEv1, consulte o artigo [introdução do ambiente de serviço de aplicações v1][ASEv1Intro].
+ASEv1 utiliza um modelo de preços diferentes de ASEv2. ASEv1, paga para cada vCPU atribuído. Que inclui vCPUs que são utilizados para front-ends ou trabalhadores que não alojam quaisquer cargas de trabalho. ASEv1, o tamanho de dimensionamento máximo predefinido de ASE é 55 total de anfitriões. Que inclui os trabalhadores e front-ends. Uma vantagem em ASEv1 é que pode ser implementada numa rede virtual clássica e uma rede virtual do Gestor de recursos. Para saber mais sobre ASEv1, consulte o artigo [introdução do ambiente de serviço de aplicações v1][ASEv1Intro].
 
 Para criar um ASEv1 utilizando um modelo do Resource Manager, consulte [criar v1 um ILB ASE com um modelo do Resource Manager][ILBASEv1Template].
 

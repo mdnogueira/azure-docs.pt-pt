@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 10/16/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d3df59afe595265fba88f7274154a36d42139859
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: d59ef16de433ac9691f6996eab2bf56f056feb88
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Otimizar o desempenho e fiabilidade das funções do Azure
 
@@ -66,8 +66,7 @@ Como o código reagir se ocorrer uma falha depois de inserir 5.000 dos itens par
 
 Se um item de fila já foi processado, permitir que a função ser sem operações.
 
-Tire partido das medidas defesas já são fornecidos para os componentes que utilizar na plataforma as funções do Azure. Por exemplo, consulte **processamento de mensagens de filas nocivas** da documentação para [aciona a fila de armazenamento do Azure](functions-bindings-storage-queue.md#trigger).
- 
+Tire partido das medidas defesas já são fornecidos para os componentes que utilizar na plataforma as funções do Azure. Por exemplo, consulte **processamento de mensagens de filas nocivas** da documentação para [fila de armazenamento do Azure acionadores e enlaces](functions-bindings-storage-queue.md#trigger---poison-messages). 
 
 ## <a name="dont-mix-test-and-production-code-in-the-same-function-app"></a>Não misture o código de teste e produção na mesma aplicação de função
 
@@ -97,4 +96,3 @@ Para obter mais informações, consulte os seguintes recursos:
 
 Uma vez que as funções do Azure utiliza o App Service do Azure, deve também estar ciente de diretrizes de serviço de aplicações.
 * [Padrões e práticas otimizações de desempenho de HTTP](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/)
-

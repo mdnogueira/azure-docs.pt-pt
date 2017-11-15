@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/03/2017
 ms.author: yurid
-ms.openlocfilehash: 2482dade7d17d05b2fc90fbf22b0466227a5983b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 925bada91216b98175fb725e7aba6a31f305839d
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="internet-of-things-security-architecture"></a>Arquitetura de segurança da Internet das coisas
 Ao conceber um sistema, é importante compreender as potenciais ameaças a esse sistema e ao adicionar o defesas adequadas em conformidade, como o sistema é concebido e criado. É particularmente importante para a estrutura do produto a partir do início com segurança em mente porque compreender como um atacante poderá comprometer um sistema de ajuda a mitigações adequadas se de que estão no local a partir do início. 
@@ -88,7 +88,7 @@ Para otimizar a melhores práticas de segurança, recomenda-se que uma arquitetu
 * Gateways, de nuvem e
 * Serviços.
 
-Zonas estão abrangentes para segmentar uma solução; cada zona tem muitas vezes, os seus próprios requisitos de dados e a autenticação e autorização. Zonas também podem ser utilizados para danos de isolamento e restringir o impacto das zonas de fidedignidade baixa em zonas de confiança superiores.
+Zonas estão abrangentes para segmentar uma solução; cada zona tem muitas vezes, os seus próprios requisitos de dados e a autenticação e autorização. Zonas também podem ser utilizadas para isolar os danos e restringir o impacto das zonas de fidedignidade baixa em zonas de confiança superiores.
 
 Cada zona é separada por um limite de fidedignidade, que é apresentado como a ponto vermelha linha no diagrama abaixo. Representa uma transição de dados/informações a partir de uma origem para outro. Durante esta transição, as informações/dados pode ser sujeito Spoofing, violação, rejeição, divulgação de informações, Denial of Service e elevação de privilégio (STRIDE).
 

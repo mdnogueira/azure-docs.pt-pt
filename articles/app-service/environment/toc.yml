@@ -38,6 +38,8 @@
       href: integrate-with-application-gateway.md
     - name: Criar ASE a partir de um modelo
       href: create-from-template.md
+    - name: Configuração de imposição de túnel
+      href: forced-tunnel-support.md
 - name: Referência
   items:
     - name: Endereços de gestão

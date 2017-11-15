@@ -12,13 +12,13 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/16/2017
+ms.date: 11/13/2017
 ms.author: dobett
-ms.openlocfilehash: 161089159999a4a63a39b059e69a08b7a9297445
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 951cd64f475363aaceac75ba96176a9b423ac5c1
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="create-an-iot-hub-using-the-azure-cli-20"></a>Criar um hub IoT utilizando o 2.0 CLI do Azure
 
@@ -31,7 +31,7 @@ Pode utilizar o Azure CLI 2.0 (az.py) para criar e gerir os hubs IoT do Azure at
 Pode concluir a tarefa utilizando uma das seguintes versões CLI:
 
 * [CLI do Azure (azure.js)](iot-hub-create-using-cli-nodejs.md) – a CLI para os modelos de implementação clássica e resource Gestão.
-* Azure CLI 2.0 (az.py) - a próxima geração CLI para o modelo de implementação de gestão recursos, tal como descrito neste artigo.
+* Azure CLI 2.0 (az.py) - a próxima geração CLI para o modelo de implementação de gestão de recursos. Descrito neste artigo.
 
 Para concluir este tutorial, precisa do seguinte:
 
@@ -43,17 +43,17 @@ Para concluir este tutorial, precisa do seguinte:
 Inicie sessão na sua conta do Azure e selecionar a sua subscrição.
 
 1. Na linha de comandos, execute o [comando de início de sessão][lnk-login-command]:
-    
+
     ```azurecli
     az login
     ```
 
     Siga as instruções para efetuar a autenticação com o código e inicie sessão na sua conta do Azure através de um browser.
 
-2. Se tiver várias subscrições do Azure, o início de sessão Azure concede acesso a todas as contas do Azure associada com as suas credenciais. Utilize o seguinte [comando para listar as contas do Azure] [ lnk-az-account-command] disponíveis para que possa utilizar:
-    
+1. Se tiver várias subscrições do Azure, o início de sessão Azure concede acesso a todas as contas do Azure associada com as suas credenciais. Utilize o seguinte [comando para listar as contas do Azure] [ lnk-az-account-command] disponíveis para que possa utilizar:
+
     ```azurecli
-    az account list 
+    az account list
     ```
 
     Utilize o seguinte comando para selecionar a subscrição que pretende utilizar para executar os comandos para criar o seu IoT hub. Pode utilizar o nome da subscrição ou o ID da saída do comando anterior:
@@ -67,29 +67,24 @@ Inicie sessão na sua conta do Azure e selecionar a sua subscrição.
 Utilize a CLI do Azure para criar um grupo de recursos e, em seguida, adicione um IoT hub.
 
 1. Quando criar um hub IoT, tem de criá-la num grupo de recursos. Utilize um grupo de recursos existente ou execute o seguinte [comando para criar um grupo de recursos][lnk-az-resource-command]:
-    
+
     ```azurecli
      az group create --name {your resource group name} --location westus
     ```
 
     > [!TIP]
     > O exemplo anterior cria o grupo de recursos na localização EUA oeste. Pode ver uma lista de localizações disponíveis, executando o comando `az account list-locations -o table`.
-    >
-    >
 
-2. Execute o seguinte [comando para criar um hub IoT] [ lnk-az-iot-command] no seu grupo de recursos, utilizando um nome globalmente exclusivo para o seu IoT hub:
-    
+1. Execute o seguinte [comando para criar um hub IoT] [ lnk-az-iot-command] no seu grupo de recursos, utilizando um nome globalmente exclusivo para o seu IoT hub:
+
     ```azurecli
     az iot hub create --name {your iot hub name} --resource-group {your resource group name} --sku S1
     ```
 
    [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
 
-
 > [!NOTE]
 > O comando anterior cria um IoT hub no S1 para o qual é-lhe faturado do escalão de preço. Para obter mais informações, consulte [preços do IoT Hub do Azure][lnk-iot-pricing].
->
->
 
 ## <a name="remove-an-iot-hub"></a>Remover um Hub IoT
 
@@ -108,6 +103,7 @@ az group delete --name {your resource group name}
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
+
 Para obter mais informações sobre como desenvolver para o IoT Hub, consulte os artigos seguintes:
 
 * [Guia para programadores do IoT Hub][lnk-devguide]

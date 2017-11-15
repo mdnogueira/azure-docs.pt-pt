@@ -1,5 +1,5 @@
 ---
-title: "Criar recursos de Service Bus do Azure através de modelos Azure Resource Manager | Microsoft Docs"
+title: Criar recursos do Service Bus do Azure utilizando modelos do Resource Manager | Microsoft Docs
 description: "Utilizar modelos Azure Resource Manager para automatizar a criação de recursos do Service Bus"
 services: service-bus-messaging
 documentationcenter: .net
@@ -12,22 +12,22 @@ ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 08/07/2017
+ms.date: 11/10/2017
 ms.author: sethm
-ms.openlocfilehash: c8142d8edfd3a527b13d655bac21acf5332f2d14
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 0ceeb138a7432e51cabe2597c680cb01ea9eac4a
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Criar recursos de Service Bus através de modelos Azure Resource Manager
 
 Este artigo descreve como criar e implementar os recursos de Service Bus através de modelos Azure Resource Manager, PowerShell e o fornecedor de recursos do Service Bus.
 
-Modelos Azure Resource Manager ajudam-na definir os recursos para implementar uma solução de e para especificar os parâmetros e variáveis que permitem introduzir os valores para os diferentes ambientes. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a sua implementação. Para obter informações detalhadas sobre como escrever modelos Azure Resource Manager e ver um debate do formato modelo, consulte [estrutura e a sintaxe do modelos Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+Modelos Azure Resource Manager ajudam-na definir os recursos para implementar uma solução de e para especificar os parâmetros e variáveis que permitem introduzir os valores para os diferentes ambientes. O modelo é escrito no JSON e é composto expressões que pode utilizar para construir valores para a sua implementação. Para obter informações detalhadas sobre como escrever modelos Azure Resource Manager e ver um debate do formato modelo, consulte [estrutura e a sintaxe do modelos Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
 > [!NOTE]
-> Os exemplos neste artigo mostram como utilizar o Azure Resource Manager para criar um espaço de nomes do Service Bus e a entidade de mensagens (fila). Para outros exemplos de modelo, visite o [Galeria de modelos de início rápido do Azure] [ Azure Quickstart Templates gallery] e procure "Service Bus".
+> Os exemplos neste artigo mostram como utilizar o Azure Resource Manager para criar um espaço de nomes do Service Bus e a entidade de mensagens (fila). Para outros exemplos de modelo, visite o [Galeria de modelos de início rápido do Azure] [ Azure Quickstart Templates gallery] e procure **Service Bus**.
 >
 >
 
@@ -43,7 +43,7 @@ Estes modelos de Gestor de recursos do Service Bus do Azure estão disponíveis 
 
 ## <a name="deploy-with-powershell"></a>Implementar com o PowerShell
 
-O procedimento seguinte descreve como utilizar o PowerShell para implementar um modelo Azure Resource Manager que cria um **padrão** camada espaço de nomes de barramento de serviço e uma fila dentro desse espaço de nomes. Neste exemplo é baseado no [criar um espaço de nomes do Service Bus com fila](https://github.com/Azure/azure-quickstart-templates/tree/master/201-servicebus-create-queue) modelo. O fluxo de trabalho aproximado é o seguinte:
+O procedimento seguinte descreve como utilizar o PowerShell para implementar um modelo Azure Resource Manager que cria um espaço de nomes do Service Bus do escalão Standard e uma fila dentro desse espaço de nomes. Neste exemplo é baseado no [criar um espaço de nomes do Service Bus com fila](https://github.com/Azure/azure-quickstart-templates/tree/master/201-servicebus-create-queue) modelo. O fluxo de trabalho aproximado é o seguinte:
 
 1. Instale o PowerShell.
 2. Crie o modelo e (opcionalmente) um ficheiro de parâmetros.
@@ -65,67 +65,72 @@ Clone ou copiar o [201-servicebus-criar-fila](https://github.com/Azure/azure-qui
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "serviceBusNamespaceName": {
-            "type": "string",
-            "metadata": {
-                "description": "Name of the Service Bus namespace"
-            }
-        },
-        "serviceBusQueueName": {
-            "type": "string",
-            "metadata": {
-                "description": "Name of the Queue"
-            }
-        },
-        "serviceBusApiVersion": {
-            "type": "string",
-            "defaultValue": "2015-08-01",
-            "metadata": {
-                "description": "Service Bus ApiVersion used by the template"
-            }
-        }
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "serviceBusNamespaceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Service Bus namespace"
+      }
     },
-    "variables": {
-        "location": "[resourceGroup().location]",
-        "sbVersion": "[parameters('serviceBusApiVersion')]",
-        "defaultSASKeyName": "RootManageSharedAccessKey",
-        "authRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]"
-    },
-    "resources": [{
-        "apiVersion": "[variables('sbVersion')]",
-        "name": "[parameters('serviceBusNamespaceName')]",
-        "type": "Microsoft.ServiceBus/Namespaces",
-        "location": "[variables('location')]",
-        "kind": "Messaging",
-        "sku": {
-            "name": "StandardSku",
-            "tier": "Standard"
-        },
-        "resources": [{
-            "apiVersion": "[variables('sbVersion')]",
-            "name": "[parameters('serviceBusQueueName')]",
-            "type": "Queues",
-            "dependsOn": [
-                "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
-            ],
-            "properties": {
-                "path": "[parameters('serviceBusQueueName')]"
-            }
-        }]
-    }],
-    "outputs": {
-        "NamespaceConnectionString": {
-            "type": "string",
-            "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
-        },
-        "SharedAccessPolicyPrimaryKey": {
-            "type": "string",
-            "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryKey]"
-        }
+    "serviceBusQueueName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Queue"
+      }
     }
+  },
+  "variables": {
+    "defaultSASKeyName": "RootManageSharedAccessKey",
+    "authRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]",
+    "sbVersion": "2017-04-01"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-04-01",
+      "name": "[parameters('serviceBusNamespaceName')]",
+      "type": "Microsoft.ServiceBus/Namespaces",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard"
+      },
+      "properties": {},
+      "resources": [
+        {
+          "apiVersion": "2017-04-01",
+          "name": "[parameters('serviceBusQueueName')]",
+          "type": "Queues",
+          "dependsOn": [
+            "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
+          ],
+          "properties": {
+            "lockDuration": "PT5M",
+            "maxSizeInMegabytes": "1024",
+            "requiresDuplicateDetection": "false",
+            "requiresSession": "false",
+            "defaultMessageTimeToLive": "P10675199DT2H48M5.4775807S",
+            "deadLetteringOnMessageExpiration": "false",
+            "duplicateDetectionHistoryTimeWindow": "PT10M",
+            "maxDeliveryCount": "10",
+            "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
+            "enablePartitioning": "false",
+            "enableExpress": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": {
+    "NamespaceConnectionString": {
+      "type": "string",
+      "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
+    },
+    "SharedAccessPolicyPrimaryKey": {
+      "type": "string",
+      "value": "[listkeys(variables('authRuleResourceId'), variables('sbVersion')).primaryKey]"
+    }
+  }
 }
 ```
 
@@ -145,13 +150,13 @@ Para utilizar um ficheiro de parâmetros opcionais, copie o [201-servicebus-cria
             "value": "<myQueueName>"
         },
         "serviceBusApiVersion": {
-            "value": "2015-08-01"
+            "value": "2017-04-01"
         }
     }
 }
 ```
 
-Para obter mais informações, consulte o [parâmetros](../azure-resource-manager/resource-group-template-deploy.md#parameter-files) tópico.
+Para obter mais informações, consulte o [parâmetros](../azure-resource-manager/resource-group-template-deploy.md#parameter-files) artigo.
 
 ### <a name="log-in-to-azure-and-set-the-azure-subscription"></a>Inicie sessão no Azure e definir a subscrição do Azure
 
@@ -161,13 +166,13 @@ A partir da linha de comandos do PowerShell, execute o seguinte comando:
 Login-AzureRmAccount
 ```
 
-Lhe for pedido que inicie sessão na sua conta do Azure. Depois de iniciar sessão, execute o seguinte comando para ver as subscrições disponíveis.
+Lhe for pedido que inicie sessão na sua conta do Azure. Depois de iniciar sessão, execute o seguinte comando para ver as subscrições disponíveis:
 
 ```powershell
 Get-AzureRMSubscription
 ```
 
-Este comando devolve uma lista de subscrições do Azure disponíveis. Escolha uma subscrição para a sessão atual, executando o seguinte comando. Substitua `<YourSubscriptionId>` com o GUID da subscrição do Azure que pretende utilizar.
+Este comando devolve uma lista de subscrições do Azure disponíveis. Escolha uma subscrição para a sessão atual, executando o seguinte comando. Substitua `<YourSubscriptionId>` com o GUID da subscrição do Azure que pretende utilizar:
 
 ```powershell
 Set-AzureRmContext -SubscriptionID <YourSubscriptionId>
@@ -209,7 +214,7 @@ O seguinte comando pede-lhe três parâmetros na janela do PowerShell:
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json
 ```
 
-Para especificar um ficheiro de parâmetros em vez disso, utilize o seguinte comando.
+Para especificar um ficheiro de parâmetros em vez disso, utilize o seguinte comando:
 
 ```powershell
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -TemplateParameterFile <path to parameters file>\azuredeploy.parameters.json
@@ -234,7 +239,7 @@ Se os recursos são implementados com êxito, é apresentado um resumo da implem
 DeploymentName    : MyDemoDeployment
 ResourceGroupName : MyDemoRG
 ProvisioningState : Succeeded
-Timestamp         : 4/19/2016 10:38:30 PM
+Timestamp         : 4/19/2017 10:38:30 PM
 Mode              : Incremental
 TemplateLink      :
 Parameters        :
@@ -242,7 +247,7 @@ Parameters        :
                     ===============  =========================  ==========
                     serviceBusNamespaceName  String             <namespaceName>
                     serviceBusQueueName  String                 <queueName>
-                    serviceBusApiVersion  String                2015-08-01
+                    serviceBusApiVersion  String                2017-04-01
 
 ```
 

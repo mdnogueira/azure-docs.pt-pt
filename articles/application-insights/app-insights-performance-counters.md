@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/11/2016
 ms.author: mbullwin
-ms.openlocfilehash: 26837a72dd4539cd5b32e5b49a127a714f3a1426
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 40821d32c5bdfe51bb3cb205660d6f25b2c3fadc
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Contadores de desempenho do sistema no Application Insights
 O Windows fornece uma ampla variedade de [contadores de desempenho](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters) , tais como a ocupação da CPU, memória, disco e utilização de rede. Também pode definir os seus próprios. [Application Insights](app-insights-overview.md) pode mostrar estes contadores de desempenho se a aplicação está a ser executada sob o IIS num anfitrião no local ou máquina virtual para os quais têm acesso administrativo. Os gráficos indicam os recursos disponíveis para a aplicação em direto e podem ajudar a identificar desequilibrada carga entre instâncias de servidor.
@@ -83,7 +83,6 @@ Para recolher contadores de desempenho do sistema e enviá-los para o Applicatio
       @"\.NET CLR Memory([replace-with-application-process-name])\# GC Handles", "GC Handles")));
     perfCollectorModule.Initialize(TelemetryConfiguration.Active);
 ```
-
 Ou pode fazê-lo a mesma coisa com métricas personalizadas que criou:
 
 ``` C#
@@ -115,6 +114,9 @@ Como outra telemetria, **performanceCounters** também tem uma coluna `cloud_Rol
 
 * *Taxa de exceção* é um contador de desempenho do sistema. O CLR contagens de todas as exceções de processadas e não processadas que estão a ser emitidas e divide o total num intervalo de amostragem pelo comprimento do intervalo. O Application Insights SDK recolhe este resultado e envia-a para o portal.
 * *Exceções* é uma contagem dos relatórios TrackException recebida pelo portal no intervalo de amostragem do gráfico. Inclui apenas as exceções processadas nos quais tem escritos TrackException chama no seu código e não inclui todos os [não processada exceções](app-insights-asp-net-exceptions.md). 
+
+## <a name="performance-counters-in-aspnet-core-applications"></a>Contadores de desempenho em aplicações do Asp.Net Core
+Contadores de desempenho apenas são suportados se a aplicação está direcionado para o .NET Framework completa. Não há nenhuma capacidade de recolher contadores de desempenho para o .net Core aplicações.
 
 ## <a name="alerts"></a>Alertas
 Como outras métricas, pode [definir um alerta](app-insights-alerts.md) para avisar o se um contador de desempenho fica fora de um limite que especificar. Abra o painel de alertas e clique em Adicionar alerta.

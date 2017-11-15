@@ -143,6 +143,8 @@
           href: web-sites-enable-diagnostic-log.md
     - name: Gerir aplicação
       items:
+        - name: Gerir o plano de alojamento
+          href: app-service-plan-manage.md
         - name: Efetuar cópia de segurança de uma aplicação
           href: web-sites-backup.md
         - name: Restaurar uma cópia de segurança

@@ -14,11 +14,11 @@ ms.topic: article
 ms.devlang: na
 ms.date: 04/04/2017
 ms.author: parakhj
-ms.openlocfilehash: 6c073d70debfdc3560405955d65fa9ccaa7d8b1f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2b91c75ec73a8b47a67241e3b69c2ed68d5f9b2a
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="azure-active-directory-b2c-sign-in-by-using-azure-ad-accounts"></a>O Azure Active Directory B2C: Início de sessão através da utilização de contas do Azure AD
 
@@ -52,6 +52,9 @@ Para ativar o início de sessão para utilizadores específicos de um organizaç
 1. Introduza um nome para a sua aplicação (por exemplo, `Azure AD B2C App`).
 1. Selecione **aplicação Web / API** para o tipo de aplicação.
 1. Para **URL de início de sessão**, introduza o seguinte URL onde `yourtenant` é substituído pelo nome do seu inquilino do Azure AD B2C (`fabrikamb2c.onmicrosoft.com`):
+
+    >[!NOTE]
+    >O valor para "yourtenant" deve ser todo em minúsculas no **URL de início de sessão**.
 
     ```
     https://login.microsoftonline.com/te/yourtenant.onmicrosoft.com/oauth2/authresp

@@ -4,7 +4,7 @@ description: Como explorar os dados armazenados numa VM do SQL Server no Azure.
 services: machine-learning
 documentationcenter: 
 author: bradsev
-manager: jhubbard
+manager: cgronlun
 editor: cgronlun
 ms.assetid: ccbb3085-af9e-4ec2-9df2-15dcab261d05
 ms.service: machine-learning
@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/24/2017
+ms.date: 11/09/2017
 ms.author: bradsev
-ms.openlocfilehash: 4777a6acbf3b45ab207d64feb7cba52f61f38eeb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d5079fc9d9a0ccd89664407fcdba9a7958e1407d
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="explore-data-in-sql-server-virtual-machine-on-azure"></a>Explorar dados numa máquina Virtual do SQL Server no Azure
 Este documento aborda como explorar os dados armazenados numa VM do SQL Server no Azure. Isto pode ser feito por dados wrangling utilizando o SQL Server ou ao utilizar uma linguagem de programação, como o Python.
@@ -69,6 +69,6 @@ O [biblioteca Pandas](http://pandas.pydata.org/) Python fornece um conjunto avan
 
 Agora, pode trabalhar com o DataFrame Pandas como descritas na íntegra no tópico [dados de Blobs do Azure de processo no seu ambiente de ciência de dados](data-blob.md).
 
-## <a name="cortana-analytics-process-in-action-example"></a>Processo de análise de Cortana no exemplo de ação
+## <a name="the-team-data-science-process-in-action-example"></a>O processo de ciência de dados de equipa no exemplo de ação
 Para obter um exemplo de instruções ponto a ponto do processo de análise de Cortana utilizando um conjunto de dados público, consulte [o processo de ciência de dados de equipa em ação: utilizar o SQL Server](sql-walkthrough.md).
 

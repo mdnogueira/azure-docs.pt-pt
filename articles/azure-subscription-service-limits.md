@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: byvinyal
-ms.openlocfilehash: ee021f5679d3c5a37cd8a795732721b37aaf66ea
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: ff5da6a07512c323cd281832d1ca8a4c0ec5a816
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Subscrição do Azure e limites de serviço, quotas e restrições
 Este documento apresenta uma lista algumas dos limites mais comuns de Microsoft Azure, que também por vezes, são chamados quotas. Este documento atualmente não abrange todos os serviços do Azure. Ao longo do tempo, a lista será expandida e atualizada para cobrir mais da plataforma.
@@ -38,7 +38,7 @@ Agora é possível combinar vários recursos do Azure num único grupo de recurs
 Os limites abaixo, uma nova tabela foi adicionada para refletir as diferenças nos limites ao utilizar o Azure Resource Manager. Por exemplo, não há um **limites de subscrição** tabela e um **limites de subscrição - Azure Resource Manager** tabela. Quando um limite aplica-se a ambos os cenários, só é apresentada na primeira tabela. A menos que indicado em contrário, os limites são globais em todas as regiões.
 
 > [!NOTE]
-> É importante realçar que as quotas para os recursos em grupos de recursos do Azure estão por regiões acessível através da sua subscrição e não estão por subscrição, como as quotas de gestão de serviço. Vamos utilizar quotas de núcleos como exemplo. Se precisar de pedir um aumento de quota com suporte para núcleos, terá de decidir quantos núcleos que pretende utilizar em que regiões e, em seguida, efetue um pedido específico para quotas de núcleo do grupo de recursos do Azure para as quantidades e regiões que pretende. Por conseguinte, se tiver de utilizar 30 núcleos na Europa Ocidental para executar a aplicação não existe; especificamente o utilizador deve pedir 30 núcleos na Europa Ocidental. Mas não terá uma quota de núcleos aumentam a qualquer outra região – apenas Europa Ocidental terão a quota de núcleos de 30.
+> É importante realçar que as quotas para os recursos em grupos de recursos do Azure estão por regiões acessível através da sua subscrição e não estão por subscrição, como as quotas de gestão de serviço. Vamos utilizar vCPU quotas como exemplo. Se precisar de pedir um aumento de quota com suporte para vCPUs, terá de decidir quantos vCPUs que pretende utilizar em que regiões e, em seguida, efetue um pedido específico para quotas de vCPU do grupo de recursos do Azure para as quantidades e regiões que pretende. Por conseguinte, se precisar de utilizar 30 vCPUs na Europa Ocidental para executar a aplicação não existe, deve pedir especificamente 30 vCPUs na Europa Ocidental. Mas não terá uma quota de vCPU aumentam a qualquer outra região – apenas Europa Ocidental terão a quota de 30 vCPU.
 > <!-- -->
 > Como resultado, pode útil considerar a decidir o que as quotas de grupo de recursos do Azure tem de ser para a carga de trabalho em qualquer região de um e pedir que quantidade em cada região na qual estiver a considerar implementação. Consulte [resolução de problemas de implementação](resource-manager-common-deployment-errors.md) para obter mais ajuda a detetar as quotas atuais para regiões específicas.
 >

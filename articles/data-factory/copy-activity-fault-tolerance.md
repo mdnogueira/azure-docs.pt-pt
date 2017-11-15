@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2017
+ms.date: 11/10/2017
 ms.author: jingwang
-ms.openlocfilehash: 5b2658cecba80ef871cc38b930b0e52bc3952530
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 990bffa728977efead7b2b20847ff2adaa63a7f8
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/10/2017
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Tolerância a falhas de atividade de cópia no Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -27,7 +27,7 @@ ms.lasthandoff: 10/18/2017
 A atividade de cópia no Azure Data Factory oferece duas formas de lidar com linhas incompatíveis ao copiar dados entre os arquivos de dados de origem e dependente:
 
 - Pode abortar e efetuar a cópia atividade quando os dados incompatíveis encontrado (comportamento predefinido).
-- Pode continuar copiar todos os dados ao adicionar a tolerância a falhas e a ignorar as linhas de dados incompatíveis. Além disso, pode iniciar as linhas incompatíveis no Blob storage do Azure. Em seguida, pode examinar o registo para obter a causa da falha, corrija os dados na origem de dados e repita a atividade de cópia.
+- Pode continuar copiar todos os dados ao adicionar a tolerância a falhas e a ignorar as linhas de dados incompatíveis. Além disso, pode iniciar as linhas incompatíveis no Blob storage do Azure ou do Azure Data Lake Store. Em seguida, pode examinar o registo para obter a causa da falha, corrija os dados na origem de dados e repita a atividade de cópia.
 
 > [!NOTE]
 > Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço do Data Factory, o que é geralmente disponível (DG), consulte [copiar tolerância a falhas de atividade V1](v1/data-factory-copy-activity-fault-tolerance.md).
@@ -50,23 +50,24 @@ O exemplo seguinte fornece uma definição de JSON para configurar a ignorar as 
     },
     "sink": {
         "type": "SqlSink",
-    },         
-    "enableSkipIncompatibleRow": true,           
+    },
+    "enableSkipIncompatibleRow": true,
     "redirectIncompatibleRowSettings": {
          "linkedServiceName": {
-              "referenceName": "AzureBlobLinkedService",
+              "referenceName": "<Azure Storage or Data Lake Store linked service>",
               "type": "LinkedServiceReference"
             },
             "path": "redirectcontainer/erroroutput"
      }
 }
 ```
+
 Propriedade | Descrição | Valores permitidos | Necessário
 -------- | ----------- | -------------- | -------- 
 enableSkipIncompatibleRow | Especifica se pretende ignorar linhas incompatíveis durante a cópia ou não. | Verdadeiro<br/>FALSE (predefinição) | Não
 redirectIncompatibleRowSettings | Um grupo de propriedades que podem ser especificados quando pretender registar as linhas incompatíveis. | &nbsp; | Não
-linkedServiceName | O serviço ligado do Storage do Azure para armazenar o registo que contém as linhas ignoradas. | O nome de um AzureStorage ou AzureStorageSas ligado serviço, que se refere à instância de armazenamento que pretende utilizar para armazenar o ficheiro de registo. | Não
-Caminho | O caminho do ficheiro de registo que contém as linhas ignoradas. | Especifique o caminho de armazenamento de BLOBs que pretende utilizar para registar os dados incompatíveis. Se não fornecer um caminho, o serviço cria um contentor para si. | Não
+linkedServiceName | O serviço ligado do [Storage do Azure](connector-azure-blob-storage.md#linked-service-properties) ou [Azure Data Lake Store](connector-azure-data-lake-store.md#linked-service-properties) para armazenar o registo que contém as linhas ignoradas. | O nome de um `AzureStorage` ou `AzureDataLakeStore` tipo de serviço ligado que referencia a instância que pretende utilizar para armazenar o ficheiro de registo. | Não
+Caminho | O caminho do ficheiro de registo que contém as linhas ignoradas. | Especifique o caminho que pretende utilizar para registar os dados incompatíveis. Se não fornecer um caminho, o serviço cria um contentor para si. | Não
 
 ## <a name="monitor-skipped-rows"></a>Monitorizar linhas ignoradas
 Após a conclusão da execução da atividade de cópia, pode ver o número de linhas ignorados na saída da atividade de cópia:
