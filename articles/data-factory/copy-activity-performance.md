@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/08/2017
+ms.date: 11/13/2017
 ms.author: jingwang
-ms.openlocfilehash: b0351e4c4dcf19f9e4b6ec11c59c4dd00f0013a2
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 841e053418dedb6b41262d1277ab4bdc9d4800c6
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Copie o desempenho de atividade e o guia de otimização
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -88,7 +88,7 @@ A **unidade de movimento de dados de nuvem (DMU)** é uma medida que representa 
 
 | Cenário de cópia | DMUs predefinido determinados pelo serviço |
 |:--- |:--- |
-| Copiar dados entre os arquivos de ficheiros | Entre 4 e 16 consoante o número e tamanho dos ficheiros. |
+| Copiar dados entre os arquivos de ficheiros | Entre 4 e 32 consoante o número e tamanho dos ficheiros. |
 | Todos os outros cenários de cópia | 4 |
 
 Para substituir esta predefinição, especifique um valor para o **cloudDataMovementUnits** propriedade da seguinte forma. O **valores permitidos** para o **cloudDataMovementUnits** propriedade são 2, 4, 8, 16, 32. O **número real de nuvem DMUs** que a operação de cópia utiliza em tempo de execução é igual ou inferior ao valor configurado, dependendo do seu padrão de dados. Para obter informações sobre o nível de ganhos de desempenho poderá obter quando configurar mais unidades para uma origem de cópia específico e o sink, consulte o [referência de desempenho](#performance-reference).
@@ -96,7 +96,7 @@ Para substituir esta predefinição, especifique um valor para o **cloudDataMove
 Pode ver as unidades de movimento de dados de nuvem, na verdade, utilizado para cada cópia executar a atividade de cópia ao monitorizar uma execução da atividade de saída. Saiba os detalhes da [copiar a monitorização da atividade](copy-activity-overview.md#monitoring).
 
 > [!NOTE]
-> Se precisar de mais nuvem DMUs para um maior débito, contacte [suporte do Azure](https://azure.microsoft.com/support/). Definição de 8 e superior funciona atualmente apenas quando é **copiar vários ficheiros de Blob storage/Data Lake Store/Amazon S3/nuvem FTP/nuvem SFTP para quaisquer outros arquivos de dados de nuvem.**.
+> Se precisar de mais nuvem DMUs para um maior débito, contacte [suporte do Azure](https://azure.microsoft.com/support/). Definição de 8 e superior funciona atualmente apenas quando é **copiar vários ficheiros de Blob storage/Data Lake Store/Amazon S3/nuvem FTP/nuvem SFTP para quaisquer outros arquivos de dados de nuvem**.
 >
 
 **Exemplo:**
@@ -133,7 +133,7 @@ Para cada cópia de execução da atividade, o Data Factory determina o número 
 
 | Cenário de cópia | Contagem de cópia paralelas predefinido determinada pelo serviço |
 | --- | --- |
-| Copiar dados entre os arquivos de ficheiros |Entre 1 e 32. Depende do tamanho dos ficheiros e o número de nuvem movimento unidades do data (DMUs) utilizados para copiar dados entre dois arquivos de dados de nuvem ou a configuração da máquina de tempo de execução de integração de Self-hosted física. |
+| Copiar dados entre os arquivos de ficheiros |Entre 1 e 64. Depende do tamanho dos ficheiros e o número de nuvem movimento unidades do data (DMUs) utilizados para copiar dados entre dois arquivos de dados de nuvem ou a configuração da máquina de tempo de execução de integração de Self-hosted física. |
 | Copiar dados a partir de qualquer arquivo de dados de origem para o Table storage do Azure |4 |
 | Todos os outros cenários de cópia |1 |
 
