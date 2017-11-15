@@ -20,10 +20,10 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/14/2017
 ---
-# Suporte de protocolos adicionais para o IoT Hub
+# <a name="support-additional-protocols-for-iot-hub"></a>Suporte de protocolos adicionais para o IoT Hub
 IoT Hub do Azure suporta nativamente comunicação através de protocolos MQTT, AMQP e HTTPS. Em alguns casos, dispositivos ou gateways de campo poderão não conseguir utilizar um destes protocolos padrão e exigir adaptation de protocolo. Nestes casos, pode utilizar um gateway personalizado. Um gateway personalizado permite adaptation de protocolo para pontos finais de IoT Hub pelo protocolo de bridge o tráfego de e para o IoT Hub. Pode utilizar o [gateway de protocolo do Azure IoT](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md) como um gateway personalizado para ativar adaptation de protocolo para o IoT Hub.
 
-## Gateway de protocolo do IoT do Azure
+## <a name="azure-iot-protocol-gateway"></a>Gateway de protocolo do IoT do Azure
 O gateway de protocolo do IoT do Azure é uma estrutura para adaptation de protocolo que foi concebido para alta escala, comunicação do dispositivo bidirecional com o IoT Hub. O gateway de protocolo é um componente de pass-through que aceita ligações de dispositivos através de um protocolo específico. O tráfego para o IoT Hub-bridges através de AMQP 1.0. 
 
 Pode implementar o gateway de protocolo no Azure de uma forma altamente dimensionável, utilizando o Azure Service Fabric, as funções de trabalho do Cloud Services do Azure ou máquinas virtuais do Windows. Além disso, o gateway de protocolo pode ser implementado em ambientes no local, tais como gateways de campo.
@@ -34,7 +34,7 @@ O adaptador MQTT também demonstra o modelo de programação para a criação de
 
 Flexibilidade, o gateway de protocolo do Azure IoT e a implementação de MQTT são fornecidos num projeto software open source. Pode utilizar o projeto open source para adicionar suporte para vários protocolos e as versões de protocolo, ou personalizar a implementação para o seu cenário. 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Para saber mais sobre o gateway de protocolo do IoT do Azure e como utilizar e implementá-la como parte da solução IoT, consulte:
 
 * [Repositório de gateway do IoT protocolo do Azure no GitHub](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)

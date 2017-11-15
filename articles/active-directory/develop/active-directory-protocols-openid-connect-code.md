@@ -21,7 +21,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Autorizar o acesso a aplicações web com OpenID Connect e o Azure Active Directory
+# <a name="authorize-access-to-web-applications-using-openid-connect-and-azure-active-directory"></a>Autorizar o acesso a aplicações web com OpenID Connect e o Azure Active Directory
 [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) é uma camada de identidade simples desenvolvida com o protocolo OAuth 2.0. OAuth 2.0 define os mecanismos de obter e utilizar **tokens de acesso** para aceder a recursos protegidos, mas não definir métodos padrão para fornecer informações de identidade. OpenID Connect implementa a autenticação como uma extensão para o processo de autorização do OAuth 2.0. Fornece informações sobre o utilizador final sob a forma de um `id_token` que verifica a identidade do utilizador e fornece informações de perfil básicas sobre o utilizador.
 
 OpenID Connect é a nossa recomendação se está a criar uma aplicação web que está alojada num servidor e acessível através de um browser.
@@ -29,12 +29,12 @@ OpenID Connect é a nossa recomendação se está a criar uma aplicação web qu
 
 [!INCLUDE [active-directory-protocols-getting-started](../../../includes/active-directory-protocols-getting-started.md)] 
 
-## Fluxo de autenticação com OpenID Connect
+## <a name="authentication-flow-using-openid-connect"></a>Fluxo de autenticação com OpenID Connect
 O fluxo de início de sessão mais básico contém os seguintes passos - cada um deles é descrita detalhadamente abaixo.
 
 ![OpenId Connect fluxo de autenticação](media/active-directory-protocols-openid-connect-code/active-directory-oauth-code-flow-web-app.png)
 
-## Documento de metadados OpenID Connect
+## <a name="openid-connect-metadata-document"></a>Documento de metadados OpenID Connect
 
 OpenID Connect descreve um documento de metadados que contém a maioria das informações necessárias para uma aplicação efetuar o início de sessão. Isto inclui informações como os URL a utilizar e a localização de chaves públicas de assinatura do serviço. O documento de metadados OpenID Connect pode ser encontrado em:
 
@@ -58,7 +58,7 @@ Os metadados são um documento de JavaScript Object Notation (JSON) simples. Con
 }
 ```
 
-## Enviar o pedido de início de sessão
+## <a name="send-the-sign-in-request"></a>Enviar o pedido de início de sessão
 Quando a aplicação web tem de autenticar o utilizador, tem a direcionar o utilizador a `/authorize` ponto final. Este pedido é semelhante para a primeira fase do [fluxo de código do OAuth 2.0 autorização](active-directory-protocols-oauth-code.md), com algumas distinctions importantes:
 
 * O pedido tem de incluir o âmbito `openid` no `scope` parâmetro.
@@ -95,7 +95,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Neste momento, é pedido ao utilizador para introduzir as suas credenciais e concluir a autenticação.
 
-### Resposta de amostra
+### <a name="sample-response"></a>Resposta de amostra
 Uma resposta de exemplo, depois do utilizador foi autenticado, pode ter o seguinte aspeto:
 
 ```
@@ -111,7 +111,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 | id_token |O `id_token` que a aplicação pedida. Pode utilizar o `id_token` para verificar a identidade do utilizador e iniciar uma sessão com o utilizador. |
 | state |Um valor incluído no pedido de que também é devolvido na resposta token. Um valor exclusivo gerado aleatoriamente é normalmente utilizado para [impedir ataques de falsificação de pedidos entre sites](http://tools.ietf.org/html/rfc6749#section-10.12).  O estado também é utilizado para codificar informações sobre o estado do utilizador na aplicação antes de ocorrer o pedido de autenticação, tais como a página ou a vista estivessem nas suas. |
 
-### Resposta de erro
+### <a name="error-response"></a>Resposta de erro
 As respostas de erro também podem ser enviadas para o `redirect_uri` para a aplicação pode processar corretamente:
 
 ```
@@ -127,7 +127,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 | erro |Uma cadeia de código de erro que pode ser utilizada para classificar os tipos de erros ocorridos e pode ser utilizada para reagir a erros. |
 | error_description |Uma mensagem de erro específicas que pode ajudar um programador identificar a causa de raiz de um erro de autenticação. |
 
-#### Códigos de erro para erros de ponto final de autorização
+#### <a name="error-codes-for-authorization-endpoint-errors"></a>Códigos de erro para erros de ponto final de autorização
 A tabela seguinte descreve os vários códigos de erro que podem ser devolvidos no `error` parâmetro da resposta de erro.
 
 | Código de erro | Descrição | Ação de cliente |
@@ -140,7 +140,7 @@ A tabela seguinte descreve os vários códigos de erro que podem ser devolvidos 
 | temporarily_unavailable |O servidor estiver temporariamente demasiado ocupado para processar o pedido. |Repita o pedido. A aplicação cliente pode explicar ao utilizador que a respetiva resposta está atrasada devido a uma condição temporária. |
 | invalid_resource |O recurso de destino é inválido porque não existe, do Azure AD não é possível encontrá-lo ou não está corretamente configurado. |Isto indica que o recurso, se existir, não foi configurado no inquilino. A aplicação pode pedir ao utilizador com instruções para instalar a aplicação e adicioná-lo para o Azure AD. |
 
-## Validar o id_token
+## <a name="validate-the-idtoken"></a>Validar o id_token
 Receber apenas um `id_token` não é suficiente para autenticar o utilizador; tem de validar a assinatura e certifique-se as afirmações no `id_token` por requisitos da sua aplicação. O ponto final do Azure AD utiliza JSON Web Tokens (JWTs) e criptografia de chave pública para assinar os tokens e certifique-se de que são válidas.
 
 Pode optar por validar o `id_token` cliente código, mas uma prática comum consiste em enviar o `id_token` para um servidor de back-end e efetuar a validação não existe. Depois de ter confirmado a assinatura do `id_token`, existem alguns afirmações são necessárias para verificar.
@@ -153,7 +153,7 @@ Também pode pretender validar afirmações adicionais dependendo do seu cenári
 
 Depois de validar o `id_token`, pode iniciar uma sessão com o utilizador e utilizar as afirmações no `id_token` para obter informações sobre o utilizador na sua aplicação. Estas informações podem ser utilizadas para apresentar, registos, autorizações, etc. Para obter mais informações sobre os tipos de tokens e afirmações, leia o artigo [suportado Token e tipos de afirmação](active-directory-token-and-claims.md).
 
-## Enviar um pedido de início de sessão
+## <a name="send-a-sign-out-request"></a>Enviar um pedido de início de sessão
 Quando pretender assinar o utilizador fora da aplicação, não é suficiente limpar os cookies da sua aplicação ou fim; caso contrário, a sessão com o utilizador.  Também tem de redirecionar o utilizador a `end_session_endpoint` para início de sessão.  Se conseguir fazê-lo, o utilizador será capaz de voltar à sua aplicação, sem introduzir as respetivas credenciais novamente, porque terá uma único início de sessão sessão válido com o ponto final do Azure AD.
 
 Pode simplesmente redirecionar o utilizador a `end_session_endpoint` listados no documento de metadados de OpenID Connect:
@@ -168,7 +168,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 | --- | --- | --- |
 | post_logout_redirect_uri |recomendado |O URL que o utilizador deve ser redirecionado para depois de terminar com êxito.  Se não incluída, o utilizador é apresentado uma mensagem genérica. |
 
-## Fim de sessão único
+## <a name="single-sign-out"></a>Fim de sessão único
 Quando lhe redireciona o utilizador para o `end_session_endpoint`, do Azure AD limpa a sessão do utilizador do browser. No entanto, o utilizador ainda pode ser iniciado outras aplicações que utilizam o Azure AD para autenticação. Para ativar as aplicações para o utilizador terminar sessão em simultâneo, o Azure AD envia um pedido de HTTP GET para o registado `LogoutUrl` de todas as aplicações que o utilizador tem atualmente sessão iniciado para. As aplicações devem responder para este pedido por qualquer sessão que identifica o utilizador de limpeza e devolver um `200` resposta.  Se pretender suportar terminar o início de sessão único na sua aplicação, tem de implementar como uma `LogoutUrl` no código da aplicação.  Pode definir o `LogoutUrl` do portal do Azure:
 
 1. Navegue para o [Portal do Azure](https://portal.azure.com).
@@ -176,10 +176,10 @@ Quando lhe redireciona o utilizador para o `end_session_endpoint`, do Azure AD l
 3. No painel de navegação esquerda, escolha **do Azure Active Directory**, em seguida, escolha **registos de aplicação** e selecione a aplicação.
 4. Clique em **propriedades** e localize o **URL de fim de sessão** caixa de texto. 
 
-## Aquisição do token
+## <a name="token-acquisition"></a>Aquisição do token
 Muitas aplicações web necessitam não só a inicie a sessão do utilizador no, mas também aceder a um serviço web em nome de utilizador com OAuth. Este cenário combina OpenID Connect para a autenticação de utilizador ao adquirir em simultâneo um `authorization_code` que podem ser utilizados para obter `access_tokens` utilizando o fluxo de código de autorização do OAuth.
 
-## Obter os Tokens de acesso
+## <a name="get-access-tokens"></a>Obter os Tokens de acesso
 Para adquirir tokens de acesso, terá de modificar o pedido de início de sessão do acima:
 
 ```
@@ -198,7 +198,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e        // Your registered Applica
 
 Incluindo âmbitos de permissões no pedido e utilizando `response_type=code+id_token`, a `authorize` endpoint assegura que o utilizador consentiu as permissões indicadas a `scope` parâmetro de consulta e devolver um código de autorização para exchange para a sua aplicação um token de acesso.
 
-### Resposta com êxito
+### <a name="successful-response"></a>Resposta com êxito
 Uma resposta com êxito utilizando `response_mode=form_post` parece ser:
 
 ```
@@ -215,7 +215,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAA
 | código |Authorization_code que a aplicação pedida. A aplicação pode utilizar o código de autorização para pedir um token de acesso para o recurso de destino. Authorization_codes são curto lived e normalmente expiram após cerca de 10 minutos. |
 | state |Se um parâmetro de estado está incluído no pedido, o mesmo valor deve aparecer na resposta. A aplicação deverá certificar-se de que os valores de estado no pedido e resposta são idênticos. |
 
-### Resposta de erro
+### <a name="error-response"></a>Resposta de erro
 As respostas de erro também podem ser enviadas para o `redirect_uri` para a aplicação pode processar corretamente:
 
 ```

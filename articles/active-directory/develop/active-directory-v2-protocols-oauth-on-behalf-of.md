@@ -21,7 +21,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Azure Active Directory v 2.0 e fluxo de OAuth 2.0 On-Behalf-Of
+# <a name="azure-active-directory-v20-and-oauth-20-on-behalf-of-flow"></a>Azure Active Directory v 2.0 e fluxo de OAuth 2.0 On-Behalf-Of
 On-Behalf-Of de 2.0 OAuth fluxo funciona o caso de utilização onde uma aplicação invoca uma serviço/API web, que por sua vez tem de chamar outro serviço/API web. A ideia é para propagar a identidade do delegado de utilizador e as permissões através da cadeia de pedidos. Para o serviço de camada média fazer pedidos autenticados para o serviço a jusante, tem de proteger um token de acesso do Azure Active Directory (Azure AD), em nome do utilizador.
 
 > [!NOTE]
@@ -29,7 +29,7 @@ On-Behalf-Of de 2.0 OAuth fluxo funciona o caso de utilização onde uma aplica�
 >
 >
 
-## Diagrama de protocolo
+## <a name="protocol-diagram"></a>Diagrama de protocolo
 Partem do princípio de que o utilizador ser autenticado utilizando uma aplicação a [fluxo de concessão do código de autorização do OAuth 2.0](active-directory-v2-protocols-oauth-code.md). Neste momento, a aplicação tem um token de acesso (token A) com afirmações do utilizador e do consentimento para aceder à camada média web API (API A). Agora, API A necessita fazer um pedido autenticado ao web a jusante API (API B).
 
 Os passos que se seguem constituem o fluxo em-nome-de e são explicados com a ajuda do diagrama a seguir.
@@ -47,7 +47,7 @@ Os passos que se seguem constituem o fluxo em-nome-de e são explicados com a aj
 > Neste cenário, o serviço de camada média tem sem interação do utilizador para obter consentimento do utilizador para aceder à API da jusante. Por conseguinte, a opção para conceder acesso à API a jusante é apresentada compromisso como parte de consentimento passo durante a autenticação.
 >
 
-## Serviço para o pedido de token de acesso de serviço
+## <a name="service-to-service-access-token-request"></a>Serviço para o pedido de token de acesso de serviço
 Para pedir um token de acesso, se um HTTP POST para o inquilino específico ponto final de v 2.0 do Azure AD com os seguintes parâmetros.
 
 ```
@@ -56,7 +56,7 @@ https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
 
 Existem dois cenários, dependendo se a aplicação cliente escolhe estar protegido por um segredo partilhado ou um certificado.
 
-### Primeiro maiúsculas e minúsculas: pedido de token de acesso com um segredo partilhado
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Primeiro maiúsculas e minúsculas: pedido de token de acesso com um segredo partilhado
 Quando utilizar um segredo partilhado, um pedido de token de acesso de serviço a serviço contém os seguintes parâmetros:
 
 | Parâmetro |  | Descrição |
@@ -68,7 +68,7 @@ Quando utilizar um segredo partilhado, um pedido de token de acesso de serviço 
 | Âmbito |Necessário | Lista de âmbitos para o pedido de token valores separados por um espaço. Para obter mais informações, consulte [âmbitos](active-directory-v2-scopes.md).|
 | requested_token_use |Necessário | Especifica a forma como o pedido deve ser processado. No fluxo em-nome-de, o valor tem de ser **on_behalf_of**. |
 
-#### Exemplo
+#### <a name="example"></a>Exemplo
 Um token de acesso com os pedidos de HTTP POST seguintes `user.read` âmbito para a API web de https://graph.microsoft.com.
 
 ```
@@ -86,7 +86,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &requested_token_use=on_behalf_of
 ```
 
-### Segunda caso: pedido de token de acesso com um certificado
+### <a name="second-case-access-token-request-with-a-certificate"></a>Segunda caso: pedido de token de acesso com um certificado
 Um pedido de token de acesso de serviços com um certificado contém os seguintes parâmetros:
 
 | Parâmetro |  | Descrição |
@@ -101,7 +101,7 @@ Um pedido de token de acesso de serviços com um certificado contém os seguinte
 
 Tenha em atenção que os parâmetros são quase os mesmos que no caso do pedido por segredo partilhado com a exceção que o parâmetro client_secret é substituído por dois parâmetros: um client_assertion_type e client_assertion.
 
-#### Exemplo
+#### <a name="example"></a>Exemplo
 Um token de acesso com os pedidos de HTTP POST seguintes `user.read` âmbito https://graph.microsoft.com API web com um certificado.
 
 ```
@@ -120,7 +120,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 &scope=https://graph.microsoft.com/user.read
 ```
 
-## Serviço de resposta de token de acesso de serviço
+## <a name="service-to-service-access-token-response"></a>Serviço de resposta de token de acesso de serviço
 Uma resposta de êxito for uma resposta de JSON OAuth 2.0 com os seguintes parâmetros.
 
 | Parâmetro | Descrição |
@@ -131,7 +131,7 @@ Uma resposta de êxito for uma resposta de JSON OAuth 2.0 com os seguintes parâ
 | access_token |O token de pedido de acesso. O serviço de chamada pode utilizar este token para se autenticar o serviço de receção. |
 | refresh_token |O token de atualização para o token de acesso solicitado. O serviço de chamada pode utilizar este token para pedir outro token de acesso após o atual token de acesso expira. |
 
-### Exemplo de resposta de êxito
+### <a name="success-response-example"></a>Exemplo de resposta de êxito
 O exemplo seguinte mostra a resposta de êxito a um pedido de um token de acesso para a API web de https://graph.microsoft.com.
 
 ```
@@ -145,7 +145,7 @@ O exemplo seguinte mostra a resposta de êxito a um pedido de um token de acesso
 }
 ```
 
-### Exemplo de resposta de erro
+### <a name="error-response-example"></a>Exemplo de resposta de erro
 Uma resposta de erro é devolvida pelo ponto final de tokens do AD do Azure ao tentar adquirir um token de acesso para a API a jusante, se a API a jusante tem uma política de acesso condicional, tais como a autenticação multifator definido nela. O serviço de camada média deve superfície este erro para a aplicação de cliente para que a aplicação de cliente pode fornecer a interação do utilizador para satisfazer a política de acesso condicional.
 
 ```
@@ -160,17 +160,17 @@ Uma resposta de erro é devolvida pelo ponto final de tokens do AD do Azure ao t
 }
 ```
 
-## Utilizar o token de acesso para aceder o recursos protegidos
+## <a name="use-the-access-token-to-access-the-secured-resource"></a>Utilizar o token de acesso para aceder o recursos protegidos
 Agora que o serviço de camada média, pode utilizar o token adquirido acima para fazer pedidos autenticados para o web a jusante API, definindo o token no `Authorization` cabeçalho.
 
-### Exemplo
+### <a name="example"></a>Exemplo
 ```
 GET /v1.0/me HTTP/1.1
 Host: graph.microsoft.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVGFlN0NkV1c3UWZkSzdNN0RyNXlvUUdLNmFEc19vdDF3cEQyZjNqRkxiNlVrcm9PcXA2cXBJclAxZVV0QktzMHEza29HN3RzXzJpSkYtQjY1UV8zVGgzSnktUHZsMjkxaFNBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiejAzOXpkc0Z1aXpwQmZCVksxVG4yNVFIWU8wIiwia2lkIjoiejAzOXpkc0Z1aXpwQmZCVksxVG4yNVFIWU8wIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNDkzOTMwMDE2LCJuYmYiOjE0OTM5MzAwMTYsImV4cCI6MTQ5MzkzMzg3NSwiYWNyIjoiMCIsImFpbyI6IkFTUUEyLzhEQUFBQUlzQjN5ZUljNkZ1aEhkd1YxckoxS1dlbzJPckZOUUQwN2FENTVjUVRtems9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJUb2RvRG90bmV0T2JvIiwiYXBwaWQiOiIyODQ2ZjcxYi1hN2E0LTQ5ODctYmFiMy03NjAwMzViMmYzODkiLCJhcHBpZGFjciI6IjEiLCJmYW1pbHlfbmFtZSI6IkNhbnVtYWxsYSIsImdpdmVuX25hbWUiOiJOYXZ5YSIsImlwYWRkciI6IjE2Ny4yMjAuMC4xOTkiLCJuYW1lIjoiTmF2eWEgQ2FudW1hbGxhIiwib2lkIjoiZDVlOTc5YzctM2QyZC00MmFmLThmMzAtNzI3ZGQ0YzJkMzgzIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTIxMjc1MjExODQtMTYwNDAxMjkyMC0xODg3OTI3NTI3LTI2MTE4NDg0IiwicGxhdGYiOiIxNCIsInB1aWQiOiIxMDAzM0ZGRkEwNkQxN0M5Iiwic2NwIjoiVXNlci5SZWFkIiwic3ViIjoibWtMMHBiLXlpMXQ1ckRGd2JTZ1JvTWxrZE52b3UzSjNWNm84UFE3alVCRSIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInVuaXF1ZV9uYW1lIjoibmFjYW51bWFAbWljcm9zb2Z0LmNvbSIsInVwbiI6Im5hY2FudW1hQG1pY3Jvc29mdC5jb20iLCJ1dGkiOiJzUVlVekYxdUVVS0NQS0dRTVFVRkFBIiwidmVyIjoiMS4wIn0.Hrn__RGi-HMAzYRyCqX3kBGb6OS7z7y49XPVPpwK_7rJ6nik9E4s6PNY4XkIamJYn7tphpmsHdfM9lQ1gqeeFvFGhweIACsNBWhJ9Nx4dvQnGRkqZ17KnF_wf_QLcyOrOWpUxdSD_oPKcPS-Qr5AFkjw0t7GOKLY-Xw3QLJhzeKmYuuOkmMDJDAl0eNDbH0HiCh3g189a176BfyaR0MgK8wrXI_6MTnFSVfBePqklQeLhcr50YTBfWg3Svgl6MuK_g1hOuaO-XpjUxpdv5dZ0SvI47fAuVDdpCE48igCX5VMj4KUVytDIf6T78aIXMkYHGgW3-xAmuSyYH_Fr0yVAQ
 ```
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 Saiba mais sobre o protocolo OAuth 2.0 e outra forma de efetuar a autenticação de serviço a serviço utilizando credenciais do cliente.
 * [As credenciais de cliente OAuth 2.0 conceder no Azure AD v 2.0](active-directory-v2-protocols-oauth-client-creds.md)
 * [OAuth 2.0 no Azure AD v 2.0](active-directory-v2-protocols-oauth-code.md)

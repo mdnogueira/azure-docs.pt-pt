@@ -21,7 +21,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Azure Active Directory v 2.0 e o protocolo OpenID Connect
+# <a name="azure-active-directory-v20-and-the-openid-connect-protocol"></a>Azure Active Directory v 2.0 e o protocolo OpenID Connect
 OpenID Connect é um protocolo de autenticação incorporado no OAuth 2.0, que pode utilizar a sessão em segurança um utilizador a uma aplicação web. Quando utilizar a implementação do ponto final v 2.0 do OpenID Connect, pode adicionar início de sessão e acesso à API às suas aplicações baseadas na web. Neste artigo, vamos mostrar-lhe como efetuar esta independente de idioma. Iremos descrevem como enviar e receber mensagens HTTP sem utilizar quaisquer bibliotecas de open source de Microsoft.
 
 > [!NOTE]
@@ -31,12 +31,12 @@ OpenID Connect é um protocolo de autenticação incorporado no OAuth 2.0, que p
 
 [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) expande o OAuth 2.0 *autorização* protocolo a utilizar como um *autenticação* protocolo, para que possam executar único início de sessão OAuth a utilizar. OpenID Connect apresenta o conceito de uma *ID token*, que é um token de segurança que permite que o cliente verificar a identidade do utilizador. O token de ID também obtém informações de perfil básicas sobre o utilizador. Porque o OpenID Connect expande o OAuth 2.0, aplicações em segurança podem adquirir *tokens de acesso*, que podem ser utilizadas para aceder a recursos que estão protegidos por um [servidor autorização](active-directory-v2-protocols.md#the-basics). Recomendamos que utilize OpenID Connect, se está a criar um [aplicação web](active-directory-v2-flows.md#web-apps) que está alojada num servidor e acessível através de um browser.
 
-## Diagrama de protocolo: início de sessão
+## <a name="protocol-diagram-sign-in"></a>Diagrama de protocolo: início de sessão
 O fluxo de início de sessão mais básico tem passos apresentados no diagrama seguinte. Iremos descrevem cada passo em pormenor neste artigo.
 
 ![Protocolo OpenID Connect: início de sessão](../../media/active-directory-v2-flows/convergence_scenarios_webapp.png)
 
-## Obter documento de metadados OpenID Connect
+## <a name="fetch-the-openid-connect-metadata-document"></a>Obter documento de metadados OpenID Connect
 OpenID Connect descreve um documento de metadados que contém a maioria das informações necessárias para uma aplicação efetuar o início de sessão. Isto inclui informações como os URL a utilizar e a localização de chaves públicas de assinatura do serviço. Para o ponto final v 2.0, este é o documento de metadados OpenID Connect que deve utilizar:
 
 ```
@@ -71,7 +71,7 @@ Os metadados são um documento de JavaScript Object Notation (JSON) simples. Con
 
 Normalmente, utilizaria este documento de metadados para configurar um SDK; ou biblioteca de OpenID Connect a biblioteca teria de utilizar os metadados para realizar o seu trabalho. No entanto, se não estiver a utilizar uma biblioteca de pré-compilação de OpenID Connect, pode seguir os passos no resto deste artigo para efetuar início de sessão numa aplicação web utilizando o ponto final v 2.0.
 
-## Enviar o pedido de início de sessão
+## <a name="send-the-sign-in-request"></a>Enviar o pedido de início de sessão
 Quando a aplicação web tem de autenticar o utilizador, pode direcionar o utilizador para o `/authorize` ponto final. Este pedido é semelhante para a primeira fase do [fluxo de código de autorização do OAuth 2.0](active-directory-v2-protocols-oauth-code.md), com estes distinctions importantes:
 
 * O pedido tem de incluir o `openid` âmbito no `scope` parâmetro.
@@ -117,7 +117,7 @@ Neste momento, é pedido ao utilizador para introduzir as suas credenciais e con
 
 Depois do utilizador efetua a autenticação e atribui o consentimento, o ponto final v 2.0 devolve uma resposta para a sua aplicação do indicado no URI de redirecionamento, utilizando o método especificado no `response_mode` parâmetro.
 
-### Resposta com êxito
+### <a name="successful-response"></a>Resposta com êxito
 Uma resposta com êxito ao utilizar `response_mode=form_post` se parece com isto:
 
 ```
@@ -133,7 +133,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 | id_token |O token de ID que a aplicação pedida. Pode utilizar o `id_token` parâmetro para verificar a identidade do utilizador e iniciar uma sessão com o utilizador. Para obter mais detalhes sobre os tokens de ID e os respetivos conteúdos, consulte o [ponto final v 2.0 tokens referência](active-directory-v2-tokens.md). |
 | state |Se um `state` parâmetro está incluído no pedido, o mesmo valor deve aparecer na resposta. A aplicação deverá certificar-se de que os valores de estado no pedido e resposta são idênticos. |
 
-### Resposta de erro
+### <a name="error-response"></a>Resposta de erro
 As respostas de erro também poderão ser enviadas para o URI de redirecionamento, para que a aplicação pode processá-los. Uma resposta de erro tem o seguinte aspeto:
 
 ```
@@ -149,7 +149,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 | erro |Uma cadeia de código de erro que pode utilizar para classificar os tipos de erros ocorridos e para reagir a erros. |
 | error_description |Uma mensagem de erro específicas que pode ajudar a identificar a causa de raiz de um erro de autenticação. |
 
-### Códigos de erro para erros de ponto final de autorização
+### <a name="error-codes-for-authorization-endpoint-errors"></a>Códigos de erro para erros de ponto final de autorização
 A tabela seguinte descreve os códigos de erro que podem ser devolvidos no `error` parâmetro da resposta ao erro:
 
 | Código de erro | Descrição | Ação de cliente |
@@ -162,7 +162,7 @@ A tabela seguinte descreve os códigos de erro que podem ser devolvidos no `erro
 | temporarily_unavailable |O servidor estiver temporariamente demasiado ocupado para processar o pedido. |Repita o pedido. A aplicação cliente pode explicar ao utilizador que a respetiva resposta está atrasada devido a uma condição temporária. |
 | invalid_resource |O recurso de destino é inválido porque não existe, do Azure AD não é possível encontrá-lo, ou não está corretamente configurado. |Isto indica que o recurso, se existir, não foi configurado no inquilino. A aplicação pode pedir ao utilizador com as instruções para instalar a aplicação e adicioná-lo para o Azure AD. |
 
-## Validar o token de ID
+## <a name="validate-the-id-token"></a>Validar o token de ID
 Não é suficiente para autenticar o utilizador recebe um token de ID. Também tem de validar a assinatura do token de ID e certifique-se as afirmações no token por requisitos da sua aplicação. Utiliza o ponto final v 2.0 [JSON Web Tokens (JWTs)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) e criptografia de chave pública para assinar os tokens e certifique-se de que são válidas.
 
 Pode optar por validar o token do ID no código de cliente, mas é uma prática comum para enviar o token de ID para um servidor de back-end e efetuar a validação não existe. Depois de ter confirmado a assinatura do token de ID, terá de verificar alguns afirmações. Para obter mais informações, incluindo informações sobre [tokens de validação](active-directory-v2-tokens.md#validating-tokens) e [informações importantes sobre o rollover da chave de assinatura](active-directory-v2-tokens.md#validating-tokens), consulte o [v 2.0 tokens referência](active-directory-v2-tokens.md). Recomendamos que utilize uma biblioteca para analisar e validar os tokens. Não há, pelo menos, um destas bibliotecas disponíveis para a maioria dos idiomas e plataformas.
@@ -178,7 +178,7 @@ Para obter mais informações sobre as afirmações num ID token, consulte o [po
 
 Depois de ter completamente validar o token de ID, pode iniciar uma sessão com o utilizador. Utilize as afirmações no ID token para obter informações sobre o utilizador na sua aplicação. Pode utilizar estas informações para apresentar, registos, autorizações e assim sucessivamente.
 
-## Enviar um pedido de início de sessão
+## <a name="send-a-sign-out-request"></a>Enviar um pedido de início de sessão
 Quando se pretende terminar sessão de utilizador da sua aplicação, esta não é suficiente para limpar os cookies da sua aplicação ou caso contrário terminar a sessão do utilizador. Também tem de redirecionar o utilizador para o ponto final v 2.0 para terminar sessão. Se não fizer isto, o utilizador novamente autentica para a sua aplicação sem introduzir as respetivas credenciais novamente, porque terá uma válido único início de sessão com o ponto final v 2.0.
 
 Pode redirecionar o utilizador a `end_session_endpoint` listados no documento de metadados de OpenID Connect:
@@ -192,17 +192,17 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 | ----------------------- | ------------------------------- | ------------ |
 | post_logout_redirect_uri | Recomendado | O URL que o utilizador é redirecionado para depois de terminar com êxito. Se o parâmetro não for incluído, o utilizador é apresentado uma mensagem genérica que é gerada pelo ponto final v 2.0. Este URL tem de corresponder a um redirecionamento que URIs registados para a sua aplicação no portal de registo de aplicação.  |
 
-## Fim de sessão único
+## <a name="single-sign-out"></a>Fim de sessão único
 Quando lhe redireciona o utilizador para o `end_session_endpoint`, o ponto final v 2.0 limpa a sessão do utilizador do browser. No entanto, o utilizador ainda pode ser iniciado outras aplicações que utilizem contas Microsoft para autenticação. Para ativar as aplicações iniciar o utilizador terminar em simultâneo, a v 2.0 o ponto final envia um pedido de HTTP GET para o registado `LogoutUrl` de todas as aplicações que o utilizador tem atualmente sessão iniciado para. As aplicações devem responder para este pedido por qualquer sessão que identifica o utilizador de limpeza e devolver um `200` resposta.  Se pretender suportar terminar o início de sessão único na sua aplicação, tem de implementar como uma `LogoutUrl` no código da aplicação.  Pode definir o `LogoutUrl` partir do portal de registo da aplicação.
 
-## Diagrama de protocolo: aquisição do Token
+## <a name="protocol-diagram-token-acquisition"></a>Diagrama de protocolo: aquisição do Token
 Muitas aplicações web tem de assinar não só o utilizador no, mas também para aceder a um serviço web em nome do utilizador através da utilização de OAuth. Este cenário combina OpenID Connect para a autenticação de utilizador ao obter simultaneamente um código de autorização que pode utilizar para obter os tokens de acesso, se estiver a utilizar o fluxo de código de autorização do OAuth.
 
 O fluxo de aquisição de início de sessão e token OpenID Connect completo semelhante ao seguinte diagrama. Iremos descrevem cada passo em detalhe nas secções seguintes do artigo.
 
 ![Protocolo OpenID Connect: aquisição do Token](../../media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
 
-## Obter os tokens de acesso
+## <a name="get-access-tokens"></a>Obter os tokens de acesso
 Para adquirir tokens de acesso, modifique o pedido de início de sessão:
 
 ```
@@ -228,7 +228,7 @@ https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 
 Incluindo os âmbitos de permissões no pedido e utilizando `response_type=id_token code`, o ponto final v 2.0 assegura que o utilizador consentiu as permissões indicadas a `scope` parâmetro de consulta. Devolve um código de autorização para a sua aplicação para um token de acesso do Exchange.
 
-### Resposta com êxito
+### <a name="successful-response"></a>Resposta com êxito
 Uma resposta com êxito de utilizar `response_mode=form_post` se parece com isto:
 
 ```
@@ -245,7 +245,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAA
 | código |O código de autorização que a aplicação pedida. A aplicação pode utilizar o código de autorização para pedir um token de acesso para o recurso de destino. Um código de autorização é muito curta duração. Normalmente, um código de autorização expira dentro de 10 minutos. |
 | state |Se um parâmetro de estado está incluído no pedido, o mesmo valor deve aparecer na resposta. A aplicação deverá certificar-se de que os valores de estado no pedido e resposta são idênticos. |
 
-### Resposta de erro
+### <a name="error-response"></a>Resposta de erro
 As respostas de erro também poderão ser enviadas para o URI de redirecionamento, para que a aplicação pode processar corretamente. Uma resposta de erro tem o seguinte aspeto:
 
 ```
