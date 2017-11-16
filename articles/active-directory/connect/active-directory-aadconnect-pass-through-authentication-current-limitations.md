@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: billmath
-ms.openlocfilehash: 42a6d7156a28aaeadea96f9134b0becc004816ba
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 4a33df43ca218545d6c684103a64f2cd1460913b
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-pass-through-authentication-current-limitations"></a>Do Azure autenticação do Active Directory pass-through: Limitações atuais
 
@@ -38,7 +38,7 @@ Os cenários seguintes são totalmente suportados:
 
 Os cenários seguintes são _não_ suportados:
 
-- Utilizador inícios de sessão no Office cliente as aplicações legadas - Office 2010 e Office 2013 _sem_ autenticação moderna). As organizações são encouraged para mudar para a autenticação moderna, se possível. Permite a autenticação moderna para o suporte de autenticação pass-through, mas também ajuda a proteger os seus utilizadores contas com [acesso condicional](../active-directory-conditional-access.md) funcionalidades, tais como o multi-factor Authentication (MFA).
+- Utilizador inícios de sessão no Office cliente as aplicações legadas - Office 2010 e Office 2013 _sem_ autenticação moderna). As organizações são encouraged para mudar para a autenticação moderna, se possível. Permite a autenticação moderna para o suporte de autenticação pass-through, mas também ajuda a proteger os seus utilizadores contas com [acesso condicional](../active-directory-conditional-access-azure-portal.md) funcionalidades, tais como o multi-factor Authentication (MFA).
 - Utilizador inícios de sessão para o Skype para aplicações de cliente de negócio, incluindo o Skype para empresas 2016.
 - Utilizador inícios de sessão para o PowerShell v 1.0. É recomendado que utilize v 2.0 do PowerShell.
 - Serviços de domínio do Azure AD.

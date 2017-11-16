@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/27/2017
 ms.author: bryanla
-ms.openlocfilehash: be3a797c4a405fd2f6636e67f4c961dd6d143486
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b27363a38c1a5955e062d1e5c036b542341e16bc
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="troubleshooting-active-directory-item-is-missing-or-not-available"></a>Resolução de problemas: O item de 'Do Active Directory' está em falta ou não está disponível
 Muitas das instruções para utilizar os serviços e funcionalidades do Azure Active Directory começam por "Ir para o Portal de gestão do Azure e clique em **do Active Directory**." Mas o que pode fazer se o item de menu ou a extensão do Active Directory não aparecer, ou se estiver marcado **não está disponível**? Este tópico foi concebido para ajudar. Descreve as condições sob as quais **do Active Directory** não aparecer ou não está disponível e explica como proceder.
@@ -43,7 +43,7 @@ O item do Active Directory é apresentada no menu de navegação esquerdo quando
 
 Para criar um espaço de nomes do controlo de acesso ou um fornecedor de multi-factor Authentication, clique em **+ novo** > **serviços aplicacionais** > **do Active Directory**.
 
-Para obter os direitos administrativos para um diretório, solicite a um administrador atribuir uma função de administrador à sua conta. Para obter mais informações, consulte [atribuir funções de administrador](active-directory-assign-admin-roles.md).
+Para obter os direitos administrativos para um diretório, solicite a um administrador atribuir uma função de administrador à sua conta. Para obter mais informações, consulte [atribuir funções de administrador](active-directory-assign-admin-roles-azure-portal.md).
 
 ## <a name="active-directory-is-not-available"></a>Active Directory não está disponível
 Ao clicar em **+ novo** > **serviços aplicacionais**, um **do Active Directory** item é apresentado. Especificamente, o item do Active Directory é apresentado quando qualquer uma das funcionalidades do Active Directory, tais como o diretório, o controlo de acesso ou o fornecedor do multi-factor Auth, estão disponíveis ao utilizador atual.

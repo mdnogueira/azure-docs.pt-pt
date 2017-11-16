@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/11/2017
+ms.date: 11/14/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 6ac076917092caa8b3c14ab179515c0693fc89bf
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.openlocfilehash: cd13ecf50cf03c362f8da2da83ab698c4e8ba0cc
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="managing-devices-using-the-azure-portal"></a>Gestão de dispositivos no portal do Azure
 
@@ -36,7 +36,7 @@ Neste tópico:
 
 ## <a name="configure-device-settings"></a>Configurar definições do dispositivo
 
-Para gerir os seus dispositivos no portal do Azure, os seus dispositivos tem de ser registado ou associado para o Azure AD. Como administrador, pode ajustar o processo de registar e associação de dispositivos ao configurar as definições do dispositivo. 
+Para gerir os seus dispositivos no portal do Azure, os seus dispositivos tem de ser [registado ou associado](device-management-introduction.md#getting-devices-under-the-control-of-azure-ad) para o Azure AD. Como administrador, pode ajustar o processo de registar e associação de dispositivos ao configurar as definições do dispositivo. 
 
 ![Configurar definições do dispositivo](./media/device-management-azure-portal/22.png)
 
@@ -45,13 +45,13 @@ A página de definições do dispositivo permite-lhe configurar:
 ![Gerir um dispositivo do Intune](./media/device-management-azure-portal/21.png)
 
 
-- **Os utilizadores podem associar dispositivos ao Azure AD** - esta definições permite-lhe selecionar os utilizadores podem associar dispositivos ao Azure AD. A predefinição é **todos os**.
+- **Os utilizadores podem associar dispositivos ao Azure AD** -esta definição permite-lhe selecionar os utilizadores podem [associar dispositivos](device-management-introduction.md#azure-ad-joined-devices) para o Azure AD. A predefinição é **todos os**.
 
 - **Os administradores locais adicionais sobre o Azure AD dispositivos associados ao** -pode selecionar os utilizadores que são concedidos direitos de administrador local num dispositivo. São adicionados utilizadores adicionados aqui para o *administradores de dispositivos* função no Azure AD. Os administradores globais no Azure AD e aos proprietários do dispositivo são concedidos direitos de administrador local por predefinição. Esta opção é uma capacidade de edição premium disponível através de produtos como o Azure AD Premium ou Enterprise Mobility Suite (EMS). 
 
-- **Os utilizadores podem registar os seus dispositivos com o Azure AD** -terá de configurar esta definição para permitir que os dispositivos registados com o Azure AD. Se selecionar **nenhum**, dispositivos não são permitidos para registar quando não estão do Azure AD associado ou híbrida do Azure AD associado. Inscrição com o Microsoft Intune ou a gestão de dispositivos móveis (MDM) para o Office 365 requer o registo. Se tiver configurado qualquer um destes serviços, **todos os** está selecionado e **NONE** não está disponível...
+- **Os utilizadores podem registar os seus dispositivos com o Azure AD** -terá de configurar esta definição para permitir que os dispositivos sejam [registado](device-management-introduction.md#azure-ad-registered-devices) com o Azure AD. Se selecionar **nenhum**, dispositivos não são permitidos para registar quando não estão do Azure AD associado ou híbrida do Azure AD associado. Inscrição com o Microsoft Intune ou a gestão de dispositivos móveis (MDM) para o Office 365 requer o registo. Se tiver configurado qualquer um destes serviços, **todos os** está selecionado e **NONE** não está disponível...
 
-- **Requer multi-Factor Auth associar dispositivos** -pode escolher se os utilizadores são obrigados a fornecer um segundo fator de autenticação para associar os seus dispositivos com o Azure AD. A predefinição é **não**. Recomendamos que requerem autenticação multifator ao registar um dispositivo. Antes de ativar a multi-factor authentication para este serviço, certifique-se de que a autenticação multifator está configurada para os utilizadores que registar os respetivos dispositivos. Para obter mais informações sobre os serviços de autenticação multifator Azure diferentes, consulte [introdução à Azure multi-factor authentication](../multi-factor-authentication/multi-factor-authentication-get-started.md). 
+- **Requer multi-Factor Auth associar dispositivos** -pode escolher se os utilizadores são obrigados a fornecer um segundo fator de autenticação para [associação](device-management-introduction.md#azure-ad-joined-devices) os respetivos dispositivos para o Azure AD. A predefinição é **não**. Recomendamos que requerem autenticação multifator ao registar um dispositivo. Antes de ativar a multi-factor authentication para este serviço, certifique-se de que a autenticação multifator está configurada para os utilizadores que registar os respetivos dispositivos. Para obter mais informações sobre os serviços de autenticação multifator Azure diferentes, consulte [introdução à Azure multi-factor authentication](../multi-factor-authentication/multi-factor-authentication-get-started.md). 
 
 - **Número máximo de dispositivos** -esta definição permite-lhe selecionar o número máximo de dispositivos que um utilizador pode ter no Azure AD. Se um utilizador atingir esta quota, estes não são poderá adicionar dispositivos até um ou mais dos dispositivos existentes são removidas. As aspas de dispositivo são contabilizadas para todos os dispositivos do Azure AD associada ao ou do Azure AD atualmente registado. O valor predefinido é **20**.
 
@@ -66,12 +66,12 @@ Esta opção é uma capacidade de premium disponível através de produtos como 
 
 Tem duas opções para localizar os dispositivos registados e associado ao:
 
-- **Todos os dispositivos** no **gerir** secção o **dispositivos** painel  
+- **Todos os dispositivos** no **gerir** secção o **dispositivos** página  
 
     ![Todos os dispositivos](./media/device-management-azure-portal/41.png)
 
 
-- **Dispositivos** no **gerir** secção um **utilizador** painel
+- **Dispositivos** no **gerir** secção um **utilizador** página
  
     ![Todos os dispositivos](./media/device-management-azure-portal/43.png)
 
@@ -170,15 +170,15 @@ Se for um administrador, pode ver e copiar as chaves do BitLocker para ajudar os
 ## <a name="audit-logs"></a>Registos de auditoria
 
 
-As atividades do dispositivo estão disponíveis através de registos de atividade. Isto inclui atividades acionadas pelo serviço de registo do dispositivo ou pelo utilizador:
+Atividades de dispositivo estão disponíveis através de registos de atividade. Isto inclui atividades acionadas pelo serviço de registo de dispositivos e utilizadores:
 
-- Criação do dispositivo e adicionar os proprietários/utilizadores no dispositivo
+- Criação do dispositivo e adicionar os proprietários / utilizadores do dispositivo
 
 - Alterações às definições do dispositivo
 
 - Operações de dispositivo como eliminar ou atualizar um dispositivo
  
-O ponto de entrada para os dados de auditorias é **registos de auditoria** no **atividade** secção a **dispositivos* painel.
+O ponto de entrada para os dados de auditorias é **registos de auditoria** no **atividade** secção o **dispositivos** página.
 
 ![Registos de auditoria](./media/device-management-azure-portal/61.png)
 
@@ -202,7 +202,7 @@ Pode personalizar a vista de lista ao clicar em **Colunas** na barra de ferramen
 
 Para limitar os dados comunicados a um nível que funcione para si, pode filtrar os dados de auditoria através dos seguintes campos:
 
-- Catergory
+- Categoria
 - Tipo de recurso de atividade
 - Atividade
 - Intervalo de datas

@@ -16,11 +16,11 @@ ms.workload:
 ms.date: 11/13/2017
 ms.author: banders
 ms.custom: mvc
-ms.openlocfilehash: 875c8c87f62ecf0e7459dfcec22089854ad95594
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.openlocfilehash: 4042c3606155d1d37947afccafd64652c9659894
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="templates-for-azure-policy"></a>Modelos de política do Azure
 
@@ -67,6 +67,7 @@ A tabela seguinte inclui ligações para modelos json para a política do Azure.
 | [Definição de deteção de nível de ameaças de base de dados de auditoria](scripts/audit-db-threat-det-setting.md) | As auditorias de políticas de alerta de segurança do SQL Server da base de dados se as políticas não estão definidas para o estado especificado. Especifique um valor que indica se a deteção de ameaças está ativada ou desativada.  |
 | [O nível de servidor do SQL Server de auditoria definição de auditoria](scripts/audit-sql-ser-leve-audit-setting.md) | As auditorias de definições de auditoria do servidor SQL se essas definições não correspondem uma definição especificada. Especifique um valor que indica se as definições de auditoria devem ser ativadas ou desativadas. |
 | [Definição de deteção de ameaças ao nível do servidor de auditoria](scripts/audit-sql-ser-threat-det-setting.md) | As auditorias de políticas de alerta de segurança do SQL Server da base de dados se as políticas não estão definidas para o estado especificado. Especifique um valor que indica se a deteção de ameaças está ativada ou desativada.  |
+| [Nenhum administrador do Azure Active Directory de auditoria](scripts/audit-no-aad-admin.md) | Auditoria quando não existe nenhum administrador do Azure Active Directory atribuído para o SQL server. |
 | [Permitido SKUs de BD do SQL Server](scripts/allowed-sql-db-skus.md) | Necessita de bases de dados do SQL Server utilizam um SKU aprovado. Especifique uma matriz de IDs de SKU permitido ou uma matriz de nomes SKU permitidos. |
 |**Armazenamento**||
 | [SKUs permitidos para as contas de armazenamento e máquinas virtuais](scripts/allowed-skus-storage.md) | Requer que as contas de armazenamento e máquinas virtuais SKUs aprovados. Utiliza políticas incorporadas para garantir a aprovada SKUs. Especifique uma matriz de máquinas virtuais aprovadas SKUs e uma matriz de conta de armazenamento aprovados SKUs. |

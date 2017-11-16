@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: tomfitz
-ms.openlocfilehash: ea0cf7ad074f95c2b49a92f9a8e32270a1d39b3a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 50a965f9773524a36bedc3d040bf1a1ca391507f
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Partilhar dashboards do Azure utilizando o controlo de acesso baseado em funções
 Depois de configurar um dashboard, pode publicá-lo e partilhá-las com outros utilizadores na sua organização. Permitir que os outros possam ver o dashboard através do Azure [controlo de acesso baseado em funções](../active-directory/role-based-access-control-configure.md). Atribuir um utilizador ou grupo de utilizadores a uma função e essa função define se esses utilizadores podem ver ou modificar o dashboard publicado. 
@@ -35,7 +35,7 @@ Com baseada em funções controlo de acesso (RBAC), pode atribuir utilizadores a
 
 * subscrição
 * grupo de recursos
-* Recursos
+* Recurso
 
 As permissões que atribuir são herdadas da subscrição para o recurso. O dashboard publicado é um recurso. Por conseguinte, pode já ter utilizadores atribuídos a funções para a subscrição que também funcionam para o dashboard publicado. 
 
@@ -44,7 +44,7 @@ Eis um exemplo.  Vamos supor que tiver uma subscrição do Azure e vários membr
 No entanto, também pode atribuir permissões para o grupo de recursos que contém vários dashboards ou a um dashboard individuais. Por exemplo, pode decidir que um grupo de utilizadores deve limitada permissões em toda a subscrição mas maior aceder a um dashboard específico. Atribuir aos utilizadores a uma função para esse dashboard. 
 
 ## <a name="publish-dashboard"></a>Publicar o dashboard
-Vamos imaginar que tiver concluído a configuração de um dashboard que pretende partilhar com um grupo de utilizadores na sua subscrição. Os passos abaixo depict um grupo personalizado denominado gestores de armazenamento, mas pode atribuir o nome do grupo que gostaria de. Para obter informações sobre como criar um grupo do Active Directory e adicionar utilizadores a esse grupo, consulte [gerir grupos no Azure Active Directory](../active-directory/active-directory-accessmanagement-manage-groups.md).
+Vamos imaginar que tiver concluído a configuração de um dashboard que pretende partilhar com um grupo de utilizadores na sua subscrição. Os passos abaixo depict um grupo personalizado denominado gestores de armazenamento, mas pode atribuir o nome do grupo que gostaria de. Para obter informações sobre como criar um grupo do Active Directory e adicionar utilizadores a esse grupo, consulte [gerir grupos no Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md).
 
 1. No dashboard, selecione **partilha**.
    

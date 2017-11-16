@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/04/2017
 ms.author: ryanwi
-ms.openlocfilehash: 8ac4a10b9030a4d56824d1a42ed2729ebb2d208e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7808493ca984277a939f04098799dbbd8287cc0c
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="service-fabric-patterns-and-scenarios"></a>Cenários e padrões de Service Fabric
 Se pretender criar micro-serviços em grande escala, utilizando o Azure Service Fabric, saiba de especialistas quem concebido e criado nesta plataforma como serviço (PaaS). Introdução à arquitetura adequada e, em seguida, saiba como otimizar os recursos para a sua aplicação. O [Service Fabric padrões e práticas](https://mva.microsoft.com/en-US/training-courses/service-fabric-patterns-and-practices-16925?l=mudwqISGD_6005167344) decorrer respostas as perguntas mais frequentes com mais frequência pelos clientes do mundo real sobre cenários de Service Fabric e áreas de aplicação.
@@ -98,4 +98,4 @@ Obter a resposta à pergunta, "por que motivo contentores?" Saiba mais sobre a p
 </table>
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que aprendeu sobre os padrões de Service Fabric e cenários, leia mais informações sobre como [criar e gerir clusters](service-fabric-deploy-anywhere.md), [migrar aplicações de serviços em nuvem para o Service Fabric](service-fabric-cloud-services-migration-worker-role-stateless-service.md), [contínua entrega de multimédia](service-fabric-set-up-continuous-integration.md), e [implementar contentores](service-fabric-containers-overview.md).
+Agora que aprendeu sobre os padrões de Service Fabric e cenários, leia mais informações sobre como [criar e gerir clusters](service-fabric-deploy-anywhere.md), [migrar aplicações de serviços em nuvem para o Service Fabric](service-fabric-cloud-services-migration-worker-role-stateless-service.md), [contínua entrega de multimédia](service-fabric-tutorial-deploy-app-with-cicd-vsts.md), e [implementar contentores](service-fabric-containers-overview.md).

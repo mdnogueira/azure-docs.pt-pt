@@ -15,11 +15,11 @@ ms.date: 07/21/2017
 ms.author: kgremban
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 3ef74c8d5d5b75eb2bca4e6c994f4718b5226db8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6534320d36653d296f254dfff129d4c5031f8ce8
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Resolver problemas de Proxy de aplicações e as mensagens de erro
 Se ocorrerem erros ao aceder a uma aplicação publicada ou numa publicação de aplicações, verifique as seguintes opções para ver se o Proxy de aplicações do Microsoft Azure AD está a funcionar corretamente:
@@ -90,7 +90,7 @@ Se ocorrer um erro ou problema com o Proxy da aplicação AD do Azure que não e
 * [Ativar o Proxy de aplicações do Azure Active Directory](active-directory-application-proxy-enable.md)
 * [Publicar aplicações com o Proxy de aplicações](active-directory-application-proxy-publish.md)
 * [Ativar o início de sessão único](active-directory-application-proxy-sso-using-kcd.md)
-* [Ativar o acesso condicional](active-directory-application-proxy-conditional-access.md)
+* [Ativar o acesso condicional](application-proxy-enable-remote-access-sharepoint.md)
 
 
 <!--Image references-->

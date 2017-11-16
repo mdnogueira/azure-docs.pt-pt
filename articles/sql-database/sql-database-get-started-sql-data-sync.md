@@ -13,14 +13,14 @@ ms.workload: Active
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/08/2017
+ms.date: 11/13/2017
 ms.author: douglasl
 ms.reviewer: douglasl
-ms.openlocfilehash: d0b3f3b188bc5da91414efb763b5165377009191
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: b356bc9db9e883c2514953b516d6dd51c1807610
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="set-up-sql-data-sync-preview"></a>Configurar a sincronização de dados do SQL Server (pré-visualização)
 Neste tutorial, irá aprender a configurar a sincronização de dados SQL do Azure através da criação de um grupo de sincronização de híbridos que contenha as instâncias de SQL Database do Azure e SQL Server. O novo grupo de sincronização está completamente configurado e sincroniza na agenda que definir.
@@ -192,6 +192,83 @@ Depois dos novos membros do grupo de sincronização são criados e implementado
     ![Selecionar campos para sincronizar](media/sql-database-get-started-sql-data-sync/datasync-preview-tables2.png)
 
 4.  Por fim, selecione **guardar**.
+
+## <a name="faq-about-setup-and-configuration"></a>FAQ sobre a configuração e a configuração
+
+### <a name="how-frequently-can-data-sync-synchronize-my-data"></a>Frequência é que a sincronização de dados pode sincronizar os meus dados? 
+O mínimo de frequência é a cada cinco minutos.
+
+### <a name="does-sql-data-sync-fully-create-and-provision-tables"></a>Sincronização de dados do SQL Server totalmente criar e aprovisionar tabelas?
+
+Se as tabelas de esquema de sincronização já não são criadas na base de dados de destino, a sincronização de dados do SQL Server (pré-visualização) cria-los com as colunas que selecionou. No entanto, este comportamento não resultar de um esquema de fidelidade completa, pelos seguintes motivos:
+
+-   Apenas as colunas que selecionou são criadas na tabela de destino. Se algumas colunas nas tabelas de origem não fazem parte do grupo de sincronização, essas colunas não são aprovisionadas nas tabelas de destino.
+
+-   Os índices são criados apenas para as colunas selecionadas. Se o índice de tabela de origem tem colunas que não fazem parte do grupo de sincronização, os índices não são aprovisionados nas tabelas de destino.
+
+-   Os índices em colunas do tipo XML não são aprovisionados.
+
+-   Restrições de verificação não são aprovisionadas.
+
+-   Não são aprovisionados existentes acionadores em tabelas de origem.
+
+-   As vistas e procedimentos armazenados não estão criados na base de dados de destino.
+
+Devido a estas limitações, recomendamos as seguintes ações:
+-   Para ambientes de produção, Aprovisione o esquema de completo fidelidade por si.
+-   Para experimentar o serviço, a funcionalidade de aprovisionamento automático de sincronização de dados do SQL Server (pré-visualização) funciona bem.
+
+### <a name="why-do-i-see-tables-that-i-did-not-create"></a>Por que razão vejo tabelas que não conseguiu criar?  
+Sincronização de dados cria tabelas lado na base de dados de registo de alterações. Não elimine-os ou sincronização de dados deixa de funcionar.
+
+### <a name="is-my-data-convergent-after-a-sync"></a>Os meus dados é convergent depois de uma sincronização?
+
+Não necessariamente. Um grupo de sincronização com um concentrador e três spokes realizar (A, B e C), as sincronizações são Hub para um, Hub para o B e Hub para C. Se for feita uma alteração à base de dados A *depois* do Hub a uma sincronização, o que não for escrita alteração à base de dados B ou a base de dados C até a próxima tarefa de sincronização.
+
+### <a name="how-do-i-get-schema-changes-into-a-sync-group"></a>Como posso obter alterações de esquema para um grupo de sincronização?
+
+Tem de efetuar alterações ao esquema manualmente.
+
+### <a name="how-can-i-export-and-import-a-database-with-data-sync"></a>Como exportar e importar uma base de dados de sincronização de dados?
+Depois de exportar uma base de dados como um `.bacpac` de ficheiros e importar o ficheiro para criar uma nova base de dados, terá de efetue os seguintes dois procedimentos para utilizar a sincronização de dados na base de dados nova:
+1.  Limpar os objetos de sincronização de dados e tabelas de lado no **nova base de dados** utilizando [este script](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/clean_up_data_sync_objects.sql). Este script elimina todos os objetos de sincronização de dados necessários da base de dados.
+2.  Recrie o grupo de sincronização com a nova base de dados. Se já não precisar de grupo de sincronização de antigo, elimine-o.
+
+## <a name="faq-about-the-client-agent"></a>FAQ sobre o agente do cliente
+
+### <a name="why-do-i-need-a-client-agent"></a>Por que motivo precisa de um agente do cliente?
+
+O serviço de sincronização de dados do SQL Server (pré-visualização) comunica com bases de dados do SQL Server através do agente de cliente. Esta funcionalidade de segurança impede a comunicação direta com bases de dados protegido por uma firewall. Quando o serviço de sincronização de dados do SQL Server (pré-visualização) comunica com o agente, faz-lo ao utilizar encriptados ligações e um token exclusivo ou *chave do agente*. As bases de dados do SQL Server autenticar o agente utilizando a chave de cadeia e o agente de ligação. Esta estrutura fornece um elevado nível de segurança para os seus dados.
+
+### <a name="how-many-instances-of-the-local-agent-ui-can-be-run"></a>Quantas instâncias do agente local de IU pode ser executada?
+
+Pode ser executada apenas uma instância da IU.
+
+### <a name="how-can-i-change-my-service-account"></a>Como posso alterar a minha conta de serviço?
+
+Depois de instalar um agente de cliente, a única forma de alterar a conta de serviço é desinstalá-lo e instalar um novo agente de cliente com a nova conta de serviço.
+
+### <a name="how-do-i-change-my-agent-key"></a>Como posso alterar a chave do agente?
+
+Uma chave de agente só pode ser utilizada uma vez por um agente. Não podem ser reutilizada quando remova e volte a instalar um novo agente, nem podem ser utilizado por múltiplos agentes. Se precisar de criar uma nova chave para o agente existente, tem de ser certificar-se de que a mesma chave é registada com o agente do cliente e com o serviço de sincronização de dados do SQL Server (pré-visualização).
+
+### <a name="how-do-i-retire-a-client-agent"></a>Como posso extinguir um agente do cliente?
+
+Imediatamente invalidar ou extinguir um agente, voltar a gerar a chave no portal, mas não submetê-las na IU do agente. Voltar a gerar uma chave invalida a chave anterior irrespective se o agente correspondente estiver online ou offline.
+
+### <a name="how-do-i-move-a-client-agent-to-another-computer"></a>Como posso mover um agente de cliente para outro computador?
+
+Se pretender executar o agente local partir de outro computador que está atualmente no, efetue os seguintes procedimentos:
+
+1. Instale o agente no computador pretendido.
+
+2. Iniciar sessão portal de sincronização de dados do SQL Server (pré-visualização) e voltar a gerar uma chave de agente para o novo agente.
+
+3. Utilize de IU o novo agente para submeter a nova chave de agente.
+
+4. Aguarde enquanto o agente do cliente transfere a lista de bases de dados no local que foram anteriormente registados.
+
+5. Forneça credenciais da base de dados para todas as bases de dados que são apresentadas como inacessível. Estas bases de dados tem de ser acessíveis a partir do novo computador no qual o agente está instalado.
 
 ## <a name="next-steps"></a>Passos seguintes
 Parabéns! Criou um grupo de sincronização que inclui uma instância de base de dados SQL e uma base de dados do SQL Server.

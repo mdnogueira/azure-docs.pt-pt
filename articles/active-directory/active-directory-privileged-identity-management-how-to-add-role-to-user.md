@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 06/06/2017
 ms.author: billmath
 ms.custom: pim;oldportal;it-pro;
-ms.openlocfilehash: 3ac07bb7b070f44595c099a454b3d0dbc66126c9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: af1ed4fab00d5304a25d28149e2ce9adcc3168fd
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-ad-privileged-identity-management-how-to-add-or-remove-a-user-role"></a>Privileged Identity Management do Azure AD: como adicionar ou remover uma função de utilizador
-Com o Azure Active Directory (AD), um administrador global (ou o administrador da empresa) pode atualizar que os utilizadores são **permanentemente** atribuídos a funções no Azure AD. Isto é feito com os cmdlets do PowerShell como `Add-MsolRoleMember` e `Remove-MsolRoleMember`. Ou, podem utilizar o portal clássico do Azure conforme descrito em [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles.md).
+Com o Azure Active Directory (AD), um administrador global (ou o administrador da empresa) pode atualizar que os utilizadores são **permanentemente** atribuídos a funções no Azure AD. Isto é feito com os cmdlets do PowerShell como `Add-MsolRoleMember` e `Remove-MsolRoleMember`. Ou, podem utilizar o portal clássico do Azure conforme descrito em [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md).
 
 A aplicação Azure AD Privileged Identity Management permite aos administradores de com função privilegiada tornar atribuições de funções permanente, bem. Além disso, os administradores de com função privilegiada podem tornar utilizadores **elegível** para funções de administrador. Um administrador elegível pode ativar a função quando precisarem e, em seguida, as respetivas permissões expirarem assim que estiver pronto.
 

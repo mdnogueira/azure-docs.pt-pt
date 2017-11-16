@@ -21,14 +21,14 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Protocolo SAML fim de sessão único
+# <a name="single-sign-out-saml-protocol"></a>Protocolo SAML fim de sessão único
 Perfil de início de sessão único de browser web do Azure suporta do Active Directory (Azure AD) SAML 2.0. Para único fim de sessão funcione corretamente, o **LogoutURL** para a aplicação tem de ser explicitamente registada com o Azure AD durante o registo de aplicação. AD do Azure utiliza o LogoutURL para redirecionar os utilizadores depois de terminada.
 
 Este diagrama apresenta o fluxo de trabalho do processo de início de sessão único do Azure AD.
 
 ![Início de sessão único o fluxo de trabalho](media/active-directory-single-sign-out-protocol-reference/active-directory-saml-single-sign-out-workflow.png)
 
-## LogoutRequest
+## <a name="logoutrequest"></a>LogoutRequest
 Envia de serviço em nuvem um `LogoutRequest` mensagem para o Azure AD para indicar que uma sessão foi terminada. O excerpt seguinte mostra um exemplo `LogoutRequest` elemento.
 
 ```
@@ -38,20 +38,20 @@ Envia de serviço em nuvem um `LogoutRequest` mensagem para o Azure AD para indi
 </samlp:LogoutRequest>
 ```
 
-### LogoutRequest
+### <a name="logoutrequest"></a>LogoutRequest
 O `LogoutRequest` elemento enviado para o Azure AD requer os seguintes atributos:
 
 * `ID`: Este identifica o pedido de início de sessão. O valor de `ID` não devem começar com um número. A prática típica é a acrescentar **id** para a representação de cadeia de um GUID.
 * `Version`: Definir o valor deste elemento para **2.0**. Este valor é preciso.
 * `IssueInstant`: Este é um `DateTime` cadeia com um valor de hora Universal Coordenada (UTC) e [formato reportadas round-trip ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD espera um valor deste tipo, mas não impõe.
 
-### emissor
+### <a name="issuer"></a>emissor
 O `Issuer` elemento um `LogoutRequest` deve corresponder exatamente um do **ServicePrincipalNames** no serviço em nuvem no Azure AD. Normalmente, isto estiver definido como o **URI de ID de aplicação** que é especificado durante o registo de aplicação.
 
-### NameID
+### <a name="nameid"></a>NameID
 O valor da `NameID` elemento deve corresponder exatamente a `NameID` do utilizador que está a ser terminado.
 
-## LogoutResponse
+## <a name="logoutresponse"></a>LogoutResponse
 Azure AD envia um `LogoutResponse` em resposta a um `LogoutRequest` elemento. O excerpt seguinte mostra um exemplo `LogoutResponse`.
 
 ```
@@ -63,13 +63,13 @@ Azure AD envia um `LogoutResponse` em resposta a um `LogoutRequest` elemento. O 
 </samlp:LogoutResponse>
 ```
 
-### LogoutResponse
+### <a name="logoutresponse"></a>LogoutResponse
 Conjuntos do Azure AD a `ID`, `Version` e `IssueInstant` valores no `LogoutResponse` elemento. Define também o `InResponseTo` elemento para que o valor da `ID` atributo do `LogoutRequest` elicited que a resposta.
 
-### emissor
+### <a name="issuer"></a>emissor
 Azure AD define este valor como `https://login.microsoftonline.com/<TenantIdGUID>/` onde <TenantIdGUID> é o ID de inquilino do inquilino do Azure AD.
 
 Para avaliar o valor da `Issuer` elemento, utilize o valor do **URI de ID de aplicação** fornecido durante o registo de aplicação.
 
-### Estado
+### <a name="status"></a>Estado
 Azure AD utiliza o `StatusCode` elemento o `Status` elemento para indicar o êxito ou falha de início de sessão. Quando a tentativa de início de sessão falha, o `StatusCode` elemento também pode conter mensagens de erro personalizadas.

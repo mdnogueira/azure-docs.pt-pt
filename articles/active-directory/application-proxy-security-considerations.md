@@ -15,11 +15,11 @@ ms.date: 09/08/2017
 ms.author: kgremban
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 031632aa9e01c66e836d607d588ededb7140589f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 239f3830a5e50f80ace15ff3f080653a5f402136
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Considerações de segurança para aceder a aplicações remotamente com o Proxy de aplicações do Azure AD
 
@@ -45,7 +45,7 @@ Se escolher Passthrough como método de pré-autenticação, não receberá dest
 
 Aplica controlos de política mais rico antes de ligações à sua rede são estabelecidas.
 
-Com [acesso condicional](active-directory-conditional-access-azuread-connected-apps.md), pode definir restrições no qual o tráfego tem permissão para aceder às suas aplicações de back-end. Pode criar políticas que restringem inícios de sessão com base na localização, força de autenticação e o perfil de risco do utilizador.
+Com [acesso condicional](active-directory-conditional-access-azure-portal-get-started.md), pode definir restrições no qual o tráfego tem permissão para aceder às suas aplicações de back-end. Pode criar políticas que restringem inícios de sessão com base na localização, força de autenticação e o perfil de risco do utilizador.
 
 Também pode utilizar o acesso condicional para configurar políticas de autenticação Multifator, adicionar outra camada de segurança para autenticações de utilizador. 
 

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: cephalin
-ms.openlocfilehash: b2305782fa4d8ca1bc90f239bc1f6ade0ff8fdc3
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: c1b832895476e2f64bbae638db76f89890e5c804
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Gerir um plano de serviço de aplicações no Azure
 
@@ -56,7 +56,16 @@ No **Menu**, procure o **plano do App Service** secção.
 
 Selecione **plano de serviço de aplicações de alteração** para iniciar o processo.
 
-**Plano de serviço aplicacional alteração** abre o **plano do App Service** Seletor. Selecione um plano existente para mover esta aplicação para. São apresentados apenas planos no mesmo grupo de recursos e região. Se acabou de criar um plano de serviço de aplicações no mesmo grupo de recursos e região, mas não é apresentada na lista, tente atualizar a página do seu browser.
+**Plano de serviço aplicacional alteração** abre o **plano do App Service** Seletor. Selecione um plano existente para mover esta aplicação para. 
+
+> [!IMPORTANT] 
+> O **plano do App Service/selecionar** página é filtrada pelos seguintes critérios: 
+> - Existe no mesmo grupo de recursos 
+> - Existe na mesma região geográfica 
+> - Existe o mesmo espaço de Web  
+> 
+> A _espaço Web_ é uma construção lógica no App Service, que define um agrupamento de recursos do servidor. Uma região geográfica (por exemplo, EUA oeste) contém muitas webspaces para atribuir clientes que utilizam o serviço de aplicações. Atualmente, os recursos de serviço de aplicações não são capazes de ser movidos entre webspaces. 
+> 
 
 ![Seletor do plano de serviço de aplicações.][change]
 

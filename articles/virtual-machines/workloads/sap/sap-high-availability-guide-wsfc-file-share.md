@@ -1,6 +1,6 @@
 ---
-title: "Clustering SAP (A) instância SCS no Cluster de ativação pós-falha do Windows utilizando a partilha de ficheiros no Azure | Microsoft Docs"
-description: "Clustering SAP (A) SCS instância no Cluster de ativação pós-falha do Windows com a partilha de ficheiros"
+title: "Uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows através da utilização de uma partilha de ficheiros no Azure | Microsoft Docs"
+description: "Saiba como uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows através da utilização de uma partilha de ficheiros no Azure."
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: goraco
@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 94d725cfb072091e57c96d3b2aca7b2e73657eef
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: 8cb339c9ecffbbc711aa6ea55d6f357fe0f4cfd0
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/14/2017
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -201,179 +201,162 @@ ms.lasthandoff: 10/27/2017
 
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
 
+[1869038]:https://launchpad.support.sap.com/#/notes/1869038 
 
-# <a name="clustering-sap-ascs-instance-on-windows-failover-cluster-using-file-share-on-azure"></a>Clustering SAP (A) SCS instância no Cluster de ativação pós-falha do Windows utilizando a partilha de ficheiros no Azure
+# <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-file-share-in-azure"></a>Uma instância do SAP ASCS/SCS de cluster num cluster de ativação pós-falha do Windows através da utilização de uma partilha de ficheiros no Azure
 
 > ![Windows][Logo_Windows] Windows
 >
 
 Clustering de ativação pós-falha do Windows Server é a base de uma elevada disponibilidade SAP ASCS/SCS instalação e DBMS no Windows.
 
-Um cluster de ativação pós-falha é um grupo de 1 + n servidores independentes (nós) que funcionam em conjunto para aumentar a disponibilidade de aplicações e serviços. Se ocorrer uma falha de nó, o Clustering de ativação pós-falha do Windows Server calcula o número de falhas que podem ocorrer, mantendo em simultâneo um cluster de bom estado de funcionamento para fornecer aplicações e serviços. Pode escolher entre modos diferentes de quórum para conseguir o clustering de ativação pós-falha.
+Um cluster de ativação pós-falha é um grupo de 1 + n servidores independentes (nós) que funcionam em conjunto para aumentar a disponibilidade de aplicações e serviços. Se ocorrer uma falha de nó, o clustering de ativação pós-falha do Windows Server calcula o número de falhas que podem ocorrer e continuar a manter um bom estado de funcionamento cluster para fornecer aplicações e serviços. Pode escolher entre modos diferentes de quórum para conseguir o clustering de ativação pós-falha.
 
-## <a name="prerequisite"></a>Pré-requisito
-Certifique-se de que revê estes documentos antes de iniciar com este documento:
+## <a name="prerequisites"></a>Pré-requisitos
+Antes de iniciar as tarefas que são descritas neste artigo, reveja este artigo:
 
 * [Cenários para SAP NetWeaver e arquitetura de elevada disponibilidade de máquinas virtuais do Azure][sap-high-availability-architecture-scenarios]
 
 > [!IMPORTANT]
->Clustering de instâncias SCS SAP (A) com partilha de ficheiros é suportado para **SAP NetWeaver 7.40 (e superior)** produtos, com **SAP Kernel 7.49 (e superior)**.
+> Clustering de instâncias de SAP ASCS/SCS através da utilização de uma partilha de ficheiros é suportada para SAP NetWeaver 7.40 (e posterior), com o SAP Kernel 7.49 (e mais tarde).
 >
 
 
-## <a name="windows-server-failover-clustering-in-azure"></a>Windows Server Clustering de ativação pós-falha no Azure
+## <a name="windows-server-failover-clustering-in-azure"></a>Windows clustering de ativação pós-falha no Azure
 
-Em comparação com bare implementações de nuvem privada ou metal, Virtual Machines do Azure requer passos adicionais para configurar o Clustering de ativação pós-falha do Windows Server. Quando criar um cluster, tem de definir vários endereços IP e nomes de anfitrião virtual para a instância do SAP ASCS/SCS.
+Em comparação com as implementações de nuvem privada ou de bare-metal, Virtual Machines do Azure requer passos adicionais para configurar o clustering de ativação pós-falha do Windows Server. Quando criar um cluster, tem de definir vários endereços IP e nomes de anfitrião virtual para a instância do SAP ASCS/SCS.
 
-### <a name="name-resolution-in-azure-and-cluster-virtual-host-name"></a>Resolução de nomes no Azure e o nome de anfitrião Virtual de Cluster
+### <a name="name-resolution-in-azure-and-the-cluster-virtual-host-name"></a>Resolução de nomes no Azure e o nome de anfitrião virtual de cluster
 
-A plataforma de nuvem do Azure não oferece a opção para configurar endereços IP virtuais, tais como endereços IP flutuante. É necessário uma solução alternativa para configurar um endereço IP virtual para alcançar o recurso de cluster na nuvem. O Azure tem um **Balanceador de carga interno** no serviço de Balanceador de carga do Azure. Com o Balanceador de carga interno, os clientes conseguirem contactar o cluster através do endereço IP virtual do cluster. Tem de implementar o Balanceador de carga interno no grupo de recursos que contém nós de cluster. Em seguida, configure todas as portas necessárias reencaminhamento regras com a pesquisa de portas do Balanceador de carga interno. Os clientes podem ligar através do nome de anfitrião virtual. O servidor DNS resolve o endereço IP do cluster e a porta de identificadores de Balanceador de carga interno de reencaminhamento para o nó ativo do cluster.
+A plataforma de nuvem do Azure não oferece a opção para configurar endereços IP virtuais, tais como endereços IP flutuante. É necessário uma solução alternativa para configurar um endereço IP virtual para alcançar o recurso de cluster na nuvem. 
+
+O serviço de Balanceador de carga do Azure fornece um *Balanceador de carga interno* para o Azure. Com o Balanceador de carga interno, os clientes conseguirem contactar o cluster através do endereço IP virtual do cluster. 
+
+Implemente o Balanceador de carga interno no grupo de recursos que contém nós de cluster. Em seguida, configure todas as portas necessárias reencaminhamento regras utilizando a pesquisa de portas do Balanceador de carga interno. Os clientes podem ligar através do nome de anfitrião virtual. O servidor DNS resolve o endereço IP do cluster. O Balanceador de carga interno processa o reencaminhamento de porta para o nó ativo do cluster.
 
 ![Figura 1: Clustering de ativação pós-falha do Windows Server configuração no Azure sem um disco partilhado][sap-ha-guide-figure-1001]
 
-_**Figura 1:** configuração Clustering de ativação pós-falha do Windows Server no Azure sem um disco partilhado_
+_**Figura 1:** configuração no Azure sem um disco partilhado de cluster de ativação pós-falha do Windows Server_
 
-## <a name="sap-ascs-ha-with-file-share"></a>SAP (A) HA SCS com partilha de ficheiros
+## <a name="sap-ascsscs-ha-with-file-share"></a>SAP ASCS/SCS HA com partilha de ficheiros
 
-SAP desenvolvidas nova abordagem e alternativa ao cluster discos partilhados, instância de SCS SAP (A) cluster no Cluster de ativação pós-falha do Windows.
-
-É utilizado aqui **partilha de ficheiros SMB** é uma opção para implementar **ficheiros anfitrião GLOBAL SAP**.
+SAP desenvolvidas uma nova abordagem e uma alternativa ao cluster discos partilhados, de clustering de uma instância do SAP ASCS/SCS num cluster de ativação pós-falha do Windows. Em vez de utilizar discos partilhados de cluster, pode utilizar uma partilha de ficheiros SMB a implementação de SAP anfitrião global ficheiros.
 
 > [!NOTE]
->Partilha de ficheiros SMB é uma opção adicional para discos partilhados para clustering de instâncias SCS SAP (A) de cluster.  
+> Partilha de ficheiros SMB é uma alternativa à utilização de discos de cluster partilhado para clustering de instâncias de SAP ASCS/SCS.  
 >
 
-O que é específico para esta arquitetura é o seguinte:
+Esta arquitetura é específica das seguintes formas:
 
-* **SAP serviços centrais (com processos de estrutura e a mensagem e a colocar em fila de ficheiro próprio) são separados dos ficheiros do anfitrião GLOBAL SAP**
-* **Serviços de centrais de SAP ser executados com a instância do SCS SAP (A)**
-* Instância do SAP (A) SCS está agrupada e é acessível através de virtual o nome de anfitrião **< (A) SCSVirtualHostName >**
-* Ficheiros SAP globais são colocados numa partilha de ficheiros SMB e são acedidos através de <SAPGLOBALHost> nome de anfitrião \\\\&lt;SAPGLOBALHost&gt;\sapmnt\\&lt;SID&gt;\SYS\...
-* A instância do SCS SAP (A) está instalada num disco local em ambos os nós de cluster
-* O **< (A) SCSVirtualHostName >** nome de rede é diferente do  **&lt;SAPGLOBALHost&gt;**
+* SAP serviços centrais (com processos de estrutura e a mensagem e colocar os seus próprios ficheiros) são separados dos ficheiros de anfitrião global do SAP.
+* Serviços de centrais de SAP ser executados com uma instância do SAP ASCS/SCS.
+* Instância do SAP ASCS/SCS está em cluster e está acessível utilizando a \<nome de anfitrião virtual ASCS/SCS\> nome de anfitrião virtual.
+* Ficheiros global SAP são colocados numa partilha de ficheiros SMB e são acedidos utilizando o \<anfitrião global SAP\> nome de anfitrião: \\ \\ &lt;anfitrião global SAP&gt;\sapmnt\\ &lt;SID&gt;\SYS\....
+* A instância do SAP ASCS/SCS está instalada num disco local em ambos os nós de cluster.
+* O \<nome de anfitrião virtual ASCS/SCS\> nome de rede é diferente do &lt;anfitrião global SAP&gt;.
 
-![Figura 2: Novo SAP (A) SCS HA arquitetura com partilha de ficheiros SMB][sap-ha-guide-figure-8004]
+![Figura 2: SAP ASCS/SCS HA arquitetura com partilha de ficheiros SMB][sap-ha-guide-figure-8004]
 
-_**Figura 2:** nova SAP (A) SCS HA arquitetura com partilha de ficheiros SMB_
+_**Figura 2:** nova SAP ASCS/SCS HA arquitetura com uma partilha de ficheiros SMB_
 
-Pré-requisitos para a partilha de ficheiros SMB:
+Pré-requisitos para uma partilha de ficheiros SMB:
 
-* Protocolo SMB 3.0 (ou superior)
-* Capacidade de definir a lista de controlo de acesso (ACLs) do Active Directory (AD) para **grupos de utilizadores do AD** e **$ de computador do objeto de computador**
-* Partilha de ficheiros tem de ser HA ativada:
-    * Utilizado para armazenar ficheiros de discos não têm de ser um ponto único de falha
-    * Tem de garantir que período de indisponibilidade de VMs/servidores não está a causar o período de indisponibilidade da partilha de ficheiros
+* Protocolo SMB 3.0 (ou posterior).
+* Capacidade de definir acesso ao Active Directory listas de controlo (ACLs) para grupos de utilizadores do Active Directory e o `computer$` objeto de computador.
+* A partilha de ficheiros tem de ser ativada para HA:
+    * Os discos utilizados para armazenar os ficheiros não pode ser um ponto único de falha.
+    * Servidor ou o período de indisponibilidade VM não irá causar período de indisponibilidade na partilha de ficheiros.
 
-Agora, o **SAP &lt;SID&gt;**  função de cluster é que não contém discos partilhados de cluster ou recurso de cluster de partilha de ficheiros genérico.
-
-
-![Figura 3: SAP < SID > função recursos do cluster quando utilizar a partilha de ficheiros][sap-ha-guide-figure-8005]
-
-_**Figura 3:** **SAP &lt;SID&gt;**  recursos de função de cluster, ao utilizar a partilha de ficheiros_
+O SAP \<SID\> função de cluster não contém discos partilhados de cluster ou um recurso de cluster de partilha de ficheiro genérico.
 
 
-## <a name="scale-out-file-share-sofs-with-storage-spaces-direct-s2d-on-azure-as-sapmnt-file-share"></a>Escalamento horizontal (SOFS) da partilha de ficheiros com direta de espaços de armazenamento (S2D) no Azure como SAPMNT partilha de ficheiros
+![Figura 3: SAP \<SID\> recursos de função para a utilização de uma partilha de ficheiros do cluster][sap-ha-guide-figure-8005]
 
-Pode utilizar SOFS para alojar e proteger ficheiros do anfitrião GLOBAL SAP e a oferta de serviço de partilha de ficheiros SAPMNT altamente disponível.
+_**Figura 3:** SAP &lt;SID&gt; recursos de função para a utilização de uma partilha de ficheiros do cluster_
 
-![Figura 4: Partilha de ficheiros SOFS utilizada para proteger ficheiros do anfitrião GLOBAL SAP][sap-ha-guide-figure-8006]
 
-_**Figura 4:** partilha de ficheiros SOFS utilizada para proteger ficheiros do anfitrião GLOBAL SAP_
+## <a name="scale-out-file-shares-with-storage-spaces-direct-in-azure-as-an-sapmnt-file-share"></a>Partilhas de ficheiros de escalamento horizontal com espaços de armazenamento direto no Azure como uma partilha de ficheiros SAPMNT
+
+Pode utilizar uma partilha de ficheiros escalável para alojar e proteger os ficheiros do anfitrião global de SAP. Uma partilha de ficheiros de escalamento horizontal também oferece um serviço de partilha de ficheiros SAPMNT altamente disponível.
+
+![Figura 4: Partilha de ficheiros de escalamento horizontal utilizada para proteger ficheiros do anfitrião global de SAP][sap-ha-guide-figure-8006]
+
+_**Figura 4:** uma partilha de ficheiros de escalamento horizontal utilizada para proteger ficheiros do anfitrião global de SAP_
 
 > [!IMPORTANT]
->Partilha de ficheiros SOFS é totalmente suportada no Microsoft Azure na nuvem, bem como em ambientes no local.
+> Partilhas de ficheiros de escalamento horizontal são totalmente suportadas na nuvem do Microsoft Azure e, em ambientes no local.
 >
 
-**SOFS** é a oferta partilha de ficheiros SAPMNT altamente disponível e escalável horizontalmente.
+Uma partilha de ficheiros de escalamento horizontal oferece uma partilha de ficheiros altamente disponível e escalável horizontalmente SAPMNT.
 
-**Espaços de armazenamento direto (S2D)**, é utilizado como **disco partilhado** para SOFS, permite a criação de armazenamento de elevada disponibilidade e dimensionável através de servidores com o armazenamento local. Por conseguinte, o armazenamento partilhado utilizado para SOFS, por exemplo, para os ficheiros de SAP GLOBALHOST não é um ponto único de falha (SPOF).
+Espaços de armazenamento direto é utilizado como um disco partilhado para uma partilha de ficheiros de escalamento horizontal. Pode utilizar espaços de armazenamento direto para criar o armazenamento de elevada disponibilidade e dimensionável através de servidores com o armazenamento local. Armazenamento que é utilizado para uma partilha de ficheiros de escalamento horizontal partilhado, como para os ficheiros do anfitrião global de SAP, não é um ponto único de falha.
 
 > [!IMPORTANT]
->Se planear a recuperação de desastres do programa de configuração, SOFS recomenda a solução para a partilha de ficheiros altamente disponíveis no Azure.
+>Se lhe *não* plano para configurar a recuperação após desastre, recomendamos que utilize uma partilha de ficheiros de escalamento horizontal como uma solução para uma partilha de ficheiros altamente disponíveis no Azure.
 >
 
-### <a name="sap-prerequisites-for-sofs-in-azure"></a>Pré-requisitos SAP para SOFS no Azure
+### <a name="sap-prerequisites-for-scale-out-file-shares-in-azure"></a>Pré-requisitos SAP para partilhas de ficheiros de escalamento horizontal no Azure
 
-Para o SOFS precisa de:
+Para utilizar uma partilha de ficheiros de escalamento horizontal, o sistema tem de cumprir os seguintes requisitos:
 
-* Pelo menos dois nós de cluster para SOFS
-
-* Cada nó tem de ter, pelo menos, dois discos locais
-
-* Para o motivo de desempenho, tem de utilizar **espelhamento resiliência**:
-    * **2-vias** espelhamento para SOFS com dois nós de cluster
-    * **3-vias** espelhamento para SOFS connosco de cluster de três (ou mais)
-
-
-* É **recomendado ter 3 (ou mais clusters) nós para SOFS com espelhamento de 3 vias**.
-Esta configuração oferece mais escalabilidade e resiliência de armazenamento mais que o programa de configuração do SOFS com 2 nós de cluster e o espelhamento de 2 vias.
-
-* Tem de utilizar **disco do Azure Premium**
-
-* É **recomendado** utilizar **discos geridos pelo Azure**
-
-* É **recomendado** para volumes de formato com novos **sistema de ficheiros Resiliente (ReFS)**
-    * [SAP nota 1869038 - suporte SAP para o sistema de ficheiros ReFs] [1869038]
-    * Consulte [escolher o sistema de ficheiros] [ planning-volumes-s2d-choosing-filesystem] capítulo de planeamento de volumes em espaços de armazenamento direto.
-    * Certifique-se instalar este [MS **KB4025334** a atualização cumulativa][kb4025334].
-
-
-* Pode utilizar **-série DS** ou **série Dsv2** tamanhos de VM do Azure
-
-* Para que boa inter-o desempenho da rede VM que é necessária para a sincronização direta de espaços de armazenamento do disco, deve utilizar um tipo VM que tenha, pelo menos, um **largura de banda de rede "elevada"**.
-Para obter mais detalhes, consulte [série Dsv2] [ dv2-series] e [-série DS] [ ds-series] especificação.
-
-* É **recomendado** sair e **algumas capacidade no agrupamento de armazenamento não alocado de reserva**. Proporciona volumes de espaço para reparar "no local" depois de unidades falharem, melhorar a segurança de dados e o desempenho.
-
- Para obter mais detalhes, consulte [escolher o tamanho de volumes][choosing-the-size-of-volumes-s2d]
-
-
-* As VMs do Azure do SOFS tem de ser implementadas no **proprietário do conjunto de disponibilidade do Azure**
-
-* Não é necessário para configurar o Balanceador de carga interno do Azure para nome de rede de partilha de ficheiros SOFS, por exemplo, <SAPGlobalHostName>, como é efetuada para < (A) SCSVirtualHostname > da instância do SCS SAP (A) ou para o DBMS. SOFS é aumentar horizontalmente a carga em todos os nós de cluster, por isso, <SAPGlobalHostName> está a utilizar o IP local de todos os nós de cluster.
+* Pelo menos dois nós para uma partilha de ficheiros de escalamento horizontal do cluster.
+* Cada nó tem de ter, pelo menos, dois discos locais.
+* Motivo de desempenho, tem de utilizar *espelhamento resiliência*:
+    * Bidirecional espelhamento para uma partilha de ficheiros de escalamento horizontal com dois nós de cluster.
+    * Três vias espelhamento para uma partilha de ficheiros de escalamento horizontal connosco de cluster de três (ou mais).
+* Recomendamos três (ou mais) nós de cluster para uma partilha de ficheiros de escalamento horizontal, com o espelhamento de três vias.
+    Esta configuração oferece mais escalabilidade e resiliência de armazenamento mais que o programa de configuração de partilha de ficheiros de escalamento horizontal com dois nós de cluster e para espelhamento de duas vias.
+* Tem de utilizar discos Premium do Azure.
+* Recomendamos que utilize discos gerida do Azure.
+* Recomendamos formatar volumes utilizando o sistema de ficheiros Resiliente (ReFS).
+    * Para obter mais informações, consulte [SAP nota 1869038 - suporte SAP para o sistema de ficheiros ReFs] [ 1869038] e [escolher o sistema de ficheiros] [ planning-volumes-s2d-choosing-filesystem] capítulo do volumes de planeamento do artigo de espaços de armazenamento direto.
+    * Certifique-se de que instala [Microsoft KB4025334 a atualização cumulativa][kb4025334].
+* Pode utilizar os tamanhos de VM de Azure de série Dsv2 ou série DS.
+* Para um desempenho de rede eficiente entre VMs, que é necessário para a sincronização direta de espaços de armazenamento do disco, utilize um tipo VM que tenha, pelo menos, uma largura de banda de rede "superior".
+    Para obter mais informações, consulte o [série Dsv2] [ dv2-series] e [-série DS] [ ds-series] especificações.
+* Recomendamos que reservar alguns capacidade não alocada no agrupamento de armazenamento. Abandonar o fileparser alguns capacidade não alocada no agrupamento de armazenamento fornece o espaço de volumes para reparar "no local" se falhar de uma unidade. Isto melhora a segurança de dados e o desempenho.  Para obter mais informações, consulte [escolher o tamanho do volume][choosing-the-size-of-volumes-s2d].
+* Partilha de ficheiros de escalamento horizontal VMs do Azure tem de ser implementada no seu próprio conjunto de disponibilidade do Azure.
+* Não precisa de configurar o Balanceador de carga interno do Azure para o nome de rede de partilha de ficheiros de escalamento horizontal, tal como para \<anfitrião global SAP\>. Este procedimento é efetuado o \<nome de anfitrião virtual ASCS/SCS\> da instância do SAP ASCS/SCS ou para o DBMS. Uma partilha de ficheiros de escalamento horizontal aumenta horizontalmente de forma a carga em todos os nós de cluster. \<Anfitrião global SAP\> utiliza o endereço IP local para todos os nós do cluster.
 
 
 > [!IMPORTANT]
->Não é possível alterar a partilha de ficheiros SAPMNT que aponta para SAPGLOBALHOST. SAP não suporta um nome diferente de partilha como sapmnt.
->[SAP nota 2492395 - é possível alterar o sapmnt de nome de partilha?][2492395]
+> Não é possível mudar o nome da partilha de ficheiros SAPMNT, que aponta para \<anfitrião global SAP\>. SAP suporta apenas a partilha de nome "sapmnt."
 
-### <a name="configuring-sap-ascs-instances-and-sofs-in-two-clusters"></a>Configurar SAP (A) SCS instâncias e SOFS em dois Clusters
+> Para obter mais informações, consulte [a nota 2492395 - pode ser alterada a sapmnt de nome de partilha?][2492395]
 
-Tem a possibilidade de implementar instâncias SCS SAP (A) de um cluster, com os seus próprios SAP <SID> função de cluster. A partilha de ficheiros SOFS está configurada no cluster outra com uma outra função de cluster.
+### <a name="configure-sap-ascsscs-instances-and-a-scale-out-file-share-in-two-clusters"></a>Configure o SAP ASCS/instâncias SCS e ficheiros de escalamento horizontal partilham em dois clusters
 
-> [!IMPORTANT]
->Neste cenário, a instância SCS SAP (A) está configurada para aceder à GLOBALHost SAP utilizando o caminho UNC \\\\&lt;SAPGLOBALHost&gt;\sapmnt\\&lt;SID&gt;\SYS\...
->
-
-![Figura 5: SAP (A) instância SCS e SOFS implementado em dois clusters][sap-ha-guide-figure-8007]
-
-_**Figura 5:** SAP (A) instância SCS e SOFS implementado em dois clusters_
+Pode implementar instâncias de SAP ASCS/SCS um cluster, com os seus próprios SAP \<SID\> função de cluster. Neste caso, pode configurar a partilha de ficheiros de escalamento horizontal no outro cluster, com uma outra função de cluster.
 
 > [!IMPORTANT]
->Na nuvem do Azure, cada cluster utilizado para SAP e para o ficheiro SOFS partilhas tem de ser implementadas na sua própria Azure do conjunto de disponibilidade garantir distribuído a colocação dessas VMS do cluster em toda a infraestrutura do Azure subjacente.
+>Neste cenário, a instância do SAP ASCS/SCS está configurada para aceder ao anfitrião SAP global utilizando o caminho UNC \\ \\ &lt;anfitrião global SAP&gt;\sapmnt\\&lt;SID&gt;\SYS\.
 >
 
-## <a name="generic-file-share-with-sios-as-cluster-shared-disks"></a>Partilha de ficheiros genérico com SIOS como discos partilhados de Cluster
+![Figura 5: Instância SAP ASCS/SCS e uma partilha de ficheiros de escalamento horizontal implementado em dois clusters][sap-ha-guide-figure-8007]
+
+_**Figura 5:** implementada em dois clusters de partilha de ficheiros de uma instância do SAP ASCS/SCS e Escalamento horizontal_
+
+> [!IMPORTANT]
+> Na nuvem do Azure, defina cada cluster que é utilizado para SAP e ficheiros de escalamento horizontal partilhas tem de ser implementadas na sua própria disponibilidade do Azure. Isto garante distribuída colocação do cluster VMs em toda a infraestrutura do Azure subjacente.
+>
+
+## <a name="generic-file-share-with-sios-datakeeper-as-cluster-shared-disks"></a>Partilha de ficheiros genérico com SIOS DataKeeper como discos partilhados de cluster
 
 
 > [!IMPORTANT]
->SOFS é recomendada a solução para a partilha de ficheiros altamente disponível.
+> Recomendamos uma solução de partilha de ficheiros de escalamento horizontal para uma partilha de ficheiros altamente disponíveis.
 >
->No entanto, se pretender definir também **recuperação após desastre** para a partilha de ficheiros altamente disponíveis, tem de utilizar partilhas de ficheiro genérico e SISO como tecnologia para discos partilhados de cluster.
+> Se pretender também definir recuperação após desastre para a partilha de ficheiros altamente disponíveis, tem de utilizar uma partilha de ficheiro genérico e SISO DataKeeper para os discos partilhados de cluster.
 >
 
-Partilha de ficheiros genérico é outra opção para obtenção de uma partilha de ficheiros altamente disponível.
+Uma partilha de ficheiros genérico é outra opção para alcançar uma partilha de ficheiros altamente disponíveis.
 
-Aqui, como um cluster de disco partilhado pode utilizar 3rd solução SIOS de terceiros.
+Neste caso, pode utilizar uma solução SIOS de terceiros como um disco partilhado de cluster.
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 
-* [Preparação de infraestrutura do Azure para SAP HA utilizando o Cluster de ativação pós-falha do Windows e a partilha de ficheiros para a instância de SCS SAP (A)][sap-high-availability-infrastructure-wsfc-file-share]
-
-* [SAP NetWeaver HA instalação no Cluster de ativação pós-falha do Windows e a partilha de ficheiros para a instância SCS SAP (A)][sap-high-availability-installation-wsfc-shared-disk]
-
+* [Preparar a infraestrutura do Azure para HA do SAP através de uma partilha de ficheiros e de cluster de ativação pós-falha do Windows para uma instância do SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
+* [Instalar SAP NetWeaver HA uma partilha de ficheiros e de cluster de ativação pós-falha de Windows para uma instância do SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
 * [Implementar um servidor de ficheiros de escalamento horizontal espaços de armazenamento direto dois nós de armazenamento UPD no Azure][deploy-sofs-s2d-in-azure]
-
 * [Espaços de armazenamento diretos no Windows Server 2016][s2d-in-win-2016]
-
-* [Descrição detalhada da: Volumes em espaços de armazenamento diretos][deep-dive-volumes-in-s2d]
+* [Descrição detalhada da: Volumes em espaços de armazenamento direto][deep-dive-volumes-in-s2d]

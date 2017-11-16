@@ -9,11 +9,11 @@ ms.reviewer: mawah, marhamil, mldocs
 ms.service: machine-learning
 ms.topic: article
 ms.date: 10/17/2017
-ms.openlocfilehash: 336d3ffaee21040a95366e0317cecdb83977ce97
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.openlocfilehash: 2f8b2d9d2396c1f9c9e509257f3cd031a816729f
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="image-classification-using-azure-machine-learning-workbench"></a>Classificação de imagem com o Azure Machine Learning Workbench
 
@@ -52,9 +52,11 @@ As pré-requisitos para executar este exemplo são os seguintes:
 4. Uma GPU dedicada não é necessária para executar a formação SVM na parte 1, no entanto, é necessário para limitar de DNN descrito na parte 2. Se não dispõem de uma GPU forte, pretende preparar em vários GPUs ou não dispõe de um computador Windows, considere, em seguida, a utilização profunda aprendizagem máquina do Azure com o sistema operativo Windows. Consulte [aqui](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning) para obter um guia de implementação de 1-clique. Depois de implementada, ligar à VM através de uma ligação de ambiente de trabalho remota, instale o Workbench existe e execute o código localmente a partir da VM.
 5. Vários bibliotecas de Python, tais como OpenCV tem de ser instalado. Clique em *abra a linha de comandos* do *ficheiro* menu no Workbench e execute os seguintes comandos para instalar estas dependências:  
     - `pip install https://cntk.ai/PythonWheel/GPU/cntk-2.0-cp35-cp35m-win_amd64.whl`  
-    - `pip install opencv_python-3.3.0-cp35-cp35m-win_amd64.whl`Após transferir a roda OpenCV do http://www.lfd.uci.edu/~gohlke/pythonlibs/ (o nome exato e versão podem alterar)
-    - `conda install matplotlib numpy pillow`
-    - `conda install -c conda-forge bqplot`
+    - `pip install opencv_python-3.3.1-cp35-cp35m-win_amd64.whl`Após transferir a roda OpenCV do http://www.lfd.uci.edu/~gohlke/pythonlibs/ (o nome exato e versão podem alterar)
+    - `conda install pillow`
+    - `pip install -U numpy`
+    - `pip install bqplot`
+    - `jupyter nbextension enable --py --sys-prefix bqplot`
 
 ### <a name="troubleshooting--known-bugs"></a>Erros conhecidos / resolução de problemas
 - É necessária uma GPU para parte 2 e, caso contrário, o erro "Batch formação de normalização na CPU ainda não está implementada" é emitida que ao tentar refinar a DNN.
@@ -66,7 +68,7 @@ As pré-requisitos para executar este exemplo são os seguintes:
 ## <a name="create-a-new-workbench-project"></a>Criar um novo projeto do workbench
 
 Para criar um novo projeto com este exemplo como um modelo:
-1.  Abra do Azure Machine Learning Workbench.
+1.  Abra o Azure Machine Learning Workbench.
 2.  No **projetos** página, clique em de  **+**  iniciar sessão e selecionar **novo projeto**.
 3.  No **criar novo projeto** painel, preencha as informações para o novo projeto.
 4.  No **modelos de projeto de pesquisa** caixa de pesquisa, escreva "Classificação de imagem" e selecione o modelo.

@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2017
 ms.author: barlan
-ms.openlocfilehash: 50b24466bcbd399de19934f7ec5ed096e308eaf3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3810c6fc3e6d6abf6e41047a303f8d0ecfe1c7ec
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="a-multi-tiered-approach-to-azure-ad-password-security"></a>Uma abordagem de várias camadas de segurança de palavra-passe do Azure AD
 
@@ -37,7 +37,7 @@ O Azure AD incorpora as seguintes abordagens comuns relativamente à proteção 
 * Requisitos de complexidade de palavra-passe
 * Expiração de palavras-passe regular e periódica
 
-Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords.md).
+Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords-update-your-own-password.md).
 
 ## <a name="azure-ad-password-protections"></a>Proteções de palavra-passe do Azure AD
 
@@ -74,7 +74,7 @@ Para outras contas Microsoft, os respetivos ecrã semelhante ao seguinte:
 
   ![Bloqueado de uma conta Microsoft](./media/active-directory-secure-passwords/locked-out-ms-accounts.png)
 
-Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords.md).
+Para obter informações sobre a reposição no Azure Active Directory palavra-passe, consulte o tópico [passe self-service do Azure AD ' Repor para profissionais de TI](active-directory-passwords-update-your-own-password.md).
 
   >[!NOTE]
   >Se for administrador do Azure AD, poderá ser útil utilizar o [Windows Hello](https://www.microsoft.com/windows/windows-hello) para impedir que os seus utilizadores criem palavras-passe tradicionais.

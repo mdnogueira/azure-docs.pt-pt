@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 05/07/2017
 ms.author: kgremban
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6b119be9c06d8c1ccc8e747168429e6c2d2e7a8f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 76bb8d239b54b5236d077b98a5908c230cdc31a1
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Desenvolver aplicações de linha de negócio para o Azure Active Directory
 Este guia fornece uma descrição geral do desenvolvimento de aplicações do linha de negócio (LoB) para o Azure Active Directory (AD). O público-alvo é administradores globais do Active Directory/Office 365.
 
 ## <a name="overview"></a>Descrição geral
-Criar aplicações integradas com o Azure AD fornece aos utilizadores na sua organização-início de sessão único com o Office 365. Com a aplicação no fornecem do Azure AD que tem controlo sobre a política de autenticação para a aplicação. Para saber mais sobre o acesso condicional e de como proteger aplicações com autenticação multifator (MFA) consulte [configurar regras de acesso](active-directory-conditional-access-azuread-connected-apps.md).
+Criar aplicações integradas com o Azure AD fornece aos utilizadores na sua organização-início de sessão único com o Office 365. Com a aplicação no fornecem do Azure AD que tem controlo sobre a política de autenticação para a aplicação. Para saber mais sobre o acesso condicional e de como proteger aplicações com autenticação multifator (MFA) consulte [configurar regras de acesso](active-directory-conditional-access-azure-portal-get-started.md).
 
 Registe a sua aplicação para utilizar o Azure Active Directory. Registar a aplicação significa que os programadores podem utilizar o Azure AD para autenticar os utilizadores e solicitar acesso a recursos de utilizador, tais como e-mail, calendário e os documentos.
 
@@ -57,7 +57,7 @@ Eis o que, o administrador global, precisa de fazer para ajudar os programadores
 * Suprimir a experiência de consentimento do utilizador predefinido
 
 ## <a name="configure-access-rules"></a>Configurar regras de acesso
-Configure regras de acesso por aplicação às suas aplicações SaaS. Por exemplo, pode exigir a MFA ou permitir apenas o acesso a utilizadores em redes fidedignas. Os detalhes para este estão disponíveis no documento [configurar regras de acesso](active-directory-conditional-access-azuread-connected-apps.md).
+Configure regras de acesso por aplicação às suas aplicações SaaS. Por exemplo, pode exigir a MFA ou permitir apenas o acesso a utilizadores em redes fidedignas. Os detalhes para este estão disponíveis no documento [configurar regras de acesso](active-directory-conditional-access-azure-portal-get-started.md).
 
 ## <a name="configure-the-app-to-require-user-assignment-and-assign-users"></a>Configurar a aplicação necessita de atribuição de utilizadores e atribuir utilizadores
 Por predefinição, os utilizadores podem aceder a aplicações sem a ser atribuída. No entanto, se a aplicação expõe funções, ou se pretender que a aplicação a aparecer no painel de acesso de um utilizador, deve solicitar a atribuição de utilizadores.
@@ -76,8 +76,8 @@ Para aplicações que considera fidedignos, pode simplificar a experiência de u
 
 Para obter mais informações sobre o consentimento do utilizador e o consentimento experiência no Azure, consulte [integrar aplicações com o Azure Active Directory](active-directory-integrating-applications.md).
 
-## <a name="related-articles"></a>Artigos relacionados
+## <a name="related-articles"></a>Artigos Relacionados
 * [Ativar o acesso remoto seguro a aplicações no local com o Proxy de aplicações do Azure AD](active-directory-application-proxy-get-started.md)
-* [Pré-visualização do acesso condicional do Azure para aplicações SaaS](active-directory-conditional-access-azuread-connected-apps.md)
+* [Pré-visualização do acesso condicional do Azure para aplicações SaaS](active-directory-conditional-access-azure-portal-get-started.md)
 * [Gerir o acesso a aplicações com o Azure AD](active-directory-managing-access-to-apps.md)
 * [Índice de Artigos da Gestão da Aplicação no Azure Active Directory](active-directory-apps-index.md)

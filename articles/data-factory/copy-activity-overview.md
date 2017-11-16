@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/09/2017
+ms.date: 11/14/2017
 ms.author: jingwang
-ms.openlocfilehash: bb739d19be7aedf73f422faaa0f5f63a81633d07
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 36443ec86c15edce27bdc4f50cabcaf2e14936bc
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Atividade de cópia numa fábrica de dados do Azure
 
@@ -65,6 +65,10 @@ Por exemplo, pode efetuar as seguintes atividades de cópia:
 * Copiar os ficheiros no formato de texto (CSV) do sistema de ficheiros no local e escrita aos BLOBs do Azure no formato Avro.
 * Copiar ficheiros zipped de sistema de ficheiros no local e, em seguida, descomprimir telefone ao Azure Data Lake Store.
 * Copiar os dados no formato de texto comprimidos (CSV) de GZip Blob do Azure e de escrita para a SQL Database do Azure.
+
+## <a name="supported-regions"></a>Regiões suportadas
+
+O serviço que está na base de atividade de cópia está disponível globalmente nas regiões e localizações geográficas listados em [localizações de Runtime de integração do Azure](concepts-integration-runtime.md#integration-runtime-location). A topologia globalmente disponível garante o movimento de dados eficiente que normalmente evita saltos por várias regiões. Consulte [serviços por região](https://azure.microsoft.com/regions/#services) para disponibilidade da fábrica de dados e o movimento de dados numa região.
 
 ## <a name="configuration"></a>Configuração
 
@@ -152,9 +156,9 @@ Detalhes de execução da atividade de cópia e as características de desempenh
 | rowsSkipped | Número de linhas incompatíveis que está a ser ignorado. Pode ativar a funcionalidade pelo conjunto "enableSkipIncompatibleRow" como verdadeiro. | Valor Int64 (nenhuma unidade) |
 | Débito | Rácio que são transferidos dados | Número de vírgula flutuante no KB/s |
 | copyDuration | A duração da cópia | Valor Int32 em segundos |
-| sqlDwPolyBase | Se o PolyBase é utilizado quando copiar dados para o SQL Data Warehouse. | Valor booleano |
-| redshiftUnload | Se descarregamento é utilizado quando copiar dados de Redshift. | Valor booleano |
-| hdfsDistcp | Se for utilizado o DistCp ao copiar dados a partir do HDFS. | Valor booleano |
+| sqlDwPolyBase | Se o PolyBase é utilizado quando copiar dados para o SQL Data Warehouse. | Booleano |
+| redshiftUnload | Se descarregamento é utilizado quando copiar dados de Redshift. | Booleano |
+| hdfsDistcp | Se for utilizado o DistCp ao copiar dados a partir do HDFS. | Booleano |
 | effectiveIntegrationRuntime | Mostrar que Runtime(s) de integração é utilizada para atribuir a atividade executar, no formato de `<IR name> (<region if it's Azure IR>)`. | Texto (cadeia) |
 | usedCloudDataMovementUnits | Unidades movimento de nuvem eficaz dados durante a cópia. | Valor Int32 |
 | redirectRowPath | Caminho para o registo de ignorados linhas incompatíveis no armazenamento de BLOBs que configurou em "redirectIncompatibleRowSettings". Consulte o exemplo abaixo. | Texto (cadeia) |

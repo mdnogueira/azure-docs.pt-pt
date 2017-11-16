@@ -13,16 +13,24 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: data-catalog
-ms.date: 10/01/2017
+ms.date: 11/13/2017
 ms.author: maroche
-ms.openlocfilehash: 2eab8ce96399c7d6da9b4afbccdfd8b836f0c9f3
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 2839c265596d98834fb4071dea1684d5a6669907
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="whats-new-in-azure-data-catalog"></a>Novidades no catálogo de dados do Azure
 Atualizações **catálogo de dados do Azure** são lançadas regularmente. Não cada versão inclui novas funcionalidades de destinada ao utilizador, como algumas versões são concentra-se nas capacidades do serviço de back-end. Esta página realça as novas capacidades destinada ao utilizador adicionadas para o serviço de catálogo de dados do Azure.
+
+## <a name="whats-new-for-november-2017"></a>Novidades de Novembro de 2017 
+A partir de Novembro de 2017, foram adicionadas as seguintes capacidades do Azure no catálogo de dados:
+
+* Suporte para ligar diretamente para o glossário de termos de negócio específicas no portal do catálogo de dados. Os utilizadores podem copiar as ligações do glossário comercial e incorpore-los no documentos, mensagens de correio eletrónico, relatórios ou outras localizações para ligar diretamente a uma definição de termo do glossário.
+* Suporte para principais de serviço do Azure Active Directory. Os administradores do catálogo de dados podem autorizar principais de serviço a utilizar para aceder ao catálogo de aplicações de cliente e podem conceder essas aplicações permissões específicas tal como se podem conceder permissões a utilizadores e grupos de segurança. Para obter mais informações consulte [aplicação e objetos de principal de serviço no Azure Active Directory](../active-directory/develop/active-directory-application-objects.md).
+* Suporte para a autenticação do Azure Active Directory ao ligar a origens de dados SQL Database do Azure e Azure SQL Data Warehouse, utilizando a ferramenta de registo de origem de dados do catálogo de dados. Para obter mais informações consulte [utilizar Azure Active Directory Authentication para a autenticação com base de dados SQL ou SQL Data Warehouse](../sql-database/sql-database-aad-authentication.md).
+
 
 ## <a name="whats-new-for-september-2017"></a>Novidades de Setembro de 2017 
 A partir de Setembro de 2017, foram adicionadas as seguintes capacidades do Azure no catálogo de dados:

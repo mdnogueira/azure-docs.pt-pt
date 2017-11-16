@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/24/2017
+ms.date: 11/14/2017
 ms.author: dobett
-ms.openlocfilehash: e99a7bc34ac5ed060100e5f5032513bf4b18b2eb
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: f6a69ecbeb09dc042eff7c1f95ee518e701b0507
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="deploy-a-gateway-on-windows-or-linux-for-the-connected-factory-preconfigured-solution"></a>Implementar um gateway no Windows ou Linux para a solução de fábrica ligado pré-configurada
 
@@ -44,7 +44,7 @@ Os passos neste artigo mostram como implementar um gateway com o Docker numa [Wi
 ## <a name="windows-deployment"></a>Implementação do Windows
 
 > [!NOTE]
-> Se ainda não tiver um dispositivo de gateway, a Microsoft recomenda que comprar um gateway comercial a partir de um dos nossos parceiros. Visite o [catálogo de dispositivos do IoT do Azure] para obter uma lista de dispositivos de gateway compatíveis com a solução de fábrica ligado. Siga as instruções que vêm com o dispositivo para configurar o gateway. Em alternativa, utilize as seguintes instruções para configurar manualmente a um dos seus gateways existentes.
+> Se ainda não tiver um dispositivo de gateway, a Microsoft recomenda que comprar um gateway comercial a partir de um dos respetivos parceiros. Visite o [catálogo de dispositivos do IoT do Azure] para obter uma lista de dispositivos de gateway compatíveis com a solução de fábrica ligado. Siga as instruções que vêm com o dispositivo para configurar o gateway. Em alternativa, utilize as seguintes instruções para configurar manualmente a um dos seus gateways existentes.
 
 ### <a name="install-docker"></a>Instalar Docker
 
@@ -103,7 +103,7 @@ Também pode efetuar este passo depois de instalar o docker do **definições** 
 ## <a name="linux-deployment"></a>Implementação do Linux
 
 > [!NOTE]
-> Se ainda não tiver um dispositivo de gateway, a Microsoft recomenda que comprar um gateway comercial a partir de um dos nossos parceiros. Visite o [catálogo de dispositivos do IoT do Azure] para obter uma lista de dispositivos de gateway compatíveis com a solução de fábrica ligado. Siga as instruções que vêm com o dispositivo para configurar o gateway. Em alternativa, utilize as seguintes instruções para configurar manualmente a um dos seus gateways existentes.
+> Se ainda não tiver um dispositivo de gateway, a Microsoft recomenda que comprar um gateway comercial a partir de um dos respetivos parceiros. Visite o [catálogo de dispositivos do IoT do Azure] para obter uma lista de dispositivos de gateway compatíveis com a solução de fábrica ligado. Siga as instruções que vêm com o dispositivo para configurar o gateway. Em alternativa, utilize as seguintes instruções para configurar manualmente a um dos seus gateways existentes.
 
 [Instalar Docker] no seu dispositivo de gateway do Linux.
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: bdbdebe069b3150bed4aa26f1f6e677a66f75f32
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7e4af248a1aafbd34a62c75e792746514456577b
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Azure Active Directory prova do manual de comunicação social conceito: blocos modulares
 
@@ -99,10 +99,10 @@ Hora para concluído aproximada: 15 minutos
 | Passo | Recursos |
 | --- | --- |
 | Aceda ao Portal de gestão do Azure AD | [Portal de gestão do Azure AD - imagem corporativa da empresa](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/LoginTenantBranding) |
-| Carregar os recursos para a página de início de sessão (logótipo heroína logótipo pequeno, etiquetas, etc.). Opcionalmente, se tiver o AD FS, alinha os elementos mesmos com páginas de início de sessão do AD FS | [Adicionar a imagem corporativa para o início de sessão e painel de acesso páginas: elementos personalizáveis](active-directory-add-company-branding.md) |
+| Carregar os recursos para a página de início de sessão (logótipo heroína logótipo pequeno, etiquetas, etc.). Opcionalmente, se tiver o AD FS, alinha os elementos mesmos com páginas de início de sessão do AD FS | [Adicionar a imagem corporativa para o início de sessão e painel de acesso páginas: elementos personalizáveis](customize-branding.md) |
 | Aguarde alguns minutos para que a alteração totalmente em vigor |  |
 | Iniciar sessão com as credenciais de utilizador POC a https://myapps.microsoft.com |  |
-| Confirme o aspeto e funcionalidade no browser | [Adicionar a imagem corporativa para o início de sessão e painel de acesso páginas](active-directory-add-company-branding.md) |
+| Confirme o aspeto e funcionalidade no browser | [Adicionar a imagem corporativa para o início de sessão e painel de acesso páginas](customize-branding.md) |
 | Opcionalmente, confirme o aspeto e funcionalidade nos outros dispositivos |  |
 
 ### <a name="considerations"></a>Considerações
@@ -379,7 +379,7 @@ Hora para concluído aproximada: 15 minutos
 
 | Pré-requisito | Recursos |
 | --- | --- |
-| Ative a gestão de palavra-passe self-service no seu inquilino. | [Azure Active Directory reposição palavra-passe para os administradores de TI](active-directory-passwords.md) |
+| Ative a gestão de palavra-passe self-service no seu inquilino. | [Azure Active Directory reposição palavra-passe para os administradores de TI](active-directory-passwords-update-your-own-password.md) |
 | Ative a palavra-passe repetição de escrita gerir palavras-passe no local. Note que isto requer específico do Azure AD Connect versões | [Pré-requisitos da Repetição de Escrita de Palavras-passe](active-directory-passwords-writeback.md) |
 | Identifique os utilizadores de PoC que irão utilizar esta funcionalidade e certifique-se de que são membros de um grupo de segurança. Os utilizadores têm de ser não-administradores demonstramos completamente a capacidade | [Personalizar: Gestão de palavras-passe do Azure ao AD: restringir o acesso a reposição de palavra-passe](active-directory-passwords-writeback.md) |
 

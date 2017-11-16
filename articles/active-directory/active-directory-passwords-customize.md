@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 030fb1d87547a4fc78d54a855bca961202f28837
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: f2b172208185e343c9c10d55036c20d60346778c
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="customize-azure-ad-functionality-for-self-service-password-reset"></a>Personalizar funcionalidades do Azure AD para a reposição da palavra-passe Self-Service
 
@@ -40,7 +40,7 @@ Este e-mail é enviado para os seguintes destinatários pela seguinte ordem:
 
 Em todos os casos, um máximo de 100 destinatários são notificados.
 
-Para obter mais informações sobre o administrador de diferentes funções e atribuí-las, consulte o documento [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles.md)
+Para obter mais informações sobre o administrador de diferentes funções e atribuí-las, consulte o documento [atribuir funções de administrador no Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md)
 
 ### <a name="disable-contact-your-administrator-emails"></a>Desativar contacte aos e-mails de administrador
 
@@ -100,17 +100,17 @@ Pode alterar o atributo de nome em **do Azure Active Directory > propriedades** 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [Quais são as opções de política com SSPR?](active-directory-passwords-policy.md)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Como comunicar na atividade na SSPR](active-directory-passwords-reporting.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Julgo que algo está danificado. Como posso resolver problemas SSPR?](active-directory-passwords-troubleshoot.md)
-* [Tenho uma pergunta que não foi abrangida algures senão](active-directory-passwords-faq.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Como posso comunicar a atividade da SSPR?](active-directory-passwords-reporting.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Creio que algo está a funcionar incorretamente. Como posso resolver problemas da SSPR?](active-directory-passwords-troubleshoot.md)
+* [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)
 
 [Contact]: ./media/active-directory-passwords-customize/sspr-contact-admin.png "Contacte o administrador para obter ajuda a repor o seu exemplo de e-mail palavras-passe"

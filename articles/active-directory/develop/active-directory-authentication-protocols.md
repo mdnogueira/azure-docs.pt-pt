@@ -21,10 +21,10 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Protocolos de autenticação do Azure Active Directory
+# <a name="azure-active-directory-authentication-protocols"></a>Protocolos de autenticação do Azure Active Directory
 Azure Active Directory (Azure AD) suporta vários os protocolos de autenticação e autorização mais amplamente utilizados. Os tópicos nesta secção descrevem os protocolos suportados e a respetiva implementação no Azure AD. Os tópicos incluídos uma revisão dos tipos de afirmação suportados, uma introdução à utilização de metadados de Federação, detalhada OAuth 2.0. função de segurança e documentação de referência do protocolo SAML 2.0 e uma secção de resolução de problemas.
 
-## Protocolos de autenticação artigos e de referência
+## <a name="authentication-protocols-articles-and-reference"></a>Protocolos de autenticação artigos e de referência
 * [Importante informações sobre como assinar Rollover de chave no Azure AD](active-directory-signing-key-rollover.md) – Saiba mais sobre a assinatura do Azure AD cadência da chave, as alterações que pode efetuar para atualizar automaticamente a chave e debate sobre como atualizar os cenários de aplicações mais comuns.
 * [Token e tipos de afirmação suportados](active-directory-token-and-claims.md) -Saiba mais sobre as afirmações nos tokens de que o Azure AD emite.
 * [Os metadados de Federação](active-directory-federation-metadata.md) -aprender a localizar e interpretar os documentos de metadados que gera do Azure AD.
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) suporta vários os protocolos de autenticaçã
 * [Chamadas de serviços com o fluxo de On-Behalf-Of](active-directory-protocols-oauth-on-behalf-of.md) -aprender a utilizar o fluxo de OAuth 2.0 On-Behalf-Of para chamadas de serviço ao serviço.
 * [Referência do protocolo SAML](active-directory-saml-protocol-reference.md) -Saiba mais sobre os perfis de Single Sign-On e única Sign-out SAML do Azure AD.
 
-## Veja Também
+## <a name="see-also"></a>Veja Também
 [Guia para programadores do Azure Active Directory](active-directory-developers-guide.md)
 
 [Exemplos de código do Active Directory](active-directory-code-samples.md)

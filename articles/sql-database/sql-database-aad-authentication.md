@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: Active
 ms.date: 09/12/2017
 ms.author: rickbyh
-ms.openlocfilehash: 2726f5a78920f0ce47ed9d034e6a597c11b92e98
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: b6a7a1d6e7c9f8a921dc73bb3bf629de71f85acf
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql-database-or-sql-data-warehouse"></a>Utilizar a autenticação do Active Directory do Azure para a autenticação com base de dados SQL ou SQL Data Warehouse
 A autenticação do Active Directory do Azure é um mecanismo de ligar à base de dados do Microsoft Azure SQL Server e [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) utilizando as identidades no Azure Active Directory (Azure AD). Com a autenticação do Azure AD, pode gerir centralmente as identidades de utilizadores de base de dados e outros serviços Microsoft numa localização central. Gestão de ID central fornece um único local para gerir utilizadores de base de dados e simplifica a gestão de permissão. Vantagens incluem o seguinte:
@@ -73,7 +73,7 @@ Para criar um utilizador de base de dados contida numa SQL Database do Azure ou 
 ## <a name="azure-ad-features-and-limitations"></a>Funcionalidades do Azure AD e limitações
 Os seguintes membros do Azure AD podem ser aprovisionados no servidor SQL do Azure ou do armazém de dados do SQL Server:
 
-* Membros nativos: membro criado no Azure AD no domínio gerido ou num domínio cliente. Para obter mais informações, consulte [adicionar o seu próprio nome de domínio para o Azure AD](../active-directory/active-directory-add-domain.md).
+* Membros nativos: membro criado no Azure AD no domínio gerido ou num domínio cliente. Para obter mais informações, consulte [adicionar o seu próprio nome de domínio para o Azure AD](../active-directory/active-directory-domains-add-azure-portal.md).
 * Federado membros do domínio: membro criado no Azure AD com um domínio federado. Para obter mais informações, consulte [Microsoft Azure suporta agora a Federação com o Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/).
 * Importados os membros de outro do Azure AD que são membros de domínio nativo ou federada.
 * Grupos do Active Directory criados como grupos de segurança.

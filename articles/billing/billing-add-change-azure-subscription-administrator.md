@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/19/2017
 ms.author: genli
-ms.openlocfilehash: 178d7fbc17464f7c9a4bc891453d0999e4ba62c3
-ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
+ms.openlocfilehash: 091fe208783a2fe5d5c91abe4ec498bf760a3eb3
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="add-or-change-azure-administrator-roles-that-manage-the-subscription-or-services"></a>Adicionar ou alterar funções de administrador do Azure que gerem a subscrição ou serviços
 
@@ -110,7 +110,7 @@ Azure baseada em função do Active Directory controlo de acesso (RBAC) permite 
 ## <a name="learn-more-about-resource-access-control-and-active-directory"></a>Saiba mais sobre o controlo de acesso de recursos e do Active Directory
 
 * Para obter mais informações sobre como o acesso a recursos é controlado no Microsoft Azure, consulte o artigo [compreender o acesso a recursos no Azure](../active-directory/active-directory-understanding-resource-access.md).
-* Para mais informações sobre o Azure Active Directory, consulte [subscrições do Azure como estão associadas ao Azure Active Directory](../active-directory/active-directory-how-subscriptions-associated-directory.md) e [atribuir funções de administrador no Azure Active Directory](../active-directory/active-directory-assign-admin-roles.md).
+* Para mais informações sobre o Azure Active Directory, consulte [subscrições do Azure como estão associadas ao Azure Active Directory](../active-directory/active-directory-how-subscriptions-associated-directory.md) e [atribuir funções de administrador no Azure Active Directory](../active-directory/active-directory-assign-admin-roles-azure-portal.md).
 
 ## <a name="need-help-contact-support"></a>Precisa de ajuda? Contacte o suporte.
 

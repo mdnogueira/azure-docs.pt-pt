@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/29/2017
 ms.author: sethm;babanisa
-ms.openlocfilehash: db8b119178de0e565b2064e9a52d5e9989d60d38
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 613ea691e38b6f0bcd8873fc2ec6bcafb3cc6c78
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="overview-of-event-hubs-dedicated"></a>Descrição geral dos Event Hubs dedicado
 
@@ -34,7 +34,7 @@ A tabela seguinte compara os escalões de serviço dos Event Hubs. A oferta dedi
 | Políticas do publicador | Sim | Sim |   
 | Grupos de consumidores | 20 | 20 |
 | Repetição de mensagens | Sim | Sim |
-| Unidades de débito máximas | 20 (flexível para 100)   | 1 CU≈200 |
+| Unidades de débito máximas | 20 (flexível para 100)   | 1 CU≈50 |
 | Ligações mediadas | 1000 incluídos | 100 K incluído |
 | Ligações Mediadas adicionais | Sim | Sim |
 | Retenção de Mensagens | 1 dia incluído | Até 7 dias incluídos |
@@ -48,18 +48,25 @@ As seguintes vantagens estão disponíveis quando utilizar Event Hubs dedicado:
 * Aumenta o tamanho da mensagem para 1 MB por comparação a 256 KB para Standard.
 * Desempenho repetíveis sempre.
 * Capacidade para satisfazer as necessidades de rajada de garantida.
-* Dimensionável entre 1 e unidades de capacidade 8 (CU) – fornecer até 2 milhões de eventos de entrada por segundo.
-  * Comunidade gerir o dimensionamento de Event Hubs dedicado, onde cada CU pode fornecer aproximadamente equivalente 200 de unidades de débito (TU).
+* Inclui o [capturar](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) funcionalidade dos Event Hubs do Azure, para fornecer a integração com retenção micro batch e a longo prazo
 * Zero manutenção: estamos a gerir o balanceamento de carga, SO de atualizações, patches de segurança e a criação de partições.
-* Corrigido mensalmente preços.
+* Corrigido preço por hora.
+* Mensagem retenção cópias de segurança para 7 dias com sem encargos adicionais
 
 Dedicado de Hubs de eventos também remove a algumas das limitações de débito de oferta de padrão. Unidades de débito no escalão Standard entitle é 1000 eventos por segundo ou de 1 MB por segundo de entrada por TU e duplo que quantidade de saída. Contagens de evento de saída e a oferta de escala dedicado tem sem restrições na entrada. Estes limites são regidos apenas pela capacidade de processamento dos hubs de eventos adquiridas.
+
+Este ambiente dedicado reservado fornece outras capacidades exclusivas para esta camada, tais como:
+
+* Controlar o número de espaços de nomes do cluster
+* Especifique cada a do débito limitson dos seus espaços de nomes
+* Configurar o número de Hubs de eventos em cada espaço de nomes
+* Determinar o limite do número de partições
 
 Este serviço é direcionado para os utilizadores de telemetria maiores e está disponível para clientes com um enterprise agreement.
 
 ## <a name="how-to-onboard"></a>Como integrar
 
-A plataforma dedicado de Hubs de eventos é fornecida através de um contrato enterprise com diferentes tamanhos da Comunidade. Cada CU fornece aproximadamente equivalente 200 de unidades de débito. Pode dimensionar a capacidade ou reduzir verticalmente durante todo o mês para satisfazer as necessidades adicionando ou removendo Comunidade. O plano dedicado é exclusivo na medida em que irá ocorrer uma integração mais prática da equipa de produto do Event Hubs para obter a implementação flexível que é adequada para si. 
+Pode dimensionar a capacidade ou reduzir verticalmente durante todo o mês para satisfazer as necessidades adicionando ou removendo Comunidade. O plano dedicado é exclusivo na medida em que irá ocorrer uma integração mais prática da equipa de produto do Event Hubs para obter a implementação flexível que é adequada para si. Integrar para este SKU, contacte (suporte à faturação) [https://ms.portal.azure.com/#create/Microsoft.Support] ou o seu representante da Microsoft.
 
 ## <a name="next-steps"></a>Passos seguintes
 Contacte o seu representante da Microsoft ou Support da Microsoft para obter detalhes adicionais sobre a capacidade de dedicado de Hubs de eventos. Também pode saber mais sobre os Event Hubs, visitando as seguintes ligações:

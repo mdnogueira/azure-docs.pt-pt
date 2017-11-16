@@ -15,11 +15,11 @@ ms.date: 10/11/2017
 ms.author: billmath
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: c15808a97d4efa5f9453f33d9ac70ebde5288201
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: f254f4959c66aeb3eec522f31e0d8a6780358188
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Trabalhar com domínios personalizados no Proxy de aplicações do Azure AD
 
@@ -82,7 +82,7 @@ Atualmente os toda a gestão de certificados é através de páginas de aplicaç
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Ativar o início de sessão único](active-directory-application-proxy-sso-using-kcd.md) às suas aplicações publicadas com a autenticação do Azure AD.
-* [Ativar o acesso condicional](active-directory-application-proxy-conditional-access.md) às suas aplicações publicadas.
+* [Ativar o acesso condicional](application-proxy-enable-remote-access-sharepoint.md) às suas aplicações publicadas.
 * [Adicionar o seu nome de domínio personalizado ao Azure AD](active-directory-domains-add-azure-portal.md)
 
 

@@ -13,11 +13,11 @@ ms.service: azure
 ms.technology: 
 ms.assetid: 
 ms.custom: it-pro
-ms.openlocfilehash: e368f14638c480a632afa7c17023aa8ae4c8833f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4d4e15e1bada54ce06f38187e6a2ea1f8c749dc4
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="understand-azure-identity-solutions"></a>Compreender as soluções de identidade do Azure
 Microsoft Azure Active Directory (Azure AD) é um identidades e acessos na nuvem solução de gestão que fornece serviços de diretório, governação de identidade e gestão de acesso de aplicação. Azure AD rapidamente [permite início de sessão único (SSO)](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-sso) em 1 000 das aplicações previamente integradas, comerciais e personalizadas no [Galeria de aplicações do Azure AD](https://azure.microsoft.com/marketplace/active-directory/all/). Muitas destas aplicações, provavelmente já utilizar como o Office 365, em Salesforce.com, caixa, ServiceNow e Workday.
@@ -110,12 +110,12 @@ Temos um ton excelente recursos online para o ajudar a saber tudo sobre o Azure 
 * [Segurança adicional para um mundo de alguma vez ligado](../multi-factor-authentication/multi-factor-authentication.md)
 * [Automatizar utilizador aprovisionamento e desaprovisionamento para aplicações SaaS com o Azure Active Directory](active-directory-saas-app-provisioning.md)
 * [Introdução aos relatórios do Azure AD](active-directory-reporting-getting-started.md)
-* [Gerir as palavras-passe a partir de qualquer lugar](active-directory-passwords.md)
+* [Gerir as palavras-passe a partir de qualquer lugar](active-directory-passwords-update-your-own-password.md)
 * [O que é o acesso a aplicações e início de sessão no Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 * [Automatizar utilizador aprovisionamento e desaprovisionamento para aplicações SaaS com o Azure Active Directory](active-directory-saas-app-provisioning.md)
 * [Como fornecer acesso remoto seguro a aplicações no local](active-directory-application-proxy-get-started.md)
 * [Gerir o acesso aos recursos com grupos do Azure Active Directory](active-directory-manage-groups.md)
-* [O que é o licenciamento de Microsoft Azure Active Directory?](active-directory-licensing-what-is.md)
+* [O que é o licenciamento de Microsoft Azure Active Directory?](active-directory-licensing-whatis-azure-portal.md)
 * [Como pode detetar aplicações na nuvem não sancionadas utilizadas dentro da minha organização](active-directory-cloudappdiscovery-whatis.md)
 
 ## <a name="next-steps"></a>Passos seguintes

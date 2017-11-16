@@ -20,14 +20,14 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Do Azure AD B2C: Protocolos de autenticação
+# <a name="azure-ad-b2c-authentication-protocols"></a>Do Azure AD B2C: Protocolos de autenticação
 O Azure Active Directory B2C (Azure AD B2C) fornece identidade como um serviço para as suas aplicações ao suportar dois protocolos padrão de indústria: OpenID Connect e OAuth 2.0. O serviço está em conformidade com as normas, mas qualquer duas implementações destes protocolos podem ter ligeiras diferenças. 
 
 As informações neste guia são útil se escrever o seu código mediante o envio diretamente e processamento de pedidos de HTTP em vez de utilizar uma biblioteca de código aberto. Recomendamos que leia esta página antes de aprofundar os detalhes de cada protocolo específico. Mas se já estiver familiarizado com o Azure AD B2C, pode ir diretamente para [os guias de referência do protocolo](#protocols).
 
 <!-- TODO: Need link to libraries above -->
 
-## Noções básicas
+## <a name="the-basics"></a>Noções básicas
 Cada aplicação que utiliza o Azure AD B2C tem de ser registado no diretório do B2C no [portal do Azure](https://portal.azure.com). O processo de registo de aplicação recolhe e atribui alguns valores à sua aplicação:
 
 * Uma **ID de Aplicação** que identifica de modo exclusivo a aplicação.
@@ -53,14 +53,14 @@ Praticamente todos os fluxos de OAuth e o OpenID Connect, quatro partes estão e
 
 * O **servidor recursos** é onde residem a recursos ou dados. Confiança do servidor de autorização para autenticar e autorizar o cliente OAuth em segurança. Também utiliza os tokens de portador acesso para se certificar de que pode ser concedido acesso a um recurso.
 
-## Políticas
+## <a name="policies"></a>Políticas
 Possivelmente, as políticas do Azure AD B2C se as funcionalidades mais importantes do serviço. O Azure AD B2C expande os protocolos padrão de OAuth 2.0 e o OpenID Connect, introduzindo as políticas. Estes cmdlets permitem do Azure AD B2C efetuar muito mais do que simples autenticação e autorização. 
 
 As políticas totalmente descrevem as experiências de identidade do consumidor, incluindo a inscrição, início de sessão e edição de perfis. As políticas podem ser definidas numa IU administrativa. Estes podem ser executados utilizando um parâmetro de consulta especiais em pedidos de autenticação HTTP. 
 
 As políticas não são funcionalidades padrão do OAuth 2.0 e o OpenID Connect, pelo que deve ter o tempo para compreendê-los. Para obter mais informações, consulte o [guia de referência de política do Azure AD B2C](active-directory-b2c-reference-policies.md).
 
-## Tokens
+## <a name="tokens"></a>Tokens
 A implementação do Azure AD B2C de OAuth 2.0 e o OpenID Connect faz com que utilize um vasto conjunto de tokens de portador, incluindo os tokens de portador são representados como tokens de web JSON (JWTs). Um token de portador é um token de segurança simples que concede acesso a "portador" para um recurso protegido.
 
 O portador é que podem apresentar o token de terceiros. Azure AD deve primeiro autenticar uma parte antes de pode receber um token de portador. Mas, se não são tidas em conta os passos necessários para proteger o token na transmissão e o armazenamento, pode ser intercetado e utilizado por uma entidade indesejada.
@@ -73,7 +73,7 @@ Para considerações de segurança de token de portador adicionais, consulte [RF
 
 Obter mais informações sobre os diferentes tipos de tokens que são utilizados no Azure AD B2C estão disponíveis no [a referência de token do Azure AD](active-directory-b2c-reference-tokens.md).
 
-## Protocolos
+## <a name="protocols"></a>Protocolos
 Quando estiver pronto para rever alguns pedidos de exemplo, pode começar com um dos tutoriais seguintes. Cada corresponde a um cenário de autenticação específica. Se precisar de ajuda para determinar que fluxo é adequado para si, consulte [os tipos de aplicações, pode criar utilizando o Azure AD B2C](active-directory-b2c-apps.md).
 
 * [Criar aplicações móveis e nativas utilizando OAuth 2.0](active-directory-b2c-reference-oauth-code.md)

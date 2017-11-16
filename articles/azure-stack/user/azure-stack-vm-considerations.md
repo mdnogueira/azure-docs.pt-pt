@@ -4,7 +4,7 @@ description: "Saiba mais sobre as diferenças e as considerações ao trabalhar 
 services: azure-stack
 documentationcenter: 
 author: SnehaGunda
-manager: byronr
+manager: femila
 editor: 
 ms.assetid: 
 ms.service: azure-stack
@@ -12,13 +12,13 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 9/25/2017
+ms.date: 11/14/2017
 ms.author: sngun
-ms.openlocfilehash: 7d841dba798c2b706c26dcf51361ce0447710b12
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: fa4816079660467e530237fef62aeadfef7fa8bd
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="considerations-for-virtual-machines-in-azure-stack"></a>Considerações para máquinas virtuais na pilha do Azure
 
@@ -46,12 +46,14 @@ O Kit de desenvolvimento de pilha do Azure suporta os tamanhos seguintes:
 
 | Tipo | Tamanho | Intervalo de tamanhos suportados |
 | --- | --- | --- |
-|Fins gerais |Básico A|A0 A4|
-|Fins gerais |Um padrão|A0 A7|
-|Fins gerais |D padrão|D1 D4|
-|Fins gerais |Dv2 padrão|D1v2 D5v2|
-|Com otimização de memória|Série D|D11 D14|
-|Com otimização de memória |Série Dv2|D11v2 D14v2|
+|Fins gerais |Básico A|A0 - A4|
+|Fins gerais |Um padrão|A0 - A7|
+|Fins gerais |Série D|D1 - D4|
+|Fins gerais |Série Dv2|D1_v2 - D5_v2|
+|Fins gerais |Série DS|DS1 - DS4|
+|Fins gerais |Série DSv2|DS1_v2 - DS5_v2|
+|Com otimização de memória|Série DS|DS11 - DS14|
+|Com otimização de memória |Série DSv2|DS11_v2 - DS14_v2|
 
 Tamanhos de máquina virtual e as quantidades de recursos associados são consistentes entre pilha do Azure e o Azure. Por exemplo, isto inclui a quantidade de memória, número de núcleos de e/tamanho do número de discos de dados que podem ser criadas. No entanto, o desempenho do mesmo tamanho VM na pilha do Azure depende as características subjacentes de um determinado ambiente de pilha do Azure.
 

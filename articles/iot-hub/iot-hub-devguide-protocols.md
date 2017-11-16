@@ -20,7 +20,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Referenciar - escolher um protocolo de comunicação
+# <a name="reference---choose-a-communication-protocol"></a>Referenciar - escolher um protocolo de comunicação
 
 IoT Hub permite que os dispositivos utilizar os protocolos seguintes para comunicações de lado do dispositivo:
 
@@ -51,7 +51,7 @@ Quando escolher o protocolo para as comunicações do lado do dispositivo, consi
 > [!WARNING]
 > Quando utilizar HTTPS, cada dispositivo deve consultar mensagens da nuvem para o dispositivo de cada 25 minutos ou mais. No entanto, durante o desenvolvimento, é aceitável para consultar mais frequentemente do que a cada 25 minutos.
 
-## Números de porta
+## <a name="port-numbers"></a>Números de porta
 
 Dispositivos podem comunicar com o IoT Hub no Azure utilizando vários protocolos. Normalmente, a escolha do protocolo está condicionada pelos requisitos específicos da solução. A tabela seguinte lista as portas de saída que tem de estar abertas para um dispositivo para poder utilizar um protocolo específico:
 
@@ -66,7 +66,7 @@ Dispositivos podem comunicar com o IoT Hub no Azure utilizando vários protocolo
 Assim que tiver criado um IoT hub na região do Azure, o IoT hub mantém o mesmo endereço IP para a duração do que o IoT hub. No entanto, se Microsoft move o hub IoT para uma unidade de escala diferente para manter a qualidade de serviço, em seguida, este é atribuído um novo endereço IP.
 
 
-## Passos seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Para obter mais informações sobre como o IoT Hub implementa o protocolo MQTT, consulte o artigo [Communicate com o seu IoT hub, utilizando o protocolo MQTT][lnk-mqtt-support].
 

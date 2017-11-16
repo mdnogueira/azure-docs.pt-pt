@@ -13,14 +13,14 @@ ms.workload: On Demand
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/27/2017
+ms.date: 11/13/2017
 ms.author: douglasl
 ms.reviewer: douglasl
-ms.openlocfilehash: fe11926cb7f6b2a80913895b685acfcc433e9805
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 8bcecdff2bb9ac037e2cd71a431619883dfb5084
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync-preview"></a>Sincronizar os dados em várias bases de dados na nuvem e no local com sincronização de dados do SQL Server (pré-visualização)
 
@@ -78,38 +78,11 @@ Sincronização de dados não é adequada para os seguintes cenários:
     -   Se selecionar *Hub wins*, as alterações no hub substitui sempre as alterações no membro.
     -   Se selecionar *wins membro*, as alterações nas alterações de substituição de membro no hub. Se existir mais do que um membro, o valor final depende que membro sincroniza-se primeiro.
 
-## <a name="common-questions"></a>Perguntas comuns
-
-### <a name="how-frequently-can-data-sync-synchronize-my-data"></a>Frequência é que a sincronização de dados pode sincronizar os meus dados? 
-O mínimo de frequência é a cada cinco minutos.
-
-### <a name="can-i-use-data-sync-to-sync-between-sql-server-on-premises-databases-only"></a>Pode utilizar a sincronização de dados a sincronização entre o SQL Server no local bases de dados apenas? 
-Não diretamente. Pode sincronizar os entre bases de dados do SQL Server no local indiretamente, no entanto, ao criar uma base de dados do Hub no Azure e, em seguida, adicionar as bases de dados no local ao grupo de sincronização.
-   
-### <a name="can-i-use-data-sync-to-seed-data-from-my-production-database-to-an-empty-database-and-then-keep-them-synchronized"></a>Posso utilizar a sincronização de dados para dados de seed da minha base de dados de produção para uma base de dados vazio e, em seguida, mantê-las sincronizados? 
-Sim. Crie manualmente o esquema na nova base de dados, processamento de scripts do original. Depois de criar o esquema, adicione as tabelas a um grupo de sincronização para copiar os dados e de as manter sincronizadas.
-
-### <a name="why-do-i-see-tables-that-i-did-not-create"></a>Por que razão vejo tabelas que não conseguiu criar?  
-Sincronização de dados cria tabelas lado na base de dados de registo de alterações. Não elimine-os ou sincronização de dados deixa de funcionar.
-   
-### <a name="i-got-an-error-message-that-said-cannot-insert-the-value-null-into-the-column-column-column-does-not-allow-nulls-what-does-this-mean-and-how-can-i-fix-the-error"></a>Posso recebeu uma mensagem de erro que consiga aceder tal "não é possível inserir o valor NULL na coluna \<coluna\>. Coluna não permite nulls." O que significa e como pode corrigir o erro? 
-Esta mensagem de erro indica uma das duas seguintes problemas:
-1.  Pode haver uma tabela sem uma chave primária. Para corrigir este problema, adicione uma chave primária para todas as tabelas que estiver a sincronizar.
-2.  Pode haver uma cláusula WHERE da instrução CREATE INDEX. Sincronização não processa esta condição. Para corrigir este problema, remova a cláusula WHERE ou manualmente, efetue as alterações a todas as bases de dados. 
- 
-### <a name="how-does-data-sync-handle-circular-references-that-is-when-the-same-data-is-synced-in-multiple-sync-groups-and-keeps-changing-as-a-result"></a>Como a sincronização de dados processar referências circulares? Ou seja, quando os mesmos dados são sincronizados em vários grupos de sincronização e mantém a alteração assim?
-Sincronização de dados não processa as referências circulares. Lembre-se de que os evitar. 
-
-### <a name="how-can-i-export-and-import-a-database-with-data-sync"></a>Como exportar e importar uma base de dados de sincronização de dados?
-Depois de exportar uma base de dados como um `.bacpac` de ficheiros e importar o ficheiro para criar uma nova base de dados, terá de efetue os seguintes dois procedimentos para utilizar a sincronização de dados na base de dados nova:
-1.  Limpar os objetos de sincronização de dados e tabelas de lado no **nova base de dados** utilizando [este script](https://github.com/Microsoft/sql-server-samples/blob/master/samples/features/sql-data-sync/clean_up_data_sync_objects.sql). Este script elimina todos os objetos de sincronização de dados necessários da base de dados.
-2.  Recrie o grupo de sincronização com a nova base de dados. Se já não precisar de grupo de sincronização de antigo, elimine-o.
-
 ## <a name="sync-req-lim"></a>Requisitos e limitações
 
 ### <a name="general-requirements"></a>Requisitos gerais
 
--   Cada tabela tem de ter uma chave primária. Não altere o valor da chave primária em qualquer linha. Se tiver de efetuar este procedimento, eliminar a linha e recriá-la com o novo valor de chave primário. 
+-   Cada tabela tem de ter uma chave primária. Não altere o valor da chave primária em qualquer linha. Se tiver de alterar um valor de chave primária, eliminar a linha e recriá-la com o novo valor de chave primário. 
 
 -   Uma tabela não pode ter uma coluna de identidade que não é a chave primária.
 
@@ -150,6 +123,44 @@ Sincronização de dados utiliza insere, atualizar e eliminar acionadores para c
 | Tamanho de linha de dados numa tabela                                        | 24 mb                  |                             |
 | Intervalo de sincronização mínima                                           | 5 minutos              |                             |
 |||
+
+## <a name="faq-about-sql-data-sync"></a>FAQ sobre a sincronização de dados do SQL Server
+
+### <a name="how-much-does-the-sql-data-sync-preview-service-cost"></a>Quanto custo do serviço de sincronização de dados do SQL Server (pré-visualização)?
+
+Durante a pré-visualização, há sem encargos durante o próprio serviço de sincronização de dados do SQL Server (pré-visualização).  No entanto, que ainda acumular custos de transferência de dados de movimento de dados e para a instância de base de dados SQL. Para obter mais informações, consulte [preços da SQL Database](https://azure.microsoft.com/pricing/details/sql-database/).
+
+### <a name="what-regions-support-data-sync"></a>As regiões suportam a sincronização de dados?
+
+Sincronização de dados do SQL Server (pré-visualização) está disponível em todas as regiões de nuvem pública.
+
+### <a name="is-a-sql-database-account-required"></a>É necessária uma conta de base de dados SQL? 
+
+Sim. Tem de ter uma conta de base de dados do SQL Server para alojar a base de dados do Hub.
+
+### <a name="can-i-use-data-sync-to-sync-between-sql-server-on-premises-databases-only"></a>Pode utilizar a sincronização de dados a sincronização entre o SQL Server no local bases de dados apenas? 
+Não diretamente. Pode sincronizar os entre bases de dados do SQL Server no local indiretamente, no entanto, ao criar uma base de dados do Hub no Azure e, em seguida, adicionar as bases de dados no local ao grupo de sincronização.
+   
+### <a name="can-i-use-data-sync-to-seed-data-from-my-production-database-to-an-empty-database-and-then-keep-them-synchronized"></a>Posso utilizar a sincronização de dados para dados de seed da minha base de dados de produção para uma base de dados vazio e, em seguida, mantê-las sincronizados? 
+Sim. Crie manualmente o esquema na nova base de dados, processamento de scripts do original. Depois de criar o esquema, adicione as tabelas a um grupo de sincronização para copiar os dados e de as manter sincronizadas.
+
+### <a name="should-i-use-sql-data-sync-to-back-up-and-restore-my-databases"></a>Deve utilizar sincronização de dados do SQL Server para criar cópias de segurança e restaurar os meus bases de dados?
+
+Não se recomenda utilizar a sincronização de dados do SQL Server (pré-visualização) para criar uma cópia de segurança dos seus dados. Não é possível fazer cópias de segurança e restaurar para um ponto específico no tempo, porque as sincronizações de sincronização de dados do SQL Server (pré-visualização) não são com a versão. Além disso, a sincronização de dados do SQL Server (pré-visualização) não efetuar cópias de segurança outros objetos SQL, tais como procedimentos armazenados e não o equivalente a uma operação de restauro rapidamente.
+
+Para obter um recomendado técnica de cópia de segurança, consulte [copiar uma base de dados SQL do Azure](sql-database-copy.md).
+
+### <a name="is-collation-supported-in-sql-data-sync"></a>Agrupamento é suportado sincronização de dados SQL?
+
+Sim. Sincronização de dados do SQL Server suporta o agrupamento nos seguintes cenários:
+
+-   Se as tabelas de esquema de sincronização selecionado ainda não estiverem no seu hub ou membro bases de dados, em seguida, ao implementar o grupo de sincronização, o serviço cria automaticamente o correspondentes tabelas e colunas com as definições de agrupamento selecionadas nas bases de dados de destino vazio.
+
+-   Se as tabelas para ser sincronizado já existem nas bases de dados do seu hub e o membro, a sincronização de dados do SQL Server requer que as colunas de chave primárias tem o mesmo agrupamento entre bases de dados de hub e o membro com êxito a implementar o grupo de sincronização. Não existem sem restrições de agrupamento em colunas que não sejam as colunas de chave primárias.
+
+### <a name="is-federation-supported-in-sql-data-sync"></a>Federação é suportada sincronização de dados SQL?
+
+Base de dados de raiz de Federação pode ser utilizado no serviço de sincronização de dados do SQL Server (pré-visualização) sem qualquer limitação. Não é possível adicionar o ponto final de base de dados federada para a versão atual de sincronização de dados do SQL Server (pré-visualização).
 
 ## <a name="next-steps"></a>Passos seguintes
 

@@ -15,11 +15,11 @@ ms.date: 07/02/2017
 ms.author: kgremban
 ms.reviewer: harshja
 ms.custom: it-pro; oldportal
-ms.openlocfilehash: ea97fdc8d146ed524a932018b572ceda0982738b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 073d81e495b9cacbe81f375b09bfcad23aadb22e
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="enable-application-proxy-in-the-classic-portal-and-download-connectors"></a>Ativar o Proxy da aplicação no portal clássico e transferir conectores
 Este artigo explica como ativar a Proxy da Aplicação do Microsoft Azure AD para o diretório em nuvem no Azure AD.
@@ -94,4 +94,4 @@ Se pretender desinstalar o Conetor, desinstale o serviço Conetor e o serviço A
 ## <a name="next-steps"></a>Passos seguintes
 Está agora pronto para [Publicar aplicações com o Proxy da Aplicação](active-directory-application-proxy-publish.md).
 
-Se tiver aplicações que estão em redes separadas ou em diferentes localizações, pode utilizar grupos de conetor para organizar os diferentes conetores em unidades lógicas. Saiba mais sobre [Trabalhar com conetores da Proxy da Aplicação](active-directory-application-proxy-connectors.md).
+Se tiver aplicações que estão em redes separadas ou em diferentes localizações, pode utilizar grupos de conetor para organizar os diferentes conetores em unidades lógicas. Saiba mais sobre [Trabalhar com conetores da Proxy da Aplicação](active-directory-application-proxy-connectors-azure-portal.md).

@@ -21,10 +21,10 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/11/2017
 ---
-# Serviço para chamadas de serviço utilizando credenciais de cliente (segredo partilhado ou certificado)
+# <a name="service-to-service-calls-using-client-credentials-shared-secret-or-certificate"></a>Serviço para chamadas de serviço utilizando credenciais de cliente (segredo partilhado ou certificado)
 O OAuth 2.0 cliente credenciais conceder fluxo permite um serviço web (*cliente confidencial*) para utilizar as suas próprias credenciais em vez de representar um utilizador, para autenticação quando chama outro serviço da web. Neste cenário, o cliente é normalmente um serviço web de camada média, um serviço do daemon ou o web site. Um nível mais elevado de garantia, o Azure AD permite também que o serviço de chamada utilizar um certificado (em vez de um segredo partilhado) como uma credencial.
 
-## Diagrama de fluxo de conceder de credenciais do cliente
+## <a name="client-credentials-grant-flow-diagram"></a>Diagrama de fluxo de conceder de credenciais do cliente
 O diagrama seguinte explica como as credenciais do cliente conceder fluxo funciona no Azure Active Directory (Azure AD).
 
 ![Fluxo de concessão de credenciais de cliente OAuth2.0](media/active-directory-protocols-oauth-service-to-service/active-directory-protocols-oauth-client-credentials-grant-flow.jpg)
@@ -34,20 +34,20 @@ O diagrama seguinte explica como as credenciais do cliente conceder fluxo funcio
 3. O token de acesso é utilizado para autenticar para o recurso protegido.
 4. Dados a partir de recursos protegidos, são devolvidos para a aplicação web.
 
-## Registar os serviços no Azure AD
+## <a name="register-the-services-in-azure-ad"></a>Registar os serviços no Azure AD
 Registe o serviço de chamada e o serviço de receção no Azure Active Directory (Azure AD). Para obter instruções detalhadas, consulte [integrar aplicações com o Azure Active Directory](active-directory-integrating-applications.md).
 
-## Pedir um Token de acesso
+## <a name="request-an-access-token"></a>Pedir um Token de acesso
 Para pedir um token de acesso, utilize um HTTP POST para o inquilino específico ponto final do Azure AD.
 
 ```
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
-## Pedido de token de acesso de serviços
+## <a name="service-to-service-access-token-request"></a>Pedido de token de acesso de serviços
 Existem dois cenários, dependendo se a aplicação cliente escolhe estar protegido por um segredo partilhado ou um certificado.
 
-### Primeiro maiúsculas e minúsculas: pedido de token de acesso com um segredo partilhado
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Primeiro maiúsculas e minúsculas: pedido de token de acesso com um segredo partilhado
 Quando utilizar um segredo partilhado, um pedido de token de acesso de serviço a serviço contém os seguintes parâmetros:
 
 | Parâmetro |  | Descrição |
@@ -57,7 +57,7 @@ Quando utilizar um segredo partilhado, um pedido de token de acesso de serviço 
 | client_secret |Necessário |Introduza uma chave registada para a chamada serviço ou o daemon de aplicação web no Azure AD. Para criar uma chave no portal do Azure, clique em **do Active Directory**, mude de diretório, clique na aplicação, clique em **definições**, clique em **chaves**, e adicionar uma chave.|
 | Recursos |Necessário |Introduza o URI de ID de aplicação do serviço web do recetor. Para obter o URI de ID de aplicação no portal do Azure, clique em **do Active Directory**, mude de diretório, clique na aplicação de serviço e, em seguida, clique em **definições** e **propriedades** |
 
-#### Exemplo
+#### <a name="example"></a>Exemplo
 O HTTP POST seguintes pedidos de um token de acesso para o serviço web de https://service.contoso.com/. O `client_id` identifica o serviço web que os pedidos de token de acesso.
 
 ```
@@ -68,7 +68,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&client_secret=qkDwDJlDfig2IpeuUZYKH1Wb8q1V0ju6sILxQQqhJ+s=&resource=https%3A%2F%2Fservice.contoso.com%2F
 ```
 
-### Segunda caso: pedido de token de acesso com um certificado
+### <a name="second-case-access-token-request-with-a-certificate"></a>Segunda caso: pedido de token de acesso com um certificado
 Um pedido de token de acesso de serviços com um certificado contém os seguintes parâmetros:
 
 | Parâmetro |  | Descrição |
@@ -81,7 +81,7 @@ Um pedido de token de acesso de serviços com um certificado contém os seguinte
 
 Tenha em atenção que os parâmetros são quase os mesmos que no caso do pedido por segredo partilhado com a exceção que o parâmetro client_secret é substituído por dois parâmetros: um client_assertion_type e client_assertion.
 
-#### Exemplo
+#### <a name="example"></a>Exemplo
 O HTTP POST seguintes pedidos de um token de acesso para o serviço web de https://service.contoso.com/ com um certificado. O `client_id` identifica o serviço web que os pedidos de token de acesso.
 
 ```
@@ -92,7 +92,7 @@ Content-Type: application/x-www-form-urlencoded
 resource=https%3A%2F%contoso.onmicrosoft.com%2Ffc7664b4-cdd6-43e1-9365-c2e1c4e1b3bf&client_id=97e0a5b7-d745-40b6-94fe-5f77d35c6e05&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg&grant_type=client_credentials
 ```
 
-### Resposta de Token de acesso de serviços
+### <a name="service-to-service-access-token-response"></a>Resposta de Token de acesso de serviços
 
 Uma resposta de êxito contém uma resposta JSON OAuth 2.0 com os seguintes parâmetros:
 
@@ -105,7 +105,7 @@ Uma resposta de êxito contém uma resposta JSON OAuth 2.0 com os seguintes par�
 | not_before |O tempo do que o token de acesso fica utilizável. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até que o tempo de validade para o token.|
 | Recursos |O URI de ID de aplicação do serviço web do recetor. |
 
-#### Exemplo de resposta
+#### <a name="example-of-response"></a>Exemplo de resposta
 O exemplo seguinte mostra a resposta de êxito a um pedido de um token de acesso a um serviço web.
 
 ```
@@ -118,6 +118,6 @@ O exemplo seguinte mostra a resposta de êxito a um pedido de um token de acesso
 }
 ```
 
-## Consultar também
+## <a name="see-also"></a>Consultar também
 * [OAuth 2.0 no Azure AD](active-directory-protocols-oauth-code.md)
 * [Exemplo em c# da chamada de serviços com um segredo partilhado](https://github.com/Azure-Samples/active-directory-dotnet-daemon) e [exemplo em c# da chamada de serviços com um certificado](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential)

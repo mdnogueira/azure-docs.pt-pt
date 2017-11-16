@@ -13,18 +13,18 @@ ms.workload: On Demand
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/06/2016
+ms.date: 11/12/2017
 ms.author: ddove
-ms.openlocfilehash: a8bfbf2e30f8568212ab49ba1772588cc9e45b38
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 6a73f8d0b85198f0d4e10fbc31cbd21f93bdb8a8
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="building-scalable-cloud-databases"></a>Criar bases de dados de nuvem escaláveis
 Aumentar horizontalmente bases de dados pode ser facilmente conseguido utilizando ferramentas dimensionáveis e funcionalidades para a SQL Database do Azure. Em particular, pode utilizar o **biblioteca de clientes de base de dados elástica** para criar e gerir bases de dados de escalamento horizontal. Esta funcionalidade permite-lhe desenvolver facilmente aplicações em partição horizontal com centenas — ou mesmo milhares — das bases de dados SQL do Azure. [As tarefas elásticas](sql-database-elastic-jobs-powershell.md) , em seguida, podem ser utilizados para ajudar a facilitar a gestão destas bases de dados.
 
-Para instalar a biblioteca, visite [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). 
+Para instalar a biblioteca, visite NuGet em [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). 
 
 ## <a name="documentation"></a>Documentação
 1. [Introdução às ferramentas de Base de Dados Elástica](sql-database-elastic-scale-get-started.md)
@@ -54,22 +54,32 @@ Aumentar horizontalmente aplicações utilizando *fragmentação* apresenta desa
 
 Em geral, os clientes utilizando ferramentas de base de dados elástica podem esperar obter a funcionalidade completa de T-SQL ao submeter operações de partições horizontais local, por oposição a operações de cross-partições horizontais que tem as seus próprios semântica.
 
+
+
 ## <a name="next-steps"></a>Passos seguintes
-Repita o [aplicação de exemplo](sql-database-elastic-scale-get-started.md) que demonstra as funções do cliente. 
 
-Para instalar a biblioteca, visite [biblioteca de clientes de base de dados elásticas](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/).
+- [Biblioteca de clientes de base de dados elásticas](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) - a **instalar** a biblioteca através do NuGet.
 
-Para obter instruções sobre como utilizar a ferramenta de intercalação de divisão, consulte o [descrição geral da ferramenta de intercalação de divisão](sql-database-elastic-scale-overview-split-and-merge.md).
+- [Começar a utilizar as ferramentas de base de dados elástica](sql-database-elastic-scale-get-started.md) - para experimentar o **aplicação de exemplo** que demonstra as funções do cliente.
 
-[Biblioteca de clientes de base de dados elástica está agora aberta sourced!](https://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/)
+- [Github, Azure/elástico-db-tools](https://github.com/Azure/elastic-db-tools) -a biblioteca é um software de código aberto.
+    - Biblioteca de cliente de ferramentas de base de dados elásticas permite ADO.NET aos programadores criar aplicações que implementam e utilizam o padrão ao conhecido como fragmentação de base de dados na base de dados do Azure SQL.
 
-Utilize [consultas elásticas](sql-database-elastic-query-overview.md).
+- [Biblioteca de clientes de base de dados elástica está agora aberta sourced!](https://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/) -um **blogue** sobre a biblioteca de clientes de base de dados elásticas, com a data de 09/2015/09.
 
-A biblioteca está disponível como software open source para [GitHub](https://github.com/Azure/elastic-db-tools). 
+- [Descrição geral de consulta elástico de base de dados SQL do Azure](sql-database-elastic-query-overview.md) - para utilizar consultas elásticas.
+
+- [Mover dados entre bases de dados de nuvem de escalamento horizontal](sql-database-elastic-scale-overview-split-and-merge.md) - para obter instruções sobre como utilizar o **ferramenta de intercalação de divisão**.
+
+
+
+<!-- Additional resources H2 -->
 
 [!INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
+
 <!--Anchors-->
 <!--Image references-->
-[1]:./media/sql-database-elastic-database-client-library/glossary.png
+
+[1]: ./media/sql-database-elastic-database-client-library/glossary.png
 

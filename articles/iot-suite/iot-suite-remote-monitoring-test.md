@@ -12,11 +12,11 @@ ms.topic: article
 ms.devlang: NA
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.openlocfilehash: 426b7ff6114fd0b79a6af71a78705f11b80862bf
-ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
+ms.openlocfilehash: 0e6cc412fdb3ea7b9d8291b9f963e6412ae994a9
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="test-your-solution-with-simulated-devices"></a>Testar a sua solução com dispositivos simulados
 
@@ -39,6 +39,10 @@ A tabela seguinte mostra os dados que a ligthbulb relatórios para a nuvem como 
 | Nome   | Valores      |
 | ------ | ----------- |
 | Estado | 'em", 'off' |
+| online | TRUE, false |
+
+> [!NOTE]
+> O **online** valor de telemetria é obrigatório para tipos de todas as simulada.
 
 *Métodos*
 
@@ -267,7 +271,11 @@ Para testar o **Lightbulb** tipo de dispositivo, primeiro pode testar o tipo de 
 
 Para testar e depurar as suas alterações localmente, consulte [descrição geral de simulação de dispositivo](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md).
 
-Configurar o projeto para copiar o novo **Lightbulb** ficheiros de dispositivos para o diretório de saída.
+Configurar o projeto para copiar o novo **Lightbulb** ficheiros de dispositivos para o diretório de saída:
+
+* Se estiver a utilizar o Visual Studio, certifique-se de adicionar os três ficheiros lightbulb novo que criou na secção anterior para o **serviços** projeto na solução. Em seguida, utilize **Explorador de soluções** marcá-los para ser copiado para o diretório de saída.
+
+* Se estiver a utilizar o Visual Studio Code, abra o **Services.csproj** de ficheiros e adicione os três ficheiros lightbulb novo que criou na secção anterior. Consulte as entradas de ficheiro de modelo de dispositivo existente no **Services.csproj** ficheiro como exemplos.
 
 Para testar o novo dispositivo numa solução implementada, consulte um dos:
 

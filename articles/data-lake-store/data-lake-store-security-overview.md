@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 08/28/2017
 ms.author: nitinme
-ms.openlocfilehash: e72dd7e84ce3961274cf312649cc679abc576aae
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5b71c7e7f1ea58a273beb58717102522ad0f8c4a
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="security-in-azure-data-lake-store"></a>Segurança no Azure Data Lake Store
 Muitas empresas são tirar partido da análise de macrodados informações empresariais ajudar a tomar decisões inteligentes. Uma organização pode ter um ambiente complexo e regulado, com um número crescente de diversos utilizadores. É vital para uma empresa para se certificar de que os dados empresariais críticos são armazenados de forma mais segura, com o nível correto de acesso concedido a utilizadores individuais. O Azure Data Lake Store foi concebido para ajudar que cumpram estes requisitos de segurança. Neste artigo, saiba mais sobre as capacidades de segurança do Data Lake Store, incluindo:
@@ -56,7 +56,7 @@ Tenha em atenção que, apesar das funções são atribuídas para gestão de co
 | --- | --- | --- | --- |
 | Nenhuma função atribuída |Nenhuma |Regida pelo ACL |O utilizador não é possível utilizar o portal do Azure ou os cmdlets do Azure PowerShell para procurar o Data Lake Store. O utilizador pode utilizar apenas as ferramentas da linha de comandos. |
 | Proprietário |Todos |Todos |A função de proprietário é um Superutilizador. Esta função pode gerir tudo e tem acesso total aos dados. |
-| Leitor |Só de leitura |Regida pelo ACL |A função de leitor pode ver tudo sobre gestão de contas, por exemplo, o que o utilizador está atribuído ao qual a função. A função de leitor não é possível efetuar quaisquer alterações. |
+| Leitor |Só de Leitura |Regida pelo ACL |A função de leitor pode ver tudo sobre gestão de contas, por exemplo, o que o utilizador está atribuído ao qual a função. A função de leitor não é possível efetuar quaisquer alterações. |
 | Contribuinte |Todos os exceto adicionar e remover funções |Regida pelo ACL |A função de contribuinte pode gerir alguns aspetos de uma conta, tais como implementações e criar e gerir alertas. A função de contribuinte não é possível adicionar ou remover funções. |
 | Administrador de Acesso de Utilizador |Adicionar e remover funções |Regida pelo ACL |A função de administrador de acesso de utilizador pode gerir o acesso às contas de utilizador. |
 
@@ -65,7 +65,7 @@ Para obter instruções, consulte [atribuir utilizadores ou grupos de segurança
 ### <a name="using-acls-for-operations-on-file-systems"></a>Utilizando ACLs para operações em sistemas de ficheiros
 Data Lake Store é um sistema de ficheiros hierárquico como distribuídas ficheiro sistema Hadoop (HDFS) e suporta [POSIX ACLs](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#ACLs_Access_Control_Lists). Controla (r) de leitura, escrita (m) e executar (permissões para recursos para a função de proprietário, para o grupo de proprietários e para outros utilizadores e grupos x). Na Pré-visualização Pública do Data Lake Store (a versão atual), as ACLs podem ser ativadas na pasta raiz, em subpastas e em ficheiros individuais. Para obter mais informações sobre como as ACLs funcionam no contexto do Data Lake Store, veja [Controlo de acesso no Data Lake Store](data-lake-store-access-control.md).
 
-Recomendamos que definir ACLs para vários utilizadores utilizando [grupos de segurança](../active-directory/active-directory-accessmanagement-manage-groups.md). Adicionar utilizadores a um grupo de segurança e, em seguida, atribua as ACLs para um ficheiro ou pasta para o grupo de segurança. Isto é útil quando pretende fornecer acesso personalizados, porque está limitado a adição de um máximo de nove entradas de acesso personalizados. Para obter mais informações sobre como proteger melhor os dados armazenados no Data Lake Store utilizando grupos de segurança do Azure Active Directory, consulte [atribuir utilizadores ou grupo de segurança como ACLs para o sistema de ficheiros do Azure Data Lake Store](data-lake-store-secure-data.md#filepermissions).
+Recomendamos que definir ACLs para vários utilizadores utilizando [grupos de segurança](../active-directory/active-directory-groups-create-azure-portal.md). Adicionar utilizadores a um grupo de segurança e, em seguida, atribua as ACLs para um ficheiro ou pasta para o grupo de segurança. Isto é útil quando pretende fornecer acesso personalizados, porque está limitado a adição de um máximo de nove entradas de acesso personalizados. Para obter mais informações sobre como proteger melhor os dados armazenados no Data Lake Store utilizando grupos de segurança do Azure Active Directory, consulte [atribuir utilizadores ou grupo de segurança como ACLs para o sistema de ficheiros do Azure Data Lake Store](data-lake-store-secure-data.md#filepermissions).
 
 ![Lista de acesso padrão e personalizado](./media/data-lake-store-security-overview/adl.acl.2.png "lista acesso padrão e personalizado")
 
