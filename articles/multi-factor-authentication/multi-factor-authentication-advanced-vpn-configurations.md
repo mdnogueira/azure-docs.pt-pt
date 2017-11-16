@@ -5,7 +5,7 @@ services: multi-factor-authentication
 documentationcenter: 
 author: MicrosoftGuyJFlo
 manager: femila
-editor: yossib
+ms.reviewer: richagi
 ms.assetid: 1f94a214-d6f6-48a8-8a12-006b5896ae45
 ms.service: multi-factor-authentication
 ms.workload: identity
@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/25/2017
 ms.author: joflore
-ms.openlocfilehash: 9daad3fab3990297cea6651c474e29e5c4002364
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 0e7406e00aea59f14a986bd1dd091d0968cc4579
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="advanced-scenarios-with-azure-multi-factor-authentication-and-third-party-vpn-solutions"></a>Cenários avançados com multi-factor Authentication do Azure e soluções VPN de terceiros
 Multi-factor Authentication do Azure pode ser utilizado para ligar de forma totalmente integrada com várias soluções VPN de terceiros. Este artigo incida no dispositivo de VPN do Cisco® ASA, aplicação Citrix NetScaler SSL VPN e o dispositivo Juniper redes proteger o acesso/Pulse Secure ligar seguro de VPN SSL. Criámos guias de configuração para resolver estas três aplicações comuns. Servidor multi-factor Authentication também pode ser integrado mais outros sistemas que utilizem RADIUS, o LDAP, o IIS ou autenticação baseada em afirmações do AD FS. Pode encontrar mais detalhes em [configurações de servidor MFA](multi-factor-authentication-get-started-server.md#next-steps).

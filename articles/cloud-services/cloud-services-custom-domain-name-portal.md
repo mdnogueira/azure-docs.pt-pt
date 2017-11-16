@@ -14,19 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: adegeo
-ms.openlocfilehash: f5d244fc747b923989407afd50927cda2b8d4a0f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: afda0bc79a26c8cb9736c754a681ebb602e41af1
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Configurar um nome de domínio personalizado para um serviço em nuvem do Azure
-> [!div class="op_single_selector"]
-> * [Portal do Azure](cloud-services-custom-domain-name-portal.md)
-> * [Portal Clássico do Azure](cloud-services-custom-domain-name.md)
-> 
-> 
-
 Quando cria um serviço em nuvem, Azure atribui-o para um subdomínio **cloudapp.net**. Por exemplo, se o seu serviço em nuvem com o nome "contoso", os utilizadores irão conseguir aceder à aplicação num URL como http://contoso.cloudapp.net. Azure também atribui um endereço IP virtual.
 
 No entanto, pode também expor a aplicação no seu próprio nome de domínio, tal como **contoso.com**. Este artigo explica como reserva ou configurar um nome de domínio personalizado para funções da web de serviço em nuvem.
@@ -62,7 +56,7 @@ Um *A* registo mapeia um domínio, tal como **contoso.com** ou **www.contoso.com
 > [!NOTE]
 > Uma vez que um registo for mapeado para um endereço IP estático, este não é possível resolver automaticamente as alterações para o endereço IP do seu serviço em nuvem. O endereço IP utilizado pelo seu serviço em nuvem está alocado à primeira que implementação para uma ranhura vazia (produção ou transição.) Se eliminar a implementação para a ranhura, o endereço IP é libertado pelo Azure e todas as implementações futuras para a ranhura podem ser atribuídas um novo endereço IP.
 > 
-> Comodamente, o endereço IP de uma ranhura de implementação fornecido (produção ou transição) é mantido ao trocar entre testes e implementações de produção ou efetuar uma atualização direta de uma implementação existente. Para obter mais informações sobre estas ações a efetuar, consulte [como gerir cloud services](cloud-services-how-to-manage.md).
+> Comodamente, o endereço IP de uma ranhura de implementação fornecido (produção ou transição) é mantido ao trocar entre testes e implementações de produção ou efetuar uma atualização direta de uma implementação existente. Para obter mais informações sobre estas ações a efetuar, consulte [como gerir cloud services](cloud-services-how-to-manage-portal.md).
 > 
 > 
 
@@ -139,7 +133,7 @@ Este exemplo mostra como criar um registo a para o domínio de raiz. Se pretende
 > 
 
 ## <a name="next-steps"></a>Passos seguintes
-* [Como gerir Serviços Cloud](cloud-services-how-to-manage.md)
+* [Como gerir Serviços Cloud](cloud-services-how-to-manage-portal.md)
 * [Como Mapear Conteúdo da CDN para um Domínio Personalizado](../cdn/cdn-map-content-to-custom-domain.md)
 * [Configuração geral do seu serviço de nuvem](cloud-services-how-to-configure-portal.md).
 * Saiba como [implementar um serviço em nuvem](cloud-services-how-to-create-deploy-portal.md).

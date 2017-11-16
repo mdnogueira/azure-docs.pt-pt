@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 10/24/2017
 ms.author: marsma
 ms.custom: 
-ms.openlocfilehash: 76e6e1b826f37bfea7a8463808566191753e4f2d
-ms.sourcegitcommit: e6029b2994fa5ba82d0ac72b264879c3484e3dd0
-ms.translationtype: HT
+ms.openlocfilehash: 049fba28d0783a79331e8bc8de741f55e9caf828
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="push-an-updated-image-to-regional-deployments"></a>Emita uma imagem atualizada para implementações regionais
 
@@ -40,7 +40,7 @@ Se ainda não configurou as duas *aplicação Web para contentores* regionais im
 
 Neste passo, efetue uma alteração à aplicação web que estarão visível elevada disponibilidade depois de emitir a imagem do contentor atualizadas para o registo de contentor do Azure.
 
-Localizar o `AcrHelloworld/Views/Home/Index.cshtml` ficheiro da origem de aplicação [clonado a partir do GitHub](container-registry-tutorial-prepare-registry.md#get-application-code) um tutorial anterior e abri-lo no seu editor de texto favorito. Adicione a seguinte linha acima o `<img>` linha:
+Localizar o `AcrHelloworld/Views/Home/Index.cshtml` ficheiro da origem de aplicação [clonado a partir do GitHub](container-registry-tutorial-prepare-registry.md#get-application-code) um tutorial anterior e abri-lo no seu editor de texto favorito. Adicione a seguinte linha abaixo existente `<h1>` linha:
 
 ```html
 <h1>MODIFIED</h1>
@@ -52,15 +52,27 @@ A modificação `Index.cshtml` deve ter um aspeto semelhante a:
 @{
     ViewData["Title"] = "Azure Container Registry :: Geo-replication";
 }
+<style>
+    body {
+        background-image: url('images/azure-regions.png');
+        background-size: cover;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+</style>
+
+<h1 style="text-align:center;color:blue">Hello World from:  @ViewData["REGION"]</h1>
 <h1>MODIFIED</h1>
-<img width="700" src="~/images/@ViewData["MAPIMAGE"]" />
-<ul>
-<li>Registry URL: @ViewData["REGISTRYURL"]</li>
-<li>Registry IP: @ViewData["REGISTRYIP"]</li>
-<li>HostEntry: @ViewData["HOSTENTRY"]</li>
-<li>Region: @ViewData["REGION"]</li>
-<li>Map: @ViewData["MAPIMAGE"]</li>
-</ul>
+<div class="footer">
+    <ul>
+        <li>Registry URL: @ViewData["REGISTRYURL"]</li>
+        <li>Registry IP: @ViewData["REGISTRYIP"]</li>
+        <li>Registry Region: @ViewData["REGION"]</li>
+    </ul>
+</div>
 ```
 
 ## <a name="rebuild-the-image"></a>Recriar a imagem
@@ -71,24 +83,26 @@ Agora que atualizou a aplicação web, recriar a imagem de contentor. Como anter
 docker build . -f ./AcrHelloworld/Dockerfile -t <acrName>.azurecr.io/acr-helloworld:v1
 ```
 
-## <a name="run-the-container-locally"></a>Executar o contentor localmente
-
-Antes de implementar no registo de contentor do Azure, execute localmente para verificar que a compilação foi bem-sucedida.
-
-```bash
-docker run -d -p 8080:80 <acrName>.azurecr.io/acr-helloworld:v1
-```
-
-Navegue para http://localhost:8080 no seu browser para confirmar que o contentor está a funcionar e é apresentada a modificação.
-
-![IMAGEM DO CONTENTOR DE LOCAIS][local-container-01]
-
 ## <a name="push-image-to-azure-container-registry"></a>Imagem de push para o registo de contentor do Azure
 
 Agora, push a atualização *acr olámundo* imagem de contentor para o registo de georreplicação. Aqui, está a executar um único `docker push` comando para implementar a imagem atualizada para as réplicas de registo em ambos os *EUA oeste* e *EUA Leste* regiões.
 
 ```bash
 docker push <acrName>.azurecr.io/acr-helloworld:v1
+```
+
+Saída deverá ser semelhante ao seguinte:
+
+```bash
+The push refers to a repository [uniqueregistryname.azurecr.io/acr-helloworld]
+5b9454e91555: Pushed
+d6803756744a: Layer already exists
+b7b1f3a15779: Layer already exists
+a89567dff12d: Layer already exists
+59c7b561ff56: Layer already exists
+9a2f9413d9e4: Layer already exists
+a75caa09eb1f: Layer already exists
+v1: digest: sha256:4c3f2211569346fbe2d1006c18cbea2a4a9dcc1eb3a078608cef70d3a186ec7a size: 1792
 ```
 
 ## <a name="view-the-webhook-logs"></a>Ver os registos do webhook
@@ -123,7 +137,7 @@ Com um único `docker push`, atualizou ambas as implementações de aplicação 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Neste tutorial, atualizada e instalada uma versão nova do contentor de aplicação web no seu registo de georreplicação. Webhooks no registo de contentor do Azure notificado serviços de aplicação da atualização, o que acionou uma solicitação de local de registos replicadas.
+Neste tutorial, atualizada e instalada uma versão nova do contentor de aplicação web no seu registo de georreplicação. Webhooks no registo de contentor do Azure notificado Web Apps para contentores de atualização, o que acionou uma solicitação local a partir das réplicas registo.
 
 Deste tutorial final da série:
 

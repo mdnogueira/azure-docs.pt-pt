@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2017
 ms.author: rodend;karlku;tomfitz
-ms.openlocfilehash: 6e8335b9c2f3609bf0c48c563205ffaee8575b20
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4ab816d0392816c2293f9d70eb249bbcfa09bfba
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="examples-of-implementing-azure-enterprise-scaffold"></a>Exemplos para implementar andaime enterprise do Azure
 Este tópico fornece exemplos de como uma empresa pode implementar as recomendações para uma [andaime Azure enterprise](resource-manager-subscription-governance.md). Utiliza uma empresa fictícias com o nome Contoso para ilustrar melhores práticas para cenários comuns.
@@ -68,14 +68,14 @@ Dave tem os seguintes requisitos para gerir recursos na subscrição:
 * Ele é preocupado com os custos. Por conseguinte, ele pretende impedir que os proprietários da aplicação para criar máquinas de virtuais desnecessariamente dispendiosas.  
 * Como esta aplicação serve os programadores em várias unidades de negócio, ele pretende etiquetar cada recurso com o proprietário de unidade e aplicações da empresa. Utilizando estas etiquetas, ETS pode faturar-as equipas de adequado.
 
-Ele cria as seguintes [políticas do Gestor de recursos](resource-manager-policy.md):
+Ele cria as seguintes [políticas do Azure](../azure-policy/azure-policy-introduction.md):
 
 | Campo | Efeito | Descrição |
 | --- | --- | --- |
 | localização |Auditoria |A criação dos recursos em qualquer região de auditoria |
-| tipo |Negar |Negar a criação de máquinas virtuais de série de G |
-| etiquetas |Negar |Exigir a tag de proprietário da aplicação |
-| etiquetas |Negar |Exigir a tag de centro de custos |
+| tipo |negar |Negar a criação de máquinas virtuais de série de G |
+| etiquetas |negar |Exigir a tag de proprietário da aplicação |
+| etiquetas |negar |Exigir a tag de centro de custos |
 | etiquetas |Acrescentar |Acrescentar o nome da etiqueta **BusinessUnit** e valor da etiqueta **ETS** a todos os recursos |
 
 ### <a name="resource-tags"></a>Sinalizadores de recursos
@@ -143,9 +143,9 @@ Para o **subscrição de produção**, criarem as políticas seguintes:
 
 | Campo | Efeito | Descrição |
 | --- | --- | --- |
-| localização |Negar |Negar a criação de quaisquer recursos fora centros de dados E.U.A. |
-| etiquetas |Negar |Exigir a tag de proprietário da aplicação |
-| etiquetas |Negar |Exigir a etiqueta do departamento |
+| localização |negar |Negar a criação de quaisquer recursos fora centros de dados E.U.A. |
+| etiquetas |negar |Exigir a tag de proprietário da aplicação |
+| etiquetas |negar |Exigir a etiqueta do departamento |
 | etiquetas |Acrescentar |Acrescentar a etiqueta para cada grupo de recursos que indica o ambiente de produção |
 
 Limita o tipo de sku que um utilizador pode criar na produção.

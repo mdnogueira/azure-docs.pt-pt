@@ -5,7 +5,7 @@ services: multi-factor-authentication
 documentationcenter: 
 author: MicrosoftGuyJFlo
 manager: femila
-editor: yossib
+ms.reviewer: richagi
 ms.assetid: 75af734e-4b12-40de-aba4-b68d91064ae8
 ms.service: multi-factor-authentication
 ms.workload: identity
@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/21/2017
 ms.author: joflore
-ms.openlocfilehash: 527bdd492561ab11784a0b23384d17e055cb3f5c
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 31b32079de19c6c9822c388f60269b07a8c70198
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Configurar definições de multi-factor Authentication do Azure
 Este artigo ajuda-o a gerir o Azure multi-factor Authentication agora que já está em execução.  Abrange vários tópicos que ajudam a tirar o máximo partido do Azure multi-factor Authentication.  Nem todas estas funcionalidades estão disponíveis em cada versão do Azure multi-factor Authentication.
@@ -54,7 +54,7 @@ Se tiver uma das seguintes licenças, pode utilizar a página de definições do
 Para aceder ao Portal de gestão MFA através da página de definições do serviço de MFA, inicie sessão no portal clássico do Azure como administrador e selecione a opção de Active Directory. Clique no seu diretório e, em seguida, no separador **Configurar**. Na secção da autenticação multifator, selecione **Gerir definições do serviço**. Na parte inferior da página Definições de Serviço do MFA, clique na ligação **Aceder ao portal**.
 
 
-## <a name="fraud-alert"></a>Alerta de fraude
+## <a name="fraud-alert"></a>Alerta de Fraude
 Alerta de fraude pode ser configurada e configurar para que os utilizadores podem comunicar fraudulenta tenta aceder aos respetivos recursos.  Os utilizadores podem comunicar fraude com a aplicação móvel ou através do seu telefone.
 
 ### <a name="set-up-fraud-alert"></a>Configurar o alerta de fraude
@@ -206,7 +206,7 @@ Se IPs fidedignos está ativada ou não, a verificação é necessária para flu
 
 ![IPs Fidedignos](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
-## <a name="app-passwords"></a>Palavras-passe de aplicação
+## <a name="app-passwords"></a>Palavras-passe de Aplicação
 Algumas aplicações, como o Office 2010 ou anterior e Apple Mail, não suportam a verificação de dois passos. Estas não estão configuradas para aceitar uma verificação de segundo. Para utilizar estas aplicações, tem de utilizar "palavras-passe de aplicação" em vez da palavra-passe tradicional. A palavra-passe de aplicação permite que a aplicação ignorar a verificação de dois passos e continuar a trabalhar.
 
 > [!NOTE]
@@ -308,7 +308,7 @@ Quando das respetivas contas de inscrever os seus utilizadores para a MFA, se es
 |:--- |:--- |
 | Ligar para telefone |Coloca uma chamada de voz automatizada. O utilizador atende a chamada e prime # no teclado do telefone para se autenticar. Este número de telefone não está sincronizado para o Active Directory no local. |
 | Mensagem de texto para telefone |Envia uma mensagem de texto que contém um código de verificação. É pedido ao utilizador que responda ao texto, a mensagem com o código de verificação, ou introduza o código de verificação para a interface de início de sessão. |
-| Notificação através de aplicações móveis |Envia uma notificação push para o seu telefone ou dispositivo registado. O utilizador vê a notificação e seleciona **verifique** para concluir a verificação. <br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
+| Notificação através de aplicação móvel |Envia uma notificação push para o seu telefone ou dispositivo registado. O utilizador vê a notificação e seleciona **verifique** para concluir a verificação. <br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
 | Código de verificação da aplicação móvel |A aplicação Microsoft Authenticator gera um novo código de verificação de OATH cada 30 segundos. O utilizador introduz este código de verificação para a interface de início de sessão.<br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
 
 ### <a name="how-to-enabledisable-authentication-methods"></a>Como ativar/desativar os métodos de autenticação

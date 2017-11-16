@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/01/2017
 ms.author: TomSh
-ms.openlocfilehash: c63eb15e8d575da91fd8198ca9d486f7fdb2b38d
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 10a92f301584d4e676da9a1eb229667925a6c72c
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="governance-in-azure"></a>Governação no Azure
 
@@ -115,7 +115,7 @@ Para organizações com um Enterprise Agreement, as subscrições do Azure, siga
 
 - proprietário da conta
 
-- Administrador de serviço
+- Administrador de serviços
 
 Esta hierarquia é regida pelas seguintes:
 
@@ -225,14 +225,14 @@ Os recursos não precisam de residir no mesmo grupo de recursos para partilhar u
 As políticas de recursos permitem-lhe criar regras padrão para a sua organização. Pode criar políticas que se certifique-se de recursos são etiquetados com os valores adequados.
 
 > [!Note]
-> Para obter mais informações, consulte [aplicar políticas de recursos de etiquetas](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-policy-tags).
+> Para obter mais informações, consulte [iniciativa de política de etiquetas de faturação](../azure-policy/scripts/billing-tags-policy-init.md).
 
 Também pode ver recursos com etiquetas através do Portal do Azure.
 
 O [relatório de utilização](https://docs.microsoft.com/azure/billing/billing-understand-your-bill) para a sua subscrição inclui nomes de etiquetas e valores, o que lhe permite dividir os custos por etiquetas.
 
 > [!Note]
-> Para obter mais informações sobre etiquetas, consulte [Utilizar etiquetas para organizar os recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags).
+> Para obter mais informações sobre etiquetas, consulte [iniciativa de política de etiquetas de faturação](../azure-policy/scripts/billing-tags-policy-init.md).
 
 As seguintes limitações aplicam-se às etiquetas:
 

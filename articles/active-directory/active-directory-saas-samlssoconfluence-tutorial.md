@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 9a36d686ba39b5168860a20e8c4db357888df6a7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 17bd8294c957c0666ffe75d1ff06b863f1176048
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Tutorial: Azure Active Directory a integração com SAML SSO para Confluence pela resolução GmbH
 
@@ -169,26 +169,53 @@ Nesta secção, ativar o Azure AD início de sessão no portal do Azure e config
 
     ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon3.png)
     
-16. No **SAML SingleSignOn Plug-in configuração** página, clique em **Adicionar fornecedor de identidade adicionais** botão para configurar as definições do fornecedor de identidade.
+16. No **SAML SingleSignOn Plug-in configuração** página, clique em **Adicionar nova IdP** botão para configurar as definições do fornecedor de identidade.
 
     ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon4.png)
 
-17. Execute os seguintes passos nesta página:
+17. No **escolha o fornecedor de identidade** página, execute os seguintes passos:
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon5.png)
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon5a.png)
  
-    a. Adicionar **nome** do fornecedor de identidade (por exemplo, do Azure AD).
+    a. Definir **do Azure AD** como o tipo de IdP.
     
-    b. Adicionar **Descrição** do fornecedor de identidade (por exemplo, do Azure AD).
+    b. Adicionar **nome** do fornecedor de identidade (por exemplo, do Azure AD).
+    
+    c. Adicionar **Descrição** do fornecedor de identidade (por exemplo, do Azure AD).
+    
+    d. Clique em **Seguinte**.
+    
+18. No **configuração do fornecedor de identidade** página, clique em **seguinte** botão.
 
-    c. Clique em **XML** e selecione o **metadados** ficheiro que transferiu a partir do portal do Azure.
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon5b.png)
 
-    d. Clique em **carga** botão.
+19. No **importação SAML IdP metadados** página, execute os seguintes passos:
 
-    e. Lê os metadados do IdP e preenche os campos conforme realçado na captura de ecrã. 
-18. Clique em **guardar definições** botão para guardar as definições.
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon5c.png)
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon6.png)
+    a. Clique em **carga ficheiro** botão e escolha o ficheiro XML de metadados que transferiu no passo 5.
+
+    b. Clique em **importação** botão.
+    
+    c. Aguarde por breves instantes até que a importação for bem sucedida.
+    
+    d. Clique em **seguinte** botão.
+    
+20. No **atributo de ID de utilizador e a transformação** página, clique em **seguinte** botão.
+
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon5d.png)
+    
+21. No **criação de utilizador e a atualização** página, clique em **Guardar & seguinte** ao guardar as definições.   
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon6a.png)
+    
+22. No **testar as suas definições** página, clique em **ignorar teste & configurar manualmente** para ignorar o teste de utilizador por agora. Isto irá ser efetuado na secção seguinte e necessita de algumas definições no portal do Azure. 
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon6b.png)
+    
+23. A ler a caixa de diálogo apprearing **ignorar os meios de teste...** , clique em **OK**.
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssoconfluence-tutorial/addon6c.png)
 
 > [!TIP]
 > Pode agora ler estas instruções dentro de uma versão concisa o [portal do Azure](https://portal.azure.com), enquanto estiver a configurar a aplicação!  Depois de adicionar esta aplicação a partir do **do Active Directory > aplicações da empresa** secção, basta clicar no **Single Sign-On** separador e aceder à documentação do embedded através de **configuração** secção na parte inferior. Pode ler mais sobre a funcionalidade de documentação incorporados aqui: [do Azure AD incorporado documentação]( https://go.microsoft.com/fwlink/?linkid=845985)

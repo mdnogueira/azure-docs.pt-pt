@@ -13,13 +13,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2017
+ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 73d5c33cec1ebec76ea738e03cd29e88d482b905
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2f0f6578b14b2fdd3807303eb94df077df92ba77
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-cosmos-db-database-security"></a>Segurança de base de dados do Cosmos BD do Azure
 
@@ -71,7 +71,7 @@ Vamos aprofundar para cada um em detalhe.
 |Integração do Active Directory (RBAC)| Também pode fornecer acesso à conta de base de dados utilizando o controlo de acesso (IAM) no portal do Azure, conforme mostrado na captura de ecrã que se segue nesta tabela. IAM fornece controlo de acesso baseado em funções e integrado no Active Directory. Pode utilizar funções incorporadas ou funções personalizadas para indivíduos e grupos, conforme mostrado na imagem seguinte.|
 |Replicação global|BD do Azure do Cosmos oferece chave na mão distribuição global, que permite-lhe replicar os dados para qualquer um dos centros de dados de todo o mundo do Azure com o clique do botão para um. Replicação global permite-lhe dimensioná-las globalmente e fornecer acesso de latência baixa aos seus dados em todo o mundo.<br><br>No contexto de segurança, replicação global forma, assegura a proteção de dados contra falhas regionais.<br><br>Saiba mais em [distribuir dados globalmente](distribute-data-globally.md).|
 |Ativações pós-falha regional|Se ter replicado dados no Centro de dados mais do que uma, base de dados do Azure Cosmos automaticamente faz o sobre as operações de deve um centro de dados regionais fique offline. Pode criar uma lista prioritária de regiões de ativação pós-falha utilizando as regiões na qual os dados são replicados. <br><br>Saiba mais em [as ativações pós-falha Regional do BD Azure Cosmos](regional-failover.md).|
-|Replicação local|Mesmo dentro de um único centro de dados, base de dados do Azure Cosmos automaticamente replica os dados para elevada disponibilidade que lhe confere a escolha de [níveis de consistência](consistency-levels.md). Esta ação garante uma [99,99% de disponibilidade mensal SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db) e inclui uma garantia financeira - algo não pode fornecer nenhum outro serviço de base de dados.|
+|Replicação local|Mesmo dentro de um único centro de dados, base de dados do Azure Cosmos automaticamente replica os dados para elevada disponibilidade que lhe confere a escolha de [níveis de consistência](consistency-levels.md). Esta ação garante uma 99,99% [SLA de disponibilidade](https://azure.microsoft.com/support/legal/sla/cosmos-db) para todas as contas de única região e todas as contas de multirregião com consistência de flexíveis e 99.999% de disponibilidade em todas as contas de multirregião base de dados de leitura.|
 |Cópias de segurança online automatizadas|Bases de dados de base de dados do Cosmos do Azure são uma cópia de segurança regularmente e armazenados num arquivo georedundant. <br><br>Saiba mais em [automática cópia de segurança online e de restauro com base de dados do Azure Cosmos](online-backup-and-restore.md).|
 |Restaurar eliminado os dados|As cópias de segurança online automáticas podem ser utilizadas para recuperar dados, poderá ter acidentalmente eliminado até ~ 30 dias após o evento. <br><br>Saiba mais em [automática cópia de segurança online e de restauro com base de dados do Azure Cosmos](online-backup-and-restore.md)|
 |Proteger e a isolar os dados confidenciais|Todos os dados nas regiões listados no [Novidades?](#whats-new) agora são encriptados em pausa.<br><br>PII e outros dados confidenciais podem ser isolados para coleções específicas e de leitura e escrita ou acesso só de leitura pode ser limitado a utilizadores específicos.|

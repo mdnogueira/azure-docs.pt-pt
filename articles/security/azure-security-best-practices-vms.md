@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/19/2017
 ms.author: yurid
-ms.openlocfilehash: c8a920a0523cb4737e6bbca7e49d0b9e2c942565
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7122e2f5f7ebc8ef0c6b2083257f26d8d2e5e345
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="best-practices-for-azure-vm-security"></a>Melhores práticas de segurança de VM do Azure
 
@@ -47,7 +47,7 @@ O artigo examina as seguintes VM melhores práticas de segurança:
 
 ## <a name="vm-authentication-and-access-control"></a>VM autenticação e controlo de acesso
 
-O primeiro passo para proteger a VM é garantir que apenas utilizadores autorizados são capazes de configurar novas VMs. Pode utilizar [políticas do Azure Resource Manager](../azure-resource-manager/resource-manager-policy.md) para estabelecer as convenções de recursos na sua organização, crie políticas personalizadas e aplicar estas políticas a recursos, tais como [grupos de recursos](../azure-resource-manager/resource-group-overview.md).
+O primeiro passo para proteger a VM é garantir que apenas utilizadores autorizados são capazes de configurar novas VMs. Pode utilizar [políticas do Azure](../azure-policy/azure-policy-introduction.md) para estabelecer as convenções de recursos na sua organização, crie políticas personalizadas e aplicar estas políticas a recursos, tais como [grupos de recursos](../azure-resource-manager/resource-group-overview.md).
 
 As VMs que pertencem a um grupo de recursos naturalmente herdam as respetivas políticas. Embora seja recomendável esta abordagem para gerir VMs, também pode controlar o acesso às políticas de VM individuais utilizando [controlo de acesso baseado em funções (RBAC)](../active-directory/role-based-access-control-configure.md).
 

@@ -1,5 +1,5 @@
 ---
-title: "Bash no início rápido do Azure na nuvem Shell (pré-visualização) | Microsoft Docs"
+title: "Bash no guia de introdução de Shell de nuvem do Azure | Microsoft Docs"
 description: "Início rápido para Bash na Shell de nuvem"
 services: 
 documentationcenter: 
@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: juluk
-ms.openlocfilehash: bbad2735acf06ebefda020410731fb307c4ec614
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4ed83b28fe5f0f1e9626115390f8697dfb2c8ead
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Início rápido para Bash na Shell de nuvem do Azure
 
@@ -30,7 +30,7 @@ Este documento fornece detalhes sobre como utilizar Bash na Shell de nuvem do Az
 ## <a name="start-cloud-shell"></a>Iniciar a Shell de nuvem
 1. Iniciar **nuvem Shell** da parte superior da navegação do portal do Azure <br>
 ![](media/quickstart/shell-icon.png)
-2. Selecionar uma subscrição para criar uma conta de armazenamento e partilha de ficheiros do Azure
+2. Selecione uma subscrição para criar uma conta de armazenamento e partilha de ficheiros do Microsoft Azure
 3. Selecione "Armazenamento criar"
 
 > [!TIP]
@@ -59,7 +59,7 @@ Crie uma VM com Ubuntu no seu novo grupo de recursos. O 2.0 CLI do Azure irá cr
 `az vm create -n my_vm_name -g MyRG --image UbuntuLTS --generate-ssh-keys`
 
 > [!NOTE]
-> As chaves públicas e privadas utilizadas para autenticar a sua VM são colocadas em `/User/.ssh/id_rsa` e `/User/.ssh/id_rsa.pub` pelo Azure CLI 2.0 por predefinição. A pasta. SSH é persistente na imagem de 5 GB a partilha de ficheiros do Azure ligado.
+> As chaves públicas e privadas utilizadas para autenticar a sua VM são colocadas em `/User/.ssh/id_rsa` e `/User/.ssh/id_rsa.pub` pelo Azure CLI 2.0 por predefinição. A pasta. SSH é persistente na imagem de 5 GB a partilha ficheiros do Azure ligado.
 
 O nome de utilizador nesta VM será o seu nome de utilizador utilizada na Shell de nuvem ($User@Azure:).
 
@@ -79,4 +79,4 @@ Execute `az group delete -n MyRG`
 ## <a name="next-steps"></a>Passos seguintes
 [Saiba mais sobre ficheiros persistentes para Bash na Shell de nuvem](persisting-shell-storage.md) <br>
 [Saiba mais sobre a CLI do Azure 2.0](https://docs.microsoft.com/cli/azure/) <br>
-[Saiba mais sobre o File storage do Azure](../storage/files/storage-files-introduction.md) <br>
+[Saiba mais sobre armazenamento de ficheiros do Azure](../storage/files/storage-files-introduction.md) <br>

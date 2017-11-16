@@ -11,13 +11,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/22/2017
-ms.author: jonatul
-ms.openlocfilehash: 9d786ce4d06ec95a647a755bed51f824e72ad04c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/06/2017
+ms.author: subsarma
+ms.openlocfilehash: 1a2a23fb5de5b5b491f061512a15f7acb6721446
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-dns-faq"></a>FAQ de DNS do Azure
 
@@ -139,6 +139,10 @@ Para obter mais informações, consulte [Protecting zonas de DNS e registos](dns
 ### <a name="how-do-i-set-up-spf-records-in-azure-dns"></a>Como configurar os registos SPF no DNS do Azure?
 
 [!INCLUDE [dns-spf-include](../../includes/dns-spf-include.md)]
+
+### <a name="do-azure-dns-nameservers-resolve-over-ipv6-"></a>Resolver Nameservers de DNS do Azure através de IPv6? 
+
+Sim. Nameservers de DNS do Azure são pilha dupla (ter endereços IPv4 e IPv6). Para localizar o endereço IPv6 de nameservers o DNS do Azure atribuídos à sua zona DNS, pode utilizar uma ferramenta como nslookup (por exemplo, `nslookup -q=aaaa <Azure DNS Nameserver>`).
 
 ### <a name="how-do-i-set-up-an-international-domain-name-idn-in-azure-dns"></a>Como definir a segurança de nome de domínio um internacional (IDN) no DNS do Azure?
 

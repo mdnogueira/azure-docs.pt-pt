@@ -29,7 +29,7 @@ De Bash, partilhas de ficheiros existentes recebem uma imagem de 5 GB criada par
 ![A definição de grupo de recursos](../articles/cloud-shell/media/persisting-shell-storage/advanced-storage.png)
 
 ### <a name="restrict-resource-creation-with-an-azure-resource-policy"></a>Restringir a criação de recursos com uma política de recursos do Azure
-As contas de armazenamento que criou na Shell de nuvem são etiquetadas com `ms-resource-usage:azure-cloud-shell`. Se pretender não permitir aos utilizadores criar contas de armazenamento na nuvem Shell, crie um [política de recursos do Azure para etiquetas](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-policy-tags) que são acionadas por esta tag específica.
+As contas de armazenamento que criou na Shell de nuvem são etiquetadas com `ms-resource-usage:azure-cloud-shell`. Se pretender não permitir aos utilizadores criar contas de armazenamento na nuvem Shell, crie um [política de recursos do Azure para etiquetas](../articles/azure-policy/json-samples.md) que são acionadas por esta tag específica.
 
 ## <a name="supported-storage-regions"></a>Regiões de armazenamento suportadas
 Associadas têm de residir na mesma região que a máquina de Shell de nuvem que está a montá-los para contas de armazenamento do Azure.

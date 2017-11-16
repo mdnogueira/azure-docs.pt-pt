@@ -14,26 +14,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2017
 ms.author: damaerte
-ms.openlocfilehash: ffe5298678de6cc16af0ea29c7d887330f77589d
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: 13289d9b18b4c53a2569b9a8772715b38ed22cf7
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="features--tools-for-powershell-in-azure-cloud-shell"></a>Funcionalidades e ferramentas para o PowerShell na Shell de nuvem do Azure
+# <a name="features--tools-for-powershell-in-azure-cloud-shell-preview"></a>Funcionalidades e ferramentas para o PowerShell na Shell de nuvem do Azure (pré-visualização)
 
 [!include [features-introblock](../../includes/cloud-shell-features-introblock.md)]
 
 > [!TIP]
 > As funcionalidades e ferramentas para [Bash](features.md) também está disponível.
 
-PowerShell na nuvem Shell é executado no `Windows Server 2016`.
+PowerShell na Shell de nuvem (pré-visualização) é executado no `Windows Server 2016`.
 
 ## <a name="features"></a>Funcionalidades
 
 ### <a name="secure-automatic-authentication"></a>Autenticação automática segura
 
-PowerShell na nuvem Shell automaticamente e em segurança autentica o acesso de conta para o Azure PowerShell.
+PowerShell na Shell de nuvem (pré-visualização) automaticamente e em segurança autentica o acesso de conta para o Azure PowerShell.
 
 ### <a name="files-persistence-across-sessions"></a>Ficheiros persistência entre sessões
 
@@ -45,7 +45,7 @@ Uma vez que cada pedido para a nuvem Shell é alocar uma máquina temporária, f
 
 ### <a name="azure-drive-azure"></a>Unidade do Azure (Azure:)
 
-PowerShell na nuvem Shell é iniciado o na unidade do Azure (`Azure:`).
+PowerShell na Shell de nuvem (pré-visualização) é iniciado o na unidade do Azure (`Azure:`).
 Unidade do Azure permite a deteção de fácil e navegação de recursos do Azure, tais como a computação, rede, etc. armazenamento semelhantes a navegação de sistema de ficheiros.
 Pode continuar a utilizar o familiar [cmdlets Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure) gerir estes recursos.
 Todas as alterações efetuadas aos recursos do Azure, o efetuadas diretamente no portal do Azure ou através de cmdlets do PowerShell do Azure, de forma instantânea são refletidas na unidade do Azure.
@@ -109,6 +109,6 @@ Estes comandos assentes comunicação remota do PowerShell e necessitam de conec
 
 ## <a name="next-steps"></a>Passos seguintes
 
-[Início rápido com o PowerShell na Shell de nuvem](quickstart-powershell.md)
+[Início rápido com o PowerShell na Shell de nuvem (pré-visualização)](quickstart-powershell.md)
 
 [Saiba mais sobre o Azure PowerShell](https://docs.microsoft.com/powershell/azure/)

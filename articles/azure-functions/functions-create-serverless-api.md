@@ -11,11 +11,11 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: 630d9022da0d51e533534ea43f50f27e8eb09a78
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 7c3933210c01c81077b594abb8c3183d6e3c58a0
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="create-a-serverless-api-using-azure-functions"></a>Criar uma API sem servidor através das funções do Azure
 
@@ -46,7 +46,7 @@ Por predefinição, a sua função de acionada por HTTP está configurada para a
     | Métodos de HTTP permitidos | Métodos selecionados | Determina os métodos HTTP podem ser utilizados para invocar esta função |
     | Métodos de HTTP selecionados | INTRODUÇÃO | Permite que apenas selecionados métodos de HTTP ser utilizado para invocar esta função |
     | Modelo de rota | /Hello | Determina que rota é utilizada para invocar esta função |
-    | Nível de autorização | Anónimo | Opcional: Faz com que a função acessível sem uma chave de API |
+    | Nível de autorização | Anónima | Opcional: Faz com que a função acessível sem uma chave de API |
 
     > [!NOTE] 
     > Tenha em atenção que não incluía o `/api` base prefixo de caminho no modelo de rota, como isto é processado por uma definição global.
@@ -67,7 +67,7 @@ Em seguida, teste a sua função para vê-lo a trabalhar com a superfície de AP
 
 ## <a name="proxies-overview"></a>Descrição geral de proxies
 
-Na secção seguinte, irá superfície da API através de um proxy. Proxies de funções do Azure é uma funcionalidade de pré-visualização permite-lhe para reencaminhar pedidos de outros recursos. Definir um ponto final HTTP, tal como com o acionador de HTTP, mas em vez de escrever código para executar quando esse ponto final é chamado, forneça um URL para a implementação remota. Isto permite-lhe compor várias origens de API para uma único superfície de API que é mais fácil para os clientes consumir. Isto é particularmente útil se pretender criar a sua API como micro-serviços.
+Na secção seguinte, irá superfície da API através de um proxy. Proxies de funções do Azure permite-lhe reencaminhar pedidos para outros recursos. Definir um ponto final HTTP, tal como com o acionador de HTTP, mas em vez de escrever código para executar quando esse ponto final é chamado, forneça um URL para a implementação remota. Isto permite-lhe compor várias origens de API para uma único superfície de API que é mais fácil para os clientes consumir. Isto é particularmente útil se pretender criar a sua API como micro-serviços.
 
 Um ponto proxy de pode a qualquer recurso HTTP, tal como:
 - Funções do Azure 
@@ -75,7 +75,7 @@ Um ponto proxy de pode a qualquer recurso HTTP, tal como:
 - Os contentores de docker no [do serviço de aplicações no Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro)
 - Quaisquer outro API alojada
 
-Para saber mais sobre proxies, consulte o artigo [trabalhar com os Proxies de funções do Azure (pré-visualização)].
+Para saber mais sobre proxies, consulte o artigo [trabalhar com os Proxies de funções do Azure].
 
 ## <a name="create-your-first-proxy"></a>Criar o primeiro proxy
 
@@ -97,7 +97,7 @@ Repita os passos para [criar uma aplicação de função](https://docs.microsoft
 ### <a name="creating-a-proxy-on-the-frontend"></a>Criar um proxy no front-end
 
 1. Navegue de volta para a sua aplicação de função de front-end no portal.
-1. No painel de navegação esquerdo, clique no sinal '+' junto a "Proxies (pré-visualização)".
+1. No painel de navegação esquerdo, clique no sinal '+' junto a "Proxies".
     ![Criar um proxy](./media/functions-create-serverless-api/creating-proxy.png)
 1. Utilize definições de proxy especificado na tabela. 
 
@@ -187,9 +187,9 @@ Neste tutorial, aprendeu a criar e personalizar uma API das funções do Azure. 
 As seguintes referências podem ser útil como desenvolver ainda mais a API:
 
 - [Enlaces de funções de HTTP e webhook do Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook)
-- [trabalhar com os Proxies de funções do Azure (pré-visualização)]
+- [trabalhar com os Proxies de funções do Azure]
 - [Documentar uma API de funções do Azure (pré-visualização)](https://docs.microsoft.com/azure/azure-functions/functions-api-definition-getting-started)
 
 
 [Create your first function]: https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function
-[trabalhar com os Proxies de funções do Azure (pré-visualização)]: https://docs.microsoft.com/azure/azure-functions/functions-proxies
+[trabalhar com os Proxies de funções do Azure]: https://docs.microsoft.com/azure/azure-functions/functions-proxies

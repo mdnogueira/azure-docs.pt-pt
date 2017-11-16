@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: adegeo
-ms.openlocfilehash: 17f6918371678ac849198bff4e3b3eea8678c660
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e2aadf6a103e92a4fbb11223a449280a36dea6b4
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="connecting-azure-cloud-services-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Ligar a funções de serviços na nuvem do Azure como um controlador de domínio do AD alojado no Azure de personalizado
 Vamos primeiro configurar uma rede Virtual (VNet) no Azure. Em seguida, iremos adicionar um controlador de domínio do Active Directory (alojado uma Máquina Virtual no Azure) para a VNet. Em seguida, iremos irá adicionar funções de serviço existente na nuvem para a VNet criada previamente, em seguida, ligue-o para o controlador de domínio.
@@ -128,7 +128,7 @@ Em seguida, terá de adicionar a implementação de serviço em nuvem para a nov
 </ServiceConfiguration>
 ```
 
-Em seguida, criar o projeto de serviços de nuvem e implementá-la para o Azure. Para obter ajuda com a implementação do pacote de serviços em nuvem para o Azure, consulte [como criar e implementar um serviço em nuvem](cloud-services-how-to-create-deploy.md#how-to-deploy-a-cloud-service)
+Em seguida, criar o projeto de serviços de nuvem e implementá-la para o Azure. Para obter ajuda com a implementação do pacote de serviços em nuvem para o Azure, consulte [como criar e implementar um serviço em nuvem](cloud-services-how-to-create-deploy-portal.md)
 
 ## <a name="connect-your-webworker-roles-to-the-domain"></a>Ligar as funções da web/trabalho ao domínio
 Depois do projeto de serviço de nuvem é implementado no Azure, ligar as instâncias de função para o domínio personalizado de AD utilizando a extensão de domínio do AD. Para adicionar a extensão de domínio do AD para a implementação de serviços em nuvem existente e associar o domínio personalizado, execute os seguintes comandos do PowerShell:

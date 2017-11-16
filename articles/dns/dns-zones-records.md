@@ -15,11 +15,11 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: jonatul
-ms.openlocfilehash: 5818986c939c464a364c52ab31225e15130ab30e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 00f6309114039db23a1d22f1eb70076b842dadca
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Descrição geral dos registos e zonas DNS
 
@@ -54,6 +54,16 @@ No DNS do Azure, o TTL é especificado para o conjunto de registos, não para ca
 O DNS do Azure suporta [registos de carateres universais](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Registos de carateres universais são devolvidos em resposta a qualquer consulta com um nome correspondente (a menos que exista uma correspondência mais próxima de um conjunto de registos não universais). O DNS do Azure suporta conjuntos de registos de carateres universais para todos os tipos de registos, exceto NS e SOA.
 
 Para criar um conjunto de registos de carateres universais, utilize o nome do conjunto de registos '\*'. Em alternativa, também pode utilizar um nome com '\*'como respetivo mais à esquerda etiqueta, por exemplo,'\*. foo ".
+
+### <a name="caa-records"></a>Registos de CAA
+
+Registos de CAA permitir que os proprietários de domínio especificar as autoridades de certificação (ACs) estão autorizadas a emitir certificados para os domínios. Isto permite que as ACs evitar incorrectamente emitir certificados em algumas circunstâncias. Registos de CAA tem três propriedades:
+* **Sinalizadores**: Este é um número inteiro entre 0 e 255, utilizada para representar o sinalizador crítico que têm um significado especial pelo [RFC](https://tools.ietf.org/html/rfc6844#section-3)
+* **Etiqueta**: uma cadeia de carateres ASCII que pode ser um dos seguintes:
+    * **problema**: Utilize esta opção se pretender especificar ACs que são permitidos para emitir certificados (todos os tipos de)
+    * **issuewild**: Utilize esta opção se pretender especificar ACs que são permitidos para emitir certificados (apenas para certificados de caráter universal)
+    * **iodef**: Especifique um endereço de e-mail ou nome de anfitrião para que as ACs podem notificar para pedidos de problema do certificado não autorizado
+* **Valor**: o valor da etiqueta específica escolhido
 
 ### <a name="cname-records"></a>Registos CNAME
 

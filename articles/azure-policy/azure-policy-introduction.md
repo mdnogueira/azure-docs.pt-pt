@@ -10,11 +10,11 @@ ms.topic: overview
 ms.service: azure-policy
 manager: jochan
 ms.custom: mvc
-ms.openlocfilehash: b784c79166eb614988d84b4553bb95e4d1e457af
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: ef1114f6b1259e4f0d60260febb39bc70b181fbc
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="what-is-azure-policy"></a>O que é a política do Azure?
 
@@ -51,7 +51,7 @@ Na política do Azure, que oferecemos algumas políticas incorporadas que estão
 
 Pode atribuir alguma destas políticas através do portal do Azure, o PowerShell ou a CLI do Azure.
 
-Para saber mais sobre as estruturas de definições de política, consulte este artigo - [estrutura de definição de política](../azure-resource-manager/resource-manager-policy.md#policy-definition-structure).
+Para saber mais sobre as estruturas de definições de política, consulte este artigo - [estrutura de definição de política](policy-definition.md).
 
 ## <a name="policy-assignment"></a>Atribuição de política
 
@@ -68,7 +68,7 @@ Os parâmetros são definidos/criados durante a criação de uma definição de 
 <!--
 Next link should point to new Concept page for Parameters
 -->
-Para obter mais informações sobre os parâmetros de política, consulte [recursos descrição geral da política - parâmetros](../azure-resource-manager/resource-manager-policy.md#parameters).
+Para obter mais informações sobre os parâmetros de política, consulte [recursos descrição geral da política - parâmetros](policy-definition.md#parameters).
 
 ## <a name="initiative-definition"></a>Definição de iniciativa
 Uma definição de iniciativa é a coleção de definições de política que são adaptados para alcançar o objetivo único abrangente. Definições da iniciativa simplificam a gestão e a atribuição de definições de política. Estes simplificam através do agrupamento de um conjunto de políticas, como um único item. Por exemplo, pode criar uma iniciativa intitulada **Ativar monitorização no Centro de segurança do Azure**, com o objetivo de monitorizar todas as recomendações de segurança disponíveis no seu centro de segurança do Azure.

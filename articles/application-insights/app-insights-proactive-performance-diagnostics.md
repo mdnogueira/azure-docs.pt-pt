@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: mbullwin
-ms.openlocfilehash: 57f17c201cd50933517ee02b2bbbe7d6aceff9b2
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 6886d1239fa074a6316b243e574833f5554ac298
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="smart-detection---performance-anomalies"></a>Deteção inteligente - anomalias de desempenho
 
@@ -67,7 +67,7 @@ Mensagens de correio eletrónico sobre anomalias de desempenho de deteções int
 
 ## <a name="faq"></a>FAQ
 
-* *Por isso, guys observar os meus dados?*
+* *Por isso, os funcionários da Microsoft observar os meus dados?*
   * Não. O serviço está totalmente automático. Apenas obter as notificações. Os seus dados são [privada](app-insights-data-retention-privacy.md).
 * *Analisa todos os dados recolhidos pelo Application Insights?*
   * Não neste momento. Atualmente, vamos analisar o pedido de tempo de carregamento de página, tempo de resposta de dependência e tempo de resposta. Análise de métricas adicionais está no nosso registo de segurança está à procura de reencaminhar.

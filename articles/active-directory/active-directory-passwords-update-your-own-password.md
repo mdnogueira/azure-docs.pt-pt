@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 11/13/2017
 ms.author: barlan
 ms.custom: end-user
-ms.openlocfilehash: 763248b1b7adf821d37f2308195a0934a0aee152
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.openlocfilehash: 9595b318b8bd974f778dc12b38cccd949a4e7a1a
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="reset-your-work-or-school-password"></a>Repor a palavra-passe de conta escolar ou profissional
 
@@ -95,6 +95,27 @@ Utilize este método se aceder às suas aplicações através do Portal de Acess
 3. Clique em **Alterar palavra-passe**
 4. Introduza a palavra-passe antiga, defina e confirme a nova e clique em **Submeter**.
 
+## <a name="reset-password-at-login"></a>Repor palavra-passe no início de sessão
+
+Se o administrador tem ativada a funcionalidade agora, pode ver uma ligação para **Repor palavra-passe** no seu ecrã de início de sessão do Windows 10, enquadram-se criadores Update.
+
+![LoginScreen][LoginScreen]
+
+Ao clicar no **Repor palavra-passe** ligação abre-se a experiência SSPR no ecrã de início de sessão para que pode repor a palavra-passe sem ter de iniciar sessão para aceder a experiência baseada na web normal.
+
+1. Confirme o seu ID de utilizador e clique em **seguinte**
+2. Escolha e confirme um método de contacto para verificação. A equipa de TI pode ter mais de verificação e poderá ter de repetir este passo novamente com uma opção diferente.
+
+   ![ContactMethod][ContactMethod]
+
+3. No **criar uma nova palavra-passe** página, introduza uma nova palavra-passe, confirme a palavra-passe e, em seguida, clique em **seguinte**. Sugerimos que a palavra-passe tenha entre 8 e 16 carateres com letras maiúsculas e minúsculas, números e carateres especiais.
+
+   ![ResetPassword][ResetPassword]
+
+4. Quando vir **a palavra-passe foi reposta**, clique em **concluir**
+
+Já deverá conseguir aceder à sua conta. Se não, contacte o departamento de TI da sua organização para obter mais ajuda.
+
 ## <a name="common-problems-and-their-solutions"></a>Problemas comuns e as respetivas soluções
 
  Eis alguns casos de erro comuns e as respetivas soluções:
@@ -116,3 +137,6 @@ Utilize este método se aceder às suas aplicações através do Portal de Acess
 [Verification]: ./media/active-directory-passwords-update-your-own-password/reset-2-verification.png "Verifique os dados de autenticação"
 [Change]: ./media/active-directory-passwords-update-your-own-password/reset-3-change.png "Alterar a palavra-passe"
 [Complete]: ./media/active-directory-passwords-update-your-own-password/reset-4-complete.png "A palavra-passe do utilizador foi reposta"
+[LoginScreen]: ./media/active-directory-passwords-update-your-own-password/login-screen.png "Ligação do Windows 10, enquadram-se criadores Update início de sessão ecrã reposição de palavra-passe"
+[ContactMethod]: ./media/active-directory-passwords-update-your-own-password/reset-contact-method-screen.png "Verifique os dados de autenticação"
+[ResetPassword]: ./media/active-directory-passwords-update-your-own-password/reset-password-screen.png "Alterar a palavra-passe"

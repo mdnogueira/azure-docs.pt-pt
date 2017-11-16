@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/06/2017
 ms.author: owend
-ms.openlocfilehash: 0e58862684e62a65cf11266cc0320a9acd781f07
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: a97f9648efef7f07659110d720c200dcd0a241a9
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-analysis-services-scale-out"></a>Escalável do Azure Analysis Services
 
@@ -32,7 +32,7 @@ Com o Escalamento horizontal, pode criar um conjunto de consulta com réplicas d
 
 Independentemente do número de réplicas de consulta que tiver de um conjunto de consulta, processamento de cargas de trabalho não são distribuídas em réplicas de consulta. Um único servidor funciona como o servidor de processamento. Réplicas de consulta servem apenas consultas nos modelos sincronizados entre cada réplica no agrupamento de consulta. 
 
-Quando as operações de processamento estiverem concluídas, tem de ser efetuada uma sincronização entre o servidor de processamento e servidores de réplica de consulta. Ao automatizar as operações de processamento, é importante configurar uma operação de sincronização após a conclusão bem-sucedida da operações de processamento.
+Quando as operações de processamento estiverem concluídas, tem de ser efetuada uma sincronização entre o servidor de processamento e servidores de réplica de consulta. Ao automatizar as operações de processamento, é importante configurar uma operação de sincronização após a conclusão bem-sucedida da operações de processamento. Pode ser efetuada manualmente a sincronização no portal, ou utilizando o PowerShell ou a REST API.
 
 > [!NOTE]
 > Escalamento horizontal está disponível para os servidores no escalão de preço padrão. Cada réplica de consulta é faturada a taxa mesmo que o servidor.
@@ -58,12 +58,10 @@ Quando as operações de processamento estiverem concluídas, tem de ser efetuad
 
 Modelos em tabela no seu servidor primário são sincronizados com os servidores de réplica. Quando a sincronização estiver concluída, o conjunto de consulta começa a distribuição de consultas recebidas entre os servidores de réplica. 
 
-### <a name="powershell"></a>PowerShell
-Utilize [conjunto AzureRmAnalysisServicesServer](/powershell/module/azurerm.analysisservices/set-azurermanalysisservicesserver) cmdlet. Especifique o `-Capacity` > 1 de valor de parâmetro.
 
 ## <a name="synchronization"></a>Sincronização 
 
-Quando aprovisionar novos réplicas de consulta, o Azure Analysis Services replica automaticamente seus modelos em todas as réplicas. Também pode efetuar uma sincronização manual. Ao processar o seus modelos, deve efetuar uma sincronização para que as atualizações são sincronizadas entre réplicas de consulta.
+Quando aprovisionar novos réplicas de consulta, o Azure Analysis Services replica automaticamente seus modelos em todas as réplicas. Também pode efetuar uma sincronização manual utilizando o portal ou a REST API. Ao processar o seus modelos, deve efetuar uma sincronização para que as atualizações são sincronizadas entre as réplicas de consulta.
 
 ### <a name="in-azure-portal"></a>No portal do Azure
 
@@ -72,18 +70,22 @@ No **descrição geral** > modelo > **sincronizar modelo**.
 ![Controlo de deslize de escalamento horizontal](media/analysis-services-scale-out/aas-scale-out-sync.png)
 
 ### <a name="rest-api"></a>API REST
+Utilize o **sincronização** operação.
 
-Sincronizar um modelo   
-`POST https://<region>.asazure.windows.net/servers/<servername>/models/<modelname>/sync`
+#### <a name="synchronize-a-model"></a>Sincronizar um modelo   
+`POST https://<region>.asazure.windows.net/servers/<servername>:rw/models/<modelname>/sync`
 
-Obter o estado da sincronização de um modelo  
-`GET https://<region>.asazure.windows.net/servers/<servername>/models/<modelname>/sync`
+#### <a name="get-sync-status"></a>Obter o estado de sincronização  
+`GET https://<region>.asazure.windows.net/servers/<servername>:rw/models/<modelname>/sync`
+
+### <a name="powershell"></a>PowerShell
+Para executar a sincronização a partir do PowerShell, [atualizar para a versão mais recente](https://github.com/Azure/azure-powershell/releases) módulo de AzureRM 5.01 ou superior. Utilize [sincronização AzureAnalysisServicesInstance](https://docs.microsoft.com/en-us/powershell/module/azurerm.analysisservices/sync-azureanalysisservicesinstance).
 
 ## <a name="connections"></a>Ligações
 
 Na página de descrição geral do servidor, existem dois nomes de servidor. Se ainda não configurou ainda escalável para um servidor, ambos os nomes de servidor funcionam da mesma. Assim que configurar Escalamento horizontal para um servidor, terá de especificar o nome de servidor adequado dependendo do tipo de ligação. 
 
-Utilizador final para ligações de cliente como o Power BI Desktop, Excel e aplicações personalizadas, utilize **nome do servidor**. 
+Utilizador final para ligações de cliente, como o Power BI Desktop, Excel e aplicações personalizadas, utilização **nome do servidor**. 
 
 Para SSMS, SSDT e cadeias de ligação no PowerShell, utilizam aplicações de função do Azure e no AMO, **nome do servidor de gestão**. O nome do servidor de gestão inclui uma oferta especial de `:rw` qualificador (leitura / escrita). Todas as operações de processamento ocorrerem no servidor de gestão.
 

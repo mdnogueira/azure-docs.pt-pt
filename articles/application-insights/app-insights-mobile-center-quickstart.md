@@ -1,6 +1,6 @@
 ---
 title: "Início rápido com o Azure Application Insights | Microsoft Docs"
-description: "Fornece instruções para configurar rapidamente a uma aplicação móvel para monitorização com o Application Insights e o Centro de Mobile"
+description: "Fornece instruções para configurar rapidamente a uma aplicação móvel para monitorização com o Application Insights e o Centro de aplicação"
 services: application-insights
 keywords: 
 author: numberbycolors
@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: a8af65a9a9f31200f833a47f811ae50a0a9d2f9b
-ms.sourcegitcommit: c50171c9f28881ed3ac33100c2ea82a17bfedbff
+ms.openlocfilehash: 897c45322148aeb088f1ec2e7f8d9f46b58c71aa
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="start-analyzing-your-mobile-app-with-mobile-center-and-application-insights"></a>Iniciar a análise da aplicação móvel com Mobile Center e o Application Insights
+# <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Iniciar a análise da sua aplicação móvel com o Centro de aplicação e o Application Insights
 
-Este guia de introdução orienta-o ligar a instância de Center móveis da sua aplicação para o Application Insights. Com o Application Insights, pode consultar, segmentar, filtrar e analisar a telemetria com ferramentas mais poderosas que estão disponíveis a partir de [análise](https://docs.microsoft.com/mobile-center/analytics/) serviço do Centro de Mobile.
+Este guia de introdução orienta-o ligar a instância de aplicação centro da sua aplicação para o Application Insights. Com o Application Insights, pode consultar, segmentar, filtrar e analisar a telemetria com ferramentas mais poderosas que estão disponíveis a partir de [análise](https://docs.microsoft.com/mobile-center/analytics/) serviço do Centro de aplicação.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,11 +29,11 @@ Para concluir este guia de início rápido, necessita de:
  
 Se não tiver uma subscrição do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-## <a name="onboard-to-mobile-center"></a>Carregar para o Centro de Mobile
+## <a name="onboard-to-app-center"></a>Carregar para o Centro de aplicação
 
-Antes de poder utilizar o Application Insights com a sua aplicação móvel, terá de carregar a aplicação [Mobile Center](https://docs.microsoft.com/mobile-center/). Application Insights não recebe a telemetria da sua aplicação móvel diretamente. Em vez disso, a sua aplicação enviar telemetria de evento personalizado para o Centro de Mobile. Em seguida, Mobile Center continuamente exporta cópias destes eventos personalizados no Application Insights como os eventos são recebidos.
+Antes de poder utilizar o Application Insights com a sua aplicação móvel, terá de carregar a aplicação [aplicação Center](https://docs.microsoft.com/mobile-center/). Application Insights não recebe a telemetria da sua aplicação móvel diretamente. Em vez disso, a sua aplicação enviar telemetria de evento personalizado para o Centro de aplicação. Em seguida, aplicação Center continuamente exporta cópias destes eventos personalizados no Application Insights como os eventos são recebidos.
 
-Integrar a aplicação, siga o guia de introdução do Mobile Center para cada plataforma suporta a sua aplicação. Crie instâncias Mobile Center separadas para cada plataforma:
+Integrar a aplicação, siga o guia de introdução do Centro de aplicação para cada plataforma suporta a sua aplicação. Crie instâncias de aplicação Center separadas para cada plataforma:
 
 * [iOS](https://docs.microsoft.com/mobile-center/sdk/getting-started/ios).
 * [Android](https://docs.microsoft.com/mobile-center/sdk/getting-started/android).
@@ -43,27 +43,27 @@ Integrar a aplicação, siga o guia de introdução do Mobile Center para cada p
 
 ## <a name="track-events-in-your-app"></a>Controlar eventos na sua aplicação
 
-Após a sua aplicação integradas ao centro de móveis, tem de ser modificados para enviar telemetria relacionada com eventos personalizados utilizando o SDK do System Center Mobile. Eventos personalizados são o único tipo de telemetria de Center móveis que é exportado para o Application Insights.
+Após a sua aplicação integradas ao centro de aplicação, tem de ser modificados para enviar telemetria relacionada com eventos personalizados utilizando o SDK da aplicação do System Center. Eventos personalizados são o único tipo de telemetria do Centro de aplicação que seja exportado para o Application Insights.
 
-Para enviar eventos personalizados a partir de aplicações iOS, utilize o `trackEvent` ou `trackEvent:withProperties` métodos no Mobile Center SDK. [Saiba mais sobre o controlo de eventos de aplicações iOS.](https://docs.microsoft.com/mobile-center/sdk/analytics/ios)
+Para enviar eventos personalizados a partir de aplicações iOS, utilize o `trackEvent` ou `trackEvent:withProperties` métodos no SDK da aplicação do System Center. [Saiba mais sobre o controlo de eventos de aplicações iOS.](https://docs.microsoft.com/mobile-center/sdk/analytics/ios)
 
 ```Swift
 MSAnalytics.trackEvent("Video clicked")
 ```
 
-Para enviar eventos personalizados a partir de aplicações Android, utilize o `trackEvent` método no Mobile Center SDK. [Saiba mais sobre o controlo de eventos de aplicações Android.](https://docs.microsoft.com/mobile-center/sdk/analytics/android)
+Para enviar eventos personalizados a partir de aplicações Android, utilize o `trackEvent` método no SDK da aplicação do System Center. [Saiba mais sobre o controlo de eventos de aplicações Android.](https://docs.microsoft.com/mobile-center/sdk/analytics/android)
 
 ```Java
 Analytics.trackEvent("Video clicked")
 ```
 
-Para enviar eventos personalizados a partir de outras plataformas de aplicação, utilize o `trackEvent` métodos no respetivo SDKs do System Center Mobile.
+Para enviar eventos personalizados a partir de outras plataformas de aplicação, utilize o `trackEvent` métodos no respetivo SDKs de centro de aplicação.
 
-Para certificar-se de que estão a ser recebidos os eventos personalizados, aceda ao **eventos** separador sob o **análise** secção Mobile Center. Pode demorar alguns minutos para eventos apareçam de quando estes está a ser enviados da sua aplicação.
+Para certificar-se de que estão a ser recebidos os eventos personalizados, aceda ao **eventos** separador sob o **análise** secção no Centro de aplicação. Pode demorar alguns minutos para eventos apareçam de quando estes está a ser enviados da sua aplicação.
 
 ## <a name="create-an-application-insights-resource"></a>Criar um recurso do Application Insights
 
-Depois da aplicação está a enviar eventos personalizados e estes eventos estão a ser recebidos pelo centro de móveis, terá de criar um recurso de tipo Center Mobile Application Insights no portal do Azure:
+Depois da aplicação está a enviar eventos personalizados e estes eventos estão a ser recebidos pelo centro de aplicação, terá de criar um recurso do Application Insights do System Center-tipo de aplicação no portal do Azure:
 
 1. Inicie sessão no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Novo** > **Monitorização + Gestão** > **Application Insights**.
@@ -75,7 +75,7 @@ Depois da aplicação está a enviar eventos personalizados e estes eventos est�
     | Definições        |  Valor           | Descrição  |
    | ------------- |:-------------|:-----|
    | **Nome**      | Um valor exclusivo global, como "myApp iOS" | Nome que identifica a aplicação que está a monitorizar |
-   | **Tipo de Aplicação** | Aplicação de Mobile Center | Tipo de aplicação que está a monitorizar |
+   | **Tipo de Aplicação** | Aplicação do Centro de aplicação | Tipo de aplicação que está a monitorizar |
    | **Grupo de Recursos**     | Um novo grupo de recursos ou um existente a partir do menu | O grupo de recursos no qual pretende criar o novo recurso do Application Insights |
    | **Localização** | Uma localização a partir do menu | Escolha uma localização perto de si ou perto do local onde a sua aplicação está alojada |
 
@@ -87,7 +87,7 @@ Se a aplicação suportar várias plataformas (iOS, Android, etc.), é melhor cr
 
 No seu novo recurso do Application Insights no **descrição geral** página no **Essentials** secção na parte superior, copie a chave de instrumentação deste recurso.
 
-Na instância Mobile Center para a sua aplicação:
+Na instância da aplicação Centro para a sua aplicação:
 
 1. No **definições** página, clique em **exportar**.
 2. Escolha **exportar novo**, escolha **Application Insights**, em seguida, clique em **personalizar**.
@@ -96,13 +96,13 @@ Na instância Mobile Center para a sua aplicação:
 
 Lembre-se repetir este processo para cada plataforma suporta a sua aplicação.
 
-Uma vez [exportar](https://docs.microsoft.com/mobile-center/analytics/export) está definido até, cada evento personalizado recebido pelo centro de Mobile é copiado para o Application Insights. Pode demorar alguns minutos para os eventos alcançar o Application Insights, pelo que o se estes não apareçam imediatamente, aguardar um pouco antes de diagnosticar mais.
+Uma vez [exportar](https://docs.microsoft.com/mobile-center/analytics/export) está definido até, cada evento personalizado recebido pelo centro de aplicação é copiado para o Application Insights. Pode demorar alguns minutos para os eventos alcançar o Application Insights, pelo que o se estes não apareçam imediatamente, aguardar um pouco antes de diagnosticar mais.
 
-Para lhe dar mais dados quando liga pela primeira vez, as mais recentes 48 horas dos eventos personalizados no Centro de Mobile automaticamente são exportadas para o Application Insights.
+Para lhe dar mais dados quando liga pela primeira vez, as mais recentes 48 horas dos eventos personalizados no Centro de aplicação são automaticamente exportadas para o Application Insights.
 
 ## <a name="start-monitoring-your-app"></a>Iniciar a sua aplicação de monitorização
 
-Application Insights podem consultar, segmentar, filtrar e analisar a telemetria de evento personalizado das suas aplicações, para além das ferramentas de análise que Mobile Center fornece.
+Application Insights podem consultar, segmentar, filtrar e analisar a telemetria de evento personalizado das suas aplicações, para além das Centro de aplicação fornece as ferramentas de análise.
 
 1. **Consulta de telemetria de evento personalizado.** Do Application Insights **descrição geral** página, escolha **análise**. 
 
@@ -131,7 +131,7 @@ Application Insights podem consultar, segmentar, filtrar e analisar a telemetria
 
    ![Ícone de ferramenta de utilizadores](./media/app-insights-mobile-center-quickstart/users-icon.png)
 
-   A ferramenta utilizadores mostra quantos utilizadores da sua aplicação clicado determinados botões, visitada determinadas ecrãs ou efetuar qualquer ação que está a controlar como um evento com o SDK do System Center Mobile. Se tiver sido à procura de uma forma segmentar e filtrar os eventos de Mobile Center, a ferramenta de utilizadores é uma escolha ideal.
+   A ferramenta utilizadores mostra quantos utilizadores da sua aplicação clicado determinados botões, visitada determinadas ecrãs ou efetuar qualquer ação que está a controlar como um evento com o SDK da aplicação do System Center. Se tiver sido à procura de uma forma segmentar e filtrar os eventos de centro de aplicação, a ferramenta de utilizadores é uma escolha ideal.
 
    ![Ferramenta de utilizadores](./media/app-insights-mobile-center-quickstart/users.png) 
 
@@ -152,11 +152,11 @@ Application Insights podem consultar, segmentar, filtrar e analisar a telemetria
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se não pretender continuar a utilizar o Application Insights com o Centro de Mobile, desativar a exportação no Centro de Mobile e eliminar o recurso do Application Insights. Isto irá impedir a que está a ser cobrados mais pelo Application Insights para este recurso.
+Se não pretender continuar a utilizar o Application Insights com o Centro de aplicação, desativar a exportação no Centro de aplicação e eliminar o recurso do Application Insights. Isto irá impedir a que está a ser cobrados mais pelo Application Insights para este recurso.
 
-Para desativar a exportação no Centro de Mobile:
+Para desativar a exportação no Centro de aplicação:
 
-1. No Centro de Mobile, aceda a **definições** e escolha **exportar**.
+1. No Centro de aplicação, aceda a **definições** e escolha **exportar**.
 2. Clique em exportar o Application Insights que pretende eliminar, em seguida, clique em **eliminar exportação** na parte inferior e confirme.
 
 Para eliminar o recurso do Application Insights:

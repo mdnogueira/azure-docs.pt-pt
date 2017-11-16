@@ -3,7 +3,7 @@ title: Gerir registos DNS no DNS do Azure utilizando o 2.0 CLI do Azure | Micros
 description: "Gerir conjuntos de registos de DNS e registos DNS do Azure ao alojamento do seu domínio no DNS do Azure. Todos os comandos de CLI 2.0 para operações de conjuntos de registos e registos."
 services: dns
 documentationcenter: na
-author: jtuliani
+author: subsarma
 manager: carmonm
 ms.assetid: 5356a3a5-8dec-44ac-9709-0c2b707f6cb5
 ms.service: dns
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
-ms.date: 02/27/2017
-ms.author: jonatul
-ms.openlocfilehash: 9543759d7ba88c7c5068021cebbeec6b8d63633e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/08/2017
+ms.author: subsarma
+ms.openlocfilehash: 47be36aee053b81913286f0119edb6c8caa7c456
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli-20"></a>Gerir registos DNS e recordsets no DNS do Azure utilizando o 2.0 CLI do Azure
 
@@ -105,6 +105,12 @@ Não iremos dar um exemplo para criar um conjunto de registos SOA, uma vez que s
 
 ```azurecli
 az network dns record-set aaaa set-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name test-aaaa --ipv6-address 2607:f8b0:4009:1803::1005
+```
+
+### <a name="create-an-caa-record"></a>Criar um registo de CAA
+
+```azurecli
+az network dns record-set caa add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name test-caa --flags 0 --tag "issue" --value "ca1.contoso.com"
 ```
 
 ### <a name="create-a-cname-record"></a>Crie um registo CNAME
@@ -208,9 +214,9 @@ az network dns record-set a remove-record --resource-group myresourcegroup --zon
 
 Cada conjunto de registos contém uma [time-to-live (TTL)](dns-zones-records.md#time-to-live), [metadados](dns-zones-records.md#tags-and-metadata)e registos DNS. As secções seguintes explicam como modificar cada uma destas propriedades.
 
-### <a name="to-modify-an-a-aaaa-mx-ns-ptr-srv-or-txt-record"></a>Para modificar um registo A, AAAA, MX, NS, PTR, SRV ou TXT
+### <a name="to-modify-an-a-aaaa-caa-mx-ns-ptr-srv-or-txt-record"></a>Para modificar um registo A, AAAA, CAA, MX, NS, PTR, SRV ou TXT
 
-Para modificar um registo existente do tipo A, AAAA, MX, NS, PTR, SRV ou TXT, deve primeiro, adicione um novo registo e, em seguida, elimine o registo existente. Para obter instruções detalhadas sobre como eliminar e adicionar registos, consulte as secções anteriores deste artigo.
+Para modificar um registo existente do tipo A, AAAA, CAA, MX, NS, PTR, SRV ou TXT, deve primeiro, adicione um novo registo e, em seguida, elimine o registo existente. Para obter instruções detalhadas sobre como eliminar e adicionar registos, consulte as secções anteriores deste artigo.
 
 O exemplo seguinte mostra como modificar um "A" registo do endereço IP 1.2.3.4 para o endereço IP 5.6.7.8:
 

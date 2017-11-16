@@ -1,5 +1,5 @@
 ---
-title: "Kubernertes no tutorial do Azure – preparar ACR | Microsoft Docs"
+title: "Kubernetes no tutorial do Azure – preparar ACR | Microsoft Docs"
 description: "Tutorial de AKS – preparar ACR"
 services: container-service
 documentationcenter: 
@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 11/11/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: fabfbe51f9486c69d795b04bd668b50971157820
-ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
+ms.openlocfilehash: 15b54f6131c847551295061df6c6ad6a476a7da6
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="deploy-and-use-azure-container-registry"></a>Implementar e utilizar o registo de contentor do Azure
 
@@ -32,13 +32,13 @@ Registo de contentor do Azure (ACR) é um registo privado baseado no Azure, para
 > * A marcação de uma imagem de contentor para o ACR
 > * Carregar a imagem para o ACR
 
-Nos tutoriais subsequentes, esta instância ACR está integrada com um cluster de Kubernetes AKS. 
+Nos tutoriais subsequentes, esta instância ACR está integrada com um cluster de Kubernetes AKS.
 
 ## <a name="before-you-begin"></a>Antes de começar
 
 No [tutorial anterior](./tutorial-kubernetes-prepare-app.md), foi criada uma imagem de contentor para uma aplicação de voto do Azure simple. Se não tiver criado a imagem de aplicação de voto do Azure, regressar à [Tutorial 1 – criar imagens de contentor](./tutorial-kubernetes-prepare-app.md).
 
-Este tutorial requer que está a executar a CLI do Azure versão 2.0.20 ou posterior. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [Instalar a CLI do Azure]( /cli/azure/install-azure-cli). 
+Este tutorial requer que está a executar a CLI do Azure versão 2.0.21 ou posterior. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [Instalar a CLI do Azure]( /cli/azure/install-azure-cli).
 
 ## <a name="deploy-azure-container-registry"></a>Implementar o registo de contentor do Azure
 
@@ -117,7 +117,7 @@ tiangolo/uwsgi-nginx-flask                           flask               788ca94
 
 ## <a name="push-images-to-registry"></a>Imagens de push para registo
 
-Push de `azure-vote-front` imagem ao registo. 
+Push de `azure-vote-front` imagem ao registo.
 
 Utilizando o exemplo seguinte, substitua o nome de loginServer ACR loginServer do seu ambiente.
 

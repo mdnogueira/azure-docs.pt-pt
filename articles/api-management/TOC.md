@@ -53,7 +53,7 @@
 ### [Utilizar a Identidade do Serviço Gerido](api-management-howto-use-managed-service-identity.md)
 ### Integração com o Service Fabric
 #### [Descrição geral](../service-fabric/service-fabric-api-management-overview.md)
-#### [Início rápido](../service-fabric/service-fabric-api-management-quick-start.md)
+#### [Tutorial](../service-fabric/service-fabric-tutorial-deploy-api-management.md)
 
 # Referência
 ## [Azure PowerShell](/powershell/azure/overview)

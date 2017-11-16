@@ -1,5 +1,5 @@
 ---
-title: "Descrição geral do Azure a Shell de nuvem (pré-visualização) | Microsoft Docs"
+title: "Descrição geral de Shell de nuvem do Azure | Microsoft Docs"
 description: "Descrição geral da Shell em nuvem do Azure."
 services: 
 documentationcenter: 
@@ -12,15 +12,15 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 11/02/2017
+ms.date: 11/13/2017
 ms.author: juluk
-ms.openlocfilehash: 3acea56ea414f0c43333a02274e91226db29d454
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: ebf6f1256a280fdff18c0c9060614acf0d4a642b
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="overview-of-azure-cloud-shell-preview"></a>Descrição geral da Shell de nuvem do Azure (pré-visualização)
+# <a name="overview-of-azure-cloud-shell"></a>Descrição geral da Shell de nuvem do Azure
 Shell de nuvem do Azure é uma shell interativa e acessíveis para o browser para a gestão de recursos do Azure.
 Proporciona a flexibilidade de escolher a experiência de shell que melhor se adapta da forma que trabalha.
 Os utilizadores de Linux podem optar por uma experiência de Bash, ao passo que os utilizadores de Windows podem escolher o PowerShell.
@@ -33,7 +33,7 @@ Tirar partido das Bash ou o PowerShell na lista pendente de Seletor de shell:
 
 ![Bash na Shell de nuvem](media/overview/overview-bash-pic.png)
 
-![PowerShell na Shell de nuvem](media/overview/overview-ps-pic.png)
+![PowerShell na Shell de nuvem (pré-visualização)](media/overview/overview-ps-pic.png)
 
 ## <a name="features"></a>Funcionalidades
 ### <a name="browser-based-shell-experience"></a>Experiência de shell baseada no browser
@@ -42,19 +42,22 @@ Pode fornecer a Shell de nuvem tire partido untethered a partir de uma máquina 
 
 ### <a name="choice-of-preferred-shell-experience"></a>Opção de experiência de shell preferencial
 O Azure Cloud Shell dá-lhe a flexibilidade de escolher a experiência de shell que mais de adequada ao seu estilo de trabalho.
-Os utilizadores de Linux podem optar por uma experiência de Bash, ao passo que os utilizadores de Windows podem escolher o PowerShell.
+Os utilizadores do Linux podem optar ativamente por participar para Bash na Shell de nuvem, enquanto utilizadores do Windows podem optar por PowerShell na Shell de nuvem (pré-visualização).
 
-### <a name="pre-configured-azure-workstation"></a>Pré-configurada estação de trabalho do Azure
-Shell de nuvem fica pré-instaladas com ferramentas de linha de comandos populares e suporte de idiomas para que possa trabalhar mais rapidamente.
+### <a name="authenticated-and-configured-azure-workstation"></a>Autenticado e configurada estação de trabalho do Azure
+Shell de nuvem vem gerida pela Microsoft, de modo está pré-instalado com ferramentas de linha de comandos populares e suporte de idiomas para que possa trabalhar mais rapidamente. Além disso, a Shell de nuvem segura autentica automaticamente para instantânea acesso aos recursos através dos cmdlets do Azure CLI 2.0 ou o Azure PowerShell.
 
-Ver a lista completa de ferramentas para [Bash experiência](features.md#tools) e [experiência com o PowerShell.](features-powershell.md#tools)
+Ver a lista completa de ferramentas para o [Bash experiência](features.md#tools) e [experiência com o PowerShell (pré-visualização).](features-powershell.md#tools)
 
-### <a name="automatic-authentication"></a>Autenticação automática
-Shell de nuvem segura autentica automaticamente em cada sessão para instantânea acesso aos recursos através dos cmdlets do Azure CLI 2.0 ou o Azure PowerShell.
+### <a name="multiple-access-points"></a>Vários pontos de acesso
+Para além da Shell de nuvem a ser disponível a partir do portal do Azure, pode também ser acedido de:
+* [Documentação de "Experimente" 2.0 da CLI do Azure](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)
+* [Aplicação móvel do Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/)
+* [Extensão de código do Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
 
-### <a name="connect-your-azure-file-storage"></a>Ligar o File storage do Azure
+### <a name="connect-your-azure-files-storage"></a>Ligar o armazenamento de ficheiros do Azure
 Nuvem Shell máquinas são temporárias e como consequência necessitam de uma partilha de ficheiros do Azure para possível montá-la como `clouddrive` para manter o seu diretório $Home.
-Na primeira execução que nuvem Shell pede-lhe criar um recurso de grupo, a conta de armazenamento e o ficheiro partilham em seu nome. Este é um passo única e será anexado automaticamente todas as sessões. Uma partilha de ficheiros única pode ser mapeada e será utilizada pelo Bash e do PowerShell na Shell de nuvem.
+Na primeira execução que nuvem Shell pede-lhe criar um recurso de grupo, a conta de armazenamento e o ficheiro partilham em seu nome. Este é um passo única e será anexado automaticamente todas as sessões. Uma partilha de ficheiros única pode ser mapeada e será utilizada pelo Bash e do PowerShell na Shell de nuvem (pré-visualização).
 
 #### <a name="create-new-storage"></a>Criar o novo armazenamento
 ![](media/overview/basic-storage.png)
@@ -86,18 +89,18 @@ As DropDowns são filtradas para a sua região de nuvem Shell atribuído e conta
 * Shell de nuvem é atribuído uma máquina por conta de utilizador
 * As permissões estão definidas como um utilizador de Linux normal (Bash)
 
-Saiba mais sobre as funcionalidades no [Bash na Shell de nuvem](features.md) e [PowerShell na nuvem Shell](features-powershell.md).
+Saiba mais sobre as funcionalidades no [Bash na Shell de nuvem](features.md) e [PowerShell na Shell de nuvem (pré-visualização)](features-powershell.md).
 
 ## <a name="examples"></a>Exemplos
 * Utilize scripts para automatizar tarefas de gestão do Azure
 * Gerir recursos do Azure através do portal do Azure e ferramentas de linha de comandos do Azure em simultâneo
 * Test-Drive os cmdlets do Azure CLI 2.0 ou o Azure PowerShell
 
-Experimente estes exemplos de inícios rápidos para [Bash na Shell de nuvem](quickstart.md) e [PowerShell na nuvem Shell](quickstart-powershell.md).
+Experimente estes exemplos de inícios rápidos para [Bash na Shell de nuvem](quickstart.md) e [PowerShell na Shell de nuvem (pré-visualização)](quickstart-powershell.md).
 
 ## <a name="pricing"></a>Preços
 O computador que aloja a Shell de nuvem é gratuito, com um pré-requisito de uma partilha de ficheiros do Azure montada. Aplicam os custos de armazenamento normal.
 
-## <a name="supported-browsers"></a>Browsers suportados
-Shell de nuvem é recomendada para Chrome, o limite e o Safari.
-Enquanto a Shell de nuvem é suportada para Chrome, Firefox, Safari, IE e Edge, Shell da nuvem está sujeita às definições de browser específico.
+## <a name="next-steps"></a>Passos seguintes
+[Bash no início rápido da Shell de nuvem](quickstart.md)
+[PowerShell no início rápido da Shell de nuvem (pré-visualização)](quickstart-powershell.md)

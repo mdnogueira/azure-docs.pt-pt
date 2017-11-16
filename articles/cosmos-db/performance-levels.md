@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 08/28/2017
 ms.author: mimig
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6692d5b75954b2162862e6be7c2e39c63fa8408b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a0567df53dff15d7fbacf4850f6eae07c8985598
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="retiring-the-s1-s2-and-s3-performance-levels"></a>Extinguir os níveis de desempenho S1, S2 e S3
 
@@ -44,7 +44,7 @@ Este artigo fornece uma descrição geral dos níveis de desempenho S1, S2 e S3 
 
 ## <a name="why-are-the-s1-s2-and-s3-performance-levels-being-retired"></a>Por que razão são o desempenho S1, S2 e S3 níveis vai ser reformado?
 
-Os níveis de desempenho S1, S2 e S3 não oferecem flexibilidade que coleções de API do DocumentDB oferece. Com S1, S2, S3 níveis de desempenho, capacidade de débito e de armazenamento foram previamente definido e não foi possível oferecem elasticidade. BD do Azure do Cosmos oferece a capacidade para personalizar o débito e armazenamento, oferta muito mais flexibilidade na sua capacidade para dimensionar conforme alterar às suas necessidades.
+Os níveis de desempenho S1, S2 e S3 não oferecem a flexibilidade que oferta de coleções de API do DocumentDB. Com S1, S2, S3 níveis de desempenho, capacidade de débito e de armazenamento foram previamente definido e não foi possível oferecem elasticidade. BD do Azure do Cosmos oferece a capacidade para personalizar o débito e armazenamento, oferta muito mais flexibilidade na sua capacidade para dimensionar conforme alterar às suas necessidades.
 
 <a name="compare"></a>
 
@@ -71,7 +71,7 @@ Nada, Cosmos DB processa a migração para si. Se tiver uma coleção S1, S2 ou 
 
 ## <a name="how-will-my-collection-change-after-the-migration"></a>Como o meu coleção será alterado após a migração?
 
-Se tiver uma coleção de S1, será migrada para uma coleção de partições únicas com débito do 400 RU/s. 400 RU/s é o débito mais baixo disponível com coleções de partições únicas. No entanto, o custo de 400 RU/s na uma coleção de partições únicas é aproximadamente idêntica à foram pagante com a coleção de S1 e 250 RU/s –, pelo que não são pagar para o extra 150 RU/s disponíveis para si.
+Se tiver uma coleção de S1, será migrada para uma coleção de partições únicas com débito do 400 RU/s. 400 RU/s é o débito mais baixo disponível com coleções de partições únicas. No entanto, o custo de 400 RU/s de uma coleção de partições únicas é aproximadamente idêntica à foram pagante com a coleção de S1 e 250 RU/s –, pelo que não são pagar para o extra 150 RU/s disponíveis para si.
 
 Se tiver uma coleção de S2, será migrada para uma coleção de partições únicas com 1 mil RU/s. Não verá nenhuma alteração para o nível de débito.
 
@@ -119,29 +119,29 @@ Pode migrar de níveis de desempenho S1, S2 e S3 para coleções de partições 
 
 1. No [ **portal do Azure**](https://portal.azure.com), clique em **Azure Cosmos DB**, em seguida, selecione a conta de base de dados do Cosmos a modificar. 
  
-    Se **Azure Cosmos DB** é não no Jumpbar, clique em >, desloque-se para **bases de dados**, selecione **Azure Cosmos DB**e, em seguida, selecione a conta DocumentDB.  
+    Se **Azure Cosmos DB** é não no Jumpbar, clique em >, desloque-se para **bases de dados**, selecione **Azure Cosmos DB**e, em seguida, selecione a conta.  
 
-2. No menu de recursos, sob **contentores**, clique em **escala**, selecione a coleção para modificar a partir da lista pendente e, em seguida, clique em **escalão de preço**. As contas utilizando o débito predefinido têm um escalão de preço de S1, S2 ou S3.  No **escolher o escalão de preço** painel, clique em **padrão** para alterar a débito definido pelo utilizador e, em seguida, clique em **selecione** para guardar a alteração.
+2. No menu de recursos, sob **contentores**, clique em **escala**, selecione a coleção para modificar a partir da lista pendente e, em seguida, clique em **escalão de preço**. As contas utilizando o débito predefinido têm um escalão de preço de S1, S2 ou S3.  No **escolher o escalão de preço** página, clique em **padrão** para alterar a débito definido pelo utilizador e, em seguida, clique em **selecione** para guardar a alteração.
 
-    ![Captura de ecrã do painel de definições que mostra onde alterar o valor de débito](./media/performance-levels/change-performance-set-thoughput.png)
+    ![Captura de ecrã da página de definições que mostra onde alterar o valor de débito](./media/performance-levels/change-performance-set-thoughput.png)
 
-3. Volta a **escala** painel, o **escalão de preço** é alterado para **padrão** e o **débito (RU/s)** é apresentada a caixa com um valor predefinido de 400. Definir o débito entre 400 e 10 000 [unidades de pedido](request-units.md)/second (RU/s). O **fatura mensal estimada** na parte inferior das atualizações de página automaticamente para fornecer uma estimativa do custo mensal. 
+3. Volta a **escala** página, o **escalão de preço** é alterado para **padrão** e o **débito (RU/s)** é apresentada a caixa com uma predefinição valor de 400. Definir o débito entre 400 e 10 000 [unidades de pedido](request-units.md)/second (RU/s). O **fatura mensal estimada** na parte inferior das atualizações de página automaticamente para fornecer uma estimativa do custo mensal. 
 
     >[!IMPORTANT] 
     > Depois de guardar as alterações e mover para o escalão de preço padrão, não é possível reverter para os níveis de desempenho S1, S2 ou S3.
 
 4. Clique em **guardar** para guardar as alterações.
 
-    Se determinar que precisa de mais de débito (superior a 10.000 RU/s) ou o armazenamento mais (superior a 10GB) pode criar uma coleção particionada. Para migrar uma coleção de partições únicas para uma coleção particionada, consulte [migrar de partição única para coleções particionadas](documentdb-partition-data.md#migrating-from-single-partition).
+    Se determinar que precisa de mais de débito (superior a 10.000 RU/s) ou o armazenamento mais (superior a 10 GB) pode criar uma coleção particionada. Para migrar uma coleção de partições únicas para uma coleção particionada, consulte [migrar de partição única para coleções particionadas](documentdb-partition-data.md#migrating-from-single-partition).
 
     > [!NOTE]
-    > A alteração do S1, S2 ou S3 para Standard pode demorar até 2 minutos.
+    > A alteração do S1, S2 ou S3 para Standard pode demorar até dois minutos.
     > 
     > 
 
 **Para migrar para coleções de partições únicas utilizando o SDK .NET**
 
-Outra opção para alterar os níveis de desempenho dos seus coleções é através do nosso SDKs. Esta secção abrange apenas a alterar o desempenho de uma coleção de nível de utilização nosso [API .NET do DocumentDB](documentdb-sdk-dotnet.md), mas o processo é semelhante para os nossos SDKs outros.
+Outra opção para alterar os níveis de desempenho dos seus coleções é através dos SDKs do Azure Cosmos DB. Esta secção abrange apenas a alterar o desempenho de uma coleção de nível de utilizar o [API .NET do DocumentDB](documentdb-sdk-dotnet.md), mas o processo é semelhante para os nossos SDKs outros.
 
 Eis um fragmento de código para alterar o débito de coleção para 5000 unidades de pedido por segundo:
     

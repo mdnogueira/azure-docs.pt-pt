@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/11/2016
 ms.author: kraigb
-ms.openlocfilehash: deb69101e855bcad56b9212736c52ace72631f0a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 59492ccc64a70680d71ad1de0700ed30f9e45306
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="configuring-your-azure-project-using-multiple-service-configurations"></a>Configurar o projeto do Azure através de várias configurações de serviço
 Um projeto de serviço em nuvem do Azure inclui dois ficheiros de configuração: servicedefinition. Csdef e serviceconfiguration. Cscfg. Estes ficheiros são compactados com a aplicação do serviço em nuvem do Azure e implementados no Azure.
@@ -30,7 +30,7 @@ As ferramentas do Azure para o Microsoft Visual Studio fornecem as páginas de p
 
 ![VS_Solution_Explorer_Roles_Properties](./media/vs-azure-tools-multiple-services-project-configurations/IC784076.png)
 
-Para obter informações sobre os esquemas subjacentes para a definição de serviço e os ficheiros de configuração de serviço, consulte o [esquema referência](https://msdn.microsoft.com/library/azure/dd179398.aspx). Para obter mais informações sobre a configuração do serviço, consulte [como configurar os serviços em nuvem](cloud-services/cloud-services-how-to-configure.md).
+Para obter informações sobre os esquemas subjacentes para a definição de serviço e os ficheiros de configuração de serviço, consulte o [. csdef esquema XML](cloud-services/schema-csdef-file.md) e [. cscfg esquema XML](cloud-services/schema-cscfg-file.md) artigos. Para obter mais informações sobre a configuração do serviço, consulte [como configurar os serviços em nuvem](cloud-services/cloud-services-how-to-configure-portal.md).
 
 ## <a name="configuring-role-properties"></a>Configurar as propriedades da função
 As páginas de propriedades para uma função da web e uma função de trabalho são semelhantes, embora existam algumas diferenças, indicadas nas secções seguintes.
@@ -88,7 +88,7 @@ Pode utilizar o **armazenamento Local** página de propriedades para um ou mais 
 ## <a name="certificates-page"></a>Página Certificados
 No **certificados** página, pode associar certificados a sua função. Os certificados que adicionar podem ser utilizados para configurar os pontos finais de HTTPS no **pontos finais** página de propriedades.
 
-O **certificados** página de propriedades adiciona informações sobre os certificados de configuração do serviço. Tenha em atenção que os certificados não são reunidos com o serviço; tem de carregar os certificados em separado para o Azure através de [portal clássico do Azure](http://go.microsoft.com/fwlink/?LinkID=213885).
+O **certificados** página de propriedades adiciona informações sobre os certificados de configuração do serviço. Tenha em atenção que os certificados não são reunidos com o serviço; tem de carregar os certificados em separado para o Azure através de [portal do Azure](http://portal.azure.com).
 
 Para associar um certificado com a função, forneça um nome para o certificado. Utilize este nome para fazer referência ao certificado quando configurar um ponto final de HTTPS no **pontos finais** página de propriedades. Em seguida, especifique se o arquivo de certificados é **máquina Local** ou **utilizador atual** e o nome do arquivo. Por fim, introduza o thumbprint do certificado. Se o certificado tem o User\Personal atual arquivo (meu), pode introduzir o thumbprint do certificado ao selecionar o certificado a partir de uma lista povoada. Se residir em qualquer outra localização, introduza o valor de thumbprint manualmente.
 

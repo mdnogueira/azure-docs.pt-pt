@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/17/2017
-ms.author: bwren
-ms.openlocfilehash: 6f627140e6c5583636f7979889f74e489fe66496
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/15/2017
+ms.author: magoedte;bwren
+ms.openlocfilehash: 22852fed184022b4eae298d6cc531fd383eff552
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Execução do Runbook na automatização do Azure
-Quando inicia um runbook na automatização do Azure, é criada uma tarefa. Uma tarefa é uma instância de execução individual de um runbook. Um trabalho de automatização do Azure é atribuído para executar cada tarefa. Enquanto trabalhadores são partilhados por várias contas do Azure, a diferentes contas de automatização de tarefas estão isoladas entre si. Pode não ter controlar ao longo do que trabalho processa o pedido para a tarefa.  Um único runbook pode ter várias tarefas em execução em simultâneo. Ao ver a lista de runbooks no portal do Azure, lista o estado de todas as tarefas que foram iniciadas para cada runbook. Pode ver a lista de tarefas para cada runbook para poder controlar o estado de cada. Para obter uma descrição dos Estados de tarefas diferentes, consulte [Estados das tarefas](#job-statuses).
+Quando inicia um runbook na automatização do Azure, é criada uma tarefa. Uma tarefa é uma instância de execução individual de um runbook. Um trabalho de automatização do Azure é atribuído para executar cada tarefa. Enquanto trabalhadores são partilhados por várias contas do Azure, a diferentes contas de automatização de tarefas estão isoladas entre si. Pode não ter controlar ao longo do que trabalho processa o pedido para a tarefa. Um único runbook pode ter várias tarefas em execução em simultâneo.  O ambiente de execução para a mesma conta de automatização de tarefas pode ser reutilizado. Ao ver a lista de runbooks no portal do Azure, lista o estado de todas as tarefas que foram iniciadas para cada runbook. Pode ver a lista de tarefas para cada runbook para poder controlar o estado de cada. Para obter uma descrição dos Estados de tarefa diferente [Estados das tarefas](#job-statuses).
 
 O diagrama seguinte mostra o ciclo de vida de uma tarefa de runbook para [runbooks gráficos](automation-runbook-types.md#graphical-runbooks) e [runbooks do fluxo de trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks).
 
@@ -38,13 +38,13 @@ A tabela seguinte descreve os diferentes Estados possíveis das tarefas.
 
 | Estado | Descrição |
 |:--- |:--- |
-| Foi concluída |A tarefa foi concluída com êxito. |
-| Falha |Para [runbooks gráfico e o fluxo de trabalho do PowerShell](automation-runbook-types.md), o runbook não conseguiu compilar.  Para [runbooks de Script do PowerShell](automation-runbook-types.md), Falha ao iniciar o runbook ou a tarefa encontrou uma exceção. |
+| Concluído |A tarefa foi concluída com êxito. |
+| Com Falhas |Para [runbooks gráfico e o fluxo de trabalho do PowerShell](automation-runbook-types.md), o runbook não conseguiu compilar.  Para [runbooks de Script do PowerShell](automation-runbook-types.md), Falha ao iniciar o runbook ou a tarefa encontrou uma exceção. |
 | Falha ao aguardar a recursos |A tarefa falhou porque atingiu o [fração justa](#fairshare) limitar três vezes e iniciadas a partir do ponto de verificação mesmo ou desde o início do runbook cada vez. |
-| Em fila |A tarefa está aguardar recursos num trabalho de automatização fique disponível para que as que possa ser iniciado. |
+| Em Fila |A tarefa está aguardar recursos num trabalho de automatização fique disponível para que as que possa ser iniciado. |
 | A Iniciar |A tarefa foi atribuída a uma função de trabalho e o sistema está a iniciá-la. |
 | A retomar |O sistema está a retomar a tarefa depois foi suspenso. |
-| A Executar |A tarefa está em execução. |
+| Em Execução |A tarefa está em execução. |
 | Aguardar execução, dos recursos |A tarefa foi descarregada porque atingiu o [fração justa](#fairshare) limite. Retoma em breve a partir do último ponto de verificação. |
 | Parada |A tarefa foi parada pelo utilizador antes de estar concluído. |
 | A Parar |O sistema está a parar a tarefa. |

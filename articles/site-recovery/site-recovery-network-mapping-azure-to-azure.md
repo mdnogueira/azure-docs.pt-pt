@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 08/11/2017
 ms.author: pratshar
-ms.openlocfilehash: 9d6a806ec533259797080fbfee2c38f918ebd8a2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1df7e04fc9cec5722747bafce7e2e5519b76315d
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="network-mapping-between-two-azure-regions"></a>Mapeamento de rede entre as duas regiões do Azure
 
@@ -48,7 +48,7 @@ Fazer a mesma coisa para criar um mapeamento de rede do Sudeste asiático a Ási
 
 ## <a name="mapping-network-when-enabling-replication"></a>Mapeamento de rede ao ativar a replicação
 
-Se não é executado o mapeamento da rede quando estiver a replicar uma máquina virtual para a primeira hora formulário uma região do Azure para outro, em seguida, pode escolher a rede de destino como parte do mesmo processo. Recuperação de sites cria os mapeamentos de rede da região de origem para a região de destino e a região de destino para a região de origem com base nesta seleção.   
+Se não é executado o mapeamento da rede quando estiver a replicar uma máquina virtual pela primeira vez a partir de uma região do Azure para outro, em seguida, pode escolher a rede de destino como parte do mesmo processo. Recuperação de sites cria os mapeamentos de rede da região de origem para a região de destino e a região de destino para a região de origem com base nesta seleção.   
 
 ![Mapeamento da rede](./media/site-recovery-network-mapping-azure-to-azure/network-mapping4.png)
 
@@ -80,18 +80,18 @@ Sub-rede de máquina virtual de destino está selecionado com base no nome de su
 Endereço IP para cada interface de rede da máquina virtual de destino é escolhido, da seguinte forma:
 
 ### <a name="dhcp"></a>DHCP
-Se a interface de rede da máquina virtual de origem estiver a utilizar DHCP, a interface de rede da máquina virtual de destino seja também definido como DHCP.
+Se a interface de rede da máquina virtual de origem estiver a utilizar DHCP, a interface de rede da máquina virtual de destino seja também definida como DHCP.
 
 ### <a name="static-ip"></a>IP estático
 Se a interface de rede da máquina virtual de origem estiver a utilizar IP estático, a interface de rede da máquina virtual de destino também está definida para utilizar IP estático. IP estático é escolhido, da seguinte forma:
 
 #### <a name="same-address-space"></a>Mesmo espaço de endereços
 
-Se a sub-rede de origem e a sub-rede de destino tem o mesmo espaço de endereços, IP de destino está definido mesmo que o IP da interface de rede da máquina virtual de origem. Se o mesmo IP não estiver disponível, alguns outro IP disponível está definido como o IP de destino.
+Se a sub-rede de origem e a sub-rede de destino tem o mesmo espaço de endereços, o IP de destino está definido mesmo que o IP da interface de rede da máquina virtual de origem. Se o mesmo IP não estiver disponível, alguns outro IP disponível está definido como o IP de destino.
 
 #### <a name="different-address-space"></a>Espaço de endereços diferente
 
-Se a sub-rede de origem e a sub-rede de destino tem espaço de endereços diferente, IP de destino está definido como qualquer IP disponível na sub-rede de destino.
+Se a sub-rede de origem e a sub-rede de destino tem espaço de endereços diferente, o IP de destino está definido como qualquer IP disponível na sub-rede de destino.
 
 Pode modificar o IP de destino em cada interface de rede acedendo às definições de computação e rede da máquina virtual.
 

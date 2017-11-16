@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2017
 ms.author: tomfitz
-ms.openlocfilehash: 44c87b00f4fc63dbfd45a07d9a8cddc5eaf1a65c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d7b091f4a437781547610624007ac1d7f22fed61
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Recursos de bloqueio para impedir que as alterações inesperadas 
 Como administrador, poderá ter de bloquear uma subscrição, grupo de recursos ou recursos para impedir que outros utilizadores na sua organização acidentalmente eliminem ou modificar a recursos críticos. Pode definir o bloqueio para **CanNotDelete** ou **ReadOnly**. 
@@ -168,6 +168,6 @@ O pedido de incluir um objeto JSON que especifica as propriedades para o bloquei
 * Para obter mais informações sobre como trabalhar com as bloqueios de recursos, consulte [bloqueio baixo Your Azure recursos](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/06/18/lock-down-your-azure-resources.aspx)
 * Para saber mais sobre como organizar logicamente os recursos, consulte [utilizando etiquetas para organizar os recursos](resource-group-using-tags.md)
 * Para alterar o grupo de recursos, um recurso reside no, consulte [mover recursos para o novo grupo de recursos](resource-group-move-resources.md)
-* Pode aplicar restrições e convenções a sua subscrição com políticas personalizadas. Para obter mais informações, consulte [Utilizar a Política para gerir recursos e controlar o acesso](resource-manager-policy.md).
+* Pode aplicar restrições e convenções a sua subscrição com políticas personalizadas. Para obter mais informações, consulte [o que é a política do Azure?](../azure-policy/azure-policy-introduction.md).
 * Para obter documentação de orientação sobre como as empresas podem utilizar o Resource Manager para gerir subscrições de forma eficaz, consulte [Azure enterprise scaffold - prescriptive subscription governance (Andaime empresarial do Azure - governação de subscrições prescritivas)](resource-manager-subscription-governance.md).
 

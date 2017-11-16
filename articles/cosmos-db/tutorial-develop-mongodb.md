@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 05/10/2017
 ms.author: anhoh
 ms.custom: mvc
-ms.openlocfilehash: a0598d32b5bad240c0a5d77a6e19285115a9f6b0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: f7aed1c69e930bdd5e5b451fa2726a75b78515eb
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-cosmos-db-connect-to-a-mongodb-app-using-net"></a>Azure Cosmos DB: Ligar a uma aplicação do MongoDB através do .NET
 
@@ -45,7 +45,6 @@ Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure
 
 > [!TIP]
 > * Já tem uma conta de base de dados do Azure Cosmos? Se assim for, avançar diretamente para [configurar a sua solução Visual Studio](#SetupVS)
-> * Tem uma conta do Azure DocumentDB? Se Sim, agora a sua conta é uma conta de base de dados do Azure Cosmos e pode avançar diretamente para [configurar a sua solução Visual Studio](#SetupVS).  
 > * Se estiver a utilizar o emulador de BD do Cosmos do Azure, siga os passos indicados em [emulador de BD do Azure Cosmos](local-emulator.md) para configurar o emulador e avançar diretamente para [configurar a sua solução do Visual Studio](#SetupVS). 
 >
 >

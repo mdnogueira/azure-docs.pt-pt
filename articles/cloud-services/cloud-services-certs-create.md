@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: adegeo
-ms.openlocfilehash: 689977491e6df37e48536f59234bf4ddba6a1575
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 37a3a990b5f0164b1b6f53727e92e09fece7f6fb
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="certificates-overview-for-azure-cloud-services"></a>Descrição geral de certificados para serviços de nuvem do Azure
 Certificados são utilizados no Azure para serviços em nuvem ([certificados de serviço](#what-are-service-certificates)) e para a autenticação com a API de gestão ([certificados de gestão](#what-are-management-certificates) quando utilizar o portal clássico do Azure e não a portal do Azure não clássica). Este tópico fornece uma descrição geral de ambos os tipos de certificado, como a [criar](#create) e [implementar](#deploy) -las para o Azure.
 
 Certificados utilizados no Azure são x. 509 v3 certificados e podem ser assinados por outro certificado fidedigno ou podem ser auto-assinados. Um certificado autoassinado está assinado pela sua própria criador, por conseguinte, não é considerado fidedigno por predefinição. A maioria dos browsers podem ignorar este problema. Só deve utilizar certificados autoassinados quando desenvolver e testar os seus serviços em nuvem. 
 
-Certificados utilizados pelo Azure podem conter um private ou uma chave pública. Certificados têm um thumbprint que fornece um meio para identificá-las de uma forma inequívoca. Esta impressão digital é utilizada do Azure [ficheiro de configuração](cloud-services-configure-ssl-certificate.md) para identificar o certificado que um serviço em nuvem deverá utilizar. 
+Certificados utilizados pelo Azure podem conter um private ou uma chave pública. Certificados têm um thumbprint que fornece um meio para identificá-las de uma forma inequívoca. Esta impressão digital é utilizada do Azure [ficheiro de configuração](cloud-services-configure-ssl-certificate-portal.md) para identificar o certificado que um serviço em nuvem deverá utilizar. 
 
 ## <a name="what-are-service-certificates"></a>Quais são os certificados de serviço?
 Certificados de serviço estão ligados ao serviços em nuvem e ativar a comunicação segura de e para o serviço. Por exemplo, se tiver implementado uma função da web, seria aconselhável fornecer um certificado que pode autenticar-se de um ponto final de HTTPS exposto. Certificados de serviço, definidos na definição do serviço, são implementados automaticamente para a máquina virtual que está a executar uma instância da sua função. 
@@ -41,7 +41,7 @@ Certificados de serviço podem ser geridos separadamente em relação os serviç
 Certificados de gestão permitem-lhe autenticar com o modelo de implementação clássica. Muitos programas e ferramentas (tais como o Visual Studio ou o SDK do Azure) utilizam estes certificados para automatizar a configuração e implementação de vários serviços do Azure. Estes não estão realmente relacionados com serviços em nuvem. 
 
 > [!WARNING]
-> Tenha cuidado! Estes tipos de certificados permite que qualquer pessoa que efetua a autenticação com os mesmos para gerir a subscrição que se encontram associados. 
+> Cuidado! Estes tipos de certificados permite que qualquer pessoa que efetua a autenticação com os mesmos para gerir a subscrição que se encontram associados. 
 > 
 > 
 
@@ -93,7 +93,7 @@ Existem várias páginas na internet que abrangem como fazê-lo com o IIS. [Aqui
 [Isto](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) artigo descreve como criar certificados com SSH.
 
 ## <a name="next-steps"></a>Passos seguintes
-[Carregue o certificado de serviço para o portal clássico do Azure](cloud-services-configure-ssl-certificate.md) (ou o [portal do Azure](cloud-services-configure-ssl-certificate-portal.md)).
+[Carregue o certificado de serviço para o portal do Azure](cloud-services-configure-ssl-certificate-portal.md).
 
 Carregar um [certificado da API de gestão](../azure-api-management-certs.md) no portal clássico do Azure. O portal do Azure utiliza certificados de gestão para a autenticação.
 

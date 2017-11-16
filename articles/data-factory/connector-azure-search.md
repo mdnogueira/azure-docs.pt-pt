@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/30/2017
 ms.author: jingwang
-ms.openlocfilehash: ebf63cd6d0f9e62d1001d74ce06b4849e08c0de0
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: 2b6219dc509b1af8f196f056b489a31fa331acaf
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="copy-data-to-an-azure-search-index-using-azure-data-factory"></a>Copiar dados para um índice da Azure Search utilizando o Azure Data Factory
 
@@ -51,7 +51,7 @@ As seguintes propriedades são suportadas para o serviço da Azure Search ligada
 | connectVia | O [integração Runtime](concepts-integration-runtime.md) para ser utilizado para ligar ao arquivo de dados. Pode utilizar o Runtime de integração do Azure ou o tempo de execução do Self-hosted integração (se o arquivo de dados esteja localizado numa rede privada). Se não for especificado, utiliza a predefinição de Runtime de integração do Azure. |Não |
 
 > [!IMPORTANT]
-> Quando copiar dados a partir de um arquivo de dados na nuvem para o índice de pesquisa do Azure, na Azure Search serviço ligado, tem de referir-se de um tempo de execução de integração do Azure com a região explícito no connactVia. Defina a região que reside a pesquisa do Azure. Saiba mais de [Runtime de integração do Azure] (conceitos-integração-runtime.md #azure-integração-tempo de execução).
+> Quando copiar dados a partir de um arquivo de dados na nuvem para o índice de pesquisa do Azure, na Azure Search serviço ligado, tem de referir-se de um tempo de execução de integração do Azure com a região explícito no connactVia. Defina a região que reside a pesquisa do Azure. Saiba mais de [Runtime de integração do Azure](concepts-integration-runtime.md#azure-integration-runtime).
 
 **Exemplo:**
 
@@ -175,7 +175,7 @@ A seguinte tabela especifica se um tipo de dados de pesquisa do Azure é suporta
 | Int32 | S |
 | Int64 | S |
 | duplo | S |
-| Valor booleano | S |
+| Booleano | S |
 | DataTimeOffset | S |
 | Matriz de cadeia | N |
 | GeographyPoint | N |

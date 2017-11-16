@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2017
 ms.author: andredm
-ms.openlocfilehash: cb6e5a398a1d7e20efbcc4a8900f9e8dea43ad2c
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: c1f49e2c7836a56f37aafcaad0cb74278213a720
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="elevate-access-as-a-tenant-admin-with-role-based-access-control"></a>Elevar o acesso como um administrador inquilino com controlo de acesso baseado em funções
 
@@ -43,6 +43,30 @@ Esta funcionalidade é importante porque permite que o administrador de inquilin
 > A impressão é que esta é uma propriedade Global do Azure Active Directory, no entanto, funciona numa base por utilizador para o utilizador atualmente com sessão iniciada. Quando tiver direitos de Administrador Global no Azure Active Directory, pode invocar a funcionalidade de elevateAccess para o utilizador que tem sessão iniciada no Centro de administração do Azure Active Directory.
 
 ![Globaladmin de centro de administração - propriedades - do Azure AD pode gerir a subscrição do Azure - captura de ecrã](./media/role-based-access-control-tenant-admin-access/aad-azure-portal-global-admin-can-manage-azure-subscriptions.png)
+
+## <a name="view-role-assignments-at-the--scope-using-powershell"></a>Ver as atribuições de função no âmbito "/" com o PowerShell
+Para ver o **administrador de acesso de utilizador** atribuição no  **/**  âmbito, utilize o `Get-AzureRmRoleAssignment` cmdlet do PowerShell.
+    
+```
+Get-AzureRmRoleAssignment* | where {$_.RoleDefinitionName -eq "User Access Administrator" -and $_SignInName -eq "<username@somedomain.com>" -and $_.Scope -eq "/"}
+```
+
+**Exemplo de saída**:
+
+RoleAssignmentId: /providers/Microsoft.Authorization/roleAssignments/098d572e-c1e5-43ee-84ce-8dc459c7e1f0    
+Âmbito: /    
+DisplayName: nome de utilizador    
+SignInName:username@somedomain.com    
+RoleDefinitionName: Administrador de acesso de utilizador    
+Em RoleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9    
+ObjectId: d65fd0e9-c185-472c-8f26-1dafa01f72cc    
+ObjectType: utilizador    
+
+## <a name="delete-the-role-assignment-at--scope-using-powershell"></a>Eliminar a atribuição de função em "/" definir o âmbito com o Powershell:
+Pode eliminar a atribuição de utilizar o seguinte cmdlet do PowerShell:
+```
+Remove-AzureRmRoleAssignment -SignInName <username@somedomain.com> -RoleDefinitionName "User Access Administrator" -Scope "/" 
+```
 
 ## <a name="use-elevateaccess-to-give-tenant-access-with-the-rest-api"></a>Utilizar elevateAccess para dar acesso do inquilino com a API REST
 

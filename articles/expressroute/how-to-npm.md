@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/13/2017
 ms.author: cherylmc
-ms.openlocfilehash: b041244b28d76de4bac2822c115482e31d073a22
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.openlocfilehash: 3ab8029d035c3ba88ddb8a112e27f9054f7c203c
+ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="configure-network-performance-monitor-for-expressroute-preview"></a>Configurar o Monitor de desempenho de rede para o ExpressRoute (pré-visualização)
 
@@ -74,6 +74,11 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
   * Grupo de recursos - criar um grupo de recursos ou utilize uma já existente.
   * Localização - tem de selecionar um [suportado região](#regions).
   * Escalão de preço - Selecione 'livres'
+  
+  >[!NOTE]
+  >O circuito de ExpressRoute pode ser qualquer parte do mundo e não tem de estar na mesma região que a área de trabalho.
+  >
+
 
   ![Área de trabalho](.\media\how-to-npm\4.png)<br><br>
 4. Clique em **OK** para guardar e implementar o modelo de definições. Assim que valida o modelo, clique em **criar** para implementar a área de trabalho.
@@ -174,7 +179,7 @@ Para mais informações sobre o NSG, consulte [grupos de segurança de rede](../
 >
 >
 
-Antes de começar a utilizar a funcionalidade de monitorização do ExpressRoute de NPM, tem de solicitar para ter a sua área de trabalho na lista de permissões. [Clique aqui para ir para a página e preencher o formulário de pedido](https://go.microsoft.com/fwlink/?linkid=862263). (Sugestão: pretende abrir esta ligação numa nova janela ou separador). O processo de adicionar à lista branca pode demorar um dia útil ou mais. Depois do adicionar à lista branca estiver concluída, receberá uma mensagem de e-mail.
+Antes de começar a utilizar a funcionalidade de monitorização do ExpressRoute de NPM, tem de solicitar para ter a sua área de trabalho na lista de permissões. [Clique aqui para ir para a página e preencher o formulário de pedido](https://aka.ms/npmcohort). (Sugestão: pretende abrir esta ligação numa nova janela ou separador). O processo de adicionar à lista branca pode demorar um dia útil ou mais. Depois do adicionar à lista branca estiver concluída, receberá uma mensagem de e-mail.
 
 ## <a name="setupmonitor"></a>Passo 5: Configurar NPM para monitorização do ExpressRoute
 

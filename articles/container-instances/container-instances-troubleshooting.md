@@ -5,7 +5,7 @@ services: container-instances
 documentationcenter: 
 author: seanmck
 manager: timlt
-editor: 
+editor: mmacy
 tags: 
 keywords: 
 ms.assetid: 
@@ -14,20 +14,20 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/31/2017
+ms.date: 11/18/2017
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: ff6da0ce95d0405714602c3872da34a2bff344d3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 78bd45f7f71fd25e351d4e9b922a6a3f171437fd
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="troubleshoot-deployment-issues-with-azure-container-instances"></a>Resolver problemas de implementação com instâncias de contentor do Azure
 
 Este artigo mostra como resolver problemas quando implementar contentores para instâncias de contentor do Azure. Também descreve alguns dos problemas comuns que poderá ter.
 
-## <a name="getting-diagnostic-events"></a>Obter eventos de diagnóstico
+## <a name="get-diagnostic-events"></a>Obter eventos de diagnóstico
 
 Para ver registos a partir do código da aplicação num contentor, pode utilizar o [az contentor registos](/cli/azure/container#logs) comando. Mas se o contentor não implementar com êxito, terá de rever as informações de diagnóstico fornecidas pelo fornecedor de recursos de instâncias de contentor do Azure. Para ver os eventos para o contentor, execute o seguinte comando:
 
@@ -91,7 +91,7 @@ O resultado inclui as propriedades de núcleo do seu contentor, juntamente com e
 
 Existem alguns problemas comuns essa conta para a maioria dos erros na implementação.
 
-### <a name="unable-to-pull-image"></a>Não é possível a imagem de solicitação
+## <a name="unable-to-pull-image"></a>Não é possível a imagem de solicitação
 
 Se as instâncias de contentor do Azure não é possível solicitar a sua imagem inicialmente, repete as tentativas durante um determinado período antes de falhar, eventualmente. Se a imagem não pode ser solicitada, são apresentados eventos, como o seguinte:
 
@@ -123,75 +123,54 @@ Se as instâncias de contentor do Azure não é possível solicitar a sua imagem
 
 Para resolver, eliminar o contentor e repita a implementação, pagar especial atenção se introduziu o nome da imagem corretamente.
 
-### <a name="container-continually-exits-and-restarts"></a>Contentor continuamente sai e reinicia
+## <a name="container-continually-exits-and-restarts"></a>Contentor continuamente sai e reinicia
 
-Atualmente, as instâncias de contentor do Azure suporta apenas a serviços de longa execução. Se for executada no contentor de conclusão e sai, é automaticamente reiniciado e será novamente executado. Se isto acontecer, são apresentados eventos, como os seguintes. Tenha em atenção que o contentor começa com êxito, em seguida, reinicia rapidamente. A API de instâncias de contentor inclui um `retryCount` propriedade mostra quantas vezes contentor específico tiver sido reiniciado.
+Se o contentor é executada para conclusão e reinicia automaticamente, poderá ter de definir um [reiniciar política](container-instances-restart-policy.md) de **OnFailure** ou **nunca**. Se especificar **OnFailure** e consulte ainda expedição é reiniciado, podem existir um problema com a aplicação ou script executado no seu contentor.
 
-```bash
-"events": [
-  {
-    "count": 5,
-    "firstTimestamp": "2017-08-03T22:21:55+00:00",
-    "lastTimestamp": "2017-08-03T22:23:22+00:00",
-    "message": "Pulling: pulling image \"alpine\"",
-    "type": "Normal"
-  },
-  {
-    "count": 5,
-    "firstTimestamp": "2017-08-03T22:21:57+00:00",
-    "lastTimestamp": "2017-08-03T22:23:23+00:00",
-    "message": "Pulled: Successfully pulled image \"alpine\"",
-    "type": "Normal"
-  },
-  {
-    "count": 1,
-    "firstTimestamp": "2017-08-03T22:21:57+00:00",
-    "lastTimestamp": "2017-08-03T22:21:57+00:00",
-    "message": "Created: Created container with id ad2bf9bc51761c5f935260b4bab53b164d52d9cbc045b16afcb26fb4d14d0a70",
-    "type": "Normal"
-  },
-  {
-    "count": 1,
-    "firstTimestamp": "2017-08-03T22:21:57+00:00",
-    "lastTimestamp": "2017-08-03T22:21:57+00:00",
-    "message": "Started: Started container with id ad2bf9bc51761c5f935260b4bab53b164d52d9cbc045b16afcb26fb4d14d0a70",
-    "type": "Normal"
-  },
-  {
-    "count": 1,
-    "firstTimestamp": "2017-08-03T22:21:58+00:00",
-    "lastTimestamp": "2017-08-03T22:21:58+00:00",
-    "message": "Created: Created container with id 7687b9bd15dc01731fa66fc45f6f0241495600602dd03841e559453245e7f70b",
-    "type": "Normal"
-  },
-  {
-    "count": 1,
-    "firstTimestamp": "2017-08-03T22:21:58+00:00",
-    "lastTimestamp": "2017-08-03T22:21:58+00:00",
-    "message": "Started: Started container with id 7687b9bd15dc01731fa66fc45f6f0241495600602dd03841e559453245e7f70b",
-    "type": "Normal"
-  },
-  {
-    "count": 13,
-    "firstTimestamp": "2017-08-03T22:21:59+00:00",
-    "lastTimestamp": "2017-08-03T22:24:36+00:00",
-    "message": "BackOff: Back-off restarting failed container",
-    "type": "Warning"
-  },
-  {
-    "count": 1,
-    "firstTimestamp": "2017-08-03T22:22:13+00:00",
-    "lastTimestamp": "2017-08-03T22:22:13+00:00",
-    "message": "Created: Created container with id 72e347e891290e238135e4a6b3078748ca25a1275dbbff30d8d214f026d89220",
-    "type": "Normal"
-  },
-  ...
+A API de instâncias de contentor inclui um `restartCount` propriedade. Para verificar o número de reinícios para um contentor, pode utilizar o [mostrar de contentor az](/cli/azure/container#az_container_show) comando no 2.0 de CLI do Azure. No seguinte exemplo de saída (que foi truncado de uma forma abreviada), pode ver o `restartCount` propriedade no final de saída.
+
+```json
+...
+ "events": [
+   {
+     "count": 1,
+     "firstTimestamp": "2017-11-13T21:20:06+00:00",
+     "lastTimestamp": "2017-11-13T21:20:06+00:00",
+     "message": "Pulling: pulling image \"myregistry.azurecr.io/aci-tutorial-app:v1\"",
+     "type": "Normal"
+   },
+   {
+     "count": 1,
+     "firstTimestamp": "2017-11-13T21:20:14+00:00",
+     "lastTimestamp": "2017-11-13T21:20:14+00:00",
+     "message": "Pulled: Successfully pulled image \"myregistry.azurecr.io/aci-tutorial-app:v1\"",
+     "type": "Normal"
+   },
+   {
+     "count": 1,
+     "firstTimestamp": "2017-11-13T21:20:14+00:00",
+     "lastTimestamp": "2017-11-13T21:20:14+00:00",
+     "message": "Created: Created container with id bf25a6ac73a925687cafcec792c9e3723b0776f683d8d1402b20cc9fb5f66a10",
+     "type": "Normal"
+   },
+   {
+     "count": 1,
+     "firstTimestamp": "2017-11-13T21:20:14+00:00",
+     "lastTimestamp": "2017-11-13T21:20:14+00:00",
+     "message": "Started: Started container with id bf25a6ac73a925687cafcec792c9e3723b0776f683d8d1402b20cc9fb5f66a10",
+     "type": "Normal"
+   }
+ ],
+ "previousState": null,
+ "restartCount": 0
+...
+}
 ```
 
 > [!NOTE]
-> A maioria das imagens de contentor para as distribuições do Linux definir uma shell, tais como bash, como o comando de predefinição. Uma vez que uma shell no seu próprio não é um serviço de execução longa, estes contentores sair imediatamente e enquadram-se um ciclo de reinício.
+> A maioria das imagens de contentor para as distribuições do Linux definir uma shell, tais como bash, como o comando de predefinição. Uma vez que uma shell no seu próprio não é um serviço de execução longa, estes imediatamente sair e contentores enquadram-se um ciclo de reinício quando configurado com a predefinição **sempre** reiniciar política.
 
-### <a name="container-takes-a-long-time-to-start"></a>Contentor demora muito tempo a iniciar
+## <a name="container-takes-a-long-time-to-start"></a>Contentor demora muito tempo a iniciar
 
 Se o seu contentor demora muito tempo a iniciar, eventualmente, mas for bem sucedida, comece por observar o tamanho da imagem do contentor. Porque as instâncias de contentor do Azure obtém a imagem do contentor a pedido, o tempo de arranque ocorrer está diretamente relacionada com o tamanho.
 
@@ -212,7 +191,7 @@ A chave para manter o tamanho de imagem pequeno é garantir que a imagem final n
 
 É a forma como para reduzir o impacto da solicitação de imagem no tempo de arranque do contentor para alojar a imagem de contentor com o registo de contentor do Azure na mesma região em que pretende utilizar instâncias de contentor do Azure. Isto reduz o caminho de rede que a imagem do contentor tem de viajam, encurtar significativamente o tempo de transferência.
 
-### <a name="resource-not-available-error"></a>Recurso erro não está disponível
+## <a name="resource-not-available-error"></a>Recurso erro não está disponível
 
 Devido a vários recursos regional carregar no Azure, poderá receber o erro seguinte ao tentar implementar uma instância do contentor:
 

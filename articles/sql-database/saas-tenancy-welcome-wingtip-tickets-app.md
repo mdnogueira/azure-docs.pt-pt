@@ -13,13 +13,13 @@ ms.workload: Active
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/12/2017
+ms.date: 11/14/2017
 ms.author: billgib;genemi
-ms.openlocfilehash: e10a954ba57782f4f79131ab583b5a73edf4ba02
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 96e031835905057a9ab2b3ee4023b08de092dd8e
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="welcome-to-the-wingtip-tickets-sample-saas-azure-sql-database-tenancy-app"></a>Bem-vindo à aplicação de inquilinos de SQL Database do Azure SaaS de amostra de pedidos de Wingtip
 
@@ -37,9 +37,9 @@ Pode instalar a aplicação de bilhetes Wingtip na sua própria subscrição do 
 
 Código da aplicação e os scripts de gestão, estão disponíveis no GitHub:
 
-- **Aplicação autónoma** modelo: *(disponíveis dentro de dias).*
-- **Base de dados por inquilino** modelo: [WingtipSaaS repositório](https://github.com/Microsoft/WingtipSaaS/).
-- **A multi-inquilino** modelo, o *híbrida*: *(disponíveis dentro de dias).*
+- **Aplicação autónoma** modelo: [WingtipTicketsSaaS StandaloneApp repositório](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp)
+- **Base de dados por inquilino** modelo: [WingtipTicketsSaaS DbPerTenant repositório](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant).
+- **A multi-inquilino** modelo: [WingtipTicketsSaaS MultiTenantDB repositório](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB).
 
 O mesmo código de uma base para a aplicação de bilhetes Wingtip é reutilizado para todos os modelos de anteriores listados. Pode utilizar o código a partir do Github para iniciar os seus projetos de SaaS.
 
@@ -79,8 +79,6 @@ Este modelo utiliza uma aplicação de inquilino único. Por conseguinte, este m
 
 Pode utilizar este modelo quando propor instâncias da sua aplicação para muitos clientes diferentes, para cada cliente a executar seu próprio. O cliente, em seguida, é o único inquilino. Enquanto a base de dados armazena os dados para apenas um cliente, a base de dados armazena os dados para muitos clientes do cliente.
 
-- *(Tutoriais para este modelo serão publicados aqui dentro de alguns dias. Uma ligação será aqui.)*
-
 #### <a name="database-per-tenant"></a>Base de dados por inquilino
 
 ![Base de dados por modelo de inquilino][database-per-tenant-model-35d]
@@ -99,8 +97,7 @@ Este modelo tem vários inquilinos na instância da aplicação. Este modelo tam
 
 O esquema de cada base de dados inclui um identificador de inquilino. O identificador de inquilino é mesmo nessas bases de dados que armazenam apenas um inquilino.
 
-- *(Tutoriais para este modelo serão publicados aqui dentro de alguns dias. Uma ligação será aqui.)*
-
+- [Introdução a um exemplo de aplicação de SaaS de multi-inquilino de base de dados SQL][saas-multitenantdb-get-started-deploy-89i]
 
 
 
@@ -149,4 +146,7 @@ Os artigos tutorial para cada modelo abrangem os seguintes cenários de gestão:
 [saas-dbpertenant-wingtip-app-overview-15d]: saas-dbpertenant-wingtip-app-overview.md
 
 [multi-tenant-saas-database-tenancy-patterns-60p]: saas-tenancy-app-design-patterns.md
+
+[saas-multitenantdb-get-started-deploy-89i]: saas-multitenantdb-get-started-deploy.md
+
 

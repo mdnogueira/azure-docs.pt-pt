@@ -3,23 +3,23 @@ title: "Tutoriais de integração de aplicações do SaaS para utilização com 
 description: "Configure o Azure integração do Active Directory único início de sessão com uma variedade de software de terceiros, como aplicações de serviço."
 services: active-directory
 documentationcenter: 
-author: MicrosoftGuyJFlo
-manager: femila
+author: daveba
+manager: mtillman
 ms.assetid: 08c0c52b-76d9-4250-936a-6bec0edb8816
 ms.service: active-directory
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/21/2017
-ms.author: joflore
+ms.date: 11/14/2017
+ms.author: daveba
 ms.custom: it-pro
 ms.reviewer: jeedes
-ms.openlocfilehash: 2b2d4617e2aef6a2cf33a9539f51fd0e0c0bac74
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 64db88f9168efd4ee636e27ebf05da497c42d466
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="saas-application-integration-with-azure-active-directory"></a>Integração de aplicações de SaaS no Azure Active Directory
 
@@ -55,6 +55,7 @@ Para obter a lista completa de aplicações SaaS que tenham sido previamente int
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_AmazonWebServices.png)| [Amazon Web Services (AWS)](active-directory-saas-amazon-web-service-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_Anaplan.png)| [Anaplan](active-directory-saas-anaplan-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_AnswerHub.png)| [AnswerHub](active-directory-saas-answerhub-tutorial.md)|
+| ![logótipo](media/active-directory-saas-tutorial-list/active-directory-apexportal-tutorial.png)| [Portal de vértice](active-directory-saas-apexportal-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_AppBlade.png)| [AppBlade](active-directory-saas-appblade-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_AppDynamics.png)| [AppDynamics](active-directory-saas-appdynamics-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_Aravo.png)| [Aravo](active-directory-saas-aravo-tutorial.md)|

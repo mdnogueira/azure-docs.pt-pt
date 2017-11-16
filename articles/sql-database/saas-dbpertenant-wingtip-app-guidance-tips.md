@@ -13,31 +13,31 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2017
 ms.author: genemi
-ms.openlocfilehash: fbfaea938676991cf6280e5dd8c1e1190aa268a8
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 4c90d70bb3b043ef81a224f0f69107eaa6eb0547
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="guidance-and-tips-for-azure-sql-database-multi-tenant-saas-app-example"></a>Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino
 
 
-## <a name="download-and-unblock-the-wingtip-saas-scripts"></a>Transferir e desbloquear os scripts de Wingtip SaaS
+## <a name="download-and-unblock-the-wingtip-tickets-saas-database-per-tenant-scripts"></a>Transferir e desbloquear Wingtip pedidos de suporte de SaaS base de dados por scripts de inquilino
 
 Conteúdo executável (scripts, dlls) pode estar bloqueado pelo Windows quando zip ficheiros são transferidos a partir de uma origem externa e extraiu. Quando extrair os scripts a partir de um ficheiro zip ***siga os passos abaixo para desbloquear o ficheiro. zip antes de a extrair***. Isto garante que os scripts estão autorizados a executar.
 
-1. Navegue até à [o repositório do github Wingtip SaaS](https://github.com/Microsoft/WingtipSaaS).
+1. Navegue até à [Wingtip pedidos de suporte de SaaS base de dados por repositório do GitHub inquilino](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant).
 2. Clique em **clonar ou transferir**.
 3. Clique em **transferir ZIP** e guarde o ficheiro.
-4. Clique com botão direito do **WingtipSaaS master.zip** do ficheiro e selecione **propriedades**.
+4. Clique com botão direito do **WingtipTicketsSaaS-DbPerTenant-master.zip** do ficheiro e selecione **propriedades**.
 5. No **geral** separador, selecione **desbloqueio**.
 6. Clique em **OK**.
 7. Extraia os ficheiros.
 
-Scripts estão localizados no *... \\WingtipSaaS-master\\Learning módulos* pasta.
+Scripts estão localizados no *... \\Learning módulos* pasta.
 
 
-## <a name="working-with-the-wingtip-saas-powershell-scripts"></a>Trabalhar com Scripts do PowerShell de SaaS Wingtip
+## <a name="working-with-the-wingtip-tickets-saas-database-per-tenant-powershell-scripts"></a>Trabalhar com Wingtip bilhetes SaaS base de dados por inquilino Scripts do PowerShell
 
 Para tirar o máximo partido do exemplo tem de aprofundar os scripts fornecidos. Utilizar pontos de interrupção e percorra os scripts, examinando os detalhes de como os diferentes padrões de SaaS são implementados. Passo facilmente através de scripts fornecidos e módulos para a melhor compreensão, recomendamos que utilize o [ISE do PowerShell](https://msdn.microsoft.com/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise).
 
@@ -73,10 +73,10 @@ Sugestões para explorar e avance mediante scripts do PowerShell:
 
 Utilize [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) para ligar e procurar a servidores de aplicações e bases de dados.
 
-A implementação inicialmente tem dois servidores de base de dados do SQL Server para ligar ao - o *tenants1 -&lt;utilizador&gt;*  servidor e o *catálogo -&lt;utilizador&gt;*  servidor. Para garantir uma ligação de demonstração com êxito, ambos os servidores têm um [regra de firewall](sql-database-firewall-configure.md) permitir que todos os IPs através de.
+A implementação inicialmente tem dois servidores de base de dados do SQL Server para ligar ao - o *tenants1-dpt -&lt;utilizador&gt;*  servidor e o *catálogo-dpt -&lt;utilizador&gt;* servidor. Para garantir uma ligação de demonstração com êxito, ambos os servidores têm um [regra de firewall](sql-database-firewall-configure.md) permitir que todos os IPs através de.
 
 
-1. Abra o *SSMS* e ligue-se ao servidor *tenants1-&lt;Utilizador&gt;.database.windows.net*.
+1. Abra *SSMS* e estabelecer ligação com o *tenants1-dpt -&lt;utilizador&gt;. database.windows.net* servidor.
 2. Clique em **Ligar** > **Motor de Base de Dados...**:
 
    ![servidor de catálogo](media/saas-dbpertenant-wingtip-app-guidance-tips/connect.png)
@@ -85,7 +85,7 @@ A implementação inicialmente tem dois servidores de base de dados do SQL Serve
 
    ![ligação](media/saas-dbpertenant-wingtip-app-guidance-tips/tenants1-connect.png)
 
-4. Repita os passos 2 e 3 e ligue-se ao servidor *catalog-&lt;Utilizador&gt;.database.windows.net*.
+4. Repita os passos 2 a 3 e estabelecer ligação com o *catálogo-dpt -&lt;utilizador&gt;. database.windows.net* servidor.
 
 
 Após estabelecer ligação, deverá poder ver os dois servidores. A lista de bases de dados poderão ser diferente, consoante os inquilinos que aprovisionou.
@@ -96,5 +96,5 @@ Após estabelecer ligação, deverá poder ver os dois servidores. A lista de ba
 
 ## <a name="next-steps"></a>Passos seguintes
 
-[Implementar a aplicação Wingtip SaaS](saas-dbpertenant-get-started-deploy.md)
+[Implementar Wingtip pedidos de suporte de SaaS base de dados por aplicação do inquilino](saas-dbpertenant-get-started-deploy.md)
 

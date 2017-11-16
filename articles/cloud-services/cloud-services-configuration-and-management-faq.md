@@ -13,13 +13,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 9/20/2017
+ms.date: 11/09/2017
 ms.author: genli
-ms.openlocfilehash: 2ce497146abf664b0084cd96963523812f166e3f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2a20ee1df23df683c49444e8fb3ffdb2085b174f
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Problemas de configuração e gestão do Cloud Services do Azure: Perguntas mais frequentes sobre (FAQ)
 
@@ -181,6 +181,19 @@ Utilizar uma das abordagens acima, os respetivos certificados (*.pfx) para os no
 ## <a name="how-can-i-add-tags-to-my-azure-cloud-service"></a>Como adicionar etiquetas ao meu serviço de nuvem do Azure? 
 
 Serviço em nuvem é um recurso de clássico. Apenas os recursos criados através de etiquetas de suporte do Azure Resource Manager. Não é possível aplicar etiquetas a recursos de clássico, como o serviço em nuvem. 
+
+## <a name="what-are-the-upcoming-cloud-service-capabilities-in-the-azure-portal-which-can-help-manage-and-monitor-applications"></a>Quais são as capacidades futuras do serviço em nuvem no Portal do Azure que pode ajudar a gerir e monitorizar as aplicações?
+
+* Capacidade de gerar um novo certificado para o protocolo de ambiente de trabalho remoto (RDP) está disponível em breve. Em alternativa, pode executar este script:
+
+```powershell
+$cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net -CertStoreLocation "cert:\LocalMachine\My" -KeyLength 20 48 -KeySpec "KeyExchange"
+$password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
+Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
+```
+* Capacidade de escolher o blob ou local para o seu csdef e cscfg carregar localização estará disponível brevemente. Utilizar [New-AzureDeployment](/powershell/module/azure/new-azuredeployment?view=azuresmps-4.0.0), pode definir cada valor de localização.
+* Capacidade de monitorizar as métricas ao nível da instância. Capacidades de monitorização adicionais estão disponíveis no [como os serviços de nuvem de Monitor](cloud-services-how-to-monitor.md).
+
 
 ## <a name="how-to-enable-http2-on-cloud-services-vm"></a>Como ativar o HTTP/2 na VM de serviços na nuvem?
 

@@ -1,6 +1,6 @@
 ---
-title: "A ligação para as VMs após a ativação pós-falha para o Azure com o Azure Site Recovery | Microsoft Docs"
-description: "Rede orientações para estabelecer a ligação para VMs do Azure após a ativação pós-falha no local com o Azure Site Recovery"
+title: "Configurar o endereçamento IP para ligar após a ativação pós-falha para o Azure com o Azure Site Recovery | Microsoft Docs"
+description: "Descreve como configurar a ligação para VMs do Azure após a ativação pós-falha no local com o Azure Site Recovery de endereçamento IP"
 services: site-recovery
 documentationcenter: 
 author: prateek9us
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 11/05/2017
+ms.date: 11/14/2017
 ms.author: pratshar
-ms.openlocfilehash: 6c0fa27aeed3e500bd69567f90743cc274144978
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: 5519a965d9828cfa1e73ba12f8acd1d509a36a66
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="connecting-to-vms-after-failover-to-azure"></a>A ligação para as VMs após a ativação pós-falha para o Azure
+# <a name="set-up-ip-addressing-to-connect-after-failover-to-azure"></a>Configurar a ligação após a ativação pós-falha para o Azure de endereçamento IP
 
 Este artigo explica os requisitos de rede para estabelecer a ligação para VMs do Azure, depois de utilizar o [do Azure Site Recovery](site-recovery-overview.md) serviço de replicação e ativação pós-falha para o Azure.
 

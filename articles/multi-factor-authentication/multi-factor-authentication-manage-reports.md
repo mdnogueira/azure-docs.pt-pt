@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2017
 ms.author: joflore
-ms.reviewer: alexwe
-ms.openlocfilehash: 77d6742faadfaf3d7afccfbe888b910c80278737
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.reviewer: richagi
+ms.openlocfilehash: a0ac1711b6bfb8f461cd775ed1f3409925643615
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Relatórios do multi-factor Authentication do Azure
 
@@ -28,11 +28,11 @@ Multi-factor Authentication do Azure fornece diversos relatórios que podem ser 
 | Relatório | Descrição |
 |:--- |:--- |
 | Utilização |A utilização de relatórios de informações de apresentação em utilização global, resumo do utilizador e detalhes de utilizador. |
-| Estado do servidor |Este relatório apresenta o estado dos servidores de autenticação Multifator associado à sua conta. |
-| Histórico de utilizador bloqueado |Estes relatórios mostram o histórico de pedidos de bloqueio ou desbloqueio de utilizadores. |
-| Histórico de utilizador ignorado |Mostra o histórico de pedidos para ignorar o multi-factor Authentication para o número de telefone de um utilizador. |
-| Alerta de fraude |Mostra um histórico de alertas de fraude apresentados durante o intervalo de datas especificado. |
-| Em fila |Apresenta uma lista de relatórios em fila para processamento e o respetivo estado. Quando o relatório estiver concluído, é fornecida uma ligação para transferir ou visualizar o relatório. |
+| Estado do Servidor |Este relatório apresenta o estado dos servidores de autenticação Multifator associado à sua conta. |
+| Histórico de Utilizador Bloqueado |Estes relatórios mostram o histórico de pedidos de bloqueio ou desbloqueio de utilizadores. |
+| Histórico de Utilizador Ignorado |Mostra o histórico de pedidos para ignorar o multi-factor Authentication para o número de telefone de um utilizador. |
+| Alerta de Fraude |Mostra um histórico de alertas de fraude apresentados durante o intervalo de datas especificado. |
+| Em Fila |Apresenta uma lista de relatórios em fila para processamento e o respetivo estado. Quando o relatório estiver concluído, é fornecida uma ligação para transferir ou visualizar o relatório. |
 
 ## <a name="view-reports"></a>Ver relatórios
 

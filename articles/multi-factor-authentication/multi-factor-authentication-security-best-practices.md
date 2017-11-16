@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/15/2017
 ms.author: joflore
-ms.reviewer: yossib
+ms.reviewer: richagi
 ms.custom: it-pro
-ms.openlocfilehash: 6166e20a4652379dc9eeffe522feb651f5e57ea2
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 2be36bce1b4cffdab2d25d150bd5a0e8451e422d
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="security-best-practices-for-using-azure-multi-factor-authentication-with-azure-ad-accounts"></a>Melhores práticas de segurança para utilizar o Azure multi-factor Authentication com contas do Azure AD
 
@@ -83,7 +83,7 @@ O portal de utilizador permite que as capacidades de self-service e fornece um c
 * Instalar e registar o ASP.NET v2.0.507207
 * Certifique-se de que este servidor pode ser implementado numa rede de perímetro
 
-### <a name="app-passwords"></a>Palavras-passe de aplicação
+### <a name="app-passwords"></a>Palavras-passe de Aplicação
 Se a sua organização estiver federada para SSO, com o Azure AD e, se pretender utilizar o MFA do Azure, tenha em atenção os seguintes detalhes:
 
 * A palavra-passe de aplicação é verificada pelo Azure AD e, por conseguinte, ignora Federação. A Federação só é utilizada quando configurar palavras-passe de aplicação.

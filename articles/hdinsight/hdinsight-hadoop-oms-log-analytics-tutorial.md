@@ -13,54 +13,53 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/12/2017
+ms.date: 11/08/2017
 ms.author: nitinme
-ms.openlocfilehash: dbd3d0ed4337d4fe86465c5c59bf20c0a50a87b4
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 73c472140861a0d0d270021ab268e8c1113c23b5
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters-preview"></a>Utilizar Log Analytics do Azure para monitorizar clusters do HDInsight (pré-visualização)
+# <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Utilizar Log Analytics do Azure para monitorizar clusters do HDInsight
 
-Neste artigo, irá aprender a utilizar Log Analytics do Azure para monitorizar as operações de clusters do HDInsight Hadoop.
+Saiba como utilizar Log Analytics do Azure para monitorizar as operações de cluster de Hadoop no HDInsight.
 
-Análise de registos é um serviço no [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md) que monitoriza a sua nuvem e no local ambientes para manter a respetiva disponibilidade e desempenho. Recolhe dados gerados por recursos nos seus ambientes na cloud e no local e de outras ferramentas de monitorização, para disponibilizar análises relativas a várias origens. 
+[Análise de registo](../log-analytics/log-analytics-overview.md) é um serviço no [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md) que monitoriza a sua nuvem e no local ambientes para manter a respetiva disponibilidade e desempenho. Recolhe dados gerados por recursos nos seus ambientes na cloud e no local e de outras ferramentas de monitorização, para disponibilizar análises relativas a várias origens. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * **Uma subscrição do Azure**. Antes de começar este tutorial, tem de ter uma subscrição do Azure. Veja o artigo [Crie hoje a sua conta do Azure gratuita](https://azure.microsoft.com/free).
 
 * **Um cluster do Azure HDInsight**. Atualmente, pode utilizar o Azure OMS com os seguintes tipos de cluster do HDInsight:
+
     * Hadoop
-    * Spark
     * HBase
-    * Storm
+    * Interactive Query
     * Kafka
-    * Ramo de registo interativo
+    * Spark
+    * Storm
 
-    Para obter instruções sobre como criar um cluster do HDInsight, consulte [introdução ao Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
-
+    Para instruções sobre como criar um cluster do HDInsight, consulte [introdução ao Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
 * **Uma área de trabalho de análise de registos**. Pode considerar esta área de trabalho como um ambiente de análise de registos exclusivo com as suas próprias repositório de dados, as origens de dados e soluções. Tem de ter uma essa área de trabalho já criada que pode associar os clusters do HDInsight do Azure. Para obter instruções, consulte [criar uma área de trabalho de análise de registos](../log-analytics/log-analytics-quick-collect-azurevm.md#create-a-workspace).
 
-## <a name="configure-hdinsight-cluster-to-use-azure-log-analytics"></a>Configurar o cluster do HDInsight ao utilizar a análise de registos do Azure
+## <a name="configure-hdinsight-cluster-to-use-log-analytics"></a>Configurar o cluster do HDInsight ao utilizar a análise de registos
 
 Nesta secção, configurar um cluster de Hadoop do HDInsight existente para utilizar uma área de trabalho do Log Analytics do Azure para monitorizar tarefas, registos de depuração, etc.
 
-1. No portal do Azure, no painel esquerdo, clique em **clusters do HDInsight**e, em seguida, clique no nome do cluster que pretende configurar com Log Analytics do Azure.
-
-2. No painel do cluster, no painel esquerdo, clique em **monitorização**.
-
-3. No painel direito, clique em **ativar**e, em seguida, selecione uma área de trabalho de análise de registos existente. Clique em **Guardar**.
+1. Abra um cluster do HDInsight no portal do Azure.
+2. No painel esquerdo, clique em **monitorização**.
+3. No painel direito, clique em **ativar**, selecione uma área de trabalho de análise de registos existente e, em seguida, clique em **guardar**.
 
     ![Ativar a monitorização de clusters do HDInsight](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring.png "ativar a monitorização de clusters do HDInsight")
 
-4. Depois do cluster está configurado para utilizar a análise de registos para monitorização, verá um **abra OMS Dashboard** opção na parte superior do separador. Clique no botão.
+    Demora alguns instantes para guardar a definição.  Depois de estar concluído, pode ver um **abra OMS Dashboard** botão na parte superior. 
 
     ![Dashboard OMS abra](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring-open-workspace.png "dashboard abrir OMS")
 
-5. Se lhe for solicitado, introduza as suas credenciais do Azure. O utilizador é direcionado para o dashboard de Microsoft OMS.
+5. Clique em **dashboard abrir OMS**.
+6. Se lhe for solicitado, introduza as suas credenciais do Azure.
 
     ![Portal do Operations Management Suite](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring-oms-portal.png "portal Operations Management Suite")
 

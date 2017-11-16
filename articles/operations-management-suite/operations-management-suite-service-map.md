@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/22/2016
 ms.author: daseidma;bwren;dairwin
-ms.openlocfilehash: f7109a3b21feac396d8c20c7e72a8987f72a909a
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: c07290a5003189b0b773bd9b9c995400b424c7f4
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="use-the-service-map-solution-in-operations-management-suite"></a>Utilizar a solução de mapa de serviço no Operations Management Suite
 O Mapa de Serviço deteta automaticamente componentes de aplicações em sistemas Windows e Linux e mapeia a comunicação entre serviços. Com o mapa de serviço, pode ver os servidores da forma que pensa que deles: como interligados sistemas que fornecem serviços críticos. Mapa de serviço mostra as ligações entre servidores, processos, e portas em qualquer arquitetura ligados de TCP, sem qualquer configuração necessária à instalação de um agente.
@@ -231,16 +231,16 @@ O **o desempenho da máquina** painel apresenta métricas de desempenho padrão 
 Para ver dados de desempenho, poderá ser necessário [ativar os contadores de desempenho de análise de registos adequados](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-performance-counters).  Os contadores que pretende ativar:
 
 Windows:
-- Processor(*)\% de tempo do processador
-- Memória\% dos Bytes consolidados em utilização
-- Rede adaptador (*) \Bytes enviados/seg
-- Rede adaptador (*) \Bytes recebidos/seg
+- Processor(*)\\% tempo do processador
+- Memória\\% dos Bytes consolidados em utilização
+- Rede Adapter(*)\\Bytes enviados/seg
+- Rede Adapter(*)\\Bytes recebidos/seg
 
 Linux:
-- Processor(*)\% de tempo do processador
-- Memory(*)\% de memória utilizada
-- Rede adaptador (*) \Bytes enviados/seg
-- Rede adaptador (*) \Bytes recebidos/seg
+- Processor(*)\\% tempo do processador
+- Memory(*)\\% de memória utilizada
+- Rede Adapter(*)\\Bytes enviados/seg
+- Rede Adapter(*)\\Bytes recebidos/seg
 
 Para obter os dados de desempenho de rede, tem também tiver ativado a solução de transmissão dados 2.0 no Operations Management Suite.
  

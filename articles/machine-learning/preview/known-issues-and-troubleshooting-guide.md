@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 28d97d65d2671f7af2cd3b29ea65ae053d5e8122
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 050758240c9670a6f120f069d736cf6d6475b534
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-machine-learning-workbench---known-issues-and-troubleshooting-guide"></a>Azure Machine Learning Workbench - problemas conhecidos e guia de resolução de problemas 
 Este artigo ajuda-o a encontrar e corrija erros ou falhas encontradas como parte da utilização da aplicação do Azure Machine Learning Workbench. 
@@ -85,7 +85,11 @@ Quando estiver a trabalhar no Azure ML Workbench, também pode enviar-num negati
 - Biblioteca de RevoScalePy só é suportada no Windows e Linux (em contentores de Docker). Não é suportada no macOS.
 
 ## <a name="cant-update-workbench"></a>Não é possível atualizar o Workbench
-Quando estiver disponível uma nova atualização, o Workbench aplicação Home page apresenta uma mensagem a informar sobre a atualização de novo. Deverá ver um destaque de atualização, volte a aparecer no canto inferior esquerdo da aplicação no ícone de sino. Clique no destaque e siga o Assistente do instalador para instalar a atualização. Se não vir a notificação, tente reiniciar a aplicação. Se ainda não vir a notificação de atualização após o reinício, poderão existir algumas causas.
+Quando estiver disponível uma nova atualização, o Workbench aplicação Home page apresenta uma mensagem a informar sobre a atualização de novo. Deverá ver um destaque de atualização, volte a aparecer no canto inferior esquerdo da aplicação no ícone de sino. Clique no destaque e siga o Assistente do instalador para instalar a atualização. 
+
+![Atualizar imagem](./media/known-issues-and-troubleshooting-guide/update.png)
+
+Se não vir a notificação, tente reiniciar a aplicação. Se ainda não vir a notificação de atualização após o reinício, poderão existir algumas causas.
 
 ### <a name="you-are-launching-workbench-from-a-pinned-shortcut-on-the-task-bar"></a>Iniciar o Workbench de um atalho afixado na barra de tarefas
 Pode já instalou a atualização. Mas o atalho afixado ainda está a apontar para o bits antigo no disco. Pode verificar isto procurando o `%localappdata%/AmlWorkbench` pasta e verifique se tem a versão mais recente instalada existe e examine o atalho afixado para ver onde está a apontar para a propriedade. Se verificar, basta remover o atalho antigo, inicie o Workbench a partir do menu Iniciar e, opcionalmente, criar um novo atalho afixado na barra de tarefas.
