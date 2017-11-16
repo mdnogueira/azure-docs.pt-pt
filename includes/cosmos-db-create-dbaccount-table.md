@@ -1,31 +1,26 @@
-1. Numa nova janela, inicie sessão no [portal do Azure](https://portal.azure.com/).
-2. No menu esquerdo, clique em **Novo**, clique em **Bases de Dados**e, em **Azure Cosmos DB**, clique em **Criar**.
+1. Numa nova janela do browser, inicie sessão para o [portal do Azure](https://portal.azure.com/).
+2. No menu esquerdo, clique em **Novo**, clique em **Bases de Dados**e, em **Azure Cosmos DB**, clique em **Criar**. 
    
    ![Captura de ecrã do portal do Azure, com destaque para Mais Serviços e Azure Cosmos DB](./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-1.png)
 
-3. No painel **Nova conta**, especifique a configuração pretendida para a conta do Azure Cosmos DB. 
-
-    Com o Azure Cosmos DB, pode escolher um de quatro modelos de programação: Gremlin (gráficos), MongoDB, SQL (DocumentDB) e Table (chave-valor). 
-    
-    Neste guia de introdução, vamos programar com a API Table, pelo que vai escolher **Table (chave-valor)** quando preencher o formulário. Contudo, se tiver dados de gráficos para aplicações de redes sociais, dados de documentos de aplicações de catálogos ou dados migrados de aplicações MongoDB, tenha em conta que o Azure Cosmos DB pode proporcionar uma plataforma de serviço de bases de dados de elevada disponibilidade e distribuída globalmente para todas as aplicações críticas para a sua atividade.
-
-    Preencha o painel Nova conta com as informações que estão na captura de ecrã como guia. Quando configurar a sua conta, vai escolher valores exclusivos, pelo que esses valores não serão exatamente iguais aos da captura de ecrã. 
+3. No **nova conta** página, introduza as definições para a nova conta de base de dados do Azure Cosmos. 
  
-    ![Captura de ecrã do painel Novo Azure Cosmos DB](./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-2.png)
-
     Definição|Valor sugerido|Descrição
     ---|---|---
-    ID|*Valor exclusivo*|Um nome exclusivo que vai escolher para identificar a conta do Azure Cosmos DB. *documents.azure.com* é anexado ao ID que indicar para criar o seu URI, pelo que deve utilizar um ID exclusivo, mas identificável. O ID pode conter apenas minúsculas, números, o caráter “-” e tem de ter entre três e 50 carateres.
-    API|Table (chave-valor)|Mais adiante neste artigo, vamos programar com a [API Table](../articles/cosmos-db/table-introduction.md).|
-    Subscrição|*A sua subscrição*|A subscrição do Azure que quer utilizar para a conta do Azure Cosmos DB. 
-    Grupo de Recursos|*O mesmo valor que o ID*|O nome do grupo de recursos novo para a sua conta. Para simplicidade, pode utilizar o mesmo nome do ID. 
-    Localização|*A região mais próxima dos seus utilizadores*|A localização geográfica na qual vai alojar a sua conta do Azure Cosmos DB. Escolha a localização mais próxima dos seus utilizadores para lhes dar o acesso mais rápido aos dados.   
+    ID|*Introduza um nome exclusivo*|Introduza um nome exclusivo para identificar esta conta de base de dados do Azure Cosmos. Uma vez que *documents.azure.com* é anexado ao ID que indicar para criar o seu URI, utilize um ID exclusivo, mas identificável.<br><br>O ID pode conter apenas minúsculas, números, o caráter hífen (-) e tem de ter entre 3 e 50 carateres.
+    API|Tabela do Azure|A API determina o tipo de conta para criar. BD do Azure do Cosmos fornece cinco APIs para se adequa às necessidades da sua aplicação: SQL Server (base de dados do documento), Gremlin (base de dados do gráfico), MongoDB (base de dados do documento), tabelas do Azure e Cassandra, cada qual atualmente necessitam de uma conta separada.<br><br>Selecione **Azure Table** porque neste guia de introdução que está a criar uma tabela que funciona com a API de tabela.<br><br>[Saiba mais sobre a API de tabela](../articles/cosmos-db/table-introduction.md) |
+    Subscrição|*Introduzir o mesmo nome exclusivo, conforme indicado acima ID*|Selecione a subscrição do Azure que pretende utilizar para esta conta de base de dados do Azure Cosmos. 
+    Grupo de Recursos|*O mesmo valor que o ID*|Introduza um novo nome de grupo de recursos para a sua conta. Para simplicidade, pode utilizar o mesmo nome do ID. 
+    Localização|*Selecione a região mais próxima aos seus utilizadores*|Selecione uma localização geográfica na qual vai alojar a sua conta de base de dados do Azure Cosmos. Utilize a localização que esteja mais próxima para os seus utilizadores para conceder-lhes o acesso mais rápido aos dados.
+    Ativar a redundância geográfica| Deixar em branco | Esta ação cria uma versão replicada da base de dados numa região segundo (emparelhada). Deixe em branco.  
+    Afixar ao dashboard | Selecione | Selecione esta caixa para que a sua nova conta de base de dados é adicionada ao seu dashboard do portal para facilitar o acesso.
 
-4. Clique em **Criar** para criar a conta.
-5. Na barra de ferramentas, clique em **Notificações** para monitorizar o processo de implementação.
+    Em seguida, clique em **Criar**.  
 
-    ![Notificação de implementação iniciada](./media/cosmos-db-create-dbaccount-table/notification.png)
+    ![Captura de ecrã do painel Novo Azure Cosmos DB](./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-2.png)
 
-6.  Quando a implementação estiver concluída, abra a conta nova no mosaico Todos os Recursos. 
+4. A criação de conta demora alguns minutos. Durante a conta criação o portal apresenta o **implementar BD do Azure Cosmos** mosaico.
 
-    ![Conta de base de dados do Cosmos do Azure no mosaico todos os recursos](./media/cosmos-db-create-dbaccount-table/all-resources.png)
+    ![O painel de Notificações de portal do Azure](./media/cosmos-db-create-dbaccount-table/deploying-cosmos-db.png)
+
+    Assim que a conta for criada, o **Parabéns! Foi criada a sua conta de base de dados do Azure Cosmos** é apresentada a página.

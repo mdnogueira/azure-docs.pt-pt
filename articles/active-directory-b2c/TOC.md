@@ -90,6 +90,7 @@
 ## Referência
 ### [Notas de versão](active-directory-b2c-developer-notes-custom.md)
 ### [Fornecedores de sessões SSO](active-directory-b2c-reference-sso-custom.md)
+### [Personalização de idioma](active-directory-b2c-language-customization-custom.md)
 ### [Definição da Arquitetura Fidedigna](active-directory-b2c-reference-trustframeworks-defined-ief-custom.md) 
 
 # Referência

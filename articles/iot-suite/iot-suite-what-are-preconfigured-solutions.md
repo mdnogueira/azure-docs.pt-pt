@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/25/2017
+ms.date: 11/10/2017
 ms.author: dobett
-ms.openlocfilehash: 2d6a09e234ee8ec63454d42a91613ed8da9d1c4b
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 5c5fa4927073ff52418a940fce59ca1f6b57daa6
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="what-is-azure-iot-suite"></a>O que é o Azure IoT Suite?
 
@@ -90,7 +90,7 @@ Quando implementa uma solução pré-configurada, o processo de aprovisionamento
 
 * [Hub IoT do Azure](../iot-hub/index.md). Este serviço fornece funcionalidades de mensagens do dispositivo para a nuvem e da nuvem para o dispositivo e funciona como gateway para a nuvem e outros serviços essenciais do IoT Suite. O serviço permite-lhe receber mensagens dos seus dispositivos de escala e enviar comandos aos seus dispositivos. O serviço também lhe permite [gerir os seus dispositivos](../iot-hub/iot-hub-device-management-overview.md). Por exemplo, pode configurar, reiniciar ou efetuar uma reposição de fábrica num ou mais dispositivos ligados ao hub.
 * [Hubs de Eventos do Azure](../event-hubs/index.md). Este serviço disponibiliza ingestão de elevados volumes de eventos na cloud. Veja [Comparação do Hub IoT do Azure e Hubs de Eventos do Azure](../iot-hub/iot-hub-compare-event-hubs.md).
-* [Azure Time Series Insights](../time-series-insights/index.md). As soluções pré-configuradas utilizam este serviço para analisar e apresentar os dados de telemetria dos seus dispositivos.
+* [Azure Time Series Insights](../time-series-insights/index.yml). As soluções pré-configuradas utilizam este serviço para analisar e apresentar os dados de telemetria dos seus dispositivos.
 * [Azure Container Service](../container-service/index.yml). Este serviço aloja e gere os microsserviços das soluções pré-configuradas.
 * [Azure Cosmos DB](../cosmos-db/index.yml) e [Armazenamento do Azure](../storage/index.yml) para armazenamento de dados.
 * [Azure Stream Analytics](../stream-analytics/index.md). A solução pré-configurada de manutenção preditiva utiliza este serviço para processar a telemetria de entrada, executar a agregação e detetar eventos. Esta solução pré-configurada utiliza ainda o Stream Analytics para processar mensagens de informações que contêm dados como metadados ou respostas aos comandos dos dispositivos.

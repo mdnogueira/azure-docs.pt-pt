@@ -15,11 +15,11 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2017
 ms.author: jroth
-ms.openlocfilehash: e502be189a29590ebe0d848b3ec43611db8d035d
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 6386678bdac3630f3e003187ff3d12c0ce053b90
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="performance-best-practices-for-sql-server-in-azure-virtual-machines"></a>Melhores práticas de desempenho do SQL Server nas Máquinas Virtuais do Azure
 
@@ -113,7 +113,7 @@ Para VMs que suportam o Premium Storage (série DS, série dsv2 e GS série), re
 
   * Se não estiver a utilizar o armazenamento Premium (cenários de desenvolvimento/teste), recomenda-se adicionar o número máximo de discos de dados suportados pela sua [tamanho da VM](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) e utilizar Striping de disco.
 
-* **Política de colocação em cache**: discos de dados para o Premium Storage, ativar a colocação em cache de leitura de discos de dados que aloja os ficheiros de dados e o TempDB apenas. Se não estiver a utilizar o armazenamento Premium, não ative a qualquer colocação em cache em qualquer discos de dados. Para obter instruções sobre como configurar a colocação em cache em disco, consulte os tópicos seguintes: [conjunto AzureOSDisk](https://msdn.microsoft.com/library/azure/jj152847) e [conjunto AzureDataDisk](https://msdn.microsoft.com/library/azure/jj152851.aspx).
+* **Política de colocação em cache**: discos de dados para o Premium Storage, ativar a colocação em cache de leitura de discos de dados que aloja os ficheiros de dados e o TempDB apenas. Se não estiver a utilizar o armazenamento Premium, não ative a qualquer colocação em cache em qualquer discos de dados. Para obter instruções sobre como configurar a colocação em cache do disco, consulte os tópicos seguintes. Para o modelo de implementação clássico (ASM) consulte o artigo: [conjunto AzureOSDisk](https://msdn.microsoft.com/library/azure/jj152847) e [conjunto AzureDataDisk](https://msdn.microsoft.com/library/azure/jj152851.aspx). Para o modelo de implementação Azure Resource Manager, consulte: [conjunto AzureRMOSDisk](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmosdisk?view=azurermps-4.4.1) e [conjunto AzureRMVMDataDisk](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmdatadisk?view=azurermps-4.4.1).
 
   > [!WARNING]
   > Pare o serviço SQL Server quando alterar a definição de cache de discos de VM do Azure para evitar a possibilidade de quaisquer danos na base de dados.

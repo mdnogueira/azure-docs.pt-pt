@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/13/2017
 ms.author: yurid
-ms.openlocfilehash: e29c381643b233d38b10f89aed5469043c699f45
-ms.sourcegitcommit: c50171c9f28881ed3ac33100c2ea82a17bfedbff
+ms.openlocfilehash: f0cb50c5ad991073b83dc5e87fbfb0300f40fc03
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="integrate-security-center-security-policies-with-azure-policy"></a>Integrar políticas de segurança do Centro de Segurança no Azure Policy
 Este artigo ajuda-o a configurar políticas de segurança do Centro de Segurança do Azure, que têm tecnologia Azure Policy. 
@@ -60,7 +60,7 @@ Pode editar a política de segurança predefinida para cada uma das suas subscri
     ![Definições de política disponíveis](./media/security-center-policies/security-center-policies-fig11.png)
 
     * Para obter uma explicação detalhada de uma política, selecione-a.  
-    Uma janela de **Pré-visualização** de definição abre. Apresenta uma descrição da definição e uma hiperligação para o código JSON que fornece a estrutura da [definição de política](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-policy/#policy-definition-structure).
+    Uma janela de **Pré-visualização** de definição abre. Apresenta uma descrição da definição e uma hiperligação para o código JSON que fornece a estrutura da [definição de política](../azure-policy/policy-definition.md).
 
     ![A janela de Pré-visualização de definição](./media/security-center-policies/security-center-policies-fig14.png)
 
@@ -72,7 +72,7 @@ Para compreender as definições de política que estão disponíveis na políti
 
 | Política | O que a política ativada faz |
 | --- | --- |
-| Atualizações do sistema |Obtém uma lista diária de atualizações críticas e de segurança disponíveis a partir do Windows Update ou o Windows Server Update Services. A lista obtida depende do serviço que está configurado para as suas máquinas virtuais e recomenda a aplicação das atualizações em falta. Para sistemas Linux, a política utiliza o sistema de gestão de pacotes fornecido pelo distro para determinar os pacotes que têm atualizações disponíveis. Também verifica se existem atualizações críticas e de segurança de máquinas virtuais dos [Serviços em Nuvem do Azure](../cloud-services/cloud-services-how-to-configure.md). |
+| Atualizações do sistema |Obtém uma lista diária de atualizações críticas e de segurança disponíveis a partir do Windows Update ou o Windows Server Update Services. A lista obtida depende do serviço que está configurado para as suas máquinas virtuais e recomenda a aplicação das atualizações em falta. Para sistemas Linux, a política utiliza o sistema de gestão de pacotes fornecido pelo distro para determinar os pacotes que têm atualizações disponíveis. Também verifica se existem atualizações críticas e de segurança de máquinas virtuais dos [Serviços em Nuvem do Azure](../cloud-services/cloud-services-how-to-configure-portal.md). |
 | Vulnerabilidades do SO |Analisa configurações do sistema operativo diariamente para determinar os problemas que podem tornar a máquina virtual vulnerável a ataques. A política também recomenda alterações de configuração para resolver estas vulnerabilidades. Para obter mais informações sobre as configurações específicas que estão a ser monitorizadas, veja a [lista de linhas de base recomendadas](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335). (Neste momento, o Windows Server 2016 não é totalmente suportado.) |
 | Endpoint protection |Recomenda que o Endpoint Protection seja configurado para todas as máquinas virtuais (VMs) Windows para ajudar a identificar e remover vírus, spyware e outro software malicioso. |
 | Encriptação de disco |Recomenda a ativação da encriptação de disco em todas as máquinas virtuais para melhorar a proteção de dados inativos. |

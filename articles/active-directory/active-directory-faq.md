@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 11/08/2017
 ms.author: markvi
-ms.openlocfilehash: 4c8a3885f34942bbd85d34f26e26ff5d7a432189
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: 241ad78abfa964c9f64e97cc8201933913f88e1e
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="azure-active-directory-faq"></a>FAQ do Azure Active Directory
 O Azure Active Directory (Azure AD) é uma solução identidade como um Serviço (IDaaS) completa que abrange todos os aspetos relativos à identidade, gestão de acesso e segurança.
@@ -56,7 +56,7 @@ Os serviços pagos do Azure AD, como o Enterprise Mobility + Security complement
 Se outras pessoas tiverem de iniciar sessão e aceder aos serviços com a mesma subscrição, pode adicioná-las como coadministradores. Esta função tem os mesmos privilégios de acesso do administrador de serviços, mas não pode alterar a associação de subscrições a diretórios do Azure.  Para obter mais informações sobre os administradores da subscrição, consulte [How to add or change Azure administrator roles (Como adicionar ou alterar funções de administrador do Azure)](../billing-add-change-azure-subscription-administrator.md) e [How Azure subscriptions are associated with Azure Active Directory (Como as subscrições do Azure estão associadas ao Azure Active Directory)](active-directory-how-subscriptions-associated-directory.md).
 
 
-O Azure AD tem um conjunto diferente de funções administrativas para gerir o diretório e as funções relacionadas com a identidade.  Estes administradores terão acesso às várias funcionalidades no portal do Azure ou no portal clássico do Azure. A função do administrador determina o que pode fazer, como criar ou editar utilizadores, atribuir funções administrativas a outras pessoas, repor palavras-passe de utilizador, gerir licenças de utilizador ou gerir domínios.  Para obter mais informações sobre os administradores de diretório do Azure AD e as respetivas funções, consulte [Assigning administrator roles in Azure Active Directory (Atribuir funções de administrador no Azure Active Directory)](active-directory-assign-admin-roles.md).
+O Azure AD tem um conjunto diferente de funções administrativas para gerir o diretório e as funções relacionadas com a identidade.  Estes administradores terão acesso às várias funcionalidades no portal do Azure ou no portal clássico do Azure. A função do administrador determina o que pode fazer, como criar ou editar utilizadores, atribuir funções administrativas a outras pessoas, repor palavras-passe de utilizador, gerir licenças de utilizador ou gerir domínios.  Para obter mais informações sobre os administradores de diretório do Azure AD e as respetivas funções, consulte [Assigning administrator roles in Azure Active Directory (Atribuir funções de administrador no Azure Active Directory)](active-directory-assign-admin-roles-azure-portal.md).
 
 Além disso, os serviços pagos do Azure AD, como o Enterprise Mobility + Security complementam outros serviços da Web, como o Office 365 e o Microsoft Azure com soluções abrangentes de gestão empresarial e de segurança.
 
@@ -132,8 +132,7 @@ Para os utilizadores do Office 365, o administrador pode repor a palavra-passe a
 Para contas do Azure AD, os administradores podem repor as palavras-passe através de um dos seguintes procedimentos:
 
 - [Repor contas no portal do Azure](active-directory-users-reset-password-azure-portal.md)
-- [Repor contas no portal clássico](active-directory-create-users-reset-password.md)
-- [Utilizar o PowerShell](/powershell/module/msonline/set-msoluserpassword?view=azureadps-1.0)
+- [Com o PowerShell](/powershell/module/msonline/set-msoluserpassword?view=azureadps-1.0)
 
 
 - - -
@@ -199,7 +198,7 @@ Para mais informações, consulte [How to provide secure remote access to on-pre
 
 **R:** Com o acesso condicional do Azure AD, pode atribuir uma política de acesso único a cada aplicação. Na sua política, pode exigir a autenticação multifator sempre ou quando os utilizadores não estiverem ligados à rede local.  
 
-Para mais informações, consulte [Securing access to Office 365 and other apps connected to Azure Active Directory (Proteger o acesso ao Office 365 e a outras aplicações ligadas ao Azure Active Directory)](active-directory-conditional-access.md).
+Para mais informações, consulte [Securing access to Office 365 and other apps connected to Azure Active Directory (Proteger o acesso ao Office 365 e a outras aplicações ligadas ao Azure Active Directory)](active-directory-conditional-access-azure-portal.md).
 
 - - -
 **P: O que é o aprovisionamento automatizado do utilizador para aplicações SaaS?**
