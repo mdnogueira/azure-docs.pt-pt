@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2017
 ms.author: joflore
-ms.reviewer: jsnow
+ms.reviewer: richagi
 ms.custom: it-pro
-ms.openlocfilehash: 01c5284a609a2246e32052985ad3a8c0475eafa5
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: fb78d39b04868c9d8790bfd64147f47bdd4125c7
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/15/2017
 ---
 #  <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Integrar a sua infraestrutura de Gateway de ambiente de trabalho remoto utilizando a extensão de servidor de políticas de rede (NPS) e o Azure AD
 
@@ -76,7 +76,7 @@ Se pretender criar manualmente uma infraestrutura RDS no local rapidamente para 
 **Saiba mais**: [implementar RDS com início rápido do Azure](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure) e [implementação da infraestrutura de RDS básica](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure). 
 
 ### <a name="azure-mfa-license"></a>Licença do MFA do Azure
-Necessário destina-se a uma licença do MFA do Azure, que está disponível através de um Azure AD Premium, o Enterprise Mobility plus segurança (EMS) ou uma subscrição de MFA. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
+Necessário destina-se a uma licença do MFA do Azure, que está disponível através de um Azure AD Premium, o Enterprise Mobility plus segurança (EMS) ou uma subscrição de MFA. Com base no consumo de licenças de MFA do Azure, como de acordo com o utilizador ou por licenças de autenticação, não são compatíveis com a extensão NPS. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação. 
 
 ### <a name="windows-server-software"></a>Software Windows Server
 A extensão NPS requer o Windows Server 2008 R2 SP1 ou posterior com o serviço de função NPS instalado. Todos os passos nesta secção foram efetuados com o Windows Server 2016.
@@ -274,7 +274,7 @@ Recuperar-se de que o servidor NPS com a extensão de MFA do Azure é o arquivo 
 1. Na consola do NPS (Local), expanda **políticas**e clique em **políticas de rede**.
 2. Clique com botão direito **ligações para outros servidores de acesso**e clique em **duplicado política**. 
 
- ![Política de duplicação](./media/nps-extension-remote-desktop-gateway/image19.png)
+ ![Política de Duplicação](./media/nps-extension-remote-desktop-gateway/image19.png)
 
 3. Clique com botão direito **cópia de ligações para outros servidores de acesso**e clique em **propriedades**.
 

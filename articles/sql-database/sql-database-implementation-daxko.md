@@ -15,11 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: Inactive
 ms.date: 01/10/2017
 ms.author: carlrab
-ms.openlocfilehash: d44e43dd8ae01c93050de199f7d72c8ac92bcad9
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 7a05836be4a0879fa7103d070c683f45c06cd741
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="daxkocsi-used-azure-to-accelerate-its-development-cycle-and-to-enhance-its-customer-services-and-performance"></a>Daxko/CSI utilizado do Azure para acelerar o respetivo ciclo de desenvolvimento e para melhorar o desempenho e serviços do cliente
 ![Logótipo de Daxko/CSI](./media/sql-database-implementation-daxko/csidaxkologo25.png)
@@ -93,5 +93,5 @@ Base de dados SQL do Azure não é apenas um boon aos clientes de SpectrumNG, qu
 * Para saber mais sobre a replicação geográfica activa, consulte [georreplicação ativa](sql-database-geo-replication-overview.md).
 * Para obter mais informações sobre funções da Web e funções de trabalho, consulte o artigo [as funções de trabalho](../fundamentals-introduction-to-azure.md#compute).    
 * Para saber mais sobre o Service Bus do Azure, consulte o artigo [Service Bus do Azure](https://azure.microsoft.com/services/service-bus/).
-* Para saber mais sobre o dimensionamento automático, consulte o artigo [dimensionamento serviços em nuvem](../cloud-services/cloud-services-how-to-scale.md).
+* Para saber mais sobre o dimensionamento automático, consulte o artigo [dimensionamento serviços em nuvem](../cloud-services/cloud-services-how-to-scale-portal.md).
 

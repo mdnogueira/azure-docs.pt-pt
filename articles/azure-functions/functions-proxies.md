@@ -14,20 +14,20 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/11/2017
 ms.author: alkarche
-ms.openlocfilehash: d201c8395adf47fa3d9f790b77b1d29dda5a0aeb
-ms.sourcegitcommit: 963e0a2171c32903617d883bb1130c7c9189d730
+ms.openlocfilehash: 24bc439b6167d335a0862aa93debb9efe5aeae48
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="work-with-azure-functions-proxies-preview"></a>Trabalhar com os Proxies de funções do Azure (pré-visualização)
-
-> [!NOTE] 
-> Proxies de funções do Azure está atualmente em pré-visualização. É gratuito enquanto na pré-visualização, mas funções padrão faturação aplica-se para execuções de proxy. Para obter mais informações, consulte [preços de funções do Azure](https://azure.microsoft.com/pricing/details/functions/).
+# <a name="work-with-azure-functions-proxies"></a>Trabalhar com os Proxies de funções do Azure
 
 Este artigo explica como configurar e trabalhar com os Proxies de funções do Azure. Com esta funcionalidade, pode especificar pontos finais na sua aplicação de função que são implementados por outro recurso. Pode utilizar estes proxies para quebrar uma API de grandes dimensões em várias aplicações de função (como uma arquitetura de microsserviço), enquanto ainda apresentar uma único superfície de API para os clientes.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
+
+> [!NOTE] 
+> Funções padrão faturação aplica-se para execuções de proxy. Para obter mais informações, consulte [preços de funções do Azure](https://azure.microsoft.com/pricing/details/functions/).
 
 ## <a name="create"></a>Criar um proxy
 

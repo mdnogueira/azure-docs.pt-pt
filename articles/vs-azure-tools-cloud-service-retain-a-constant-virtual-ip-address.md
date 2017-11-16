@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 03/21/2017
 ms.author: kraigb
-ms.openlocfilehash: a76bcba5ab4ca8e1a4899e4aa28f734c09af2aa9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 96c4ed88db5e24f439825aee5afe457a1e8c81d7
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="retain-a-constant-virtual-ip-address-for-an-azure-cloud-service"></a>Manter um endereço IP virtual constante para um serviço em nuvem do Azure
-Quando atualizar um serviço em nuvem que está alojado no Azure, poderá ter de garantir que não altera o endereço IP virtual (VIP) do serviço. Muitos serviços de gestão do domínio utilizam o sistema de nomes de domínio (DNS) para registar nomes de domínio. DNS só funciona se o VIP permanece igual. Pode utilizar o **publicar assistente** nas ferramentas do Azure para se certificar de que o VIP do seu serviço em nuvem não altera quando efetua a atualização. Para obter mais informações sobre como utilizar a gestão de domínios DNS para serviços em nuvem, consulte [configurar um nome de domínio personalizado para um serviço em nuvem do Azure](cloud-services/cloud-services-custom-domain-name.md).
+Quando atualizar um serviço em nuvem que está alojado no Azure, poderá ter de garantir que não altera o endereço IP virtual (VIP) do serviço. Muitos serviços de gestão do domínio utilizam o sistema de nomes de domínio (DNS) para registar nomes de domínio. DNS só funciona se o VIP permanece igual. Pode utilizar o **publicar assistente** nas ferramentas do Azure para se certificar de que o VIP do seu serviço em nuvem não altera quando efetua a atualização. Para obter mais informações sobre como utilizar a gestão de domínios DNS para serviços em nuvem, consulte [configurar um nome de domínio personalizado para um serviço em nuvem do Azure](cloud-services/cloud-services-custom-domain-name-portal.md).
 
 ## <a name="publish-a-cloud-service-without-changing-its-vip"></a>Publicar um serviço em nuvem sem alterar o VIP
 O VIP de um serviço em nuvem é atribuído ao primeiro implementá-lo no Azure num ambiente específico, como o ambiente de produção. O VIP altera-se apenas se eliminar a implementação explicitamente ou a implementação implicitamente é eliminada pelo processo de atualização de implementação. Para manter o VIP, não terá de eliminar a implementação e tem de se certificar de que Visual Studio não elimina a implementação automaticamente. 

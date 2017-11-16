@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2017
 ms.author: v-jysur
-ms.openlocfilehash: bbec5773987b29eb62d10d17b88efcda29889612
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e801d484ffb40a0d4aed517a741c45dc76b62b37
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector-preview"></a>Ligar ITSM produtos/serviços com o conector de gestão de serviços de TI (pré-visualização)
-Este artigo fornece informações sobre como ligar o seu ITSM produtos/serviços conector de gestão de serviços de TI no OMS e gerir centralmente os itens de trabalho. Obter mais informações sobre o conector de gestão de serviços de TI, consulte [descrição geral](log-analytics-itsmc-overview.md).
+Este artigo fornece informações sobre como ligar o ITSM produtos/serviços para TI serviço de gestão conector (ITSMC) no OMS e gerir centralmente os itens de trabalho. Para mais informações sobre ITSMC, consulte [descrição geral de ITSMC](log-analytics-itsmc-overview.md).
 
 São suportados os seguintes produtos/serviços:
 
@@ -31,14 +31,13 @@ São suportados os seguintes produtos/serviços:
 
 ## <a name="connect-system-center-service-manager-to-it-service-management-connector-in-oms"></a>Ligar o System Center Service Manager para o serviço de TI conector de gestão no OMS
 
-As secções seguintes fornecem detalhes sobre como ligar o seu produto do System Center Service Manager para o conector de gestão do serviço de TI no OMS.
+As secções seguintes fornecem detalhes sobre como ligar o seu produto do System Center Service Manager para ITSMC no OMS.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-Certifique-se de que tem os seguintes pré-requisitos cumpridos:
+Certifique-se de que são cumpridos os seguintes pré-requisitos:
 
-- Conector de gestão do serviço IT instalado.
-Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
+- ITSMC instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - A aplicação Web do Service Manager (aplicação Web) é implementada e configurada. Informações sobre a aplicação Web são [aqui](#create-and-deploy-service-manager-web-app-service).
 - Ligação híbrida criada e configurada. Obter mais informações: [configurar a ligação de híbrida](#configure-the-hybrid-connection).
 - As versões do Service Manager: 2012 R2 ou 2016.
@@ -46,7 +45,7 @@ Obter mais informações: [adicionar a solução de conector de gestão de servi
 
 ### <a name="connection-procedure"></a>Procedimento de ligação
 
-Utilize o procedimento seguinte para ligar a instância do System Center Service Manager para o conector de gestão do serviço de TI:
+Utilize o procedimento seguinte para ligar a instância do System Center Service Manager para ITSMC:
 
 1. Aceda a **OMS** >**definições** > **ligado origens**.
 2. Selecione **ITSM conector,** clique **Adicionar nova ligação**.
@@ -59,26 +58,26 @@ Utilize o procedimento seguinte para ligar a instância do System Center Service
 
 | **Campo** | **Descrição** |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância do System Center Service Manager que pretende estabelecer ligação com o conector de gestão do serviço de TI.  Utilize este nome mais tarde quando configurar os itens de trabalho nesta instância / ver a análise de registos detalhados. |
+| **Nome**   | Escreva um nome para a instância do System Center Service Manager que pretende estabelecer ligação com ITSMC.  Utilize este nome mais tarde quando configurar os itens de trabalho nesta instância / ver a análise de registos detalhados. |
 | **Selecione o tipo de ligação**   | Selecione **do System Center Service Manager**. |
 | **URL do servidor**   | Escreva o URL da aplicação Web do Service Manager. Obter mais informações sobre a aplicação Web do Service Manager são [aqui](#create-and-deploy-service-manager-web-app-service).
 | **ID de cliente**   | Escreva o ID de cliente que gerou (utilizando o script automático) para autenticar a aplicação Web. Mais informações sobre o script automatizado [aqui.](log-analytics-itsmc-service-manager-script.md)|
 | **Segredo do cliente**   | Escreva o segredo de cliente gerado para este ID.   |
-| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho do Service Manager que pretende sincronizar através do conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho. **Opções:** incidentes, pedidos de alteração.|
+| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho do Service Manager que pretende sincronizar através de ITSMC.  Estes itens são importados para análise de registos de trabalho. **Opções:** incidentes, pedidos de alteração.|
 | **Dados de sincronização** | Escreva o número de últimos dias que pretende que os dados da. **Limite máximo**: 120 dias. |
 | **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender criar itens de configuração no produto ITSM. Quando selecionada, o OMS cria o IC afectado como itens de configuração (em caso de não existente CIs) no sistema ITSM suportado. **Predefinição**: desativado. |
 
-Quando ligado com êxito e sincronizada com êxito:
+**Quando ligado com êxito e sincronizadas**:
 
 - Itens de trabalho selecionado do Service Manager são importados para o OMS **análise de registos.** Pode ver o resumo dos seguintes itens de trabalho no mosaico do conector de gestão de serviços de TI.
 
-- Da OMS, pode criar incidentes a partir dos alertas do OMS ou de pesquisa de registo, nesta instância do Service Manager.
+- Da OMS, pode criar incidentes a partir dos alertas do OMS ou pesquisa de registo ou a partir dos alertas do Azure nesta instância do Service Manager.
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts), [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs) e [itens de trabalho de criar ITSM de alertas do Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="create-and-deploy-service-manager-web-app-service"></a>Criar e implementar o serviço de aplicações web do Service Manager
 
-Para ligar o Gestor de serviços no local com o conector de gestão do serviço de TI na OMS, Microsoft criou uma aplicação Web do Service Manager no GitHub.
+Para ligar o Gestor de serviços no local com ITSMC na OMS, Microsoft criou uma aplicação Web do Service Manager no GitHub.
 
 Para configurar a aplicação ITSM Web para o Gestor do serviço, efetue o seguinte:
 
@@ -99,7 +98,7 @@ Execute o script, fornecendo os seguintes detalhes necessários:
 
 O script cria a aplicação Web utilizando o nome que especificou (juntamente com alguns cadeias adicionais para o tornar único). Gera o **URL da aplicação Web**, **ID de cliente** e **segredo do cliente**.
 
-Guarde os valores, poderá utilizá-los quando criar uma ligação com o conector de gestão do serviço de TI.
+Guarde os valores, poderá utilizá-los quando criar uma ligação com ITSMC.
 
 **Verifique a instalação da aplicação Web**
 
@@ -109,7 +108,7 @@ Guarde os valores, poderá utilizá-los quando criar uma ligação com o conecto
 
 ### <a name="configure-the-hybrid-connection"></a>Configurar a ligação híbrida
 
-Utilize o procedimento seguinte para configurar a ligação híbrida que se liga a instância do Service Manager com o conector de gestão do serviço de TI no OMS.
+Utilize o procedimento seguinte para configurar a ligação híbrida que se liga a instância do Service Manager com ITSMC no OMS.
 
 1. Localizar a aplicação Web do Service Manager, em **recursos do Azure**.
 2. Clique em **definições** > **redes**.
@@ -161,7 +160,7 @@ A ligação híbrida foi ligada com êxito.
 ![ligação híbrida com êxito](./media/log-analytics-itsmc/itsmc-hybrid-connection-listener-set-up-successful.png)
 > [!NOTE]
 
-> Depois da híbrida ligação é criada, certifique-se e testar a ligação, visitando a aplicação Web do Service Manager implementada. Certifique-se de que a ligação é efetuada com êxito antes de tentar estabelecer ligação com o conector de gestão do serviço de TI no OMS.
+> Depois da híbrida ligação é criada, certifique-se e testar a ligação, visitando a aplicação Web do Service Manager implementada. Certifique-se de que a ligação é efetuada com êxito antes de tentar ligar ao ITSMC no OMS.
 
 A imagem seguinte mostra os detalhes de uma ligação com êxito:
 
@@ -169,13 +168,13 @@ A imagem seguinte mostra os detalhes de uma ligação com êxito:
 
 ## <a name="connect-servicenow-to-it-service-management-connector-in-oms"></a>Ligar o ServiceNow ao serviço de TI conector de gestão no OMS
 
-As secções seguintes fornecem detalhes sobre como ligar o ServiceNow produto para o conector de gestão do serviço de TI no OMS.
+As secções seguintes fornecem detalhes sobre como ligar o ServiceNow produto ITSMC no OMS.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-Certifique-se de que tem os seguintes pré-requisitos cumpridos:
+Certifique-se de que são cumpridos os seguintes pré-requisitos:
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
+- ITSMC instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - ServiceNow suportadas versões – Fuji, Geneva, Helsinki.
 
 Administradores do ServiceNow terá de efetuar o seguinte na sua instância do ServiceNow:
@@ -185,7 +184,6 @@ Administradores do ServiceNow terá de efetuar o seguinte na sua instância do S
 
 
 ### <a name="connection-procedure"></a>**Procedimento de ligação**
-
 Utilize o procedimento seguinte para criar uma ligação de ServiceNow:
 
 1. Aceda a **OMS** > **definições** > **ligado origens**.
@@ -200,25 +198,25 @@ Utilize o procedimento seguinte para criar uma ligação de ServiceNow:
 
 | **Campo** | **Descrição** |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância do ServiceNow que pretende estabelecer ligação com o conector de gestão do serviço de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
+| **Nome**   | Escreva um nome para a instância do ServiceNow que pretende estabelecer ligação com ITSMC.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
 | **Selecione o tipo de ligação**   | Selecione **ServiceNow**. |
-| **Nome de Utilizador**   | Escreva o nome de utilizador de integração que criou na aplicação do ServiceNow para suportar a ligação do conector de gestão de serviços de TI. Obter mais informações: [ServiceNow criar função de utilizador de aplicação](#create-integration-user-role-in-servicenow-app).|
+| **Nome de Utilizador**   | Escreva o nome de utilizador de integração que criou na aplicação para suportar a ligação ao ITSMC ServiceNow. Obter mais informações: [ServiceNow criar função de utilizador de aplicação](#create-integration-user-role-in-servicenow-app).|
 | **Palavra-passe**   | Escreva a palavra-passe associada este nome de utilizador. **Tenha em atenção**: nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no âmbito do serviço do OMS.  |
-| **URL do servidor**   | Escreva o URL da instância do ServiceNow que pretende ligar ao conector de gestão do serviço de TI. |
+| **URL do servidor**   | Escreva o URL da instância do ServiceNow que pretende ligar à ITSMC. |
 | **ID de cliente**   | Escreva o ID de cliente que pretende utilizar para autenticação de OAuth2, o que é gerado anteriormente.  Obter mais informações sobre a geração de ID de cliente e o segredo: [configuração de OAuth](http://wiki.servicenow.com/index.php?title=OAuth_Setup). |
 | **Segredo do cliente**   | Escreva o segredo de cliente gerado para este ID.   |
-| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho do ServiceNow que pretende sincronizar OMS, através do conector de gestão de serviços de TI.  Os valores selecionados são importados para análise de registos.   **Opções:** incidentes e pedidos de alteração.|
+| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho do ServiceNow que pretende sincronizar OMS, através de ITSMC.  Os valores selecionados são importados para análise de registos.   **Opções:** incidentes e pedidos de alteração.|
 | **Dados de sincronização** | Escreva o número de últimos dias que pretende que os dados da. **Limite máximo**: 120 dias. |
 | **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender criar itens de configuração no produto ITSM. Quando selecionada, o OMS cria o IC afectado como itens de configuração (em caso de não existente CIs) no sistema ITSM suportado. **Predefinição**: desativado. |
 
 
-Quando ligado com êxito e sincronizada com êxito:
+**Quando ligado com êxito e sincronizadas**:
 
 - Selecionar itens da ligação do ServiceNow são importados para análise de registos do OMS de trabalho.  Pode ver o resumo dos seguintes itens de trabalho no mosaico do conector de gestão de serviços de TI.
-- Pode criar incidentes, alertas e eventos de pesquisa de alertas do OMS ou de registo nesta instância do ServiceNow.  
+- Pode criar incidentes, alertas e eventos de alertas do OMS ou de pesquisa de registo ou de alertas do Azure nesta instância do ServiceNow.  
 
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts), [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs) e [itens de trabalho de criar ITSM de alertas do Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="create-integration-user-role-in-servicenow-app"></a>Criar função de utilizador de integração na aplicação do ServiceNow
 
@@ -230,7 +228,7 @@ Utilizador o seguinte procedimento:
 
     O estado é apresentado como **não concluir** se a função de utilizador ainda está a ser criado.
 
-4.  Nas caixas de texto, junto a **criar o utilizador de integração**, introduza o nome de utilizador para o utilizador que se pode ligar para o conector de gestão do serviço de TI no OMS.
+4.  Nas caixas de texto, junto a **criar o utilizador de integração**, introduza o nome de utilizador para o utilizador que possam ligar à ITSMC no OMS.
 5.  Introduza a palavra-passe para este utilizador e clique em **OK**.  
 
 >[!NOTE]
@@ -239,7 +237,7 @@ Utilizador o seguinte procedimento:
 
 O utilizador recentemente criado será apresentado com as funções predefinidas atribuídas.
 
-Funções predefinidas:
+**Predefinição funções**:
 - personalize_choices
 - import_transformer
 -   x_mioms_microsoft.User
@@ -262,14 +260,15 @@ Depois do utilizador foi criado com êxito, o estado de **Verifique a lista de v
 
 ## <a name="connect-provance-to-it-service-management-connector-in-oms"></a>Ligar Provance ao serviço de TI conector de gestão no OMS
 
-As secções seguintes fornecem detalhes sobre como ligar o seu produto Provance para o conector de gestão do serviço de TI no OMS.
+As secções seguintes fornecem detalhes sobre como ligar o seu produto Provance ITSMC no OMS.
+
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-Certifique-se de que tem os seguintes pré-requisitos cumpridos:
+Certifique-se de que são cumpridos os seguintes pré-requisitos:
 
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
+- ITSMC instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - Aplicação de provance deve ser registada com o Azure AD - e ID de cliente é disponibilizado. Para obter informações detalhadas, consulte [como configurar a autenticação do Active Directory](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).
 
 - A função de utilizador: administrador.
@@ -289,32 +288,32 @@ Utilize o procedimento seguinte para criar uma ligação de Provance:
 
 | **Campo** | **Descrição** |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância de Provance que pretende estabelecer ligação com o conector de gestão do serviço de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
+| **Nome**   | Escreva um nome para a instância de Provance que pretende estabelecer ligação com ITSMC.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
 | **Selecione o tipo de ligação**   | Selecione **Provance**. |
-| **Nome de Utilizador**   | Escreva o nome de utilizador que se pode ligar para o conector de gestão do serviço de TI.    |
+| **Nome de Utilizador**   | Escreva o nome de utilizador que possam ligar à ITSMC.    |
 | **Palavra-passe**   | Escreva a palavra-passe associada este nome de utilizador. **Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no âmbito do serviço do OMS. _|
-| **URL do servidor**   | Escreva o URL da sua instância Provance que pretende ligar ao conector de gestão do serviço de TI. |
+| **URL do servidor**   | Escreva o URL da sua instância Provance que pretende ligar à ITSMC. |
 | **ID de cliente**   | Escreva o ID de cliente para autenticar esta ligação, que gerou na sua instância Provance.  Obter mais informações sobre o ID de cliente, consulte [como configurar a autenticação do Active Directory](../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md). |
-| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho Provance que pretende sincronizar OMS, através do conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração.|
+| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho Provance que pretende sincronizar OMS, através de ITSMC.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração.|
 | **Dados de sincronização** | Escreva o número de últimos dias que pretende que os dados da. **Limite máximo**: 120 dias. |
 | **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender criar itens de configuração no produto ITSM. Quando selecionada, o OMS cria o IC afectado como itens de configuração (em caso de não existente CIs) no sistema ITSM suportado. **Predefinição**: desativado.|
 
-Quando ligado com êxito e sincronizada com êxito:
+**Quando ligado com êxito e sincronizadas**:
 
 - Itens de trabalho selecionados da ligação de Provance são importados para o OMS **análise de registos.**  Pode ver o resumo dos seguintes itens de trabalho no mosaico do conector de gestão de serviços de TI.
-- Pode criar incidentes e eventos de alertas do OMS ou de pesquisa de registo nesta instância Provance.
+- Pode criar incidentes e eventos de alertas do OMS ou de pesquisa de registo ou de alertas do Azure nesta instância Provance.
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts), [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs) e [itens de trabalho de criar ITSM de alertas do Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ## <a name="connect-cherwell-to-it-service-management-connector-in-oms"></a>Ligar Cherwell ao serviço de TI conector de gestão no OMS
 
-As secções seguintes fornecem detalhes sobre como ligar o seu produto Cherwell para o conector de gestão do serviço de TI no OMS.
+As secções seguintes fornecem detalhes sobre como ligar o seu produto Cherwell ITSMC no OMS.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-Certifique-se de que tem os seguintes pré-requisitos cumpridos:
+Certifique-se de que são cumpridos os seguintes pré-requisitos:
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
+- ITSMC instalado. Obter mais informações: [adicionar a solução de conector de gestão de serviço de TI](log-analytics-itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - ID de cliente gerado. Obter mais informações: [geram o ID de cliente para Cherwell](#generate-client-id-for-cherwell).
 - A função de utilizador: administrador.
 
@@ -334,22 +333,22 @@ Utilize o procedimento seguinte para criar uma ligação de Cherwell:
 
 | **Campo** | **Descrição** |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância de Cherwell que pretende estabelecer ligação com o conector de gestão do serviço de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
+| **Nome**   | Escreva um nome para a instância de Cherwell que pretende ligar à ITSMC.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
 | **Selecione o tipo de ligação**   | Selecione **Cherwell.** |
-| **Nome de Utilizador**   | Escreva o nome de utilizador Cherwell que se pode ligar para o conector de gestão do serviço de TI. |
+| **Nome de Utilizador**   | Escreva o nome de utilizador Cherwell que possam ligar à ITSMC. |
 | **Palavra-passe**   | Escreva a palavra-passe associada este nome de utilizador. **Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no âmbito do serviço do OMS.|
-| **URL do servidor**   | Escreva o URL da sua instância Cherwell que pretende ligar ao conector de gestão do serviço de TI. |
+| **URL do servidor**   | Escreva o URL da sua instância Cherwell que pretende ligar à ITSMC. |
 | **ID de cliente**   | Escreva o ID de cliente para autenticar esta ligação, que gerou na sua instância Cherwell.   |
-| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho Cherwell que pretende sincronizar através do conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração. |
+| **Âmbito de sincronização de dados**   | Selecione os itens de trabalho Cherwell que pretende sincronizar através de ITSMC.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração. |
 | **Dados de sincronização** | Escreva o número de últimos dias que pretende que os dados da. **Limite máximo**: 120 dias. |
 | **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender criar itens de configuração no produto ITSM. Quando selecionada, o OMS cria o IC afectado como itens de configuração (em caso de não existente CIs) no sistema ITSM suportado. **Predefinição**: desativado. |
 
-Quando ligado com êxito e sincronizada com êxito:
+**Quando ligado com êxito e sincronizadas**:
 
 - Selecionar itens a partir desta ligação Cherwell são importados para análise de registos do OMS de trabalho. Pode ver o resumo dos seguintes itens de trabalho no mosaico do conector de gestão de serviços de TI.
-- Pode criar incidentes e eventos nesta instância Cherwell da OMS. Obter mais informações: criar itens de trabalho ITSM para alertas do OMS e criar ITSM de trabalho itens de registos do OMS.
+- Pode criar incidentes e eventos de alertas do OMS ou de pesquisa de registo ou de alertas do Azure nesta instância Cherwell.
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts), [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs) e [itens de trabalho de criar ITSM de alertas do Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="generate-client-id-for-cherwell"></a>Geram o ID de cliente para Cherwell
 
@@ -364,7 +363,6 @@ Para gerar o chave/ID de cliente para Cherwell, utilize o seguinte procedimento:
 
 ## <a name="next-steps"></a>Passos seguintes
  - [Criar itens de trabalho ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts)
-
  - [Criar itens de trabalho ITSM a partir de registos do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs)
-
-- [Análise de registos de vista da ligação](log-analytics-itsmc-overview.md#using-the-solution)
+ - [Criar itens de trabalho ITSM a partir dos alertas do Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts)
+ - [Análise de registos de vista da ligação](log-analytics-itsmc-overview.md#using-the-solution)

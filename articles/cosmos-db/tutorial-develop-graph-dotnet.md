@@ -15,11 +15,11 @@ ms.topic: tutorial
 ms.date: 05/10/2017
 ms.author: denlee
 ms.custom: mvc
-ms.openlocfilehash: b1419e5aad9446b9d96450cfad79b200cda9a518
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 613956416d35687c5f2fe0123a9a59182390b440
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-cosmos-db-develop-with-the-graph-api-in-net"></a>Azure Cosmos DB: Desenvolver com o gráfico de API no .NET
 BD do Azure do Cosmos é serviço de base de dados com múltiplos modelo global distribuída da Microsoft. Pode criar e consultar rapidamente o documento, a chave/valor e as bases de dados de gráficos, que beneficiam de capacidades de escalamento horizontal e distribuição global no centro do Azure Cosmos DB. 
@@ -53,7 +53,6 @@ Vamos começar por criar uma conta de base de dados do Azure Cosmos no portal do
 
 > [!TIP]
 > * Já tem uma conta de base de dados do Azure Cosmos? Se assim for, avançar diretamente para [configurar a sua solução Visual Studio](#SetupVS)
-> * Tem uma conta do Azure DocumentDB? Se Sim, agora a sua conta é uma conta de base de dados do Azure Cosmos e pode avançar diretamente para [configurar a sua solução Visual Studio](#SetupVS).  
 > * Se estiver a utilizar o emulador de BD do Cosmos do Azure, siga os passos indicados em [emulador de BD do Azure Cosmos](local-emulator.md) para configurar o emulador e avançar diretamente para [configurar a sua solução do Visual Studio](#SetupVS). 
 >
 > 
@@ -86,7 +85,7 @@ No portal do Azure, navegue até à sua conta de base de dados do Azure Cosmos, 
 
 Copie o URI do portal e cole-o ao longo do `Endpoint` na propriedade endpoint acima. Em seguida, copie a chave primária do portal e cole-o para o `AuthKey` propriedade acima. 
 
-! [Captura de ecrã do portal do Azure utilizado pelo tutorial para criar uma aplicação c#. Mostra o botão chaves realçado no painel de navegação BD do Cosmos do Azure e os valores URI e a chave primária realçados no painel chaves de conta de uma base de dados do Cosmos do Azure] [chaves] 
+![Captura de ecrã do portal do Azure utilizado pelo tutorial para criar uma aplicação c#. Mostra uma base de dados do Azure Cosmos conta o botão chaves realçado no painel de navegação BD do Cosmos do Azure e os valores URI e a chave primária realçados no painel de chaves](./media/tutorial-develop-graph-dotnet/keys.png) 
  
 ## <a id="instantiate"></a>Instanciar o DocumentClient 
 Em seguida, crie uma nova instância do **DocumentClient**.  
@@ -271,7 +270,7 @@ Se não pretender continuar a utilizar esta aplicação, siga os passos abaixo p
 1. No menu do lado esquerdo do portal do Azure, clique em **Grupos de recursos** e, em seguida, clique no nome de recurso que criou. 
 2. Na página do grupo de recursos, clique em **Eliminar**, escreva o nome do recurso a eliminar na caixa de texto e, em seguida, clique em **Eliminar**.
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 
 Neste tutorial, fez o seguinte:
 

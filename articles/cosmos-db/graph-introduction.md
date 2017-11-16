@@ -10,13 +10,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 08/29/2017
+ms.date: 11/15/2017
 ms.author: denlee
-ms.openlocfilehash: b6cc51ad2bab294035f3ed8f300423d1d320df1f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 71d9d03b45d8c4fcf8acb41871dcf3f1304955aa
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="introduction-to-azure-cosmos-db-graph-api"></a>Introdução ao Azure Cosmos DB: Graph API
 
@@ -44,7 +44,7 @@ Fornece a Graph API do Azure Cosmos DB:
 - Elástico dimensionamento de armazenamento e débito com menos de 10 ms latências de leitura e inferior a 15 ms, o percentil 99th.
 - Automático indexação com disponibilidade de consulta instantânea.
 - Níveis de consistência ajustáveis pelo.
-- SLA abrangente, incluindo 99,99% de disponibilidade.
+- SLA abrangente, incluindo um SLA de disponibilidade de 99,99% de todas as contas de única região e todas as contas de multirregião com consistência simples e 99.999% ler disponibilidade em todas as contas de multirregião base de dados.
 
 Para consultar a base de dados do Azure Cosmos, pode utilizar o [Apache TinkerPop](http://tinkerpop.apache.org) idioma transversal, da graph [Gremlin](http://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps), ou outros sistemas de gráfico compatível com a TinkerPop como [Apache Spark GraphX](spark-connector-graph.md).
 

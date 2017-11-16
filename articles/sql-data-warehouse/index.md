@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: fea8cd403cbf21acee2194e8e3888e4001663cdd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 47807360dd58f0c19360d90ed66f726d8922be1e
+ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="sql-data-warehouse-documentation"></a>Documentação do SQL Data Warehouse
 
@@ -102,7 +102,6 @@ Saiba como utilizar o SQL Data Warehouse, que combina a base de dados relacional
                 <div class="card">
                     <div class="cardText">
                         <h3>Linguagens</h3>
-                        <p><a href="/azure/sql-data-warehouse/sql-data-warehouse-service-capacity-limits">Limites de capacidade</a></p>
                         <p><a href="/azure/sql-data-warehouse/sql-data-warehouse-reference-tsql-language-elements">Elementos de linguagem do T-SQL</a></p>
                         <p><a href="/azure/sql-data-warehouse/sql-data-warehouse-reference-tsql-statements">Declarações do T-SQL</a></p>
                         <p><a href="/azure/sql-data-warehouse/sql-data-warehouse-reference-tsql-system-views">Vistas de sistema do T-SQL</a></p>

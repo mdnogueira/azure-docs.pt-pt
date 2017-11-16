@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/22/2017
+ms.date: 11/14/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: a57edd30975ec0e943fd84b2c66137d328a89b8b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 949cf120b9b0ae0815b492166ffc19cb0412efbd
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="configure-azure-active-directory-device-based-conditional-access-policies"></a>Configurar políticas de acesso condicional baseado no dispositivo do Azure Active Directory
 
@@ -51,7 +51,7 @@ O [plataformas de dispositivos](active-directory-conditional-access-azure-portal
 
 Numa política de acesso condicional baseado no dispositivo, pode exigir a dispositivos fidedignos ser assinalado como estando em conformidade.
 
-![Aplicações na nuvem](./media/active-directory-conditional-access-policy-connected-applications/24.png)
+![Aplicações na cloud](./media/active-directory-conditional-access-policy-connected-applications/24.png)
 
 Dispositivos podem ser marcados como compatível no diretório por:
 
@@ -66,11 +66,11 @@ Apenas os dispositivos que estão ligados ao Azure AD podem ser marcados como co
 - Azure AD associado
 - Híbrida do Azure AD associada
 
-    ![Aplicações na nuvem](./media/active-directory-conditional-access-policy-connected-applications/26.png)
+    ![Aplicações na cloud](./media/active-directory-conditional-access-policy-connected-applications/26.png)
 
 Se tiver um local do Active Directory (AD) os requisitos de espaço, poderá considerar os dispositivos que não são ligados com o Azure AD mas associados ao seu AD para ser considerado confiável.
 
-![Aplicações na nuvem](./media/active-directory-conditional-access-policy-connected-applications/25.png)
+![Aplicações na cloud](./media/active-directory-conditional-access-policy-connected-applications/25.png)
 
 
 ## <a name="next-steps"></a>Passos seguintes

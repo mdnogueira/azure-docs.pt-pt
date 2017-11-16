@@ -14,20 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2016
 ms.author: mmccrory
-ms.openlocfilehash: 0ff7fde5f3753aa6a24fb0af54d68d0dc0bd96a4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b9ae4442f57170746eb0de94849b09625be51264
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services"></a>Ativar a ligação de ambiente de trabalho remoto para uma função nos serviços em nuvem do Azure
 > [!div class="op_single_selector"]
 > * [Portal do Azure](cloud-services-role-enable-remote-desktop-new-portal.md)
-> * [Portal Clássico do Azure](cloud-services-role-enable-remote-desktop.md)
 > * [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
 > * [Visual Studio](../vs-azure-tools-remote-desktop-roles.md)
->
->
 
 Ambiente de trabalho remoto permite-lhe aceder ao ambiente de trabalho de uma função em execução no Azure. Pode utilizar uma ligação de ambiente de trabalho remoto para resolver problemas e diagnosticar problemas com a sua aplicação enquanto estiver em execução.
 
@@ -47,7 +44,7 @@ O portal do Azure utiliza a abordagem de extensão de ambiente de trabalho remot
     ![Ambiente de trabalho remoto do serviços de nuvem](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.png)
 
    > [!WARNING]
-   > Todas as instâncias de função serão reiniciadas quando ativar o ambiente de trabalho remoto e clique em OK (marca de verificação) pela primeira vez. Para impedir que um reinício, o certificado utilizado para encriptar a palavra-passe tem de estar instalado na função. Para impedir que um reinício, [carregar um certificado para o serviço em nuvem](cloud-services-configure-ssl-certificate.md#step-3-upload-a-certificate) e, em seguida, regresse a esta caixa de diálogo.
+   > Todas as instâncias de função serão reiniciadas quando ativar o ambiente de trabalho remoto e clique em OK (marca de verificação) pela primeira vez. Para impedir que um reinício, o certificado utilizado para encriptar a palavra-passe tem de estar instalado na função. Para impedir que um reinício, [carregar um certificado para o serviço em nuvem](cloud-services-configure-ssl-certificate-portal.md#step-3-upload-a-certificate) e, em seguida, regresse a esta caixa de diálogo.
    >
    >
 3. No **funções**, selecione a função que pretende atualizar ou selecione **todos os** para todas as funções.
@@ -70,5 +67,5 @@ Depois de ambiente de trabalho remoto está ativado nas funções, pode iniciar 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-[Como configurar os serviços em nuvem](cloud-services-how-to-configure.md)
+[Como configurar os serviços em nuvem](cloud-services-how-to-configure-portal.md)
 [Cloud services FAQ – ambiente de trabalho remoto](cloud-services-faq.md)

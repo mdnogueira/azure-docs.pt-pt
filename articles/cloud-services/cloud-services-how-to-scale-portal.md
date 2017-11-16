@@ -14,16 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: adegeo
-ms.openlocfilehash: e9683d4c5779450fd67fa42ab13095c7f201b4cd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 708b35252429e30b44226030d3d83b928f2a9520
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-portal"></a>Como configurar automática dimensionamento para um serviço em nuvem no portal
-> [!div class="op_single_selector"]
-> * [Portal do Azure](cloud-services-how-to-scale-portal.md)
-> * [Portal Clássico do Azure](cloud-services-how-to-scale.md)
 
 Condições podem ser definidas para uma função de trabalho do serviço de nuvem que acionam uma escala de entrada ou saída da operação. Podem basear-se as condições para a função na CPU, disco ou de carga na rede da função. Também pode definir uma condição com base na fila de mensagens ou a métrica de alguns recursos do Azure associado à sua subscrição.
 

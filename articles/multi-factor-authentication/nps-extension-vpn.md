@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2017
 ms.author: joflore
-ms.reviewer: jsnow
+ms.reviewer: richagi
 ms.custom: it-pro
-ms.openlocfilehash: 8bb4c754f7bf22198b997ded7a994ccf0e4ad265
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: bf83952b29759ff601685513ace31828404c7b1a
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Integrar a sua infraestrutura de VPN com a MFA do Azure utilizando a extensão de servidor de políticas de rede do Azure
 
@@ -491,7 +491,7 @@ Para utilizar o script, forneça a extensão com as credenciais administrativas 
 
 6. Reinicie o servidor.
 
-### <a name="verify-the-configuration"></a>Verificar a configuração
+### <a name="verify-the-configuration"></a>Verificar se
 Para verificar a configuração, tem de estabelecer uma nova ligação de VPN com o servidor VPN. Depois de introduzir com êxito as suas credenciais para autenticação primária, a ligação VPN aguarda que a autenticação secundária com êxito antes da ligação for estabelecida, conforme mostrado abaixo. 
 
 ![A janela de VPN de definições do Windows](./media/nps-extension-vpn/image42.png)

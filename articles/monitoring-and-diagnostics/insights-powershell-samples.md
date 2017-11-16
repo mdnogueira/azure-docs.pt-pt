@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/09/2017
 ms.author: robb
-ms.openlocfilehash: 60048ab8e0118bc67850aa6ad91c82dcf8122b1d
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 21123299fbab59b388aacc4a802f3a9ec1d80632
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Exemplos de início rápido do Azure PowerShell de Monitor
 Este artigo apresenta o exemplo comandos do PowerShell para o ajudar a aceder às funcionalidades de monitorização do Azure. Monitor do Azure permite-lhe para serviços de Cloud de dimensionamento automático, as máquinas virtuais e aplicações Web. Também permite-lhe enviar notificações de alerta ou chamar URLs web com base nos valores de dados de telemetria configurado.
@@ -202,7 +202,7 @@ Uma lista completa das opções disponíveis para `Get-AzureRmMetricDefinition` 
 
 ## <a name="create-and-manage-autoscale-settings"></a>Criar e gerir definições de dimensionamento automático
 Um recurso (uma aplicação Web, VM, o serviço em nuvem ou conjunto de dimensionamento da Máquina Virtual) pode ter apenas uma definição de dimensionamento automático configurada para ele.
-No entanto, cada definição de dimensionamento automático pode ter vários perfis. Por exemplo, um para um perfil de escala com base no desempenho e um segundo para um perfil com base na agenda. Cada perfil pode ter várias regras configuradas no mesmo. Para mais informações sobre o dimensionamento automático, consulte [como uma aplicação de dimensionamento automático](../cloud-services/cloud-services-how-to-scale.md).
+No entanto, cada definição de dimensionamento automático pode ter vários perfis. Por exemplo, um para um perfil de escala com base no desempenho e um segundo para um perfil com base na agenda. Cada perfil pode ter várias regras configuradas no mesmo. Para mais informações sobre o dimensionamento automático, consulte [como uma aplicação de dimensionamento automático](../cloud-services/cloud-services-how-to-scale-portal.md).
 
 Eis os passos a utilizar:
 

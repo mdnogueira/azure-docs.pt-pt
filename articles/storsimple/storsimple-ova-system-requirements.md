@@ -4,7 +4,7 @@ description: Saiba mais sobre o software e requisitos de rede para a matriz de V
 services: storsimple
 documentationcenter: NA
 author: alkohli
-manager: timlt
+manager: jeconnoc
 editor: 
 ms.assetid: ea1d3bca-e71b-453d-aa82-440d2638f5e3
 ms.service: storsimple
@@ -12,13 +12,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/16/2017
+ms.date: 11/14/2017
 ms.author: alkohli
-ms.openlocfilehash: 8cae0577d950e3968bc25083e59d637963e6b442
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: 5d01523f326bd7e2518bff06e62ae62db8f318d3
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="storsimple-virtual-array-system-requirements"></a>Requisitos de sistema da Matriz Virtual StorSimple
 ## <a name="overview"></a>Descrição geral
@@ -41,7 +41,10 @@ Os requisitos de software incluem informações sobre os browsers suportados, as
 | **Hipervisor** | **Versão** |
 | --- | --- |
 | Hyper-V |Windows Server 2008 R2 SP1 e posterior |
-| VMware ESXi |5.5 e 6.0 |
+| VMware ESXi |5.0, 5.5 e 6.0 <br> (6.5 não é suportada.) |
+
+> [!IMPORTANT]
+> Não instale as ferramentas do VMware na sua matriz Virtual StorSimple; Este procedimento resultará numa configuração não suportada.
 
 ### <a name="virtual-device-requirements"></a>Requisitos do dispositivo virtual
 | **Componente** | **Requisito** |
@@ -79,8 +82,8 @@ Os seguintes requisitos de software são para os clientes do SMB que acedem a ma
 | SMB 3.02 |
 
 > [!IMPORTANT]
-> Não copie ou armazenar os ficheiros protegidos pelo Windows sistema EFS (Encrypting File) para o servidor de ficheiros de matriz Virtual StorSimple; Este procedimento resultará numa configuração não suportada. 
-> 
+> Não copie ou armazenar os ficheiros protegidos pelo Windows sistema EFS (Encrypting File) para o servidor de ficheiros de matriz Virtual StorSimple; Este procedimento resultará numa configuração não suportada.
+
 
 ### <a name="supported-storage-format"></a>Suportado formato de armazenamento
 Apenas o armazenamento de BLOBs de blocos do Azure é suportado. Os blobs de página não são suportados. Obter mais informações [sobre blobs de blocos e blobs de páginas](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: ryanwi
-ms.openlocfilehash: 31e35432ecc10b06c7a6400a1e0904e7bc2cd8c9
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: b06d0196f1f911f2f6cf87242d70455ba22b1f88
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Windows numa rede virtual do Azure
 Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Windows Service Fabric numa rede virtual do Azure existente (VNET) e subplano net através do PowerShell. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações.  Para criar um cluster de Linux utilizando a CLI do Azure, consulte [criar um cluster com Linux seguro no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
@@ -36,6 +36,7 @@ Neste tutorial, ficará a saber como:
 Este tutorial série, a saber como:
 > [!div class="checklist"]
 > * Criar um cluster seguro no Azure
+> * [Um cluster de entrada ou saída de escala](/service-fabric-tutorial-scale-cluster.md)
 > * [Implementar a gestão de API com o Service Fabric](service-fabric-tutorial-deploy-api-management.md)
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -104,7 +105,7 @@ Preencha estes parâmetros vazios no *cluster.parameters.json* ficheiro para a s
 |adminPassword|Palavra-passe #1234|
 |adminUserName|vmadmin|
 |clusterName|mysfcluster|
-|localização|southcentralus|
+|localização|euacentrosul|
 
 Deixe o *certificateThumbprint*, *certificateUrlValue*, e *sourceVaultValue* parâmetros em branco para criar um certificado autoassinado.  Se pretender utilizar um certificado existente carregado anteriormente para um cofre de chaves, preencha os valores de parâmetros.
 

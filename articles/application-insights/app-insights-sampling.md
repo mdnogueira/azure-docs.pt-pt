@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: mbullwin
-ms.openlocfilehash: af184574bdfa7d3a11baf75d8cdfbf80f1544dde
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: bf5f12e4a20d9692e311550fc7a02f14f0b4aaad
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="sampling-in-application-insights"></a>Amostragem no Application Insights
 
@@ -38,9 +38,9 @@ A amostragem reduz os custos de tráfego e os dados e ajuda a evitar a limitaç�
 ## <a name="types-of-sampling"></a>Tipos de amostragem
 Existem três métodos alternativos de amostragem:
 
-* **Amostragem adaptável** ajusta automaticamente o volume de telemetria enviada do SDK na sua aplicação ASP.NET. Predefinido de 2.0.0-Beta3 v SDK. Acessível apenas a telemetria do lado do servidor ASP.NET. 
+* **Amostragem adaptável** ajusta automaticamente o volume de telemetria enviada do SDK na sua aplicação ASP.NET. Começando com 2.0.0-Beta3 do SDK v este é o método de amostragem de predefinição. Amostragem adaptável está atualmente disponível apenas para telemetria do lado do servidor ASP.NET. 
 * **A amostragem-taxa** reduz o volume de telemetria enviada do seu servidor de ASP.NET e browsers dos seus utilizadores. Definir a velocidade. O cliente e o servidor irão sincronizar os seus amostragem para essa, procura na, possa navegar entre os pedidos e vistas de página relacionados.
-* **A amostragem de ingestão** funciona no portal do Azure. Elimina algumas na telemetria o que são recebidos a partir da sua aplicação, uma taxa que definir. Não reduzir o tráfego de telemetria, mas ajuda a manter dentro da sua quota mensal. A grande vantagem de amostragem de ingestão é que pode configurá-lo sem Reimplementar a sua aplicação e uniformemente funciona para todos os servidores e clientes. 
+* **A amostragem de ingestão** funciona no portal do Azure. Elimina algumas na telemetria o que são recebidos a partir da sua aplicação, uma taxa de amostragem que definir. Não reduzir o tráfego de telemetria enviado a partir da sua aplicação, mas ajuda a manter dentro da sua quota mensal. A principal vantagem de amostragem de ingestão é que pode definir a frequência de amostragem sem Reimplementar a sua aplicação e uniformemente funciona para todos os servidores e clientes. 
 
 Se forem Adaptive ou fixo amostragem de velocidade numa operação, a amostragem de ingestão está desativada.
 
@@ -67,7 +67,7 @@ A amostragem de ingestão não funciona enquanto amostragem adaptável ou -taxa 
 ## <a name="adaptive-sampling-at-your-web-server"></a>Amostragem adaptável no seu servidor web
 Amostragem adaptável está disponível para o Application Insights SDK para 2.0.0-Beta3 do ASP.NET v e posterior e está ativada por predefinição. 
 
-Amostragem adaptável afeta o volume de telemetria enviada a partir da sua aplicação de servidor web para o serviço do Application Insights. O volume é ajustado automaticamente para manter dentro de uma velocidade máxima especificada de tráfego.
+Amostragem adaptável afeta o volume de telemetria enviada a partir da sua aplicação de servidor web para o ponto final de serviço de Application Insights. O volume é ajustado automaticamente para manter dentro de uma velocidade máxima especificada de tráfego.
 
 Este não funciona em volumes baixos de telemetria, por isso, uma aplicação de depuração ou um Web site com baixa utilização não será afetado.
 
@@ -75,7 +75,11 @@ Para alcançar o volume de destino, algumas da telemetria gerada rejeitados. Mas
 
 Métrica contagens, tais como a taxa de pedidos e velocidade de exceção são ajustado para compensar a frequência de amostragem, para que mostram, aproximadamente, os valores corretos no Explorador de métrica.
 
-**Atualizar o NuGet seu projeto** pacotes para a versão mais recente *pré-lançamento* versão do Application Insights: clique com o botão direito no projeto no Explorador de soluções, selecione gerir pacotes NuGet, verifique **incluir pré-lançamento** e procure applicationinsights. 
+### <a name="update-nuget-packages"></a>Atualizar pacotes NuGet ###
+
+Atualizar pacotes de NuGet do seu projeto para a versão mais recente *pré-lançamento* versão do Application Insights. No Visual Studio, clique com botão direito no projeto no Explorador de soluções, selecione gerir pacotes NuGet, verifique **incluir pré-lançamento** e procure applicationinsights. 
+
+### <a name="configuring-adaptive-sampling"></a>Configuração de amostragem adaptável ###
 
 No [Applicationinsights](app-insights-configuration-with-applicationinsights-config.md), pode ajustar vários parâmetros no `AdaptiveSamplingTelemetryProcessor` nós. Os valores apresentados são os valores predefinidos:
 
@@ -116,7 +120,7 @@ No [Applicationinsights](app-insights-configuration-with-applicationinsights-con
 **Para desactivar** adaptável de amostragem, remove o nó de AdaptiveSamplingTelemetryProcessor applicationinsights-config.
 
 ### <a name="alternative-configure-adaptive-sampling-in-code"></a>Em alternativa: Configurar amostragem adaptável no código
-Em vez de ajustar a amostragem no ficheiro. config, pode utilizar o código. Isto permite-lhe especificar uma função de chamada de retorno que é invocada sempre que a frequência de amostragem é reavaliada. Pode utilizar, por exemplo, para saber que frequência de amostragem está a ser utilizada.
+Em vez de definição do parâmetro de amostragem no ficheiro. config, através de programação pode definir estes valores. Isto permite-lhe especificar uma função de chamada de retorno que é invocada sempre que a frequência de amostragem é reavaliada. Pode utilizar, por exemplo, para saber que frequência de amostragem está a ser utilizada.
 
 Remova o `AdaptiveSamplingTelemetryProcessor` nó a partir do ficheiro. config.
 
@@ -168,7 +172,7 @@ Remova o `AdaptiveSamplingTelemetryProcessor` nó a partir do ficheiro. config.
 ## <a name="sampling-for-web-pages-with-javascript"></a>Amostragem para páginas web com JavaScript
 Pode configurar páginas web para a amostragem-taxa de qualquer servidor. 
 
-Quando lhe [configurar as páginas web para o Application Insights](app-insights-javascript.md), modificar o fragmento que obtém a partir do portal do Application Insights. (Em aplicações do ASP.NET, o fragmento normalmente passa em layout.)  Inserir uma linha como `samplingPercentage: 10,` antes da chave de instrumentação:
+Quando lhe [configurar as páginas web para o Application Insights](app-insights-javascript.md), modificar o fragmento JavaScript que obtém a partir do portal do Application Insights. (Em aplicações do ASP.NET, o fragmento normalmente passa em layout.)  Inserir uma linha como `samplingPercentage: 10,` antes da chave de instrumentação:
 
     <script>
     var appInsights= ... 
@@ -191,13 +195,15 @@ Para a percentagem de amostragem, escolha uma percentagem que está próximo 100
 Se também ativar a amostragem-taxa no servidor, os clientes e o servidor irão sincronizar, de modo que, de pesquisa, possa navegar entre os pedidos e vistas de página relacionados.
 
 ## <a name="fixed-rate-sampling-for-aspnet-web-sites"></a>-Taxa amostragem para ASP.NET web sites
-Taxa de fixa amostragem reduz o tráfego enviado a partir do seu servidor web e browsers da web. Ao contrário de amostragem adaptável, reduz a telemetria uma taxa fixo optado por si. Também sincroniza, o cliente e a amostragem de servidor para que os itens relacionados são mantidos - por exemplo, para que o se observar uma vista de página na pesquisa, pode encontrar o pedido relacionado.
+Taxa de fixa amostragem reduz o tráfego enviado a partir do seu servidor web e browsers da web. Ao contrário de amostragem adaptável, reduz a telemetria uma taxa fixo optado por si. Também sincroniza, o cliente e a amostragem de servidor para que os itens relacionados são mantidos - por exemplo, quando observa uma vista de página na pesquisa, pode encontrar o pedido relacionado.
 
-O algoritmo de amostragem mantém itens relacionados. Para cada pedido HTTP evento e os eventos relacionados são eliminados ou transmitidos. 
+O algoritmo de amostragem mantém itens relacionados. Para cada pedido HTTP de eventos, o pedido e os eventos relacionados são eliminados ou transmitidos em conjunto. 
 
 No Explorador de métricas, taxas como contagens de pedidos e exceções são multiplicadas por um fator para compensar a frequência de amostragem, para que fiquem aproximadamente corretos.
 
-1. **Atualizar pacotes de NuGet do seu projeto** para o versão mais recente *pré-lançamento* versão do Application Insights. Clique com o botão direito no projeto no Explorador de soluções, selecione gerir pacotes NuGet, verifique **incluir pré-lançamento** e procure applicationinsights. 
+### <a name="configuring-fixed-rate-sampling"></a>Configurar taxa fixo amostragem ###
+
+1. **Atualizar pacotes de NuGet do seu projeto** para o versão mais recente *pré-lançamento* versão do Application Insights. No Visual Studio, clique com botão direito no projeto no Explorador de soluções, selecione gerir pacotes NuGet, verifique **incluir pré-lançamento** e procure applicationinsights. 
 2. **Desativar a amostragem adaptável**: no [Applicationinsights](app-insights-configuration-with-applicationinsights-config.md), remover ou comente a `AdaptiveSamplingTelemetryProcessor` nós.
    
     ```xml
@@ -233,7 +239,7 @@ No Explorador de métricas, taxas como contagens de pedidos e exceções são mu
 > 
 
 ### <a name="alternative-enable-fixed-rate-sampling-in-your-server-code"></a>Alternativa: Ativar amostragem-taxa no seu código de servidor
-Em vez de definição do parâmetro de amostragem no ficheiro. config, pode utilizar o código. 
+Em vez de definição do parâmetro de amostragem no ficheiro. config, através de programação pode definir estes valores. 
 
 *C#*
 
@@ -256,9 +262,9 @@ Em vez de definição do parâmetro de amostragem no ficheiro. config, pode util
 ([Saiba mais sobre os processadores de telemetria](app-insights-api-filtering-sampling.md#filtering).)
 
 ## <a name="when-to-use-sampling"></a>Quando utilizar amostragem?
-Amostragem adaptável é ativada automaticamente se utilizar o ASP.NET SDK versão 2.0.0-Beta3 ou posterior. Independentemente da que versão SDK utilizada, pode utilizar a amostragem de ingestão (no nosso servidor).
+Amostragem adaptável é ativada automaticamente se utilizar o ASP.NET SDK versão 2.0.0-Beta3 ou posterior. Independentemente de qual é a versão do SDK que utilizar, pode ativar a amostragem de ingestão permitir que o Application Insights para os dados recolhidos de exemplo.
 
-Não precisa de amostragem para a maioria das aplicações de tamanho de pequenas e médias. As informações de diagnóstico mais úteis e as estatísticas mais exatas são obtidas através da recolha de dados em todas as atividades do utilizador. 
+Em geral, para a maioria das aplicações de tamanho de pequenas e médias não precisa de amostragem. As informações de diagnóstico mais úteis e as estatísticas mais exatas são obtidas através da recolha de dados em todas as atividades do utilizador. 
 
 São as principais vantagens da amostragem:
 
@@ -281,7 +287,7 @@ São as principais vantagens da amostragem:
 
 **Utilize a amostragem adaptável:**
 
-Caso contrário, é recomendável amostragem adaptável. Isto é ativado por predefinição no servidor de ASP.NET SDK versão 2.0.0-Beta3 ou posterior. -Não reduzir o tráfego até que um determinada taxa mínima, pelo que não afetam a um site de baixa utilização.
+Se não aplicar as condições para utilizar as outras formas de amostragem, recomendamos amostragem adaptável. Isto é ativado por predefinição no servidor de ASP.NET SDK versão 2.0.0-Beta3 ou posterior. Não reduzirá tráfego até que um determinada taxa mínima for atingida, por conseguinte, baixa utilização sites não serão afetados.
 
 ## <a name="how-do-i-know-whether-sampling-is-in-operation"></a>Como saber se amostragem está na operação?
 Para detetar a frequência de amostragem real, independentemente de onde foi aplicado, utilize um [consulta de análise](app-insights-analytics.md) como esta:
@@ -330,7 +336,7 @@ O lado do cliente (JavaScript) SDK participa numa taxa fixo amostragem em conjun
 
 * Uma forma é amostragem adaptável para começar, descobrir que classificar assenta (consulte a questão acima) e, em seguida, mude para-taxa amostragem com essa taxa. 
   
-    Caso contrário, terá de adivinhar. Analisar a utilização atual de telemetria no AI, observar qualquer limitação que está a ocorrer e estimar o volume de telemetria a recolhidos. Estas três entradas, juntamente com o escalão de preço selecionado, sugerimos quanto poderá reduzir o volume de telemetria a recolhidos. No entanto, um aumento no número de utilizadores ou alguns outro shift no volume de telemetria pode invalidar a estimativa.
+    Caso contrário, terá de adivinhar. Analisar a utilização atual de telemetria no Application Insights, observar qualquer limitação que está a ocorrer e estimar o volume de telemetria a recolhidos. Estas três entradas, juntamente com o escalão de preço selecionado, sugerimos quanto poderá reduzir o volume de telemetria a recolhidos. No entanto, um aumento no número de utilizadores ou alguns outro shift no volume de telemetria pode invalidar a estimativa.
 
 *O que acontece se configurar a percentagem de amostragem demasiado baixa?*
 

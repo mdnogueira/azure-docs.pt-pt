@@ -1,5 +1,5 @@
 ---
-title: "Shell de nuvem do Azure (pré-visualização) de preços | Microsoft Docs"
+title: "Preços de Shell de nuvem do Azure | Microsoft Docs"
 description: "Descrição geral de preços da Shell de nuvem do Azure"
 services: 
 documentationcenter: 
@@ -14,18 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: juluk
-ms.openlocfilehash: eddbc6e977b52e3a068a1b55792512b966a58c18
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8c418a3681fa9d8ac70974ac2c0bcf1c826209aa
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="pricing"></a>Preços
+Bash na Shell de nuvem e o PowerShell na Shell de nuvem (pré-visualização) são requerente para as informações abaixo.
 
 ## <a name="compute-cost"></a>Custos de computação
 Shell de nuvem do Azure é executado numa máquina gratuitamente fornecida pelo Azure, mas necessita de uma partilha de ficheiros do Azure a utilizar. 
 
 ## <a name="storage-cost"></a>Custo de armazenamento
-Shell de nuvem necessita de uma partilha de ficheiros de Azure nova ou existente seja montado para manter os ficheiros entre sessões. Armazenamento incorreu custos regulares.
+Shell de nuvem necessita de uma partilha de ficheiros do Azure nova ou existente seja montado para manter os ficheiros entre sessões. Armazenamento incorreu custos regulares.
 
 Verifique [aqui para obter detalhes sobre os custos de ficheiros do Azure](https://azure.microsoft.com/pricing/details/storage/files/). 

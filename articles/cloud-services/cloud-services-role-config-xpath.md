@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2017
 ms.author: adegeo
-ms.openlocfilehash: fd6efac829d3fd9e2840362b8d2ff423add566d9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e71adbca34390bda3a7d4067742ffb3a28201449
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Expõe as definições de configuração de função como uma variável de ambiente com XPath
 No ficheiro de definição de serviço de função web ou trabalho do serviço de nuvem, pode expor os valores de configuração de tempo de execução como variáveis de ambiente. Os seguintes valores de XPath são suportados (que correspondem aos valores de API).
@@ -166,5 +166,5 @@ Saiba mais sobre o [serviceconfiguration. Cscfg](cloud-services-model-and-packag
 
 Criar um [ServicePackage.cspkg](cloud-services-model-and-package.md#servicepackagecspkg) pacote.
 
-Ativar [ambiente de trabalho remoto](cloud-services-role-enable-remote-desktop.md) para uma função.
+Ativar [ambiente de trabalho remoto](cloud-services-role-enable-remote-desktop-new-portal.md) para uma função.
 

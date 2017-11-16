@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2017
 ms.author: juliako
-ms.openlocfilehash: 796f3b5a4dd56a0160986600cbbcf38faf8add56
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1622149009a37b864e84caa158da960ccc03ca65
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Como codificar um elemento com o codificador de multimédia Standard
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.lasthandoff: 10/11/2017
 >
 
 ## <a name="overview"></a>Descrição geral
-Para distribuir vídeo digital através da Internet, tem de comprimir o suporte de dados. Ficheiros de vídeo digitais grandes e podem ser demasiado grandes para entregar através da Internet, ou para dispositivos dos seus clientes apresentar corretamente. A codificação é o processo de compressão vídeos e áudio, para que os seus clientes podem visualizar o seu suporte de dados.
+Para distribuir vídeo digital através da Internet, tem de comprimir o suporte de dados. Ficheiros de vídeo digitais grandes e poderão ser demasiado grandes para entregar através da Internet, ou para dispositivos dos seus clientes apresentar corretamente. A codificação é o processo de compressão vídeos e áudio, para que os seus clientes podem visualizar o seu suporte de dados.
 
 As tarefas de codificação são uma das operações de processamento mais comuns nos Media Services do Azure. Estes Serviços permitem-lhe criar tarefas de codificação para converter ficheiros de multimédia de uma codificação para outra. Quando codificar, pode utilizar o codificador incorporado de Media Services (codificador de multimédia Standard). Também pode utilizar um codificador fornecido por um parceiro de Media Services. Codificadores de terceiros estão disponíveis através do Azure Marketplace. Pode especificar os detalhes das tarefas de codificação, utilizando cadeias predefinidas definidas para o codificador ou utilizando os ficheiros de configuração predefinidas. Para ver os tipos de predefinições que estão disponíveis, consulte [predefinições de tarefas para o codificador de multimédia Standard](http://msdn.microsoft.com/library/mt269960).
 
@@ -265,6 +265,12 @@ Se tiver êxito, é devolvida a resposta do seguinte:
     . . .
 
 
+## <a name="advanced-encoding-features-to-explore"></a>Funcionalidades de codificação de mensagens em fila avançadas para explorar
+* [Como gerar miniaturas](media-services-dotnet-generate-thumbnail-with-mes.md)
+* [Gerar miniaturas durante a codificação](media-services-dotnet-generate-thumbnail-with-mes.md#example-of-generating-a-thumbnail-while-encoding)
+* [Vídeos de cortar durante a codificação](media-services-crop-video.md)
+* [Personalizar predefinições de codificação](media-services-custom-mes-presets-with-dotnet.md)
+* [Sobreposição ou um vídeo com uma imagem de marca d'água](media-services-advanced-encoding-with-mes.md#overlay)
 
 ## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]

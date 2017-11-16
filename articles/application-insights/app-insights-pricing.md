@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: mbullwin
-ms.openlocfilehash: f11f7bf6ed94c5d19ad51b1e474ab45d20216351
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.openlocfilehash: ecb6dd0343c36a0f1571b416817aad5e7a52fccb
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="manage-pricing-and-data-volume-in-application-insights"></a>Gerir o volume de preços e os dados no Application Insights
 
@@ -110,7 +110,7 @@ Custos do Application Insights são adicionados à fatura do Azure. Pode ver os 
 Existem três formas em que o volume de enviar dados está limitado:
 
 * **A amostragem:** pode ser utilizado este mecanismo de reduzir a quantidade de telemetria enviada das suas aplicações de servidor e cliente, com distortion mínima de métricas. Esta é a principal ferramenta que terá de ajustar a quantidade de dados. Saiba mais sobre [amostragem funcionalidades](app-insights-sampling.md). 
-* **Cap diária:** quando criar um recurso do Application Insights do portal do Azure está definido como diário 500 GB. A predefinição quando criar um recurso do Application Insights do Visual Studio, é pequeno (apenas 32.3 MB/dia) destina-se apenas a testar faciliate. Neste caso, destina-se que o utilizador irá elevar o limite diário antes de implementar a aplicação em produção. O limite máximo é diário 500 GB, a menos que pediu um máximo superior para uma aplicação de tráfego elevado. Utilizar cuidado ao definir a cap diária, como deve ser a sua intenção **nunca para atingiu o limite diário**, porque, em seguida, irá perder dados para o resto do dia e não conseguir monitorizar a sua aplicação. Para alterá-lo, utilize o painel de extremidade de volume diária, ligações a partir do painel de gestão de volumes de dados (ver abaixo). Tenha em atenção que alguns tipos de subscrição tem crédito que não pode ser utilizado para o Application Insights. Se a subscrição tem um limite de gastos, o painel de extremidade diária tem instruções como removê-lo e ativar a cap diária gerado para além do diário 32.3 MB.  
+* **Cap diária:** quando criar um recurso do Application Insights do portal do Azure está definido para 100 GB diário. A predefinição quando criar um recurso do Application Insights do Visual Studio, é pequeno (apenas 32.3 MB/dia) destina-se apenas a testar faciliate. Neste caso, destina-se que o utilizador irá elevar o limite diário antes de implementar a aplicação em produção. O limite máximo é diário 1000 GB, a menos que pediu um máximo superior para uma aplicação de tráfego elevado. Utilizar cuidado ao definir a cap diária, como deve ser a sua intenção **nunca para atingiu o limite diário**, porque, em seguida, irá perder dados para o resto do dia e não conseguir monitorizar a sua aplicação. Para alterá-lo, utilize o painel de extremidade de volume diária, ligações a partir do painel de gestão de volumes de dados (ver abaixo). Tenha em atenção que alguns tipos de subscrição tem crédito que não pode ser utilizado para o Application Insights. Se a subscrição tem um limite de gastos, o painel de extremidade diária tem instruções como removê-lo e ativar a cap diária gerado para além do diário 32.3 MB.  
 * **Limitação:** Isto limita a taxa de dados para k 32 eventos por segundo, apresentou uma média superior a 1 minuto. 
 
 

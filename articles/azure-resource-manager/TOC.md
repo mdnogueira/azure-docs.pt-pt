@@ -69,10 +69,6 @@
 ### [API de Autenticação para aceder a subscrições](resource-manager-api-authentication.md)
 ### [Bloquear recursos](resource-group-lock-resources.md)
 
-## Definir políticas de recursos
-### [O que são políticas de recursos?](resource-manager-policy.md)
-### [Convenções de nomenclatura](resource-manager-policy-naming-convention.md)
-
 ## Auditoria
 ### [Ver registos de atividades](resource-group-audit.md)
 ### [Ver as operações de implementação](resource-manager-deployment-operations.md)

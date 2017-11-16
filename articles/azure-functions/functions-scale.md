@@ -17,17 +17,18 @@ ms.workload: na
 ms.date: 06/12/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 423eee65040a11695d9f6c18d64948e4c3d3aafe
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: 09bb662e30a97e2741303e2e4630582625954909
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-functions-hosting-plans-comparison"></a>Comparação de planos de alojamento das funções do Azure
 
-## <a name="introduction"></a>Introdução
-
 Pode executar as funções do Azure em dois modos diferentes: plano de consumo e o plano do App Service do Azure. O plano de consumo atribui automaticamente a capacidade de computação quando o código está em execução, aumenta horizontalmente de forma conforme necessário para processar carga e, em seguida, dimensiona quando o código não está em execução. Por isso, não tem de pagar VMs Inativas e não têm capacidade de reserva antecipadamente. Este artigo incida no plano de consumo, um [sem servidor](https://azure.microsoft.com/overview/serverless-computing/) modelo de aplicação. Para obter mais informações sobre como funciona o plano do App Service, consulte o [descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). 
+
+>[!NOTE]  
+> Linux que aloja atualmente só está disponível um plano de serviço de aplicações.
 
 Se não estiver familiarizado com as funções do Azure, consulte o [descrição geral das funções do Azure](functions-overview.md).
 
@@ -55,7 +56,7 @@ O plano de consumo a predefinição é o plano de alojamento e oferece as seguin
 
 ## <a name="app-service-plan"></a>Plano do App Service
 
-O plano de serviço de aplicações, as aplicações de função executam em VMs dedicadas em básicas, Standard, Premium e SKUs isolado, semelhantes às Web Apps, API Apps e aplicações móveis. VMs dedicadas são atribuídas às suas aplicações de serviço de aplicações, o que significa que o anfitrião de funções está sempre em execução.
+O plano de serviço de aplicações, as aplicações de função executam em VMs dedicadas em básicas, Standard, Premium e SKUs isolado, semelhantes às Web Apps, API Apps e aplicações móveis. VMs dedicadas são atribuídas às suas aplicações de serviço de aplicações, o que significa que o anfitrião de funções está sempre em execução. Planos de serviço de aplicações suportam Linux.
 
 Tenha em consideração um plano de serviço de aplicações nos seguintes casos:
 - Tem as VMs existentes, subutilizadas que já estejam a executar outras instâncias de serviço de aplicações.
@@ -63,6 +64,7 @@ Tenha em consideração um plano de serviço de aplicações nos seguintes casos
 - Precisa de mais opções de CPU ou memória ao que é fornecido no plano de consumo.
 - Tem de executar mais do que o tempo de execução máximo permitido no plano de consumo (de 10 minutos).
 - Precisa de funcionalidades que só estão disponíveis num plano de serviço de aplicações, como o suporte para o ambiente de serviço de aplicações, conectividade VNET/VPN e tamanhos de VM maiores. 
+- Pretende executar a aplicação de função no Linux ou pretender fornecer uma imagem personalizada para executar as suas funções.
 
 Uma VM desassocia custo de número de execuções, tempo de execução e memória utilizada. Como resultado, não será paga mais do que o custo da instância de VM que alocar. Para obter mais informações sobre como funciona o plano do App Service, consulte o [descrição geral dos planos do App Service do Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). 
 

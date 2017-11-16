@@ -13,21 +13,21 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 11/08/2017
 ms.author: nitinme
-ms.openlocfilehash: 8fe91bed69a1c06367346041d8caba4aaee4c82a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e4ee80826a710bde9483d130a4d1c986a72645ca
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="query-azure-log-analytics-to-monitor-hdinsight-clusters-preview"></a>Análise de registos do Azure de consulta para monitorizar clusters do HDInsight (pré-visualização)
+# <a name="query-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Análise de registos do Azure de consulta para monitorizar clusters do HDInsight
 
-Neste artigo, observe o alguns cenários sobre como utilizar Log Analytics do Azure com clusters do HDInsight do Azure. Três cenários mais comuns são:
+Aprender alguns cenários básicos sobre como utilizar Log Analytics do Azure para monitorizar clusters do HDInsight do Azure:
 
-* Analisar as métricas de cluster do HDInsight no OMS
-* Procure mensagens de registo específicas para clusters do HDInsight
-* Criar alertas com base em eventos que ocorrem os clusters
+* [Analisar as métricas de cluster do HDInsight](#analyze-hdinsight-cluster-metrics)
+* [Procure mensagens de registo específico](#search-for-specific-log-messages)
+* [Criar alertas de eventos](#create-alerts-for-tracking-events)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -35,53 +35,54 @@ Neste artigo, observe o alguns cenários sobre como utilizar Log Analytics do Az
 
 * Tem de ter adicionado as soluções de gestão de específicas do cluster do HDInsight para a área de trabalho do OMS conforme descrito em [soluções de gestão de cluster do HDInsight adicionar ao Log Analytics](hdinsight-hadoop-oms-log-analytics-management-solutions.md).
 
-## <a name="analyze-hdinsight-cluster-metrics-in-oms"></a>Analisar as métricas de cluster do HDInsight no OMS
+## <a name="analyze-hdinsight-cluster-metrics"></a>Analisar as métricas de cluster do HDInsight
 
-Nesta secção, vamos percorrer os passos para procurar as métricas específicas para o seu cluster HDInsight.
+Saiba como procurar métricas específicas para o seu cluster HDInsight.
 
-1. Abra o dashboard do OMS. No portal do Azure, abra o painel de cluster do HDInsight que que tenha associado às Log Analytics do Azure, clique no separador monitorização e clique em **abrir o Dashboard do OMS**.
+1. Abra um cluster do HDInsight que tiver associado Log Analytics do Azure no portal do Azure.
+2. Clique em **monitorização**e, em seguida, clique em **abra OMS Dashboard**.
 
     ![Dashboard OMS abra](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "dashboard abrir OMS")
 
-2. No dashboard do OMS, a partir do ecrã principal, clique em **pesquisa registo**.
+2. Clique em **pesquisa registo** no menu da esquerda.
 
     ![Abra pesquisa de registo](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "abra pesquisa de registo")
 
-3. Na janela pesquisa de registo, no **Begin pesquisa aqui** caixa de texto, escreva `*` para procurar em todas as métricas para todas as métricas disponíveis para todos os clusters do HDInsight configurados para utilizar a análise de registos do Azure. Prima ENTER.
+3. Escreva a consulta seguinte na caixa de procura para procurar em todas as métricas para todas as métricas disponíveis para todos os clusters do HDInsight configurados para utilizar a análise de registos do Azure e, em seguida, prima **ENTER**.
+
+        `search *` 
 
     ![Procurar em todas as métricas](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png "todas as métricas de pesquisa")
 
-4. Deverá ver um resultado como o seguinte.
+    O resultado deverá ter o seguinte aspeto:
 
     ![Procurar em todas as saídas de métricas](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics-output.png "procurar todas as saídas de métricas")
 
-5. No painel esquerdo, em **tipo** categoria, a pesquisa a métrica que pretende aprofundar aprofundadamente. Para este tutorial, vamos escolher `metrics_resourcemanager_queue_root_default_CL`. Selecione a caixa de verificação correspondente para a métrica e, em seguida, clique em **aplicar**.
+5. No painel esquerdo, em **tipo**, selecione uma métrica que pretende aprofundar aprofundadamente e, em seguida, clique em **aplicar**. A seguinte captura de ecrã mostra o `metrics_resourcemanager_queue_root_default_CL` é selecionado o tipo. 
 
     > [!NOTE]
-    > Poderá ter de clicar o **[+] mais** botão para localizar a métrica que procura. Além disso, o **aplicar** botão está na parte inferior da lista de, pelo que tem desloque para baixo para vê-lo.
+    > Poderá ter de clicar no **[+] mais** botão para localizar a métrica que procura. Além disso, o **aplicar** botão está na parte inferior da lista de, pelo que tem desloque para baixo para vê-lo.
     > 
     >    
-    Repare que a consulta na caixa de texto agora alterações mostrado na caixa de realçado na captura de ecrã seguinte:
+
+    Repare que a consulta na caixa de texto é alterado para mostrado na caixa de realçado na captura de ecrã seguinte:
 
     ![Pesquisa de métricas específicas](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png "procure métricas específicas")
 
-6. -Pode agora aprofundar esta métrica específica. Por exemplo, agora pode refinar a saída existente com base em média dos recursos utilizados num intervalo de 10 minutos, categorizado pelo nome do cluster. Escreva a consulta seguinte na caixa de texto de consulta.
+6. Para aprofundar esta métrica específica. Por exemplo, pode refinar a saída existente com base em média dos recursos utilizados num intervalo de 10 minutos, categorizado pelo nome do cluster utilizando a seguinte consulta:
 
-        * (Type=metrics_resourcemanager_queue_root_default_CL) | measure avg(UsedAMResourceMB_d) by ClusterName_s interval 10minute
+        search in (metrics_resourcemanager_queue_root_default_CL) * | summarize AggregatedValue = avg(UsedAMResourceMB_d) by ClusterName_s, bin(TimeGenerated, 10m)
 
-    ![Pesquisa de métricas específicas](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-more-specific-metrics.png "procure métricas específicas")
+7. Em vez de limitar com base em média dos recursos utilizados, pode utilizar a seguinte consulta para refinar os resultados com base na quando os recursos máximos foram utilizados (bem como percentil 90th e 95th) numa janela de 10 minutos:
 
-7. Em vez de limitar com base em média dos recursos utilizados, pode utilizar a seguinte consulta para refinar os resultados com base na quando os recursos máximos foram utilizados (bem como percentil 90th e 95th) numa janela de 10 minutos.
+        search in (metrics_resourcemanager_queue_root_default_CL) * | summarize ["max(UsedAMResourceMB_d)"] = max(UsedAMResourceMB_d), ["pct95(UsedAMResourceMB_d)"] = percentile(UsedAMResourceMB_d, 95), ["pct90(UsedAMResourceMB_d)"] = percentile(UsedAMResourceMB_d, 90) by ClusterName_s, bin(TimeGenerated, 10m)
 
-        * (Type=metrics_resourcemanager_queue_root_default_CL) | measure max(UsedAMResourceMB_d) , pct95(UsedAMResourceMB_d), pct90(UsedAMResourceMB_d)  by ClusterName_s interval 10minute
+## <a name="search-for-specific-log-messages"></a>Procure mensagens de registo específico
 
-    ![Pesquisa de métricas específicas](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-more-specific-metrics-1.png "procure métricas específicas")
+Saiba como consultar mensagens de erro durante uma janela de tempo específico. Os passos aqui descritos são apenas um exemplo de como pode chegar à mensagem de erro estão interessadas nas. Pode utilizar qualquer propriedade que está disponível para procurar erros que está a tentar encontrar.
 
-## <a name="search-for-specific-log-messages-in-hdinsight-clusters"></a>Procure mensagens de registo específico nos clusters do HDInsight
-
-Nesta secção, vamos percorrer os passos para ver mensagens de erro durante uma janela de tempo específico. Os passos aqui descritos são apenas um exemplo de como pode chegar à mensagem de erro estão interessadas nas. Pode utilizar qualquer propriedade que está disponível para procurar erros que está a tentar encontrar.
-
-1. Abra o dashboard do OMS. No portal do Azure, abra o painel de cluster do HDInsight que que tenha associado às Log Analytics do Azure, clique no separador monitorização e clique em **abrir o Dashboard do OMS**.
+1. Abra um cluster do HDInsight que tiver associado Log Analytics do Azure no portal do Azure.
+2. Clique em **monitorização**e clique em **abra OMS Dashboard**.
 
     ![Dashboard OMS abra](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "dashboard abrir OMS")
 
@@ -89,44 +90,39 @@ Nesta secção, vamos percorrer os passos para ver mensagens de erro durante uma
 
     ![Abra pesquisa de registo](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "abra pesquisa de registo")
 
-3. Na janela pesquisa de registo, no **Begin pesquisa aqui** caixa de texto, escreva `"Error"` (com as aspas) para procurar em todas as mensagens de erro para todos os clusters do HDInsight configurados para utilizar a análise de registos do Azure. Prima ENTER.
+3. Tipo a seguinte consulta para procurar em todas as mensagens de erro para todos os clusters do HDInsight configurados para utilizar a análise de registos do Azure e, em seguida, prima **ENTER**. 
 
-    ![Todos os erros de pesquisa](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors.png "todos os erros de pesquisa")
+         search "Error"
 
-4. Deverá ver um resultado como o seguinte.
+    Deverá ver um resultado como o seguinte resultado:
 
     ![Procurar em todas as saídas de erros](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors-output.png "procurar todas as saídas de erros")
 
-5. No painel esquerdo, em **tipo** categoria, procure um tipo de erro que pretende aprofundar aprofundadamente. Para este tutorial, vamos escolher `log_sparkappsexecutors_CL`. Selecione a caixa de verificação correspondente para a métrica e, em seguida, clique em **aplicar**.
+5. No painel esquerdo, em **tipo** categoria, selecione um tipo de erro que pretende aprofundar aprofundadamente e, em seguida, clique em **aplicar**.  Tenha em atenção de que os resultados são foi refinados para mostrar apenas o erro do tipo selecionado.
+7. -Pode aprofundar esta lista de erro específico utilizando as opções disponíveis no painel esquerdo. Por exemplo, 
 
-    ![Procure erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error.png "procure o erro específico")
+    - Para ver mensagens de erro a partir de um nó de trabalho específico:
 
-        
-6. Tenha em atenção que a consulta na caixa de texto agora alterações mostrado na caixa de realçado abaixo e os resultados são avançadas para mostrar apenas o erro do tipo selecionado.
+        ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "pesquisa para o resultado de erros específicos")
 
-    ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-output.png "pesquisa para o resultado de erros específicos")
+    - Para ver que ocorreu um erro num determinado momento:
 
-7. -Pode agora aprofundar esta lista de erro específico utilizando as opções disponíveis no painel esquerdo. Por exemplo, pode refinar a consulta para ver apenas as mensagens de erro de um nó de trabalho específico.
+        ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "pesquisa para o resultado de erros específicos")
 
-    ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "pesquisa para o resultado de erros específicos")
-
-8. Pode ainda mais zona na hora que pensa que o erro ocorreu ao selecionar o valor de tempo relevantes no painel esquerdo.
-
-    ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "pesquisa para o resultado de erros específicos")
-
-9. Estão agora para baixo até o erro específico que está a procurar. Pode clicar em **[+] Mostrar mais** para ver a mensagem de erro real.
+9. Para ver o erro específico. Pode clicar em **[+] Mostrar mais** para ver a mensagem de erro real.
 
     ![Pesquisa para o resultado de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "pesquisa para o resultado de erros específicos")
 
-## <a name="create-alerts-to-track-events"></a>Criar alertas para controlar eventos
+## <a name="create-alerts-for-tracking-events"></a>Criar alertas para o registo de eventos
 
 O primeiro passo para criar um alerta é chegam a uma consulta com base na qual o alerta é acionado. Simplicidade, vamos utilizar a seguinte consulta, que fornece a lista de aplicações com falhas em execução nos clusters do HDInsight.
 
-    * (Tipo = metrics_resourcemanager_queue_root_default_CL) AppsFailed_d > 0 
+    metrics_resourcemanager_queue_root_default_CL | where AppsFailed_d > 0
 
 Pode utilizar qualquer consulta que pretende criar um alerta.
 
-1. Abra o dashboard do OMS. No portal do Azure, abra o painel de cluster do HDInsight que que tenha associado às Log Analytics do Azure, clique no separador monitorização e clique em **abrir o Dashboard do OMS**.
+1. Abra um cluster do HDInsight que tiver associado Log Analytics do Azure no portal do Azure.
+2. Clique em **monitorização**e, em seguida, clique em **abra OMS Dashboard**.
 
     ![Dashboard OMS abra](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "dashboard abrir OMS")
 
@@ -134,7 +130,11 @@ Pode utilizar qualquer consulta que pretende criar um alerta.
 
     ![Abra pesquisa de registo](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "abra pesquisa de registo")
 
-3. Na janela pesquisa de registo, no **Begin pesquisa aqui** texto caixa, cole a consulta no qual pretende criar um alerta, prima ENTER e, em seguida, clique o **alerta** botão.
+3. Execute a seguinte consulta no qual pretende criar um alerta e, em seguida, prima **ENTER**.
+
+        metrics_resourcemanager_queue_root-default-CL | where AppsFailed_d > 0
+
+4. Clique em **alerta** no topo da página.
 
     ![Consulta de ENTER para criar um alerta](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Enter consulta para criar um alerta")
 
@@ -142,7 +142,7 @@ Pode utilizar qualquer consulta que pretende criar um alerta.
 
     ![Consulta de ENTER para criar um alerta](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Enter consulta para criar um alerta")
 
-    Nesta captura de ecrã, apenas Enviámos uma notificação de correio eletrónico se a consulta de alerta obtém um resultado.
+    A captura de ecrã mostra a configuração para enviar uma notificação por e-mail quando a consulta de alerta devolve um resultado.
 
 5. Também pode editar ou eliminar um alerta existente. Para tal, a partir de qualquer página no portal do OMS, clique em de **definições** ícone.
 

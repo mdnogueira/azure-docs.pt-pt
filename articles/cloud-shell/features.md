@@ -1,5 +1,5 @@
 ---
-title: "Bash em funcionalidades de Shell de nuvem do Azure (pré-visualização) | Microsoft Docs"
+title: Bash em funcionalidades de Shell de nuvem do Azure | Microsoft Docs
 description: "Descrição geral das funcionalidades de Bash na Shell de nuvem do Azure"
 services: Azure
 documentationcenter: 
@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2017
+ms.date: 11/15/2017
 ms.author: juluk
-ms.openlocfilehash: 23faadc38fde75d4c83361465fdacc76d42d7523
-ms.sourcegitcommit: b723436807176e17e54f226fe00e7e977aba36d5
+ms.openlocfilehash: 79c3f376c2800e2ce9123c31af6e1aa2aacfcf00
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="features--tools-for-bash-in-azure-cloud-shell"></a>Funcionalidades e ferramentas para Bash na Shell de nuvem do Azure
 
@@ -53,13 +53,13 @@ Ficheiros fora do `$Home` e o estado da máquina não são mantidas entre sessõ
 |Categoria   |Nome   |
 |---|---|
 |Ferramentas do Linux            |Bash<br> partilhar<br> tmux<br> aprofundar<br>               |
-|Ferramentas do Azure            |[CLI do Azure 2.0](https://github.com/Azure/azure-cli) e [1.0](https://github.com/Azure/azure-xplat-cli)<br> [AZCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard) <br> [CLI do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli) <br>    |
+|Ferramentas do Azure            |[CLI do Azure 2.0](https://github.com/Azure/azure-cli) e [1.0](https://github.com/Azure/azure-xplat-cli)<br> [AZCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard) <br> [CLI do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli) <br> [blobxfer](https://github.com/Azure/blobxfer#blobxfer) |
 |Editores de texto           |VIM<br> Nano<br> emacs       |
 |Controlo de código fonte         |Git                    |
 |Ferramentas de compilação            |Certifique-<br> maven<br> npm<br> PIP         |
 |Contentores             |[CLI do docker](https://github.com/docker/cli)/[Docker máquina](https://github.com/docker/machine)<br> [Kubectl](https://kubernetes.io/docs/user-guide/kubectl-overview/)<br> [Helm](https://github.com/kubernetes/helm)<br> [CLI DE DC/SO](https://github.com/dcos/dcos-cli)         |
 |Bases de Dados              |Cliente de MySQL<br> Cliente PostgreSql<br> [SQLCMD utilitário](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [MSSQL scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Outros                  |iPython cliente<br> [Nuvem Foundry CLI](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> |
+|Outros                  |iPython cliente<br> [Nuvem Foundry CLI](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)|
 
 ## <a name="language-support"></a>Suporte de idiomas
 

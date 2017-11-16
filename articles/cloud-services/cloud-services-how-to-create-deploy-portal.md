@@ -14,19 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: adegeo
-ms.openlocfilehash: e5ce666f1d826c7901c9fd5e7fafe6171139c3ad
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 020e2996f40ed4a48affd3776e44e382c40cb3c0
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="how-to-create-and-deploy-a-cloud-service"></a>Como criar e implementar um serviço em nuvem
-> [!div class="op_single_selector"]
-> * [Portal do Azure](cloud-services-how-to-create-deploy-portal.md)
-> * [Portal Clássico do Azure](cloud-services-how-to-create-deploy.md)
->
->
-
 O portal do Azure fornece duas formas para criar e implementar um serviço em nuvem: *criação rápida* e *criação personalizada*.
 
 Este artigo explica como utilizar o método de criação rápida para criar um novo serviço de nuvem e, em seguida, utilizar **carregar** para carregar e implementar um pacote de serviço em nuvem no Azure. Quando utilizar este método, o portal do Azure torna disponíveis ligações convenientes para concluir todos os requisitos à medida que avança. Se estiver pronto para implementar o seu serviço em nuvem quando a criar, pode efetuar ambas ao mesmo tempo utilizando criação personalizada.

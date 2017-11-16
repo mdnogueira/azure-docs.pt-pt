@@ -24,9 +24,6 @@
   items:
     - name: Gerir clusters
       href: apache-domain-joined-manage.md
-    - name: Gerir permissões de utilizador
-      href: ../hdinsight-add-acls-at-file-folder-levels.md
-      maintainContext: true
 - name: Referência
   items:
     - name: Exemplos de código

@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 07/14/2017
+ms.date: 11/15/2017
 ms.author: mimig
 ms.custom: mvc
-ms.openlocfilehash: 804b20111ea99892201079657d6d3602ececdd28
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: f34790ad670b488159e945be9bf4ba378cc5e94a
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Bem-vindo ao Azure Cosmos DB
 
@@ -44,6 +44,7 @@ Como um serviço de base de dados de distribuição global, o Azure Cosmos DB pr
         * [API de MongoDB](mongodb-introduction.md): serviço de base de dados de A MongoDB desenvolvida com base de dados do Cosmos. É compatível com existente MongoDB bibliotecas, controladores, ferramentas e aplicações.
         * [API de tabela](table-introduction.md): um serviço de base de dados de chave-valor criado para fornecer capacidades de premium para aplicações de armazenamento de tabelas do Azure.
         * [Graph API (Gremlin)](graph-introduction.md): um seguinte de serviço criado de base de dados de gráfico a [especificação do Apache TinkerPop](http://tinkerpop.apache.org/).
+        * [API de Cassandra](cassandra-introduction.md): um arquivo de chave/valor incorporado no [Apache Cassandra](https://cassandra.apache.org/) implementação. 
         * Modelos de dados adicionais disponíveis em breve!
 
 * **Dimensionar de forma elástica o débito e o armazenamento a pedido, em todo o mundo**
@@ -55,7 +56,7 @@ Como um serviço de base de dados de distribuição global, o Azure Cosmos DB pr
     * Para um item de 1 KB típico, o Cosmos DB garante a latência ponto a ponto das leituras abaixo dos 10 ms e das escritas indexadas abaixo dos 15 ms no percentil 99, dentro da mesma região do Azure. As latências medianas são significativamente inferiores (abaixo dos 5 ms).
 
 * **Garantia de disponibilidade “always on”**
-    * 99,99% de disponibilidade numa única região.
+    * SLA de 99,99% disponibilidade para todas as contas de única região e todas as contas de multirregião com consistência simples e 99.999% de disponibilidade em todas as contas de base de dados de multirregião leitura.
     * Para maior disponibilidade, implemente em qualquer número de [regiões do Azure](https://azure.microsoft.com/regions).
     * [Simule uma falha](regional-failover.md) de uma ou mais regiões com garantia de zero perda de dados. 
 

@@ -13,13 +13,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 09/18/2017
+ms.date: 11/15/2017
 ms.author: raprasa
-ms.openlocfilehash: 84b26c9ff354adef3f1bc1e61f235c520b63df13
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3b421ca0d4ec612c5b0da25bcff712eb7ff9df85
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="automatic-online-backup-and-restore-with-azure-cosmos-db"></a>Cópia de segurança online automática e de restauro com base de dados do Azure Cosmos
 BD do Azure do Cosmos demora automaticamente cópias de segurança de todos os seus dados em intervalos regulares. As cópias de segurança automáticas são executadas sem afetar o desempenho ou a disponibilidade das suas operações de base de dados. Todas as suas cópias de segurança são armazenadas em separado no outro serviço de armazenamento e as cópias de segurança global são replicadas para resiliência contra desastres inesperados regionais. As cópias de segurança automáticas destinam-se para cenários quando elimina acidentalmente o contentor de BD do Cosmos e mais tarde necessitam de recuperação de dados ou uma solução de recuperação após desastre.  
@@ -27,7 +27,7 @@ BD do Azure do Cosmos demora automaticamente cópias de segurança de todos os s
 Este artigo começa com um resumo rápido de redundância de dados e disponibilidade na base de dados do Cosmos e, em seguida, descreve as cópias de segurança. 
 
 ## <a name="high-availability-with-cosmos-db---a-recap"></a>Elevada disponibilidade com base de dados do Cosmos - um resumo
-BD do cosmos foi concebido para ser [globalmente distribuída](distribute-data-globally.md) – permite-lhe dimensionar débito em várias regiões do Azure, juntamente com a política suscitada pelo departamento de ativação pós-falha e APIs multi homing transparentes. Como uma oferta de sistema da base de dados [99,99% de disponibilidade SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db), todas as escritas na base de dados do Cosmos são forma durável consolidadas para discos locais por um quórum de réplicas dentro do Centro de dados local antes de confirmar para o cliente. Tenha em atenção que a elevada disponibilidade do Cosmos DB baseia-se no armazenamento local e não depender de quaisquer tecnologias de armazenamento externo. Além disso, se a sua conta de base de dados está associada a mais do que uma região do Azure, as escritas são replicadas em outras regiões, bem como. Dimensionar os débito e acesso de dados, baixas latências, pode ter como muitas ler regiões associadas à conta da base de dados como pretender. Em cada região de leitura, os dados (replicados) de forma durável é persistente através de um conjunto de réplicas.  
+BD do cosmos foi concebido para ser [globalmente distribuída](distribute-data-globally.md) – permite-lhe dimensionar débito em várias regiões do Azure, juntamente com a política suscitada pelo departamento de ativação pós-falha e APIs multi homing transparentes. BD do Cosmos Auzre oferece [99,99% de disponibilidade SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db) para todas as contas de única região e todas as contas de multirregião com consistência de flexíveis e 99.999% de disponibilidade em todas as contas de multirregião base de dados de leitura. Todas as escritas na base de dados do Azure Cosmos são forma durável consolidadas para discos locais por um quórum de réplicas dentro do Centro de dados local antes de confirmar para o cliente. Tenha em atenção que a elevada disponibilidade do Cosmos DB baseia-se no armazenamento local e não depender de quaisquer tecnologias de armazenamento externo. Além disso, se a sua conta de base de dados está associada a mais do que uma região do Azure, as escritas são replicadas em outras regiões, bem como. Dimensionar os débito e acesso de dados, baixas latências, pode ter como muitas ler regiões associadas à conta da base de dados como pretender. Em cada região de leitura, os dados (replicados) de forma durável é persistente através de um conjunto de réplicas.  
 
 Conforme ilustrado no diagrama seguinte, um único contentor de BD do Cosmos é [horizontalmente particionada](partition-data.md). "Partição" está em falta que por um círculo no diagrama seguinte, e cada partição é disponibilizada elevada disponibilidade através de um conjunto de réplicas. Esta é a distribuição local numa única região do Azure (em falta por que o eixo X). Além disso, cada partição (com o respetivo conjunto de réplica correspondente) é, então, distribuída global em várias regiões associadas à sua conta de base de dados (por exemplo, nas regiões ilustração três – EUA leste, EUA oeste e Índia Central). O "conjunto de partição" é uma globalmente distribuída que inclui entidades de várias cópias dos seus dados em cada região (em falta por que o eixo Y). Pode atribuir prioridade a regiões associadas à sua conta de base de dados e base de dados do Cosmos transparente efetuará a ativação pós-falha para a região seguinte em caso de desastre. Pode também manualmente simulam a ativação pós-falha para testar a disponibilidade de ponto a ponto da sua aplicação.  
 

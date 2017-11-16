@@ -12,26 +12,17 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/19/2016
+ms.date: 11/15/2016
 ms.author: tomfitz
-ms.openlocfilehash: 7a94fd5065de93384460e851627a9813d439956b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 27213482c3ef6b35e1e3f887c9a336b946850802
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="manage-azure-resources-through-portal"></a>Gerir recursos do Azure através do portal
-> [!div class="op_single_selector"]
-> * [Azure PowerShell](powershell-azure-resource-manager.md)
-> * [CLI do Azure](xplat-cli-azure-resource-manager.md)
-> * [Portal](resource-group-portal.md) 
-> * [API REST](resource-manager-rest-api.md)
-> 
-> 
 
-Este tópico mostra como utilizar o [portal do Azure](https://portal.azure.com) com [do Azure Resource Manager](resource-group-overview.md) para gerir os recursos do Azure. Para saber mais sobre a implementação de recursos através do portal, consulte [implementar recursos com modelos do Resource Manager e o portal do Azure](resource-group-template-deploy-portal.md).
-
-Atualmente, nem todos os serviço suporta o portal ou o Gestor de recursos. Para esses serviços, tem de utilizar o [portal clássico](https://manage.windowsazure.com). O estado de cada serviço, consulte [gráfico de disponibilidade de portal do Azure](https://azure.microsoft.com/features/azure-portal/availability/).
+Este artigo mostra como utilizar o [portal do Azure](https://portal.azure.com) com [do Azure Resource Manager](resource-group-overview.md) para gerir os recursos do Azure. Para saber mais sobre a implementação de recursos através do portal, consulte [implementar recursos com modelos do Resource Manager e o portal do Azure](resource-group-template-deploy-portal.md).
 
 ## <a name="manage-resource-groups"></a>Gerir grupos de recursos
 
@@ -58,7 +49,7 @@ O grupo de recursos armazena metadados sobre os recursos. Por conseguinte, quand
    
     ![Adicionar colunas](./media/resource-group-portal/add-columns.png)
 7. Para saber mais sobre a implementação de recursos para o novo grupo de recursos, consulte [implementar recursos com modelos do Resource Manager e o portal do Azure](resource-group-template-deploy-portal.md).
-8. Para obter acesso rápido a um grupo de recursos, pode afixar painel ao dashboard.
+8. Para obter acesso rápido a um grupo de recursos, pode afixar o grupo de recursos ao seu dashboard.
    
     ![grupo de recursos de PIN](./media/resource-group-portal/pin-group.png)
 9. O dashboard apresenta o grupo de recursos e os respetivos recursos. Pode selecionar os grupos de recursos ou qualquer um dos respetivos recursos para navegar para o item.
@@ -71,12 +62,12 @@ Pode aplicar etiquetas a grupos de recursos e recursos para organizar logicament
 [!INCLUDE [resource-manager-tag-resource](../../includes/resource-manager-tag-resources.md)]
 
 ## <a name="monitor-resources"></a>Monitorizar recursos
-Quando seleciona um recurso, o painel de recursos apresenta gráficos predefinida e tabelas para a monitorização esse tipo de recurso.
+Quando seleciona um recurso, o portal apresenta gráficos predefinida e tabelas para a monitorização esse tipo de recurso.
 
 1. Selecione um recurso e repare o **monitorização** secção. Inclui gráficos que são relevantes para o tipo de recurso. A imagem seguinte mostra as predefinições de monitorização de dados para uma conta de armazenamento.
    
     ![Mostrar a monitorização](./media/resource-group-portal/show-monitoring.png)
-2. Pode afixar uma secção do painel ao dashboard, selecionando o botão de reticências (…) acima da secção. Também pode personalizar o tamanho da secção no painel ou remova-a completamente. A imagem seguinte mostra como afixar, personalizar ou remover a secção de CPU e memória.
+2. Pode afixar uma secção ao seu dashboard, selecionando o botão de reticências (…) acima da secção. Também pode personalizar o tamanho de secção ou remova-a completamente. A imagem seguinte mostra como afixar, personalizar ou remover a secção de CPU e memória.
    
     ![secção de PIN](./media/resource-group-portal/pin-cpu-section.png)
 3. Após da afixação a secção para o dashboard, irá ver o resumo no dashboard. Além disso, selecionando-o imediatamente leva-o para obter mais detalhes sobre os dados.
@@ -92,7 +83,7 @@ Quando seleciona um recurso, o painel de recursos apresenta gráficos predefinid
      Para saber mais sobre como trabalhar com dashboards, consulte [criar e partilhar dashboards no portal do Azure](../azure-portal/azure-portal-dashboards.md).
 
 ## <a name="manage-resources"></a>Gerir recursos
-No painel de para um recurso, consulte as opções para gerir o recurso. O portal apresenta as opções de gestão para esse tipo de recurso específico. Consulte os comandos de gestão na parte superior do painel de recursos e no lado esquerdo.
+Ao visualizar um recurso no portal, consulte as opções para gerir esse recurso específico.
 
 ![gerir recursos](./media/resource-group-portal/manage-resources.png)
 
@@ -111,7 +102,7 @@ Pode ver informações sobre a sua subscrição e os custos agregados para todos
 
 ![subscrição](./media/resource-group-portal/select-subscription.png)
 
-No painel de subscrição, verá uma taxa gravado.
+Consulte a taxa de gravado.
 
 ![taxa de gravado](./media/resource-group-portal/burn-rate.png)
 
@@ -128,7 +119,7 @@ Depois de configurar o grupo de recursos, poderá ver o modelo do Resource Manag
 Para obter orientações passo a passo, consulte [modelo de exportar o Azure Resource Manager a partir dos recursos existentes](resource-manager-export-template.md).
 
 ## <a name="delete-resource-group-or-resources"></a>Eliminar grupo de recursos ou recursos
-Eliminar um grupo de recursos elimina todos os recursos contidos. Também pode eliminar recursos individuais dentro de um grupo de recursos. Quer tenha cuidado quando elimina um grupo de recursos porque pode ter recursos de outros grupos de recursos que estão ligados ao mesmo. Gestor de recursos não elimina recursos ligados, mas não podem funcionar corretamente sem recursos esperados.
+Eliminar um grupo de recursos elimina todos os recursos contidos. Também pode eliminar recursos individuais dentro de um grupo de recursos. Tenha cuidado quando eliminar um grupo de recursos. Nesse grupo de recursos pode conter recursos que dependam de recursos de outros grupos de recursos.
 
 ![Eliminar grupo](./media/resource-group-portal/delete-group.png)
 

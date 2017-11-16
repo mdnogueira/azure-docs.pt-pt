@@ -13,13 +13,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/14/2017
+ms.date: 11/15/2017
 ms.author: anhoh
-ms.openlocfilehash: 4dbf91a3c1d6a287d7337647f9e059566c7ddbe5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: eca720f365a00070afd2a657829f5b108ab91fb9
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="introduction-to-azure-cosmos-db-api-for-mongodb"></a>Introdução ao Azure Cosmos DB: API para MongoDB
 
@@ -27,24 +27,23 @@ O [Azure Cosmos DB](../cosmos-db/introduction.md) é um serviço de bases de dad
 
 ![Azure Cosmos DB: MongoDB API](./media/mongodb-introduction/cosmosdb-mongodb.png) 
 
-Bases de dados do cosmos DB podem ser utilizados como o arquivo de dados para aplicações escritas para [MongoDB](https://docs.mongodb.com/manual/introduction/). Isto significa que, ao utilizar existente [controladores](https://docs.mongodb.org/ecosystem/drivers/), a aplicação escritos para o MongoDB pode comunicar com a base de dados do Cosmos e utilizar bases de dados do Cosmos DB em vez de bases de dados de MongoDB. Em muitos casos, pode mudar do MongoDB à base de dados do Cosmos alterando simplesmente uma cadeia de ligação. Utilizar esta funcionalidade, pode facilmente criar e executar aplicações de base de dados de MongoDB do Azure na nuvem com distribuição global da BD do Azure Cosmos e [indústria abrangente esquerda SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db), ao continuar a utilizar as competências familiares e ferramentas para MongoDB.
+Bases de dados de base de dados do Cosmos do Azure podem ser utilizados como o arquivo de dados para aplicações escritas para [MongoDB](https://docs.mongodb.com/manual/introduction/). Esta funcionalidade significa que, ao utilizar existente [controladores](https://docs.mongodb.org/ecosystem/drivers/), a aplicação escritos para o MongoDB pode comunicar com a base de dados do Azure Cosmos e utilizar bases de dados de base de dados do Azure Cosmos em vez de bases de dados de MongoDB. Em muitos casos, pode mudar do MongoDB à base de dados do Azure Cosmos alterando simplesmente uma cadeia de ligação. Utilizar esta funcionalidade, pode facilmente criar e executar aplicações de base de dados de MongoDB do Azure na nuvem com distribuição global da BD do Azure Cosmos e [abrangentes líder da indústria SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db), enquanto continua a utilizar as competências familiares e as ferramentas para MongoDB.
 
+**Compatibilidade do MongoDB**: pode utilizar o existente MongoDB conhecimentos, código de aplicação e ferramentas como base de dados do Azure Cosmos implementa o protocolo de transmissão do MongoDB 3.4 (versão 5) e suporta o [pipeline de agregação do MongoDB](mongodb-feature-support.md#aggregation-pipeline). Pode desenvolver aplicações com o MongoDB e implementá-las em produção completamente gerido a utilizar e o serviço de base de dados do Azure Cosmos globalmente distribuído.
 
 ## <a name="what-is-the-benefit-of-using-azure-cosmos-db-for-mongodb-applications"></a>O que é a vantagem de utilizar a base de dados do Azure Cosmos para MongoDB aplicações?
 
-**Débito e armazenamento dimensionável aprovisionadas:** Dimensionar facilmente ou reduzir verticalmente a sua base de dados de MongoDB para satisfazer as necessidades da sua aplicação. Os seus dados são armazenados em unidades de estado sólido (SSD) para baixas latências previsíveis. BD do cosmos suporta MongoDB coleções que podem ser dimensionados para tamanhos de armazenamento virtualmente ilimitados e débito aprovisionado. Pode dimensionar Cosmos DB com um desempenho previsível integrado à medida que aumenta a sua aplicação. 
+**Débito e armazenamento dimensionável aprovisionadas:** cumprem as suas aplicações necessitam ao facilmente aumentar ou reduzir vertical a base de dados de MongoDB. Os dados são armazenados em discos de estado sólidos (SSD) para baixas latências previsíveis. BD do Azure do Cosmos suporta MongoDB coleções que podem ser dimensionados para tamanhos de armazenamento virtualmente ilimitados e débito aprovisionado. Pode dimensionar de forma totalmente integrada o Azure Cosmos DB, com um desempenho previsível, à medida que a sua aplicação aumenta. 
 
-**Replicação de multirregião:** Cosmos DB replica de forma transparente os dados para todas as regiões que associou à sua conta do MongoDB, permitindo-lhe desenvolver aplicações que necessitam acesso global aos dados ao fornecer as responsabilidades entre consistência, disponibilidade e desempenho, tudo com garantias correspondentes. BD do cosmos fornece ativação pós-falha regional transparente com APIs multi homing e a capacidade e dimensionar débito e armazenamento no globo. Saiba mais em [distribuir dados globalmente](distribute-data-globally.md).
+**Replicação de multirregião:** Azure Cosmos DB replica de forma transparente os dados para todas as regiões que associou à sua conta do MongoDB, permitindo-lhe desenvolver aplicações que necessitam acesso global aos dados ao fornecer as responsabilidades entre consistência, disponibilidade e desempenho, tudo com garantias correspondentes. O Azure Cosmos DB oferece ativação pós-falha regional transparente com APIs multi-homing e a capacidade e dimensionar de forma elástica o débito e o armazenamento a nível global. Saiba mais em [distribuir dados globalmente](distribute-data-globally.md).
 
-**Compatibilidade do MongoDB**: pode utilizar o existente MongoDB conhecimentos, código de aplicação e ferramentas. Pode desenvolver aplicações com o MongoDB e implementá-las para produção, utilizando o serviço de base de dados do Cosmos globalmente distribuído completamente gerido.
+**Nenhuma gestão de servidor**: não tem de gerir e dimensionar as bases de dados de MongoDB. BD do Cosmos do Azure é um serviço completamente gerido, o que significa que não tem de gerir qualquer infraestrutura ou de máquinas virtuais por si. BD do Cosmos do Azure está disponível no 30 + [regiões do Azure](https://azure.microsoft.com/regions/services/).
 
-**Nenhuma gestão de servidor**: não tem de gerir e dimensionar as bases de dados de MongoDB. BD do cosmos é um serviço completamente gerido, o que significa que não tem de gerir qualquer infraestrutura ou de máquinas virtuais por si. BD do cosmos está disponível no 30 + [regiões do Azure](https://azure.microsoft.com/regions/services/).
+**Níveis de consistência sincronizáveis:** Selecionarem cinco níveis de consistência bem definidos para alcançar entre a consistência e desempenho. Para consultas e operações de leitura, o Azure Cosmos DB oferece cinco níveis de consistência distintos: forte, consistência vinculada, sessão, prefixo de consistência e eventual. Estes níveis de consistência granular e bem definidos permitem-lhe efetuar compromissos sonoros entre a consistência, a disponibilidade e a latência. Saiba mais em [Using consistency levels to maximize availability and performance](consistency-levels.md) (Utilizar níveis de consistência para maximizar a disponibilidade e desempenho).
 
-**Níveis de consistência sincronizáveis:** Selecione um dos cinco níveis de consistência bem definidos para alcançar compromissos ótimos entre a consistência e o desempenho. Para consultas e operações de leitura, base de dados do Cosmos oferece cinco níveis de consistência distintos: forte, consistência vinculada, sessão, prefixo consistente e eventual. Estes níveis de consistência granular e bem definidos permitem-lhe efetuar compromissos sonoros entre a consistência, a disponibilidade e a latência. Saiba mais em [Using consistency levels to maximize availability and performance](consistency-levels.md) (Utilizar níveis de consistência para maximizar a disponibilidade e desempenho).
+**A indexação automática**: por predefinição, base de dados do Azure Cosmos indexa automaticamente os todas as propriedades dentro de documentos no seu MongoDB da base de dados e não espera nem requer nenhum esquema ou criação de índices secundários. Além disso, a capacidade de índice exclusivo permite uma restrição de exclusividade em todos campos de documento que já são indexados automática do BD Azure Cosmos.
 
-**A indexação automática**: por predefinição, base de dados do Cosmos indexa automaticamente os todas as propriedades dentro de documentos no seu MongoDB da base de dados e não espera nem requer nenhum esquema ou criação de índices secundários.
-
-**Nível de Enterprise** -base de dados do Azure Cosmos suporta várias réplicas locais para fornecer proteção de dados de disponibilidade e de 99,99% face a falhas de locais e regionais. BD do Azure do Cosmos tem de nível empresarial [certificações de conformidade](https://www.microsoft.com/trustcenter) e funcionalidades de segurança. 
+**Nível de Enterprise**: base de dados do Azure Cosmos suporta várias réplicas locais para fornecer proteção de dados de disponibilidade e de 99,99% face a falhas de locais e regionais. BD do Azure do Cosmos tem de nível empresarial [certificações de conformidade](https://www.microsoft.com/trustcenter) e funcionalidades de segurança. 
 
 Saiba mais neste Azure vídeo com autoria de Scott Hanselman e o Azure Cosmos BD Principal de engenharia Manager, Kirill Gavrylyuk sexta-feira.
 
@@ -53,7 +52,7 @@ Saiba mais neste Azure vídeo com autoria de Scott Hanselman e o Azure Cosmos BD
 
 ## <a name="how-to-get-started"></a>Como começar
 
-Siga os inícios rápidos MongoDB para criar uma conta de base de dados do Cosmos e migrar a sua aplicação de base de dados do Mongo existente ao utilizar base de dados do Cosmos ou criar um novo:
+Siga os inícios rápidos MongoDB para criar uma conta de base de dados do Azure Cosmos e migrar a sua aplicação MongoDB existente ao utilizar base de dados do Azure Cosmos ou criar um novo:
 
 * [Migrar uma aplicação de web de Node.js MongoDB existente](create-mongodb-nodejs.md).
 * [Criar uma aplicação de web API do MongoDB com .NET e o portal do Azure](create-mongodb-dotnet.md)

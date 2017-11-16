@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/06/2017
-ms.openlocfilehash: 2b2f35b3241bd1700bb1fb3319d38fdfda2545f9
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: a4945c77be5763ffeda328184149f712572937c0
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="sprint-1---november-2017"></a>Sprint 1 - Novembro de 2017 
 
@@ -122,7 +122,7 @@ Segue-se uma lista das atualizações de detalhado cada área de componente do A
 
 ### <a name="operationalization"></a>Operationalization
 - Serviço Web com "pontuação" no nome já não irá falhar.
-- Utilizador pode agora criar um ambiente de implementação com acesso de proprietário apenas a um grupo de recursos do Azure. Já não é necessário acesso de proprietário para a subscrição completa.
+- Utilizador pode agora criar um ambiente de implementação com apenas o acesso de contribuinte a um grupo de recursos do Azure ou a subscrição. Já não é necessário acesso de proprietário para a subscrição completa.
 - Operationalization CLI agora gostar separador-conclusão automática no Linux.
 - Serviço de construção de imagem suporta agora criar imagens para serviços/dispositivos do IoT do Azure.
 

@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/25/2017
+ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 68800ab14cbca367fd97827a923a2edc377e9aee
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: cd10147047a7d5d8b0a15be08fbba24a07adffad
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Casos de utilização de base de dados do Azure Cosmos comuns
 Este artigo fornece uma descrição geral de vários casos de utilização comuns para a base de dados do Azure Cosmos.  As recomendações neste artigo, servem como um ponto de partida, como desenvolver a sua aplicação com a base de dados do Cosmos.   
@@ -39,7 +39,7 @@ BD do Cosmos do Azure é global distribuído, com vários modelo base de dados q
 
 Seguem-se alguns atributos de base de dados do Azure Cosmos que torna adequada para aplicações de elevado desempenho com global ambition.
 
-* BD do Azure do Cosmos nativamente particiona os dados para elevada disponibilidade e escalabilidade. BD do Azure do Cosmos oferece garantias de 99,99% de disponibilidade, débito, latência baixa e consistência.
+* BD do Azure do Cosmos nativamente particiona os dados para elevada disponibilidade e escalabilidade. BD do Azure do Cosmos oferece garantias de 99,99% de disponibilidade, débito, latência baixa e consistência em todas as contas de única região e todas as contas de multirregião com consistência simples e 99.999% de disponibilidade em todas as contas de base de dados de multirregião de leitura.
 * BD do Azure do Cosmos tem um armazenamento de cópias de SSD com tempos de resposta de ordem de milissegundo de latência baixa.
 * Suporte Cosmos da BD do Azure para níveis de consistência como prefixo eventual e consistente, a sessão e a consistência vinculada permite total flexibilidade e o rácio de custos para desempenho baixo. Nenhum serviço de base de dados oferece a maior quantidade flexibilidade como base de dados do Azure Cosmos na consistência níveis. 
 * BD do Azure do Cosmos tem um modelo de preços do compatível com dados flexível que medidores débito de armazenamento e de forma independente.

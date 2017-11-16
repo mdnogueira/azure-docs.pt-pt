@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: db23eba9ff8debd5268cd02bc4f37c4e6501bfac
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b77000c2cf46b59b65c27c78182193624fd62062
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Planeamento da migração de recursos IaaS do clássico para o Azure Resource Manager
 Enquanto o Azure Resource Manager oferece muitas funcionalidades incrível, é essencial para planear a saída da sua viagem de migração para fazer coisas sure correm. A dedicar muito tempo sobre o planeamento irá garantir que não ocorrerem problemas ao executar atividades de migração.
@@ -123,7 +123,7 @@ Os seguintes foram problemas detetados em muitos das migrações maior. Não se 
 
     - Interfaces de Rede
     - Balanceadores de carga
-    - IPs públicos
+    - IPs Públicos
     - IPs públicos estáticos
     - Núcleos
     - Grupos de Segurança de Rede
@@ -204,7 +204,7 @@ Ser tem um fim específico nos serviços que pretende ativar no Gestor de recurs
 - [Modelos Azure Resource Manager para a implementação mais fácil e mais controlada](../../azure-resource-manager/resource-group-overview.md#template-deployment).
 - [Etiquetas](../../azure-resource-manager/resource-group-using-tags.md).
 - [Controlo de atividade](../../azure-resource-manager/resource-group-audit.md)
-- [Políticas de recursos](../../azure-resource-manager/resource-manager-policy.md)
+- [Políticas do Azure](../../azure-policy/azure-policy-introduction.md)
 
 ### <a name="pitfalls-to-avoid"></a>Pitfalls para evitar
 

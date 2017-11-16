@@ -1,5 +1,5 @@
 ---
-title: "Manter os ficheiros para Bash na Shell de nuvem do Azure (pré-visualização) | Microsoft Docs"
+title: Manter os ficheiros para Bash na Shell de nuvem do Azure | Microsoft Docs
 description: "Instruções sobre como Bash na Shell de nuvem do Azure persistir ficheiros."
 services: azure
 documentationcenter: 
@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: juluk
-ms.openlocfilehash: 8b8a82e1c1328d952a85ea5afd975a95f5a6e740
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a04342f77126afe1e0a2707f1d213e0a8eb5825d
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 [!include [features-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
-## <a name="how-cloud-shell-storage-works"></a>Como funciona o armazenamento de nuvem Shell 
-Shell de nuvem persistir ficheiros através de ambos dos seguintes métodos: 
+## <a name="how-bash-in-cloud-shell-storage-works"></a>Como funciona o Bash no armazenamento de nuvem Shell 
+Bash na Shell de nuvem persistir ficheiros através de ambos dos seguintes métodos: 
 * Criar uma imagem de disco do seu `$Home` diretório para manter todo o conteúdo dentro do diretório. A imagem de disco é guardada na partilha de ficheiro especificado como `acc_<User>.img` em `fileshare.storage.windows.net/fileshare/.cloudconsole/acc_<User>.img`, e alterações sincroniza-se automaticamente. 
 * Montar a partilha de ficheiro especificado como `clouddrive` no seu `$Home` diretório para interação direta de partilha de ficheiros. `/Home/<User>/clouddrive`está mapeado para `fileshare.storage.windows.net/fileshare`.
  
@@ -91,6 +91,6 @@ justin@Azure:~$
 [!include [features-introblock](../../includes/cloud-shell-persisting-shell-storage-endblock.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
-[Início rápido de Shell de nuvem](quickstart.md) <br>
-[Saiba mais sobre o File storage do Azure](https://docs.microsoft.com/azure/storage/storage-introduction#file-storage) <br>
+[Bash no guia de introdução de Shell de nuvem](quickstart.md) <br>
+[Saiba mais sobre armazenamento de ficheiros do Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction#file-storage) <br>
 [Saiba mais sobre as etiquetas de armazenamento](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags) <br>

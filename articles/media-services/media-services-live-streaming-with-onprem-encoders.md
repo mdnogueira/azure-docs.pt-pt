@@ -14,17 +14,17 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/12/2017
 ms.author: cenkd;juliako
-ms.openlocfilehash: 3f6569d32708c42247e0ffec70389f2e0f07389e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d7c33dc0a3c1f01cc53a91e05feb33272cb21f47
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="live-streaming-with-on-premises-encoders-that-create-multi-bitrate-streams"></a>Em direto com codificadores no local que criar fluxos de transmissão múltipla transmissão em fluxo
 ## <a name="overview"></a>Descrição geral
 Nos Media Services do Azure, uma *canal* representa um pipeline de processamento de conteúdos de transmissão em direto. Um canal recebe fluxos de entrada em direto de uma das seguintes formas:
 
-* Um codificador em direto de no local envia uma transmissão múltipla RTMP ou transmissão em fluxo uniforme (MP4 fragmentados) transmitido em fluxo para o canal não está ativado para realizar live encoding com Media Services. Transmita as transmissões em fluxo através dos canais sem qualquer processamento adicional. Este método é denominado *pass-through*. Pode utilizar os seguintes codificadores em direto com velocidade de transmissão múltipla transmissão em fluxo uniforme como saída: Excel de suporte de dados, Ateme, Imagine comunicações, Envivio, Cisco e elementar. Os seguintes codificadores em direto tem RTMP como saída: Adobe Flash Live codificador de multimédia, Telestream Wirecast, Haivision, Teradek e Transcodificadores. Um codificador em direto pode também enviar um fluxo de velocidade de transmissão única para um canal que não está ativado para live encoding, mas não recomendamos que. Os Media Services disponibilizam a transmissão fluxo para os clientes que solicitá-la.
+* Um codificador em direto de no local envia uma transmissão múltipla RTMP ou transmissão em fluxo uniforme (MP4 fragmentados) transmitido em fluxo para o canal não está ativado para realizar live encoding com Media Services. Transmita as transmissões em fluxo através dos canais sem qualquer processamento adicional. Este método é denominado *pass-through*. Um codificador em direto pode também enviar um fluxo de velocidade de transmissão única para um canal que não está ativado para live encoding, mas não recomendamos que. Os Media Services disponibilizam a transmissão fluxo para os clientes que solicitá-la.
 
   > [!NOTE]
   > Utilizar um método pass-through é a forma mais económica TTL transmissão em fluxo.
@@ -34,13 +34,13 @@ Nos Media Services do Azure, uma *canal* representa um pipeline de processamento
 
 A partir da versão 2.10 de serviços de suporte de dados, quando criar um canal, pode especificar como pretende que o canal para receber o fluxo de entrada. Também pode especificar se pretende que o canal para realizar live encoding da sua transmissão em fluxo. Tem duas opções:
 
-* **Pass-Through**: especificar este valor se planeia utilizar um codificador em direto no local com uma sequência de transmissão múltipla (uma sequência de pass-through) como saída. Neste caso, o fluxo de entrada atravessa a saída sem qualquer tipo de codificação. Este é o comportamento de um canal antes do lançamento 2.10. Este tópico fornece detalhes sobre como trabalhar com canais deste tipo.
-* **Live Encoding**: Escolha este valor se planear utilizar serviços de suporte de dados para codificar a sua transmissão em fluxo em direto para uma sequência de transmissão múltipla velocidade de transmissão única. Lembre-se de que deixa uma codificação em direto canal num **executar** Estado resultará em encargos faturação. Recomendamos que pare os canais executar imediatamente depois de concluída a evitar custos extra por hora do evento de transmissão em direto. Os Media Services disponibilizam a transmissão fluxo para os clientes que solicitá-la.
+* **Pass-Through**: especificar este valor se planeia utilizar um codificador em direto no local que tenha uma sequência de transmissão múltipla (uma sequência de pass-through) como saída. Neste caso, o fluxo de entrada atravessa a saída sem qualquer tipo de codificação. Este é o comportamento de um canal antes do lançamento 2.10. Este artigo fornece detalhes sobre como trabalhar com canais deste tipo.
+* **Live Encoding**: Escolha este valor se planear utilizar serviços de suporte de dados para codificar a sua transmissão em fluxo em direto para uma sequência de transmissão múltipla velocidade de transmissão única. Abandonar o fileparser um canal de codificação em direto num **com** Estado implica encargos de faturação. Recomendamos que pare os canais executar imediatamente depois de concluída a evitar custos extra por hora do evento de transmissão em direto. Os Media Services disponibilizam a transmissão fluxo para os clientes que solicitá-la.
 
 > [!NOTE]
-> Este tópico descreve os atributos de canais que não estão ativados para realizar live encoding. Para obter informações sobre como trabalhar com canais ativados para realizar live encoding, consulte [em direto de transmissão em fluxo utilizando os Media Services do Azure para criar fluxos de transmissão múltipla](media-services-manage-live-encoder-enabled-channels.md).
+> Este artigo aborda os atributos de canais que não estão ativados para realizar live encoding. Para obter informações sobre como trabalhar com canais ativados para realizar live encoding, consulte [em direto de transmissão em fluxo utilizando os Media Services do Azure para criar fluxos de transmissão múltipla](media-services-manage-live-encoder-enabled-channels.md).
 >
->
+>Para obter informações sobre codificadores recomendada no local, consulte [recomendado codificadores no local](media-services-recommended-encoders.md).
 
 O diagrama seguinte representa um fluxo de trabalho em fluxo em direto, que utiliza um codificador em direto no local para ter RTMP de transmissão múltipla ou MP4 fragmentados fluxos (transmissão em fluxo uniforme) como saída.
 
@@ -94,7 +94,7 @@ Utilize o URL secundário se pretender melhorar a tolerância de durabilidade e 
 
 - Vários codificadores, com cada codificador enviar para um ponto de dedicado:
 
-    Este cenário fornece tanto codificador e redundância de inserção. Neste cenário, encoder1 pushes para o URL principal e encoder2 pushes para o URL secundário. Quando um codificador falha, o codificador de outro pode manter a enviar dados. Redundância de dados pode ser mantida porque os serviços de suporte de dados não desliga URLs primários e secundários ao mesmo tempo. Este cenário pressupõe que codificadores são tempo sincronizado e fornecerem exatamente os mesmos dados.  
+    Este cenário fornece tanto codificador e ingere redundância. Neste cenário, encoder1 pushes para o URL principal e encoder2 pushes para o URL secundário. Quando um codificador falha, o codificador de outro pode manter a enviar dados. Redundância de dados pode ser mantida porque os serviços de suporte de dados não desliga URLs primários e secundários ao mesmo tempo. Este cenário pressupõe que codificadores são tempo sincronizado e fornecerem exatamente os mesmos dados.  
 
 - Vários codificadores duplo enviar aos URLs primários e secundários:
 
@@ -124,7 +124,7 @@ Pode alterar o rácio de fragmentos por segmento ao configurar a saída do canal
 
 Também pode alterar o valor do intervalo keyframe ao definir a propriedade KeyFrameInterval ChanneInput. Se definir explicitamente KeyFrameInterval, os HLS segmentar rácio de empacotamento que fragmentspersegment é calculada através de regras descritas anteriormente.  
 
-Se definir explicitamente KeyFrameInterval e FragmentsPerSegment, os Media Services irá utilizar os valores que definir.
+Se definir explicitamente KeyFrameInterval e FragmentsPerSegment, os Media Services utiliza os valores que definir.
 
 #### <a name="allowed-ip-addresses"></a>Endereços IP permitidos
 Pode definir os endereços IP que estão autorizados a publicar vídeo neste canal. Pode ser especificado um endereço IP permitido como um dos seguintes:
@@ -133,7 +133,7 @@ Pode definir os endereços IP que estão autorizados a publicar vídeo neste can
 * Um intervalo IP que utiliza um endereço IP e uma máscara de sub-rede CIDR (por exemplo, 10.0.0.1/22)
 * Um intervalo IP que utiliza um endereço IP e uma máscara de sub-rede de ponto decimal (por exemplo, 10.0.0.1(255.255.252.0))
 
-Se não houver endereços IP são especificados e não existe nenhuma definição de regra, não será permitido a nenhum endereço IP. Para permitir um endereço IP, crie uma regra e defina 0.0.0.0/0.
+Se não houver endereços IP são especificados e não existe nenhuma definição de regra, em seguida, não é permitido nenhum endereço IP. Para permitir um endereço IP, crie uma regra e defina 0.0.0.0/0.
 
 ### <a name="channel-preview"></a>Pré-visualização do canal
 #### <a name="preview-urls"></a>URLs de pré-visualização
@@ -144,7 +144,7 @@ Pode obter o URL de pré-visualização quando criar o canal. Para que possa obt
 Atualmente, o fluxo de pré-visualização pode ser fornecido apenas em MP4 fragmentados formato (transmissão em fluxo uniforme), independentemente do tipo de entrada especificado. Pode utilizar o [Monitor de estado de funcionamento de transmissão em fluxo uniforme](http://smf.cloudapp.net/healthmonitor) leitor para testar a transmissão em fluxo uniforme. Também pode utilizar um leitor de que está alojado no portal do Azure para ver a sua transmissão em fluxo.
 
 #### <a name="allowed-ip-addresses"></a>Endereços IP permitidos
-Pode definir os endereços IP que estão autorizados a ligar ao ponto final de pré-visualização. Se não houver endereços IP forem especificados, será permitido qualquer endereço IP. Pode ser especificado um endereço IP permitido como um dos seguintes:
+Pode definir os endereços IP que estão autorizados a ligar ao ponto final de pré-visualização. Se não houver endereços IP forem especificados, é permitido qualquer endereço IP. Pode ser especificado um endereço IP permitido como um dos seguintes:
 
 * Um endereço IP único (por exemplo, 10.0.0.1)
 * Um intervalo IP que utiliza um endereço IP e uma máscara de sub-rede CIDR (por exemplo, 10.0.0.1/22)
@@ -154,13 +154,13 @@ Pode definir os endereços IP que estão autorizados a ligar ao ponto final de p
 Para obter informações sobre a saída de canal, consulte o [Keyframe intervalo](#keyframe_interval) secção.
 
 ### <a name="channel-managed-programs"></a>Gerido de canal de programas
-Um canal está associado a programas que pode utilizar para controlar a publicação e armazenamento de segmentos numa transmissão em fluxo em direto. Canais gerem programas. A relação de canal e o programa é muito semelhante à multimédia tradicional, onde um canal tem uma transmissão em fluxo constante de conteúdo e um programa está confinado a alguns eventos temporizados nesse canal.
+Um canal está associado a programas que pode utilizar para controlar a publicação e armazenamento de segmentos numa transmissão em fluxo em direto. Canais gerem programas. A relação de canal e o programa é semelhante à multimédia tradicional, onde um canal tem uma transmissão em fluxo constante de conteúdo e um programa está confinado a alguns eventos temporizados nesse canal.
 
-Pode especificar o número de horas que pretenda manter o conteúdo gravado para o programa através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. A duração da janela de arquivo dita também o tempo máximo que os clientes podem recuar a partir da posição atual em direto. Os programas podem ser executados durante o período de tempo especificado, mas o conteúdo que se situe atrás da duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
+Pode especificar o número de horas que pretenda manter o conteúdo gravado para o programa através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. Duração da janela de arquivo dita também que o número máximo de clientes de hora pode recuar a partir da posição atual em direto. Os programas podem ser executados durante o período de tempo especificado, mas o conteúdo que se situe atrás da duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
 
 Cada programa está associado um recurso que armazena o conteúdo de transmissão em fluxo. Um recurso está mapeado para um contentor de BLOBs de blocos na conta do storage do Azure e os ficheiros no elemento são armazenados como blobs no contentor. Para publicar o programa para que os seus clientes, podem ver a sequência, tem de criar um localizador OnDemand para o elemento associado. Pode utilizar este localizador para compilar um URL de transmissão em fluxo que pode fornecer aos seus clientes.
 
-Um canal suporta até três programas em execução em simultâneo, para que possa criar vários arquivos da mesma transmissão em fluxo recebida. Pode publicar e arquivar diferentes partes de um evento, conforme necessário. Por exemplo, imagine que é o requisito de negócio para arquivar 6 horas de um programa, mas difundir apenas os últimos 10 minutos. Para tal, tem de criar dois programas em execução em simultâneo. Um programa está definido para arquivar 6 horas do evento, mas o programa não está publicado. O outro programa está definido para arquivar durante 10 minutos e este está publicado.
+Um canal suporta até três programas em execução em simultâneo, para que possa criar vários arquivos da mesma transmissão em fluxo recebida. Pode publicar e arquivar diferentes partes de um evento, conforme necessário. Por exemplo, imagine que é o requisito de negócio para arquivar 6 horas de um programa, mas difundir apenas os últimos 10 minutos. Para tal, tem de criar dois programas em execução em simultâneo. Um programa está definido para arquivar seis horas do evento, mas o programa não está publicado. O outro programa está definido para arquivar durante 10 minutos e este está publicado.
 
 Não deve reutilizar programas existentes para novos eventos. Em vez disso, crie um novo programa para cada evento. Inicie o programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento.
 
@@ -210,7 +210,7 @@ Seguem-se outras considerações relacionadas com a trabalhar com canais e compo
 
 * Sempre que reconfigurar o codificador em direto, chame o **repor** método no canal. Antes de repor o canal, terá de parar o programa. Depois de repor o canal, reinicie o programa.
 * Um canal pode ser parado apenas quando está a ser o **executar** estado e todos os programas no canal foram parados.
-* Por predefinição, pode adicionar apenas 5 canais à sua conta de Media Services. Para obter mais informações, consulte [Quotas e limitações](media-services-quotas-and-limitations.md).
+* Por predefinição, pode adicionar apenas cinco canais à sua conta de Media Services. Para obter mais informações, consulte [Quotas e limitações](media-services-quotas-and-limitations.md).
 * É-lhe faturado apenas quando o canal está no **executar** estado. Para obter mais informações, consulte o [canal Estados e faturação](media-services-live-streaming-with-onprem-encoders.md#states) secção.
 
 ## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
@@ -220,7 +220,9 @@ Seguem-se outras considerações relacionadas com a trabalhar com canais e compo
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-topics"></a>Tópicos relacionados
-[Especificação de inserção de Media Services do Azure live MP4 fragmentados](media-services-fmp4-live-ingest-overview.md)
+[Codificadores recomendada no local](media-services-recommended-encoders.md)
+
+[Especificação de inserção de Azure vida MP4 fragmentadas dos Media Services](media-services-fmp4-live-ingest-overview.md)
 
 [Descrição geral dos Media Services do Azure e cenários comuns](media-services-overview.md)
 

@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: jeedes
-ms.openlocfilehash: cde5983710185d1e46a5601b16bbfb1c0fcae382
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 17ff07648b210fe207b514381e98dd372375e092
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Tutorial: Azure Active Directory a integração com SAML SSO para Jira pela resolução GmbH
 
@@ -159,27 +159,53 @@ Nesta secção, ativar o Azure AD início de sessão no portal do Azure e config
 
     ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon11.png)
 
-14. No **SAML SingleSignOn Plug-in configuração** página, clique em **Adicionar fornecedor de identidade adicionais** botão para configurar as definições do fornecedor de identidade.
+14. No **SAML SingleSignOn Plug-in configuração** página, clique em **Adicionar nova IdP** botão para configurar as definições do fornecedor de identidade.
 
     ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon4.png)
 
-15. Execute os seguintes passos nesta página:
+15. No **escolha o fornecedor de identidade** página, execute os seguintes passos:
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon5.png)
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon5a.png)
  
-    a. Adicionar **nome** do fornecedor de identidade (por exemplo, do Azure AD).
+    a. Definir **do Azure AD** como o tipo de IdP.
     
-    b. Adicionar **Descrição** do fornecedor de identidade (por exemplo, do Azure AD).
+    b. Adicionar **nome** do fornecedor de identidade (por exemplo, do Azure AD).
+    
+    c. Adicionar **Descrição** do fornecedor de identidade (por exemplo, do Azure AD).
+    
+    d. Clique em **Seguinte**.
+    
+16. No **configuração do fornecedor de identidade** página, clique em **seguinte** botão.
 
-    c. Clique em **XML** e selecione o **metadados** ficheiro, que transferiu a partir do portal do Azure.
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon5b.png)
 
-    d. Clique em **carga** botão.
+17. No **importação SAML IdP metadados** página, execute os seguintes passos:
 
-    e. Lê os metadados do IdP e preenche os campos conforme realçado na captura de ecrã. 
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon5c.png)
 
-16. Clique em **guardar definições** botão para guardar as definições.
+    a. Clique em **carga ficheiro** botão e escolha o ficheiro XML de metadados que transferiu no passo 5.
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon6.png)
+    b. Clique em **importação** botão.
+    
+    c. Aguarde por breves instantes até que a importação for bem sucedida.
+    
+    d. Clique em **seguinte** botão.
+    
+18. No **atributo de ID de utilizador e a transformação** página, clique em **seguinte** botão.
+
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon5d.png)
+    
+19. No **criação de utilizador e a atualização** página, clique em **Guardar & seguinte** ao guardar as definições.   
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon6a.png)
+    
+20. No **testar as suas definições** página, clique em **ignorar teste & configurar manualmente** para ignorar o teste de utilizador por agora. Isto irá ser efetuado na secção seguinte e necessita de algumas definições no portal do Azure. 
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon6b.png)
+    
+21. A ler a caixa de diálogo apprearing **ignorar os meios de teste...** , clique em **OK**.
+    
+    ![Configurar o início de sessão único](./media/active-directory-saas-samlssojira-tutorial/addon6c.png)
 
 > [!TIP]
 > Pode agora ler estas instruções dentro de uma versão concisa o [portal do Azure](https://portal.azure.com), enquanto estiver a configurar a aplicação!  Depois de adicionar esta aplicação a partir do **do Active Directory > aplicações da empresa** secção, basta clicar no **Single Sign-On** separador e aceder à documentação do embedded através de **configuração** secção na parte inferior. Pode ler mais sobre a funcionalidade de documentação incorporados aqui: [do Azure AD incorporado documentação]( https://go.microsoft.com/fwlink/?linkid=845985)

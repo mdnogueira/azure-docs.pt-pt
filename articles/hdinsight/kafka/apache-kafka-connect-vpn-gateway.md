@@ -13,15 +13,15 @@ ms.custom: hdinsightactive
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 11/06/2017
+ms.date: 11/07/2017
 ms.author: larryfr
-ms.openlocfilehash: 1721f985214b9a9fbefed628308b1a72f5cc186a
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: 2b55de4de6bb94be78649112161211346090b23a
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="connect-to-kafka-on-hdinsight-preview-through-an-azure-virtual-network"></a>Ligar ao Kafka no HDInsight (pré-visualização) através de uma rede Virtual do Azure
+# <a name="connect-to-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Ligar ao Kafka no HDInsight através de uma rede Virtual do Azure
 
 Saiba como ligar diretamente a Kafka no HDInsight através de uma rede Virtual do Azure. Este documento fornece informações sobre a ligação ao Kafka utilizando as seguintes configurações:
 
@@ -32,7 +32,7 @@ Saiba como ligar diretamente a Kafka no HDInsight através de uma rede Virtual d
 
 HDInsight não permite a ligação direta para Kafka através da internet pública. Em vez disso, os clientes de Kafka (produtores e consumidores) tem de utilizar um dos seguintes métodos de ligação:
 
-* Execute cliente na mesma rede virtual como Kafka no HDInsight. Esta configuração é utilizada no [começar a utilizar o Apache Kafka (pré-visualização) no HDInsight](apache-kafka-get-started.md) documento. O cliente é executada diretamente em nós de cluster do HDInsight ou outra máquina virtual na mesma rede.
+* Execute cliente na mesma rede virtual como Kafka no HDInsight. Esta configuração é utilizada no [começar a utilizar o Apache Kafka no HDInsight](apache-kafka-get-started.md) documento. O cliente é executada diretamente em nós de cluster do HDInsight ou outra máquina virtual na mesma rede.
 
 * Ligar uma rede privada, tais como a sua rede no local, a rede virtual. Esta configuração permite que os clientes na sua rede no local para trabalhar diretamente com Kafka. Para ativar esta configuração, execute as seguintes tarefas:
 

@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: 
-ms.date: 05/10/2017
+ms.date: 11/15/2017
 ms.author: govindk
-ms.openlocfilehash: e59cfa85c6bf584e44bdc6e88cc19d67df390041
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cbb752692fbd618d9e7e14c8a80b582aad657b38
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="azure-cosmos-db-how-to-query-table-data-by-using-the-table-api-preview"></a>Azure Cosmos DB: Como consultar dados da tabela, utilizando a API de tabela (pré-visualização)?
+# <a name="azure-cosmos-db-how-to-query-table-data-by-using-the-table-api"></a>Azure Cosmos DB: Como consultar dados da tabela, utilizando a API de tabela
 
-A BD do Cosmos Azure [API de tabela](table-introduction.md) (pré-visualização) suporta OData e [LINQ](https://docs.microsoft.com/rest/api/storageservices/fileservices/writing-linq-queries-against-the-table-service) consultas em relação a dados de chave/valor (tabela).  
+A BD do Cosmos Azure [API de tabela](table-introduction.md) suporta OData e [LINQ](https://docs.microsoft.com/rest/api/storageservices/fileservices/writing-linq-queries-against-the-table-service) consultas em relação a dados de chave/valor (tabela).  
 
 Este artigo abrange as seguintes tarefas: 
 
@@ -38,13 +38,13 @@ As consultas neste artigo, utilize o seguinte exemplo `People` tabela:
 | Santos | Bernardo | Ben@contoso.com| 425-555-0102 |
 | Santos | Jorge | Jeff@contoso.com| 425-555-0104 | 
 
-Porque a base de dados do Azure Cosmos é compatível com as APIs de armazenamento de tabelas do Azure, consulte [consultar tabelas e entidades] (https://docs.microsoft.com/rest/api/storageservices/fileservices/querying-tables-and-entities) para obter detalhes sobre a consulta utilizando a tabela API. 
+Consulte [consultar tabelas e entidades] (https://docs.microsoft.com/rest/api/storageservices/fileservices/querying-tables-and-entities) para obter detalhes sobre a consulta utilizando a API de tabela. 
 
-Para obter mais informações sobre as capacidades de premium oferece de BD do Cosmos do Azure, consulte [BD do Azure Cosmos: API de tabela](table-introduction.md) e [desenvolver com a API de tabela no .NET](tutorial-develop-table-dotnet.md). 
+Para obter mais informações sobre as capacidades de premium oferece de BD do Cosmos do Azure, consulte [API de tabela de base de dados do Azure Cosmos](table-introduction.md) e [desenvolver com a API de tabela no .NET](tutorial-develop-table-dotnet.md). 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para estas consultas funcione, tem de ter uma conta de base de dados do Azure Cosmos e ter dados de entidade no contentor. Não tem qualquer um desses? Concluir o [início rápido de cinco minutos](https://aka.ms/acdbtnetqs) ou [tutorial programador](https://aka.ms/acdbtabletut) para criar uma conta e preencher a base de dados.
+Para estas consultas funcione, tem de ter uma conta de base de dados do Azure Cosmos e ter dados de entidade no contentor. Não tem qualquer um desses? Concluir o [início rápido de cinco minutos](create-table-dotnet.md) ou [tutorial programador](tutorial-develop-table-dotnet.md) para criar uma conta e preencher a base de dados.
 
 ## <a name="query-on-partitionkey-and-rowkey"></a>A consulta de PartitionKey e RowKey
 Porque as propriedades PartitionKey e RowKey formam a chave primária de uma entidade, pode utilizar a seguinte sintaxe especial para identificar a entidade: 
@@ -109,9 +109,9 @@ await table.ExecuteQuerySegmentedAsync<CustomerEntity>(query, null);
 Neste tutorial, fez o seguinte:
 
 > [!div class="checklist"]
-> * Aprendeu a consulta utilizando a API de tabela (pré-visualização) 
+> * Aprendeu a consulta utilizando a API de tabela
 
 Agora pode avançar para o próximo tutorial para saber como distribuir dados globalmente.
 
 > [!div class="nextstepaction"]
-> [Distribuir dados globalmente](tutorial-global-distribution-documentdb.md)
+> [Distribuir dados globalmente](tutorial-global-distribution-table.md)

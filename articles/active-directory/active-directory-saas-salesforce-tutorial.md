@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 639e40ca7e406a1726033e9f5c5363c289087589
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7471a6999ac4dcd15f5162e69cb0100cc1e3b14f
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Tutorial: Integração do Azure Active Directory com o Salesforce
 
@@ -121,9 +121,7 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     ![Configurar o início de sessão único](./media/active-directory-saas-salesforce-tutorial/tutorial_salesforce_certificate.png) 
 
-5. Clique em **guardar** botão.
-
-    ![Configurar o início de sessão único](./media/active-directory-saas-salesforce-tutorial/tutorial_general_400.png)
+5. Clique em **guardar** botão ![configurar Single Sign-On](./media/active-directory-saas-salesforce-tutorial/tutorial_general_400.png)
 
 6. No **Salesforce configuração** secção, clique em **configurar Salesforce** para abrir **configurar início de sessão** janela. Copiar o **ID de entidade de SAML e único início de sessão no URL do serviço SAML** do **secção de referência rápida.** 
 
@@ -154,7 +152,7 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     a. Para o **nome** campo, escreva um nome amigável para esta configuração. Fornecer um valor para **nome** preencher automaticamente o **nome API** caixa de texto.
 
-    b. Colar **ID da entidade SMAL** valor para o **emissor** campo no Salesforce.
+    b. Colar **ID de entidade de SAML** valor para o **emissor** campo no Salesforce.
 
     c. No **caixa de texto do Id de entidade**, escreva o seu nome de domínio do Salesforce utilizando o padrão do seguinte:
       

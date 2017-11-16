@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2017
 ms.author: rodend;karlku;tomfitz
-ms.openlocfilehash: 3a19f2cf7566f38f80639d7c966638a3ec900cf4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5950bad397e4b0f08f998ea6756e3c258e84b63e
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-enterprise-scaffold---prescriptive-subscription-governance"></a>Andaime enterprise do Azure - governação prescritiva subscrição
 As empresas adotem cada nuvem pública para a agilidade e a flexibilidade. Estes são utilizar força da codificação da nuvem para gerar receitas ou otimizar os recursos para as empresas. O Microsoft Azure oferece um em diversos serviços de que as empresas podem assemblar como blocos modulares para resolver um grande número de aplicações e cargas de trabalho. 
@@ -89,7 +89,7 @@ O primeiro pilar do andaime é nomenclatura normas. As normas de nomenclatura de
 > As sugestões anteriores ajudam a implementar uma convenção de nomenclatura consistente.
 
 ## <a name="policies-and-auditing"></a>As políticas e de auditoria
-O segundo pilar do andaime envolve criar [políticas do Azure Resource Manager](resource-manager-policy.md) e [auditoria no registo de atividade](resource-group-audit.md). As políticas do Resource Manager fornecem-lhe a capacidade de gerir o risco no Azure. Pode definir políticas que garantem soberania de dados ao restringir, impor ou auditoria determinadas ações. 
+O segundo pilar do andaime envolve criar [políticas do Azure](../azure-policy/azure-policy-introduction.md) e [auditoria no registo de atividade](resource-group-audit.md). As políticas do Resource Manager fornecem-lhe a capacidade de gerir o risco no Azure. Pode definir políticas que garantem soberania de dados ao restringir, impor ou auditoria determinadas ações. 
 
 * A política é uma predefinição **permitir** sistema. Controlar as ações por definição e a atribuição de políticas para recursos que negarem ou ações em recursos de auditoria.
 * As políticas são descritas por definições de política na linguagem de definição de política (if-a em seguida, em seguida condições).
