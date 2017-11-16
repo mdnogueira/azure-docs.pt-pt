@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/18/2017
+ms.date: 11/15/2017
 ms.author: maheshu
-ms.openlocfilehash: fb5e1e6f03c47afc8eba5f469a985a38c0e542d9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b658bc91723c8384b91eb62e8506c82aa5112509
+ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="enable-password-synchronization-to-azure-active-directory-domain-services"></a>Ativar a sincronização de palavras-passe para o Azure Active Directory Domain Services
 Em tarefas anteriores, ativou o Azure Active Directory Domain Services do seu inquilino do Azure Active Directory (Azure AD). A tarefa seguinte consiste em ativar a sincronização de hashes de credenciais necessários para a autenticação NTLM (NT LAN Manager) e Kerberos para sincronizar com os Serviços de Domínio do Azure AD. Assim que a sincronização de credenciais estiver configurada, os utilizadores podem iniciar sessão no domínio gerido com as credenciais da empresa.
@@ -62,7 +62,7 @@ Instruções de instalação para o Azure AD Connect estão disponíveis no segu
 ### <a name="enable-synchronization-of-ntlm-and-kerberos-credential-hashes-to-azure-ad"></a>Ativar a sincronização de hashes de credencial de NTLM e Kerberos para o Azure AD
 Execute o seguinte script do PowerShell em cada floresta do AD. O script permite que os hashes de palavra-passe NTLM e Kerberos de todos os utilizadores locais sejam sincronizados com o seu inquilino do Azure AD. O script também inicia uma sincronização completa no Azure AD Connect.
 
-```
+```powershell
 $adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"  
 $azureadConnector = "<CASE SENSITIVE AZURE AD CONNECTOR NAME>"  
 Import-Module adsync  

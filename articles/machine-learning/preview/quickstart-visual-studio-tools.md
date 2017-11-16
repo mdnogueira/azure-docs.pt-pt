@@ -11,11 +11,11 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: get-started-article
 ms.date: 09/12/2017
-ms.openlocfilehash: 680c1afab1af31cfef51b1c82d2db49f452ba6ab
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 400fc384519f2ff5c9bb7d83dab6499f5008a833
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="visual-studio-code-tools-for-ai"></a>Visual Studio Code Tools para IA
 O Visual Studio Code Tools para IA é uma extensão de desenvolvimento para criar, testar e implementar soluções de Aprendizagem Profunda e IA. Proporciona integração total com o Azure Machine Learning, nomeadamente uma vista de histórico de execução que detalha o desempenho de preparações anteriores e métricas personalizadas. Oferece uma vista de explorador de amostras que permite procurar e efetuar o arranque de sistema do novo projeto com o [Microsoft Cognitive Toolkit (anteriormente designado CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org)e outra arquitetura de aprendizagem profunda. Por fim, fornece um explorador de destinos de computação que permite submeter tarefas de preparação de modelos em ambientes remotos como as Máquinas Virtuais do Azure ou os servidores Linux com GPU. 
@@ -70,7 +70,6 @@ Depois de submeter as tarefas, pode listá-las a partir do histórico de execuç
 1. Abra a paleta de comandos (Ver > **Paleta de Comandos** ou **Ctrl + Shift + P**).
 2. Introduza "Lista de AI".
 3. Obtém uma recomendação para "IA: Lista de Tarefas", selecione e prima enter.
-4. Selecione a plataforma: "Azure Machine Learning".
 
 É aberta a Vista de Lista de Tarefas que apresenta todas as execuções e algumas informações relacionadas.
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.author: billmath
-ms.openlocfilehash: 8a08f6e441a856a06bf7870747ca20af45a0364e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d3b634bc36e01f8586b6645515942c049701c30e
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="getting-started-with-azure-ad-connect-using-express-settings"></a>Introdução ao Azure AD Connect utilizando as definições rápidas
 Utilizam-se as **Definições Rápidas** do Azure AD Connect se tiver uma topologia de floresta única e a [sincronização de palavras-passe](active-directory-aadconnectsync-implement-password-synchronization.md) para autenticação. **Definições Rápidas** é a opção predefinida e é utilizada para o cenário de implementação mais comum. Estará a apenas alguns cliques da expansão do seu diretório no local para a nuvem.
@@ -39,7 +39,7 @@ Pode ver estes passos em ação na secção [vídeos](#videos).
    ![Ligar ao Azure AD](./media/active-directory-aadconnect-get-started-express/connectaad.png) Se receber um erro e tiver problemas de conectividade, veja [Resolver problemas de conectividade](active-directory-aadconnect-troubleshoot-connectivity.md).
 6. No ecrã Ligar ao AD DS, introduza o nome de utilizador e palavra-passe para uma conta de administrador da empresa. Pode introduzir a parte do domínio no formato NetBios ou FQDN, ou seja, FABRIKAM\administrator ou fabrikam.com\administrator. Clique em **Seguinte**.  
    ![Ligar ao AD DS](./media/active-directory-aadconnect-get-started-express/connectad.png)
-7. A página [**Configuração do início de sessão do Azure AD**](active-directory-aadconnect-user-signin.md#azure-ad-sign-in-configuration) só é mostrada caso não tenha concluído a [verificação dos domínios](../active-directory-add-domain.md) nos [pré-requisitos](active-directory-aadconnect-prerequisites.md).
+7. A página [**Configuração do início de sessão do Azure AD**](active-directory-aadconnect-user-signin.md#azure-ad-sign-in-configuration) só é mostrada caso não tenha concluído a [verificação dos domínios](../active-directory-domains-add-azure-portal.md) nos [pré-requisitos](active-directory-aadconnect-prerequisites.md).
    ![Domínios não verificados](./media/active-directory-aadconnect-get-started-express/unverifieddomain.png)  
    Se esta página for apresentada, reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os domínios que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização.
 8. No ecrã Preparado para configurar, clique em **Instalar**.

@@ -12,11 +12,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 10/10/2017
 ms.author: mbullwin
-ms.openlocfilehash: 57d9ebc5a9689a6f1d48464aa20ffdc7fa61b00f
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 4a6647e30657a6d2d076cd254069d96f99a0aa60
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="usage-analysis-with-application-insights"></a>Análise de utilização com o Application Insights
 
@@ -34,7 +34,7 @@ A melhor experiência é obtida pela instalação do Application Insights no seu
 
     ![Copie o script para o cabeçalho da sua página web mestra.](./media/app-insights-usage-overview/02-monitor-web-page.png)
 
-3. **Código de aplicação móvel:** utilizar o SDK do System Center Mobile para recolher eventos a partir da sua aplicação, em seguida, envie cópias destes eventos para o Application Insights para análise pelo [seguir este guia](app-insights-mobile-center-quickstart.md).
+3. **Código de aplicação móvel:** utilizar o SDK da aplicação do System Center para recolher eventos a partir da sua aplicação, em seguida, envie cópias destes eventos para o Application Insights para análise pelo [seguir este guia](app-insights-mobile-center-quickstart.md).
 
 4. **Obter telemetria:** executar o projeto no modo de depuração para alguns minutos e, em seguida, procure os resultados no painel de descrição geral no Application Insights.
 
