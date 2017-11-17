@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/01/2017
 ms.author: kakhan
-ms.openlocfilehash: b35595d3dd91932888a26edc92dae81dd71682d8
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 15ed35ab3a082db3376890992be3a29b6e042a2f
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-disk-encryption-for-windows-and-linux-iaas-vms"></a>Encriptação de disco do Azure para o Windows e as VMs de Linux IaaS
 Microsoft Azure é vivamente consolidada para assegurar a privacidade dos dados, soberania de dados e permite avançadas, para controlar o Azure alojadas dados através de uma variedade de tecnologias para encriptar, controlar e gerir chaves de encriptação, controlo & auditar o acesso aos dados. Isto proporciona aos clientes do Azure a flexibilidade para escolher a solução que melhor se adeque às suas necessidades de negócio. Neste documento, vamos apresenta-lhe uma nova solução de tecnologia "Do Azure Disk Encryption para o Windows e de Linux IaaS VM" para ajudar a proteger e salvaguardar os seus dados para satisfazer os seus compromissos de conformidade e segurança organizacional. O documento fornece orientações detalhadas sobre como utilizar as funcionalidades de encriptação de disco do Azure, incluindo os cenários suportados e o utilizador experiências.
@@ -149,6 +149,7 @@ Antes de ativar o Azure Disk Encryption em VMs do IaaS do Azure para os cenário
 | Ubuntu | 14.04.5-DAILY-LTS | Disco do SO e dados |
 | Ubuntu | 12.10 | Disco de dados |
 | Ubuntu | 12.04 | Disco de dados |
+| RHEL | 7.4 | Disco do SO e dados |
 | RHEL | 7.3 | Disco do SO e dados |
 | RHEL | LVM 7.3 | Disco do SO e dados |
 | RHEL | 7.2 | Disco do SO e dados |

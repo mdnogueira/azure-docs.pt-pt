@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2017
 ms.author: LADocs; divswa
-ms.openlocfilehash: 2d4d009dfc4d43ccc3c69bb3da15ca2c478b9efe
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 0323b0f7ee03dce209d5a71c6711988a34ba7633
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-and-register-soap-connectors-in-azure-logic-apps"></a>Crie e registe os conectores SOAP no Azure Logic Apps
 
@@ -82,7 +82,7 @@ Agora especificar o ficheiro WSDL ou o URL para criar o conector, a autenticaç�
 
       ![Disponibilize o ficheiro WSDL para a API](./media/logic-apps-soap-connector-create-register/provide-wsdl-file.png)
 
-      | Opção | formato |Descrição | 
+      | Opção | Formato |Descrição | 
       | ------ | ------ | ----------- | 
       | **Carregar WSDL do ficheiro** | *Ficheiro WSDL* | Navegue para a localização do ficheiro WSDL e selecione esse ficheiro. | 
       | **Carregar WSDL a partir do URL** | http://*caminho no wsdl ficheiro* | Forneça o URL para o ficheiro WSDL do seu serviço. | 
@@ -95,7 +95,7 @@ Agora especificar o ficheiro WSDL ou o URL para criar o conector, a autenticaç�
 
       ![Detalhes do conector](./media/logic-apps-soap-connector-create-register/add-general-details.png)
 
-      | Opção ou definição | formato | Descrição | 
+      | Opção ou definição | Formato | Descrição | 
       | ----------------- | ------ | ----------- | 
       | **Carregue ícone** | *PNG-or-jpg-file-under-1-MB* | Um ícone que representa o conector <p>Cor: Preferencialmente, um logótipo sobre um fundo de cor branco. <p>Dimensões: Um pixel ~ 160 logótipo no interior de um quadrado 230 pixel | 
       | **Cor de fundo de ícone** | *ícone de marca-cor-hexadecimal-código* | <p>A cor atrás o ícone que corresponda a cor de fundo no seu ficheiro de ícone. <p>Formato: Hexadecimal. Por exemplo, #007ee5 representa a cor azul. | 
@@ -149,6 +149,12 @@ Registado mas uncertified conectores personalizados funcionam como conectores ge
 Para partilhar o seu conector com utilizadores externos fora estes limites, por exemplo, com todos os utilizadores das Logic Apps, [submeter o seu conector para certificação Microsoft](../logic-apps/custom-connector-submit-certification.md).
 
 ## <a name="faq"></a>FAQ
+
+**P:** é o conector SOAP geralmente disponível (GA)? </br>
+**R:** SOAP o conector está no **pré-visualização**, e ainda não é um serviço GA.
+
+**P:** existem quaisquer restrições e os problemas conhecidos para o conector SOAP? </br>
+**R:** Sim, consulte o [restrições de conector SOAP e os problemas conhecidos](../api-management/api-management-api-import-restrictions.md#wsdl).
 
 **P:** existem limites para os conectores personalizados? </br>
 **R:** Sim, consulte o [conetor personalizado aqui limita](../logic-apps/logic-apps-limits-and-config.md#custom-connector-limits).

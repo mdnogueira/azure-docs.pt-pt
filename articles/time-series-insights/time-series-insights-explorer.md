@@ -3,7 +3,7 @@ title: "Explore os dados utilizando o Explorador de informações de séries de 
 description: "Este artigo descreve como utilizar o Explorador de informações de séries de tempo do Azure no seu browser para ver rapidamente uma vista global dos seus dados de grandes e validar o seu ambiente de IoT."
 services: time-series-insights
 ms.service: time-series-insights
-author: kfile
+author: MarkMcGeeAtAquent
 ms.author: kfile
 manager: jhubbard
 editor: MicrosoftDocs/tsidocs
@@ -12,11 +12,11 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: article
 ms.date: 11/15/2017
-ms.openlocfilehash: 112c1a86e302c2549018fc3a8c6dbc22a689c8a6
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 35f7bf0504075e8bb0b99f8492b850df2b7ceae1
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-time-series-insights-explorer"></a>Explorador do Azure Insights de séries de tempo
 Este artigo explicar as várias funcionalidades e as opções disponíveis na aplicação de web do Explorador de informações de séries de tempo. Utilize o Explorador de informações de séries de tempo no seu browser para criar as visualizações de dados.
@@ -50,10 +50,10 @@ Minutos de ligar a sua origem de evento para o seu ambiente de informações de 
       - **Divisão pela**: esta lista pendente mostra colunas categórico (cadeias)
       - Pode ativar passo interpolação, Mostrar mínima e máxima e ajustar o eixo y do painel de controlo seguinte para medir.  Além disso, pode ajustar se os dados apresentados são uma contagem, média ou soma dos dados.
       - Pode adicionar até cinco termos para ver no mesmo eixo x.  Utilize o **cópia pendente** botão para adicionar um termo adicional ou clique em de **adicionar** botão para adicionar um termo de raiz.
+     
+        ![Painel do Editor de termos](media/time-series-insights-explorer/explorer2.png)
 
-      ![Painel do Editor de termos](media/time-series-insights-explorer/explorer2.png)
-
-      - **Predicado**: O predicado permite-lhe filtrar rapidamente os eventos utilizando o conjunto de operandos listados abaixo. Se realiza uma pesquisa clicando selecionar /, o predicado será automaticamente atualização com base nessa procura.  Os tipos de operando suportados incluem:
+      - **Predicado**: O predicado permite-lhe filtrar rapidamente os eventos utilizando o conjunto de operandos listados abaixo. Se realiza uma pesquisa clicando selecionar /, o predicado será automaticamente atualização com base nessa procura.      Os tipos de operando suportados incluem:
 
          |Operação  |Tipos suportados  |Notas  |
          |---------|---------|---------|
@@ -107,4 +107,5 @@ Minutos de ligar a sua origem de evento para o seu ambiente de informações de 
 Agora constatou as várias funcionalidades e as opções disponíveis na aplicação de web do Explorador de informações de séries de tempo. 
 
 ## <a name="next-steps"></a>Passos seguintes
-[Diagnosticar e resolver problemas no seu ambiente de informações de séries de tempo](time-series-insights-diagnose-and-solve-problems.md)
+> [!div class="nextstepaction"]
+>[Diagnosticar e resolver problemas no seu ambiente de informações de séries de tempo](time-series-insights-diagnose-and-solve-problems.md)

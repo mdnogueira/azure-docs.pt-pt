@@ -9,11 +9,11 @@ ms.author: kgremban
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: e1337ddf5ed84a06a62e2faa198f3e8fb49bc3bd
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: c9f71a7e95ea8c1b2cbd9b74ef20f9b0342d00f8
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-an-iot-edge-gateway-device-to-process-data-from-other-iot-devices---preview"></a>Criar um dispositivo de gateway do limite de IoT para processar dados de outros dispositivos de IoT – pré-visualização
 
@@ -68,7 +68,9 @@ Este procedimento resultará numa solução que permite que todos os dispositivo
 
 Pode utilizar o exemplo do Powershell e scripts de Bash descritas [gerir exemplo de certificado de AC] [ lnk-ca-scripts] para gerar um autoassinado **proprietário do hub IoT AC** e certificados de dispositivo sessão iniciada com o mesmo.
 
-1. Siga o passo 1 de [gerir exemplo de certificado de AC] [ lnk-ca-scripts] para instalar os scripts.
+1. Siga o passo 1 de [gerir exemplo de certificado de AC] [ lnk-ca-scripts] para instalar os scripts. Certifique-se de clonar a partir de `modules-preview` sucursal:
+                
+                git clone -b modules-preview https://github.com/Azure/azure-iot-sdk-c.git 
 2. Siga o passo 2 para gerar o **proprietário do hub IoT AC**, este ficheiro será utilizado pelos dispositivos a jusante para validar a ligação.
 
 Utilize as seguintes instruções para gerar um certificado para o seu dispositivo de gateway.
@@ -77,7 +79,7 @@ Utilize as seguintes instruções para gerar um certificado para o seu dispositi
 
 * Executar `./certGen.sh create_edge_device_certificate myGateway` para criar o novo certificado de dispositivo.  
   Esta ação irá criar o.\certs\new-edge-device.* ficheiros que contêm a chave pública e o PFX e a.\private\new-edge-device.key.pem que contém a chave privada do dispositivo.  
-* `cat new-edge-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-edge-device-full-chain.cert.pem`Para obter a chave pública.
+* No `certs` diretório executar `cat ./new-edge-device.cert.pem ./azure-iot-test-only.intermediate.cert.pem ./azure-iot-test-only.root.ca.cert.pem > ./new-edge-device-full-chain.cert.pem` para obter a cadeia completa de chave pública do dispositivo.
 * `./private/new-edge-device.cert.pem`contém a chave privada do dispositivo.
 
 #### <a name="powershell"></a>PowerShell
@@ -135,7 +137,7 @@ Um dispositivo a jusante pode ser qualquer aplicação utilizando o [dispositivo
 
 Em primeiro lugar, tem de confiança de uma aplicação de dispositivo a jusante a **proprietário do hub IoT AC** certificado para validar as ligações de TLS para os dispositivos de gateway. Normalmente, é possível executar este passo de duas formas: ao nível do SO ou (para alguns idiomas) ao nível da aplicação.
 
-Por exemplo, para aplicações de .NET, pode adicionar o seguinte fragmento de um certificado no formato PEM armazenado no caminho de confiança `certPath`.
+Por exemplo, para aplicações de .NET, pode adicionar o seguinte fragmento de um certificado no formato PEM armazenado no caminho de confiança `certPath`. Se utilizar o script acima, o caminho será feita referência `certs/azure-iot-test-only.root.ca.cert.pem` (Bash), ou `RootCA.pem` (Powershell).
 
         using System.Security.Cryptography.X509Certificates;
         
@@ -145,8 +147,6 @@ Por exemplo, para aplicações de .NET, pode adicionar o seguinte fragmento de u
         store.Open(OpenFlags.ReadWrite);
         store.Add(new X509Certificate2(X509Certificate2.CreateFromCertFile(certPath)));
         store.Close();
-
-Tenha em atenção que os scripts de exemplo referenciados acima gera a chave pública no ficheiro `certs/azure-iot-test-only.root.ca.cert.pem` (Bash), ou `RootCA.pem` (Powershell).
 
 Executar este passo ao nível do SO é diferente entre o Windows e entre as distribuições do Linux.
 
@@ -176,6 +176,8 @@ Quando implementar um gateway opaco, o módulo de tradução do protocolo utiliz
 
 Quando implementar um gateway transparente, o módulo cria várias instâncias do cliente do dispositivo IoT Hub, utilizando as cadeias de ligação para os dispositivos a jusante.
 
+O [módulo do Azure IoT Edge Modbus] [ lnk-modbus-module] é uma implementação de um módulo de adaptador de protocolo para um gateway opaco aberta.
+
 ## <a name="next-steps"></a>Passos seguintes
 
 - [Compreender os requisitos e ferramentas para o desenvolvimento de módulos de limite de IoT][lnk-module-dev].
@@ -191,4 +193,5 @@ Quando implementar um gateway transparente, o módulo cria várias instâncias d
 [lnk-iothub-throttles-quotas]: ../iot-hub/iot-hub-devguide-quotas-throttling.md
 [lnk-iothub-devicetwins]: ../iot-hub/iot-hub-devguide-device-twins.md
 [lnk-iothub-c2d]: ../iot-hub/iot-hub-devguide-messages-c2d.md
-[lnk-ca-scripts]: https://github.com/Azure/azure-iot-sdk-c/blob/CACertToolEdge/tools/CACertificates/CACertificateOverview.md
+[lnk-ca-scripts]: https://github.com/Azure/azure-iot-sdk-c/blob/modules-preview/tools/CACertificates/CACertificateOverview.md
+[lnk-modbus-module]: https://github.com/Azure/iot-edge-modbus

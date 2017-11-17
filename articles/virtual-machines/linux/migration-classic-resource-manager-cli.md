@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/30/2017
 ms.author: kasing
-ms.openlocfilehash: fe0446b986ff73cce66a961c1c8aa1b01ef493a3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1d6f2d8319dde63434041885dcf5ff1a1cde3bcc
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-azure-cli"></a>Migrar recursos IaaS do clássico para o Azure Resource Manager, utilizando a CLI do Azure
 Estes passos mostram como utilizar comandos de interface de linha de comandos do Azure (CLI) para migrar a infraestrutura como um recursos de serviço (IaaS) do modelo de implementação clássica para o modelo de implementação Azure Resource Manager. O artigo requer o [CLI do Azure 1.0](../../cli-install-nodejs.md). Uma vez que o Azure CLI 2.0 só é aplicável para recursos do Azure Resource Manager, não pode ser utilizado para esta migração.
@@ -77,14 +77,14 @@ Agora comutador CLI para o `asm` modo.
 
     azure config mode asm
 
-## <a name="step-3-make-sure-you-have-enough-azure-resource-manager-virtual-machine-cores-in-the-azure-region-of-your-current-deployment-or-vnet"></a>Passo 3: Certifique-se de que tem suficiente núcleos de Máquina Virtual do Azure Resource Manager na região do Azure da sua implementação atual ou o VNET
+## <a name="step-3-make-sure-you-have-enough-azure-resource-manager-virtual-machine-vcpus-in-the-azure-region-of-your-current-deployment-or-vnet"></a>Passo 3: Certifique-se de que tem suficiente vCPUs de Máquina Virtual do Azure Resource Manager na região do Azure da sua implementação atual ou o VNET
 Para este passo, terá de mudar para `arm` modo. Fazê-lo com o seguinte comando.
 
 ```
 azure config mode arm
 ```
 
-Pode utilizar o seguinte comando da CLI para verificar a quantidade atual de núcleos que tiver no Gestor de recursos do Azure. Para saber mais sobre as quotas de núcleos, consulte o artigo [limites e o Azure Resource Manager](../../azure-subscription-service-limits.md#limits-and-the-azure-resource-manager)
+Pode utilizar o seguinte comando da CLI para verificar o número atual de vCPUs que tiver no Gestor de recursos do Azure. Para saber mais sobre as quotas de vCPU, consulte o artigo [limites e o Azure Resource Manager](../../azure-subscription-service-limits.md#limits-and-the-azure-resource-manager)
 
 ```
 azure vm list-usage -l "<Your VNET or Deployment's Azure region"

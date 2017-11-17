@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: sdanie
-ms.openlocfilehash: 0a5c95eab3fd01f611fc049e80c5c506857e0b81
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 5b65d513d6418f13a6f3e10644c1892eecbcba1d
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="manage-azure-redis-cache-with-azure-powershell"></a>Gerir a Cache de Redis do Azure com o Azure PowerShell
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ Este tópico mostra como realizar tarefas comuns, tais como de criar, atualizar 
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
-Para obter mais informações sobre o modelo de implementação clássica, consulte [vs. de implementação clássica do Azure Resource Manager: compreender o estado dos seus recursos e modelos de implementação](../azure-resource-manager/resource-manager-deployment-model.md#classic-deployment-characteristics).
+Para obter mais informações sobre o modelo de implementação clássica, consulte [vs. de implementação clássica do Azure Resource Manager: compreender o estado dos seus recursos e modelos de implementação](../azure-resource-manager/resource-manager-deployment-model.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Se já tiver instalado o Azure PowerShell, tem de ter o Azure PowerShell versão 1.0.0 ou posterior. Pode verificar a versão do Azure PowerShell que tenha instalado com este comando na linha de comandos do Azure PowerShell.

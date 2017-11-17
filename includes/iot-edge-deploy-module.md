@@ -7,6 +7,9 @@ Uma das principais funcionalidades do Azure IoT Edge está a ser possível imple
 1. No **nome** campo, introduza `tempSensor`. 
 1. No **URI de imagem** campo, introduza `microsoft/azureiotedge-simulated-temperature-sensor:1.0-preview`. 
 1. Deixar as outras definições inalteradas e selecione **guardar**.
+
+   ![Guardar o módulo de limite de IoT depois de introduzir o nome e a imagem de URI](./media/iot-edge-deploy-module/name-image.png)
+
 1. Volta a **adicionar módulos** passo, selecione **seguinte**.
 1. No **especificar rotas** passo, selecione **seguinte**.
 1. No **rever modelo** passo, selecione **submeter**.

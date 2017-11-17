@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: article
-ms.date: 10/11/2017
+ms.date: 11/14/2017
 ms.author: khdang
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7de7c5e366d1f7da73eabfa889a3b43fb0403438
-ms.sourcegitcommit: 4d90200f49cc60d63015bada2f3fc4445b34d4cb
+ms.openlocfilehash: 38737c8a296e27a4256e19b8c45cab17fc71b81a
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-cosmos-db-documentdb-java-sdk-release-notes-and-resources"></a>Azure Cosmos DB: SDK de DocumentDB Java notas de versão e recursos
 > [!div class="op_single_selector"]
@@ -51,6 +51,13 @@ ms.lasthandoff: 10/24/2017
 </table></br>
 
 ## <a name="release-notes"></a>Notas de Versão
+
+### <a name="a-name11501150"></a><a name="1.15.0"/>1.15.0
+* Desempenho melhorado de serialização Json.
+* Esta versão do SDK requer a versão mais recente do Azure Cosmos DB emulador disponível para transferência a partir do https://aka.ms/cosmosdb-emulator.
+
+### <a name="a-name11401140"></a><a name="1.14.0"/>1.14.0
+* Alterações internas para bibliotecas de amigos de Microsoft.
 
 ### <a name="a-name11301130"></a><a name="1.13.0"/>1.13.0
 * Foi corrigido um problema na leitura única partição intervalos de chaves.
@@ -174,6 +181,8 @@ Qualquer pedido de BD do Cosmos utilizando um SDK extinto será rejeitado pelo s
 
 | Versão | Data da versão | Data de retirada |
 | --- | --- | --- |
+| [1.15.0](#1.15.0) |14 de Novembro de 2017 |--- |
+| [1.14.0](#1.14.0) |28 de FPO de 2017 |--- |
 | [1.13.0](#1.13.0) |25 de Agosto de 2017 |--- |
 | [1.12.0](#1.12.0) |11 de Julho de 2017 |--- |
 | [1.11.0](#1.11.0) |10 de maio de 2017 |--- |

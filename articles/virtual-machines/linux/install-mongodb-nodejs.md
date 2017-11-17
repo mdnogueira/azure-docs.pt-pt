@@ -14,11 +14,11 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/11/2017
 ms.author: iainfou
-ms.openlocfilehash: c97ade0a3d95824f723aad55776de861fe49441f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ff9e23de41245ea21ba6e9c3efe13ca13b0b0ae1
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="how-to-install-and-configure-mongodb-on-a-linux-vm-using-the-azure-cli-10"></a>Como instalar e configurar o MongoDB numa VM com Linux utilizando a CLI do Azure 1.0
 [MongoDB](http://www.mongodb.org) é um popular open source e de elevado desempenho base de dados NoSQL. Este artigo mostra como instalar e configurar o MongoDB numa VM com Linux no Azure utilizando o modelo de implementação Resource Manager. Os exemplos são apresentados como esse detalhe para:
@@ -163,7 +163,7 @@ Pode criar um cluster a MongoDB complexo utilizando o modelo seguinte de início
 * [Cluster de fragmentação do MongoDB em CentOS](https://github.com/Azure/azure-quickstart-templates/tree/master/mongodb-sharding-centos) -https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-sharding-centos/azuredeploy.json
 
 > [!WARNING]
-> Este cluster em partição horizontal do MongoDB complexo a implementação requer mais de 20 núcleos, que é, geralmente, o número de núcleos predefinido por região para uma subscrição. Abra um pedido de suporte do Azure para aumentar a contagem de núcleos.
+> Implementar este cluster em partição horizontal do MongoDB complexo requer mais de 20 vCPUs, que é, geralmente, a contagem de vCPU predefinida por região para uma subscrição. Abra um pedido de suporte do Azure para aumentar a contagem de vCPU.
 
 O exemplo seguinte cria um grupo de recursos com o nome *myResourceGroup* no *eastus* região. Introduza os seus próprios valores da seguinte forma:
 

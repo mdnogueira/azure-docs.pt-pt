@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2017
 ms.author: markvi;andkjell
-ms.openlocfilehash: c298a2f99750ead099b8761699c914a3a6e41ce1
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 7bb7bdba21d83817cf5579e779a6a4d509753c01
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Sincronização do Azure AD Connect: entender utilizadores, grupos e contactos
 Existem diversas razões diferentes por que motivo, deverá dispor várias florestas do Active Directory e não existirem várias topologias de implementação diferentes. Modelos comuns incluem uma implementação de recursos de conta e da GAL sync'ed florestas após uma fusão & aquisição. Mas, mesmo se não existirem modelos puro, modelos híbridos são comuns bem. A configuração predefinida na sincronização do Azure AD Connect não assume qualquer modelo específico, mas, dependendo de como a correspondência de utilizador tiver sido selecionada no guia de instalação, podem ser observados comportamentos diferentes.
@@ -42,15 +42,15 @@ Pontos importantes a ter em consideração ao sincronizar a grupos do Active Dir
 
 * Sincronizar um grupo do Active Directory para o Azure AD como um grupo com capacidade de correio:
 
-    * Se o grupo */proxyaddress* está vazio, o atributo respetivo *correio* atributo tem de ter um valor, ou 
+    * Se o grupo */proxyaddress* está vazio, o atributo respetivo *correio* atributo tem de ter um valor
 
-    * Se o grupo */proxyaddress* atributo é não vazia, também tem de conter um valor de endereço de proxy SMTP primário (conforme a designação por maiúsculas **SMTP** prefixo). Eis alguns exemplos:
+    * Se o grupo */proxyaddress* atributo é não vazia, tem de conter pelo menos um valor de endereço de proxy de SMTP. Eis alguns exemplos:
     
-      * Um grupo do Active Directory cujo atributo /proxyaddress tem o valor *{"X500:/0=contoso.com/ou=users/cn=testgroup"}* não será com capacidade de correio no Azure AD. Não tem um endereço SMTP principal.
-      
-      * Um grupo do Active Directory cujo atributo /proxyaddress tem valores *{"X500:/0=contoso.com/ou=users/cn=testgroup", "smtp:johndoe@contoso.com"}* não será com capacidade de correio no Azure AD. Tem um endereço smtp, mas não é primária.
+      * Um grupo do Active Directory cujo atributo /proxyaddress tem o valor *{"X500:/0=contoso.com/ou=users/cn=testgroup"}* não será com capacidade de correio no Azure AD. Não tem um endereço de SMTP.
       
       * Um grupo do Active Directory cujo atributo /proxyaddress tem valores *{"X500:/0=contoso.com/ou=users/cn=testgroup","SMTP:johndoe@contoso.com"}* será com capacidade de correio no Azure AD.
+      
+      * Um grupo do Active Directory cujo atributo /proxyaddress tem valores *{"X500:/0=contoso.com/ou=users/cn=testgroup", "smtp:johndoe@contoso.com"}* também será com capacidade de correio no Azure AD.
 
 ## <a name="contacts"></a>Contactos
 Ter contactos que representa um utilizador numa floresta diferente é comum após uma fusão & aquisição onde uma solução de GALSync é bridging duas ou mais florestas do Exchange. O objeto de contacto é sempre a associar a partir do espaço de conector para o metaverso utilizando o atributo de correio. Se já existir um objeto de contacto ou objeto de utilizador com o mesmo endereço de correio, os objetos são Unidos. Este é configurado na regra **do AD – contacte associar**. Há também uma regra com o nome **do AD – contacte comuns** com um fluxo de atributos para o atributo do metaverso **sourceObjectType** com a constante **contacte**. Esta regra tem precedência muito baixa, pelo que, se qualquer objeto de utilizador está associado ao mesmo objeto de metaverso, em seguida, a regra **do AD – utilizador comuns** contribuem o valor de utilizador para este atributo. Com esta regra, este atributo tem o valor contacte se nenhum utilizador tiver sido associado e o valor do utilizador se não foi encontrado pelo menos um utilizador.

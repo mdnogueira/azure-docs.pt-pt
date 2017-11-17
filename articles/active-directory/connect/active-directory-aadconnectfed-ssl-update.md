@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/02/2017
+ms.date: 11/15/2017
 ms.author: anandy
-ms.openlocfilehash: 87807a203d71b3abfe3e93132eb7d0b82b14b4ee
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: eca5a61369c1653d8d3e04d191adfe4b54a11248
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="update-the-ssl-certificate-for-an-active-directory-federation-services-ad-fs-farm"></a>Atualizar o certificado SSL para um farm de serviços de Federação do Active Directory (AD FS)
 
@@ -36,7 +36,7 @@ Pode executar toda a operação de atualização do certificado SSL para o farm 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * **Farm do AD FS**: Certifique-se de que o farm do AD FS é baseado no Windows Server 2012 R2 ou posterior.
-* **O Azure AD Connect**: Certifique-se de que a versão do Azure AD Connect 1.1.443.0 ou posterior. Irá utilizar a tarefa **atualização AD certificado SSL FS**.
+* **O Azure AD Connect**: Certifique-se de que a versão do Azure AD Connect 1.1.553.0 ou superior. Irá utilizar a tarefa **atualização AD certificado SSL FS**.
 
 ![Tarefa de atualização de SSL](./media/active-directory-aadconnectfed-ssl-update/updatessltask.png)
 
@@ -78,7 +78,7 @@ No próximo passo, selecione os servidores que têm de ter o certificado SSL atu
 
 Depois de concluir a configuração, o Azure AD Connect apresenta a mensagem que indica o estado da atualização e fornece uma opção para verificar o AD FS início de sessão.
 
-![Conclusão da configuração](./media/active-directory-aadconnectfed-ssl-update/configurecomplete.png)   
+![Configuração completa](./media/active-directory-aadconnectfed-ssl-update/configurecomplete.png)   
 
 ## <a name="faqs"></a>Perguntas mais frequentes
 

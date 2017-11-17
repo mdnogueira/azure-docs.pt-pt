@@ -11,18 +11,18 @@ ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: article
 ms.date: 11/15/2017
-ms.openlocfilehash: ed31a0e725d1e0863e9c4695d4eccb324f60678a
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 29b617422810480f5f8cbcd5b78ebe8605734bbf
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="how-to-add-an-iot-hub-event-source-to-time-series-insights-environment"></a>Como adicionar uma origem de evento do IoT Hub para o ambiente de informações de séries de tempo
 Este artigo descreve como utilizar o portal do Azure para adicionar uma origem de evento que lê dados a partir de um IoT Hub para o seu ambiente de informações de séries de tempo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Crie um ambiente de informações de séries de tempo. Para obter mais informações, consulte [criar um ambiente de informações de séries de tempo do Azure](time-series-insights-get-started.md) 
-- Crie um Hub IoT. Para obter mais informações sobre os Hubs IoT, consulte [criar um IoT hub no portal do Azure](../iot-hub/iot-hub-create-through-portal.md)
+- Crie um Hub IoT. Para obter mais informações sobre os Hubs IoT, consulte [criar um IoT Hub no portal do Azure](../iot-hub/iot-hub-create-through-portal.md)
 - O IoT Hub tem de ter os eventos de mensagem Active Directory que está a ser enviados.
 - Crie um grupo de consumidores dedicado no IoT Hub para o ambiente de conhecimentos aprofundados de séries de tempo para consumir do. Cada origem de evento Insights de séries de tempo tem de ter o seu próprio grupo de consumidores dedicado que não seja partilhado com quaisquer outros consumidores. Se vários leitores consumam eventos a partir do mesmo grupo de consumidores, todos os leitores serão provável que consulte falhas. Para obter mais informações, consulte o [guia para programadores do IoT Hub](../iot-hub/iot-hub-devguide.md).
 
@@ -52,11 +52,11 @@ Este artigo descreve como utilizar o portal do Azure para adicionar uma origem d
 
    | Propriedade | Descrição |
    | --- | --- |
-   | ID da subscrição | Selecione a subscrição na qual este hub IoT foi criado.
-   | Nome do hub IoT | Selecione o nome do IoT Hub.
-   | Nome da política do IoT hub | Selecione a política de acesso partilhado, o que pode ser encontrada no separador de definições do IoT Hub. Cada política de acesso partilhado tem um nome, as permissões que define e chaves de acesso. A política de acesso partilhado para a origem de evento *tem* ter **serviço ligar** permissões.
-   | Chave de política do IoT hub | A chave é pré-preenchida.
-   | Grupo de consumidores do hub IoT | O grupo de consumidores para ler eventos do IoT Hub. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento.
+   | ID da subscrição | Selecione a subscrição na qual este IoT Hub foi criado.
+   | Nome do IoT Hub | Selecione o nome do IoT Hub.
+   | Nome da política de IoT Hub | Selecione a política de acesso partilhado, o que pode ser encontrada no separador de definições do IoT Hub. Cada política de acesso partilhado tem um nome, as permissões que define e chaves de acesso. A política de acesso partilhado para a origem de evento *tem* ter **serviço ligar** permissões.
+   | Chave de política do IoT Hub | A chave é pré-preenchida.
+   | Grupo de consumidores do IoT Hub | O grupo de consumidores para ler eventos do IoT Hub. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento.
    | Formato de serialização de eventos | JSON é a serialização apenas disponível neste momento. As mensagens de eventos tem de estar no formato ou não existem dados podem ser lidos. |
    | Nome da propriedade Timestamp | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o IoT Hub. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
 
@@ -64,12 +64,12 @@ Este artigo descreve como utilizar o portal do Azure para adicionar uma origem d
 
    | Propriedade | Descrição |
    | --- | --- |
-   | ID da subscrição | A subscrição na qual este hub IoT foi criado.
-   | Grupo de recursos | O nome do grupo de recursos no qual este hub IoT foi criado.
-   | Nome do hub IoT | O nome do seu IoT Hub. Quando criou o seu hub IoT, também lhe atribuiu um nome específico.
-   | Nome da política do IoT hub | A política de acesso partilhado, que pode ser criada no separador de definições do IoT Hub. Cada política de acesso partilhado tem um nome, as permissões que define e chaves de acesso. A política de acesso partilhado para a origem de evento *tem* ter **serviço ligar** permissões.
-   | Chave de política do IoT hub | A chave de acesso partilhado utilizada para autenticar o acesso ao espaço de nomes do Service Bus. Escreva a chave primária ou secundária aqui.
-   | Grupo de consumidores do hub IoT | O grupo de consumidores para ler eventos do IoT Hub. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento.
+   | ID da subscrição | A subscrição na qual este IoT Hub foi criado.
+   | Grupo de recursos | O nome do grupo de recursos no qual este IoT Hub foi criado.
+   | Nome do IoT Hub | O nome do seu IoT Hub. Quando criou o seu IoT Hub, também lhe atribuiu um nome específico.
+   | Nome da política de IoT Hub | A política de acesso partilhado, que pode ser criada no separador de definições do IoT Hub. Cada política de acesso partilhado tem um nome, as permissões que define e chaves de acesso. A política de acesso partilhado para a origem de evento *tem* ter **serviço ligar** permissões.
+   | Chave de política do IoT Hub | A chave de acesso partilhado utilizada para autenticar o acesso ao espaço de nomes do Service Bus. Escreva a chave primária ou secundária aqui.
+   | Grupo de consumidores do IoT Hub | O grupo de consumidores para ler eventos do IoT Hub. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento.
    | Formato de serialização de eventos | JSON é a serialização apenas disponível neste momento. As mensagens de eventos tem de estar no formato ou não existem dados podem ser lidos. |
    | Nome da propriedade Timestamp | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o IoT Hub. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
 
@@ -79,11 +79,11 @@ Este artigo descreve como utilizar o portal do Azure para adicionar uma origem d
 
    Depois de criar a origem de eventos, o Time Series Insights vai começar a transmitir dados para o seu ambiente automaticamente.
 
-### <a name="add-a-consumer-group-to-your-iot-hub"></a>Adicionar um grupo de consumidores ao seu IoT hub
+### <a name="add-a-consumer-group-to-your-iot-hub"></a>Adicionar um grupo de consumidores ao seu IoT Hub
 Grupos de consumidores são utilizados por aplicações para solicitar dados a partir dos Hubs IoT do Azure. Forneça um grupo de consumidores dedicado para utilização por este ambiente de informações de séries de tempo só, fiável ler dados a partir do seu IoT Hub.
 
-Para adicionar um novo grupo de consumidores ao seu IoT hub, siga estes passos:
-1. No portal do Azure, localize e abra o seu IoT hub.
+Para adicionar um novo grupo de consumidores ao seu IoT Hub, siga estes passos:
+1. No portal do Azure, localize e abra o seu IoT Hub.
 
 2. Sob o **mensagens** cabeçalho, selecione **pontos finais**. 
 

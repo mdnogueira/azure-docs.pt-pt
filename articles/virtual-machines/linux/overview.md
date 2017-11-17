@@ -15,11 +15,11 @@ ms.workload: infrastructure
 ms.date: 09/14/2016
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: ae4b8f423489bf417f1086368db9b1043cd7f396
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: cef9abddf980c695040e99995eb325eeb182fad4
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-and-linux"></a>Azure e Linux
 Microsoft Azure é uma crescente coleção de público integrada, incluindo bases de dados de análise, as máquinas virtuais, móveis, funcionamento em rede, armazenamento, de serviços em nuvem e web&mdash;ideal para alojar as suas soluções.  O Microsoft Azure fornece uma plataforma informática dimensionável que lhe permite pagar apenas aquilo que utiliza, quando quer utilizar, sem que precise de investir em hardware no local.  O Azure está sempre pronto quando precisa de aumentar as suas soluções vertical e horizontalmente até atingir a dimensão de que necessita para satisfazer as necessidades dos seus clientes.
@@ -53,7 +53,7 @@ Quando implementa uma VM no Azure, se pretender selecionar um tamanho VM dentro 
 Seguem-se algumas orientações básicas para selecionar um tamanho VM a partir de um dos nosso série (A, D, DS, G e GS).
 * A série VMs são nosso valor um preço entry-level VMs de cargas de trabalho leves e cenários de desenvolvimento/teste. Estão amplamente disponíveis em todas as regiões e pode ligar e utilizar todos os recursos padrão disponíveis para máquinas virtuais.
 * A série (A8 - A11) são configurações intensivas de computação especial adequadas para aplicações de cluster computacional de elevado desempenho.
-* As VMs da série D foram concebidos para executar aplicações que exigem um maior desempenho de poder de computação e disco temporário. As VMs da série D fornecem processadores mais rápidos, um rácio de memória para núcleo superior e uma unidade de estado sólida (SSD) para o disco temporário.
+* As VMs da série D foram concebidos para executar aplicações que exigem um maior desempenho de poder de computação e disco temporário. As VMs da série D fornecem processadores mais rápidos, um rácio de memória para vCPU superior e uma unidade de estado sólida (SSD) para o disco temporário.
 * Série Dv2, é a versão mais recente do nosso série D, funcionalidades uma CPU mais poderosa. A CPU da série Dv2 é cerca de 35% mais rápida do que a CPU da série D. Se baseia na geração de mais recente 2.4 GHz Intel Xeon® E5-2673 v3 processador (Haskell) e com o Intel Turbo intensificação tecnologia 2.0, pode ir até 3,2 GHz. A série Dv2 tem as mesmas configurações de memória e disco da série D.
 * As VMs da série G oferecem a maior capacidade de memória e são executadas em anfitriões com processadores da família Intel Xeon E5 V3.
 

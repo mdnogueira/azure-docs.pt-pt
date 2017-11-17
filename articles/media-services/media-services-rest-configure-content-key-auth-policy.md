@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: juliako
-ms.openlocfilehash: 33507d76839567c830c9e8152eeac70d5c0f2b7b
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 5b8f2d750c3330fb05f5529c3e3549d8e06e5e4e
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="dynamic-encryption-configure-content-key-authorization-policy"></a>Encriptação dinâmica: configurar a política de autorização de chave de conteúdo
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
@@ -184,9 +184,6 @@ Resposta:
 Esta secção descreve como criar uma política de autorização da chave de conteúdo e associe-a com a chave de conteúdo. A política de autorização descreve os requisitos de autorização devem ser cumpridos para determinar se o utilizador está autorizado para receberem a chave (por exemplo, does a lista de "chave de verificação" contém a chave que o token foi assinado com).
 
 Para configurar a opção de restrição de token, terá de utilizar um XML para descrever os requisitos de autorização do token. O XML de configuração de restrição de token tem de estar em conformidade com o esquema XML seguinte.
-
-> [!NOTE]
-> Restrição de token nas políticas de autorização da chave de conteúdo ainda não está disponível no serviço.
 
 
 #### <a id="schema"></a>Esquema de restrição de token
@@ -428,9 +425,14 @@ Adicione AuthorizationPolicy para o ContentKey conforme é mostrado [aqui](#AddA
     public enum ContentKeyRestrictionType
     {
         Open = 0,
-        TokenRestricted = 1, // Not supported, reserved for future
-        IPRestricted = 2,
+        TokenRestricted = 1, 
+        IPRestricted = 2, // IP restriction on content key is not currently supported, reserved for future.
     }
+
+
+> [!NOTE]
+> Restrição de IP nas políticas de autorização da chave de conteúdo ainda não está disponível no serviço.
+
 
 ### <a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
     public enum ContentKeyDeliveryType

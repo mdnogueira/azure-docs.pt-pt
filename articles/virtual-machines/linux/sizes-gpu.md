@@ -1,6 +1,6 @@
 ---
 title: Tamanhos de VM Linux do Azure - GPU | Microsoft Docs
-description: "Apresenta uma lista na GPU diferentes com otimização de tamanhos disponíveis para computadores virtuais Linux no Azure."
+description: "Apresenta uma lista na GPU diferentes com otimização de tamanhos disponíveis para computadores virtuais Linux no Azure. Apresenta informações sobre o número de vCPUs, discos de dados e NICs, bem como armazenamento débito e a rede de largura de banda para tamanhos de nesta série."
 services: virtual-machines-linux
 documentationcenter: 
 author: jonbeck7
@@ -15,11 +15,11 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/08/2017
 ms.author: jonbeck
-ms.openlocfilehash: 645f69e71c5a13bb70edabfd22f51ed5df619693
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.openlocfilehash: 6650bb2620f43053836a49f39337852d94d8dbc5
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>GPU com otimização de tamanhos de máquinas virtuais
 

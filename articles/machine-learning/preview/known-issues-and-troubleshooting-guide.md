@@ -10,19 +10,17 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 050758240c9670a6f120f069d736cf6d6475b534
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: a03fb4f202bddb6454f703c998e95abf13d14fff
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="azure-machine-learning-workbench---known-issues-and-troubleshooting-guide"></a>Azure Machine Learning Workbench - problemas conhecidos e guia de resolução de problemas 
 Este artigo ajuda-o a encontrar e corrija erros ou falhas encontradas como parte da utilização da aplicação do Azure Machine Learning Workbench. 
 
-> [!IMPORTANT]
-> Ao comunicar com a equipa de suporte, é importante que tenha o número de compilação. Pode encontrar o número de compilação da aplicação ao clicar no **ajudar** menu. Ao clicar no número de compilação copia-o para a sua área de transferência. Pode cole-o e-mails ou suportar fóruns para ajudar a problemas de relatório.
-
-![Verifique o número de versão](media/known-issues-and-troubleshooting-guide/buildno.png)
+## <a name="find-the-workbench-build-number"></a>Determinar o número de compilação do Workbench
+Ao comunicar com a equipa de suporte, é importante incluir o número de compilação da aplicação Workbench. No Windows, pode descobrir o número de compilação, clicando no **ajudar** menu e escolha **sobre o Azure ML Workbench**. No macOS, pode clicar no **do Azure ML Workbench** menu e escolha **sobre o Azure ML Workbench**.
 
 ## <a name="machine-learning-msdn-forum"></a>Fórum MSDN do Machine Learning
 Temos um fórum MSDN que pode publicar perguntas. A equipa de produto monitoriza ativamente o Fórum. Fórum do URL é [https://aka.ms/azureml-forum](https://aka.ms/azureml-forum). 
@@ -75,10 +73,13 @@ Quando estiver a trabalhar no Azure ML Workbench, também pode enviar-num negati
     >Este limite não se aplica a `.git`, `docs` e `outputs` pastas. Estes nomes de pastas diferenciam maiúsculas de minúsculas. Se estiver a trabalhar com ficheiros grandes, consulte [a persistência de alterações e grau com ficheiros grandes](how-to-read-write-files.md).
 
 - Máx. permitido tempo de execução da experimentação: sete dias
+
 - Tamanho máx. de ficheiros registados no `outputs` pasta após a execução: 512 MB
   - Isto significa que o se o script produz um ficheiro com mais de 512 MB na pasta saídas, não está a recolher não existe. Se estiver a trabalhar com ficheiros grandes, consulte [a persistência de alterações e grau com ficheiros grandes](how-to-read-write-files.md).
 
 - Não são suportadas chaves SSH ao ligar a um computador remoto ou um cluster do Spark através de SSH. Modo de nome de utilizador/palavra-passe apenas é suportado atualmente.
+
+- Ao utilizar o cluster do HDInsight como destino de computação, tem de utilizar Azure blob como armazenamento primário. Não é suportada a utilização de armazenamento do Azure Data Lake.
 
 - Texto transformações de clusters não são suportadas em Mac.
 

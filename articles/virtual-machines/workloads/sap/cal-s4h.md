@@ -16,11 +16,11 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
-ms.openlocfilehash: 4788fa14a6c49d39b5a3096a69b6738f4a5d8cca
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 342bd20466cdeb0b9df1cdacd4664fa4e3e0c604
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Implementar SAP S/4HANA ou BW/4HANA no Azure
 Este artigo descreve como implementar o S/4HANA no Azure através da biblioteca de aplicação de nuvem de SAP (SAP CAL) 3.0. Para implementar outras soluções baseadas em SAP HANA, tais como BW/4HANA, siga os mesmos passos.
@@ -95,7 +95,7 @@ Criou com êxito uma conta do SAP CAL que é capaz de:
 Agora pode começar a implementar S/4HANA na sua subscrição de utilizador no Azure.
 
 > [!NOTE]
-Antes de continuar, determine se tem de quotas de núcleo do Azure para as VMs do Azure série H. De momento, o SAP CAL utiliza H série VMs do Azure para implementar algumas das soluções do SAP HANA. A subscrição do Azure poderá não ter quaisquer quotas de núcleos de série de H para série H. Se assim for, poderá ter de contactar o suporte do Azure para obter uma quota de núcleos de série de H, pelo menos, 16.
+Antes de continuar, determine se tem de quotas vCPU do Azure para as VMs do Azure série H. De momento, o SAP CAL utiliza H série VMs do Azure para implementar algumas das soluções do SAP HANA. A subscrição do Azure poderá não ter quaisquer quotas de vCPU H série para série H. Se assim for, poderá ter de contactar o suporte do Azure para obter uma quota de pelo menos 16 vCPUs de série de H.
 
 > [!NOTE]
 Ao implementar uma solução no Azure no CAL SAP, poderá achar que pode escolher apenas uma região do Azure. Para implementar em regiões do Azure diferente daquela sugerida pelo CAL SAP, tem de comprar uma subscrição de CAL SAP. Também poderá ter de abrir uma mensagem com o SAP a sua conta do CAL ativada para a entrega em regiões do Azure sem ser aqueles inicialmente sugeridos.

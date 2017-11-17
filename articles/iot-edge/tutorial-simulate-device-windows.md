@@ -10,11 +10,11 @@ ms.reviewer: elioda
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 08c501b9132bb21f47f099725d1fad5556befb4c
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: da0446a62c5d254aa92e6673de034852044bc052
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="deploy-azure-iot-edge-on-a-simulated-device-in-windows----preview"></a>Implementar o Azure IoT Edge num dispositivo simulado Windows – pré-visualização
 
@@ -38,18 +38,18 @@ Este tutorial parte do princípio de que está a utilizar um computador ou máqu
 3. Instalar [Python 2.7 no Windows] [ lnk-python] e certifique-se de que pode utilizar o comando do pip.
 4. Execute o seguinte comando para transferir o script de controlo contorno de IoT.
 
-   ```
+   ```cmd
    pip install -U azure-iot-edge-runtime-ctl
    ```
 
 > [!NOTE]
-> Limite de IoT do Azure pode executar contentores do Windows ou Linux contentores. Utilizar contentores do Windows, tem de executar:
->    * Atualizar do Windows 10 criadores de reversão, ou
->    * Windows Server 1709 (criar 16299), ou
+> Limite de IoT do Azure pode executar contentores do Windows ou Linux contentores. Se estiver a executar uma das seguintes versões do Windows, pode utilizar contentores do Windows:
+>    * Atualizar do Windows 10 criadores de reversão
+>    * Windows Server 1709 (criar 16299)
 >    * Windows IoT Core (criar 16299) num dispositivo baseado em x64
 >
-> Para Windows IoT Core, siga as instruções em [instalar o runtime de limite de IoT no Windows IoT Core][lnk-install-iotcore]. Caso contrário, basta [configurar Docker utilizar contentores Windows][lnk-docker-containers]e, opcionalmente, confirme os pré-requisitos com o seguinte comando do powershell:
->    ```
+> Para Windows IoT Core, siga as instruções em [instalar o runtime de limite de IoT no Windows IoT Core][lnk-install-iotcore]. Caso contrário, basta [configurar Docker utilizar contentores Windows][lnk-docker-containers]. Utilize o seguinte comando para validar os pré-requisitos:
+>    ```powershell
 >    Invoke-Expression (Invoke-WebRequest -useb https://aka.ms/iotedgewin)
 >    ```
 
@@ -73,28 +73,28 @@ Registe um dispositivo de limite de IoT IoT Hub recentemente criado.
 Instalar e iniciar o tempo de execução do Azure IoT Edge no seu dispositivo. 
 ![Registar um dispositivo][5]
 
-O tempo de execução do limite de IoT é implementado em todos os dispositivos de limite de IoT. É composto por dois módulos. Em primeiro lugar, o agente de limite de IoT facilita a implementação e monitorização de módulos no dispositivo de limite de IoT. Segundo, o hub IoT Edge gere as comunicações entre os módulos no dispositivo de limite de IoT e entre o dispositivo e o IoT Hub. 
+O tempo de execução do limite de IoT é implementado em todos os dispositivos de limite de IoT. É composto por dois módulos. O **agente IoT Edge** facilita a implementação e monitorização de módulos no dispositivo de limite de IoT. O **hub IoT Edge** gere as comunicações entre os módulos no dispositivo de limite de IoT e entre o dispositivo e o IoT Hub. Quando configura o tempo de execução no seu dispositivo novo, apenas o agente de limite de IoT começará em primeiro lugar. O hub IoT Edge vem mais tarde quando implementar um módulo. 
 
 
-Utilize os seguintes passos para instalar e iniciar o tempo de execução do limite de IoT:
+Configure o tempo de execução com a cadeia de ligação do dispositivo de limite de IoT da secção anterior.
 
-1. Configure o tempo de execução com a cadeia de ligação do dispositivo de limite de IoT da secção anterior.
+```cmd
+iotedgectl setup --connection-string "{device connection string}" --auto-cert-gen-force-no-passwords
+```
 
-   ```
-   iotedgectl setup --connection-string "{device connection string}" --auto-cert-gen-force-no-passwords
-   ```
+Inicie o tempo de execução.
 
-1. Inicie o tempo de execução.
+```cmd
+iotedgectl start
+```
 
-   ```
-   iotedgectl start
-   ```
+Verifique o Docker para ver que o agente de limite de IoT está em execução como um módulo.
 
-1. Verifique o Docker para ver que o agente de limite de IoT está em execução como um módulo.
+```cmd
+docker ps
+```
 
-   ```
-   docker ps
-   ```
+![Consulte edgeAgent no Docker](./media/tutorial-simulate-device-windows/docker-ps.png)
 
 ## <a name="deploy-a-module"></a>Implementar um módulo
 
@@ -108,11 +108,21 @@ Gerir o seu dispositivo de limite de IoT do Azure na nuvem para implementar um m
 
 Este guia de introdução, criou um novo dispositivo de limite de IoT e instalado o tempo de execução do limite de IoT. Em seguida, utilizou o portal do Azure para emitir um módulo de limite de IoT para ser executada no dispositivo sem ter de efetuar alterações para o dispositivo propriamente dito. Neste caso, o módulo que tiver feito o Push de cria ambientais dados que pode utilizar para os tutoriais. 
 
-Ver as mensagens a enviar do módulo tempSensor:
+Abra a linha de comandos no computador com o seu dispositivo simulado novamente. Certifique-se de que o módulo implementado a partir da nuvem está em execução no seu dispositivo de limite de IoT. 
 
-```cmd/sh
-sudo docker logs -f tempSensor
+```cmd
+docker ps
 ```
+
+![Ver três módulos no seu dispositivo](./media/tutorial-simulate-device-windows/docker-ps2.png)
+
+Ver as mensagens do módulo tempSensor, que está a ser enviadas para a nuvem. 
+
+```cmd
+docker logs -f tempSensor
+```
+
+![Ver os dados a partir do módulo](./media/tutorial-simulate-device-windows/docker-logs.png)
 
 Também pode ver a telemetria que o dispositivo está a enviar ao utilizar o [ferramenta do Explorador do IoT Hub][lnk-iothub-explorer]. 
 

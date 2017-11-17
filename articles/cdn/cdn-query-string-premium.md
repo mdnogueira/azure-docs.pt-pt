@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: mazha
-ms.openlocfilehash: ba9c28f0e6df25b101b45edf836d0b95056cbc6f
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: 2021b5b7602605a7c264e9cd575399077691da34
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="control-azure-content-delivery-network-caching-behavior-with-query-strings---premium"></a>Controlo do Azure conteúdo rede de entrega de colocação em cache comportamento com cadeias de consulta - Premium
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/11/2017
 > 
 
 ## <a name="overview"></a>Descrição geral
-Com o Azure entrega rede conteúdos (CDN), pode controlar a forma como os ficheiros são colocadas em cache para um pedido web que contém uma cadeia de consulta. Um pedido web com uma cadeia de consulta, a cadeia de consulta é que parte do pedido que ocorre após o `?` caráter. Uma cadeia de consulta pode conter um ou mais parâmetros que são separados por um `&` caráter. Por exemplo, `http://www.domain.com/content.mov?data1=true&data2=false`. Se existir mais do que um parâmetro de cadeia de consulta num pedido, não importa a ordem dos parâmetros. 
+Com o Azure entrega rede conteúdos (CDN), pode controlar a forma como os ficheiros são colocadas em cache para um pedido web que contém uma cadeia de consulta. Um pedido web com uma cadeia de consulta, a cadeia de consulta é que parte do pedido que ocorre após um ponto de interrogação (?). Uma cadeia de consulta pode conter um ou mais pares de valor de chave, em que o nome do campo e o respetivo valor são separados por um sinal de igual (=). Cada par chave-valor é separado por um e comercial (&). Por exemplo `http://www.contoso.com/content.mov?field1=value1&field2=value2`. Se existir mais do que um par chave-valor de uma cadeia de consulta de um pedido, não importa a sua ordem. 
 
 > [!IMPORTANT]
 > Os produtos da CDN standard e premium fornecem a mesma cadeia de consulta funcionalidade a colocação em cache, mas a interface de utilizador é diferente.  Este artigo descreve a interface para **CDN do Azure Premium da Verizon**. Para a cache de cadeia de consulta com **CDN do Azure Standard da Akamai** e **CDN do Azure Standard da Verizon**, consulte [controlar o comportamento de colocação em cache da CDN pedidos com cadeias de consulta](cdn-query-string.md).

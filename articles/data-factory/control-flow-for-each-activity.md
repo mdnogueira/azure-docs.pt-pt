@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2017
 ms.author: shlo
-ms.openlocfilehash: 10c0dd2156e850b421d80901b6f0b40c7d384cef
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 183880d2225c1dcc628349733c4fcaa8ddefe6eb
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="foreach-activity-in-azure-data-factory"></a>Atividade ForEach no Azure Data Factory
 A atividade ForEach define um fluxo de controlo de repetidos no seu pipeline. Esta atividade é utilizada para iterar uma coleção e executa atividades especificadas em ciclo. A implementação de ciclo desta atividade é semelhante à estrutura de ciclo Foreach nas linguagens de programação.
@@ -34,7 +34,10 @@ As propriedades são descritas neste artigo. A propriedade de itens é uma cole�
    "type":"ForEach",
    "typeProperties":{  
       "isSequential":"true",
-      "items":"@pipeline().parameters.mySinkDatasetFolderPathCollection",
+        "items": {
+            "value": "@pipeline().parameters.mySinkDatasetFolderPathCollection",
+            "type": "Expression"
+        },
       "activities":[  
          {  
             "name":"MyCopyActivity",
@@ -73,7 +76,7 @@ Propriedade | Descrição | Valores permitidos | Necessário
 -------- | ----------- | -------------- | --------
 nome | Nome da atividade para cada. | Cadeia | Sim
 tipo | Tem de ser definido como **ForEach** | Cadeia | Sim
-isSequential | Especifica se o ciclo deve ser executado sequencialmente ou em paralelo.  Máximo de 20 iterações de ciclo pode ser executado em simultâneo em paralelo). Por exemplo, se tiver uma atividade de ForEach iterating através de uma atividade de cópia com 10 diferentes origem e dependente conjuntos de dados com **isSequential** definido como FALSO, todas as cópias são executadas em simultâneo. Predefinição é False. <br/><br/> Se "isSequential" estiver definido como False, certifique-se de que não existe uma configuração correta para executar executáveis vários. Caso contrário, esta propriedade deve ser utilizada com cuidado para evitar incorrer em conflitos de escrita. Para obter mais informações, consulte [execução paralela](#parallel-execution) secção. | Valor booleano | Não. Predefinição é False.
+isSequential | Especifica se o ciclo deve ser executado sequencialmente ou em paralelo.  Máximo de 20 iterações de ciclo pode ser executado em simultâneo em paralelo). Por exemplo, se tiver uma atividade de ForEach iterating através de uma atividade de cópia com 10 diferentes origem e dependente conjuntos de dados com **isSequential** definido como FALSO, todas as cópias são executadas em simultâneo. Predefinição é False. <br/><br/> Se "isSequential" estiver definido como False, certifique-se de que não existe uma configuração correta para executar executáveis vários. Caso contrário, esta propriedade deve ser utilizada com cuidado para evitar incorrer em conflitos de escrita. Para obter mais informações, consulte [execução paralela](#parallel-execution) secção. | Booleano | Não. Predefinição é False.
 Itens | Uma expressão que devolve uma matriz JSON para iterated através de mensagens em fila. | Expressão (que devolve uma matriz JSON) | Sim
 Atividades | As atividades para ser executada. | Lista de atividades | Sim
 
@@ -98,7 +101,10 @@ A atividade ForEach, fornecem uma matriz para ser iterated através da proprieda
                 "type": "ForEach",
                 "typeProperties": {
                     "isSequential": "true",
-                    "items": "@pipeline().parameters.mySinkDatasetFolderPath",
+                    "items": {
+                        "value": "@pipeline().parameters.mySinkDatasetFolderPath",
+                        "type": "Expression"
+                    },
                     "activities": [
                         {
                             "name": "MyCopyActivity",

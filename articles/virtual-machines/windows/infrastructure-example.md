@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 06/26/2017
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 84cefcdb85f1a3c753027e827abde010b461cda7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ee66bf554e8e623ebfaa82bc888fc541da322d2f
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-windows-vms"></a>Instruções de infraestrutura do Azure de exemplo para VMs do Windows
 
@@ -41,7 +41,7 @@ Adventure Works Cycles pretende criar uma aplicação da loja online no Azure qu
 
 ![Diagrama de diferentes camadas para a infraestrutura de aplicação](./media/infrastructure-example/example-tiers.png)
 
-Entrada segura tráfego web tem de ser com balanceamento de carga entre os servidores web como os clientes procurar o arquivo de online. Ordem de processamento de tráfego sob a forma de pedidos de HTTP da web servidores devem ser balanceados entre os servidores de aplicação. Além disso, a infraestrutura têm de ser concebida para elevada disponibilidade.
+Entrada segura tráfego web tem de ser com balanceamento de carga entre os servidores web como os clientes procurar loja online. Ordem de processamento de tráfego sob a forma de pedidos de HTTP da web servidores devem ser balanceados entre os servidores de aplicação. Além disso, a infraestrutura têm de ser concebida para elevada disponibilidade.
 
 Tem de incorporar o design resultante:
 
@@ -55,7 +55,7 @@ Tem de incorporar o design resultante:
 Todos os anteriores, siga estas convenções de nomenclatura:
 
 * Adventure Works Cycles utiliza **[carga de trabalho IT]-[localização]-[recursos do Azure]** como prefixo
-  * Neste exemplo, "**azos**" (Azure on-line Store) é o nome de carga de trabalho de TI e "**utilizar**" (EUA Leste 2) é a localização
+  * Neste exemplo, "**azos**" (Azure Online Store) é o nome de carga de trabalho de TI e "**utilizar**" (EUA Leste 2) é a localização
 * Redes virtuais utilizam AZOS-utilização-VN**[número]**
 * Conjuntos de disponibilidade utilizam azos-utilizar-como-**[função]**
 * Nomes de máquina virtual utilizar azos-utilizar-vm -**[vmname]**

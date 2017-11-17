@@ -9,11 +9,11 @@ ms.author: kgremban
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: e10b5dba6f91c97a5c6b71aee76eef062a8be82c
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: e232b4cdb62b7bf212808bd380119482ee88b077
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Início rápido: Implementar o módulo de limite de IoT primeiro do portal do Azure para um dispositivo Windows – pré-visualização
 
@@ -94,6 +94,8 @@ Verifique o Docker para ver que o agente de limite de IoT está em execução co
 docker ps
 ```
 
+![Consulte edgeAgent no Docker](./media/tutorial-simulate-device-windows/docker-ps.png)
+
 ## <a name="deploy-a-module"></a>Implementar um módulo
 
 [!INCLUDE [iot-edge-deploy-module](../../includes/iot-edge-deploy-module.md)]
@@ -102,11 +104,21 @@ docker ps
 
 Este guia de introdução, criou um novo dispositivo de limite de IoT e instalado o tempo de execução do limite de IoT. Em seguida, utilizou o portal do Azure para emitir um módulo de limite de IoT para ser executada no dispositivo sem ter de efetuar alterações para o dispositivo propriamente dito. Neste caso, o módulo que tiver feito o Push de cria ambientais dados que pode utilizar para os tutoriais. 
 
-Ver as mensagens a enviar do módulo tempSensor:
+Abra a linha de comandos no computador com o seu dispositivo simulado novamente. Certifique-se de que o módulo implementado a partir da nuvem está em execução no seu dispositivo de limite de IoT. 
 
-```cmd/sh
+```cmd
+docker ps
+```
+
+![Ver três módulos no seu dispositivo](./media/tutorial-simulate-device-windows/docker-ps2.png)
+
+Ver as mensagens do módulo tempSensor, que está a ser enviadas para a nuvem. 
+
+```cmd
 docker logs -f tempSensor
 ```
+
+![Ver os dados a partir do módulo](./media/tutorial-simulate-device-windows/docker-logs.png)
 
 Também pode ver a telemetria que o dispositivo está a enviar ao utilizar o [ferramenta do Explorador do IoT Hub][lnk-iothub-explorer]. 
 ## <a name="clean-up-resources"></a>Limpar recursos

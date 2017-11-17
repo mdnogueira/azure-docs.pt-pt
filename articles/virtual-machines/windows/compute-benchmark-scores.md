@@ -15,11 +15,11 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/11/2017
 ms.author: cynthn
-ms.openlocfilehash: dc715a9bf4e5366e1719de7c649feb06b0c4bee7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 37eaafdbcee87e6f6a6164dffcabaa7e9efa65ca
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="compute-benchmark-scores-for-windows-vms"></a>Calcular as pontuações de benchmark para VMs do Windows
 As pontuações de benchmark SPECInt seguintes mostram o desempenho de computação para lineup VM de elevado desempenho do Azure com o Windows Server. Também estão disponíveis para computação benchmark pontuações [VMs com Linux](../linux/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -65,7 +65,7 @@ As pontuações de benchmark SPECInt seguintes mostram o desempenho de computaç
 | Standard_H16mr |16 |2 |Intel Xeon E5-2667 v3 @ 3,2 GHz |7 |569.6 |2.8 |
 
 ## <a name="about-specint"></a>Sobre SPECint
-Números de Windows foram calculados executando [SPECint 2006](https://www.spec.org/cpu2006/results/rint2006.html) no Windows Server. SPECint foi executada utilizando a opção de taxa base (SPECint_rate2006), com uma cópia por núcleo. SPECint consiste em 12 testes separados, cada executada três vezes, demorar o valor mediano de cada teste e weighting-los para formar uma pontuação composta. Os testes foram, em seguida, executar através de várias VMs para fornecer as pontuações médias mostradas.
+Números de Windows foram calculados executando [SPECint 2006](https://www.spec.org/cpu2006/results/rint2006.html) no Windows Server. SPECint foi executada utilizando a opção de taxa base (SPECint_rate2006), com uma cópia por vCPU. SPECint consiste em 12 testes separados, cada executada três vezes, demorar o valor mediano de cada teste e weighting-los para formar uma pontuação composta. Os testes foram, em seguida, executar através de várias VMs para fornecer as pontuações médias mostradas.
 
 ## <a name="next-steps"></a>Passos seguintes
 * Para as capacidades de armazenamento, detalhes do disco e as considerações adicionais para escolher entre os tamanhos VM, consulte [tamanhos das virtual machines](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

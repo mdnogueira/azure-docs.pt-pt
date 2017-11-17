@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/06/2017
+ms.date: 11/15/2017
 ms.author: maheshu
-ms.openlocfilehash: c158c67a82e12501386179e19bc75fd852d7e308
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 157a10277f89643245746223f2cd1d73680ac700
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Implementar o Proxy de aplicações do Azure AD num domínio gerido dos serviços de domínio do Azure AD
 Proxy de aplicações do Azure Active Directory (AD) ajuda-o suporte a funcionários remotos através da publicação de aplicações no local para ser acedido através da internet. Com os serviços de domínio do Azure AD, pode aplicações legadas de comparação de precisão e shift agora em execução no local para serviços de infraestrutura do Azure. Em seguida, pode publicar estas aplicações através do Proxy da aplicação AD do Azure, para fornecer acesso remoto seguro aos utilizadores na sua organização.
@@ -56,7 +56,7 @@ Execute os seguintes passos para ativar o Proxy de aplicações do Azure AD para
 
 
 ## <a name="task-2---provision-domain-joined-windows-servers-to-deploy-the-azure-ad-application-proxy-connector"></a>Tarefa 2 - aprovisionar servidores associados a um domínio do Windows para implementar o conector do Proxy de aplicações do Azure AD
-Terá de associados a um domínio Windows Server máquinas virtuais nos quais pode instalar o conector do Proxy de aplicações do Azure AD. Consoante as aplicações que está a ser publicadas, pode optar por aprovisionar vários servidores em que o conector está instalado. Esta opção de implementação dá-lhe maior disponibilidade e ajuda a lidar com cargas mais pesadas de autenticação.
+Terá de associados a um domínio Windows Server máquinas virtuais nos quais pode instalar o conector do Proxy de aplicações do Azure AD. Para algumas aplicações, pode optar por aprovisionar vários servidores em que o conector está instalado. Esta opção de implementação dá-lhe maior disponibilidade e ajuda a lidar com cargas mais pesadas de autenticação.
 
 Aprovisione os servidores do conector na mesma rede virtual (ou uma rede virtual ligado/emparelhado), em que tiver ativado o seu domínio gerido dos serviços de domínio do Azure AD. Da mesma forma, os servidores que alojam aplicações que publicar através do Proxy de aplicações têm de ser instalados na mesma rede virtual do Azure.
 
@@ -64,7 +64,7 @@ Para aprovisionar servidores do conector, siga as tarefas descritas no artigo in
 
 
 ## <a name="task-3---install-and-register-the-azure-ad-application-proxy-connector"></a>Tarefa 3 - instale e registe o conector de Proxy de aplicações do Azure AD
-Anteriormente, pode aprovisionar uma máquina virtual do Windows e associados a um domínio gerido. Nesta tarefa, irá instalar o conector do Proxy de aplicações do Azure AD nesta máquina virtual.
+Anteriormente, pode aprovisionar uma máquina virtual do Windows e associados a um domínio gerido. Nesta tarefa, é possível instalar o conector do Proxy de aplicações do Azure AD nesta máquina virtual.
 
 1. Copie o pacote de instalação do conector para a VM no qual instala o conector do Proxy de aplicações Web do Azure AD.
 
@@ -99,11 +99,11 @@ Tem de configurar o Proxy de aplicações do Azure AD e integrado-lo no seu dom�
 
 
 ## <a name="deployment-note---publish-iwa-integrated-windows-authentication-applications-using-azure-ad-application-proxy"></a>Nota de implementação - aplicações de publicar IWA (autenticação integrada do Windows) com o Proxy de aplicações do Azure AD
-Ative início de sessão às suas aplicações utilizando a autenticação integrada de Windows (IWA) ao conceder permissão de conectores do Proxy de aplicação para representar os utilizadores e enviar e receber tokens em nome daqueles. Configure a delegação restringida de kerberos (KCD) para o conector conceder as permissões necessárias para aceder a recursos no domínio gerido. Utilize o mecanismo KCD baseada em recursos em domínios geridos para maior segurança.
+Ative início de sessão às suas aplicações utilizando a autenticação integrada de Windows (IWA) ao conceder permissão de conectores do Proxy de aplicação para representar os utilizadores e enviar e receber tokens em nome daqueles. Configure a delegação restringida de Kerberos (KCD) para o conector conceder as permissões necessárias para aceder a recursos no domínio gerido. Utilize o mecanismo KCD baseada em recursos em domínios geridos para maior segurança.
 
 
-### <a name="enable-resource-based-kerberos-constrained-delegation-for-the-azure-ad-application-proxy-connector"></a>Ativar a delegação restringida de kerberos baseada em recursos para o conector do Proxy de aplicações do Azure AD
-O conector do Proxy de aplicações do Azure deve ser configurado para delegação restringida de kerberos (KCD), pelo que pode representar os utilizadores no domínio gerido. Num domínio gerido dos serviços de domínio do Azure AD, não tiver privilégios de administrador de domínio. Por conseguinte, **tradicional KCD de nível de conta não é possível configurar um domínio gerido**.
+### <a name="enable-resource-based-kerberos-constrained-delegation-for-the-azure-ad-application-proxy-connector"></a>Ativar baseada em recursos a delegação restringida de Kerberos para o conector do Proxy de aplicações do Azure AD
+O conector do Proxy de aplicações do Azure deve ser configurado para delegação restringida de Kerberos (KCD), pelo que pode representar os utilizadores no domínio gerido. Num domínio gerido dos serviços de domínio do Azure AD, não tiver privilégios de administrador de domínio. Por conseguinte, **tradicional KCD de nível de conta não é possível configurar um domínio gerido**.
 
 Utilize KCD baseada em recursos, conforme descrito neste [artigo](active-directory-ds-enable-kcd.md).
 
@@ -113,12 +113,12 @@ Utilize KCD baseada em recursos, conforme descrito neste [artigo](active-directo
 >
 
 Utilize o cmdlet do PowerShell Get-ADComputer para obter as definições para o computador no qual está instalado o conector do Proxy de aplicações do Azure AD.
-```
+```powershell
 $ConnectorComputerAccount = Get-ADComputer -Identity contoso100-proxy.contoso100.com
 ```
 
 Depois disso, utilize o cmdlet Set-ADComputer configurar KCD baseada em recursos para o servidor de recurso.
-```
+```powershell
 Set-ADComputer contoso100-resource.contoso100.com -PrincipalsAllowedToDelegateToAccount $ConnectorComputerAccount
 ```
 

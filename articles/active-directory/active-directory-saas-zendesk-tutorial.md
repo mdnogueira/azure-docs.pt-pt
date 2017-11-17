@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 51c06d838c5ed6286dfb99ea25faaaf33bad5f3c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ebf07218a6b356d71af51383ac85933ec63b543b
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zendesk"></a>Tutorial: Integração do Azure Active Directory com Zendesk
 
@@ -116,7 +116,7 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     a. No **URL de início de sessão** caixa de texto, digite o valor utilizando o padrão do seguinte:`https://<subdomain>.zendesk.com`
 
-    b. No **identificador** caixa de texto, digite o valor utilizando o padrão do seguinte:`https://<subdomain>.zendesk.com`
+    b. No **identificador** caixa de texto, digite o valor utilizando o padrão do seguinte:`<subdomain>.zendesk.com`
 
     > [!NOTE] 
     > Estes valores não estiverem reais. Atualize estes valores com o URL de início de sessão real e o URL de identificador. Contacte [equipa de suporte do Zendesk](https://support.zendesk.com/hc/articles/203663676-Using-SAML-for-single-sign-on-Professional-and-Enterprise) para obter estes valores. 

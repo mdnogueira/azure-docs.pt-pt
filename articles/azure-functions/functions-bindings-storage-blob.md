@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 10/27/2017
 ms.author: glenga
-ms.openlocfilehash: e0c608fe3a80c9d704774e592a1eba383bbdffe8
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 31a2fa3d3c87c16109514b130c95e731f401f8bd
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-functions-blob-storage-bindings"></a>Enlaces de armazenamento de BLOBs de funções do Azure
 
@@ -309,7 +309,7 @@ Veja o exemplo de específicas do idioma:
 
 ### <a name="input--output---c-example"></a>Entrada e de saída - c# exemplo
 
-O exemplo seguinte é um [pré-compilada c#](functions-dotnet-class-library.md) função que utiliza uma entrada e dois enlaces de blob de saída. A função é acionada pela criação de um blob de imagem no *imagens de exemplo* contentor. Cria cópias de pequenas e médias o tamanho do blob de imagem. 
+O exemplo seguinte é um [pré-compilada c#](functions-dotnet-class-library.md) função que utiliza um acionador de blob e dois enlaces de blob de saída. A função é acionada pela criação de um blob de imagem no *imagens de exemplo* contentor. Cria cópias de pequenas e médias o tamanho do blob de imagem. 
 
 ```csharp
 [FunctionName("ResizeImage")]
@@ -342,7 +342,7 @@ private static Dictionary<ImageSize, (int, int)> imageDimensionsTable = new Dict
 
 ### <a name="input--output---c-script-example"></a>Entrada e de saída - exemplo de script do c#
 
-O exemplo seguinte mostra um acionador de blob enlace num *function.json* ficheiro e [c# script](functions-reference-csharp.md) código que utiliza o enlace. A função faz uma cópia de um blob. A função é acionada por uma mensagem de fila que contém o nome do blob para copiar. O novo blob é denominado *{originalblobname}-cópia*.
+O exemplo seguinte mostra o blob de entrada e saída de enlaces num *function.json* ficheiro e [c# script](functions-reference-csharp.md) código que utiliza os enlaces. A função faz uma cópia de um blob de texto. A função é acionada por uma mensagem de fila que contém o nome do blob para copiar. O novo blob é denominado *{originalblobname}-cópia*.
 
 No *function.json* ficheiro, o `queueTrigger` propriedade de metadados é utilizada para especificar o nome do blob no `path` propriedades:
 
@@ -380,7 +380,7 @@ O [configuração](#input--output---configuration) secção explica estas propri
 Eis o código de script do c#:
 
 ```cs
-public static void Run(string myQueueItem, Stream myInputBlob, out string myOutputBlob, TraceWriter log)
+public static void Run(string myQueueItem, string myInputBlob, out string myOutputBlob, TraceWriter log)
 {
     log.Info($"C# Queue trigger function processed: {myQueueItem}");
     myOutputBlob = myInputBlob;
@@ -389,7 +389,7 @@ public static void Run(string myQueueItem, Stream myInputBlob, out string myOutp
 
 ### <a name="input--output---javascript-example"></a>Entrada e de saída - exemplo de JavaScript
 
-O exemplo seguinte mostra um acionador de blob enlace num *function.json* de ficheiros e [código JavaScript] (funções-referência-node.md) que utiliza o enlace. A função faz uma cópia de um blob. A função é acionada por uma mensagem de fila que contém o nome do blob para copiar. O novo blob é denominado *{originalblobname}-cópia*.
+O exemplo seguinte mostra o blob de entrada e saída de enlaces num *function.json* de ficheiros e [código JavaScript] (funções-referência-node.md) que utiliza os enlaces. A função faz uma cópia de um blob. A função é acionada por uma mensagem de fila que contém o nome do blob para copiar. O novo blob é denominado *{originalblobname}-cópia*.
 
 No *function.json* ficheiro, o `queueTrigger` propriedade de metadados é utilizada para especificar o nome do blob no `path` propriedades:
 

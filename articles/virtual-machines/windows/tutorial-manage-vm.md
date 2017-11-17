@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 05/02/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 2237f2e5cb67df019d0975e764602babe7f4c8f9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c612a251105197ab2b46bf448ae39253e5a65f36
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-and-manage-windows-vms-with-the-azure-powershell-module"></a>Criar e gerir VMs do Windows com o módulo Azure PowerShell
 
@@ -293,7 +293,7 @@ A tabela seguinte categoriza tamanhos em casos de utilização.
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | Fins gerais         |Série DSv2, Dv2, DS, D, Av2, A0 7| Equilibrada CPU para memória. Ideal para dev / teste e pequena a médias soluções de aplicações e dados.  |
 | Com otimização de computação      | FS, F             | Elevada da CPU para memória. Boa para aplicações de tráfego média, os dispositivos de rede e processos de batch.        |
-| Com otimização de memória       | GS, G, série DSv2, DS, Dv2, D   | Elevada memória-para-core. Excelente para bases de dados relacionais, caches médias e grandes e análise de memória.                 |
+| Com otimização de memória       | GS, G, série DSv2, DS, Dv2, D   | Elevada memória-para-CPU. Excelente para bases de dados relacionais, caches médias e grandes e análise de memória.                 |
 | Com otimização de armazenamento       | Ls                | Débito e E/S de disco elevados. Ideal para bases de dados de Macrodados, SQL e NoSQL.                                                         |
 | GPU           | NV, NC            | VMs especializadas visadas para a composição de gráfico pesada e edição de vídeo.       |
 | Elevado desempenho | H, A8-11          | A nossa VMs de CPU mais poderosas com interfaces de rede de alto débito opcional (RDMA). 
@@ -344,11 +344,11 @@ VM do Azure pode ter um dos vários Estados de energia. Este estado representa o
 | Estado de energia | Descrição
 |----|----|
 | A Iniciar | Indica que a máquina virtual está a ser iniciada. |
-| A Executar | Indica que a máquina virtual está em execução. |
+| Em Execução | Indica que a máquina virtual está em execução. |
 | A Parar | Indica se a máquina virtual está a ser parada. | 
 | Parada | Indica se a máquina virtual está parada. Tenha em atenção que as máquinas virtuais no estado de paragem ainda implicar custos de computação.  |
-| Desalocação | Indica que a máquina virtual está a ser desalocada. |
-| Desalocar | Indica que a máquina virtual é completamente removidas do hipervisor, mas continuará disponível no plane controlo. Máquinas virtuais no Estado Deallocated não implicar custos de computação. |
+| A desalocar | Indica que a máquina virtual está a ser desalocada. |
+| Desalocado | Indica que a máquina virtual é completamente removidas do hipervisor, mas continuará disponível no plane controlo. Máquinas virtuais no Estado Deallocated não implicar custos de computação. |
 | - | Indica que o estado de energia da máquina virtual é desconhecido. |
 
 ### <a name="find-power-state"></a>Determinar o estado de energia

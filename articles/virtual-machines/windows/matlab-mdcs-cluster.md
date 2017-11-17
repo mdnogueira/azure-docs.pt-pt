@@ -14,11 +14,11 @@ ms.tgt_pltfrm: Windows
 ms.workload: infrastructure-services
 ms.date: 05/09/2016
 ms.author: markscu
-ms.openlocfilehash: b302c6b3c6acbb8552796e7fb1bfd153d23dceb3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 177f8a61487130e718e3e6cfb779b17a3ed8ed69
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-matlab-distributed-computing-server-clusters-on-azure-vms"></a>Criar clusters de servidor de informática distribuída da MATLAB em VMs do Azure
 Utilize máquinas virtuais do Microsoft Azure para criar um ou mais clusters de servidor de computação MATLAB distribuídas para executar as intensivas de computação paralelas MATLAB cargas de trabalho. Instalar o software de servidor de informática distribuída da MATLAB numa VM para utilizar como uma imagem de base e utilizar um modelo de início rápido do Azure ou do script do PowerShell do Azure (disponível no [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster)) para implementar e gerir o cluster. Após a implementação, ligue para o cluster para executar as cargas de trabalho.
@@ -32,7 +32,7 @@ Através da utilização de máquinas virtuais do Azure, pode criar clusters MAT
 * **Computador cliente** -, terá de um computador de cliente baseados em Windows para comunicar com o Azure e o cluster de servidor de informática distribuída da MATLAB após a implementação.
 * **O Azure PowerShell** -consulte [como instalar e configurar o Azure PowerShell](/powershell/azure/overview) para instalá-lo no seu computador cliente.
 * **Subscrição do Azure** -se não tiver uma subscrição, pode criar um [conta gratuita](https://azure.microsoft.com/free/) em apenas alguns minutos. Para clusters maiores, considere uma subscrição pay as you go ou outras opções de compra.
-* **Quota de núcleos** -poderá ter de aumentar a quota de núcleos para implementar um cluster de grandes dimensões ou mais de um cluster de servidor de informática distribuída da MATLAB. Para aumentar uma quota [abrir um pedido de suporte ao cliente online](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) , sem encargos.
+* **quota de vCPUs** -poderá ter de aumentar a quota de vCPU para implementar um cluster de grandes dimensões ou mais de um cluster de servidor de informática distribuída da MATLAB. Para aumentar uma quota [abrir um pedido de suporte ao cliente online](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) , sem encargos.
 * **Licenças MATLAB, caixa de ferramentas de computação paralelas e MATLAB distribuídas Server informática** -os scripts partem do princípio de que o [MathWorks alojado do License Manager](http://www.mathworks.com/products/parallel-computing/mathworks-hosted-license-manager/) é utilizada para todas as licenças.  
 * **Software MATLAB distribuídas Server informática** -será instalado numa VM que será utilizada como a imagem de VM base para as VMs do cluster.
 
@@ -62,7 +62,7 @@ O nó de cliente MATLAB, nó de Programador de tarefas MATLAB e MATLAB distribu�
 * Para utilizar o cluster, estabelecer ligação ao ambiente de trabalho remoto para o nó de cliente. O nó cliente executa o cliente MATLAB.
 * O nó de cliente tem uma partilha de ficheiros que pode ser acedida por todos os funcionários.
 * Gestor de licenças alojado MathWorks é utilizado para as verificações de licença de todo o software MATLAB.
-* Por predefinição, é criado um trabalho de servidor de informática distribuída da MATLAB por núcleos na função de trabalho VMs, mas pode especificar qualquer número.
+* Por predefinição, é criado um trabalho do servidor de informática distribuída da MATLAB por vCPU na função de trabalho VMs, mas pode especificar qualquer número.
 
 ## <a name="use-an-azure-based-cluster"></a>Utilizar um Cluster baseado no Azure
 Como com outros tipos de clusters de servidor de informática distribuída da MATLAB, tem de utilizar o Gestor de clusters de perfil no cliente MATLAB (no cliente VM) para criar um perfil de cluster MATLAB Programador de tarefas.

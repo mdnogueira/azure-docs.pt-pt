@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/18/2017
+ms.date: 11/16/2017
 ms.author: marsma
 ms.custom: 
-ms.openlocfilehash: 06368cb5084dd49e24c1c25aa8100a7680aacefb
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: ae2466bdd3b21984b141c9178ea46bd25bb6357b
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="run-a-containerized-task-in-azure-container-instances"></a>Executar uma tarefa de instâncias de contentor do Azure
 
@@ -147,7 +147,7 @@ Especifique uma linha de comandos quando cria uma instância de contentor para s
 
 Por exemplo, pode fazer com que o contentor de exemplo analisar texto diferente de *Hamlet* , especificando uma linha de comandos diferente. O script do Python executado por contentor, *wordcount.py*, aceita um URL como um argumento e irá processar conteúdo nessa página, em vez do predefinido.
 
-Por exemplo, para determinar as palavras de letra cinco primeiras três no *Romeo e Juliet*:
+Por exemplo, para determinar as palavras de cinco letra 3 principais do *Romeo e Juliet*:
 
 ```azurecli-interactive
 az container create \
@@ -172,6 +172,8 @@ Saída:
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
+
+### <a name="persist-task-output"></a>Manter o resultado da tarefa
 
 Para obter mais informações sobre como manter o resultado dos contentores que serem concluídas, consulte [montar uma partilha de ficheiros do Azure com instâncias de contentor do Azure](container-instances-mounting-azure-files-volume.md).
 
