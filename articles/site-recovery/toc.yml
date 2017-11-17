@@ -67,6 +67,18 @@
       href: site-recovery-faq.md
 - name: Guias de Procedimentos
   items:
+    - name: Redes
+      items:
+        - name: Configurar o funcionamento em rede para a recuperação de desastres da VM do Azure (pré-visualização)
+          href: site-recovery-azure-to-azure-networking-guidance.md
+        - name: Configurar o mapeamento de rede para a recuperação de desastres da VM do Azure (pré-visualização)
+          href: site-recovery-network-mapping-azure-to-azure.md
+        - name: Preparar o mapeamento de rede para replicação da VM de Hyper-V para o Azure
+          href: site-recovery-network-mapping.md
+        - name: Configurar o endereçamento IP para o acesso ao Azure após a ativação pós-falha
+          href: concepts-on-premises-to-azure-networking.md
+        - name: Configurar o endereçamento IP para o acesso para um site secundário após a ativação pós-falha
+          href: concepts-on-premises-to-on-premises-networking.md
     - name: Recuperação após desastre
       items:
         - name: VMs de Hyper-V para o Azure
@@ -81,14 +93,43 @@
           href: tutorial-dr-drill-azure.md
         - name: Executar um teste de recuperação após desastre para um site secundário
           href: tutorial-dr-drill-secondary.md
+        - name: VMs VMware com suporte multi-inquilino para o Azure
+          href: site-recovery-multi-tenant-support-vmware-using-csp.md
+    - name: Ativação pós-falha e reativação pós-falha
+      items:
+        - name: Configurar planos de recuperação
+          href: site-recovery-create-recovery-plans.md
+          items:
+            - name: Adicionar runbooks do Azure aos planos de recuperação
+              href: site-recovery-runbook-automation.md
+        - name: Executar uma ativação pós-falha de teste
+          items:
+            - name: Executar uma ativação pós-falha de teste para o Azure
+              href: site-recovery-test-failover-to-azure.md
+            - name: Executar uma ativação pós-falha de teste entre clouds de VMM
+              href: site-recovery-test-failover-vmm-to-vmm.md
+        - name: Realizar a ativação pós-falha em máquinas protegidas
+          href: site-recovery-failover.md
         - name: Executar uma ativação pós-falha e uma reativação pós-falha para servidores físicos
           href: tutorial-vmware-to-azure-failover-failback.md
         - name: Executar uma ativação pós-falha e uma reativação pós-falha para VMs de Hyper-V
           href: tutorial-hyper-v-to-azure-failover-failback.md
         - name: Executar uma ativação pós-falha e uma reativação pós-falha entre sites no local
           href: tutorial-vmm-to-vmm-failover-failback.md
-        - name: VMs VMware com suporte multi-inquilino para o Azure
-          href: site-recovery-multi-tenant-support-vmware-using-csp.md
+        - name: Voltar a proteger máquinas após a ativação pós-falha
+          items:
+            - name: Voltar a proteger de uma região secundária do Azure para uma principal
+              href: site-recovery-how-to-reprotect-azure-to-azure.md
+            - name: Voltar a proteger do Azure para o local
+              href: site-recovery-how-to-reprotect.md
+        - name: Reativação pós-falha a partir do Azure
+          items:
+            - name: Reativação pós-falha do Azure para o VMware
+              href: site-recovery-how-to-failback-azure-to-vmware.md
+            - name: Reativação pós-falha do Azure para Hyper-V
+              href: site-recovery-failback-from-azure-to-hyper-v.md
+        - name: Configurar um servidor de destino principal do Linux para reativação pós-falha
+          href: site-recovery-how-to-install-linux-master-target.md
     - name: Capacidade e dimensionamento
       items:
         - name: Planeamento de capacidade para replicação de VMware para o Azure
@@ -105,16 +146,6 @@
           href: site-recovery-performance-and-scaling-testing-on-premises-to-on-premises.md
     - name: Configurar
       items:
-        - name: Configurar o funcionamento em rede para a recuperação de desastres da VM do Azure (pré-visualização)
-          href: site-recovery-azure-to-azure-networking-guidance.md
-        - name: Configurar o endereçamento IP para o acesso após a ativação pós-falha para o Azure
-          href: concepts-on-premises-to-azure-networking.md
-        - name: Configurar o endereçamento IP para o acesso após a ativação pós-falha para um site secundário
-          href: concepts-on-premises-to-on-premises-networking.md
-        - name: Configurar o mapeamento de rede para a recuperação de desastres da VM do Azure (pré-visualização)
-          href: site-recovery-network-mapping-azure-to-azure.md
-        - name: Preparar o mapeamento de rede para replicação da VM de Hyper-V para o Azure
-          href: site-recovery-network-mapping.md
         - name: Configurar o ambiente de origem
           items:
             - name: Ambiente de origem para VMware para o Azure
@@ -127,7 +158,7 @@
               href: site-recovery-prepare-target-vmware-to-azure.md
             - name: Ambiente de destino para replicação física para o Azure
               href: site-recovery-prepare-target-physical-to-azure.md
-        - name: Configurar as definições de replicação
+        - name: Configurar as definições de replicação do VMware para Azure
           href: site-recovery-setup-replication-settings-vmware.md
         - name: Excluir discos da replicação
           href: site-recovery-exclude-disk.md
@@ -144,35 +175,6 @@
               href: site-recovery-replicate-azure-to-azure.md
             - name: Ativar a replicação do VMware para o Azure
               href: site-recovery-replicate-vmware-to-azure.md
-    - name: Ativação e reativação pós-falha
-      items:
-        - name: Configurar planos de recuperação
-          href: site-recovery-create-recovery-plans.md
-          items:
-            - name: Adicionar runbooks do Azure aos planos de recuperação
-              href: site-recovery-runbook-automation.md
-        - name: Executar uma ativação pós-falha de teste
-          items:
-            - name: Executar uma ativação pós-falha de teste para o Azure
-              href: site-recovery-test-failover-to-azure.md
-            - name: Executar uma ativação pós-falha de teste entre clouds de VMM
-              href: site-recovery-test-failover-vmm-to-vmm.md
-        - name: Realizar a ativação pós-falha em máquinas protegidas
-          href: site-recovery-failover.md
-        - name: Voltar a proteger máquinas após a ativação pós-falha
-          items:
-            - name: Voltar a proteger de uma região secundária do Azure para uma principal
-              href: site-recovery-how-to-reprotect-azure-to-azure.md
-            - name: Voltar a proteger do Azure para o local
-              href: site-recovery-how-to-reprotect.md
-        - name: Reativação pós-falha a partir do Azure
-          items:
-            - name: Reativação pós-falha do Azure para o VMware
-              href: site-recovery-how-to-failback-azure-to-vmware.md
-            - name: Reativação pós-falha do Azure para Hyper-V
-              href: site-recovery-failback-from-azure-to-hyper-v.md
-        - name: Configurar um servidor de destino principal do Linux para reativação pós-falha
-          href: site-recovery-how-to-install-linux-master-target.md
     - name: Automatizar
       items:
         - name: Configurar a replicação de Hyper-V para o Azure (sem VMM) com o PowerShell
@@ -213,7 +215,7 @@
           href: 'site-recovery-workload.md#workload-summary'
     - name: Gerir
       items:
-        - name: Atualizar o seu cofre do Site Recovery para o cofre dos Serviços de Recuperação
+        - name: Atualizar para um cofre dos Serviços de Recuperação
           href: upgrade-site-recovery-vaults.md
         - name: Gerir servidores de processos no Azure
           href: site-recovery-vmware-setup-azure-ps-resource-manager.md
@@ -223,7 +225,7 @@
           href: site-recovery-vmware-to-azure-manage-vCenter.md
         - name: Remover servidores e desativar proteção
           href: site-recovery-manage-registration-and-protection.md
-        - name: Eliminar o cofre dos Serviços de Recuperação
+        - name: Eliminar um cofre
           href: delete-vault.md
     - name: Resolução de problemas
       items:
@@ -231,7 +233,7 @@
           href: site-recovery-azure-to-azure-troubleshoot-errors.md
         - name: Problemas de replicação do local para o Azure
           href: site-recovery-vmware-to-azure-protection-troubleshoot.md
-        - name: Problemas de instalação do serviço de Mobilidade
+        - name: Problemas do Serviço de Mobilidade
           href: site-recovery-vmware-to-azure-push-install-error-codes.md
         - name: Problemas de ativação pós-falha para o Azure
           href: site-recovery-failover-to-azure-troubleshoot.md

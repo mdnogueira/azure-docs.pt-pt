@@ -41,6 +41,8 @@
           href: roaming-and-collaboration.md
     - name: Utilizar o Visual Studio Code Tools para IA
       href: quickstart-visual-studio-tools.md
+    - name: Utilize o Toolkit de AI do IoT Edge do Azure
+      href: use-azure-iot-edge-ai-toolkit.md
     - name: Configurar o ambiente de computação
       items:
         - name: Configurar experimentação
@@ -88,6 +90,8 @@
           href: how-to-scale-clusters.md
         - name: Implementar serviços Web
           href: model-management-service-deploy.md
+        - name: Implementar um dispositivo do IoT Edge
+          href: deploy-to-iot-edge-device.md
         - name: Consumir serviços Web
           href: model-management-consumption.md
         - name: Recolher dados do modelo

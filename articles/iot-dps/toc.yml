@@ -10,7 +10,11 @@
     - name: Configurar o aprovisionamento automático
       href: quick-setup-auto-provision.md
     - name: Criar dispositivo simulado
-      href: quick-create-simulated-device.md
+      items:
+        - name: TPM
+          href: quick-create-simulated-device.md
+        - name: X.509
+          href: quick-create-simulated-device-x509.md
 - name: Tutoriais
   items:
     - name: 1 - Configurar recursos de cloud
@@ -29,7 +33,6 @@
       href: concepts-service.md
     - name: Conceitos de segurança
       href: concepts-security.md
-    - name: Segurança
 - name: Guias de procedimentos
   items:
     - name: Gerir inscrições de dispositivos

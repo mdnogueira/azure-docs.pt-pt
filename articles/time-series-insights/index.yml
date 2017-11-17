@@ -1,0 +1,37 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentação do Azure Time Series Insights
+metadata:
+  title: 'Documentação do Azure Time Series Insights - Tutoriais, Referência da API | Microsoft Docs'
+  description: 'Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais.'
+  services: time-series-insights
+  author: kfile
+  manager: jhubbard
+  ms.service: time-series-insights
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 11/13/2017
+  ms.author: kfile
+abstract:
+  description: 'Saiba como configurar um ambiente do Time Series Insights, explorar e analisar dados de série de tempo das suas soluções de IoT ou aplicações ligadas. A documentação descreve os pré-requisitos, procedimentos, referências de API e outros artigos que ajudam a começar a trabalhar em poucos minutos.'
+sections:
+  - title: Inícios rápidos de cinco minutos
+    items:
+      - type: paragraph
+        text: 'Saiba como implementar o Log Analytics e configurar a recolha de dados a partir do Azure, de outros fornecedores de cloud e de recursos no local.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/en-us/azure/time-series-insights/media/index/time-series-insights.svg'
+            text: Explorar o Azure Time Series Insights
+            href: /azure/time-series-insights/time-series-quickstart
+  - title: Referência
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: APIs
+            html: <p><a href="/rest/api/time-series-insights/time-series-insights-reference-queryapi">API de Consulta</a></p><p><a href="/rest/api/time-series-insights/time-series-insights-reference-query-syntax">Sintaxe de Consulta</a></p>

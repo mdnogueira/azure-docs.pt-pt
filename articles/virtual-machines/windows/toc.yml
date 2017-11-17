@@ -125,7 +125,7 @@
           href: ps-template.md
         - name: Ligar a uma VM
           href: connect-logon.md
-        - name: Utilizar o licenciamento AHUB
+        - name: Utilize a licença do Benefício Híbrido do Azure
           href: hybrid-use-benefit-licensing.md
         - name: Utilizar os Direitos de Alojamento Multi-inquilino para o Windows 10
           href: windows-desktop-multitenant-hosting-deployment.md
@@ -141,6 +141,17 @@
           href: policy.md
         - name: Criar um Key Vault
           href: key-vault-setup.md
+    - name: Proteger VMs
+      href: ../../backup/backup-introduction-to-azure-backup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+      items:
+        - name: Criar cópia de segurança de uma única VM
+          items:
+            - name: Portal do Azure
+              href: ../../backup/quick-backup-vm-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+            - name: Azure PowerShell
+              href: ../../backup/quick-backup-vm-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+        - name: Fazer uma cópia de segurança de várias VMs
+          href: ../../backup/tutorial-backup-vm-at-scale.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
     - name: Gerir VMs
       items:
         - name: Tarefas comuns do PowerShell
@@ -167,6 +178,8 @@
           href: scheduled-events.md
         - name: Monitorizar metadados
           href: instance-metadata-service.md
+        - name: Ativar a virtualização aninhada
+          href: nested-virtualization.md
     - name: Utilizar Imagens
       items:
         - name: Localizar e utilizar imagens
