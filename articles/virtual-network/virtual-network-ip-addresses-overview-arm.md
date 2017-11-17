@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2017
 ms.author: jdial
-ms.openlocfilehash: d243455be9439a686ecdf6dfa3aadf2802a0714d
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 95f2b57b2012df816c76a1b6ec55ca9f92e134a3
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Tipos de endereços IP e métodos de alocação no Azure
 
@@ -145,29 +145,22 @@ Os endereços IP privados são criados com um endereço IPv4 ou IPv6. Os endere�
 
 ### <a name="allocation-method"></a>Método de alocação
 
-Os endereços IP privados são alocados a partir do intervalo de endereços da sub-rede à qual o recurso está ligado. O próprio intervalo de endereços da sub-rede faz parte do intervalo de endereços da rede virtual.
+Os endereços IP privados são alocados a partir do intervalo de endereços da sub-rede da rede virtual em que um recurso está implementado. Os endereços IP privados podem ser alocados de duas formas:
 
-Os endereços IP privados podem ser alocados de duas formas - *dinâmica* ou *estática*. O método de alocação predefinido é o *dinâmico*, no qual o endereço IP é alocado automaticamente a partir da sub-rede do recurso (mediante a utilização de DHCP). Este endereço IP pode ser alterado quando o recurso é parado e iniciado.
-
-Pode definir o método de alocação como *estático*, para garantir que o endereço IP permanece o mesmo. Quando especifica *estático*, tem de especificar um endereço IP válido que faça parte da sub-rede do recurso.
-
-Geralmente, os endereços IP privados estáticos são utilizados para:
-
-* Máquinas virtuais que funcionam como controladores de domínio ou servidores DNS.
-* Recursos que precisam de regras de firewall que utilizem endereços IP.
-* Recursos acedidos por outros recursos/aplicações através de um endereço IP.
+- **Dinâmico**: o Azure reserva os primeiros quatro endereços em cada intervalo de endereços da sub-rede e não atribui os endereços. O Azure atribui o endereço disponível seguinte a um recurso do intervalo de endereços da sub-rede. Por exemplo, se o intervalo de endereços da sub-rede for 10.0.0.0/16 e os endereços 10.0.0.0.4-10.0.0.14 já estiverem atribuídos (.0-.3 está reservado), o Azure atribui o 10.0.0.15 ao recurso. Dinâmico é o método de alocação predefinido. Após a atribuição, os endereços IP dinâmicos só são lançados se uma interface de rede for eliminada, atribuída a uma sub-rede diferente dentro da mesma rede virtual, ou se o método de alocação for alterado para estático e for especificado um endereço IP diferente. Por predefinição, o Azure atribui o endereço atribuído de forma dinâmica anterior como o endereço estático quando altera o método de alocação de dinâmico para estático.
+- **Estático**: pode selecionar e atribuir um endereço do intervalo de endereços da sub-rede. O endereço que atribuir pode ser qualquer endereço dentro do intervalo de endereços da sub-rede que não seja um dos primeiros quatro endereços no intervalo de endereços da sub-rede e que não esteja atualmente atribuído a qualquer outro recurso na sub-rede. Os endereços estáticos só são lançados se uma interface de rede for eliminada. Se alterar o método de alocação para estático, o Azure atribui de forma dinâmica o endereço IP estático atribuído anteriormente como endereço dinâmico, mesmo que o endereço não seja o endereço seguinte disponível no intervalo de endereços da sub-rede. O endereço também muda se a interface de rede for atribuída a uma sub-rede diferente dentro da mesma rede virtual, mas, para atribuir a interface de rede a uma sub-rede diferente, tem, primeiro, de alterar o método de alocação de estático para dinâmico. Assim que tiver atribuído a interface de rede a uma sub-rede diferente, pode alterar o método de alocação novamente para estático e atribuir um endereço IP do intervalo de endereços da nova sub-rede.
 
 ### <a name="virtual-machines"></a>Máquinas virtuais
 
-Um endereço IP privado é atribuído à **interface de rede** de uma máquina virtual [Windows](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) ou [Linux](../virtual-machines/linux/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Se a máquina virtual possuir várias interfaces de rede, é atribuído um endereço IP privado a cada interface de rede. Pode especificar o método de alocação como dinâmico ou estático para as interfaces de rede.
+Um ou mais endereços IP privados são atribuídos a uma ou mais **interfaces de rede** de uma máquina virtual do [Windows](../virtual-machines/windows/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) ou do [Linux](../virtual-machines/linux/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Pode especificar o método de alocação como dinâmico ou estático para cada endereço IP privado.
 
 #### <a name="internal-dns-hostname-resolution-for-virtual-machines"></a>Resolução de nomes de anfitrião DNS interna (para máquinas virtuais)
 
 Todas as máquinas virtuais do Azure são configuradas com [servidores DNS geridos pelo Azure](virtual-networks-name-resolution-for-vms-and-role-instances.md#azure-provided-name-resolution) por predefinição, a não ser que configure explicitamente servidores DNS personalizados. Estes servidores DNS fornecem resolução de nomes interna para as máquinas virtuais que residam na mesma rede virtual.
 
-Quando cria uma máquina virtual, é adicionado aos servidores DNS geridos pelo Azure um mapeamento do nome do anfitrião para o respetivo endereço IP privado. Se uma máquina virtual tiver várias interfaces de rede, o nome do anfitrião é mapeado para o endereço IP privado da interface de rede primária.
+Quando cria uma máquina virtual, é adicionado aos servidores DNS geridos pelo Azure um mapeamento do nome do anfitrião para o respetivo endereço IP privado. Se uma máquina virtual tiver várias interfaces de rede, ou várias configurações de IP para uma interface de rede, o nome de anfitrião é mapeado para o endereço IP privado da configuração de IP principal da interface de rede principal.
 
-As máquinas virtuais configuradas com servidores DNS geridos pelo Azure conseguem resolver os nomes de anfitrião de todas as máquinas virtuais dentro da mesma rede virtual para os respetivos endereços IP privados.
+As máquinas virtuais configuradas com servidores DNS geridos pelo Azure conseguem resolver os nomes de anfitrião de todas as máquinas virtuais dentro da mesma rede virtual para os respetivos endereços IP privados. Para resolver os nomes de anfitrião de máquinas virtuais em redes virtuais ligadas, tem de utilizar um servidor DNS personalizado.
 
 ### <a name="internal-load-balancers-ilb--application-gateways"></a>Balanceadores de carga internos (ILBs) e gateways de aplicação
 

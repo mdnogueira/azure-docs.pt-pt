@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 10/26/2017
 ms.author: jdial
 ms.custom: 
-ms.openlocfilehash: ab8689defed59bef362b1f22f78d41923087841d
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.openlocfilehash: 18169b86d10b589a5c8b707596d5f62813e9efe2
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="virtual-network-traffic-routing"></a>Encaminhamento de tráfego da rede virtual
 
@@ -84,7 +84,7 @@ Ao criar uma rota definida pelo utilizador, pode especificar os tipos de próxim
 
 - **Aplicação virtual**: uma aplicação virtual é uma máquina virtual que, normalmente, executa uma aplicação de rede, como uma firewall. Para saber mais sobre diversas aplicações de rede virtual pré-configuradas que pode implementar numa rede virtual, veja o [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances). Quando cria uma rota com o tipo de salto seguinte **aplicação virtual**, também tem de especificar um endereço IP de próximo salto. O endereço IP pode ser:
 
-    - O [endereço IP privado](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) de uma interface de rede ligada a uma máquina virtual. Qualquer interface de rede ligada a uma máquina virtual que reencaminhe o tráfego de rede para um endereço que não o da mesma tem de ter a opção do Azure *Ativar reencaminhamento de IP* ativada. A definição desativa a verificação por parte do Azure da origem e do destino de uma interface de rede. Saiba mais sobre como [ativar o reencaminhamento de IP em interfaces de rede](virtual-network-network-interface.md#enable-or-disable-ip-forwarding). Embora *Ativar o reencaminhamento de IPs* seja uma definição do Azure, poderá também ter de ativar o reencaminhamento de IPs dentro do sistema operativo da máquina virtual, de modo a que a esta reencaminhe o tráfego entre as interfaces de rede. Para determinar as definições necessárias na máquina virtual, veja a documentação relativa ao seu sistema operativo ou à sua aplicação de rede.
+    - O [endereço IP privado](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) de uma interface de rede ligada a uma máquina virtual. Qualquer interface de rede ligada a uma máquina virtual que reencaminhe o tráfego de rede para um endereço que não o da mesma tem de ter a opção do Azure *Ativar reencaminhamento de IP* ativada. A definição desativa a verificação por parte do Azure da origem e do destino de uma interface de rede. Saiba mais sobre como [ativar o reencaminhamento de IP em interfaces de rede](virtual-network-network-interface.md#enable-or-disable-ip-forwarding). Embora *Ativar o reencaminhamento de IPs* seja uma definição do Azure, também poderá ser necessário ativar o reencaminhamento de IP dentro do sistema operativo da máquina virtual, de modo a que a aplicação reencaminhe o tráfego entre as interfaces de rede dos endereços IP privados atribuídos ao Azure. Se a aplicação tem de encaminhar o tráfego para um endereço IP público, tem de suportar o tráfego com proxy, ou traduzir com um endereço de rede o endereço IP privado do endereço IP privado da origem para o seu próprio endereço IP privado, o qual o Azure, em seguida, traduz com um endereço de rede para um endereço IP público, antes de enviar o tráfego para a Internet. Para determinar as definições necessárias na máquina virtual, veja a documentação relativa ao seu sistema operativo ou à sua aplicação de rede. Para compreender as ligações de saída no Azure, veja [Compreender as ligações de saída](../load-balancer/load-balancer-outbound-connections.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
     > [!NOTE]
     > Implemente uma aplicação virtual numa sub-rede diferente daquela em que estão implementados os recursos que são encaminhados através da mesma. Implementar a aplicação virtual na mesma sub-rede e, depois, aplicar uma tabela de rotas à sub-rede que encaminha o tráfego através dessa aplicação virtual, pode resultar em ciclos de encaminhamento, nos quais o tráfego nunca sai da sub-rede.

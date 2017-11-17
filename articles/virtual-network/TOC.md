@@ -63,6 +63,7 @@
 #### [PowerShell](create-public-ip-availability-zone-powershell.md)
 
 ### Máquinas virtuais
+#### [Débito de rede de máquina virtual](virtual-machine-network-throughput.md)
 #### Criar uma VM com um endereço IP público estático
 ##### [Portal do Azure](virtual-network-deploy-static-pip-arm-portal.md)
 ##### [Azure PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
