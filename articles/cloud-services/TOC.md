@@ -34,32 +34,21 @@
 #### [Utilizar uma tarefa para Instalar o .NET numa função de Serviço Cloud](cloud-services-dotnet-install-dotnet.md)
 
 ### Configurar o Ambiente de Trabalho Remoto
-#### [Portal do Azure](cloud-services-role-enable-remote-desktop-new-portal.md)
-#### [Portal clássico](cloud-services-role-enable-remote-desktop.md)
-#### [Azure PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
+#### [Portal](cloud-services-role-enable-remote-desktop-new-portal.md)
+#### [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
 
 ## Implementação
-### Criar e implementar um serviço cloud no portal
-#### [Portal do Azure](cloud-services-how-to-create-deploy-portal.md)
-#### [Portal clássico](cloud-services-how-to-create-deploy.md)
+### [Criar e implementar um serviço cloud no portal](cloud-services-how-to-create-deploy-portal.md)
 ### [Criar um contentor de serviço cloud vazio no PowerShell](cloud-services-powershell-create-cloud-container.md)
-### Configurar um nome de domínio personalizado
-#### [Portal](cloud-services-custom-domain-name-portal.md)
-#### [Portal clássico](cloud-services-custom-domain-name.md)
+### [Configurar um nome de domínio personalizado](cloud-services-custom-domain-name-portal.md)
 ### [Testar uma implementação do Serviço Cloud (Node.js)](cloud-services-nodejs-stage-application.md)
 ### [Ligar a um Controlador de Domínio personalizado](cloud-services-connect-to-custom-domain.md)
 
 ## Gerir serviço
-### Tarefas comuns de gestão
-#### [Portal do Azure](cloud-services-how-to-manage-portal.md)
-#### [Portal clássico](cloud-services-how-to-manage.md)
-### Configurar Serviço Cloud
-#### [Portal do Azure](cloud-services-how-to-configure-portal.md)
-#### [Portal clássico](cloud-services-how-to-configure.md)
+### [Tarefas de gestão comuns](cloud-services-how-to-manage-portal.md)
+### [Configurar o Serviço Cloud](cloud-services-how-to-configure-portal.md)
 ### [Gerir um Serviço Cloud com a Automatização do Azure](automation-manage-cloud-services.md)
-### Configurar o dimensionamento automático
-#### [Portal do Azure](cloud-services-how-to-scale-portal.md)
-#### [Portal clássico](cloud-services-how-to-scale.md)
+### [Configurar o dimensionamento automático](cloud-services-how-to-scale-portal.md)
 ### [Utilizar Python para gerir os Recursos do Azure](cloud-services-python-how-to-use-service-management.md)
 
 ### [Correções do SO convidado](cloud-services-guestos-msrc-releases.md)
@@ -71,9 +60,7 @@
 
 ## Gerir certificados
 ### [Serviços Cloud em e gestão de certificados](cloud-services-certs-create.md)
-### Configurar o SSL 
-#### [Portal](cloud-services-configure-ssl-certificate-portal.md)
-#### [Portal clássico](cloud-services-configure-ssl-certificate.md)
+### [Configurar o SSL](cloud-services-configure-ssl-certificate-portal.md)
 
 ## Monitorizar
 ### [Monitorizar serviço cloud](cloud-services-how-to-monitor.md)
