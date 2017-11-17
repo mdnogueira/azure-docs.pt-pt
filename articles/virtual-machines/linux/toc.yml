@@ -143,6 +143,17 @@
               href: ssh-from-windows.md
             - name: Passos detalhados
               href: create-ssh-keys-detailed.md
+    - name: Proteger VMs
+      href: ../../backup/backup-introduction-to-azure-backup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+      items:
+        - name: Criar cópia de segurança de uma única VM
+          href: ../../backup/quick-backup-vm-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+        - name: Fazer uma cópia de segurança de várias VMs
+          href: ../../backup/tutorial-backup-vm-at-scale.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+        - name: Restaurar discos
+          href: ../../backup/tutorial-restore-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
+        - name: Restaurar ficheiros individuais
+          href: ../../backup/tutorial-restore-files.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
     - name: Gerir VMs
       items:
         - name: Tarefas comuns da CLI
