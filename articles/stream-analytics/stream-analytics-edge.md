@@ -12,26 +12,27 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 11/15/2017
+ms.date: 11/16/2017
 ms.author: jeanb
-ms.openlocfilehash: 6e94758581bd510e58a709a53e30c11a5c1f1b62
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: f1df2f52d00444ba0a27644a6e65cee789788f58
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-stream-analytics-on-iot-edge-preview"></a>O Azure Stream Analytics no limite de IoT (pré-visualização)
 
 > [!IMPORTANT]
 > Esta funcionalidade está em pré-visualização. Não é recomendada a utilização em produção.
  
-Azure Stream Analytics (ASA) no limite de IoT proporciona aos programadores implementar quase em tempo real intelligence analítico próximo dispositivos IoT para que eles podem desbloquear pleno partido dos dados gerados pelo dispositivo. Concebido para os clientes que necessitam de latência baixa, a resiliência, uma utilização eficiente da largura de banda e de conformidade, as empresas podem agora implementar a lógica de controlo próximo as operações industriais e complementar a análise de macrodados efetuada na nuvem.  
-O Azure Stream Analytics no limite de IoT é executado dentro do [Azure IoT Edge](https://azure.microsoft.com/campaigns/iot-edge/) framework e a implementação e gestão de tarefas do ASA podem ser realizadas utilizar o IoT Hub depois da tarefa é criada no ASA.
+Azure Stream Analytics (ASA) no limite de IoT proporciona aos programadores implementar quase em tempo real intelligence analítico próximo dispositivos IoT para que eles podem desbloquear pleno partido dos dados gerados pelo dispositivo. Concebido para baixa latência, a resiliência, uma utilização eficiente da largura de banda e de conformidade, as empresas podem agora implementar a lógica de controlo próximo as operações industriais e complementar a análise de macrodados efetuada na nuvem.  
+O Azure Stream Analytics no limite de IoT é executado dentro de [limite do Azure IoT](https://azure.microsoft.com/campaigns/iot-edge/) framework. Assim que a tarefa é criada no ASA, deploym e gerir tarefas do ASA utilizar o IoT Hub.
 Esta funcionalidade está em pré-visualização, se tiver qualquer pergunta ou comentários, pode utilizar [este inquérito](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2czagZ-i_9Cg6NhAZlH9ypUMjNEM0RDVU9CVTBQWDdYTlk0UDNTTFdUTC4u) contactar a equipa de produto. 
 
 ## <a name="scenarios"></a>Cenários
-![Diagrama de alto nível](media/stream-analytics-edge/ASAedge_highlevel.png) Eis alguns cenários típicos para as quais ASA em execução na margem é particularmente interessante:
-* **Comando de latência baixa e controlo**: por exemplo, segurança sistemas são necessários para responder a dados operacionais, com latência ultra-baixa de fabrico. Com ASA no limite do IoT, pode analisar dados de sensores em quase em tempo real e comandos de problema quando detetar anomalias para parar uma máquina ou acionador alertas.
+![Diagrama de alto nível](media/stream-analytics-edge/ASAedge_highlevel.png)
+
+* **Comando de latência baixa e controlo**: por exemplo, os sistemas de segurança de fabrico deve responder para dados operacionais com ultra-baixa latência. Com ASA no limite do IoT, pode analisar sensor, dados quase em tempo real e emitem comandos quando detetar anomalias para parar uma máquina ou acionar alertas.
 *   **Limitada a conectividade à nuvem**: missão sistemas críticos, como equipamento de extração remoto, vessels ligados ou desagregação offshore, tem de analisar e reagir aos dados, mesmo quando a conectividade de nuvem é intermitente. Com ASA, a lógica de transmissão em fluxo é executado independentemente a conectividade de rede e pode escolher que enviar para a nuvem para processamento adicional ou o armazenamento.
 * **Largura de banda limitada**: O volume de dados produzidos por motores de jet ou carros ligados podem ser tão grandes que dados tem de ser filtrados ou pré-processados antes de a enviar para a nuvem. Utilizar ASA, pode filtrar ou agregar os dados que têm de ser enviadas para a nuvem.
 * **Conformidade**: a conformidade regulamentar pode necessitar de alguns dados localmente anónimas ou agregado antes de a ser enviados para a nuvem. Com ASA, 

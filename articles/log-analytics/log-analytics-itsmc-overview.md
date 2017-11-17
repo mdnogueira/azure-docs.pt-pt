@@ -1,6 +1,6 @@
 ---
 title: "IT Service conector de gestão na análise de registos do Azure | Microsoft Docs"
-description: "Utilizar o conector de gestão do serviço de TI para monitorizar e gerir itens de trabalho ITSM no Log Analytics do Azure centralmente e resolva os problemas rapidamente."
+description: "Este artigo fornece uma descrição geral de TI serviço de gestão. o conector (ITSMC) e informações sobre como utilizar esta solução para monitorizar e gerir o ITSM centralmente itens de trabalho na análise de registos do OMS e resolva os problemas rapidamente."
 services: log-analytics
 documentationcenter: 
 author: JYOTHIRMAISURI
@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2017
 ms.author: v-jysur
-ms.openlocfilehash: ba8542640fcec6e4bc63d8f0a41bf85b221d4c5e
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: bd384255b3c46b3ae88b1269ab26e0ddaa6f6e77
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="centrally-manage-itsm-work-items-using-it-service-management-connector-preview"></a>Gerir centralmente a itens de trabalho ITSM utilizando o conector de gestão de serviços de TI (pré-visualização)
 
 ![Símbolo do conector de gestão do serviço IT](./media/log-analytics-itsmc/itsmc-symbol.png)
 
-O conector de gestão do serviço de TI (ITSMC) fornece uma integração bidirecional entre um produtos/serviços de gestão de serviço de TI (ITSM) e análise de registos suportados.  Através desta ligação, pode criar incidentes, alertas ou eventos no produto ITSM com base em alertas ou registos de análise de registos. O conector também importa dados, tais como incidentes e pedidos de alteração do produto ITSM para análise de registos do OMS.
+O conector de gestão do serviço de TI (ITSMC) fornece uma integração bidirecional entre um produtos/serviços de gestão de serviço de TI (ITSM) e análise de registos suportados.  Através desta ligação, pode criar incidentes, alertas ou eventos no produto ITSM com base na análise de registos alertas, registos ou alertas do Azure. O conector também importa dados, tais como incidentes e pedidos de alteração do produto ITSM para análise de registos do OMS.
 
 Com ITSMC, pode:
 
@@ -56,11 +56,11 @@ Após a adição com êxito, verá que o conector de gestão do serviço de TI e
  ![Atualização ITSMC](./media/log-analytics-itsmc/itsmc-connection-refresh.png)
 
 
-## <a name="configuring-the-connection-with-your-itsm-software"></a>Configurar a ligação com o seu software ITSM
+## <a name="configuring-the-itsmc-connection-with-your-itsm-productsservices"></a>Configurar a ligação de ITSMC com os produtos/serviços ITSM
 
 ITSMC suporta ligações a **System Center Service Manager**, **ServiceNow**, **Provance**, e **Cherwell**.
 
-Utilize os procedimentos seguintes como adequada para si:
+Utilize os seguintes procedimentos conforme aplicável para si:
 
 - [O System Center Service Manager (SCSM)](log-analytics-itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-oms)
 
@@ -258,6 +258,7 @@ Também pode criar itens de trabalho nas origens ITSM ligadas diretamente a part
 4. Forneça os valores adequados no **contacte tipo**, **impacto**, **urgência**, **categoria**, e **Sub categoria** caixas de texto e, em seguida, clique em **criar**.
 
 ## <a name="create-itsm-work-items-from-azure-alerts"></a>Criar itens de trabalho ITSM a partir dos alertas do Azure
+
 ITSMC está integrado com grupos de ação.
 
 [Grupos de ação](../monitoring-and-diagnostics/monitoring-action-groups.md) proporcionam uma forma modular e reutilizável de a acionar ações para os alertas do Azure. Ao utilizar a ação de ITSM em grupos de ação, pode criar itens de trabalho no seu produto ITSM que tenha uma ligação à solução de conector ITSM existente.
@@ -286,7 +287,7 @@ Quando a criação/edição de uma regra de alerta do Azure, utilize um grupo de
 
 >[!NOTE]
 
-> Atualmente, os alertas de registo de atividade só suportam a ação de ITSM. Ação de ITSM não é suportada para outros alertas do Azure.
+> Atualmente, apenas alertas de registo de atividade suportam a ação de ITSM, alertas outras do Azure não aceita a situação.
 
 
 ## <a name="troubleshoot-itsm-connections-in-oms"></a>Resolver problemas de ligações de ITSM no OMS

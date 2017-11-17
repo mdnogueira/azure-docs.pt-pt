@@ -5,17 +5,17 @@ services: functions
 keywords: 
 author: ggailey777
 ms.author: glenga
-ms.date: 11/08/2017
+ms.date: 11/15/2017
 ms.topic: article
 ms.service: functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: cfowler
-ms.openlocfilehash: 40fbbd0ec020320b26ed343aec8ac31d60b646dc
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 67ee02df2c42ba39c2f186cc95fa886a3d735ed2
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image-preview"></a>Criar uma função no Linux utilizando uma imagem personalizada (pré-visualização)
 
@@ -145,7 +145,7 @@ Agora, pode utilizar esta imagem como a origem de implementação para uma nova 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e utilizar a CLI localmente, este tópico requer a CLI do Azure versão 2.0 ou posterior. Executar `az --version` para localizar a versão do. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se optar por instalar e utilizar a CLI localmente, este tópico requer a CLI do Azure versão 2.0.21 ou posterior. Executar `az --version` para localizar a versão do. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 [!INCLUDE [functions-create-resource-group](../../includes/functions-create-resource-group.md)]
 

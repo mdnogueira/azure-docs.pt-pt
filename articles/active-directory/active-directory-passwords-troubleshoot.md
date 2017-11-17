@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 09/21/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 2eeb49cb6ab39c78612e0f1b3e08130ba88cf356
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 5c4942dbeccbd97c6bfc0f2c086e8d6091f6ed64
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="how-to-troubleshoot-self-service-password-reset"></a>Como resolver problemas de reposição de palavra-passe self-service
 
@@ -59,7 +59,7 @@ Se estiver a ter problemas com a reposição de palavra-passe self-service, os i
 
 | **Erro** | Solução |
 | --- | --- |
-| Diretórios não está ativado para a reposição de palavra-passe **o administrador não utilizar esta funcionalidade ativada** | Comutador de **Self-repor a palavra-passe serviço ativada** sinalizador para **um grupo** ou **Everybody** e clique em **guardar** |
+| Diretórios não está ativado para a reposição de palavra-passe **o administrador não utilizar esta funcionalidade ativada** | Comutador de **Self-repor a palavra-passe serviço ativada** sinalizador para **selecionados** ou **todos os** e clique em **guardar** |
 | O utilizador não tem um Azure AD Premium ou Basic licença atribuída **o administrador não utilizar esta funcionalidade ativada** | Isto pode acontecer se não tiver um Azure AD Premium ou Basic licença atribuída para o administrador efetuar a operação. <br> Isto pode ser resolvido ao atribuir uma licença para a conta de administrador em questão, utilizando o artigo [atribuir, certifique-se e resolver problemas com licenças](active-directory-licensing-group-assignment-azure-portal.md#step-1-assign-the-required-licenses) |
 | Pedido de processamento de erros | Isto pode ser causado por vários problemas, mas, geralmente, este erro é causado por ou uma interrupção ou a configuração problema do serviço. Se vir este erro e está com impacto na sua empresa, contacte o suporte da Microsoft para obter assistência adicional. |
 
@@ -67,7 +67,7 @@ Se estiver a ter problemas com a reposição de palavra-passe self-service, os i
 
 | **Erro** | Solução |
 | --- | --- |
-| Diretórios não está ativado para a reposição de palavra-passe. | Comutador de **Self-repor a palavra-passe serviço ativada** sinalizador para **um grupo** ou **Everybody** e clique em **guardar** |
+| Diretórios não está ativado para a reposição de palavra-passe. | Comutador de **Self-repor a palavra-passe serviço ativada** sinalizador para **selecionados** ou **todos os** e clique em **guardar** |
 | O utilizador não tem um Azure AD Premium ou Basic licença atribuída | Isto pode acontecer se não tiver um Azure AD Premium ou Basic licença atribuída para o administrador efetuar a operação. <br> Isto pode ser resolvido ao atribuir uma licença para a conta de administrador em questão, utilizando o artigo [atribuir, certifique-se e resolver problemas com licenças](active-directory-licensing-group-assignment-azure-portal.md#step-1-assign-the-required-licenses) |
 | Diretório está ativado para a reposição de palavra-passe, mas o utilizador tem em falta ou incorretamente que o soft informações de autenticação | Certifique-se de que o utilizador foi correctamente formado dados de contacto no ficheiro no diretório antes de continuar. Para obter mais informações acerca deste tópico, consulte o artigo [dados utilizados pelo Azure AD Self-Service palavra-passe reposta](active-directory-passwords-data.md). |
 | Diretório está ativado para a reposição de palavra-passe, mas um utilizador só tem um conjunto de dados de contactos no ficheiro quando a política estiver definida para exigir dois passos de verificação | Certifique-se de que o utilizador tem, pelo menos, dois métodos de contactos configurados corretamente (exemplo: telemóvel **e** telefone do escritório) antes de continuar. |
@@ -270,14 +270,14 @@ Para ajudá-lo corretamente, pedimos-lhe fornecer a maior quantidade detalhe pos
 
 As ligações seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe com o Azure AD
 
-* [Como concluir a uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
-* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [O registo para a reposição de palavra-passe self-service](active-directory-passwords-reset-register.md).
-* [Tem uma pergunta de licenciamento?](active-directory-passwords-licensing.md)
-* [Os dados que são utilizados pelo SSPR e os dados que deve preencher para os seus utilizadores?](active-directory-passwords-data.md)
-* [Os métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
-* [Quais são as opções de política com SSPR?](active-directory-passwords-policy.md)
-* [O que é a repetição de escrita de palavras-passe e por que motivo importantes acerca do mesmo?](active-directory-passwords-writeback.md)
-* [Como comunicar na atividade na SSPR](active-directory-passwords-reporting.md)
-* [Quais são todas as opções na SSPR e o que fazer significa?](active-directory-passwords-how-it-works.md)
-* [Tenho uma pergunta que não foi abrangida algures senão](active-directory-passwords-faq.md)
+* [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
+* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
+* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
+* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
+* [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
+* [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
+* [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)
+* [Como posso comunicar a atividade da SSPR?](active-directory-passwords-reporting.md)
+* [Quais são todas as opções na SSPR e o que significam?](active-directory-passwords-how-it-works.md)
+* [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)

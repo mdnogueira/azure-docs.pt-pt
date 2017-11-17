@@ -15,11 +15,11 @@ ms.topic: quickstart
 ms.date: 05/05/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: a40dc540884454fed9c374ba1365fdf7b85e4531
-ms.sourcegitcommit: 3e3a5e01a5629e017de2289a6abebbb798cec736
+ms.openlocfilehash: d797b83e2ab7f1b567588ca8e884aed97b49cf45
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-a-nodejs-web-app-in-azure-app-service-on-linux"></a>Criar uma aplicação web Node.js no Azure App Service no Linux
 
@@ -78,11 +78,11 @@ Na janela do terminal, prima **Ctrl+C** para sair do servidor Web.
 
 [!INCLUDE [Create app service plan](../../../includes/app-service-web-create-app-service-plan-linux.md)]
 
-## <a name="create-a-web-app-with-built-in-image"></a>Criar uma aplicação web com a imagem incorporada
+## <a name="create-a-web-app"></a>Criar uma aplicação Web
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-nodejs-no-h.md)]
 
-Navegue até à sua aplicação web recentemente criada. Substitua  _&lt;nome da aplicação >_ com um nome de aplicação único.
+Navegue até à sua aplicação web recentemente criada. Substitua  _&lt;nome da aplicação >_ com o nome da aplicação web.
 
 ```bash
 http://<app name>.azurewebsites.net
@@ -142,7 +142,7 @@ O código de exemplo do Node.js está em execução numa aplicação web com a i
 
 ## <a name="update-and-redeploy-the-code"></a>Atualizar e voltar a implementar o código
 
-Utilizando um editor de texto, abra o ficheiro `index.js` na aplicação Node.js e faça uma pequena alteração ao texto na chamada para `response.end`:
+No diretório local, abra o `index.js` ficheiro na aplicação Node.js e efetuar uma alteração de pequeno para o texto na chamada para `response.end`:
 
 ```nodejs
 response.end("Hello Azure!");

@@ -15,11 +15,11 @@ ms.topic: quickstart
 ms.date: 08/30/2017
 ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: 47b3f3b0a0faab6daa4ff64230128fc0ad3510e9
-ms.sourcegitcommit: 3e3a5e01a5629e017de2289a6abebbb798cec736
+ms.openlocfilehash: 34da73e5feca1782f3e107fd30d268df4f9883d8
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-a-php-web-app-in-app-service-on-linux"></a>Criar uma aplicação web PHP no App Service no Linux
 
@@ -71,14 +71,14 @@ Na janela do terminal, prima **Ctrl+C** para sair do servidor Web.
 
 [!INCLUDE [Create app service plan](../../../includes/app-service-web-create-app-service-plan-linux.md)]
 
-## <a name="create-a-web-app-with-built-in-image"></a>Criar uma aplicação web com a imagem incorporada
+## <a name="create-a-web-app"></a>Criar uma aplicação Web
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-php-no-h.md)] 
 
-Navegar para o site para ver a sua aplicação web recentemente criada com a imagem incorporada. Substitua  _&lt;nome da aplicação >_ com um nome de aplicação único.
+Navegar para o site para ver a sua aplicação web recentemente criada com a imagem incorporada. Substitua  _&lt;nome da aplicação >_ com o nome da aplicação web.
 
 ```bash
-http://<app name>.azurewebsites.net
+http://<app_name>.azurewebsites.net
 ```
 
 ![Página da aplicação Web vazia](media/quickstart-php/app-service-web-service-created.png)
@@ -126,7 +126,7 @@ O código de exemplo do PHP está em execução numa aplicação web com a image
 
 ## <a name="update-locally-and-redeploy-the-code"></a>Atualizar localmente e reimplementar o código
 
-Utilizando um editor de texto local, abra o ficheiro `index.php` na aplicação PHP e faça uma pequena alteração ao texto na cadeia junto a `echo`:
+No diretório local, abra o `index.php` ficheiro dentro da aplicação PHP e efetuar uma alteração de pequeno para o texto na cadeia de caracteres junto a `echo`:
 
 ```php
 echo "Hello Azure!";

@@ -1,10 +1,10 @@
 ---
-title: "VM com o IP de vários endereços utilizando o 2.0 CLI do Azure | Microsoft Docs"
-description: "Saiba como atribuir vários endereços IP a uma máquina virtual utilizando o 2.0 CLI do Azure | Gestor de recursos."
+title: "VM com o IP de vários endereços utilizando a CLI do Azure | Microsoft Docs"
+description: "Saiba como atribuir vários endereços IP a uma máquina virtual utilizando a interface de linha de comandos do Azure (CLI)."
 services: virtual-network
 documentationcenter: na
-author: anavinahar
-manager: narayan
+author: jimdial
+manager: jeconnoc
 editor: 
 tags: azure-resource-manager
 ms.assetid: 
@@ -14,24 +14,24 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/17/2016
-ms.author: annahar
-ms.openlocfilehash: 0e9b2ef89ca39a7988a7b2573496a605dfc604b4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: jimdial
+ms.openlocfilehash: aa0f84299dcb4800cd332d8276785f6b08152060
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
-# <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli-20"></a>Atribuir vários endereços IP para máquinas virtuais utilizando o 2.0 CLI do Azure
+# <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli"></a>Atribuir vários endereços IP para máquinas virtuais utilizando a CLI do Azure
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-intro.md](../../includes/virtual-network-multiple-ip-addresses-intro.md)]
 
-Este artigo explica como criar uma máquina virtual (VM) através do modelo de implementação Azure Resource Manager utilizando o 2.0 CLI do Azure. Vários endereços IP não não possível atribuir recursos criados através do modelo de implementação clássica. Para saber mais sobre modelos de implementação do Azure, leia o [compreender os modelos de implementação](../resource-manager-deployment-model.md) artigo.
+Este artigo explica como criar uma máquina virtual (VM) através do modelo de implementação Azure Resource Manager utilizando a CLI do Azure. Vários endereços IP não não possível atribuir recursos criados através do modelo de implementação clássica. Para saber mais sobre modelos de implementação do Azure, leia o [compreender os modelos de implementação](../resource-manager-deployment-model.md) artigo.
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-template-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
 ## <a name = "create"></a>Criar uma VM com vários endereços IP
 
-Pode concluir esta tarefa com o 2.0 do CLI do Azure (Este artigo) ou o [CLI do Azure 1.0](virtual-network-multiple-ip-addresses-cli-nodejs.md). Altere os valores, conforme adequado, para o seu ambiente. Os passos que se seguem explicam como criar um VM de exemplo com vários endereços IP, conforme descrito no cenário. Alterar valores das variáveis no "" e tipos de endereços IP conforme necessário para a implementação. 
+Os passos que se seguem explicam como criar uma máquina virtual de exemplo com vários endereços IP, conforme descrito no cenário. Alterar valores das variáveis no "" e tipos de endereços IP, conforme necessário, para a implementação. 
 
 1. Instalar o [Azure CLI 2.0](/cli/azure/install-az-cli2) se ainda não o tiver instalado.
 2. Criar um par de chaves público e privado SSH para VMs com Linux, efetuando os passos a [criar um par de chaves público e privado SSH para VMs com Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

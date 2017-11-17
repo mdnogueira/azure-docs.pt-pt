@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2017
 ms.author: sstein
-ms.openlocfilehash: a74a439eab3698e14e5b8e2db0d45a86e9f55f0e
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 450a5fc578948db044d9e0bb9db09508b2512aca
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="monitor-and-manage-performance-of-azure-sql-databases-and-pools-in-a-multi-tenant-saas-app"></a>Monitorizar e gerir o desempenho de bases de dados SQL do Azure e agrupamentos numa aplicação SaaS multi-inquilino
 
@@ -64,7 +64,7 @@ Para cenários de volume elevado, onde está a trabalhar com muitos recursos, [a
 
 ## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-source-code-and-scripts"></a>Obter o código fonte da aplicação Wingtip bilhetes SaaS da base de dados por inquilino e os scripts
 
-Os scripts de Wingtip bilhetes SaaS da base de dados por inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do github. [Passos para transferir os scripts de Wingtip bilhetes SaaS da base de dados por inquilino](saas-dbpertenant-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-saas-scripts).
+Os scripts de Wingtip bilhetes SaaS da base de dados por inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do github. [Passos para transferir os scripts de Wingtip bilhetes SaaS da base de dados por inquilino](saas-dbpertenant-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-tickets-saas-database-per-tenant-scripts).
 
 ## <a name="provision-additional-tenants"></a>Aprovisionar inquilinos adicionais
 

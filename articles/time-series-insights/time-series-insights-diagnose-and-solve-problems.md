@@ -9,11 +9,11 @@ ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 11/15/2017
-ms.openlocfilehash: 4216b245fd480003cfa4a34452f87efade964f8d
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 47fb6f01eff8827179fbfa9e67ad3b901c8cdf94
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="diagnose-and-solve-problems-in-your-time-series-insights-environment"></a>Diagnosticar e resolver problemas no seu ambiente de informações de séries de tempo
 
@@ -24,9 +24,9 @@ Existem várias razões comuns por que motivo não poderá ver os dados no [Expl
 As informações de séries de tempo do Azure suporta apenas os dados JSON. Para exemplos JSON, consulte [formas de JSON suportado](time-series-insights-send-events.md#supported-json-shapes).
 
 ### <a name="possible-cause-b-event-source-key-is-missing-a-required-permission"></a>Chave de origem do evento b: causa está em falta uma permissão necessária
-* Para um hub IoT, tem de fornecer a chave que tenha **serviço ligar** permissão.
+* Para um IoT Hub, tem de fornecer a chave que tenha **serviço ligar** permissão.
 
-   ![Permissão de ligação de serviço do hub IoT](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)
+   ![Permissão de ligação de serviço IoT Hub](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)
 
    Conforme mostrado na imagem anterior, qualquer uma das políticas **iothubowner** e **serviço** funcionarão, porque têm **serviço ligar** permissão.
    
@@ -37,13 +37,13 @@ As informações de séries de tempo do Azure suporta apenas os dados JSON. Para
    Conforme mostrado na imagem anterior, qualquer uma das políticas **ler** e **gerir** funcionarão, porque têm **escutar** permissão.
 
 ### <a name="possible-cause-c-the-consumer-group-provided-is-not-exclusive-to-time-series-insights"></a>Possível fazer com que o grupo de consumidores fornecido não é exclusiva Insights de séries de tempo de c:
-Durante o registo de am IoT hub ou hub de eventos, especifique o grupo de consumidores que deve ser utilizado para ler os dados. Este grupo de consumidores tem **não** ser partilhado. Se o grupo de consumidores for partilhado, o hub de eventos subjacente automaticamente desliga um dos leitores aleatoriamente. Forneça um grupo de consumidores exclusivo das informações de série de tempo ler a partir do.
+Durante o registo de am IoT Hub ou hub de eventos, especifique o grupo de consumidores que deve ser utilizado para ler os dados. Este grupo de consumidores tem **não** ser partilhado. Se o grupo de consumidores for partilhado, o hub de eventos subjacente automaticamente desliga um dos leitores aleatoriamente. Forneça um grupo de consumidores exclusivo das informações de série de tempo ler a partir do.
 
 ## <a name="problem-2-some-data-is-shown-but-some-is-missing"></a>Problema de 2: Alguns dados são apresentados, mas algumas está em falta
 Quando podem ver dados parcialmente, mas os dados é lagging, existem várias possibilidades a ter em consideração:
 
 ### <a name="possible-cause-a-your-environment-is-getting-throttled"></a>Uma causa possível r: o seu ambiente é obter limitada
-O limite de limitação é imposto com base no tipo SKU do ambiente e a capacidade. Todas as origens de eventos no ambiente de partilham esta capacidade. Se a origem do evento para o seu IoT hub ou hub de eventos está a enviar dados que ultrapassem os limites impostos, verá limitação e um atraso.
+O limite de limitação é imposto com base no tipo SKU do ambiente e a capacidade. Todas as origens de eventos no ambiente de partilham esta capacidade. Se a origem do evento para o seu IoT Hub ou hub de eventos está a enviar dados que ultrapassem os limites impostos, verá limitação e um atraso.
 
 O diagrama seguinte mostra um ambiente de informações de séries de tempo que tem um SKU de S1 e uma capacidade de 3. Pode eventos de 3 milhões de entrada por dia.
 
@@ -61,7 +61,7 @@ Para uma compreensão como funciona o flattening lógica, consulte [formas de JS
 Para corrigir o desfasamento, aumenta a capacidade SKU do seu ambiente. Para obter mais informações, consulte [como dimensionar o ambiente de tempo série Insights](time-series-insights-how-to-scale-your-environment.md).
 
 ### <a name="possible-cause-b-initial-ingestion-of-historical-data-is-causing-slow-ingress"></a>Uma causa possível ingestão b: inicial de dados históricos está a causar entrada lenta
-Se estiver a ligar uma origem de evento existente, é provável que o IoT hub ou hub de eventos já tiver dados no mesmo. O ambiente inicia a extração de dados a partir do início do período de retenção de mensagens da origem de evento.
+Se estiver a ligar uma origem de evento existente, é provável que o seu hub IoT Hub ou evento já tiver dados no mesmo. O ambiente inicia a extração de dados a partir do início do período de retenção de mensagens da origem de evento.
 
 Este comportamento é o comportamento predefinido e não pode ser substituído. Pode interagir com limitação, e pode demorar algum tempo para acompanhar no ingestão de dados históricos.
 

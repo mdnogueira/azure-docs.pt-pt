@@ -1,10 +1,10 @@
 ---
-title: "Criar uma VM com um endereço IP público estático - Azure CLI 2.0 | Microsoft Docs"
-description: "Saiba como criar uma VM com um endereço IP público estático, utilizar a interface de linha de comandos do Azure (CLI) 2.0."
+title: "Criar uma VM com um endereço IP público estático - CLI do Azure | Microsoft Docs"
+description: "Saiba como criar uma VM com um endereço IP público estático, utilizar a interface de linha de comandos do Azure (CLI)."
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: timlt
+manager: jeconnoc
 editor: 
 tags: azure-resource-manager
 ms.assetid: 55bc21b0-2a45-4943-a5e7-8d785d0d015c
@@ -16,19 +16,18 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a4c32694949880037f01bb2b6b9779d2cbb9809c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c50f685745a645b5fbe383a5fe4726faa0e36345
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
-# <a name="create-a-vm-with-a-static-public-ip-address-using-the-azure-cli-20"></a>Criar uma VM com um endereço IP público estático, utilizar o 2.0 CLI do Azure
+# <a name="create-a-vm-with-a-static-public-ip-address-using-the-azure-cli"></a>Criar uma VM com um endereço IP público estático, utilizar a CLI do Azure
 
 > [!div class="op_single_selector"]
 > * [Portal do Azure](virtual-network-deploy-static-pip-arm-portal.md)
 > * [PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
-> * [CLI 2.0 do Azure](virtual-network-deploy-static-pip-arm-cli.md)
-> * [CLI do Azure 1.0](virtual-network-deploy-static-pip-cli-nodejs.md)
+> * [CLI do Azure](virtual-network-deploy-static-pip-arm-cli.md)
 > * [Modelo](virtual-network-deploy-static-pip-arm-template.md)
 > * [PowerShell (Clássico)](virtual-networks-reserved-public-ip.md)
 
@@ -40,7 +39,7 @@ O Azure tem dois modelos de implementação diferentes para criar e trabalhar co
 
 ## <a name = "create"></a>Criar a VM
 
-Pode concluir esta tarefa com o 2.0 do CLI do Azure (Este artigo) ou o [CLI do Azure 1.0](virtual-network-deploy-static-pip-cli-nodejs.md). Os valores existentes na "" para as variáveis nos passos que se seguem criar recursos com as definições do cenário. Altere os valores, conforme adequado, para o seu ambiente.
+Os valores existentes na "" para as variáveis nos passos que se seguem criar recursos com as definições do cenário. Altere os valores, conforme adequado, para o seu ambiente.
 
 1. Instalar o [Azure CLI 2.0](/cli/azure/install-az-cli2) se ainda não o tiver instalado.
 2. Criar um par de chaves público e privado SSH para VMs com Linux, efetuando os passos a [criar um par de chaves público e privado SSH para VMs com Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

@@ -9,11 +9,11 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 05/09/2017
 ms.author: jasonzio
-ms.openlocfilehash: 525d706bd709ae72f2dca1c21e06db533ccf32b4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ebb963236a069f272499fce59945d0cf0d3d647f
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Utilizar a extensão de diagnóstico do Linux para monitorizar métricas e registos
 
@@ -319,7 +319,7 @@ displayName | A etiqueta (no idioma especificado pela definição de região ass
 
 O counterSpecifier é um identificador arbitrário. Os consumidores de métricas, como charting portal do Azure e alertas funcionalidade, utilize counterSpecifier como a "chave" que identifica uma métrica ou uma instância de uma métrica. Para `builtin` métricas, recomendamos que utilize valores counterSpecifier que começam com `/builtin/`. Se está a recolher uma instância específica de uma métrica, recomendamos que ligue o identificador da instância para o valor de counterSpecifier. Alguns exemplos:
 
-* `/builtin/Processor/PercentIdleTime`-Tempo inativo, Considerando todos os núcleos
+* `/builtin/Processor/PercentIdleTime`-Tempo inativo, Considerando todos os vCPUs
 * `/builtin/Disk/FreeSpace(/mnt)`-Espaço para o sistema de ficheiros /mnt
 * `/builtin/Disk/FreeSpace`-Espaço Considerando todos os sistemas de ficheiros instalados montados
 
@@ -424,7 +424,7 @@ O fornecedor de métrica de builtin é uma origem de métricas mais interessante
 
 ### <a name="builtin-metrics-for-the-processor-class"></a>métricas de Builtin para a classe de processador
 
-A classe de processador de métricas fornece informações sobre a utilização de processador na VM. Ao agregar percentagens, o resultado é a média em todas as CPUs. Um núcleo dois VM, se um núcleo 100% ocupado e o outro era 100% inativo, o PercentIdleTime comunicado seria possível 50. Se cada principal era 50% ocupado para o mesmo período, o resultado que relatados também seria 50. Um núcleo de VM, quatro com um núcleo 100% ocupado e a outras pessoas inativo, o PercentIdleTime comunicado seria possível 75.
+A classe de processador de métricas fornece informações sobre a utilização de processador na VM. Ao agregar percentagens, o resultado é a média em todas as CPUs. Numa VM dois vCPU, se um vCPU 100% ocupado e o outro era 100% inativo, o PercentIdleTime comunicado seria 50. Se cada vCPU estava ocupado para o mesmo período a 50%, o resultado que relatados também seria 50. Numa VM quatro vCPU, com um vCPU 100% ocupada e a outras pessoas inativo, o PercentIdleTime comunicado seria 75.
 
 Contador | Significado
 ------- | -------
@@ -438,7 +438,7 @@ PercentPrivilegedTime | De tempo de inatividade não, a percentagem despendido n
 
 Os primeiro quatro contadores devem soma para 100%. A última três também contadores soma para 100%; Estes subdividir a soma de PercentProcessorTime, PercentIOWaitTime e PercentInterruptTime.
 
-Para obter uma métrica único agregada para todos os processadores, defina `"condition": "IsAggregate=TRUE"`. Para obter uma métrica para um processador específico, tal como o segundo processador lógico de um quatro principais VM, defina `"condition": "Name=\\"1\\""`. Processador lógico números estão no intervalo `[0..n-1]`.
+Para obter uma métrica único agregada para todos os processadores, defina `"condition": "IsAggregate=TRUE"`. Para obter uma métrica para um processador específico, como o segundo processador lógico de uma VM de quatro vCPU, defina `"condition": "Name=\\"1\\""`. Processador lógico números estão no intervalo `[0..n-1]`.
 
 ### <a name="builtin-metrics-for-the-memory-class"></a>métricas de Builtin para a classe de memória
 

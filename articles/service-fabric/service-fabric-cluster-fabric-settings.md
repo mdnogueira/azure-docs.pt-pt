@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/15/2017
 ms.author: chackdan
-ms.openlocfilehash: bfbfc5b46985d3413510ba69cbdfc688f46f0f1b
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
-ms.translationtype: HT
+ms.openlocfilehash: 19caa05f0de7b4ff4ed7f4eafe50839d04f4ab50
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Personalizar as definições de cluster do Service Fabric e política de atualização do Fabric
 Este documento indica como personalizar as várias definições de recursos de infraestrutura e os recursos de infraestrutura atualizar a política para o cluster do Service Fabric. Pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou através de um modelo Azure Resource Manager.
@@ -80,10 +80,10 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-setup"></a>Secção nome: a configuração
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| A variável FabricDataRoot |Cadeia | Não permitido |Diretório de raiz de dados do Service Fabric. Predefinido para o Azure é d:\svcfab |
-| FabricLogRoot |Cadeia | Não permitido |Diretório de raiz do registo de recursos de infraestrutura do serviço. Este é onde os registos de SF e rastreios são colocados. |
-| ServiceRunAsAccountName |Cadeia | Não permitido |O nome da conta para executar o serviço de anfitrião de recursos de infraestrutura. |
-| SkipFirewallConfiguration |Booleana, a predefinição é false | Não permitido |Especifica se as definições de firewall tem de ser definido pelo sistema ou não. Isto aplica-se apenas se estiver a utilizar a firewall do windows. Se estiver a utilizar firewalls de terceiros, em seguida, tem de abrir as portas para o sistema e as aplicações utilizem |
+| A variável FabricDataRoot |Cadeia | Não Permitido |Diretório de raiz de dados do Service Fabric. Predefinido para o Azure é d:\svcfab |
+| FabricLogRoot |Cadeia | Não Permitido |Diretório de raiz do registo de recursos de infraestrutura do serviço. Este é onde os registos de SF e rastreios são colocados. |
+| ServiceRunAsAccountName |Cadeia | Não Permitido |O nome da conta para executar o serviço de anfitrião de recursos de infraestrutura. |
+| SkipFirewallConfiguration |Booleana, a predefinição é false | Não Permitido |Especifica se as definições de firewall tem de ser definido pelo sistema ou não. Isto aplica-se apenas se estiver a utilizar a firewall do windows. Se estiver a utilizar firewalls de terceiros, em seguida, tem de abrir as portas para o sistema e as aplicações utilizem |
 |NodesToBeRemoved|cadeia, a predefinição é ""| Dinâmica |Os nós que devem ser removidos como parte da atualização da configuração. (Apenas para implementações autónomas)|
 |ContainerNetworkSetup|booleana, a predefinição é FALSE| Estático |Se pretende configurar uma rede de contentor.|
 |ContainerNetworkName|cadeia, a predefinição é L""| Estático |O nome de rede a utilizar quando configurar uma rede de contentor.|
@@ -102,13 +102,13 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 | MaxSecondaryReplicationQueueSize |Uint, a predefinição é 16384 | Estático |Este é o número máximo de operações que pode existir na fila de replicação secundário. Tenha em atenção que tem de ser uma potência de 2. |
 | MaxSecondaryReplicationQueueMemorySize |Uint, a predefinição é 0 | Estático |Este é o valor máximo da fila de replicação secundária em bytes. |
 | SecondaryClearAcknowledgedOperations |Booleana, a predefinição é false | Estático |Booleano que controla se as operações nos replicador secundária estão desmarcadas uma vez são confirmadas principal (libertado no disco). Definições de esta opção para verdadeiro pode resultar em leituras de disco adicional no principal novo, durante a deteção de segurança de réplicas após uma ativação pós-falha. |
-| MaxMetadataSizeInKB |Int, a predefinição é 4 |Não permitido|Tamanho máximo dos metadados de sequência do registo. |
-| MaxRecordSizeInKB |Uint, a predefinição é 1024 |Não permitido| Tamanho máximo de um registo de fluxo. |
+| MaxMetadataSizeInKB |Int, a predefinição é 4 |Não Permitido|Tamanho máximo dos metadados de sequência do registo. |
+| MaxRecordSizeInKB |Uint, a predefinição é 1024 |Não Permitido| Tamanho máximo de um registo de fluxo. |
 | CheckpointThresholdInMB |Int, predefinido é 50 |Estático|Um ponto de verificação será iniciado quando a utilização do registo excede este valor. |
 | MaxAccumulatedBackupLogSizeInMB |Int, a predefinição é 800 |Estático|Máx. acumulados tamanho (em MB) de cópia de segurança registos numa cadeia de cópia de segurança de registo especificado. Um pedidos de cópia de segurança incremental falharão se a cópia de segurança incremental irá gerar um registo de cópia de segurança que faria com que os registos de cópia de segurança acumulados desde a relevante cópia de segurança completa ser maior do que este tamanho. Nestes casos, é pedido ao utilizador para efetuar uma cópia de segurança completa. |
-| MaxWriteQueueDepthInKB |Int, a predefinição é 0 |Não permitido| Int para máximo escrever profundidade de fila do registador de núcleos pode utilizar conforme especificado em quilobytes para o registo que está associado esta réplica. Este valor é o número máximo de bytes que podem ser pendentes durante as atualizações de registo principal. Pode ser 0 para o registo de núcleos para um valor adequado de computação ou um múltiplo de 4. |
-| SharedLogId |Cadeia |Não permitido|Identificador de registo partilhado. Este é um guid e deve ser exclusivo para cada registo partilhado. |
-| SharedLogPath |Cadeia |Não permitido|Caminho para o registo partilhado. Se este valor está vazio, em seguida, é utilizado o registo partilhado predefinido. |
+| MaxWriteQueueDepthInKB |Int, a predefinição é 0 |Não Permitido| Int para máximo escrever profundidade de fila do registador de núcleos pode utilizar conforme especificado em quilobytes para o registo que está associado esta réplica. Este valor é o número máximo de bytes que podem ser pendentes durante as atualizações de registo principal. Pode ser 0 para o registo de núcleos para um valor adequado de computação ou um múltiplo de 4. |
+| SharedLogId |Cadeia |Não Permitido|Identificador de registo partilhado. Este é um guid e deve ser exclusivo para cada registo partilhado. |
+| SharedLogPath |Cadeia |Não Permitido|Caminho para o registo partilhado. Se este valor está vazio, em seguida, é utilizado o registo partilhado predefinido. |
 | SlowApiMonitoringDuration |Tempo em segundos, a predefinição é 300 |Estático| Especificar a duração para api antes de que desencadeou o evento de estado de funcionamento de aviso.|
 | MinLogSizeInMB |Int, a predefinição é 0 |Estático|Tamanho mínimo do registo transacional. O registo não será permitido para truncar para um tamanho inferior esta definição. 0 indica que o replicador determinará o tamanho do registo mínimo, de acordo com as outras definições. Aumento deste valor aumenta a possibilidade de fazer cópias parciais e cópias de segurança incrementais desde possibilidades de registos de registo relevantes fossem truncados é lowered. |
 
@@ -178,7 +178,7 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-paas"></a>Secção nome: Paas
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| ClusterId |cadeia, a predefinição é "" |Não permitido|Utilizado por recursos de infraestrutura para proteção da configuração do arquivo de certificados X509. |
+| ClusterId |cadeia, a predefinição é "" |Não Permitido|Utilizado por recursos de infraestrutura para proteção da configuração do arquivo de certificados X509. |
 
 ### <a name="section-name-fabrichost"></a>Secção nome: FabricHost
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
@@ -202,11 +202,11 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 | UserMaxStandByReplicaCount |Int, a predefinição é 1 |Dinâmica|O número máximo predefinido de réplicas do modo de espera que o sistema mantém para serviços de utilizador. |
 | ExpectedClusterSize|Int, a predefinição é 1|Dinâmica|Quando o cluster é inicialmente iniciado; o FM espera que isto nós muitos relatórios próprios cópias de segurança antes de iniciar a colocação de outros serviços; incluindo os serviços do sistema, como a atribuição de nomes.  Aumento deste valor aumenta o tempo que demora um cluster de arranque; mas impede os nós precoce de se tornar sobrecarregado e também a move adicional que irá ser necessário como mais nós fique online.  Este valor, geralmente, deve ser definido como algumas pequena fração do tamanho do cluster inicial. |
 |ClusterPauseThreshold|Int, a predefinição é 1|Dinâmica|Se o número de nós no sistema ficarem abaixo este valor, em seguida, Colocação; carregar balanceamento; e parar a ativação pós-falha. |
-|TargetReplicaSetSize|Int, a predefinição é 7|Não permitido|Este é o número de destino de réplicas de FM que vai manter os recursos de infraestrutura do Windows.  Um número mais alto resulta numa maior fiabilidade dos dados FM; com um compromisso do desempenho pequeno. |
-|MinReplicaSetSize|Int, a predefinição é 3|Não permitido|Este é o tamanho de conjunto de réplicas mínima para o FM.  Se o número de réplicas do Active Directory FM descerem abaixo este valor; o FM irão rejeitar as alterações para o cluster até, pelo menos, o número mínimo de réplicas é recuperado |
-|ReplicaRestartWaitDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(60.0 * 30)|Não permitido|Especifique timespan em segundos. Este é o ReplicaRestartWaitDuration para o FMService |
-|StandByReplicaKeepDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(3600.0 * 24 * 7)|Não permitido|Especifique timespan em segundos. Este é o StandByReplicaKeepDuration para o FMService |
-|PlacementConstraints|cadeia, a predefinição é L""|Não permitido|As restrições de posicionamento para as réplicas de Gestor de ativação pós-falha |
+|TargetReplicaSetSize|Int, a predefinição é 7|Não Permitido|Este é o número de destino de réplicas de FM que vai manter os recursos de infraestrutura do Windows.  Um número mais alto resulta numa maior fiabilidade dos dados FM; com um compromisso do desempenho pequeno. |
+|MinReplicaSetSize|Int, a predefinição é 3|Não Permitido|Este é o tamanho de conjunto de réplicas mínima para o FM.  Se o número de réplicas do Active Directory FM descerem abaixo este valor; o FM irão rejeitar as alterações para o cluster até, pelo menos, o número mínimo de réplicas é recuperado |
+|ReplicaRestartWaitDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(60.0 * 30)|Não Permitido|Especifique timespan em segundos. Este é o ReplicaRestartWaitDuration para o FMService |
+|StandByReplicaKeepDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(3600.0 * 24 * 7)|Não Permitido|Especifique timespan em segundos. Este é o StandByReplicaKeepDuration para o FMService |
+|PlacementConstraints|cadeia, a predefinição é L""|Não Permitido|As restrições de posicionamento para as réplicas de Gestor de ativação pós-falha |
 |ExpectedNodeFabricUpgradeDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(60.0 * 30)|Dinâmica|Especifique timespan em segundos. Esta é a duração esperada para um nó a ser atualizado durante a atualização do Windows Fabric. |
 |ExpectedReplicaUpgradeDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(60.0 * 30)|Dinâmica|Especifique timespan em segundos. Esta é a duração esperada para todas as réplicas ser actualizado num nó durante a atualização da aplicação. |
 |ExpectedNodeDeactivationDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(60.0 * 30)|Dinâmica|Especifique timespan em segundos. Esta é a duração esperada para um nó concluir a desativação de no. |
@@ -219,12 +219,12 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-namingservice"></a>Secção nome: NamingService
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| TargetReplicaSetSize |Int, a predefinição é 7 |Não permitido|Define o número de réplica para cada partição do arquivo do serviço de nomenclatura. Aumento do número de conjuntos de réplicas aumenta o nível de fiabilidade para obter as informações no arquivo do serviço de nomes; diminuir a alteração que as informações serão perdidas devido a falhas de nó um custo de aumento de carga em recursos de infraestrutura do Windows e a quantidade de tempo que demora a efetuar atualizações para os dados de nomenclatura.|
-|MinReplicaSetSize | Int, a predefinição é 3 |Não permitido| O número mínimo de réplicas de nomenclatura serviço necessário para escrever na conclusão de uma atualização. Se existirem menos réplicas mais ativos no sistema o sistema de fiabilidade nega atualizações para o arquivo do serviço de nomenclatura até as réplicas são restauradas. Este valor nunca deve ser superior a TargetReplicaSetSize. |
-|ReplicaRestartWaitDuration | Tempo em segundos, a predefinição é (60.0 * 30)|Não permitido| Especifique timespan em segundos. Quando uma réplica Naming Service fica inativo; Este temporizador é iniciado.  Quando este expirar o FM começará substituir as réplicas que estão em baixo (não ainda considera perdido). |
-|QuorumLossWaitDuration | Tempo em segundos, a predefinição é MaxValue |Não permitido| Especifique timespan em segundos. Quando um serviço de nomenclatura obtém em perda de quórum Este temporizador é iniciado.  Quando este expirar o FM considerará as réplicas como perdido; baixo e tentar recuperar o quórum. Não Isto pode resultar na perda de dados. |
-|StandByReplicaKeepDuration | Tempo em segundos, a predefinição é 3600.0 * 2 |Não permitido| Especifique timespan em segundos. Quando uma réplica Naming Service voltar atrás de um Estado de indisponibilidade; Pode já ter foi substituído.  Este temporizador determina quanto a FM irá manter a réplica em modo de espera antes de eliminá-lo. |
-|PlacementConstraints | cadeia, a predefinição é "" |Não permitido| Restrição de posicionamento para o serviço de nomenclatura. |
+| TargetReplicaSetSize |Int, a predefinição é 7 |Não Permitido|Define o número de réplica para cada partição do arquivo do serviço de nomenclatura. Aumento do número de conjuntos de réplicas aumenta o nível de fiabilidade para obter as informações no arquivo do serviço de nomes; diminuir a alteração que as informações serão perdidas devido a falhas de nó um custo de aumento de carga em recursos de infraestrutura do Windows e a quantidade de tempo que demora a efetuar atualizações para os dados de nomenclatura.|
+|MinReplicaSetSize | Int, a predefinição é 3 |Não Permitido| O número mínimo de réplicas de nomenclatura serviço necessário para escrever na conclusão de uma atualização. Se existirem menos réplicas mais ativos no sistema o sistema de fiabilidade nega atualizações para o arquivo do serviço de nomenclatura até as réplicas são restauradas. Este valor nunca deve ser superior a TargetReplicaSetSize. |
+|ReplicaRestartWaitDuration | Tempo em segundos, a predefinição é (60.0 * 30)|Não Permitido| Especifique timespan em segundos. Quando uma réplica Naming Service fica inativo; Este temporizador é iniciado.  Quando este expirar o FM começará substituir as réplicas que estão em baixo (não ainda considera perdido). |
+|QuorumLossWaitDuration | Tempo em segundos, a predefinição é MaxValue |Não Permitido| Especifique timespan em segundos. Quando um serviço de nomenclatura obtém em perda de quórum Este temporizador é iniciado.  Quando este expirar o FM considerará as réplicas como perdido; baixo e tentar recuperar o quórum. Não Isto pode resultar na perda de dados. |
+|StandByReplicaKeepDuration | Tempo em segundos, a predefinição é 3600.0 * 2 |Não Permitido| Especifique timespan em segundos. Quando uma réplica Naming Service voltar atrás de um Estado de indisponibilidade; Pode já ter foi substituído.  Este temporizador determina quanto a FM irá manter a réplica em modo de espera antes de eliminá-lo. |
+|PlacementConstraints | cadeia, a predefinição é "" |Não Permitido| Restrição de posicionamento para o serviço de nomenclatura. |
 |ServiceDescriptionCacheLimit | Int, a predefinição é 0 |Estático| O número máximo de entradas mantido na cache de descrição de serviço LRU, o serviço de arquivo de nomenclatura (definido como 0 para nenhum limite). |
 |RepairInterval | Tempo em segundos, a predefinição é 5 |Estático| Especifique timespan em segundos. Intervalo no qual será iniciada a nomenclatura reparação de inconsistência entre o proprietário de autoridade e o proprietário do nome. |
 |MaxNamingServiceHealthReports | Int, a predefinição é 10 |Dinâmica|O número máximo de operações lentas que armazenam Naming service relatórios mau estado de funcionamento de uma só vez. Se for 0; todas as operações lentas são enviadas. |
@@ -236,7 +236,7 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 | MaxOutstandingNotificationsPerClient |Int, a predefinição é 1000 |Dinâmica|O número máximo de pendentes notificações antes de um registo de cliente é forçado a fechar o gateway. |
 | MaxIndexedEmptyPartitions |Int, a predefinição é 1000 |Dinâmica|O número máximo de partições vazia que permanecerá indexado na cache de notificação para sincronizar os clientes de restabelecer a ligação. Quaisquer partições vazias acima este número serão removidas do índice por pesquisa versão ordem ascendente. Restabelecer a ligação de clientes pode ainda sincronizar e receção de atualizações de partição vazia em falta mas o protocolo de sincronização torna-se mais dispendioso. |
 | GatewayServiceDescriptionCacheLimit |Int, a predefinição é 0 |Estático|O número máximo de entradas mantido na cache de descrição de serviço LRU no Gateway de nomenclatura (definido como 0 para nenhum limite). |
-| PartitionCount |Int, a predefinição é 3 |Não permitido|O número de partições do serviço de nomenclatura de armazena a ser criado. Cada partição possui uma chave de partição única que corresponde ao respetivo índice; por isso, as chaves de partição [0; PartitionCount) existe. Definir o aumento do número de aumentos de partições Naming Service escala a que o serviço de nomenclatura pode efetuar ao diminuir a quantidade média de dados retidos pela qualquer réplica de cópia de segurança; Custo uma maior utilização de recursos (desde o PartitionCount * ReplicaSetSize réplicas de serviço têm de ser mantidas).|
+| PartitionCount |Int, a predefinição é 3 |Não Permitido|O número de partições do serviço de nomenclatura de armazena a ser criado. Cada partição possui uma chave de partição única que corresponde ao respetivo índice; por isso, as chaves de partição [0; PartitionCount) existe. Definir o aumento do número de aumentos de partições Naming Service escala a que o serviço de nomenclatura pode efetuar ao diminuir a quantidade média de dados retidos pela qualquer réplica de cópia de segurança; Custo uma maior utilização de recursos (desde o PartitionCount * ReplicaSetSize réplicas de serviço têm de ser mantidas).|
 
 ### <a name="section-name-runas"></a>Secção nome: RunAs
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
@@ -340,8 +340,8 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-faultanalysisservice"></a>Secção nome: FaultAnalysisService
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| TargetReplicaSetSize |Int, a predefinição é 0 |Não permitido|NOT_PLATFORM_UNIX_START TargetReplicaSetSize para FaultAnalysisService. |
-| MinReplicaSetSize |Int, a predefinição é 0 |Não permitido|MinReplicaSetSize para FaultAnalysisService. |
+| TargetReplicaSetSize |Int, a predefinição é 0 |Estático|NOT_PLATFORM_UNIX_START TargetReplicaSetSize para FaultAnalysisService. |
+| MinReplicaSetSize |Int, a predefinição é 0 |Estático|MinReplicaSetSize para FaultAnalysisService. |
 | ReplicaRestartWaitDuration |Tempo em segundos, a predefinição é 60 minutos|Estático|Especifique timespan em segundos. ReplicaRestartWaitDuration para FaultAnalysisService. |
 | QuorumLossWaitDuration | Tempo em segundos, a predefinição é MaxValue |Estático|Especifique timespan em segundos. QuorumLossWaitDuration para FaultAnalysisService. |
 | StandByReplicaKeepDuration| Tempo em segundos, a predefinição é (60*24*7) minutos |Estático|Especifique timespan em segundos. StandByReplicaKeepDuration para FaultAnalysisService. |
@@ -390,8 +390,8 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
 | Ativado |Booleana, a predefinição é false |Estático|O sinalizador de ativado para ImageStoreService. Predefinição: false |
-| TargetReplicaSetSize | Int, a predefinição é 7 |Não permitido|TargetReplicaSetSize para ImageStoreService. |
-| MinReplicaSetSize | Int, a predefinição é 3 |Não permitido|MinReplicaSetSize para ImageStoreService. |
+| TargetReplicaSetSize | Int, a predefinição é 7 |Estático|TargetReplicaSetSize para ImageStoreService. |
+| MinReplicaSetSize | Int, a predefinição é 3 |Estático|MinReplicaSetSize para ImageStoreService. |
 | ReplicaRestartWaitDuration | Tempo em segundos, a predefinição é 60.0 * 30 |Estático|Especifique timespan em segundos. ReplicaRestartWaitDuration para ImageStoreService. |
 | QuorumLossWaitDuration | Tempo em segundos, a predefinição é MaxValue |Estático| Especifique timespan em segundos. QuorumLossWaitDuration para ImageStoreService. |
 | StandByReplicaKeepDuration | Tempo em segundos, a predefinição é 3600.0 * 2 |Estático| Especifique timespan em segundos. StandByReplicaKeepDuration para ImageStoreService. |
@@ -414,8 +414,8 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-upgradeorchestrationservice"></a>Secção nome: UpgradeOrchestrationService
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| TargetReplicaSetSize |Int, a predefinição é 0 |Não permitido|TargetReplicaSetSize para UpgradeOrchestrationService. |
-| MinReplicaSetSize |Int, a predefinição é 0 |Não permitido|MinReplicaSetSize para UpgradeOrchestrationService.
+| TargetReplicaSetSize |Int, a predefinição é 0 |Estático |TargetReplicaSetSize para UpgradeOrchestrationService. |
+| MinReplicaSetSize |Int, a predefinição é 0 |Estático |MinReplicaSetSize para UpgradeOrchestrationService.
 | ReplicaRestartWaitDuration | Tempo em segundos, a predefinição é 60 minutos|Estático| Especifique timespan em segundos. ReplicaRestartWaitDuration para UpgradeOrchestrationService. |
 | QuorumLossWaitDuration | Tempo em segundos, a predefinição é MaxValue |Estático| Especifique timespan em segundos. QuorumLossWaitDuration para UpgradeOrchestrationService. |
 | StandByReplicaKeepDuration | Tempo em segundos, a predefinição é 60*24*7 minutos |Estático| Especifique timespan em segundos. StandByReplicaKeepDuration para UpgradeOrchestrationService. |
@@ -426,10 +426,10 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-upgradeservice"></a>Secção nome: UpgradeService
 | **Parâmetro** | **Valores permitidos** | **Política de atualização** | **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-| PlacementConstraints |cadeia, a predefinição é "" |Não permitido|PlacementConstraints para o serviço de atualização. |
-| TargetReplicaSetSize | Int, a predefinição é 3 |Não permitido| TargetReplicaSetSize para UpgradeService. |
-| MinReplicaSetSize | Int, a predefinição é 2 |Não permitido| MinReplicaSetSize para UpgradeService. |
-| CoordinatorType | cadeia, a predefinição é "WUTest"|Não permitido|CoordinatorType para UpgradeService. |
+| PlacementConstraints |cadeia, a predefinição é "" |Não Permitido|PlacementConstraints para o serviço de atualização. |
+| TargetReplicaSetSize | Int, a predefinição é 3 |Não Permitido| TargetReplicaSetSize para UpgradeService. |
+| MinReplicaSetSize | Int, a predefinição é 2 |Não Permitido| MinReplicaSetSize para UpgradeService. |
+| CoordinatorType | cadeia, a predefinição é "WUTest"|Não Permitido|CoordinatorType para UpgradeService. |
 | BaseUrl | cadeia, a predefinição é "" |Estático|BaseUrl para UpgradeService. |
 | ClusterId | cadeia, a predefinição é "" |Estático|ClusterId para UpgradeService. |
 | X509StoreName | cadeia, a predefinição é "Os meus"|Dinâmica|X509StoreName para UpgradeService. |
@@ -443,7 +443,7 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 ### <a name="section-name-security"></a>Secção nome: segurança
 | **Parâmetro** | **Valores permitidos** |**Política de atualização**| **Documentação de orientação ou breve descrição** |
 | --- | --- | --- | --- |
-|ClusterCredentialType|cadeia, a predefinição é L "None"|Não permitido|Indica o tipo de credenciais de segurança a utilizar para proteger o cluster. Os valores válidos são "Nenhum/X509/Windows" |
+|ClusterCredentialType|cadeia, a predefinição é L "None"|Não Permitido|Indica o tipo de credenciais de segurança a utilizar para proteger o cluster. Os valores válidos são "Nenhum/X509/Windows" |
 |ServerAuthCredentialType|cadeia, a predefinição é L "None"|Estático|Indica o tipo de credenciais de segurança a utilizar para proteger a comunicação entre FabricClient e o Cluster. Os valores válidos são "Nenhum/X509/Windows" |
 |ClientRoleEnabled|booleana, a predefinição é FALSE|Estático|Indica se a função de cliente está ativada; Quando definido como true; os clientes são atribuídos a funções com base na respetiva identidades. Para V2; Ativar Isto significa que o cliente não se encontra na AdminClientCommonNames/AdminClientIdentities só é possível executar operações só de leitura. |
 |ClusterCertThumbprints|cadeia, a predefinição é L""|Dinâmica|Thumbprints de certificados permitidos para aderirem ao cluster; uma lista de nomes de valores separados por vírgulas. |
@@ -460,7 +460,7 @@ Segue-se uma lista de recursos de infraestrutura, as definições que pode perso
 |ClientClaimAuthEnabled|booleana, a predefinição é FALSE|Estático|Indica se a autenticação baseada em afirmações está ativada nos clientes; definir este verdadeiro implicitamente define ClientRoleEnabled. |
 |ClientClaims|cadeia, a predefinição é L""|Dinâmica|Todas as afirmações possíveis esperadas a partir de clientes para ligar ao gateway. Esta é uma lista de 'Ou': ClaimsEntry || ClaimsEntry || ClaimsEntry... cada ClaimsEntry é uma lista de "E": ClaimType = ClaimValue & & ClaimType = ClaimValue & & ClaimType = ClaimValue... |
 |AdminClientClaims|cadeia, a predefinição é L""|Dinâmica|Todas as afirmações possíveis esperadas a partir de clientes de admin; o mesmo formato que ClientClaims; Esta lista internamente obtém adicionada ao ClientClaims; por isso, não é necessário adicionar também as entradas do mesmas ao ClientClaims. |
-|ClusterSpn|cadeia, a predefinição é L""|Não permitido|Nome principal do serviço de cluster; Quando os recursos de infraestrutura é executado como um utilizador de domínio único (conta de utilizador de domínio/gMSA). É o SPN da escuta de concessão e os serviços de escuta em fabric.exe: serviços de escuta de Federação; Serviços de escuta de replicação interna; serviço de escuta de serviço de tempo de execução e o serviço de escuta de gateway nomenclatura. Isto deve ser deixado em branco quando recursos de infraestrutura é executada em contas de computador ligar caso em que o serviço de escuta de computação de lado de SPN do serviço de escuta do transporte endereço. |
+|ClusterSpn|cadeia, a predefinição é L""|Não Permitido|Nome principal do serviço de cluster; Quando os recursos de infraestrutura é executado como um utilizador de domínio único (conta de utilizador de domínio/gMSA). É o SPN da escuta de concessão e os serviços de escuta em fabric.exe: serviços de escuta de Federação; Serviços de escuta de replicação interna; serviço de escuta de serviço de tempo de execução e o serviço de escuta de gateway nomenclatura. Isto deve ser deixado em branco quando recursos de infraestrutura é executada em contas de computador ligar caso em que o serviço de escuta de computação de lado de SPN do serviço de escuta do transporte endereço. |
 |ClusterIdentities|cadeia, a predefinição é L""|Dinâmica|Identidades de Windows de nós de cluster utilizado para autorização de associação de cluster. É uma lista separada por vírgulas; cada entrada é um nome de conta de domínio ou o nome do grupo |
 |ClientIdentities|cadeia, a predefinição é L""|Dinâmica|Identidades de Windows de FabricClient; gateway de atribuição de nomes utiliza-o para autorizar ligações de entrada. É uma lista separada por vírgulas; cada entrada é um nome de conta de domínio ou o nome do grupo. Para sua comodidade; a conta que executa fabric.exe automaticamente é permitida. por isso, são grupo ServiceFabricAllowedUsers e ServiceFabricAdministrators. |
 |AdminClientIdentities|cadeia, a predefinição é L""|Dinâmica|Identidades de Windows de clientes de recursos de infraestrutura na função de administrador; utilizado para autorizar operações privilegiadas de recursos de infraestrutura. É uma lista separada por vírgulas; cada entrada é um nome de conta de domínio ou o nome do grupo. Para sua comodidade; a conta que executa fabric.exe é atribuída automaticamente a função de administrador por isso, é grupo ServiceFabricAdministrators. |
@@ -596,7 +596,7 @@ PropertyGroup|X509NameMap, a predefinição é nenhum|Dinâmica| |
 | PeriodicApiSlowTraceInterval | Tempo em segundos, a predefinição é 5 minutos |Dinâmica| Especifique timespan em segundos. PeriodicApiSlowTraceInterval define o intervalo durante o qual irão ser retraced chamadas de API lentas pelo monitor de API. |
 | NodeDeactivationMaxReplicaCloseDuration | Tempo em segundos, a predefinição é 900 |Dinâmica|Especifique timespan em segundos. Feche a duração para o qual o sistema irá aguardar antes de terminar os anfitriões que tenham as réplicas que está bloqueada no durante a desativação de nós. |
 | FabricUpgradeMaxReplicaCloseDuration | Tempo em segundos, a predefinição é 900 |Dinâmica| Especifique timespan em segundos. Feche a duração para o qual o sistema irá aguardar antes de terminar os anfitriões que tenham as réplicas que está bloqueada no durante a atualização do fabric. |
-|GracefulReplicaShutdownMaxDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(120)|Dinâmica|Especifique timespan em segundos. A duração para o qual o sistema irá aguardar antes de terminar os anfitriões que tenham as réplicas que está bloqueada no feche.|
+|GracefulReplicaShutdownMaxDuration|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(120)|Dinâmica|Especifique timespan em segundos. A duração para o qual o sistema irá aguardar antes de terminar os anfitriões que tenham as réplicas que está bloqueada no feche. Se este valor é definido como 0, as réplicas serão não ser deu instruções ao fechar.|
 |ReplicaChangeRoleFailureRestartThreshold|Int, a predefinição é 10|Dinâmica| Número inteiro. Especifique o número de falhas de API durante a promoção principal após o qual será aplicada a ação de mitigação automática (réplica reiniciar). |
 |ReplicaChangeRoleFailureWarningReportThreshold|int, a predefinição é 2147483647|Dinâmica| Número inteiro. Especifique o número de falhas de API durante a promoção principal após o qual o relatório de estado de funcionamento de aviso é acionado.|
 
@@ -701,12 +701,12 @@ PropertyGroup|X509NameMap, a predefinição é nenhum|Dinâmica| |
 | FabricUpgradeStatusPollInterval |Tempo em segundos, a predefinição é 60 |Dinâmica|A frequência de consulta para o estado de atualização de recursos de infraestrutura. Este valor determina a frequência de atualização para qualquer chamada GetFabricUpgradeProgress |
 | FabricUpgradeHealthCheckInterval |Tempo em segundos, a predefinição é 60 |Dinâmica|A frequência de estado de funcionamento de verificação durante uma atualização do Fabric monitorizada |
 |InfrastructureTaskProcessingInterval | Tempo em segundos, a predefinição é 10 |Dinâmica|Especifique timespan em segundos. O intervalo de processamento utilizado pela tarefa de infraestrutura na máquina de estado de processamento. |
-|TargetReplicaSetSize |Int, a predefinição é 7 |Não permitido|TargetReplicaSetSize para ClusterManager. |
-|MinReplicaSetSize |Int, a predefinição é 3 |Não permitido|MinReplicaSetSize para ClusterManager. |
-|ReplicaRestartWaitDuration |Tempo em segundos, a predefinição é (60.0 * 30)|Não permitido|Especifique timespan em segundos. ReplicaRestartWaitDuration para ClusterManager. |
-|QuorumLossWaitDuration |Tempo em segundos, a predefinição é MaxValue |Não permitido| Especifique timespan em segundos. QuorumLossWaitDuration para ClusterManager. |
-|StandByReplicaKeepDuration | Tempo em segundos, a predefinição é (3600.0 * 2)|Não permitido|Especifique timespan em segundos. StandByReplicaKeepDuration para ClusterManager. |
-|PlacementConstraints | cadeia, a predefinição é "" |Não permitido|PlacementConstraints para ClusterManager. |
+|TargetReplicaSetSize |Int, a predefinição é 7 |Não Permitido|TargetReplicaSetSize para ClusterManager. |
+|MinReplicaSetSize |Int, a predefinição é 3 |Não Permitido|MinReplicaSetSize para ClusterManager. |
+|ReplicaRestartWaitDuration |Tempo em segundos, a predefinição é (60.0 * 30)|Não Permitido|Especifique timespan em segundos. ReplicaRestartWaitDuration para ClusterManager. |
+|QuorumLossWaitDuration |Tempo em segundos, a predefinição é MaxValue |Não Permitido| Especifique timespan em segundos. QuorumLossWaitDuration para ClusterManager. |
+|StandByReplicaKeepDuration | Tempo em segundos, a predefinição é (3600.0 * 2)|Não Permitido|Especifique timespan em segundos. StandByReplicaKeepDuration para ClusterManager. |
+|PlacementConstraints | cadeia, a predefinição é "" |Não Permitido|PlacementConstraints para ClusterManager. |
 |SkipRollbackUpdateDefaultService | Booleana, a predefinição é false |Dinâmica|O CM irá ignorar reverter serviços de predefinição atualizado durante a reversão de atualização de aplicação. |
 |EnableDefaultServicesUpgrade | Booleana, a predefinição é false |Dinâmica|Ative os serviços de predefinição atualizar durante a atualização da aplicação. Descrições de serviço predefinido serão substituídas após a atualização. |
 |InfrastructureTaskHealthCheckWaitDuration |Tempo em segundos, a predefinição é 0|Dinâmica| Especifique timespan em segundos. A quantidade de tempo de espera antes de iniciar as verificações de estado de funcionamento após o processamento pós-cópia uma tarefa de infraestrutura. |

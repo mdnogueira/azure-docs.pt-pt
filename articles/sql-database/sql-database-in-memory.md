@@ -13,13 +13,13 @@ ms.workload: On Demand
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2017
+ms.date: 11/16/2017
 ms.author: jodebrui
-ms.openlocfilehash: 8930595821cc7662c4ff792b73eb357f1ba29307
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: f136faf3df761b048c88e72f564f81fd32e630ab
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-sql-database"></a>Otimizar o desempenho ao utilizar tecnologias de dentro da memória na base de dados do SQL Server
 
@@ -118,8 +118,6 @@ Mas desatualização o escalão de preço pode afetar negativamente a base de da
 
 *Desatualização de Basic/Standard*: OLTP na memória não é suportada em bases de dados na camada Standard ou básico. Além disso, não se encontra possível mover uma base de dados que tenha quaisquer objetos OLTP na memória para o escalão Standard ou básico.
 
-Antes de mudar a base de dados padrão/básica, remova todas as tabelas com otimização de memória e tipos de tabela, bem como todos os módulos compilados nativamente de T-SQL.
-
 Há uma forma programática compreender se uma determinada base de dados suporta OLTP na memória. Pode executar a seguinte consulta de Transact-SQL:
 
 ```
@@ -128,6 +126,13 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 
 Se a consulta devolve **1**, OLTP dentro da memória é suportada nesta base de dados.
 
+Antes de mudar a base de dados padrão/básica, remova todas as tabelas com otimização de memória e tipos de tabela, bem como todos os módulos compilados nativamente de T-SQL. As seguintes consultas de identificam todos os objetos que tenham de ser removidas antes de uma base de dados pode ser alterada uma versão anterior para padrão/básico:
+
+```
+SELECT * FROM sys.tables WHERE is_memory_optimized=1
+SELECT * FROM sys.table_types WHERE is_memory_optimized=1
+SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
+```
 
 *Desatualização de para um escalão Premium inferior*: dados em tabelas com otimização de memória devem encaixar-se no armazenamento OLTP na memória que está associado com o escalão de preço da base de dados ou não está disponível num conjunto elástico. Se tentar reduzir o escalão de preço ou mover a base de dados para um conjunto que não tem memória suficiente disponível OLTP na memória, a operação falhar.
 

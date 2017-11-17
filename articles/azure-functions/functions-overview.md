@@ -17,11 +17,11 @@ ms.workload: na
 ms.date: 10/03/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 41f26a4b03a6431aaad21bda6336b8840d2d923f
-ms.sourcegitcommit: 963e0a2171c32903617d883bb1130c7c9189d730
+ms.openlocfilehash: d60c898225b944801504f38d536262134a31e021
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="an-introduction-to-azure-functions"></a>Uma introdução às Funções do Azure  
 Funções do Azure é uma solução para uma fácil execução de pequenos blocos de código, ou "funções", na nuvem. É possível escrever apenas o código que necessita para o problema em questão, sem ter de se preocupar com toda a aplicação ou a infraestrutura para executá-la. As funções podem tornar o desenvolvimento ainda mais produtivo, e pode utilizar a linguagem de programação de escolha, tal como c#, F #, Node.js, Java ou PHP. Paga apenas para a hora que o seu código é executado e confie no Azure para dimensionar conforme necessário. As funções do Azure permite-lhe desenvolver [sem servidor](https://azure.microsoft.com/overview/serverless-computing/) aplicações no Microsoft Azure.
@@ -31,7 +31,7 @@ Este tópico fornece uma descrição geral de alto nível das Funções do Azure
 ## <a name="features"></a>Funcionalidades
 Seguem-se algumas funcionalidades-chave de funções:
 
-* **Escolha de idioma** - escreva funções com c#, F #, Node.js, Java, PHP, lote, bash ou qualquer executável.
+* **Escolha de idioma** - escreva funções com a sua escolha de c#, F # ou Javascript. Consulte [idiomas suportados](supported-languages.md) para outras opções.
 * **Modelo de preços de pagamento por utilização** - Pague apenas o tempo despendido a executar o seu código. Veja a opção do plano de alojamento de Consumo na [secção preços](#pricing).  
 * **Traga as suas próprias dependências** - As funções são compatíveis com NuGet e NPM, pelo que pode utilizar as suas bibliotecas favoritas.  
 * **Segurança integrada** - Proteja as funções acionadas por HTTP com fornecedores de OAuth, como o Azure Active Directory, Facebook, Google, Twitter e Conta Microsoft.  

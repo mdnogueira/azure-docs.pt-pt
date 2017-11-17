@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 56ddd5742b63851b9477bae0705ebd24e30ff185
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 19518ad8dc2d697f1716750adc3f0ad7d7f8a875
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="self-service-password-reset-in-azure-ad-deep-dive"></a>Self-service reposição palavra-passe na descrição profunda do Azure AD
 
@@ -183,7 +183,7 @@ Para ativar esta opção, um utilizador que está ativado para a reposição de 
 Quando a necessidade de registo está desativada, os utilizadores podem manualmente registar as suas informações de contactos. Estes requisitos podem ambos visite [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) ou selecione o **registar para a reposição de palavra-passe** ligação sob o **perfil** separador no painel de acesso.
 
 > [!NOTE]
-> Os utilizadores podem ignorar o portal de registo de reposição de palavra-passe, selecionando **Cancelar** ou se fechar a janela. Mas, será pedido para registar cada vez que iniciar sessão até que concluírem o respetivo registo.
+> Os utilizadores podem ignorar o portal de registo de reposição de palavra-passe, selecionando **Cancelar** ou se fechar a janela. Mas são lhe for pedidos para registar cada vez que iniciar sessão até que concluírem o respetivo registo.
 >
 > Tal não interromper a ligação do utilizador que já estejam assinados.
 
@@ -209,6 +209,17 @@ Exemplo: Existem quatro administradores num ambiente. O administrador A repõe a
 
 Se instalar, configurar e ativar o Azure AD Connect, terá as seguintes opções adicionais para integrações no local. Se estas opções estão desativadas, em seguida, repetição de escrita não foi corretamente configurada. Para obter mais informações, consulte [configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback).
 
+![Repetição de escrita][Writeback]
+
+Esta página fornece um rápida Estado no local repetição de escrita do cliente de uma das seguintes mensagens são apresentadas com base na configuração atual:
+
+* O cliente de repetição de escrita no local se encontra em execução.
+* Azure AD está online e está ligado ao seu cliente de repetição de escrita no local. No entanto, mas parece que a versão instalada do Azure AD Connect está desatualizada. Considere [atualizar o Azure AD Connect](./connect/active-directory-aadconnect-upgrade-previous-version.md) para se certificar de que tem o mais recentes de conectividade de funcionalidades e correções importantes.
+* Infelizmente, não é possível verificar o estado de repetição de escrita no local do cliente porque a versão instalada do Azure AD Connect está desatualizada. [Atualizar o Azure AD Connect](./connect/active-directory-aadconnect-upgrade-previous-version.md) para poder verificar o estado de ligação.
+* Infelizmente, mas parece não é possível ligar ao seu cliente de repetição de escrita no local agora. [Resolver problemas relacionados com o Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) para restaurar a ligação.
+* Infelizmente, estamos não é possível estabelecer ligação para o seu cliente de repetição de escrita no local porque a repetição de escrita de palavras-passe não foi corretamente configurada. [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para restaurar a ligação.
+* Infelizmente, mas parece não é possível ligar ao seu cliente de repetição de escrita no local agora. Isto pode dever-se a problemas temporários no nosso lado. Se o problema persistir, [resolver problemas relacionados com o Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) para restaurar a ligação.
+
 ### <a name="write-back-passwords-to-your-on-premises-directory"></a>Repetição de escrita palavras-passe para o seu diretório no local
 
 Este controlo determina se a repetição de escrita de palavras-passe está ativada para este diretório. Se a repetição de escrita está ativado, indica o estado do serviço de repetição de escrita no local. Isto é útil se pretender desativar temporariamente a repetição de escrita de palavras-passe sem ter de reconfigurar o Azure AD Connect.
@@ -233,7 +244,7 @@ Reposição de palavra-passe e de alterações são totalmente suportadas em tod
 Para testar este cenário, aceda à http://passwordreset.microsoftonline.com com um destes utilizadores do parceiro. Se tiverem um correio eletrónico alternativo ou o e-mail de autenticação definido, a palavra-passe reposição funciona conforme esperado.
 
 > [!NOTE]
-> As contas do Microsoft que tenham sido concedidas acesso de convidado para o inquilino do Azure AD, tais como Hotmail.com, Outlook.com ou outros endereços de e-mail pessoal, não são capazes de utilizar o Azure AD SSPR. Têm de repor a palavra-passe, utilizando as informações localizadas no [quando não é possível iniciar sessão na sua conta Microsoft](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant) artigo.
+> As contas do Microsoft que tenham sido concedidas acesso de convidado para o inquilino do Azure AD, tais como Hotmail.com, Outlook.com ou outros endereços de e-mail pessoal, não são capazes de utilizar o Azure AD SSPR. Tem de repor a palavra-passe, utilizando as informações localizadas no [quando não é possível iniciar sessão na sua conta Microsoft](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant) artigo.
 
 ## <a name="next-steps"></a>Passos seguintes
 
@@ -253,3 +264,4 @@ Os artigos seguintes fornecem informações adicionais sobre a reposição atrav
 * [Tenho uma pergunta que ainda não foi abordada](active-directory-passwords-faq.md)
 
 [Authentication]: ./media/active-directory-passwords-how-it-works/sspr-authentication-methods.png "Métodos de autenticação do Azure AD disponíveis e a quantidade necessária"
+[Writeback]: ./media/active-directory-passwords-how-it-works/troubleshoot-writeback-running.png "No local Configuração de repetição de escrita de palavras-passe de integração e informações de resolução de problemas"

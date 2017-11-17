@@ -21,8 +21,6 @@
 
 | Recurso | Limite Predefinido |
 | --- | --- |
-| IOPs Máx Por VM |80.000 IOPS com GS5 VM<sup>1</sup> |
-| Débito máx por VM |2.000 MB/s com GS5 VM<sup>1</sup> |
-
-<sup>1</sup>Consulte o [Tamanho da VM](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para limites em outros tamanhos da VM. 
+| IOPs Máx Por VM |80.000 IOPS com GS5 VM |
+| Débito máx por VM |2.000 MB/s com GS5 VM |
 

@@ -15,11 +15,11 @@ ms.date: 08/14/2017
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 5903c8ac7a16a87b93ea6e105d82bbfdfa26bf8c
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 5dae5ef260d975e00d3bdaa9aff73fd5807bb839
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Integrar a sua infraestrutura existente do NPS com multi-factor Authentication do Azure
 
@@ -81,7 +81,7 @@ Antes de instalar a extensão NPS, pretende preparar o ambiente para processar o
 
 ### <a name="enable-the-nps-role-on-a-domain-joined-server"></a>Ativar a função NPS num servidor associado a um domínio
 
-O servidor NPS liga ao Azure Active Directory e autentica os pedidos MFA. Escolha um servidor para esta função. Recomendamos que escolha um servidor que não a processar pedidos de outros serviços, porque a extensão NPS emite erros para quaisquer pedidos que não são RADIUS.
+O servidor NPS liga ao Azure Active Directory e autentica os pedidos MFA. Escolha um servidor para esta função. Recomendamos que escolha um servidor que não a processar pedidos de outros serviços, porque a extensão NPS emite erros para quaisquer pedidos que não são RADIUS. O servidor NPS deve ser configurado como o servidor de autenticação principal e secundário para o seu ambiente; Não é possível pedidos RADIUS de proxy para outro servidor.
 
 1. No seu servidor, abra o **Assistente Adicionar funções e funcionalidades** no menu de início rápido do Gestor de servidor.
 2. Escolha **instalação baseada em funções ou baseada em funcionalidade** para o seu tipo de instalação.
@@ -193,7 +193,7 @@ Se tiver utilizadores que não estão registados para o MFA, pode determinar o q
 | --- | ----- | ------- |
 | REQUIRE_USER_MATCH | VERDADEIRO/FALSO | Não definido (equivalentes como TRUE) |
 
-O objetivo desta definição consiste em determinar o que fazer quando um utilizador não estiver inscrito para a MFA. Quando a chave não existe, não está definida ou é definido como VERDADEIRO e o utilizador não estiver inscrito e, em seguida, a extensão falha o desafio MFA. Quando a chave está definida como FALSE e o utilizador não estiver inscrito, o processo de autenticação continua sem efetuar o MFA.
+O objetivo desta definição consiste em determinar o que fazer quando um utilizador não estiver inscrito para a MFA. Quando a chave não existe, não está definida ou é definido como VERDADEIRO e o utilizador não estiver inscrito e, em seguida, a extensão falha o desafio MFA. Quando a chave está definida como FALSE e o utilizador não estiver inscrito, o processo de autenticação continua sem efetuar o MFA. Se um utilizador estiver inscrito no MFA, têm de autenticar com a MFA, mesmo se REQUIRE_USER_MATCH estiver definido como FALSE.
 
 Pode optar por criar esta chave e defina-o como falso enquanto os seus utilizadores estão a integração e poderão nem todos os ser inscritos para MFA do Azure ainda. No entanto, uma vez que a chave a definição permite aos utilizadores que não estão registados para a MFA iniciar sessão, deve remover esta chave antes de ir para produção.
 

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 7068d6e83d196d95b4625d1b1a496be5a22c88a0
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: d0b4ff1959465ade5f57c045d2a005e828638eb2
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="connect-and-communicate-with-services-in-service-fabric"></a>Ligar e comunicar com serviços no Service Fabric
 No Service Fabric, um serviço é executado algures num cluster de Service Fabric, normalmente distribuído por várias VMs. -Pode ser movida local para outro, pelo proprietário do serviço, ou automaticamente pelo Service Fabric. Serviços estaticamente não estão associados a um determinado computador ou endereço.
@@ -63,7 +63,7 @@ Como é mostrado no diagrama seguinte, o serviço DNS, em execução no cluster 
 Para obter mais detalhes sobre como utilizar o DNS do serviço consulte [serviço DNS do Azure Service Fabric](service-fabric-dnsservice.md) artigo.
 
 ### <a name="reverse-proxy-service"></a>Serviço de proxy inverso
-O proxy reverso endereços serviços em cluster que expõe os pontos finais HTTP, incluindo HTTPS. O proxy reverso significativamente simplifica a chamar outros serviços e os respetivos métodos por ter um formato URI específico e processa a resolver, ligar, repita os passos necessários para um serviço comunicar com outro utilizando a atribuição de nomes do serviço. Por outras palavras, oculta o serviço de nomenclatura do utilizador ao chamar outros serviços ao fazer isto tão simples como chamar um URL.
+O proxy reverso endereços serviços em cluster que expõe os pontos finais HTTP, incluindo HTTPS. O proxy inverso significativamente simplifica a chamar outros serviços e os respetivos métodos por ter um formato URI específico e processa o resolver, ligar, repita os passos necessários para um serviço comunicar com outro utilizando o serviço de nomenclatura. Por outras palavras, oculta o serviço de nomenclatura do utilizador ao chamar outros serviços ao fazer isto tão simples como chamar um URL.
 
 ![pontos finais de serviço][10]
 

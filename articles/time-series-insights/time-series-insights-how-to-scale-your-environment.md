@@ -12,17 +12,17 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: article
 ms.date: 11/15/2017
-ms.openlocfilehash: d3c8b2b1ba220bf07a2bcdbd7fb26b94f897981f
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: edcd9561778998c4df09cc5014f8b8ba81c0e369
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/16/2017
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Como dimensionar o ambiente de informações de séries de tempo
 
-Este artigo descreve como alterar a capacidade do seu ambiente o ambiente de informações de séries de tempo no portal do Azure. A capacidade é o multiplicador aplicado para a taxa de entrada, a capacidade de armazenamento e o custo associado à sua Sku selecionado. 
+Este artigo descreve como alterar a capacidade do seu ambiente o ambiente de informações de séries de tempo no portal do Azure. A capacidade é o multiplicador aplicado para a taxa de entrada, a capacidade de armazenamento e o custo associado à sua SKU selecionado. 
 
-Pode utilizar o portal do Azure para aumentar ou diminuir a capacidade dentro de um determinado Sku de preço. 
+Pode utilizar o portal do Azure para aumentar ou diminuir a capacidade dentro de um determinado SKU de preço. 
 
 No entanto, se alterar o escalão de preço SKU não é permitida. Por exemplo, um ambiente com um S1 preços SKU não é possível converter para um S2 e vice-versa. 
 
@@ -46,7 +46,7 @@ As capacidades dimensionadas de forma linear, pelo que um SKU S1 com capacidade 
 ## <a name="change-the-capacity-of-your-environment"></a>Alterar a capacidade do seu ambiente
 1. No portal do Azure, localize e selecione o seu ambiente de informações de séries de tempo. 
 
-2. Sob o **definições** cabeçalho, selecione **configurar**.
+2. No menu para o seu ambiente Insighs de séries de tempo, selecione **configurar**.
 
    ![Configure.png](media/scale-your-environment/configure.png)
 

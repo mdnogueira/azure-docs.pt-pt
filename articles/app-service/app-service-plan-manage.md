@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: cephalin
-ms.openlocfilehash: c1b832895476e2f64bbae638db76f89890e5c804
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 5369946b1e8a4851ee940cf6fe91a1bdb94db5f3
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Gerir um plano de serviço de aplicações no Azure
 
@@ -58,7 +58,7 @@ Selecione **plano de serviço de aplicações de alteração** para iniciar o pr
 
 **Plano de serviço aplicacional alteração** abre o **plano do App Service** Seletor. Selecione um plano existente para mover esta aplicação para. 
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > O **plano do App Service/selecionar** página é filtrada pelos seguintes critérios: 
 > - Existe no mesmo grupo de recursos 
 > - Existe na mesma região geográfica 
@@ -82,7 +82,7 @@ Pode encontrar **Clone aplicação** no **ferramentas de desenvolvimento** secç
 
 ## <a name="scale-an-app-service-plan"></a>Dimensionar um plano de serviço de aplicações
 
-Para aumentar verticalmente ah plano do App Service do escalão de preço, consulte [aumentar verticalmente a uma aplicação no Azure](web-sites-scale.md).
+Para aumentar verticalmente a um serviço de aplicações plano do escalão de preço, consulte [aumentar verticalmente a uma aplicação no Azure](web-sites-scale.md).
 
 Para ampliar a contagem de instâncias de uma aplicação, consulte [dimensionar a contagem de instâncias manual ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md).
 

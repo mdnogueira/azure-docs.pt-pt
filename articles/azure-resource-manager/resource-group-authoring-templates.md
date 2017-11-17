@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/08/2017
+ms.date: 11/16/2017
 ms.author: tomfitz
-ms.openlocfilehash: 85fff4c8c5a68a4ebaa63b263e90d0220c273e23
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: b8d1988a8705e0708e412c24fb5b49f5ece31429
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Compreender a estrutura e a sintaxe de modelos Azure Resource Manager
-Este tópico descreve a estrutura de um modelo Azure Resource Manager. Apresente as diferentes secções de um modelo e as propriedades que estão disponíveis dessas secções. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a sua implementação. Para um tutorial passo a passo sobre como criar um modelo, consulte [criar o primeiro modelo Azure Resource Manager](resource-manager-create-first-template.md).
+Este artigo descreve a estrutura de um modelo Azure Resource Manager. Apresente as diferentes secções de um modelo e as propriedades que estão disponíveis dessas secções. O modelo é constituído por JSON e expressões que pode utilizar para construir valores para a sua implementação. Para um tutorial passo a passo sobre como criar um modelo, consulte [criar o primeiro modelo Azure Resource Manager](resource-manager-create-first-template.md).
 
 ## <a name="template-format"></a>Formato de modelo
 Na sua estrutura mais simples, um modelo contém os seguintes elementos:
@@ -43,7 +43,7 @@ Na sua estrutura mais simples, um modelo contém os seguintes elementos:
 | contentVersion |Sim |Versão do modelo (por exemplo, 1.0.0.0). Pode fornecer qualquer valor para este elemento. Quando implementar recursos com o modelo, este valor pode ser utilizado para se certificar de que está a ser utilizado o modelo à direita. |
 | parâmetros |Não |Valores que são fornecidos durante a implementação é executada para personalizar a implementação de recursos. |
 | variáveis |Não |Valores que são utilizados como fragmentos JSON no modelo para simplificar as expressões de idioma do modelo. |
-| Recursos |Sim |Tipos de recursos que são implementados ou atualizados num grupo de recursos. |
+| recursos |Sim |Tipos de recursos que são implementados ou atualizados num grupo de recursos. |
 | saídas |Não |Valores que são devolvidos após a implementação. |
 
 Cada elemento contém propriedades, que pode definir. O exemplo seguinte contém a sintaxe completa para um modelo:
@@ -66,11 +66,31 @@ Cada elemento contém propriedades, que pode definir. O exemplo seguinte contém
             }
         }
     },
-    "variables": {  
+    "variables": {
         "<variable-name>": "<variable-value>",
-        "<variable-name>": { 
-            <variable-complex-type-value> 
-        }
+        "<variable-object-name>": {
+            <variable-complex-type-value>
+        },
+        "<variable-object-name>": {
+            "copy": [
+                {
+                    "name": "<name-of-array-property>",
+                    "count": <number-of-iterations>,
+                    "input": {
+                        <properties-to-repeat>
+                    }
+                }
+            ]
+        },
+        "copy": [
+            {
+                "name": "<variable-array-name>",
+                "count": <number-of-iterations>,
+                "input": {
+                    <properties-to-repeat>
+                }
+            }
+        ]
     },
     "resources": [
       {
@@ -117,7 +137,7 @@ Cada elemento contém propriedades, que pode definir. O exemplo seguinte contém
 }
 ```
 
-Vamos examinar as secções do modelo em maior detalhe posteriormente neste tópico.
+Este artigo descreve as secções do modelo em maior detalhe.
 
 ## <a name="expressions-and-functions"></a>As expressões e funções
 A sintaxe básica do modelo é JSON. No entanto, expressões e as funções expandem os valores JSON disponíveis no modelo.  As expressões são escritas no literais de cadeia JSON cujo primeiro e último carateres são Retos: `[` e `]`, respetivamente. O valor da expressão é avaliado quando o modelo é implementado. Enquanto escritos como uma cadeia literal, o resultado da avaliação da expressão pode ser um tipo JSON diferente, tal como uma matriz nem um número inteiro, consoante a expressão real.  Para ter um literal de cadeia começa com um parêntese `[`, mas não o tiver interpretado como uma expressão, adicione um parêntesis adicional para iniciar a cadeia com `[[`.
@@ -334,6 +354,33 @@ Pode utilizar o **cópia** sintaxe para criar uma variável com uma matriz de v�
 }
 ```
 
+Também pode especificar mais de um objeto ao utilizar a cópia para criar variáveis. O exemplo seguinte define duas matrizes como variáveis. Um nome **discos top-nível matriz** e tem cinco elementos. O outro é denominado **a diferentes matriz** e tem três elementos.
+
+```json
+"variables": {
+    "copy": [
+        {
+            "name": "disks-top-level-array",
+            "count": 5,
+            "input": {
+                "name": "[concat('oneDataDisk', copyIndex('disks-top-level-array', 1))]",
+                "diskSizeGB": "1",
+                "diskIndex": "[copyIndex('disks-top-level-array')]"
+            }
+        },
+        {
+            "name": "a-different-array",
+            "count": 3,
+            "input": {
+                "name": "[concat('twoDataDisk', copyIndex('a-different-array', 1))]",
+                "diskSizeGB": "1",
+                "diskIndex": "[copyIndex('a-different-array')]"
+            }
+        }
+    ]
+},
+```
+
 ## <a name="resources"></a>Recursos
 Na secção de recursos, é possível definir os recursos que são implementados ou atualizados. Nesta secção pode obter complicada porque tem de compreender os tipos que está a implementar para fornecer os valores corretos. Para os recurso valores específicos (apiVersion, tipo e propriedades) que tem de definir, consulte [definir recursos em modelos do Azure Resource Manager](/azure/templates/). 
 
@@ -390,7 +437,7 @@ Definir recursos com a estrutura seguinte:
 | Copiar |Não |Se for necessário mais do que uma instância, o número de recursos para criar. O modo predefinido é paralelo. Especifique o modo de série quando não pretender que todos os ou os recursos a implementar em simultâneo. Para obter mais informações, consulte [criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md). |
 | dependsOn |Não |Recursos a que tem de ser implementados antes de implementar este recurso. O Resource Manager avalia as dependências entre os recursos e implementa-los na ordem correta. Quando os recursos não são dependentes entre si, que são implementados em paralelo. O valor pode ser uma lista separada por vírgulas de um recurso nomes ou identificadores exclusivos de recursos. Apenas lista os recursos que são implementados neste modelo. Recursos que não estão definidos neste modelo tem de existir. Evite adicionar dependências desnecessárias à medida que estes possam lenta a implementação e criar dependências circulares. Para obter orientações sobre as dependências de definição, consulte [definir dependências nos modelos Azure Resource Manager](resource-group-define-dependencies.md). |
 | propriedades |Não |Definições de configuração específicas do recurso. Os valores para as propriedades são os mesmos que os valores que fornecem no corpo do pedido para a operação de REST API (método PUT) criar o recurso. Também pode especificar uma matriz de cópia para criar várias instâncias de uma propriedade. Para obter mais informações, consulte [criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md). |
-| Recursos |Não |Recursos subordinados que dependem do recurso que está a ser definido. Fornece apenas tipos de recursos que são permitidos pelo esquema do recurso principal. O tipo completamente qualificado do recurso subordinado inclui o tipo de recurso principal, tal como **Microsoft.Web/sites/extensions**. Dependência no recurso principal não está implícita. Tem de definir explicitamente que dependência. |
+| recursos |Não |Recursos subordinados que dependem do recurso que está a ser definido. Fornece apenas tipos de recursos que são permitidos pelo esquema do recurso principal. O tipo completamente qualificado do recurso subordinado inclui o tipo de recurso principal, tal como **Microsoft.Web/sites/extensions**. Dependência no recurso principal não está implícita. Tem de definir explicitamente que dependência. |
 
 A secção de recursos contém uma matriz de recursos a implementar. Dentro de cada recurso, também pode definir uma matriz de recursos subordinados. Por conseguinte, a secção de recursos pode ter uma estrutura como:
 
@@ -482,7 +529,7 @@ Para especificar se uma máquina virtual é implementada com uma palavra-passe o
 
 Para obter um exemplo de utilização de uma palavra-passe ou chave SSH para implementar a máquina virtual, consulte [modelo de condição de nome de utilizador ou SSH](https://github.com/rjmax/Build2017/blob/master/Act1.TemplateEnhancements/Chapter05.ConditionalResourcesUsernameOrSsh.json).
 
-## <a name="outputs"></a>saídas
+## <a name="outputs"></a>Saídas
 Na secção saídas, especifique os valores que são devolvidos por implementação. Por exemplo, pode devolver o URI para aceder a um recurso implementado.
 
 O exemplo seguinte mostra a estrutura de uma definição de saída:

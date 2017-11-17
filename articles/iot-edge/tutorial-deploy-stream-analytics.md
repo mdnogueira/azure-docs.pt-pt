@@ -9,11 +9,11 @@ ms.author: v-masebo
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: ebda79442b8feb9f052c3ae455fa43aafb7b5a6a
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 88dc0860b4455d19b05b4f4f1766210e3f3c704e
+ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="deploy-azure-stream-analytics-as-an-iot-edge-module---preview"></a>Implementar o Azure Stream Analytics como um módulo de limite de IoT – pré-visualização
 
@@ -62,13 +62,16 @@ Nesta secção, vai criar uma tarefa do Azure Stream Analytics para colocar os d
     ![nova conta de armazenamento][1]
 
 3. No portal do Azure, navegue para a conta de armazenamento que acabou de criar. Clique em **procurar blobs** em **serviço Blob**. 
-1. Crie um novo contentor para o módulo do ASA armazenar dados. Defina o acesso de nível para _contentor_. Clique em **OK**.
+4. Crie um novo contentor para o módulo do ASA armazenar dados. Defina o acesso de nível para _contentor_. Clique em **OK**.
 
     ![definições de armazenamento][10]
 
-1. No portal do Azure, navegue para **crie um recurso** > **Internet das coisas** e selecione **tarefa do Stream Analytics**.
+5. No portal do Azure, navegue para **crie um recurso** > **Internet das coisas** e selecione **tarefa do Stream Analytics**.
 
-1. Introduza um nome, **escolha "Edge" como ambiente de alojamento** e utilizar os valores predefinidos restantes.  Clique em **Criar**.
+6. Introduza um nome, escolha **Edge** como o ambiente de alojamento e utilizar os valores predefinidos restantes.  Clique em **Criar**.
+
+    >[!NOTE]
+    >Atualmente, existem um número limitado de regiões que suportam as tarefas ASA no limite de IoT. Selecione um dos seguintes como a localização: EUA Central, Central EUA oeste, Norte Central dos EUA, EUA leste, Canadá leste, este do Japão, Leste asiático, Europa do Norte, RU Sul, leste da Austrália, sul do Brasil. 
 
     ![Criar ASA][5]
 

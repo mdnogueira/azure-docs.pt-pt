@@ -15,11 +15,11 @@ ms.tgt_pltfrm: NA
 ms.workload: Active
 ms.date: 10/13/2017
 ms.author: carlrab
-ms.openlocfilehash: bdef3c155317f32ce03aef920108922c40efc102
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: cb9b1296ced73c123faa0c682e9ef55d4b46ac11
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Recuperar uma base de dados SQL do Azure através de cópias de segurança da base de dados automatizada
 Base de dados do SQL Server fornece estas opções para a base de dados de recuperação utilizando [cópias de segurança da base de dados automatizadas](sql-database-automated-backups.md) e [cópias de segurança no retenção de longo prazo](sql-database-long-term-retention.md). Pode restaurar a partir de uma cópia de segurança da base de dados para:
@@ -54,7 +54,14 @@ O tempo de recuperação para restaurar uma base de dados através de cópias de
 * O número de pedidos de restauro em simultâneo a ser processado na região de destino. 
   
   Para uma base de dados muito grande e/ou Active Directory, o restauro pode demorar várias horas. Se não houver indisponibilidade prolongada numa região, é possível que existem grande número de pedidos de georrestauro processados por noutras regiões. Quando existem muitos pedidos, pode aumentar o tempo de recuperação para bases de dados nessa região. Base de dados a maioria das restaura concluída no prazo de 12 horas.
-  
+
+Para uma única subscrição, existe a algumas limitações no número de pedidos de restauro em simultâneo (incluindo o ponto de restauro de tempo, restauro georreplicação e restauro a partir da cópia de segurança de retenção de longo prazo) que está a ser submetidas e proceeded:
+|  | **N. º máximo de pedidos em simultâneo a ser processado** | **N. º máximo de pedidos simultâneos sejam submetidas** |
+| :--- | --: | --: |
+|Base de dados individual (por subscrição)|10|60|
+|Agrupamento elástico (por conjunto)|4|200|
+||||
+
 Não é uma funcionalidade incorporada em massa de restauro. O [SQL Database do Azure: recuperação de servidor completa](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) script é um exemplo de uma forma de realizar esta tarefa.
 
 > [!IMPORTANT]

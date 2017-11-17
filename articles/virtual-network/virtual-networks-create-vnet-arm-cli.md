@@ -1,10 +1,10 @@
 ---
-title: Criar uma rede virtual - Azure CLI 2.0 | Microsoft Docs
-description: Saiba como criar uma rede virtual com o 2.0 CLI do Azure.
+title: Criar uma rede virtual - CLI do Azure | Microsoft Docs
+description: Saiba como criar uma rede virtual com a CLI do Azure.
 services: virtual-network
 documentationcenter: 
 author: jimdial
-manager: timlt
+manager: jeconnoc
 editor: 
 tags: azure-resource-manager
 ms.assetid: 75966bcc-0056-4667-8482-6f08ca38e77a
@@ -16,25 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7d7b3543f488aedff1ea2c68a2b497e0ca744af
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 659a791124eab002290ac0b7f0898cf1c06c2951
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
-# <a name="create-a-virtual-network-using-the-azure-cli-20"></a>Criar uma rede virtual com o 2.0 CLI do Azure
+# <a name="create-a-virtual-network-using-the-azure-cli"></a>Criar uma rede virtual com a CLI do Azure
 
 [!INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnet-intro-include.md)]
 
 O Azure tem dois modelos de implementação: a implementação do Azure Resource Manager e a implementação clássica. A Microsoft recomenda a criação de recursos com o modelo de implementação Resource Manager. Para saber mais sobre as diferenças entre os dois modelos, veja o artigo [Understand Azure deployment models (Compreender os modelos de implementação do Azure)](../azure-resource-manager/resource-manager-deployment-model.md).
 
-## <a name="cli-versions-to-complete-the-task"></a>Versões CLI para concluir a tarefa
-Pode concluir a tarefa utilizando uma das seguintes versões CLI:
-
-- [Azure CLI 1.0](virtual-networks-create-vnet-cli-nodejs.md) – CLI para os modelos de implementação de gestão clássica e de recursos
-- [Azure CLI 2.0](#create-a-virtual-network) -nossa próxima geração CLI para o modelo de implementação de gestão de recursos (Este artigo)'
- 
-    Também pode criar uma VNet através do Resource Manager com outras ferramentas ou criá-la através do modelo de implementação clássica, ao selecionar outra opção na lista seguinte:
+Também pode criar uma rede virtual através do Resource Manager utilizando outras ferramentas ou criar uma rede virtual através do modelo de implementação clássica, selecionando uma opção diferente na lista seguinte:
 
 > [!div class="op_single_selector"]
 > * [Portal](virtual-networks-create-vnet-arm-pportal.md)
@@ -47,10 +41,9 @@ Pode concluir a tarefa utilizando uma das seguintes versões CLI:
 
 [!INCLUDE [virtual-networks-create-vnet-scenario-include](../../includes/virtual-networks-create-vnet-scenario-include.md)]
 
-
 ## <a name="create-a-virtual-network"></a>Criar uma rede virtual
 
-Para criar uma rede virtual com o 2.0 CLI do Azure, execute os seguintes passos:
+Para criar uma rede virtual com a CLI do Azure, execute os seguintes passos:
 
 1. Instalar e configurar a versão mais recente [Azure CLI 2.0](/cli/azure/install-az-cli2) e início de sessão para um Azure conta através de [início de sessão az](/cli/azure/#login).
 
