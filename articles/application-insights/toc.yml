@@ -91,6 +91,8 @@
       items:
         - name: Azure
           items:
+            - name: Adicionar monitorização contínua
+              href: app-insights-vsts-continuous-monitoring.md
             - name: Gerador de perfis
               href: app-insights-profiler.md
             - name: Ativar o Gerador de Perfis
