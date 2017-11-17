@@ -1,5 +1,5 @@
 ---
-title: "Como utilizar uma identidade de serviço gerida do Azure na API Management do Azure | Microsoft Docs"
+title: "Utilize Azure geridos identidade de serviço de API Management do Azure | Microsoft Docs"
 description: "Saiba como utilizar uma identidade de serviço gerida do Azure na API Management"
 services: api-management
 documentationcenter: 
@@ -11,22 +11,22 @@ ms.workload: integration
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: apimpm
-ms.openlocfilehash: 70bf207cc173caf7d8cae3c4c9111ee2f427405b
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: ded0809fa90e98b2e845d328fbeec6d21507c46b
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/16/2017
 ---
-# <a name="how-to-use-azure-managed-service-identity-in-azure-api-management"></a>Como utilizar uma identidade de serviço gerida do Azure na API Management do Azure
+# <a name="use-azure-managed-service-identity-in-azure-api-management"></a>Utilizar identidade de serviço gerida do Azure na API Management do Azure
 
 > [!Note]
 > Identidade de serviço gerida de API Management do Azure está atualmente em pré-visualização.
 
-Este tópico mostra-lhe como criar uma identidade de serviço gerida para uma instância de serviço de API Management e como aceder a outros recursos. Uma identidade de serviço geridas gerada ao Azure Active Directory (AAD) permite que a instância de API Management para facilmente e aceder de forma segura outros recursos protegidos do AAD, tais como o Cofre de chaves do Azure. Esta identidade de serviço geridas é gerida pelo Azure e não necessita de aprovisionar ou rodar os segredos. Para obter mais informações sobre a identidade de serviço gerida do Azure, consulte [descrição geral de identidade de serviço geridas](../active-directory/msi-overview.md).
+Este artigo mostra-lhe como criar uma identidade de serviço gerida para uma instância de serviço de API Management e como aceder a outros recursos. Uma identidade de serviço geridas gerada pelo Azure Active Directory (Azure AD) permite que a instância de API Management fácil e segura aceder a outros recursos do Azure AD protegida, tais como o Cofre de chaves do Azure. Esta identidade de serviço geridas é gerida pelo Azure e não necessita de aprovisionar ou rodar os segredos. Para obter mais informações sobre a identidade de serviço gerida do Azure, consulte [identidade de serviço geridas para recursos do Azure](../active-directory/msi-overview.md).
 
-## <a name="creating-an-api-management-instance-with-an-identity-using-an-azure-resource-manager-template"></a>Criar uma instância de API Management com uma identidade através de um modelo Azure Resource Manager
+## <a name="create-an-api-management-instance-with-an-identity-by-using-a-resource-manager-template"></a>Criar uma instância de API Management com uma identidade com um modelo do Resource Manager
 
-Uma instância de API Management pode ser criada com uma identidade, incluindo a seguinte propriedade na definição do recurso. 
+Pode criar uma instância de API Management com uma identidade, incluindo a seguinte propriedade na definição do recurso: 
 
 ```json
 "identity" : {
@@ -34,9 +34,9 @@ Uma instância de API Management pode ser criada com uma identidade, incluindo a
 }
 ```
 
-Isto indica do Azure para criar e gerir a identidade para a instância de API Management. 
+Esta propriedade indica do Azure para criar e gerir a identidade para a instância de API Management. 
 
-Por exemplo, um modelo completo aspeto que poderá ter o seguinte:
+Por exemplo, um modelo Azure Resource Manager completo aspeto que poderá ter o seguinte:
 
 ```json
 {
@@ -109,13 +109,13 @@ Por exemplo, um modelo completo aspeto que poderá ter o seguinte:
 }
 ```
 
-## <a name="obtaining-a-certificate-from-azure-key-vault"></a>Obter um certificado a partir do Cofre de chaves do Azure
+## <a name="obtain-a-certificate-from-azure-key-vault"></a>Obter um certificado a partir do Cofre de chaves do Azure
 
-O exemplo abaixo mostra como obter um certificado a partir do Cofre de chaves do Azure. Esta secção inclui os seguintes passos:
+O exemplo seguinte mostra como obter um certificado a partir do Cofre de chaves do Azure. Esta secção inclui os seguintes passos:
 
-* Criar uma instância de API Management com uma identidade
-* Atualizar as políticas de acesso de uma instância do Cofre de chaves do Azure e permitir que a instância da API de gestão a obter segredos do mesmo
-* Atualizar a instância de API Management, definindo um nome de domínio personalizado com um certificado na instância do Cofre de chaves
+1. Crie uma instância de API Management com uma identidade.
+2. Atualizar as políticas de acesso de uma instância do Cofre de chaves do Azure e permitir que a instância da API de gestão a obter segredos do mesmo.
+3. Atualize a instância de API Management, definindo um nome de domínio personalizado através de um certificado na instância do Cofre de chaves.
 
 > [!Important]
 > Se a versão de objeto do certificado não for fornecida, gestão de API irá obter automaticamente a versão mais recente do certificado após ser carregada para o Cofre de chaves. 
@@ -245,7 +245,8 @@ O exemplo abaixo mostra como obter um certificado a partir do Cofre de chaves do
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* Saiba mais sobre a identidade de serviço gerida do Azure
-  * [Descrição geral de identidade de serviço geridas](../active-directory/msi-overview.md)
-  * [Consulte mais modelos Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates)
+Saiba mais sobre a identidade de serviço gerida do Azure:
+
+* [Identidade de serviço geridas para recursos do Azure](../active-directory/msi-overview.md)
+* [Modelos Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates)
 
