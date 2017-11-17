@@ -37,6 +37,8 @@
       href: container-instances-mounting-azure-files-volume.md
     - name: Implementar do Azure Container Registry
       href: container-instances-using-azure-container-registry.md
+    - name: Executar tarefas em contentores
+      href: container-instances-restart-policy.md
     - name: Resolução de problemas de implementações
       href: container-instances-troubleshooting.md
 - name: Referência
