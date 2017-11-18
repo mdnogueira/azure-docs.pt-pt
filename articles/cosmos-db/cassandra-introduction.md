@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: govindk
-ms.openlocfilehash: 23909c65499697be66fc2d2f43c6d0bd8a02b614
-ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
+ms.openlocfilehash: 5ca9b8ed40a1e58a0aea4de87995caf5f9a9212b
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="introduction-to-apache-cassandra-api-for-azure-cosmos-db"></a>Introdução ao Apache Cassandra API para o Azure Cosmos DB
 
@@ -36,7 +36,10 @@ BD do Azure do Cosmos pode ser utilizado como o arquivo de dados para aplicaçõ
 
 ![Cassandra API no Azure Cosmos DB](./media/cassandra-introduction/cosmosdb-cassandra.png)
 
-A API de Cassandra permite-lhe interagir com os dados armazenados na base de dados do Cosmos do Azure utilizando as ferramentas de idioma de consulta Cassandra com base em (como CQLSH) e os controladores cliente Cassandra já estiver familiarizado com.
+A API de Cassandra permite-lhe interagir com os dados armazenados na base de dados do Cosmos do Azure utilizando as ferramentas de idioma de consulta Cassandra com base em (como CQLSH) e os controladores cliente Cassandra já estiver familiarizado com. Saiba mais sobre o assunto neste vídeo Microsoft Mechanics com o Gestor de engenharia do Principal Kirill Gavrylyuk.
+
+> [!VIDEO https://www.youtube.com/embed/1Sf4McGN1AQ]
+>
 
 ## <a name="what-is-the-benefit-of-using-apache-cassandra-api-for-azure-cosmos-db"></a>O que é a vantagem de utilizar o Apache Cassandra API para a base de dados do Azure Cosmos?
 
@@ -56,17 +59,34 @@ A API de Cassandra permite-lhe interagir com os dados armazenados na base de dad
 
 **Nível de Enterprise**: segura e compatível por predefinição – cosmos do Azure fornece DB [certificações de conformidade](https://www.microsoft.com/trustcenter) para garantir que os utilizadores podem utilizar a plataforma sem ter de se preocupar sobre problemas de conformidade. BD do Azure do Cosmos também proporciona a encriptação em descanso e em movimento, firewall IP e os registos de auditoria para as atividades de plane do controlo.  
 
+<a id="sign-up-now"></a>
+## <a name="sign-up-now"></a>Registe-se já 
+
+Se já tiver uma subscrição do Azure, pode inscrever aderir ao programa de API Cassandra (pré-visualização) [portal do Azure](https://aka.ms/cosmosdb-cassandra-signup).  Se estiver familiarizado com o Azure, inscreva-se um [avaliação gratuita](https://azure.microsoft.com/free) onde pode obter de acesso gratuito a base de dados do Azure Cosmos de 12 meses. Conclua os seguintes passos para pedir acesso para o programa de API Cassandra (pré-visualização).
+
+1. No [portal do Azure](https://portal.azure.com), clique em **novo** > **bases de dados** > **Azure Cosmos DB**. 
+
+2. Na página de nova conta, selecione **Cassandra** na caixa de API. 
+
+3. No **subscrição** caixa, selecione a subscrição do Azure que pretende utilizar para esta conta.
+
+4. Clique em **inscrever-se na pré-visualização hoje mesmo**.
+
+    ![Cassandra API no Azure Cosmos DB](./media/cassandra-introduction/cassandra-sign-up.png)
+
+3. Na inscrição para pré-visualizar painel atual, clique em **OK**. 
+
+    Depois de submeter o pedido, o estado é alterado para **com aprovação pendente** no painel de conta de novo. 
+
+Depois de submeter o pedido, aguarde que a notificação por correio eletrónico que o seu pedido tiver sido aprovado. Não é necessário criar um pedido de suporte para concluir o pedido. Pedidos serão analisados pela ordem em que foram recebidos. 
+
 ## <a name="how-to-get-started"></a>Como começar
-Siga os inícios rápidos Cassandra API para criar uma conta do Azure Cosmos DB Cassandra API e criar uma aplicação Cassandra:
+Uma vez tiver associado a um programa de pré-visualização, siga os inícios rápidos Cassandra API para criar uma aplicação utilizando a API de Cassandra:
 
 * [Início rápido: Criar um Cassandra aplicação web com o Node.js e base de dados do Azure Cosmos](create-cassandra-nodejs.md)
 * [Início rápido: Criar um Cassandra aplicação web com o Java e base de dados do Azure Cosmos](create-cassandra-java.md)
 * [Início rápido: Criar um Cassandra aplicação web com o .NET e da base de dados do Azure Cosmos](create-cassandra-dotnet.md)
 * [Início rápido: Criar um Cassandra aplicação web com o Python e Azure Cosmos DB](create-cassandra-python.md)
-
-## <a name="sign-up-now"></a>Registe-se já 
-
-Se já tiver uma subscrição do Azure, pode inscrever para a API de Cassandra (pré-visualização) [portal do Azure](https://aka.ms/cosmosdb-cassandra-signup). Se estiver familiarizado com o Azure, assinatura de cópia de segurança para um [avaliação gratuita](https://azure.microsoft.com/free) onde pode obter de acesso gratuito a base de dados do Azure Cosmos de 12 meses.
 
 ## <a name="next-steps"></a>Passos seguintes
 

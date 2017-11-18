@@ -12,11 +12,11 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: article
 ms.date: 11/15/2017
-ms.openlocfilehash: 7772f6be0c60c1c2e59499d46e3c56975053e551
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: a1d364b0dcb70998b390d0d96bcd1e439617e493
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Autenticação e autorização para API de Insights de série de tempo do Azure
 
@@ -24,15 +24,15 @@ Este artigo explica como configurar a autenticação e autorização utilizado n
 
 ## <a name="service-principal"></a>Principal de serviço
 
-Esta secção explica como configurar uma aplicação para aceder a API de informações de séries de tempo em nome da aplicação. A aplicação pode consultar dados ou publicar dados de referência no ambiente de informações de séries de tempo com credenciais de aplicação e não as credenciais do utilizador.
+Esta secção explica como configurar uma aplicação para aceder a API de informações de séries de tempo em nome da aplicação. A aplicação pode consultar dados ou publicar dados de referência no ambiente de informações de séries de tempo com credenciais de aplicação em vez das credenciais do utilizador.
 
-Quando tiver uma aplicação que necessita de informações de série de tempo de acesso, tem de configurar uma aplicação do Azure Active Directory e atribuir as políticas de acesso de dados no ambiente de informações de séries de tempo. Esta abordagem é preferível executar a aplicação com as suas próprias credenciais porque:
+Quando tiver uma aplicação que tem informações de série de tempo de acesso, tem de configurar uma aplicação do Azure Active Directory e atribuir as políticas de acesso de dados no ambiente de informações de séries de tempo. Esta abordagem é preferível executar a aplicação com as suas próprias credenciais porque:
 
-* Pode atribuir permissões para a identidade de aplicação que são diferentes das suas permissões. Normalmente, estas permissões são restritos exatamente o que a aplicação tem de fazer. Por exemplo, pode permitir que a aplicação para só de leitura de dados num ambiente Insights de séries de tempo específico.
+* Pode atribuir permissões para a identidade de aplicação que são diferentes das suas permissões. Normalmente, estas permissões são restringidas a apenas que a aplicação requer. Por exemplo, pode permitir que a aplicação para só de leitura de dados num ambiente Insights de séries de tempo específico.
 * Não tem de alterar as credenciais da aplicação, se alterar as suas responsabilidades.
 * Pode utilizar um certificado ou uma chave de aplicação para automatizar a autenticação quando estiver a executar um script automático.
 
-Este artigo mostra como efetuar os passos através do portal do Azure. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada na organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas na sua organização.
+Este tópico mostra como efetuar os passos através do portal do Azure. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada na organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas na sua organização.
 
 O fluxo de configuração consiste em três passos de alto nível:
 
@@ -103,5 +103,7 @@ Utilize o ID da aplicação e a chave na sua aplicação para autenticar com con
 
 ## <a name="next-steps"></a>Passos seguintes
 - Para o código de exemplo chama a API de informações de séries de tempo, consulte [consultar dados com c#](time-series-insights-query-data-csharp.md).
-- Para informações de referência de API, consulte [referência da API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi)
-- [Criar um principal de serviço no portal do Azure](../azure-resource-manager/resource-group-create-service-principal-portal.md)
+- Para informações de referência de API, consulte [referência da API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi).
+
+> [!div class="nextstepaction"]
+> [Criar um principal de serviço](../azure-resource-manager/resource-group-create-service-principal-portal.md)

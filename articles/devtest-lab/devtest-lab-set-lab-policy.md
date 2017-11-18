@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/03/2017
 ms.author: tarcher
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 03cd09e37ff7dd0b7731eee19810ada7aed1a875
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 7f42baa1ac37f425f915b6949e018f6e7397d3ae
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="manage-all-policies-for-a-lab-in-azure-devtest-labs"></a>Gerir todas as políticas para um laboratório no Azure DevTest Labs
 
@@ -79,7 +79,9 @@ A política de encerramento automático ajuda a minimizar as perdas de laborató
 
 1. Se ativar esta política, especifique a hora (e o fuso horário) para encerrar todas as VMs no laboratório atual.
 
-1. Especifique **Sim** ou **não** para a opção para enviar uma notificação de 15 minutos antes do tempo de encerramento automático especificado. Se especificar **Sim**, introduza um ponto de final do URL do webhook ou um endereço de e-mail para onde a notificação será publicada ou enviada. Para obter mais informações sobre webhooks, consulte [criar um webhook ou uma função Azure API](../azure-functions/functions-create-a-web-hook-or-api-function.md). 
+1. Especifique **Sim** ou **não** para a opção para enviar uma notificação de 15 minutos antes do tempo de encerramento automático especificado. Se optar por **Sim**, introduza um ponto de final do URL do webhook ou um endereço de correio eletrónico especificar onde pretende que a notificação para ser publicado ou enviado. O utilizador recebe uma notificação e é dada a opção para atrasar o encerramento.
+
+   Para obter mais informações sobre webhooks, consulte [criar um webhook ou uma função Azure API](../azure-functions/functions-create-a-web-hook-or-api-function.md). 
 
 1. Selecione **Guardar**.
 

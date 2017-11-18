@@ -18,7 +18,7 @@
 | Domínio personalizado [suporte SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) | | |Ilimitados ligações de SNI SSL |Ilimitados SSL SNI e ligações de IP SSL 1 incluídos |Ilimitados SSL SNI e ligações de IP SSL 1 incluídos |
 | Load Balancer Integrado | |X |X |X |X |
 | [Always On](../articles/app-service/web-sites-configure.md) | | |X |X |X |
-| [Cópias de segurança agendadas](../articles/app-service/web-sites-backup.md) | | | |Uma vez por dia |Uma vez a cada 5 minutos<sup>8</sup> |
+| [Cópias de segurança agendadas](../articles/app-service/web-sites-backup.md) | | | |12 por dia |Uma vez a cada 5 minutos<sup>8</sup> |
 | [Escala automática](../articles/app-service/web-sites-scale.md) | | | |X |X |
 | [WebJobs](../articles/app-service/web-sites-create-web-jobs.md)<sup>9</sup> |X |X |X |X |X |
 | [O agendador do Azure](https://azure.microsoft.com/services/scheduler/) suportar | |X |X |X |X |

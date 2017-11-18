@@ -13,13 +13,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 11/15/2017
+ms.date: 11/16/2017
 ms.author: arramac
-ms.openlocfilehash: 5eade2b85737f9c381f6292a78fc5407398e2b9c
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: ce5c1c25a73bdc02d7e66768752c6942144de517
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="quickstart-build-a-table-api-app-with-java-and-azure-cosmos-db"></a>Início rápido: Criar uma tabela de aplicação de API com Java e Cosmos BD do Azure
 
@@ -87,9 +87,20 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
    ![Ver e copiar as informações de cadeia de ligação necessária do no painel de cadeia de ligação](./media/create-table-java/connection-string.png)
 
-2. Abra o ficheiro de Properties e copiar as propriedades de cadeia de ligação necessárias para o ficheiro de configuração.
+2. Copie a cadeia de ligação principal com o botão de cópia no lado direito.
 
-3. Guarde o ficheiro Properties.
+3. Abra Properties da pasta C:\git-samples\storage-table-java-getting-started\src\main\resources. 
+
+5. Comente a linha de uma e anule os comentários linha dois. As primeiras duas linhas devem agora ter este aspeto.
+
+    ```
+    #StorageConnectionString = UseDevelopmentStorage=true
+    StorageConnectionString = DefaultEndpointsProtocol=https;AccountName=[ACCOUNTNAME];AccountKey=[ACCOUNTKEY]
+    ```
+
+6. Cole a cadeia de ligação principal do portal o valor de StorageConnectionString na linha 2. Se a parte do ponto final da cadeia de ligação utiliza documents.azure.com, corrija a que parte a utilizar em vez disso, table.cosmosdb.azure.com.
+
+7. Guarde o ficheiro Properties.
 
 Atualizou agora a sua aplicação com todas as informações necessárias para comunicar com o Azure Cosmos DB. 
 

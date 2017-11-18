@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/03/2017
 ms.author: genli
-ms.openlocfilehash: 3bf9e4673ffb756a8d159ed5733d3ddca70010c7
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: e5fc1933efcaa9c6eaa7ab0021c3362e0714a3d5
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Gestão de configuração e perguntas mais frequentes para aplicações Web no Azure
 
@@ -319,4 +319,4 @@ Também pode especificar os tipos de MIME estáticos e dinâmicos específicos q
 
 ## <a name="how-do-i-migrate-from-an-on-premises-environment-to-app-service"></a>Como posso migrar de um ambiente no local para o App Service?
 
-Para migrar sites de servidores de web do Windows e Linux para o App Service, pode utilizar o Azure App Service migração através do assistente. A ferramenta de migração cria as web apps e bases de dados no Azure, conforme necessário e, em seguida, publica o conteúdo. Para obter mais informações, consulte [Azure App Service migração assistente](https://www.movemetothecloud.net/).
+Para migrar sites de servidores de web do Windows e Linux para o App Service, pode utilizar o Azure App Service migração através do assistente. A ferramenta de migração cria as web apps e bases de dados no Azure, conforme necessário e, em seguida, publica o conteúdo. Para obter mais informações, consulte [Azure App Service migração assistente](https://www.migratetoazure.net/).

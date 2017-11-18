@@ -7,14 +7,14 @@ author: kgremban
 manager: timlt
 ms.author: kgremban
 ms.reviewer: veyalla
-ms.date: 11/15/2017
+ms.date: 11/17/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: be2a80645d23e709d6c5cfb3978498bbe85eca34
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: a78efef6bc82a837782c462bc3558a9582a8da7c
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="install-the-iot-edge-runtime-on-windows-iot-core---preview"></a>Instalar o runtime de limite de IoT no Windows IoT Core - pré-visualização
 
@@ -25,8 +25,22 @@ Pode executar o tempo de execução do limite de IoT do Azure, mesmo em disposit
 1. Instalar [Dashboard de núcleo do Windows 10 IoT] [ lnk-core] num sistema anfitrião.
 1. Siga os passos no [configurar o seu dispositivo] [ lnk-board] para configurar o seu dashboard com a imagem de MinnowBoard Turbot/máx. de compilação 16299. 
 1. Ativar no dispositivo, em seguida, [início de sessão remotamente com o PowerShell][lnk-powershell].
-1. Na consola do PowerShell, [instalar os binários de Docker][lnk-docker-install].
-1. Execute o seguinte comando na consola do PowerShell para instalar o runtime de limite de IoT e verificar a configuração:
+1. Na consola do PowerShell, instale o tempo de execução do contentor: 
+
+   ```powershell
+   Invoke-WebRequest https://master.dockerproject.org/windows/x86_64/docker-17.06.0-dev.zip -o temp.zip
+   Expand-Archive .\temp.zip $env:ProgramFiles -f
+   Remove-Item .\temp.zip
+   $env:Path += ";$env:programfiles\docker"
+   SETX /M PATH "$env:Path"
+   dockerd --register-service
+   start-service docker
+   ```
+
+   >[!NOTE]
+   >Este script do PowerShell é a partir do servidor de compilação do projeto de Moby e destina-se apenas a fins de avaliação. -Não testado, aprovadas ou suportada pelo Docker.
+
+1. Instalar o runtime de limite de IoT e certifique-se a configuração:
 
    ```powershell
    Invoke-Expression (Invoke-WebRequest -useb https://aka.ms/iotedgewin)

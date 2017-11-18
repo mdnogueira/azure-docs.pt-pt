@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/15/2017
+ms.date: 11/17/2017
 ms.author: jomolesk
-ms.openlocfilehash: bbf58215a4d236c70bf988cbfa1c8491055b5183
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 0be18e2c2354ea8f766eb48db793c906e565a201
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="national-cyber-security-centre-cloud-security-principles-overview"></a>Descrição geral de segurança de informático Centre princípios de segurança de nuvem nacional
 
 
 > [!NOTE]
-> Estes princípios de segurança são definidos por Centre National de segurança informático (NCSC). Consulte a documentação de NCSC para obter informações sobre procedimentos de teste e as diretrizes para cada princípio de segurança.
+> Estes princípios de segurança são definidos por o RU National informático segurança Centre (NCSC). Consulte [documentação NCSC](https://www.ncsc.gov.uk/guidance/implementing-cloud-security-principles) para obter informações sobre procedimentos e as diretrizes para cada princípio de segurança de teste.
 
 
 
@@ -435,3 +435,12 @@ Com ofertas de IaaS e PaaS, for o responsável pela significativos aspetos de se
 |---|---|
 | **Cliente** | Os modelos Azure Resource Manager e o associada recursos que compõem este Blueprint Azure siga uma abordagem de defence-na profundidade para segurança. Para poder estar em conformidade com este princípio, é necessária configuração adicional pelo cliente para utilização em produção (por exemplo, software de gestão de base de dados, implementação de aplicação web). |
 | **Fornecedor&nbsp;(Microsoft&nbsp;Azure)** | Não Aplicável |
+
+## <a name="disclaimer"></a>Exclusão de Responsabilidade
+
+ - Este documento destina-se apenas a fins informativos. MICROSOFT FAZ COM QUE NÃO OFERECE NENHUMA GARANTIA, EXPRESSAS, IMPLÍCITA OU ESTATUTARIAMENTE AS INFORMAÇÕES NESTE DOCUMENTO. Este documento é fornecido "como-está." As informações e opiniões expressados neste documento, incluindo URLs e outras referências de Web site da Internet, podem ser alteradas sem aviso prévio. Os clientes ler este documento da sua responsabilidade utilizá-la.
+ - Este documento não fornece aos clientes com quaisquer direitos legais a nenhuma propriedade intelectual de qualquer produto da Microsoft ou de soluções.
+ - Os clientes podem copiar e utilizar este documento para efeitos de referência interno.
+ - Algumas recomendações neste documento poderão resultar numa maior dados, a rede ou a utilização de recursos de computação no Azure e podem aumentar os custos de licenciamento ou de subscrição do Azure do cliente.
+ - Esta arquitetura destina-se para servir como base para os clientes ajustar os seus requisitos específicos e não devem ser utilizada como-é num ambiente de produção.
+ - Este documento é desenvolvido como uma referência e não deve ser utilizado para definir todas as formas através do qual um cliente pode cumpre os requisitos de conformidade específico e regulamentos. Os clientes devem procurar suporte legal da respetiva organização em implementações de cliente aprovados.

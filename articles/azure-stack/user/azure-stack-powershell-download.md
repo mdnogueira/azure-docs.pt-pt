@@ -14,30 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: sngun
-ms.openlocfilehash: 69ca030d1b7601df424fa9446e1d194a3f6bd50a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1957e63914d5f9f443a504ef90df49d79ec3e40f
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="download-azure-stack-tools-from-github"></a>Descarregar as ferramentas de pilha do Azure a partir do GitHub
 
-Ferramentas de AzureStack é um repositório do GitHub que aloja os módulos do PowerShell que pode utilizar para gerir e implementar recursos com pilha do Azure. Pode transferir e utilizar estes módulos do PowerShell para o Kit de desenvolvimento de pilha do Azure ou para um cliente externo baseado em windows, se estiver a planear estabelecer conectividade VPN. Para obter estas ferramentas, clone o repositório do GitHub ou transferir a pasta Ferramentas AzureStack. 
-
-Para clonar o repositório, transfira [Git](https://git-scm.com/download/win) para Windows, abra uma janela de linha de comandos e execute o seguinte script:
-
-```PowerShell
-# Change directory to the root directory 
-cd \
-
-# clone the repository
-git clone https://github.com/Azure/AzureStack-Tools.git --recursive
-
-# Change to the tools directory
-cd AzureStack-Tools
-```
-
-Para transferir a pasta Ferramentas, execute o seguinte script:
+Ferramentas de AzureStack é um repositório do GitHub que aloja os módulos do PowerShell que pode utilizar para gerir e implementar recursos com pilha do Azure. Pode transferir e utilizar estes módulos do PowerShell para o Kit de desenvolvimento de pilha do Azure ou para um cliente externo baseado em windows, se estiver a planear estabelecer conectividade VPN. Para obter estas ferramentas, clone o repositório do GitHub ou transferir a pasta Ferramentas AzureStack executando o seguinte script:
 
 ```PowerShell
 # Change directory to the root directory 

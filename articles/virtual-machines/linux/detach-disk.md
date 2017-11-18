@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.topic: article
-ms.date: 03/21/2017
+ms.date: 11/17/2017
 ms.author: cynthn
-ms.openlocfilehash: de0222d897ed2cf94be98501c39385ac88f866fc
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: c589dd8c9d597145fd87a00d9a2ba040988cd8ec
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="how-to-detach-a-data-disk-from-a-linux-virtual-machine"></a>Como desligar um disco de dados de uma máquina virtual Linux
 
@@ -35,28 +35,25 @@ Se pretender voltar a utilizar os dados existentes no disco, pode voltar a ligá
 ## <a name="detach-a-data-disk-using-cli-20"></a>Desligar um disco de dados utilizando a CLI 2.0
 
 ```azurecli
-az vm disk detach -g myResourceGroup --vm-name myVm -n myDataDisk
+az vm disk detach \
+    -g myResourceGroup \
+    --vm-name myVm \
+    -n myDataDisk
 ```
 
 O disco permanece no armazenamento, mas já não está ligado a uma máquina virtual.
 
 
 ## <a name="detach-a-data-disk-using-the-portal"></a>Desanexar um disco de dados com o portal
-1. No portal hub, selecione **máquinas virtuais**.
+1. No menu à esquerda, selecione **máquinas virtuais**.
 2. Selecione a máquina virtual que tenha o disco de dados que pretende desanexar e clique em **parar** ao anular atribuição de VM.
-3. No painel da máquina virtual, selecione **discos**.
+3. No painel de máquina virtual, selecione **discos**.
 4. Na parte superior do **discos** painel, selecione **editar**.
 5. No **discos** painel, na extremidade direita do disco de dados que pretende desanexar, clique em de ![imagem do botão de anulação de exposições](./media/detach-disk/detach.png) exposição do botão.
 5. Depois do disco foi removido, clique em Guardar na parte superior do painel.
 6. No painel da máquina virtual, clique em **descrição geral** e, em seguida, clique em de **iniciar** botão na parte superior do painel para reiniciar a VM.
 
 O disco permanece no armazenamento, mas já não está ligado a uma máquina virtual.
-
-
-
-
-
-
 
 
 ## <a name="next-steps"></a>Passos seguintes

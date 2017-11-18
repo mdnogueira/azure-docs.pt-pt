@@ -2,19 +2,19 @@
 title: "Roaming e de colaboração no Azure Machine Learning Workbench | Microsoft Docs"
 description: Lista dos problemas conhecidos e um guia para ajudar a resolver problemas
 services: machine-learning
-author: svankam
-ms.author: svankam
+author: hning86
+ms.author: haining
 manager: mwinkle
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
-ms.date: 09/05/2017
-ms.openlocfilehash: 156dd1b7f928df22b3feb9e7a13396d3b53a91d7
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/16/2017
+ms.openlocfilehash: 856348c07a198a8c53c6661441d5c49196ef3af5
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="roaming-and-collaboration-in-azure-machine-learning-workbench"></a>Roaming e de colaboração no Azure Machine Learning Workbench
 Este documento explica como como o Azure Machine Learning Workbench pode ajudar a percorrer o seus projetos máquinas, bem como ativar colaboração com seu teammates. 
@@ -90,23 +90,16 @@ Alice clica no **ficheiro** menu e seleciona a **linha de comandos** item de men
 # Find ARM ID of the experimnetation account
 az ml account experimentation show --query "id"
 
-# Add Bob to the Experimentation Account as a Reader.
-# Bob now has read access to all workspaces and projects under the Account by inheritance.
-az role assignment create --assignee bob@contoso.com --role Reader --scope <experimentation account ARM ID>
+# Add Bob to the Experimentation Account as a Contributor.
+# Bob now has read/write access to all workspaces and projects under the Account by inheritance.
+az role assignment create --assignee bob@contoso.com --role Contributor --scope <experimentation account ARM ID>
 
 # Find ARM ID of the workspace
 az ml workspace show --query "id"
 
-# Add Bob to the workspace as a Contributor.
-# Bob now has read/write access to all projects under the Workspace by inheritance.
-az role assignment create --assignee bob@contoso.com --role Contributor --scope <workspace ARM ID>
-
-# find ARM ID of the project 
-az ml project show --query "id"
-
-# Add Bob to the Project as an Owner.
-# Bob now has read/write access to the Project, and can add others too.
-az role assignment create --assignee bob@contoso.com --role Owner --scope <project ARM ID>
+# Add Bob to the workspace as an Owner.
+# Bob now has read/write access to all projects under the Workspace by inheritance. And he can invite or remove others.
+az role assignment create --assignee bob@contoso.com --role Owner --scope <workspace ARM ID>
 ```
 
 Após a atribuição de função, diretamente ou através de herança, João pode ver o projeto na lista de projeto Workbench. A aplicação poderá necessitar de um reinício para ver o projeto. Bernardo, em seguida, pode transferir o projeto conforme descrito no [Roaming secção](#roaming) e colaborar com a Alice. 
@@ -124,3 +117,81 @@ Localize o recurso que procura para adicionar utilizadores a partir de todos os 
 
 <img src="./media/roaming-and-collaboration/iam.png" width="320px">
 
+## <a name="sample-collaboration-workflow"></a>Fluxo de trabalho de colaboração de exemplo
+Para ilustrar o fluxo de colaboração, vamos guiá-lo através de um exemplo. Os funcionários do contoso Alice e João pretendem colaborar num projeto de ciência de dados através do Azure ML Workbench. A identidade de pertencer ao mesmo inquilino Contoso do Azure AD.
+
+1. Alice cria pela primeira vez um repositório de Git vazio num projeto VSTS. Este projeto VSTS deve estar numa subscrição do Azure criada no inquilino do Contoso AAD. 
+
+2. Alice, em seguida, cria uma conta de experimentação do Azure ML, uma área de trabalho e um projeto do Azure ML Workbench no respetivo computador. A Joana fornece o URL do repositório de Git ao criar o projeto.
+
+3. Alice começa a trabalhar no projeto. A Joana cria alguns scripts e executa alguns é executado. Para cada execução, um instantâneo da pasta do projeto todo é automaticamente instalado para um ramo de histórico de execução do repositório de VSTS Git criado pelo Workbench como uma confirmação.
+
+4. Alice é agora satisfeita com o trabalho em curso. Que pretende consolidar a alteração no local _mestre_ sucursal e envia-o para o repositório de VSTS Git _mestre_ ramo. Para tal, com o projeto open, a Joana inicia a janela de linha de comandos do Azure ML Workbench e, emite os seguintes comandos:
+    
+    ```sh
+    # verify the Git remote is pointing to the VSTS Git repo
+    $ git remote -v
+
+    # verify that the current branch is master
+    $ git branch
+
+    # stage all changes
+    $ git add -A
+
+    # commit changes with a comment
+    $ git commit -m "this is a good milestone"
+
+    # push the commit to the master branch of the remote Git repo in VSTS
+    $ git push
+    ```
+
+5. Alice, em seguida, adiciona o Artur à área de trabalho como um contribuinte. Ela pode fazer isto do portal do Azure ou utilizar o `az role assignment` ilustrar de comando acima. Ela também concede Bernardo leitura/escrita acesso para o repositório de VSTS Git.
+
+6. Bernardo agora registos no Azure ML Workbench no seu computador. Ele pode ver a Alice da área de trabalho partilhado com ele e o projeto listados na área de trabalho. 
+
+7. Bernardo clica no nome do projeto e o projeto é transferido para o seu computador.
+    
+    a. Os ficheiros do projeto transferido são clones do instantâneo da versão mais recente executados gravados no histórico de execução. Não estão a consolidação último no ramo principal.
+    
+    b. A pasta local do projeto está definida no _mestre_ ramo unstaged alterações.
+
+8. João pode procurar executa executada pela Inês e restauro de instantâneo de qualquer executa anterior.
+
+9. João pretende obter as últimas alterações pelo Alice é feito o Push e começar a trabalhar um ramo diferentes. Por conseguinte, ele abre a janela de linha de comandos do Azure ML Workbench e executa os seguintes comandos:
+
+    ```sh
+    # verify the Git remote is pointing to the VSTS Git repo
+    $ git remote -v
+
+    # verify that the current branch is master
+    $ git branch
+
+    # get the latest commit in VSTS Git master branch and overwrite current files
+    $ git pull --force
+
+    # create a new local branch named "bob" so Bob's work is done on the "bob" branch
+    $ git checkout -b bob
+    ```
+
+10. Bernardo agora modifica o projeto e submeter execuções de novo. As alterações são efetuadas no _Bernardo_ ramo. E execuções do de Bob ficam visíveis para Alice bem.
+
+11. João está agora pronto para enviar as alterações para o repositório de Git remoto. Para evitar conflitos com _mestre_ sucursal onde está a funcionar Alice, ele decide enviar o seu trabalho para um novo ramo remoto, também denominado _Bernardo_.
+
+    ```sh
+    # verify that the current branch is "bob" and it has unstaged changes
+    $ git status
+    
+    # stage all changes
+    $ git add -A
+
+    # commit them with a comment
+    $ git commit -m "I found a cool new trick."
+
+    # create a new branch on the remote VSTS Git repo, and push changes
+    $ git push origin bob
+    ```
+
+12. Bernardo, em seguida, pode dizer Alice sobre a nova truque útil no seu código e cria um pedido pull no repositório de Git remoto do _Bernardo_ sucursal para o _mestre_ ramo. E Alice, em seguida, pode intercalar o pedido de solicitação para _mestre_ ramo.
+
+## <a name="next-steps"></a>Passos seguintes
+Saiba mais sobre como utilizar o Git com Azure ML Workbench: [repositório de Git utilizando com um projeto do Azure Machine Learning Workbench](using-git-ml-project.md)

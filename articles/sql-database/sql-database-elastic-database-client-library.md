@@ -15,16 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2017
 ms.author: ddove
-ms.openlocfilehash: 6a73f8d0b85198f0d4e10fbc31cbd21f93bdb8a8
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 721b87c67aa5e8002f21faca5a10fe41b8958e1e
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-scalable-cloud-databases"></a>Criar bases de dados de nuvem escaláveis
 Aumentar horizontalmente bases de dados pode ser facilmente conseguido utilizando ferramentas dimensionáveis e funcionalidades para a SQL Database do Azure. Em particular, pode utilizar o **biblioteca de clientes de base de dados elástica** para criar e gerir bases de dados de escalamento horizontal. Esta funcionalidade permite-lhe desenvolver facilmente aplicações em partição horizontal com centenas — ou mesmo milhares — das bases de dados SQL do Azure. [As tarefas elásticas](sql-database-elastic-jobs-powershell.md) , em seguida, podem ser utilizados para ajudar a facilitar a gestão destas bases de dados.
 
-Para instalar a biblioteca, visite NuGet em [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). 
+Para transferir:
+* a versão do .NET da biblioteca, consulte [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/).
+* a versão de Java da biblioteca, consulte [repositório Central Maven](https://search.maven.org/#search%7Cga%7C1%7Celastic-db-tools).
 
 ## <a name="documentation"></a>Documentação
 1. [Introdução às ferramentas de Base de Dados Elástica](sql-database-elastic-scale-get-started.md)
@@ -50,7 +52,7 @@ Aumentar horizontalmente aplicações utilizando *fragmentação* apresenta desa
 - **Gestão de mapa de partições horizontais**: uma base de dados especiais chamado o "Gestor de mapa de partições horizontais". Gestão de mapa de partições horizontais é a capacidade para uma aplicação gerir os metadados sobre os shards. Os programadores podem utilizar esta funcionalidade para registar as bases de dados como shards, descrevem os mapeamentos de chaves de fragmentação individuais ou intervalos de chaves para essas bases de dados e manter estes metadados como o número e medida que evolui da composição de bases de dados para refletir as alterações de capacidade. Sem a biblioteca de clientes de base de dados elástica, terá de passam muito tempo a escrever o código de gestão quando implementar fragmentação. Para obter mais informações, consulte [gestão de mapa de partições horizontais](sql-database-elastic-scale-shard-map-management.md).
 
 - **Dados dependentes encaminhamento**: Imagine um pedido entra da aplicação. Com base no valor da chave de fragmentação do pedido, a aplicação tem de determinar a base de dados correto com base no valor de chave. Em seguida, abre-se uma ligação à base de dados para processar o pedido. Dados dependentes encaminhamento fornece a capacidade para abrir as ligações com uma única chamada fácil para o mapa de partições horizontais da aplicação. Dados dependentes encaminhamento foi outra área do código de infraestrutura que agora é abrangido por funcionalidade na biblioteca de cliente da base de dados elásticas. Para obter mais informações, consulte [dados dependentes encaminhamento](sql-database-elastic-scale-data-dependent-routing.md).
-- **Consultas de partições horizontais multi (MSQ)**: consultar várias partições horizontais funciona quando um pedido envolve shards várias (ou todos os). Uma consulta de partições horizontais multi executa o mesmo código de T-SQL em todas as partições horizontais ou um conjunto de partições horizontais. Os resultados dos participantes shards são intercalados num resultado geral definido utilizando UNION ALL semântica. A funcionalidade como expostos através da biblioteca de clientes processa muitas tarefas, incluindo: gestão de ligações, gestão de thread, processamento de falhas e de processamento de resultados intermédios. MSQ pode consultar até centenas de partições horizontais. Para obter mais informações, consulte [consultar várias partições horizontais](sql-database-elastic-scale-multishard-querying.md).
+- **Consultas de partições horizontais multi (MSQ)**: consultar várias partições horizontais funciona quando um pedido envolve shards várias (ou todos os). Uma consulta de partições horizontais multi executa o mesmo código de T-SQL em todas as partições horizontais ou um conjunto de partições horizontais. Os resultados dos participantes shards são intercalados num resultado geral definido utilizando UNION ALL semântica. A funcionalidade como expostos através da biblioteca de clientes processa muitas tarefas, incluindo: gestão de ligações, gestão de thread, processamento de falhas e resultados intermédios processamento. MSQ pode consultar até centenas de partições horizontais. Para obter mais informações, consulte [consultar várias partições horizontais](sql-database-elastic-scale-multishard-querying.md).
 
 Em geral, os clientes utilizando ferramentas de base de dados elástica podem esperar obter a funcionalidade completa de T-SQL ao submeter operações de partições horizontais local, por oposição a operações de cross-partições horizontais que tem as seus próprios semântica.
 
@@ -58,15 +60,11 @@ Em geral, os clientes utilizando ferramentas de base de dados elástica podem es
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Biblioteca de clientes de base de dados elásticas](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) - a **instalar** a biblioteca através do NuGet.
+- Biblioteca de clientes de base de dados elásticas ([.NET](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/), [Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22)) - a **transferir** a biblioteca.
 
 - [Começar a utilizar as ferramentas de base de dados elástica](sql-database-elastic-scale-get-started.md) - para experimentar o **aplicação de exemplo** que demonstra as funções do cliente.
 
-- [Github, Azure/elástico-db-tools](https://github.com/Azure/elastic-db-tools) -a biblioteca é um software de código aberto.
-    - Biblioteca de cliente de ferramentas de base de dados elásticas permite ADO.NET aos programadores criar aplicações que implementam e utilizam o padrão ao conhecido como fragmentação de base de dados na base de dados do Azure SQL.
-
-- [Biblioteca de clientes de base de dados elástica está agora aberta sourced!](https://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/) -um **blogue** sobre a biblioteca de clientes de base de dados elásticas, com a data de 09/2015/09.
-
+- GitHub ([.NET](https://github.com/Azure/elastic-db-tools), [Java](https://github.com/Microsoft/elastic-db-tools-for-java/blob/master/README.md)) – para tornar as suas contribuições para o código.
 - [Descrição geral de consulta elástico de base de dados SQL do Azure](sql-database-elastic-query-overview.md) - para utilizar consultas elásticas.
 
 - [Mover dados entre bases de dados de nuvem de escalamento horizontal](sql-database-elastic-scale-overview-split-and-merge.md) - para obter instruções sobre como utilizar o **ferramenta de intercalação de divisão**.

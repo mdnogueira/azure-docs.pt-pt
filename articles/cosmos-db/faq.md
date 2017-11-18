@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 1d2a5e5d639e2aa0023e99b73f87a68e19afc239
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: 2f46fc37b9050b19b83685c97198c29a5ce46289
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="azure-cosmos-db-faq"></a>FAQ do Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Noções básicas do Cosmos BD do Azure
@@ -431,7 +431,7 @@ BD do Azure do Cosmos define débito predefinido para o contentor com base no on
 O conceito de débito é explicado no [unidades de pedido na base de dados do Azure Cosmos](request-units.md) artigo. O débito para uma tabela igualmente é distribuído entre as partições físicas subjacentes.  
 
 ### <a name="what-is-the-default-rus-of-table-when-created-through-cql-what-if-i-need-to-change-it"></a>O que é a predefinição RU/s da tabela quando criado através da CQL? E se necessário alterá-la?
-BD do Azure do Cosmos utiliza unidades de pedido por segundo (RU/s) como uma moeda para fornecer o débito. As tabelas criadas através de CQL ter 400 RU. Pode alterar o RU do portal para 10 000 RU. Se precisar de mais de 10.000 RU na pré-visualização privada - pode criá-la pela primeira vez no portal. Ou se pretender que esta capacidade para CQL - estabeleça a ligação com-no [ askcosmosdbcassandra@microsoft.com ](mailto:askcosmosdbcassandra@microsoft.com). 
+BD do Azure do Cosmos utiliza unidades de pedido por segundo (RU/s) como uma moeda para fornecer o débito. As tabelas criadas através de CQL ter 400 RU. Pode alterar o RU do portal. 
 
 CQL
 ```

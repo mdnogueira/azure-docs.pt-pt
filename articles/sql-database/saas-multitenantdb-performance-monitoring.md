@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: sstein
-ms.openlocfilehash: 9961a39f8e422d72301958ef467e4267f2c6c498
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 6c73cf2e96503f47dd4234387222169cb30b4cce
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="monitor-and-manage-performance-of-sharded-multi-tenant-azure-sql-database-in-a-multi-tenant-saas-app"></a>Monitorizar e gerir o desempenho da multi-inquilino SQL database do Azure numa aplicação SaaS multi-inquilino
 
@@ -35,7 +35,7 @@ Neste tutorial, ficará a saber como:
 > * Simular a utilização de uma base de dados em partição horizontal do multi-inquilino através da execução de um gerador de carga fornecido
 > * Monitorizar a base de dados como responder ao aumento de carga
 > * Dimensionar a base de dados em resposta a carga de aumento da base de dados
-> * Aprovisionar um novo inquilino na sua própria base de dados
+> * Aprovisionar um inquilino para uma base de dados de inquilino único
 
 Para concluir este tutorial, confirme que conclui os pré-requisitos seguintes:
 
@@ -51,11 +51,11 @@ Gerir o desempenho da base de dados consiste em compilar e analisar dados de des
 * Para evitar a necessidade que monitorizar o desempenho manualmente, é mais eficaz **definir alertas que é acionam quando as bases de dados stray fora do normais intervalos**.
 * Para responder a curto prazo flutuações do nível de desempenho da base de dados, o **nível DTU pode ser escalado para cima ou para baixo**. Se esta flutuação ocorre de forma normal ou previsível, **dimensionar a base de dados pode ser agendado para ocorrer automaticamente**. Por exemplo, reduza verticalmente quando sabe que a carga de trabalho é leve, talvez durante a noite ou durante os fins de semana.
 * Para responder a duração mais longa flutuações ou alterações de inquilinos, **individuais inquilinos podem ser movidos para outra base de dados**.
-* Para responder a curto prazo aumentos *individuais* carga de inquilino, **inquilinos individuais podem ser efetuados fora de uma base de dados e atribuídos um nível de desempenho individuais**. Assim que a carga é reduzida, o inquilino, em seguida, pode ser reencaminhado para a base de dados do multi-inquilino. Quando isto é conhecido seguinte com antecedência, inquilinos podem ser movidos de pre-emptively Certifique-se de que a base de dados tem sempre os recursos que necessita e para evitar o impacto nos outros inquilinos na base de dados de multi-inquilino. Se este requisito for previsível, por exemplo, quando um local tem uma grande procura de bilhetes para um evento popular, este comportamento de gestão poderá ser integrado na aplicação.
+* Para responder a aumentos de curta duração de *individuais* carga de inquilino, **inquilinos individuais podem ser efetuados fora de uma base de dados e atribuídos um nível de desempenho individuais**. Assim que a carga é reduzida, o inquilino, em seguida, pode ser reencaminhado para a base de dados do multi-inquilino. Quando isto é conhecido seguinte com antecedência, inquilinos podem ser movidos de pre-emptively Certifique-se de que a base de dados tem sempre os recursos que necessita e para evitar o impacto nos outros inquilinos na base de dados de multi-inquilino. Se este requisito for previsível, por exemplo, quando um local tem uma grande procura de bilhetes para um evento popular, este comportamento de gestão poderá ser integrado na aplicação.
 
-O [portal do Azure](https://portal.azure.com) fornece monitorização e alertas incorporados na maior parte dos recursos. Para a base de dados do SQL Server, monitorização e alertas estão disponível em bases de dados. Esta monitorização incorporada e os alertas são recursos específicos, é conveniente utilizar pequenas quantidades de recursos, mas não é muito conveniente ao trabalhar com muitos recursos.
+O [portal do Azure](https://portal.azure.com) fornece monitorização e alertas incorporados na maior parte dos recursos. Para a base de dados do SQL Server, monitorização e alertas estão disponível em bases de dados. Esta monitorização incorporada e os alertas são recursos específicos, é conveniente utilizar pequenas quantidades de recursos, mas não for conveniente ao trabalhar com muitos recursos.
 
-Para cenários de elevado volume onde está a trabalhar com muitos recursos, [análise de registos (OMS)](https://azure.microsoft.com/services/log-analytics/) pode ser utilizado. Este é um serviço Azure separado que fornece análises através de registos de diagnóstico emitidos e telemetria recolhidos numa área de trabalho de análise de registo. Análise de registos pode recolher a telemetria de vários serviços e ser utilizado para consultar e definir alertas.
+Para cenários de volume elevado, onde está a trabalhar com muitos recursos, [análise de registos (OMS)](https://azure.microsoft.com/services/log-analytics/) pode ser utilizado. Este é um serviço Azure separado que fornece análises através de registos de diagnóstico emitidos e telemetria recolhidos numa área de trabalho de análise de registo. Análise de registos pode recolher a telemetria de vários serviços e ser utilizado para consultar e definir alertas.
 
 ## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>Obter o código de origem da aplicação de base de dados do Wingtip bilhetes SaaS multi-inquilino e os scripts
 
@@ -71,7 +71,7 @@ Se já aprovisionou um lote de inquilinos um tutorial anterior, avance para o [s
 1. Defina **$DemoScenario** = **1**, _Aprovisionar um lote de inquilinos_
 1. Prima **F5** para executar o script.
 
-O script irá implementar 17 inquilinos na base de dados de multi-inquilino dentro de alguns minutos. 
+O script implementa 17 inquilinos na base de dados de multi-inquilino dentro de alguns minutos. 
 
 O *New-TenantBatch* script cria novos inquilinos com inquilino exclusivo chaves na base de dados em partição horizontal do multi-inquilino e inicializa-los com o tipo de nome e venue de inquilino. Isto é consistente com a forma como a aplicação aprovisiona um novo inquilino. 
 
@@ -95,7 +95,7 @@ O gerador de carga aplica uma carga *sintética* só na CPU para cada base de da
 Base de dados do Wingtip pedidos de suporte de SaaS multi-inquilino é uma aplicação SaaS e a carga do mundo real numa aplicação SaaS é normalmente esporádicas e imprevisíveis. Para simular isto, o gerador de carga produz uma carga aleatória distribuída por todos os inquilinos. São necessários alguns minutos para o padrão de carga ideia, por isso, execute o gerador de carga durante 3 a 5 minutos antes de tentar monitorizar a carga das secções seguintes.
 
 > [!IMPORTANT]
-> O gerador de carga está a ser executado como uma série de tarefas no tiver uma nova janela do PowerShell. Se fechar a sessão, deixa o gerador de carga. O gerador de carga permanece num *invocar a tarefa* Estado onde gera carga de quaisquer novos inquilinos aprovisionados depois do gerador é iniciado. Utilize *Ctrl-C* parar invocar novas tarefas e sair o script. O gerador de carga irá continuar a executar, mas apenas nos inquilinos existentes.
+> O gerador de carga está em execução como uma série de tarefas numa nova janela do PowerShell. Se fechar a sessão, deixa o gerador de carga. O gerador de carga permanece num *invocar a tarefa* Estado onde gera carga de quaisquer novos inquilinos aprovisionados depois do gerador é iniciado. Utilize *Ctrl-C* parar invocar novas tarefas e sair o script. O gerador de carga irá continuar a executar, mas apenas nos inquilinos existentes.
 
 ## <a name="monitor-resource-usage-using-the-azure-portal"></a>Monitorizar a utilização de recursos no portal do Azure
 
@@ -120,9 +120,9 @@ Definir um alerta na base de dados que aciona no \>75% de utilização da seguin
 1. Forneça um nome, tal como **DTU elevada**,
 1. Defina os seguintes valores:
    * **Métrica = percentagem de DTU**
-   * **Condição = maior que**.
+   * **Condição = superior a**
    * **Limiar = 75**.
-   * **Período = Nos últimos 30 minutos**.
+   * **Período = nos últimos 30 minutos**
 1. Adicione um endereço de e-mail para o *administrador adicionais email(s)* caixa e clique em **OK**.
 
    ![alerta de definição](media/saas-multitenantdb-performance-monitoring/set-alert.png)
@@ -153,7 +153,7 @@ As bases de dados permanecem online e estão totalmente disponíveis durante o p
 
 ## <a name="provision-a-new-tenant-in-its-own-database"></a>Aprovisionar um novo inquilino na sua própria base de dados 
 
-O modelo de multi-inquilino em partição horizontal permite-lhe escolher se pretende aprovisionar um novo inquilino na base de dados do multi-inquilino juntamente com outros inquilinos ou para aprovisionar o inquilino na base de dados do seu próprio. Por um inquilino na sua própria base de dados de aprovisionamento, beneficia do isolamento inerente na base de dados separada, permitindo-lhe gerir o desempenho desse inquilino independentemente de outras pessoas, restaurar esse inquilino independentemente de outras pessoas, etc. Por exemplo, pode optar por colocar os clientes de avaliação gratuita ou regulares numa base de dados multi-inquilino e os clientes de premium em bases de dados individuais.  Se forem criados isolados bases de dados único inquilino podem ainda ser geridos coletivamente num conjunto elástico para otimizar os custos de recursos.
+O modelo de multi-inquilino em partição horizontal permite-lhe escolher se pretende aprovisionar um novo inquilino na base de dados do multi-inquilino juntamente com outros inquilinos ou para aprovisionar o inquilino na base de dados do seu próprio. Por um inquilino na sua própria base de dados de aprovisionamento, beneficia do isolamento inerente na base de dados separada, permitindo-lhe gerir o desempenho desse inquilino independentemente de outras pessoas, restaurar esse inquilino independentemente de outras pessoas, etc. Por exemplo, pode optar por colocar os clientes de avaliação gratuita ou regulares numa base de dados multi-inquilino e os clientes de premium em bases de dados individuais.  Se as bases de dados de inquilino único isolados são criados, podem ainda ser geridos coletivamente num conjunto elástico para otimizar os custos de recursos.
 
 Se já aprovisionado um novo inquilino na sua própria base de dados, ignore os próximos passos.
 
@@ -195,7 +195,7 @@ Neste tutorial, ficará a saber como:
 > * Simular a utilização de uma base de dados em partição horizontal do multi-inquilino através da execução de um gerador de carga fornecido
 > * Monitorizar a base de dados como responder ao aumento de carga
 > * Dimensionar a base de dados em resposta a carga de aumento da base de dados
-> * Aprovisionar um novo inquilino na sua própria base de dados
+> * Aprovisionar um inquilino para uma base de dados de inquilino único
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

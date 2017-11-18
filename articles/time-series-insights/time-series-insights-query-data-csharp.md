@@ -12,11 +12,11 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: article
 ms.date: 11/15/2017
-ms.openlocfilehash: 6bc0a5cbc770de571bfc296e35ab028f9802a90a
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: 77d3135790bbfd79679d188e3b3f1af876d2b905
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="query-data-from-the-azure-time-series-insights-environment-using-c"></a>Consultar dados a partir do ambiente de informações de séries de tempo do Azure com c#
 
@@ -339,4 +339,4 @@ namespace TimeSeriesInsightsQuerySample
 
 ## <a name="next-steps"></a>Passos seguintes
 > [!div class="nextstepaction"]
-> Para obter a referência de API de consulta completa, consulte [API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi).
+> [Referência da API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi).

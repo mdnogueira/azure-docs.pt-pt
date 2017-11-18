@@ -14,11 +14,11 @@ ms.workload: infrastructure
 ms.date: 10/31/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4ef5ec3d8f4b96d4a318e01b449d3baad8a6324a
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: 2461e5fbf620fa2651792b47d41e9835d4d6ef8c
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="sap-hana-large-instances-overview-and-architecture-on-azure"></a>Descrição geral de SAP HANA (instâncias de grandes dimensões) e arquitetura no Azure
 
@@ -291,7 +291,10 @@ Esta lista monta requisitos para executar o SAP HANA no Azure (instâncias super
 - Red Hat subscrição Manager implementado no Azure numa VM do Azure. O Gestor de subscrição do Red Hat fornece a capacidade para SAP HANA no Azure (instâncias de grande) para ser registado e respetivamente atualizado pelo Red Hat (uma vez que não há nenhum acesso direto à internet de dentro do inquilino implementado no carimbo instância grande de Azure).
 - SAP requer que tenha um suporte de contrato, bem como o seu fornecedor de Linux. Este requisito não é apagar pela solução de instâncias de grande HANA ou o facto de que a executar Linux no Azure. Ao contrário com algumas das imagens de galeria do Azure do Linux, a taxa de serviço não está incluída na oferta de soluções de instâncias de grande HANA. É, como um cliente para satisfazer os requisitos de SAP relativos contratos de suporte com o distribuidor de Linux.   
    - Procurar para SUSE Linux, os requisitos do contrato de suporte no [1984787 de n. º de nota SAP - SUSE LINUX Enterprise Server 12: notas instalação](https://launchpad.support.sap.com/#/notes/1984787) e [&#1056161; nota SAP - SUSE prioridade suporte para aplicações SAP](https://launchpad.support.sap.com/#/notes/1056161).
-   - Para Red Hat Linux, tem de ter os níveis de subscrição correta que incluem suporte e de serviço (atualizações para os sistemas operativos de instâncias de grande HANA. Red Hat recomenda obter uma subscrição de "RHEL para SAP aplicações empresariais". Sobre o suporte e serviços, verifique [2002167 de n. º de nota SAP - Red Hat Enterprise Linux 7. x: instalação e a atualização](https://launchpad.support.sap.com/#/notes/2002167) e [1496410 de n. º de nota SAP - Red Hat Enterprise Linux 6. x: instalação e a atualização](https://launchpad.support.sap.com/#/notes/1496410) para detalhes.
+   - Para Red Hat Linux, tem de ter os níveis de subscrição correta que incluem suporte e de serviço (atualizações para os sistemas operativos de instâncias de grande HANA. Red Hat recomenda a obter um "RHEL para [SAP soluções](https://access.redhat.com/solutions/3082481)" subscrição. 
+
+Para a matriz de suporte com a versão de SAP HANA diferente com as diferentes versões de Linux, consulte [SAP nota #2235581](https://launchpad.support.sap.com/#/notes/2235581).
+
 
 **Base de dados:**
 

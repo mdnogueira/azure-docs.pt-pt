@@ -3,7 +3,7 @@ title: Ligar a computadores com o Windows ao Log Analytics do Azure | Microsoft 
 description: "Este artigo mostra os passos para ligar os computadores com o Windows na sua infraestrutura no local para o serviço de análise de registos, utilizando uma versão personalizada da monitorização do agente Microsoft (MMA)."
 services: log-analytics
 documentationcenter: 
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: 
 ms.assetid: 932f7b8c-485c-40c1-98e3-7d4c560876d2
@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/03/2017
 ms.author: magoedte
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e5f04f3b9135167c0f339c58323ebd931b260109
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: aaf3e596f8c287c60531a6911c5797b3de26e570
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Ligar computadores Windows para o serviço de análise de registos do Azure
 
@@ -28,7 +28,7 @@ Este artigo mostra os passos para ligar computadores com o Windows na sua infrae
 Pode instalar agentes utilizando a configuração, a linha de comandos, ou com pretendido Estado Configuration (DSC) na automatização do Azure.  
 
 >[!NOTE]
-Para máquinas virtuais em execução no Azure, pode simplificar a instalação utilizando a [extensão da máquina virtual](log-analytics-azure-vm-extension.md).
+Para máquinas virtuais em execução no Azure, pode simplificar a instalação utilizando a [extensão da máquina virtual](../virtual-machines/windows/extensions-oms.md).
 
 Em computadores com a conectividade à Internet, o agente utiliza a ligação à Internet para enviar dados para OMS. Para computadores que não têm acesso à Internet, pode utilizar um proxy ou o [OMS Gateway](log-analytics-oms-gateway.md).
 

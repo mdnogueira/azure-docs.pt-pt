@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: On Demand
 ms.date: 11/13/2017
 ms.author: genemi
-ms.openlocfilehash: ba9612eb1a8c57a03ab9d0cb3c16ac5b76891b0e
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 66dbc9c2c3ba9b9f0c7eb405dbafbd002ce50fbc
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database"></a>Utilizar pontos finais do serviço de rede Virtual e as regras para a SQL Database do Azure
 
@@ -30,10 +30,7 @@ Para criar uma regra de rede virtual, tem primeiro de existir um [ponto final do
 
 
 > [!NOTE]
-> Para a base de dados SQL do Azure, esta funcionalidade está disponível na pré-visualização para as seguintes regiões do Azure:
->
-> - WestCentralUS, WestUS2 e EastUS.
-
+> Para a base de dados SQL do Azure, esta funcionalidade está disponível na pré-visualização em todas as regiões de nuvem pública do Azure.
 
 #### <a name="how-to-create-a-virtual-network-rule"></a>Como criar uma regra de rede virtual
 

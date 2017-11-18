@@ -11,27 +11,29 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/04/2017
+ms.date: 11/16/2017
 ms.author: bradsev;
-ms.openlocfilehash: 8c318f87243d0c98b6a42bebcdffb433f9cc456e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1015a9f24ca2c175ff367b1748f05bb3e464457f
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="execution-of-data-science-projects"></a>Execução de projetos de ciência de dados
 
-Este documento descreve como um scientist de dados pode ser executado um projeto de ciência de dados num systematic, versão controladas e forma colaboração dentro de uma equipa de projeto, utilizando o [o processo de ciência de dados de equipa](overview.md) (TDSP). O TDSP é uma arquitetura desenvolvida pela Microsoft que fornece uma sequência de atividades para executar as soluções de Análise Preditiva baseado na nuvem, de forma eficiente structured. Para uma descrição das funções de técnicos e das respetivas tarefas associadas são processados por um dados ciência equipa uniformizar neste processo, consulte [funções do processo de ciência de dados de equipa e tarefas](roles-tasks.md). 
+Este documento descreve como os programadores podem executar um projeto de ciência de dados num systematic, versão controladas e forma colaboração dentro de uma equipa de projeto, utilizando o [o processo de ciência de dados de equipa](overview.md) (TDSP). O TDSP é uma arquitetura desenvolvida pela Microsoft que fornece uma sequência de atividades para executar as soluções de Análise Preditiva baseado na nuvem, de forma eficiente structured. Para uma descrição das funções de técnicos e das respetivas tarefas associadas são processados por um dados ciência equipa uniformizar neste processo, consulte [funções do processo de ciência de dados de equipa e tarefas](roles-tasks.md). 
 
-Este tópico inclui instruções sobre como: 
+Este artigo inclui instruções sobre como: 
 
-1. Efetue **sprint planeamento** para itens de trabalho envolvidos num projeto.<br> Se não estiver familiarizado com o planeamento de sprint, pode encontrar informações gerais e os detalhes abaixo [aqui](https://en.wikipedia.org/wiki/Sprint_(software_development) "aqui"). 
+1. Efetue **sprint planeamento** para itens de trabalho envolvidos num projeto.<br> Se não estiver familiarizado com o planeamento de sprint, pode encontrar os detalhes e informações gerais [aqui](https://en.wikipedia.org/wiki/Sprint_(software_development) "aqui"). 
 2. **Adicionar itens de trabalho** para sprints.
 3. **ligar os itens de trabalho com atividades de codificação** controlados pelo git.
 4. Efetue **code revisão**. 
 
-
->[AZURE.NOTE] Iremos descrevem os passos necessários para configurar um ambiente de equipa TDSP utilizando os serviços de equipa do Visual Studio (VSTS) do seguinte conjunto de instruções. Especificamos como realizar estas tarefas com VSTS, uma vez que é a forma como implementamos TDSP na Microsoft. Itens (3) e (4) na lista anterior são as vantagens que obtém naturalmente se optar por utilizar VSTS. Se for utilizado outro código de plataforma de alojamento para o grupo, as tarefas que necessitam de ser concluídos pela antecedência de equipa, geralmente, não alteram. Mas a forma para concluir estas tarefas vai ser diferentes. Por exemplo, o item na secção seis, **associar um item de trabalho com um ramo de git**, poderá não ser tão fácil porque esta está no VSTS.
+> [!NOTE]
+> Os passos necessários para configurar um ambiente de equipa TDSP utilizando os serviços de equipa do Visual Studio (VSTS) são descritos na seguinte conjunto de instruções. Se especificarem como realizar estas tarefas com VSTS, uma vez que é como implementar TDSP na Microsoft.  Se optar por utilizar VSTS, itens (3) e (4) na lista anterior são as vantagens que obtém naturalmente. Se for utilizado outro código de plataforma de alojamento para o grupo, as tarefas que necessitam de ser concluídos pela antecedência de equipa, geralmente, não alteram. Mas a forma para concluir estas tarefas vai ser diferentes. Por exemplo, o item na secção seis, **associar um item de trabalho com um ramo de git**, poderá não ser tão fácil porque esta está no VSTS.
+>
+>
 
 A figura seguinte ilustra uma sprint típico planeamento, a codificação e fluxo de trabalho do controlo de código fonte envolvidos na implementação de um projeto de ciência de dados:
 
@@ -53,9 +55,15 @@ No TDSP sprint framework planeamento, existem quatro tipos utilizados frequentem
 - **Tarefa**: as tarefas são itens de trabalho de código ou documento pode ser atribuídos ou outras atividades que têm de ser efetuadas para concluir uma história específica. Por exemplo, as tarefas no bloco *obter dados* pode ser:
     -  Obter credenciais do SQL Server 
     -  Carregar dados do armazém de dados do SQL Server. 
-- **Erros**: erros referir-se normalmente a correções que são necessários para um código existente ou o documento que são efetuadas quando concluir uma tarefa. Pode escalar a ser uma história ou uma tarefa se o erro é causado por falta fases ou tarefas respetivamente. 
+- **Erros**: erros referir-se normalmente a correções que são necessários para um código existente ou o documento que são efetuadas quando concluir uma tarefa. Se o erro é causado por falta fases ou tarefas, respetivamente, este pode escalar a ser uma história ou uma tarefa. 
 
->[AZURE.NOTE] Iremos são borrowing os conceitos das funcionalidades, stories, tarefas e erros da gestão de código de software (SCM) para ser utilizado em ciência de dados. Poderão diferir ligeiramente das respetivas definições SCM convencionais.
+> [!NOTE]
+> Conceitos são borrowed de funcionalidades, stories, tarefas e erros da gestão de código de software (SCM) para ser utilizado em ciência de dados. Poderão diferir ligeiramente das respetivas definições SCM convencionais.
+>
+>
+
+Cientistas de dados podem sentir mais confortável com um modelo seja ágil especificamente alinhar com as fases do ciclo de vida TDSP. Com que em mente, um sprint derivadas Agile planear o modelo foi criado, onde Epics, etc. da Stories são substituídos por fases do ciclo de vida TDSP ou substages. Pode encontrar documentação sobre como criar um modelo seja ágil essa [aqui](https://msdata.visualstudio.com/AlgorithmsAndDataScience/TDSP/_git/TDSP?path=%2FDocs%2Fteam-data-science-process-agile-template.md&version=GBxibingao&_a=preview).
+
 
 ##  2. <a name='SprintPlanning-2'></a>Sprint planeamento 
 
@@ -74,7 +82,7 @@ Para incluir uma funcionalidade no registo de segurança, clique em **os registo
 
 ![3](./media/project-execution/project-execution-3-sprint-team-add-work.png)
 
-Faça duplo clique a funcionalidade que acabou de criar. Preencha as descrições, atribuir membros do agrupamento para esta funcionalidade e conjunto de parâmetros para esta funcionalidade de planeamento. 
+Faça duplo clique a funcionalidade que criou. Preencha as descrições, atribuir membros do agrupamento para esta funcionalidade e conjunto de parâmetros para esta funcionalidade de planeamento. 
 
 Também pode ligar esta funcionalidade para o repositório de projeto. Clique em **hiperligação Adicionar** sob o **desenvolvimento** secção. Depois de acabar de editar a funcionalidade, clique em **guardar e fechar** para sair.
 
@@ -196,7 +204,7 @@ Também pode utilizar os seguintes comandos de Git para intercalar o ramo de tra
 
 ##  10. <a name='DataQualityReportUtility-10'></a>Exploração de dados interativa, análise e relatórios utilitário (IDEAR)
 
-Este utilitário de baseado no markdown de R fornece uma ferramenta flexível e interativa para avaliar e explore os conjuntos de dados. Os utilizadores podem gerar rapidamente os relatórios do conjunto de dados com codificação mínima. Os utilizadores podem clicar botões para exportar os resultados de exploração que João vê na ferramenta de interativa para um relatório final, o que pode ser distribuída aos clientes ou utilizado para tomar decisões sobre as variáveis para incluir o passo de modelação subsequentes.
+Este utilitário de baseado no markdown de R fornece uma ferramenta flexível e interativa para avaliar e explore os conjuntos de dados. Os utilizadores podem gerar rapidamente os relatórios do conjunto de dados com codificação mínima. Os utilizadores podem clicar botões para exportar os resultados de exploração na ferramenta de interativa para um relatório final, o que pode ser distribuído aos clientes ou utilizado para tomar decisões sobre as variáveis para incluir o passo de modelação subsequentes.
 
 Neste momento, a ferramenta só funciona em pacotes de dados na memória. É necessário um ficheiro de .yaml para especificar os parâmetros de conjunto de dados para ser explorou. Para obter mais informações, consulte [IDEAR no utilitários de ciência de dados de TDSP](https://github.com/Azure/Azure-TDSP-Utilities/tree/master/DataScienceUtilities/DataReport-Utils).
 
@@ -229,7 +237,7 @@ Gestores de grupo de ciência de dados, clientes potenciais clientes potenciais 
 
 Para saber como criar dashboards do Power BI e relatórios para controlar as atividades do repositório de Git e os itens de trabalho depois dos dados de VSTS estão ligados ao Power BI, consulte [relatórios e dashboards do Power BI crie](https://www.visualstudio.com/en-us/docs/report/powerbi/report-on-vso-with-power-bi-vs). 
 
-Seguem-se dois dashboards de exemplo simples que vamos construir para controlar as atividades do Git e itens de trabalho. No dashboard do primeiro exemplo, as atividades de compromisso de git são listadas por diferentes utilizadores, datas diferentes e repositórios diferentes. Pode facilmente segmentação e decomposição para filtrar aqueles que está interessado em.
+Seguem-se dois dashboards de exemplo simples que são criadas para controlar as atividades do Git e itens de trabalho. No dashboard do primeiro exemplo, as atividades de compromisso de git são listadas por diferentes utilizadores, datas diferentes e repositórios diferentes. Pode facilmente segmentação e decomposição para filtrar aqueles que está interessado em.
 
 ![23](./media/project-execution/project-execution-23-powerbi-git.png)
 
@@ -240,6 +248,6 @@ No dashboard de exemplo do segundo, são apresentados os itens de trabalho (stor
  
 ## <a name="next-steps"></a>Passos seguintes
 
-Total de instruções ponto-a-ponto que demonstram todos os passos no processo de **cenários específicos** também são fornecidos. São listados e ligados com descrições de miniaturas no [instruções de exemplo](walkthroughs.md) tópico. Estes mostram como combinar em nuvem, ferramentas no local e serviços para um fluxo de trabalho ou pipeline para criar uma aplicação inteligente. 
+Total de instruções ponto-a-ponto que demonstram todos os passos no processo de **cenários específicos** também são fornecidos. São listados e ligados com descrições de miniaturas no [instruções de exemplo](walkthroughs.md) artigo. Estes mostram como combinar em nuvem, ferramentas no local e serviços para um fluxo de trabalho ou pipeline para criar uma aplicação inteligente. 
 
 Para obter exemplos executar os passos no processo de ciência de dados de equipa que utilizam o Azure Machine Learning Studio, consulte o [com o Azure ML](http://aka.ms/datascienceprocess) percurso de aprendizagem.

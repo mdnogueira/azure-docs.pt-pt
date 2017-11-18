@@ -9,11 +9,11 @@ ms.author: v-jamebr
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: fb7674d8c292e7d571a94ac4625b0858a90704b3
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: c778c412bf6d65c5b6ee92d603aac7acfa6139eb
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="develop-and-deploy-a-c-iot-edge-module-to-your-simulated-device---preview"></a>Desenvolver e implementar um módulo de limite de IoT c# para o seu dispositivo simulado – pré-visualização
 
@@ -35,7 +35,6 @@ O módulo de limite de IoT que criou neste tutorial filtra os dados de temperatu
 * [Visual Studio Code](https://code.visualstudio.com/). 
 * [Extensão de limite de IoT do Azure para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). (Pode instalar a extensão do painel de extensões no Visual Studio Code.)
 * [C# para a extensão do Visual Studio Code (com tecnologia OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). (Pode instalar a extensão do painel de extensões no Visual Studio Code.)
-* Extensão de limite de IoT do Azure para Visual Studio Code
 * [Docker](https://docs.docker.com/engine/installation/). A edição de Comunidade (CE) para a sua plataforma é suficiente para este tutorial. Certifique-se, instalá-lo no computador que executa o VS Code no.
 * [.NET core 2.0 SDK](https://www.microsoft.com/net/core#windowscmd). 
 

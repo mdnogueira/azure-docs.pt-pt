@@ -14,17 +14,20 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 10/12/2017
 ms.author: glenga
-ms.openlocfilehash: 35fd47025ca0dba1edbe1d7dd3ee0172fc45d6f5
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: 31142fa2ab06b7479aa93f9ece14f4dd51fa28ef
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Código e teste das funções do Azure localmente
 
 Enquanto o [portal do Azure] fornece um completo conjunto de ferramentas para o desenvolvimento e teste das funções do Azure, os programadores muitos preferir uma experiência de desenvolvimento local. As funções do Azure torna mais fácil de utilizar o seu editor favorito de código e ferramentas de desenvolvimento local para desenvolver e testar as suas funções no seu computador local. As suas funções podem acionar eventos no Azure e pode depurar o c# e JavaScript funções no seu computador local. 
 
 Se for um programador Visual Studio c#, as funções do Azure também [integra-se com o Visual Studio 2017](functions-develop-vs.md).
+
+>[!IMPORTANT]  
+> Não misture desenvolvimento local com o desenvolvimento portal na mesma aplicação de função. Quando criar e publicar as funções de um projeto local, não deve tentar manter ou modificar o código de projeto no portal.
 
 ## <a name="install-the-azure-functions-core-tools"></a>Instalar as ferramentas de núcleos de funções do Azure
 

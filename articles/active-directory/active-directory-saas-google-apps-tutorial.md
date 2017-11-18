@@ -1,23 +1,24 @@
 ---
-title: "Tutorial: Integração do Azure Active Directory com o Google Apps no Azure | Microsoft Docs"
+title: "Tutorial: Integração do Azure Active Directory com o Google Apps | Microsoft Docs"
 description: "Saiba como configurar o início de sessão entre o Azure Active Directory e o Google Apps."
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: femila
+ms.reviewer: joflore
 ms.assetid: 38a6ca75-7fd0-4cdc-9b9f-fae080c5a016
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2017
+ms.date: 11/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 065841d6b4fe50e953f01bba4d3f23de82b82726
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1d92e673a948dd139ff2d4a24f2e602180be43c5
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-google-apps"></a>Tutorial: Integração do Azure Active Directory com o Google Apps
 
@@ -25,11 +26,11 @@ Neste tutorial, irá aprender a integrar o Google Apps com o Azure Active Direct
 
 Integrar o Google Apps com o Azure AD fornece as seguintes vantagens:
 
-- Pode controlar no Azure AD que tenha acesso ao Google Apps
-- Pode permitir que os utilizadores automaticamente obter com sessão iniciada ao Google Apps (Single Sign-On) com as respetivas contas do Azure AD
-- Pode gerir as contas numa localização central - portal do Azure
+- Pode controlar no Azure AD que tenha acesso ao Google Apps.
+- Pode permitir aos utilizadores automaticamente obter com sessão iniciada ao Google Apps (Single Sign-On) com as respetivas contas do Azure AD.
+- Pode gerir as contas numa localização central - portal do Azure.
 
-Se pretender saber mais informações sobre a integração de aplicações SaaS com o Azure AD, consulte o artigo [que é o acesso a aplicações e início de sessão no Azure Active Directory](active-directory-appssoaccess-whatis.md).
+Se pretender saber mais detalhes sobre a integração de aplicações SaaS com o Azure AD, consulte o artigo [que é o acesso a aplicações e início de sessão no Azure Active Directory](active-directory-appssoaccess-whatis.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -44,7 +45,7 @@ Para configurar a integração do Azure AD com o Google Apps, terá dos seguinte
 Para testar os passos neste tutorial, deve seguir estas recomendações:
 
 - Não utilize o seu ambiente de produção, a menos que seja necessário.
-- Se não tiver um ambiente de avaliação do Azure AD, pode obter uma avaliação de um mês aqui: [oferta de avaliação](https://azure.microsoft.com/pricing/free-trial/).
+- Se não tiver um ambiente de avaliação do Azure AD, pode [obtenha uma avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="video-tutorial"></a>Tutorial de vídeo
 Como ativar o início de sessão ao Google Apps em 2 minutos:
@@ -81,40 +82,37 @@ Para configurar a integração do Google Apps com o Azure AD, terá de adicionar
 
 1. No  **[portal do Azure](https://portal.azure.com)**, no painel de navegação esquerdo, clique em **do Azure Active Directory** ícone. 
 
-    ![Active Directory][1]
+    ![O botão do Azure Active Directory][1]
 
 2. Navegue para **aplicações empresariais**. Em seguida, aceda a **todas as aplicações**.
 
-    ![Aplicações][2]
+    ![O painel de aplicações da empresa][2]
     
 3. Para adicionar a nova aplicação, clique em **nova aplicação** botão no topo da caixa de diálogo.
 
-    ![Aplicações][3]
+    ![O novo botão de aplicação][3]
 
-4. Na caixa de pesquisa, escreva **Google Apps**.
+4. Na caixa de pesquisa, escreva **Google Apps**, selecione **Google Apps** partir do painel de resultados, em seguida, clique em **adicionar** botão para adicionar a aplicação.
 
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_search.png)
+    ![Google Apps na lista de resultados](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_addfromgallery.png)
 
-5. No painel de resultados, selecione **Google Apps**e, em seguida, clique em **adicionar** botão para adicionar a aplicação.
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar o Azure AD-início de sessão único
 
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_addfromgallery.png)
-
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>Configurar e testar o Azure AD de sessão único-
-Nesta secção, configure e teste do Azure AD-início de sessão único com o Google Apps, com base num utilizador de teste chamado "Britta Simon."
+Nesta secção, configure e teste do Azure AD-início de sessão único com o Google Apps, com base num utilizador de teste chamado "Britta Simon".
 
 Para início de sessão trabalhar, do Azure AD tem de saber o que o utilizador homólogo no Google Apps é um utilizador no Azure AD. Por outras palavras, uma relação de ligação entre um utilizador do Azure AD e o utilizador relacionado no Google Apps tem de ser estabelecida.
 
-Esta relação de ligação é estabelecida ao atribuir o valor da **nome de utilizador** no Azure AD como o valor a **Username** no Google Apps.
+No Google Apps, atribua o valor do **nome de utilizador** no Azure AD como o valor a **Username** para estabelecer a relação de ligação.
 
 Para configurar e testar o Azure AD-início de sessão único com o Google Apps, tem de concluir os blocos modulares seguintes:
 
-1. **[Configurar o Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)**  - para permitir aos utilizadores utilizar esta funcionalidade.
-2. **[Criar um utilizador de teste do Azure AD](#creating-an-azure-ad-test-user)**  - para testar o Azure AD-início de sessão único com Britta Simon.
-3. **[Criar um utilizador de teste do Google Apps](#creating-a-google-apps-test-user)**  - para ter um homólogo de Britta Simon no Google Apps, que está ligada a representação do Azure AD do utilizador.
-4. **[Atribuir o utilizador de teste do Azure AD](#assigning-the-azure-ad-test-user)**  - para ativar Britta Simon utilizar o Azure AD-início de sessão único.
-5. **[Teste o início de sessão único](#testing-single-sign-on)**  - para verificar se a configuração funciona.
+1. **[Configurar o Azure AD Single Sign-On](#configure-azure-ad-single-sign-on)**  - para permitir aos utilizadores utilizar esta funcionalidade.
+2. **[Criar um utilizador de teste do Azure AD](#create-an-azure-ad-test-user)**  - para testar o Azure AD-início de sessão único com Britta Simon.
+3. **[Criar um utilizador de teste do Google Apps](#create-a-google-apps-test-user)**  - para ter um homólogo de Britta Simon no Google Apps, que está ligada a representação do Azure AD do utilizador.
+4. **[Atribua o utilizador de teste do Azure AD](#assign-the-azure-ad-test-user)**  - para ativar Britta Simon utilizar o Azure AD-início de sessão único.
+5. **[Teste o início de sessão único](#test-single-sign-on)**  - para verificar se a configuração funciona.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Configurar o Azure AD-início de sessão único
+### <a name="configure-azure-ad-single-sign-on"></a>Configurar o Azure AD-início de sessão único
 
 Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e configurar o início de sessão único na sua aplicação do Google Apps.
 
@@ -122,32 +120,41 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
 1. No portal do Azure, no **Google Apps** página de integração de aplicações, clique em **de sessão único-**.
 
-    ![Configurar o início de sessão único][4]
+    ![Configurar a ligação de início de sessão único][4]
 
 2. No **de sessão único-** caixa de diálogo, selecione **modo** como **baseados em SAML início de sessão** para ativar o início de sessão único.
  
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_samlbase.png)
+    ![Caixa de diálogo de início de sessão único](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_samlbase.png)
 
 3. No **domínio de aplicações do Google e URLs** secção, execute os seguintes passos:
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_url.png)
+    ![Domínio de aplicações do Google e os URLs únicos de informações de início de sessão](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_url.png)
 
-    No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://mail.google.com/a/<yourdomain>`
+    a. No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://mail.google.com/a/<yourdomain.com>`
+
+    b. No **identificador** caixa de texto, escreva um URL a utilizar o padrão do seguinte:
+
+    | |
+    |--|
+    | `http://google.com/a/<yourdomain.com>`|
+    | `http://google.com`|    
+    | `google.com/<yourdomain.com>`|
+    | `google.com`|
 
     > [!NOTE] 
-    > Este valor não é real. Atualize o valor com o URL de início de sessão real. Contacte o [equipa de suporte do Google](https://www.google.com/contact/).
- 
-4. No **certificado de assinatura de SAML** secção, clique em **certificado** e, em seguida, guarde o certificado no seu computador.
+    > Estes valores não estiverem reais. Atualize estes valores com o URL de início de sessão e o identificador real. Contacte [equipa de suporte de cliente de aplicações do Google](https://www.google.com/contact/) para obter estes valores. 
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_certificate.png) 
+4. No **certificado de assinatura de SAML** secção, clique em **certificado** e, em seguida, guarde o ficheiro de certificado no seu computador.
+
+    ![A hiperligação de transferência do certificado](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_certificate.png) 
 
 5. Clique em **guardar** botão.
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_general_400.png)
+    ![Configurar botão único início de sessão guardar](./media/active-directory-saas-googleapps-tutorial/tutorial_general_400.png)
 
 6. No **configuração de aplicações do Google** secção, clique em **configurar o Google Apps** para abrir **configurar início de sessão** janela. Copiar o **Sign-Out URL, único início de sessão no URL do serviço SAML e alteração URL de palavra-passe** do **secção de referência rápida.**
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_configure.png) 
+    ![Configuração de aplicações do Google](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_configure.png) 
 
 7. Abra um novo separador no seu browser e inicie sessão no [consola de administração de aplicações do Google](http://admin.google.com/) utilizando a sua conta de administrador.
 
@@ -165,11 +172,11 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
    
     a. Selecione **SSO de configuração com o fornecedor de identidade de terceiros**.
 
-    b. No **URL de página de início de sessão** campo no Google Apps, cole o valor de **URL Single Sign-On serviço**, que copiou do portal do Azure.
+    b. No **URL de página de início de sessão** campo no Google Apps, cole o valor de **URL Single Sign-On serviço** que copiou do portal do Azure.
 
-    c. No **URL da página de início de sessão** campo no Google Apps, cole o valor de **Sign-Out URL**, que copiou do portal do Azure. 
+    c. No **URL da página de início de sessão** campo no Google Apps, cole o valor de **Sign-Out URL** que copiou do portal do Azure. 
 
-    d. No **alterar palavra-passe URL** campo no Google Apps, cole o valor de **alterar palavra-passe URL**, que copiou do portal do Azure. 
+    d. No **alterar palavra-passe URL** campo no Google Apps, cole o valor de **alterar palavra-passe URL** que copiou do portal do Azure. 
 
     e. No Google Apps, para o **certificado de verificação**, carregue o certificado que transferiu a partir do portal do Azure.
 
@@ -177,50 +184,52 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
 > [!TIP]
 > Pode agora ler estas instruções dentro de uma versão concisa o [portal do Azure](https://portal.azure.com), enquanto estiver a configurar a aplicação!  Depois de adicionar esta aplicação a partir do **do Active Directory > aplicações da empresa** secção, basta clicar no **Single Sign-On** separador e aceder à documentação do embedded através de **configuração** secção na parte inferior. Pode ler mais sobre a funcionalidade de documentação incorporados aqui: [do Azure AD incorporado documentação]( https://go.microsoft.com/fwlink/?linkid=845985)
- 
-### <a name="creating-an-azure-ad-test-user"></a>Criar um utilizador de teste do Azure AD
+> 
+
+### <a name="create-an-azure-ad-test-user"></a>Criar um utilizador de teste do Azure AD
+
 O objetivo desta secção consiste em criar um utilizador de teste no portal do Azure chamado Britta Simon.
 
-![Criar utilizador do Azure AD][100]
+   ![Criar um utilizador de teste do Azure AD][100]
 
 **Para criar um utilizador de teste no Azure AD, execute os seguintes passos:**
 
-1. No **portal do Azure**, no painel de navegação esquerdo, clique em **do Azure Active Directory** ícone.
+1. No portal do Azure, no painel esquerdo, clique em de **do Azure Active Directory** botão.
 
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/create_aaduser_01.png) 
+    ![O botão do Azure Active Directory](./media/active-directory-saas-googleapps-tutorial/create_aaduser_01.png)
 
-2. Para apresentar a lista de utilizadores, aceda a **utilizadores e grupos** e clique em **todos os utilizadores**.
-    
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/create_aaduser_02.png) 
+2. Para apresentar a lista de utilizadores, aceda a **utilizadores e grupos**e, em seguida, clique em **todos os utilizadores**.
 
-3. Para abrir o **utilizador** caixa de diálogo, clique em **adicionar** na parte superior da caixa de diálogo.
- 
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/create_aaduser_03.png) 
+    !["Os utilizadores e grupos" e "Todos os utilizadores" ligações](./media/active-directory-saas-googleapps-tutorial/create_aaduser_02.png)
 
-4. No **utilizador** diálogo página, execute os seguintes passos:
- 
-    ![Criar um utilizador de teste do Azure AD](./media/active-directory-saas-google-apps-tutorial/create_aaduser_04.png) 
+3. Para abrir o **utilizador** caixa de diálogo, clique em **adicionar** na parte superior do **todos os utilizadores** caixa de diálogo.
 
-    a. No **nome** caixa de texto, tipo **BrittaSimon**.
+    ![O botão de adição](./media/active-directory-saas-googleapps-tutorial/create_aaduser_03.png)
 
-    b. No **nome de utilizador** caixa de texto, tipo de **endereço de correio eletrónico** de BrittaSimon.
+4. No **utilizador** diálogo caixa, execute os seguintes passos:
 
-    c. Selecione **mostrar palavra-passe** e anote o valor da **palavra-passe**.
+    ![A caixa de diálogo de utilizador](./media/active-directory-saas-googleapps-tutorial/create_aaduser_04.png)
+
+    a. No **nome** caixa, escreva **BrittaSimon**.
+
+    b. No **nome de utilizador** caixa, escreva o endereço de e-mail do utilizador Britta Simon.
+
+    c. Selecione o **mostrar palavra-passe** caixa de verificação e, em seguida, anote o valor que é apresentado no **palavra-passe** caixa.
 
     d. Clique em **Criar**.
  
-### <a name="creating-a-google-apps-test-user"></a>Criar um utilizador de teste do Google Apps
+### <a name="create-a-google-apps-test-user"></a>Criar um utilizador de teste do Google Apps
 
 O objetivo desta secção consiste em criar um utilizador chamado Britta Simon no Software de aplicações do Google. Google Apps suporta o aprovisionamento automático, que é por predefinição ativada. Não há nenhuma ação por si nesta secção. Se um utilizador já não existe no Software de aplicações do Google, uma nova é criada quando tentar aceder ao Software de aplicações do Google.
 
 >[!NOTE] 
 >Se precisar de criar manualmente um utilizador, contacte o [equipa de suporte do Google](https://www.google.com/contact/).
 
-### <a name="assigning-the-azure-ad-test-user"></a>Atribuir o utilizador de teste do Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Atribua o utilizador de teste do Azure AD
 
 Nesta secção, vai ativar Britta Simon utilizar o Azure-início de sessão único, concedendo acesso ao Google Apps.
 
-![Atribua o utilizador][200] 
+![Atribuir a função de utilizador][200] 
 
 **Para atribuir Britta Simon ao Google Apps, execute os seguintes passos:**
 
@@ -230,15 +239,15 @@ Nesta secção, vai ativar Britta Simon utilizar o Azure-início de sessão úni
 
 2. Na lista de aplicações, selecione **Google Apps**.
 
-    ![Configurar o início de sessão único](./media/active-directory-saas-google-apps-tutorial/tutorial_googleapps_app.png) 
+    ![A ligação do Google Apps na lista de aplicações](./media/active-directory-saas-googleapps-tutorial/tutorial_googleapps_app.png)  
 
 3. No menu à esquerda, clique em **utilizadores e grupos**.
 
-    ![Atribua o utilizador][202] 
+    ![A ligação de "Utilizadores e grupos"][202]
 
 4. Clique em **adicionar** botão. Em seguida, selecione **utilizadores e grupos** no **adicionar atribuição** caixa de diálogo.
 
-    ![Atribua o utilizador][203]
+    ![O painel Adicionar atribuição][203]
 
 5. No **utilizadores e grupos** caixa de diálogo, selecione **Britta Simon** na lista utilizadores.
 
@@ -246,55 +255,32 @@ Nesta secção, vai ativar Britta Simon utilizar o Azure-início de sessão úni
 
 7. Clique em **atribuir** botão no **adicionar atribuição** caixa de diálogo.
     
-### <a name="testing-single-sign-on"></a>Teste o início de sessão único
+### <a name="test-single-sign-on"></a>Teste o início de sessão único
 
-Nesta secção, para testar as definições de início de sessão único, abra o painel de acesso em [https://myapps.microsoft.com](active-directory-saas-access-panel-introduction.md), em seguida, iniciar sessão na conta de teste e, em **Google Apps** mosaico no painel de acesso.
+Nesta secção, testar a configuração do Azure AD único início de sessão através do painel de acesso.
+
+Quando clica no mosaico do Google Apps no painel de acesso, deve obter automaticamente com sessão iniciada para a aplicação do Google Apps.
+Para mais informações sobre o painel de acesso, consulte [introdução ao painel de acesso](active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Lista de tutoriais sobre como integrar aplicações SaaS com o Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [O que é o acesso a aplicações e início de sessão no Azure Active Directory?](active-directory-appssoaccess-whatis.md)
-* [Configurar o aprovisionamento de utilizadores](active-directory-saas-google-apps-provisioning-tutorial.md)
 
 <!--Image references-->
 
-[1]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_01.png
-[2]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_02.png
-[3]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_03.png
-[4]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_04.png
+[1]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_01.png
+[2]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_02.png
+[3]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_03.png
+[4]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_04.png
 
-[100]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_100.png
+[100]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_100.png
 
-[200]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_200.png
-[201]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_201.png
-[202]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_202.png
-[203]: ./media/active-directory-saas-google-apps-tutorial/tutorial_general_203.png
+[200]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_200.png
+[201]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_201.png
+[202]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_202.png
+[203]: ./media/active-directory-saas-googleapps-tutorial/tutorial_general_203.png
+[10]: ./media/active-directory-saas-googleapps-tutorial/gapps-security.png
+[11]: ./media/active-directory-saas-googleapps-tutorial/security-gapps.png
+[12]: ./media/active-directory-saas-googleapps-tutorial/gapps-sso-config.png
 
-[0]: ./media/active-directory-saas-google-apps-tutorial/azure-active-directory.png
-
-[5]: ./media/active-directory-saas-google-apps-tutorial/gapps-added.png
-[6]: ./media/active-directory-saas-google-apps-tutorial/config-sso.png
-[7]: ./media/active-directory-saas-google-apps-tutorial/sso-gapps.png
-[8]: ./media/active-directory-saas-google-apps-tutorial/sso-url.png
-[9]: ./media/active-directory-saas-google-apps-tutorial/download-cert.png
-[10]: ./media/active-directory-saas-google-apps-tutorial/gapps-security.png
-[11]: ./media/active-directory-saas-google-apps-tutorial/security-gapps.png
-[12]: ./media/active-directory-saas-google-apps-tutorial/gapps-sso-config.png
-[13]: ./media/active-directory-saas-google-apps-tutorial/gapps-sso-confirm.png
-[14]: ./media/active-directory-saas-google-apps-tutorial/gapps-sso-email.png
-[15]: ./media/active-directory-saas-google-apps-tutorial/gapps-api.png
-[16]: ./media/active-directory-saas-google-apps-tutorial/gapps-api-enabled.png
-[17]: ./media/active-directory-saas-google-apps-tutorial/add-custom-domain.png
-[18]: ./media/active-directory-saas-google-apps-tutorial/specify-domain.png
-[19]: ./media/active-directory-saas-google-apps-tutorial/verify-domain.png
-[20]: ./media/active-directory-saas-google-apps-tutorial/gapps-domains.png
-[21]: ./media/active-directory-saas-google-apps-tutorial/gapps-add-domain.png
-[22]: ./media/active-directory-saas-google-apps-tutorial/gapps-add-another.png
-[23]: ./media/active-directory-saas-google-apps-tutorial/apps-gapps.png
-[24]: ./media/active-directory-saas-google-apps-tutorial/gapps-provisioning.png
-[25]: ./media/active-directory-saas-google-apps-tutorial/gapps-provisioning-auth.png
-[26]: ./media/active-directory-saas-google-apps-tutorial/gapps-admin.png
-[27]: ./media/active-directory-saas-google-apps-tutorial/gapps-admin-privileges.png
-[28]: ./media/active-directory-saas-google-apps-tutorial/gapps-auth.png
-[29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
-[30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png

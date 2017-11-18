@@ -3,7 +3,7 @@ title: "Início rápido: Tabela API com .NET - Cosmos BD do Azure | Microsoft Do
 description: "Este guia de introdução mostra como utilizar a API de tabela de base de dados do Azure Cosmos para criar uma aplicação com o portal do Azure e o .NET"
 services: cosmos-db
 documentationcenter: 
-author: arramac
+author: mimig1
 manager: jhubbard
 editor: 
 ms.assetid: 66327041-4d5e-4ce6-a394-fee107c18e59
@@ -13,13 +13,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 11/15/2017
-ms.author: arramac
-ms.openlocfilehash: 5d22b23d687dba2382e009e73f20014a5d528d78
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.date: 11/16/2017
+ms.author: mimig
+ms.openlocfilehash: 4e59c333e14e5e21a02c3160cf6311d1182e5a5e
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-and-azure-cosmos-db"></a>Início rápido: Criar uma tabela de aplicação de API com .NET e do Azure Cosmos DB 
 
@@ -84,15 +84,16 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 2. No Visual Studio, abra o ficheiro App. config. 
 
-3. Anule o comentário StorageConnectionString na linha 8 e comente a StorageConnectionString na linha 7 como este tutorial não utiliza o emulador de armazenamento. 
-
-3. Cole o valor da cadeia de ligação principal no valor do StorageConnectionString na linha 8. 
+3. Anule o comentário StorageConnectionString na linha 8 e comente a StorageConnectionString na linha 7 como este tutorial não utiliza o emulador de armazenamento. Linha 7 e 8 deve agora ter o seguinte aspeto:
 
     ```
-    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]" />`
+    <!--key="StorageConnectionString" value="UseDevelopmentStorage=true;" />-->
+    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]" />
     ```
 
-    Linha 8 deve agora ter um aspeto semelhante a
+4. Cole a cadeia de ligação principal do portal o valor de StorageConnectionString na linha 8. Cole a cadeia dentro de aspas. Se o ponto final utiliza documents.azure.com, altere a que parte para table.cosmosdb.azure.com. 
+
+    Linha 8 deve agora ter um aspeto semelhante a:
 
     ```
     <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=txZACN9f...==;TableEndpoint=https://<account name>.table.cosmosdb.azure.com;" />
@@ -110,11 +111,25 @@ Atualizou agora a sua aplicação com todas as informações necessárias para c
 
 3. Na lista de resultados, instale o **Microsoft.Azure.CosmosDB.Table** biblioteca. Esta ação instala o pacote de API de tabela do Azure Cosmos DB, bem como todas as dependências.
 
-4. Clique em CTRL + F5 para executar a aplicação.
+4. Abra BasicSamples.cs e adicione um ponto de interrupção linha 30 e linha 52.
 
-    A janela de consola apresenta os dados da tabela a ser adicionados para a nova base de dados de tabela na base de dados do Azure Cosmos.
+5. Clique em CTRL + F5 para executar a aplicação.
 
-    Agora, pode voltar ao Data Explorer e ver, consultar, modificar e trabalhar com estes dados novos.
+    A janela de consola apresenta os dados da tabela a ser adicionados para a nova base de dados de tabela na base de dados do Azure Cosmos. 
+    
+    Se obtiver um erro sobre dependências, consulte [resolução de problemas](table-sdk-dotnet.md#troubleshooting).
+
+    Quando atingiu o primeiro ponto de interrupção, volte atrás para Explorador de dados no portal do Azure e expanda a tabela demonstração * e clique em **entidades**. O **entidades** separador no lado direito apresenta a nova entidade que tenha sido adicionada, tenha em atenção o número de telefone para o utilizador é 425-555-0101.
+    
+6. Feche o separador de entidades no Explorador de dados.
+    
+7. Continue a executar a aplicação para o ponto de interrupção seguinte.
+
+    Quando atingiu o ponto de interrupção, mude novamente para o portal, clique em entidades novamente para abrir o separador de entidades e tenha em atenção que o número de telefone foi atualizado para 425-555-0105.
+
+8. Na janela da consola, prima CTRL + C para terminar a execução da aplicação. 
+
+    Agora pode voltar ao Explorador de dados e adicionar ou modificar o entitites e consultar os dados.
 
 ## <a name="review-slas-in-the-azure-portal"></a>Rever os SLAs no portal do Azure
 

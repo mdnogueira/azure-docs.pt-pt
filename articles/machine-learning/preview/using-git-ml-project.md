@@ -2,19 +2,19 @@
 title: "Utilizar o repositório de Git com uma projeto do Workbench de aprendizagem do Azure | Microsoft Docs"
 description: "Este artigo explica como utilizar um repositório de Git em conjunto com um projeto de Workbench do Azure Machine Learning."
 services: machine-learning
-author: ahgyger
-ms.author: ahgyger
-manager: hning86
+author: hning86
+ms.author: haining
+manager: haining
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
-ms.date: 09/20/2017
-ms.openlocfilehash: 59b07c9834904e01256b75344ba2e6892e56438c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/16/2017
+ms.openlocfilehash: c91eadd69eaf16b2496f4d7247e5b0121904e172
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="using-git-repository-with-an-azure-machine-learning-workbench-project"></a>Utilizar o repositório de Git com um projeto do Azure Machine Learning Workbench
 Este documento fornece informações sobre como o Azure Machine Learning Workbench utiliza o Git para garantir reproducibility na sua experimentação de ciência de dados. Também são fornecidas instruções sobre como associar o seu projeto com uma nuvem repositório de Git.
@@ -66,27 +66,29 @@ Para navegar diretamente para o projeto de equipa que acabou de criar, o URL é 
 > Atualmente, o Azure Machine Learning suporta apenas vazios Git repos com nenhuma ramo principal. Da interface da linha de comandos, pode utilizar – force argumento para eliminar primeiro o ramo principal. 
 
 ## <a name="step-3-create-a-new-azure-ml-project-with-a-remote-git-repo"></a>Passo 3. Criar um novo projeto do Azure ML com um repositório de Git remoto
-Inicie o Workbench do Azure ML e criar um novo projeto. Preencha a caixa de texto do repositório de Git com o URL do repositório de VSTS Git que obtém do passo 2. Normalmente, parece este: http://<vsts_account_name>.visualstudio.com/_git/<project_name>
+Inicie o Workbench do Azure ML e criar um novo projeto. Preencha a caixa de texto do repositório de Git com o URL do repositório de VSTS Git que obtém do passo 2. -Normalmente, este aspeto:`http://<vsts_account_name>.visualstudio.com/_git/<project_name>`
 
 ![Criar projeto do Azure ML com o repositório de Git](media/using-git-ml-project/create_project_with_git_rep.png)
 
 Agora é criado um novo projeto do Azure ML com a integração do repositório de Git remota ativado e pronto para começar. A pasta do projeto é sempre inicializado pelo Git como um repositório de Git local. E o Git _remoto_ está definido para o repositório de VSTS Git remoto para consolidações podem ser enviadas para o repositório de Git remoto.
 
-## <a name="step-3a-associate-an-existing-azure-ml-project-with-a-vsts-git-repo"></a>Passo 3.a associar um projeto do Azure ML existente com um repositório de VSTS Git
+## <a name="step-3a-associate-an-existing-azure-ml-project-with-a-vsts-git-repo"></a>Passo 3a. Associar um projeto existente do Azure ML com um repositório de VSTS Git
 Opcionalmente, pode também criar um projeto do Azure ML sem um repositório de VSTS Git e apenas pode confiar no repositório de Git local para instantâneos do histórico de execução. E pode associar um repositório de VSTS Git mais tarde este projeto do Azure ML existente utilizando o seguinte comando:
 
 ```azurecli
 # make sure you are in the project path so CLI has context of your current project
-az ml project update --repo http://<vsts_account_name>.visualstudio.com/_git/<project_name
+$ az ml project update --repo http://<vsts_account_name>.visualstudio.com/_git/<project_name>
 ```
 
 ## <a name="step-4-capture-project-snapshot-in-git-repo"></a>Passo 4. Captura de instantâneos de projeto no repositório de Git
-Agora pode executar alguns é executado no projeto, certifique-algumas alterações entre o é executado. Pode fazê-a aplicação de ambiente de trabalho, ou do CLI utilizando `az ml experiment submit` comando. Para obter mais detalhes, pode seguir o [tutorial classificar Iris](tutorial-classifying-iris-part-1.md). Para cada execução, se não houver qualquer alteração efetuada em todos os ficheiros na pasta do projeto, um instantâneo da pasta do projeto todo é consolidado e enviado para o repositório de Git remoto. Pode ver os ramos e consolidações ao navegar para o URL do repositório de VSTS Git.
+Agora pode executar alguns é executado no projeto, certifique-algumas alterações entre o é executado. Pode fazê-a aplicação de ambiente de trabalho, ou do CLI utilizando `az ml experiment submit` comando. Para obter mais detalhes, pode seguir o [tutorial classificar Iris](tutorial-classifying-iris-part-1.md). Para cada execução, se existir qualquer alteração efetuada em todos os ficheiros na pasta do projeto, um instantâneo da pasta do projeto todo está consolidado e enviado para o repositório de Git remoto sob um ramo com o nome `AzureMLHistory/<Project_GUID>`. Pode ver os ramos e consolidações ao navegar para o URL do repositório de VSTS Git e localizar este ramo. 
 
 ![ramo de histórico de execução](media/using-git-ml-project/run_history_branch.png)
 
+Tenha em atenção é melhor não funcionar no ramo histórico por si. Se o fizer, poderá mess cópias de segurança com o histórico de execução. Utilizar o ramo principal ou criar outros ramos em vez disso, para as seus próprios operações de Git.
+
 ## <a name="step-5-restore-a-previous-project-snapshot"></a>Passo 5. Restaurar um instantâneo anterior do projeto 
-Para restaurar a pasta do projeto todo para o estado de um instantâneo estado de projeto da histórico de execução anterior, de AML Workbench.
+Para restaurar a pasta do projeto todo para o estado de um instantâneo estado de projeto da histórico de execução anterior, a partir do Azure ML Workbench:
 1. Clique em **executa** na atividade de barra (ícone glass hora).
 2. Do **executar lista** ver, clique em execução que pretende restaurar.
 3. Do **executar detalhe** ver, clique em **restaurar**.
@@ -97,29 +99,29 @@ Em alternativa, pode utilizar o seguinte comando na janela da CLI do Azure ML Wo
 
 ```azurecli
 # discover the run I want to restore snapshot from:
-az ml history list -o table
+$ az ml history list -o table
 
 # restore the snapshot from a particular run
-az ml project restore --run-id <run_id>
+$ az ml project restore --run-id <run_id>
 ```
 
-Ao executar este comando, iremos irá substituir a pasta do projeto todo com o instantâneo tirado quando esse específico run foi arrancou. Isto significa que poderá **perder todas as alterações** na pasta do projeto atual. Por isso, tenha muito cuidado quando executar este comando.
+Ao executar este comando, iremos irá substituir a pasta do projeto todo com o instantâneo tirado quando esse específico run foi arrancou. Mas o seu projeto situa-se no ramo atual. Isto significa que poderá **perder todas as alterações** na pasta do projeto atual. Por isso, tenha muito cuidado quando executar este comando.
 
 ## <a name="step-6-use-the-master-branch"></a>Passo 6. Utilize o ramo principal
-Uma forma para evitar a perda acidental o seu estado atual do projeto, é para consolidar o projeto para o ramo principal do repositório de Git. Pode utilizar diretamente Git de linha de comandos (ou a outra favorita Git ferramenta de cliente da preferência) a funcionar o ramo principal. Por exemplo:
+Uma forma de evitar acidentalmente perder o seu estado atual do projeto, é consolidar o projeto para o ramo principal (ou qualquer ramo criado por si) do repositório de Git. Pode utilizar diretamente Git de linha de comandos (ou a outra favorita Git ferramenta de cliente da preferência) a funcionar o ramo principal. Por exemplo:
 
 ```
-# make sure you are on the master branch
-git checkout master
+# make sure you are on the master branch (or branch of your choice)
+$ git checkout master
 
 # stage all changes
-git add -A
+$ git add -A
 
 # commit all changes locally on the master branch
-git commit -m 'this is my updates so far'
+$ git commit -m 'this is my updates so far'
 
 # push changes into the remote VSTS Git repo master branch.
-git push origin master
+$ git push origin master
 ```
 
 Agora, pode restaurar em segurança projeto para um instantâneo anterior seguinte passo 5, sabendo que, pode sempre voltar para a consolidação apenas efetuadas no principal ramo.

@@ -15,11 +15,11 @@ ms.date: 11/14/2017
 ms.author: daveba
 ms.custom: it-pro
 ms.reviewer: jeedes
-ms.openlocfilehash: 64db88f9168efd4ee636e27ebf05da497c42d466
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 55da67499cfbe30f182f55895a1f164c602391a9
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="saas-application-integration-with-azure-active-directory"></a>Integração de aplicações de SaaS no Azure Active Directory
 
@@ -234,12 +234,14 @@ Para obter a lista completa de aplicações SaaS que tenham sido previamente int
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_MaxxPoint.png)| [MaxxPoint](active-directory-saas-maxxpoint-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mcm-tutorial.png)| [MCM](active-directory-saas-mcm-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/saasapp_menlosecurity.png)| [Segurança Menlo](active-directory-saas-menlosecurity-tutorial.md)|
+| ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mercerhrs-tutorial.png)| [Mercer BenefitsCentral](active-directory-saas-mercerhrs-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-merchlogix-tutorial.png)| [MerchLogix](active-directory-saas-merchlogix-tutorial.md)||
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-m-files-tutorial.png)| [M-ficheiros](active-directory-saas-m-files-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_Mimecast.png)| [Consola de administração de Mimecast](active-directory-saas-mimecast-admin-console-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mimecast-personal-portal-tutorial.png)| [Portal de Mimecast pessoal](active-directory-saas-mimecast-personal-portal-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mindflash-tutorial.png)| [Mindflash](active-directory-saas-mindflash-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mixpanel-tutorial.png)| [Mixpanel](active-directory-saas-mixpanel-tutorial.md)|
+| ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-mobileiron-tutorial.png)| [MobileIron](active-directory-saas-mobileiron-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/saasapp_mobilexpense.png)| [MobileXpense](active-directory-saas-mobilexpense-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-moveittransfer-tutorial.png)| [Transferência de MOVEit](active-directory-saas-moveittransfer-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/saasapp_moxiengage.png)| [Moxi levar a cabo](active-directory-saas-moxiengage-tutorial.md)|
@@ -338,6 +340,7 @@ Para obter a lista completa de aplicações SaaS que tenham sido previamente int
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-skydeskemail-tutorial.png)| [E-Mail SkyDesk](active-directory-saas-skydeskemail-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-slack-tutorial.png)| [Slack](active-directory-saas-slack-tutorial.md)| [Slack - aprovisionamento de utilizadores](active-directory-saas-slack-provisioning-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-smallimprovements-tutorial.png)| [Melhoramentos pequenos](active-directory-saas-smallimprovements-tutorial.md)|
+| ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-smartrecruiters-tutorial.png)| [SmartRecruiters](active-directory-saas-smartrecruiters-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/SaaSApp_SmarterU.png)| [SmarterU](active-directory-saas-smarteru-tutorial.md)|
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-softeon-tutorial.png)| [Softeon WMS](active-directory-saas-softeon-tutorial.md)
 | ![logótipo](./media/active-directory-saas-tutorial-list/active-directory-saas-soonr-tutorial.png)| [Área de trabalho Soonr](active-directory-saas-soonr-tutorial.md)|

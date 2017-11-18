@@ -14,11 +14,11 @@ ms.workload: infrastructure
 ms.date: 12/01/2016
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 280001f9057825b9dcd98c5180340a54e2e239cf
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8ef85c098058c97e5ec6d758fcf1dab5b1a87786
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Como instalar e configurar o SAP HANA (instâncias de grande) no Azure
 
@@ -172,7 +172,7 @@ Notas de suporte SAP aplicável para implementar o SAP HANA SLES 12:
 - [Nota de suporte SAP #171356 – Software SAP no Linux: informações gerais](https://launchpad.support.sap.com/#/notes/1984787).
 - [Nota de suporte SAP #1391070 – UUID de Linux soluções](https://launchpad.support.sap.com/#/notes/1391070).
 
-[Red Hat Enterprise Linux para SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) é outra oferta para a execução de SAP HANA em instâncias de grande HANA. Versões do RHEL 6.7 e 7.2 estão disponíveis. 
+[Red Hat Enterprise Linux para SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) é outra oferta para a execução de SAP HANA em instâncias de grande HANA. Versões do RHEL 6.7 e 7.2 estão disponíveis. . Anote na opposite to nativo as VMs do Azure onde são suportadas apenas RHEL 7.2 e versões mais recentes, instâncias de grande HANA suportam RHEL 6.7 bem. No entanto, recomendamos que utilize uma versão do RHEL 7. x.
 
 SAP útil e adicional no Red Hat relacionados com ligações:
 - [SAP HANA no Red Hat Linux Site](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+Red+Hat).

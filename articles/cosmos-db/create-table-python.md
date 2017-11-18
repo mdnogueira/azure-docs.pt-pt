@@ -12,13 +12,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 11/15/2017
+ms.date: 11/16/2017
 ms.author: mimig
-ms.openlocfilehash: 0900ec1931cc622339133393b72b558076a42710
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 5bf995cba884ff9910ce000195c8fa0e3da2d332
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Início rápido: Criar uma tabela de aplicação de API com o Python e Azure Cosmos DB
 
@@ -84,7 +84,13 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
     ![Ver e copiar a cadeia de ligação no painel de cadeia de ligação](./media/create-table-python/connection-string.png)
 
-2. Abra o ficheiro de config.py e copiar as propriedades de cadeia de ligação necessárias para o ficheiro de configuração.
+2. Copie o nome da conta com o botão à direita.
+
+3. Abra o ficheiro de config.py e cole o nome da conta do portal para o valor STORAGE_ACCOUNT_NAME 19 de linha.
+
+4. Volte ao portal e copie a chave primária.
+
+5. Cole a chave primária no portal o valor STORAGE_ACCOUNT_KEY linha 20.
 
 3. Guarde o ficheiro config.py.
 

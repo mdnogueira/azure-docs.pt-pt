@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 11/10/2017
+ms.date: 11/17/2017
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 25fd7ca3a7a6f2bd9b361bd459a707bad49449e4
-ms.sourcegitcommit: e38120a5575ed35ebe7dccd4daf8d5673534626c
+ms.openlocfilehash: ee6d649ac1ab0813098b13750ccc1f6ebf82f684
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="azure-cosmos-db-net-sdk-download-and-release-notes"></a>Cosmos do Azure SDK .NET da base de dados: Transferir e notas de versão
 > [!div class="op_single_selector"]
@@ -51,6 +51,11 @@ ms.lasthandoff: 11/13/2017
 </table></br>
 
 ## <a name="release-notes"></a>Notas de versão
+### <a name="a-name11911191"></a><a name="1.19.1"/>1.19.1
+
+* Adiciona a capacidade de especificar índices exclusivos para os documentos, utilizando o DocumentCollection UniqueKeyPolicy propriedade.
+* Corrigido um erro na qual as definições personalizadas do JsonSerializer não foram que está a ser cumpridas para algumas consultas e a execução do procedimento armazenado.
+
 ### <a name="a-name11901190"></a><a name="1.19.0"/>1.19.0
 
 * Documentação, informações de metadados em assemblagens e o pacote NuGet de imagem corporativa alteração do Azure DocumentDB à base de dados do Azure Cosmos de referência de API. 
@@ -270,6 +275,7 @@ Todos os pedidos de BD do Cosmos do Azure utilizando um SDK extinto são rejeita
 
 | Versão | Data da versão | Data de retirada |
 | --- | --- | --- |
+| [1.19.1](#1.19.1) |16 de Novembro de 2017 |--- |
 | [1.19.0](#1.19.0) |10 de Novembro de 2017 |--- |
 | [1.18.1](#1.18.1) |07 de Novembro de 2017 |--- |
 | [1.18.0](#1.18.0) |17 de Outubro de 2017 |--- |

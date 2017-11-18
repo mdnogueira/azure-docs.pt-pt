@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2015
 ms.author: robb
-ms.openlocfilehash: 2d2cc04887d90b9f005bfe5310a9ce2fb2f7e217
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 69b8ec86f764077a0e6d029f7c540fa25d022a31
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="introducing-microsoft-azure"></a>Introdução ao Microsoft Azure
 Microsoft Azure é plataforma de aplicações da Microsoft para a nuvem pública.  O objetivo deste artigo é para lhe fornecer uma Fundação para compreender as noções básicas do Azure, mesmo se não souber nada sobre nuvem informática.
@@ -77,7 +77,7 @@ Um dos aspetos mais comuns que pessoas fazer na nuvem é executado sites e aplic
 
 Isto é exatamente o que fornece as Web Apps. Este modelo de computação oferece um ambiente de web gerida utilizando o portal de gestão do Azure, bem como os APIs. Pode mover uma aplicação de Web site existente para as Web Apps inalterados, ou pode criar um novo diretamente na nuvem. Depois de um Web site está em execução, pode adicionar ou remover instâncias dinamicamente, depender de Web Apps do Azure para a carga de pedidos de equilíbrio entre eles. As aplicações do Azure oferece uma opção partilhada, onde o seu Web site é executada numa máquina virtual com outros sites, e uma opção padrão que permite que um site ser executada na sua própria VM. A opção padrão também permite-lhe aumentar o tamanho (informática power) das suas instâncias se for necessário.
 
-Para o desenvolvimento, as aplicações Web suporta .NET, PHP, Node.js, Java e Python, juntamente com a base de dados SQL e o MySQL (a partir de ClearDB, um parceiro da Microsoft) para o armazenamento relacional. Também fornece suporte incorporado para várias aplicações populares, incluindo WordPress, o Joomla e o Drupal. O objetivo consiste em fornecer uma plataforma de baixo custo, dimensionável e amplamente útil para a criação de Web sites e aplicações web na nuvem pública.
+Para o desenvolvimento, aplicações Web suporta .NET, PHP, Node.js, Java e Python, juntamente com a base de dados do SQL Server e base de dados do Azure para o MySQL para armazenamento relacional. Também fornece suporte incorporado para várias aplicações populares, incluindo WordPress, o Joomla e o Drupal. O objetivo consiste em fornecer uma plataforma de baixo custo, dimensionável e amplamente útil para a criação de Web sites e aplicações web na nuvem pública.
 
 **Cenários de aplicações Web**
 

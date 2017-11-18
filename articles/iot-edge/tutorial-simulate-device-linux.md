@@ -7,14 +7,14 @@ author: kgremban
 manager: timlt
 ms.author: kgremban
 ms.reviewer: elioda
-ms.date: 10/05/2017
+ms.date: 10/16/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 041919fd729880d429e08d8942f8d1ee087ccf61
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 11353ef93455a47f9f1c252fc5e192c111d87dd7
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-azure-iot-edge-on-a-simulated-device-in-linux---preview"></a>Implementar o Azure IoT Edge num dispositivo simulado com Linux – pré-visualização
 
@@ -52,33 +52,29 @@ Registe um dispositivo de limite de IoT IoT Hub recentemente criado.
 Instalar e iniciar o tempo de execução do Azure IoT Edge no seu dispositivo. 
 ![Registar um dispositivo][5]
 
-O tempo de execução do limite de IoT é implementado em todos os dispositivos de limite de IoT. É composto por dois módulos. Em primeiro lugar, o agente de limite de IoT facilita a implementação e monitorização de módulos no dispositivo de limite de IoT. Segundo, o hub IoT Edge gere as comunicações entre os módulos no dispositivo de limite de IoT e entre o dispositivo e o IoT Hub. 
+O tempo de execução do limite de IoT é implementado em todos os dispositivos de limite de IoT. É composto por dois módulos. O **agente IoT Edge** facilita a implementação e monitorização de módulos no dispositivo de limite de IoT. O **hub IoT Edge** gere as comunicações entre os módulos no dispositivo de limite de IoT e entre o dispositivo e o IoT Hub. Quando configura o tempo de execução no seu dispositivo novo, apenas o agente de limite de IoT começará em primeiro lugar. O hub IoT Edge vem mais tarde quando implementar um módulo. 
 
-Utilize os seguintes passos para instalar e iniciar o tempo de execução do limite de IoT:
+No computador onde irá executar o dispositivo de limite de IoT, transferi o script de controlo contorno de IoT:
+```cmd
+sudo pip install -U azure-iot-edge-runtime-ctl
+```
 
-1. No computador onde irá executar o dispositivo de limite de IoT, transferi o script de controlo contorno de IoT.
+Configure o tempo de execução com a cadeia de ligação do dispositivo de limite de IoT da secção anterior:
+```cmd
+sudo iotedgectl setup --connection-string "{device connection string}" --auto-cert-gen-force-no-passwords
+```
 
-   ```
-   sudo pip install -U azure-iot-edge-runtime-ctl
-   ```
+Inicie o tempo de execução:
+```cmd
+sudo iotedgectl start
+```
 
-1. Configure o tempo de execução com a cadeia de ligação do dispositivo de limite de IoT da secção anterior.
+Docker para ver que o agente de limite de IoT está em execução como um módulo de verificação:
+```cmd
+sudo docker ps
+```
 
-   ```
-   sudo iotedgectl setup --connection-string "{device connection string}" --auto-cert-gen-force-no-passwords
-   ```
-
-1. Inicie o tempo de execução.
-
-   ```
-   sudo iotedgectl start
-   ```
-
-1. Verifique o Docker para ver que o agente de limite de IoT está em execução como um módulo.
-
-   ```
-   sudo docker ps
-   ```
+![Consulte edgeAgent no Docker](./media/tutorial-simulate-device-linux/docker-ps.png)
 
 ## <a name="deploy-a-module"></a>Implementar um módulo
 
@@ -89,13 +85,23 @@ Gerir o seu dispositivo de limite de IoT do Azure na nuvem para implementar um m
 
 ## <a name="view-generated-data"></a>Dados de vista gerada
 
-Este guia de introdução, criou um novo dispositivo de limite de IoT e instalado o tempo de execução do limite de IoT. Em seguida, utilizou o portal do Azure para emitir um módulo de limite de IoT para ser executada no dispositivo sem ter de efetuar alterações para o dispositivo propriamente dito. Neste caso, o módulo que tiver feito o Push de cria ambientais dados que pode utilizar para os tutoriais. 
+Neste tutorial, criou um novo dispositivo de limite de IoT e instalado o tempo de execução do limite de IoT. Em seguida, utilizou o portal do Azure para emitir um módulo de limite de IoT para ser executada no dispositivo sem ter de efetuar alterações para o dispositivo propriamente dito. Neste caso, o módulo que tiver feito o Push de cria ambientais dados que pode utilizar para os tutoriais. 
 
-Ver as mensagens a enviar do módulo tempSensor:
+Abra a linha de comandos no computador com o seu dispositivo simulado novamente. Confirme que o módulo implementado a partir da nuvem está em execução no seu dispositivo de limite de IoT:
 
-```cmd/sh
-docker logs -f tempSensor
+```cmd
+sudo docker ps
 ```
+
+![Ver três módulos no seu dispositivo](./media/tutorial-simulate-device-linux/docker-ps2.png)
+
+Ver as mensagens do módulo tempSensor, que está a ser enviadas para a nuvem:
+
+```cmd
+sudo docker logs -f tempSensor
+```
+
+![Ver os dados a partir do módulo](./media/tutorial-simulate-device-linux/docker-logs.png)
 
 Também pode ver a telemetria que o dispositivo está a enviar ao utilizar o [ferramenta do Explorador do IoT Hub][lnk-iothub-explorer]. 
 

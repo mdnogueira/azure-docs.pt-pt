@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: mareat
-ms.openlocfilehash: 1d79b775e97765a48be48a96cf10bc9435b4539b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: eaee4e1ed213d0834d959d862feffd4bca57cd9f
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Gerir e analisar registos da fluxo de grupo de segurança de rede no Azure utilizando o observador de rede e Graylog
 
@@ -148,9 +148,9 @@ Logstash é utilizada para aplanar os registos de fluxo de formatação JSON par
     ```
 O ficheiro de configuração de Logstash fornecido é composto por três partes: a entrada, o filtro e a saída. A secção de entrada designa a origem de entrada de registos que irá processar Logstash – neste caso, vamos utilizar um blogue do Azure entrada Plug-in (instalada nos passos) que permite-nos para o fluxo de grupo de segurança de rede de acesso aos ficheiros JSON armazenados no blob storage de registo.
 
-    The filter section then flattens each flow log file so that each individual flow tuple and its associated properties becomes a separate Logstash event.
+A secção de filtro flattens, em seguida, cada ficheiro de registo de fluxo, para que cada tupla de fluxo individuais e as respetivas propriedades associadas torna-se um evento de Logstash separado.
 
-    Finally, the output section forwards each Logstash event to the Graylog server. To suit your specific needs, modify the Logstash config file, as required.
+Por fim, a secção de saída reencaminha cada evento Logstash para o servidor de Graylog. De acordo com a sua específica precisa, modificar o ficheiro de configuração Logstash, conforme necessário.
 
     > [!NOTE]
     > The previous config file assumes that the Graylog server has been configured on the local host loopback IP address 127.0.0.1. If not, be sure to change the host parameter in the output section to the correct IP address.

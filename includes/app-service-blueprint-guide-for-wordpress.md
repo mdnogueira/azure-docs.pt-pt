@@ -1,7 +1,7 @@
 ## <a name="wordpress-and-azure-app-service"></a>WordPress e o App Service do Azure
 * [O que é o WordPress?](https://wordpress.org/)
-* [Como comprar ClearDB partilhado MySQL de alojamento para a sua aplicação WordPress](http://blog.syntaxc4.net/post/2012/12/03/provisioning-a-mysql-database-from-the-windows-azure-store.aspx)
-* [Como a compra ClearDB MySQL dedicado de cluster para a sua aplicação WordPress](https://azure.microsoft.com/blog/announcing-new-mysql-premium-tiers-from-cleardb/)
+* [Criar um site WordPress no portal do Azure](https://portal.azure.com/#create/WordPress.WordPress)s
+* [Criar manualmente uma base de dados MySQL no Azure](../articles/mysql/quickstart-create-mysql-server-database-using-azure-portal.md)
 * [Implementar uma aplicação web do WordPress cópia com o cluster de replicação de MySQL](/documentation/templates/wordpress-mysql-replication/)
 * [Criar as suas próprias Cluster de MySQL Master-Master utilizando o Percona Cluster](/documentation/templates/mysql-ha-pxc/) e [saber mais sobre como gerir o cluster](https://github.com/fanjeffrey/axiom.articles/tree/master/pxc)
 * [Implementar o WordPress por cluster de replicação de MySQL com a configuração de principal-subordinado](/documentation/templates/mysql-replication/)
@@ -11,9 +11,9 @@
 * [Como resolver problemas da aplicação WordPress](https://sunithamk.wordpress.com/2014/09/04/wordpress-troubleshooting-techniques-on-azure-websites/)
 * [Recolher a telemetria de utilização com o serviço de Azure Application Insights](https://azure.microsoft.com/blog/usage-analytics-for-wordpress-with-azure-app-insights/)
 * [Executar Zend Zray gerador de perfis em relação a sua aplicação web para diagnosticar problemas e de desempenho](https://sunithamk.wordpress.com/2015/08/04/profiling-php-application-on-azure-web-apps/)
-* [Utilizar o portal de suporte do Kudu para diagnosticar e atenuar problemas em tempo real](https://sunithamk.wordpress.com/2015/11/04/diagnose-and-mitigate-issues-with-azure-web-apps-support-portal/)
-* [Utilizar que várias autom-heal regras para automatizar a resolução de tempo real de incidentes](http://microsoftazurewebsitescheatsheet.info/#auto-heal)
-* [Como a sua aplicação web de cópia de segurança](../articles/app-service/web-sites-backup.md) e [como restaurar a sua aplicação web](../articles/app-service/web-sites-restore.md)
+* [Utilizar o portal de suporte do Kudu para diagnosticar e atenuar problemas](https://sunithamk.wordpress.com/2015/11/04/diagnose-and-mitigate-issues-with-azure-web-apps-support-portal/)
+* [Utilizar várias autom-heal regras para resolver incidentes automaticamente](http://microsoftazurewebsitescheatsheet.info/#auto-heal)
+* [Como fazer cópias de segurança da sua aplicação web](../articles/app-service/web-sites-backup.md) e [como restaurar a sua aplicação web](../articles/app-service/web-sites-restore.md)
 
 ## <a name="performance"></a>Desempenho
 * [Como acelerar a aplicação web do WordPress](https://sunithamk.wordpress.com/2014/08/01/10-ways-to-speed-up-your-wordpress-site-on-azure-websites/)

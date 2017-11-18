@@ -14,32 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: sngun
-ms.openlocfilehash: c0a4f337c055f4b62d986e2a3c3ce7b962aceae9
-ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
+ms.openlocfilehash: 661f24e1271b3f16fddc6426c94464dd8b388f18
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="download-azure-stack-tools-from-github"></a>Descarregar as ferramentas de pilha do Azure a partir do GitHub
 
 *Aplica-se a: Azure pilha integrado sistemas e Kit de desenvolvimento de pilha do Azure*
 
-**Ferramentas de AzureStack** é um repositório do GitHub que aloja os módulos do PowerShell para gerir e implementar recursos com pilha do Azure. Se estiver a planear estabelecer conectividade VPN, pode transferir estes módulos do PowerShell para o Kit de desenvolvimento de pilha do Azure ou para um cliente externo baseado em Windows. Para obter estas ferramentas, clone o repositório do GitHub ou transferir o **AzureStack ferramentas** pasta. 
-
-Para clonar o repositório, transfira [Git para Windows](https://git-scm.com/download/win), abra uma linha de comandos e execute o seguinte script:
-
-```PowerShell
-# Change directory to the root directory. 
-cd \
-
-# Clone the repository.
-git clone https://github.com/Azure/AzureStack-Tools.git --recursive
-
-# Change to the tools directory.
-cd AzureStack-Tools
-```
-
-Para transferir a pasta Ferramentas, execute o seguinte script:
+**Ferramentas de AzureStack** é um repositório do GitHub que aloja os módulos do PowerShell para gerir e implementar recursos com pilha do Azure. Se estiver a planear estabelecer conectividade VPN, pode transferir estes módulos do PowerShell para o Kit de desenvolvimento de pilha do Azure ou para um cliente externo baseado em Windows. Para obter estas ferramentas, clone o repositório do GitHub ou transferir o **AzureStack ferramentas** pasta executando o seguinte script:
 
 ```PowerShell
 # Change directory to the root directory. 

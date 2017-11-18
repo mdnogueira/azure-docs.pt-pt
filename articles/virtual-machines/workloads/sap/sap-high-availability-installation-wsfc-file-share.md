@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b7b403518c75c72b68957f94dcac750cd922f6bc
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: fc957ece0250d233db9cec4f1fdd8b063c13a136
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Instalar o SAP NetWeaver elevada disponibilidade numa partilha de ficheiros e de cluster de ativação pós-falha de Windows para SAP ASCS/SCS as instâncias no Azure
 
@@ -33,6 +33,8 @@ ms.lasthandoff: 11/16/2017
 [1596496]:https://launchpad.support.sap.com/#/notes/1596496
 
 [sap-installation-guides]:http://service.sap.com/instguides
+
+[sap-powershell-scrips]:https://github.com/Azure-Samples/sap-powershell
 
 [azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
 [azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md
@@ -367,7 +369,7 @@ Get-ClusterAccess
 
 ## <a name="create-a-virtual-host-name-for-the-clustered-sap-ascsscs-instance"></a>Criar um nome de anfitrião virtual para a instância do SAP ASCS/SCS em cluster
 
-Criar um nome de rede de cluster do SAP ASCS/SCS (por exemplo, **pr1-ascs [10.0.6.7]**), conforme descrito nas [criar um nome de anfitrião virtual para a instância em cluster do SAP ASCS/SCS] [ sap-high-availability-installation-wsfc-shared-disk-create-ascs-virt-host] . 
+Criar um nome de rede de cluster do SAP ASCS/SCS (por exemplo, **pr1-ascs [10.0.6.7]**), conforme descrito nas [criar um nome de anfitrião virtual para a instância em cluster do SAP ASCS/SCS] [ sap-high-availability-installation-wsfc-shared-disk-create-ascs-virt-host] .
 
 ## <a name="update-the-default-and-sap-ascsscs-instance-profile"></a>Atualizar a predefinição e o perfil de instância do SAP ASCS/SCS
 
@@ -414,17 +416,17 @@ Para utilizar o novo nome de anfitrião virtual SAP ASCS/SCS e nome de anfitriã
 >O cmdlet do PowerShell suporta o SAP ABAP ASCS e o SAP Java SCS instâncias.
 >
 
-Cópia **SAPScripts.ps1** ao seu local de uma unidade C:\tmp, e execute o seguinte cmdlet do PowerShell:
+Cópia [ **SAPScripts.psm1** ] [ sap-powershell-scrips] ao seu local de uma unidade C:\tmp, e execute o seguinte cmdlet do PowerShell:
 
 ```PowerShell
-Import-Module C:\tmp\SAPScripts.ps1
+Import-Module C:\tmp\SAPScripts.psm1
 
 Update-SAPASCSSCSProfile -PathToAscsScsInstanceProfile \\sapglobal\sapmnt\PR1\SYS\profile\PR1_ASCS00_ascs-1 -NewASCSHostName pr1-ascs -NewSAPGlobalHostName sapglobal -Verbose  
 ```
 
-![Figura 1: SAPScripts.ps1 saída][sap-ha-guide-figure-8012]
+![Figura 1: SAPScripts.psm1 saída][sap-ha-guide-figure-8012]
 
-_**Figura 1**: SAPScripts.ps1 saída_
+_**Figura 1**: SAPScripts.psm1 saída_
 
 ## <a name="update-the-sidadm-user-environment-variable"></a>Atualização do \<sid > variável de ambiente de utilizador do adm
 

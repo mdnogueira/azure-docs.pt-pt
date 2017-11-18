@@ -11,13 +11,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/08/2017
+ms.date: 11/16/2017
 ms.author: tomfitz
-ms.openlocfilehash: 3b9c49d4c7d49cc6795fb093f9abc748d55b5b6f
-ms.sourcegitcommit: ccb84f6b1d445d88b9870041c84cebd64fbdbc72
+ms.openlocfilehash: fc5bfebbcbac7096dea874684bdefe099b572adc
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="use-portal-to-create-an-azure-active-directory-application-and-service-principal-that-can-access-resources"></a>Utilize o portal para criar uma aplicação Azure Active Directory e um principal de serviço que pode aceder a recursos
 
@@ -27,11 +27,11 @@ Quando tiver uma aplicação que necessita para aceder ou modificar recursos, te
 * Não é necessário que alterar credenciais da aplicação, se alterar as suas responsabilidades. 
 * Pode utilizar um certificado para automatizar a autenticação ao executar um script automático.
 
-Este tópico mostra como efetuar os passos através do portal. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada dentro da organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas dentro da sua organização.
+Este artigo mostra como efetuar os passos através do portal. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada dentro da organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas dentro da sua organização.
 
-## <a name="required-permissions"></a>Permissões necessárias
+## <a name="required-permissions"></a>Permissões obrigatórias
 
-Para concluir este tópico, tem de ter permissões suficientes para registar uma aplicação com o seu inquilino do Azure AD e atribuir a aplicação a uma função na sua subscrição do Azure. Vamos certificar-se de que tem as permissões corretas para efetuar esses passos.
+Para concluir este artigo, tem de ter permissões suficientes para registar uma aplicação com o seu inquilino do Azure AD e atribuir a aplicação a uma função na sua subscrição do Azure. Vamos certificar-se de que tem as permissões corretas para efetuar esses passos.
 
 ### <a name="check-azure-active-directory-permissions"></a>Verifique as permissões do Azure Active Directory
 
@@ -104,7 +104,7 @@ Para verificar as permissões de subscrição:
 
    ![Adicionar aplicação](./media/resource-group-create-service-principal-portal/select-add-app.png)
 
-1. Forneça um nome e o URL para a aplicação. Selecione **aplicação Web / API** ou **nativo** para o tipo de aplicação que pretende criar. Depois de definir os valores, selecione **criar**.
+1. Forneça um nome e o URL para a aplicação. Selecione **aplicação Web / API** para o tipo de aplicação que pretende criar. Não é possível criar as credenciais para um **nativo** aplicação; por conseguinte, esse tipo não funciona para uma aplicação automatizada. Depois de definir os valores, selecione **criar**.
 
    ![aplicação de nome](./media/resource-group-create-service-principal-portal/create-app.png)
 
