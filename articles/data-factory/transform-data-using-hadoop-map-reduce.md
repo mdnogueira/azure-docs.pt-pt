@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: shengc
-ms.openlocfilehash: b473ba03b8b700b3123f82343e59a1ed897c4189
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4c022d1c091fdd1b1e4d16270467c7191fc24ae3
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Transformar dados utilizando a atividade de MapReduce do Hadoop no Azure Data Factory
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -53,7 +53,6 @@ Consulte [Pig](transform-data-using-hadoop-pig.md) e [Hive](transform-data-using
             "type": "LinkedServiceReference"
         },
         "jarFilePath": "MyAzureStorage/jars/sample.jar",
-        "jarlibs": "MyAzureStorage/jars/jar1",
         "getDebugInfo": "Failure",
         "arguments": [
           "-SampleHadoopJobArgument1"
@@ -76,7 +75,7 @@ Consulte [Pig](transform-data-using-hadoop-pig.md) e [Hive](transform-data-using
 | className         | Nome da classe para ser executada         | Sim      |
 | jarLinkedService  | Referência a um serviço ligado do Storage do Azure utilizados para armazenar os ficheiros Jar. Se não especificar este serviço ligado, o serviço ligado de armazenamento de Azure definido no serviço ligado do HDInsight é utilizado. | Não       |
 | jarFilePath       | Forneça o caminho para os ficheiros Jar armazenados no Storage do Azure que referida pelo jarLinkedService. O nome de ficheiro é maiúsculas e minúsculas. | Sim      |
-| jarlibs           | Forneça o caminho para os ficheiros da biblioteca Jar referenciada pela tarefa armazenada no Storage do Azure que referida pelo jarLinkedService. O nome de ficheiro é maiúsculas e minúsculas. | Não       |
+| jarlibs           | Matriz do caminho para os ficheiros da biblioteca Jar referenciada pela tarefa armazenada no Storage do Azure definido no jarLinkedService de cadeia. O nome de ficheiro é maiúsculas e minúsculas. | Não       |
 | getDebugInfo      | Especifica se os ficheiros de registo são copiados para o armazenamento do Azure utilizados pelo cluster do HDInsight (ou) especificado por jarLinkedService. Valores permitidos: None, sempre ou falha. Valor predefinido: nenhuma. | Não       |
 | Argumentos         | Especifica uma matriz de argumentos para uma tarefa do Hadoop. Os argumentos são transmitidos como argumentos da linha de comandos para cada tarefa. | Não       |
 | Define           | Especifique parâmetros como pares chave-valor para referenciar dentro do script de ramo de registo. | Não       |

@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/07/2017
+ms.date: 11/17/2017
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: dc8a94e998b36331a6a42253a68b43d76be6657c
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: a6d5690edd9020e777f3d71c41a53856d0a400db
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="create-your-first-container-in-azure-container-instances"></a>Criar o seu primeiro contentor no Azure Container Instances
 Instâncias de contentor do Azure torna mais fácil criar e gerir contentores de Docker no Azure, sem ter de aprovisionar as máquinas virtuais ou que adotar um serviço de nível mais elevado. Este guia de introdução, criar um contentor no Azure e expô-la à internet com um endereço IP público. Esta operação é concluída com um único comando. Dentro de alguns segundos, verá isto no seu browser:
@@ -51,7 +51,7 @@ az group create --name myResourceGroup --location eastus
 Pode criar um contentor, fornecendo um nome, uma imagem de Docker e um grupo de recursos do Azure para o [criar contentor de az] [ az-container-create] comando. Opcionalmente, pode expor o contentor na Internet com um endereço IP público. Este guia de introdução, é implementar um contentor que aloja uma aplicação web pequenas escrita em [Node.js](http://nodejs.org).
 
 ```azurecli-interactive
-az container create --name mycontainer --image microsoft/aci-helloworld --resource-group myResourceGroup --ip-address public
+az container create --name mycontainer --image microsoft/aci-helloworld --resource-group myResourceGroup --ip-address public --ports 80
 ```
 
 Dentro de alguns segundos, deve obter uma resposta ao seu pedido. Inicialmente, o contentor está no **criar** Estado, mas deve iniciar dentro de alguns segundos. Pode verificar o estado com o [mostrar de contentor az] [ az-container-show] comando:

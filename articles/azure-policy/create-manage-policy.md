@@ -3,17 +3,17 @@ title: "Utilizar a política do Azure para criar e gerir políticas para impor a
 description: "Utilize a política de Azure para impor as normas, cumpre os requisitos regulamentares de conformidade e auditoria, controlar os custos, manter a consistência de segurança e o desempenho e impõe princípios de wide design enterprise."
 services: azure-policy
 keywords: 
-author: Jim-Parker
-ms.author: jimpark
-ms.date: 11/01/2017
+author: bandersmsft
+ms.author: banders
+ms.date: 11/17/2017
 ms.topic: tutorial
 ms.service: azure-policy
 ms.custom: mvc
-ms.openlocfilehash: 63e8e4d3dbbc2e50b55f7e293d324ceed0484bb7
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 517f85307e97c1e98a84da95cb51660d6d4fe679
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="create-and-manage-policies-to-enforce-compliance"></a>Criar e gerir políticas para impor a compatibilidade
 
@@ -386,7 +386,7 @@ Com uma definição de iniciativa, pode agrupar várias definições de polític
 
 ## <a name="resolve-a-non-compliant-or-denied-resource"></a>Resolver um recurso de não conformidade ou negado
 
-Seguindo o exemplo acima, depois de atribuir a definição de política para exigir 12.0 a versão do servidor SQL, seria obter negado um criado com uma versão diferente do SQL server. Nesta secção, iremos estiver a walking através de resolver uma tentativa de negado para criar um SQL server com uma versão diferente.
+Seguindo o exemplo acima, depois de atribuir a definição de política para exigir 12.0 a versão do servidor SQL, seria obter negado um criado com uma versão diferente do SQL server. Nesta secção, iremos estiver a walking através de uma tentativa para criar um SQL server com uma versão diferente, pedindo uma exclusão negada a resolver.
 
 1. Selecione **atribuições** no painel esquerdo.
 2. Percorrer todas as atribuições de política e iniciar o *requerem o SQL Server versão 12.0* atribuição.

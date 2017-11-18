@@ -1,6 +1,6 @@
 ---
-title: Sobre discos e VHD para as VMs de Linux do Microsoft Azure | Microsoft Docs
-description: "Saiba mais sobre as noções básicas de discos e VHDs para computadores virtuais Linux no Azure."
+title: Sobre o armazenamento de disco para as VMs de Linux do Microsoft Azure | Microsoft Docs
+description: "Saiba mais sobre as noções básicas do armazenamento de discos e VHDs para computadores virtuais Linux no Azure."
 services: storage
 documentationcenter: 
 author: robinsh
@@ -12,15 +12,15 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/15/2017
+ms.date: 11/15/2017
 ms.author: robinsh
-ms.openlocfilehash: be5f09af275142590ec6ade02562e914d5726e08
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ad55898806024a9f0562b32e7bdd990fd7dfd8d2
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
-# <a name="about-disks-and-vhds-for-azure-linux-vms"></a>Sobre discos e VHD para as VMs Linux do Azure
+# <a name="about-disk-storage-for-azure-linux-vms"></a>Sobre o armazenamento de disco para as VMs Linux do Azure
 Tal como qualquer outro computador, máquinas virtuais no Azure utilizar discos como um local para armazenar os dados, aplicações e um sistema operativo. Todas as máquinas virtuais do Azure de ter, pelo menos, dois discos – um disco de sistema operativo Linux e um disco temporário. O disco do sistema operativo é criado a partir de uma imagem e o disco do sistema operativo e a imagem são, na verdade, discos rígidos virtuais (VHDs) armazenados numa conta de armazenamento do Azure. Máquinas virtuais podem ter também um ou mais discos de dados, que também são armazenados como VHDs. 
 
 Neste artigo, iremos falar sobre as utilizações diferentes para os discos e, em seguida, aborda os diferentes tipos de discos, pode criar e utilizar. Este artigo também está disponível para [máquinas virtuais Windows](../windows/about-disks-and-vhds.md).
@@ -59,6 +59,6 @@ Pode adicionar os discos de dados para uma máquina virtual em qualquer altura, 
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Anexar um disco](add-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para adicionar armazenamento adicional para a VM.
-* [Configurar software RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para redundância.
-* [Capturar uma máquina virtual Linux](./classic/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json) pelo que pode implementar rapidamente VMs adicionais.
+* [Criar um instantâneo](snapshot-copy-managed-disk.md).
+* [Converter discos geridos](convert-unmanaged-to-managed-disks.md).
 

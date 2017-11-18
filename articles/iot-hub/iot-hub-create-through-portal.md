@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/26/2017
 ms.author: dobett
-ms.openlocfilehash: bca7eea5f44bbed3b784b56edaac235161b43e5e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ac1a52355ffa5354bebe3b98fdb75783bcd57697
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="create-an-iot-hub-using-the-azure-portal"></a>Criar um IoT hub no portal do Azure
 
@@ -180,7 +180,7 @@ Siga estas ligações para saber mais sobre a gestão do Azure IoT Hub:
 Para explorar ainda mais as capacidades do IoT Hub, consulte:
 
 * [Guia para programadores do IoT Hub][lnk-devguide]
-* [Simulando um dispositivo com o limite de IoT][lnk-iotedge]
+* [Implementar o AI para dispositivos de limite com limite de IoT do Azure][lnk-iotedge]
 * [Proteger a sua solução de IoT a partir do zero cópias de segurança][lnk-securing]
 
 [4]: ./media/iot-hub-create-through-portal/create-iothub.png
@@ -198,6 +198,6 @@ Para explorar ainda mais as capacidades do IoT Hub, consulte:
 [lnk-monitor]: iot-hub-operations-monitoring.md
 
 [lnk-devguide]: iot-hub-devguide.md
-[lnk-iotedge]: iot-hub-linux-iot-edge-simulated-device.md
+[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
 [lnk-securing]: iot-hub-security-ground-up.md
 [lnk-devguide-endpoints]: iot-hub-devguide-endpoints.md

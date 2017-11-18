@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2017
+ms.date: 11/15/2017
 ms.author: jeedes
-ms.openlocfilehash: d936bc50a66ac2a3c17038ff08351edf9902c99f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 944149746b05108040cd0cc340e882b39713f06e
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-front"></a>Tutorial: Integração do Azure Active Directory com início
 
@@ -104,66 +104,60 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
  
     ![Caixa de diálogo de início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_front_samlbase.png)
 
-3. No **URLs e de domínio de front-** secção, se pretender configurar a aplicação no **IDP** iniciada modo:
+3. No **URLs e de domínio de front-** secção, execute os seguintes passos:
 
     ![Configurar o início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_front_url1.png)
 
     a. No **identificador** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<companyname>.frontapp.com`
 
     b. No **URL de resposta** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<companyname>.frontapp.com/sso/saml/callback`
-
-4. Verifique **Mostrar avançadas definições de URL**, se pretender configurar a aplicação no **SP** iniciada modo:
-
-    ![Configurar o início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_front_url2.png)
-
-    No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<companyname>.frontapp.com`
      
     > [!NOTE] 
-    > Estes valores não estiverem reais. Atualizar estes valores com o identificador real, URL de resposta e URL de início de sessão que serão explicados de forma mais tarde no tutorial ou contacte [equipa de suporte de front-cliente](mailto:support@frontapp.com) para obter estes valores. 
+    > Estes valores não estiverem reais. Atualizar estes valores com o real identificador e o URL de resposta que serão explicados de forma mais tarde no tutorial ou contacte [equipa de suporte de front-cliente](mailto:support@frontapp.com) para obter estes valores. 
 
-5. No **certificado de assinatura de SAML** secção, clique em **Certificate(Base64)** e, em seguida, guarde o ficheiro de certificado no seu computador.
+4. No **certificado de assinatura de SAML** secção, clique em **Certificate(Base64)** e, em seguida, guarde o ficheiro de certificado no seu computador.
 
     ![Configurar o início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_front_certificate.png) 
 
-6. Clique em **guardar** botão.
+5. Clique em **guardar** botão.
 
     ![Configurar o início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_general_400.png)
     
-7. No **front-configuração** secção, clique em **configurar front-** para abrir **configurar início de sessão** janela. Copiar o **Sign-Out URL, o ID de entidade de SAML e o único início de sessão no URL do serviço SAML** do **secção de referência rápida.**
+6. No **front-configuração** secção, clique em **configurar front-** para abrir **configurar início de sessão** janela. Copiar o **Sign-Out URL, o ID de entidade de SAML e o único início de sessão no URL do serviço SAML** do **secção de referência rápida.**
 
     ![Configurar o início de sessão único](./media/active-directory-saas-front-tutorial/tutorial_front_configure.png) 
 
-8. Início de sessão no seu inquilino de frente como administrador.
+7. Início de sessão no seu inquilino de frente como administrador.
 
-9. Aceda a **definições (ícone roda dentada na parte inferior esquerda barra lateral) > Preferências**.
+8. Aceda a **definições (ícone roda dentada na parte inferior esquerda barra lateral) > Preferências**.
    
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_000.png)
 
-10. Clique em **início de sessão único** ligação.
+9. Clique em **início de sessão único** ligação.
    
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_001.png)
 
-11. Selecione **SAML** na lista pendente de **início de sessão único**.
+10. Selecione **SAML** na lista pendente de **início de sessão único**.
    
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_002.png)
 
-12. No **ponto de entrada** textbox colocar o valor de **URL Single Sign-on serviço** do Assistente de configuração de aplicações do Azure AD.
+11. No **ponto de entrada** textbox colocar o valor de **URL Single Sign-on serviço** do Assistente de configuração de aplicações do Azure AD.
     
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_003.png)
 
-13. Abra o transferido **Certificate(Base64)** ficheiro no bloco de notas, copie o conteúdo do mesmo para a sua área de transferência e, em seguida, cole-os para o **certificado de assinatura** caixa de texto.
+12. Abra o transferido **Certificate(Base64)** ficheiro no bloco de notas, copie o conteúdo do mesmo para a sua área de transferência e, em seguida, cole-os para o **certificado de assinatura** caixa de texto.
     
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_004.png)
 
-14. No **as definições do fornecedor de serviço** secção, execute os seguintes passos:
+13. No **as definições do fornecedor de serviço** secção, execute os seguintes passos:
 
     ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-front-tutorial/tutorial_front_005.png)
 
     a. Copie o valor da **ID de entidade** e cole-o para o **identificador** textbox em **URLs e de domínio de front-** secção no portal do Azure.
 
-    b. Copie o valor da **ACS URL** e cole-o para o **URL de início de sessão** textbox em **URLs e de domínio de front-** secção no portal do Azure.
+    b. Copie o valor da **ACS URL** e cole-o para o **URL de resposta** textbox em **URLs e de domínio de front-** secção no portal do Azure.
     
-15. Clique em **guardar** botão.
+14. Clique em **guardar** botão.
 
 > [!TIP]
 > Pode agora ler estas instruções dentro de uma versão concisa o [portal do Azure](https://portal.azure.com), enquanto estiver a configurar a aplicação!  Depois de adicionar esta aplicação a partir do **do Active Directory > aplicações da empresa** secção, basta clicar no **Single Sign-On** separador e aceder à documentação do embedded através de **configuração** secção na parte inferior. Pode ler mais sobre a funcionalidade de documentação incorporados aqui: [do Azure AD incorporado documentação]( https://go.microsoft.com/fwlink/?linkid=845985)

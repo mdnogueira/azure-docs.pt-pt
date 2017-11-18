@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/03/2017
 ms.author: yurid
 ms.openlocfilehash: 2482dade7d17d05b2fc90fbf22b0466227a5983b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="internet-of-things-security-architecture"></a>Arquitetura de segurança da Internet das coisas
 Ao conceber um sistema, é importante compreender as potenciais ameaças a esse sistema e ao adicionar o defesas adequadas em conformidade, como o sistema é concebido e criado. É particularmente importante para a estrutura do produto a partir do início com segurança em mente porque compreender como um atacante poderá comprometer um sistema de ajuda a mitigações adequadas se de que estão no local a partir do início. 
@@ -166,10 +166,10 @@ Em cada uma das categorias descritas na arquitetura do IoT do Azure, vamos tenta
 | --- | --- | --- | --- | --- |
 | Dispositivo |S |Atribuição de identidade para o dispositivo e autenticar o dispositivo |Substituir o dispositivo ou parte do dispositivo com alguns outros dispositivos. Como podemos saber que estão a comunicar no dispositivo correto? |Autenticar o dispositivo, utilizar IPSec ou o Transport Layer Security (TLS). Infraestrutura deve suportar a utilização de chave pré-partilhada (PSK) nesses dispositivos que não é possível processar a criptografia completa assimétrica. Tirar partido do Azure AD, [OAuth](http://www.rfc-editor.org/in-notes/internet-drafts/draft-ietf-ace-oauth-authz-01.txt) |
 | TRID |Aplica tamperproof mecanismos para o dispositivo por exemplo, tornando muito difícil para impossíveis extrair as chaves e outro material de criptografia do dispositivo. |O risco é se alguém a adulteração é o dispositivo (interferências físicos). Como são, certifique-se, que o dispositivo não adulterado. |A mitigação mais eficaz é uma capacidade de module (TPM) fidedigna plataforma que permite armazenar chaves numa especial no chip circuitry, partir da qual as chaves não não possível ler, mas só podem ser utilizadas para operações de criptografia que utilizam a chave, mas nunca divulgar a chave. Encriptação de memória do dispositivo. Gestão de chaves para o dispositivo. O código de assinatura. | |
-| I |Com o controlo de acesso do dispositivo. Esquema de autorização. |Se o dispositivo permite para ações individuais ser executada com base em comandos de uma origem externa ou sensores mesmo comprometidos, isso permitirá ataque executar operações não caso contrário, acessível. |Ter o esquema de autorização para o dispositivo | |
+| E |Com o controlo de acesso do dispositivo. Esquema de autorização. |Se o dispositivo permite para ações individuais ser executada com base em comandos de uma origem externa ou sensores mesmo comprometidos, isso permitirá ataque executar operações não caso contrário, acessível. |Ter o esquema de autorização para o dispositivo | |
 | Gateway de campo |S |Autenticar o gateway de campo para o Gateway de nuvem (cert com base, PSK, afirmação com base,..) |Se alguém pode falsificar Gateway de campo, em seguida,-lo pode apresentar-se automaticamente como qualquer dispositivo. |TLS RSA/PSK, IPSec, [RFC 4279](https://tools.ietf.org/html/rfc4279). As mesmas preocupações de armazenamento e do atestado de chaves dos dispositivos na geral – melhor caso é utilizar o TPM. Extensão do 6LowPAN para IPSec suportar a redes de Sensor sem fios (WSN). |
 | TRID |Proteger o Gateway de campo contra adulteração (TPM)? |O spoofing de ataques enganar a pensar de gateway de nuvem que é falar com gateway de campo pode resultar em divulgação de informações e a adulteração de dados |Do memória encriptação, TPM, a autenticação. | |
-| I |Mecanismo de controlo de acesso para o Gateway de campo | | | |
+| E |Mecanismo de controlo de acesso para o Gateway de campo | | | |
 
 Seguem-se alguns exemplos de ameaças nesta categoria:
 

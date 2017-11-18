@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/25/2017
 ms.author: nberdy
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e850370faf2d271b4adad1af48c1ead7b316fa67
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cafe5009b8e96b147b5bbed1957024f6d96feb58
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="understand-iot-hub-metrics"></a>Compreender as métricas do IoT Hub
 Métricas de IoT Hub dão-lhe uma melhor dados sobre o estado dos recursos do Azure IoT na sua subscrição do Azure. Métricas de IoT Hub permitem-lhe avaliar o estado de funcionamento geral do serviço IoT Hub e dispositivos ligados ao mesmo. Estatísticas de destinada ao utilizador são importantes porque podem ajudar a ver de que está a suceder com problemas de causa raiz seu IoT hub e ajuda sem ser necessário contactar o suporte do Azure.
@@ -53,13 +53,13 @@ IoT Hub disponibiliza várias métricas para lhe dar uma descrição geral do Es
 |d2c.telemetry.egress.Invalid|Mensagens inválidas|Contagem|Total|A contagem de mensagens não entregues devido a incompatibilidade com o ponto final|
 |d2c.telemetry.egress.fallback|Mensagens de correspondência de condição de contingência|Contagem|Total|Número de mensagens escritas para o ponto final de contingência|
 |d2c.Endpoints.egress.eventHubs|Mensagens entregues nos pontos finais de Hub de eventos|Contagem|Total|Número de vezes que as mensagens foram escritas com êxito aos pontos finais de Hub de eventos|
-|d2c.Endpoints.latency.eventHubs|Latência de mensagem para pontos finais de Hub de eventos|milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de Hub de eventos, em milissegundos|
+|d2c.Endpoints.latency.eventHubs|Latência de mensagem para pontos finais de Hub de eventos|Milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de Hub de eventos, em milissegundos|
 |d2c.Endpoints.egress.serviceBusQueues|Mensagens entregues nos pontos finais de fila do Service Bus|Contagem|Total|Número de vezes que as mensagens foram escritas com êxito aos pontos finais de fila do Service Bus|
-|d2c.Endpoints.latency.serviceBusQueues|Latência de mensagem para pontos finais de fila do Service Bus|milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de fila do Service Bus, em milissegundos|
+|d2c.Endpoints.latency.serviceBusQueues|Latência de mensagem para pontos finais de fila do Service Bus|Milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de fila do Service Bus, em milissegundos|
 |d2c.Endpoints.egress.serviceBusTopics|Mensagens entregues nos pontos finais de tópico de barramento de serviço|Contagem|Total|Número de vezes que as mensagens foram escritas com êxito aos pontos finais de tópico de barramento de serviço|
-|d2c.Endpoints.latency.serviceBusTopics|Latência de mensagem para pontos finais de tópico de barramento de serviço|milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de tópico de barramento de serviço, em milissegundos|
+|d2c.Endpoints.latency.serviceBusTopics|Latência de mensagem para pontos finais de tópico de barramento de serviço|Milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para um ponto final de tópico de barramento de serviço, em milissegundos|
 |d2c.Endpoints.egress.builtIn.Events|Mensagens entregues para o ponto final incorporado (mensagens/eventos)|Contagem|Total|Número de vezes que as mensagens foram escritas com êxito para o ponto final incorporado (mensagens/eventos)|
-|d2c.Endpoints.latency.builtIn.Events|Latência de mensagem para o ponto final incorporado (mensagens/eventos)|milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para o ponto final incorporado (mensagens/eventos), em milissegundos |
+|d2c.Endpoints.latency.builtIn.Events|Latência de mensagem para o ponto final incorporado (mensagens/eventos)|Milissegundos|Média|A latência média entre a entrada de mensagem para o IoT hub e a entrada de mensagem para o ponto final incorporado (mensagens/eventos), em milissegundos |
 |d2c.Twin.Read.Success|Leituras de duplo bem-sucedida dos dispositivos|Contagem|Total|A contagem de leituras de iniciadas por dispositivo duplo todos os com êxito.|
 |d2c.Twin.Read.Failure|Não foi possível duplo leituras dos dispositivos|Contagem|Total|A contagem de todas as falha leituras iniciadas por dispositivo duplo.|
 |d2c.Twin.Read.size|Tamanho da resposta de duplo lê a partir de dispositivos|Bytes|Média|A média, mínimo e máximo de todos os com êxito iniciadas por dispositivo duplo leituras.|
@@ -100,7 +100,7 @@ Agora que viu uma descrição geral das métricas do IoT Hub, siga esta ligaçã
 Para explorar ainda mais as capacidades do IoT Hub, consulte:
 
 * [Guia para programadores do IoT Hub][lnk-devguide]
-* [Simulando um dispositivo com o Azure IoT Edge][lnk-iotedge]
+* [Implementar o AI para dispositivos de limite com limite de IoT do Azure][lnk-iotedge]
 
 <!-- Links and images -->
 [1]: media/iot-hub-metrics/enable-metrics-1.png
@@ -114,4 +114,4 @@ Para explorar ainda mais as capacidades do IoT Hub, consulte:
 [lnk-monitor]: iot-hub-operations-monitoring.md
 
 [lnk-devguide]: iot-hub-devguide.md
-[lnk-iotedge]: iot-hub-linux-iot-edge-simulated-device.md
+[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md

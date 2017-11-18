@@ -3,26 +3,26 @@ title: "Adicionar um domínio personalizado ao Azure AD | Microsoft Docs"
 description: "Explica como adicionar um domínio personalizado no Azure Active Directory."
 services: active-directory
 author: curtand
-manager: femila
+manager: michael.tillman
 ms.assetid: 0a90c3c5-4e0e-43bd-a606-6ee00f163038
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2017
+ms.date: 11/14/2017
 ms.author: curtand
-ms.reviewer: jsnow
+ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: d2f0287202e1b39f395354b1124078b7b0dc95a7
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 27e7449f039da8f7661d113999e1c4e5d76c3cf6
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="quickstart-add-a-custom-domain-name-to-azure-active-directory"></a>Guia de introdução: Adicionar um nome de domínio personalizado ao Azure Active Directory
 
-Cada diretório do Azure AD é fornecido com um nome de domínio inicial sob a forma de *domainname*. c o m. O nome de domínio inicial não pode ser alterado ou eliminado, mas pode adicionar o seu nome de domínio empresarial para o Azure AD também. Por exemplo, a organização tem provavelmente outros nomes de domínio utilizados para fazer negócios e os utilizadores que inicie sessão com o nome de domínio empresarial. Adicionar nomes de domínio personalizado ao Azure AD permite-lhe atribuir nomes de utilizador no diretório que estão familiarizados aos seus utilizadores, tais como 'alice@contoso.com.' em vez de ' alice @*<domain name>*. c o m ". O processo é simples:
+Cada diretório do Azure AD é fornecido com um nome de domínio inicial sob a forma de *domainname*. c o m. O nome de domínio inicial não pode ser alterado ou eliminado, mas pode adicionar o seu nome de domínio empresarial para o Azure AD também. Por exemplo, a organização tem provavelmente outros nomes de domínio utilizados para fazer negócios e os utilizadores que inicie sessão com o nome de domínio empresarial. Adicionar nomes de domínio personalizado ao Azure AD permite-lhe atribuir nomes de utilizador no diretório que estão familiarizados aos seus utilizadores, tais como 'alice@contoso.com.' em vez de ' alice @*nome de domínio*. c o m ". O processo é simples:
 
 1. Adicione o nome de domínio personalizado ao seu diretório
 2. Adicione uma entrada DNS do nome de domínio à entidade registo do nome de domínio
@@ -30,11 +30,11 @@ Cada diretório do Azure AD é fornecido com um nome de domínio inicial sob a f
 
 ## <a name="add-the-custom-domain-name-to-your-directory"></a>Adicione o nome de domínio personalizado ao seu diretório
 1. Iniciar sessão para o [portal do Azure](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) com uma conta que seja um administrador global do diretório.
-2. No lado esquerdo, selecione **nomes de domínio**.
-3. No  ***nome do diretório* -nomes de domínio**, selecione **adicionar**.
+2. No lado esquerdo, selecione **nomes de domínio personalizado**.
+3. Selecione **Adicionar domínio personalizado**.
    
-   ![Selecione o comando Adicionar](./media/active-directory-domains-add-azure-portal/add-command.png)
-5. No **nome de domínio**, introduza o nome do seu domínio personalizado na caixa, tais como "contoso.com" e, em seguida, selecione **Adicionar domínio**. Certifique-se de que inclui .com .net ou outra extensão de nível superior.
+   ![Selecione o comando Adicionar](./media/add-custom-domain/add-custom-domain.png)
+5. No **nomes de domínio personalizado**, introduza o nome do seu domínio personalizado na caixa, tais como "contoso.com" e, em seguida, selecione **Adicionar domínio**. Certifique-se de que inclui .com .net ou outra extensão de nível superior.
 6. No ***domainname*** (ou seja, o novo nome de domínio é o título), reunir as informações de entrada DNS a utilizar mais tarde para verificar o nome de domínio personalizado no Azure AD.
    
    ![obter as informações de entrada DNS](./media/active-directory-domains-add-azure-portal/get-dns-info.png)
@@ -51,17 +51,15 @@ O passo seguinte para utilizar o seu nome de domínio personalizado com o Azure 
 ## <a name="verify-the-custom-domain-name-in-azure-ad"></a>Verifique o nome de domínio personalizado no Azure AD
 Depois de adicionar a entrada DNS, está pronto para verificar o nome de domínio com o Azure AD. Um nome de domínio pode ser verificado apenas depois dos registos DNS terem sido propagados. Esta propagação frequentemente demora apenas alguns segundos, mas, por vezes, pode demorar uma hora ou mais. Se a verificação não funcionar à primeira, tente de novo mais tarde.
 
-1. Inicie sessão no [do Azure AD](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) com uma conta que seja um administrador global do diretório.
-2. No lado esquerdo, selecione **nomes de domínio**.
-3. No  ***nome do diretório* -nomes de domínio**, selecione o **Adicionar nome de domínio** comando. 
-  ![Selecione o comando Adicionar](./media/active-directory-domains-add-azure-portal/add-command.png)
-3. No  ***nome do diretório* -nomes de domínio**, selecione o nome de domínio não verificado que pretende verificar.
-4. No ***domainname*** (ou seja, o nome de domínio selecionado é o título), selecione **verifique** para concluir a verificação.
+1. Inicie sessão no [do Azure AD](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) com uma conta que seja um administrador global do inquilino.
+2. Selecione **nomes de domínio personalizado**.
+3. Selecione o nome de domínio não verificado que pretende verificar.
+4. Verifique as suas entradas e selecione **verifique** para concluir a verificação.
 
 Já pode [atribuir nomes de utilizador que incluem o seu nome de domínio personalizado](active-directory-users-create-azure-portal.md). Pode criar contas de utilizador baseadas na nuvem ou atualização anteriormente sincronizado informações de conta de utilizador no local, utilizando o seu nome de domínio personalizado. Também pode alterar utilizador sincronizado conta de domínio sufixo informações utilizando [Microsoft PowerShell](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains) ou [Graph API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations).
 
 > [!TIP]
-> Pode adicionar a cópia de segurança para um máximo de 900 nomes de domínio gerido. Se pretender configurar todos os seus domínios para federação no local com o Active Directory, pode adicionar cópias de segurança para um máximo de 450 nomes de domínio em cada diretório. Para obter mais informações, consulte [Federated e nomes de domínio geridos](https://docs.microsoft.com/azure/active-directory/active-directory-add-domain-concepts#federated-and-managed-domain-names).
+> Pode adicionar a cópia de segurança para um máximo de 900 nomes de domínio gerido. Se estiver a configurar todos os seus domínios para federação no local com o Active Directory, pode adicionar cópias de segurança para um máximo de 450 nomes de domínio em cada diretório. Para obter mais informações, consulte [Federated e nomes de domínio geridos](https://docs.microsoft.com/azure/active-directory/active-directory-add-domain-concepts#federated-and-managed-domain-names).
 
 ## <a name="troubleshooting"></a>Resolução de problemas
 Se não conseguir verificar um nome de domínio personalizado, tente os seguintes passos de resolução de problemas:
@@ -74,10 +72,9 @@ Se não conseguir verificar um nome de domínio personalizado, tente os seguinte
   Se não tiver acesso para atualizar os registos DNS do domínio na entidade de registo de nome de domínio, partilhe a entrada DNS com a pessoa ou equipa na sua organização que tenham este acesso e peça-lhes para adicionar a entrada DNS.
 3. **Elimine o nome de domínio a partir de outro diretório no Azure AD**. Um nome de domínio só pode ser verificado num único diretório. Se um nome de domínio é verificado atualmente num diretório diferente, não é possível verificá-lo no seu novo diretório até serem eliminada dos outros. Para saber mais sobre como eliminar nomes de domínio, veja o artigo [Gerir nomes de domínio personalizados](active-directory-domains-manage-azure-portal.md).    
 
-## <a name="add-more-custom-domain-names"></a>Adicionar mais nomes de domínio personalizados
-Se a organização utilizar vários nomes de domínio personalizado, como "contoso.com" e "contosobank.com", pode adicioná-los, até um máximo de 900 nomes de domínio. Os passos neste artigo podem ajudar a adicionar cada um dos nomes de domínio.
+Repita os passos neste artigo para adicionar cada um dos nomes de domínio.
 
-### <a name="learn-more"></a>Saiba mais
+## <a name="learn-more"></a>Saiba mais
 [Descrição geral conceptual dos nomes de domínio personalizados no Azure AD](active-directory-domains-manage-azure-portal.md)
 
 [Gerir nomes de domínio personalizado](active-directory-domains-manage-azure-portal.md)

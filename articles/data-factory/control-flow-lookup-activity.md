@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/31/2017
 ms.author: spelluru
-ms.openlocfilehash: 30173f8eea2ccbbcd44018596cf34b3769a64b50
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d498705ef7f714b4f15b8d2722053bf3081b5045
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Atividade de pesquisa no Azure Data Factory
 A atividade de Pesquisa pode ser utilizada para ler ou procurar registos/nomes de tabelas/valores em qualquer origem externa. Este resultado pode ser ainda referenciado por atividades bem-sucedidas. 
@@ -53,6 +53,9 @@ Este pipeline contém duas atividades: **procurar** e **cópia**.
                 "name": "LookupActivity",
                 "type": "Lookup",
                 "typeProperties": {
+                    "source": {
+                        "type": "BlobSource"
+                    },
                     "dataset": { 
                         "referenceName": "LookupDataset", 
                         "type": "DatasetReference" 
@@ -232,7 +235,7 @@ Esta base de dados SQL do Azure contém os dados para ser copiado para o armazen
 ## <a name="type-properties"></a>Propriedades do tipo
 Nome | Descrição | Tipo | Necessário
 ---- | ----------- | ---- | --------
-Conjunto de dados | O atributo de conjunto de dados é fornecer a referência de conjunto de dados para a pesquisa. Atualmente, os tipos de conjunto de dados suportados são:<ul><li>FileShareDataset</li><li>AzureBlobDataset</li><li>AzureSqlTableDataset</li><li>AzureTableDataset</li> | par chave-valor | Sim
+Conjunto de dados | O atributo de conjunto de dados é fornecer a referência de conjunto de dados para a pesquisa. Atualmente, os tipos de conjunto de dados suportados são:<ul><li>FileShareDataset</li><li>AzureBlobDataset</li><li>AzureSqlTableDataset</li><li>AzureTableDataset</li> | Par chave/valor | Sim
 origem | Propriedades específicas do conjunto de dados de origem, mesmo que a origem de atividade de cópia | Par chave/valor | Não
 firstRowOnly | Devolve a primeira linha ou todas as linhas. | Valor booleano | Não
 

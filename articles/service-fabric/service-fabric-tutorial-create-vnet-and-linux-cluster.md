@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/26/2017
 ms.author: ryanwi
-ms.openlocfilehash: 84b219d31635af6fbdb6bd618e3a9bb4e4848809
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 47e023e7240cfae3553b220ebc44c95ec96d62a7
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-a-service-fabric-linux-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Linux numa rede virtual do Azure
 Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Linux Service Fabric numa rede virtual do Azure existente (VNET) e subplano net utilizando a CLI do Azure. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações. Para criar um cluster do Windows com o PowerShell, consulte [criar um cluster do Windows seguro no Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
@@ -45,6 +45,22 @@ Antes de começar este tutorial:
 - Instalar o [CLI do Azure 2.0](/cli/azure/install-azure-cli)
 
 Os procedimentos seguintes criar um cluster do Service Fabric cinco nós. Para calcular o custo tarifas através da execução de um cluster do Service Fabric em utilização do Azure a [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/).
+
+## <a name="introduction"></a>Introdução
+Este tutorial implementa um cluster de cinco nós de um tipo de nó único numa rede virtual no Azure.
+
+Um [cluster do Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os microsserviços são implementados e geridos. Clusters podem dimensionar a milhares de máquinas. Um computador ou a VM que faz parte de um cluster é designado por um nó. Cada nó é atribuído um nome de nó (uma cadeia). Os nós têm características como propriedades de colocação.
+
+Um tipo de nó define o tamanho, o número e propriedades de um conjunto de máquinas virtuais no cluster. Cada tipo de nó definido está configurado como um [conjunto de dimensionamento da máquina virtual](/azure/virtual-machine-scale-sets/), que utiliza para implementar e gerir uma coleção de máquinas virtuais como um conjunto de recursos de computação de um Azure. Cada tipo de nó, em seguida, pode ser escalado para cima ou para baixo de forma independente, têm conjuntos diferentes de portas abertas e pode ter as métricas de capacidade diferentes. Tipos de nó são utilizados para definir funções para um conjunto de nós de cluster, como o "front end" ou "back-end".  O cluster pode ter mais do que um tipo de nó, mas o tipo de nó principal tem de ter, pelo menos, cinco VMs de clusters de produção (ou, pelo menos, três VMs para clusters de teste).  [Serviços de sistema do Service Fabric](service-fabric-technical-overview.md#system-services) são colocadas em nós do tipo de nó principal.
+
+## <a name="cluster-capacity-planning"></a>Planeamento da capacidade do cluster
+Este tutorial implementa um cluster de cinco nós de um tipo de nó único.  Para qualquer implementação de cluster de produção, o planeamento de capacidade é um passo importante. Seguem-se alguns aspetos a considerar como parte do processo.
+
+- O número de nó tipos seu cluster precisa 
+- As propriedades de cada tipo de nó (por exemplo tamanho, principal, para a internet e número de VMs)
+- As características de durabilidade e fiabilidade do cluster
+
+Para obter mais informações, consulte [considerações de planeamento de capacidade de Cluster](service-fabric-cluster-capacity.md).
 
 ## <a name="sign-in-to-azure-and-select-your-subscription"></a>Início de sessão para o Azure e selecionar a sua subscrição
 Este guia utiliza CLI do Azure. Quando iniciar uma sessão nova, inicie sessão na sua conta do Azure e selecionar a sua subscrição antes de executar os comandos do Azure.

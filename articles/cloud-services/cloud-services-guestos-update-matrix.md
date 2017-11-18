@@ -14,8 +14,8 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 11/16/2017
 ms.author: raiye
-ms.openlocfilehash: ad23a38800a282b81d95eb5b15b218d86d3c0bc9
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: e19bb15be29fefbfbc94f7396bb2b68f8236f66a
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/17/2017
@@ -88,7 +88,7 @@ Devido a um erro de segurança, iremos desativação as seguintes Dezembro de 20
 
 | Cadeia de configuração | Data da versão | Desativar data | Data expirada |
 | --- | --- | --- | --- |
-| WA-CONVIDADO-SO-5.12_201710-01 |8 de Novembro de 2017 |Post 5.14 |TBD |
+| WA-CONVIDADO-SO-5.12_201710-02 |8 de Novembro de 2017 |Post 5.14 |TBD |
 | WA-CONVIDADO-SO-5.11_201709-01 |6 de Outubro de 2017 |Post 5.13 |TBD |
 | WA-CONVIDADO-SO-5.10_201708-01 |24 de Agosto de 2017 |Post 5.12 |TBD |
 |~~WA-CONVIDADO-SO-5.9_201707-01~~ |3 de Agosto de 2017 |8 de Novembro de 2017 |TBD |
@@ -134,7 +134,7 @@ Devido a um erro de segurança, iremos desativação as seguintes Dezembro de 20
 
 | Cadeia de configuração | Data da versão | Desativar data | Data expirada |
 | --- | --- | --- | --- |
-| WA-CONVIDADO-SO-3.54_201710-01 |8 de Novembro de 2017 |Post 3.56 |TBD |
+| WA-CONVIDADO-SO-3.54_201710-02 |8 de Novembro de 2017 |Post 3.56 |TBD |
 | WA-CONVIDADO-SO-3.53_201709-01 |6 de Outubro de 2017 |Post 3.55 |TBD |
 | WA-CONVIDADO-SO-3.52_201708-01 |24 de Agosto de 2017 |Post 3.54 |TBD |
 |~~WA-CONVIDADO-SO-3.51_201707-01~~ |3 de Agosto de 2017 |8 de Novembro de 2017 |TBD |
@@ -157,7 +157,7 @@ Devido a um erro de segurança, iremos desativação as seguintes Dezembro de 20
 
 | Cadeia de configuração | Data da versão | Desativar data | Data expirada |
 | --- | --- | --- | --- |
-| WA-CONVIDADO-SO-2.67_201710-01 |8 de Novembro de 2017 |Post 2.69 |TBD |
+| WA-CONVIDADO-SO-2.67_201710-02 |8 de Novembro de 2017 |Post 2.69 |TBD |
 | WA-CONVIDADO-SO-2.66_201709-01 |6 de Outubro de 2017 |Post 2.68 |TBD |
 | WA-CONVIDADO-SO-2.65_201708-01 |24 de Agosto de 2017 |Post 2.67 |TBD |
 |~~WA-CONVIDADO-SO-2.64_201707-01~~ |3 de Agosto de 2017 |8 de Novembro de 2017 |TBD |

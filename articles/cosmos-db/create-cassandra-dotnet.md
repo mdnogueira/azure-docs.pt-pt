@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 2503e7e6025e6f064574f14855468ae9b1b97fa0
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: ebfe845fa4f695064773a03f6d765da37ab44189
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-and-azure-cosmos-db"></a>Início rápido: Criar uma aplicação de Cassandra com .NET e do Azure Cosmos DB
 
@@ -28,13 +28,13 @@ BD do Azure do Cosmos é serviço de base de dados com múltiplos modelo global 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Acesso para o programa de pré-visualização do Azure Cosmos DB Cassandra API. Se ainda não aplicada para acesso ainda, [inscrever-se agora](https://aka.ms/cosmosdb-cassandra-signup).
-
-Se ainda não tiver o Visual Studio 2017, instalado, pode transferir e utilizar o **livre** [edição de Comunidade de 2017 do Visual Studio](https://www.visualstudio.com/downloads/). Confirme que ativa o **desenvolvimento do Azure** durante a configuração do Visual Studio.
-
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]Em alternativa, pode [tente BD do Azure do Cosmos gratuitamente](https://azure.microsoft.com/try/cosmosdb/) sem uma subscrição do Azure, sem encargos e compromissos.
 
-Instalar [Git](https://www.git-scm.com/) para clonar o exemplo.
+Acesso para o programa de pré-visualização do Azure Cosmos DB Cassandra API. Se ainda não aplicada para acesso ainda, [inscrever-se agora](cassandra-introduction.md#sign-up-now).
+
+Além disso: 
+* Se ainda não tiver o Visual Studio 2017, instalado, pode transferir e utilizar o **livre** [edição de Comunidade de 2017 do Visual Studio](https://www.visualstudio.com/downloads/). Confirme que ativa o **desenvolvimento do Azure** durante a configuração do Visual Studio.
+* Instalar [Git](https://www.git-scm.com/) para clonar o exemplo.
 
 <a id="create-account"></a>
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
@@ -112,7 +112,7 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 1. No [portal do Azure](http://portal.azure.com/), clique em **cadeia de ligação**. 
 
-    Utilize o ![Botão Copiar](./media/create-cassandra-dotnet/copy.png) botão à direita do ecrã, para copiar o valor de nome de utilizador.
+    Utilize o ![Copiar botão](./media/create-cassandra-dotnet/copy.png) botão à direita do ecrã, para copiar o valor de nome de utilizador.
 
     ![Ver e copiar uma chave de acesso na página do portal, cadeia de ligação do Azure](./media/create-cassandra-dotnet/keys.png)
 

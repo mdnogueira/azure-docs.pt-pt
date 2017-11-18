@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/09/2017
 ms.author: vikdesai
-ms.openlocfilehash: ab97feac7dd92cdc64343e215f6c623a6de9ef60
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 96e9cf2fed0b22fd7aa7b9ffeab0e94738ce510d
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="save-money-on-virtual-machines-with-reserved-virtual-machine-instances"></a>Poupar dinheiro em máquinas virtuais com instâncias de Máquina Virtual reservado 
 Instâncias de Máquina Virtual reservada permitem-lhe pagar previamente para um ano ou três anos de capacidade de cálculo para obter um desconto nas máquinas virtuais que utiliza. Esta reduz significativamente os custos de máquina virtual — até 72 por cento num preços pay as you go – com o compromisso de compromisso de um ano ou três anos. Instâncias de Máquina Virtual reservada um desconto de faturação e não afeta o estado do tempo de execução de máquinas virtuais.
@@ -46,7 +46,7 @@ Pode alterar o âmbito depois de comprar uma instância de VM reservado. Para al
 
 O desconto de reserva só se aplica a máquinas virtuais em subscrições com enterprise ou tipos de oferta pay as you go. Máquinas virtuais em execução numa subscrição com outros tipos de oferta não recebem o desconto de reserva. Para inscrições de empresa, as subscrições de programador/teste empresariais não elegíveis para as vantagens de instância reservado.
 
-Como reserva afeta a faturação da máquina virtual é explicado no [Noções sobre a aplicação de reserva de faturação benefício](https://go.microsoft.com/fwlink/?linkid=861721).
+Como reserva afeta a faturação da máquina virtual é explicado no [Noções sobre a aplicação de reserva de faturação benefício](https://go.microsoft.com/fwlink/?linkid=863405).
 
 ## <a name="what-happens-when-the-reservation-term-expires"></a>O que acontece quando o termo de reserva expira?
 No final do período da reserva, o faturação desconto expira e a infraestrutura de máquina virtual é faturada a pay-como-lhe aceda preço. As reservas não a renovação automática. Para continuar a introdução de desconto de faturação, tem de comprar uma nova instância de Máquina Virtual reservada. 

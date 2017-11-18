@@ -9,11 +9,11 @@ ms.author: kgremban
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: e232b4cdb62b7bf212808bd380119482ee88b077
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 17675f870a015e86f98bf286a9b1c2bbc05c16cd
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Início rápido: Implementar o módulo de limite de IoT primeiro do portal do Azure para um dispositivo Windows – pré-visualização
 
@@ -42,7 +42,7 @@ Este tutorial parte do princípio de que está a utilizar um computador ou máqu
 >    * Windows Server 1709 (criar 16299), ou
 >    * Windows IoT Core (criar 16299) num dispositivo baseado em x64
 >
-> Para Windows IoT Core, siga as instruções em [instalar o runtime de limite de IoT no Windows IoT Core] [lnk-install-iotcore]. Caso contrário, basta [configurar Docker utilizar contentores Windows][lnk-docker-containers]e, opcionalmente, confirme os pré-requisitos com o seguinte comando do powershell:
+> Para Windows IoT Core, siga as instruções em [instalar o runtime de limite de IoT no Windows IoT Core][lnk-install-iotcore]. Caso contrário, basta [configurar Docker utilizar contentores Windows][lnk-docker-containers]e, opcionalmente, confirme os pré-requisitos com o seguinte comando do powershell:
 >    ```
 >    Invoke-Expression (Invoke-WebRequest -useb https://aka.ms/iotedgewin)
 >    ```
@@ -150,6 +150,7 @@ Aprendeu a implementar um módulo de IoT Edge para um dispositivo de limite de I
 [lnk-portal]: https://portal.azure.com
 [lnk-nested]: https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization
 [lnk-delete]: https://docs.microsoft.com/cli/azure/iot/hub?view=azure-cli-latest#az_iot_hub_delete
+[lnk-install-iotcore]: how-to-install-iot-core.md
 
 <!-- Anchor links -->
 [anchor-register]: #register-an-iot-edge-device

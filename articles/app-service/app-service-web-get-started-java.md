@@ -4,7 +4,7 @@ description: "Saiba como executar aplicações Web no Serviço de Aplicações a
 services: app-service\web
 documentationcenter: 
 author: rmcmurray
-manager: erikre
+manager: routlaw
 editor: 
 ms.assetid: 8bacfe3e-7f0b-4394-959a-a88618cb31e1
 ms.service: app-service-web
@@ -12,18 +12,20 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 6/7/2017
+ms.date: 11/08/2017
 ms.author: cephalin;robmcm
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ac8ef479be5a93b2c4baa76279c8d3e53389409a
-ms.sourcegitcommit: 9c3150e91cc3075141dc2955a01f47040d76048a
+ms.openlocfilehash: 3d9a4d72d348b4fe631f075debb6198462f24c56
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="create-your-first-java-web-app-in-azure"></a>Criar a primeira aplicação Web Java no Azure
 
 Azure [Web Apps](app-service-web-overview.md) fornece uma serviço de alojamento na web altamente dimensionável e aplicação de patches personalizada. Este guia de introdução mostra como implementar uma aplicação Web Java no Serviço de Aplicações com o [IDE do Eclipse para Programadores de Java EE](http://www.eclipse.org/).
+
+Quando tiver concluído este guia de introdução, a aplicação terá um aspeto semelhante à ilustração seguinte quando vê-la num browser:
 
 !["Olá, Azure!” aplicação Web de exemplo](./media/app-service-web-get-started-java/browse-web-app-1.png)
 
@@ -32,7 +34,7 @@ Azure [Web Apps](app-service-web-overview.md) fornece uma serviço de alojamento
 Para concluir este guia de introdução, instale:
 
 * O [IDE do Eclipse para Programadores de Java EE](http://www.eclipse.org/downloads/) gratuito. Este guia de introdução utiliza o Eclipse Neon.
-* O [Azure Toolkit para Eclipse](/azure/azure-toolkit-for-eclipse-installation).
+* O [Azure Toolkit para Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-installation).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -167,9 +169,9 @@ No Explorador de Projeto, clique com o botão direito do rato no projeto e, em s
 
 A caixa de diálogo **Implementar Aplicação Web** é apresentada e mostra o serviço de aplicações que criou anteriormente. 
 
-> [!NOTE]
-> Selecione **Implementar na raiz** sempre que publicar.
->
+> [!NOTE] 
+> Selecione **Implementar na raiz** sempre que publicar. 
+> 
 
 Selecione a aplicação Web e selecione **Implementar**, que publica as alterações.
 

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2017
 ms.author: dobett
-ms.openlocfilehash: f960d82575be2aa80c039c3c3f73abee1e2aa9a5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6b100e65aba604fd8becb02c3a205b3348872bc4
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Configurar o IoT Hub carregamentos de ficheiros utilizando a CLI do Azure
 
@@ -144,7 +144,7 @@ Siga estas ligações para saber mais sobre a gestão do Azure IoT Hub:
 Para explorar ainda mais as capacidades do IoT Hub, consulte:
 
 * [Guia para programadores do IoT Hub][lnk-devguide]
-* [Simulando um dispositivo com o limite de IoT][lnk-iotedge]
+* [Implementar o AI para dispositivos de limite com limite de IoT do Azure][lnk-iotedge]
 * [Proteger a sua solução de IoT a partir do zero cópias de segurança][lnk-securing]
 
 [13]: ./media/iot-hub-configure-file-upload/file-upload-settings.png
@@ -158,7 +158,7 @@ Para explorar ainda mais as capacidades do IoT Hub, consulte:
 [lnk-monitor]: iot-hub-operations-monitoring.md
 
 [lnk-devguide]: iot-hub-devguide.md
-[lnk-iotedge]: iot-hub-linux-iot-edge-simulated-device.md
+[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
 [lnk-securing]: iot-hub-security-ground-up.md
 
 

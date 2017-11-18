@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/18/2017
+ms.date: 11/14/2017
 ms.author: dhanyahk;markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 58ebf74e166cdcae2c54b134cb99552333fafa24
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: 9fbcac4bd6240aed607c3da6c6535d207a782448
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="prerequisites-to-access-the-azure-ad-reporting-api"></a>Pré-requisitos para o Azure AD API do relatório de acesso
 
@@ -55,7 +55,7 @@ Para configurar o seu diretório para o Azure AD API do relatório de acesso, te
 
 **Para registar uma aplicação do Azure Active Directory:**
 
-1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Active Directory**.
+1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Azure Active Directory**.
    
     ![Registar a aplicação](./media/active-directory-reporting-api-prerequisites-azure-portal/01.png) 
 
@@ -120,7 +120,7 @@ O objetivo deste passo é conceder a aplicação **ler os dados de diretório** 
 Esta secção mostra como obter as seguintes definições do diretório:
 
 * Nome de domínio
-* ID de cliente
+* ID de Cliente
 * Segredo do cliente
 
 Necessitar destes valores quando configurar chamadas à API do Reporting Services. 
@@ -129,11 +129,11 @@ Necessitar destes valores quando configurar chamadas à API do Reporting Service
 
 **Para obter o seu nome de domínio:**
 
-1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Active Directory**.
+1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Azure Active Directory**.
    
     ![Registar a aplicação](./media/active-directory-reporting-api-prerequisites-azure-portal/01.png) 
 
-2. No **do Azure Active Directory** painel, clique em **nomes de domínio**.
+2. No **do Azure Active Directory** painel, clique em **nomes de domínio personalizado**.
 
     ![Registar a aplicação](./media/active-directory-reporting-api-prerequisites-azure-portal/09.png) 
 
@@ -144,7 +144,7 @@ Necessitar destes valores quando configurar chamadas à API do Reporting Service
 
 **Para obter o ID de cliente da aplicação:**
 
-1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Active Directory**.
+1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Azure Active Directory**.
    
     ![Registar a aplicação](./media/active-directory-reporting-api-prerequisites-azure-portal/01.png) 
 
@@ -161,7 +161,7 @@ Para obter o segredo do cliente da sua aplicação, terá de criar uma nova chav
 
 **Para obter o segredo do cliente da aplicação:**
 
-1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Active Directory**.
+1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, clique em **do Azure Active Directory**.
    
     ![Registar a aplicação](./media/active-directory-reporting-api-prerequisites-azure-portal/01.png) 
 

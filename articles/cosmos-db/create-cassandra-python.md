@@ -15,11 +15,11 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 11/15/2017
 ms.author: govindk
-ms.openlocfilehash: 95d58c600bc43059025e739a8cdb062287f4ffb5
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: 4a2347fe9578b35c95d240c5c4dd2bf062077ece
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="quickstart-build-a-cassandra-app-with-python-and-azure-cosmos-db"></a>Início rápido: Criar uma aplicação de Cassandra com o Python e Azure Cosmos DB
 
@@ -29,13 +29,14 @@ BD do Azure do Cosmos é serviço de base de dados com múltiplos modelo global 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Antes de poder executar este exemplo, tem de ter os pré-requisitos seguintes:
-    * [Python](https://www.python.org/downloads/) v2.7.14 de versão
-    * [Git](http://git-scm.com/)
-    * [Controlador de Python para Apache Cassandra](https://github.com/datastax/python-driver)
-
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]Em alternativa, pode [tente BD do Azure do Cosmos gratuitamente](https://azure.microsoft.com/try/cosmosdb/) sem uma subscrição do Azure, sem encargos e compromissos.
 
+Acesso para o programa de pré-visualização do Azure Cosmos DB Cassandra API. Se ainda não aplicada para acesso ainda, [inscrever-se agora](cassandra-introduction.md#sign-up-now).
+
+Além disso:
+* [Python](https://www.python.org/downloads/) v2.7.14 de versão
+* [Git](http://git-scm.com/)
+* [Controlador de Python para Apache Cassandra](https://github.com/datastax/python-driver)
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
 
@@ -132,7 +133,7 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 1. No [portal do Azure](http://portal.azure.com/), clique em **cadeia de ligação**. 
 
-    Utilize o ![Botão Copiar](./media/create-cassandra-python/copy.png) botão à direita do ecrã, para copiar o valor superior, o ponto de contacto.
+    Utilize o ![Copiar botão](./media/create-cassandra-python/copy.png) botão à direita do ecrã, para copiar o valor superior, o ponto de contacto.
 
     ![Ver e copiar um acesso nome, a palavra-passe e contacte ponto do utilizador no Azure painel do portal, ligação cadeia](./media/create-cassandra-python/keys.png)
 

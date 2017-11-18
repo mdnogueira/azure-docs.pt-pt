@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/02/2017
 ms.author: ryanwi
-ms.openlocfilehash: b06d0196f1f911f2f6cf87242d70455ba22b1f88
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: fb32ef2881bdc1e88bb3f54446163c0feac5da9b
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Implementar um cluster do Service Fabric Windows numa rede virtual do Azure
-Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Windows Service Fabric numa rede virtual do Azure existente (VNET) e subplano net através do PowerShell. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações.  Para criar um cluster de Linux utilizando a CLI do Azure, consulte [criar um cluster com Linux seguro no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
+Este tutorial faz parte de um de uma série. Ficará a saber como implementar um cluster do Service Fabric com o Windows numa rede virtual do Azure existente (VNET) e subplano net através do PowerShell. Quando tiver terminado, tiver um cluster em execução na nuvem que pode implementar aplicações.  Para criar um cluster de Linux utilizando a CLI do Azure, consulte [criar um cluster com Linux seguro no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 Neste tutorial, ficará a saber como:
 
@@ -47,6 +47,22 @@ Antes de começar este tutorial:
 
 Os procedimentos seguintes criar um cluster do Service Fabric cinco nós. Para calcular o custo tarifas através da execução de um cluster do Service Fabric em utilização do Azure a [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/).
 
+## <a name="introduction"></a>Introdução
+Este tutorial implementa um cluster de cinco nós de um tipo de nó único numa rede virtual no Azure.
+
+Um [cluster do Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto ligado à rede de máquinas virtuais ou físicas, no qual os microsserviços são implementados e geridos. Clusters podem dimensionar a milhares de máquinas. Um computador ou a VM que faz parte de um cluster é designado por um nó. Cada nó é atribuído um nome de nó (uma cadeia). Os nós têm características como propriedades de colocação.
+
+Um tipo de nó define o tamanho, o número e propriedades de um conjunto de máquinas virtuais no cluster. Cada tipo de nó definido está configurado como um [conjunto de dimensionamento da máquina virtual](/azure/virtual-machine-scale-sets/), que utiliza para implementar e gerir uma coleção de máquinas virtuais como um conjunto de recursos de computação de um Azure. Cada tipo de nó, em seguida, pode ser escalado para cima ou para baixo de forma independente, têm conjuntos diferentes de portas abertas e pode ter as métricas de capacidade diferentes. Tipos de nó são utilizados para definir funções para um conjunto de nós de cluster, como o "front end" ou "back-end".  O cluster pode ter mais do que um tipo de nó, mas o tipo de nó principal tem de ter, pelo menos, cinco VMs de clusters de produção (ou, pelo menos, três VMs para clusters de teste).  [Serviços de sistema do Service Fabric](service-fabric-technical-overview.md#system-services) são colocadas em nós do tipo de nó principal.
+
+## <a name="cluster-capacity-planning"></a>Planeamento da capacidade do cluster
+Este tutorial implementa um cluster de cinco nós de um tipo de nó único.  Para qualquer implementação de cluster de produção, o planeamento de capacidade é um passo importante. Seguem-se alguns aspetos a considerar como parte do processo.
+
+- O número de nó tipos seu cluster precisa 
+- As propriedades de cada tipo de nó (por exemplo tamanho, principal, para a internet e número de VMs)
+- As características de durabilidade e fiabilidade do cluster
+
+Para obter mais informações, consulte [considerações de planeamento de capacidade de Cluster](service-fabric-cluster-capacity.md).
+
 ## <a name="sign-in-to-azure-and-select-your-subscription"></a>Início de sessão para o Azure e selecionar a sua subscrição
 Este guia utiliza o Azure PowerShell. Quando inicia uma nova sessão do PowerShell, inicie sessão na sua conta do Azure e selecionar a sua subscrição antes de executar os comandos do Azure.
  
@@ -68,7 +84,7 @@ New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
 ```
 
 ## <a name="deploy-the-network-topology"></a>Implementar a topologia de rede
-Em seguida, configure a topologia de rede à qual serão implementados API Management e o cluster do Service Fabric. O [network.json] [ network-arm] modelo do Resource Manager é configurado para criar uma rede virtual (VNET) e também um grupo de segurança sub-rede e de rede (NSG) para o Service Fabric e uma sub-rede e o NSG para gestão de API . Saiba mais sobre as VNETs, sub-redes e NSGs [aqui](../virtual-network/virtual-networks-overview.md).
+Em seguida, configure a topologia de rede à qual serão implementados API Management e o cluster do Service Fabric. O [network.json] [ network-arm] modelo do Resource Manager é configurado para criar uma rede virtual (VNET) e também um grupo de segurança sub-rede e de rede (NSG) para o Service Fabric e uma sub-rede e o NSG para gestão de API . API Management está implementada mais tarde no tutorial. Saiba mais sobre as VNETs, sub-redes e NSGs [aqui](../virtual-network/virtual-networks-overview.md).
 
 O [network.parameters.json] [ network-parameters-arm] ficheiro de parâmetros contém os nomes das sub-redes e NSGs Service Fabric e gestão de API implementar.  API Management está implementada no [seguintes tutorial](service-fabric-tutorial-deploy-api-management.md). Para este guia, os valores de parâmetros não precisam de ser alteradas. Os modelos de serviço Gestor de recursos de infraestrutura utilizam estes valores.  Se os valores forem modificados aqui, deve modificá-las nos outros modelos do Resource Manager utilizados neste tutorial e [tutorial de gestão de API implementar](service-fabric-tutorial-deploy-api-management.md). 
 

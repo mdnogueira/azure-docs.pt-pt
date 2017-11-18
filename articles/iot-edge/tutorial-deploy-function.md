@@ -9,11 +9,11 @@ ms.author: v-jamebr
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 34ed5083b952c42d4ed119b6986db965eb9eb67a
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 82019392edc99f0adccb26b483e77b7c576822fb
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="deploy-azure-function-as-an-iot-edge-module---preview"></a>Implementar a função do Azure como um módulo de limite de IoT – pré-visualização
 Pode utilizar as funções do Azure para implementar o código que implementa a lógica de negócio diretamente nos seus dispositivos de limite de IoT. Este tutorial explica-lhe como criar e implementar uma função do Azure, que filtra os dados de sensores no dispositivo simulado contorno de IoT que criou na implementação do Azure IoT limite num dispositivo simulado no [Windows] [ lnk-tutorial1-win]ou [Linux] [ lnk-tutorial1-lin] tutoriais. Neste tutorial, ficará a saber como:     
@@ -141,7 +141,7 @@ Os passos seguintes mostram como criar uma função de limite de IoT utilizando 
 1. Compilar a imagem do Docker.
     1. No VS Code explorer, clique o **Docker** pasta para abri-lo. Em seguida, selecione a pasta para a sua plataforma de contentor: **linux x64** ou **windows nano**. 
     2. Clique com botão direito do **Dockerfile** do ficheiro e clique em **imagem de Docker do módulo de limite de IoT criar**. 
-    3. No **selecionar pasta** caixa, navegue para o **linux/Docker-x64** pasta e clique em **selecionar pasta como EXE_DIR**. 
+    3. No **selecionar pasta** caixa, navegue para a pasta do projeto, **FilterFunction**e clique em **selecionar pasta como EXE_DIR**. 
     4. Na caixa de texto de pop-up na parte superior da janela VS Code, introduza o nome da imagem. Por exemplo, `<docker registry address>/filterfunction:latest`; onde *endereço de registo do docker* é o seu ID de Docker se estiver a utilizar o Hub de Docker ou é semelhante à `<your registry name>.azurecr.io`, se estiver a utilizar o registo de contentor do Azure.
  
 4. Inicie sessão no Docker. No terminal integrada, introduza o seguinte comando: 

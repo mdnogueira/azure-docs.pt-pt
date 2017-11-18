@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/15/2017
+ms.date: 11/17/2017
 ms.author: bwren
-ms.openlocfilehash: e3a4c631cd69921fec60b3ae33a23c4c7c369194
-ms.sourcegitcommit: 5735491874429ba19607f5f81cd4823e4d8c8206
+ms.openlocfilehash: addb1c8f4c71bb1979229c597665fd301dfb9fdf
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="custom-logs-in-log-analytics"></a>Registos personalizados na análise de registos
 A origem de dados de registos personalizados na análise de registos permite-lhe recolher eventos de ficheiros de texto em computadores Windows e Linux. Muitas aplicações regista informações nos ficheiros de texto em vez dos serviços de registo padrão, tais como o registo de eventos do Windows ou Syslog.  Depois de recolhidos, pode analisar cada registo de início de sessão para os campos individuais utilizando o [campos personalizados](log-analytics-custom-fields.md) funcionalidade de análise de registos.
@@ -56,10 +56,6 @@ Começar através do carregamento de uma amostra de registo personalizado.  O as
 
 Se for utilizado um delimitador de timestamp, a propriedade TimeGenerated de cada registo armazenado no OMS será preenchida com a data/hora especificada para essa entrada no ficheiro de registo.  Se for utilizado um delimitador de linha nova, em seguida, TimeGenerated é preenchido com a data e hora em que a análise de registos recolhidos a entrada.
 
-> [!NOTE]
-> Análise de registos trata atualmente a data/hora recolhida a partir de um registo com um delimitador de timestamp como UTC.  Isto em breve será alterado para utilizar o fuso horário no agente.
->
->
 
 1. Clique em **procurar** e navegue para um ficheiro de exemplo.  Tenha em atenção que isto pode botão poderá ser assinalada como **Escolher ficheiro** alguns browsers.
 2. Clique em **Seguinte**.

@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 11/17/2017
 ms.author: mimig
-ms.openlocfilehash: ae896bc5d795a733357ac08d370433d7475d2eb2
-ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
+ms.openlocfilehash: 943e0849b03debaa47022b5cb6d0df43d82ac230
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>Cosmos Azure API de .NET de tabela de base de dados: Transferir e notas de versão
 > [!div class="op_single_selector"]
@@ -44,17 +44,34 @@ ms.lasthandoff: 11/15/2017
 * Versão de pré-visualização inicial
 
 ## <a name="release-and-retirement-dates"></a>Datas de lançamento e de extinção
-A Microsoft vai fornecer pelo menos notificação **12 meses** previamente extinguir um SDK para smooth a transição para uma versão mais recente/suportado.
+A Microsoft disponibiliza notificação, pelo menos, **12 meses** previamente extinguir um SDK para smooth a transição para uma versão mais recente/suportado.
 
 Novas funcionalidades e a funcionalidade e otimizações apenas são adicionadas ao SDK atual, como tal, recomenda-se que atualize sempre para a versão mais recente SDK como antecipadamente quanto possível. 
 
-Qualquer pedido de BD do Cosmos do Azure utilizando um SDK extinto será rejeitado pelo serviço.
+Todos os pedidos de BD do Cosmos do Azure utilizando um SDK extinto são rejeitados pelo serviço.
 <br/>
 
 | Versão | Data da versão | Data de retirada |
 | --- | --- | --- |
 | [1.0.0](#1.0.0) |15 de Novembro de 2017|--- |
 | [0.9.0-Preview](#0.1.0-preview) |11 de Novembro de 2017 |--- |
+
+## <a name="troubleshooting"></a>Resolução de problemas
+
+Se receber o erro 
+
+```
+Unable to resolve dependency 'Microsoft.Azure.Storage.Common'. Source(s) used: 'nuget.org', 
+'CliFallbackFolder', 'Microsoft Visual Studio Offline Packages', 'Microsoft Azure Service Fabric SDK'`
+```
+durante a tentativa de utilizar o pacote Microsoft.Azure.CosmosDB.Table NuGet, tem duas opções para corrigir o problema:
+
+* Utilize a consola de gerir pacotes para instalar o pacote de Microsoft.Azure.CosmosDB.Table e as respetivas dependências. Para tal, escreva o seguinte na consola do Gestor de pacotes para a sua solução. 
+    ```
+    Install-Package Microsoft.Azure.CosmosDB.Table -IncludePrerelease
+    ```
+    
+* Utilizar a ferramenta de gestão de pacote Nuget preferencial, instale o pacote Microsoft.Azure.Storage.Common Nuget antes de instalar Microsoft.Azure.CosmosDB.Table.
 
 ## <a name="faq"></a>FAQ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]

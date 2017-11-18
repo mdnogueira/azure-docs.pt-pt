@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/04/2017
 ms.author: alkohli
-ms.openlocfilehash: 2d6c1737edbc4e69dd7de4c8ce3d7b0899bfae51
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: 5f31e32bb7cbd747af2e03699cfb2c6418828f8d
+ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Implementar o serviço do Gestor de dispositivos do StorSimple para os dispositivos de série 8000 do StorSimple
 
@@ -113,6 +113,7 @@ Execute os seguintes passos para transitar o seu serviço para o portal do Azure
 
 Depois de concluída a transição, pode gerir os seus dispositivos através do serviço StorSimple Manager de dispositivos no portal do Azure. Se não vir uma opção para migrar para o portal do Azure, mas pretender mover, pode [submeter um pedido](https://aka.ms/ss8000-cx-signup).
 
+## <a name="supported-operations-on-devices-running-versions-prior-to-update-30"></a>Suportado operações em dispositivos com versões anteriores ao 3.0 de atualização
 No portal do Azure, são suportados apenas StorSimple dispositivos a executar a atualização 3.0 e superior. Os dispositivos que executam versões mais antigas têm suporte limitado. Depois de ter migrado para o portal do Azure, utilize a tabela seguinte para compreender as operações são suportadas em dispositivos com versões anteriores ao 3.0 de atualização.
 
 | Operação                                                                                                                       | Suportado      |
@@ -121,7 +122,7 @@ No portal do Azure, são suportados apenas StorSimple dispositivos a executar a 
 | Configurar definições de dispositivos como geral, rede e segurança                                                                | Sim            |
 | Procurar, transferir e instalar atualizações                                                                                             | Sim            |
 | Desativar o dispositivo                                                                                                               | Sim            |
-| Eliminar o dispositivo                                                                                                                   | Sim            |
+| Eliminar dispositivo                                                                                                                   | Sim            |
 | Criar, modificar e eliminar um contentor de volume                                                                                   | Não             |
 | Criar, modificar e eliminar um volume                                                                                             | Não             |
 | Criar, modificar e eliminar uma política de cópia de segurança                                                                                      | Não             |
