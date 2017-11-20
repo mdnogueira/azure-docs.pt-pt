@@ -28,12 +28,6 @@
 #### [Sparkfun ESP8266 Thing Dev com Arduino IDE](iot-hub-sparkfun-esp8266-thing-dev-get-started.md)
 #### [Adafruit Feather M0 com Arduino IDE](iot-hub-adafruit-feather-m0-wifi-kit-arduino-get-started.md)
 
-#### Utilizar o Starter Kit do Gateway do IoT
-##### [Configurar o Intel NUC como um gateway](iot-hub-gateway-kit-c-lesson1-set-up-nuc.md)
-##### [Ligar o gateway ao Hub IoT](iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud.md)
-##### [Utilizar o gateway para conversão de dados](iot-hub-gateway-kit-c-use-iot-gateway-for-data-conversion.md)
-##### [Resolução de problemas](iot-hub-gateway-kit-c-troubleshooting.md)
-
 ## Cenários de IoT alargados
 ### [Gerir mensagens de dispositivo na cloud com o iothub-explorer](iot-hub-explorer-cloud-device-messaging.md)
 ### [Guardar mensagens do Hub IoT no armazenamento de dados do Azure](iot-hub-store-data-in-azure-table-storage.md)
@@ -43,7 +37,7 @@
 ### [Gestão de dispositivos com o iothub-explorer](iot-hub-device-management-iothub-explorer.md)
 ### [Monitorização remota e notificações com Aplicações Lógicas](iot-hub-monitoring-notifications-with-azure-logic-apps.md)
 
-# Procedimento
+# Guias de procedimentos
 ## Planear
 ### [Comparação entre o Hub IoT e os Hubs de Eventos](iot-hub-compare-event-hubs.md)
 ### [Dimensionar a sua solução](iot-hub-scaling.md)
@@ -147,30 +141,6 @@
 ##### [Conceitos da segurança de certificado X.509 de AC](iot-hub-x509ca-concept.md)
 #### [Introdução à segurança de certificado X.509 de AC](iot-hub-security-x509-get-started.md)
 ##### [Criar certificados - PowerShell](iot-hub-security-x509-create-certificates.md)
-
-## Azure IoT Edge
-### [Descrição geral](iot-hub-iot-edge-overview.md)
-### Introdução
-#### [Linux](iot-hub-linux-iot-edge-get-started.md)
-#### [Windows](iot-hub-windows-iot-edge-get-started.md)
-### Simular um dispositivo
-#### [Linux](iot-hub-linux-iot-edge-simulated-device.md)
-#### [Windows](iot-hub-windows-iot-edge-simulated-device.md)
-### [Utilizar um dispositivo real](iot-hub-iot-edge-physical-device.md)
-### Criar um módulo
-#### [Java](iot-hub-iot-edge-create-module-java.md)
-#### [.NET Framework](https://github.com/Azure-Samples/iot-edge-samples#how-to-run-the-net-module-sample-windows-10)
-#### [.NET Standard](iot-hub-iot-edge-create-module-dotnet-core.md)
-#### [Node.js](iot-hub-iot-edge-create-module-js.md)
-### Compilação
-#### [.NET Framework](https://github.com/Azure/iot-edge/tree/master/samples/dotnet_binding_sample)
-#### [Módulo do .NET Core](https://github.com/Azure/iot-edge/tree/master/samples/dotnet_core_module_sample)
-#### [Gateway gerido do .NET Core](https://github.com/Azure/iot-edge/tree/master/samples/dotnet_core_managed_gateway)
-#### [Java](https://github.com/Azure/iot-edge/tree/master/samples/java_sample)
-#### [Node.js](https://github.com/Azure/iot-edge/tree/master/samples/nodejs_simple_sample)
-#### [Adicionar módulo dinamicamente](https://github.com/Azure/iot-edge/tree/master/samples/dynamically_add_module_sample)
-#### [Módulo de proxy extraprocessual](https://github.com/Azure/iot-edge/tree/master/samples/proxy_sample)
-#### [Anfitrião de módulo nativo](https://github.com/Azure/iot-edge/tree/master/samples/native_module_host_sample)
 
 # Referência
 ## [Exemplos de código](https://azure.microsoft.com/en-us/resources/samples/?service=iot-hub)

@@ -370,6 +370,8 @@
           items:
             - name: Implementar aplicação de exemplo
               href: saas-multitenantdb-get-started-deploy.md
+            - name: Aprovisionar inquilinos
+              href: saas-multitenantdb-provision-and-catalog.md
             - name: Monitorizar o desempenho da base de dados
               href: saas-multitenantdb-performance-monitoring.md
             - name: Executar consultas ad hoc
