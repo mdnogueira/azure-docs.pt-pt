@@ -6,6 +6,7 @@
 ## [Inscrever-se numa conta do Office 365](billing-use-existing-office-365-account-azure-subscription.md)
 ## [Inscrever-se no Office 365 com a conta do Azure](billing-use-existing-azure-account-for-office-365-subscription.md)
 ## [Organizar recursos com grupos de gestão](billing-enterprise-mgmt-group-overview.md)
+## [Poupe dinheiro com as Instâncias de VM Reservadas](billing-save-compute-costs-reservations.md)
 ## [Limites e quotas](../azure-subscription-service-limits.md?toc=/azure/billing/TOC.json)
 
 # Procedimento
@@ -17,9 +18,13 @@
 ### [Compreender os termos na sua utilização](billing-understand-your-usage.md)
 ### [Compreender os encargos de serviços externos](billing-understand-your-azure-marketplace-charges.md)
 ### [Compreender o mapeamento de medição dos serviços gratuitos](billing-understand-free-service-meter-mapping.md)
+### [Os custos do Windows relativamente às Instâncias de VM Reservadas](billing-reserved-instance-windows-software-costs.md)
+### [Compreender a aplicação de descontos da Instância de VM Reservada](billing-understand-vm-reservation-charges.md)
 ### [Compreender o limite de gastos](billing-spending-limit.md)
 ### [Configurar alertas de faturação](billing-set-up-alerts.md)
 ### [Resolver saldo em dívida](billing-azure-subscription-past-due-balance.md)
+### [Compreender a utilização da Instância Reservada para Pay As You Go](billing-understand-reserved-instance-usage.md)
+### [Compreender a utilização da Instância Reservada para Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## Gerir subscrições
 ### [Gerir funções de administrador](billing-add-change-azure-subscription-administrator.md)
@@ -34,6 +39,7 @@
 ### [Atualizar informações de pagamento](billing-how-to-change-credit-card.md)
 ### [Ligar inquilino do Office 365](billing-add-office-365-tenant-to-azure-subscription.md)
 ### [Comprar subscrições através de fatura](billing-how-to-pay-by-invoice.md)
+## [Gerir Instâncias de VM Reservadas](billing-manage-reserved-vm-instance.md)
 ## Resolução de problemas
 ### [Problemas de inscrição](https://support.microsoft.com/en-us/help/4042959)
 ### [Cartão rejeitado](https://support.microsoft.com/en-us/help/4042960)

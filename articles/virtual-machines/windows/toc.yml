@@ -80,15 +80,21 @@
           href: sizes-general.md
     - name: Manutenção e atualizações
       href: maintenance-and-updates.md
-    - name: Armazenamento
+    - name: Armazenamento em disco
       href: about-disks-and-vhds.md
       items:
+        - name: Managed Disks
+          href: managed-disks-overview.md
         - name: Armazenamento Premium
           href: premium-storage.md
         - name: Desempenho de armazenamento Premium
           href: premium-storage-performance.md
         - name: Armazenamento Standard
           href: standard-storage.md
+        - name: Destinos de escalabilidade para discos
+          href: disk-scalability-targets.md
+        - name: Cópia de Segurança e recuperação após desastre para discos
+          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
     - name: Redes
       href: network-overview.md
     - name: Aplicações de dimensionamento automático
@@ -113,6 +119,8 @@
       items:
         - name: 'Utilizar C#'
           href: csharp.md
+        - name: Utilizar disco especializado
+          href: create-vm-specialized.md
         - name: 'Utilizar um modelo com C#'
           href: csharp-template.md
         - name: Criar VM com Chef
@@ -154,6 +162,8 @@
           href: ../../backup/tutorial-backup-vm-at-scale.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
     - name: Gerir VMs
       items:
+        - name: Pré-pagamento de VMs - Instâncias Reservadas
+          href: prepay-reserved-vm-instances.md
         - name: Tarefas comuns do PowerShell
           href: ps-common-ref.md
         - name: Mover uma VM
@@ -186,12 +196,10 @@
           href: cli-ps-findimage.md
         - name: Preparar a VM para carregamento
           href: prepare-for-upload-vhd-image.md
-        - name: Utilizar imagem generalizada
-          href: create-vm-generalized-managed.md
-        - name: Utilizar disco especializado
-          href: create-vm-specialized.md
         - name: Captura de VM para imagem
           href: capture-image-resource.md
+        - name: Utilizar imagem generalizada
+          href: create-vm-generalized-managed.md
         - name: Criar imagem com o Packer
           href: build-image-with-packer.md
         - name: Utilizar imagens do cliente Windows
@@ -241,8 +249,6 @@
               href: excel-cluster-hpcpack.md
     - name: Gerir o armazenamento
       items:
-        - name: Saiba mais sobre os Managed Disks
-          href: managed-disks-overview.md
         - name: FAQ sobre discos
           href: faq-for-disks.md
         - name: Adicionar um disco
@@ -255,8 +261,6 @@
           href: detach-disk.md
         - name: Redimensionar um disco
           href: expand-os-disk.md
-        - name: Cópia de Segurança e recuperação após desastre para discos
-          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Tirar um instantâneo de um disco
           href: snapshot-copy-managed-disk.md
         - name: Fazer cópia de segurança de discos não geridos
