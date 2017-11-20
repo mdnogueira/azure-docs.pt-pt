@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/24/2017
+ms.date: 11/15/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: a532c8f69bfb19d26538aafe7c74f062dee06d9f
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 6c61d99f1d023ac643455faae10ef284f1f5bb14
+ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="service-principals-with-azure-container-service-aks"></a>Principais de serviço com o Azure Container Service (AKS)
 
@@ -34,13 +34,13 @@ Os passos detalhados neste documento partem do princípio de que já criou um cl
 
 Para criar um principal de serviço do Azure AD, tem de ter permissões para registar uma aplicação no seu inquilino do Azure AD e para atribuir a aplicação a uma função na sua subscrição. Se não tiver as permissões necessárias, poderá ter de pedir ao administrador do Azure AD ou da subscrição para atribuir as permissões necessárias ou pré-criar um principal de serviço para o cluster de Kubernetes.
 
-Precisa também da versão 2.0.20 da CLI do Azure ou posterior instalada e configurada. Execute az --version para localizar a versão. Se precisar de instalar ou atualizar, veja [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
+Precisa também da versão 2.0.21 da CLI do Azure ou posterior instalada e configurada. Execute az --version para localizar a versão. Se precisar de instalar ou atualizar, veja [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 ## <a name="create-sp-with-aks-cluster"></a>Criar o SP com o cluster do AKS
 
 Quando implementar um cluster do AKS com o comando `az aks create`, tem a opção de gerar automaticamente um principal de serviço.
 
-No exemplo seguinte, é criado um cluster do AKS e, por não existir um principal de serviço especificado, é criado um principal de serviço para o cluster. Para concluir esta operação, a sua conta tem de ter os direitos adequados para criar um principal de serviço. 
+No exemplo seguinte, é criado um cluster do AKS e, por não existir um principal de serviço especificado, é criado um principal de serviço para o cluster. Para concluir esta operação, a sua conta tem de ter os direitos adequados para criar um principal de serviço.
 
 ```azurecli
 az aks create -n myClusterName -d myDNSPrefix -g myResourceGroup --generate-ssh-keys

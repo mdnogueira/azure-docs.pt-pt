@@ -1,6 +1,6 @@
 ---
-title: "Criar um índice da Azure Search | Microsoft Azure | Serviço de pesquisa em nuvem alojado"
-description: "O que é um índice da Azure Search e como é utilizado?"
+title: "Índices no Azure Search | Microsoft Docs"
+description: "Saiba mais sobre os conceitos de índice no Azure Search e como são os índices são utilizados."
 services: search
 documentationcenter: 
 author: ashmaka
@@ -10,15 +10,15 @@ ms.devlang: na
 ms.workload: search
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
-ms.date: 12/08/2016
+ms.date: 11/08/2017
 ms.author: ashmaka
-ms.openlocfilehash: 7fc45273c0f71c727b7087949cc63bbb4111f866
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 87f1121594d8577b5dacac4026aa7d86b2921d10
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/13/2017
 ---
-# <a name="create-an-azure-search-index"></a>Criar um índice da Azure Search
+# <a name="indexes-in-azure-search"></a>Índices no Azure Search
 > [!div class="op_single_selector"]
 > * [Descrição geral](search-what-is-an-index.md)
 > * [Portal](search-create-index-portal.md)
@@ -27,8 +27,7 @@ ms.lasthandoff: 10/11/2017
 > 
 > 
 
-## <a name="what-is-an-index"></a>O que é um índice?
-Um *índice* é um arquivo persistente de *documentos* e outras construções utilizado por um serviço Azure Search. Um documento é uma unidade de dados pesquisáveis no índice. Por exemplo, um retalhista de comércio eletrónico pode ter um documento para cada artigo que vende, uma empresa jornalística pode ter um documento para cada artigo, etc. Mapeamento destes conceitos para equivalentes da base de dados mais familiares: um *índice* é, conceptualmente, semelhante a uma *tabela* e os *documentos* são quase equivalentes a *linhas* numa tabela.
+No Azure Search, os *índices* são arquivos persistentes de *documentos* e de outras construções utilizados por um serviço do Azure Search. Um documento é uma unidade de dados pesquisáveis no índice. Por exemplo, um retalhista de comércio eletrónico pode ter um documento para cada artigo que vende, uma empresa jornalística pode ter um documento para cada artigo, etc. Mapeamento destes conceitos para equivalentes da base de dados mais familiares: um *índice* é, conceptualmente, semelhante a uma *tabela* e os *documentos* são quase equivalentes a *linhas* numa tabela.
 
 Quando adiciona/carrega documentos e submete consultas de pesquisa para a Azure Search, submete pedidos para um índice específico no serviço de pesquisa. 
 

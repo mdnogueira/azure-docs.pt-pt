@@ -13,15 +13,15 @@ ms.devlang:
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 09/20/2017
+ms.date: 11/07/2017
 ms.author: larryfr
-ms.openlocfilehash: ee69da7f2190d40148ea59e6a23315ad96c2bc92
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 91ef8aece812c0495fcb3bc31401606f40b7ba97
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="start-with-apache-kafka-preview-on-hdinsight"></a>Começar com o Apache Kafka (pré-visualização) no HDInsight
+# <a name="start-with-apache-kafka-on-hdinsight"></a>Introdução ao Apache Kafka no HDInsight
 
 Saiba como criar e utilizar um cluster do [Apache Kafka](https://kafka.apache.org) no Azure HDInsight. O Kafka é uma plataforma open source de transmissão em fluxo distribuída, disponível com o HDInsight. É frequentemente utilizado como mediador de mensagens, uma vez que fornece funcionalidades semelhantes a uma fila de mensagens de publicação-subscrição.
 

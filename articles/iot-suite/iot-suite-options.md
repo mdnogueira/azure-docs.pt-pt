@@ -1,6 +1,6 @@
 ---
 title: "Opções de IoT do Microsoft Azure | Microsoft Docs"
-description: "Escolha como pretende implementar a sua solução de IoT do Azure com o IoT Suite, Centro de IoT ou Hub IoT."
+description: "Escolha como pretende implementar a sua solução IoT com o Azure IoT Suite, o Microsoft IoT Central ou o Hub IoT do Azure."
 services: 
 suite: iot-suite
 author: dominicbetts
@@ -8,14 +8,14 @@ manager: timlt
 ms.assetid: 2d38d08a-4133-4e5c-8b28-f93cadb5df05
 ms.service: iot-suite
 ms.topic: get-started-article
-ms.date: 09/21/2017
+ms.date: 11/10/2017
 ms.author: dobett
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bd98d42ab391d471d2302066dc2baf2c64f56f55
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: e00dd828ef24b9bc97665f0f5fe8d7e14f4e4630
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="compare-azure-iot-options"></a>Comparar as opções de IoT do Azure
 
@@ -33,18 +33,18 @@ Para implementar esta arquitetura,o Azure IoT oferece várias opções, cada uma
 
 ## <a name="azure-iot-hub"></a>Azure IoT Hub
 
-O Hub IoT é a principal plataforma-como-um-serviço do Azure utilizada pelo Centro de IoT e IoT Suite. O Hub IoT permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e um solução na cloud. O Hub IoT ajuda a cumprir os desafios de implementação de IoT, como:
+O Hub IoT é a principal Plataforma como Serviço do Azure que o Microsoft IoT Central e o Azure IoT Suite utilizam. O Hub IoT permite comunicações bidirecionais fiáveis e seguras entre milhões de dispositivos IoT e um solução na cloud. O Hub IoT ajuda a cumprir os desafios de implementação de IoT, como:
 
 * Conectividade e gestão de dispositivos de volume elevado.
 * Ingestão de telemetria de volume elevado.
 * Comando e controlo de dispositivos.
 * Imposição de segurança do dispositivo.
 
-## <a name="compare-iot-suite-and-iot-central"></a>Comparar o IoT Suite e o Centro de IoT
+## <a name="compare-azure-iot-suite-and-microsoft-iot-central"></a>Comparar o Azure IoT Suite e o Microsoft IoT Central
 
-Escolher o produto do Azure IoT é uma parte crítica do planeamento da solução de IoT. O Hub IoT é um serviço do Azure individual que, por si só, não fornece uma solução de IoT ponto a ponto. O Hub IoT pode ser utilizado como um ponto de partida para qualquer solução de IoT e não precisa de utilizar o Azure IoT Suite ou o Centro de IoT da Microsoft para utilizá-lo. Tanto o IoT Suite como o Centro de IoT utilizam o Hub IoT, juntamente com outros serviços do Azure. A tabela seguinte resume as principais diferenças entre o IoT Suite e Centro de IoT, para o ajudar a escolher o mais adequado para os seus requisitos:
+Escolher o produto do Azure IoT é uma parte crítica do planeamento da solução de IoT. O Hub IoT é um serviço do Azure individual que, por si só, não fornece uma solução de IoT ponto a ponto. O Hub IoT pode ser utilizado como um ponto de partida para qualquer solução de IoT e não precisa de utilizar o Azure IoT Suite ou o Centro de IoT da Microsoft para utilizá-lo. Tanto o Azure IoT Suite, como o Microsoft IoT Central utilizam o Hub IoT, juntamente com outros serviços do Azure. A tabela seguinte resume as principais diferenças entre o Azure IoT Suite e o Microsoft IoT Central, para o ajudar a escolher o mais adequado para os seus requisitos:
 
-|                        | Suite IoT | Centro de IoT |
+|                        | Azure IoT Suite | Microsoft IoT Central |
 | ---------------------- | --------- | ----------- |
 | Utilização principal | Acelerar o desenvolvimento de uma solução de IoT personalizada que precisa da máxima flexibilidade. | Acelerar o tempo de colocação no mercado para soluções de IoT simples que não necessitam de personalização avançada do serviço. |
 | Acesso aos serviços PaaS subjacentes          | Tem acesso aos serviços do Azure subjacentes para geri-los ou substituí-los, conforme necessário. | SaaS. Solução totalmente gerida, os serviços subjacentes não são expostos. |
@@ -63,6 +63,6 @@ A decisão do produto a utilizar para criar a sua solução de IoT é, em últim
 
 Com base no produto e na abordagem escolhidos, os passos seguintes sugeridos são:
 
-* **IoT Suite**: [Quais são as soluções pré-configuradas do Azure IoT?](iot-suite-what-are-preconfigured-solutions.md)
-* **Centro de IoT**: [Centro de IoT da Microsoft](https://www.microsoft.com/internet-of-things/iot-central-saas-solutions).
+* **Azure IoT Suite**: [Quais são as soluções pré-configuradas do Azure IoT?](iot-suite-what-are-preconfigured-solutions.md)
+* **Microsoft IoT Central**: [Microsoft IoT Central](https://www.microsoft.com/internet-of-things/iot-central-saas-solutions).
 * **Hub IoT**: [ Descrição geral do serviço Hub IoT do Azure](../iot-hub/iot-hub-what-is-iot-hub.md).

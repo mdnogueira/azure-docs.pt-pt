@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/25/2017
+ms.date: 11/14/2017
 ms.author: dobett
-ms.openlocfilehash: 369e61b091c79df8ad2d874693aedc3b23e512c8
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 36cae39b7eaa0aff5f47f6a2511c7a0593f70b26
+ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="predictive-maintenance-preconfigured-solution-overview"></a>Descrição geral da solução pré-configurada de manutenção preditiva
 
@@ -83,7 +83,7 @@ Para concluir este tutorial, precisa de uma subscrição ativa do Azure.
 > [!NOTE]
 > Se tiver problemas com a implementação da solução pré-configurada, consulte [Permissions on the azureiotsuite.com site (Permissões no site azureiotsuite.com)][lnk-permissions] e as [FAQ][lnk-faq]. Se os problemas persistirem, crie um pedido de serviço no [portal][lnk-portal].
 
-Pretendia ver certos detalhes que não se encontram listados para a sua solução? Dê-nos a suas sugestões de funcionalidades através de [A Voz do Utilizador](https://feedback.azure.com/forums/321918-azure-iot).
+Pretendia ver certos detalhes que não se encontram listados para a sua solução? Sugira funcionalidades no [User Voice](https://feedback.azure.com/forums/321918-azure-iot).
 
 ## <a name="view-the-solution"></a>Ver a solução
 
@@ -149,11 +149,11 @@ Também pode explorar algumas das outras funcionalidades e capacidades das solu�
 [lnk_regression_model]: http://gallery.cortanaanalytics.com/Collection/Predictive-Maintenance-Template-3
 
 [lnk_capture_value]: http://download.microsoft.com/download/0/7/D/07D394CE-185D-4B96-AC3C-9B61179F7080/Capture_value_from_the_Internet%20of%20Things_with_Predictive_Maintenance.PDF
-[lnk-faq]: iot-suite-faq.md
+[lnk-faq]: iot-suite-v1-faq.md
 [lnk-security-groundup]: securing-iot-ground-up.md
 [lnk-azureiotsuite]: https://www.azureiotsuite.com/
 [lnk_free_trial]: http://azure.microsoft.com/pricing/free-trial/
 [lnk-azureiotsuite]: https://www.azureiotsuite.com
-[lnk-permissions]: iot-suite-permissions.md
+[lnk-permissions]: iot-suite-v1-permissions.md
 [lnk-portal]: http://portal.azure.com/
 [lnk-machine-learning]: https://azure.microsoft.com/services/machine-learning/

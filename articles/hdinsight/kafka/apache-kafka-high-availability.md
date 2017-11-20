@@ -12,15 +12,15 @@ ms.devlang:
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 09/20/2017
+ms.date: 11/07/2017
 ms.author: larryfr
-ms.openlocfilehash: fe4cb62e4ceba46b44bdc62b05be4a6b1e2afa3d
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: f7a4245435093358cac567cf08c8ce3979371c04
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="high-availability-of-your-data-with-apache-kafka-preview-on-hdinsight"></a>Elevada disponibilidade dos seus dados com o Apache Kafka (pré-visualização) no HDInsight
+# <a name="high-availability-of-your-data-with-apache-kafka-on-hdinsight"></a>Elevada disponibilidade dos seus dados com o Apache Kafka no HDInsight
 
 Saiba como configurar réplicas da partição para que os tópicos do Kafka tirem partido da configuração de rack do hardware subjacente. Esta configuração garante a disponibilidade dos dados armazenados no Apache Kafka no HDInsight.
 

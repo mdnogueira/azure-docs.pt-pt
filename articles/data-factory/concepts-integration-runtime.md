@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/15/2017
 ms.author: shlo
-ms.openlocfilehash: 7851a24e7053e03cc28927ffae3a2b69a3291635
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.openlocfilehash: c3cf9bfeabb65fa15941e3085d9f9146c3feef80
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="integration-runtime-in-azure-data-factory"></a>Integration runtime no Azure Data Factory
 O Integration Runtime (IR) é a infraestrutura de computação que o Azure Data Factory utiliza para proporcionar as seguintes capacidades de integração de dados em diferentes ambientes de rede:
@@ -85,7 +85,7 @@ Se quiser efetuar a integração de dados de forma segura num ambiente de rede p
 ### <a name="compute-resource-and-scaling"></a>Recurso de computação e dimensionamento
 Os runtimes de integração autoalojados têm de ser instalados num computador no local ou numa máquina virtual que esteja numa rede privada. Atualmente, só suportamos a execução dos runtimes de integração autoalojados em sistemas operativos Windows.  
 
-Para elevada disponibilidade e escalabilidade, pode aumentar horizontalmente o runtime de integração autoalojado ao associar a instância lógica a vários computadores no local no modo ativo-ativo.  Para obter mais informações, veja o tópico “how to create and configure self-hosted IR” (Como criar e configurar os runtimes de integração autoalojados) nos guias de procedimentos.
+Para elevada disponibilidade e escalabilidade, pode aumentar horizontalmente o runtime de integração autoalojado ao associar a instância lógica a vários computadores no local no modo ativo-ativo.  Para obter mais informações, veja o artigo “how to create and configure self-hosted IR” (“Como criar e configurar os runtimes de integração autoalojados”) nos guias de procedimentos.
 
 ## <a name="azure-ssis-integration-runtime"></a>Runtime de integração Azure-SSIS
 Para fazer a migração lift and shift de cargas de trabalho do SSIS existentes, pode criar um runtime de integração Azure-SSIS para executar nativamente pacotes do SSIS.
@@ -96,7 +96,7 @@ O runtime de integração Azure-SSIS pode ser aprovisionado na rede pública ou 
 ### <a name="compute-resource-and-scaling"></a>Recurso de computação e dimensionamento
 O runtime de integração Azure-SSIS é um cluster totalmente gerido de VMs do Azure dedicadas à execução dos pacotes do SSIS. Pode utilizar o seu próprio servidor da Base de Dados SQL do Azure ou da Instância Gerida (pré-visualização privada) para alojar o catálogo dos projetos/pacotes (SSISDB) do SSIS que vão ser ligados ao mesmo. Pode aumentar verticalmente o poder da computação ao especificar o tamanho do nó e aumentá-lo horizontalmente ao definir o número de nós no cluster. Pode gerir o custo da execução do runtime de integração Azure-SSIS ao pará-lo e iniciá-lo, conforme achar mais adequado.
 
-Para obter mais informações, veja o tópico “how to create and configure Azure-SSIS IR” (Como criar e configurar o runtime de integração Azure-SSIS) nos guias de procedimentos.  Depois de criado, pode implementar e gerir os seus pacotes do SSIS com poucas ou nenhumas alterações através de ferramentas familiares, como o SQL Server Data Tools (SSDT) e o SQL Server Management Studio (SSMS), tal e qual como utilizaria o SSIS no local.
+Para obter mais informações, veja o artigo “how to create and configure Azure-SSIS IR” (“Como criar e configurar o runtime de integração Azure-SSIS”) nos guias de procedimentos.  Depois de criado, pode implementar e gerir os seus pacotes do SSIS com poucas ou nenhumas alterações através de ferramentas familiares, como o SQL Server Data Tools (SSDT) e o SQL Server Management Studio (SSMS), tal e qual como utilizaria o SSIS no local.
 
 Para obter mais informações sobre o runtime Azure-SSIS, veja os artigos seguintes: 
 
@@ -123,7 +123,7 @@ O diagrama seguinte mostra dois exemplos de atividades de cópia:
 ![Que runtime de integração utilizar](media/concepts-integration-runtime/which-integration-runtime-to-use.png)
 
 ## <a name="integration-runtime-location"></a>Localização do runtime de integração
-É na localização do Data Factory que os metadados da fábrica de dados são armazenados e a partir de onde o acionamento do pipeline é iniciado. Atualmente, as localizações do Data Factory suportadas são E.U.A. Leste e E.U.A. Leste 2. No entanto, uma fábrica de dados pode aceder aos arquivos de dados e serviços de computação noutras regiões do Azure para mover dados entre os arquivos de dados ou processar dados com serviços de computação. Este comportamento é realizado através do runtime de integração disponível globalmente em várias regiões, para garantir a conformidade dos dados, a eficiência e custos de saída de rede reduzidos.
+É na localização do Data Factory que os metadados da fábrica de dados são armazenados e a partir de onde o acionamento do pipeline é iniciado. Atualmente, as localizações do Data Factory suportadas são E.U.A. Leste, E.U.A. Leste 2 e Europa Ocidental. No entanto, uma fábrica de dados pode aceder aos arquivos de dados e serviços de computação noutras regiões do Azure para mover dados entre os arquivos de dados ou processar dados com serviços de computação. Este comportamento é realizado através do runtime de integração disponível globalmente em várias regiões, para garantir a conformidade dos dados, a eficiência e custos de saída de rede reduzidos.
 
 A localização do runtime de integração define a localização da respetiva computação de back-end e, essencialmente, a localização onde são realizados o movimento de dados, a distribuição de atividades e a execução de pacotes do SSIS. A localização do runtime de integração pode ser diferente da localização da fábrica de dados à qual pertence. O diagrama seguinte mostra as definições de localização do Data Factory e os respetivos runtimes de integração:
 

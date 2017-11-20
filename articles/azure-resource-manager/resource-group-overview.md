@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/19/2017
+ms.date: 11/14/2017
 ms.author: tomfitz
-ms.openlocfilehash: f539931e0704f904f4b942f185f086a790caf4da
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b0d71f7eee6568f9b98c80315d265704ee0ae9fc
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="azure-resource-manager-overview"></a>Descrição geral do Azure Resource Manager
 Normalmente, a infraestrutura da sua aplicação é composta por vários componentes, como uma máquina virtual, uma conta do Storage e uma rede virtual, ou uma aplicação Web, uma base de dados, um servidor de base de dados e serviços de terceiros. Não vê estes componentes como entidades separadas. Em vez disso, vê-os como partes relacionadas e interdependentes de uma única entidade. Deve implementá-los, geri-los e monitorizá-los como um grupo. O Azure Resource Manager permite trabalhar com os recursos na sua solução como um grupo. Pode implementar, atualizar ou eliminar todos os recursos da sua solução numa operação única e coordenada. Utiliza um modelo para a implementação e esse modelo pode funcionar para ambientes diferentes, como de teste e produção. O Resource Manager fornece funcionalidades de segurança, auditoria e etiquetagem para o ajudar a gerir os recursos após a implementação. 
@@ -251,7 +251,7 @@ O exemplo seguinte mostra uma política que garante a consistência da etiqueta,
 }
 ```
 
-Existem muitos mais tipos de políticas que pode criar. Para obter mais informações, consulte [Utilizar a Política para gerir recursos e controlar o acesso](resource-manager-policy.md).
+Existem muitos mais tipos de políticas que pode criar. Para obter mais informações, veja [What is Azure Policy?](../azure-policy/azure-policy-introduction.md) (O que é o Azure Policy?).
 
 ## <a name="sdks"></a>SDKs
 Os SDKs do Azure estão disponíveis para vários idiomas e plataformas. Cada uma destas implementações de idiomas está disponível através do respetivo gestor de pacotes ecossistema de pacotes e do GitHub.

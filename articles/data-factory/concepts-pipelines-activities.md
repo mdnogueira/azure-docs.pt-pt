@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/17/2017
 ms.author: shlo
-ms.openlocfilehash: 6dcc5c55fae5e2494526c492a1453747b4d6e179
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6b5552bbb3a56a95e616a79bf9adeabe68d01216
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Pipelines e atividades no Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -75,11 +75,12 @@ Atividade de controlo | Descrição
 [Atividade Web](control-flow-web-activity.md) | A atividade Web pode ser utilizada para chamar um ponto final REST personalizado a partir de um pipeline do Data Factory. Pode transmitir conjuntos de dados e serviços ligados aos quais a atividade tem acesso e que pode consumir. 
 [Atividade de Pesquisa](control-flow-lookup-activity.md) | A atividade de Pesquisa pode ser utilizada para ler ou procurar registos/nomes de tabelas/valores em qualquer origem externa. Este resultado pode ser ainda referenciado por atividades bem-sucedidas. 
 [Atividade Obter Metadados](control-flow-get-metadata-activity.md) | A atividade Obter Metadados pode ser utilizada para obter os metadados de quaisquer dados no Azure Data Factory. 
-Atividade Do Until | Implementa o ciclo Do-Until que é semelhante à estrutura de ciclo Do-Until nas linguagens de programação.
-Atividade Se Condição | Se Condição pode ser utilizada com base em ramos numa condição que é avaliada como verdadeira ou falsa. 
+[Atividade Until](control-flow-until-activity.md) | Implementa o ciclo Do-Until que é semelhante à estrutura de ciclo Do-Until nas linguagens de programação. Executa um conjunto de atividades num ciclo até que a condição associada às atividades seja avaliada como verdadeira. Pode especificar um valor de tempo limite para a atividade Until no Data Factory.
+[Atividade Se Condição](control-flow-if-condition-activity.md) | Se Condição pode ser utilizada com base em ramos numa condição que é avaliada como verdadeira ou falsa. A atividade Se Condição disponibiliza a mesma funcionalidade que as instruções “se” fornecem nas linguagens de programação. Avalia um conjunto de atividades quando a condição é avaliada como `true` e outro conjunto de atividades quando é avaliada como `false`.
+[Atividade Aguardar](control-flow-wait-activity.md) | Quando utiliza uma atividade Aguardar num pipeline, este aguarda o período de tempo especificado antes de continuar a execução das atividades subsequentes. 
 
 ## <a name="pipeline-json"></a>JSON dos pipelines
-Vamos ver mais de perto a definição dos pipelines no formato JSON. A estrutura genérica de um pipeline tem o aspeto seguinte:
+Eis como os pipelines são definidos no formato JSON: 
 
 ```json
 {
@@ -175,7 +176,7 @@ retry | Número máximo de repetições | Número inteiro | Não. A predefiniç�
 retryIntervalInSeconds | O atraso entre as tentativas de repetição em segundos | Número inteiro | Não. A predefinição é 20 segundos
 
 ### <a name="control-activity"></a>Atividade de controlo
-As atividades de controlo têm a estrutura de nível superior seguinte.
+As atividades de controlo têm a estrutura de nível superior seguinte:
 
 ```json
 {

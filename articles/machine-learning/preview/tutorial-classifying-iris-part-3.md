@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: hero-article
-ms.date: 11/2/2017
-ms.openlocfilehash: b6cdd135d2d264c8b4ede1592c686cdeea3d0a59
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.date: 11/14/2017
+ms.openlocfilehash: 7fa7eb53876746f1934af8ca3428cfdacb56382d
+ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="classify-iris-part-3-deploy-a-model"></a>Classificar Íris, parte 3: implementar um modelo
 Os serviços do Azure Machine Learning (pré-visualização) são uma solução de análise avançada e ciência de dados completa e integrada para os cientistas de dados profissionais. Os cientistas de dados podem utilizá-los para preparar dados, desenvolver experimentações e implementar modelos à escala da cloud.
@@ -119,8 +119,7 @@ Para implementar o serviço Web, juntamente com o ficheiro do modelo, também pr
 
 Agora, está pronto para preparar o ambiente para operacionalizar o modelo.
 
->[!NOTE]
->A implementação de modelos requer que tenha acesso de proprietário a uma subscrição do Azure.
+
 
 ## <a name="prepare-to-operationalize-locally"></a>Preparar para operacionalizar localmente
 Utilize a implementação de _modo local_ para executar em contentores do Docker no seu computador local.
@@ -162,7 +161,9 @@ Pode utilizar o _modo local_ para desenvolvimento e testes. O motor do Docker te
 
    A terceira linha da saída apresenta **"registrationState": "Registering"**. Aguarde uns momentos e repita o comando **show**, até que a saída apresente **"registrationState": "Registered"**.
 
-3. Crie o ambiente. Tem de executar este passo uma vez por ambiente. Por exemplo, execute-o uma vez para o ambiente de desenvolvimento e outra para produção. Utilize o _modo local_ para o primeiro. Pode experimentar o comutador `-c` ou `--cluster` no comando seguinte para configurar um ambiente no _modo de cluster_ mais tarde:
+3. Crie o ambiente. Tem de executar este passo uma vez por ambiente. Por exemplo, execute-o uma vez para o ambiente de desenvolvimento e outra para produção. Utilize o _modo local_ para o primeiro. Pode experimentar o comutador `-c` ou `--cluster` no comando seguinte para configurar um ambiente no _modo de cluster_ mais tarde.
+
+Tenha em conta que o comando de configuração seguinte requer que tenha o acesso Contribuidor à subscrição. Se não o tiver, precisa, pelo menos, de acesso Contribuidor ao grupo de recursos no qual está a implementar. Neste último caso, tem de especificar o nome do grupo de recursos como parte do comando de configuração através do sinalizador `-g`. 
 
    ```azurecli
    az ml env setup -n <new deployment environment name> --location <e.g. eastus2>
