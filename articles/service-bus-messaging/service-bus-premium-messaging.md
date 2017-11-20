@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/07/2017
-ms.author: darosa;sethm
-ms.openlocfilehash: a0c169e0580468e83a07c077f8c60e83d3fb52f2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/10/2017
+ms.author: sethm
+ms.openlocfilehash: 613bb074063e436cdbd54fe5aee9c49109a2d8f2
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Escalões de mensagens Standard e Premium do Service Bus
 
@@ -60,12 +60,11 @@ Se tiver código em execução nas mensagens Standard e quiser transportar para 
 
 ## <a name="get-started-with-premium-messaging"></a>Introdução às Mensagens Premium
 
-A introdução às Mensagens Premium é simples e o processo é semelhante ao das Mensagens Standard. Comece por [criar um espaço de nomes](service-bus-create-namespace-portal.md). Certifique-se de que seleciona **Premium**, em **Escalão de preço**.
+A introdução às Mensagens Premium é simples e o processo é semelhante ao das Mensagens Standard. Comece por [criar um espaço de nomes](service-bus-create-namespace-portal.md) no [portal do Azure](https://portal.azure.com). Confirme que seleciona **Premium** em **Escolher o escalão de preço**.
 
 ![create-premium-namespace][create-premium-namespace]
 
 Também pode criar [espaços de nomes Premium com modelos do Azure Resource Manager](https://azure.microsoft.com/en-us/resources/templates/101-servicebus-pn-ar/).
-
 
 ## <a name="next-steps"></a>Passos seguintes
 
@@ -74,7 +73,7 @@ Para saber mais sobre Mensagens do Service Bus, veja os tópicos seguintes.
 * [Introducing Azure Service Bus Premium Messaging (Introdução às Mensagens Premium do Azure Service Bus) (mensagem de blogue)](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
 * [Introducing Azure Service Bus Premium Messaging (Introdução às Mensagens Premium do Azure Service Bus) (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 * [Descrição geral de Mensagens do Service Bus](service-bus-messaging-overview.md)
-* [Como utilizar as filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
+* [Introdução às filas do Service Bus](service-bus-dotnet-get-started-with-queues.md)
 
 <!--Image references-->
 

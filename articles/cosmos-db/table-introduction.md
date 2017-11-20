@@ -2,7 +2,7 @@
 title: "Introdução à API de Tabela do Azure Cosmos DB | Microsoft Docs"
 description: "Saiba como pode utilizar o Azure Cosmos DB para armazenar e consultar grandes volumes de dados de chaves-valores com baixa latência através da utilização das populares APIs OSS MongoDB."
 services: cosmos-db
-author: bhanupr
+author: mimig
 manager: jhubbard
 editor: monicar
 documentationcenter: 
@@ -12,17 +12,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/02/2017
-ms.author: arramac
-ms.openlocfilehash: 68c9f37b6e241d39911acff9c12aa4c978b4215d
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.date: 11/15/2017
+ms.author: mimig1
+ms.openlocfilehash: 8e8a5d89080df54da1a951d94fac12592de29c50
+ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/16/2017
 ---
-# <a name="introduction-to-azure-cosmos-db-table-api"></a>Introdução ao Azure Cosmos DB: Table API
+# <a name="introduction-to-azure-cosmos-db-table-api"></a>Introdução à API de Tabelas do Azure Cosmos DB
 
-O [Azure Cosmos DB](introduction.md) disponibiliza a API de Tabela (pré-visualização) às aplicações que foram escritas para o Armazenamento de tabelas do Azure e que precisam de capacidades premium, como:
+O [Azure Cosmos DB](introduction.md) disponibiliza a API de Tabelas às aplicações que foram escritas para o armazenamento de Tabelas do Azure e que precisam de capacidades premium, como:
 
 * [Distribuição global chave na mão](distribute-data-globally.md).
 * [Débito dedicado](partition-data.md) em todo o mundo.
@@ -39,9 +39,9 @@ Recomendamos que veja o vídeo seguinte, onde Aravind Ramachandran explica como 
 > 
 
 ## <a name="table-offerings"></a>Ofertas de Tabelas
-Se utilizar atualmente o Armazenamento de Tabelas do Azure, beneficia das vantagens seguintes se mudar para a API de Tabela do Azure Cosmos DB (pré-visualização):
+Se utilizar atualmente o armazenamento de Tabelas do Azure, beneficia das vantagens seguintes se mudar para a API de Tabelas do Azure Cosmos DB:
 
-| | Armazenamento de Tabelas do Azure | API de Tabela do Azure Cosmos DB (pré-visualização) |
+| | Armazenamento de Tabelas do Azure | API de Tabelas do Azure Cosmos DB |
 | --- | --- | --- |
 | Latência | Rápida, mas sem limites superiores. | Latência de milissegundos de um só dígito para leituras e escritas, suportada por leituras de latência inferiores a 10 ms e a escritas de latência inferiores a 15 ms no percentil 99, em qualquer escala e em qualquer parte do mundo. |
 | Débito | Modelo de débito variável. As tabelas têm um limite de escalabilidade de 20 000 operações/s. | Altamente dimensionável, com [débito reservado dedicado por tabela](request-units.md), com suporte dos SLAs. As contas não têm limite superior relativamente ao débito e suportam mais de dez milhões de operações/s por tabela. |
@@ -50,7 +50,7 @@ Se utilizar atualmente o Armazenamento de Tabelas do Azure, beneficia das vantag
 | Consulta | A execução de consultas utiliza o índice para a chave primária e analisa, se for caso disso. | As consultas podem tirar partido da indexação automática nas propriedades para tempos de consulta rápidos. O motor de bases de dados do Azure Cosmos DB é capaz de suportar agregados, geoespacial e ordenação. |
 | Consistência | Forte na região primária. Eventual na região secundária. | [Cinco níveis de consistência bem definidos](consistency-levels.md) para alternar entre disponibilidade, latência, débito e consistência com base nas necessidades da sua aplicação. |
 | Preços | Otimizado para armazenamento. | Otimizado para débito. |
-| SLAs | 99,99% de disponibilidade. | 99,99% de disponibilidade numa única região e capacidade para adicionar mais regiões, para maior disponibilidade. [SLAs abrangentes líderes da indústria](https://azure.microsoft.com/support/legal/sla/cosmos-db/) na disponibilidade geral. |
+| SLAs | 99,99% de disponibilidade. | SLA de 99,99% disponibilidade para todas as contas de região única e para todas as contas de várias regiões com consistência flexível e 99,999% de disponibilidade de leitura em todas as contas de bases de dados de várias regiões [SLAs abrangentes e líderes da indústria](https://azure.microsoft.com/support/legal/sla/cosmos-db/) em disponibilidade geral. |
 
 ## <a name="get-started"></a>Introdução
 
@@ -64,5 +64,7 @@ Eis alguns sítios por onde começar:
 * [Consulta de dados de tabela utilizando a API de Tabela](tutorial-query-table.md)
 * [Learn how to set up Azure Cosmos DB global distribution by using the Table API](tutorial-global-distribution-table.md) (Como configurar a distribuição global do Azure Cosmos DB com a API de Tabela)
 * [API .NET da Tabela do Azure Cosmos DB](table-sdk-dotnet.md)
-
+* [API Java de Tabelas do Azure Cosmos DB](table-sdk-java.md)
+* [API Node.js de Tabelas do Azure Cosmos DB](table-sdk-nodejs.md)
+* [SDK da Tabela do Azure Cosmos DB para Python](table-sdk-python.md)
 

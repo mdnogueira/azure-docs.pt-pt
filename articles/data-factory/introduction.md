@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/29/2017
 ms.author: shlo
-ms.openlocfilehash: 58e141498ed5cbaa110622d949a9627c98827ac3
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: b797ee3ef270ff3420ff9e7f4aa8032641714d7a
+ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="introduction-to-azure-data-factory"></a>Introdução ao Azure Data Factory 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -172,11 +172,11 @@ Para obter mais informações sobre os conceitos do Data Factory, veja os artigo
 
 ## <a name="supported-regions"></a>Regiões suportadas
 
-Atualmente, pode criar fábricas de dados nas regiões E.U.A. Leste e E.U.A. Leste 2. No entanto, uma fábrica de dados pode aceder aos arquivos de dados e serviços de computação noutras regiões do Azure para mover dados entre os arquivos de dados ou processar dados com serviços de computação.
+Atualmente, pode criar fábricas de dados nas regiões E.U.A. Leste, E.U.A. Leste 2 e Europa Ocidental. No entanto, uma fábrica de dados pode aceder aos arquivos de dados e serviços de computação noutras regiões do Azure para mover dados entre os arquivos de dados ou processar dados com serviços de computação.
 
 O Azure Data Factory propriamente dito não armazena quaisquer dados. Permite-lhe criar fluxos de trabalho orientados por dados para orquestrar o movimento dos dados entre arquivos de dados suportados e o processamento de dados com serviços de computação noutras regiões ou num ambiente no local. Também lhe permite utilizar mecanismos programáticos e de IU para monitorizar e gerir os fluxos de trabalho.
 
-Apesar de o Data Factory estar disponível apenas nas regiões E.U.A. Leste e E.U.A. Leste 2, o serviço que alimenta o movimento de dados no Data Factory está disponível globalmente em várias regiões. Caso um arquivo de dados se encontre protegido por uma firewall, os dados são movidos pelo Data Management Gateway que está instalado no seu ambiente no local.
+Apesar de o Data Factory estar disponível apenas nas regiões E.U.A. Leste, E.U.A. Leste 2 e Europa Ocidental, o serviço que alimenta o movimento de dados no Data Factory está disponível globalmente em várias regiões. Caso um arquivo de dados se encontre protegido por uma firewall, os dados são movidos pelo Data Management Gateway que está instalado no seu ambiente no local.
 
 Por exemplo, vamos presumir que os seus ambientes de computação, como o cluster do Azure HDInsight e o Azure Machine Learning, estão a ficar sem a região Europa Ocidental. Pode criar e utilizar uma instância do Azure Data Factory na Europa do Norte e utilizá-la para agendar tarefas nos seus ambientes de computação na Europa Ocidental. O Data Factory demora alguns milissegundos a acionar a tarefa no seu ambiente de computação, mas o tempo de execução da tarefa nesse ambiente não sofre alterações.
 

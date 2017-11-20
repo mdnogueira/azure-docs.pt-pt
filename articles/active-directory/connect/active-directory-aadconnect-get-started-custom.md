@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 10/02/2017
 ms.author: billmath
-ms.openlocfilehash: a4b3c7543efc33d07dbd4f6c01b6e1bc354d1ed2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: eff198a522470e1145c97758a54fc9b8f294287f
+ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Instalação personalizada do Azure AD Connect
 As **Definições personalizadas** do Azure AD Connect são utilizadas quando pretende mais opções para a instalação. São utilizadas se tiver várias florestas ou se pretender configurar funcionalidades opcionais não abrangidas na instalação rápida. São utilizadas em todos os casos em que a opção [**instalação rápida**](active-directory-aadconnect-get-started-express.md) não satisfaz a sua implementação ou topologia.
@@ -91,9 +91,9 @@ Depois de introduzir o nome da floresta e de clicar em **Adicionar Diretório**,
 Esta página permite-lhe rever os domínios UPN presentes no AD DS no local e que foram verificados no Azure AD. Esta página também lhe permite configurar o atributo a utilizar para userPrincipalName.
 
 ![Domínios não verificados](./media/active-directory-aadconnect-get-started-custom/aadsigninconfig.png)  
-Reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os domínios que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização. Para obter mais informações, consulte [Adicionar e verificar o domínio](../active-directory-add-domain.md)
+Reveja todos os domínios marcados como **Não Adicionado** e **Não Verificado**. Certifique-se de que os domínios que utiliza foram verificados no Azure AD. Quando tiver verificado os domínios, clique no símbolo de atualização. Para obter mais informações, consulte [Adicionar e verificar o domínio](../active-directory-domains-add-azure-portal.md)
 
-**UserPrincipalName** -o atributo userPrincipalName é o atributo que os utilizadores utilizam quando iniciam sessão no Azure AD e no Office 365. O domínio utilizado, também conhecido como sufixo UPN, deve ser verificado no Azure AD para que os utilizadores possam ser sincronizados. A Microsoft recomenda que mantenha o atributo predefinido userPrincipalName. Se este atributo não for encaminhável e não puder ser verificado, é possível selecionar outro atributo. Pode, por exemplo, selecionar o correio eletrónico como o atributo que contém o ID de início de sessão. A utilização de um atributo diferente de userPrincipalName é conhecida como **ID Alternativo**. O valor do atributo ID Alternativo tem de seguir a norma RFC822. Um ID Alternativo pode ser utilizado na sincronização de palavras-passe e na federação.
+**UserPrincipalName** -o atributo userPrincipalName é o atributo que os utilizadores utilizam quando iniciam sessão no Azure AD e no Office 365. O domínio utilizado, também conhecido como sufixo UPN, deve ser verificado no Azure AD para que os utilizadores possam ser sincronizados. A Microsoft recomenda que mantenha o atributo predefinido userPrincipalName. Se este atributo não for encaminhável e não puder ser verificado, é possível selecionar outro atributo. Pode, por exemplo, selecionar o correio eletrónico como o atributo que contém o ID de início de sessão. A utilização de um atributo diferente de userPrincipalName é conhecida como **ID Alternativo**. O valor do atributo ID Alternativo tem de seguir a norma RFC822. Um ID Alternativo pode ser utilizado na sincronização de palavras-passe e na federação. O atributo não pode ser definido no Active Directory como com múltiplos valores, mesmo se tiver apenas um valor único.
 
 >[!NOTE]
 > Ao ativar a Autenticação Pass-through tem de ter, pelo menos, um domínio verificado para continuar através do assistente.
@@ -296,7 +296,7 @@ Esta configuração é utilizada para configurar a relação de federação entr
 ![Domínio do Azure AD](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
 
 ### <a name="verify-the-azure-ad-domain-selected-for-federation"></a>Verificar o domínio do Azure AD selecionado para federação
-Quando seleciona o domínio a ser federado, o Azure AD Connect fornece-lhe as informações necessárias para verificar um domínio não verificado. Consulte [Adicionar e verificar o domínio](../active-directory-add-domain.md) para saber como utilizar estas informações.
+Quando seleciona o domínio a ser federado, o Azure AD Connect fornece-lhe as informações necessárias para verificar um domínio não verificado. Consulte [Adicionar e verificar o domínio](../active-directory-domains-add-azure-portal.md) para saber como utilizar estas informações.
 
 ![Domínio do Azure AD](./media/active-directory-aadconnect-get-started-custom/verifyfeddomain.png)
 

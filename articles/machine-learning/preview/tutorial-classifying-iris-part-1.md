@@ -11,11 +11,11 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: hero-article
 ms.date: 09/28/2017
-ms.openlocfilehash: cabba8ce04d62d35ca40b3ae35d9d40a6ec7b2b9
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: fcef59d38cce5f8860508ebeeda0b1b97f5e83f1
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="classify-iris-part-1-prepare-the-data"></a>Classificar Íris, parte 1 : preparar os dados
 Os serviços do Azure Machine Learning (pré-visualização) são uma solução de análise avançada e ciência de dados ponto a ponto integrada para os cientistas de dados profissionais prepararem dados, desenvolverem experimentações e implementarem modelos à escala da cloud.
@@ -69,7 +69,9 @@ Pode seguir as instruções do artigo [Início rápido de instalação e criaç�
    ![Selecionar iris](media/tutorial-classifying-iris/select_iris_csv.png)
 
    >[!IMPORTANT]
-   >Certifique-se de que seleciona o ficheiro **iris.csv** no diretório do projeto atual para este exercício. Caso contrário, os passos posteriores poderão falhar. 
+   >Certifique-se de que seleciona o ficheiro **iris.csv** no diretório do projeto atual para este exercício. Caso contrário, os passos posteriores poderão falhar.
+   
+4. Depois de selecionar o ficheiro, selecione o botão **Concluir**.
 
 4. É criado um ficheiro novo com o nome **iris-1.dsource**. É atribuído um nome exclusivo ao ficheiro com um traço-um, uma vez que o projeto de exemplo já vem com um ficheiro **iris.dsource** não numerado.  
 

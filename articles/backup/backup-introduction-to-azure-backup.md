@@ -16,11 +16,11 @@ ms.topic: get-started-article
 ms.date: 9/29/2017
 ms.author: markgal;trinadhk;anuragm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3be12abaaedf5b0d66a484cbee48fe3df77f63fe
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 1d26fb8caacdd775b62d704a4b474e68e2f5a3ec
+ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="overview-of-the-features-in-azure-backup"></a>Descrição geral das funcionalidades do Azure Backup
 O Azure Backup é o serviço baseado no Azure que pode utilizar para criar cópias de segurança (ou proteger) e restaurar os dados na nuvem Microsoft. O Azure Backup substitui a solução de cópia de segurança no local ou fora das instalações por uma solução baseada na nuvem que é fiável, segura e competitiva em termos de custos. O Azure Backup oferece vários componentes que são transferidos e implementados no computador ou servidor adequado, ou na nuvem. O componente ou o agente que implementar depende do que pretende proteger. Todos os componentes do Azure Backup (independentemente de estar a proteger dados no local ou na cloud) podem ser utilizados para criar cópias de segurança para um cofre dos Serviços de Recuperação do Azure. Veja a [tabela de componentes do Azure Backup](backup-introduction-to-azure-backup.md#which-azure-backup-components-should-i-use) (mais à frente neste artigo) para obter informações sobre os componentes a utilizar para proteger dados, aplicações ou cargas de trabalho específicos.
@@ -224,7 +224,10 @@ Um cofre dos Serviços de Recuperação é uma entidade de armazenamento online 
 Os cofres de cópia de segurança, baseados no Azure Service Manager, foram a primeira versão do cofre. Os cofres dos Serviços de Recuperação, que adicionam as funcionalidades do modelo do Azure Resource Manager, são a segunda versão do cofre. Veja o artigo [Descrição geral do cofre dos Serviços de Recuperação](backup-azure-recovery-services-vault-overview.md) para obter uma descrição completa das diferenças das funcionalidades. Já não pode utilizar o portal para criar cofres de Cópia de Segurança, mas os cofres de Cópia de Segurança ainda são suportados. Tem de utilizar o portal do Azure para gerir os cofres de cópias de segurança.
 
 > [!IMPORTANT]
-> Agora pode atualizar os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação. Para obter detalhes, veja o artigo [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md). Recomendamos que atualize os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação.<br/> Após **15 de outubro de 2017**, não poderá continuar a utilizar o PowerShell para criar cofres de Cópia de segurança. <br/> A **1 de novembro de 2007** quaisquer cofres de Cópia e Segurança restantes serão atualizados automaticamente para cofres dos Serviços de Recuperação.
+> Pode atualizar os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação. Para obter detalhes, veja o artigo [Atualizar um cofre de Cópia de Segurança para um cofre dos Serviços de Recuperação](backup-azure-upgrade-backup-to-recovery-services.md). Recomendamos que atualize os cofres de Cópia de Segurança para cofres dos Serviços de Recuperação.<br/> Após **30 de novembro de 2017**, não poderá continuar a utilizar o PowerShell para criar cofres de Cópia de segurança. <br/>
+Até 30 de novembro de 2017:
+- Todos os cofres de Cópia e Segurança restantes serão atualizados automaticamente para cofres dos Serviços de Recuperação.
+- Não vai conseguir aceder aos dados de cópias de segurança no portal Clássico. Em vez disso, utilize o portal do Azure para aceder aos dados de cópia de segurança em cofres dos Serviços de Recuperação.
 
 
 

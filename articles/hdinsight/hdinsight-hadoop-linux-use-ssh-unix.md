@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 10/06/2017
+ms.date: 11/10/2017
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 8961576d1a7de268bab2f4adf01d89dde1fc8776
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 23621c418663ee5b4ed83ab989663a882e7000bd
+ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="connect-to-hdinsight-hadoop-using-ssh"></a>Ligar ao HDInsight (Hadoop) através de SSH
 
@@ -48,26 +48,24 @@ O HDInsight pode utilizar o Linux (Ubuntu) como o sistema operativo dos nós den
 > [!TIP]
 > Quando liga pela primeira vez ao HDInsight, o cliente SSH pode apresentar um aviso a indicar que não é possível estabelecer a autenticidade do anfitrião. Quando lhe for pedido selecione "sim" para adicionar o anfitrião à lista de servidores fidedignos do seu cliente SSH.
 >
-> Se anteriormente tiver ligado a um servidor com o mesmo nome, poderá receber um aviso a indicar que a chave de anfitrião armazenado não corresponde à chave de anfitrião do servidor. O cliente SSH pode recusar ligar ao cluster quando isto ocorrer. Veja a documentação para o cliente SSH sobre como remover a entrada existente para o nome do servidor.
+> Se anteriormente tiver ligado a um servidor com o mesmo nome, poderá receber um aviso a indicar que a chave de anfitrião armazenado não corresponde à chave de anfitrião do servidor. Veja a documentação para o cliente SSH sobre como remover a entrada existente para o nome do servidor.
 
 ## <a name="ssh-clients"></a>Clientes SSH
 
 Os sistemas Linux, Unix e macOS fornecem os comandos `ssh` e `scp`. O cliente `ssh` é usado normalmente para criar uma sessão de linha de comandos remota com um sistema baseado em Unix ou Linux. O cliente `scp` é usado para copiar com segurança ficheiros entre o cliente e o sistema remoto.
 
-O Microsoft Windows não fornece clientes SSH por predefinição. Os clientes `ssh` e `scp` estão disponíveis para o Windows através dos seguintes pacotes:
+O Microsoft Windows não instala nenhum cliente SSH por predefinição. Os clientes `ssh` e `scp` estão disponíveis para o Windows através dos seguintes pacotes:
 
-* [Azure Cloud Shell](../cloud-shell/quickstart.md): o Cloud Shell fornece um ambiente de Bash no seu navegador e fornece `ssh`, `scp` e outros comandos comuns do Linux.
+* Cliente OpenSSH (Beta): na Fall Creators Update, aceda a __Settings__ (Definições) > __Apps & features__ (Aplicações e funcionalidades) > __Manage optional features__ (Gerir funcionalidades opcionais) > __Add a feature__ (Adicionar uma funcionalidade) e selecione __OpenSSH Client__ (Cliente SSH). 
+
+    > [!NOTE]
+    > Se os comandos `ssh` e `scp` não estiverem disponíveis no PowerShell depois de ativar esta funcionalidade, termine sessão e reinicie-a.
 
 * [Bash no Ubuntu no Windows 10](https://msdn.microsoft.com/commandline/wsl/about): os comandos `ssh` e `scp` estão disponíveis através do Bash na linha de comandos do Windows.
 
+* [Azure Cloud Shell](../cloud-shell/quickstart.md): o Cloud Shell fornece um ambiente de Bash no seu navegador e fornece `ssh`, `scp` e outros comandos comuns do Linux.
+
 * [Git (https://git-scm.com/)](https://git-scm.com/): os comandos `ssh` e `scp` estão disponíveis através da linha de comandos GitBash.
-
-* [GitHub Desktop (https://desktop.github.com/)](https://desktop.github.com/) os comandos `ssh` e `scp` estão disponíveis através da linha de comandos GitHub Shell. O GitHub Desktop pode ser configurado para utilizar Bash, a Linha de Comandos do Windows ou no PowerShell como a linha ed comandos para o Git Shell.
-
-* [OpenSSH (https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH): a equipa do PowerShell está a migrar o OpenSSH para o Windows e disponibiliza versões de teste.
-
-    > [!WARNING]
-    > O pacote OpenSSH inclui o componente de servidor SSH, `sshd`. Este componente inicia um servidor SSH no seu sistema, permitindo que outras pessoas se liguem ao mesmo. Não configure este componente nem abra a porta 22, a não ser que queira alojar um servidor SSH no seu sistema. Não é necessário para comunicar com o HDInsight.
 
 Também existem vários clientes SSH gráficos, tais como [PuTTY (http://www.chiark.greenend.org.uk/~sgtatham/putty/)](http://www.chiark.greenend.org.uk/~sgtatham/putty/) e [MobaXterm (http://mobaxterm.mobatek.net/)](http://mobaxterm.mobatek.net/). Embora estes clientes possam ser utilizados para ligar ao HDInsight, o processo de ligação é diferente relativamente à utilização do utilitário `ssh`. Para obter mais informações, veja a documentação do cliente gráfico que está a utilizar.
 
@@ -116,7 +114,7 @@ São-lhe pedidas informações durante o processo de criação de chaves. Por ex
 As contas SSH podem ser protegidas através de palavra-passe. Quando utiliza SSH para se ligar ao HDInsight, é-lhe pedido que introduza a palavra-passe.
 
 > [!WARNING]
-> Não recomendamos utilizar a autenticação por palavra-passe para SSH. As palavras-passe podem ser descobertas e são vulneráveis a ataques de força bruta. Em vez disso, recomendamos que utilize [chaves SSH para a autenticação](#sshkey).
+> A Microsoft não recomenda utilizar a autenticação por palavra-passe para SSH. As palavras-passe podem ser descobertas e são vulneráveis a ataques de força bruta. Em vez disso, recomendamos que utilize [chaves SSH para a autenticação](#sshkey).
 
 ### <a name="create-hdinsight-using-a-password"></a>Utilizar uma palavra-passe para criar o HDInsight
 
@@ -160,7 +158,7 @@ Os nós principais e o nó de extremidade (caso exista um) podem ser acedidos at
     ```
 
 > [!IMPORTANT]
-> Os exemplos anteriores assumem que está a utilizar a autenticação por palavra-passe ou a autenticação de certificados está a ocorrer automaticamente. Se utilizar um par de chaves SSH para a autenticação e o certificado não for utilizado automaticamente, utilize o parâmetro `-i` para especificar a chave privada. Por exemplo, `ssh -i ~/.ssh/mykey sshuser@clustername-ssh.azurehdinsight.net`.
+> Os exemplos anteriores pressupõem que está a utilizar a autenticação por palavra-passe ou a autenticação de certificados está a ocorrer automaticamente. Se utilizar um par de chaves SSH para a autenticação e o certificado não for utilizado automaticamente, utilize o parâmetro `-i` para especificar a chave privada. Por exemplo, `ssh -i ~/.ssh/mykey sshuser@clustername-ssh.azurehdinsight.net`.
 
 Assim que estiver ligado, a linha de comandos muda para indicar o nome de utilizador SSH e o nó a que está ligado. Por exemplo, quando estiver ligado ao nó principal primário como `sshuser`, a linha de comandos é `sshuser@hn0-clustername:~$`.
 
@@ -176,7 +174,7 @@ Os nós de trabalho e Zookeeper não são acessíveis diretamente pela Internet.
 
         ssh sshuser@wn0-myhdi
 
-    Para obter uma lista dos nomes de domínio dos nós no cluster, veja o documento [Manage HDInsight by using the Ambari REST API](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes) (Gerir o HDInsight com a API REST Ambari).
+    Para obter uma lista dos nomes dos nós, veja o documento [Manage HDInsight by using the Ambari REST API](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes) (Gerir o HDInsight com a API REST Ambari).
 
 Se a conta SSH for protegida por __palavra-passe__, introduza-a ao ligar.
 
