@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 11/20/2017
 ms.author: govindk
-ms.openlocfilehash: 5ca9b8ed40a1e58a0aea4de87995caf5f9a9212b
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: fe911b69278021262f1d90f2157bb78ca48db0db
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="introduction-to-apache-cassandra-api-for-azure-cosmos-db"></a>Introdução ao Apache Cassandra API para o Azure Cosmos DB
 
@@ -78,7 +78,7 @@ Se já tiver uma subscrição do Azure, pode inscrever aderir ao programa de API
 
     Depois de submeter o pedido, o estado é alterado para **com aprovação pendente** no painel de conta de novo. 
 
-Depois de submeter o pedido, aguarde que a notificação por correio eletrónico que o seu pedido tiver sido aprovado. Não é necessário criar um pedido de suporte para concluir o pedido. Pedidos serão analisados pela ordem em que foram recebidos. 
+Depois de submeter o pedido, aguarde que a notificação por correio eletrónico que o seu pedido tiver sido aprovado. Devido ao elevado volume de pedidos, deverá receber a notificação dentro de uma semana. Não é necessário criar um pedido de suporte para concluir o pedido. Pedidos serão analisados pela ordem em que foram recebidos. 
 
 ## <a name="how-to-get-started"></a>Como começar
 Uma vez tiver associado a um programa de pré-visualização, siga os inícios rápidos Cassandra API para criar uma aplicação utilizando a API de Cassandra:

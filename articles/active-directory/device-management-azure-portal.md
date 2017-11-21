@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/14/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: cd13ecf50cf03c362f8da2da83ab698c4e8ba0cc
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 83a1ba0b97c0617884b1645ad54e259f04052f49
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="managing-devices-using-the-azure-portal"></a>Gestão de dispositivos no portal do Azure
 
@@ -32,7 +32,30 @@ Neste tópico:
 
 - Fornece informações sobre como gerir os seus dispositivos no portal do Azure
 
+## <a name="manage-devices"></a>Gerir dispositivos 
 
+O portal do Azure fornece um local central para gerir os seus dispositivos. Pode obter a este local, ou utilizando um [ligação direta](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices) ou ao seguir estes passos:
+
+1. Iniciar sessão no [portal do Azure](https://portal.azure.com) como administrador.
+
+2. No navbar esquerdo, clique em **do Active Directory**.
+
+    ![Configurar definições do dispositivo](./media/device-management-azure-portal/01.png)
+
+3. No **gerir** secção, clique em **dispositivos**.
+
+    ![Configurar definições do dispositivo](./media/device-management-azure-portal/11.png)
+ 
+O **dispositivos** página permite-lhe:
+
+- Configurar as definições de gestão de dispositivos
+
+- Localizar os dispositivos
+
+- Executar tarefas de gestão de dispositivos
+
+- Reveja a gestão de dispositivos relacionadas com registos de auditoria  
+  
 
 ## <a name="configure-device-settings"></a>Configurar definições do dispositivo
 
@@ -207,7 +230,7 @@ Para limitar os dados comunicados a um nível que funcione para si, pode filtrar
 - Atividade
 - Intervalo de datas
 - Alvo
-- Iniciado pelo (Ator)
+- Iniciado por (Ator)
 
 Para além dos filtros, pode procurar entradas específicas.
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2017
 ms.author: johnkem
-ms.openlocfilehash: d36cc43889c190544b9a2735ce00e718c11fd216
-ms.sourcegitcommit: bd0d3ae20773fc87b19dd7f9542f3960211495f9
+ms.openlocfilehash: 4a796920d5ff76d4ff4d41afe2ec14aa89ae2265
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Monitorizar a atividade de subscrição com o registo de atividade do Azure
 O **registo de atividade do Azure** é um registo de subscrição que fornece informações sobre os eventos de nível de subscrição ocorridos no Azure. Isto inclui uma série de dados, a partir dos dados operacionais do Azure Resource Manager para atualizações de eventos de estado de funcionamento do serviço. O registo de atividade era anteriormente conhecido como "Registos de auditoria" ou "Registos operacionais," dado que os eventos de controlo plane de relatórios de categoria administrativa para as suas subscrições. Utilizar o registo de atividade, poderá determinar o ' que, quem e quando ' para quaisquer operações (PUT, POST, DELETE) efetuadas nos recursos na sua subscrição de escrita. Também pode compreender o estado da operação e outras propriedades relevantes. O registo de atividade não incluir operações de leitura (GET) ou as operações para recursos que utilizam clássica / modelo "RDFE".
@@ -49,7 +49,8 @@ O registo de atividade contém várias categorias de dados. Para obter detalhes 
 * **Alerta** -esta categoria contém o registo de todas as ativações de alertas do Azure. Um exemplo do tipo de evento que vir esta categoria é "% de CPU no myVM foi superior a 80 para os últimos 5 minutos." Um conceito de alerta de ter uma variedade de sistemas do Azure – pode definir uma regra de algumas ordenação e receber uma notificação quando as condições corresponderem dessa regra. Sempre que um tipo de alerta do Azure suportado 'ativa,' ou as condições são cumpridas para gerar uma notificação, um registo da ativação também é enviado para esta categoria do registo de atividade.
 * **Dimensionamento automático** -esta categoria contém o registo de quaisquer eventos relacionados com a operação do motor de dimensionamento automático com base em quaisquer definições de dimensionamento automático que definiu na sua subscrição. Um exemplo do tipo de evento que vir esta categoria é "Escala de dimensionamento automático ação falhou". Utilizar o dimensionamento automático, pode automaticamente aumentar ou reduzir horizontalmente em número de instâncias de um tipo de recurso suportados com base na hora do dia e/ou carga dados (métricos) através de uma definição de dimensionamento automático. Quando as condições são cumpridas para escala ou reduzir verticalmente, o início e de eventos com êxito ou falha são gravadas nesta categoria.
 * **Recomendação** -esta categoria contém eventos de recomendação de determinados tipos de recursos, tais como web sites e servidores SQL. Estes eventos oferecem recomendações sobre como utilizar melhor os recursos. Eventos deste tipo receber apenas se tiver recursos que emitir recomendações.
-* **Estado de funcionamento de recursos, de segurança e de política** -destas categorias não contêm quaisquer eventos; estão reservados para utilização futura.
+* **Segurança** -esta categoria contém o registo de quaisquer alertas gerados pelo centro de segurança do Azure. Um exemplo do tipo de evento que vir esta categoria é "ficheiro de extensão duplo suspeita executado".
+* **Política e o estado de funcionamento do recurso** -destas categorias não contêm quaisquer eventos; estão reservados para utilização futura.
 
 ## <a name="event-schema-per-category"></a>Esquema de eventos por categoria
 [Consulte este artigo para compreender o esquema de eventos de registo de atividades por categoria.](monitoring-activity-log-schema.md)

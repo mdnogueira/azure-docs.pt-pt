@@ -1,6 +1,6 @@
 ---
 title: "Do Azure AD Connect: Autenticação pass-through - bloqueio inteligente | Microsoft Docs"
-description: "Este artigo descreve como autenticação de pass-through do Azure Active Directory (Azure AD) protege as contas no local contra ataques de palavra-passe de força bruta na nuvem."
+description: "Este artigo descreve como autenticação de pass-through do Azure Active Directory (Azure AD) protege as contas no local contra ataques de palavra-passe de força bruta na nuvem"
 services: active-directory
 keywords: "Authentication do Azure AD Connect pass-through, a instalação do Active Directory, os componentes necessários para o Azure AD, SSO, o início de sessão único"
 documentationcenter: 
@@ -14,74 +14,74 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: billmath
-ms.openlocfilehash: 771741fd7da8c9b6932851851aaca148f9596643
-ms.sourcegitcommit: c5eeb0c950a0ba35d0b0953f5d88d3be57960180
+ms.openlocfilehash: 2e1468c6a576ab71b85e3f69e5914df6ee9e4d5a
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="azure-active-directory-pass-through-authentication-smart-lockout"></a>A autenticação pass-through do Azure Active Directory: Bloqueio inteligente
 
 ## <a name="overview"></a>Descrição geral
 
-Azure AD protege contra ataques de palavra-passe de força bruta e impede que os utilizadores genuínos as aplicações do Office 365 e do SaaS que está a ser bloqueado. Esta capacidade, denominada **bloqueio inteligente**, é suportada quando utiliza a autenticação pass-through como método de início de sessão. Bloqueio inteligente está ativada por predefinição para todos os inquilinos e estiver a proteger as contas de utilizador sempre; Não é necessário para ativá-la.
+Azure Active Directory (Azure AD) protege contra ataques de palavra-passe de força bruta e impede que os utilizadores genuínos que está a ser bloqueado as aplicações do Office 365 e do SaaS. Esta capacidade, denominada *bloqueio inteligente*, é suportada quando utiliza a autenticação pass-through como método de início de sessão. Bloqueio inteligente está ativado por predefinição para todos os inquilinos e que protege continuamente as contas de utilizador.
 
-Bloqueio inteligente funciona por manter um registo do início de sessão de tentativas falhadas e depois de uma determinada **limiar de bloqueio**, começando uma **duração do bloqueio**. Quaisquer tentativas de início de sessão do atacante durante o período de bloqueio são rejeitadas. Se persistir de ataque, o subsequente falhado início de sessão tenta após a duração do bloqueio terminar resultado no tempo durações de bloqueio.
-
->[!NOTE]
->O limiar de bloqueio a predefinição é 10 tentativas falhadas, e a duração do bloqueio de predefinição é 60 segundos.
-
-Bloqueio inteligente também distingue entre inícios de sessão dos utilizadores genuínos e para os atacantes e bloqueios apenas enviados os atacantes na maioria dos casos. Esta funcionalidade impede os atacantes de forma maliciosa poderá utilizadores genuínos. Utilizamos passado o comportamento de início de sessão, dos utilizadores dispositivos e browsers e outros sinais para distinguir entre utilizadores genuínos e os atacantes. Estamos constantemente estão a melhorar o nosso algoritmos.
-
-Porque a autenticação pass-through reencaminha os pedidos de validação de palavra-passe no seu local no Active Directory (AD), tem de impedir atacantes de bloqueio de contas de anúncios a que os utilizadores. Uma vez que tem as suas políticas de bloqueio da conta (especificamente, [ **limiar de bloqueio de conta** ](https://technet.microsoft.com/library/hh994574(v=ws.11).aspx) e [ **Repor conta bloqueio contador após políticas**](https://technet.microsoft.com/library/hh994568(v=ws.11).aspx)), terá de configurar devidamente limiar de bloqueio e valores de duração do bloqueio do Azure AD para filtrar ataques na nuvem, antes de atingirem no local AD.
+Bloqueio inteligente mantém um registo dos tentativas de início de sessão falhadas. Depois de uma determinada *limiar de bloqueio*, este inicia um *duração do bloqueio*. Bloqueio inteligente rejeita todas as tentativas para iniciar sessão a partir do atacante durante o período de bloqueio. Se o ataque continua, subsequente falhada início de sessão tenta após a duração do bloqueio termina resultado no tempo durações de bloqueio.
 
 >[!NOTE]
->A funcionalidade de bloqueio inteligente está livre e é _no_ por predefinição para todos os clientes. No entanto, modificar o limiar de bloqueio e valores de duração do bloqueio utilizando Graph API do Azure AD tem o seu inquilino ter pelo menos uma licença do Azure AD Premium P2. Não precisa de uma licença do Azure AD Premium P2 _por utilizador_ para obter a funcionalidade de bloqueio inteligente com a autenticação pass-through.
+>O limiar de bloqueio predefinido é 10 tentativas falhadas. A duração do bloqueio de predefinição é 60 segundos.
 
-Para garantir que os seus utilizadores no local Contas de anúncios são bem protegidas, certifique-se de que:
+Bloqueio inteligente também distingue entre inícios de sessão dos utilizadores genuínos e inícios de sessão de atacantes. Na maioria dos casos, bloqueia enviados apenas os atacantes. Esta funcionalidade impede os atacantes de forma maliciosa poderá utilizadores genuínos. Bloqueio inteligente utiliza passado o dos comportamento de início de sessão, os utilizadores dispositivos e browsers e outros sinalizar distinguir entre utilizadores genuínos e os atacantes. Os algoritmos são constantemente melhorados.
 
-1.  Limiar de bloqueio do Azure AD é _menos_ ao limiar de bloqueio de conta do AD. Recomendamos que defina os valores de forma a que o limiar de bloqueio de conta do AD é, pelo menos, dois ou três vezes o limiar de bloqueio do Azure AD.
-2.  Duração do bloqueio do Azure AD (representado em segundos) é _mais_ que de reposição de conta bloqueio contador após do AD (representado em minutos).
+Autenticação pass-through reencaminha os pedidos de validação da palavra-passe no Active Directory no local, pelo que necessita de impedir atacantes de bloqueio de contas do Active Directory dos utilizadores. Do Active Directory tem as suas próprias políticas de bloqueio de conta, especificamente, [limiar de bloqueio de conta](https://technet.microsoft.com/library/hh994574(v=ws.11).aspx) e [reposição do contador de bloqueio da conta após](https://technet.microsoft.com/library/hh994568(v=ws.11).aspx) políticas. Configure os Azure AD bloqueio limiar e de bloqueio de valores de duração adequadamente para filtrar ataques na nuvem, antes de atingirem do Active Directory no local.
+
+>[!NOTE]
+>A funcionalidade de bloqueio inteligente está livre e é _no_ por predefinição para todos os clientes. Mas se pretender modificar do Azure AD bloqueio limiar e de bloqueio de valores de duração com Graph API, o seu inquilino tem de ter pelo menos uma licença do Azure AD Premium P2. Não precisa de uma licença do Azure AD Premium P2 _por utilizador_ para obter a funcionalidade de bloqueio inteligente com a autenticação pass-through.
+
+Para garantir que contas de Active Directory no local dos seus utilizadores são bem protegidas, terá de se certificar de que:
+
+   * O limiar de bloqueio do Azure AD é _menos_ ao limiar de bloqueio de conta do Active Directory. Defina os valores de forma a que o limiar de bloqueio de conta do Active Directory, pelo menos, dois ou três vezes superior ao limiar de bloqueio do Azure AD.
+   * A duração do bloqueio do Azure AD (representada em segundos) é _mais_ que o Active Directory repor o contador de bloqueio da conta após a duração (representada em minutos).
 
 >[!IMPORTANT]
->Um administrador não é possível desbloqueie as contas na nuvem se foi bloqueados para a capacidade de bloqueio inteligente. Terá de aguardar o período de bloqueio expirar.
+>Um administrador não é possível desbloqueie as contas na nuvem se foi bloqueados para a capacidade de bloqueio inteligente. O administrador tem de aguardar o período de bloqueio expirar.
 
-## <a name="verify-your-ad-account-lockout-policies"></a>Certifique-se as políticas de bloqueio de conta do AD
+## <a name="verify-your-active-directory-account-lockout-policies"></a>Certifique-se as políticas de bloqueio de conta do Active Directory
 
-Utilize as instruções seguintes para verificar as políticas de bloqueio da conta do AD:
+Utilize as instruções seguintes para verificar as políticas de bloqueio de conta do Active Directory:
 
 1.  Abra a ferramenta de gestão de políticas de grupo.
-2.  Edite a política de grupo é aplicada a todos os utilizadores, por exemplo, a política de domínio predefinida.
-3.  Navegue até à política de bloqueio de computador Configuration\Policies\Windows definições Settings\Account Policies\Account.
-4.  Certifique-se os valores de limiar de bloqueio de conta e de reposição de conta bloqueio contador depois.
+2.  Editar a política de grupo é aplicada a todos os utilizadores, por exemplo, o **política de domínio predefinida**.
+3.  Navegue até à **configuração do computador** > **políticas** > **definições do Windows** > **definições de segurança**   >  **Políticas de conta** > **política de bloqueio de conta**.
+4.  Certifique-se a **limiar de bloqueio de conta** e **reposição do contador de bloqueio da conta após** valores.
 
-![Políticas de bloqueio da conta do AD](./media/active-directory-aadconnect-pass-through-authentication/pta5.png)
+![Políticas de bloqueio de conta do Active Directory](./media/active-directory-aadconnect-pass-through-authentication/pta5.png)
 
-## <a name="use-the-graph-api-to-manage-your-tenants-smart-lockout-values-needs-premium-license"></a>Utilize a Graph API gerir os valores do seu inquilino bloqueio inteligente (necessita de licença Premium)
+## <a name="use-the-graph-api-to-manage-your-tenants-smart-lockout-values-requires-a-premium-license"></a>Utilize a Graph API gerir os valores do seu inquilino bloqueio inteligente (necessita de uma licença de Premium)
 
 >[!IMPORTANT]
->Modificar o limiar de bloqueio e valores de duração do bloqueio utilizando Graph API do Azure AD é uma funcionalidade do Azure AD Premium P2. Também tem de ser um Administrador Global no seu inquilino.
+>A modificação do Azure AD bloqueio limiar e de bloqueio de valores de duração, utilizando a Graph API é uma funcionalidade do Azure AD Premium P2. Também tem de ser um administrador global no seu inquilino.
 
-Pode utilizar [gráfico Explorer](https://developer.microsoft.com/graph/graph-explorer) para ler, definir e atualizar os valores de bloqueio inteligente do Azure AD. Mas também pode efetuar estas operações através de programação.
+Pode utilizar [gráfico Explorer](https://developer.microsoft.com/graph/graph-explorer) para ler, definir e atualize os valores de bloqueio do Azure AD inteligente. Também pode efetuar estas operações através de programação.
 
-### <a name="read-smart-lockout-values"></a>Valores de bloqueio de Smart de leitura
+### <a name="view-smart-lockout-values"></a>Valores de bloqueio inteligente de vista
 
-Siga estes passos, leia os valores de bloqueio inteligente do inquilino:
+Siga estes passos para ver os valores de bloqueio inteligente do inquilino:
 
-1. Inicie sessão no Explorador do gráfico como um Administrador Global do seu inquilino. Se lhe for solicitado, conceda acesso para as permissões de pedido.
-2. Clique em "Modificar permissões" e selecione a permissão "Directory.ReadWrite.All".
-3. Configurar o pedido da Graph API da seguinte forma: Definir versão para "BETA", tipo de pedido "GET" e o URL para `https://graph.microsoft.com/beta/<your-tenant-domain>/settings`.
-4. Clique em "Executar a consulta" para ver os valores de bloqueio inteligente do seu inquilino. Se ainda não definido valores do seu inquilino antes, pode ver um conjunto vazio.
+1. Inicie sessão no Explorador do gráfico como um administrador global do seu inquilino. Se lhe for pedida, conceda acesso para as permissões de pedido.
+2. Selecione **modificar permissões**e, em seguida, selecione o **Directory.ReadWrite.All** permissão.
+3. Configurar o pedido da Graph API da seguinte forma: definir a versão para **BETA**, o tipo de pedido para **obter**e o URL para `https://graph.microsoft.com/beta/<your-tenant-domain>/settings`.
+4. Selecione **executar consulta** para ver os valores de bloqueio inteligente do seu inquilino. Se ainda não definido valores do seu inquilino antes, pode ver um conjunto vazio.
 
 ### <a name="set-smart-lockout-values"></a>Definir valores de bloqueio inteligente
 
-Siga estes passos para definir valores de bloqueio inteligente do seu inquilino (pela primeira vez apenas):
+Siga estes passos para definir os valores de bloqueio inteligente do seu inquilino (necessários para a primeira vez):
 
-1. Inicie sessão no Explorador do gráfico como um Administrador Global do seu inquilino. Se lhe for solicitado, conceda acesso para as permissões de pedido.
-2. Clique em "Modificar permissões" e selecione a permissão "Directory.ReadWrite.All".
-3. Configurar o pedido da Graph API da seguinte forma: Definir versão para "BETA", tipo "POST" e o URL de pedido `https://graph.microsoft.com/beta/<your-tenant-domain>/settings`.
-4. Copie e cole o seguinte pedido JSON para o campo "Corpo do pedido".
-5. Clique em "Executar a consulta" para definir os valores de bloqueio inteligente do seu inquilino.
+1. Inicie sessão no Explorador do gráfico como um administrador global do seu inquilino. Se lhe for pedida, conceda acesso para as permissões de pedido.
+2. Selecione **modificar permissões**e, em seguida, selecione o **Directory.ReadWrite.All** permissão.
+3. Configurar o pedido da Graph API da seguinte forma: definir a versão para **BETA**, o tipo de pedido para **POST**e o URL para `https://graph.microsoft.com/beta/<your-tenant-domain>/settings`.
+4. Copie e cole o seguinte pedido JSON para o **corpo do pedido** campo.
+5. Selecione **executar consulta** para definir os valores de bloqueio inteligente do seu inquilino.
 
 ```
 {
@@ -108,20 +108,20 @@ Siga estes passos para definir valores de bloqueio inteligente do seu inquilino 
 ```
 
 >[!NOTE]
->Se não estiver a utilizá-los, pode deixar o **BannedPasswordList** e **EnableBannedPasswordCheck** valores como vazia ("") e "false", respetivamente.
+>Se não utilizá-los, pode deixar o **BannedPasswordList** e **EnableBannedPasswordCheck** valores como vazio (**""**) e **falso** respetivamente.
 
-Certifique-se de que definiu os valores de bloqueio inteligente do seu inquilino corretamente utilizando [estes passos](#read-smart-lockout-values).
+Certifique-se de que definiu os valores do seu inquilino bloqueio inteligente corretamente, utilizando os passos no [valores de bloqueio inteligente vista](#view-smart-lockout-values).
 
 ### <a name="update-smart-lockout-values"></a>Atualize os valores de bloqueio inteligente
 
-Siga estes passos para atualizar os valores do seu inquilino bloqueio inteligente (se já definiu-los antes):
+Siga estes passos para atualizar os valores do seu inquilino bloqueio inteligente (se defini-los antes):
 
-1. Inicie sessão no Explorador do gráfico como um Administrador Global do seu inquilino. Se lhe for solicitado, conceda acesso para as permissões de pedido.
-2. Clique em "Modificar permissões" e selecione a permissão "Directory.ReadWrite.All".
-3. [Siga estes passos para ler os valores do seu inquilino bloqueio inteligente](#read-smart-lockout-values). Copiar o `id` valor (um GUID) do item com o "displayName" como "PasswordRuleSettings".
-4. Configurar o pedido da Graph API da seguinte forma: Definir versão para "BETA", tipo de pedido "Corrigir" e o URL para `https://graph.microsoft.com/beta/<your-tenant-domain>/settings/<id>` -utilize o GUID do passo 3 para `<id>`.
-5. Copie e cole o seguinte pedido JSON para o campo "Corpo do pedido". Altere os valores de bloqueio inteligente conforme apropriado.
-6. Clique em "Executar a consulta" para atualizar os valores de bloqueio inteligente do seu inquilino.
+1. Inicie sessão no Explorador do gráfico como um administrador global do seu inquilino. Se lhe for pedida, conceda acesso para as permissões de pedido.
+2. Selecione **modificar permissões**e, em seguida, selecione o **Directory.ReadWrite.All** permissão.
+3. [Siga estes passos para ver os valores do seu inquilino bloqueio inteligente](#view-smart-lockout-values). Copiar o `id` valor (um GUID) do item com **displayName** como **PasswordRuleSettings**.
+4. Configurar o pedido da Graph API da seguinte forma: definir a versão para **BETA**, o tipo de pedido para **PATCH**e o URL para `https://graph.microsoft.com/beta/<your-tenant-domain>/settings/<id>`. Utilize o GUID do passo 3 para `<id>`.
+5. Copie e cole o seguinte pedido JSON para o **corpo do pedido** campo. Altere os valores de bloqueio inteligente conforme apropriado.
+6. Selecione **executar consulta** para atualizar os valores de bloqueio inteligente do seu inquilino.
 
 ```
 {
@@ -146,7 +146,7 @@ Siga estes passos para atualizar os valores do seu inquilino bloqueio inteligent
 }
 ```
 
-Certifique-se de que foi atualizado com valores do seu inquilino bloqueio inteligente corretamente utilizando [estes passos](#read-smart-lockout-values).
+Certifique-se de que foi atualizado com os valores do seu inquilino bloqueio inteligente corretamente, utilizando os passos no [valores de bloqueio inteligente vista](#view-smart-lockout-values).
 
 ## <a name="next-steps"></a>Passos seguintes
-- [**UserVoice** ](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect) - para apresentação de pedidos de funcionalidades de novo.
+[UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect): Utilize o Fórum do Azure Active Directory para novos pedidos de funcionalidade de ficheiros.

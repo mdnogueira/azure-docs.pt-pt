@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 08/09/2017
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: d0f67b1a63c36e878ed5f7c9aa1c45267e5b156c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: acfeb5a3f27f6451309017bad88c687b408872b6
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Implementar uma aplicação com CI/CD para um cluster do Service Fabric
 Este tutorial faz parte três de uma série e descreve como configurar a integração contínua e implementação para uma aplicação de Service Fabric do Azure utilizando o Visual Studio Team Services.  É necessária uma aplicação de Service Fabric existente, a aplicação criada na [compilar uma aplicação .NET](service-fabric-tutorial-create-dotnet-app.md) é utilizada como exemplo.
@@ -45,7 +45,7 @@ Antes de começar este tutorial:
 - [Instalar Visual Studio 2017](https://www.visualstudio.com/) e instalar o **programação do Azure** e **desenvolvimento ASP.NET e web** cargas de trabalho.
 - [Instalar o SDK do Service Fabric](service-fabric-get-started.md)
 - Criar uma aplicação de Service Fabric, por exemplo, [seguir este tutorial](service-fabric-tutorial-create-dotnet-app.md). 
-- Criar um cluster do Windows Service Fabric no Azure, por exemplo, [seguir este tutorial](service-fabric-tutorial-create-cluster-azure-ps.md)
+- Criar um cluster do Windows Service Fabric no Azure, por exemplo, [seguir este tutorial](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
 - Criar um [conta Team Services](https://www.visualstudio.com/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services).
 
 ## <a name="download-the-voting-sample-application"></a>Transferir a aplicação de exemplo de voto

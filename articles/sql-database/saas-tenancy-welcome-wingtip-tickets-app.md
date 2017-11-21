@@ -13,140 +13,84 @@ ms.workload: Active
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2017
-ms.author: billgib;genemi
-ms.openlocfilehash: 96e031835905057a9ab2b3ee4023b08de092dd8e
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.date: 11/17/2017
+ms.author: billgib
+ms.openlocfilehash: 094189e08002ce8d4a2f4f92a8c112eaf18ebe13
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/20/2017
 ---
-# <a name="welcome-to-the-wingtip-tickets-sample-saas-azure-sql-database-tenancy-app"></a>Bem-vindo à aplicação de inquilinos de SQL Database do Azure SaaS de amostra de pedidos de Wingtip
+# <a name="the-wingtip-tickets-saas-application"></a>A aplicação de Wingtip bilhetes SaaS
 
-Bem-vindo à aplicação Wingtip bilhetes exemplo SQL Database do Azure SaaS inquilinos e os tutoriais. A arquitetura de base de dados refere-se para o modo de isolamento de dados que a aplicação fornece aos clientes que pagar para ser alojada na sua aplicação. A ativação pós-falha simplificar neste momento, a cada cliente tem uma base de dados de todo a próprio ou partilha uma base de dados com outro cliente.
+O mesmo *Wingtip bilhetes* aplicação é implementada em cada uma das três amostras. A aplicação é um evento simple de listagem e relatórios de aplicações SaaS filtragem pequenos venues - theaters, clubs, etc. Cada venue é um inquilino da aplicação e se tem os seus próprios dados: venue detalhes, listas de eventos, os clientes, as ordens de permissão, etc.  A aplicação, juntamente com os scripts de gestão e tutoriais, showcases um cenário de SaaS ponto-a-ponto. Isto inclui o aprovisionamento de inquilinos, monitorizar e gerir o desempenho, gestão de esquema e inquilinos entre análises e relatórios.
 
-## <a name="wingtip-tickets-app"></a>Aplicação de bilhetes Wingtip
+## <a name="three-saas-application-patterns"></a>Três padrões de aplicações SaaS
 
-A aplicação de exemplo Wingtip bilhetes ilustra os efeitos de modelos de inquilinos de base de dados diferente na conceção e gestão de aplicações de SaaS multi-inquilino. Os tutoriais associados diretamente descrevem esses mesmos efeitos. Pedidos de suporte de Wingtip está incorporado no SQL Database do Azure.
+Três vesions da aplicação estiverem disponíveis; cada explicar um padrão de inquilinos de base de dados diferente na SQL Database do Azure.  O primeiro utiliza uma aplicação de inquilino único com uma base de dados de inquilino único isolado. O segundo utiliza uma aplicação de multi-inquilino, com uma base de dados por inquilino. O terceiro exemplo utiliza uma aplicação multi-inquilino com a bases de dados do multi-inquilinos.
 
-Pedidos de suporte de Wingtip foi concebido para processar vários cenários de design e de gestão que são utilizados pelos clientes de SaaS reais. Os padrões de utilização emerged são contabilizados no Wingtip pedidos de suporte.
+![Três padrões de inquilinos][image-three-tenancy-patterns]
 
-Pode instalar a aplicação de bilhetes Wingtip na sua própria subscrição do Azure em cinco minutos. A instalação inclui a inserção de dados de exemplo para vários inquilinos. Em segurança pode instalar a aplicação e os scripts de gestão para todos os modelos, porque as instalações não interagir ou interferir com entre si.
+ Cada amostra inclui scripts de gestão e tutoriais explorar um intervalo de design e padrões de gestão, que pode utilizar na sua própria aplicação.  Cada amostra implementa no menor do que cinco minutos.  Todas as três podem ser implementado lado lado a lado, pelo que pode comparar as diferenças na conceção e na gestão.
 
-#### <a name="code-in-github"></a>Código no Github
+## <a name="standalone-application-pattern"></a>Padrão de aplicação autónoma
 
-Código da aplicação e os scripts de gestão, estão disponíveis no GitHub:
+O padrão de aplicação autónomo utiliza uma aplicação de inquilino único com uma base de dados de inquilino único para cada inquilino. Aplicação de cada inquilino é implementada num grupo de recursos do Azure separado. Isto pode ser na subscrição do fornecedor de serviços ou de subscrição do inquilino e gerido pelo fornecedor em nome do inquilino. Este padrão fornece o isolamento de inquilino é maior, mas é, normalmente, mais dispendioso vez que não há nenhuma oportunidade de partilhar recursos em vários inquilinos.
 
-- **Aplicação autónoma** modelo: [WingtipTicketsSaaS StandaloneApp repositório](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp)
-- **Base de dados por inquilino** modelo: [WingtipTicketsSaaS DbPerTenant repositório](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant).
-- **A multi-inquilino** modelo: [WingtipTicketsSaaS MultiTenantDB repositório](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB).
+Veja o [tutoriais] [ docs-tutorials-for-wingtip-sa] e código no GitHub [.../Microsoft/WingtipTicketsSaaS-StandaloneApp][github-code-for-wingtip-sa].
 
-O mesmo código de uma base para a aplicação de bilhetes Wingtip é reutilizado para todos os modelos de anteriores listados. Pode utilizar o código a partir do Github para iniciar os seus projetos de SaaS.
+## <a name="database-per-tenant-pattern"></a>Base de dados por padrão de inquilino
 
+A base de dados por padrão de inquilino é eficaz para fornecedores de serviços que estão preocupados com o isolamento de inquilino e pretendem executar um serviço centralizado que permite a utilização de baixo custo de recursos partilhados. É criada uma base de dados para cada venue ou inquilino e todas as bases de dados são geridas centralmente. Bases de dados podem ser alojados no conjuntos elásticos para fornecer económico e uma gestão mais fácil de desempenho, que tira partido do padrões de carga de trabalho imprevisíveis aos inquilinos. Uma base de dados do catálogo detém o mapeamento entre inquilinos e as bases de dados. Este mapeamento é gerido utilizando as funcionalidades de gestão de mapa de partições horizontais do [biblioteca de clientes de base de dados elásticas](sql-database-elastic-database-client-library.md), que fornece uma gestão eficiente de ligação à aplicação.
 
+Veja o [tutoriais] [ docs-tutorials-for-wingtip-dpt] e código no GitHub [.../Microsoft/WingtipTicketsSaaS-DbPerTenant][github-code-for-wingtip-dpt].
 
-## <a name="major-database-tenancy-models"></a>Modelos de inquilinos de base de dados principais
+## <a name="sharded-multi-tenant-database-pattern"></a>Padrão da base de dados do multi-inquilino
 
-Pedidos de suporte de Wingtip é um evento de listagem e de emissão de permissões de aplicação SaaS. Wingtip fornece serviços que são necessárias por venues. Todos os itens seguintes são aplicáveis a cada venue:
+Bases de dados do multi-inquilinos são eficazes para fornecedores de serviços à procura de custo mais baixo por inquilino e há problema com o isolamento de inquilino reduzida. Este padrão permite packing grande número de inquilinos numa base de dados único, a impulsionar o custo por inquilino para baixo. Escala infinita near é possível ao fragmentação através da base de dados de vários inquilinos.  Uma base de dados do catálogo novamente mapeia inquilinos para bases de dados.  
 
-- Pays a ser alojado na sua aplicação.
-- É um *inquilino* no Wingtip.
-- Eventos de anfitriões. Os seguintes eventos são relacionados:
-    - Preços de permissão.
-    - Vendas de permissão.
-    - Clientes que comprar pedidos de suporte.
+Este padrão também permite que um modelo de híbrida, na qual pode otimizar o custo com múltiplos inquilinos numa base de dados ou otimizar para isolamento com um inquilino único na sua própria base de dados. Se a opção pode ser efetuada numa base de inquilino por inquilino quando o inquilino seja aprovisionado ou posterior, sem afetar a aplicação.
 
-A aplicação, juntamente com os scripts de gestão e tutoriais, showcases um cenário de SaaS completo. O cenário inclui as seguintes atividades:
-
-- Aprovisionamento de inquilinos.
-- Monitorizar e gerir o desempenho.
-- Gestão de esquema.
-- Entre-inquilinos de relatórios e análise.
-
-Todas essas atividades são fornecidas em qualquer escala é necessária.
-
-
-
-## <a name="code-samples-for-each-tenancy-model"></a>Exemplos de código para cada modelo de inquilinos
-
-Um conjunto de modelos de aplicação merecem. No entanto, outras implementações podem misturar elementos de dois ou mais modelos.
-
-#### <a name="standalone-app-model"></a>Modelo de aplicação autónoma
-
-![Modelo de aplicação autónoma][standalone-app-model-62s]
-
-Este modelo utiliza uma aplicação de inquilino único. Por conseguinte, este modelo tem apenas uma base de dados e armazena os dados para o um inquilino. O inquilino gostar concluído isolamento de outros inquilinos na base de dados.
-
-Pode utilizar este modelo quando propor instâncias da sua aplicação para muitos clientes diferentes, para cada cliente a executar seu próprio. O cliente, em seguida, é o único inquilino. Enquanto a base de dados armazena os dados para apenas um cliente, a base de dados armazena os dados para muitos clientes do cliente.
-
-#### <a name="database-per-tenant"></a>Base de dados por inquilino
-
-![Base de dados por modelo de inquilino][database-per-tenant-model-35d]
-
-Este modelo tem vários inquilinos na instância da aplicação. Ainda para cada inquilino novo, outra base de dados está alocado para utilização apenas por ao novo inquilino.
-
-Este modelo fornece isolamento de segurança completa para cada inquilino. O serviço SQL Database do Azure tem sofisticação para tornar este modelo plausible.
-
-- [Introdução a um exemplo de aplicação de SaaS de multi-inquilino de base de dados SQL] [ saas-dbpertenant-wingtip-app-overview-15d] -tem mais informações sobre este modelo.
-
-#### <a name="sharded-multi-tenant-databases-the-hybrid"></a>A multi-inquilinos bases de dados, a híbrida
-
-![Modelo da base de dados do multi-inquilino, o híbrida][sharded-multitenantdb-model-hybrid-79m]
-
-Este modelo tem vários inquilinos na instância da aplicação. Este modelo também tem vários inquilinos em algumas ou todas as suas bases de dados. Este modelo é boa para oferta diferentes escalões de serviço para que os clientes podem paga mais se o valor total de isolamento de base de dados.
-
-O esquema de cada base de dados inclui um identificador de inquilino. O identificador de inquilino é mesmo nessas bases de dados que armazenam apenas um inquilino.
-
-- [Introdução a um exemplo de aplicação de SaaS de multi-inquilino de base de dados SQL][saas-multitenantdb-get-started-deploy-89i]
-
-
-
-## <a name="tutorials-for-each-tenancy-model"></a>Tutoriais para cada modelo de inquilinos
-
-Cada modelo de inquilinos é descrito pelo seguinte:
-
-- Um conjunto de artigos tutorial.
-- Código de origem armazenado no repositório do Github que se encontra dedicado para o modelo:
-    - O código para a aplicação de Wingtip pedidos de suporte.
-    - O código de script para cenários de gestão.
-
-#### <a name="tutorials-for-management-scenarios"></a>Tutoriais para cenários de gestão
-
-Os artigos tutorial para cada modelo abrangem os seguintes cenários de gestão:
-
-- Aprovisionamento do inquilino.
-- Monitorização de desempenho e gestão.
-- Gestão de esquema.
-- Entre-inquilinos de relatórios e análise.
-- Restauro de um inquilino para um ponto anterior no tempo.
-- Recuperação após desastre.
-
-
+Veja o [tutoriais] [ docs-tutorials-for-wingtip-mt] e código no GitHub [.../Microsoft/WingtipTicketsSaaS-MultiTenantDb][github-code-for-wingtip-mt].
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Introdução a um exemplo de aplicação de SaaS de multi-inquilino de base de dados SQL] [ saas-dbpertenant-wingtip-app-overview-15d] -tem mais informações sobre este modelo.
+#### <a name="conceptual-descriptions"></a>Descrições conceptuais
 
-- [Padrões de inquilinos de base de dados de SaaS multi-inquilino][multi-tenant-saas-database-tenancy-patterns-60p]
+- Uma explicação mais detalhada de padrões de inquilinos a aplicação está disponível em [padrões de inquilinos da base de dados de SaaS multi-inquilino][saas-tenancy-app-design-patterns-md]
+
+#### <a name="tutorials-and-code"></a>Tutoriais e código
+
+- Aplicação autónoma:
+    - [Tutoriais para a aplicação autónoma][docs-tutorials-for-wingtip-sa].
+    - [Código autónomo, no Github][github-code-for-wingtip-sa].
+
+- Base de dados por inquilino:
+    - [Tutoriais para a base de dados por inquilino][docs-tutorials-for-wingtip-dpt].
+    - [Código de base de dados por inquilino, no Github][github-code-for-wingtip-dpt].
+
+- A multi-inquilino:
+    - [Tutoriais para a multi-inquilino][docs-tutorials-for-wingtip-mt].
+    - [Código para a multi-inquilino, no Github][github-code-for-wingtip-mt].
 
 
 
 <!-- Image references. -->
 
-[standalone-app-model-62s]: media/saas-tenancy-welcome-wingtip-tickets-app/model-standalone-app.png "Modelo de aplicação autónoma"
+[image-three-tenancy-patterns]: media/saas-tenancy-welcome-wingtip-tickets-app/three-tenancy-patterns.png "Três padrões de inquilinos."
 
-[database-per-tenant-model-35d]: media/saas-tenancy-welcome-wingtip-tickets-app/model-database-per-tenant.png "Base de dados por modelo de inquilino"
+<!-- Docs.ms.com references. -->
 
-[sharded-multitenantdb-model-hybrid-79m]: media/saas-tenancy-welcome-wingtip-tickets-app/model-sharded-multitenantdb-hybrid.png "Modelo da base de dados do multi-inquilino, o híbrida"
+[saas-tenancy-app-design-patterns-md]: saas-tenancy-app-design-patterns.md
 
+<!-- WWWeb http references. -->
 
+[docs-tutorials-for-wingtip-sa]: https://aka.ms/wingtipticketssaas-sa
+[github-code-for-wingtip-sa]: https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp
 
-<!-- Article references. -->
+[docs-tutorials-for-wingtip-dpt]: https://aka.ms/wingtipticketssaas-dpt
+[github-code-for-wingtip-dpt]: https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant
 
-[saas-dbpertenant-wingtip-app-overview-15d]: saas-dbpertenant-wingtip-app-overview.md
-
-[multi-tenant-saas-database-tenancy-patterns-60p]: saas-tenancy-app-design-patterns.md
-
-[saas-multitenantdb-get-started-deploy-89i]: saas-multitenantdb-get-started-deploy.md
-
+[docs-tutorials-for-wingtip-mt]: https://aka.ms/wingtipticketssaas-mt
+[github-code-for-wingtip-mt]: https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb
 

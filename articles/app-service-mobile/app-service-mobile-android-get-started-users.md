@@ -12,13 +12,13 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: article
-ms.date: 10/01/2016
+ms.date: 11/16/2017
 ms.author: glenga
-ms.openlocfilehash: 81331142aa6110d4e29e6fb30a90ce6e3a853439
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3d38482ebca736e4d7d0fe0b1b4b5dd0220de5b4
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="add-authentication-to-your-android-app"></a>Adicionar autenticação à sua aplicação Android
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -50,7 +50,7 @@ Autenticação segura requer que defina um novo esquema de URL para a sua aplica
 
      Esta exceção acontece porque a aplicação tenta aceder a back-end como um utilizador não autorizado, mas o *TodoItem* tabela agora requer autenticação.
 
-Em seguida, atualize a aplicação para autenticar os utilizadores antes de pedir a recursos de back-end das Mobile Apps. 
+Em seguida, atualize a aplicação para autenticar os utilizadores antes de pedir a recursos de back-end das Mobile Apps.
 
 ## <a name="add-authentication-to-the-app"></a>Adicionar autenticação à aplicação
 [!INCLUDE [mobile-android-authenticate-app](../../includes/mobile-android-authenticate-app.md)]
@@ -79,3 +79,4 @@ Agora que concluiu este tutorial de autenticação básica, considere continuar 
 
 <!-- URLs. -->
 [introdução às Mobile Apps]: app-service-mobile-android-get-started.md
+[portal do Azure]: https://portal.azure.com/

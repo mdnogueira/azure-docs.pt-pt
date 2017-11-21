@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/16/2017
-ms.openlocfilehash: 856348c07a198a8c53c6661441d5c49196ef3af5
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 50f48fb096cb907e050769a8a4159689eb25418c
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="roaming-and-collaboration-in-azure-machine-learning-workbench"></a>Roaming e de colaboração no Azure Machine Learning Workbench
 Este documento explica como como o Azure Machine Learning Workbench pode ajudar a percorrer o seus projetos máquinas, bem como ativar colaboração com seu teammates. 
@@ -28,10 +28,14 @@ Segundo, aceder [Visual Studio Team System](https://www.visualstudio.com) e cria
 
 ## <a name="create-a-new-azure-machine-learning-project"></a>Criar um novo projeto do Azure Machine Learning
 Inicie o Azure Machine Learning Workbench e criar um novo projeto (por exemplo, _iris_). Preencher o **URL do repositório do GIT Visualstudio.com** caixa de texto com um URL do repositório de VSTS Git válido. 
->[!IMPORTANT]
->Criação do projeto falha se não tiver acesso de leitura/escrita no repositório de Git e o repositório de Git não está vazio, ou seja, já tem um ramo principal.
+
+> [!IMPORTANT]
+> Se escolher o modelo de projeto em branco, é OK se o repositório de Git que escolher já tiver um _mestre_ ramo. Azure ML clones simplesmente o _mestre_ sucursal localmente e adicione o `aml_config` pasta e outros ficheiros de metadados para a pasta do projeto local do projeto. Mas se optar por qualquer outro modelo de projeto, o repositório de Git não já tem de ter um _mestre_ ramo ou será apresentado um erro. A alternativa consiste em utilizar `az ml project create` ferramenta de linha de comandos para criar o projeto e fornecer um `--force` mudar. Isto elimina os ficheiros no ramo principal original e substitua-as com os novos ficheiros no modelo que escolher.
 
 Depois do projeto ser criado, submeta alguns é executado em quaisquer scripts no projeto. Esta ação consolida estado do projeto no ramo de histórico de execução do repositório de Git remoto. 
+
+> [!NOTE] 
+> Apenas o script é executado acionador consolidações para o ramo do histórico de execução. Preparação de dados de execução ou execuções do bloco de notas não acionam instantâneos de projeto no ramo do histórico de execução.
 
 Se tiver a autenticação de Git do programa de configuração, pode também explicitamente operar no ramo principal, ou criar um novo ramo. 
 
@@ -71,7 +75,8 @@ No macOS, é aqui:`/home/<username>/Documents/AzureML`
 
 Numa versão futura, planeamos que melhoram a funcionalidade para que possa selecionar uma pasta de destino. 
 
->Tenha em atenção de que o se acontecer tem uma pasta no diretório do Azure ML com o mesmo nome exato como o projeto, a falha de transferência. Durante o período de tempo a ser, terá de mudar o nome de pasta existente para solucionar este problema.
+> [!NOTE]
+> Se tiver uma pasta no diretório do Azure ML com o mesmo nome exato como o projeto, a transferência falhará. Durante o período de tempo a ser, terá de mudar o nome de pasta existente para solucionar este problema.
 
 
 ### <a name="work-on-the-downloaded-project"></a>Funcionam em projeto transferido 
