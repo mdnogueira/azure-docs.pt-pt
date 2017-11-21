@@ -63,6 +63,8 @@
           href: azure-stack-integrate-identity.md
         - name: Publicar pontos finais
           href: azure-stack-integrate-endpoints.md
+        - name: Monitorização externo
+          href: azure-stack-integrate-monitor.md
         - name: Segurança
           href: azure-stack-integrate-security.md
     - name: Gerir
