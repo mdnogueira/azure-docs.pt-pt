@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 10/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c8e598159d2139397952a5c11eac54dc38939f47
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: b58d6be3d6412b5357aa405269aac4563a7a33a9
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="create-a-java-application"></a>Criar uma aplicação de Java
 Azure Service Fabric é uma plataforma de sistemas distribuídos para implementar e gerir micro-serviços e contentores. 
@@ -83,7 +83,7 @@ Para implementar a aplicação para um cluster no Azure, criar o seu próprio cl
 
 Party clusters são clusters do Service Fabric gratuitos e de tempo limitado, alojados no Azure. São executados pela equipa do Service Fabric em que qualquer pessoa pode implementar aplicações e saber mais sobre a plataforma. Para obter acesso a um Party Cluster, [siga as instruções](http://aka.ms/tryservicefabric). 
 
-Para obter informações sobre como criar o seu próprio cluster, veja [Crie o seu primeiro cluster do Service Fabric no Azure](service-fabric-get-started-azure-cluster.md).
+Para obter informações sobre como criar o seu próprio cluster, consulte [criar um cluster do Service Fabric no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 > [!Note]
 > O serviço de front-end da web está configurado para escutar na porta 8080 para o tráfego de entrada. Certifique-se de que a porta está aberta no seu cluster. Se estiver a utilizar o Cluster de terceiros, esta porta é aberta.

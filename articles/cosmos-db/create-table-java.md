@@ -13,13 +13,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 11/16/2017
+ms.date: 11/20/2017
 ms.author: arramac
-ms.openlocfilehash: ce5c1c25a73bdc02d7e66768752c6942144de517
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 90ba10990049cd1fb788d63a143eb1169191cf24
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="quickstart-build-a-table-api-app-with-java-and-azure-cosmos-db"></a>Início rápido: Criar uma tabela de aplicação de API com Java e Cosmos BD do Azure
 
@@ -43,6 +43,10 @@ Além disso:
     * No Ubuntu, pode executar `sudo apt-get install git` para instalar o Git.
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
+
+> [!IMPORTANT] 
+> Terá de criar uma nova conta de API de tabela para trabalhar com os SDKs de API de tabela geralmente disponível. As contas de API de tabela criadas durante a pré-visualização não são suportadas pelos SDKs geralmente disponíveis.
+>
 
 [!INCLUDE [cosmos-db-create-dbaccount-table](../../includes/cosmos-db-create-dbaccount-table.md)]
 
@@ -98,7 +102,11 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
     StorageConnectionString = DefaultEndpointsProtocol=https;AccountName=[ACCOUNTNAME];AccountKey=[ACCOUNTKEY]
     ```
 
-6. Cole a cadeia de ligação principal do portal o valor de StorageConnectionString na linha 2. Se a parte do ponto final da cadeia de ligação utiliza documents.azure.com, corrija a que parte a utilizar em vez disso, table.cosmosdb.azure.com.
+6. Cole a cadeia de ligação principal do portal o valor de StorageConnectionString na linha 2. 
+
+    > [!IMPORTANT]
+    > Se o ponto final utiliza documents.azure.com, o que significa que tem uma conta de pré-visualização, e tem de criar um [nova conta de API de tabela](#create-a-database-account) para trabalhar com o SDK de API de tabela geralmente disponível.
+    >
 
 7. Guarde o ficheiro Properties.
 

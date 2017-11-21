@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 08/11/2017
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 57af000e47188786a77cdb84ebb6ffb5c50eafaa
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 528b569ff9ffb3659e9210ea70e3aa06921cfe0d
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="track-software-changes-in-your-environment-with-the-change-tracking-solution"></a>Controlar as alterações de software no seu ambiente com a solução de controlo de alterações
 
@@ -44,7 +44,7 @@ Utilize os seguintes passos para configurar ficheiros para controlar em computad
 4. Clique em **Guardar**.  
 
 > [!NOTE]
-> Controlo de ficheiro de Linux tem capacidades adicionais, incluindo o controlo de diretório, recrusion através de diretórios e o caráter universal de controlo.
+> Controlo de ficheiro de Linux tem capacidades adicionais, incluindo o controlo de diretório, recursão através de diretórios e o caráter universal de controlo.
 
 ### <a name="configure-windows-files-to-track"></a>Configurar ficheiros do Windows para controlar
 Utilize os seguintes passos para configurar ficheiros para controlar em computadores Windows.
@@ -69,7 +69,7 @@ Utilize os seguintes passos para configurar as chaves de registo para controlar 
    * **Ficheiro** (relatório de metadados do ficheiro - tamanho, data de modificação, hash, etc.)
    * **Diretório** (relatório metadados do diretório - tamanho, a data de modificação, etc.)
 2. **Ligações** (processamento Linux symlink referências a outros ficheiros ou diretórios)
-   * **Ignorar** (ignorar symlinks durante recurions por não incluir os ficheiros/diretórios referenciados)
+   * **Ignorar** (ignorar symlinks durante recursão por não incluir os ficheiros/diretórios referenciados)
    * **Siga** (siga a symlinks durante recursão para incluir os ficheiros/diretórios referenciados também)
    * **Gerir** (siga a symlinks e alterar o tratamento de conteúdo devolvido)
 
@@ -87,7 +87,7 @@ A solução de controlo de alterações não suporta atualmente os seguintes ite
 * Os carateres universais para o controlo de ficheiro do Windows
 * Variáveis de caminho
 * Sistemas de ficheiros de rede
-* Conteúdo do ficheiro
+* Conteúdo do Ficheiro
 
 Outras limitações:
 
@@ -96,14 +96,18 @@ Outras limitações:
 * Quando o tráfego de rede é elevado, registos de alteração poderão demorar até um máximo de seis horas para apresentar.
 * Se modificar a configuração enquanto um computador é encerrado, o computador poderá publicar as alterações do ficheiro que pertenciam a configuração anterior.
 
+### <a name="known-issues"></a>Problemas conhecidos
+A solução de controlo de alterações atualmente estão a ocorrer os seguintes problemas:
+* Atualizações de correção não são recolhidas para Windows 10 criadores Update e no Windows Server 2016 Core RS3 máquinas.
+
 ## <a name="change-tracking-data-collection-details"></a>Alterar os detalhes de recolha de dados de controlo
 Registo de alterações recolhe inventário de software e os metadados do serviço do Windows utilizando os agentes que tiver ativado.
 
 A tabela seguinte mostra os métodos de recolha de dados e outros detalhes sobre como os dados são recolhidos para controlo de alterações.
 
-| Plataforma | Direcionar o agente | Agente do Operations Manager | Agente Linux | Storage do Azure | O Operations Manager necessárias? | Dados de agente do Operations Manager enviados através do grupo de gestão | Frequência de recolha |
+| Plataforma | Direcionar o agente | Agente do Operations Manager | Agente Linux | Storage do Azure | O Operations Manager necessárias? | Dados de agente do Operations Manager enviados através do grupo de gestão | Frequência da recolha |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Windows e Linux | &#8226; | &#8226; | &#8226; |  |  | &#8226; | cinco minutos para 50 minutos, consoante o tipo de alteração. Veja a tabela seguinte para obter mais informações. |
+| Windows e Linux | &#8226; | &#8226; | &#8226; |  |  | &#8226; | cinco minutos para 50 minutos, consoante o tipo de alteração. Para obter mais informações, consulte a tabela seguinte. |
 
 
 A tabela seguinte mostra a frequência de recolha de dados para os tipos de alterações.

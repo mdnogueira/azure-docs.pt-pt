@@ -10,11 +10,11 @@ ms.reviewer: veyalla
 ms.date: 11/17/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: a78efef6bc82a837782c462bc3558a9582a8da7c
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: b6c8e77b16d784373e392d0ac97094050677cb84
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="install-the-iot-edge-runtime-on-windows-iot-core---preview"></a>Instalar o runtime de limite de IoT no Windows IoT Core - pré-visualização
 
@@ -38,7 +38,7 @@ Pode executar o tempo de execução do limite de IoT do Azure, mesmo em disposit
    ```
 
    >[!NOTE]
-   >Este script do PowerShell é a partir do servidor de compilação do projeto de Moby e destina-se apenas a fins de avaliação. -Não testado, aprovadas ou suportada pelo Docker.
+   >Este contentor runtime é a partir do servidor de compilação do projeto de Moby e destina-se apenas a fins de avaliação. -Não testado, aprovadas ou suportada pelo Docker.
 
 1. Instalar o runtime de limite de IoT e certifique-se a configuração:
 

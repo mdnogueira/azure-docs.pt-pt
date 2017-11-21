@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2017
 ms.author: mingzhan
-ms.openlocfilehash: 2ad497a0244f9c7cdad34faf807cc9ed10ea704d
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 228f3153f47e0b147688fe958a767660976b08be
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="using-remote-desktop-to-connect-to-a-microsoft-azure-linux-vm"></a>Utilizar um Ambiente de Trabalho Remoto para ligar a uma VM do Linux no Microsoft Azure
 > [!IMPORTANT] 
@@ -49,18 +49,23 @@ Ligar à VM com Linux através do `putty`e instalar `Gnome Desktop`.
 
 Ubuntu, utilize:
 
-    #sudo apt-get update
-    #sudo apt-get install ubuntu-desktop
-
+```bash
+sudo apt-get update
+sudo apt-get install ubuntu-desktop
+```
 
 Para OpenSUSE, utilize:
 
-    #sudo zypper install gnome-session
+```bash
+sudo zypper install gnome-session
+```
 
 ## <a name="install-xrdp"></a>Instalar xrdp
 Ubuntu, utilize:
 
-    #sudo apt-get install xrdp
+```bash
+sudo apt-get install xrdp
+```
 
 Para OpenSUSE, utilize:
 
@@ -69,15 +74,18 @@ Para OpenSUSE, utilize:
 > 
 > 
 
-    #sudo zypper in http://download.opensuse.org/repositories/X11:/RemoteDesktop/openSUSE_13.2/x86_64/xrdp-0.9.0git.1401423964-2.1.x86_64.rpm
-    #sudo zypper install tigervnc xorg-x11-Xvnc xterm remmina-plugin-vnc
-
+```bash
+sudo zypper in http://download.opensuse.org/repositories/X11:/RemoteDesktop/openSUSE_13.2/x86_64/xrdp-0.9.0git.1401423964-2.1.x86_64.rpm
+sudo zypper install tigervnc xorg-x11-Xvnc xterm remmina-plugin-vnc
+```
 
 ## <a name="start-xrdp-and-set-xdrp-service-at-boot-up"></a>Iniciar xrdp e definir o serviço de xdrp em cima de arranque
 Para OpenSUSE, utilize:
 
-    #sudo systemctl start xrdp
-    #sudo systemctl enable xrdp
+```bash
+sudo systemctl start xrdp
+sudo systemctl enable xrdp
+```
 
 Para Ubuntu, xrdp será iniciado e ativado no arranque-se automaticamente após a instalação.
 
@@ -86,22 +94,29 @@ Porque a versão atual do xrdp não suporta Gnome ambiente de trabalho para as v
 
 Para instalar `xfce`, utilize este comando:
 
-    #sudo apt-get install xubuntu-desktop
+```bash
+sudo apt-get install xubuntu-desktop
+```
 
 Em seguida, ative `xfce` utilizando este comando:
 
-    #echo xfce4-session >~/.xsession
+```bash
+echo xfce4-session >~/.xsession
+```
 
 Edite o ficheiro de configuração `/etc/xrdp/startwm.sh`:
 
-    #sudo vi /etc/xrdp/startwm.sh   
+```bash
+sudo vi /etc/xrdp/startwm.sh   
+```
 
 Adicione a linha `xfce4-session` antes da linha `/etc/X11/Xsession`.
 
 Para reiniciar o serviço de xrdp, utilizá-lo:
 
-    #sudo service xrdp restart
-
+```bash
+sudo service xrdp restart
+```
 
 ## <a name="connect-your-linux-vm-from-a-windows-machine"></a>Ligar a VM com Linux a partir de uma máquina Windows
 Numa máquina Windows, inicie o cliente de ambiente de trabalho remoto e introduza o nome de DNS de VM do Linux. Ou aceda ao Dashboard da sua VM no portal do Azure e clique em `Connect` para ligar a VM com Linux. Nesse caso, consulte a janela de início de sessão:

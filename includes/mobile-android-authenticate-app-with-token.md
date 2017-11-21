@@ -8,24 +8,32 @@ O exemplo anterior mostrou uma norma início de sessão, que exige que o cliente
 
 1. Abra o ficheiro ToDoActivity.java e adicione as seguintes declarações de importação:
 
-        import android.content.Context;
-        import android.content.SharedPreferences;
-        import android.content.SharedPreferences.Editor;
+    ```java
+    import android.content.Context;
+    import android.content.SharedPreferences;
+    import android.content.SharedPreferences.Editor;
+    ```
+
 2. Adicione as seguintes para o `ToDoActivity` classe.
 
-        public static final String SHAREDPREFFILE = "temp";    
-        public static final String USERIDPREF = "uid";    
-        public static final String TOKENPREF = "tkn";    
+    ```java
+    public static final String SHAREDPREFFILE = "temp";
+    public static final String USERIDPREF = "uid";
+    public static final String TOKENPREF = "tkn";
+    ```
+
 3. No ficheiro ToDoActivity.java, adicione a seguinte definição para o `cacheUserToken` método.
 
-        private void cacheUserToken(MobileServiceUser user)
-        {
-            SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
-            Editor editor = prefs.edit();
-            editor.putString(USERIDPREF, user.getUserId());
-            editor.putString(TOKENPREF, user.getAuthenticationToken());
-            editor.commit();
-        }    
+    ```java
+    private void cacheUserToken(MobileServiceUser user)
+    {
+        SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
+        Editor editor = prefs.edit();
+        editor.putString(USERIDPREF, user.getUserId());
+        editor.putString(TOKENPREF, user.getAuthenticationToken());
+        editor.commit();
+    }
+    ```
 
     Este método armazena o ID de utilizador e o token num ficheiro preferência que está marcado como privado. Isto deve proteger o acesso à cache para que as outras aplicações no dispositivo não tem acesso para o token. A preferência é uma para a aplicação. No entanto, se alguém obtiver o acesso ao dispositivo, é possível que estes podem ter acesso à cache de token através de outros meios.
 
@@ -33,52 +41,65 @@ O exemplo anterior mostrou uma norma início de sessão, que exige que o cliente
    > Pode proteger ainda mais o token com a encriptação, se o token acesso aos seus dados é considerado altamente confidencial e alguém obter acesso ao dispositivo. Uma solução completamente segura está fora do âmbito deste tutorial, no entanto e depende dos requisitos de segurança.
    >
    >
+
 4. No ficheiro ToDoActivity.java, adicione a seguinte definição para o `loadUserTokenCache` método.
 
-        private boolean loadUserTokenCache(MobileServiceClient client)
+    ```java
+    private boolean loadUserTokenCache(MobileServiceClient client)
+    {
+        SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
+        String userId = prefs.getString(USERIDPREF, null);
+        if (userId == null)
+            return false;
+        String token = prefs.getString(TOKENPREF, null);
+        if (token == null)
+            return false;
+
+        MobileServiceUser user = new MobileServiceUser(userId);
+        user.setAuthenticationToken(token);
+        client.setCurrentUser(user);
+
+        return true;
+    }
+    ```
+
+5. No *ToDoActivity.java* de ficheiros, substitua o `authenticate` e `onActivityResult` métodos com os seguintes, que utiliza uma cache de token. Altere o fornecedor de início de sessão se pretender utilizar uma conta diferente da Google.
+
+    ```java
+    private void authenticate() {
+        // We first try to load a token cache if one exists.
+        if (loadUserTokenCache(mClient))
         {
-            SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
-            String userId = prefs.getString(USERIDPREF, null);
-            if (userId == null)
-                return false;
-            String token = prefs.getString(TOKENPREF, null);
-            if (token == null)
-                return false;
-
-            MobileServiceUser user = new MobileServiceUser(userId);
-            user.setAuthenticationToken(token);
-            client.setCurrentUser(user);
-
-            return true;
+            createTable();
         }
-5. No *ToDoActivity.java* de ficheiros, substitua o `authenticate` método com o seguinte método que utiliza uma cache de token. Altere o fornecedor de início de sessão se pretender utilizar uma conta diferente da Google.
+        // If we failed to load a token cache, login and create a token cache
+        else
+        {
+            // Login using the Google provider.
+            mClient.login(MobileServiceAuthenticationProvider.Google, "{url_scheme_of_your_app}", GOOGLE_LOGIN_REQUEST_CODE);
+        }
+    }
 
-        private void authenticate() {
-            // We first try to load a token cache if one exists.
-            if (loadUserTokenCache(mClient))
-            {
-                createTable();
-            }
-            // If we failed to load a token cache, login and create a token cache
-            else
-            {
-                // Login using the Google provider.    
-                ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
-
-                Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
-                    @Override
-                    public void onFailure(Throwable exc) {
-                        createAndShowDialog("You must log in. Login Required", "Error");
-                    }           
-                    @Override
-                    public void onSuccess(MobileServiceUser user) {
-                        createAndShowDialog(String.format(
-                                "You are now logged in - %1$2s",
-                                user.getUserId()), "Success");
-                        cacheUserToken(mClient.getCurrentUser());
-                        createTable();    
-                    }
-                });
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // When request completes
+        if (resultCode == RESULT_OK) {
+            // Check the request code matches the one we send in the login request
+            if (requestCode == GOOGLE_LOGIN_REQUEST_CODE) {
+                MobileServiceActivityResult result = mClient.onActivityResult(data);
+                if (result.isLoggedIn()) {
+                    // login succeeded
+                    createAndShowDialog(String.format("You are now logged in - %1$2s", mClient.getCurrentUser().getUserId()), "Success");
+                    cacheUserToken(mClient.getCurrentUser());
+                    createTable();
+                } else {
+                    // login failed, check the error message
+                    String errorMessage = result.getErrorMessage();
+                    createAndShowDialog(errorMessage, "Error");
+                }
             }
         }
+    }
+    ```
+
 6. Crie a autenticação de aplicação e teste utilizando uma conta válida. Execute, pelo menos, duas vezes. Durante a primeira execução, deverá receber um pedido para iniciar sessão e criar a cache de token. Depois disso, cada execução tenta carregar a cache de token de autenticação. Não deve ser necessário iniciar sessão.

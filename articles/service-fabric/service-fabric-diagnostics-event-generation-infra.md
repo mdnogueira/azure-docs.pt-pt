@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/24/2017
+ms.date: 11/20/2017
 ms.author: dekapur
-ms.openlocfilehash: c5857515ae8357b003f0999c4b11bd666c32bbf9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 1277969d820c6348392d07e2dc5f35b52377fd7e
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="platform-level-event-and-log-generation"></a>Geração de registo e evento nível no plataforma
 
@@ -26,12 +26,13 @@ ms.lasthandoff: 10/11/2017
 
 É importante monitorizar a nível de plataforma para determinar se é ou não o hardware e o cluster se comportam conforme esperado. Apesar de Service Fabric pode manter as aplicações em execução durante uma falha de hardware, mas terá de diagnosticar se o erro está a ocorrer numa aplicação ou na infraestrutura subjacente. Também deverá monitorizar clusters para melhor planear a capacidade, ajudar a tomar decisões sobre a adição ou remoção de hardware.
 
-O Service Fabric fornece cinco registo diferentes canais out-of-a-box que geram os seguintes eventos:
-
-* Canal operacional: operações de alto nível efetuadas pelo serviço de recursos de infraestrutura e o cluster, incluindo eventos de um nó de futuras cópias de segurança, uma nova aplicação que está a ser implementada, ou um SF atualizar reversão, etc.
+O Service Fabric fornece o seguinte registo canais out-of-a-box:
+* Canal operacional: operações de alto nível efetuadas pelo serviço de recursos de infraestrutura e o cluster, incluindo eventos de um nó de futuras cópias de segurança, uma nova aplicação que está a ser implementada ou uma atualização reversão, etc.
 * Canal operacional - detalhada: relatórios de estado de funcionamento e decisões de balanceamento de carga
-* Canal de mensagens & dados: críticos registos e eventos gerados no nosso serviço de mensagens (atualmente apenas o ReverseProxy) e o caminho de dados (modelos de reliable services)
+* Canal de mensagens & dados: críticos registos e eventos gerados no (atualmente apenas o ReverseProxy) de mensagens e o caminho de dados (modelos de reliable services)
 * Canal de mensagens & dados - detalhada: verboso canal que contém todos os registos não críticos de dados e mensagens do cluster (este canal tem um volume muito elevado de eventos)   
+
+Além destas, existem dois canais de EventSource estruturados fornecidos, bem como registos que recolhemos para fins de suporte.
 * [Eventos de serviços fiáveis](service-fabric-reliable-services-diagnostics.md): eventos específicos do modelo de programação
 * [Eventos de Atores fiáveis](service-fabric-reliable-actors-diagnostics.md): programação eventos específicos do modelo e os contadores de desempenho
 * Suporta registos: gerados pelo serviço de recursos de infraestrutura apenas ser utilizado por ao fornecer suporte de registos de sistema

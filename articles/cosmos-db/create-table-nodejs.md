@@ -13,13 +13,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: node
 ms.topic: quickstart
-ms.date: 11/16/2017
+ms.date: 11/20/2017
 ms.author: arramac
-ms.openlocfilehash: 1dcc2178b3c7017338e0097773fbf0d04c8b6a20
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 8cf8820ceea19fe8c4926c65d107d4f770f40926
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="quickstart-build-a-table-api-app-with-nodejs-and-azure-cosmos-db"></a>Início rápido: Criar uma tabela de aplicação de API com o Node.js e Cosmos BD do Azure
 
@@ -38,6 +38,10 @@ Além disso:
 * [Git](http://git-scm.com/)
 
 ## <a name="create-a-database-account"></a>Criar uma conta de base de dados
+
+> [!IMPORTANT] 
+> Terá de criar uma nova conta de API de tabela para trabalhar com os SDKs de API de tabela geralmente disponível. As contas de API de tabela criadas durante a pré-visualização não são suportadas pelos SDKs geralmente disponíveis.
+>
 
 [!INCLUDE [cosmos-db-create-dbaccount-table](../../includes/cosmos-db-create-dbaccount-table.md)]
 
@@ -84,7 +88,11 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 2. Copie a cadeia de ligação principal com o botão de cópia no lado direito.
 
-3. Abra o ficheiro App. config e cole o valor connectionString linha três. Se a parte do ponto final da cadeia de ligação utiliza documents.azure.com, corrija a que parte a utilizar em vez disso, table.cosmosdb.azure.com.
+3. Abra o ficheiro App. config e cole o valor connectionString linha três. 
+
+    > [!IMPORTANT]
+    > Se o ponto final utiliza documents.azure.com, o que significa que tem uma conta de pré-visualização, e tem de criar um [nova conta de API de tabela](#create-a-database-account) para trabalhar com o SDK de API de tabela geralmente disponível.
+    >
 
 3. Guarde o ficheiro App. config.
 

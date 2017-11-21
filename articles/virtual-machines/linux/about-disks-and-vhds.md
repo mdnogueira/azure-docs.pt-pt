@@ -1,6 +1,6 @@
 ---
-title: Sobre o armazenamento de disco para as VMs de Linux do Microsoft Azure | Microsoft Docs
-description: "Saiba mais sobre as noções básicas do armazenamento de discos e VHDs para computadores virtuais Linux no Azure."
+title: "Sobre não geridos (os blobs de páginas) e geridas armazenamento de discos para as VMs de Linux do Microsoft Azure | Microsoft Docs"
+description: "Saiba mais sobre as noções básicas de não geridos (os blobs de páginas) e geridos de armazenamento de discos para computadores virtuais Linux no Azure."
 services: storage
 documentationcenter: 
 author: robinsh
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: robinsh
-ms.openlocfilehash: ad55898806024a9f0562b32e7bdd990fd7dfd8d2
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: fee78c87c1d73f2a0816d6e52ad48a93eef8dfc3
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/20/2017
 ---
-# <a name="about-disk-storage-for-azure-linux-vms"></a>Sobre o armazenamento de disco para as VMs Linux do Azure
+# <a name="about-disks-storage-for-azure-linux-vms"></a>Sobre o armazenamento de discos para as VMs Linux do Azure
 Tal como qualquer outro computador, máquinas virtuais no Azure utilizar discos como um local para armazenar os dados, aplicações e um sistema operativo. Todas as máquinas virtuais do Azure de ter, pelo menos, dois discos – um disco de sistema operativo Linux e um disco temporário. O disco do sistema operativo é criado a partir de uma imagem e o disco do sistema operativo e a imagem são, na verdade, discos rígidos virtuais (VHDs) armazenados numa conta de armazenamento do Azure. Máquinas virtuais podem ter também um ou mais discos de dados, que também são armazenados como VHDs. 
 
 Neste artigo, iremos falar sobre as utilizações diferentes para os discos e, em seguida, aborda os diferentes tipos de discos, pode criar e utilizar. Este artigo também está disponível para [máquinas virtuais Windows](../windows/about-disks-and-vhds.md).

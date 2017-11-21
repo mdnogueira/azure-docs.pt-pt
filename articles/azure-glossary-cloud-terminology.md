@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: b55eed31ddb5be23dc28a23b2f0588b8c8ff8833
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cbc4b8cdb0ff9255d0be02b998e67686921921ea
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Glossário do Microsoft Azure: um dicionário de terminologia de nuvem na plataforma do Azure
 
@@ -87,13 +87,13 @@ Os preços, créditos e os termos relacionados a aplicáveis a uma subscrição 
 Consulte o [página de detalhes de oferta do Azure](https://azure.microsoft.com/support/legal/offer-details/)
 
 ## <a name="portal"></a>portal
-O portal web seguro utilizado para implementar e gerir serviços do Azure.  Existem dois portais: O [portal do Azure](http://portal.azure.com/) e [portal clássico](http://manage.windowsazure.com/). Alguns serviços estão disponíveis em ambos os portais, enquanto que outras pessoas só estão disponíveis em uma ou outros. O [gráfico de disponibilidade de portal do Azure](https://azure.microsoft.com/features/azure-portal/availability/) listas os serviços estão disponíveis no qual o portal.
+O portal web seguro utilizado para implementar e gerir serviços do Azure.
 
-## <a name="region"></a>Região
+## <a name="region"></a>região
 Uma área dentro de uma georreplicação limites não cross national e contém um ou mais dos centros de dados. Preços, os serviços regionais e tipos de oferta estão expostos ao nível da região. Uma região normalmente se encontra emparelhada com outro região, o que pode ser até várias centenas quilómetros ausente. Pares regionais podem ser utilizados como um mecanismo para cenários de elevada disponibilidade e recuperação após desastre. Também referido como *localização*.  
 Consulte [regiões do Azure](best-practices-availability-paired-regions.md)
 
-## <a name="resource"></a>Recursos
+## <a name="resource"></a>Recurso
 Um item que faz parte da sua solução do Azure. Cada serviço do Azure permite-lhe implementar os diferentes tipos de recursos, tais como bases de dados ou de máquinas virtuais.   
 Consulte [descrição geral do Azure Resource Manager](azure-resource-manager/resource-group-overview.md)
 

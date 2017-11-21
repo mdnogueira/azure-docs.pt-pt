@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 10/13/2017
 ms.author: renash
-ms.openlocfilehash: 871fc85d0b406d2de35a79eb2906ff2d6ada9570
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: da8ccf35dcc873a5c31842c6eb7bdf72879854c2
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="frequently-asked-questions-about-azure-files"></a>Perguntas mais frequentes sobre os ficheiros do Azure
 [Ficheiros do Azure](storage-files-introduction.md) oferece completamente geridos partilhas de ficheiros na nuvem que estão acessíveis através da norma da indústria [protocolo Server Message Block (SMB)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) (também conhecido como sistema de ficheiros Internet comum ou CIFS). É possível montar partilhas de ficheiros do Azure em simultâneo em implementações de nuvem ou no local do Windows, Linux e macOS. Também pode colocar em cache as partilhas de ficheiros do Azure nas máquinas do Windows Server utilizando a sincronização de ficheiros do Azure (pré-visualização) para acesso rápido próximo de onde os dados são utilizados.
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/07/2017
 Este artigo responde a questões recorrentes sobre ficheiros do Azure e funcionalidades, incluindo a utilização de sincronização de ficheiros do Azure com ficheiros do Azure. Se não vir a resposta à sua pergunta, pode contactar-nos através dos seguintes canais (pela ordem em constante crescendo):
 
 1. A secção de comentários deste artigo.
-2. [Fórum de armazenamento do Azure](https://social.msdn.microsoft.com/Forums/home?forum=windowsazuredata).
+2. [Fórum de armazenamento do Azure](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=windowsazuredata).
 3. [Azure ficheiros UserVoice](https://feedback.azure.com/forums/217298-storage/category/180670-files). 
 4. Suporte da Microsoft. Para criar um novo pedido de suporte, no portal do Azure, o **ajudar** separador, selecione o **ajuda + suporte** botão e, em seguida, selecione **novo pedido de suporte**.
 

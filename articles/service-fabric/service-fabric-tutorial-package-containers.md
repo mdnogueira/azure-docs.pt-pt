@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 09/12/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 9b1498d76680185b45edf9ac7e1747bfa6794eec
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 0631b621c01eb880393d07323cdeb815e564a2e3
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="package-and-deploy-containers-as-a-service-fabric-application"></a>O pacote e implementar contentores como uma aplicação de Service Fabric
 
@@ -218,7 +218,7 @@ Para implementar a aplicação num cluster no Azure, utilize o seu próprio clus
 
 Party clusters são clusters do Service Fabric gratuitos e de tempo limitado, alojados no Azure. Esta é mantida pela equipa do Service Fabric em que qualquer pessoa pode implementar aplicações e saber mais sobre a plataforma. Para obter acesso a um Party Cluster, [siga as instruções](http://aka.ms/tryservicefabric). 
 
-Para obter informações sobre como criar o seu próprio cluster, veja [Crie o seu primeiro cluster do Service Fabric no Azure](service-fabric-get-started-azure-cluster.md).
+Para obter informações sobre como criar o seu próprio cluster, consulte [criar um cluster do Service Fabric no Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 ## <a name="build-and-deploy-the-application-to-the-cluster"></a>Criar e implementar a aplicação em cluster
 Pode implementar a aplicação do cluster do Azure utilizando a CLI de recursos de infraestrutura de serviço. Se o serviço de recursos de infraestrutura CLI não está instalado no seu computador, siga as instruções [aqui](service-fabric-get-started-linux.md#set-up-the-service-fabric-cli) instalá-la. 

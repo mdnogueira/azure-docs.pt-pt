@@ -12,13 +12,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: integration
-ms.date: 11/03/2017
+ms.date: 11/17/2017
 ms.author: mezha
-ms.openlocfilehash: 29da65c5629c08635b4df1aa78386675152bb0cb
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: a73df89d5f97d2d6aa295d7efdd46abc15f81de7
+ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="securing-azure-content-delivery-network-assets-with-token-authentication"></a>Proteger recursos de rede de entrega de conteúdos do Azure com a autenticação de token
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/18/2017
 
 ## <a name="overview"></a>Descrição geral
 
-Autenticação de token é um mecanismo que permite-lhe impedir que a rede Azure entrega de conteúdos (CDN) que serve ativos para os clientes não autorizados. Autenticação de token é geralmente feita para evitar "hotlinking" do conteúdo, em que um Web site diferente, muitas vezes, uma placa de mensagem, utiliza os recursos sem permissão. Hotlinking pode ter um impacto nos custos de entrega de conteúdos. Ao ativar a autenticação com token na CDN, os pedidos são autenticados pelo limite CDN POPs antes da CDN oferece o conteúdo. 
+Autenticação de token é um mecanismo que permite-lhe impedir que a rede Azure entrega de conteúdos (CDN) que serve ativos para os clientes não autorizados. Autenticação de token é geralmente feita para evitar "hotlinking" do conteúdo, em que um Web site diferente, tal como uma placa de mensagem, utiliza os recursos sem permissão. Hotlinking pode ter um impacto nos custos de entrega de conteúdos. Ao ativar a autenticação com token na CDN, os pedidos são autenticados pelo servidor de limite CDN antes da CDN oferece o conteúdo. 
 
 ## <a name="how-it-works"></a>Como funciona
 
@@ -50,7 +50,7 @@ O diagrama de fluxo de trabalho seguinte descreve como o CDN utiliza a autentica
 
 ## <a name="token-validation-logic-on-cdn-endpoint"></a>Lógica de validação de token no ponto final de CDN
     
-O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de cliente quando a autenticação de token está configurada no ponto final de CDN.
+O fluxograma a seguir descreve a forma como o CDN do Azure valida um pedido de cliente quando a autenticação de token está configurada no ponto final da CDN.
 
 ![Lógica de validação de token de CDN](./media/cdn-token-auth/cdn-token-auth-validation-logic.png)
 
@@ -60,7 +60,7 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
 
     ![Botão de gerir do perfil de CDN](./media/cdn-token-auth/cdn-manage-btn.png)
 
-2. Coloque o cursor sobre **HTTP grande**e, em seguida, clique em **Token Auth** no flyout. Pode, em seguida, configurar os parâmetros de encriptação e a chave de encriptação da seguinte forma:
+2. Coloque o cursor sobre **HTTP grande**, em seguida, clique em **Token de autenticação** no flyout. Pode, em seguida, configurar os parâmetros de encriptação e a chave de encriptação da seguinte forma:
 
     1. Crie uma ou mais chaves de encriptação. Uma chave de encriptação é sensível e pode conter qualquer combinação de carateres alfanuméricos. Quaisquer outros tipos de carateres, incluindo espaços, não são permitidos. O comprimento máximo é 250 caracteres. Para garantir que as chaves de encriptação são aleatórias, é recomendado criar utilizando o [OpenSSL ferramenta](https://www.openssl.org/). 
 
@@ -115,26 +115,28 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
        >    </ul>
        > </tr>
        > <tr>
+       >    <td><b>ec_country_allow</b></td> 
+       >    <td>Apenas permite pedidos provenientes de uma ou mais países especificados. Pedidos provenientes de todos os outros países são negados. Utilize [indicativos de país](https://msdn.microsoft.com/library/mt761717.aspx) e separe cada um com uma vírgula. Por exemplo, se pretender autorizar o acesso apenas dos Estados Unidos e França, introduza `US,FR`.</td>
+       > </tr>
+       > <tr>
        >    <td><b>ec_country_deny</b></td> 
-       >    <td>Nega pedidos provenientes de uma ou mais países especificados. São permitidos pedidos provenientes de todos os outros países. Utilizar indicativos de país e separe cada um com uma vírgula. Por exemplo, se pretender negar o acesso dos Estados Unidos e França, introduza `US, FR`.</td>
+       >    <td>Nega pedidos provenientes de uma ou mais países especificados. São permitidos pedidos provenientes de todos os outros países. Utilizar indicativos de país e separe cada um com uma vírgula. Por exemplo, se pretender negar o acesso dos Estados Unidos e França, introduza `US,FR`.</td>
        > </tr>
        > <tr>
        >    <td><b>ec_ref_allow</b></td>
-       >    <td>Apenas permite pedidos de referência especificada. Uma referência identifica o URL da página web que está ligada ao recurso que está a ser solicitado. Não inclua o protocolo no valor de parâmetro de referência.>    
-       >    Os seguintes tipos de entrada são permitidos para o valor do parâmetro:
+       >    <td>Apenas permite pedidos de referência especificada. Uma referência identifica o URL da página web que está ligada ao recurso que está a ser solicitado. Não inclua o protocolo no valor do parâmetro.>    
+       >    Os seguintes tipos de entrada são permitidos:
        >    <ul>
        >       <li>Um nome de anfitrião ou um nome de anfitrião e um caminho.</li>
        >       <li>Vários referrers. Para adicionar vários referrers, separe cada referência com uma vírgula. Se especificar um valor de referência, mas as informações de referência não são enviadas no pedido devido a configuração do browser, o pedido é negado por predefinição.</li> 
        >       <li>Pedidos com informações de referência em falta. Para permitir que estes tipos de pedidos, introduza o texto "em falta" ou introduza um valor em branco.</li> 
-       >       <li>Subdomínios. Para permitir que os subdomínios, introduza um asterisco (\*). Por exemplo, para permitir que os subdomínios de `consoto.com`, introduza `*.consoto.com`.</li>
+       >       <li>Subdomínios. Para permitir que os subdomínios, introduza um asterisco (\*). Por exemplo, para permitir que os subdomínios de `contoso.com`, introduza `*.contoso.com`.</li>
        >    </ul> 
-       >    O exemplo seguinte mostra a entrada para permitir o acesso para pedidos de `www.consoto.com`, todos os subdomínios em `consoto2.com`e os pedidos com referrers em branco ou em falta: 
-       > 
-       >    ![Exemplo de ec_ref_allow CDN](./media/cdn-token-auth/cdn-token-auth-referrer-allow2.png)</td>
+       >    Por exemplo, para permitir o acesso para pedidos de `www.contoso.com`, todos os subdomínios em `contoso2.com`, e pedidos com referrers em branco ou em falta, introduza `www.contoso.com,*.contoso.com,missing`.</td>
        > </tr>
        > <tr> 
        >    <td><b>ec_ref_deny</b></td>
-       >    <td>Nega pedidos de referência especificada. A implementação é o mesmo que o parâmetro ec_ref_allow.</td>
+       >    <td>Nega pedidos de referência especificada. A implementação é o mesmo que o <b>ec_ref_allow</b> parâmetro.</td>
        > </tr>
        > <tr> 
        >    <td><b>ec_proto_allow</b></td> 
@@ -146,21 +148,23 @@ O fluxograma a seguir descreve a forma como o CDN do Azure valida pedido de clie
        > </tr>
        > <tr>
        >    <td><b>ec_clientip</b></td>
-       >    <td>Restringe o acesso ao endereço IP do especificado autor do pedido. São suportados IPV4 e IPV6. Pode especificar um endereço IP único pedido ou uma sub-rede IP. Por exemplo, `11.22.33.0/22`</td>
+       >    <td>Restringe o acesso ao endereço IP do especificado autor do pedido. São suportados IPV4 e IPV6. Pode especificar um endereço IP único pedido ou uma sub-rede IP. Por exemplo, `11.22.33.0/22`.</td>
        > </tr>
        > </table>
 
     5. Depois de concluída a introduzir os valores de parâmetro de encriptação, selecione uma chave para encriptar (se tiver criado um site primário e uma chave de cópia de segurança) a **chave para encriptar** lista.
     
-    6. Selecione uma versão de encriptação do **encriptação versão** lista: **V2** para versão 2 ou **V3** para a versão 3 (recomendado). Em seguida, clique em **encriptar** para gerar o token.
+    6. Selecione uma versão de encriptação do **encriptação versão** lista: **V2** para versão 2 ou **V3** para a versão 3 (recomendado). 
+
+    7. Clique em **encriptar** para gerar o token.
 
     Depois do token é gerado, é apresentada no **gerados tokens** caixa. Para utilizar o token, anexe como uma cadeia de consulta para o fim do ficheiro no seu caminho de URL. Por exemplo, `http://www.domain.com/content.mov?a4fbc3710fd3449a7c99986b`.
         
-    7. Opcionalmente, pode teste o seu token com a ferramenta de desencriptação. Colar o valor do token no **Token para desencriptar** caixa. Selecionar a chave de encriptação a utilizar o **chave para desencriptar** lista, em seguida, clique em **desencriptar**.
+    8. Opcionalmente, pode teste o seu token com a ferramenta de desencriptação. Colar o valor do token no **Token para desencriptar** caixa. Selecionar a chave de encriptação a utilizar o **chave para desencriptar** lista, em seguida, clique em **desencriptar**.
 
     Depois do token é desencriptado, os parâmetros são apresentados no **parâmetros Original** caixa.
 
-    8. Opcionalmente, personalize o tipo de código de resposta que é devolvido quando um pedido é negado. Selecione **ativado**, selecione o código de resposta a **código de resposta** lista e clique em **guardar**. Alguns códigos de resposta, também tem de introduzir o URL da sua página de erro no **valor do cabeçalho** caixa. O **403** código de resposta (proibido) está selecionado por predefinição. 
+    9. Opcionalmente, personalize o tipo de código de resposta que é devolvido quando um pedido é negado. Selecione **ativado**e selecione o código de resposta a **código de resposta** lista. Em seguida, clique em **guardar**. Alguns códigos de resposta, também tem de introduzir o URL da sua página de erro no **valor do cabeçalho** caixa. O **403** código de resposta (proibido) está selecionado por predefinição. 
 
 3. Em **HTTP grande**, clique em **motor de regras**. Utilize o motor de regras para definir caminhos para aplicar a funcionalidade, ativar a funcionalidade de autenticação de token e ativar funcionalidades relacionadas com autenticação de token adicionais. Para obter mais informações, consulte [regras motor referência](cdn-rules-engine-reference.md).
 

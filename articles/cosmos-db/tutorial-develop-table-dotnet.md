@@ -12,14 +12,14 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 11/15/2017
+ms.date: 11/20/2017
 ms.author: arramac
 ms.custom: mvc
-ms.openlocfilehash: 0e77ecc591173ae29311c2a1508e5a8a907816ac
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 08e59fda2ea439b2272121cf8bfee76fe4f96fc3
+ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="azure-cosmos-db-develop-with-the-table-api-in-net"></a>Azure Cosmos DB: Desenvolver com a API de tabela no .NET
 
@@ -88,7 +88,7 @@ Agora, vamos clonar uma aplicação de Tabela a partir do GitHub, definir a cade
 2. Execute o seguinte comando para clonar o repositório de exemplo. Este comando cria uma cópia da aplicação de exemplo no seu computador. 
 
     ```bash
-    git clone https://github.com/Azure-Samples/azure-cosmos-db-table-dotnet-getting-started.git
+    git clone https://github.com/Azure-Samples/storage-table-dotnet-getting-started.git
     ```
 
 3. Em seguida, abra o ficheiro da solução no Visual Studio. 
@@ -99,24 +99,32 @@ Agora, regresse ao portal do Azure para obter as informações da cadeia de liga
 
 1. No [portal do Azure](http://portal.azure.com/), clique em **cadeia de ligação**. 
 
-    Utilize os botões de cópia no lado direito do ecrã para copiar a cadeia de ligação.
+    Utilize os botões de cópia no lado direito do ecrã para copiar a cadeia de ligação principal.
 
     ![Ver e copiar a cadeia de ligação no painel de cadeia de ligação](./media/create-table-dotnet/connection-string.png)
 
 2. No Visual Studio, abra o ficheiro app.config. 
 
-3. Cole o valor da cadeia de ligação no ficheiro App. config, como o valor de CosmosDBStorageConnectionString. 
+3. Anule o comentário StorageConnectionString na linha 8 e comente a StorageConnectionString na linha 7 como este tutorial não utiliza o emulador de armazenamento. Linha 7 e 8 deve agora ter o seguinte aspeto:
 
-    `<add key="CosmosDBStorageConnectionString" 
-        value="DefaultEndpointsProtocol=https;AccountName=MYSTORAGEACCOUNT;AccountKey=AUTHKEY;TableEndpoint=https://account-name.table.cosmosdb.net" />`    
+    ```
+    <!--key="StorageConnectionString" value="UseDevelopmentStorage=true;" />-->
+    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]" />
+    ```
 
-    > [!NOTE]
-    > Para utilizar esta aplicação com o Table storage do Azure, terá de alterar a cadeia de ligação no `app.config file`. Utilize o nome da conta como nome da conta de tabela e a chave como chave primária de armazenamento do Azure. <br>
-    >`<add key="StandardStorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key;EndpointSuffix=core.windows.net" />`
-    > 
+4. Cole a cadeia de ligação principal do portal o valor de StorageConnectionString na linha 8. Cole a cadeia dentro de aspas.
+   
+    > [!IMPORTANT]
+    > Se o ponto final utiliza documents.azure.com, o que significa que tem uma conta de pré-visualização, e tem de criar um [nova conta de API de tabela](#create-a-database-account) para trabalhar com o SDK de API de tabela geralmente disponível. 
     >
 
-4. Guarde o ficheiro App. config.
+    Linha 8 deve agora ter um aspeto semelhante a:
+
+    ```
+    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=txZACN9f...==;TableEndpoint=https://<account name>.table.cosmosdb.azure.com;" />
+    ```
+
+5. Guarde o ficheiro App. config.
 
 Atualizou agora a sua aplicação com todas as informações necessárias para comunicar com o Azure Cosmos DB. 
 
@@ -128,7 +136,7 @@ Algumas funcionalidades são acedidas através do novo sobrecargas para CreateCl
 | Definições de ligação da tabela | Descrição |
 | --- | --- |
 | Modo de ligação  | BD do Cosmos do Azure suporta dois modos de conectividade. No `Gateway` modo, são efetuados os pedidos sempre para o gateway de BD do Cosmos do Azure, que reencaminha-lo para as partições de dados correspondente. No `Direct` modo de conectividade, o cliente obtém o mapeamento de tabelas de partições e pedidos são realizados diretamente em partições de dados. Recomendamos `Direct`, a predefinição.  |
-| Protocolo de ligação | BD do Cosmos do Azure suporta dois protocolos de ligação - `Https` e `Tcp`. `Tcp`é o predefinido e recomendado porque é mais simples. |
+| Protocolo da Ligação | BD do Cosmos do Azure suporta dois protocolos de ligação - `Https` e `Tcp`. `Tcp`é o predefinido e recomendado porque é mais simples. |
 | Localizações preferenciais | Lista separada por vírgulas das localizações (multi homing) preferenciais para leituras. Cada conta de base de dados do Azure Cosmos pode ser associada com 1-30 + regiões. Cada instância de cliente pode especificar um subconjunto destas regiões pela ordem preferencial para leituras de latência baixa. As regiões devem ter o nome a utilizar as respetivas [nomes a apresentar](https://msdn.microsoft.com/library/azure/gg441293.aspx), por exemplo, `West US`. Consulte também [APIs multi homing](tutorial-global-distribution-table.md). |
 | Nível de Consistência | Pode comprometido entre a latência de consistência, disponibilidade e ao escolher entre cinco níveis de consistência bem definidos: `Strong`, `Session`, `Bounded-Staleness`, `ConsistentPrefix`, e `Eventual`. Predefinição é `Session`. A escolha de nível de consistência faz uma diferença significativa do desempenho no multirregião setups. Consulte [níveis de consistência](consistency-levels.md) para obter mais detalhes. |
 
@@ -316,12 +324,9 @@ CloudTable table = tableClient.GetTableReference("people");
 table.DeleteIfExists();
 ```
 
-## <a name="clean-up-resources"></a>Limpar recursos 
+## <a name="clean-up-resources"></a>Limpar recursos
 
-Se não pretender continuar a utilizar esta aplicação, siga os passos abaixo para eliminar todos os recursos criados por este tutorial no portal do Azure.   
-
-1. No menu do lado esquerdo do portal do Azure, clique em **Grupos de recursos** e, em seguida, clique no nome de recurso que criou.  
-2. Na página do grupo de recursos, clique em **Eliminar**, escreva o nome do recurso a eliminar na caixa de texto e, em seguida, clique em **Eliminar**. 
+[!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 
