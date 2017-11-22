@@ -13,13 +13,13 @@ ms.workload:
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 10/20/2017
+ms.date: 11/20/2017
 ms.author: denlee
-ms.openlocfilehash: 4470b5adb52debce1492b084ce71100da77da046
-ms.sourcegitcommit: 4ed3fe11c138eeed19aef0315a4f470f447eac0c
+ms.openlocfilehash: 84a9ae4a48e7e71d70214550dd203a0468a31de6
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/23/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="azure-cosmos-db-create-a-graph-database-using-java-and-the-azure-portal"></a>Azure Cosmos DB: Criar uma base de dados de gráficos com Java e o portal do Azure
 
@@ -72,13 +72,19 @@ Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar um
 
 Agora, vamos trabalhar com código. Vamos de clone de uma aplicação da Graph API a partir do GitHub, definir a cadeia de ligação e executá-la. Vai ver como é fácil trabalhar com dados programaticamente.  
 
-1. Abra uma janela de terminal do git, tais como o git bash e utilize o `cd` comando para alterar para uma pasta para instalar a aplicação de exemplo.  
+1. Abra uma linha de comandos, crie uma nova pasta designada git-samples e, em seguida, feche a linha de comandos.
+
+    ```bash
+    md "C:\git-samples"
+    ```
+
+2. Abra uma janela de terminal do git, tais como o git bash e utilize o `cd` comando para alterar para uma pasta para instalar a aplicação de exemplo.  
 
     ```bash
     cd "C:\git-samples"
     ```
 
-2. Execute o seguinte comando para clonar o repositório de exemplo. Este comando cria uma cópia da aplicação de exemplo no seu computador. 
+3. Execute o seguinte comando para clonar o repositório de exemplo. Este comando cria uma cópia da aplicação de exemplo no seu computador. 
 
     ```bash
     git clone https://github.com/Azure-Samples/azure-cosmos-db-graph-java-getting-started.git
@@ -86,7 +92,7 @@ Agora, vamos trabalhar com código. Vamos de clone de uma aplicação da Graph A
 
 ## <a name="review-the-code"></a>Rever o código
 
-Este passo é opcional. Se estiver interessado em aprender a forma como os recursos de base de dados são criados no código, pode rever os seguintes fragmentos. Os fragmentos são obtidos a partir do `Program.java` ficheiro na pasta C:\git-samples\azure-cosmos-db-graph-java-getting-started\src\GetStarted. Caso contrário, pode avançar diretamente para [atualizar a cadeia de ligação](#update-your-connection-string). 
+Este passo é opcional. Se estiver interessado em aprender a forma como os recursos de base de dados são criados no código, pode rever os seguintes fragmentos. Os fragmentos são obtidos a partir do `Program.java` ficheiro na pasta C:\git-samples\azure-cosmos-db-graph-java-getting-started\src\GetStarted. Caso contrário, pode avançar diretamente para [atualizar a cadeia de ligação](#update-your-connection-information). 
 
 * O Gremlin `Client` é inicializado na configuração em `src/remote.yaml`.
 
@@ -148,11 +154,23 @@ Agora, regresse ao portal do Azure para obter as informações de ligação e co
     cd "C:\git-samples\azure-cosmos-db-graph-java-getting-started"
     ```
 
-2. Na janela de terminal do git, escreva `mvn package` para instalar os pacotes Java necessários.
+2. Na janela de terminal do git, utilize o seguinte comando para instalar os pacotes necessários do Java.
 
-3. Na janela de terminal do git, execute `mvn exec:java -D exec.mainClass=GetStarted.Program` para iniciar a aplicação de Java.
+   ```
+   mvn package
+   ```
 
-    A janela de terminal apresenta os vértices a adicionar ao gráfico. Depois do programa é interrompido, mude novamente para o portal do Azure no seu browser da internet. 
+3. Na janela de terminal do git, utilize o seguinte comando para iniciar a aplicação de Java.
+    
+    ```
+    mvn exec:java -D exec.mainClass=GetStarted.Program
+    ```
+
+    A janela de terminal apresenta os vértices a adicionar ao gráfico. 
+    
+    Se ocorrer erros de tempo limite, verifique que atualizadas as informações de ligação corretamente em [atualizar as suas informações de ligação](#update-your-connection-information)e também tentar executar o último comando novamente. 
+    
+    Depois do programa é interrompido, prima Enter, mude novamente para o portal do Azure no seu browser da internet. 
 
 <a id="add-sample-data"></a>
 ## <a name="review-and-add-sample-data"></a>Rever e adicionar dados de exemplo
@@ -200,11 +218,11 @@ Agora, pode voltar ao Data Explorer e ver os vértices adicionados ao gráfico e
 
 10. Clique em **OK**. 
 
-11. Clique em **aplicar filtro** com a predefinição `g.V()` filtro para apresentar todos os valores no gráfico. Todos os utilizadores aparecem agora na lista **Resultados**. 
+11. Clique em de **aplicar filtro** botão com a predefinição `g.V()` filtro para apresentar todos os valores no gráfico. Todos os utilizadores aparecem agora na lista **Resultados**. 
 
     À medida que adiciona mais dados, pode utilizar filtros para limitar os resultados. Por predefinição, o Explorador de dados utiliza `g.V()` obter todos os vértices num gráfico. Pode alterá-la para outro [consulta gráfico](tutorial-query-graph.md), tais como `g.V().count()`, para devolver uma contagem de todos os vértices no gráfico no formato JSON. Se tiver alterado o filtro, altere o filtro de volta para `g.V()` e clique em **aplicar filtro** para apresentar todos os resultados novamente.
 
-12. Agora, podemos ligar rakesh e ashley. Confirme que **ashley** está selecionada na lista **Resultados**, e clique no botão Editar junto a **Destinos**, no canto inferior direito. Poderá ter de alargar a janela para ver a área **Propriedades**.
+12. Agora, podemos ligar rakesh e ashley. Certifique-se **ashley** está selecionado no **resultados** lista, em seguida, clique no botão Editar junto a **destinos** no inferior direita. Poderá ter de alargar a janela para ver a área **Propriedades**.
 
    ![Alterar o destino de um vértice de um gráfico](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
 

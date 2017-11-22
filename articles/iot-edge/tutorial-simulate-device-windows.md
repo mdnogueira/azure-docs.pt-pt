@@ -10,15 +10,22 @@ ms.reviewer: elioda
 ms.date: 11/16/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 9c9bf2df078bfebb23ad549c7053f12b62fab59b
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: 0207418cf71902ce9bc9d2911124d1d46889d893
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="deploy-azure-iot-edge-on-a-simulated-device-in-windows----preview"></a>Implementar o Azure IoT Edge num dispositivo simulado Windows – pré-visualização
 
-Limite de IoT do Azure move a capacidade da nuvem para os seus dispositivos Internet das coisas (IoT). Este tutorial explica como criar um dispositivo simulado de limite de IoT que gera dados de sensores. Saiba como:
+Limite de IoT do Azure permite-lhe efetuar o processamento de dados e de análise nos seus dispositivos, em vez de ter de push de todos os dados para a nuvem. Os tutoriais de limite de IoT demonstram como implementar os diferentes tipos de módulos, criados a partir de serviços do Azure ou código personalizado, mas primeiro tem de um dispositivo para testar. 
+
+Neste tutorial, ficará a saber como:
+
+1. Criar um Hub IoT
+2. Registar um dispositivo de limite de IoT
+3. Iniciar o tempo de execução do limite de IoT
+4. Implementar um módulo
 
 ![Arquitetura do tutorial][2]
 

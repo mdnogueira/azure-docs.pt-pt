@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 3b51276fe074282339d30d075547160277bee53f
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: cd321531c99f14e93d8cab2acb7844ae79be2158
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="understanding-outbound-connections-in-azure"></a>Compreender as ligações de saída no Azure
 
@@ -72,18 +72,21 @@ Tem de se certificar de que a VM pode receber pedidos de sonda de estado de func
 
 ## <a name="snatexhaust"></a>Gestão de esgotamento de realizar o SNAT
 
-Portas efémeras utilizadas para realizar o SNAT são um recurso exhaustible, conforme descrito em [autónoma de VM com nenhum endereço IP público de nível de instância](#standalone-vm-with-no-instance-level-public-ip-address) e [VM de balanceamento de carga com nenhum endereço IP público de nível de instância](#standalone-vm-with-no-instance-level-public-ip-address).  
+Portas efémeras utilizadas para realizar o SNAT são um recurso exhaustible, conforme descrito em [autónoma de VM com nenhum endereço IP público de nível de instância](#standalone-vm-with-no-instance-level-public-ip-address) e [VM de balanceamento de carga com nenhum endereço IP público de nível de instância](#standalone-vm-with-no-instance-level-public-ip-address).
 
-Se sabe que irá ser iniciar muitas ligações de saída para o mesmo destino, observar a efetuar ligações de saída ou que aconselhado pelo suporte esgotar os portas de realizar o SNAT, tem várias opções de mitigação geral.  Reveja estas opções e decidir o que é melhor para o seu cenário.  É possível um ou mais podem ajudar a gerir este cenário.
+Se sabe que irá ser iniciar muitas ligações de saída para o mesmo endereço IP de destino e a porta, observar a efetuar ligações de saída ou que aconselhado pelo suporte esgotar os portas de realizar o SNAT, tem várias opções de mitigação geral.  Reveja estas opções e decidir o que é melhor para o seu cenário.  É possível um ou mais podem ajudar a gerir este cenário.
 
-### <a name="assign-an-instance-level-public-ip-to-each-vm"></a>Atribuir um IP público de nível de instância para cada VM
-Isto altera o seu cenário para [IP público de nível de instância para uma VM](#vm-with-an-instance-level-public-ip-address-with-or-without-load-balancer).  Todas as portas efémeras do IP público utilizado para cada VM estão disponíveis para a VM (por oposição a cenários em que a portas efémeras de um IP público são partilhadas com todas as VMS associado ao conjunto de back-end correspondentes).
+### <a name="modify-application-to-reuse-connections"></a>Modificar a aplicação reutilizar ligações 
+Pode reduzir a pedido para portas efémeras utilizado para realizar o SNAT por reutilizar as ligações na sua aplicação.  Isto é particularmente verdadeiro protocolos, como HTTP/1.1 onde explicitamente é suportado.  E outros protocolos utilizando HTTP como transporte (ou seja, REST) podem beneficiar por sua vez.  Reutilização é sempre melhor do que individuais, atómicas ligações de TCP para cada pedido.
 
 ### <a name="modify-application-to-use-connection-pooling"></a>Modificar a aplicação para utilizar o agrupamento de ligações
-Pode reduzir a pedido para portas efémeras utilizada para realizar o SNAT utilizando o agrupamento de ligação na sua aplicação.  Fluxos adicionais para o mesmo destino irão consumir portas adicionais.  Se reutilizar o mesmo fluxo para vários pedidos, os pedidos de vários irão consumir uma única porta.
+Pode utilizar uma ligação de agrupamento de esquema na sua aplicação, onde os pedidos internamente estão distribuídos por um conjunto de ligações (cada reutilizar sempre que possível) fixo.  Se reutilizar o mesmo fluxo para vários pedidos, os pedidos de vários irão consumir uma porta única, em vez de fluxos adicionais para o mesmo destino consumir portas adicionais e à esquerda a esgotar os condições.
 
 ### <a name="modify-application-to-use-less-aggressive-retry-logic"></a>Modificar a aplicação para utilizar menos agressiva lógica de repetição
 Pode reduzir a pedido para portas efémeras utilizando uma menor agressiva lógica de repetição.  Quando estão esgotadas portas efémeras utilizadas para realizar o SNAT, agressiva ou força bruta repete sem decay e término esgotamento de causa de lógica para manter.  Portas efémeras tem um minuto 4 tempo limite de inatividade (não ajustável) e se as repetições são demasiado agressiva, o esgotamento não tem nenhuma oportunidade de limpar no seu próprio.
+
+### <a name="assign-an-instance-level-public-ip-to-each-vm"></a>Atribuir um IP público de nível de instância para cada VM
+Isto altera o seu cenário para [IP público de nível de instância para uma VM](#vm-with-an-instance-level-public-ip-address-with-or-without-load-balancer).  Todas as portas efémeras do IP público utilizado para cada VM estão disponíveis para a VM (por oposição a cenários em que a portas efémeras de um IP público são partilhadas com todas as VMS associado ao conjunto de back-end correspondentes).  Existem trade-offs a ter em consideração, como o custo adicional de endereços IP e o impacto potencial da branca um grande número de endereços IP individuais.
 
 ## <a name="limitations"></a>Limitações
 
