@@ -378,6 +378,8 @@
               href: saas-multitenantdb-adhoc-reporting.md
             - name: Gerir esquema de inquilino
               href: saas-multitenantdb-schema-management.md
+            - name: ETL para análise
+              href: saas-multitenantdb-tenant-analytics.md
     - name: Programar aplicações
       items:
         - name: C e C ++
