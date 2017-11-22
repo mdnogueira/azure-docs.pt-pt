@@ -13,8 +13,8 @@ Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar um
     Id da base de dados|Tarefas|Introduza *tarefas* como o nome para a nova base de dados. Os nomes das bases de dados devem conter de 1 a 255 carateres e não podem conter /, \\, #, ?, ou um espaço à direita.
     ID da coleção|Itens|Introduza *itens* como o nome para a nova coleção. Ids de colecção têm os mesmos requisitos de caráter como nomes de base de dados.
     Capacidade de armazenamento| Fixa (10 GB)|Altere o valor para **fixo (10 GB)**. Este valor é a capacidade de armazenamento da base de dados.
-    Débito|400 RU|Altere o débito para 400 unidades de pedido por segundo (RU/s). Se pretender reduzir a latência, pode aumentar o débito mais tarde.
-    Chave de partição|/categoria|Uma chave de partição que distribui uniformemente os dados para cada partição. É importante selecionar a chave de partição correta para criar coleções com bom desempenho. Para obter mais informações, consulte [Designing for partitioning](../articles/cosmos-db/partition-data.md#designing-for-partitioning) (Criação de partições).
+    Débito|400 RU|Altere o débito para 400 unidades de pedido por segundo (RU/s). Capacidade de armazenamento tem de ser definida como **fixo (10 GB)** para definir o débito para 400 RU/s. Se pretender reduzir a latência, pode aumentar o débito mais tarde. 
+    Chave de partição|/categoria|Introduza */category* como a chave de partição. Uma chave de partição distribui dados uniformemente para cada partição na base de dados. Para saber mais sobre a criação de partições, consulte o artigo [estruturar para criação de partições](../articles/cosmos-db/partition-data.md#designing-for-partitioning).
 
     Clique em **OK**.
 

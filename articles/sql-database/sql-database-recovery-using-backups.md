@@ -13,13 +13,13 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: Active
-ms.date: 10/13/2017
+ms.date: 11/20/2017
 ms.author: carlrab
-ms.openlocfilehash: cb9b1296ced73c123faa0c682e9ef55d4b46ac11
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: ea762816cf0aa4c5fcafd2010bfc06eb580219fa
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Recuperar uma base de dados SQL do Azure através de cópias de segurança da base de dados automatizada
 Base de dados do SQL Server fornece estas opções para a base de dados de recuperação utilizando [cópias de segurança da base de dados automatizadas](sql-database-automated-backups.md) e [cópias de segurança no retenção de longo prazo](sql-database-long-term-retention.md). Pode restaurar a partir de uma cópia de segurança da base de dados para:
@@ -80,7 +80,7 @@ Pode restaurar uma base de dados existente para um ponto anterior no tempo como 
 
 Geralmente, restaurar uma base de dados para um ponto anterior para fins de recuperação. Ao fazê-lo, pode tratar a base de dados restaurada como uma substituição para a base de dados original ou utilizá-lo a obter dados de e, em seguida, atualizar a base de dados original. 
 
-* ***Substituição da base de dados:*** se a base de dados restaurada destina-se como uma substituição para a base de dados original, deve verificar o nível de desempenho e/ou camada de serviço são adequada e dimensionar a base de dados, se necessário. Pode mudar o nome da base de dados original e, em seguida, atribua o nome de original utilizando o comando ALTER DATABASE em T-SQL de base de dados restaurada. 
+* ***Substituição da base de dados:*** se a base de dados restaurada destina-se como uma substituição para a base de dados original, deve verificar o nível de desempenho e/ou camada de serviço são adequada e dimensionar a base de dados, se necessário. Pode mudar o nome da base de dados original e, em seguida, atribua a base de dados restaurada o nome original utilizando o [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database) comando em T-SQL. 
 * ***Recuperação de dados:*** se pretender obter os dados da base de dados restaurada para recuperar de um erro de utilizador ou aplicação, terá de escrever e executar os scripts de recuperação de dados necessários para extrair dados da base de dados restaurada na base de dados original. Apesar da operação de restauro pode demorar muito tempo a concluir, a base de dados de restauro é visível na lista da base de dados em todo o processo de restauro. Se eliminar a base de dados durante o restauro, a operação de restauro foi cancelada e não lhe serem cobrados para a base de dados que não foi possível concluir o restauro. 
 
 ### <a name="azure-portal"></a>Portal do Azure

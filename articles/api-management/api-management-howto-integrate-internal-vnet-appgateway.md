@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: sasolank
-ms.openlocfilehash: 834a81c36557feffaa01c256dad0338617486773
-ms.sourcegitcommit: 9c3150e91cc3075141dc2955a01f47040d76048a
+ms.openlocfilehash: e138241139329b8bb956157ab55b7d22dc2a9b67
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="integrate-api-management-in-an-internal-vnet-with-application-gateway"></a>Integrar a gestão de API numa VNET interna com Gateway de aplicação 
 
@@ -77,7 +77,7 @@ No exemplo de configuração primeiro as suas APIs são geridos apenas a partir 
 
 ## <a name="create-a-resource-group-for-resource-manager"></a>Criar um grupo de recursos para o Resource Manager
 
-Verifique se está a utilizar a versão mais recente do Azure PowerShell. Para obter mais informações, veja [Using Windows PowerShell with Resource Manager (Usar o Windows PowerShell com o Resource Manager)](../powershell-azure-resource-manager.md).
+Verifique se está a utilizar a versão mais recente do Azure PowerShell. Para obter mais informações, veja [Using Windows PowerShell with Resource Manager (Usar o Windows PowerShell com o Resource Manager)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/powershell-azure-resource-manager).
 
 ### <a name="step-1"></a>Passo 1
 

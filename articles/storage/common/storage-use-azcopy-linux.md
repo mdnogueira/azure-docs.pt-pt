@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 28/9/2017
 ms.author: seguler
-ms.openlocfilehash: d77ac39b7fcf6a23ebc58a2bbf9dc7de664edbb3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e73a2424d3eb633f6bec63189786a67161750d4f
+ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Transferência de dados com o AzCopy no Linux
 O AzCopy no Linux é um utilitário da linha de comandos concebido para copiar dados para e do armazenamento de Blobs do Microsoft Azure e o ficheiro de utilização de comandos simples com um desempenho ideal. Pode copiar dados de um objeto para outro dentro da sua conta de armazenamento, ou entre contas de armazenamento.
@@ -559,7 +559,7 @@ azcopy \
     --recursive
 ```
 
-Tenha em atenção que o AzCopy atualmente suporta apenas o [conta SAS](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1).
+Tenha em atenção que o AzCopy atualmente suporta apenas o [conta SAS](https://docs.microsoft.com/azure/storage/storage-dotnet-shared-access-signature-part-1).
 
 ### <a name="journal-file-folder"></a>Pasta de ficheiros do diário de alterações
 Sempre que emitir um comando do AzCopy, este verifica se existe um ficheiro de diário de alterações na pasta predefinida ou se existe uma pasta que especificou através desta opção. Se o ficheiro do diário de alterações não existe em qualquer local, o AzCopy processa a operação como novo e gera um novo ficheiro de diário de alterações.
@@ -673,7 +673,7 @@ Para obter mais informações sobre o Storage do Azure e AzCopy, consulte os seg
 ### <a name="azure-storage-documentation"></a>Documentação do Storage do Azure:
 * [Introdução ao Storage do Azure](../storage-introduction.md)
 * [Criar uma conta de armazenamento](../storage-create-storage-account.md)
-* [Gerir a blobs com o Explorador de armazenamento](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-blobs)
+* [Gerir a blobs com o Explorador de armazenamento](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs)
 * [Utilizar a CLI do Azure 2.0 com o Storage do Azure](../storage-azure-cli.md)
 * [Como utilizar o Blob storage do C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)
 * [Como utilizar o Armazenamento de blobs do Java](../blobs/storage-java-how-to-use-blob-storage.md)
