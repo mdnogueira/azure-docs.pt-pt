@@ -157,10 +157,10 @@
               href: azure-stack-mysql-resource-provider-deploy.md
             - name: Implementar um fornecedor de recursos SQL
               href: azure-stack-sql-resource-provider-deploy.md
-            - name: Criar bases de dados SQL
-              href: azure-stack-sql-resource-provider-databases.md
             - name: Adicionar servidores de alojamento
               href: azure-stack-sql-resource-provider-hosting-servers.md
+            - name: Criar bases de dados SQL
+              href: azure-stack-sql-resource-provider-databases.md
         - name: Oferecer Serviço de Aplicações como PaaS
           items:
             - name: Descrição geral do Serviço de Aplicações no Azure Stack
@@ -183,11 +183,11 @@
               href: azure-stack-marketplace.md
             - name: Transferir itens do marketplace
               href: azure-stack-download-azure-marketplace-item.md
-            - name: Itens do Azure Marketplace para o Azure Stack
+            - name: Itens do Marketplace do Azure para a pilha do Azure
               href: azure-stack-marketplace-azure-items.md
             - name: Criar e publicar um item do marketplace
               href: azure-stack-create-and-publish-marketplace-item.md
-            - name: Utilizar a ferramenta de Publicação do Marketplace
+            - name: Utilize a ferramenta de publicação do marketplace
               href: azure-stack-marketplace-publisher.md
             - name: Adicionar uma imagem de máquina virtual personalizada
               href: azure-stack-add-vm-image.md
