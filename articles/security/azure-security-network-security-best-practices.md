@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/09/2017
+ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 659304937eebb1b2fe6faf019dfef63e1e29bcd4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3dee3411dadbca5e88951dec2ed1836d440423c4
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="azure-network-security-best-practices"></a>Práticas recomendadas de segurança de rede do Azure
-Microsoft Azure permite-lhe ligar máquinas virtuais e aplicações para outros dispositivos de rede, colocando-los em redes virtuais do Azure. Uma rede Virtual do Azure é uma construção de rede virtual que permite ligar placas de interface de rede virtual a uma rede virtual para permitir a comunicação baseada em TCP/IP entre dispositivos de rede ativada. Máquinas virtuais do Azure ligado a uma rede Virtual do Azure são capazes de estabelecer a ligação para dispositivos em que a mesma rede Virtual do Azure, Azure redes virtuais diferentes, na Internet ou até mesmo as suas próprias redes no local.
+Microsoft Azure permite-lhe ligar máquinas virtuais e aplicações para outros dispositivos de rede, colocando-los em redes virtuais do Azure. Uma rede Virtual do Azure é uma construção que permite ligar placas de interface de rede virtual a uma rede virtual para permitir a comunicação baseada em TCP/IP entre dispositivos de rede ativada. Máquinas virtuais do Azure ligado a uma rede Virtual do Azure são capazes de estabelecer a ligação para dispositivos em que a mesma rede Virtual do Azure, Azure redes virtuais diferentes, na Internet ou até mesmo as suas próprias redes no local.
 
 Neste artigo, vamos abordar uma coleção de práticas recomendadas de segurança de rede do Azure. Estas melhores práticas são derivadas da nossa experiência com redes do Azure e as experiências dos clientes, como por si.
 
@@ -50,9 +50,9 @@ Azure rede melhores práticas de segurança abordadas neste artigo incluem:
 * Expandir o seu centro de dados no Azure
 
 ## <a name="logically-segment-subnets"></a>Logicamente as sub-redes de segmento
-[Redes virtuais do Azure](https://azure.microsoft.com/documentation/services/virtual-network/) são semelhantes a uma rede local na sua rede no local. A ideia atrás de uma rede Virtual do Azure é a criação de uma único IP endereço com base no espaço rede privada em que pode colocar todos os seus [Virtual Machines do Azure](https://azure.microsoft.com/services/virtual-machines/). Privada espaços de endereços IP disponíveis são nos (10.0.0.0/8) do classe A, classe B (172.16.0.0/12) e de classe C intervalos (192.168.0.0/16).
+[Redes virtuais do Azure](https://azure.microsoft.com/documentation/services/virtual-network/) são semelhantes a uma rede local na sua rede no local. A ideia atrás de uma rede Virtual do Azure é a criação de uma único IP endereço com base no espaço rede privada em que pode colocar todos os seus [Virtual Machines do Azure](https://azure.microsoft.com/services/virtual-machines/). Privada espaços de endereços IP disponíveis são na classe (10.0.0.0/8), classe B (172.16.0.0/12), e intervalos de classe C (192.168.0.0/16).
 
-Semelhante à que fizer no local, poderá ser útil segmentar o maior espaço de endereços em sub-redes. Pode utilizar [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) com base princípios de sub-redes para criar as sub-redes.
+Semelhante à que fizer no local, deve segmentar o maior espaço de endereços em sub-redes. Pode utilizar [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) com base princípios de sub-redes para criar as sub-redes.
 
 Encaminhamento entre sub-redes acontecerá automaticamente e não terá de configurar manualmente as tabelas de encaminhamento. No entanto, a predefinição é que não existem sem controlos de acesso de rede entre as sub-redes que cria na rede Virtual do Azure. Para criar controlos de acesso de rede entre sub-redes, terá de colocar algo entre as sub-redes.
 
@@ -74,7 +74,7 @@ Enquanto as rotas de sistema predefinida são úteis para vários cenários de i
 Recomendamos que configure rotas definidas pelo utilizador ao implementar uma aplicação de segurança de rede virtual, que iremos falar sobre no posterior melhor prática.
 
 > [!NOTE]
-> Rotas definidas pelo utilizador não são necessárias e as rotas de sistema predefinido que funcionará na maioria das instâncias.
+> Rotas definidas pelo utilizador não são necessárias e as rotas de sistema predefinido funciona na maioria das instâncias.
 >
 >
 
@@ -82,7 +82,7 @@ Pode saber mais sobre rotas definidas pelo utilizador e como configurá-las ao l
 
 ## <a name="enable-forced-tunneling"></a>Ativar a imposição do túnel
 Para compreender melhor a imposição do túnel, é útil para entender que "a divisão de túnel" é.
-O exemplo mais comuns de divisão de túnel é utilizado com ligações VPN. Imagine que estabeleça uma ligação VPN do seu espaço de átrios à sua rede empresarial. Esta ligação permite-lhe ligar a recursos na rede da sua empresa e todas as comunicações aos recursos na sua rede empresarial aceda através do túnel VPN.
+O exemplo mais comuns de divisão de túnel é utilizado com ligações VPN. Imagine que estabeleça uma ligação VPN do seu espaço de átrios à sua rede empresarial. Esta ligação permite-lhe aceder a recursos empresariais e todas as comunicações à sua rede empresarial aceda através do túnel VPN.
 
 O que acontece quando pretende ligar a recursos na Internet? Quando a divisão do túnel estiver ativada, essas ligações aceda diretamente à Internet e não através do túnel VPN. Alguns especialistas de segurança, considere esta opção para ser um risco potencial e, por conseguinte, recomendamos que divisão de túnel desativada e todas as ligações, os destinado à Internet e os destinado a recursos da empresa, aceda a através do túnel VPN. A vantagem de fazer isto é que as ligações à Internet, em seguida, são forçadas através de dispositivos de segurança de rede empresarial, que não ser o caso, se o cliente VPN ligado à Internet fora do túnel VPN.
 
@@ -144,10 +144,9 @@ Confidencialidade, integridade e disponibilidade (CIA) compõem triad do modelo 
 Disponibilidade pode considerar como sendo sobre desempenho e disponibilidade. Se um serviço estiver desativado, não não possível aceder a informações. Se, por isso, fraco relativamente inviabilizar a utilização de dados de desempenho, em seguida, iremos pode considerar a inacessível a dados. Por conseguinte, numa perspetiva de segurança, é necessário fazer que podemos para se certificar de que os nossos serviços têm de desempenho e disponibilidade ideal.
 Um método popular e mais eficaz utilizado para melhorar o desempenho e disponibilidade consiste em utilizar o balanceamento de carga. Balanceamento de carga é um método de distribuição de tráfego de rede nos servidores que fazem parte de um serviço. Por exemplo, se tiver servidores web front-end como parte do seu serviço, pode utilizar o balanceamento de carga para distribuir o tráfego entre os vários servidores web front-end.
 
-Esta distribuição de tráfego aumenta a disponibilidade dos porque se um dos servidores web ficar indisponível, o Balanceador de carga irá parar de enviar o tráfego para que o servidor e redirecionar o tráfego para os servidores que ainda estão online. Balanceamento de carga também ajuda-o desempenho, porque o processador, a rede e a sobrecarga para servir pedidos é distribuída por todos os a carga de memória com balanceamento de servidores.
+Esta distribuição de tráfego aumenta a disponibilidade dos porque se um dos servidores web ficar indisponível, o Balanceador de carga deixa de envio de tráfego para que o servidor e redireciona-lo para os servidores que ainda estão online. Balanceamento de carga também ajuda-o desempenho, porque o processador, a rede e a sobrecarga para servir pedidos é distribuída por todos os a carga de memória com balanceamento de servidores.
 
-Recomendamos que utilize o balanceamento de carga sempre que pode e, conforme adequado para os serviços. Iremos irá endereços appropriateness nas secções seguintes.
-Ao nível da rede Virtual do Azure, Azure fornece-lhe primário três as opções de balanceamento de carga:
+Recomendamos que utilize o balanceamento de carga sempre que pode e, conforme adequado para os serviços. Terá de endereços appropriateness nas secções seguintes: ao nível da rede Virtual do Azure, Azure fornece-lhe primário três as opções de balanceamento de carga:
 
 * Balanceamento de carga baseado em HTTP
 * Balanceamento de carga externa
@@ -173,10 +172,10 @@ Recomendamos que utilize o balanceamento de carga externo, sempre que tiver [as 
 
 Para saber mais sobre como funciona o Balanceador de carga externos do Azure e como implementá-la, leia o artigo [introdução à criação de um balanceador de carga com acesso à Internet no Gestor de recursos com o PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md).
 
-## <a name="internal-load-balancing"></a>Balanceamento de carga interna
+## <a name="internal-load-balancing"></a>Balanceamento do Carregamento Interno
 Balanceamento de carga interna é semelhante ao balanceamento de carga externo e utiliza o mesmo mecanismo para carregar saldo ligações para os servidores protegidos por eles. A única diferença é que o Balanceador de carga neste caso, está a aceitar ligações a partir de máquinas virtuais que não estão na Internet. Na maioria dos casos, as ligações que são considerados aceites para balanceamento de carga são iniciadas por dispositivos numa rede Virtual do Azure.
 
-Recomendamos que utilize para cenários que irão beneficiar esta capacidade, por exemplo, quando tiver de carregar saldo ligações aos servidores de SQL ou servidores web interna de balanceamento de carga interna.
+Recomendamos que utilize para cenários que beneficiam desta capacidade, por exemplo, quando tiver de carregar saldo ligações aos servidores de SQL ou servidores web interna de balanceamento de carga interna.
 
 Para obter mais informações sobre como funciona o Azure interno balanceamento de carga e como implementá-la, leia o artigo [introdução à criação de um balanceador de carga internos através do PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md#update-an-existing-load-balancer).
 

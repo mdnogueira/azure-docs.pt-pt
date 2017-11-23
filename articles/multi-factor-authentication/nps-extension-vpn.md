@@ -16,11 +16,11 @@ ms.date: 08/15/2017
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.openlocfilehash: bf83952b29759ff601685513ace31828404c7b1a
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: c058f1e747849cde0f15a039779665c8718da947
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Integrar a sua infraestrutura de VPN com a MFA do Azure utilizando a extensão de servidor de políticas de rede do Azure
 
@@ -108,7 +108,7 @@ Para obter informações sobre como instalar a função Serviços de acesso e po
 
 ### <a name="azure-mfa-license"></a>Licença do MFA do Azure
 
-É necessária uma licença para o multi-factor Authentication do Azure e está disponível através de um Azure AD Premium, o Enterprise Mobility + segurança ou uma subscrição de multi-factor Authentication. Com base no consumo de licenças do MFA do Azure, como por utilizador ou por licenças de autenticação não são compatíveis com a extensão NPS. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
+É necessária uma licença para o multi-factor Authentication do Azure e está disponível através de um Azure AD Premium, o Enterprise Mobility + segurança ou uma licença autónoma do multi-factor Authentication. Com base no consumo de licenças do MFA do Azure, como por utilizador ou por licenças de autenticação não são compatíveis com a extensão NPS. Para obter mais informações, consulte [como obter o Azure multi-factor Authentication](multi-factor-authentication-versions-plans.md). Para fins de teste, pode utilizar uma subscrição de avaliação.
 
 ### <a name="windows-server-software"></a>Software Windows Server
 
@@ -310,7 +310,7 @@ Partem do princípio de que a configuração de VPN estava a funcionar antes de 
 
 Para resolver estes problemas, um local ideal para começar, é examinar os registos de eventos de segurança no servidor RADIUS. Para guardar o tempo a procurar eventos, pode utilizar a baseada em funções política de rede e servidor de acesso vista personalizada no Visualizador de eventos, conforme mostrado aqui. "ID de evento 6273" indica onde o NPS negado o acesso a um utilizador de eventos. 
 
-![Visualizador de eventos](./media/nps-extension-vpn/image22.png)
+![Visualizador de Eventos](./media/nps-extension-vpn/image22.png)
  
 ## <a name="configure-multi-factor-authentication"></a>Configurar a autenticação multifator
 Esta secção fornece instruções para permitir que os utilizadores para a MFA e para configurar contas para verificação de dois passos. 

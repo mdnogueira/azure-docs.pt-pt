@@ -15,11 +15,11 @@ ms.topic: quickstart
 ms.date: 11/08/2017
 ms.author: cephalin;robmcm
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 3d9a4d72d348b4fe631f075debb6198462f24c56
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: d44fff1e59198d662356c4d7739c05e538ba57b9
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="create-your-first-java-web-app-in-azure"></a>Criar a primeira aplicação Web Java no Azure
 
@@ -33,8 +33,8 @@ Quando tiver concluído este guia de introdução, a aplicação terá um aspeto
 
 Para concluir este guia de introdução, instale:
 
-* O [IDE do Eclipse para Programadores de Java EE](http://www.eclipse.org/downloads/) gratuito. Este guia de introdução utiliza o Eclipse Neon.
-* O [Azure Toolkit para Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-installation).
+* O <a href="http://www.eclipse.org/downloads/" target="_blank">IDE do Eclipse para Programadores de Java EE</a> gratuito. Este guia de introdução utiliza o Eclipse Neon.
+* O <a href="/java/azure/eclipse/azure-toolkit-for-eclipse-installation" target="_blank">Azure Toolkit para Eclipse</a>.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

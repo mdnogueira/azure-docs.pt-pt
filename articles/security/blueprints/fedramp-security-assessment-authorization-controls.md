@@ -14,17 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: cac5e65485fcc9790ef2110fe3b48f99f1b4c14d
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 24c3e53d12f1479ba2d6b17bf28ebb7e5912206e
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="security-assessment-and-authorization-ca"></a>Avaliação de segurança e de autorização (AC)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-
-
-# <a name="security-assessment-and-authorization-ca"></a>Avaliação de segurança e de autorização (AC)
 
 ## <a name="nist-800-53-control-ca-1"></a>AC de controlo do NIST 800-53-1
 

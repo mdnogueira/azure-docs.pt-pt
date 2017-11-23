@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/13/2017
 ms.author: cherylmc
-ms.openlocfilehash: 3ab8029d035c3ba88ddb8a112e27f9054f7c203c
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 9e459a42a9fd7caedfa255a7baf51273eef2265a
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="configure-network-performance-monitor-for-expressroute-preview"></a>Configurar o Monitor de desempenho de rede para o ExpressRoute (pré-visualização)
 
@@ -96,7 +96,7 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
 1. No **configuração de Monitor de desempenho de rede - página de configuração de TCP** para o seu recurso no **instalar agentes do OMS** secção, clique no agente que corresponde ao processador e a transferência do servidor de ficheiro de configuração.
 
   >[!NOTE]
-  >O agente Linux não é atualmente suportado para o ExpressRoute monitorização.
+  >O agente tem de ser instalado num servidor do Windows (2008 SP1 ou posterior). Não é suportada a monitorização dos circuitos do ExpressRoute com o sistema operativo de ambiente de trabalho do Windows e com SO Linux. 
   >
   >
 2. Em seguida, copie o **ID da área de trabalho** e **chave primária** para bloco de notas.
@@ -105,6 +105,8 @@ Se já estiver a utilizar o Monitor de desempenho de rede para monitorizar os ou
   ![Script do PowerShell](.\media\how-to-npm\7.png)
 
 ### <a name="installagent"></a>2.2: instalar um agente de monitorização em cada servidor de monitorização
+
+Recomendamos que instale, pelo menos, dois agentes em cada lado da ligação ExpressRoute (ou seja, no local, as VNETs do Azure) para redundância. Utilize os seguintes passos para instalar agentes:
 
 1. Executar **configuração** para instalar o agente em cada servidor que pretende utilizar para a monitorização do ExpressRoute. O servidor que utiliza para a monitorização pode ser uma VM ou no local e tem de ter acesso à Internet. Terá de instalar pelo menos um agente no local e um agente em cada segmento de rede que pretende monitorizar no Azure.
 2. No **boas-vindas** página, clique em **seguinte**.

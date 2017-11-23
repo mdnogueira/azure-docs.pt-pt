@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/04/2017
+ms.date: 11/21/2017
 ms.author: yurid
-ms.openlocfilehash: efb0cfa4b7950a2d9418282965a23498a67cbffc
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e7a46f73cc076ff9efb91da8041c4a785b1d1975
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="security-architecture-overview"></a>Descrição geral da arquitetura de segurança
 Ter uma base de arquitetura segura é uma das chaves para êxito quando for necessário para proteger as implementações de solução no Azure. Com este conhecimento está capaz de compreender melhor os requisitos por saber as perguntas certas pedir e mais equipado para localizar que o direito de respostas para as suas perguntas. Introdução à direita respostas para as perguntas certas passa uma forma muito para otimizar a segurança das implementações.

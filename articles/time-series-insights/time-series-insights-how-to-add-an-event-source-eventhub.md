@@ -1,5 +1,5 @@
 ---
-title: "Como adicionar uma origem de evento do Hub de eventos para o seu ambiente de informações de séries de tempo do Azure | Microsoft Docs"
+title: "Como adicionar uma origem de evento do Hub de eventos para informações de séries de tempo do Azure | Microsoft Docs"
 description: "Este artigo descreve como adicionar uma origem de evento que está ligada a um Hub de eventos para o seu ambiente de informações de séries de tempo."
 services: time-series-insights
 ms.service: time-series-insights
@@ -10,12 +10,12 @@ editor: MicrosoftDocs/tsidocs
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: article
-ms.date: 11/15/2017
-ms.openlocfilehash: f3a9a1c7e57383925877f674a2e02f931e5c1e3c
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.date: 11/21/2017
+ms.openlocfilehash: c07c847784eb13c62e350e9c655e027e7df696a3
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="how-to-add-an-event-hub-event-source-to-time-series-insights-environment"></a>Como adicionar uma origem de evento do Hub de eventos para o ambiente de informações de séries de tempo
 
@@ -61,7 +61,7 @@ Este artigo descreve como utilizar o portal do Azure para adicionar uma origem d
    | Chave de política de hub de eventos | O valor da chave pode ser pré-preenchida.
    | Grupo de consumidores do hub de eventos | O grupo de consumidores para ler eventos do Hub de eventos. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento. |
    | Formato de serialização de eventos | JSON é a serialização apenas disponível neste momento. As mensagens de eventos tem de estar no formato ou não existem dados podem ser lidos. |
-   | Nome da propriedade Timestamp | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o Hub de eventos. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
+   | Nome da propriedade de carimbo de data/hora | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o Hub de eventos. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
 
 
 9. Se tiver selecionado o **definições de Hub de eventos de fornecer manualmente** opção, a tabela seguinte explica cada propriedade necessária:
@@ -76,7 +76,7 @@ Este artigo descreve como utilizar o portal do Azure para adicionar uma origem d
    | Chave de política de hub de eventos | A chave de acesso partilhado utilizada para autenticar o acesso ao espaço de nomes do Service Bus. Escreva a chave primária ou secundária aqui.
    | Grupo de consumidores do hub de eventos | O grupo de consumidores para ler eventos do Hub de eventos. Recomenda-se vivamente a utilizar um grupo de consumidores dedicado para a origem de evento.
    | Formato de serialização de eventos | JSON é a serialização apenas disponível neste momento. As mensagens de eventos tem de estar no formato ou não existem dados podem ser lidos. |
-   | Nome da propriedade Timestamp | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o Hub de eventos. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
+   | Nome da propriedade de carimbo de data/hora | Para determinar este valor, tem de compreender o formato da mensagem dos dados da mensagem enviados para o Hub de eventos. Este valor é o **nome** da propriedade de evento específico dos dados de mensagem que pretende utilizar como o carimbo de eventos. O valor é maiúsculas e minúsculas. Deixado em branco, o **tempo de colocar em fila de eventos** dentro o evento de origem é utilizada como o carimbo de eventos. |
 
 
 10. Selecione **criar** para adicionar a nova origem de evento.

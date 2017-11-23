@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: fcb8b6a0a88e70419a1f87ccd1ed9bd524dec57c
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: f38f2c7069c4edd0983fd1c2a723287950ace708
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="system-and-services-acquisition-sa"></a>Sistema e aquisição de serviços (SA)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="system-and-services-acquisition-sa"></a>Sistema e aquisição de serviços (SA)
 
 ## <a name="nist-800-53-control-sa-1"></a>Controlo NIST 800-53 SA-1
 

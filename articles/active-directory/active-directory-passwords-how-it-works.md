@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 19518ad8dc2d697f1716750adc3f0ad7d7f8a875
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: bb2e1aebc60eee5f94ed486e0efb43265728df6f
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="self-service-password-reset-in-azure-ad-deep-dive"></a>Self-service reposição palavra-passe na descrição profunda do Azure AD
 
@@ -92,7 +92,7 @@ Se um utilizador não tem os métodos necessários mínimos registados, verá um
 
 Se começar com uma política que tem apenas um necessário método de autenticação para repor ou desbloquear registado e alterar a que, para os dois métodos, o que acontece?
 
-| Número de métodos registado | Número de métodos necessários | resultado |
+| Número de métodos registado | Número de métodos necessários | Resultado |
 | :---: | :---: | :---: |
 | 1 ou mais | 1 | **Capaz de** para repor ou desbloquear |
 | 1 | 2 | **Não é possível** para repor ou desbloquear |
@@ -207,7 +207,7 @@ Exemplo: Existem quatro administradores num ambiente. O administrador A repõe a
 
 ## <a name="on-premises-integration"></a>Integração no local
 
-Se instalar, configurar e ativar o Azure AD Connect, terá as seguintes opções adicionais para integrações no local. Se estas opções estão desativadas, em seguida, repetição de escrita não foi corretamente configurada. Para obter mais informações, consulte [configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback).
+Se instalar, configurar e ativar o Azure AD Connect, terá as seguintes opções adicionais para integrações no local. Se estas opções estão desativadas, em seguida, repetição de escrita não foi corretamente configurada. Para obter mais informações, consulte [configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configure-password-writeback).
 
 ![Repetição de escrita][Writeback]
 
@@ -217,7 +217,7 @@ Esta página fornece um rápida Estado no local repetição de escrita do client
 * Azure AD está online e está ligado ao seu cliente de repetição de escrita no local. No entanto, mas parece que a versão instalada do Azure AD Connect está desatualizada. Considere [atualizar o Azure AD Connect](./connect/active-directory-aadconnect-upgrade-previous-version.md) para se certificar de que tem o mais recentes de conectividade de funcionalidades e correções importantes.
 * Infelizmente, não é possível verificar o estado de repetição de escrita no local do cliente porque a versão instalada do Azure AD Connect está desatualizada. [Atualizar o Azure AD Connect](./connect/active-directory-aadconnect-upgrade-previous-version.md) para poder verificar o estado de ligação.
 * Infelizmente, mas parece não é possível ligar ao seu cliente de repetição de escrita no local agora. [Resolver problemas relacionados com o Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) para restaurar a ligação.
-* Infelizmente, estamos não é possível estabelecer ligação para o seu cliente de repetição de escrita no local porque a repetição de escrita de palavras-passe não foi corretamente configurada. [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para restaurar a ligação.
+* Infelizmente, estamos não é possível estabelecer ligação para o seu cliente de repetição de escrita no local porque a repetição de escrita de palavras-passe não foi corretamente configurada. [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configure-password-writeback) para restaurar a ligação.
 * Infelizmente, mas parece não é possível ligar ao seu cliente de repetição de escrita no local agora. Isto pode dever-se a problemas temporários no nosso lado. Se o problema persistir, [resolver problemas relacionados com o Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) para restaurar a ligação.
 
 ### <a name="write-back-passwords-to-your-on-premises-directory"></a>Repetição de escrita palavras-passe para o seu diretório no local
@@ -248,12 +248,12 @@ Para testar este cenário, aceda à http://passwordreset.microsoftonline.com com
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Os artigos seguintes fornecem informações adicionais sobre a reposição através do Azure AD palavra-passe:
+Os artigos seguintes disponibilizam informações adicionais relativamente à reposição de palavras-passe através do Azure AD:
 
 * [Como posso concluir uma implementação com êxito da SSPR?](active-directory-passwords-best-practices.md)
 * [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md)
 * [Registar-se na reposição personalizada de palavra-passe](active-directory-passwords-reset-register.md)
-* [Tem uma pergunta licenciamento?](active-directory-passwords-licensing.md)
+* [Tem alguma pergunta sobre licenciamento?](active-directory-passwords-licensing.md)
 * [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
 * [Que métodos de autenticação estão disponíveis para os utilizadores?](active-directory-passwords-how-it-works.md#authentication-methods)
 * [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)

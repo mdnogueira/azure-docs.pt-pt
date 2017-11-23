@@ -14,20 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: 9fa06a1b7e80a2d50553512a10f4425dc06ef692
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 5ceac04f3f5c58ac5810dda6c99b40ebc8ad736f
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
-> [!NOTE]
-> Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
 # <a name="identification-and-authentication-ia"></a>Identificação e autenticação (IA)
 
 ## <a name="nist-800-53-control-ia-1"></a>NIST 800-53 controlo IA-1
+
+> [!NOTE]
+> Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
 
 #### <a name="identification-and-authentication-policy-and-procedures"></a>Identificação e a política de autenticação e procedimentos
 
