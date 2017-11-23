@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 08/31/2017
 ms.author: sujayt
-ms.openlocfilehash: 2b5431cefd26d27f6c72dbe72c4b90554b2511b6
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 7dae1d903b6cbb6a74f89443ec9601c6b4b9d078
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="azure-site-recovery-support-matrix-for-replicating-from-azure-to-azure"></a>Matriz de suporte do Azure Site Recovery para replicar a partir do Azure para o Azure
 
@@ -164,6 +164,7 @@ GRS | Suportado |
 RA-GRS | Suportado |
 ZRS | Não suportado |  
 Armazenamento de acesso frequente e esporádico | Não suportado | Discos da máquina virtual não são suportados no armazenamento de acesso frequente e esporádico
+Virtual rede pontos finais de serviço (firewalls de armazenamento do Azure e redes virtuais)  | Não | Permitir o acesso específicos redes virtuais do Azure em contas de armazenamento de cache utilizadas para armazenar dados replicados não é suportada. 
 
 >[!IMPORTANT]
 > Certifique-se de que observar os destinos de desempenho e escalabilidade do disco VM para [Linux](../virtual-machines/linux/disk-scalability-targets.md) ou [Windows](../virtual-machines/windows/disk-scalability-targets.md) máquinas virtuais para evitar quaisquer problemas de desempenho. Se seguir as predefinições, a recuperação de sites irá criar as contas de armazenamento com base na configuração da origem e discos necessários. Se personalizar e selecione as suas próprias definições, certifique-se de que segue os destinos de escalabilidade e desempenho de disco para as VMs de origem.

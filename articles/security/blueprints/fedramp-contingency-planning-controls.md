@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: d4f1816e19b7cc145d3c7c983b8ead906e10d151
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: f6e07903b9d7bd69398f23ace168299c6c1bdf44
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="contingency-planning-cp"></a>Contingency planeamento (CP)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-
-# <a name="contingency-planning-cp"></a>Contingency planeamento (CP)
 
 ## <a name="nist-800-53-control-cp-1"></a>Controlo NIST 800-53 CP-1
 

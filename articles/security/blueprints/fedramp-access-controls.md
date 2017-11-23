@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: 4f2445f1166ae24afb1c6b2a81cf02176593fdaa
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: a7a840b338af3aa6c6a71f2db3cff1e36a8a6794
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="access-control-ac"></a>Controlo de acesso (AC)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="access-control-ac"></a>Controlo de acesso (AC)
 
 ## <a name="nist-800-53-control-ac-1"></a>Controlo NIST 800-53 AC-1
 

@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/04/2017
+ms.date: 11/21/2017
 ms.author: yurid
-ms.openlocfilehash: 8efc0053458e338ac1afe98d9ce970c1d5cbfa81
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8937437652a78e05b94574cb9fe5df7962edb1ad
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="internet-of-things-security-best-practices"></a>Internet das coisas segurança melhores práticas
 Proteger a infraestrutura de Internet das coisas (IoT) é um undertaking crítico para todas as pessoas envolvidas com soluções de IoT. Devido ao número de dispositivos envolvidos e a natureza distribuída destes dispositivos, o impacto relacionados com um evento de segurança ao comprometimento de milhões de dispositivos de IoT não trivial e pode ter impacto ampla.

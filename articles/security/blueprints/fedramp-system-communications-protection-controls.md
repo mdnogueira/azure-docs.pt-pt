@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: 059576e28b0b74700b5e4fbad06e74606c893af7
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 02e2d07eb29d0d5d436afed1cdab4fe710674a8c
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="system-and-communications-protection-sc"></a>Proteção de comunicações (SC) e de sistema
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="system-and-communications-protection-sc"></a>Proteção de comunicações (SC) e de sistema
 
 ## <a name="nist-800-53-control-sc-1"></a>NIST 800-53 controlo SC-1
 

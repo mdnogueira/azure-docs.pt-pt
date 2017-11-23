@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/27/2017
+ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: a7a1179f815395028c4d0324e2bfb6fbed77229c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d2fab26d8ff9f006cfed82685a738b791d0b0624
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="azure-advanced-threat-detection"></a>Deteção de ameaças avançadas do Azure
 ## <a name="introduction"></a>Introdução
@@ -351,7 +351,7 @@ A deteção de anomalias API é uma solução eficaz e eficiente para uma vasta 
 
 -   Grupos de análise de negócio que pretende monitorizar os KPIs de empresas (por exemplo, o volume de venda sentiments de cliente, preços) movimento anormal em tempo real.
 
-### <a name="cloud-app-security"></a>O cloud App Security
+### <a name="cloud-app-security"></a>Cloud App Security
 
 [Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) é um componente fundamental da pilha de segurança de nuvem da Microsoft. É uma solução abrangente que pode ajudar a sua organização como mover para tirar partido da promessa das aplicações em nuvem, mas manter-se no controlo, através de visibilidade melhorada para a atividade. Também ajuda a aumentar a proteção de dados críticos entre aplicações em nuvem.
 
@@ -385,7 +385,7 @@ Com ferramentas que ajudam a Desvende shadow IT, a avaliar o risco, a impor pol�
 </table>
 
 
-![O cloud App Security](./media/azure-threat-detection/azure-threat-detection-fig14.png)
+![Cloud App Security](./media/azure-threat-detection/azure-threat-detection-fig14.png)
 
 O cloud App Security integra-se a visibilidade com a sua nuvem por
 

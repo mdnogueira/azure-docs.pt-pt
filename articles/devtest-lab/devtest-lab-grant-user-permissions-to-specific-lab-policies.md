@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/25/2016
 ms.author: tarcher
-ms.openlocfilehash: fa7c1e4435106d0fc25cb7f77f195eb48705772d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 155debf5fea4439c8273d2518856952fbf0f871a
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="grant-user-permissions-to-specific-lab-policies"></a>Conceder permissões de utilizador para políticas de laboratório específico
 ## <a name="overview"></a>Descrição geral
@@ -87,9 +87,9 @@ No exemplo anterior, o **AllowedVmSizesInLab** política é utilizada. Pode util
 ## <a name="next-steps"></a>Passos seguintes
 Uma vez tiver conceder permissões de utilizador para políticas específicas de laboratório, seguem-se alguns passos a ter em consideração:
 
-* [Acesso seguro a um laboratório](devtest-lab-add-devtest-user.md).
-* [Definir políticas de laboratório](devtest-lab-set-lab-policy.md).
-* [Criar um modelo de laboratório](devtest-lab-create-template.md).
-* [Criar artefactos personalizados para as suas VMs](devtest-lab-artifact-author.md).
-* [Adicionar uma VM com artefactos para um laboratório](devtest-lab-add-vm-with-artifacts.md).
+* [Proteger o acesso a um laboratório](devtest-lab-add-devtest-user.md)
+* [Conjunto de políticas de laboratório](devtest-lab-set-lab-policy.md)
+* [Criar um modelo de laboratório](devtest-lab-create-template.md)
+* [Criar artefactos personalizados para as suas VMs](devtest-lab-artifact-author.md)
+* [Adicionar uma VM para um laboratório](devtest-lab-add-vm.md)
 

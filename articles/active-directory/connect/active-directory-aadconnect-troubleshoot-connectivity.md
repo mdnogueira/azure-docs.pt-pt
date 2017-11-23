@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: billmath
-ms.openlocfilehash: f9631e8a383b88421c55d9c42c8059df9e732800
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: fa98672551a2089f1a306c838295dd1980da0bca
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="troubleshoot-connectivity-issues-with-azure-ad-connect"></a>Resolver problemas de conectividade com o Azure AD Connect
 Este artigo explica como funciona a conectividade entre o Azure AD Connect e o Azure AD e como resolver problemas de conectividade. Estes problemas são mais prováveis ser vistos num ambiente com um servidor proxy.
@@ -90,10 +90,13 @@ Se receber **não é possível ligar ao servidor remoto**, em seguida, o PowerSh
 Se o proxy não está corretamente configurado, receberá um erro: ![proxy200](./media/active-directory-aadconnect-troubleshoot-connectivity/invokewebrequest403.png)
 ![proxy407](./media/active-directory-aadconnect-troubleshoot-connectivity/invokewebrequest407.png)
 
-| Erro | Texto de erro | Comentário |
+| Erro | Texto de erro | Comentar |
 | --- | --- | --- |
 | 403 |Proibido |O proxy não foi aberto para o URL pedido. Revê a configuração de proxy e certifique-se a [URLs](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) tenham sido abertos. |
 | 407 |Autenticação de proxy necessária |O servidor proxy necessário um início de sessão e não foi fornecido nenhum. Se o servidor proxy requer autenticação, certifique-se para terem esta definição configurada no Config. Certifique-se também que estiver a utilizar as contas de domínio para o utilizador que executa o assistente e para a conta de serviço. |
+
+### <a name="proxy-idle-timeout-setting"></a>Definição de tempo limite de inatividade do proxy
+Quando o Azure AD Connect envia um pedido de exportação para o Azure AD, o Azure AD pode demorar até 5 minutos para processar o pedido antes de gerar uma resposta. Isto pode acontecer, especialmente se houver um número de objetos de grupo com associações grande incluídos no mesmo pedido de exportação. Certifique-se de que o limite de tempo inativo do Proxy está configurado para ser superior a cinco minutos. Caso contrário, o problema de conectividade intermitente com o Azure AD pode ser observado no servidor do Azure AD Connect.
 
 ## <a name="the-communication-pattern-between-azure-ad-connect-and-azure-ad"></a>O padrão de comunicação entre o Azure AD Connect e o Azure AD
 Se seguiu todos estes passos anteriores e ainda não é possível ligar-se, poderá começar neste momento observar os registos de rede. Esta secção é documentar um padrão de conectividade normal e com êxito. Este é também listagem herrings red comuns que podem ser ignoradas quando estiver a ler os registos de rede.

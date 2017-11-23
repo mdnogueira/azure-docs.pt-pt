@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2017
+ms.date: 11/16/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: c5ba922175a25776c6e27ee03fae9b2941235881
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 0320cb33dcab63ea394cf8e13e9aef5cc75951fa
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="azure-ad-self-service-password-reset-rapid-deployment"></a>Implementação rápida da reposição personalizada de palavras-passe do Azure AD
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/15/2017
 
 A reposição de palavras-passe self-service (Self-service Password Reste, SSPR) oferece aos administradores de TI uma forma simples de capacitarem os utilizadores a repor ou desbloquear as palavras-passe ou as contas deles. O sistema inclui relatórios detalhados que controlam quando os utilizadores acedem ao sistema, juntamente com notificações para o alertar quanto a utilizações indevidas ou abusos.
 
-Este guia pressupõe que já tem uma versão de avaliação ou um inquilino licenciado do Azure Active Directory (Azure AD) em funcionamento. Se precisar de ajuda para configurar o Azure AD, veja [Getting started with Azure AD](https://azure.microsoft.com/trial/get-started-active-directory/) (Introdução ao Azure AD).
+Este guia pressupõe que já tem uma versão de avaliação ou um inquilino licenciado do Azure Active Directory (Azure AD) em funcionamento. Se precisar de ajuda para configurar o Azure AD, veja [Getting started with Azure AD](get-started-azure-ad.md) (Introdução ao Azure AD).
 
 ## <a name="enable-sspr-for-your-azure-ad-tenant"></a>Ativar a SSPR para o seu inquilino do Azure AD
 
@@ -73,7 +73,7 @@ Para ativar a sincronização de identidades no local com o Azure AD, tem de ins
 
 * [Upgrade from DirSync or Azure AD Sync to Azure AD Connect](./connect/active-directory-aadconnect-dirsync-deprecated.md) (Atualizar de DirSync ou do Azure AD Sync para o Azure AD Connect)
 * [Introdução ao Azure AD Connect utilizando as definições rápidas](./connect/active-directory-aadconnect-get-started-express.md)
-* [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local
+* [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configure-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local
 
 ### <a name="on-premises-policy-change"></a>Alteração à política no local
 

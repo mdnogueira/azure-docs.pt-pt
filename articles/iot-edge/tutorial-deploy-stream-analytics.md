@@ -9,11 +9,11 @@ ms.author: v-masebo
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 88dc0860b4455d19b05b4f4f1766210e3f3c704e
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 0d19d1142cf15221f84692f7e613edd6b46b4083
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="deploy-azure-stream-analytics-as-an-iot-edge-module---preview"></a>Implementar o Azure Stream Analytics como um módulo de limite de IoT – pré-visualização
 
@@ -68,10 +68,10 @@ Nesta secção, vai criar uma tarefa do Azure Stream Analytics para colocar os d
 
 5. No portal do Azure, navegue para **crie um recurso** > **Internet das coisas** e selecione **tarefa do Stream Analytics**.
 
-6. Introduza um nome, escolha **Edge** como o ambiente de alojamento e utilizar os valores predefinidos restantes.  Clique em **Criar**.
+2. Introduza um nome, escolha **Edge** como o ambiente de alojamento e utilizar os valores predefinidos restantes.  Clique em **Criar**.
 
     >[!NOTE]
-    >Atualmente, existem um número limitado de regiões que suportam as tarefas ASA no limite de IoT. Selecione um dos seguintes como a localização: EUA Central, Central EUA oeste, Norte Central dos EUA, EUA leste, Canadá leste, este do Japão, Leste asiático, Europa do Norte, RU Sul, leste da Austrália, sul do Brasil. 
+    >Atualmente, as tarefas do ASA IoT Edge não são suportadas na região dos EUA oeste 2. Selecione uma localização diferente.
 
     ![Criar ASA][5]
 

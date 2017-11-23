@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: fb4b2bc0ad24c5c697f1fd5d4cc77585d52baa33
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: ace6a78fe08d1dbabeb435d76e686ba9c61aac99
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="personnel-security-ps"></a>Segurança do pessoal (PS)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="personnel-security-ps"></a>Segurança do pessoal (PS)
 
 ## <a name="nist-800-53-control-ps-1"></a>Controlo NIST 800-53 PS-1
 

@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: 845e2b165fe01a0a3a2193165eb7ab73a06b9ff5
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 9e9e473285f4e82e1da40b8c3d496d65733fbd45
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="physical-and-environmental-protection-pe"></a>Proteção física e ambiental (PE)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="physical-and-environmental-protection-pe"></a>Proteção física e ambiental (PE)
 
 ## <a name="nist-800-53-control-pe-1"></a>PE de controlo do NIST 800-53-1
 

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: iainfou
-ms.openlocfilehash: 266e9674a422dffb7f78a4aa3dd0adfa3c8bab3b
-ms.sourcegitcommit: 2d1153d625a7318d7b12a6493f5a2122a16052e0
+ms.openlocfilehash: 3714a4feb14bc47132e501629fc339bc7d0e40a1
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-in-the-azure-portal"></a>Dimensionar automaticamente um conjunto no portal do Azure de dimensionamento de máquina virtual
 Quando cria um conjunto de dimensionamento, é possível definir o número de instâncias VM que pretende executar. Como muda o seu pedido de aplicação, pode automaticamente aumentar ou reduzir o número de instâncias de VM. A capacidade de dimensionamento automático permite-lhe manter-se a pedido do cliente ou responder a alterações de desempenho da aplicação durante todo o ciclo de vida da sua aplicação.
@@ -34,7 +34,7 @@ Para criar regras de dimensionamento automático, terá de uma máquina virtual 
 ## <a name="create-a-rule-to-automatically-scale-out"></a>Criar uma regra para ampliar automaticamente
 Se aumentar o seu pedido de aplicação, a carga sobre as instâncias de VM no seu dimensionamento definir aumenta. Se este aumento de carga é consistente, em vez de apenas um breve pedido, pode configurar regras de dimensionamento automático para aumentar o número de instâncias VM no conjunto de dimensionamento. Quando estas instâncias VM são criadas e as suas aplicações são implementadas, inicia o conjunto de dimensionamento distribuir o tráfego aos mesmos através do Balanceador de carga. Controlar as métricas para monitorizar, tais como CPU ou disco, quanto a carga da aplicação têm de cumprir um determinado limiar, e quantas instâncias VM para adicionar à escala definido.
 
-1. Abra o Azure portal e selecione **grupos de recursos** no menu no lado esquerdo tamanho do dashboard.
+1. Abra o Azure portal e selecione **grupos de recursos** no menu no lado esquerdo do dashboard.
 2. Selecione o grupo de recursos que contém o conjunto de dimensionamento, em seguida, escolha o conjunto de dimensionamento da lista de recursos.
 3. Escolha **dimensionamento** no menu no lado esquerdo da escala definir janela. Selecione o botão para **ativar o dimensionamento automático**:
 
@@ -49,12 +49,12 @@ Se aumentar o seu pedido de aplicação, a carga sobre as instâncias de VM no s
     | Parâmetro              | Explicação                                                                                                         | Valor          |
     |------------------------|---------------------------------------------------------------------------------------------------------------------|----------------|
     | *Agregação de tempo*     | Define a forma como as métricas recolhidas devem ser agregadas para análise.                                                | Média        |
-    | *Nome da métrica*          | A métrica de desempenho para monitorizar e aplicar escala definir ações.                                                   | Percentagem de CPU |
+    | *Nome da métrica*          | A métrica de desempenho para monitorizar e aplicar escala definir ações.                                                   | Percentagem da CPU |
     | *Estatística de grão de tempo* | Define a forma como as métricas recolhidas em cada intervalo de tempo devem ser agregadas para análise.                             | Média        |
     | *Operador*             | Operador utilizado para comparar os dados métricos contra o limiar.                                                     | Mais do que   |
     | *Limiar*            | A percentagem que faz com que a regra de dimensionamento automático acionar uma ação.                                                 | 70             |
     | *Duração*             | A quantidade de tempo monitorizado antes em comparação com os valores da métrica e de limiar.                                   | 10 minutos     |
-    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                        | Percentagem de aumento por |
+    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                        | Aumentar percentagem em |
     | *Contagem de instâncias*       | A percentagem de instâncias de VM deve ser alterada quando a regra é acionado.                                            | 20             |
     | *Esporádico para baixo (minutos)*  | A quantidade de tempo de espera antes da regra é aplicada novamente para que as ações de dimensionamento automático de ter a hora entre em vigor. | 5 minutos      |
 
@@ -77,7 +77,7 @@ Num evening ou fim de semana, pode diminuir o seu pedido de aplicação. Se este
     |------------------------|----------------------------------------------------------------------------------------------------------------------|----------------|
     | *Operador*             | Operador utilizado para comparar os dados métricos contra o limiar.                                                      | Menos do que   |
     | *Limiar*            | A percentagem que faz com que a regra de dimensionamento automático acionar uma ação.                                                 | 30             |
-    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                         | Diminuir por cento por |
+    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                         | Diminuir percentagem em |
     | *Contagem de instâncias*       | A percentagem de instâncias de VM deve ser alterada quando a regra é acionado.                                             | 20             |
 
 3. Para criar a regra, selecione **adicionar**

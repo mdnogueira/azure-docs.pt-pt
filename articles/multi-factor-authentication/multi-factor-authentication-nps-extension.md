@@ -15,11 +15,11 @@ ms.date: 08/14/2017
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 5dae5ef260d975e00d3bdaa9aff73fd5807bb839
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: ebd6109fdae00da9e6dc1fc456573327d521e7e9
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Integrar a sua infraestrutura existente do NPS com multi-factor Authentication do Azure
 
@@ -52,7 +52,7 @@ A extensão NPS destina-se para trabalhar com a infraestrutura existente. Certif
 
 ### <a name="licenses"></a>Licenças
 
-A extensão de NPS para o Azure MFA está disponível para clientes com [licenças para o Azure multi-factor Authentication](multi-factor-authentication.md) (incluído com o Azure AD Premium, EMS ou uma subscrição de MFA). Com base no consumo de licenças do MFA do Azure, como por utilizador ou por licenças de autenticação não são compatíveis com a extensão NPS. 
+A extensão de NPS para o Azure MFA está disponível para clientes com [licenças para o Azure multi-factor Authentication](multi-factor-authentication.md) (incluído com o Azure AD Premium, EMS ou uma licença do MFA autónoma). Com base no consumo de licenças do MFA do Azure, como por utilizador ou por licenças de autenticação não são compatíveis com a extensão NPS. 
 
 ### <a name="software"></a>Software
 

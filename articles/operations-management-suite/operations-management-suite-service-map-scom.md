@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
 ms.author: bwren;dairwin
-ms.openlocfilehash: fb58a01828e13f9605e4788ee7e064162a7a31d9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: af1f683f08ff6b70b23ff265f39b9a76f92f4be2
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Integração de mapa de serviço com o System Center Operations Manager
   > [!NOTE]
@@ -30,7 +30,7 @@ Mapa de serviço do Operations Management Suite automaticamente Deteta os compon
 Esta integração entre o mapa de serviço e o System Center Operations Manager, pode criar automaticamente diagramas de aplicação distribuída no Operations Manager que se baseiam os maps de dependência dinâmica no mapa de serviço.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-* Um grupo de gestão do Operations Manager que está a gerir um conjunto de servidores.
+* Um grupo de gestão do Operations Manager (2012 R2 ou posterior) que está a gerir um conjunto de servidores.
 * Uma área de trabalho de Operations Management Suite com a solução de mapa de serviço ativada.
 * Um conjunto de servidores (pelo menos um) que estão a ser gerido pelo Operations Manager e o envio de dados para o mapa de serviço. São suportados servidores Windows e Linux.
 * Um principal de serviço com acesso à subscrição do Azure que está associado a área de trabalho do Operations Management Suite. Para obter mais informações, aceda a [criar um principal de serviço](#creating-a-service-principal).

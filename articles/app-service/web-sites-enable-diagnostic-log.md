@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
-ms.openlocfilehash: a9c5743c92ac48202c19c2f6f024238c147d8444
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 1d8d0caa1aa9e21bf724d60127dc6f2ac9a49ecf
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="enable-diagnostics-logging-for-web-apps-in-azure-app-service"></a>Ativar o registo de diagnóstico para web apps no App Service do Azure
 ## <a name="overview"></a>Descrição geral
@@ -34,18 +34,18 @@ Web apps do App Service fornecem a funcionalidade de diagnóstico para informaç
 ### <a name="web-server-diagnostics"></a>Diagnóstico do servidor Web
 Pode ativar ou desativar os seguintes tipos de registos:
 
-* **Detalhadas de registo de erro** -erro informações detalhadas de códigos de estado HTTP que indiquem uma falha (código de estado 400 ou superior). Isto pode conter informações que podem ajudar a determinar por que motivo o servidor devolveu o código de erro.
-* **Falha do rastreio de pedido** -informações detalhadas sobre pedidos falhados, incluindo um rastreio de componentes IIS utilizada para processar o pedido e o tempo decorrido em cada componente. Isto pode ser útil se está a tentar melhorar o desempenho do site ou isolar o que está a causar um erro HTTP específico a ser devolvido.
+* **Detalhadas de registo de erro** -erro informações detalhadas de códigos de estado HTTP que indiquem uma falha (código de estado 400 ou superior). Poderá conter informações que podem ajudar a determinar por que motivo o servidor devolveu o código de erro.
+* **Falha do rastreio de pedido** -informações detalhadas sobre pedidos falhados, incluindo um rastreio de componentes IIS utilizada para processar o pedido e o tempo decorrido em cada componente. Isto é útil se está a tentar melhorar o desempenho do site ou isolar o que está a causar um erro HTTP específico a ser devolvido.
 * **Registo do servidor de Web** -informações sobre transações de HTTP utilizando o [formato de ficheiro de registo expandido de W3C](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). Isto é útil ao determinar as métricas de site geral, tais como o número de pedidos processados ou o número de pedidos está a partir de um endereço IP específico.
 
-### <a name="application-diagnostics"></a>Diagnóstico de aplicação
+### <a name="application-diagnostics"></a>Application diagnostics
 Diagnóstico de aplicação permite-lhe capturar informações produzidas por uma aplicação web. As aplicações do ASP.NET podem utilizar o [Trace](http://msdn.microsoft.com/library/36hhw2t6.aspx) classe para registar informações no registo de diagnóstico de aplicação. Por exemplo:
 
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
 Em runtime, pode obter estes registos para ajudar a resolver problemas. Para obter mais informações, consulte [web apps do Azure de resolução de problemas no Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
-Web apps do App Service também registar informações de implementação quando publicar conteúdo para uma aplicação web. Isto ocorre automaticamente e não existem sem definições de configuração para o registo de implementação. Registo de implementação permite-lhe determinar por que motivo uma implementação falhou. Por exemplo, se estiver a utilizar um script de implementação personalizada, poderá utilizar o registo de implementação para determinar por que razão o script está a falhar.
+Web apps do App Service também registar informações de implementação quando publicar conteúdo para uma aplicação web. -Ocorre automaticamente e não existem sem definições de configuração para o registo de implementação. Registo de implementação permite-lhe determinar por que motivo uma implementação falhou. Por exemplo, se estiver a utilizar um script de implementação personalizada, poderá utilizar o registo de implementação para determinar por que razão o script está a falhar.
 
 ## <a name="enablediag"></a>Como ativar o diagnóstico
 Para ativar o diagnóstico no [portal do Azure](https://portal.azure.com), aceda à página para a sua aplicação web e clique em **definições > registos de diagnóstico**.
@@ -53,21 +53,20 @@ Para ativar o diagnóstico no [portal do Azure](https://portal.azure.com), aceda
 <!-- todo:cleanup dogfood addresses in screenshot -->
 ![Parte de registos](./media/web-sites-enable-diagnostic-log/logspart.png)
 
-Quando ativa **diagnóstico de aplicação**, também optar pelo **nível**. Esta definição permite-lhe filtrar as informações capturadas para **informativa**, **aviso**, ou **erro** informações. Definir este como **verboso** regista todas as informações produzidas pela aplicação.
+Quando ativa **diagnóstico de aplicação**, também optar pelo **nível**. Esta definição permite-lhe filtrar as informações capturadas para **informativa**, **aviso**, ou **erro** informações. Defini-la como **verboso** regista todas as informações produzidas pela aplicação.
 
 > [!NOTE]
 > Ao contrário de alterar o ficheiro Web. config, ativar o diagnóstico de aplicação ou alterar os níveis de registo de diagnóstico não recicle o domínio de aplicação que a aplicação é executada no.
 >
 >
 
-No [portal clássico](https://manage.windowsazure.com) aplicação Web **configurar** separador, pode selecionar **armazenamento** ou **sistema de ficheiros** para **registo de servidor web** . Selecionar **armazenamento** permite-lhe selecionar uma conta de armazenamento e, em seguida, um contentor do blob que os registos são escritos para. Todos os outros registos para **site diagnóstico** são escritos para o sistema de ficheiros apenas.
+Para **registo de aplicações**, pode ativar a opção de sistema de ficheiros temporariamente para fins de depuração. Esta opção desativa automaticamente em 12 horas. Também pode ativar a opção de armazenamento de BLOBs para selecionar um contentor de blogue para escrever os registos.
 
-O [portal clássico](https://manage.windowsazure.com) aplicação Web **configurar** separador também tem definições adicionais para o application diagnostics:
+Para **registo de servidor Web**, pode selecionar **armazenamento** ou **sistema de ficheiros**. Selecionar **armazenamento** permite-lhe selecionar uma conta de armazenamento e, em seguida, um contentor do blob que os registos são escritos para. 
 
-* **Sistema de ficheiros** -armazena as informações de diagnóstico de aplicação para o sistema de ficheiros de aplicação web. Estes ficheiros podem ser acedidos por FTP ou transferiu como um arquivo Zip com o Azure PowerShell ou a Interface de linha de comandos do Azure (CLI do Azure).
-* **Tabela de armazenamento** -armazena as informações de diagnóstico de aplicação no nome de conta de armazenamento do Azure e a tabela especificado.
-* **Armazenamento de BLOBs** -armazena as informações de diagnóstico de aplicação no contentor de conta de armazenamento do Azure e o blob especificado.
-* **Período de retenção** -por predefinição, os registos não são automaticamente eliminados do **armazenamento de BLOBs**. Selecione **definir a retenção** e introduza o número de dias a manter os registos, se pretender eliminar automaticamente registos.
+Se armazenar os registos no sistema de ficheiros, os ficheiros podem ser acedidos por FTP ou transferiu como um arquivo Zip com o Azure PowerShell ou a Interface de linha de comandos do Azure (CLI do Azure).
+
+Por predefinição, os registos não são automaticamente eliminados (com exceção do **registo na aplicação (sistema de ficheiros)**). Para eliminar automaticamente os registos, defina o **período de retenção (dias)** campo.
 
 > [!NOTE]
 > Se lhe [voltar a gerar chaves de acesso da sua conta de armazenamento](../storage/common/storage-create-storage-account.md), tem de repor a configuração do respetivo registo para utilizar as chaves atualizadas. Para efetuar este procedimento:
@@ -101,12 +100,10 @@ A estrutura de diretórios que os registos são armazenados no é o seguinte:
 * **Registos de implementação** -LogFiles/Git. Esta pasta contém registos gerados pelos processos de implementação interno utilizados por aplicações web do Azure, bem como os registos para implementações do Git.
 
 ### <a name="ftp"></a>FTP
-Para aceder a informações de diagnóstico a utilizar FTP, visite o **Dashboard** da sua aplicação web no [portal clássico](https://manage.windowsazure.com). No **leitura rápida** secção, utilize o **registos de diagnóstico de FTP** ligação para aceder aos ficheiros de registo a utilizar FTP. O **utilizador de FTP/implementação** entrada lista o nome de utilizador que deve ser utilizado para aceder ao site FTP.
 
-> [!NOTE]
-> Se o **utilizador de FTP/implementação** entrada não estiver definida, ou tenha esquecido a palavra-passe para este utilizador, pode criar um novo utilizador e palavra-passe utilizando o **repor as credenciais de implementação** ligação no  **leitura rápida** secção o **Dashboard**.
->
->
+Para abrir uma ligação de FTP para o servidor FTP da sua aplicação, consulte [implementar a aplicação no serviço de aplicações do Azure através de FTP/S](app-service-deploy-ftp.md).
+
+Assim que estiver ligado ao servidor FTP/S da sua aplicação web, abra o **LogFiles** pasta, onde os ficheiros de registo são armazenados.
 
 ### <a name="download-with-azure-powershell"></a>Transferir com o Azure PowerShell
 Para transferir os ficheiros de registo, inicie uma nova instância do Azure PowerShell e utilize o seguinte comando:
@@ -145,7 +142,7 @@ Visual Studio Application Insights fornece ferramentas para filtrar e procurar o
 [Saiba mais sobre o desempenho de controlo com o Application Insights](../application-insights/app-insights-azure-web-apps.md)
 
 ## <a name="streamlogs"></a>Como: registos de fluxo
-Ao desenvolver uma aplicação, muitas vezes, é útil ver informações de registo em tempo quase real. Isto pode ser conseguido através de transmissão em fluxo de informações de registo para o ambiente de desenvolvimento utilizando o Azure PowerShell ou a Interface de linha de comandos do Azure.
+Ao desenvolver uma aplicação, muitas vezes, é útil ver informações de registo em tempo quase real. Pode transmitir informações de registo para o ambiente de desenvolvimento utilizando o Azure PowerShell ou a Interface de linha de comandos do Azure.
 
 > [!NOTE]
 > Alguns tipos de memória intermédia de registo de escrita para o ficheiro de registo, o que pode resultar em eventos fora de ordem na sequência. Por exemplo, uma entrada de registo de aplicação que ocorre quando um utilizador visita uma página poderão ser apresentada no fluxo antes da entrada de registo HTTP correspondente para o pedido de página.
@@ -207,7 +204,7 @@ Cada linha com sessão iniciada para o sistema de ficheiros ou recebidas utiliza
 
     {Date}  PID[{process ID}] {event type/level} {message}
 
-Por exemplo, um evento de erro, aparece semelhante ao seguinte:
+Por exemplo, um evento de erro, aparece semelhante ao seguinte exemplo:
 
     2014-01-30T16:36:59  PID[3096] Error       Fatal error on the page!
 
@@ -221,13 +218,13 @@ Quando o registo para o table storage, propriedades adicionais são utilizadas p
 | --- | --- |
 | PartitionKey |Data/hora do evento no formato yyyyMMddHH |
 | RowKey |Um valor GUID que identifica exclusivamente esta entidade |
-| Timestamp |A data e hora em que ocorreu o evento |
+| Carimbo de data/hora |A data e hora em que ocorreu o evento |
 | EventTickCount |A data e hora em que o evento ocorreu, no formato de marcas de escala (maior precisão) |
 | ApplicationName |O nome da aplicação web |
 | Nível |Nível do evento (por exemplo, erro, aviso, informações) |
 | EventId |O ID de evento deste evento<p><p>Por predefinição, 0 se nenhum especificado |
-| instanceId |Instância da aplicação web que ocorreu o mesmo |
-| PID |ID do processo |
+| Id da Instância |Instância da aplicação web que ocorreu o mesmo |
+| PID |ID de Processo |
 | TID |O ID de thread do thread que produziu o evento |
 | Mensagem |Mensagem de detalhes do evento |
 
@@ -240,14 +237,14 @@ Ao iniciar sessão para o armazenamento de BLOBs, os dados são armazenados no f
 | Data |A data e hora em que ocorreu o evento |
 | Nível |Nível do evento (por exemplo, erro, aviso, informações) |
 | ApplicationName |O nome da aplicação web |
-| instanceId |Instância da aplicação web que o evento ocorreu |
+| Id da Instância |Instância da aplicação web que o evento ocorreu |
 | EventTickCount |A data e hora em que o evento ocorreu, no formato de marcas de escala (maior precisão) |
 | EventId |O ID de evento deste evento<p><p>Por predefinição, 0 se nenhum especificado |
-| PID |ID do processo |
+| PID |ID de Processo |
 | TID |O ID de thread do thread que produziu o evento |
 | Mensagem |Mensagem de detalhes do evento |
 
-Os dados armazenados num blob seriam ter um aspeto semelhantes ao seguinte:
+Os dados armazenados num blob seriam ter um aspeto semelhantes ao seguinte exemplo:
 
     date,level,applicationName,instanceId,eventTickCount,eventId,pid,tid,message
     2014-01-30T16:36:52,Error,mywebapp,6ee38a,635266966128818593,0,3096,9,An error occurred
@@ -258,14 +255,14 @@ Os dados armazenados num blob seriam ter um aspeto semelhantes ao seguinte:
 >
 
 ### <a name="failed-request-traces"></a>Falha de rastreios de pedido
-Os rastreios de pedidos falhados são armazenados nos ficheiros XML com o nome **. XML de # # # fr**. Para tornar mais fácil ver as informações com sessão iniciada, uma folha de estilos XSL chamada **freb.xsl** é fornecido no mesmo diretório que os ficheiros XML. Se abrir um dos ficheiros XML no Internet Explorer, o Internet Explorer utiliza folha de estilos XSL para fornecer uma apresentação formatada as informações de rastreio. Isto parece ser semelhante ao seguinte:
+Os rastreios de pedidos falhados são armazenados nos ficheiros XML com o nome **. XML de # # # fr**. Para tornar mais fácil ver as informações com sessão iniciada, uma folha de estilos XSL chamada **freb.xsl** é fornecido no mesmo diretório que os ficheiros XML. Se abrir um dos ficheiros XML no Internet Explorer, o Internet Explorer utiliza folha de estilos XSL para fornecer uma apresentação formatada as informações de rastreio, semelhante ao seguinte exemplo:
 
 ![pedidos falhados visualizados no browser](./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png)
 
 ### <a name="detailed-error-logs"></a>Registos de erros detalhados
 Registos de erros detalhados são documentos HTML que fornecem informações mais detalhadas sobre os erros HTTP que ocorreram. Uma vez que são simplesmente os documentos HTML, podem ser vistos utilizando um browser.
 
-### <a name="web-server-logs"></a>Registos do servidor Web
+### <a name="web-server-logs"></a>Registos de servidores Web
 Os registos do servidor web são formatados com o [formato de ficheiro de registo expandido de W3C](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). Estas informações podem ser lidos com um editor de texto ou analisar a utilizar utilitários como [Log Parser](http://go.microsoft.com/fwlink/?LinkId=246619).
 
 > [!NOTE]
