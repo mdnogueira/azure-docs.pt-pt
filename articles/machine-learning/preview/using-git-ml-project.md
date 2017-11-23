@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/18/2017
-ms.openlocfilehash: fe2a302a32f1b9ec474416704c6cb613cd384a0e
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 0cd447a52964578dd2348a786dd57a45ea87516e
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="using-git-repository-with-an-azure-machine-learning-workbench-project"></a>Utilizar o repositório de Git com um projeto do Azure Machine Learning Workbench
 Este documento fornece informações sobre como o Azure Machine Learning Workbench utiliza o Git para fornecer controlo de versão e certifique-se reproducibility na sua experimentação de ciência de dados. Também são fornecidas instruções sobre como associar o seu projeto com uma nuvem repositório de Git.
@@ -121,7 +121,7 @@ Ao executar este comando, iremos irá substituir a pasta do projeto todo com o i
 ## <a name="step-6-use-the-master-branch"></a>Passo 6. Utilize o ramo principal
 Uma forma de evitar acidentalmente perder o seu estado atual do projeto, é consolidar o projeto para o ramo principal (ou qualquer ramo criado por si) do repositório de Git. Pode utilizar diretamente Git de linha de comandos (ou a outra favorita Git ferramenta de cliente da preferência) a funcionar o ramo principal. Por exemplo:
 
-```
+```sh
 # check status to make sure you are on the master branch (or branch of your choice)
 $ git status
 

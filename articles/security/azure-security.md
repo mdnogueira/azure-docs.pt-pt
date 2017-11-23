@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/03/2017
+ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 54bbd7dd1d0ecad79f86e0ab16be3a48854093ac
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b22ad29e593a9293a98acebca065f19ab2d9d5be
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="introduction-to-azure-security"></a>Introdução à segurança do Azure
 ## <a name="overview"></a>Descrição geral
@@ -139,7 +139,7 @@ Pode ativar ou desativar os seguintes tipos de registos:
 
 -   Web Server registo - informações sobre transações de HTTP utilizando o formato de ficheiro de registo expandido de W3C. Isto é útil ao determinar as métricas de site geral, tais como o número de pedidos processados ou o número de pedidos está a partir de um endereço IP específico.
 
-#### <a name="application-diagnostics"></a>Diagnóstico de aplicação
+#### <a name="application-diagnostics"></a>Application diagnostics
 [Diagnóstico de aplicação](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log) permite-lhe capturar informações produzidas por uma aplicação web. As aplicações do ASP.NET podem utilizar o [Trace](https://msdn.microsoft.com/library/system.diagnostics.trace) classe para registar informações no registo de diagnóstico de aplicação. No Application Diagnostics, existem dois tipos principais de eventos, os relacionados com o desempenho da aplicação e os relacionados com falhas de aplicações e erros. As falhas e os erros podem ser divididos adicional para problemas de conectividade, segurança e de falha. Problemas de falha estão normalmente relacionados com um problema com o código de aplicação.
 
 No Application Diagnostics, pode ver eventos agrupados nas seguintes formas:

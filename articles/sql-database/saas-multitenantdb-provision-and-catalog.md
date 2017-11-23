@@ -9,26 +9,26 @@ manager: craigg
 editor: 
 ms.assetid: 
 ms.service: sql-database
-ms.custom: scale out apps
+ms.custom: saas apps
 ms.workload: Inactive
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/17/2017
+ms.date: 11/20/2017
 ms.author: billgib
-ms.openlocfilehash: f6707b85cc80178da663d7e2b95eeb5c9550789c
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: ec753027c8ce8040cbc574279a44eb24590fcb05
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/22/2017
 ---
-# <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-multi-tenant-sql-database"></a>Aprovisionar e catálogo novos inquilinos numa aplicação SaaS utilizando uma base de dados do SQL Server do multi-inquilino
+# <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-sql-database"></a>Aprovisionar e catálogo novos inquilinos numa aplicação SaaS utilizando uma base de dados de SQL Server em partição horizontal do multi-inquilino
 
 Neste tutorial, pode saber mais sobre padrões para o aprovisionamento e cataloging inquilinos ao trabalhar com um modelo a base de dados do multi-inquilino. 
 
-Um esquema de multi-inquilino permite que os dados de vários inquilinos para ser armazenada na base de dados individual. Para suportar grande número de inquilinos, os dados do inquilino são distribuídos por vários shards ou bases de dados. Os dados para qualquer um inquilino sempre totalmente estão contidos numa única base de dados.  Um catálogo é utilizado para conter o mapeamento de inquilinos para bases de dados.   
+Um esquema de multi-inquilino, o que inclui um Id de inquilino na chave primária de tabelas que contém dados de inquilino, permite que vários inquilinos ser armazenada na base de dados individual. Para suportar grande número de inquilinos, os dados do inquilino são distribuídos por vários shards ou bases de dados. Os dados para qualquer um inquilino sempre totalmente estão contidos numa única base de dados.  Um catálogo é utilizado para conter o mapeamento de inquilinos para bases de dados.   
 
-Também pode optar por preencher algumas bases de dados com apenas um único inquilino. Bases de dados que contêm vários inquilinos favor um custo mais baixo por inquilino em detrimento de isolamento de inquilino.  Bases de dados que contêm apenas um único inquilino favor isolamento através de custo.  Bases de dados com múltiplos inquilinos e inquilinos únicos podem ser misto numa única aplicação SaaS a otimizar os custos ou de isolamento para cada inquilino. Os inquilinos podem ser especificados a sua própria base de dados quando aprovisionado ou podem ser movidas para a sua própria base de dados mais tarde.
+Também pode optar por preencher algumas bases de dados com apenas um único inquilino. Bases de dados que contêm vários inquilinos favor um custo mais baixo por inquilino em detrimento de isolamento de inquilino.  Bases de dados que contêm apenas um único inquilino favor isolamento através de custo baixo.  Bases de dados com múltiplos inquilinos e inquilinos únicos podem ser misto na mesma aplicação SaaS a otimizar os custos ou de isolamento para cada inquilino. Os inquilinos podem ser especificados a sua própria base de dados quando aprovisionado ou podem ser movidas para a sua própria base de dados mais tarde.
 
    ![A base de dados do multi-inquilino de aplicação com o catálogo de inquilino](media/saas-multitenantdb-provision-and-catalog/MultiTenantCatalog.png)
 
@@ -46,21 +46,21 @@ O catálogo pode ser expandido para armazenar metadados adicionais de inquilinos
 O catálogo também pode ser utilizado para ativar a gestão de esquema de relatórios, cross-inquilinos e extrair dados para efeitos de análise. 
 
 ### <a name="elastic-database-client-library"></a>Biblioteca de Clientes da Base de Dados Elástica 
-Nas aplicações SaaS de bilhetes Wingtip, o catálogo está implementado a *tenantcatalog* da base de dados utilizando as funcionalidades de gestão de partições horizontais o [biblioteca de cliente de base de dados elásticas (EDCL)](sql-database-elastic-database-client-library.md). A biblioteca ativa uma aplicação criar, gerir e utilizar uma cópia da base de dados 'mapa de partições horizontais'. Um mapa de partições horizontais contém uma lista de partições horizontais (bases de dados) e o mapeamento entre as chaves (inquilinos) e shards.  Funções EDCL podem ser utilizadas de aplicações ou scripts do PowerShell durante inquilino aprovisionamento para criar as entradas no mapa de partições horizontais e versões posterior, para ligar à base de dados correto. A biblioteca coloca em cache as informações da ligação para minimizar o tráfego na base de dados de catálogo e acelerar a ligação. 
+Nas aplicações SaaS de bilhetes Wingtip, o catálogo está implementado a *tenantcatalog* da base de dados utilizando as funcionalidades de gestão de partições horizontais o [biblioteca de cliente de base de dados elásticas (EDCL)](sql-database-elastic-database-client-library.md). A biblioteca ativa uma aplicação criar, gerir e utilizar uma cópia da base de dados 'mapa de partições horizontais'. Um mapa de partições horizontais contém uma lista de partições horizontais (bases de dados) e o mapeamento entre as chaves (inquilino Ids) e shards.  Funções EDCL podem ser utilizadas de aplicações ou scripts do PowerShell durante inquilino aprovisionamento para criar as entradas no mapa de partições horizontais e versões posterior, para ligar à base de dados correto. A biblioteca coloca em cache as informações da ligação para minimizar o tráfego na base de dados de catálogo e acelerar a ligação. 
 
 > [!IMPORTANT]
-> Os dados de mapeamento estão acessíveis na base de dados do catálogo, mas *não deverá editá-los*! Edite os dados de mapeamento apenas com as APIs da Biblioteca de Clientes da Base de Dados Elástica. Se manipular diretamente os dados de mapeamento arrisca-se a danificar o catálogo, além de não ser suportado.
+> Os dados de mapeamento estão acessíveis na base de dados do catálogo, mas *não editá-lo!* Edite os dados de mapeamento apenas com as APIs da Biblioteca de Clientes da Base de Dados Elástica. Se manipular diretamente os dados de mapeamento arrisca-se a danificar o catálogo, além de não ser suportado.
 
 
 ## <a name="tenant-provisioning-pattern"></a>Padrão de aprovisionamento do inquilino
 
 Quando aprovisionar um novo inquilino no modelo da base de dados do multi-inquilino, tem primeiro de ser determinou-se o inquilino está a ser aprovisionado numa base de dados partilhado ou fornecidos a sua própria base de dados. Se uma base de dados partilhada, têm de ser determinada se há espaço na base de dados existente ou uma nova base de dados é necessária. Se não for necessária uma nova base de dados, têm de ser aprovisionado na localização adequada e escalão de serviço, inicializado com dados de esquema e de referência adequada e, em seguida, registados no catálogo. Por fim, o mapeamento do inquilino pode ser adicionado para referenciar o ID de partição horizontal adequado.
 
-Aprovisionamento de base de dados pode ser alcançado ao executar scripts de SQL, implementar um bacpac ou copiar uma base de dados do modelo. As aplicações de SaaS de bilhetes Wingtip copiar uma base de dados do modelo para criar novas bases de dados do inquilino.
+Aprovisione a base de dados ao executar scripts de SQL, implementar um bacpac ou copiar uma base de dados do modelo. As aplicações de SaaS de bilhetes Wingtip copiar uma base de dados do modelo para criar novas bases de dados do inquilino.
 
 A abordagem de aprovisionamento de base de dados deve compreender na estratégia de gestão de esquema geral, o que precisa de garantir que as novas bases de dados são aprovisionados com o esquema mais recente.  Isto é explorou posteriormente o [tutorial de gestão de esquema](saas-tenancy-schema-management.md).  
 
-Os scripts de aprovisionamento do inquilino neste tutorial incluem o aprovisionamento de um inquilino na base de dados existente do multi-inquilino e criar uma nova base de dados do inquilino. Dados do inquilino são inicializados, em seguida e, em seguida, registados no mapa de partições horizontais de catálogo. A aplicação de exemplo, as bases de dados que contém um único inquilino estão nomes fornecido com base no nome do inquilino. Bases de dados que contêm vários inquilinos recebem um genérico _tenantsN_ nome enquanto as bases de dados com apenas um único-inquilinos foram fornecidos o nome do inquilino. As convenções de nomenclatura específicas utilizadas no exemplo não são uma parte crucial do padrão, como a utilização de um catálogo permite que qualquer nome a atribuir à base de dados.  
+Os scripts de aprovisionamento do inquilino neste tutorial incluem tanto um inquilino para uma base de dados partilhados com outros inquilinos e o aprovisionamento de um inquilino na sua própria base de dados de aprovisionamento. Dados de inquilino, em seguida, são inicializados e registados no mapa de partições horizontais de catálogo. Na aplicação de exemplo, as bases de dados que contêm vários inquilinos recebem um nome genérico, como *tenants1*, *tenants2*, etc., enquanto as bases de dados que contém um único inquilino recebem o nome do inquilino. As convenções de nomenclatura específicas utilizadas no exemplo não são uma parte crucial do padrão, como a utilização de um catálogo permite que qualquer nome a atribuir à base de dados.  
 
 ## <a name="provision-and-catalog-tutorial"></a>Tutorial de aprovisionamento e de catálogo
 
@@ -83,14 +83,14 @@ Para concluir este tutorial, confirme que conclui os pré-requisitos seguintes:
 Os scripts de gestão e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS MultiTenantDB](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB) repositório do GitHub. <!--See [Steps to download the Wingtip SaaS scripts](saas-tenancy-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-saas-scripts).-->
 
 
-## <a name="provision-tenant-walkthrough-1"></a>Instruções de inquilino de aprovisionar #1
+## <a name="provision-a-tenant-in-a-shared-database-with-other-tenants"></a>Aprovisionar um inquilino na base de dados partilhada com outros inquilinos
 
-Para compreender a forma como a aplicação de bilhetes Wingtip implementa novo inquilino com uma base de dados do multi-inquilino, adicione um ponto de interrupção e passo através do fluxo de trabalho ao aprovisionamento de um inquilino na base de dados partilhada com outros inquilinos:
+Para compreender como a aplicação de bilhetes Wingtip implementa novo inquilino aprovisionamento numa base de dados partilhada, adicione um ponto de interrupção e passo através do fluxo de trabalho:
 
 1. No _ISE do PowerShell_, abra... \\Learning módulos\\ProvisionAndCatalog\\_demonstração ProvisionAndCatalog.ps1_ e defina os seguintes parâmetros:
-   * **$TenantName** = **Bushwillow Blues**, o nome de um novo venue.
-   * **$VenueType** = **blues**, um dos tipos venue predefinidos: blues classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (minúsculas, sem espaços).
-   * **$DemoScenario** = **1**ao *aprovisionar um inquilino na base de dados partilhada com outros inquilinos*.
+   * **$TenantName** = **Bushwillow Blues**, o nome do venue de novo.
+   * **$VenueType** = **blues**, um dos tipos venue predefinidos: *blues*, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer ( minúsculas, sem espaços).
+   * **$Scenario** = **1**ao *aprovisionar um inquilino na base de dados partilhada com outros inquilinos*.
 
 1. Adicionar um ponto de interrupção, colocando o cursor em qualquer lugar na linha 38, a linha que diz: *inquilino novo '*e prima **F9**.
 
@@ -100,31 +100,31 @@ Para compreender a forma como a aplicação de bilhetes Wingtip implementa novo 
 
 1. Depois de parar a execução do script, o ponto de interrupção, prima **F11** para o passo no código.
 
-   ![Depuração](media/saas-multitenantdb-provision-and-catalog/debug.png)
+   ![depurar](media/saas-multitenantdb-provision-and-catalog/debug.png)
 
-Execução do script de rastreio utilizando a **depurar** opções de menu - **F10** e **F11** para o passo ao longo de ou para as funções de chamada. Para obter mais informações sobre a depuração de scripts do PowerShell, consulte [sugestões sobre a trabalhar com e a depuração de scripts do PowerShell como](https://msdn.microsoft.com/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise).
+Execução do script de rastreio utilizando a **depurar** opções de menu **F10** e **F11**, ao passo ao longo de ou para as funções de chamada. Para obter mais informações sobre a depuração de scripts do PowerShell, consulte [sugestões sobre a trabalhar com e a depuração de scripts do PowerShell como](https://msdn.microsoft.com/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise).
 
 
-Seguem-se entre os principais elementos do fluxo de trabalho, siga os passos enquanto o script de rastreio:
+Seguem-se entre os principais elementos do fluxo de trabalho aprovisionamento, siga os passos:
 
 * **Calcular a nova chave de inquilino**. É utilizada uma função hash para criar a chave de inquilino a partir do nome do inquilino.
 * **Verificar se a chave de inquilino existe**. O catálogo é verificado para garantir que a chave já não foi registada.
 * **Inicializar o inquilino na base de dados do inquilino predefinido**. A base de dados do inquilino é atualizado para adicionar as novas informações de inquilino.  
 * **Registar o inquilino no catálogo** o mapeamento entre a nova chave de inquilino e a base de dados existente do tenants1 é adicionado ao catálogo. 
-* **Nome do inquilino é adicionada ao catálogo de**. O nome de venue é adicionado à tabela inquilinos no catálogo.  Isto mostra como a base de dados do catálogo pode ser expandido para suportar dados específicos da aplicação adicionais.
+* **Adicionar o nome do inquilino a uma tabela de extensão de catálogo**. O nome de venue é adicionado à tabela inquilinos no catálogo.  Isto mostra como a base de dados do catálogo pode ser expandido para suportar dados específicos da aplicação adicionais.
 * **Abra página de eventos para o novo inquilino**. O *Bushwillow Blues* é abrir a página de eventos no browser:
 
    ![eventos](media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
 
 
-## <a name="provision-tenant-walkthrough-2"></a>Instruções de inquilino de aprovisionar #2
+## <a name="provision-a-tenant-in-its-own-database"></a>Aprovisionar um inquilino na sua própria base de dados
 
 Agora explicação passo a passo do processo quando criar um inquilino na sua própria base de dados:
 
 1. Ainda no... \\Learning módulos\\ProvisionAndCatalog\\_demonstração ProvisionAndCatalog.ps1_ definir os seguintes parâmetros:
-   * **$TenantName** = **sequoia Soccer**, o nome de um novo venue.
-   * **$VenueType** = **soccer**, um dos tipos venue predefinidos: blues classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (minúsculas, sem espaços).
-   * **$DemoScenario** = **2**ao *aprovisionar um inquilino na base de dados partilhada com outros inquilinos*.
+   * **$TenantName** = **sequoia Soccer**, o nome do venue de novo.
+   * **$VenueType** = **soccer**, um dos tipos venue predefinidos: blues classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, *soccer* ( minúsculas, sem espaços).
+   * **$Scenario** = **2**ao *aprovisionar um inquilino na base de dados partilhada com outros inquilinos*.
 
 1. Adicionar um novo ponto de interrupção, colocando o cursor em qualquer lugar na linha 57, a linha que diz:  *& &nbsp;$PSScriptRoot\New-TenantAndDatabase '*e prima **F9**.
 
@@ -138,11 +138,11 @@ Seguem-se entre os principais elementos do fluxo de trabalho, siga os passos enq
 
 * **Calcular a nova chave de inquilino**. É utilizada uma função hash para criar a chave de inquilino a partir do nome do inquilino.
 * **Verificar se a chave de inquilino existe**. O catálogo é verificado para garantir que a chave já não foi registada.
-* **Criar uma nova base de dados do inquilino**. A base de dados é criado ao copiar o *basetenantdb* da base de dados com um modelo do Resource Manager.  O nome de base de dados é baseado no nome do inquilino.
-* **Adicionar a base de dados ao catálogo**. A base de dados de inquilino está registado como um ID de partição horizontal no catálogo.
+* **Criar uma nova base de dados do inquilino**. A base de dados é criado ao copiar o *basetenantdb* da base de dados com um modelo do Resource Manager.  O novo nome de base de dados é baseado no nome do inquilino.
+* **Adicionar a base de dados ao catálogo**. A nova base de dados de inquilino está registado como um ID de partição horizontal no catálogo.
 * **Inicializar o inquilino na base de dados do inquilino predefinido**. A base de dados do inquilino é atualizado para adicionar as novas informações de inquilino.  
 * **Registar o inquilino no catálogo** o mapeamento entre a nova chave de inquilino e a *sequoiasoccer* base de dados é adicionada ao catálogo.
-* **Nome do inquilino é adicionada ao catálogo de**. O nome de venue é adicionado à tabela inquilinos no catálogo.
+* **Nome do inquilino é adicionada ao catálogo de**. O nome de venue é adicionado à tabela de extensão de inquilinos no catálogo.
 * **Abra página de eventos para o novo inquilino**. O *Sequoia Soccer* é abrir a página de eventos no browser:
 
    ![eventos](media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
@@ -150,10 +150,10 @@ Seguem-se entre os principais elementos do fluxo de trabalho, siga os passos enq
 
 ## <a name="provision-a-batch-of-tenants"></a>Aprovisionar um lote de inquilinos
 
-Neste exercício rapidamente aprovisiona um lote de 17 inquilinos. Recomenda-se que aprovisionar este lote de inquilinos antes de iniciar os outros tutoriais de bilhetes Wingtip, pelo que não existe mais do que alguns bases de dados para trabalhar com.
+Neste exercício aprovisiona um lote de 17 inquilinos. Recomenda-se que aprovisionar este lote de inquilinos antes de iniciar os outros tutoriais de bilhetes Wingtip pelo que existem mais bases de dados para trabalhar com.
 
-1. No *ISE do PowerShell*, abra... \\Learning módulos\\ProvisionAndCatalog\\*demonstração ProvisionAndCatalog.ps1* e altere o *$DemoScenario* parâmetro para 3:
-   * **$DemoScenario** = **3**ao *aprovisionar um lote de inquilinos numa base de dados partilhado*.
+1. No *ISE do PowerShell*, abra... \\Learning módulos\\ProvisionAndCatalog\\*demonstração ProvisionAndCatalog.ps1* e altere o *$Scenario* parâmetro para 3:
+   * **$Scenario** = **3**ao *aprovisionar um lote de inquilinos numa base de dados partilhado*.
 1. Prima **F5** e execute o script.
 
 
@@ -162,30 +162,30 @@ Nesta fase tem uma combinação de inquilinos implementados para uma base de dad
 
 * No [portal do Azure](https://portal.azure.com), abra o **tenants1-mt -\<utilizador\>**  servidor ao navegar para a lista de servidores SQL.  O **bases de dados SQL** lista deve incluir partilhado **tenants1** base de dados e as bases de dados para os inquilinos que estão na sua própria base de dados:
 
-   ![lista de bases de dados](media/saas-multitenantdb-provision-and-catalog/databases.png)
+   ![lista de bases de dados](media/saas-multitenantdb-provision-and-catalog/Databases.png)
 
-Enquanto o portal do Azure mostra o inquilino bases de dados, vamos vir os inquilinos no interior da base de dados partilhada. A lista completa dos inquilinos pode ser vista na página do hub de eventos de pedidos de suporte de Wingtip.   
+Enquanto o portal do Azure mostra o inquilino bases de dados, não permitem-lhe ver os inquilinos *dentro* a base de dados partilhado. A lista completa de inquilinos pode ser vista na página do hub de eventos de pedidos de suporte de Wingtip e procurando o catálogo de:   
 
-* Abra a página de Hub de eventos no browser (http:events.wingtip-mt.\<utilizador\>. trafficmanager.net)  
+1. Abra a página de Hub de eventos no browser (http:events.wingtip-mt.\<utilizador\>. trafficmanager.net)  
 
-A lista completa de inquilinos e a respetiva base de dados correspondente está disponível no catálogo. Uma vista SQL é fornecida na base de dados tenantcatalog que associa o nome do inquilino armazenado na tabela de inquilinos para o nome de base de dados nas tabelas de gestão de partições horizontais. Esta vista será demonstra o valor de expandir os metadados armazenados no catálogo.
+   A lista completa de inquilinos e a respetiva base de dados correspondente está disponível no catálogo. Uma vista SQL é fornecida na base de dados tenantcatalog que associa o nome do inquilino armazenado na tabela de inquilinos para o nome de base de dados nas tabelas de gestão de partições horizontais. Esta vista será demonstra o valor de expandir os metadados armazenados no catálogo.
 
-* No *SQL Server Management Studio (SSMS)* ligar ao servidor de inquilinos em **tenants1 mt.\<utilizador\>. database.windows.net**, com início de sessão: **Programador** , Palavra-passe:**P@ssword1**
+2. No *SQL Server Management Studio (SSMS)*, ligar ao servidor de inquilinos em **tenants1 mt.\<utilizador\>. database.windows.net**, com início de sessão: **Programador** , Palavra-passe:**P@ssword1**
 
     ![Caixa de diálogo de ligação de SSMS](media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 
-* No *Object Explorer*, navegue para as vistas na *tenantcatalog* base de dados.
-* Clique em *ExtendedTenants* e escolha **selecionar primeiras 1000 linhas** e tenha em atenção o mapeamento entre o nome de inquilino e a base de dados para os inquilinos diferentes.
+2. No *Object Explorer*, navegue para as vistas na *tenantcatalog* base de dados.
+2. Clique na vista *TenantsExtended* e escolha **selecionar primeiras 1000 linhas**. Tenha em atenção o mapeamento entre o nome de inquilino e a base de dados para os inquilinos diferentes.
 
     ![Vista de ExtendedTenants no SSMS](media/saas-multitenantdb-provision-and-catalog/extendedtenantsview.png)
       
 ## <a name="other-provisioning-patterns"></a>Outros padrões de aprovisionamento
 
-Outros padrões de aprovisionamento não incluídos neste tutorial incluem:
+Outros padrões interessantes aprovisionamento incluem:
 
-**Pré-aprovisionar conjuntos elásticos de bases de dados.** O padrão de pré-aprovisionamento exploits de facto de que as bases de dados num conjunto elástico não adicionar custos adicionais associados. Faturação é para o conjunto elástico, não as bases de dados, e as bases de dados Inativas consumam não existem recursos. Pré-aprovisionar um conjunto de bases de dados e atribuir-lhes quando for necessário, o tempo decorrido para carregar inquilinos na sua própria base de dados pode ser significativamente reduzido. O número de bases de dados previamente aprovisionadas pode ser ajustado conforme necessário para manter uma memória intermédia adequada para a taxa de aprovisionamento previsível.
+**Pré-aprovisionar conjuntos elásticos de bases de dados.** O padrão de pré-aprovisionamento exploits o facto de que, quando utilizar conjuntos elásticos, faturação é para o conjunto não as bases de dados. Deste modo, bases de dados podem ser adicionados ao conjunto elástico antes de que forem necessárias sem incorrer em custos adicionais associados. Pré-aprovisionar um conjunto de bases de dados e atribuir-lhes quando for necessário, o tempo necessário para aprovisionar um inquilino numa base de dados pode ser significativamente reduzido. O número de bases de dados previamente aprovisionadas pode ser ajustado conforme necessário para manter uma memória intermédia adequado para a velocidade de aprovisionamento prevista.
 
-**Aprovisionamento automático.** O padrão de aprovisionamento automático de um serviço de aprovisionamento dedicada é utilizado para aprovisionar automaticamente servidores, os conjuntos e as bases de dados conforme necessário – incluindo as bases de dados previamente aprovisionamento no conjuntos elásticos, se assim o desejar. E, se as bases de dados forem desativadas e eliminadas, os espaços nos conjuntos elásticos poderão ser preenchidos pelo serviço de aprovisionamento, conforme desejado. Tal serviço pode ser simples ou complexas – por exemplo, processamento de aprovisionamento em várias localizações geográficas e pode configurar a georreplicação para recuperação após desastre. Com o padrão de aprovisionamento automático, uma aplicação de cliente ou script seria submeter um pedido de aprovisionamento para uma fila para ser processado por um serviço de aprovisionamento e, em seguida, deverá consultar para determinar a conclusão. Se for utilizado previamente aprovisionamento, pedidos seriam processados rapidamente, com o serviço de gestão de aprovisionamento de uma base de dados de substituição em execução em segundo plano.
+**Aprovisionamento automático.** O padrão de aprovisionamento automático de um serviço de aprovisionamento dedicada é utilizado para aprovisionar automaticamente servidores, os conjuntos e as bases de dados conforme necessário – incluindo as bases de dados previamente aprovisionamento no conjuntos elásticos. E se as bases de dados são anular commissioned e eliminados, lacunas que isto cria em conjuntos elásticos podem ser preenchidas pelo serviço de aprovisionamento conforme pretendido. Tal serviço pode ser simples ou complexas – por exemplo, processamento de aprovisionamento em várias localizações geográficas e pode configurar a georreplicação para recuperação após desastre. Com o padrão de aprovisionamento automático, uma aplicação de cliente ou script seria submeter um pedido de aprovisionamento para uma fila para ser processado por um serviço de aprovisionamento e, em seguida, deverá consultar para determinar a conclusão. Se for utilizado previamente aprovisionamento, pedidos seriam rapidamente, processados enquanto outro serviço iria gerir aprovisionamento da base de dados de substituição em segundo plano.
 
 
 
@@ -195,9 +195,9 @@ Neste tutorial, ficou a saber como:
 
 > [!div class="checklist"]
 
-> * Aprovisionar um inquilino individual novo
+> * Aprovisionar um novo inquilino único para uma base de dados partilhada do multi-inquilino e a sua própria base de dados
 > * Aprovisionar um lote de inquilinos adicionais
-> * Avance para os detalhes de aprovisionamento de inquilinos e registá-los para o catálogo
+> * Siga os passos os detalhes de aprovisionamento de inquilinos e registá-los para o catálogo
 
 Repita o [tutorial de monitorização de desempenho](saas-multitenantdb-performance-monitoring.md).
 

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 10/18/2016
 ms.author: LADocs; jehollan
-ms.openlocfilehash: 9af2f71b3d288cc6f4e271d0915545d43a1249bc
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4eb6f743479886374692eadcf218b77b4bfcc933
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Processar os erros e exceções no Azure Logic Apps
 
@@ -26,38 +26,74 @@ Aplicações lógicas do Azure fornece ferramentas avançadas e padrões para o 
 
 ## <a name="retry-policies"></a>Repita políticas
 
-Uma política de repetição é o tipo de exceção e processamento de erros mais básico. Se um pedido inicial foi excedido ou falha (qualquer pedido que resulte num 429 ou resposta 5xx), esta política define se deve repetir a ação. Por predefinição, todas as ações repetir 4 vezes adicionais sobre os intervalos de 20 segundo. Por isso, caso o primeiro pedido recebe um `500 Internal Server Error` resposta, o motor de fluxo de trabalho interrompe para 20 segundos e tenta novamente o pedido. Se depois de todas as tentativas, a resposta ainda uma exceção ou falha, o fluxo de trabalho continua e marca o estado da ação como `Failed`.
+Uma política de repetição é o tipo de exceção e processamento de erros mais básico. Se um pedido inicial foi excedido ou falha (qualquer pedido que resulte num 429 ou resposta 5xx), esta política define se e como deve repetir a ação. Existem três tipos de políticas de repetição, `exponential`, `fixed`, e `none`. Se uma política de repetição não é fornecida na definição de fluxo de trabalho, a política predefinida é utilizada. Pode configurar as políticas de repetição no **entradas** para uma ação específica ou acionador se se tratar de repetição. Da mesma forma, em Repetir o Designer de aplicação lógica políticas podem ser configuradas (se aplicável) sob o **setttings** para um determinado bloco.
 
-Pode configurar as políticas de repetição no **entradas** para uma ação específica. Por exemplo, pode configurar uma política de repetição para tentar máximo de 4 vezes através de intervalos de 1 hora. Para obter detalhes completos sobre as propriedades de entrada, consulte [ações de fluxo de trabalho e é acionado][retryPolicyMSDN].
+Para obter informações sobre as limitações das políticas de repetição, consulte [limites Logic Apps e a configuração](../logic-apps/logic-apps-limits-and-config.md) e para obter mais informações sobre a sintaxe suportado, consulte o [secção política de repetição ações de fluxo de trabalho e é acionado][retryPolicyMSDN].
+
+### <a name="exponential-interval"></a>Intervalo exponencial
+O `exponential` tipo de política irá repetir um pedido falhado após um intervalo de tempo aleatório de um intervalo de exponencialmente crescente. Cada tentativa de repetição é garantida a serem enviados num intervalo aleatório que é superior ao **minimumInterval** e inferior a **maximumInterval**. Uma variável de aleatório uniform no abaixo intervalo será gerado para cada repetição até e incluindo **contagem**:
+<table>
+<tr><th> Aleatória de variável de intervalo </th></tr>
+<tr><td>
+
+| Repetir número | Intervalo mínimo | Intervalo máximo |
+| ------------ |  ------------ |  ------------ |
+| 1 | Máx. (0, **minimumInterval**) | Min (intervalo, **maximumInterval**) |
+| 2 | Máx. (intervalo, **minimumInterval**) | Mín. (2 * intervalo, **maximumInterval**) |
+| 3 | Número máximo (2 * intervalo, **minimumInterval**) | Min (4 * intervalo, **maximumInterval**) |
+| 4 | Máx. (4 * intervalo, **minimumInterval**) | Min (8 * intervalo, **maximumInterval**) |
+| ... |
+
+</td></tr></table>
+
+Para `exponential` escreva políticas, **contagem** e **intervalo** são necessários, embora **minimumInterval** e **maximumInterval** pode ser Opcionalmente, é fornecido para substituir os valores predefinidos de PT5S e PT1D respetivamente.
+
+| Nome do elemento | Necessário | Tipo | Descrição |
+| ------------ | -------- | ---- | ----------- |
+| tipo | Sim | Cadeia | `exponential` |
+| contagem | Sim | Número inteiro | número de tentativas de repetição, tem de ser entre 1 e 90  |
+| intervalo | Sim | Cadeia | Repita o intervalo em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), tem de estar entre PT5S e PT1D |
+| minimumInterval | Não| Cadeia | Repita o intervalo mínimo na [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), tem de estar entre PT5S e **intervalo** |
+| maximumInterval | Não| Cadeia | Repita o intervalo mínimo na [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), tem de estar entre **intervalo** e PT1D |
+
+### <a name="fixed-interval"></a>Intervalo fixo
+
+O `fixed` tipo de política irá repetir um pedido falhado por a aguardar o intervalo de tempo antes de enviar o pedido seguinte fornecido.
+
+| Nome do elemento | Necessário | Tipo | Descrição |
+| ------------ | -------- | ---- | ----------- |
+| tipo | Sim | Cadeia | `fixed`|
+| contagem | Sim | Número inteiro | número de tentativas de repetição, tem de ser entre 1 e 90 |
+| intervalo | Sim | Cadeia | Repita o intervalo em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), tem de estar entre PT5S e PT1D |
+
+### <a name="none"></a>Nenhuma
+O `none` tipo de política não irá repetir um pedido falhado.
+
+| Nome do elemento | Necessário | Tipo | Descrição |
+| ------------ | -------- | ---- | ----------- |
+| tipo | Sim | Cadeia | `none`|
+
+### <a name="default"></a>Predefinição
+Não se for especificada nenhuma política de repetição, em seguida, é utilizada a política predefinida. A política predefinida é uma política de intervalo exponencial que irá enviar até 4 tentativas, ao aumentar exponencialmente intervalos ampliada por segundos 7.5 e limitado entre 5 e 45 segundos. Esta política predefinida (utilizado quando **retryPolicy** não está definido) é equivalente a política neste exemplo, definição de fluxo de trabalho HTTP:
 
 ```json
-"retryPolicy" : {
-      "type": "<type-of-retry-policy>",
-      "interval": <retry-interval>,
-      "count": <number-of-retry-attempts>
-    }
-```
-
-Se quisesse a ação de HTTP para repetir 4 vezes e aguarde 10 minutos entre cada tentativa, teria de utilizar a seguinte definição:
-
-```json
-"HTTP": 
+"HTTP":
 {
     "inputs": {
         "method": "GET",
         "uri": "http://myAPIendpoint/api/action",
         "retryPolicy" : {
-            "type": "fixed",
-            "interval": "PT10M",
-            "count": 4
+            "type": "exponential",
+            "count": 4,
+            "interval": "PT7.5S",
+            "minimumInterval": "PT5S",
+            "maximumInterval": "PT45S"
         }
     },
     "runAfter": {},
     "type": "Http"
 }
 ```
-
-Para obter mais informações sobre a sintaxe suportado, consulte o [secção política de repetição ações de fluxo de trabalho e é acionado][retryPolicyMSDN].
 
 ## <a name="catch-failures-with-the-runafter-property"></a>Detetar falhas com a propriedade RunAfter
 

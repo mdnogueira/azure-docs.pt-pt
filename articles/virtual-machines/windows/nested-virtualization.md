@@ -11,11 +11,11 @@ ms.topic: howto
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.openlocfilehash: c7ee06a00488b3f958127f6d7f57324c7ed14ab4
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: a157e612ca4fca06a57df478eaa20793c8b35d60
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Como ativar a virtualização aninhada numa VM do Azure
 
@@ -49,7 +49,7 @@ Crie uma ligação de ambiente de trabalho remoto para a máquina virtual.
 Pode configurar estas definições manualmente ou fornecemos um script do PowerShell para automatizar a configuração.
 
 ### <a name="option-1-use-a-powershell-script-to-configure-nested-virtualization"></a>Opção 1: Utilizar um script do PowerShell para configurar a virtualização de aninhadas
-Um script do PowerShell para ativar a virtualização aninhada num anfitrião Windows Server 2016 não está disponível na [GitHub](https://github.com/MicrosoftDocs/Virtualization-Documentation/tree/live/hyperv-tools/Nested). O script verifica os pré-requisitos e, em seguida, configura virtualização aninhada na VM do Azure. É necessário para concluir a configuração reiniciar a VM do Azure. Este script pode funcionar nos outros ambientes, mas não é garantido. Consulte a mensagem de blogue do Azure com uma demonstração em vídeo em direto virtualização aninhados em execução no Azure! https://aka.MS/AzureNVblog.
+Um script do PowerShell para ativar a virtualização aninhada num anfitrião Windows Server 2016 não está disponível na [GitHub](https://github.com/charlieding/Virtualization-Documentation/tree/live/hyperv-tools/Nested). O script verifica os pré-requisitos e, em seguida, configura virtualização aninhada na VM do Azure. É necessário para concluir a configuração reiniciar a VM do Azure. Este script pode funcionar nos outros ambientes, mas não é garantido. Consulte a mensagem de blogue do Azure com uma demonstração em vídeo em direto virtualização aninhados em execução no Azure! https://aka.MS/AzureNVblog.
 
 ### <a name="option-2-configure-nested-virtualization-manually"></a>Opção 2: Configurar a virtualização de aninhada manualmente
 

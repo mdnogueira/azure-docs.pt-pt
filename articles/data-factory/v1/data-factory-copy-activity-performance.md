@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 11/14/2017
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 2aeb3820667f264e4a26860913e3f7b0e22e4c4a
-ms.sourcegitcommit: d41d9049625a7c9fc186ef721b8df4feeb28215f
+ms.openlocfilehash: 1f774bb881c66ceeb9f3223b735b3f34462b6a8d
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Copie o desempenho de atividade e o guia de otimização
 > [!NOTE]
@@ -49,6 +49,8 @@ Como uma referência, tabela abaixo mostra o número de débito de cópia em MBp
 
 ![Matriz de desempenho](./media/data-factory-copy-activity-performance/CopyPerfRef.png)
 
+>[!IMPORTANT]
+>No Azure Data Factory versão 1, as unidades de movimento de dados de nuvem mínima para a cópia da nuvem para a nuvem é dois. Se não for especificado, consulte unidades de movimento de dados predefinido a ser utilizadas numa [unidades de movimento de dados de nuvem](#cloud-data-movement-units).
 
 **Pontos a ter em atenção:**
 * Débito é calculado utilizando a fórmula seguinte: [tamanho dos dados ler a partir da origem] / [duração de execução da atividade cópia].
@@ -90,9 +92,16 @@ E assim sucessivamente.
 Neste exemplo, quando o **simultaneidade** valor está definido como 2, **atividade executada 1** e **atividade executada 2** copiar dados a partir do windows de atividade dois **em simultâneo** para melhorar o desempenho de movimento de dados. No entanto, se vários ficheiros associados às 1 de execução da atividade, o serviço de movimento de dados copia ficheiros da origem de um ficheiro de destino cada vez.
 
 ### <a name="cloud-data-movement-units"></a>Unidades de movimento de dados de nuvem
-A **unidade de movimento de dados de nuvem (DMU)** é uma medida que representa a potência (uma combinação de CPU, memória e alocação de recursos de rede) de uma única unidade na fábrica de dados. Um DMU pode ser utilizada numa operação de cópia da nuvem para a nuvem, mas não de uma cópia híbrida.
+A **unidade de movimento de dados de nuvem (DMU)** é uma medida que representa a potência (uma combinação de CPU, memória e alocação de recursos de rede) de uma única unidade na fábrica de dados. DMU é aplicável para operações de cópia da nuvem para a nuvem, mas não de uma cópia híbrida.
 
-Por predefinição, a fábrica de dados utiliza uma única nuvem DMU para executar uma única atividade de cópia executar. Para substituir esta predefinição, especifique um valor para o **cloudDataMovementUnits** propriedade da seguinte forma. Para obter informações sobre o nível de ganhos de desempenho poderá obter quando configurar mais unidades para uma origem de cópia específico e o sink, consulte o [referência de desempenho](#performance-reference).
+**As unidades de movimento de dados de nuvem mínima atribuir a cópia de execução da atividade é dois.** Se não for especificado, a tabela seguinte lista os DMUs predefinido utilizados em cenários de cópia diferentes:
+
+| Cenário de cópia | DMUs predefinido determinados pelo serviço |
+|:--- |:--- |
+| Copiar dados entre os arquivos de ficheiros | Entre 2 e 16 consoante o número e tamanho dos ficheiros. |
+| Todos os outros cenários de cópia | 2 |
+
+Para substituir esta predefinição, especifique um valor para o **cloudDataMovementUnits** propriedade da seguinte forma. O **valores permitidos** para o **cloudDataMovementUnits** propriedade são 2, 4, 8, 16, 32. O **número real de nuvem DMUs** que a operação de cópia utiliza em tempo de execução é igual ou inferior ao valor configurado, dependendo do seu padrão de dados. Para obter informações sobre o nível de ganhos de desempenho poderá obter quando configurar mais unidades para uma origem de cópia específico e o sink, consulte o [referência de desempenho](#performance-reference).
 
 ```json
 "activities":[  
@@ -114,7 +123,6 @@ Por predefinição, a fábrica de dados utiliza uma única nuvem DMU para execut
     }
 ]
 ```
-O **valores permitidos** para o **cloudDataMovementUnits** propriedade são 1 (predefinição), 2, 4, 8, 16, 32. O **número real de nuvem DMUs** que a operação de cópia utiliza em tempo de execução é igual ou inferior ao valor configurado, dependendo do seu padrão de dados.
 
 > [!NOTE]
 > Se precisar de mais nuvem DMUs para um maior débito, contacte [suporte do Azure](https://azure.microsoft.com/support/). Definição de 8 e superior funciona atualmente apenas quando é **copiar vários ficheiros de Blob storage/Data Lake Store/Amazon S3/nuvem SFTP de FTP/nuvem para o Blob storage/Data Lake Store/Azure SQL Database**.

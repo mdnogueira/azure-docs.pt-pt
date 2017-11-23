@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/18/2016
 ms.author: daseidma;bwren;dairwin
-ms.openlocfilehash: c56a59a648b90c59e6e1a5e0fb6a26cd1dba4dfc
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 0823cc54731ac1cd7f39de256a899696683375a8
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="configure-service-map-in-operations-management-suite"></a>Configurar o mapa de serviço no Operations Management Suite
 O Mapa de Serviço deteta automaticamente componentes de aplicações em sistemas Windows e Linux e mapeia a comunicação entre serviços. Pode utilizá-lo para ver os servidores que acha que deles – como interligados sistemas que fornecem serviços críticos. Mapa de serviço mostra as ligações entre servidores, processos e portas em qualquer arquitetura TCP ligados sem qualquer configuração necessária, que não seja a instalação de um agente.
@@ -228,14 +228,14 @@ Um administrador pode desinstalar o agente de dependência para o Windows atrav�
 Um administrador também pode executar %Programfiles%\Microsoft dependência Agent\Uninstall.exe para desinstalar o agente de dependência.
 
 ### <a name="uninstall-the-dependency-agent-on-linux"></a>Desinstale o agente de dependência no Linux
-Para desinstalar completamente o agente de dependência do Linux, tem de remover o próprio agente e o conector, que é instalado automaticamente com o agente. Pode desinstalar ambos usando o seguinte comando único.
+Pode desinstalar o agente de dependência do Linux com o seguinte comando.
 <br>RHEL, CentOs ou Oracle:
 ```
-sudo rpm -e dependency-agent dependency-agent-connector
+sudo rpm -e dependency-agent
 ```
 Ubuntu:
 ```
-sudo dpkg --purge dependency-agent dependency-agent-connector
+sudo dpkg --purge dependency-agent
 ```
 ## <a name="troubleshooting"></a>Resolução de problemas
 Se tiver quaisquer problemas de instalação e execução de mapa de serviço, esta secção pode ajudá-lo. Se ainda não é possível resolver o problema, contacte Support da Microsoft.

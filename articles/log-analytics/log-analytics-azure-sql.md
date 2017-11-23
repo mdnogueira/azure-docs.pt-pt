@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2017
 ms.author: magoedte;banders
-ms.openlocfilehash: a1214d8327075ee081124d42aeb78846e09ff588
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 957b8b9aca0ae27362923c87c7a0161cf2c052b7
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview-in-log-analytics"></a>Monitorizar a base de dados do SQL do Azure através da análise do SQL do Azure (pré-visualização) no Log Analytics
 
@@ -29,6 +29,11 @@ A solução de análise de SQL do Azure no Log Analytics do Azure recolhe e visu
 Atualmente, esta solução de pré-visualização suporta até 150.000 bases de dados de SQL do Azure e 5000 conjuntos elásticos SQL por área de trabalho.
 
 A solução de análise de SQL do Azure, tal como outros disponível para análise de registos, ajuda a monitorizar e receber notificações sobre o estado de funcionamento dos seus recursos do Azure, neste caso, SQL Database do Azure. Base de dados do Microsoft Azure SQL é um serviço de base de dados relacional dimensionável, que fornece capacidades de SQL Server-semelhantes familiares para aplicações em execução na nuvem do Azure. Análise de registos ajuda-o a recolher, correlacionar e visualizar dados estruturados e não estruturados.
+
+Para obter uma descrição prática utilizando a solução de análise de SQL do Azure e para cenários de utilização normal, veja o vídeo incorporado:
+          
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Get-Intelligent-Insights-for-Improving-Azure-SQL-Database-Performance/player]
+>
 
 ## <a name="connected-sources"></a>Origens ligadas
 
@@ -115,7 +120,7 @@ Cada perspetiva, fornece resumos na subscrição, o servidor, o conjunto elásti
 
 ### <a name="intelligent-insights-report"></a>Relatório de Insights inteligente
 
-Todas as informações inteligente recolhidos podem ser visualizadas e acedidas através de perspetiva Insights. 
+Base de dados SQL do Azure [Insights inteligente](../sql-database/sql-database-intelligent-insights.md) permite-lhe determinar o que acontece com o desempenho de base de dados. Todas as informações inteligente recolhidos podem ser visualizadas e acedidas através de perspetiva Insights.
 
 ![Informações de análise SQL do Azure](./media/log-analytics-azure-sql/azure-sql-sol-insights.png)
 

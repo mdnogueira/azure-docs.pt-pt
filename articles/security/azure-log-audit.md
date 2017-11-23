@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/27/2017
+ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 9e5c929251259a86944121e504dc033bc99e3bc4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 035f51d9f12e887d2017b058f0b0471870f411f7
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="azure-logging-and-auditing"></a>Auditoria e registo do Azure
 ## <a name="introduction"></a>Introdução
@@ -125,9 +125,9 @@ Os registos de diagnóstico do Azure oferecem várias opções de configuração
 |||Microsoft.Network/loadBalancers| LoadBalancerProbeHealthStatus
 |Grupos de Segurança de Rede|[Análise de registos para grupos de segurança de rede (NSGs) (Log analytics for network security groups (NSGs))](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-nsg-manage-log)|Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent|
 |||Microsoft.Network/networksecuritygroups|NetworkSecurityGroupRuleCounter|
-|Gateways da Aplicação|[Registo de diagnóstico para o Gateway de aplicação](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics)|Network/applicationgateways|ApplicationGatewayAccessLog|
-|||Network/applicationgateways|ApplicationGatewayPerformanceLog|
-|||Network/applicationgateways|ApplicationGatewayFirewallLog|
+|Gateways da Aplicação|[Registo de diagnóstico para o Gateway de aplicação](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics)|Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog|
+|||Microsoft.Network/applicationGateways|ApplicationGatewayPerformanceLog|
+|||Microsoft.Network/applicationGateways|ApplicationGatewayFirewallLog|
 |Cofre de Chaves|[Registo do Cofre de Chaves do Azure](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-logging)|Microsoft.KeyVault/vaults|AuditEvent|
 |Azure Search|[Ativar e utilizar a análise de tráfego de pesquisa](https://docs.microsoft.com/en-us/azure/search/search-traffic-analytics)|Microsoft.Search/searchServices|OperationLogs|
 |Data Lake Store|[Aceder a registos de diagnóstico para o Azure Data Lake Store](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-diagnostic-logs)|Microsoft.DataLakeStore/accounts|Auditoria|
@@ -209,7 +209,7 @@ Os seguintes tipos de pedidos autenticados e anónimos são registados.
 
 
 
-| Autenticado  | Anónimo|
+| Autenticados  | Anónima|
 | :------------- | :-------------|
 | Pedidos com êxito | Pedidos com êxito |
 |Falha de pedidos, incluindo o tempo limite, limitação, rede, autorização e outros erros | Pedidos utilizando um acesso assinatura partilhado (SAS), incluindo pedidos falhados e bem-sucedidas |
@@ -355,17 +355,17 @@ Existem quatro formas diferentes de [recolher registos e as métricas para os se
 | Serviço | Tipo de Recurso | Registos | Métricas | Solução |
 | :------ | :------------ | :--- | :------ | :------- |
 |Gateways de aplicação|  Microsoft.Network/<br>applicationGateways|  Diagnóstico|Diagnóstico|    [Aplicação Azure](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics) [análise de Gateway](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics)|
-|Informações de aplicação||     conector|  conector|  [Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [conector (pré-visualização)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
+|Informações de aplicação||     Conector|  Conector|  [Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [conector (pré-visualização)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
 |Contas de Automatização|   Microsoft.Automation/<br>AutomationAccounts|    Diagnóstico||       [Obter mais informações](https://docs.microsoft.com/en-us/azure/automation/automation-manage-send-joblogs-log-analytics)|
 |Contas do batch|    Microsoft.Batch/<br>batchAccounts|  Diagnóstico|    Diagnóstico||
 |Serviços cloud clássico||       Armazenamento||       [Obter mais informações](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-storage-iis-table)|
 |Serviços cognitivos|    Microsoft.CognitiveServices/<br>accounts|       Diagnóstico|||
 |Análise do Data Lake|   Microsoft.DataLakeAnalytics/<br>accounts|   Diagnóstico|||
 |Arquivo data Lake|   Microsoft.DataLakeStore/<br>accounts|   Diagnóstico|||
-|Espaço de nomes de Hub de eventos|   Microsoft.EventHub/<br>Espaços de nomes|  Diagnóstico|    Diagnóstico||
+|Espaço de nomes do Hub de Eventos|   Microsoft.EventHub/<br>Espaços de nomes|  Diagnóstico|    Diagnóstico||
 |Hubs IoT|  Microsoft.Devices/<br>IotHubs||     Diagnóstico||
 |Cofre de Chaves| Microsoft.KeyVault/<br>cofres|  Diagnóstico  || [Análise de KeyVault](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-key-vault)|
-|Balanceadores de carga|    Microsoft.Network/<br>loadBalancers|    Diagnóstico|||
+|Balanceadores de Carga|    Microsoft.Network/<br>loadBalancers|    Diagnóstico|||
 |Aplicações Lógicas|    Microsoft.Logic/<br>Fluxos de trabalho|  Diagnóstico|    Diagnóstico||
 ||Microsoft.Logic/<br>integrationAccounts||||
 |Grupos de Segurança de Rede|   Microsoft.Network/<br>networksecuritygroups|Diagnóstico||   [Análise de grupo de segurança de rede do Azure](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-azure-networking-analytics#azure-network-security-group-analytics-solution-in-log-analytics)|

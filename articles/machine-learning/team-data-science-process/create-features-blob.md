@@ -4,7 +4,7 @@ description: Como criar funcionalidades para os dados armazenados no contentor d
 services: machine-learning,storage
 documentationcenter: 
 author: bradsev
-manager: jhubbard
+manager: cgronlun
 editor: cgronlun
 ms.assetid: 676b5fb0-4c89-4516-b3a8-e78ae3ca078d
 ms.service: machine-learning
@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/24/2017
+ms.date: 11/21/2017
 ms.author: bradsev;garye
-ms.openlocfilehash: ea6712fcedcc61c9f88e9daa8d576ac3d202da51
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7a2e64927f4afca87642fb4829166c5ec60dbc09
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="create-features-for-azure-blob-storage-data-using-panda"></a>Criar funcionalidades para dados do Armazenamento de Blobs do Azure com o Pandas
 Este documento mostra como criar funcionalidades para os dados armazenados no blob do Azure contentor utilizando o [Pandas](http://pandas.pydata.org/) pacote do Python. Após definido que estipule como carregar dados para um intervalo de dados Panda, mostra como gerar categórico funcionalidades com scripts do Python com valores de indicador e funcionalidades de discretização.
@@ -31,9 +31,9 @@ Isto **menu** ligações para tópicos que descrevem como criar funcionalidades 
 Este artigo pressupõe que já criou uma conta de armazenamento de Blobs do Azure e tem armazenados os dados não existe. Se precisar de instruções para configurar uma conta, consulte [criar uma conta de armazenamento do Azure](../../storage/common/storage-create-storage-account.md#create-a-storage-account)
 
 ## <a name="load-the-data-into-a-pandas-data-frame"></a>Carregar os dados para um intervalo de dados Pandas
-Para explorar e manipular um conjunto de dados, este tem de ser transferido a partir da origem do blob para um ficheiro local que, em seguida, pode ser carregado num intervalo de dados Pandas. Eis os passos a seguir para este procedimento:
+Para explorar e manipular um conjunto de dados transferidos-lo da origem do blob para um ficheiro local. Em seguida, carregue-o para um intervalo de dados Pandas. Eis os passos a seguir para este procedimento:
 
-1. Transferência de dados do Azure blob com o seguinte código de Python de exemplo utilizando o serviço blob. Substitua os valores específicos a variável com o código abaixo:
+1. Transferência de dados do Azure blob com o seguinte código de Python de exemplo utilizando o serviço blob. Substitua os valores específicos a variável no seguinte código:
    
         from azure.storage.blob import BlobService
         import tables
@@ -60,7 +60,7 @@ Agora, está pronto para explorar os dados e gerar funcionalidades neste conjunt
 ## <a name="blob-featuregen"></a>Geração de funcionalidade
 As duas secções seguintes explicam como gerar categórico com valores de indicador discretização e das funcionalidades e com scripts do Python.
 
-### <a name="blob-countfeature"></a>Valor do indicador baseado geração de funcionalidade
+### <a name="blob-countfeature"></a>Indicador baseado no valor funcionalidade geração
 Funcionalidades categórico podem ser criadas da seguinte forma:
 
 1. Inspecione a distribuição da coluna categórico:
@@ -80,7 +80,7 @@ Funcionalidades categórico podem ser criadas da seguinte forma:
         dataframe_blobdata_with_identity.drop('<categorical_column>', axis=1, inplace=True)
 
 ### <a name="blob-binningfeature"></a>A discretização geração de funcionalidade
-Para gerar binned funcionalidades, iremos continuar da seguinte forma:
+Para gerar funcionalidades binned, avance da seguinte forma:
 
 1. Adicionar uma sequência de colunas a bin uma coluna numérica
    
@@ -93,8 +93,8 @@ Para gerar binned funcionalidades, iremos continuar da seguinte forma:
    
         dataframe_blobdata_with_bin_bool = dataframe_blobdata.join(dataframe_blobdata_bin_bool)
 
-## <a name="sql-featuregen"></a>Escrever dados blob do Azure e consumir no Azure Machine Learning
-Depois de ter explorou os dados e criar as funcionalidades necessárias, pode carregar os dados (amostragem ou featurized) para um Azure blob e consumi-lo no Azure Machine Learning utilizando os seguintes passos: tenha em atenção que as funcionalidades adicionais podem ser criadas na máquina do Azure Learning Studio bem.
+## <a name="sql-featuregen"></a>Escrever dados blob do Azure para consumi-lo no Azure Machine Learning
+Para consumir dados no Azure Machine Learning tem explorou, amostragem ou featurized, carregar os dados para um blob do Azure. Funcionalidades adicionais podem ser criadas no Azure Machine Learning Studio bem. Os passos seguintes mostram como carregar os dados:
 
 1. Escrever o intervalo de dados no ficheiro local
    
@@ -120,7 +120,7 @@ Depois de ter explorou os dados e criar as funcionalidades necessárias, pode ca
    
         except:            
             print ("Something went wrong with uploading blob:"+BLOBNAME)
-3. Agora, os dados podem ser lidos a partir do blob a utilizar o Azure Machine Learning [importar dados](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/) módulo, conforme mostrado no ecrã abaixo:
+3. Agora, os dados podem ser lidos a partir do blob a utilizar o Azure Machine Learning [importar dados](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/) módulo, conforme mostrado na captura de ecrã seguinte:
 
 ![blob de leitor](./media/data-blob/reader_blob.png)
 

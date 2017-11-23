@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 5/22/2017
+ms.date: 11/21/2017
 ms.author: asgang
-ms.openlocfilehash: f9f97cf840b722c8cfee169dd1640e0682f287ff
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dc7dff33aa2c3e844c6a91024fcfc98148416f7e
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="replicate-azure-virtual-machines-to-another-azure-region"></a>Replicar máquinas virtuais do Azure para outra região do Azure
 
@@ -32,7 +32,7 @@ Este artigo descreve como configurar a replicação de máquinas virtuais com um
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* O artigo pressupõe que já sabe sobre recuperação de Site e o Cofre de serviços de recuperação. Tem de ter um pre 'Cofre dos serviços de recuperação' criado.
+* O artigo pressupõe que já sabe sobre recuperação de Site e o Cofre de serviços de recuperação. Tem de ter um 'recuperação Cofre de serviços' previamente criado.
 
     >[!NOTE]
     >
@@ -51,11 +51,11 @@ Nesta ilustração, iremos irá replicar as VMs em execução no 'Oriental' loca
 
  Clique em **+ replicar** no cofre para ativar a replicação para máquinas virtuais.
 
-1. **Origem:** refere-se para o ponto de origem das máquinas que neste caso é **Azure**.
+1. **Origem:** refere-se para o ponto de origem das máquinas, que neste caso é **Azure**.
 
-2. **Localização de origem:** é a região do Azure a partir do qual pretende proteger as máquinas virtuais. Para nesta ilustração, a localização de origem ser 'Oriental'
+2. **Localização de origem:** é a região do Azure a partir do qual pretende proteger as máquinas virtuais. Nesta ilustração, a localização de origem é 'Oriental'
 
-3. **Modelo de implementação:** refere-se ao modelo de implementação do Azure máquinas de origem. Pode selecionar qualquer uma das clássico ou do resource manager e as máquinas que pertençam ao modelo específico serão apresentadas para proteção no próximo passo.
+3. **Modelo de implementação:** refere-se ao modelo de implementação do Azure máquinas de origem. Pode selecionar qualquer uma das clássico ou do Resource Manager e as máquinas que pertençam ao modelo específico serão apresentadas para proteção no próximo passo.
 
       >[!NOTE]
       >
@@ -69,34 +69,34 @@ No **máquinas virtuais > Selecione as máquinas virtuais**, clique e selecione 
     ![Ativar replicação](./media/site-recovery-replicate-azure-to-azure/virtualmachine_selection.png)
 
 
-Na secção de definições pode configurar as propriedades do site de destino
+Na secção de definições, pode configurar as propriedades do site de destino
 
 1. **Localização de destino:** esta é a localização onde os dados de máquina virtual de origem serão replicados. Consoante a sua localização máquinas selecionadas, a recuperação de sites fornece a lista de regiões de destino adequado.
 
     > [!TIP]
     > É recomendado para manter a localização de destino mesmo a partir da recuperação do seu Cofre de serviços.
 
-2. **Grupo de recursos de destino:** é o grupo de recursos para que todos os seus máquinas virtuais replicadas irão pertencer. Por predefinição a ASR irá criar um novo grupo de recursos na região de destino com um nome que o sufixo "asr". No caso de grupo de recursos criado pelo ASR já existir, será reutilizada. Também pode optar por personalizá-la conforme mostrado na secção abaixo.    
-3. **Rede Virtual de destino:** por predefinição, a ASR irá criar uma nova rede virtual na região de destino com um nome que o sufixo "asr". Isto será mapeado para a sua rede de origem e será utilizado para qualquer proteção futura.
+2. **Grupo de recursos de destino:** é o grupo de recursos para que todos os seus máquinas virtuais replicadas irão pertencer. Por predefinição o Azure Site Recovery irá criar um novo grupo de recursos na região de destino com um nome que o sufixo "asr". No caso de grupo de recursos criado pelo Azure Site Recovery já existe, será reutilizada. Também pode optar por personalizá-la conforme mostrado na secção abaixo.    
+3. **Rede Virtual de destino:** por predefinição, a recuperação de sites do Azure irá criar uma nova rede virtual na região de destino com um nome que o sufixo "asr". Isto será mapeado para a sua rede de origem e será utilizado para qualquer proteção futura.
 
     > [!NOTE]
     > [Verifique os detalhes de rede](site-recovery-network-mapping-azure-to-azure.md) para saber mais sobre o mapeamento da rede.
 
-4. **As contas de armazenamento de destino:** por predefinição, a ASR irá criar a nova conta de armazenamento de destino mimicking a configuração de armazenamento VM de origem. No caso de conta de armazenamento criada por ASR já existir, será reutilizada.
+4. **As contas de armazenamento de destino:** por predefinição, o Azure Site Recovery irá criar a nova conta de armazenamento de destino mimicking a configuração de armazenamento VM de origem. No caso de conta de armazenamento criada pelo Azure Site Recovery já existir, será reutilizada.
 
-5. **As contas de armazenamento em cache:** ASR tem de conta de armazenamento adicional chamou o armazenamento de cache na região de origem. Todas as alterações a acontecer nas VMs de origem são controladas e enviadas para a conta de armazenamento de cache antes de replicar os para a localização de destino.
+5. **As contas de armazenamento em cache:** do Azure Site Recovery tem de conta de armazenamento adicional chamou o armazenamento de cache na região de origem. Todas as alterações a acontecer nas VMs de origem são controladas e enviadas para a conta de armazenamento de cache antes de replicar os para a localização de destino.
 
-6. **Conjunto de disponibilidade:** por predefinição, a ASR irá criar uma novo conjunto de disponibilidade na região de destino com um nome que o sufixo "asr". No caso de conjunto de disponibilidade criado pelo ASR já existir, será reutilizada.
+6. **Conjunto de disponibilidade:** por predefinição, o Azure Site Recovery irá criar uma novo conjunto de disponibilidade na região de destino com um nome que o sufixo "asr". No caso de conjunto de disponibilidade criado pelo Azure Site Recovery já existe, será reutilizada.
 
-7.  **Política de replicação:** define as definições de recuperação ponto retenção histórico e aplicação consistente frequência de instantâneos. Por predefinição, a ASR irá criar uma nova política de replicação com as predefinições dos ' 24 horas para retenção do ponto de recuperação e ' 60 minutos para a frequência de instantâneos consistentes da aplicação.
+7.  **Política de replicação:** define as definições de recuperação ponto retenção histórico e aplicação consistente frequência de instantâneos. Por predefinição, o Azure Site Recovery irá criar uma nova política de replicação com as predefinições dos ' 24 horas para retenção do ponto de recuperação e ' 60 minutos para a frequência de instantâneos consistentes da aplicação.
 
     ![Ativar a replicação](./media/site-recovery-replicate-azure-to-azure/enabledrwizard3.PNG)
 
 ## <a name="customize-target-resources"></a>Personalizar a recursos de destino
 
-No caso de pretender alterar as predefinições utilizadas por ASR, pode alterar as definições com base nas suas necessidades.
+No caso de pretender alterar as predefinições utilizadas pelo Azure Site Recovery, pode alterar as definições com base nas suas necessidades.
 
-1. **Personalizar:** clique nele para alterar as predefinições utilizadas por ASR.
+1. **Personalizar:** clique nele para alterar as predefinições utilizadas pelo Azure Site Recovery.
 
 2. **Grupo de recursos de destino:** pode selecionar o grupo de recursos na lista de todos os grupos de recursos existente na localização de destino dentro da subscrição.
 
@@ -112,7 +112,7 @@ No caso de pretender alterar as predefinições utilizadas por ASR, pode alterar
 Depois de máquinas virtuais estão protegidas pode verificar o estado de funcionamento de VMs em **replicado itens**
 
 >[!NOTE]
->Durante o período de tempo da replicação inicial existe foi uma possibilidade que estado demora tempo a atualizar e não consegue ver o progresso durante algum tempo. Pode clicar no botão Atualizar no topo do painel para obter o estado mais recente.
+>Durante o período de tempo da replicação inicial, pode existir a possibilidade de estado demora tempo a atualizar e não consegue ver o progresso durante algum tempo. Pode clicar no botão Atualizar no topo do painel para obter o estado mais recente.
 >
 
 ![Ativar a replicação](./media/site-recovery-replicate-azure-to-azure/replicateditems.PNG)

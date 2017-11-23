@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2017
 ms.author: ccompy
-ms.openlocfilehash: 121dd1a90e9bde66f1c3b752412a657a67295084
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3ac630982b47f7105feb034982eae070faa72d9e
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="networking-considerations-for-an-app-service-environment"></a>Considerações sobre o funcionamento em rede para um ambiente de serviço de aplicações #
 
@@ -47,7 +47,7 @@ Se tiver ILB ASE, o endereço IP do ILB é o ponto final de HTTP/S, FTP/S, imple
 
 As portas de acesso de aplicações normal são:
 
-| Utilizar | Do | Para |
+| Utilizar | De | Para |
 |----------|---------|-------------|
 |  HTTP/HTTPS  | Utilizador configurável |  80, 443 |
 |  FTP/FTPS    | Utilizador configurável |  21, 990, 10001-10020 |
@@ -59,7 +59,7 @@ Isto é verdadeiro se estiver num ASE externo ou num ILB ASE. Se estiver num ASE
 
 ASE dependência de acesso de entrada é:
 
-| Utilizar | Do | Para |
+| Utilizar | De | Para |
 |-----|------|----|
 | Gestão | Endereços de gestão do serviço de aplicações | A sub-rede de ASE: 454, 455 |
 |  Comunicação interna ASE | A sub-rede de ASE: todas as portas | A sub-rede de ASE: todas as portas
@@ -76,7 +76,7 @@ Se estiver a utilizar a aplicação de endereços IP, que terá de permitir o tr
 
 Para acesso de saída, ASE depende da existência de vários sistemas externos. As dependências de sistema estão definidas com nomes DNS e não mapeiam para um conjunto de endereços IP fixo. Assim, o ASE necessita de acesso de saída da sub-rede ASE para todos os IPs externo através de diversas portas. ASE tem as seguintes dependências de saída:
 
-| Utilizar | Do | Para |
+| Utilizar | De | Para |
 |-----|------|----|
 | Storage do Azure | Sub-rede de ASE | w, w, q, w: 80, 443, 445 (445 só é necessário para ASEv1.) |
 | Base de Dados SQL do Azure | Sub-rede de ASE | Database.Windows.NET: 1433, 11000 11999, 14000 14999 (para obter mais informações, consulte [utilização de porta de SQL Database V12](../../sql-database/sql-database-develop-direct-route-ports-adonet-v12.md).)|
@@ -103,7 +103,7 @@ Para além das dependências de funcionais ASE, existem alguns itens adicionais 
 
 -   Tarefas da Web
 -   Funções
--   Registo de transmissão em fluxo
+-   Transmissão em fluxo de registo
 -   Kudu
 -   Extensões
 -   Explorador de Processos
@@ -164,7 +164,7 @@ Todos os itens apresentados nas seguintes regras de saída são necessárias, ex
 
 ![Regras de segurança de saída][5]
 
-Depois de definidos os NSGs, atribua-lhes para a sub-rede no seu ASE. Não se lembra da ASE VNet ou sub-rede, pode vê-lo a partir do portal de gestão ASE. Para atribuir o NSG para a sub-rede, aceda à sub-rede da IU e selecione o NSG.
+Depois de definidos os NSGs, atribua-lhes para a sub-rede no seu ASE. Não se lembra da ASE VNet ou sub-rede, pode vê-lo a partir da página de portal ASE. Para atribuir o NSG para a sub-rede, aceda à sub-rede da IU e selecione o NSG.
 
 ## <a name="routes"></a>Rotas ##
 

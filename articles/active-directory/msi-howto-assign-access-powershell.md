@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: bryanla
-ms.openlocfilehash: 3d032593b8eba89479829121a9745692e0f1f456
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4ac10621330a671d279f15f3f100a68a57365825
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="assign-a-managed-service-identity-msi-access-to-a-resource-using-powershell"></a>Atribuir acesso uma identidade de serviço geridas (MSI) a um recurso com o PowerShell
 
@@ -27,7 +27,7 @@ Depois de configurar um recurso do Azure com um MSI, é possível conceder o ace
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!INCLUDE [msi-qs-configure-prereqs](../../includes/msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
 Além disso, instalar [Azure PowerShell versão 4.3.1](https://www.powershellgallery.com/packages/AzureRM/4.3.1) se ainda não o fez.
 

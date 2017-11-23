@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/25/2017
+ms.date: 11/21/2017
 ms.author: TomShinder
-ms.openlocfilehash: 62c7b6706268e3c6e329f90651125fe299f61d67
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 16ee6d9d2f02c758d7682626a8b71a3ff17f841c
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="securing-paas-web-and-mobile-applications-using-azure-storage"></a>Proteger o PaaS web e aplicações móveis com o Storage do Azure
 Neste artigo, discutimos a uma coleção de segurança de armazenamento do Azure melhores práticas para proteger o seu web de PaaS e as aplicações móveis. Estas melhores práticas são derivadas da nossa experiência com o Azure e as experiências dos clientes, como por si.
@@ -87,7 +87,7 @@ Para saber mais sobre RBAC, consulte:
 - [Funções incorporadas para controlo de acesso baseado em funções do Azure](../active-directory/role-based-access-built-in-roles.md)
 - [Guia de segurança de armazenamento do Azure](../storage/common/storage-security-guide.md) para detalhes sobre como proteger a sua conta de armazenamento com o RBAC
 
-## <a name="storage-encryption"></a>Encriptação de armazenamento
+## <a name="storage-encryption"></a>Encriptação do armazenamento
 ### <a name="use-client-side-encryption-for-high-value-data"></a>Utilizar encriptação do lado do cliente para os dados de valor elevado
 
 Encriptação do lado do cliente permite-lhe programaticamente encriptar dados em trânsito antes de carregar para o armazenamento do Azure e através de programação desencriptar dados ao obtê-lo a partir do armazenamento.  Isto fornece encriptação de dados em trânsito, mas também fornece encriptação de dados inativos.  A encriptação do lado do cliente é o método mais seguro de encriptar os dados, mas que é necessário efetuar alterações programáticas à sua aplicação e colocar os processos de gestão de chaves no local.

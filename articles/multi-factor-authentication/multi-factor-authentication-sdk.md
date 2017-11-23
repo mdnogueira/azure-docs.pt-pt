@@ -14,13 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2017
 ms.author: joflore
-ms.openlocfilehash: 653166235a2fec79945a8e54aafdb8e697e8b634
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: c9be948a7328b0f535d8683e6cdc695a01654a94
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="building-multi-factor-authentication-into-custom-apps-sdk"></a>Edifício multi-factor Authentication em aplicações personalizadas (SDK)
+
+> [!IMPORTANT]
+> Tem sido anunciou a descontinuação do Azure multi-factor Authentication Software Development Kit (SDK). Esta funcionalidade deixará de ser suportada para clientes novos. Os clientes atuais podem continuar a utilizar o SDK até 14 de Novembro de 2018. Após esse tempo, as chamadas para o SDK irão falhar. 
 
 O Azure multi-factor Authentication Software Development Kit (SDK) permite-lhe criar verificação em dois passos diretamente para os processos de início de sessão ou a transação de aplicações no seu inquilino do Azure AD.
 
@@ -35,30 +38,7 @@ Porque as APIs não tiverem acesso a utilizadores registados no Azure Active Dir
 
 
 ## <a name="download-the-sdk"></a>Transferir o SDK
-Transferir o SDK do multi-factor do Azure requer um [fornecedor do Azure multi-factor Auth](multi-factor-authentication-get-started-auth-provider.md).  Isto requer uma subscrição do Azure completo, mesmo que pertencem a licenças de MFA do Azure, Azure AD Premium ou Enterprise Mobility Suite.  Para transferir o SDK, navegue para o Portal de gestão de multi-factor. Pode aceder ao portal ao gerir diretamente o fornecedor de autenticação Multifator, ou clicando a **"Aceda ao portal do"** ligação na página de definições do serviço de MFA.
-
-### <a name="download-from-the-azure-classic-portal"></a>Transferir a partir do portal clássico do Azure
-1. Inicie sessão no [portal clássico do Azure](https://manage.windowsazure.com) como Administrador.
-2. No lado esquerdo, selecione **Active Directory**.
-3. Na página do Active Directory, ao selecionar superior **fornecedores do multi-factor Auth**
-4. Na parte inferior, selecione **gerir**. Uma nova página é aberta.
-5. À esquerda, na parte inferior, clique em **SDK**.
-   <center>![Transferir](./media/multi-factor-authentication-sdk/download.png)</center>
-6. Selecione o idioma que pretende e clique nas ligações de transferência associados.
-7. Guarde a transferência.
-
-### <a name="download-from-the-service-settings"></a>Transferir a partir das definições do serviço
-1. Inicie sessão no [portal clássico do Azure](https://manage.windowsazure.com) como Administrador.
-2. No lado esquerdo, selecione **Active Directory**.
-3. Faça duplo clique na sua instância do Azure AD.
-4. Na parte superior, clique em **Configurar**
-5. Em autenticação multifator, selecione **gerir definições do serviço**
-   ![transferir](./media/multi-factor-authentication-sdk/download2.png)
-6. Na página de definições do serviço, na parte inferior do ecrã, clique em **Ir para o portal**. Uma nova página é aberta.
-   ![Transferência](./media/multi-factor-authentication-sdk/download3a.png)
-7. À esquerda, na parte inferior, clique em **SDK**.
-8. Selecione o idioma que pretende e clique nas ligações de transferência associados.
-9. Guarde a transferência.
+Transferir o SDK do multi-factor do Azure requer um [fornecedor do Azure multi-factor Auth](multi-factor-authentication-get-started-auth-provider.md).  Isto requer uma subscrição do Azure completo, mesmo que pertencem a licenças de MFA do Azure, Azure AD Premium ou Enterprise Mobility Suite. Os métodos públicos de transferir o SDK foram decomissioned, uma vez que o SDK foi preterido. Deve abrir um incidente de suporte com a Microsoft se necessitar de transferir o SDK.
 
 ## <a name="whats-in-the-sdk"></a>O que está no SDK
 O SDK inclui os seguintes itens:

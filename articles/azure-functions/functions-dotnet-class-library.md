@@ -16,11 +16,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 10/10/2017
 ms.author: glenga
-ms.openlocfilehash: a3bc07623505371b4f3c230ebadeb577a70fdb5e
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: a856c3b04dc458c0f1e0017066c35edd743565fd
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="using-net-class-libraries-with-azure-functions"></a>Bibliotecas de classe do .NET a utilizar com as funções do Azure
 
@@ -37,7 +37,7 @@ Este artigo tem os seguintes pré-requisitos:
 
 A partir do Visual Studio, crie um novo projeto de funções do Azure. O novo modelo de projeto cria os ficheiros *host.json* e *local.settings.json*. Pode [personalizar definições de tempo de execução das funções do Azure no host.json](functions-host-json.md). 
 
-O ficheiro *local.settings.json* armazena as definições de aplicação, cadeias de ligação e as definições para ferramentas de núcleos de funções do Azure. Para saber mais sobre a estrutura, consulte [código e testar as funções do Azure localmente](functions-run-local.md#local-settings).
+O ficheiro *local.settings.json* armazena as definições de aplicação, cadeias de ligação e as definições para ferramentas de núcleos de funções do Azure. Para saber mais sobre a estrutura, consulte [código e testar as funções do Azure localmente](functions-run-local.md#local-settings-file).
 
 ### <a name="functionname-attribute"></a>Atributo de FunctionName
 
@@ -53,7 +53,7 @@ Esta conversão é realizado o pacote NuGet [Microsoft\.NET\.Sdk\.funções](htt
 
 A tabela seguinte lista os acionadores e enlaces que estão disponíveis no projeto da biblioteca de classe das funções do Azure. Todos os atributos estão no espaço de nomes `Microsoft.Azure.WebJobs`.
 
-| Enlace | Atributo | Pacote NuGet |
+| Vínculo | Atributo | Pacote NuGet |
 |------   | ------    | ------        |
 | [Acionador de armazenamento de BLOBs, entrada, saída](#blob-storage) | [BlobAttribute], [StorageAccountAttribute] | [Microsoft.Azure.WebJobs] | [O blob storage] |
 | [Acionador cosmos DB](#cosmos-db) | [CosmosDBTriggerAttribute] | [Microsoft.Azure.WebJobs.Extensions.DocumentDB] | 

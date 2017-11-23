@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/28/2017
 ms.author: bryanla
-ms.openlocfilehash: 84fcb0181d635ecd8ebc68b31365fba9d6be21ed
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 25bbe7bbfbc32441cd3dbbb1e213fdce556b410b
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="configure-a-vm-managed-service-identity-msi-using-an-azure-sdk"></a>Configurar uma VM geridos serviço de identidade (MSI) utilizando um SDK do Azure
 
@@ -29,7 +29,7 @@ Neste artigo, irá aprender a ativar e remover MSI para uma VM do Azure, utiliza
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!INCLUDE [msi-qs-configure-prereqs](../../includes/msi-qs-configure-prereqs.md)]
+[!INCLUDE [msi-qs-configure-prereqs](../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
 ## <a name="azure-sdks-with-msi-support"></a>SDKs do Azure com suporte MSI 
 

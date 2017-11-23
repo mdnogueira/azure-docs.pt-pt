@@ -14,18 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: jomolesk
-ms.openlocfilehash: 34d04fdc5e509aea22c96d04063e4845408ce92b
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 8e4d4f228940d08bc522aabcd6f4ab573ff231d4
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/23/2017
 ---
+# <a name="planning-pl"></a>Planeamento (LP)
+
 > [!NOTE]
 > Estes controlos são definidos pelo NIST e para os E.U.A. Departamento de comércio como parte da revisão a publicação especial do NIST 800-53 4. Consulte Rev 4 do NIST 800-53. para obter informações sobre testes de procedimentos e as diretrizes para cada controlo.
-    
-    
-
-# <a name="planning-pl"></a>Planeamento (LP)
 
 ## <a name="nist-800-53-control-pl-1"></a>Controlo NIST 800-53 PL-1
 
