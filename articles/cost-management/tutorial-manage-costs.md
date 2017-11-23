@@ -5,16 +5,16 @@ services: cost-management
 keywords: 
 author: bandersmsft
 ms.author: banders
-ms.date: 11/06/2017
+ms.date: 11/21/2017
 ms.topic: tutorial
 ms.service: cost-management
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 83ddc0cb4227235069b0027a24a52f4d8e818126
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: bfbcded98814500a03b2b79b0248c84f8f043dc0
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="manage-costs-by-using-azure-cost-management"></a>Gerir os custos, utilizando a gestão de custo do Azure
 
@@ -80,6 +80,23 @@ A imagem seguinte mostra um exemplo de regras criadas para uma nova categoria de
 
 ![Categoria de exemplo](./media/tutorial-manage-costs/category01.png)
 
+### <a name="tag-sources-and-reports"></a>Origens de tag e relatórios
+
+Dados de etiquetas que visualiza relatórios Cloudyn origem em três locais:
+
+- Recursos do fornecedor de nuvem APIs
+- Fornecedor de nuvem APIs de faturação
+- Criar manualmente as etiquetas das seguintes origens:
+    - Tags de entidade Cloudyn - definido pelo utilizador dados de metadados aplicados a Cloudyn entidades
+    - Gestor de categoria - uma ferramenta que cria novas etiquetas com base nas regras que são aplicadas para as etiquetas existentes de limpeza de dados
+
+Para ver as etiquetas de fornecedor de nuvem em relatórios de custo de Cloudyn tem de criar um modelo de alocação de custo personalizado utilizando 360 de alocação de custo. Para fazê-lo, aceda a **custo** > **custo gestão** > **custo alocação 360**, selecione as etiquetas pretendidas e, em seguida, definir regras para processar requeira custos. Em seguida, crie um novo modelo de custo. Posteriormente, pode visualizar relatórios no custo de análise de alocação para a vista, filtrar e ordenar sobre as suas etiquetas de recursos do Azure.
+
+Os sinalizadores de recursos do Azure só aparecem na **custo alocação Analysis** relatórios.
+
+Etiquetas de faturação de fornecedor de nuvem são apresentados em todos os relatórios de custo.
+
+Etiquetas de entidade de Cloudyn etiquetas que cria manualmente e apresentados em todos os relatórios de custo.
 
 
 ## <a name="create-showback-and-chargeback-reports"></a>Criar relatórios de análise de custos e encargos

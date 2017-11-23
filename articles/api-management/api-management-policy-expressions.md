@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 33bcc51466fa0918bf4484c58fac813d07ae14da
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 96455dcdcf2eb90c836675c73c83c0320524fdac
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="api-management-policy-expressions"></a>Expressões de política de gestão de API
 Sintaxe de expressões de política é c# 6.0. Cada expressão tem acesso ao implicitamente fornecido [contexto](api-management-policy-expressions.md#ContextVariables) variável e um permitido [subconjunto](api-management-policy-expressions.md#CLRTypes) dos tipos de .NET Framework.  
@@ -174,7 +174,7 @@ Sintaxe de expressões de política é c# 6.0. Cada expressão tem acesso ao imp
 |----------------------|-------------------------------------------------------|  
 |Contexto|API: IApi<br /><br /> Implementação<br /><br /> LastError<br /><br /> Operação<br /><br /> Produto<br /><br /> Pedir<br /><br /> RequestId: Guid<br /><br /> Resposta<br /><br /> Subscrição<br /><br /> Rastreio: bool<br /><br /> Utilizador<br /><br /> Variáveis: IReadOnlyDictionary < cadeia, objecto ><br /><br /> void Trace(message: string)|  
 |contexto. API|ID: cadeia<br /><br /> Nome: cadeia<br /><br /> Caminho: cadeia<br /><br /> ServiceUrl: IUrl|  
-|contexto. Implementação|Região: cadeia<br /><br /> ServiceName: cadeia|  
+|contexto. Implementação|Região: cadeia<br /><br /> ServiceName: cadeia<br /><br /> Certificados: IReadOnlyDictionary < cadeia, X509Certificate2 >|  
 |contexto. LastError|Origem: cadeia<br /><br /> Razão: cadeia<br /><br /> Mensagem: cadeia<br /><br /> Âmbito: cadeia<br /><br /> Secção: cadeia<br /><br /> Caminho: cadeia<br /><br /> PolicyId: cadeia<br /><br /> Para obter mais informações sobre o contexto. LastError, consulte [processamento de erros](api-management-error-handling-policies.md).|  
 |contexto. Operação|ID: cadeia<br /><br /> Método: cadeia<br /><br /> Nome: cadeia<br /><br /> UrlTemplate: cadeia|  
 |contexto. Produto|APIs: IEnumerable < IApi\><br /><br /> ApprovalRequired: bool<br /><br /> Grupos: IEnumerable < IGroup\><br /><br /> ID: cadeia<br /><br /> Nome: cadeia<br /><br /> Estado: enumeração ProductState {NotPublished, publicada}<br /><br /> SubscriptionLimit: int?<br /><br /> SubscriptionRequired: bool|  
@@ -199,6 +199,12 @@ Sintaxe de expressões de política é c# 6.0. Cada expressão tem acesso ao imp
 |bool TryParseJwt (entrada: Esta cadeia, o resultado: saída Jwt)|entrada: cadeia<br /><br /> resultado: saída Jwt<br /><br /> Se o parâmetro de entrada contém um valor de token válido JWT, o método devolve `true` e o parâmetro de resultado contém um valor de tipo `Jwt`; caso contrário, devolve o método `false`.|  
 |Jwt|Algoritmo: cadeia<br /><br /> Audiência: IEnumerable < cadeia\><br /><br /> Afirmações: IReadOnlyDictionary < string, string [] ><br /><br /> ExpirationTime: DateTime?<br /><br /> ID: cadeia<br /><br /> Emissor: cadeia<br /><br /> NotBefore: DateTime?<br /><br /> Requerente: cadeia<br /><br /> Tipo: cadeia|  
 |cadeia Jwt.Claims.GetValueOrDefault (claimName: cadeia, defaultValue: cadeia)|claimName: cadeia<br /><br /> defaultValue: cadeia<br /><br /> Devolve os valores de afirmação separados por vírgulas ou `defaultValue` se não for encontrado o cabeçalho.|
+|byte [] encriptar (entrada: esta byte [], alg: cadeia, a chave: byte [], iv:byte[])|entrada - texto simples para ser encriptada<br /><br />alg - nome de um algoritmo de encriptação simétrica<br /><br />chave - chave de encriptação<br /><br />IV - vetor de inicialização<br /><br />Devolve texto não encriptado.|
+|byte [] encriptar (entrada: esta byte [], alg: System.Security.Cryptography.SymmetricAlgorithm)|entrada - texto simples para ser encriptada<br /><br />alg - algoritmo de encriptação<br /><br />Devolve texto não encriptado.|
+|byte [] encriptar (entrada: esta byte [], alg: System.Security.Cryptography.SymmetricAlgorithm, chave: byte [], iv:byte[])|entrada - texto simples para ser encriptada<br /><br />alg - algoritmo de encriptação<br /><br />chave - chave de encriptação<br /><br />IV - vetor de inicialização<br /><br />Devolve texto não encriptado.|
+|byte [] desencriptar (entrada: esta byte [], alg: cadeia, a chave: byte [], iv:byte[])|entrada - cyphertext a desencriptar<br /><br />alg - nome de um algoritmo de encriptação simétrica<br /><br />chave - chave de encriptação<br /><br />IV - vetor de inicialização<br /><br />Devolve texto simples.|
+|byte [] desencriptar (entrada: esta byte [], alg: System.Security.Cryptography.SymmetricAlgorithm)|entrada - cyphertext a desencriptar<br /><br />alg - algoritmo de encriptação<br /><br />Devolve texto simples.|
+|byte [] desencriptar (entrada: esta byte [], alg: System.Security.Cryptography.SymmetricAlgorithm, chave: byte [], iv:byte[])|entrada cyphertext - entrada - a desencriptar<br /><br />alg - algoritmo de encriptação<br /><br />chave - chave de encriptação<br /><br />IV - vetor de inicialização<br /><br />Devolve texto simples.|
 
 ## <a name="next-steps"></a>Passos seguintes
 Para obter mais informações para trabalhar com as políticas, consulte [políticas na API Management](api-management-howto-policies.md).  

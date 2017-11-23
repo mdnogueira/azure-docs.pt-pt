@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/13/2017
 ms.author: billmath
-ms.openlocfilehash: af32c3f2d96ca51f59e29f8d9635caa290d580aa
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 89bfedd282d04569bcf873fd7a9082791a94376b
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="azure-ad-connect-sync-operational-tasks-and-consideration"></a>Sincronização do Azure AD Connect: considerações e tarefas operacionais
 O objetivo deste tópico é descrever tarefas operacionais para a sincronização do Azure AD Connect.
@@ -33,6 +33,11 @@ O modo de teste pode ser utilizado para vários cenários, incluindo:
 Com um servidor no modo de teste, pode efetuar alterações à configuração e pré-visualizar as alterações antes de efetuar o servidor do Active Directory. Também permite-lhe executar importação completa e uma sincronização completa para confirmar que todas as alterações esperadas antes de efetuar estas alterações para o seu ambiente de produção.
 
 Durante a instalação, pode selecionar o servidor ser **modo de teste**. Esta ação faz com que o servidor do Active Directory para importação e sincronização, mas não é executado qualquer exportações. Um servidor no modo de teste não está em execução sincronização de palavra-passe ou de repetição de escrita de palavras-passe, mesmo se tiver selecionado estas funcionalidades durante a instalação. Quando desativar o modo de teste, o servidor inicia a exportar, permite a sincronização de palavra-passe e permite a repetição de escrita de palavras-passe.
+
+> [!NOTE]
+> Suponha que tem do Azure AD Connect com funcionalidade de sincronização de Hash de palavra-passe ativada. Quando ativar o modo de teste, a paragem do servidor sincronização da palavra-passe é alterado de AD no local. Quando desativar o modo de teste, o servidor de retoma de sincronizar as alterações de palavra-passe de onde pela última vez foi deixada. Se o servidor for deixado em modo de teste por um longo período de tempo, pode demorar algum tempo para o servidor para sincronizar todas as alterações de palavra-passe que tinham ocorreu durante o período de tempo.
+>
+>
 
 Ainda pode forçar uma exportação utilizando o Gestor do serviço de sincronização.
 

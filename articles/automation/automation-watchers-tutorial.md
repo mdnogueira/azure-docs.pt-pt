@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/15/2017
 ms.author: eamono
-ms.openlocfilehash: 7cd6bebcaa1ed263b9854f7307cf22fba006748e
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: 0ddd31f7ce2217c1136eccd391bb30bd4461c3e5
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="azure-automation-watcher-tasks-enable-you-to-respond-to-events-happening-in-your-local-datacenter"></a>Tarefas de observador de automatização do Azure permitem-lhe responder a eventos a acontecer no seu centro de dados local
 
@@ -64,7 +64,7 @@ Para concluir este tutorial, é necessário o seguinte.
 ## <a name="create-a-watcher-task-that-selects-the-watcher-runbook-and-action-runbook"></a>Criar uma tarefa de observador que seleciona o runbook de observador e o runbook de ação
 1.  Abra a página de tarefas do observador e clique no botão "Adicionar uma tarefa de observador".
 ![Lista de observador a partir da IU](media/automation-watchers-tutorial/WatchersList.png)
-2.  Introduza "Ver novos ficheiros" como o nome.
+2.  Introduza "WatchMyFolder" como o nome.
 3.  Selecione "Configurar observador" e selecione o runbook "NewFile veja".
 ![Configurar o observador da IU](media/automation-watchers-tutorial/ConfigureWatcher.png)
 4.  Introduza os seguintes valores para parâmetros:
@@ -86,7 +86,7 @@ Para concluir este tutorial, é necessário o seguinte.
 2.  Adicione um novo ficheiro de texto para a pasta que está a ser monitorizada pela tarefa de observador.
 
 ## <a name="inspect-the-output-from-the-action-runbook-that-shows-information-on-the-new-file"></a>Verifique os resultados do runbook de ação que mostra informações sobre o novo ficheiro
-1.  Clique na tarefa de observador para "Veja novos ficheiros"
+1.  Clique na tarefa de observador para "WatchMyFolder"
 2.  Clique em fluxos"observador de vista" que o observador encontrado o novo ficheiro e iniciar o runbook de ação.
 3.  Clique em "ver observador ação tarefas" para ver a tarefa de runbook de ação.
 ![Tarefas de ação de observador da IU](media/automation-watchers-tutorial/WatcherActionJobs.png)

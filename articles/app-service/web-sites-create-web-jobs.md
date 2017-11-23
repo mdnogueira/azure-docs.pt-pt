@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/09/2017
-ms.author: glenga
-ms.openlocfilehash: 1594a27d50df9abdac27b342ad18363b974c8972
-ms.sourcegitcommit: 1131386137462a8a959abb0f8822d1b329a4e474
+ms.author: glenga;david.ebbo;suwatch;pbatum;naren.soni
+ms.openlocfilehash: 91839d8f547340d55f6badb3350a393a48a13c7d
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Executar tarefas em segundo plano com WebJobs no App Service do Azure
 
@@ -36,7 +36,7 @@ As funções do Azure proporciona outra forma de executar scripts e programas. P
 A tabela seguinte descreve as diferenças entre *contínua* e *acionada* WebJobs.
 
 
-|Contínua  |Acionado  |
+|Contínuo  |Acionado  |
 |---------|---------|
 | Começa imediatamente quando o trabalho Web foi criado. Para manter a tarefa terminar, o programa ou script, normalmente, faz o trabalho no interior de um ciclo endless. Se a tarefa terminar, pode reiniciá-lo. | Inicia o apenas quando acionado com base num agendamento ou manualmente. |
 | É executado em todas as instâncias que a aplicação web é executado. Opcionalmente, pode restringir o trabalho Web a uma única instância. |É executado numa única instância que Azure seleciona para balanceamento de carga.|
@@ -82,7 +82,7 @@ when making changes in one don't forget the other two.
    | ------------ | ----------------- | ------------ |
    | **Nome** | myContinuousWebJob | Um nome exclusivo dentro de uma aplicação de serviço de aplicações. Tem de começar com uma letra ou um número e não pode conter carateres especiais diferente de "-" e "_". |
    | **Carregamento de ficheiros** | ConsoleApp.zip | A *. zip* ficheiro que contém o ficheiro executável ou script, bem como quaisquer ficheiros de suporte necessários para executar o programa ou script. Os tipos de ficheiro executável ou script suportados estão listados no [tipos de ficheiro suportados](#acceptablefiles) secção. |
-   | **Tipo** | Contínua | O [WebJob tipos](#webjob-types) descrito anteriormente neste artigo. |
+   | **Tipo** | Contínuo | O [WebJob tipos](#webjob-types) descrito anteriormente neste artigo. |
    | **Dimensionamento** | De ocorrências múltiplas | Disponível apenas para WebJobs contínuos. Determina se o programa ou script é executado em todas as instâncias ou apenas uma instância. A opção para executar em várias instâncias não se aplica ao gratuito ou partilhado [escalões de preço](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). | 
 
 4. Clique em **OK**.
@@ -131,7 +131,7 @@ when making changes in one don't forget the other two.
 
 7. Para executar o trabalho Web, clique no respetivo nome na lista e clique em **executar**.
    
-    ![Executar o trabalho Web](./media/web-sites-create-web-jobs/runondemand.png)
+    ![Executar WebJob](./media/web-sites-create-web-jobs/runondemand.png)
 
 ## <a name="CreateScheduledCRON"></a>Criar um WebJob agendado
 

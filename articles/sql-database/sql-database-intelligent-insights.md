@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: Inactive
 ms.date: 09/25/2017
 ms.author: v-daljep
-ms.openlocfilehash: 86011610885ff913bfd70aa46389e4e39989d0a3
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 823855d88396a14ff7e5428a12d71384cdfe95a1
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="intelligent-insights"></a>Informações Inteligentes
 
@@ -49,8 +49,6 @@ Depois de um problema de degradação de desempenho é detetado a partir de vár
 
 As métricas utilizadas para medir e detetar problemas de desempenho de base de dados são com base na duração de consulta, pedidos de tempo limite, tempos de espera excessivo e pedidos Ocorreu um erro ao. Para obter mais informações sobre as métricas, consulte o [métricas de deteção](sql-database-intelligent-insights.md#detection-metrics) secção deste documento.
 
-## <a name="degradations-detected"></a>Degradations detetados
-
 Identificou a base de dados SQL degradations de desempenho são registadas no registo de diagnóstico com entradas inteligentes, que consistem em das seguintes propriedades:
 
 | Propriedade             | Detalhes              |
@@ -64,36 +62,49 @@ Identificou a base de dados SQL degradations de desempenho são registadas no re
 | Análise da causa raiz | A causa do problema identificado num formato legível por humanos raiz. Algumas informações podem conter uma recomendação de melhoramento de desempenho, sempre que possível. |
 |||
 
-## <a name="issues-state-lifecycle-active-verifying-and-complete"></a>Problemas de ciclo de vida de estado: "Ativo", "Verificar" e "Concluir"
-
 Problemas de desempenho que são registados no registo de diagnóstico são sinalizados com um dos três Estados de um ciclo de vida do problema: "Ativo", "Verificar" e "Concluir". Depois de desempenho foi detetado o problema e como o tempo que tem considerado como presente pelo intelligence incorporado de base de dados SQL, o problema está assinalado como "Ativo". Quando o problema é considerado atenuados, verificá-lo e o estado do problema é alterado para "Verificar". Depois de intelligence incorporada de base de dados SQL considera o problema resolvido, o estado do problema está assinalado como "Concluir".
 
 ## <a name="use-intelligent-insights"></a>Utilizar o Insights inteligentes
 
-Pode enviar o registo de diagnóstico Insights inteligente Log Analytics do Azure, Event Hubs do Azure e Storage do Azure. Para obter mais informações, consulte [métricas da SQL Database do Azure e o registo de diagnóstico](sql-database-metrics-diag-logging.md). Depois de enviar o registo de um nestes destinos, o registo pode ser utilizado para a monitorização de desenvolvimento utilizando o Microsoft ou as ferramentas de terceiros e alertas personalizados. 
+Inteligentes Insights é um registo de diagnóstico de desempenho inteligente. Pode ser integrado com outros produtos para consumo e aplicações específicas deste tipo são Log Analytics do Azure, Event Hubs do Azure e storage do Azure ou terceiros produtos. 
 
-Para obter mais informações sobre o desempenho de base de dados SQL utilizando inteligente das informações de resolução de problemas, consulte [problemas de desempenho de resolver problemas relacionados com a base de dados de SQL do Azure com o Insights inteligente](sql-database-intelligent-insights-troubleshoot-performance.md).
+Insights inteligentes, juntamente com o Log Analytics do Azure é normalmente utilizado para ver as informações através de um browser e, talvez, uma das formas mais fácil para obter desativar zero com utilizar o produto. Insights inteligentes juntamente com os Event Hubs do Azure é normalmente utilizado para configurar a monitorização e alertas cenários personalizados. Insights inteligentes, juntamente com o storage do Azure é normalmente utilizado para o desenvolvimento de aplicações personalizadas, como por exemplo relatórios personalizados, ou talvez arquivo de dados e a obtenção.
 
-## <a name="built-in-intelligent-insights-analytics-with-log-analytics"></a>Análise de Insights inteligente incorporada com a análise de registos 
+Integração do Insights inteligente com outros produtos Log Analytics do Azure, Event Hub do Azure, armazenamento do Azure ou produtos de terceiros para consumo é realizada através do primeiro ativar inteligente das informações no registo (SQLInsights) e, em seguida, configurar Insights inteligentes registar dados para transmissão em fluxo para um destes produtos. Para obter mais informações sobre como ativar o registo de Insights inteligente e configurar dados de registo para transmissão em fluxo para um produto consumo, consulte [métricas da SQL Database do Azure e o registo de diagnóstico](sql-database-metrics-diag-logging.md). 
 
-Uma solução de análise de registos fornece relatórios e dados de registo de alertas capacidades o diagnóstico Insights inteligente. O exemplo seguinte mostra um relatório de Insights inteligente na análise de SQL do Azure:
+Para obter uma descrição prática utilizando inteligente conhecimentos aprofundados com o Log Analytics do Azure e para cenários de utilização normal, veja o vídeo incorporado:
+
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Get-Intelligent-Insights-for-Improving-Azure-SQL-Database-Performance/player]
+>
+
+Insights inteligentes shines na deteção e de resolução de problemas de desempenho de base de dados SQL. Para utilizar Insights inteligente para resolver problemas de desempenho de base de dados SQL, consulte [problemas de desempenho de resolver problemas relacionados com a base de dados de SQL do Azure com o Insights inteligente](sql-database-intelligent-insights-troubleshoot-performance.md).
+
+## <a name="set-up-intelligent-insights-with-log-analytics"></a>Configurar o Insights inteligente com a análise de registos 
+
+Inicie sessão solução fornece relatórios de análise e capacidades de informações do inteligente de alerta de registo de diagnóstico dados.
+
+Para utilizar Insights inteligente com a análise de registos, configurar dados de registo de Insights inteligente para transmissão em fluxo para análise de registos, consulte [métricas da SQL Database do Azure e o registo de diagnóstico](sql-database-metrics-diag-logging.md). 
+
+O exemplo seguinte mostra um relatório de Insights inteligente na análise de SQL do Azure:
 
 ![Relatório de Insights inteligente](./media/sql-database-intelligent-insights/intelligent-insights-azure-sql-analytics.png)
 
 Depois do registo de diagnóstico Insights inteligente é configurado para dados de fluxo para análise do SQL Server, pode [monitorizar a base de dados do SQL Server utilizando o SQL Server análise](../log-analytics/log-analytics-azure-sql.md).
 
-## <a name="custom-integrations-of-intelligent-insights-log"></a>Integrações personalizadas do registo Insights inteligente
-
-Para obter mais informações sobre alertas personalizados e a monitorização de desenvolvimento utilizando o Microsoft ou as ferramentas de terceiros, consulte [utilize iniciar o diagnóstico de desempenho de base de dados do Insights inteligente](sql-database-intelligent-insights-use-diagnostics-log.md).
-
 ## <a name="set-up-intelligent-insights-with-event-hubs"></a>Configurar o Insights inteligente com os Event Hubs
 
-- Para configurar Insights inteligente para transmitir o registo de eventos para os Event Hubs, consulte [registos de diagnóstico do Azure de fluxo para os Event Hubs](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md).
-- Para utilizar os Hubs de eventos para monitorização personalizada e alertas, consulte [nos Event Hubs que fazer com métricas e diagnóstico registos](sql-database-metrics-diag-logging.md#what-to-do-with-metrics-and-diagnostics-logs-in-event-hubs). 
+Para utilizar Insights inteligente com os Event Hubs, configurar dados de registo de Insights inteligente para transmissão em fluxo para os Event Hubs, consulte [registos de diagnóstico do Azure de fluxo para os Event Hubs](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md).
+
+Para utilizar os Hubs de eventos para o programa de configuração personalizada de monitorização e alertas, consulte [nos Event Hubs que fazer com métricas e diagnóstico registos](sql-database-metrics-diag-logging.md#what-to-do-with-metrics-and-diagnostics-logs-in-event-hubs). 
 
 ## <a name="set-up-intelligent-insights-with-storage"></a>Configurar inteligente conhecimentos aprofundados com o armazenamento
 
-- Para configurar Insights inteligente para ser armazenado com o armazenamento, consulte [fluxo para o armazenamento de Azure](sql-database-metrics-diag-logging.md#stream-into-storage).
+Para utilizar inteligente Insights com o armazenamento, configurar dados de registo de Insights inteligente para transmissão em fluxo para o armazenamento, consulte [fluxo para o armazenamento de Azure](sql-database-metrics-diag-logging.md#stream-into-storage).
+
+## <a name="custom-integrations-of-intelligent-insights-log"></a>Integrações personalizadas do registo Insights inteligente
+
+Para utilizar Insights inteligente com ferramentas de terceiros ou para a monitorização de desenvolvimento e alertas personalizados, consulte [utilize iniciar o diagnóstico de desempenho de base de dados do Insights inteligente](sql-database-intelligent-insights-use-diagnostics-log.md).
 
 ## <a name="detection-metrics"></a>Métricas de deteção
 

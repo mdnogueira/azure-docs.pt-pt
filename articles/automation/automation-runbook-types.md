@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/01/2017
 ms.author: bwren
-ms.openlocfilehash: 2acf45187894aa3bfcaa4df639becf18605d50a5
-ms.sourcegitcommit: b83781292640e82b5c172210c7190cf97fabb704
+ms.openlocfilehash: 508f4bb0fc8a443dd7b95cbf19861ab1a1abeb6e
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="azure-automation-runbook-types"></a>Tipos de runbook da automatização do Azure
 A automatização do Azure suporta vários tipos de runbooks que por breves instantes são descritos na seguinte tabela.  As seções abaixo fornecem informações adicionais sobre cada tipo, incluindo considerações sobre quando utilizar cada uma.
@@ -30,7 +30,6 @@ A automatização do Azure suporta vários tipos de runbooks que por breves inst
 | [PowerShell](#powershell-runbooks) |Runbook de texto com base no script do Windows PowerShell. |
 | [Fluxo de Trabalho do PowerShell](#powershell-workflow-runbooks) |Runbook de texto com base no fluxo de trabalho do Windows PowerShell. |
 | [python](#python-runbooks) |Runbook de texto com base no Python. |
-| [Bash](#bash-runbooks) |Runbook de texto com base no Bash. |
 
 ## <a name="graphical-runbooks"></a>Runbooks gráficos
 [Gráfico](automation-runbook-types.md#graphical-runbooks) e runbooks do fluxo de trabalho do PowerShell gráfico são criados e editados com o editor gráfico no portal do Azure.  Pode exportá-las para um ficheiro e, em seguida, importe-as para outra conta de automatização, mas não é possível criar ou editá-los com outra ferramenta.  Runbooks gráficos gerar código do PowerShell, mas não é possível ver ou modificar o código diretamente. Não é possível converter um dos runbooks gráficos a [formatos de texto](automation-runbook-types.md), nem um runbook de texto pode ser convertido para o formato do gráfico. Runbooks gráficos pode ser convertidos para runbooks do fluxo de trabalho do PowerShell gráfico durante a importação e vice-versa.
@@ -39,7 +38,7 @@ A automatização do Azure suporta vários tipos de runbooks que por breves inst
 * Visual insert-ligação-configurar o modelo criação  
 * Focar-se na forma como os dados fluem através do processo  
 * Visualmente representar processos de gestão  
-* Incluir outros runbooks como runbooks subordinados para criar fluxos de trabalho de nível elevados  
+* Incluir outros runbooks como runbooks subordinados para criar fluxos de trabalho de alto nível  
 * Encoraja programação modular  
 
 
@@ -64,7 +63,7 @@ Os runbooks do PowerShell são baseados no Windows PowerShell.  Editar diretamen
 ### <a name="known-issues"></a>Problemas conhecidos
 Seguem-se atuais problemas conhecidos com runbooks do PowerShell.
 
-* Os runbooks do PowerShell não é possível não é possível obter um não encriptada [recurso de variável](automation-variables.md) com um valor nulo.
+* Os runbooks do PowerShell não é possível obter um não encriptada [recurso de variável](automation-variables.md) com um valor nulo.
 * Os runbooks do PowerShell não é possível obter um [recurso de variável](automation-variables.md) com  *~*  no nome.
 * Get-Process num ciclo num PowerShell runbook pode falhar após cerca de 80 iterações. 
 * Um runbook de PowerShell poderá falhar se o mesmo tenta a escrever uma grande quantidade de dados no fluxo de saída de uma só vez.   Normalmente, pode contornar este problema, exportar apenas as informações que necessárias ao trabalhar com objetos grandes.  Por exemplo, em vez de exportar algo semelhante ao seguinte *Get-Process*, o utilizador pode apresentar apenas os campos obrigatórios com *Get-Process | Selecione ProcessName, CPU*.
@@ -76,7 +75,7 @@ Os runbooks do fluxo de trabalho do PowerShell são texto runbooks com base nos 
 * Implementa toda a lógica complexa com o código de fluxo de trabalho do PowerShell.
 * Utilize [pontos de verificação](automation-powershell-workflow.md#checkpoints) retomar runbook em caso de erro.
 * Utilize [processamento paralelo](automation-powershell-workflow.md#parallel-processing) para efetuar várias ações em paralelo.
-* Pode incluir outros runbooks gráficos e runbooks do fluxo de trabalho do PowerShell como runbooks subordinados para criar fluxos de trabalho de nível elevados.
+* Pode incluir outros runbooks gráficos e runbooks do fluxo de trabalho do PowerShell como runbooks subordinados para criar fluxos de trabalho de alto nível.
 
 ### <a name="limitations"></a>Limitações
 * Autor deve estar familiarizado com o fluxo de trabalho do PowerShell.

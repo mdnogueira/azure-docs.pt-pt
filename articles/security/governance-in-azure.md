@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/01/2017
 ms.author: TomSh
-ms.openlocfilehash: 10a92f301584d4e676da9a1eb229667925a6c72c
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 03e86448a1b0a13addab789bf2aea62e5d84149b
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="governance-in-azure"></a>Governação no Azure
 
 Sabemos que a segurança está tarefa um na nuvem e como importante é que encontrará exatas e atempadas informações sobre a segurança do Azure. Uma das razões melhor a utilizar o Azure para as suas aplicações e serviços é tirar partido do respetivo grade diversidade de capacidades e ferramentas de segurança. Estas ferramentas e capacidades ajudam possibilitam a criar soluções seguras na plataforma do Azure segura.
 
-Para o ajudar a compreender melhor a matriz de governação controlos implementados no Microsoft Azure de perspetivas do cliente e do Microsoft operations neste artigo, "Governação no Azure", é escrito que fornece um abrangente as funcionalidades de governação disponíveis com o Microsoft Azure.
+Para o ajudar a compreender melhor a matriz de governação controlos implementados no Microsoft Azure de perspetivas do cliente e do Microsoft operations neste artigo, "Governação no Azure", é escrito para fornecer um abrangente de olhos a governação funcionalidades disponíveis com o Microsoft Azure.
 
 ## <a name="azure-platform"></a>Plataforma Azure
 
@@ -175,7 +175,7 @@ Também pode [criar uma função personalizada](https://docs.microsoft.com/azure
 
 Pode conceder até duas mil atribuições de funções em cada subscrição.
 
-## <a name="resource-management"></a>Gestão de recursos
+## <a name="resource-management"></a>Gestão de Recursos
 
 O modelo de implementação clássica fornecido originalmente pelo Azure. Neste modelo, cada recurso existia independentemente; não ocorreu nenhuma forma de agrupar os recursos relacionados. Em vez disso, era necessário manualmente controlar quais os recursos que efetuou a sua solução ou uma aplicação e não se esqueça de geri-los numa abordagem coordenada.
 

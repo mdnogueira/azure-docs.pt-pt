@@ -14,11 +14,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/17/2016
 ms.author: LADocs; mandia
-ms.openlocfilehash: 7e0266cdc477715a5d2f9067c6dcea73da9ba763
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 9f95c0c486401e0d709829ce8d560f030932eea7
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="triggers-and-actions-for-logic-app-workflows"></a>Acionadores e ações para fluxos de trabalho de aplicação de lógica
 
@@ -115,7 +115,7 @@ Segue-se a definição para este acionador:
 | ------------ | -------- | ---- | ----------- | 
 | frequência | Sim | Cadeia | A unidade de tempo para a frequência de Acionador é acionado. Utilizar apenas um destes valores: "segundo", "minutos", "horas", "dia", "semanas" ou "mês" | 
 | intervalo | Sim | Número inteiro | Um número inteiro que descreve com que frequência o fluxo de trabalho é executada com base na frequência de. <p>Seguem-se os intervalos de mínimos e máximo: <p>-Mês: 1-16 meses </br>-Dia: 1-500 dias </br>-Hora: 1-12 000 horas </br>-Minuto: 1-72,000 minutos </br>-Segundo: segundos de 1-9,999,999<p>Por exemplo, se o intervalo é de 6 e a frequência é de "mês", em seguida, a periodicidade é a cada 6 meses. | 
-| Fuso horário | Não | Cadeia | Aplica-se apenas quando especificar uma hora de início porque este acionador não aceita [Desvio UTC](https://en.wikipedia.org/wiki/UTC_offset). Especifique o fuso horário que pretende aplicar. | 
+| timeZone | Não | Cadeia | Aplica-se apenas quando especificar uma hora de início porque este acionador não aceita [Desvio UTC](https://en.wikipedia.org/wiki/UTC_offset). Especifique o fuso horário que pretende aplicar. | 
 | startTime | Não | Cadeia | Especifique a data de início e a hora neste formato: <p>AAAA-MM-ddTHH se especificar um fuso horário <p>-ou- <p>AAAA-MM-Aaaathh se não especificar um fuso horário <p>Por isso, por exemplo, se quiser 18 de Setembro de 2017 às 2:00 PM, em seguida, especifique "2017-09-18T14:00:00" e especifique um fuso horário, como "Hora padrão do Pacífico". Em alternativa, especificar "2017-09-18T14:00:00Z" sem um fuso horário. <p>**Nota:** esta hora de início tem de seguir a [especificação de tempo de data ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) no [formato de hora UTC data](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), mas sem um [Desvio UTC](https://en.wikipedia.org/wiki/UTC_offset). Se não especificar um fuso horário, tem de adicionar a letra "Z" no final sem quaisquer espaços. Este "Z" refere-se para o equivalente [tempo nautical](https://en.wikipedia.org/wiki/Nautical_time). <p>Para agendas simples, a hora de início é a primeira ocorrência, enquanto para agendas complexas, o acionador não acionados qualquer define à hora de início. Para obter mais informações sobre datas de início e horas, consulte [criar e a agenda de tarefas em execução regularmente](../connectors/connectors-native-recurrence.md). | 
 | weekDays | Não | Cadeia ou matriz de cadeia | Se especificar "Semana" para `frequency`, pode especificar um ou mais dias, separados por vírgulas, quando pretender executar o fluxo de trabalho: "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado" e "Domingo" | 
 | hours | Não | Um número inteiro ou matriz de número inteiro | Se especificar "Dia" ou "Semana" para `frequency`, pode especificar um ou mais números inteiros entre 0 e 23, separados por vírgulas, como as horas do dia em que pretende executar o fluxo de trabalho. <p>Por exemplo, se especificar "10", "12" e "14", receberá 10 AM, 12 PM e 2 PM como as marcas de hora. | 
@@ -194,21 +194,11 @@ Acionadores HTTP consultam um ponto final especificado e verificar a resposta pa
 | Método | Sim | Cadeia | Utiliza um destes métodos HTTP: "GET", "Publicar", "Colocar", "Eliminar", "Corrigir" ou "HEAD" | 
 | URI | Sim| Cadeia | O HTTP ou HTTPs ponto final que verifica o acionador. Tamanho máximo de cadeia: 2 KB | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
-| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. Para obter mais informações, consulte [Repita políticas](../logic-apps/logic-apps-exception-handling.md). | 
 | Autenticação | Não | Objeto | Representa o método que o pedido deve utilizar para autenticação. Para obter mais informações, consulte [autenticação de saída do agendador](../scheduler/scheduler-outbound-authentication.md). <p>Para além do programador, é uma propriedade mais suportada: `authority`. Por predefinição, este valor é `https://login.windows.net` quando não especificado, mas pode utilizar um valor diferente, tal como`https://login.windows\-ppe.net`. | 
 ||||| 
-
-A *política de repetição* aplica-se a falhas intermitentes, caracterizadas como códigos de estado HTTP 408, 429 e 5xx, além de quaisquer exceções de conetividade. Pode definir esta política com o `retryPolicy` objeto conforme mostrado aqui:
-  
-```json
-"retryPolicy": {
-    "type": "retry-policy-type",
-    "interval": retry-interval,
-    "count": number-of-retry-attempts
-}
-```
  
 Para funcionar bem com a sua aplicação lógica, o acionador HTTP requer a API de HTTP em conformidade com um padrão específico. O acionador reconhece estas propriedades:  
   
@@ -234,8 +224,8 @@ Seguem-se as saídas de Acionador HTTP:
   
 | Nome do elemento | Tipo | Descrição |
 | ------------ | ---- | ----------- |
-| Cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
-| Corpo | Objeto | O corpo da resposta HTTP | 
+| cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
+| corpo | Objeto | O corpo da resposta HTTP | 
 |||| 
 
 ## <a name="api-connection-trigger"></a>Acionamento da ligação de API  
@@ -267,9 +257,9 @@ O acionador de ligação da API é semelhante para o acionador HTTP na sua funci
 | anfitrião | Sim | Objeto | O gateway alojada e o ID da aplicação de API | 
 | Método | Sim | Cadeia | Utiliza um destes métodos HTTP: "GET", "Publicar", "Colocar", "Eliminar", "Corrigir" ou "HEAD" | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
-| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. Para obter mais informações, consulte [Repita políticas](../logic-apps/logic-apps-exception-handling.md). | 
 | Autenticação | Não | Objeto | Representa o método que o pedido deve utilizar para autenticação. Para obter mais informações, consulte [autenticação de saída do agendador](../scheduler/scheduler-outbound-authentication.md). | 
 ||||| 
 
@@ -281,22 +271,12 @@ Para o `host` objeto, seguem-se as propriedades:
 | Nome da ligação |  | O nome da ligação de API gerido que o fluxo de trabalho utiliza. Tem de referenciar um parâmetro com o nome `$connection`. |
 |||| 
 
-A *política de repetição* aplica-se a falhas intermitentes, caracterizadas como códigos de estado HTTP 408, 429 e 5xx, além de quaisquer exceções de conetividade. Pode definir esta política com o `retryPolicy` objeto conforme mostrado aqui:
-  
-```json
-"retryPolicy": {
-    "type": "retry-policy-type",
-    "interval": retry-interval,
-    "count": number-of-retry-attempts
-}
-```
-
 Seguem-se as saídas para um acionador de ligação de API:
   
 | Nome do elemento | Tipo | Descrição |
 | ------------ | ---- | ----------- |
-| Cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
-| Corpo | Objeto | O corpo da resposta HTTP | 
+| cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
+| corpo | Objeto | O corpo da resposta HTTP | 
 |||| 
   
 ## <a name="httpwebhook-trigger"></a>HTTPWebhook acionador  
@@ -360,8 +340,8 @@ Seguem-se as saídas do HTTPWebhook acionam e o conteúdo do pedido a receber de
   
 | Nome do elemento | Tipo | Descrição |
 | ------------ | ---- | ----------- |
-| Cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
-| Corpo | Objeto | O corpo da resposta HTTP | 
+| cabeçalhos | Objeto | Os cabeçalhos da resposta HTTP | 
+| corpo | Objeto | O corpo da resposta HTTP | 
 |||| 
 
 ## <a name="conditions"></a>Condições  
@@ -527,22 +507,13 @@ Aqui, o `inputs` objeto aceita estes parâmetros necessários para construir uma
 | Método | Sim | Cadeia | Utiliza um destes métodos HTTP: "GET", "Publicar", "Colocar", "Eliminar", "Corrigir" ou "HEAD" | 
 | URI | Sim| Cadeia | O HTTP ou HTTPs ponto final que verifica o acionador. Tamanho máximo de cadeia: 2 KB | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
-| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. Para obter mais informações, consulte [Repita políticas](../logic-apps/logic-apps-exception-handling.md). | 
 | operationsOptions | Não | Cadeia | Define o conjunto de comportamentos especiais para substituir. | 
 | Autenticação | Não | Objeto | Representa o método que o pedido deve utilizar para autenticação. Para obter mais informações, consulte [autenticação de saída do agendador](../scheduler/scheduler-outbound-authentication.md). <p>Para além do programador, é uma propriedade mais suportada: `authority`. Por predefinição, este valor é `https://login.windows.net` quando não especificado, mas pode utilizar um valor diferente, tal como`https://login.windows\-ppe.net`. | 
 ||||| 
 
-Ações de HTTP e as ações de APIConnection suporta *Repita políticas*. Uma política de repetição aplica-se a falhas intermitentes, caracterizadas como códigos de estado HTTP 408, 429 e 5xx, além de quaisquer exceções de conetividade. Pode definir esta política com o `retryPolicy` objeto conforme mostrado aqui:
-  
-```json
-"retryPolicy": {
-    "type": "retry-policy-type",
-    "interval": retry-interval,
-    "count": number-of-retry-attempts
-}
-```
 Neste exemplo ação HTTP repete a obter as últimas novidades duas vezes se existirem falhas intermitentes para um total de execuções de três e um atraso de 30 segundo entre cada tentativa de:
   
 ```json
@@ -629,22 +600,12 @@ Eis um exemplo APIConnection ação:
 | Método | Sim | Cadeia | Utiliza um destes métodos HTTP: "GET", "Publicar", "Colocar", "Eliminar", "Corrigir" ou "HEAD" | 
 | Caminho | Sim | Cadeia | O caminho para a operação de API | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
-| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. Para obter mais informações, consulte [Repita políticas](../logic-apps/logic-apps-exception-handling.md). | 
 | operationsOptions | Não | Cadeia | Define o conjunto de comportamentos especiais para substituir. | 
 | Autenticação | Não | Objeto | Representa o método que o pedido deve utilizar para autenticação. Para obter mais informações, consulte [autenticação de saída do agendador](../scheduler/scheduler-outbound-authentication.md). |
 ||||| 
-
-Uma política de repetição aplica-se a falhas intermitentes, caracterizadas como códigos de estado HTTP 408, 429 e 5xx, além de quaisquer exceções de conetividade. Pode definir esta política com o `retryPolicy` objeto conforme mostrado aqui:
-  
-```json
-"retryPolicy": {
-    "type": "retry-policy-type",
-    "interval": retry-interval,
-    "count": number-of-retry-attempts
-}
-```
 
 ## <a name="apiconnection-webhook-action"></a>Ação de webhook APIConnection
 
@@ -682,9 +643,9 @@ A ação de APIConnectionWebhook referencia um conector gerida pela Microsoft. E
 | anfitrião | Sim | Objeto | Representa as informações do conector como a `runtimeUrl` e referência ao objeto de ligação. | 
 | Caminho | Sim | Cadeia | O caminho para a operação de API | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
-| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| retryPolicy | Não | Objeto | Utilize este objeto para personalizar o comportamento de repetição para 4xx ou 5xx erros. Para obter mais informações, consulte [Repita políticas](../logic-apps/logic-apps-exception-handling.md). | 
 | operationsOptions | Não | Cadeia | Define o conjunto de comportamentos especiais para substituir. | 
 | Autenticação | Não | Objeto | Representa o método que o pedido deve utilizar para autenticação. Para obter mais informações, consulte [autenticação de saída do agendador](../scheduler/scheduler-outbound-authentication.md). |
 ||||| 
@@ -750,8 +711,8 @@ Esta ação permite-lhe representam e chamada um [função do Azure](../azure-fu
 | id de função | Sim | Cadeia | O ID de recurso para a função do Azure que pretende ligar. | 
 | Método | Não | Cadeia | O método HTTP utilizado para chamar a função. Se não for especificado, "POST" é o método predefinido. | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
 |||||
 
 Quando guardar a sua aplicação lógica, o Azure Logic Apps faz verificações na função referenciada:
@@ -839,8 +800,8 @@ Saídas esta ação baseiam-se na definir no `response` ação para o fluxo de t
 | id de anfitrião | Sim | Cadeia| O ID de recurso para o fluxo de trabalho que pretende chamar | 
 | triggerName de anfitrião | Sim | Cadeia | O nome do acionador que pretende invocar | 
 | Consultas | Não | Objeto | Representa a quaisquer parâmetros de consulta que pretende incluir no URL. <p>Por exemplo, `"queries": { "api-version": "2015-02-01" }` adiciona `?api-version=2015-02-01` para o URL. | 
-| Cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
-| Corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
+| cabeçalhos | Não | Objeto | Representa a cada cabeçalho que é enviado no pedido. <p>Por exemplo, para definir o idioma e escreva num pedido: <p>`"headers": { "Accept-Language": "en-us", "Content-Type": "application/json" }` | 
+| corpo | Não | Objeto | Representa o payload de que é enviado para o ponto final. | 
 |||||   
 
 ## <a name="compose-action"></a>Componha ação
@@ -880,8 +841,8 @@ Por exemplo, para converter uma matriz dos números existentes numa matriz de ob
 
 | Nome | Necessário | Tipo | Descrição | 
 | ---- | -------- | ---- | ----------- | 
-| Do | Sim | Matriz | A matriz de origem |
-| Selecione | Sim | Qualquer | A projecção aplicada a cada elemento na matriz de origem |
+| de | Sim | Matriz | A matriz de origem |
+| seleccionar | Sim | Qualquer | A projecção aplicada a cada elemento na matriz de origem |
 ||||| 
 
 O resultado do `select` ação é uma matriz que tenha a mesma cardinalidade porque a matriz de entrada. Cada elemento é transformado conforme definido pelo `select` propriedade. Se a entrada é uma matriz vazia, a saída também é uma matriz vazia.
@@ -907,7 +868,7 @@ O resultado do `query` ação é uma matriz que tenha elementos da matriz de ent
 
 | Nome | Necessário | Tipo | Descrição | 
 | ---- | -------- | ---- | ----------- | 
-| Do | Sim | Matriz | A matriz de origem |
+| de | Sim | Matriz | A matriz de origem |
 | onde | Sim | Cadeia | A condição que é aplicada a cada elemento da matriz de origem |
 ||||| 
 
@@ -972,7 +933,7 @@ O resultado neste exemplo aspeto nesta tabela HTML:
 
 | Nome | Necessário | Tipo | Descrição | 
 | ---- | -------- | ---- | ----------- | 
-| Do | Sim | Matriz | A matriz de origem. Se o `from` valor da propriedade é uma matriz vazia, o resultado é uma tabela vazia. | 
+| de | Sim | Matriz | A matriz de origem. Se o `from` valor da propriedade é uma matriz vazia, o resultado é uma tabela vazia. | 
 | formato | Sim | Cadeia | O formato de tabela que pretende, ou **CSV** ou **HTML** | 
 | colunas | Não | Matriz | As colunas da tabela que pretende. Utilize para substituir a forma de tabela de predefinição. | 
 | cabeçalho da coluna | Não | Cadeia | O cabeçalho de coluna | 
@@ -1059,7 +1020,7 @@ Se a condição for avaliada com êxito, a condição está marcada como `Succee
 
 Seguem-se exemplos que mostram como condições podem utilizar expressões de uma ação:
   
-| Valor JSON | resultado | 
+| Valor JSON | Resultado | 
 | ---------- | -------| 
 | `"expression": "@parameters('hasSpecialAction')"` | Qualquer valor que avalia como verdadeiro faz com que esta condição a passagem de mensagens em fila. Suporta apenas expressões. Para converter outros tipos de valor booleano, utilize estas funções: `empty` e`equals` | 
 | `"expression": "@greater(actions('act1').output.value, parameters('threshold'))"` | Suporta as funções de comparação. Neste exemplo, a ação apenas é executada quando o resultado do `act1` é superior ao limiar. | 
@@ -1160,7 +1121,7 @@ Esta ação ciclo executa ações internas até uma condição de resultados com
 | ações | Sim | Objeto | As ações internas executar dentro do ciclo | 
 | expressão | Sim | Cadeia | A expressão a avaliar após cada iteração | 
 | Limite | Sim | Objeto | Os limites do ciclo. Tem de definir, pelo menos, um limite. | 
-| Contagem | Não | Número inteiro | O limite no número de iterações para executar | 
+| contagem | Não | Número inteiro | O limite no número de iterações para executar | 
 | tempo limite | Não | Cadeia | O limite de tempo limite em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quanto o ciclo deve ser executado |
 ||||| 
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: e5a658e0d20d42911870f2522f6c1bab7529ea11
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 08834531b78a857b54f0e9e792290774f9e477de
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="api-management-advanced-policies"></a>API de gestão avançada de políticas
 Este tópico fornece uma referência para as seguintes políticas de gestão de API. Para obter informações sobre adicionar e configurar as políticas, consulte [políticas na API Management](http://go.microsoft.com/fwlink/?LinkID=398186).  
@@ -258,7 +258,7 @@ Este tópico fornece uma referência para as seguintes políticas de gestão de 
 |Atributo|Descrição|Necessário|Predefinição|  
 |---------------|-----------------|--------------|-------------|  
 |tempo limite = "número inteiro"|O intervalo de tempo limite em segundos antes da chamada para o serviço de back-end irá falhar.|Não|Não há tempo limite|  
-|seguir redirecionamentos = "true &#124; FALSE"|Especifica se redirecionamentos a partir do serviço de back-end são seguidos pelo gateway ou devolvidos ao autor da chamada.|Não|FALSO|  
+|seguir redirecionamentos = "true &#124; FALSE"|Especifica se redirecionamentos a partir do serviço de back-end são seguidos pelo gateway ou devolvidos ao autor da chamada.|Não|False|  
   
 ### <a name="usage"></a>Utilização  
  Esta política pode ser utilizada na política de seguinte [secções](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) e [âmbitos](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
@@ -268,26 +268,26 @@ Este tópico fornece uma referência para as seguintes políticas de gestão de 
 -   **Âmbitos de política:** todos os âmbitos  
   
 ##  <a name="LimitConcurrency"></a>Simultaneidade de limite  
- O `limit-concurrency` política impede que as políticas de incluídos em execução em mais do que o número especificado de pedidos num determinado momento. Após ter excedido o limiar, os novos pedidos de são adicionados a uma fila, até que o comprimento máximo da fila é conseguido. Após o esgotamento de filas, novos pedidos falhará imediatamente.
+ O `limit-concurrency` política impede que as políticas de incluídos em execução em mais do que o número especificado de pedidos num determinado momento. Após a exceder esse número, os novos pedidos irão falhar imediatamente com o código de estado do 429 demasiados pedidos.
   
 ###  <a name="LimitConcurrencyStatement"></a>Declaração de política  
   
 ```xml  
-<limit-concurrency key="expression" max-count="number" timeout="in seconds" max-queue-length="number">
+<limit-concurrency key="expression" max-count="number">
         <!— nested policy statements -->  
 </limit-concurrency>
 ``` 
 
 ### <a name="examples"></a>Exemplos  
   
-####  <a name="ChooseExample"></a>Exemplo  
+#### <a name="example"></a>Exemplo  
  O exemplo seguinte demonstra como limitar o número de pedidos reencaminhados para um back-end baseado no valor de uma variável de contexto.
  
 ```xml  
 <policies>
   <inbound>…</inbound>
   <backend>
-    <limit-concurrency key="@((string)context.Variables["connectionId"])" max-count="3" timeout="60">
+    <limit-concurrency key="@((string)context.Variables["connectionId"])" max-count="3">
       <forward-request timeout="120"/>
     <limit-concurrency/>
   </backend>
@@ -307,10 +307,8 @@ Este tópico fornece uma referência para as seguintes políticas de gestão de 
 |---------------|-----------------|--------------|--------------|  
 |key|Uma cadeia. Expressão permitido. Especifica o âmbito de concorrência. Pode ser partilhado por várias políticas.|Sim|N/D|  
 |contagem máxima|Um número inteiro. Especifica um número máximo de pedidos que estão autorizados a introduzir a política.|Sim|N/D|  
-|tempo limite|Um número inteiro. Expressão permitido. Especifica o número de segundos deve aguardar um pedido para introduzir um âmbito antes de falhar com "429 demasiados pedidos muitos"|Não|Infinity|  
-|comprimento da fila de máx.|Um número inteiro. Expressão permitido. Especifica o comprimento máximo da fila. Os pedidos recebidos tentar introduza esta política serão terminados com "429 demasiados pedidos muitos" imediatamente quando a fila se esgota.|Não|Infinity|  
   
-###  <a name="ChooseUsage"></a>Utilização  
+### <a name="usage"></a>Utilização  
  Esta política pode ser utilizada na política de seguinte [secções](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) e [âmbitos](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
   
 -   **As secções de política:** entrada, saída, back-end, no caso de erro  
@@ -457,7 +455,7 @@ status code and media type. If no example or schema found, the content is empty.
 |Atributo|Descrição|Necessário|Predefinição|  
 |---------------|-----------------|--------------|-------------|  
 |Condição|Um booleano literal ou [expressão](api-management-policy-expressions.md) especificar se as tentativas devem ser paradas (`false`) ou continuou (`true`).|Sim|N/D|  
-|Contagem|Um número positivo que especifica o número máximo de tentativas a tentar.|Sim|N/D|  
+|contagem|Um número positivo que especifica o número máximo de tentativas a tentar.|Sim|N/D|  
 |intervalo|Um número positivo em segundos, especificando o intervalo de espera entre a repetição tenta.|Sim|N/D|  
 |intervalo máximo|Um número positivo no especificando o número máximo de segundos de espera intervalo entre tentativas de repetição. É utilizado para implementar um algoritmo de repetição exponencial.|Não|N/D|  
 |delta|Um número positivo em segundos, especificando o incremento de intervalo de espera. É utilizado para implementar os algoritmos de repetição linear e exponencial.|Não|N/D|  
@@ -575,13 +573,13 @@ status code and media type. If no example or schema found, the content is empty.
 |URL|O URL do pedido.|Não se modo = cópia; Sim, caso contrário.|  
 |Método|O método HTTP para o pedido.|Não se modo = cópia; Sim, caso contrário.|  
 |cabeçalho|Cabeçalho do pedido. Utilize vários elementos de cabeçalho para vários cabeçalhos de pedido.|Não|  
-|Corpo|O corpo do pedido.|Não|  
+|corpo|O corpo do pedido.|Não|  
   
 ### <a name="attributes"></a>Atributos  
   
 |Atributo|Descrição|Necessário|Predefinição|  
 |---------------|-----------------|--------------|-------------|  
-|modo = "cadeia"|Determina se se trata de um novo pedido ou uma cópia do pedido atual. No modo de saída, modo = cópia não inicializou o corpo do pedido.|Não|novo|  
+|modo = "cadeia"|Determina se se trata de um novo pedido ou uma cópia do pedido atual. No modo de saída, modo = cópia não inicializou o corpo do pedido.|Não|Novo|  
 |nome|Especifica o nome do cabeçalho de ser definida.|Sim|N/D|  
 |ação existe|Especifica a ação a tomar quando o cabeçalho já está especificado. Este atributo tem de ter um dos seguintes valores.<br /><br /> -Ignorar - substitui o valor do cabeçalho existente.<br />-Ignorar - não substitui o valor de cabeçalho existente.<br />-Acrescentar - acrescenta o valor para o valor de cabeçalho existente.<br />-delete - remove o cabeçalho do pedido.<br /><br /> Quando definido como `override` inscrever várias entradas com o mesmo nome resulta no cabeçalho de que está a ser definido de acordo com todas as entradas (que serão apresentadas várias vezes); apenas os valores listados serão definidos no resultado.|Não|substituir|  
   
@@ -654,16 +652,16 @@ status code and media type. If no example or schema found, the content is empty.
 |URL|O URL do pedido.|Não se modo = cópia; Sim, caso contrário.|  
 |Método|O método HTTP para o pedido.|Não se modo = cópia; Sim, caso contrário.|  
 |cabeçalho|Cabeçalho do pedido. Utilize vários elementos de cabeçalho para vários cabeçalhos de pedido.|Não|  
-|Corpo|O corpo do pedido.|Não|  
+|corpo|O corpo do pedido.|Não|  
   
 ### <a name="attributes"></a>Atributos  
   
 |Atributo|Descrição|Necessário|Predefinição|  
 |---------------|-----------------|--------------|-------------|  
-|modo = "cadeia"|Determina se se trata de um novo pedido ou uma cópia do pedido atual. No modo de saída, modo = cópia não inicializou o corpo do pedido.|Não|novo|  
+|modo = "cadeia"|Determina se se trata de um novo pedido ou uma cópia do pedido atual. No modo de saída, modo = cópia não inicializou o corpo do pedido.|Não|Novo|  
 |nome da variável de resposta = "cadeia"|Se não estiver presente, `context.Response` é utilizado.|Não|N/D|  
 |tempo limite = "número inteiro"|O intervalo de tempo limite em segundos antes da chamada para o URL de falha.|Não|60|  
-|Ignorar-erro|Se VERDADEIRO e os resultados de pedido num erro:<br /><br /> -Se foi especificado o nome de variável de resposta irá conter um valor nulo.<br />-Se não foi especificado o nome da variável de resposta, contexto. Não será possível atualizar o pedido.|Não|FALSO|  
+|Ignorar-erro|Se VERDADEIRO e os resultados de pedido num erro:<br /><br /> -Se foi especificado o nome de variável de resposta irá conter um valor nulo.<br />-Se não foi especificado o nome da variável de resposta, contexto. Não será possível atualizar o pedido.|Não|False|  
 |nome|Especifica o nome do cabeçalho de ser definida.|Sim|N/D|  
 |ação existe|Especifica a ação a tomar quando o cabeçalho já está especificado. Este atributo tem de ter um dos seguintes valores.<br /><br /> -Ignorar - substitui o valor do cabeçalho existente.<br />-Ignorar - não substitui o valor de cabeçalho existente.<br />-Acrescentar - acrescenta o valor para o valor de cabeçalho existente.<br />-delete - remove o cabeçalho do pedido.<br /><br /> Quando definido como `override` inscrever várias entradas com o mesmo nome resulta no cabeçalho de que está a ser definido de acordo com todas as entradas (que serão apresentadas várias vezes); apenas os valores listados serão definidos no resultado.|Não|substituir|  
   
@@ -1003,7 +1001,7 @@ Tenha em atenção a utilização de [propriedades](api-management-howto-propert
   
 |Atributo|Descrição|Necessário|Predefinição|  
 |---------------|-----------------|--------------|-------------|  
-|Para|Determina se o `wait` aguarda política para todas as políticas de subordinados imediatos seja concluído ou apenas um. Valores permitidos são:<br /><br /> -   `all`-aguardar para todas as políticas de subordinados imediatos concluir<br />-qualquer - Aguarde qualquer política de subordinados imediatos para concluir. Depois de concluída a política de imediato subordinados primeiro, o `wait` conclusão da política e a execução de outras políticas de subordinados imediatos é terminada.|Não|Todos os|  
+|para|Determina se o `wait` aguarda política para todas as políticas de subordinados imediatos seja concluído ou apenas um. Valores permitidos são:<br /><br /> -   `all`-aguardar para todas as políticas de subordinados imediatos concluir<br />-qualquer - Aguarde qualquer política de subordinados imediatos para concluir. Depois de concluída a política de imediato subordinados primeiro, o `wait` conclusão da política e a execução de outras políticas de subordinados imediatos é terminada.|Não|tudo|  
   
 ### <a name="usage"></a>Utilização  
  Esta política pode ser utilizada na política de seguinte [secções](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) e [âmbitos](http://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
