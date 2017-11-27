@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-compute
-ms.date: 10/12/2017
+ms.date: 11/16/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8e9f098bedf2c4dfb27a27d028b7bd87782516c7
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 3028e913937db304ac0a1df8e6a095072630505d
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolver soluções de computação paralelas em grande escala com o Batch
 
@@ -75,7 +75,7 @@ Pode criar uma conta do Azure Batch através do [portal do Azure](batch-account-
 Pode executar várias cargas de trabalho do Batch numa única conta do Batch ou distribuí-las entre contas do Batch que estejam na mesma subscrição, mas em diferentes regiões do Azure.
 
 > [!NOTE]
-> Ao criar uma conta do Batch, geralmente escolhe o modo **Serviço Batch** predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. No modo **Subscrição de utilizador** alternativo, o qual já não é recomendado, as VMs do Batch e outros recursos são criados diretamente na sua subscrição quando é criado um conjunto. Para criar uma conta do Batch no modo de subscrição Utilizador, também tem de associar o Azure Key Vault à conta.
+> Ao criar uma conta do Batch, geralmente escolhe o modo **Serviço Batch** predefinido, no qual os conjuntos são aplicados em segundo plano nas subscrições geridas do Azure. No modo **subscrição de utilizador** alternativo, o qual já não é recomendado para a maioria dos cenários, as VMs do Batch e outros recursos são criados diretamente na sua subscrição quando é criado um conjunto. Para criar uma conta do Batch no modo de subscrição de utilizador, também tem de registar a sua subscrição no Azure Batch e associar a conta ao Azure Key Vault.
 >
 
 
@@ -150,7 +150,9 @@ Para obter requisitos e passos detalhados, veja [Utilizar uma imagem personaliza
 
 #### <a name="container-support-in-virtual-machine-pools"></a>Suporte de contentor em agrupamentos de Máquinas Virtuais
 
-Ao criar um agrupamento de Configuração de Máquinas Virtuais com as APIs do Batch, pode configurar o agrupamento para executar tarefas nos contentores do Docker. Atualmente, tem de criar o agrupamento através do Windows Server 2016 Datacenter com a imagem de Contentores do Azure Marketplace ou fornecer uma imagem da VM personalizada que inclua o Docker Community Edition e quaisquer controladores necessários. As definições do agrupamento têm de incluir uma [configuração de contentor](/rest/api/batchservice/pool/add#definitions_containerconfiguration) que copie as imagens do contentor para as VMs quando for criado o agrupamento. As tarefas executadas no agrupamento podem, então, referenciar as imagens e as opções de execução do contentor.
+Ao criar um agrupamento de Configuração de Máquinas Virtuais com as APIs do Batch, pode configurar o agrupamento para executar tarefas nos contentores do Docker. Atualmente, tem de criar o agrupamento através de uma imagem que suporte contentores do Docker. Utilize o Windows Server 2016 Datacenter com a imagem de Contentores do Azure Marketplace ou forneça uma imagem da VM personalizada que inclua o Docker Community Edition ou Enterprise Edition e quaisquer controladores necessários. As definições do agrupamento têm de incluir uma [configuração de contentor](/rest/api/batchservice/pool/add#definitions_containerconfiguration) que copie as imagens do contentor para as VMs quando for criado o agrupamento. As tarefas executadas no agrupamento podem, então, referenciar as imagens e as opções de execução do contentor.
+
+Para obter mais informações, veja [Aplicações de contentor do Run Docker no Azure Batch](batch-docker-container-workloads.md).
 
 ## <a name="compute-node-type-and-target-number-of-nodes"></a>Tipo de nó de comutação e número de nós de destino
 

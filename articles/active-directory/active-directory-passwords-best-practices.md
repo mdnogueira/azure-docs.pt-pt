@@ -13,75 +13,77 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/24/2017
+ms.date: 11/16/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 0be1616f5df915e566dc73c15dbea2e53177aa1c
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.openlocfilehash: 4e2f788f4e4dfd013754925d8f6dbc3bf35b1a91
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/23/2017
 ---
-# <a name="how-to-successfully-rollout-self-service-password-reset"></a>Como implementar com êxito a reposição personalizada de palavra-passe
+# <a name="how-to-successfully-roll-out-self-service-password-reset"></a>Como implementar com êxito a reposição personalizada de palavras-passe
 
-A maioria dos clientes seguem estes passos para garantir a implementação eficaz da funcionalidade SSPR.
+Para garantir uma suave implementação da funcionalidade de reposição personalizada de palavra-passe (SSPR) do Azure Active Directory (Azure AD), a maioria dos clientes realizam os passos seguintes:
 
 1. [Ative a reposição de palavras-passe no seu diretório](active-directory-passwords-getting-started.md).
-2. [Configure as permissões do AD no local para repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#active-directory-permissions).
-3. [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configuring-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local.
-4. [Atribua e verifique as licenças necessárias](active-directory-passwords-licensing.md).
-5. Se pretender implementar a SSPR gradualmente, pode limitar o acesso a um grupo de utilizadores, para que possa criar um piloto com um grupo específico. Para tal, mude o comutador **Reposição Personalizada de Palavra-Passe Ativada** para **Selecionado** e selecione o grupo de segurança no qual ativar a reposição de palavras-passe. 
-6. Preencha os [Dados de Autenticação](active-directory-passwords-data.md) para os seus utilizadores, como o telefone do escritório, número de telemóvel e o endereço de e-mail alternativo.
+2. [Configurar as permissões do Active Directory no local para repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#active-directory-permissions).
+3. [Configurar a repetição de escrita de palavras-passe](active-directory-passwords-writeback.md#configure-password-writeback) para gravar palavras-passe do Azure AD no seu diretório local.
+4. [Atribuir e verificar as licenças necessárias](active-directory-passwords-licensing.md).
+5. Determinar se quer fazer uma implementação gradual. Se quiser implementar a SSPR gradualmente, pode limitar o acesso a um grupo de utilizadores, para que possa criar um programa-piloto com um grupo específico. Para implementar num grupo específico, defina o comutador **Reposição Personalizada de Palavras-passe Ativada** como **Selecionada** e selecione o grupo de segurança que vai poder utilizar a reposição de palavras-passe. 
+6. Preencha os [dados de autenticação](active-directory-passwords-data.md) necessários para os seus utilizadores se registarem, como o telefone do escritório, o número de telemóvel e o endereço de e-mail alternativo.
 7. [Personalize a experiência de início de sessão do Azure AD para incluir a imagem corporativa da sua empresa](active-directory-passwords-customize.md).
-8. Ensinar os utilizadores a utilizar o SSPR, ao enviar-lhes instruções para que vejam como se registar e repor as palavras-passe.
-9. Pode optar por forçar o registo em qualquer momento e exigir aos utilizadores que confirmem as informações de autenticação deles após um determinado período de tempo.
-10. Ao longo do tempo, veja os [relatórios disponibilizados pelo Azure AD](active-directory-passwords-reporting.md) para rever os utilizadores que se registam e a utilizam.
-11. Quando estiver pronto, ative a reposição de palavra-passe para todos os utilizadores, defina o comutador **Reposição Personalizada de Palavra-Passe Ativada** para **Todos**. 
+8. Ensine os utilizadores a utilizar a SSPR. Envie-lhes instruções para aprenderem a registar-se e a repor as palavras-passe.
+9. Determine quando pretende impor o registo. Pode optar por impor o registo em qualquer momento. Pode também exigir aos utilizadores que confirmem novamente as respetivas informações de autenticação deles após um determinado período de tempo.
+10. Utilize a capacidade de relatórios. Ao longo do tempo, pode rever o registo dos utilizadores e a utilização com a [capacidade de relatórios que o Azure AD proporciona](active-directory-passwords-reporting.md).
+11. Ative a reposição de palavras-passe. Quando estiver pronto, ative a reposição de palavras-passe para todos os utilizadores mediante a definição do comutador **Reposição Personalizada de Palavras-Passe Ativada** como **Todos**. 
+12. [Permita que os utilizadores do Windows 10 reponham as palavras-passe no ecrã de início de sessão](active-directory-passwords-login.md).
 
    > [!IMPORTANT]
-   > Teste o SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de tipo administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso [artigo de política de palavra-passe](active-directory-passwords-policy.md#administrator-password-policy-differences).
+   > Teste a SSPR com um utilizador e não com um administrador, pois a Microsoft aplica requisitos de autenticação fortes às contas de administrador do Azure. Para obter mais informações sobre a política de palavras-passe de administrador, veja o nosso artigo sobre a [política de palavras-passe](active-directory-passwords-policy.md#administrator-password-policy-differences).
 
 ## <a name="email-based-rollout"></a>Implementação baseado em e-mails
 
-Para muitos clientes, a forma mais fácil de pôr os utilizadores a utilizar o SSPR é criar campanhas de e-mail, com instruções de utilização simples. [Criámos três e-mails simples que pode utilizar como modelos para ajudar na sua implementação.](https://onedrive.live.com/?authkey=%21AD5ZP%2D8RyJ2Cc6M&id=A0B59A91C740AB16%2125063&cid=A0B59A91C740AB16)
+Muitos clientes consideram que a forma mais fácil de pôr os utilizadores a utilizar a SSPR é criar uma campanha de e-mail que inclua instruções de utilização simples. [Criámos três e-mails simples que pode utilizar como modelos para ajudar na sua implementação](https://onedrive.live.com/?authkey=%21AD5ZP%2D8RyJ2Cc6M&id=A0B59A91C740AB16%2125063&cid=A0B59A91C740AB16):
 
-* O modelo de e-mail **Brevemente**, que pode ser utilizado nas semanas ou dias anteriores à implementação, para dizer aos utilizadores que precisam de fazer uma determinada coisa.
-* O modelo de e-mail **Disponível Agora**, para ser utilizado no dia do lançamento, de modo a levar os utilizadores a registarem-se e confirmarem os respetivos dados de autenticação, para que possam utilizar o SSPR quando precisarem.
-* O modelo de e-mail **Lembrete de Inscrição**, para ser utilizado uns dias ou semanas após a implementação, para relembrar aos utilizadores para se registarem e confirmarem os respetivos dados de autenticação.
+* **Brevemente**: modelo de e-mail que pode utilizar nas semanas ou dias anteriores à implementação, para dizer aos utilizadores que precisam de fazer uma determinada coisa.
+* **Disponível agora**: modelo de e-mail que pode utilizar no dia do lançamento do programa, de modo a levar os utilizadores a registarem-se e confirmarem os respetivos dados de autenticação. Se os utilizadores se registarem nesse momento, a SSPR estará à disposição deles quando precisarem.
+* **Lembrete de inscrição**: modelo de e-mail para ser utilizado uns dias ou semanas após a implementação, para relembrar aos utilizadores para se registarem e confirmarem os respetivos dados de autenticação.
 
 ![E-mail][Email]
 
-## <a name="creating-your-own-password-portal"></a>Criar o seu próprio portal de palavras-passe
+## <a name="create-your-own-password-portal"></a>Criar o seu próprio portal de palavras-passe
 
-Muitos dos nossos clientes maiores optam por alojar a página Web e criar uma entrada DNS de raiz, como https://passwords.contoso.com. Preenchem esta página com ligações para a reposição de palavras-passe do Azure AD, o registo de reposição de palavras-passe, os portais de alteração de palavras-passe e outras informações específicas da organização. Depois, pode incluir, em qualquer comunicação ou panfleto por e-mail que distribuir, um URL corporativo e memorável, ao qual os utilizadores podem aceder quando precisam de utilizar os serviços.
+Muitos clientes optam por alojar uma página Web e criar uma entrada DNS de raiz, como https://passwords.contoso.com. Preenchem esta página com ligações para as informações seguintes:
 
-* Portal para reposição de palavras-passe - https://aka.ms/sspr
-* Portal de registo da reposição de palavras-passe - http://aka.ms/ssprsetup
-* Portal de alteração de palavras-passe - https://account.activedirectory.windowsazure.com/ChangePassword.aspx
+* [Portal da reposição de palavras-passe do Azure AD](https://aka.ms/sspr)
+* [Portal de registo da reposição de palavras-passe do Azure AD](http://aka.ms/ssprsetup)
+* [Portal de alteração de palavras-passe do Azure AD](https://account.activedirectory.windowsazure.com/ChangePassword.aspx)
+* Outras informações específicas da organização
 
-Para seu benefício, criámos uma página de exemplo, que pode utilizar e personalizar consoante as necessidades da sua organização, que pode ser transferida a partir do [GitHub](https://github.com/ajamess/password-reset-page).
+Pode incluir, em qualquer comunicação ou panfleto por e-mail que distribuir, um URL corporativo e memorável, ao qual os utilizadores podem aceder quando precisam de utilizar os serviços. Para seu benefício, criámos uma [página de reposição de palavras-passe de exemplo](https://github.com/ajamess/password-reset-page) que pode utilizar e personalizar consoante as necessidades da sua organização.
 
-## <a name="using-enforced-registration"></a>Utilizar o registo forçado
+## <a name="use-enforced-registration"></a>Utilizar o registo forçado
 
-Se quiser que os utilizadores se registem na reposição de palavras-passe, pode forçá-los a registarem-se quando iniciam sessão com o Azure AD. Pode ativar esta opção no painel **Reposição de palavras-passe** do seu diretório, ao ativar a opção **Exigir que os Utilizadores se Registem Quando Iniciam Sessão**, no separador **Registo**.
+Se quiser que os utilizadores se registem na reposição de palavras-passe, pode obrigá-los a registarem-se quando iniciam sessão através do Azure AD. Pode ativar esta opção no painel **Reposição de palavras-passe** do seu diretório ao ativar a opção **Exigir que os Utilizadores se Registem Quando Iniciam Sessão**, no separador **Registo**.
 
-Os administradores podem exigir aos utilizadores que se registem após um período de tempo, ao definir o **Número de dias antes de ser pedido aos utilizadores que reconfirmem as respetivas informações de autenticação** entre 0 e 730 dias.
+Os administradores podem exigir que os utilizadores se voltem a registar após um determinado período de tempo. Podem definir a opção **Número de dias antes de ser pedido aos utilizadores que voltem a confirmar as informações de autenticação** entre 0 e 730 dias.
 
-Depois de ativar esta opção, os utilizadores que iniciem sessão verão uma mensagem que os informa de que o administrador lhes exigiu que verifiquem as informações de autenticação deles.
+Depois de ativar esta opção, quando iniciam sessão, os utilizadores verão uma mensagem que os informa de que o administrador lhes exigiu que verifiquem as informações de autenticação.
 
 ## <a name="populate-authentication-data"></a>Preencher os dados de autenticação
 
-Se [preencher os dados de autenticação pelos seus utilizadores](active-directory-passwords-data.md), estes não têm de se registar na reposição de palavras-passe antes de poderem utilizar o SSPR. Desde que os utilizadores tenham os dados de autenticação definidos de forma a que cumpram a política de reposição de palavras-passe, podem repor as palavras-passe deles.
+Deve [preencher os dados de autenticação dos seus utilizadores](active-directory-passwords-data.md). Desta forma, não precisam de se registar na reposição de palavras-passe antes de poderem utilizar a SSPR. Desde que os utilizadores tenham fornecido os dados de autenticação que cumpram a política de reposição de palavras-passe, podem repor as palavras-passe deles.
 
-## <a name="disabling-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
+## <a name="disable-self-service-password-reset"></a>Desativar a reposição de palavras-passe self-service
 
-Para desativar a reposição de palavras-passe self-service basta abrir o inquilino do Azure AD e aceder a **Reposição de Palavras-passe**, **Propriedades** e escolher **Ninguém**, em **Reposição de Palavras-passe Self-service Ativada**
+É fácil desativar a reposição de palavras-passe self-service. Abra o seu inquilino do Azure AD e aceda a **Reposição de Palavras-passe** > **Propriedades** e selecione **Ninguém**, em **Reposição de Palavras-passe Self-Service Ativada**.
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* [Reponha ou altere a palavra-passe](active-directory-passwords-update-your-own-password.md).
-* [Registe-se na reposição personalizada de palavras-passe](active-directory-passwords-reset-register.md).
-* [Tem alguma pergunta sobre Licenciamento?](active-directory-passwords-licensing.md)
+* [Repor ou alterar a palavra-passe](active-directory-passwords-update-your-own-password.md)
+* [Registar-se na reposição personalizada de palavra-passe](active-directory-passwords-reset-register.md)
+* [Tem alguma pergunta sobre licenciamento?](active-directory-passwords-licensing.md)
 * [Que dados são utilizados pela SSPR e que dados devem ser preenchidos por si para os seus utilizadores?](active-directory-passwords-data.md)
 * [Quais são as opções de política da SSPR?](active-directory-passwords-policy.md)
 * [O que é a repetição de escrita de palavras-passe e por que me deve interessar?](active-directory-passwords-writeback.md)

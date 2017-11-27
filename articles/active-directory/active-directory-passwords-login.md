@@ -13,24 +13,24 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 11/08/2017
+ms.date: 11/16/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: 9f7fdb97fd121eecf9e7b2f4edc1b568c8114869
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 0a3fca0c7d36122a09c825a3ed8edf11cc362b8b
+ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/23/2017
 ---
 # <a name="azure-ad-password-reset-from-the-login-screen"></a>Reposição de palavras-passe do Azure AD no ecrã de início de sessão
 
 Já implementou a reposição de palavras-passe self-service (SSPR) do Azure AD, mas se se esquecerem das palavras-passe, os seus utilizadores podem continuar a entrar em contacto com o suporte técnico. Entram em contacto com o suporte técnico porque não conseguem abrir um browser para aceder à SSPR.
 
-Com a nova Fall Creators Update do Windows 10, os utilizadores que tenham dispositivos associados ao Azure AD podem ver a ligação “Repor palavra-passe” no ecrã de início de sessão. Quando clicam nesta ligação, são encaminhados para a experiência de reposição de palavras-passe self-service (SSPR) que já conhecem. 
+Com a nova Fall Creators Update do Windows 10, os utilizadores que tenham dispositivos associados ao Azure AD podem ver a ligação “Repor palavra-passe” no ecrã de início de sessão. Quando clicam nesta ligação, são encaminhados para a experiência de reposição de palavras-passe self-service (SSPR) que já conhecem.
 
 Para que os utilizadores possam repor as palavras-passe do Azure AD a partir do ecrã de início de sessão do Windows 10, têm de ser satisfeitos os requisitos seguintes:
 
-* Windows 10, versão 1709 ou cliente mais recente que esteja associado ao Domínio do Azure AD.
+* Windows 10, versão 1709 ou cliente mais recente que esteja [associado ao Azure AD](device-management-azure-portal.md).
 * A reposição de palavras-passe self-service do Azure AD tem de estar ativada.
 * Configurar e implementar a definição para ativar a ligação Repor palavra-passe através de um dos métodos abaixo:
    * [Perfil de configuração de dispositivo no Intune](active-directory-passwords-login.md#configure-reset-password-link-using-intune)
@@ -90,7 +90,7 @@ Criou e atribuiu agora uma política de configuração de dispositivos para ativ
 
 Recomendamos que utilize este método apenas para testar a alteração da definição.
 
-1. Utilize credenciais administrativas para iniciar sessão no dispositivo associado ao Domínio do Azure AD
+1. Utilize credenciais administrativas para iniciar sessão no dispositivo associado ao Azure AD
 2. Execute **regedit** como administrador
 3. Defina a chave de registo seguinte
    * `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AzureADAccount`
@@ -104,7 +104,7 @@ Agora que a política está configurada e atribuída, que alterações há para 
 
 Quando os utilizadores tentam iniciar sessão, veem agora a ligação Repor palavra-passe, a qual abre a experiência de reposição de palavra-passe self-service no ecrã de início de sessão. Com esta funcionalidade, os utilizadores podem repor as palavras-passe sem terem de utilizar outro dispositivo para aceder a um browser.
 
-Os seus utilizadores podem obter orientações sobre como utilizar esta funcionalidade em [Reset your work or school password](active-directory-passwords-update-your-own-password.md#reset-password-at-login) (Repor a palavra-passe da conta escolar ou profissional)
+Os seus utilizadores podem obter orientações sobre como utilizar esta funcionalidade em [Reset your work or school password](active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in) (Repor a palavra-passe da conta escolar ou profissional)
 
 ## <a name="common-issues"></a>Problemas comuns
 

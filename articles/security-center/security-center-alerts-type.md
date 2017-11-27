@@ -12,13 +12,13 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2017
+ms.date: 11/22/2017
 ms.author: yurid
-ms.openlocfilehash: 274c50dad9b8a1d79a71a29b04cb8e44ad91893c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 829657664cf1e37b22d57c62614300a205b5e91c
+ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="understanding-security-alerts-in-azure-security-center"></a>Compreender os alertas de segurança no Centro de Segurança do Azure
 Este artigo ajuda-o a compreender os vários tipos de alertas de segurança e informações relacionadas que estão disponíveis no Centro de Segurança do Azure. Para obter mais informações sobre como gerir alertas e incidentes, veja [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md).
@@ -53,6 +53,45 @@ Os campos seguintes são comuns aos exemplos de alertas de informação de falha
 * DUMPFILE: nome do ficheiro de informação de falha de sistema.
 * PROCESSNAME: nome do processo de falha inesperada.
 * PROCESSVERSION: versão do processo de falha inesperada.
+
+### <a name="code-injection-discovered"></a>Injeção de Código Detetada
+A injeção de código é a inserção de módulos executáveis em processos ou threads em execução.  Esta técnica é utilizada por software maligno para aceder a dados, ocultar ou impedir a sua remoção (por exemplo, persistência). Este alerta indica que está presente nas informações de falha de sistema um módulo injetado. Os programadores de software legítimo efetuam ocasionalmente a injeção de código por motivos não maliciosos, por exemplo, para modificar ou expandir uma aplicação ou componente do sistema operativo existente.  Para ajudar a diferenciar entre módulos maliciosos e não maliciosos injetados, o Centro de Segurança verifica se o módulo inserido está ou não em conformidade com um perfil de comportamento suspeito. O resultado desta verificação é indicado pelo campo "SIGNATURE" do alerta e é refletido na gravidade do alerta, na descrição do alerta e nos passos de remediação do alerta. 
+
+Este alerta fornece os campos adicionais seguintes:
+
+- ADDRESS: a localização na memória do shellcode injetado
+- IMAGENAME: o nome do módulo injetado. Tenha em atenção que isto pode estar em branco se o nome da imagem não for fornecido na imagem.
+- SIGNATURE: indica se o módulo injetado está em conformidade com um perfil de comportamento suspeito. 
+
+A tabela abaixo mostra exemplos de resultados e a respetiva descrição:
+
+| Valor de assinatura                      | Descrição                                                                                                       |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Exploração de carregador reflexivo suspeito | Este comportamento suspeito está frequentemente relacionado com o carregamento de código injetado, independentemente do carregador do sistema operativo |
+| Exploração injetada suspeita          | Significa malícia frequentemente relacionada com a injeção de código na memória                                       |
+| Exploração de injeção suspeita         | Significa malícia frequentemente relacionada com a utilização de código injetado na memória                                   |
+| Exploração de depuração injetada suspeita | Significa malícia frequentemente relacionada com a deteção ou a neutralização de um depurador                         |
+| Exploração remota injetada suspeita   | Significa malícia frequentemente relacionada com cenários de comando e controlo (C2)                                 |
+
+Segue um exemplo deste tipo de alerta:
+
+![Alerta de injeção de código](./media/security-center-alerts-type/security-center-alerts-type-fig21.png)
+
+### <a name="suspicious-code-segment"></a>Segmento de código suspeito
+O segmento de código suspeito indica que foi alocado um segmento de código através de métodos não padrão, como injeção reflexiva e “hollowing” de processos.  Além disso, este alerta processa características adicionais do segmento de código, para dar contexto relativamente às capacidades e comportamentos do segmento reportado.
+
+Este alerta fornece os campos adicionais seguintes:
+
+- ADDRESS: a localização na memória do shellcode injetado
+- SIZE: o tamanho do segmento de código suspeito
+- STRINGSIGNATURES: este campo lista as capacidades das APIs cujos nomes de funções estão contidos dentro do segmento de código. Os exemplos de capacidades podem incluir:
+    - Descritores de Secção de Imagem, Execução de Código Dinâmica para x64, Capacidade de alocação de memória e carregador, Capacidade de injeção de código remota, Capacidade de controlo de Hijack, Ler variáveis de ambiente, Ler memória de processos arbitrários, Consultar ou modificar tokens de privilégios, Comunicação de rede HTTP/HTTPS e Comunicação de socket de Rede.
+- IMAGEDETECTED: este campo indica se foi injetada uma imagem de PE no processo em que foi detetado o segmento de código suspeito e em que endereço é que o módulo injetado começa.
+- SHELLCODE: este código indica a presença de comportamentos normalmente utilizados pelos payloads maliciosos para adquirir acesso a funções de segurança sensíveis de sistema operativo adicionais. 
+
+Segue um exemplo deste tipo de alerta:
+
+![Alerta de segmento de código suspeito](./media/security-center-alerts-type/security-center-alerts-type-fig22.png)
 
 ### <a name="shellcode-discovered"></a>Shellcode detetado
 Shellcode é o payload executado depois de o software maligno explorar uma vulnerabilidade de software. Este alerta indica que a análise da informação de falha de sistema detetou código executável que apresenta um comportamento que é normalmente tido por payloads maliciosos. Apesar de o software não malicioso poder ter este comportamento, não é característico das práticas normais de desenvolvimento de software.

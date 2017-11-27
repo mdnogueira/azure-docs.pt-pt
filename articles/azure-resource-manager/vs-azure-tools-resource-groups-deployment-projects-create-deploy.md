@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/10/2017
 ms.author: tomfitz
-ms.openlocfilehash: f82f59f363507b69a729580302c2d11202e93a87
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d647206b882059e0651223dc84f2ad2a314f8a87
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Criar e implementar grupos de recursos do Azure através do Visual Studio
 Com o Visual Studio e o [Azure SDK](https://azure.microsoft.com/downloads/), pode criar um projeto que implementa a sua infraestrutura e o código para o Azure. Por exemplo, pode definir o anfitrião web, o Web site e a base de dados para a sua aplicação e implementar essa infraestrutura juntamente com o código. Em alternativa, pode definir uma Máquina Virtual, a Virtual Network e a Conta do Storage e implemente essa infraestrutura juntamente com um script que é executado na Máquina Virtual. O projeto de implementação **Grupo de Recursos do Azure** permite-lhe implementar todos os recursos necessários numa operação única e repetida. Para obter mais informações sobre como implementar e gerir os recursos, consulte o artigo [Descrição geral do Azure Resource Manager](resource-group-overview.md).
@@ -32,7 +32,7 @@ Este artigo mostra o Visual Studio 2017. Se utilizar o Visual Studio 2015 Update
 ## <a name="create-azure-resource-group-project"></a>Criar projeto do Grupo de Recursos do Azure
 Neste procedimento, cria um projeto de Grupo de Recursos do Azure com um modelo **Aplicação Web + SQL Server**.
 
-1. No Visual Studio, selecione **Ficheiro**, **Novo Projeto**, escolha **C#** ou **Visual Basic**. Em seguida, selecione **Nuvem** e, em seguida, o projeto **Grupo de Recursos do Azure**.
+1. No Visual Studio, selecione **Ficheiro**, **Novo Projeto**, **C#** ou **Visual Basic** (a linguagem que selecionar não afeta as fases posteriores, uma vez que estes projetos têm apenas conteúdo JSON e do PowerShell). Em seguida, selecione **Nuvem** e, em seguida, o projeto **Grupo de Recursos do Azure**.
    
     ![Projeto de Cloud Deployment](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/create-project.png)
 2. Escolha o modelo que pretende implementar no Azure Resource Manager. Tenha em atenção que existem muitas opções diferentes com base no tipo de projeto que pretende implementar. Para este artigo, selecione o modelo **Aplicação Web + SQL**.

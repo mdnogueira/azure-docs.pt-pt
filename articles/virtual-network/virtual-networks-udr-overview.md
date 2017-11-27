@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 10/26/2017
 ms.author: jdial
 ms.custom: 
-ms.openlocfilehash: 18169b86d10b589a5c8b707596d5f62813e9efe2
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: 8a80220879db9f0030b9f1a8494b1cc24105ef17
+ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="virtual-network-traffic-routing"></a>Encaminhamento de tráfego da rede virtual
 
@@ -118,7 +118,7 @@ O nome apresentado e referenciado para os tipos de próximo salto são diferente
 
 Os gateways de rede no local podem utilizar o BGP (Border Gateway Protocol) para trocar de rotas com gateways de rede virtual do Azure. A utilização do BGP com um gateway de rede virtual do Azure depende do tipo que selecionou quando criou o gateway. Se tiver selecionado o tipo:
 
-- **ExpressRoute**: tem de utilizar o BGP para anunciar rotas no router de periferia da Microsoft. Se implementar um gateway de rede virtual implementado com o tipo ExpressRoute, não pode criar rotas definidas pelo utilizador.
+- **ExpressRoute**: tem de utilizar o BGP para anunciar rotas no local no router de periferia da Microsoft. Se implementar um gateway de rede virtual implementado com o tipo ExpressRoute, não pode criar rotas definidas pelo utilizador para forçar o tráfego para o ExpressRoute. Pode utilizar rotas definidas pelo utilizador para forçar o tráfego do Express Route para, por exemplo, um Dispositivo Virtual de Rede. 
 - **VPN**: opcionalmente, pode utilizar o BGP. Para obter detalhes, veja [BGP com ligações VPN de site a site](../vpn-gateway/vpn-gateway-bgp-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Quando utiliza o BGP para trocar rotas com o Azure, é adicionada uma rota separada à tabela de rotas de todas as sub-redes numa rede virtual para cada prefixo anunciado. A rota é adicionada com *Gateway de rede virtual* listado como a origem e o tipo de próximo salto. 

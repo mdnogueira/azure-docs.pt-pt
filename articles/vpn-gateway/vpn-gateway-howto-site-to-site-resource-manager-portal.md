@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/02/2017
+ms.date: 11/17/2017
 ms.author: cherylmc
-ms.openlocfilehash: 41279502c16d0b23c91739dcb62e8f94f3b8bd67
-ms.sourcegitcommit: 3ab5ea589751d068d3e52db828742ce8ebed4761
+ms.openlocfilehash: 4f5e249238020429b6c6e0d39c580c83bc43969e
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Criar uma ligação Site a Site no portal do Azure
 
@@ -50,15 +50,13 @@ Antes de iniciar a configuração, verifique se cumpre os seguintes critérios:
 Os exemplos neste artigo utilizam os seguintes valores. Pode utilizar estes valores para criar um ambiente de teste ou consultá-los para compreender melhor os exemplos neste artigo. Para obter mais informações sobre as definições do Gateway de VPN em geral, veja [Sobre as Definições do Gateway de VPN](vpn-gateway-about-vpn-gateway-settings.md).
 
 * **Nome da VNet:** TestVNet1
-* **Espaço de Endereços:** 
-  * 10.11.0.0/16
-  * 10.12.0.0/16 (opcional para este exercício)
-* **Sub-redes:**
-  * Front-End: 10.11.0.0/24
-  * Back-End: 10.12.0.0/24 (opcional para este exercício)
-* **GatewaySubnet:** 10.11.255.0/27
+* **Espaço de Endereços:** 10.11.0.0/16 e 10.12.0.0/16 (opcional neste exercício)
+* **Subscrição:** a subscrição que pretende utilizar
 * **Grupo de Recursos:** TestRG1
 * **Localização:** E.U.A. Leste
+* **Sub-rede:** FrontEnd: 10.11.0.0/24, BackEnd: 10.12.0.0/24 (opcional neste exercício)
+* **Nome da Sub-rede do Gateway:** GatewaySubnet (será preenchido automaticamente no portal)
+* **Intervalo de endereços da Sub-rede do Gateway:** 10.11.255.0/27
 * **Servidor DNS:** Opcional. O endereço IP do seu servidor DNS.
 * **Nome do Gateway de Rede Virtual:** VNet1GW
 * **IP Público:** VNet1GWIP
@@ -67,6 +65,7 @@ Os exemplos neste artigo utilizam os seguintes valores. Pode utilizar estes valo
 * **Tipo de Gateway:** VPN
 * **Nome do Gateway de Rede Local:** Site2
 * **Nome da Ligação:** VNet1toSite2
+* **Chave partilhada:** neste exemplo, utilizaremos abc123. No entanto, pode utilizar uma chave qualquer, desde que seja compatível com o seu hardware de VPN. O mais importante é que os valores correspondam em ambos os lados da ligação.
 
 ## <a name="CreatVNet"></a>1. Criar uma rede virtual
 
@@ -125,10 +124,21 @@ Repor o gateway de VPN do Azure é útil se perder a conectividade VPN em vário
 
 Para obter os passos para alterar um SKU de gateway, veja [Gateway SKUs](vpn-gateway-about-vpn-gateway-settings.md#gwsku) (SKUs de gateway).
 
+## <a name="addconnect"></a>Como adicionar outra ligação a um gateway de VPN
+
+Pode adicionar mais ligações, desde que nenhum desses espaços de endereços se sobreponha entre as ligações.
+
+1. Para adicionar outra ligação, navegue para o gateway de VPN e clique em **Ligações** para abrir a página Ligações.
+2. Clique em **+Adicionar** para adicionar a ligação. Ajuste o tipo de ligação para refletir se é VNet a VNet (se estiver a ligar a outro gateway de VPN) ou Site a Site.
+3. Se estiver a ligar através de Site a Site e ainda não tiver criado um gateway de rede local para o site ao qual se quer ligar, pode criar um novo.
+4. Especifique a chave partilhada que pretende utilizar e clique em **OK** para criar a ligação.
+
 ## <a name="next-steps"></a>Passos seguintes
 
 * Para obter informações sobre o BGP, veja a [Descrição Geral do BGP](vpn-gateway-bgp-overview.md) e [Como configurar o BGP](vpn-gateway-bgp-resource-manager-ps.md).
-* Para obter informações sobre o Túnel Forçado, veja [About Forced Tunneling](vpn-gateway-forced-tunneling-rm.md) (Sobre o Túnel Forçado).
+* Para obter informações sobre o túnel forçado, veja [About forced tunneling](vpn-gateway-forced-tunneling-rm.md) (Acerca do túnel forçado).
 * Para obter informações sobre ligações Altamente Disponíveis Ativo-Ativo, veja [Premissas cruzadas de disponibilidade elevada e ligação VNet para VNet](vpn-gateway-highlyavailable.md).
-* Para obter informações sobre como criar uma ligação de VPN de site a site com o modelo do Azure Resource Manager, veja [Create a Site-to-Site VPN Connection (Criar uma Ligação de VPN de Site a Site)](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/).
-* Para obter informações sobre como criar uma ligação de VPN de vnet a vnet com o modelo do Azure Resource Manager, veja [Deploy HBase geo replication (Implementar georreplicação do HBase)](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/).
+* Para obter informações sobre como limitar o tráfego de rede para os recursos numa rede virtual, veja [Segurança da rede](../virtual-network/security-overview.md).
+* Para obter informações sobre a forma como o Azure encaminha o tráfego entre os recursos do Azure, do local e da Internet veja [Encaminhamento de tráfego da rede virtual](../virtual-network/virtual-networks-udr-overview.md).
+* Para obter informações sobre como criar uma ligação VPN de Site a Site com o modelo Azure Resource Manager, veja [Create a Site-to-Site VPN Connection](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/) (Criar uma Ligação VPN de Site a Site).
+* Para obter informações sobre como criar uma ligação VPN de Vnet a Vnet com o modelo Azure Resource Manager, veja [Deploy HBase geo replication](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/) (Implementar georreplicação do HBase).
