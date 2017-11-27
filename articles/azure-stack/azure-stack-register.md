@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 11/21/2017
 ms.author: erikje
-ms.openlocfilehash: 977630741b8424c4c6bd5f5d492e33b9981b9cb5
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 6ce8f86592ece59e338578be86c2cb673c35dbc1
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="register-azure-stack-with-your-azure-subscription"></a>Registar a pilha do Azure com a sua subscrição do Azure
 
@@ -42,22 +42,6 @@ Antes de registar a pilha do Azure com o Azure, tem de ter:
 Se não tiver uma subscrição do Azure que cumpra estes requisitos, pode [criar uma conta do Azure gratuita aqui](https://azure.microsoft.com/en-us/free/?b=17.06). Registar o Azure pilha incorreu sem qualquer custo na sua subscrição do Azure.
 
 
-
-## <a name="register-azure-stack-resource-provider-in-azure"></a>Registar o fornecedor de recursos do Azure pilha no Azure
-> [!NOTE] 
-> Este passo deve ser concluído apenas uma vez num ambiente de pilha do Azure.
->
-
-1. Inicie uma sessão do Powershell como administrador.
-2. Inicie sessão na conta do Azure que é proprietário da subscrição do Azure (pode utilizar o cmdlet Login-AzureRmAccount para iniciar sessão e quando iniciar sessão, certifique-se definir o parâmetro - EnvironmentName para "AzureCloud").
-3. Registar o fornecedor de recursos do Azure "Microsoft.AzureStack."
-
-**Exemplo:** 
-```Powershell
-Login-AzureRmAccount -EnvironmentName "AzureCloud"
-Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
-```
-
 ## <a name="register-azure-stack-with-azure"></a>Registar a pilha do Azure com o Azure
 
 > [!NOTE]
@@ -66,7 +50,11 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
 
 1. Abra uma consola do PowerShell como administrador e [instale o PowerShell para Azure pilha](azure-stack-powershell-install.md).  
 
-2. Adicione a conta do Azure que irá utilizar para registar a pilha do Azure. Para tal, execute o `Add-AzureRmAccount` cmdlet sem quaisquer parâmetros. É-lhe pedido que introduza as credenciais da conta do Azure e poderá ter de utilizar a autenticação de fator 2, com base na configuração da sua conta.  
+2. Adicione a conta do Azure que irá utilizar para registar a pilha do Azure. Para tal, execute o `Add-AzureRmAccount` cmdlet com o parâmetro EnvironmentName definido como "AzureCloud". É-lhe pedido que introduza as credenciais da conta do Azure e poderá ter de utilizar a autenticação de fator 2, com base na configuração da sua conta. 
+
+   ```Powershell
+   Add-AzureRmAccount -EnvironmentName "AzureCloud"
+   ```
 
 3. Se tiver várias subscrições, execute o seguinte comando para selecionar aquela que pretende utilizar:  
 
@@ -74,22 +62,28 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
       Get-AzureRmSubscription -SubscriptionID '<Your Azure Subscription GUID>' | Select-AzureRmSubscription
    ```
 
-4. Eliminar quaisquer versões dos módulos do Powershell que correspondem ao registo existentes e [transferir a versão mais recente do mesmo a partir do GitHub](azure-stack-powershell-download.md).  
+4. Registe o fornecedor de recursos AzureStack na sua subscrição do Azure. Para tal, execute o seguinte comando:
 
-5. O diretório de "AzureStack-ferramentas-master" que é criado no passo anterior, navegue para a pasta "Registo" e importe o módulo ".\RegisterWithAzure.psm1":  
+   ```Powershell
+   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
+   ```
+
+5. Eliminar quaisquer versões dos módulos do Powershell que correspondem ao registo existentes e [transferir a versão mais recente do mesmo a partir do GitHub](azure-stack-powershell-download.md).  
+
+6. O diretório de "AzureStack-ferramentas-master" que é criado no passo anterior, navegue para a pasta "Registo" e importe o módulo ".\RegisterWithAzure.psm1":  
 
    ```powershell 
    Import-Module .\RegisterWithAzure.psm1 
    ```
 
-6. Na mesma sessão do PowerShell, execute o seguinte script. Quando lhe forem pedidas as credenciais, especifique `azurestack\cloudadmin` como o utilizador e a palavra-passe é igual à que utilizou para o administrador local durante a implementação.  
+7. Na mesma sessão do PowerShell, execute o seguinte script. Quando lhe forem pedidas as credenciais, especifique `azurestack\cloudadmin` como o utilizador e a palavra-passe é igual à que utilizou para o administrador local durante a implementação.  
 
    ```powershell
    $AzureContext = Get-AzureRmContext
    $CloudAdminCred = Get-Credential -UserName AZURESTACK\CloudAdmin -Message "Enter the cloud domain credentials to access the privileged endpoint"
    Add-AzsRegistration `
        -CloudAdminCredential $CloudAdminCred `
-       -AzureSubscriptionId $AzureContext.Subscription.Id `
+       -AzureSubscriptionId $AzureContext.Subscription.SubscriptionId `
        -AzureDirectoryTenantName $AzureContext.Tenant.TenantId `
        -PrivilegedEndpoint AzS-ERCS01 `
        -BillingModel Development 
@@ -103,7 +97,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.AzureStack
    | PrivilegedEndpoint | Uma previamente configurada PowerShell consola remota que fornece capacidades, como a recolha de registos e outra post tarefas de implementação. Para o kit de desenvolvimento, o ponto final com privilégios está alojado na máquina virtual "AzS ERCS01". Se estiver a utilizar um sistema integrado, contacte o operador de pilha do Azure para obter este valor. Para obter mais informações, consulte o [utilizando o ponto final com privilégios](azure-stack-privileged-endpoint.md) tópico.|
    | BillingModel | O modelo de faturação que utiliza a sua subscrição. Valores para este parâmetro tem-"Capacidade", "PayAsYouUse" e "Desenvolvimento" de permitidos. Para o kit de desenvolvimento, este valor é definido como "Desenvolvimento". Se estiver a utilizar um sistema integrado, contacte o operador de pilha do Azure para obter este valor. |
 
-7. O script estiver concluído, verá uma mensagem "em ativação Azure (este passo pode demorar até 10 minutos a concluir) de pilha." 
+8. O script estiver concluído, verá uma mensagem "em ativação Azure (este passo pode demorar até 10 minutos a concluir) de pilha." 
 
 ## <a name="verify-the-registration"></a>Verifique o registo
 
