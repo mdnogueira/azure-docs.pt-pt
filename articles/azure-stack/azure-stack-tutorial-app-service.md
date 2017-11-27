@@ -1,6 +1,6 @@
 ---
-title: "Certifique-web, móveis e API apps disponíveis para os utilizadores de pilha do Azure | Microsoft Docs"
-description: "Tutorial para instalar o fornecedor de recursos do serviço de aplicações e criar oferece que conceder aos seus utilizadores de pilha do Azure a capacidade de criar web, móveis e API apps."
+title: "Certifique-web e API apps disponíveis para os utilizadores de pilha do Azure | Microsoft Docs"
+description: "Tutorial para instalar o fornecedor de recursos do serviço de aplicações e criar oferece que conceder aos seus utilizadores de pilha do Azure a capacidade de criar web e API apps."
 services: azure-stack
 documentationcenter: 
 author: ErikjeMS
@@ -15,15 +15,15 @@ ms.topic: tutorial
 ms.date: 7/03/2017
 ms.author: erikje
 ms.custom: mvc
-ms.openlocfilehash: 2d011e933cb063eef88a372fccc49d2b9de19717
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 42d94eea8b9e4db611b821cd84e7d02f1d226293
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
-# <a name="make-web-mobile-and-api-apps-available-to-your-azure-stack-users"></a>Certifique-web, móveis e API apps disponíveis para os utilizadores de pilha do Azure
+# <a name="make-web-and-api-apps-available-to-your-azure-stack-users"></a>Certifique-web e API apps disponíveis para os utilizadores de pilha do Azure
 
-Como um administrador da nuvem de pilha do Azure, pode criar ofertas informar os utilizadores (inquilinos) criam aplicações das funções do Azure e web, móveis e API. Ao fornecer acesso a estas aplicações a pedido, baseado na nuvem aos seus utilizadores, pode guardá-los tempo e recursos. Para configurar esta opção, irá:
+Como um administrador da nuvem de pilha do Azure, pode criar ofertas informar os utilizadores (inquilinos) criam aplicações das funções do Azure e web e API. Ao fornecer acesso a estas aplicações a pedido, baseado na nuvem aos seus utilizadores, pode guardá-los tempo e recursos. Para configurar esta opção, irá:
 
 > [!div class="checklist"]
 > * Implementar o fornecedor de recursos do serviço de aplicações
@@ -43,7 +43,7 @@ Como um administrador da nuvem de pilha do Azure, pode criar ofertas informar os
 Por exemplo, pode criar uma oferta, que permite aos utilizadores criar sistemas de gestão de conteúdos do DNN web. Requer o serviço do SQL Server que já ativou ao instalar o fornecedor de recursos do SQL Server.
 
 1.  [Define uma quota de](azure-stack-setting-quotas.md) e dê-lhe nome *AppServiceQuota*. Selecione **Microsoft** para o **espaço de nomes** campo.
-2.  [Criar um plano](azure-stack-create-plan.md). Nome *TestAppServicePlan*, selecione do **Microsoft.SQL** serviço, e **AppService Quota** quota.
+2.  [Criar um plano](azure-stack-create-plan.md). Nome *TestAppServicePlan*, selecione o **Microsoft.SQL** serviço, e **AppService Quota** quota.
 
     > [!NOTE]
     > Para permitir aos utilizadores criar outras aplicações, os outros serviços poderão ser necessário no plano. Por exemplo, as funções do Azure requer que o plano inclui o **Microsoft** service, enquanto o Wordpress requer **Microsoft.MySQL**.

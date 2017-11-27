@@ -12,13 +12,13 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/17/2017
+ms.date: 11/23/2017
 ms.author: anwestg
-ms.openlocfilehash: cd727b2902dafdb8086ac4ce74db96ca8acf8fe8
-ms.sourcegitcommit: 6a22af82b88674cd029387f6cedf0fb9f8830afd
+ms.openlocfilehash: d2a9b9fbe2a057a6d36e80c89af83a543e90d3be
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Adicionar um fornecedor de recursos do serviço de aplicações para um ambiente desligado de pilha do Azure protegido pelo AD FS
 
@@ -75,7 +75,7 @@ Para implementar o serviço de aplicações num ambiente desligado, primeiro tem
         - Se estiver a utilizar serviços de Federação do Active Directory (AD FS), forneça a sua conta de administrador. Por exemplo, cloudadmin@azurestack.local. Introduza a palavra-passe e clique em **sessão**.
     2. No **subscrições de pilha do Azure** caixa, selecione a sua subscrição.
     3. No **localizações de pilha do Azure** caixa, selecione a localização que corresponde à região estiver a implementar. Por exemplo, seleccione **local** se a implementar o Kit de desenvolvimento de pilha do Azure.
-    4. Introduza um **nome do grupo de recursos** para a sua implementação do serviço de aplicações. Por predefinição, está definido como **APPSERVICE\<MOBILE\>**.
+    4. Introduza um **nome do grupo de recursos** para a sua implementação do serviço de aplicações. Por predefinição, está definido como **APPSERVICE LOCAL**.
     5. Introduza o **nome da conta de armazenamento** que pretende que o serviço de aplicações para criar como parte da instalação. Por predefinição, está definido como **appsvclocalstor**.
     6. Clique em **Seguinte**.
 
