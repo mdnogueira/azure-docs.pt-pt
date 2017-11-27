@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/19/2017
+ms.date: 11/17/2017
 ms.author: billmath
-ms.openlocfilehash: b6318b419a0ea87fd1fb56656b1161909876f338
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: cf7b64bd956c236f5c70bb7dcd209ecdcd7176dd
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="azure-active-directory-terms-of-use-feature-preview"></a>Funcionalidade Termos de Utilização do Azure Active Directory (Pré-visualização)
 Os Termos de Utilização do Azure AD fornecem um método simples que as organizações podem utilizar para apresentar informações aos utilizadores finais.  Isto garante a visualização das exclusões de responsabilidade relevantes no que se refere a requisitos legais ou de conformidade por parte dos utilizadores.
@@ -43,7 +43,8 @@ Utilize os seguintes passos para configurar os Termos de Utilização do Azure A
 2. Certifique-se de que o diretório tem uma subscrição Premium P1, Premium P2, EMS E3 ou EMS E5 do Azure AD.  Caso isto não se verifique, [obtenha o Azure AD Premium](active-directory-get-started-premium.md) ou [inicie uma avaliação](https://azure.microsoft.com/trial/get-started-active-directory/).
 3. Consulte o dashboard dos Termos de Utilização do Azure AD em [https://aka.ms/catou](https://aka.ms/catou).
 
-
+>[!IMPORTANT]
+>Os controlos de política de acesso condicional (incluindo os termos de utilização) não suportam a imposição em contas de serviço.  Recomendamos excluir todas as contas de serviço da política de acesso condicional.
 
 ## <a name="add-company-terms-of-use"></a>Adicionar Termos de Utilização da Empresa
 Depois de finalizar os seus Termos de Utilização, utilize o procedimento que se segue para os adicionar.
@@ -92,7 +93,6 @@ Aos utilizadores abrangidos pelo âmbito definido será apresentado o seguinte a
 
 ## <a name="additional-information"></a>Informações adicionais
 As informações que se seguem são dados a ter em consideração e podem ajudar na utilização dos termos de utilização.
-
 
 Os utilizadores abrangidos pelo âmbito definido terão de terminar e iniciar sessão de modo a satisfazerem uma nova política:
  - se for ativada uma política de acesso condicional num documento de termos de utilização

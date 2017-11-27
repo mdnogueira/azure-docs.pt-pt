@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/02/2017
+ms.date: 11/17/2017
 ms.author: cherylmc
-ms.openlocfilehash: ff859bd9dbbf30c461cdba8409c77b04ff97b1f6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7c7653250f51429321b4da0384496aae37ad06da
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Configurar uma ligação de gateway de VPN de VNet a VNet com a CLI do Azure
 
@@ -59,11 +59,17 @@ Para obter mais informações sobre ligações de VNet a VNet, consulte [FAQ sob
 
 ### <a name="which-set-of-steps-should-i-use"></a>Que conjunto de passos devo utilizar?
 
-Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [VNets que residem na mesma subscrição](#samesub) e outro para [VNets que residem em diferentes subscrições](#difsub).
-
-## <a name="samesub"></a>Ligar VNets que estão na mesma subscrição
+Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [VNets que residem na mesma subscrição](#samesub). Os passos para esta configuração utilizam TestVNet1 e TestVNet4.
 
 ![Diagrama v2v](./media/vpn-gateway-howto-vnet-vnet-cli/v2vrmps.png)
+
+Há um artigo separado para [VNets que residem em subscrições diferentes](#difsub). Os passos para essa configuração utilizam TestVNet1 e TestVNet5.
+
+![Diagrama v2v](./media/vpn-gateway-howto-vnet-vnet-cli/v2vdiffsub.png)
+
+Pode combinar configurações, se quiser, ou apenas escolher a com que quiser trabalhar.
+
+## <a name="samesub"></a>Ligar VNets que estão na mesma subscrição
 
 ### <a name="before-you-begin"></a>Antes de começar
 
@@ -88,7 +94,7 @@ Utilizamos os seguintes valores nos exemplos:
 * IP Público: VNet1GWIP
 * VPNType: RouteBased
 * Ligação (1 a 4): VNet1toVNet4
-* Ligação (1 a 5): VNet1toVNet5
+* Ligação(1 a 5): VNet1aVNet5 (Para VNets em subscrições diferentes)
 * ConnectionType: VNet2VNet
 
 **Valores da TestVNet4:**
@@ -255,8 +261,6 @@ Agora, tem duas VNets com gateways de VPN. O passo seguinte é criar ligações 
 
 ## <a name="difsub"></a>Ligar VNets que estão em subscrições diferentes
 
-![Diagrama v2v](./media/vpn-gateway-howto-vnet-vnet-cli/v2vdiffsub.png)
-
 Neste cenário, vamos ligar TestVNet1 e TestVNet5. As VNets residem em subscrições diferentes. As subscrições não têm de estar associadas ao mesmo inquilino do Active Directory. Os passos desta configuração acrescentam uma ligação de VNet para VNet adicional, de modo a ligar a TestVNet1 à TestVNet5.
 
 ### <a name="TestVNet1diff"></a>Passo 5 - Criar e configurar TestVNet1
@@ -362,7 +366,7 @@ Dividimos este passo em duas sessões da CLI marcadas como **[Subscrição 1]** 
 ## <a name="verify"></a>Verificar as ligações
 [!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
 
-[!INCLUDE [verify connections v2v cli](../../includes/vpn-gateway-verify-connection-cli-rm-include.md)]
+[!INCLUDE [verify connections](../../includes/vpn-gateway-verify-connection-cli-rm-include.md)]
 
 ## <a name="faq"></a>FAQ da ligação VNet a VNet
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]

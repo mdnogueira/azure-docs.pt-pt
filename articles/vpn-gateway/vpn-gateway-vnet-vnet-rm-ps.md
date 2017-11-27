@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/02/2017
+ms.date: 11/17/2017
 ms.author: cherylmc
-ms.openlocfilehash: 46037efe0e2c30337d76790c46c16e300bfffd5f
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 9bcad8ed57980b08e0290e0272a5ff9de46f11a0
+ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Configurar uma ligação de gateway de VPN de VNet a VNet com o PowerShell
 
@@ -59,13 +59,17 @@ Para obter mais informações sobre ligações de VNet a VNet, consulte [FAQ sob
 
 ## <a name="which-set-of-steps-should-i-use"></a>Que conjunto de passos devo utilizar?
 
-Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [VNets que residem na mesma subscrição](#samesub) e outro para [VNets que residem em diferentes subscrições](#difsub). A principal diferença entre os dois é se pode criar e configurar todos os recursos do gateway e da rede virtual na mesma sessão do PowerShell.
-
-Os passos deste artigo utilizam variáveis declaradas no início de cada secção. Se já estiver a trabalhar com VNets existentes, modifique as variáveis de forma a refletir as definições do seu ambiente. Se pretender a resolução de nomes para as suas redes virtuais, veja [Name resolution](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) (Resolução de nomes).
-
-## <a name="samesub"></a>Como ligar VNets que estão na mesma subscrição
+Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [VNets que residem na mesma subscrição](#samesub). Os passos para esta configuração utilizam TestVNet1 e TestVNet4.
 
 ![Diagrama v2v](./media/vpn-gateway-vnet-vnet-rm-ps/v2vrmps.png)
+
+Há um artigo separado para [VNets que residem em subscrições diferentes](#difsub). Os passos para essa configuração utilizam TestVNet1 e TestVNet5.
+
+![Diagrama v2v](./media/vpn-gateway-vnet-vnet-rm-ps/v2vdiffsub.png)
+
+A principal diferença entre os dois é se pode criar e configurar todos os recursos do gateway e da rede virtual na mesma sessão do PowerShell. Tem de utilizar sessões do PowerShell separadas quando configurar as ligações para VNets que residem em subscrições diferentes. Pode combinar configurações, se quiser, ou apenas escolher a com que quiser trabalhar.
+
+## <a name="samesub"></a>Como ligar VNets que estão na mesma subscrição
 
 ### <a name="before-you-begin"></a>Antes de começar
 
@@ -90,7 +94,7 @@ Utilizamos os seguintes valores nos exemplos:
 * IP Público: VNet1GWIP
 * VPNType: RouteBased
 * Ligação (1 a 4): VNet1toVNet4
-* Ligação (1 a 5): VNet1toVNet5
+* Ligação(1 a 5): VNet1aVNet5 (Para VNets em subscrições diferentes)
 * ConnectionType: VNet2VNet
 
 **Valores da TestVNet4:**
@@ -279,8 +283,6 @@ Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos abaixo
 4. Verifique a ligação. Veja a secção [Como verificar a ligação](#verify).
 
 ## <a name="difsub"></a>Como ligar VNets que estão em subscrições diferentes
-
-![Diagrama v2v](./media/vpn-gateway-vnet-vnet-rm-ps/v2vdiffsub.png)
 
 Neste cenário, vamos ligar TestVNet1 e TestVNet5. TestVNet1 e TestVNet5 residem em subscrições diferentes. As subscrições não têm de estar associadas ao mesmo inquilino do Active Directory. A diferença entre estes passos e as definições anteriores é que alguns dos passos de configuração têm de ser realizados numa sessão separada do PowerShell no contexto da segunda subscrição. especialmente quando as duas subscrições pertencem a organizações distintas.
 
