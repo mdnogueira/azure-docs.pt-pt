@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 04/20/2017
 ms.author: jeanb
-ms.openlocfilehash: 14f73322701dffea283432bf2a25b5e6cd3e9de4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e1fb9ee3147f94b173b0fd324943b8801b984d2b
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Compreender e ajustar as unidades de transmissão em fluxo
 
@@ -59,7 +59,6 @@ Para obter mais informações sobre como escolher o número correto de SUs, cons
 
 > [!Note]
 > Escolher SUs quantos são necessários para uma tarefa específica depende da configuração de partição para as entradas e a consulta definida para a tarefa. Pode selecionar até a sua cota de SUs para uma tarefa. Por predefinição, cada subscrição do Azure tem uma quota de 200 até SUs para todas as tarefas de análise numa região específica. Para aumentar o SUs para as suas subscrições depois desta quota, contacte [Microsoft Support](http://support.microsoft.com). Os valores válidos para SUs por tarefa são 1, 3, 6 e até em incrementos de 6.
-> Tenha em atenção de que 1 SU não é recomendado utilizar para as tarefas de produção. Iremos normalmente conselhos para utilizar apenas as tarefas de SU 1 para fazer o protótipo e testar as tarefas.
 
 
 

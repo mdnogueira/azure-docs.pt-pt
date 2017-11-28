@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: On Demand
 ms.date: 09/29/2017
 ms.author: rickbyh
-ms.openlocfilehash: bd5a7a117ec6c4a4b75fcced3f2b5987004c83d0
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: cdf78a3c64933f5f01642d5ef8fe1fca64cb1fbb
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="universal-authentication-with-sql-database-and-sql-data-warehouse-ssms-support-for-mfa"></a>Autenticação universal com a base de dados SQL e SQL Data Warehouse (SSMS suporte para a MFA)
 SQL Database do Azure e o Azure SQL Data Warehouse suportam ligações da utilização do SQL Server Management Studio (SSMS) *autenticação de Universal do Active Directory*. 
@@ -63,4 +63,4 @@ Suportado para cenários B2B do Azure AD, como os utilizadores convidados os uti
 - [Importar um ficheiro BACPAC para uma nova SQL Database do Azure](../sql-database/sql-database-import.md)  
 - [Exportar uma base de dados SQL do Azure para um ficheiro BACPAC](../sql-database/sql-database-export.md)  
 - Interface de c# [IUniversalAuthProvider Interface](https://msdn.microsoft.com/library/microsoft.sqlserver.dac.iuniversalauthprovider.aspx)  
-- Quando utilizar **Active Directory - Universal com a MFA** autenticação, o rastreio ADAL está disponível a partir com [SSMS 17.3](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms). Desativado por predefinição, pode ativar o rastreio ADAL utilizando o **ferramentas**, **opções** menu, em **serviços do Azure**, **nuvem do Azure**,  **Nível de rastreio de janela de saída ADAL**, seguido pela ativação **saída** no **vista** menu. Os rastreios estão disponíveis na janela de saída quando selecionar **opção do Azure Active Directory**.  
+- Quando utilizar **Active Directory - Universal com a MFA** autenticação, o rastreio ADAL está disponível a partir com [SSMS 17.3](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Desativado por predefinição, pode ativar o rastreio ADAL utilizando o **ferramentas**, **opções** menu, em **serviços do Azure**, **nuvem do Azure**,  **Nível de rastreio de janela de saída ADAL**, seguido pela ativação **saída** no **vista** menu. Os rastreios estão disponíveis na janela de saída quando selecionar **opção do Azure Active Directory**.  

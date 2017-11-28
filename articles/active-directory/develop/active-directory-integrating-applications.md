@@ -16,11 +16,11 @@ ms.date: 10/04/2017
 ms.author: bryanla
 ms.custom: aaddev
 ms.reviewer: luleon
-ms.openlocfilehash: d9816f53e1d0e09f938452a022c75a3d20a43da4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8a5eab88e10b330bf4da88c01d24a11e95277439
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="integrating-applications-with-azure-active-directory"></a>Integrar aplicações com o Azure Active Directory
 [!INCLUDE [active-directory-devguide](../../../includes/active-directory-devguide.md)]
@@ -178,7 +178,7 @@ A secção seguinte mostra como para expor os âmbitos de acesso, modificando o 
   }
   ```
   > [!NOTE]
-  > O valor de "id" tem de ser gerado utilizando uma ferramenta de geração de GUID como [guidgen]] (https://msdn.microsoft.com/library/ms241442%28v=vs.80%29.aspx) ou através de programação. Representa um identificador exclusivo para o âmbito como expostos através da web API. Depois de um cliente está corretamente configurado com permissões para aceder à web API, este é emitido um token de acesso OAuth2.0 pelo Azure AD. Quando o cliente, chama a API web, apresenta o token de acesso que tenha o âmbito (scp) conjunto de afirmações para as permissões de pedido no respetivo registo de aplicação.
+  > O valor de "id" tem de ser gerado utilizando uma ferramenta de geração de GUID como [guidgen](https://msdn.microsoft.com/library/ms241442%28v=vs.80%29.aspx) ou através de programação. Representa um identificador exclusivo para o âmbito como expostos através da web API. Depois de um cliente está corretamente configurado com permissões para aceder à web API, este é emitido um token de acesso OAuth2.0 pelo Azure AD. Quando o cliente, chama a API web, apresenta o token de acesso que tenha o âmbito (scp) conjunto de afirmações para as permissões de pedido no respetivo registo de aplicação.
   >
   > Pode expor os âmbitos adicionais mais tarde conforme necessários. Considere-se de que a API web poderá expor associados uma variedade de diferentes funções de vários âmbitos. O recurso pode controlar o acesso para a API web em tempo de execução, através da avaliação de âmbito (`scp`) claim(s) no token de acesso de OAuth 2.0 recebido.
   > 

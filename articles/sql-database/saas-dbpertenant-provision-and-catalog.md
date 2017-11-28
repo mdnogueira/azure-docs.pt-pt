@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/11/2017
 ms.author: sstein
-ms.openlocfilehash: 17eb9b3ff059912e4fe3fafda0b9c435e3983888
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: b82623f63681daff502f1e23d052da7480dda942
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>Saiba como aprovisionar novos inquilinos e registe-os no catálogo
 
@@ -68,9 +68,9 @@ A abordagem de aprovisionamento que utiliza tem de ser compreender na sua estrat
 Wingtip pedidos de suporte de SaaS base de dados por inquilino aplicação Aprovisiona novos inquilinos ao copiar uma base de dados do modelo com o nome _basetenantdb_, implementados no servidor de catálogo.  Aprovisionamento pode ser integrado na aplicação como parte de uma experiência de inscrição, e/ou suportado offline com scripts. Este tutorial explicar aprovisionamento através do PowerShell. Os scripts de aprovisionamento de copiar a base de dados basetenantdb para criar uma nova base de dados do inquilino num conjunto elástico, em seguida, inicializá-lo com as informações de inquilino específico e registá-lo no mapa de partições horizontais de catálogo.  Na Wingtip bilhetes SaaS da base de dados por aplicação de inquilino, bases de dados do inquilino recebem nomes com base no nome do inquilino, mas não se trata de uma parte crucial do padrão – a utilização do catálogo permite que qualquer nome que seja atribuído ao inquilino bases de dados. + 
 
 
-## <a name="get-the-wingtip-application-scripts"></a>Obter os scripts da aplicação Wingtip
+## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Obter os scripts de aplicação Wingtip bilhetes SaaS da base de dados por inquilino
 
-Os scripts de Wingtip SaaS e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do GitHub. [Passos para transferir os scripts de SaaS de bilhetes Wingtip](saas-dbpertenant-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-tickets-saas-database-per-tenant-scripts).
+Os scripts de base de dados do Wingtip bilhetes SaaS multi-inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do GitHub. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 
 
 ## <a name="provision-and-catalog-detailed-walkthrough"></a>Instruções detalhadas sobre o aprovisionamento e a catalogação

@@ -16,15 +16,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: billgib;sstein
-ms.openlocfilehash: 866b5eec6e9c7e8bf98547143c0393bfb6f97b14
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: ee2bc6d8b75b92243c0550db0044895e41c9474b
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="restore-a-single-tenants-azure-sql-database-in-a-multi-tenant-saas-app"></a>Restaurar uma única inquilinos SQL database do Azure numa aplicação SaaS multi-inquilino
+# <a name="restore-a-single-tenants-azure-sql-database-in-a-multi-tenant-saas-app"></a>Restaurar SQL database do Azure um único inquilino numa aplicação SaaS multi-inquilino
 
-A aplicação Wingtip SaaS baseia-se através de um modelo de base de dados por inquilino, onde cada inquilino tem os seus próprios base de dados. Uma das vantagens deste modelo é que é mais fácil restaurar dados de um único inquilino do isolamento sem afetar outros inquilinos.
+A aplicação de Wingtip bilhetes SaaS baseia-se através de um modelo de base de dados por inquilino, onde cada inquilino tem os seus próprios base de dados. Uma das vantagens deste modelo é que é mais fácil restaurar dados de um único inquilino do isolamento sem afetar outros inquilinos.
 
 Neste tutorial aprende dois padrões de recuperação de dados:
 
@@ -53,9 +53,9 @@ No primeiro padrão, os dados são restaurados para uma nova base de dados. O in
 
 O padrão de segundo, assume-se de que o inquilino sofra uma perda ou corrupção de dados, a base de dados de produção do inquilino é restaurada para um ponto anterior no tempo. No restauro local padrão, o inquilino seja colocado offline por um breve período de tempo enquanto a base de dados é restaurada e recolocado online. A base de dados original é eliminado, mas pode ainda ser restaurado a partir de se precisar de voltar atrás para um ponto mesmo anterior no tempo. Uma variação deste padrão de poderia mudar o nome da base de dados em vez de eliminá-lo, apesar de mudar o nome da base de dados não oferece nenhuma vantagem adicional em termos de segurança dos dados.
 
-## <a name="get-the-wingtip-application-scripts"></a>Obter os scripts da aplicação Wingtip
+## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Obter os scripts de aplicação Wingtip bilhetes SaaS da base de dados por inquilino
 
-Os scripts de Wingtip SaaS e o código fonte da aplicação, estão disponíveis no [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS) repositório do github. [Passos para transferir os scripts de Wingtip SaaS](saas-dbpertenant-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-tickets-saas-database-per-tenant-scripts).
+Os scripts de base de dados do Wingtip bilhetes SaaS multi-inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do GitHub. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 
 ## <a name="simulate-a-tenant-accidentally-deleting-data"></a>Simular um inquilino eliminação acidental de dados
 
@@ -146,6 +146,6 @@ Neste tutorial, ficou a saber como:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* Adicionais [tutoriais tirar partido da aplicação Wingtip SaaS](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
+* [Tutoriais adicionais que tirar partido da aplicação Wingtip SaaS](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 * [Descrição geral da continuidade do negócio com a SQL Database do Azure](sql-database-business-continuity.md)
 * [Saiba mais sobre as cópias de segurança de base de dados SQL](sql-database-automated-backups.md)

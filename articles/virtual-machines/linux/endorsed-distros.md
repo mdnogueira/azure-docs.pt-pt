@@ -13,24 +13,25 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 02/02/2017
+ms.date: 11/21/2017
 ms.author: szark
-ms.openlocfilehash: 39cb2464eb593a29c4436afb5c14419b704ebff4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 811769443e322af3a2981c58979040a1e33b06e9
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="linux-on-distributions-endorsed-by-azure"></a>Linux em distribuições aprovadas pelo Azure
 Parceiros fornecer imagens de Linux no Azure Marketplace. Estamos a trabalhar com várias comunidades de Linux para adicionar tipos ainda mais a lista de distribuição aprovadas. Entretanto, para as distribuições que não estão disponíveis no Marketplace, que pode sempre colocar o seus próprios Linux ao seguir as diretrizes no [criar e carregar um disco rígido virtual que contém o sistema operativo Linux](classic/create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json).
 
 ## <a name="supported-distributions-and-versions"></a>Distribuições suportadas e as versões
-A tabela seguinte lista as distribuições de Linux e versões que são suportadas no Azure. Consulte [imagens de suporte para Linux no Microsoft Azure](https://support.microsoft.com/en-us/kb/2941892) para informações mais detalhadas.
+A tabela seguinte lista as distribuições de Linux e versões que são suportadas no Azure. Consulte [suporte para imagens de Linux no Microsoft Azure](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) para obter mais informações sobre o suporte para Linux e tecnologia de código aberto no Azure.
 
 Os controladores de serviços de integração Linux (LIS) para o Hyper-V e do Azure são módulos de kernel que Microsoft contribui diretamente para o kernel do Linux a montante.  Alguns controladores LIS estão incorporados em kernel a distribuição por predefinição. Distribuições mais antigas que se baseiam no Red Hat Enterprise (RHEL) CentOS são disponíveis como uma transferência individual no [4.1 versão de serviços de integração do Linux para Hyper-V](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409). Consulte [requisitos de kernel do Linux](create-upload-generic.md#linux-kernel-requirements) para obter mais informações sobre os controladores de LIS.
 
 O agente Linux do Azure já está instalado previamente nas imagens do Azure Marketplace e está normalmente disponível a partir do repositório de pacote de distribuição. Código de origem pode ser encontrado no [GitHub](https://github.com/azure/walinuxagent).
 
+  
 | Distribuição | Versão | Controladores | Agente |
 | --- | --- | --- | --- |
 | CentOS |CentOS 6.3 + 7.0 + |CentOS 6.3: [LIS transferir](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4 +: na kernel |Pacote: [repositório](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) em "WALinuxAgent" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
@@ -39,8 +40,11 @@ O agente Linux do Azure já está instalado previamente nas imagens do Azure Mar
 | Oracle Linux |6.4+, 7.0+ |Na kernel |Pacote de: no repositório em "WALinuxAgent" <br/>Código de origem: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | Red Hat Enterprise Linux |RHEL 6.7 + 7.1 + |Na kernel |Pacote de: no repositório em "WALinuxAgent" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise |SLES/SLES para SAP<br>11 SP4<br>12 SP1 +|Na kernel |Pacote de:<p> para 11 no [nuvem: ferramentas](https://build.opensuse.org/project/show/Cloud:Tools) repositório<br>para 12 incluídos no módulo "Nuvem pública" em "python-azure-agente"<br/>Código de origem: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998) |
-| openSUSE |openSUSE bissexto 42.1 + |Na kernel |Pacote: [nuvem: ferramentas](https://build.opensuse.org/project/show/Cloud:Tools) repositório em "python-azure-agente" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
-| Ubuntu |Ubuntu 12.04, 14.04, 16.04, 16.10 |Na kernel |Pacote de: no repositório em "walinuxagent" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| openSUSE |openSUSE bissexto 42.2 + |Na kernel |Pacote: [nuvem: ferramentas](https://build.opensuse.org/project/show/Cloud:Tools) repositório em "python-azure-agente" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| Ubuntu |Ubuntu 12.04 +  **<sup>1</sup>** |Na kernel |Pacote de: no repositório em "walinuxagent" <br/>Código de origem: [GitHub](https://github.com/Azure/WALinuxAgent) |
+
+  - **<sup>1</sup>**  para Ubuntu 12.04 suporte no Azure, consulte o [aviso EOL](https://azure.microsoft.com/blog/ubuntu-12-04-precise-pangolin-nearing-end-of-life/).
+
 
 ## <a name="partners"></a>Parceiros
 
@@ -59,7 +63,7 @@ Credativ é um consultadoria independente e a empresa de serviços specializes n
 ### <a name="oracle"></a>Oracle
 [http://www.Oracle.com/technetwork/topics/cloud/FAQ-1963009.HTML](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html)
 
-Estratégia do Oracle é oferecer um amplo portefólio de soluções para nuvens públicas e privadas. A estratégia de fornece aos clientes opção e a flexibilidade na forma como implementam software Oracle em nuvens Oracle e de outras nuvens. Parceria do Oracle com a Microsoft permite aos clientes implementar software Oracle em nuvens públicas e privadas do Microsoft com confiança de certificação e suporte do Oracle.  Compromisso da Oracle e o investimento em soluções de nuvens públicas e privadas Oracle permanece inalterado.
+Estratégia do Oracle é oferecer um amplo portefólio de soluções para nuvens públicas e privadas. A estratégia de fornece aos clientes opção e a flexibilidade na forma como implementam software Oracle em nuvens Oracle e de outras nuvens. A parceria da Oracle com a Microsoft permite aos clientes implementar software Oracle nas clouds pública e privada da Microsoft sabendo que conta com a certificação e o suporte da Oracle.  Compromisso da Oracle e o investimento em soluções de nuvens públicas e privadas Oracle permanece inalterado.
 
 ### <a name="red-hat"></a>Red Hat
 [http://www.Redhat.com/en/partners/Strategic-Alliance/Microsoft](http://www.redhat.com/en/partners/strategic-alliance/microsoft)

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 11/16/2017
 ms.author: sethm
-ms.openlocfilehash: 69c07cb31b1dc3ec3685448d8187ef3a57bd3821
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: d6cc4d95adb52b5b0bfc4b674ade878af764a3e7
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="event-hubs-programming-guide"></a>Guia de programação dos Event Hubs
 
@@ -117,10 +117,10 @@ Enviar eventos em lotes pode ajudar a aumentar o débito. O [SendBatch](/dotnet/
 public void SendBatch(IEnumerable<EventData> eventDataList);
 ```
 
-Tenha em atenção que um único lote não pode exceder o limite de 256 KB de um evento. Além disso, cada mensagem no lote utiliza a mesma identidade do publicador. É da responsabilidade do remetente certificar-se de que o lote não excede o tamanho máximo do evento. Se exceder esse tamanho, é gerado um erro **Enviar** do cliente.
+Tenha em atenção que um único lote não pode exceder o limite de 256 KB de um evento. Além disso, cada mensagem no lote utiliza a mesma identidade do publicador. É da responsabilidade do remetente certificar-se de que o lote não excede o tamanho máximo do evento. Se exceder esse tamanho, é gerado um erro **Enviar** do cliente. Pode utilizar a classe de programa auxiliar [EventHubClient.CreateBatch](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.createbatch) para se certificar de que o lote não excede 256 KB. Obter vazio [EventDataBatch](/dotnet/api/microsoft.servicebus.messaging.eventdatabatch) do [CreateBatch](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.createbatch) API e, em seguida, utilize [TryAdd](/dotnet/api/microsoft.servicebus.messaging.eventdatabatch.tryadd#Microsoft_ServiceBus_Messaging_EventDataBatch_TryAdd_Microsoft_ServiceBus_Messaging_EventData_) adicionar eventos ao construir o batch. Por último, utilize [EventDataBatch.ToEnumerable](/dotnet/api/microsoft.servicebus.messaging.eventdatabatch.toenumerable) para obter os eventos subjacentes para passar para o [EventHubClient.Send](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.send) API.
 
 ## <a name="send-asynchronously-and-send-at-scale"></a>Enviar no modo assíncrono e enviar à escala
-Também pode enviar eventos para um hub de eventos no modo assíncrono. Enviar no modo assíncrono pode aumentar a taxa a que um cliente é capaz de enviar eventos. Tanto os métodos [Enviar](/dotnet/api/microsoft.servicebus.messaging.eventhubclient#Microsoft_ServiceBus_Messaging_EventHubClient_Send_Microsoft_ServiceBus_Messaging_EventData_) como [SendBatch](/dotnet/api/microsoft.servicebus.messaging.eventhubclient#Microsoft_ServiceBus_Messaging_EventHubClient_SendBatch_System_Collections_Generic_IEnumerable_Microsoft_ServiceBus_Messaging_EventData__) estão disponíveis em versões assíncronas que devolvem um objeto [Tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). Apesar de esta técnica poder aumentar o débito, também pode fazer com que o cliente continue a enviar eventos mesmo quando está a ser limitado pelo serviço dos Event Hubs e pode resultar em falhas do cliente ou mensagens perdidas se não for implementada corretamente. Além disso, pode utilizar a propriedade [RetryPolicy](/dotnet/api/microsoft.servicebus.messaging.cliententity#Microsoft_ServiceBus_Messaging_ClientEntity_RetryPolicy) no cliente para controlar as opções de repetição do cliente.
+Também pode enviar eventos para um hub de eventos no modo assíncrono. Enviar no modo assíncrono pode aumentar a taxa a que um cliente é capaz de enviar eventos. Tanto os métodos [Enviar](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.send) como [SendBatch](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.sendbatch) estão disponíveis em versões assíncronas que devolvem um objeto [Tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). Apesar de esta técnica poder aumentar o débito, também pode fazer com que o cliente continue a enviar eventos mesmo quando está a ser limitado pelo serviço dos Event Hubs e pode resultar em falhas do cliente ou mensagens perdidas se não for implementada corretamente. Além disso, pode utilizar a propriedade [RetryPolicy](/dotnet/api/microsoft.servicebus.messaging.cliententity.retrypolicy) no cliente para controlar as opções de repetição do cliente.
 
 ## <a name="create-a-partition-sender"></a>Criar um remetente de partição
 Embora seja mais comum para enviar eventos para um hub de eventos sem uma chave de partição, em alguns casos poderá querer enviar eventos diretamente para uma determinada partição. Por exemplo:

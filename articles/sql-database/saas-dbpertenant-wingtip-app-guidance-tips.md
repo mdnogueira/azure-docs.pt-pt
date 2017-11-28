@@ -3,7 +3,7 @@ title: "Orientações para o exemplo de aplicação multi-inquilino de base de d
 description: "Fornece os passos e as orientações para instalar e executar a aplicação multi-inquilino de exemplo que utiliza o SQL Database do Azure, o exemplo de Wingtip SaaS."
 keywords: tutorial de base de dados sql
 services: sql-database
-author: MightyPen
+author: ajlam
 manager: craigg
 ms.service: sql-database
 ms.custom: scale out apps
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2017
-ms.author: genemi
-ms.openlocfilehash: 4c90d70bb3b043ef81a224f0f69107eaa6eb0547
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.author: andrela
+ms.openlocfilehash: f7ba0569a0ede80a6579ccf3f30efb1997d4ad90
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="guidance-and-tips-for-azure-sql-database-multi-tenant-saas-app-example"></a>Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino
 

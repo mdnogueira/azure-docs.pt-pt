@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 06/05/2017
+ms.date: 11/28/2017
 ms.author: ruturajd
-ms.openlocfilehash: 3644b41c3e3293a263bd9ff996d4e3d26417aeed
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ba68df3df33a357db4d97ff65c9cc5995cd51caa
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="reprotect-from-azure-to-an-on-premises-site"></a>Voltar a proteger a partir do Azure para um site no local
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/11/2017
 Este artigo descreve como voltar a proteger máquinas virtuais do Azure a partir do Azure para um site no local. Siga as instruções neste artigo quando estiver pronto para efetuar a cópia a máquinas virtuais VMware ou o Windows/Linux em servidores físicos depois de ter pós-falha no local do site para o Azure (conforme descrito em [VMware replicar máquinas virtuais e servidores físicos para o Azure com o Azure Site Recovery](site-recovery-failover.md)).
 
 > [!WARNING]
-> Não é possível reativação pós-falha depois de ter um [concluído migração](site-recovery-migrate-to-azure.md#what-do-we-mean-by-migration), mover uma máquina virtual para outro grupo de recursos ou eliminar a máquina virtual do Azure. Se desativar a proteção da máquina virtual, não é possível reativação pós-falha.
+> Não é possível reativação pós-falha depois de ter um [concluído migração](site-recovery-migrate-to-azure.md#what-do-we-mean-by-migration), mover uma máquina virtual para outro grupo de recursos ou eliminar a máquina virtual do Azure. Se desativar a proteção da máquina virtual, não é possível reativação pós-falha. Se a máquina virtual foi criada pela primeira vez no Azure (born na nuvem) não é possível Proteja-no local. A máquina deve ter sido protegido inicialmente no local e a ativação pós-falha para o Azure antes de reproteção.
 
 
 Depois de voltar concluída e estiver a replicar máquinas virtuais protegidas, pode iniciar uma reativação pós-falha nas máquinas virtuais para colocá-los para o site no local.
@@ -63,7 +63,10 @@ Quando preparar para voltar a proteger máquinas virtuais, tomar ou considere as
     * [Uma máquina virtual Linux necessita de um servidor de destino principal do Linux](site-recovery-how-to-install-linux-master-target.md).
     * Máquina virtual do Windows precisa de um servidor de destino principal do Windows. Pode utilizar as máquinas no local processo servidor e o mestre de destino novamente.
 
-    O destino principal tem outros pré-requisitos listados em [coisas comuns para verificar um destino principal antes de reproteção](site-recovery-how-to-reprotect.md#common-things-to-check-after-completing-installation-of-the-master-target-server).
+> [!NOTE]
+> Todas as máquinas virtuais de um grupo de replicação deve ser do mesmo tipo de sistema operativo (todos os Windows ou Linux todas as). Um grupo de replicação com sistemas de operativos mistos não é atualmente suportado para reproteção e a reativação pós-falha no local. Isto acontece porque o destino principal deve ser do mesmo sistema operativo que a máquina virtual e todas as máquinas virtuais de um grupo de replicação deve ter o mesmo destino mestre. 
+
+    The master target has other prerequisites that are listed in [Common things to check on a master target before reprotect](site-recovery-how-to-reprotect.md#common-things-to-check-after-completing-installation-of-the-master-target-server).
 
 * Um servidor de configuração é necessário no local ao efetuar a cópia. Durante a reativação pós-falha, a máquina virtual tem de existir na base de dados de servidor de configuração. Caso contrário, a reativação pós-falha é bem-sucedida. 
 
@@ -170,6 +173,8 @@ Atualmente, o Azure Site Recovery suporta a falhar back apenas a um sistema de f
 * O servidor de destino principal não pode ter instantâneos de discos. Se existirem instantâneos, só e a reativação pós-falha falharem.
 
 * O destino principal não pode ter um controlador de Paravirtual SCSI. O controlador só pode ser um controlador de LSI Logic. Sem um controlador de LSI Logic só irá falhar.
+
+* Em qualquer instância especificada, o destino principal pode ter Step-by-atmst 60 discos ligados ao mesmo. Se o número de máquinas virtuais que está a ser proteger ao destino principal no local têm um número total de soma de mais de 60 discos, em seguida, reprotects ao destino principal começarão a falhar. Certifique-se de que tem suficiente mestre ranhuras de disco de destino ou implementar servidores de destino mestre adicionais.
 
 <!--
 ### Failback policy

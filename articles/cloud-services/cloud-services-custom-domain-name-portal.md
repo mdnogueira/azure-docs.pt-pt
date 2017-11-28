@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: adegeo
-ms.openlocfilehash: afda0bc79a26c8cb9736c754a681ebb602e41af1
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: 139ec6578dc9e76039c5fb13e7a7741aa8ba4e0d
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Configurar um nome de domínio personalizado para um serviço em nuvem do Azure
 Quando cria um serviço em nuvem, Azure atribui-o para um subdomínio **cloudapp.net**. Por exemplo, se o seu serviço em nuvem com o nome "contoso", os utilizadores irão conseguir aceder à aplicação num URL como http://contoso.cloudapp.net. Azure também atribui um endereço IP virtual.
@@ -28,7 +28,7 @@ No entanto, pode também expor a aplicação no seu próprio nome de domínio, t
 Já compreender quais são CNAME e registos? [Ir passado a explicação](#add-a-cname-record-for-your-custom-domain).
 
 > [!NOTE]
-> Os procedimentos nesta tarefa se aplicam ao Cloud Services do Azure. Para os serviços de aplicação, consulte [isto](../app-service/app-service-web-tutorial-custom-domain.md). Para contas do storage, consulte [isto](../storage/blobs/storage-custom-domain-name.md).
+> Os procedimentos nesta tarefa se aplicam ao Cloud Services do Azure. Para os serviços de aplicação, consulte [mapear um nome DNS personalizado existente para Web Apps do Azure](../app-service/app-service-web-tutorial-custom-domain.md). Para contas do storage, consulte [configurar um nome de domínio personalizado para o ponto final de armazenamento de Blobs do Azure](../storage/blobs/storage-custom-domain-name.md).
 > 
 > 
 

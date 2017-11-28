@@ -4,7 +4,7 @@ description: "Saiba como o Stream Analytics pode visar BD do Cosmos do Azure par
 keywords: "Saída JSON"
 documentationcenter: 
 services: stream-analytics,documentdb
-author: samacha
+author: jseb225
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 5d2a61a6-0dbf-4f1b-80af-60a80eb25dd1
@@ -14,19 +14,21 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 03/28/2017
-ms.author: samacha
-ms.openlocfilehash: cc80b0080c806541362a1ef2d71b95862bd51ca2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: jeanb
+ms.openlocfilehash: ca7102f5fd4a5038cee983b5fdd588d41d1b2725
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="target-azure-cosmos-db-for-json-output-from-stream-analytics"></a>BD de Cosmos do destino do Azure para a saída JSON a partir do Stream Analytics
 Pode visar do Stream Analytics [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) para saída JSON, permitindo consultas de arquivo e baixa latência de dados em dados não estruturados de JSON. Este documento inclui algumas melhores práticas para implementar esta configuração.
 
 Os utilizadores que não está familiarizado com a base de dados do Cosmos, observe [percurso de aprendizagem da BD do Azure Cosmos](https://azure.microsoft.com/documentation/learning-paths/documentdb/) para começar a utilizar. 
 
-Nota: API de BD do Mongo Cosmos DB baseada em coleções não é atualmente suportada. 
+> [!Note]
+> Neste momento, o Azure Stream Analytics suporta apenas a ligação para a utilização de CosmosDB **(SQL do DocumentDB) API**.
+> APIs de BD do Cosmos outros Azure ainda não são suportadas. Se o ponto de Azure Stream Analytics para as contas de base de dados do Azure Cosmos criado com outras APIs, os dados poderão não ser corretamente armazenados. 
 
 ## <a name="basics-of-cosmos-db-as-an-output-target"></a>Noções básicas da BD do Cosmos como um destino de saída
 A saída de BD do Cosmos Azure Stream Analytics permite escrita sua transmissão em fluxo processar os resultados como saída JSON na sua collection(s) de BD do Cosmos. Do Stream Analytics não criar coleções na base de dados, em vez disso, exigir a criação de compromisso. Isto é, para que os custos de faturação da BD do Cosmos coleções são transparentes para si e para que pode otimizar o desempenho, a consistência e a capacidade do seu coleções diretamente utilizando a [APIs de BD do Cosmos](https://msdn.microsoft.com/library/azure/dn781481.aspx). Recomendamos que utilize um Cosmos DB da base de dados por transmissão em fluxo de trabalho para logicamente as coleções separadas para uma tarefa de transmissão em fluxo.
@@ -67,5 +69,5 @@ Coleção particionada | Várias coleções de "Única partição"
 * **Padrão de nome de coleção** – o nome da coleção ou os respetivos padrão para as coleções a ser utilizado. O formato de nome de coleção pode ser construído utilizando o token {partition} opcional, onde as partições começam do 0. Seguem-se entradas de exemplo válido:  
   1\) MyCollection – uma coleção designada "MyCollection" tem de existir.  
   2\) MyCollection {partition} – essas coleções têm de ser existir – "MyCollection0", "MyCollection1", "MyCollection2" e assim sucessivamente.  
-* **Chave de partição** – opcional. Isto só é necessário se estiver a utilizar um token de {dividir em partições} no seu padrão de nome de coleção. O nome do campo em eventos de saída utilizado para especificar a chave de partições da saída nas coleções. Para o resultado única coleção, pode ser qualquer coluna de saída arbitrários utilizado por PartitionId.  
+* **Chave de partição** – opcional. Isto só é necessário se estiver a utilizar um token {partition} no seu padrão de nome de coleção. O nome do campo em eventos de saída utilizado para especificar a chave de partições da saída nas coleções. Para o resultado única coleção, pode ser qualquer coluna de saída arbitrários utilizado por PartitionId.  
 * **ID de documento** – opcional. O nome do campo em eventos de saída utilizado para especificar a chave primária na qual insert ou update baseiam-se operações.  

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/17/2017
 ms.author: billgib
-ms.openlocfilehash: 094189e08002ce8d4a2f4f92a8c112eaf18ebe13
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 2a36df0e45af5bcce5338d04b7e1ba44221ae964
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="the-wingtip-tickets-saas-application"></a>A aplicação de Wingtip bilhetes SaaS
 
@@ -27,7 +27,7 @@ O mesmo *Wingtip bilhetes* aplicação é implementada em cada uma das três amo
 
 ## <a name="three-saas-application-patterns"></a>Três padrões de aplicações SaaS
 
-Três vesions da aplicação estiverem disponíveis; cada explicar um padrão de inquilinos de base de dados diferente na SQL Database do Azure.  O primeiro utiliza uma aplicação de inquilino único com uma base de dados de inquilino único isolado. O segundo utiliza uma aplicação de multi-inquilino, com uma base de dados por inquilino. O terceiro exemplo utiliza uma aplicação multi-inquilino com a bases de dados do multi-inquilinos.
+Estão disponíveis; três versões da aplicação cada explicar um padrão de inquilinos de base de dados diferente na SQL Database do Azure.  O primeiro utiliza uma aplicação de inquilino único com uma base de dados de inquilino único isolado. O segundo utiliza uma aplicação de multi-inquilino, com uma base de dados por inquilino. O terceiro exemplo utiliza uma aplicação multi-inquilino com a bases de dados do multi-inquilinos.
 
 ![Três padrões de inquilinos][image-three-tenancy-patterns]
 
@@ -63,15 +63,15 @@ Veja o [tutoriais] [ docs-tutorials-for-wingtip-mt] e código no GitHub [.../Mic
 
 - Aplicação autónoma:
     - [Tutoriais para a aplicação autónoma][docs-tutorials-for-wingtip-sa].
-    - [Código autónomo, no Github][github-code-for-wingtip-sa].
+    - [Código autónomo, no GitHub][github-code-for-wingtip-sa].
 
 - Base de dados por inquilino:
     - [Tutoriais para a base de dados por inquilino][docs-tutorials-for-wingtip-dpt].
-    - [Código de base de dados por inquilino, no Github][github-code-for-wingtip-dpt].
+    - [Código de base de dados por inquilino, no GitHub][github-code-for-wingtip-dpt].
 
 - A multi-inquilino:
     - [Tutoriais para a multi-inquilino][docs-tutorials-for-wingtip-mt].
-    - [Código para a multi-inquilino, no Github][github-code-for-wingtip-mt].
+    - [Código para a multi-inquilino, no GitHub][github-code-for-wingtip-mt].
 
 
 

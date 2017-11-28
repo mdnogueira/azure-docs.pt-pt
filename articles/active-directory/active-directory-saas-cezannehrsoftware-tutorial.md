@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/22/2017
+ms.date: 11/28/2017
 ms.author: jeedes
-ms.openlocfilehash: cf44d749ecbfcffb3d5a6e5e12aa49e66f7cde2e
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 620b0f62bceeda6fac87c31b325a078260f7d3d0
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Tutorial: Integração do Azure Active Directory com o Software de RH Cezanne
 
@@ -108,11 +108,14 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     ![Cezanne HR Software domínio e os URLs únicos de informações de início de sessão](./media/active-directory-saas-cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_url.png)
 
-    a. No **URL de início de sessão** caixa de texto, escreva o URL:`https://w3.cezanneondemand.com/CezanneOnDemand/-/optyma`
+    a. No **URL de início de sessão** caixa de texto, escreva o URL:`https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`
 
     b. No **identificador** caixa de texto, escreva o URL:`https://w3.cezanneondemand.com/CezanneOnDemand/`
 
-    c. No **URL de resposta** caixa de texto, escreva o URL:`https://w3.cezanneondemand.com:443/cezanneondemand/-/optyma/Saml/samlp`
+    c. No **URL de resposta** caixa de texto, escreva o URL:`https://w3.cezanneondemand.com:443/cezanneondemand/-/<tenantidentifier>/Saml/samlp`
+    
+    > [!NOTE]
+    > Estes valores não estiverem reais. Atualize estes valores com o URL de início de sessão e o URL de resposta real. Contacte [equipa de suporte de cliente de Software de RH Cezanne](https://cezannehr.com/services/support/) para obter estes valores.
 
 4. No **certificado de assinatura de SAML** secção, clique em **Certificate(Base64)** e, em seguida, guarde o ficheiro de certificado no seu computador.
 

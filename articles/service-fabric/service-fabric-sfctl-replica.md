@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 09/22/2017
 ms.author: ryanwi
-ms.openlocfilehash: 50d185294131e42aaf8b541ab17495fcb40c89dd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: bd16dd889cbe0f05d7e60f444c6c5fa2e65f64a4
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="sfctl-replica"></a>réplica sfctl
 Gerir as réplicas que pertencem a partições de serviço.
@@ -29,8 +29,7 @@ Gerir as réplicas que pertencem a partições de serviço.
 | --- | --- |
 |    Implementado  | Obtém os detalhes da réplica implementada num nó de Service Fabric.|
 |    lista implementado| Obtém a lista de réplicas implementado num nó de Service Fabric.|
-|    Estado de funcionamento    | Obtém o estado de funcionamento de uma réplica de monitorização de estado do serviço do Service Fabric ou o serviço sem monitorização de estado
-                   instância.|
+|    estado de funcionamento    | Obtém o estado de funcionamento de uma réplica de monitorização de estado do serviço do Service Fabric ou instância de serviço sem estado.|
 |    informações      | Obtém as informações sobre uma réplica de uma partição de Service Fabric.|
 |    lista      | Obtém as informações acerca de réplicas de uma partição de serviço do Service Fabric.|
 |    Remover    | Remove uma réplica de serviço em execução num nó.|

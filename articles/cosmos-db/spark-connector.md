@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: denlee
-ms.openlocfilehash: ba824ed1bad49c71f8de9f2da8249945d9430222
-ms.sourcegitcommit: 3ee36b8a4115fce8b79dd912486adb7610866a7c
+ms.openlocfilehash: 1efdda867703613e4f85e6994004df32e70ccb3d
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-the-spark-to-azure-cosmos-db-connector"></a>Acelerar a análise de macrodados em tempo real com o Spark para o conector Azure Cosmos DB
 
@@ -79,7 +79,7 @@ Comunicação entre o Spark e base de dados do Azure Cosmos está limitada ao n�
 ### <a name="install-pydocumentdb"></a>Instalar o pyDocumentDB
 Pode instalar o pyDocumentDB no seu nó controladores utilizando **pip**, por exemplo:
 
-```
+```bash
 pip install pyDocumentDB
 ```
 
@@ -89,7 +89,7 @@ Simplicidade o transporte de comunicações faz com que a execução de uma cons
 
 O fragmento de código seguinte mostra como utilizar o pyDocumentDB num contexto de Spark.
 
-```
+```python
 # Import Necessary Libraries
 import pydocumentdb
 from pydocumentdb import document_client
@@ -117,7 +117,7 @@ Conforme indicado no fragmento de código:
 ### <a name="execute-spark-queries-via-pydocumentdb"></a>Executar consultas do Spark através de pyDocumentDB
 Os exemplos seguintes utilizam a instância de base de dados do Azure Cosmos que foi criada no fragmento anterior utilizando as chaves especificadas de só de leitura. O seguinte fragmento de código liga-se ao **airports.codes** coleção na conta DoctorWho como especificado anteriormente e executa uma consulta para extrair as cidades airport no estado de Washington.
 
-```
+```python
 # Configure Database and Collections
 databaseId = 'airports'
 collectionId = 'codes'
@@ -141,7 +141,7 @@ elements = list(query)
 
 Depois da consulta foi executada através de **consulta**, o resultado é um **query_iterable. QueryIterable** que é convertido para uma lista de Python. Uma lista de Python pode ser facilmente convertida para um DataFrame Spark utilizando o seguinte código:
 
-```
+```python
 # Create `df` Spark DataFrame from `elements` Python list
 df = spark.createDataFrame(elements)
 ```
@@ -183,7 +183,7 @@ spark-shell --master $master --jars /$location/azure-cosmosdb-spark-0.0.3-jar-wi
 
 Se pretender executar JAR sem dependências, utilize o seguinte código:
 
-```
+```bash
 spark-shell --master $master --jars /$location/azure-cosmosdb-spark-0.0.3.jar,/$location/azure-documentdb-1.10.0.jar
 ```
 

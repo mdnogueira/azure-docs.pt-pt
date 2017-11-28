@@ -15,11 +15,11 @@ ms.devlang:
 ms.topic: article
 ms.date: 11/08/2017
 ms.author: anjangsh; billgib; genemi
-ms.openlocfilehash: ec93bbb477a047a028328964d3e152c1ab4bb58f
-ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
+ms.openlocfilehash: 549b6abf5728e50ee365f40326263d391e4b26fd
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="cross-tenant-analytics-using-extracted-data"></a>Análise de inquilino entre utilizar dados extraídos
 
@@ -73,7 +73,7 @@ Compreender como consistentemente cada inquilino está a utilizar o serviço for
 Para concluir este tutorial, devem ser cumpridos os seguintes pré-requisitos:
 
 - A aplicação de base de dados do Wingtip bilhetes SaaS multi-inquilino for implementada. Para implementar em menos de cinco minutos, consulte [implementar e explorar a aplicação de base de dados do Wingtip bilhetes SaaS multi-inquilino](saas-multitenantdb-get-started-deploy.md)
-- Os scripts de Wingtip SaaS e aplicação [código fonte](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB) são transferidos a partir do GitHub. Certifique-se para *desbloquear o ficheiro zip* antes de a extrair o respetivo conteúdo.
+- Os scripts de Wingtip SaaS e aplicação [código fonte](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB) são transferidos a partir do GitHub. Certifique-se para *desbloquear o ficheiro zip* antes de a extrair o respetivo conteúdo. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 - Ambiente de trabalho do Power BI está instalado. [Transferir o ambiente de trabalho do Power BI](https://powerbi.microsoft.com/downloads/)
 - O lote de inquilinos adicionais tiver sido aprovisionado, consulte o [ **aprovisionar inquilinos tutorial**](saas-multitenantdb-provision-and-catalog.md).
 - Uma conta de tarefa e a base de dados de conta de tarefa foram criados. Consulte os passos adequados de [ **tutorial de gestão de esquema**](saas-multitenantdb-schema-management.md#create-a-job-account-database-and-new-job-account).
@@ -212,7 +212,7 @@ O desenho anterior para Contoso Concert Hall mostra que o rush mad não acontece
 
 As informações para vender padrões de pedido de suporte poderão originar Wingtip permissões para otimizar o seu modelo de negócio. Em vez de charging todos os inquilinos igualmente, talvez Wingtip deve dar origem a escalões de serviço com níveis de desempenho diferentes. Venues maior do que necessita para vender mais pedidos por dia foi oferecidas um escalão superior com um superior contrato de nível serviço (SLA). Esses venues podem ter as bases de dados colocados em conjunto com limites de recursos por base de dados superiores. Cada escalão de serviço pode ter uma alocação de venda por hora, com taxas adicionais cobradas exceder a alocação. Venues maiores que tenham bursts periódicas de vendas seriam beneficiar os escalões superiores e Wingtip permissões pode monetizar seu serviço de forma mais eficiente.
 
-Entretanto, alguns clientes de bilhetes Wingtip queixarem de que estes dificuldade vender suficiente permissões para indicar o custo do serviço. Talvez nestas informações não há uma oportunidade para melhorar vendas de permissão para underperforming venues. Vendas superiores seriam aumentar o valor do serviço percetível. Clique com o botão direito do rato em fact_Tickets e selecione **nova medida**. Introduza a seguinte expressão da medida nova denominada **AverageTicketsSold**:
+Entretanto, alguns clientes de bilhetes Wingtip queixarem de que estes dificuldade vender suficiente permissões para indicar o custo do serviço. Talvez nestas informações não há uma oportunidade para melhorar vendas de permissão para em execução venues. Vendas superiores seriam aumentar o valor do serviço percetível. Clique com o botão direito do rato em fact_Tickets e selecione **nova medida**. Introduza a seguinte expressão da medida nova denominada **AverageTicketsSold**:
 
 ```
 AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[VenueCapacity]))*100, COUNTROWS(dim_Events))

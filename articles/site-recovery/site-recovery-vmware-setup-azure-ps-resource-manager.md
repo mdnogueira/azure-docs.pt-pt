@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 06/29/2017
+ms.date: 11/23/2017
 ms.author: anoopkv
-ms.openlocfilehash: 2b9b31abd5d11d02935a74e47d26be9803cdc920
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 035336efa6be0d00c41baba168eaffd80939cc82
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="manage-a-process-server-running-in-azure-resource-manager"></a>Gerir um servidor de processos em execução no Azure (Resource Manager)
 > [!div class="op_single_selector"]
@@ -56,7 +56,7 @@ Durante a reativação pós-falha, recomenda-se para implementar o servidor de p
   ![Adicionar o servidor de processos resumo](./media/site-recovery-vmware-setup-azure-ps-arm/add-ps-page-2.png)
 |**Nome do campo**|**Valor**|
 |-|-|
-|Nome do servidor|Nome a apresentar & o nome de anfitrião para a máquina de virtual do servidor de processo|
+|Nome do Servidor|Nome a apresentar & o nome de anfitrião para a máquina de virtual do servidor de processo|
 | Nome de Utilizador|Um nome de utilizador torna-se um administrador nessa máquina virtual|
 |Conta de Armazenamento|Nome da conta do Storage onde é colocado do disco virtual da máquina virtual|
 |Subrede|A sub-rede da VNet do Azure à qual a máquina virtual está ligada|

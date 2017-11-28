@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/10/2017
-ms.openlocfilehash: 924766aee7486f0cf5006dd89d5d77b83753833b
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 60db74535edd09841a1b660c2bf832af65fbfcad
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="deploy-and-azure-machine-learning-model-to-an-azure-iot-edge-device"></a>Implementar e modelo do Azure Machine Learning para um dispositivo de limite de IoT do Azure
+# <a name="deploy-an-azure-machine-learning-model-to-an-azure-iot-edge-device"></a>Implementar um modelo do Azure Machine Learning para um dispositivo de limite de IoT do Azure
 
 Todos os modelos do Azure Machine Learning de como serviços web baseados em Docker também podem executar em dispositivos de limite de IoT do Azure. Instruções de scripts adicionais e podem ser encontradas no [Toolkit de AI do Azure IoT Edge](http://aka.ms/AI-toolkit).
 

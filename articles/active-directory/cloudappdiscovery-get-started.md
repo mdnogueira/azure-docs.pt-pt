@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/18/2017
 ms.author: curtand
 ms.reviewer: nigu
-ms.openlocfilehash: c09410bc6ed8b4eac4316e206c75db84ef0b07fb
-ms.sourcegitcommit: 963e0a2171c32903617d883bb1130c7c9189d730
+ms.openlocfilehash: 92cafe24fc3a038f2acd68ec21ec845316ef46de
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="set-up-cloud-app-discovery-in-azure-ad"></a>Configurar a Cloud App Discovery no Azure AD
 
@@ -37,7 +37,7 @@ O cloud App Discovery no Azure AD é agora com base na integração com dados di
 
 2. [Configurar relatórios contínua](https://docs.microsoft.com/cloud-app-security/discovery-docker) para analisar todos os registos que são reencaminhados a partir da rede utilizando o recoletor de registos da Cloud App Security. Pode utilizá-los para identificar tendências de utilização e de novas aplicações.
 
-3. Se os registos não são atualmente suportados, [configurar um analisador de registo personalizado](https://docs.microsoft.com/en-us/cloud-app-security/custom-log-parser) para que o Cloud App Discovery poder analisá-las.
+3. Se os registos não são atualmente suportados, [configurar um analisador de registo personalizado](https://docs.microsoft.com/cloud-app-security/custom-log-parser) para que o Cloud App Discovery poder analisá-las.
   
 ## <a name="log-processing-flow"></a>Registo de processamento de fluxo
 

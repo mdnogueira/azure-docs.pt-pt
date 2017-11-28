@@ -12,13 +12,13 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/17/2016
+ms.date: 11/24/2017
 ms.author: cephalin
-ms.openlocfilehash: 3cb22b935624041ab51e64028a1b668fd694f9b5
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2ba6e3a79e5eb4eca4a3c7d35ada8c58bfe2295e
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="buy-a-custom-domain-name-for-azure-web-apps"></a>Compre um nome de domínio personalizado para Web Apps do Azure
 
@@ -31,6 +31,7 @@ Este artigo é para o App Service do Azure (Web Apps, API Apps, Mobile Apps, as 
 Para concluir este tutorial:
 
 * [Criar uma aplicação do app Service](/azure/app-service/), ou utilizar uma aplicação que criou para outro tutorial.
+* [Remover o limite de gastos na sua subscrição](../billing/billing-spending-limit.md#remove). Não é possível comprar a domínios do serviço de aplicações com os créditos de subscrição gratuita.
 
 ## <a name="prepare-the-app"></a>Preparar a aplicação
 
@@ -82,15 +83,25 @@ No **Web Apps** separador, clique no nome da sua aplicação web, selecione **de
    
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
 
-No **domínios personalizados** página, clique em **comprar domínios**.
+No **domínios personalizados** página, clique em **comprar domínio**.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-1.png)
 
+> [!NOTE]
+> Se não vir o **domínios do serviço de aplicações** secção, terá de remover o limite de gastos na sua conta do Azure (consulte [pré-requisitos](#prerequisites)).
+>
+>
+
 ### <a name="configure-the-domain-purchase"></a>Configurar a compra de domínio
 
-No **domínio da aplicação de serviço** na página de **Procurar domínio** caixa, escreva o nome de domínio que pretende comprar e escreva `Enter`. Os domínios disponíveis sugeridos são mostrados imediatamente por baixo da caixa de texto. Selecione um ou mais domínios que pretende comprar. 
+No **domínio da aplicação de serviço** na página de **Procurar domínio** caixa, escreva o nome de domínio que pretende comprar e escreva `Enter`. Os domínios disponíveis sugeridos são mostrados imediatamente por baixo da caixa de texto. Selecione um ou mais domínios que pretende comprar.
    
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-2.png)
+
+> [!NOTE]
+> O seguinte [domínios de nível superior](https://wikipedia.org/wiki/Top-level_domain) são suportadas pelo domínios do serviço de aplicações: _com_, _net_, _co.uk_, _org_, _nl_, _no_, _biz_, _org.pt_, e _co.in_.
+>
+>
 
 Clique em de **informações de contacto** e preencher o formulário de informações de contacto do domínio. Quando terminar, clique em **OK** para regressar à página de domínio da aplicação de serviço.
    
@@ -100,9 +111,8 @@ Em seguida, selecione as opções pretendidas para o seu domínio. Consulte a ta
 
 | Definição | Valor sugerido | Descrição |
 |-|-|-|
-|A renovação automática | **Ativar** | Renova o domínio da aplicação de serviço automaticamente todos os anos. O cartão de crédito é cobrado o mesmo preço de compra no momento da renovação. |
-|Proteção de privacidade | Ativar | Optar por "A proteção de privacidade", que está incluída no preço de compra _gratuitamente_ (à exceção dos domínios de nível superior cujo registo não suportam a proteção de privacidade, tais como _. co.in_, _. co.uk_, e assim sucessivamente). |
-| Atribuir nomes de anfitrião predefinido | **www** e**@** | Selecione os enlaces do nome de anfitrião desejado, se assim o desejar. Quando a operação de compra de domínio estiver concluída, a aplicação web pode ser acedida em nomes de anfitrião selecionado. Se a aplicação web está protegido por [Traffic Manager do Azure](https://azure.microsoft.com/services/traffic-manager/), não vir a opção de atribuir o domínio de raiz (@), devido Gestor de tráfego não suporte registos. Pode efetuar alterações às atribuições de nome de anfitrião depois de concluir a compra de domínio. |
+|Proteção de privacidade | Ativar | Optar por "A proteção de privacidade", que está incluída no preço de compra _gratuitamente_. Alguns domínios de nível superior são geridos pelo registrars que não suportam a proteção de privacidade e são listados no **a proteção de privacidade** página. |
+| Atribuir nomes de anfitrião predefinidos | **www** e**@** | Selecione os enlaces do nome de anfitrião desejado, se assim o desejar. Quando a operação de compra de domínio estiver concluída, a aplicação web pode ser acedida em nomes de anfitrião selecionado. Se a aplicação web está protegido por [Traffic Manager do Azure](https://azure.microsoft.com/services/traffic-manager/), não vir a opção de atribuir o domínio de raiz (@), devido Gestor de tráfego não suporte registos. Pode efetuar alterações às atribuições de nome de anfitrião depois de concluir a compra de domínio. |
 
 ### <a name="accept-terms-and-purchase"></a>Aceitar os termos e compra
 
@@ -125,7 +135,7 @@ Se tiver atribuído hostnames predefinido para a sua aplicação web, também ve
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
 
-Consulte também os nomes de anfitriões selecionado no **domínios personalizados** na página de **Hostnames** secção. 
+Consulte também os nomes de anfitriões selecionado no **domínios personalizados** na página a **personalizada Hostnames** secção. 
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
 
@@ -182,7 +192,25 @@ Deverá ver o hostname(s) atribuída recentemente na sua aplicação **domínios
 
 Navegue para os nomes de anfitriões listadas no browser. O exemplo na captura de ecrã anterior, tente navegar para _abc.kontoso.net_.
 
-<a name="custom" />
+## <a name="renew-the-domain"></a>Renovar o domínio
+
+O domínio de serviço de aplicações que comprou é válido durante um ano da hora de compra. Por predefinição, o domínio é configurado para renovar automaticamente ao charging o seu método de pagamento para o ano seguinte. Se pretender desativar a renovação automática, ou se quiser renovar manualmente o seu domínio, siga os passos aqui descritos.
+
+No **Web Apps** separador, clique no nome da sua aplicação web, selecione **definições**e, em seguida, selecione **domínios personalizados**.
+
+![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
+
+No **domínios do serviço de aplicações** secção, selecione o domínio que pretende configurar.
+
+![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-select-domain.png)
+
+A partir do painel de navegação esquerdo do domínio, selecione **renovação do domínio**. Para parar a renovar o seu domínio automaticamente, selecione **desativar**e, em seguida, **guardar**. 
+
+![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-autorenew.png)
+
+Para renovar manualmente o seu domínio, selecione **renovar domínio**. No entanto, este botão não está ativo até 90 dias antes da expiração do domínio.
+
+<a name="custom"></a>
 
 ## <a name="manage-custom-dns-records"></a>Gerir registos DNS personalizados
 
@@ -236,6 +264,14 @@ Se não tiver decorrido o período de cancelamento no domínio adquirido, seleci
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-cancel.png)
 
-Selecione **OK** para confirmar a operação. Se não quiser continuar, clique em qualquer lugar fora da caixa de diálogo de confirmação.
+Para confirmar a operação, selecione **Sim**.
 
 Depois de concluída a operação, o domínio é libertado da sua subscrição e disponíveis para qualquer pessoa adquirir o novamente. 
+
+## <a name="direct-default-url-to-a-custom-directory"></a>Direcionar o URL predefinido para um diretório personalizado
+
+Por predefinição, o serviço de aplicações direciona pedidos web para o diretório de raiz do seu código de aplicação. A direcioná-los para um subdiretório, tais como `public`, consulte [direcionar o URL predefinido para um diretório personalizado](app-service-web-tutorial-custom-domain.md#virtualdir).
+
+## <a name="more-resources"></a>Mais recursos
+
+[FAQ: Domínio da aplicação de serviço (pré-visualização) e domínios personalizados](https://blogs.msdn.microsoft.com/appserviceteam/2017/08/08/faq-app-service-domain-preview-and-custom-domains/)

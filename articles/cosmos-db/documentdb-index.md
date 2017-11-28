@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2017
 ms.author: mimig
-ms.openlocfilehash: ce24e445177b7e2e499309f016478030efa6bfe8
-ms.sourcegitcommit: c50171c9f28881ed3ac33100c2ea82a17bfedbff
+ms.openlocfilehash: 8d618e00ed274f5d5705346a4ffd8281769de4e3
+ms.sourcegitcommit: 21a58a43ceceaefb4cd46c29180a629429bfcf76
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="azure-cosmos-db-documentdb-api-documentation"></a>Do Azure Cosmos DB: Documentação do DocumentDB API
 
@@ -36,7 +36,7 @@ Estes são tem leia os tópicos e recursos para começar a aprender mais sobre a
 
 ## <a name="quickstarts"></a>Inícios rápidos
 
-Os tópicos do guia de introdução são a forma mais rápida para criar uma aplicação de trabalho com base de dados do Azure Cosmos. Cada guia de introdução, irá aprender a utilizar baseadas na IU do portal do Azure e o favorito linguagem de programação para criar soluções de base de dados com base de dados do Azure Cosmos. Aplicações web clonáveis da área de GitHub disponível para cada início rápido. 
+Os tópicos do guia de introdução são a forma mais rápida para criar uma aplicação de trabalho com base de dados do Azure Cosmos. Cada guia de introdução, irá aprender a utilizar baseadas na IU do portal do Azure e o favorito linguagem de programação para criar soluções de base de dados com base de dados do Azure Cosmos. Aplicações web clonáveis a partir do GitHub estão disponíveis para cada início rápido. 
 
 - [.NET + portal do azure + aplicações Web](create-documentdb-dotnet.md)
 - [Java + portal do Azure + aplicações Web](create-documentdb-java.md)

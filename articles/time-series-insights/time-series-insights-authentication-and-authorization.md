@@ -1,5 +1,5 @@
 ---
-title: "Como configurar a autenticação e autorização APIs no informações de séries de tempo do Azure"
+title: "Como autenticar e autorizar pela API em informações de séries de tempo do Azure"
 description: "Este artigo descreve como configurar a autenticação e autorização para uma aplicação personalizada que chama a API de informações de série de tempo do Azure."
 services: time-series-insights
 ms.service: time-series-insights
@@ -11,12 +11,12 @@ ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: article
-ms.date: 11/21/2017
-ms.openlocfilehash: cab37f65541ecf8bfa58edcd40df0aed39b37680
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.date: 11/27/2017
+ms.openlocfilehash: dd78e1e726029aaceef5aff0e0eed84acac646cf
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Autenticação e autorização para API de Insights de série de tempo do Azure
 
@@ -32,7 +32,7 @@ Quando tiver uma aplicação que tem informações de série de tempo de acesso,
 * Não tem de alterar as credenciais da aplicação, se alterar as suas responsabilidades.
 * Pode utilizar um certificado ou uma chave de aplicação para automatizar a autenticação quando estiver a executar um script automático.
 
-Este tópico mostra como efetuar os passos através do portal do Azure. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada na organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas na sua organização.
+Este artigo mostra como efetuar os passos através do portal do Azure. Concentra-se uma aplicação do inquilino único onde a aplicação foi concebida para ser executada na organização apenas um. Normalmente utiliza aplicações de inquilino único para aplicações de linha de negócio que são executadas na sua organização.
 
 O fluxo de configuração consiste em três passos de alto nível:
 

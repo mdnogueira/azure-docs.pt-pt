@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2017
 ms.author: jarrettr
-ms.openlocfilehash: ba390a5973ad33405f1d4217d60d7989f04db3b4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: db0f09433750a3af2d70039d780a25ad64bb4df1
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="moving-data-to-and-from-azure-storage"></a>Mover dados de e para o Storage do Azure
 Se pretender mover os dados no local ao Storage do Azure (ou vice-versa), existem várias formas para efetuar este procedimento. A abordagem que funciona melhor para si dependerá do seu cenário. Este artigo irá fornecer uma rápida descrição geral dos diferentes cenários e ofertas adequadas para cada um deles.
@@ -76,4 +76,4 @@ Quando tiver aplicações e cargas de trabalho no local, terá de uma solução 
 Consulte [do Azure Site Recovery](../../site-recovery/site-recovery-overview.md) para obter mais informações.
 ### <a name="moving-data-faq"></a>Mover dados FAQ:
 ## <a name="can-i-migrate-vhds-from-one-region-to-another-without-copying"></a>Posso migrar VHDs de uma região para outro sem copiar?
-É a única forma de copiar VHDs entre região para copiar os dados entre contas de armazenamento em cada região. Pode utilizar o AZCopy para este. Ver os dados de transferência com o utilitário de linha de comandos de AzCopy para obter mais informações. Para grandes quantidades de dados, pode também importar/exportar do Azure. Consulte [do Azure para importar/exportar](https://docs.microsoft.com/en-us/azure/storage/storage-import-export-service) para obter mais informações.
+É a única forma de copiar VHDs entre região para copiar os dados entre contas de armazenamento em cada região. Pode utilizar o AZCopy para este. Ver os dados de transferência com o utilitário de linha de comandos de AzCopy para obter mais informações. Para grandes quantidades de dados, pode também importar/exportar do Azure. Consulte [do Azure para importar/exportar](https://docs.microsoft.com/azure/storage/storage-import-export-service) para obter mais informações.

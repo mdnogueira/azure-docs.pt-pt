@@ -8,11 +8,11 @@ ms.service: event-grid
 ms.topic: article
 ms.date: 09/18/2017
 ms.author: babanisa
-ms.openlocfilehash: 5b69478bf00284594b984fde452f6bed4e73859b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ccbd861c985e54a3808c0d4e8ea6169b6a61f134
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="concepts-in-azure-event-grid"></a>Conceitos na grelha de eventos do Azure
 
@@ -20,7 +20,7 @@ Os principais conceitos na grelha de eventos do Azure são:
 
 ## <a name="events"></a>Eventos
 
-Um evento é a mais pequena quantidade de informações que descreve algo de completamente ocorrida no sistema.  Cada evento tem informações comuns, como: origem de evento, o tempo que demorou o evento local e o identificador exclusivo.  Cada evento também contém informações específicas que só são relevantes para o evento específico. Por exemplo, um evento sobre um novo ficheiro a ser criado no armazenamento do Azure contém detalhes sobre o ficheiro, como o valor de lastTimeModified. Em alternativa, um evento sobre reiniciar uma máquina virtual contém o nome da máquina virtual e o motivo para reiniciar o computador. Cada evento está limitado a 64 KB de dados.
+Um evento é a mais pequena quantidade de informações que descreve algo de completamente ocorrida no sistema.  Cada evento tem informações comuns, como: origem de evento, o tempo que demorou o evento local e o identificador exclusivo.  Cada evento também contém informações específicas que só são relevantes para o tipo específico do evento. Por exemplo, um evento sobre um novo ficheiro a ser criado no armazenamento do Azure contém detalhes sobre o ficheiro, tal como o `lastTimeModified` valor. Em alternativa, um evento sobre reiniciar uma máquina virtual contém o nome da máquina virtual e o motivo para reiniciar o computador. Cada evento está limitado a 64 KB de dados.
 
 ## <a name="event-sourcespublishers"></a>Origens/publicadores de eventos
 
@@ -46,7 +46,7 @@ Ao subscrever um tópico, pode filtrar os eventos que são enviados para o ponto
 
 ## <a name="security"></a>Segurança
 
-O evento fornece segurança de subscrição de tópicos e tópicos de publicação. Quando subscrever, tem de ter permissões do recurso ou tópico. Quando a publicação, tem de ter um SAS token ou a autenticação de chave para o tópico. Para obter mais informações, consulte [grelha de eventos de segurança e autenticação](security-authentication.md).
+Grelha de evento fornece segurança de subscrição de tópicos e tópicos de publicação. Quando subscrever, tem de ter permissões do recurso ou tópico. Quando a publicação, tem de ter um SAS token ou a autenticação de chave para o tópico. Para obter mais informações, consulte [grelha de eventos de segurança e autenticação](security-authentication.md).
 
 ## <a name="failed-delivery"></a>Entrega falhou
 
