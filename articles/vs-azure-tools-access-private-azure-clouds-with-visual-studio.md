@@ -12,28 +12,26 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 03/19/2017
+ms.date: 11/13/2017
 ms.author: kraigb
-ms.openlocfilehash: b2578c837732ab05d538e9b896ed3a3035075a70
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 54acfc7c686dc7025368c381d79cde93d7d48fc5
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="accessing-private-azure-clouds-with-visual-studio"></a>Acesso a nuvens privadas do Azure com o Visual Studio
-Por predefinição, o Visual Studio suporta pontos finais REST de nuvem do Azure público. Neste tópico, irá aprender a utilizar o certificado da sua nuvem privada para aceder - e interagir com - a nuvem privada a partir do Visual Studio.
 
-## <a name="to-access-a-private-azure-cloud-in-visual-studio"></a>Para aceder a um Azure privado nuvem no Visual Studio
-1. No [portal clássico do Azure](http://go.microsoft.com/fwlink/?LinkID=213885) para a nuvem privada, transfira o ficheiro de definições de publicação ou contacte o administrador para um ficheiro de definições de publicação. Na versão pública do Azure, é a ligação para transferir este [https://manage.windowsazure.com/publishsettings/](https://manage.windowsazure.com/publishsettings/). (O ficheiro transferido deve ter uma extensão de `.publishsettings`)
+Por predefinição, o Visual Studio suporta pontos finais REST de nuvem do Azure. Neste artigo, irá aprender a utilizar o certificado da sua nuvem privada para aceder e interagir com a nuvem privada a partir do Visual Studio.
 
-1. Abrir Visual Studio
+1. No portal do Azure para a nuvem privada, transfira o ficheiro de definições de publicação ou contacte o administrador para um ficheiro de definições de publicação. (O ficheiro tem a extensão `.publishsettings`.)
 
-1. No **Explorador de servidores**, clique com botão direito do **Azure** nó e, no menu de contexto, selecione **gerir e subscrições de filtro**.
-   
+1. No Visual Studio **Explorador de servidores**, clique com botão direito do **Azure** nó e selecione **gerir e subscrições de filtro**.
+
     ![Gerir o comando de subscrições](./media/vs-azure-tools-access-private-azure-clouds-with-visual-studio/IC790778.png)
 
-1. No **gerir subscrições do Microsoft Azure** caixa de diálogo, selecione o **certificados** separador e, em seguida, selecione **importação**.
-   
+1. No **gerir subscrições do Microsoft Azure** caixa de diálogo, selecione o **certificados** separador, em seguida, selecione **importação**.
+
     ![Importação de certificados do Azure](./media/vs-azure-tools-access-private-azure-clouds-with-visual-studio/IC790779.png)
 
 1. No **importar Microsoft Azure subscrições** caixa de diálogo, selecione **procurar**.
@@ -49,7 +47,4 @@ Por predefinição, o Visual Studio suporta pontos finais REST de nuvem do Azure
     ![Importar o ficheiro de definições de publicação](./media/vs-azure-tools-access-private-azure-clouds-with-visual-studio/IC790780.png)
 
     Os certificados são importados a partir do ficheiro de definições de publicação para Visual Studio e, agora pode interagir com os recursos de nuvem privada.
-   
-## <a name="next-steps"></a>Passos seguintes
-- [Publicação de um serviço em nuvem do Azure a partir do Visual Studio](https://msdn.microsoft.com/library/azure/ee460772.aspx)
-- [Como: transferir e importar publicar definições e informações de subscrição](https://msdn.microsoft.com/library/dn385850\(v=nav.70\).aspx)
+

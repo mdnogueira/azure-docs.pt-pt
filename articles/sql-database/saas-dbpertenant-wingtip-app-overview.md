@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2017
 ms.author: sstein
-ms.openlocfilehash: ddd51c23c7e7d01e38b02c79c27d1951eea61e70
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: d17c361d2249cc95be78cde143925251ad65db44
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-a-sql-database-multi-tenant-saas-app-example"></a>Introdução a um exemplo de aplicação de SaaS de multi-inquilino de base de dados SQL
 
 O *Wingtip SaaS* aplicação é uma aplicação de multi-inquilino de exemplo que demonstra vantagens exclusivas da base de dados SQL. A aplicação utiliza uma base de dados por inquilino, o padrão da aplicação SaaS, para servir vários inquilinos. A aplicação foi concebida para demonstram as funcionalidades da SQL Database do Azure que ativar cenários de SaaS, incluindo vários padrões de conceção e gestão de SaaS. Para obter rapidamente e em execução, a aplicação Wingtip SaaS implementa em menos de cinco minutos!
 
-Scripts de gestão e código de origem de aplicação estão disponíveis no [WingtipSaaS](https://github.com/Microsoft/WingtipSaaS) repositório do github. Para executar os scripts, [transferir a pasta de módulos de aprendizagem](#download-and-unblock-the-wingtip-saas-scripts) para o seu computador local.
+Scripts de gestão e código de origem de aplicação estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do GitHub. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 
 ## <a name="application-architecture"></a>Arquitetura da aplicação
 
-A aplicação Wingtip SaaS utiliza o modelo de base de dados por inquilino e utiliza conjuntos elásticos SQL para maximizar a eficiência. Para o aprovisionamento e os inquilinos de mapeamento para os seus dados, é utilizada uma base de dados do catálogo. As principais aplicação Wingtip SaaS, utiliza um conjunto com três inquilinos de exemplo, para além da base de dados do catálogo. Concluir muitas do SaaS Wingtip tutoriais resultam em suplementos para a implementação iniciais existentes, introduzindo as bases de dados de análise, entre bases de dados gestão de esquema, etc.
+A aplicação Wingtip SaaS utiliza o modelo de base de dados por inquilino e utiliza conjuntos elásticos SQL para maximizar a eficiência. Para o aprovisionamento e os inquilinos de mapeamento para os seus dados, é utilizada uma base de dados do catálogo. As principais aplicação Wingtip SaaS, utiliza um conjunto com três inquilinos de exemplo, para além da base de dados do catálogo. Concluir muitas do SaaS Wingtip tutoriais resultam em suplementos para a implementação inicial, ao introduzir bases de dados de análise, entre bases de dados gestão de esquema, etc.
 
 
 ![Arquitetura de SaaS Wingtip](media/saas-dbpertenant-wingtip-app-overview/app-architecture.png)
@@ -42,7 +42,7 @@ Depois de implementar a aplicação, explore os tutoriais seguintes que criar ap
 
 | Tutorial | Descrição |
 |:--|:--|
-| [Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino](saas-dbpertenant-wingtip-app-guidance-tips.md) | **COMECE POR AQUI!** Transferir e executar scripts do PowerShell para preparar as partes da aplicação. |
+| [Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino](saas-tenancy-wingtip-app-guidance-tips.md) | **COMECE POR AQUI!** Transferir e executar scripts do PowerShell para preparar as partes da aplicação. |
 |[Implementar e explorar a aplicação Wingtip SaaS](saas-dbpertenant-get-started-deploy.md)|  Implementar e explorar a aplicação Wingtip SaaS à sua subscrição do Azure. |
 |[Aprovisionamento e o catálogo de inquilinos](saas-dbpertenant-provision-and-catalog.md)| Saiba como a aplicação se liga ao utilizar uma base de dados do catálogo de inquilinos e como o catálogo de mapas de inquilinos para os seus dados. |
 |[Monitorizar e gerir o desempenho](saas-dbpertenant-performance-monitoring.md)| Saiba como utilizar funcionalidades de monitorização da base de dados do SQL Server e como configurar alertas quando os limiares de desempenho for excedidos. |
@@ -55,6 +55,6 @@ Depois de implementar a aplicação, explore os tutoriais seguintes que criar ap
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino](saas-dbpertenant-wingtip-app-guidance-tips.md)
+- [Orientações e sugestões de exemplo de aplicação SaaS do SQL Database do Azure multi-inquilino](saas-tenancy-wingtip-app-guidance-tips.md)
 
 - [Implementar a aplicação Wingtip SaaS](saas-dbpertenant-get-started-deploy.md)

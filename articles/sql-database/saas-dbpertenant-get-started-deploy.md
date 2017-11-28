@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/10/2017
 ms.author: sstein
-ms.openlocfilehash: 9b1ae219eb1278b818e3e1d4237d04fe54c980ec
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: f91ddff81e51e7cc3d1561dc799013764530924b
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="deploy-and-explore-a-multi-tenant-saas-application-that-uses-the-database-per-tenant-pattern-with-azure-sql-database"></a>Implementar e explorar uma aplicação SaaS multi-inquilino que utiliza a base de dados por padrão do inquilino com a SQL Database do Azure
 
@@ -173,11 +173,11 @@ Agora que já iniciou a execução de carga na coleção de inquilinos, vamos ve
 
 Se o gerador de carga estiver a ser executado há vários minutos, deverão estar disponíveis dados suficientes para começar a ver algumas das outras capacidades de monitorização incorporadas nos conjuntos e nas bases de dados.
 
-1. Navegue para o servidor **tenants1-dpt -&lt;utilizador&gt;**e clique em **Pool1** para ver a utilização de recursos para o conjunto (o gerador de carga foi executado para uma hora nos gráficos seguintes):
+Navegue para o servidor **tenants1-dpt -&lt;utilizador&gt;**e clique em **Pool1** para ver a utilização de recursos para o conjunto (o gerador de carga foi executado para uma hora nos gráficos seguintes):
 
    ![monitorização do conjunto](./media/saas-dbpertenant-get-started-deploy/monitor-pool.png)
 
-O gráfico superior mostra a utilização de eDTU do conjunto, enquanto o gráfico de inferior mostra utiization eDTU das bases de 5 dados superiores no conjunto.  Estes dois gráficos ilustram bem como os conjuntos elásticos e a Base de Dados SQL são adequados para as cargas de trabalho da aplicação SaaS. Quatro bases de dados que podem ser expandidas cada uma até um máximo de 40 eDTUs e que são facilmente suportadas num conjunto de 50 eDTUs. Se estes tenham sido aprovisionados como bases de dados autónomo, fariam cada têm de ser um S2 (50 DTU) para suportar os bursts. O custo de 4 bases de dados do autónomo S2 seria quase 3 vezes o preço do conjunto, e o conjunto ainda tem muitos headroom para muitas bases de dados mais. Em situações de mundo real, os clientes de base de dados do SQL Server estão atualmente em execução até 500 bases de dados em 200 conjuntos de eDTU. Para obter mais informações, veja o [tutorial de monitorização do desempenho](saas-dbpertenant-performance-monitoring.md).
+O gráfico superior mostra a utilização de eDTU do conjunto, enquanto o gráfico de inferior mostra a utilização de eDTU das bases de 5 dados superiores no conjunto.  Estes dois gráficos ilustram bem como os conjuntos elásticos e a Base de Dados SQL são adequados para as cargas de trabalho da aplicação SaaS. Quatro bases de dados que podem ser expandidas cada uma até um máximo de 40 eDTUs e que são facilmente suportadas num conjunto de 50 eDTUs. Se estes tenham sido aprovisionados como bases de dados autónomo, fariam cada têm de ser um S2 (50 DTU) para suportar os bursts. O custo de 4 bases de dados do autónomo S2 seria quase 3 vezes o preço do conjunto, e o conjunto ainda tem muitos headroom para muitas bases de dados mais. Em situações de mundo real, os clientes de base de dados do SQL Server estão atualmente em execução até 500 bases de dados em 200 conjuntos de eDTU. Para obter mais informações, veja o [tutorial de monitorização do desempenho](saas-dbpertenant-performance-monitoring.md).
 
 
 ## <a name="next-steps"></a>Passos seguintes

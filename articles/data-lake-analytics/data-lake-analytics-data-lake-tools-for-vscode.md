@@ -1,7 +1,7 @@
 ---
 title: "Ferramentas do Azure Data Lake: A utilização do Azure Data Lake Tools para Visual Studio Code | Microsoft Docs"
 description: 'Saiba como utilizar o Azure Data Lake Tools para Visual Studio Code para criar, testar e executar scripts U-SQL. '
-Keywords: "VScode, ferramentas do Azure Data Lake, execução, ficheiros de armazenamento de pré-visualização de depuração Local, depurar Local, Local carregar para o caminho de armazenamento, transferências, carregamento"
+Keywords: VScode,Azure Data Lake Tools,Local run,Local debug,Local Debug,preview file,upload to storage path,download,upload
 services: data-lake-analytics
 documentationcenter: 
 author: jejiang
@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 10/10/2017
+ms.date: 11/10/2017
 ms.author: jejiang
-ms.openlocfilehash: e724a8db4424a1e608ae7ee5625cd4cc16f6078f
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: 60307b8b16718fdc947bde7616532fa6a0920cf0
+ms.sourcegitcommit: 21a58a43ceceaefb4cd46c29180a629429bfcf76
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Utilize as ferramentas do Azure Data Lake para Visual Studio Code
 
 Obter as ferramentas do Azure Data Lake para Visual Studio Code (VS Code) para criar, testar e executar scripts U-SQL. As informações também são abrangidas no vídeo seguinte:
 
-<a href="https://www.youtube.com/watch?v=J_gWuyFnaGA&feature=youtu.be"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
+<a href="https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -86,33 +86,20 @@ Abra a paleta de comando (Ctrl + Shift + P) e introduza **ADL: Abra o Script de 
 
     O script cria um ficheiro de departments.csv com alguns dados incluídos na pasta /output.
 
-5. Guarde o ficheiro como **myUSQL.usql** na pasta aberta. Um ficheiro de configuração adltools_settings.json também é adicionado ao projeto.
-4. Abra e configurar adltools_settings.json com as seguintes propriedades:
+5. Guarde o ficheiro como **myUSQL.usql** na pasta aberta. Um ficheiro de configuração xxx_settings.json também é adicionado à pasta.
+6. Abra e configurar xxx_settings.json com as seguintes propriedades:
 
-    - : Uma análise do Data Lake conta na sua subscrição do Azure.
+    - : Uma análise do Data Lake conta na sua subscrição do Azure que é necessário para compilar e executar tarefas U-SQL, pelo que tem de configurar a conta de computador antes de o compilar e executar tarefas U-SQL.
     - Base de dados: Uma base de dados na sua conta. A predefinição é **mestre**.
     - Esquema: Um esquema em sua base de dados. A predefinição é **dbo**.
     - Definições opcionais:
         - Prioridade: O intervalo de prioridade é de 1 a 1000 1 como a prioridade mais elevada. O valor predefinido é **1000**.
         - Paralelismo: O intervalo de paralelismo é entre 1 e 150. O valor predefinido é o paralelismo máximo permitido na sua conta do Azure Data Lake Analytics. 
         
-        > [!NOTE] 
-        > Se as definições são inválidas, são utilizados os valores predefinidos.
-
         ![Ferramentas do Data Lake para o ficheiro de configuração do Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-configuration-file.png)
-
-        É necessária uma conta do Data Lake Analytics de computação para compilar e executar tarefas U-SQL. Tem de configurar a conta de computador antes de poder compilar e executar tarefas U-SQL.
-    
-        Depois da configuração é guardada, as informações de conta, a base de dados e o esquema é apresentado na barra de estado no canto inferior esquerdo do ficheiro .usql correspondente. 
- 
- 
-Em comparação com a abertura de um ficheiro, quando abre uma pasta, pode:
-
-- Utilize um ficheiro code-behind. No modo de ficheiro único, não é suportada por detrás do código.
-- Utilize um ficheiro de configuração. Quando abre uma pasta, os scripts na pasta de trabalho partilham um único ficheiro de configuração.
-
-
-O script U-SQL compila remotamente através do serviço do Data Lake Analytics. Quando emitir o **compilar** comando, o script U-SQL é enviado à sua conta do Data Lake Analytics. Posteriormente, o Visual Studio Code recebe o resultado de compilação. Devido a compilação remota, Visual Studio Code requer que lista as informações para ligar à sua conta do Data Lake Analytics no ficheiro de configuração.
+      
+        > [!NOTE] 
+        > Depois da configuração é guardada, a conta, base de dados e as informações de esquema aparecem na barra de estado no canto inferior esquerdo do ficheiro .usql correspondente.
 
 **Para compilar um script U-SQL**
 
@@ -129,29 +116,8 @@ Depois de submeter uma tarefa de U-SQL, os registos de submissão apresentado o 
 
 Para ativar a saída dos detalhes da tarefa, defina **jobInformationOutputPath** no **vs code para u-sql_settings.json** ficheiro.
  
-## <a name="use-a-code-behind-file"></a>Utilizar um ficheiro code-behind
-
-Um ficheiro code-behind é um ficheiro c# associado um script único do U-SQL. Pode definir um script dedicado UDO, UDA, UDT e UDF no ficheiro code-behind. O UDO, UDA, UDT e UDF podem ser utilizado diretamente no script sem registar a assemblagem primeiro. O ficheiro code-behind é colocado na mesma pasta que o ficheiro de script U-SQL peering. Se o script é denominado xxx.usql, code-behind é denominado como xxx.usql.cs. Se eliminar manualmente o ficheiro code-behind, a funcionalidade de por detrás do código está desativada para o script U-SQL associado. Para obter mais informações sobre como escrever código de cliente para o script U-SQL, consulte [escrita e utilizar o código personalizado em U-SQL: funções definidas pelo utilizador]( https://blogs.msdn.microsoft.com/visualstudio/2015/10/28/writing-and-using-custom-code-in-u-sql-user-defined-functions/).
-
-Para suportar por detrás do código, tem de abrir a pasta de trabalho. 
-
-**Para gerar um ficheiro code-behind**
-
-1. Abra um ficheiro de origem. 
-2. Selecione Ctrl + Shift + P para abrir a paleta de comando.
-3. Introduza **ADL: gerar Code-Behind**. Um ficheiro code-behind é criado na mesma pasta. 
-
-Pode também com o botão direito um ficheiro de script e, em seguida, selecione **ADL: gerar código atrás**. 
-
-Para compilar e submeter um script U-SQL com um ficheiro por detrás do código é o mesmo que com o ficheiro de script de U-SQL autónomo.
-
-As capturas de ecrã de dois seguintes mostram um ficheiro code-behind e o respetivo ficheiro de script U-SQL associado:
- 
-![Ferramentas do Data Lake para Visual Studio Code code-behind](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-behind.png)
-
-![Ficheiro de script de ferramentas do Data Lake para Visual Studio Code code-behind](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-behind-call.png) 
-
-Suportamos a execução local e de depuração local, as instruções consulte [execução local do U-SQL e depuração local com o Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md).
+## <a name="use-python-r-and-csharp-code-behind-file"></a>Utilizar o Python, R e CSharp ficheiro code-behind
+Ferramenta de Lake de dados do Azure suporta vários código personalizado, consulte as instruções [desenvolver U-SQL com o Python, R e CSharp para o Azure Data Lake Analytics no VSCode](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md).
 
 ## <a name="use-assemblies"></a>Utilizar assemblagens
 
@@ -277,14 +243,14 @@ Depois de ligar para o Azure, pode utilizar os seguintes passos para aceder ao c
 Pode utilizar comandos relacionados com o armazenamento do Azure Data Lake para:
  - Procure os recursos de armazenamento do Azure Data Lake. [Listar o caminho de armazenamento](#list-the-storage-path). 
  - Pré-visualize o ficheiro de armazenamento do Azure Data Lake. [Pré-visualize o ficheiro de armazenamento](#preview-the-storage-file). 
- - Carregue o ficheiro diretamente ao armazenamento do Azure Data Lake no VS Code. [Carregar ficheiro](#upload-file).
+ - Carregue o ficheiro diretamente ao armazenamento do Azure Data Lake no VS Code. [Carregar o ficheiro ou pasta](#upload-file-or-folder).
  - Transfira o ficheiro diretamente a partir do armazenamento do Azure Data Lake no VS Code. [Transferir o ficheiro](#download-file).
 
 ## <a name="list-the-storage-path"></a>Listar o caminho de armazenamento 
 
 **Para listar o caminho de armazenamento através da paleta do comando**
 
-O editor de scripts com o botão direito e selecione **ADL: caminho de armazenamento de lista**.
+O editor de scripts com o botão direito e selecione **ADL: caminho de lista**.
 
 Selecione a pasta na lista ou clique em **introduza caminho** ou **procurar a partir da raiz** (utiliza introduza um caminho como um exemplo). -> Selecione o **ADLA conta**. -> Navegue ou introduza o caminho de pasta de armazenamento (por exemplo: / saída /). -> As listas de paleta de comando as informações de caminho com base nas suas entradas.
 
@@ -294,55 +260,40 @@ Uma forma mais conveniente para listar o caminho relativo é efetuada através d
 
 **Para listar o caminho de armazenamento através de contexto**
 
-Faça duplo clique para selecionar a cadeia do caminho **caminho de armazenamento de lista** para continuar.
+Faça duplo clique para selecionar a cadeia do caminho **lista caminho** para continuar.
 
 ![Ferramentas do Data Lake para Visual Studio Code clique no menu de contexto](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-right-click-path.png)
 
 
 ## <a name="preview-the-storage-file"></a>Pré-visualize o ficheiro de armazenamento
 
-O editor de scripts com o botão direito e selecione **ADL: ficheiro de armazenamento de pré-visualização**.
+O editor de scripts com o botão direito e selecione **ADL: pré-visualização do ficheiro**.
 
 Selecione o **ADLA conta**. -> Introduza um caminho de ficheiro de armazenamento do Azure (por exemplo, /output/SearchLog.txt). -> Resultado: para abrir o ficheiro no VSCode.
 
    ![Ferramentas do Data Lake para Visual Studio Code pré-visualizar resultados de ficheiro](./media/data-lake-analytics-data-lake-tools-for-vscode/preview-storage-file.png)
 
-Outra forma de ficheiros de armazenamento de pré-visualização é efetuada através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts. 
+Outra forma de ficheiros de pré-visualização é efetuada através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts. 
 
-## <a name="upload-file"></a>Carregar o ficheiro 
+## <a name="upload-file-or-folder"></a>Carregar o ficheiro ou pasta
 
-Pode carregar ficheiros, introduzindo os comandos **ADL: carregar o ficheiro** ou **ADL: carregar o ficheiro através da configuração**.
+1. O editor de scripts com o botão direito e selecione **carregar o ficheiro** ou **carregar pasta**.
 
-**Para carregar ficheiros apesar de ADL: carregar o ficheiro através do comando de configuração**
-1.  O editor de scripts com o botão direito e, em seguida, selecione **carregar o ficheiro através da configuração**.
-2.  O VS Code apresenta um ficheiro JSON. Pode introduzir caminhos de ficheiro e carregar vários ficheiros ao mesmo tempo. As instruções apresentadas no **saída** janela. Para continuar a carregar o ficheiro, guarde, por exemplo, o ficheiro JSON (Ctrl + S).
+2. Escolha um ficheiro de vários ficheiros, se selecionar carregar ficheiros, ou escolha a pasta de toda, se selecionar carregar pastas, em seguida, clique em **carregar**. -> Escolha a pasta de armazenamento na lista ou clique em **introduza caminho** ou **procurar a partir da raiz** (utiliza introduza um caminho como um exemplo). -> Selecione o **ADLA conta**. -> Navegue ou introduza o caminho de pasta de armazenamento (por exemplo: / saída /). -> clique **escolha a pasta atual** para especificar o destino de carregamento.
 
-       ![Caminho do ficheiro de ferramentas do Data Lake para Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-upload-file.png)
+   ![Ferramentas do Data Lake para Visual Studio Code carregar o Estado](./media/data-lake-analytics-data-lake-tools-for-vscode/upload-file.png)    
 
-3.  Resultados: O **saída** janela apresenta o estado de carregamento de ficheiros.
 
-       ![Ferramentas do Data Lake para Visual Studio Code carregar o Estado](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-upload-status.png)     
+   Outra forma de carregamento de ficheiros de armazenamento é através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts.
 
 Como o mesmo tempo, pode monitorizar o [Carregar estado](#check-storage-tasks-status).
 
-**Para carregar ficheiros apesar de ADL: o comando de carregar o ficheiro**
-
-O editor de scripts com o botão direito e selecione **carregar o ficheiro**.
-
-Introduza o **caminho do ficheiro Local**. -> Escolha a pasta na lista ou clique em **introduza caminho** ou **procurar a partir da raiz** (utiliza introduza um caminho como um exemplo). -> Selecione o **ADLA conta**. -> Navegue ou introduza o caminho de pasta de armazenamento (por exemplo: / saída /). -> clique **escolha a pasta atual** para especificar o destino de carregamento.
-
-![Ferramentas do Data Lake para Visual Studio Code carregar o Estado](./media/data-lake-analytics-data-lake-tools-for-vscode/upload-file.png)    
-
-
-Outra forma de carregamento de ficheiros de armazenamento é através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts.
-
-Como o mesmo tempo, pode monitorizar o [Carregar estado](#check-storage-tasks-status).
 
 ## <a name="download-file"></a>Transferir o ficheiro 
-Pode transferir os ficheiros, introduzindo os comandos **ADL: Transferir o ficheiro de armazenamento** ou **ADL: Transferir o ficheiro de armazenamento através da configuração**.
+Pode transferir os ficheiros, introduzindo os comandos **ADL: Transferir ficheiro** ou **ADL: Transferir o ficheiro (avançado)**.
 
-**Para transferir ficheiros apesar de ADL: transferir ficheiros através do comando de configuração**
-1. O editor de scripts com o botão direito e, em seguida, selecione **transferir ficheiros de armazenamento através da configuração**.
+**Para transferir ficheiros apesar de ADL: Transferir o ficheiro (avançado)**
+1. O editor de scripts com o botão direito e, em seguida, selecione **transferir ficheiros (avançado)**.
 2. O VS Code apresenta um ficheiro JSON. Pode introduzir caminhos de ficheiro e transferi vários ficheiros ao mesmo tempo. As instruções apresentadas no **saída** janela. Para continuar a transferir o ficheiro, guarde, por exemplo, o ficheiro JSON (Ctrl + S).
 
     ![Ferramentas do Data Lake para Visual Studio Code transferir ficheiros com a configuração](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-files.png)
@@ -353,17 +304,16 @@ Pode transferir os ficheiros, introduzindo os comandos **ADL: Transferir o fiche
 
 Como o mesmo tempo, pode monitorizar o [Transferir estado](#check-storage-tasks-status).
 
-**Para transferir ficheiros apesar do ADL: o comando de transferir ficheiros de armazenamento**
+**Para transferir ficheiros apesar do ADL: Transferir o ficheiro**
 
-O editor de scripts com o botão direito e, em seguida, selecione **transferir ficheiros de armazenamento**.
+1. O editor de scripts com o botão direito, selecione **transferir ficheiro**e, em seguida, selecione a pasta de destino a partir de **selecionar pasta** caixa de diálogo.
 
-Selecione a pasta na lista ou clique em **introduza caminho** ou **procurar a partir da raiz** (utiliza introduza um caminho como um exemplo). -> Selecione o **ADLA conta**. -> Navegue ou introduza o caminho de pasta de armazenamento (por exemplo: / saída) -> Escolha um ficheiro para transferir.
+2. Selecione a pasta na lista ou clique em **introduza caminho** ou **procurar a partir da raiz** (utiliza introduza um caminho como um exemplo). -> Selecione o **ADLA conta**. -> Navegue ou introduza o caminho de pasta de armazenamento (por exemplo: / saída) -> Escolha um ficheiro para transferir.
 
    ![Estado de transferir as ferramentas do Data Lake para Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/download-file.png) 
 
-   Imagem de resultado, o ficheiro será guardado como a pasta temporária. Pode definir uma predefinição a transferir o caminho para o parâmetro **usql.defaultLocalFolderForDownload** por si, através do menu VSCode **ficheiro** -> **preferências**  ->  **Definição**.
-
-Outra forma de transferência de ficheiros de armazenamento é através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts.
+   
+   Outra forma de transferência de ficheiros de armazenamento é através do menu de contexto no caminho completo do ficheiro ou o caminho relativo do ficheiro no editor de scripts.
 
 Como o mesmo tempo, pode monitorizar o [Transferir estado](#check-storage-tasks-status).
 
@@ -373,12 +323,20 @@ Apresenta o estado na parte inferior da barra de estado quando concluir a transf
 
    ![Ferramentas do Data Lake para o estado do Visual Studio Code verificar armazenamento](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-status.png)
 
+## <a name="vscode-explorer-integration-with-azure-data-lake"></a>Integração de VSCode Explorer com o Azure Data Lake
+1. Após o início de sessão, irá ver todas as contas do Azure estão listadas no painel da esquerda do **DataLake Explorer**. Expanda uma base de dados, pode ver o **esquemas**, **tabelas**, **assemblagens** e assim sucessivamente, sob o nó.
 
-## <a name="open-azure-storage-explorer"></a>Explorador de armazenamento do Azure aberta
-Pode abrir **Explorador de armazenamento do Azure** introduzindo o comando **ADL: Abra o Explorador de armazenamento de Azure Web** ou ao selecioná-la a partir do menu de contexto de contexto.
+   ![Explorador do DataLake](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer.png)
 
-**Para abrir o Explorador de armazenamento do Azure**
+2. Pode executar o comando **registar a assemblagem** clicando no **assemblagens** nós.
 
+    ![Explorador do DataLake](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer-register-assembly.png)
+
+3. Navegue para **conta de armazenamento**, pode carregar ou transferir ficheiro clicando na pasta ou ficheiro. E também **pré-visualização** um ficheiro, **transferir**, **copiar o caminho relativo**, **caminho completo de cópia** pelo menu de contexto.
+
+   ![Explorador do DataLake](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-account-download-preview-file.png)
+
+## <a name="open-adl-storage-explorer-in-portal"></a>Abrir Explorador de armazenamento ADL no portal
 1. Selecione Ctrl + Shift + P para abrir a paleta de comando.
 2. Introduza **Abrir Explorador de armazenamento do Azure Web** ou um caminho relativo ou o caminho completo no editor de scripts com o botão direito e, em seguida, selecione **Abrir Explorador de armazenamento do Azure Web**.
 3. Selecione uma conta de Data Lake Analytics.
@@ -420,11 +378,12 @@ Ferramentas do Data Lake para o VS Code suporta as seguintes funcionalidades:
     ![Ferramentas do Data Lake para Visual Studio Code sintaxe destaques](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-syntax-highlights.png)
 
 ## <a name="next-steps"></a>Passos seguintes
+- [Desenvolver U-SQL com o Python, R e CSharp para o Azure Data Lake Analytics no VSCode](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
+- [Execução local do U-SQL e de depuração local com o Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
+- [Tutorial: Introdução ao Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md)
+- [Tutorial: Desenvolver scripts U-SQL, utilizando ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
+- [Desenvolver assemblagens de U-SQL para tarefas do Azure Data Lake Analytics](data-lake-analytics-u-sql-develop-assemblies.md)
 
-- Para execução local do U-SQL e depuração local com o Visual Studio Code, consulte [execução local do U-SQL e de depuração local com o Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md).
-- Para informações de introdução no Data Lake Analytics, consulte [Tutorial: introdução ao Azure Data Lake Analytics](data-lake-analytics-get-started-portal.md).
-- Para informações sobre as ferramentas do Data Lake para Visual Studio, consulte [Tutorial: desenvolver scripts SQL-U, utilizando ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
-- Para obter informações sobre o desenvolvimento das assemblagens, consulte [assemblagens de desenvolver U-SQL para tarefas do Azure Data Lake Analytics](data-lake-analytics-u-sql-develop-assemblies.md).
 
 
 

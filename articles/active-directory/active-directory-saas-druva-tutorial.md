@@ -12,13 +12,13 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/20/2017
+ms.date: 11/23/2017
 ms.author: jeedes
-ms.openlocfilehash: b23e73c47b9a00893e036b67826e4b7ead819a1d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 52212c44c925598b2c19df1b20eb4e8123f974ba
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-druva"></a>Tutorial: Integração do Azure Active Directory com Druva
 
@@ -104,23 +104,29 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
  
     ![Caixa de diálogo de início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_druva_samlbase.png)
 
-3. No **Druva domínio e os URLs** secção, execute os seguintes passos:
+3. No **Druva domínio e os URLs** secção, se pretender configurar a aplicação no **IDP** iniciada modo:
 
     ![Configurar o início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_druva_url.png)
 
+    No **identificador** caixa de texto, digite o valor de cadeia:`druva-cloud`
+    
+4. Verifique **Mostrar avançadas definições de URL**. Se pretender configurar a aplicação no **SP** iniciada modo:
+
+    ![Configurar o início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_druva_url1.png)
+    
     No **URL de início de sessão** caixa de texto, escreva o URL:`https://cloud.druva.com/home`
 
-4. No **certificado de assinatura de SAML** secção, clique em **Certificate(Base64)** e, em seguida, guarde o ficheiro de certificado no seu computador.
+5. No **certificado de assinatura de SAML** secção, clique em **Certificate(Base64)** e, em seguida, guarde o ficheiro de certificado no seu computador.
 
     ![A hiperligação de transferência do certificado](./media/active-directory-saas-druva-tutorial/tutorial_druva_certificate.png) 
 
-5. A aplicação de Druva espera as asserções de SAML num formato específico, que necessita para adicionar mapeamentos de atributos personalizados para o **atributos Token SAML** configuração. 
+6. A aplicação de Druva espera as asserções de SAML num formato específico, que necessita para adicionar mapeamentos de atributos personalizados para o **atributos Token SAML** configuração. 
 
     ![Configurar o início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_druva_attribute.png)
 
-6. No **atributos de utilizador** secção no **de sessão único-** caixa de diálogo, configurar atributos token SAML, conforme mostrado na imagem anterior e execute os seguintes passos:
+7. No **atributos de utilizador** secção no **de sessão único-** caixa de diálogo, configurar atributos token SAML, conforme mostrado na imagem anterior e execute os seguintes passos:
 
-    | Nome do atributo      | Valor do atributo      |
+    | Nome do Atributo      | Valor do Atributo      |
     | ------------------- | -------------------- |
     | insync\_auth\_token |Introduza o valor do token gerado |
     
@@ -136,47 +142,47 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
     
     d. Clique em **OK**.    
 
-7. Clique em **guardar** botão.
+8. Clique em **guardar** botão.
 
     ![Configurar o início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_general_400.png)
 
-8. No **Druva configuração** secção, clique em **configurar Druva** para abrir **configurar início de sessão** janela. Copiar o **Sign-Out URL e o único início de sessão no URL do serviço SAML** do **secção de referência rápida.**
+9. No **Druva configuração** secção, clique em **configurar Druva** para abrir **configurar início de sessão** janela. Copiar o **Sign-Out URL e o único início de sessão no URL do serviço SAML** do **secção de referência rápida.**
 
     ![Configurar o início de sessão único](./media/active-directory-saas-druva-tutorial/tutorial_druva_configure.png) 
 
-9. Numa janela do browser web diferente, inicie sessão no site da sua empresa Druva como administrador.
+10. Numa janela do browser web diferente, inicie sessão no site da sua empresa Druva como administrador.
 
-10. Aceda a **gerir \> definições**.
+11. Aceda a **gerir \> definições**.
 
     ![Definições](./media/active-directory-saas-druva-tutorial/ic795091.png "definições")
 
-11. Na caixa de diálogo Definições de início de sessão único, execute os seguintes passos:
+12. Na caixa de diálogo Definições de início de sessão único, execute os seguintes passos:
 
     ![Single Sign-On definições](./media/active-directory-saas-druva-tutorial/ic795092.png "único as definições de início de sessão")
     
-    a. Colar **único início de sessão no URL do serviço SAML** valor que copiou do portal do Azure para o **URL de início de sessão do fornecedor de ID** caixa de texto.
-    
-    b. Colar **Sign-Out URL** valor que copiou do portal do Azure para o **URL de fim de sessão do fornecedor de ID** caixa de texto.
-    
-     c. Abra o certificado codificado base-64 no bloco de notas, copie o conteúdo do mesmo para a sua área de transferência e, em seguida, cole-os para o **ID fornecedor certificado** caixa de texto
+    a. No **URL de início de sessão do fornecedor de ID** caixa de texto, cole o valor de **URL Single Sign-On serviço**, que copiou do portal do Azure.
+        
+    b. No **URL de fim de sessão do fornecedor de ID** caixa de texto, cole o valor de **Sign-Out URL**, que copiou do portal do Azure
+        
+    c. Abra o certificado codificado base-64 no bloco de notas, copie o conteúdo do mesmo para a sua área de transferência e, em seguida, cole-os para o **ID fornecedor certificado** caixa de texto
      
-     d. Para abrir o **definições** página, clique em **guardar**.
+    d. Para abrir o **definições** página, clique em **guardar**.
 
-12. No **definições** página, clique em **gerar Token SSO**.
+13. No **definições** página, clique em **gerar Token SSO**.
 
     ![Definições](./media/active-directory-saas-druva-tutorial/ic795093.png "definições")
 
-13. No **único início de sessão no Token de autenticação** caixa de diálogo, execute os seguintes passos:
+14. No **único início de sessão no Token de autenticação** caixa de diálogo, execute os seguintes passos:
 
     ![Token SSO](./media/active-directory-saas-druva-tutorial/ic795094.png "SSO Token")
     
-    a. Clique em **cópia**, colar copiados valor o **valor** textbox no **adicionar atributo** secção.
+    a. Clique em **cópia**, colar copiados valor o **valor** textbox no **adicionar atributo** secção no portal do Azure.
     
     b. Clique em **Fechar**.
 
 > [!TIP]
 > Pode agora ler estas instruções dentro de uma versão concisa o [portal do Azure](https://portal.azure.com), enquanto estiver a configurar a aplicação!  Depois de adicionar esta aplicação a partir do **do Active Directory > aplicações da empresa** secção, basta clicar no **Single Sign-On** separador e aceder à documentação do embedded através de **configuração** secção na parte inferior. Pode ler mais sobre a funcionalidade de documentação incorporados aqui: [do Azure AD incorporado documentação]( https://go.microsoft.com/fwlink/?linkid=845985)
-> 
+ 
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um utilizador de teste do Azure AD
 
@@ -280,8 +286,6 @@ Para mais informações sobre o painel de acesso, consulte [introdução ao pain
 
 * [Lista de tutoriais sobre como integrar aplicações SaaS com o Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [O que é o acesso a aplicações e início de sessão no Azure Active Directory?](active-directory-appssoaccess-whatis.md)
-
-
 
 <!--Image references-->
 

@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2017
 ms.author: sstein
-ms.openlocfilehash: 450a5fc578948db044d9e0bb9db09508b2512aca
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 289f1f99b1661e499fa7132887e2f65e086ad689
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="monitor-and-manage-performance-of-azure-sql-databases-and-pools-in-a-multi-tenant-saas-app"></a>Monitorizar e gerir o desempenho de bases de dados SQL do Azure e agrupamentos numa aplicação SaaS multi-inquilino
 
@@ -62,9 +62,9 @@ O [portal do Azure](https://portal.azure.com) fornece monitorização e alertas 
 
 Para cenários de volume elevado, onde está a trabalhar com muitos recursos, [análise de registos (OMS)](saas-dbpertenant-log-analytics.md) pode ser utilizado. Este é um serviço Azure separado que fornece análises através de registos de diagnóstico emitidos e telemetria recolhidos numa área de trabalho de análise de registo. Análise de registos pode recolher a telemetria de vários serviços e ser utilizado para consultar e definir alertas.
 
-## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-source-code-and-scripts"></a>Obter o código fonte da aplicação Wingtip bilhetes SaaS da base de dados por inquilino e os scripts
+## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Obter os scripts de aplicação Wingtip bilhetes SaaS da base de dados por inquilino
 
-Os scripts de Wingtip bilhetes SaaS da base de dados por inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do github. [Passos para transferir os scripts de Wingtip bilhetes SaaS da base de dados por inquilino](saas-dbpertenant-wingtip-app-guidance-tips.md#download-and-unblock-the-wingtip-tickets-saas-database-per-tenant-scripts).
+Os scripts de base de dados do Wingtip bilhetes SaaS multi-inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) repositório do GitHub. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 
 ## <a name="provision-additional-tenants"></a>Aprovisionar inquilinos adicionais
 
@@ -220,7 +220,7 @@ Este exercício simula o efeito de uma carga elevada em Contoso Concert Hall, qu
 
 Assim que a carga elevada na base de dados contosoconcerthall subsides retomadas rapidamente o deve regressar ao agrupamento para reduzir o custo. Se não é claro quando que irá acontecer pode configurar um alerta na base de dados que é acionado quando a utilização da DTU descerem abaixo o por base de dados máximo no conjunto. Veja o exercício 5, para saber como mover uma base de dados para um conjunto.
 
-## <a name="other-performance-management-patterns"></a>Outros Padrões de Gestão do Desempenho
+## <a name="other-performance-management-patterns"></a>Outros padrões de gestão de desempenho
 
 **Dimensionamento preventivas** no exercício acima onde, explorou como dimensionar uma base de dados isolado, souberem base de dados para procurar. Se a gestão de Contoso Concert Hall tinha informado Wingtips de venda permissão iminente, a base de dados foi terem sido movido fora do conjunto pre-emptively. Caso contrário, seria provavelmente necessário um alerta no conjunto ou na base de dados para detetar o que estava a acontecer. Não gostaria de ter conhecimento desta situação através dos outros inquilinos no conjunto a reclamarem de uma degradação do desempenho. E se o inquilino pode prever por quanto tempo serão necessários recursos adicionais, pode configurar um runbook de Automatização do Azure para mover a base de dados para fora do conjunto e, em seguida, fazê-la voltar numa agenda definida.
 

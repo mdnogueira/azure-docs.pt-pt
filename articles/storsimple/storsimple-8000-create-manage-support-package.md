@@ -4,7 +4,7 @@ description: "Saiba como criar, desencriptar e editar um pacote de suporte para 
 services: storsimple
 documentationcenter: 
 author: alkohli
-manager: timlt
+manager: jeconnoc
 editor: 
 ms.assetid: 
 ms.service: storsimple
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/05/2017
+ms.date: 11/16/2017
 ms.author: alkohli
-ms.openlocfilehash: 92abbb96b2117e10800de61b5c405a784453265b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 641109970865ea915f83d48488f1bdf5cb2d5242
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Criar e gerir um pacote de suporte para a série 8000 do StorSimple
 
@@ -58,14 +58,14 @@ Pode partilhar o pacote de suporte manualmente gerado com Support da Microsoft a
    
    * Para partilhas de rede que estão protegido de palavra-passe, introduza:
      
-       `Export-HcsSupportPackage –PackageTag "MySupportPackage" –Credential "Username" -Force`
+       `Export-HcsSupportPackage -Path <\\IP address\location of the shared folder> -Include Default -Credential domainname\username`
      
-       Será solicitada uma palavra-passe, um caminho para a pasta partilhada de rede e uma frase de acesso de encriptação (porque o pacote de suporte é encriptado). Em seguida, é criado um pacote de suporte na pasta especificada.
+       Lhe será solicitada uma palavra-passe e uma frase de acesso de encriptação (porque o pacote de suporte é encriptado). Em seguida, é criado um pacote de suporte na pasta predefinida (nome de dispositivo anexado com a data e hora atuais).
    * Para partilhas não estão protegido de palavra-passe, não é necessário o `-Credential` parâmetro. Introduza o seguinte:
      
-       `Export-HcsSupportPackage –PackageTag "MySupportPackage" -Force`
+       `Export-HcsSupportPackage`
      
-       Criar o pacote de suporte para os dois controladores na pasta partilhada de rede especificado. É um ficheiro de encriptados, comprimido que pode ser enviado ao Microsoft Support para resolução de problemas. Para obter mais informações, consulte [contactar o suporte da Microsoft](storsimple-8000-contact-microsoft-support.md).
+       Criar o pacote de suporte para os dois controladores na pasta predefinida. O pacote é um ficheiro de encriptados, comprimido que pode ser enviado ao Microsoft Support para resolução de problemas. Para obter mais informações, consulte [contactar o suporte da Microsoft](storsimple-8000-contact-microsoft-support.md).
 
 ### <a name="the-export-hcssupportpackage-cmdlet-parameters"></a>Os parâmetros do cmdlet HcsSupportPackage de exportação
 

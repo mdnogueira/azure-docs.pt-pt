@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 11/16/2017
 ms.author: jeanb
-ms.openlocfilehash: f1df2f52d00444ba0a27644a6e65cee789788f58
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: ad2a5891e207f6e8320c3e54ae7c817b49db4672
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="azure-stream-analytics-on-iot-edge-preview"></a>O Azure Stream Analytics no limite de IoT (pré-visualização)
 
@@ -61,6 +61,11 @@ Pode seguir [neste tutorial passo a passo](https://docs.microsoft.com/azure/iot-
 
 #### <a name="create-an-asa-edge-job"></a>Criar uma tarefa do ASA Edge
 1. A partir do portal do Azure, crie uma nova "tarefa de Stream Analytics". [Ligação direta para criar uma nova tarefa ASA aqui](https://ms.portal.azure.com/#create/Microsoft.StreamAnalyticsJob).
+
+> [!Note]
+> É possível criar tarefas de limite em todas as regiões suportadas pelo ASA, **exceto na região de "EUA oeste 2"**.
+> Esta limitação será removida pouco tempo.
+
 2. No ecrã da criação, selecione **Edge** como **ambiente de alojamento** (ver a imagem seguinte) ![criação da tarefa](media/stream-analytics-edge/ASAEdge_create.png)
 3. Definição de tarefa
     1. **Definir a entrada Stream(s)**. Defina um ou vários fluxos de entrada para a tarefa.

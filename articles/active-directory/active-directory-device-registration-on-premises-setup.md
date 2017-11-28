@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/21/2017
+ms.date: 11/22/2017
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 6d53d08156d0e5d1d070361db5b74d201f18a224
-ms.sourcegitcommit: 9c3150e91cc3075141dc2955a01f47040d76048a
+ms.openlocfilehash: 2342690d983b6e27fa008b5c72a736a9ecda8f47
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="setting-up-on-premises-conditional-access-by-using-azure-active-directory-device-registration"></a>Configurar o acesso condicional no local utilizando o registo de dispositivos do Azure Active Directory
 Quando necessitar que os utilizadores a associação à área de trabalho os seus dispositivos pessoais para o serviço de registo de dispositivos do Azure Active Directory (Azure AD), os respetivos dispositivos podem ser marcados como conhecida para a sua organização. Segue-se um guia passo a passo para ativar o acesso condicional para aplicações no local através da utilização de serviços de Federação do Active Directory (AD FS) no Windows Server 2012 R2.
@@ -166,9 +166,9 @@ Existem muitas formas diferentes de comunicar este URL aos seus utilizadores. Po
 4. Quando lhe for solicitado, inicie sessão com as suas credenciais. O dispositivo está agora associado.
 
 ### <a name="join-a-windows-7-device-by-using-azure-active-directory-device-registration"></a>Associar um dispositivo Windows 7, utilize o registo de dispositivos do Azure Active Directory
-Para registar dispositivos associados a domínios do Windows 7, tem de implementar o pacote de software de registo do dispositivo. O pacote de software é chamado associação do local de trabalho para o Windows 7 e está disponível para transferência no [Web site Microsoft Connect](https://connect.microsoft.com/site1164). 
+Para registar dispositivos associados a domínios do Windows 7, é necessário implementar o [pacote de software de registo do dispositivo](https://www.microsoft.com/download/details.aspx?id=53554).
 
-Instruções sobre como utilizar o pacote estão disponíveis no [como configurar o registo automático de dispositivos associados a um domínio do Windows com o Azure Active Directory](active-directory-conditional-access-automatic-device-registration-setup.md).
+Para obter instruções sobre como utilizar o pacote, consulte [pacotes do Windows Installer para computadores Windows de 10](device-management-hybrid-azuread-joined-devices-setup.md#windows-installer-packages-for-non-windows-10-computers).
 
 ## <a name="verify-that-registered-devices-are-written-back-to-active-directory"></a>Certifique-se de que os dispositivos registados são escritos de volta para o Active Directory
 Pode ver e certifique-se de que os objetos de dispositivo escritos novamente para o Active Directory com LDP.exe ou Editor de ADSI. Ambos estão disponíveis com as ferramentas de administração do Active Directory.

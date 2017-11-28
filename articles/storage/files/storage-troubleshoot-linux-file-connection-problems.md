@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: genli
-ms.openlocfilehash: 660fe4fb9f962c835de9a2f900ceaabb4371b0db
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b6eb37ef4e836bd33a77180ef5aa8589ca5139af
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Resolução de problemas de ficheiros do Azure no Linux
 
@@ -154,6 +154,21 @@ As causas comuns para este problema são:
 ### <a name="solution"></a>Solução
 
 Para resolver o problema, utilize o [ferramenta de resolução de problemas para os ficheiros de Azure montar erros no Linux](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089). Esta ferramenta ajuda-o para validar o cliente com o ambiente, para detetar a configuração de cliente incompatível que poderia causar a falha de acesso para ficheiros do Azure, fornece orientação prescritiva sobre corrigir personalizada e, recolhe os rastreios de diagnóstico.
+
+## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>ls: não é possível aceder '&lt;caminho&gt;': erro de entrada/saída
+
+Quando tenta listam os ficheiros numa partilha de ficheiros do Azure utilizando o comando ls, receberá o seguinte erro:
+
+**ls: não é possível aceder '&lt;caminho&gt;': erro de entrada/saída**
+
+
+### <a name="solution"></a>Solução
+Atualize o kernel do Linux para as seguintes versões que tem de corrigir este problema:
+
+- 4.4.87+
+- 4.9.48+
+- 4.12.11+
+- Todas as versões que seja maior ou igual a 4.13
 
 ## <a name="need-help-contact-support"></a>Precisa de ajuda? Contacte o suporte.
 

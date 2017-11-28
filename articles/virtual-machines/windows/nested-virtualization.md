@@ -11,11 +11,11 @@ ms.topic: howto
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.openlocfilehash: a157e612ca4fca06a57df478eaa20793c8b35d60
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.openlocfilehash: c2f511cd024accc099423f2ed5bbb15d2dd23414
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Como ativar a virtualização aninhada numa VM do Azure
 
@@ -140,7 +140,7 @@ Siga os passos abaixo para configurar o DHCP da máquina virtual do anfitrião p
   
 2. No assistente, clique em **seguinte** até a página de funções de servidor.
   
-3. Clique para selecionar o **servidor DHCP** caixa de verificação, clique em **adicionar funcionalidades**e, em seguida, clique em**seguinte** até que conclua o assistente.
+3. Clique para selecionar o **servidor DHCP** caixa de verificação, clique em **adicionar funcionalidades**e, em seguida, clique em **seguinte** até que conclua o assistente.
   
 4. Clique em **Instalar**.
 
@@ -159,7 +159,7 @@ Siga os passos abaixo para configurar o DHCP da máquina virtual do anfitrião p
 6. Clique em **seguinte** até concluir o assistente, deixando todos os valores predefinidos, clique em **concluir**.
     
 ### <a name="option-2-manually-set-a-static-ip-address-on-the-guest-virtual-machine"></a>Opção 2: Definir manualmente um endereço IP estático na máquina virtual convidada
-Se não tiver configurado o DHCP para atribuir dinamicamente um toe de endereço IP da máquina virtual convidada, siga estes passos para definir um endereço IP estático.
+Se não tiver configurado o DHCP para atribuir dinamicamente um endereço IP para a máquina virtual convidada, siga estes passos para definir um endereço IP estático.
 
 1. Na VM do Azure, abra o PowerShell como administrador.
 

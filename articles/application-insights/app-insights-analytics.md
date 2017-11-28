@@ -11,13 +11,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2017
+ms.date: 11/27/2017
 ms.author: mbullwin
-ms.openlocfilehash: 80a9e248ca50c11ef61a5c50c4986c4f8f4ead9d
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: adda6335b702470cd491f07d750236c368325a9e
+ms.sourcegitcommit: 21a58a43ceceaefb4cd46c29180a629429bfcf76
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="analytics-in-application-insights"></a>Análise no Application Insights
 A análise é a ferramenta de pesquisa e a consulta poderosa de [Application Insights](app-insights-overview.md). Análise é uma ferramenta web, pelo que não é necessária nenhuma configuração. Se já tiver configurado o Application Insights para uma das suas aplicações, em seguida, pode analisar os dados da sua aplicação, abrindo a análise da sua aplicação [painel Descrição geral](app-insights-dashboards.md).
@@ -49,7 +49,7 @@ O idioma tem muitas funcionalidades apelativo:
 
 * [Filtro](https://docs.loganalytics.io/queryLanguage/query_language_whereoperator.html) a telemetria de aplicações não processados por quaisquer campos, incluindo as métricas e propriedades personalizadas.
 * [Associar](https://docs.loganalytics.io/queryLanguage/query_language_joinoperator.html) várias tabelas – correlacione pedidos com vistas de página, chamadas de dependência, exceções e rastreios de registo.
-* Poderosas análises [agregações](https://docs.loganalytics.io/learn/tutorials/aggregations.html).
+* Poderosas análises [agregações](https://docs.loganalytics.io/docs/Learn/Tutorials/Aggregation-functions).
 * Visualizações imediatas e poderosas.
 * [REST API](https://dev.applicationinsights.io/) que pode utilizar para executar consultas através de programação, por exemplo a partir do PowerShell.
 

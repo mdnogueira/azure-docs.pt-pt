@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: iainfou
-ms.openlocfilehash: 2348db8f19391292f79608092a3c2482216493c6
-ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
+ms.openlocfilehash: 5686d8bd3f9817be2308583afe778e0615154580
+ms.sourcegitcommit: 21a58a43ceceaefb4cd46c29180a629429bfcf76
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli-20"></a>Gerir um conjunto com o 2.0 CLI do Azure de dimensionamento de máquina virtual
 Ao longo do ciclo de vida de um conjunto de dimensionamento de máquina virtual, poderá ter de executar um ou mais tarefas de gestão. Além disso, pode querer criar scripts que automatizem várias tarefas de ciclo de vida. Este artigo fornece detalhes sobre alguns dos comandos do Azure CLI 2.0 comuns que permitem-lhe efetuar estas tarefas.
@@ -36,7 +36,7 @@ az vmss show --resource-group myResourceGroup --name myScaleSet
 
 
 ## <a name="view-vms-in-a-scale-set"></a>Vista VMs num conjunto de dimensionamento
-Para ver uma lista de instância de VM num conjunto de dimensionamento, utilize [az vmss-instâncias da lista](/cli/azure/vmss#list-instances). O exemplo seguinte lista todas as instâncias de VM o conjunto nomeado de dimensionamento *myScaleSet* e no *myResourceGroup* grupo de recursos. Forneça os seus próprios valores para estes nomes de:
+Para ver uma lista de instância de VM num conjunto de dimensionamento, utilize [az vmss-instâncias da lista](/cli/azure/vmss#list-instances). O exemplo seguinte lista todas as instâncias de VM o conjunto nomeado de dimensionamento *myScaleSet* no *myResourceGroup* grupo de recursos. Forneça os seus próprios valores para estes nomes de:
 
 ```azurecli
 az vmss list-instances \

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/20/2017
 ms.author: saveenr
-ms.openlocfilehash: d18ef1f747aee2fa01cef9891432d0461031ee4c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 51c0bac3cd03965d002b3fe87804a0d7ea6cf63e
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="tutorial-get-started-with-extending-u-sql-with-python"></a>Tutorial: Introdução ao expandir o U-SQL com o Python
 
@@ -98,4 +98,4 @@ Cada vértice tem uma quantidade limitada de memória atribuída ao mesmo. Atual
 * [Descrição geral do Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
 * [Desenvolver scripts U-SQL com as Ferramentas do Data Lake para Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 * [Utilizar as funções de janela U-SQL para tarefas do Azure Data Lake Analytics](data-lake-analytics-use-window-functions.md)
-
+* [Utilize as ferramentas do Azure Data Lake para Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)

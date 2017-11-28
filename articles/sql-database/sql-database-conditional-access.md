@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 06/07/2017
 ms.author: rickbyh
 ms.workload: Inactive
-ms.openlocfilehash: c45f0ae655c544f51c8983c234591eef3da9dc6b
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 16bd403fecbd24d7cea774bba8535f102501861f
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="conditional-access-mfa-with-azure-sql-database-and-data-warehouse"></a>Acesso condicional (MFA) com base de dados SQL do Azure e do armazém de dados  
 
@@ -25,7 +25,7 @@ Base de dados SQL e do armazém de dados do SQL Server suportam o acesso condici
 - Quando a autenticação multifator estiver ativada, tem de ligar com a ferramenta suportada, por exemplo, o SSMS mais recente. Para obter mais informações, consulte [configurar a base de dados de SQL do Azure multi-factor authentication para SQL Server Management Studio](sql-database-ssms-mfa-authentication-configure.md).  
 
 ## <a name="configure-ca-for-azure-sql-dbdw"></a>Configurar a AC para a base de dados/armazém de dados do SQL do Azure  
-1.  Inicie sessão no Portal, selecione **do Azure Active Directory**e, em seguida, selecione **acesso condicional**. Para obter mais informações, consulte [referência técnica do Azure Active Directory condicional acesso](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-technical-reference).  
+1.  Inicie sessão no Portal, selecione **do Azure Active Directory**e, em seguida, selecione **acesso condicional**. Para obter mais informações, consulte [referência técnica do Azure Active Directory condicional acesso](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference).  
   ![Painel de acesso condicional](./media/sql-database-conditional-access/conditional-access-blade.png) 
      
 2.  No **políticas de acesso condicional** painel, clique em **nova política**, forneça um nome e, em seguida, clique em **configurar regras**.  

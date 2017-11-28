@@ -1,6 +1,7 @@
 ---
 title: Mapear um nome DNS personalizado existente para Web Apps do Azure | Microsoft Docs
 description: "Saiba como adicionar um personalizado DNS nome de domínio existente (domínio intuitivos) para uma aplicação web, o back-end da aplicação móvel ou a aplicação API no App Service do Azure."
+keywords: "serviço de aplicações, serviço de aplicações do azure, o mapeamento de domínio, nome de domínio, domínio existente, nome de anfitrião"
 services: app-service\web
 documentationcenter: nodejs
 author: cephalin
@@ -15,11 +16,11 @@ ms.topic: tutorial
 ms.date: 06/23/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 6d7c99b1b02a0450cae406e2bc70a7e5563e2ac2
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 1a0b54e75bd6356ba7ba351d51d5f4a59bd64c75
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="map-an-existing-custom-dns-name-to-azure-web-apps"></a>Mapear um nome DNS personalizado existente para Web Apps do Azure
 
@@ -269,6 +270,27 @@ Selecione o  **+**  ícone novo para adicionar outro nome de anfitrião, que cor
 Navegue para os nomes DNS que configurou anteriormente (por exemplo, `contoso.com`, `www.contoso.com`, `sub1.contoso.com`, e `sub2.contoso.com`).
 
 ![Navegação do portal para aplicações do Azure](./media/app-service-web-tutorial-custom-domain/app-with-custom-dns.png)
+
+## <a name="resolve-404-error-web-site-not-found"></a>Resolva o erro 404 "Web Site não foi encontrada"
+
+Se receber um erro de HTTP 404 (não for encontrado) ao navegar para o URL do seu domínio personalizado, certifique-se de que o seu domínio é resolvido para o endereço IP da sua aplicação com <a href="https://www.whatsmydns.net/" target="_blank">WhatsmyDNS.net</a>. Caso contrário, pode ser devido a um dos seguintes motivos:
+
+- O domínio personalizado configurado está em falta um registo a e/ou um registo CNAME.
+- O browser cliente foi colocado em cache o endereço IP antigo do seu domínio. Desmarque a resolução DNS da cache e teste novamente. Num computador Windows, limpe a cache com `ipconfig /flushdns`.
+
+<a name="virtualdir"></a>
+
+## <a name="direct-default-url-to-a-custom-directory"></a>Direcionar o URL predefinido para um diretório personalizado
+
+Por predefinição, o serviço de aplicações direciona pedidos web para o diretório de raiz do seu código de aplicação. No entanto, determinadas estruturas web não inicie no diretório de raiz. Por exemplo, [Laravel](https://laravel.com/) é iniciado no `public` subdiretório. Para continuar a `contoso.com` exemplo DNS, essa aplicação seria acessível em `http://contoso.com/public`, mas realmente pretende direcionar `http://contoso.com` para o `public` directory em vez disso. Este passo não envolve resolução de DNS, mas a personalizar o diretório virtual.
+
+Para tal, selecione **definições da aplicação** no painel de navegação esquerdo da sua página de aplicação web. 
+
+Na parte inferior da página, o diretório virtual raiz `/` aponta para `site\wwwroot` por predefinição, o que é o diretório de raiz do seu código de aplicação. Altere-o para apontar para o `site\wwwroot\public` em vez disso, por exemplo e guarde as alterações. 
+
+![Personalizar o diretório virtual](./media/app-service-web-tutorial-custom-domain/customize-virtual-directory.png)
+
+Uma vez concluída a operação, a aplicação deverá devolver a página à direita no caminho da raiz (por exemplo, http://contoso.com).
 
 ## <a name="automate-with-scripts"></a>Automatizar com scripts
 

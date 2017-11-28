@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 09/25/2017
 ms.author: pratshar
-ms.openlocfilehash: 9c00cf88fa8b754c92cfd0f01be61a596d04d7c6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 160457fdad57cd947077aeb3a4ed85fd2a2849d8
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="failover-in-site-recovery"></a>Reativação pós-falha na Recuperação de Sites
 Este artigo descreve como a ativação pós-falha máquinas de virtuais e físicos servidores protegidos pela recuperação de sites.
@@ -70,7 +70,7 @@ Este procedimento descreve como executar uma ativação pós-falha para um [plan
 1. Quando estiver satisfeito com a ativação pós-falha da máquina virtual, pode **consolidar** a ativação pós-falha. Consolidação elimina todos os pontos de recuperação disponíveis com o serviço e **alterar o ponto de recuperação** opção deixará de estar disponível.
 
 ## <a name="planned-failover"></a>Ativação pós-falha planeada
-Máquinas virtuais/servidores físicos protegidos através da recuperação de Site também suporte **a ativação pós-falha planeada**. Ativação pós-falha planeada é uma zero opção do dados perda ativação pós-falha. Quando é acionada uma ativação pós-falha planeada, primeiro são encerrar as máquinas virtuais de origem, os dados ainda a ser sincronizados estão sincronizados e, em seguida, é acionada uma ativação pós-falha.
+Máquinas virtuais/servidores físicos protegidos através da recuperação de Site também suporte **a ativação pós-falha planeada**. Ativação pós-falha planeada é uma zero opção do dados perda ativação pós-falha. Quando é acionada uma ativação pós-falha planeada, primeiro são encerrar as máquinas virtuais de origem, os dados mais recentes são sincronizados e, em seguida, é acionada uma ativação pós-falha.
 
 > [!NOTE]
 > Quando a ativação pós-falha Hyper-v máquinas virtuais a partir de um local site para outro site no local, para voltar para o site primário no local tem de primeiro **replicar inversamente** a máquina virtual de volta para o site primário e, em seguida, acione uma ativação pós-falha. Se a máquina virtual primária não está disponível, em seguida, antes de começar a **replicar inversamente** tiver de restaurar a máquina virtual a partir de uma cópia de segurança.   

@@ -16,11 +16,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: AyoOlubeko
-ms.openlocfilehash: c85dec1023e4d4f0a14dfbc249850b6dc6e78edf
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: c0ed3eb344ea8ec7e2d3e86125d60c8cc28f723d
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Executar consultas de análises ad hoc através de várias bases de dados SQL do Azure
 
@@ -52,12 +52,11 @@ Aceder a estes dados numa única base de dados multi-inquilinos é fácil, mas n
 
 Por distribuição consultas entre as bases de dados do inquilino, consulta elástico fornece informações imediatas sobre os dados de produção em direto. No entanto, como elástico consulta obtém dados a partir potencialmente muitas bases de dados, latência de consulta pode, por vezes, ser ou superior para consultas equivalentes submetidas a uma única base de dados do multi-inquilino. Lembre-se de que a estrutura de consultas para minimizar os dados que são devolvidos. Consulta elástica frequentemente melhor é adequada para pequenas quantidades de dados em tempo real, por oposição a criação utilizada frequentemente ou consultas de análises complexas ou relatórios a consultar. Se não possível efetuar consultas bem, observe o [plano de execução](https://docs.microsoft.com/sql/relational-databases/performance/display-an-actual-execution-plan) para ver a que parte da consulta ter sido feito o push para baixo para a base de dados remota. E avaliar a quantidade de dados está a ser devolvido. As consultas que requerem processamento analítico complexo poderá ser melhor servidos pelo guardar os dados extraídos inquilino na base de dados que está otimizada para consultas de análise. Base de dados SQL e do armazém de dados do SQL Server foi alojar esse a análise da base de dados.
 
-<!-- ?? This pattern for analytics is explained in the [tenant analytics tutorial](saas-multitenantdb-tenant-analytics.md).
--->
+Este padrão para a análise é explicado no [tutorial de análise do inquilino](saas-multitenantdb-tenant-analytics.md).
 
-## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-scripts"></a>Obter os scripts de aplicação de base de dados do Wingtip bilhetes SaaS multi-inquilino
+## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>Obter o código de origem da aplicação de base de dados do Wingtip bilhetes SaaS multi-inquilino e os scripts
 
-Os scripts de base de dados do Wingtip bilhetes SaaS multi-inquilino e o código fonte da aplicação, estão disponíveis no [repositório do github WingtipTicketsSaaS MultitenantDB](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDB). Certifique-se a seguir os passos de desbloqueio descritos no ficheiro Leia-me.
+Os scripts de base de dados do Wingtip bilhetes SaaS multi-inquilino e o código fonte da aplicação, estão disponíveis no [WingtipTicketsSaaS MultitenantDB](https://github.com/microsoft/WingtipTicketsSaaS-MultiTenantDB) repositório do GitHub. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 
 ## <a name="create-ticket-sales-data"></a>Criar dados de vendas de permissão
 
@@ -96,7 +95,7 @@ Neste exercício adiciona esquema (a origem de dados externa e definições de t
 
     ![Criar credencial](media/saas-multitenantdb-adhoc-reporting/create-credential.png)
 
-   A origem de dados externos, que é definida para utilizar o mapa de partições horizontais inquilino na base de dados de catálogo. Ao utilizar isto como a origem de dados externos, consultas são distribuídas para todas as bases de dados registadas no catálogo, quando a consulta é executada. Porque os nomes dos servidores são diferentes para cada implementação, este script de inicialização obtém a localização da base de dados do catálogo por obter o servidor atual (@@servername) onde o script é executado.
+   Ao utilizar a base de dados de catálogo como a origem de dados externos, consultas são distribuídas para todas as bases de dados registadas no catálogo, quando a consulta é executada. Porque os nomes dos servidores são diferentes para cada implementação, este script de inicialização obtém a localização da base de dados do catálogo por obter o servidor atual (@@servername) onde o script é executado.
 
     ![Criar origem de dados externa](media/saas-multitenantdb-adhoc-reporting/create-external-data-source.png)
 
@@ -120,7 +119,7 @@ Agora que o *adhocreporting* base de dados está a configurar, avançar e execut
 
 Quando inspecionar o plano de execução, coloque o cursor sobre os ícones de plano para obter mais detalhes. 
 
-1. Abra... \\Learning módulos\\análise operacional\\Adhoc Reporting\\*demonstração AdhocReportingQueries.sql* no SSMS.
+1. No *SSMS*, abra... \\Learning módulos\\análise operacional\\Adhoc Reporting\\*demonstração AdhocReportingQueries.sql*.
 2. Certifique-se de que está ligado ao **adhocreporting** base de dados.
 3. Selecione o **consulta** menu e **incluem real planear de execução**
 4. Realce o *que venues estão atualmente registados?* consulta e prima **F5**.
@@ -155,9 +154,7 @@ Neste tutorial, ficou a saber como:
 > * Executar consultas distribuídas em todas as bases de dados do inquilino
 > * Implementar uma base de dados de relatórios ad hoc e adicionar-lhe para executar consultas distribuídas esquema.
 
-<!-- ??
-Now try the [Tenant Analytics tutorial](saas-multitenantdb-tenant-analytics.md) to explore extracting data to a separate analytics database for more complex analytics processing...
--->
+Experimente agora o [tutorial de análise de inquilino](saas-multitenantdb-tenant-analytics.md) para explorar extrair dados para uma base de dados de análise separada para o processamento de análise mais complexo.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

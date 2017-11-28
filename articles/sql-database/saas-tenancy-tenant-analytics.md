@@ -15,11 +15,11 @@ ms.devlang:
 ms.topic: article
 ms.date: 11/08/2017
 ms.author: anjangsh; billgib; genemi
-ms.openlocfilehash: 54aa3d9982ff5cd99be2eb145e223397ca8d6a3f
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: fb4311f28f55cfeb3f07a441adde18ae95f39e90
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="cross-tenant-analytics-using-extracted-data"></a>Análise de inquilino entre utilizar dados extraídos
 
@@ -73,7 +73,7 @@ Compreender como consistentemente cada inquilino está a utilizar o serviço for
 Para concluir este tutorial, devem ser cumpridos os seguintes pré-requisitos:
 
 - A aplicação de Wingtip bilhetes SaaS da base de dados por inquilino é implementada. Para implementar em menos de cinco minutos, consulte [implementar e explorar a aplicação Wingtip SaaS](saas-dbpertenant-get-started-deploy.md)
-- Os scripts de Wingtip bilhetes SaaS da base de dados por inquilino e a aplicação [código fonte](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant/) são transferidos a partir do GitHub. Consulte o artigo de instruções de transferência. Certifique-se para *desbloquear o ficheiro zip* antes de a extrair o respetivo conteúdo.
+- Os scripts de Wingtip bilhetes SaaS da base de dados por inquilino e a aplicação [código fonte](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant/) são transferidos a partir do GitHub. Consulte o artigo de instruções de transferência. Certifique-se para *desbloquear o ficheiro zip* antes de a extrair o respetivo conteúdo. Veja o [orientações gerais](saas-tenancy-wingtip-app-guidance-tips.md) para obter os passos transferir e os scripts de Wingtip SaaS de pedidos de desbloqueio.
 - Ambiente de trabalho do Power BI está instalado. [Transferir o ambiente de trabalho do Power BI](https://powerbi.microsoft.com/downloads/)
 - O lote de inquilinos adicionais tiver sido aprovisionado, consulte o [ **aprovisionar inquilinos tutorial**](saas-dbpertenant-provision-and-catalog.md).
 - Uma conta de tarefa e a base de dados de conta de tarefa foram criados. Consulte os passos adequados de [ **tutorial de gestão de esquema**](saas-tenancy-schema-management.md#create-a-job-account-database-and-new-job-account).

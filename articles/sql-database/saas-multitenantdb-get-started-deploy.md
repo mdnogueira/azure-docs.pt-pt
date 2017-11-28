@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: sstein
-ms.openlocfilehash: cb55bf1f1c7eeb0fc7608aca8d70818b5e3e06c0
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 1ef4355f7234bc6a534d21a57fa52b480983b99b
+ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application-that-uses-azure-sql-database"></a>Implementar e explorar uma a aplicação multi-inquilino que utiliza a SQL Database do Azure
 
@@ -35,7 +35,7 @@ A secção de implementação que se segue fornece o **implementar no Azure** bo
 
 A aplicação é implementada com os dados para os três inquilinos de exemplo. Os inquilinos são armazenados em conjunto numa base de dados do multi-inquilino.
 
-Qualquer pessoa pode transferir o código de origem do c# e do PowerShell para bilhetes de Wingtip de [nosso repositório do Github][link-github-wingtip-multitenantdb-55g].
+Qualquer pessoa pode transferir o código de origem do c# e do PowerShell para bilhetes de Wingtip de [nosso repositório do GitHub][link-github-wingtip-multitenantdb-55g].
 
 #### <a name="learn-in-this-tutorial"></a>Saiba neste tutorial
 
@@ -93,7 +93,7 @@ Enquanto a aplicação está a implementar, transfira os scripts de código e ge
 > [!IMPORTANT]
 > Conteúdo executável (scripts, dlls) pode estar bloqueado pelo Windows quando zip ficheiros são transferidos a partir de uma origem externa e extraiu. Quando extrair os scripts a partir de um ficheiro zip, utilize os seguintes passos para desbloquear o ficheiro. zip antes de a extrair. Ao desbloquear o ficheiro. zip, certifique-se que os scripts estão autorizados a executar.
 
-1. Navegue até à [o repositório do github WingtipTicketsSaaS MultiTenantDb](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb).
+1. Navegue até à [o repositório do GitHub WingtipTicketsSaaS MultiTenantDb](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb).
 2. Clique em **clonar ou transferir**.
 3. Clique em **transferir ZIP** e guarde o ficheiro.
 4. Clique com botão direito do **WingtipTicketsSaaS-MultiTenantDb-master.zip** do ficheiro e selecione **propriedades**.
@@ -120,7 +120,7 @@ A aplicação apresenta os locais, como salas de espetáculos, clubes de jazz, c
 Um centro **Hub de eventos** fornece uma lista de ligações para os inquilinos na sua implementação específica.
 
 1. Abra o *Hub de eventos* no seu browser:
-    - http://events.Wingtip-MT.&lt;utilizador&gt;. trafficmanager.net &nbsp; *(substituir pelo valor de utilizador da sua implementação.)*
+    - http://events.Wingtip. &lt;Utilizador&gt;. trafficmanager.net &nbsp; *(substituir pelo valor de utilizador da sua implementação.)*
 
     ![hub de eventos](media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
@@ -130,7 +130,7 @@ Um centro **Hub de eventos** fornece uma lista de ligações para os inquilinos 
 
 Para controlar a distribuição de pedidos recebidos, as utilizações de aplicação [Traffic Manager do Azure](../traffic-manager/traffic-manager-overview.md). As páginas de eventos, que são específicas do inquilino, incluem o nome de inquilino no URL. Os URLs também incluem o valor de utilizador específico e seguem este formato:
 
-- http://events.Wingtip-MT.&lt;utilizador&gt;.trafficmanager.net/*fabrikamjazzclub*
+- http://events.Wingtip. &lt;Utilizador&gt;.trafficmanager.net/*fabrikamjazzclub*
  
 A aplicação de eventos analisa o nome de inquilino a partir do URL e a codifica para criar uma chave para aceder a um catálogo utilizando [gestão de mapa de partições horizontais](sql-database-elastic-scale-shard-map-management.md). O catálogo mapeia a chave para a localização do inquilino da base de dados. O **Hub de eventos** apresenta uma lista de todos os inquilinos estão registados no catálogo. O **Hub de eventos** utiliza metadados expandido no catálogo para obter o nome do inquilino associado a cada mapeamento para construir os URLs.
 
@@ -156,7 +156,7 @@ Pode querer reiniciar a sessão do gerador de carga a utilizar valores de parâm
 
 A implementação inicial inclui três inquilinos de exemplo no *Tenants1* base de dados. Vamos criar outro inquilino para ver como este problema afeta a aplicação implementada. Neste passo, criar rapidamente um novo inquilino.
 
-1. Abra... \\Learning Modules\ProvisionTenants\\*demonstração ProvisionTenants.ps1* no *ISE do PowerShell*.
+1. Abra... \\Learning Modules\Provision e catálogo\\*demonstração ProvisionTenants.ps1* no *ISE do PowerShell*.
 2. Prima **F5** para executar o script (mantenha os valores predefinidos por agora).
 
    > [!NOTE]
@@ -174,7 +174,7 @@ O modelo de multi-inquilino em partição horizontal permite-lhe escolher se apr
 
 Agora vamos aprovisionar outro inquilino, desta vez na sua própria base de dados.
 
-1. Em... \\Learning módulos\\ProvisionTenants\\*demonstração ProvisionTenants.ps1*, modificar *$TenantName* para **Salix Salsa**,  *$VenueType* para **dance** e *$Scenario* para **2**.
+1. Em... \\Learning módulos\\aprovisionar e catálogo\*ProvisionTenants.ps1* demonstração, modificar *$TenantName* para **Salix Salsa**, *$VenueType*  para **dance** e *$Scenario* para **2**.
 
 2. Prima **F5** para executar novamente o script.
     - Este prima F5 Aprovisiona ao novo inquilino na base de dados separada. A base de dados e de inquilino são registadas no catálogo. Em seguida, o browser abre-se para a página de eventos do inquilino.
@@ -239,7 +239,7 @@ Neste tutorial, ficou a saber:
 > - Como ver a utilização do conjunto para monitorizar a atividade dos inquilinos
 > - Como eliminar os recursos de exemplo para parar a faturação relacionada
 
-Experimente agora o [tutorial de aprovisionamento inquilinos](sql-database-saas-tutorial-provision-and-catalog.md).
+Experimente agora o [tutorial de aprovisionamento e o catálogo](sql-database-saas-tutorial-provision-and-catalog.md).
 
 
 

@@ -14,11 +14,11 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 12/08/2016
 ms.author: tamram
-ms.openlocfilehash: 592a8716dd15b25b14fed145c11e5f5714cdd41c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c3973c7e529cd1d0ecd98ae17d4d979d0d458ef3
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="azure-storage-security-guide"></a>Guia de segurança de armazenamento do Azure
 ## <a name="overview"></a>Descrição geral
@@ -354,7 +354,7 @@ A solução não suporta os seguintes cenários, funcionalidades e tecnologias n
 Esta funcionalidade garante que todos os dados nos seus discos da máquina virtual são encriptados em pausa no armazenamento do Azure.
 
 #### <a name="resources"></a>Recursos
-* [Encriptação de disco do Azure para o Windows e as VMs de Linux IaaS](https://docs.microsoft.com/en-us/azure/security/azure-security-disk-encryption)
+* [Encriptação de disco do Azure para o Windows e as VMs de Linux IaaS](https://docs.microsoft.com/azure/security/azure-security-disk-encryption)
 
 ### <a name="comparison-of-azure-disk-encryption-sse-and-client-side-encryption"></a>Comparação de encriptação de disco do Azure, SSE e encriptação do lado do cliente
 #### <a name="iaas-vms-and-their-vhd-files"></a>VMs de IaaS e os respetivos ficheiros VHD
