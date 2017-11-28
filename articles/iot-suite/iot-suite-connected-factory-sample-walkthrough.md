@@ -101,7 +101,7 @@ O Hub IoT disponibiliza uma origem de eventos para o Azure TSI. O TSI armazena d
 
 Atualmente, o TSI não permite aos clientes personalizar o período de tempo durante o qual pretendem manter os dados.
 
-O TSI consulta os dados dos nós através de um **SearchSpan** [InvervalodePesquisa] (**Time.From** [Hora.De], **Time.To** [Hora.Até]) e agrega por **OPC UA ApplicationUri** [UriAplicação OPC UA], **OPC UA NodeId** [IdNó OPC UA] ou **OPC UA DisplayName** [NomeaApresentar OPC UA].
+O TSI consulta os dados dos nós através de um **SearchSpan** [InvervalodePesquisa] \(**Time.From** [Hora.De], **Time.To** [Hora.Até]) e agrega por **OPC UA ApplicationUri** [UriAplicação OPC UA], **OPC UA NodeId** [IdNó OPC UA] ou **OPC UA DisplayName** [NomeaApresentar OPC UA].
 
 Para obter os dados relativos aos medidores OEE e KPI, bem como os gráficos de séries temporais, os dados são agregados por contagem de eventos, Soma, Média, Mín e Máx.
 
