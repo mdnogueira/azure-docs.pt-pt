@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/12/2017
 ms.author: billmath
-ms.openlocfilehash: 5d2c581b25d34ea1b83f54292b5b65b2286e5a9d
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 4428f3da5dd9423aa60daa697e4ea15c99f92188
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="azure-active-directory-pass-through-authentication-security-deep-dive"></a>Azure Active Directory pass-through Authentication segurança detalhada
 
@@ -39,7 +39,7 @@ Estes são os aspetos de segurança de chave desta funcionalidade:
 - Apenas portas não padrão (80 e 443) são utilizadas para comunicação de saída dos agentes de autenticação para o Azure AD. Não precisa abrir portas de entrada na sua firewall. 
   - Porta 443 é utilizada para todas as comunicações de saída autenticada.
   - Porta 80 é utilizada apenas para transferir o certificado de listas de revogação (CRL) para se certificar de que nenhuma dos certificados utilizados por esta funcionalidade foram revogadas.
-  - Para obter a lista completa dos requisitos de rede, consulte [autenticação pass-through do Active Directory do Azure: início rápido](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-1-check-prerequisites).
+  - Para obter a lista completa dos requisitos de rede, consulte [autenticação pass-through do Active Directory do Azure: início rápido](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-1-check-the-prerequisites).
 - Palavras-passe que os utilizadores forneçam durante o início de sessão são encriptadas na nuvem, antes dos agentes de autenticação no local aceitar para validação no Active Directory.
 - O canal HTTPS entre o Azure AD e o agente de autenticação no local é protegido pela utilização de autenticação mútua.
 - A funcionalidade de forma totalmente integrada integra-se com capacidades de proteção da nuvem do Azure AD, como as políticas de acesso condicional (incluindo o multi-factor Authentication do Azure), a proteção de identidade e bloqueio inteligente.

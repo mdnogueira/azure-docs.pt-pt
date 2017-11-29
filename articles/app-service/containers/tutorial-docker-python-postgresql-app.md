@@ -5,25 +5,22 @@ services: app-service\web
 documentationcenter: python
 author: berndverst
 manager: erikre
-editor: 
-ms.assetid: 2bada123-ef18-44e5-be71-e16323b20466
 ms.service: app-service-web
 ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 05/03/2017
 ms.author: beverst
 ms.custom: mvc
-ms.openlocfilehash: fa3aa3a73338970fde2d0b0230e7b2e6ca687dc9
-ms.sourcegitcommit: b979d446ccbe0224109f71b3948d6235eb04a967
+ms.openlocfilehash: 55d6f1d10ff08fd8f0ea4aba775a96549192cef2
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="build-a-docker-python-and-postgresql-web-app-in-azure"></a>Criar uma aplicação web Docker Python e PostgreSQL no Azure
 
-Web App para contentores fornece uma serviço de alojamento na web altamente dimensionável e aplicação de patches personalizada. Este tutorial mostra como criar uma aplicação de web básica do Docker Python no Azure. Irá ligar esta aplicação a uma base de dados PostgreSQL. Quando tiver terminado, terá de uma aplicação de Python Flask em execução dentro de um contentor de Docker no [do serviço de aplicações no Linux](app-service-linux-intro.md).
+Web App para contentores fornece uma serviço de alojamento na web altamente dimensionável e aplicação de patches personalizada. Este tutorial mostra como criar uma aplicação de web básica do Docker Python no Azure. Ligar esta aplicação numa base de dados PostgreSQL. Quando tiver terminado, que tem uma aplicação de Python Flask em execução dentro de um contentor de Docker no [do serviço de aplicações no Linux](app-service-linux-intro.md).
 
 ![Docker Python Flask aplicação no App Service no Linux](./media/tutorial-docker-python-postgresql-app/docker-flask-in-azure.png)
 
@@ -120,7 +117,7 @@ Para parar o servidor de Flask em qualquer altura, escreva Ctrl + C no terminal.
 
 ## <a name="create-a-production-postgresql-database"></a>Criar uma base de dados de PostgreSQL de produção
 
-Neste passo, vai criar uma base de dados PostgreSQL no Azure. Quando a aplicação é implementada no Azure, irá utilizar esta base de dados de nuvem.
+Neste passo, vai criar uma base de dados PostgreSQL no Azure. Quando a aplicação for implementada para o Azure, este utiliza esta base de dados de nuvem.
 
 ### <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
@@ -146,7 +143,7 @@ Utilize o [az appservice lista-localizações](/cli/azure/appservice#list-locati
 
 ### <a name="create-an-azure-database-for-postgresql-server"></a>Criar uma Base de Dados do Azure para o servidor PostgreSQL
 
-Criar um servidor de PostgreSQL com o [az postgres servidor criar](/cli/azure/documentdb#create) comando.
+Criar um servidor de PostgreSQL com o [az postgres servidor criar](/cli/azure/postgres/server#az_postgres_server_create) comando.
 
 O seguinte comando, substitua um nome de servidor exclusivo para o  *\<postgresql_name >* marcador de posição e um utilizador de nome para o  *\<admin_username >* marcador de posição. O nome do servidor é utilizado como parte do seu ponto final PostgreSQL (`https://<postgresql_name>.postgres.database.azure.com`), por isso, o nome tem de ser exclusivos em todos os servidores no Azure. É o nome de utilizador para a conta de utilizador de administrador de base de dados inicial. Lhe for pedido para escolher uma palavra-passe para este utilizador.
 
@@ -207,7 +204,7 @@ Neste passo, ligar a aplicação de exemplo do Python Flask na base de dados do 
 
 ### <a name="create-an-empty-database-and-set-up-a-new-database-application-user"></a>Criar uma base de dados vazio e configurar um novo utilizador de aplicação de base de dados
 
-Crie um utilizador de base de dados com acesso a uma base de dados apenas. Irá utilizar estas credenciais para evitar a fornecer o acesso completo da aplicação para o servidor.
+Crie um utilizador de base de dados com acesso a uma base de dados apenas. Utilizar estas credenciais para evitar a fornecer o acesso completo da aplicação para o servidor.
 
 Ligar à base de dados (lhe for pedida a palavra-passe de administrador).
 
@@ -293,7 +290,7 @@ A base de dados já contém o registo que criou anteriormente.
 
 ## <a name="upload-the-docker-container-to-a-container-registry"></a>Carregar o contentor de Docker para um registo de contentor
 
-Neste passo, carregue o contentor de Docker um registo de contentor. Irá utilizar o registo de contentor do Azure, mas também pode utilizar outros diferentes populares, tais como o Hub de Docker.
+Neste passo, carregue o contentor de Docker um registo de contentor. Registo de contentor do Azure de utilização, mas também pode utilizar outros diferentes populares, tais como o Hub de Docker.
 
 ### <a name="create-an-azure-container-registry"></a>Criar um Azure Container Registry
 

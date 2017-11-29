@@ -8,15 +8,15 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 10/03/2017
-ms.openlocfilehash: 17f045f516792e50f7349805ec9f7a01e3f9d5b0
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/27/2017
+ms.openlocfilehash: d3de3fdf28997b63321bf23443472db43ebb5c52
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Conceitos de servidor na base de dados do Azure para MySQL
-Este tópico fornece considerações e diretrizes para trabalhar com a base de dados do Azure para servidores MySQL.
+Este artigo fornece considerações e diretrizes para trabalhar com a base de dados do Azure para servidores MySQL.
 
 ## <a name="what-is-an-azure-database-for-mysql-server"></a>O que é uma base de dados do Azure para o servidor de MySQL?
 
@@ -38,15 +38,13 @@ Dentro de uma Base de Dados do Azure para o servidor MySQL, pode criar uma ou v�
 ## <a name="how-do-i-connect-and-authenticate-to-an-azure-database-for-mysql-server"></a>Como ligar e autenticar para uma base de dados do Azure para o servidor de MySQL?
 
 Os elementos seguintes ajudam a garantir o acesso seguro à sua base de dados.
-
 |||
 | :-- | :-- |
 | **Autenticação e autorização** | Base de dados do Azure para o servidor de MySQL suporta a autenticação de MySQL nativa. Pode estabelecer ligação e autenticar para um servidor com início de sessão de administrador do servidor. |
 | **Protocolo** | O serviço suporta um protocolo baseado em mensagem utilizado pelo MySQL. |
 | **TCP/IP** | O protocolo é suportado por TCP/IP e através de sockets de domínio do Unix. |
-| **Firewall** | Para ajudar a proteger os seus dados, uma regra de firewall impede a todos os acessos ao seu servidor de base de dados, ou para as respetivas bases de dados, até que especifique os computadores que têm permissão. Consulte [base de dados do Azure para as regras de firewall do servidor de MySQL](./concepts-firewall-rules.md). |
+| **Firewall** | Para ajudar a proteger os seus dados, uma regra de firewall impede que todos os acessos ao seu servidor de base de dados, até especificar quais os computadores que tem permissão. Consulte [base de dados do Azure para as regras de firewall do servidor de MySQL](./concepts-firewall-rules.md). |
 | **SSL** | O serviço suporta a imposição de ligações de SSL entre as suas aplicações e o servidor de base de dados.  Veja [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (Configurar a conectividade SSL na sua aplicação para ligar em segurança à Base de Dados do Azure para o MySQL). |
-|||
 
 ## <a name="how-do-i-manage-a-server"></a>Como gerir a um servidor?
 Pode gerir a base de dados do Azure para servidores MySQL, utilizando o portal do Azure ou a CLI do Azure.

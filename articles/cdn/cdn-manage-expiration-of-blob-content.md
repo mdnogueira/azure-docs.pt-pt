@@ -14,11 +14,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/10/2017
 ms.author: mazha
-ms.openlocfilehash: 8c15d198e92b1478b84b2140df416df3909ba141
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 276b0ecd6d84725b94018e73d53555ffd9f3e9a0
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-content-delivery-network"></a>Gerir a expiração do Blob storage do Azure numa rede de entrega de conteúdo do Azure
 > [!div class="op_single_selector"]
@@ -101,6 +101,14 @@ class Program
 
 ### <a name="azure-storage-explorer"></a>Explorador do Storage do Azure
 Com [Explorador de armazenamento do Azure](https://azure.microsoft.com/en-us/features/storage-explorer/), pode ver e editar os recursos do blob storage, incluindo propriedades, como o *CacheControl* propriedade. 
+
+Para atualizar o *CacheControl* propriedade de um blob com o Explorador de armazenamento do Azure:
+   1. Selecione um blob, em seguida, selecione **propriedades** no menu de contexto. 
+   2. Desloque para baixo até o *CacheControl* propriedade.
+   3. Introduza um valor, em seguida, clique em **guardar**.
+
+
+![Propriedades do Explorador de armazenamento do Azure](./media/cdn-manage-expiration-of-blob-content/cdn-storage-explorer-properties.png)
 
 ### <a name="azure-command-line-interface"></a>Interface de Linha de Comandos do Azure
 Quando carregar um blob, pode definir o *cacheControl* propriedade com o `-p` mudar o [Interface de linha de comandos do Azure](../cli-install-nodejs.md). O exemplo seguinte mostra como definir o valor de TTL para uma hora (3600 segundos):

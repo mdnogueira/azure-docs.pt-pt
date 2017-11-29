@@ -5,8 +5,6 @@ services: app-service\web
 documentationcenter: nodejs
 author: cephalin
 manager: erikre
-editor: 
-ms.assetid: 14feb4f3-5095-496e-9a40-690e1414bd73
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
@@ -15,11 +13,11 @@ ms.topic: tutorial
 ms.date: 07/21/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 11e8708987f4e085fc8bf1db10144283a9a17d2e
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 86ee5b02fe2a9f34db651f6446398d366b24b5d2
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="build-a-php-and-mysql-web-app-in-azure"></a>Criar uma aplicação web PHP e o MySQL no Azure
 
@@ -106,7 +104,7 @@ composer install
 
 Na raiz do repositório, crie um ficheiro denominado *.env*. Copie as seguintes variáveis para o *.env* ficheiro. Substitua o  _&lt;root_password >_ marcador de posição pela palavra-passe do utilizador de raiz MySQL.
 
-```
+```txt
 APP_ENV=local
 APP_DEBUG=true
 APP_KEY=SomeRandomString
@@ -236,7 +234,7 @@ Neste passo, ligar a aplicação PHP para a base de dados MySQL que criou na bas
 
 Na raiz do repositório, crie um _. env.production_ de ficheiros e copie as seguintes variáveis para a mesma. Substitua o marcador de posição  _&lt;mysql_server_name >_.
 
-```
+```txt
 APP_ENV=production
 APP_DEBUG=true
 APP_KEY=SomeRandomString
@@ -332,7 +330,7 @@ Neste passo, a aplicação é implementada ligados MySQL PHP App Service do Azur
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-php-no-h.md)] 
 
-### <a name="configure-database-settings"></a>Configurar as definições de base de dados
+### <a name="configure-database-settings"></a>Configurar definições de base de dados
 
 No App Service, definir variáveis de ambiente como _as definições de aplicação_ utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#set) comando.
 

@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: jeedes
-ms.openlocfilehash: d93667f16f2d72995e4a42e79e9125b8e3f6b07c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 598387b6066612c6c4a4c92cba5ba03e03a55203
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trello"></a>Tutorial: Integração do Azure Active Directory com Trello
 
@@ -96,6 +96,10 @@ Para configurar e testar o Azure AD-início de sessão único com Trello, tem de
 
 Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e configurar o início de sessão único na sua aplicação Trello.
 
+>[!NOTE]
+    >Pode ser obtido o  **\<enterprise\>**  devendo de Trello. Se não tiver o valor do campo de dados dinâmico, contacte [equipa de suporte de Trello](mailto:support@trello.com) para obter o campo de dados dinâmico para a sua empresa.
+    > 
+
 **Para configurar o Azure AD-início de sessão único com Trello, execute os seguintes passos:**
 
 1. No portal do Azure, no **Trello** página de integração de aplicações, clique em **de sessão único-**.
@@ -112,17 +116,15 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     No **URL de resposta** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://trello.com/auth/saml/consume/<enterprise>`
 
-4. No **Trello domínio e os URLs** secção, se pretender configurar a aplicação no **SP iniciada modo**, execute os seguintes passos:
-    
-    ![Configurar o início de sessão único](./media/active-directory-saas-trello-tutorial/tutorial_trello_url1.png)
+4. Se pretender configurar a aplicação no **SP iniciada modo**, execute os seguintes passos:
+
+  ![Configurar o início de sessão único](./media/active-directory-saas-trello-tutorial/tutorial_trello_url1.png)
 
     a. Clique em de **Mostrar avançadas definições de URL**.
 
-    b. No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://trello.com/auth/saml/consume/<enterprise>`
+    b. No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://trello.com/auth/saml/login/<enterprise>`
 
-    >[!NOTE]
-    >Pode ser obtido o  **\<enterprise\>**  devendo de Trello. Se não tiver o valor do campo de dados dinâmico, contacte [equipa de suporte de Trello](mailto:support@trello.com) para obter o campo de dados dinâmico para a empresa.
-    > 
+  c. No **identificador** caixa de texto, escreva o seguinte URL:`https://trello.com/auth/saml/metadata`
 
 5. Aplicação de Trello espera as asserções de SAML para conter os atributos específicos. Configure os seguintes atributos para esta aplicação. Pode gerir os valores destes atributos do **"Atributos de utilizador"** da aplicação. A seguinte captura de ecrã mostra um exemplo para este.
 
@@ -130,7 +132,7 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
 6. No **atributos token SAML** caixa de diálogo, para cada linha mostrada na tabela abaixo, execute os seguintes passos:
  
-    | Nome do atributo | Valor do atributo |
+    | Nome do Atributo | Valor do Atributo |
     | --- | --- |
     | User.Email | User.Mail |
     | User.FirstName | User.givenName |

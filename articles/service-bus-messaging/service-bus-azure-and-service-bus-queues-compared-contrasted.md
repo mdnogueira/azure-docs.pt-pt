@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 11/08/2017
 ms.author: sethm
-ms.openlocfilehash: d566b74429bf158e0c9cc51419ba35c9e6c32f64
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: f13c7330c9e828abe6557149b9a31c7170e33dcd
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>As filas de armazenamento e de filas do Service Bus - comparados e contrasted
 Este artigo analisa as diferenças e semelhanças entre os dois tipos de filas oferecidas pelo Microsoft Azure hoje: as filas de armazenamento e de filas do Service Bus. A utilização destas informações permite-lhe comparar e contrastar as respetivas tecnologias, e tomar uma decisão mais informada quanto à solução que melhor responde às suas necessidades.
@@ -30,12 +30,12 @@ Azure suporta dois tipos de mecanismos de fila: **as filas de armazenamento** e 
 
 **Filas do Service Bus** fazem parte de um mais ampla [mensagens do Azure](https://azure.microsoft.com/services/service-bus/) infraestrutura que suporta a colocação em fila, bem como de publicação/subscrição e, mais avançadas padrões de integração. Para obter mais informações sobre as filas/tópicos/subscrições do Service Bus, consulte o [descrição geral do Service Bus](service-bus-messaging-overview.md).
 
-Embora ambas as tecnologias de colocação existirem em simultâneo, as filas de armazenamento foram introduzidas em primeiro lugar, como um mecanismo de armazenamento dedicado fila desenvolvido com serviços de armazenamento do Azure. Filas do Service Bus são criadas com base a infraestrutura de "mensagens" mais ampla concebida para integrar aplicações ou componentes da aplicação que podem abranger vários protocolos de comunicação, contratos de dados, os domínios de confiança, e/ou ambientes de rede.
+Embora ambas as tecnologias de colocação existirem em simultâneo, as filas de armazenamento foram introduzidas em primeiro lugar, como um mecanismo de armazenamento dedicado fila desenvolvido com serviços de armazenamento do Azure. Filas do Service Bus são criadas com base a infraestrutura de mensagens mais ampla concebida para integrar aplicações ou componentes da aplicação que podem abranger vários protocolos de comunicação, contratos de dados, os domínios de confiança, e/ou ambientes de rede.
 
 ## <a name="technology-selection-considerations"></a>Considerações de seleção de tecnologia
 As filas de armazenamento e de filas do Service Bus são implementações da mensagem de colocação em fila de serviço atualmente oferecido pelo Microsoft Azure. Cada um tem um conjunto de funcionalidades ligeiramente diferentes, o que significa que pode escolher um ou outro, ou ambos, consoante as necessidades da sua solução específica ou um problema de negócio/técnica que são resolver.
 
-Ao determinar o objetivo de uma determinada solução se adequa a tecnologia que colocação, aos programadores e arquitetos de soluções, devem considerar as recomendações abaixo. Para obter mais detalhes, consulte a secção seguinte.
+Ao determinar o objetivo de uma determinada solução se adequa a tecnologia que colocação, aos programadores e arquitetos de soluções, devem considerar estas recomendações. Para obter mais detalhes, consulte a secção seguinte.
 
 Como um arquiteto de solução/programador, **deve considerar a utilização de filas de armazenamento** quando:
 
@@ -75,8 +75,8 @@ Esta secção compara algumas das capacidades de colocação fundamentais fornec
 | API de estilo de push |**Não** |**Sim**<br/><br/>[OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage#Microsoft_ServiceBus_Messaging_QueueClient_OnMessage_System_Action_Microsoft_ServiceBus_Messaging_BrokeredMessage__) e **OnMessage** sessões .NET API. |
 | Receber modo |**Observar & concessão** |**Observar & bloqueio**<br/><br/>**Receber e eliminar** |
 | Modo de acesso exclusivo |**Com base em concessão** |**Com base em bloqueio** |
-| Duração de concessão/bloqueio |**30 segundos (predefinição)**<br/><br/>**7 dias (máximo)** (pode renovar ou uma mensagem através de concessão de versão a [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API.) |**60 segundos (predefinição)**<br/><br/>Pode renovar um bloqueio de mensagens utilizando o [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) API. |
-| / Bloqueio de concessão precisão |**Nível de mensagem**<br/><br/>(cada mensagem pode ter um valor de tempo limite diferentes, que, em seguida, pode atualizar conforme necessário durante o processamento da mensagem, utilizando o [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API) |**Nível de fila**<br/><br/>(cada fila tem uma precisão de bloqueio aplicada a todos os respetivos mensagens, mas podem renovar o bloqueio utilizando o [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) API.) |
+| Duração de concessão/bloqueio |**30 segundos (predefinição)**<br/><br/>**7 dias (máximo)** (pode renovar ou uma mensagem através de concessão de versão a [UpdateMessage](/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage) API.) |**60 segundos (predefinição)**<br/><br/>Pode renovar um bloqueio de mensagens utilizando o [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) API. |
+| / Bloqueio de concessão precisão |**Nível de mensagem**<br/><br/>(cada mensagem pode ter um valor de tempo limite diferentes, que, em seguida, pode atualizar conforme necessário durante o processamento da mensagem, utilizando o [UpdateMessage](/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage) API) |**Nível de fila**<br/><br/>(cada fila tem uma precisão de bloqueio aplicada a todos os respetivos mensagens, mas podem renovar o bloqueio utilizando o [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) API.) |
 | Em lotes receber |**Sim**<br/><br/>(especifique explicitamente contagem de mensagens quando a obtenção de mensagens, até um máximo de 32 mensagens) |**Sim**<br/><br/>(implicitamente ativar uma propriedade de obtenção prévia ou explicitamente através da utilização de transações) |
 | Em lote de envio |**Não** |**Sim**<br/><br/>(através da utilização de transações ou criação de batches do lado do cliente) |
 
@@ -89,7 +89,7 @@ Esta secção compara algumas das capacidades de colocação fundamentais fornec
 * Filas do Service Bus fornecem suporte para transações locais no contexto de uma fila única.
 * O **receber e eliminar** modo suportado pelo Service Bus fornece a capacidade para reduzir a contagem de operação de mensagens (e o custo associado) in exchange for garantia de entrega lowered.
 * As filas de armazenamento fornecem concessões a capacidade de expandir as concessões de mensagens. Isto permite que os trabalhadores manter concessões curtos nas mensagens. Assim, se um trabalho falhar, a mensagem pode ser rapidamente processada novamente por outro worker. Além disso, uma função de trabalho pode alargar a concessão num mensagem se necessita de processar-mais do que o período de concessão atual.
-* As filas de armazenamento oferecem um tempo limite de visibilidade que pode definir após a colocar ou dequeuing de uma mensagem. Além disso, pode atualizar uma mensagem com valores de concessão diferentes em tempo de execução e valores diferentes de atualização em mensagens na fila da mesma. Tempos limite de bloqueio do Service Bus são definidos nos metadados da fila; No entanto, podem renovar o bloqueio chamando a [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) método.
+* As filas de armazenamento oferecem um tempo limite de visibilidade que pode definir após o enqueuing ou dequeuing de uma mensagem. Além disso, pode atualizar uma mensagem com valores de concessão diferentes em tempo de execução e valores diferentes de atualização em mensagens na fila da mesma. Tempos limite de bloqueio do Service Bus são definidos nos metadados da fila; No entanto, podem renovar o bloqueio chamando a [RenewLock](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.renewlock#Microsoft_ServiceBus_Messaging_BrokeredMessage_RenewLock) método.
 * O tempo limite máximo para uma bloquear a operação de receção de filas do Service Bus é de 24 dias. No entanto, os tempos limite baseado em REST tem um valor máximo de segundos 55.
 * Do lado do cliente de criação de batches fornecida pelo Service Bus permite que um cliente de fila para várias mensagens do batch para uma operação de envio único. Criação de batches só está disponível para operações de envio assíncrono.
 * Funcionalidades como o limite de 200 TB de filas de armazenamento (mais quando virtualizar contas) e de filas ilimitadas torná-lo numa plataforma ideal para fornecedores de SaaS.
@@ -132,9 +132,9 @@ Esta secção compara as filas de armazenamento e de filas do Service Bus da per
 | Critérios de comparação | Filas de armazenamento | Filas de Service Bus |
 | --- | --- | --- |
 | Tamanho máximo da fila |**500 TB**<br/><br/>(limitado a um [única capacidade das contas de armazenamento](../storage/common/storage-introduction.md#queue-storage)) |**1 GB para 80 GB**<br/><br/>(definido após a criação de uma fila e [ativar a criação de partições](service-bus-partitioning.md) – consulte a secção "Informações adicionais") |
-| Tamanho da mensagem máximo |**64 KB**<br/><br/>(48 KB quando utilizar **Base64** codificação)<br/><br/>Azure suporta mensagens grandes através da combinação de filas e blobs – ponto em que pode colocar em fila até 200GB para um único item. |**256 KB** ou **1 MB**<br/><br/>(incluindo o cabeçalho e corpo, tamanho do cabeçalho máximo: 64 KB).<br/><br/>Depende do [camada de serviço](service-bus-premium-messaging.md). |
+| Tamanho da mensagem máximo |**64 KB**<br/><br/>(48 KB quando utilizar **Base64** codificação)<br/><br/>Azure suporta mensagens grandes através da combinação de filas e blobs – ponto em que pode colocar em fila até 200 GB para um único item. |**256 KB** ou **1 MB**<br/><br/>(incluindo o cabeçalho e corpo, tamanho do cabeçalho máximo: 64 KB).<br/><br/>Depende do [camada de serviço](service-bus-premium-messaging.md). |
 | TTL da mensagem máximo |**7 dias** |**TimeSpan.Max** |
-| Número máximo de filas |**Ilimitado** |**10,000**<br/><br/>(por espaço de nomes de serviço, pode ser aumentada) |
+| Número máximo de filas |**Ilimitado** |**10,000**<br/><br/>(por espaço de nomes do serviço) |
 | Número máximo de clientes em simultâneo |**Ilimitado** |**Ilimitado**<br/><br/>(limite de ligações simultâneas 100 apenas se aplica a comunicação baseada no protocolo TCP) |
 
 ### <a name="additional-information"></a>Informações adicionais

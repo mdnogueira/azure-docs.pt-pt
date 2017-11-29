@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 2f46fc37b9050b19b83685c97198c29a5ce46289
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 0f45468616884a6866bd95ef53acab71b4fed06c
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="azure-cosmos-db-faq"></a>FAQ do Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Noções básicas do Cosmos BD do Azure
@@ -194,9 +194,11 @@ Existem algumas diferenças de comportamento utilizadores provenientes da Table 
 * API de tabela de base de dados do Azure Cosmos utiliza um modelo de capacidade reservado para garantir o desempenho garantido, mas isto significa que um pays para a capacidade, assim que a tabela é criada, mesmo que a capacidade não está a ser utilizada. Table Storage do Azure um apenas pays para a capacidade, na verdade, está a ser utilizada. Esta ajuda a explicar por que motivo API de tabela pode oferecer que um 10 ms ler e a 15 ms escrever SLA no percentil 99th Table storage do Azure oferece um SLA de segundo 10. Mas como consequence, com as tabelas de API de tabela, mesmo vazios tabelas sem quaisquer pedidos, custo dinheiro para garantir que a capacidade está disponível para processar pedidos aos mesmos, o SLA oferecidas pelo Azure Cosmos DB.
 * Resultados devolvidos pela API de tabela não são ordenados por ordem de chave de linha/chave de partição conforme forem no Table storage do Azure.
 * Chaves de linha só podem ser até 255 bytes
+* Lotes só podem conter até 2 MB
 * Chamadas de CreateIfNotExists estão limitadas por uma limitação de gestão que seja fixo e separada das outras operações de tabela que estão abrangidas pelos RUs. Isto significa que os efetuar grandes quantidades de CreateIfNotExists obterem limitados e irão não será capazes de fazer nada sobre o assunto, porque o limite não provém do respetivos RUs.
 * Não é atualmente suportado CORS
 * Os nomes de tabela no armazenamento de Azure Table não são maiúsculas e minúsculas, mas estão na API de tabela de base de dados do Azure Cosmos
+* Alguns dos formatos de internos da BD do Cosmos do Azure para obter informações de codificação, como binários campos, atualmente não estão como eficientes como um poderá gostar. Por conseguinte, isto pode provocar limitações inesperadas no tamanho dos dados. Por exemplo, atualmente um não foi possível utilizar a completa 1 Meg de uma entidade de tabela para armazenar dados binários porque a codificação aumenta o tamanho dos dados.
 
 Em termos da API REST, existem várias opções de pontos finais/consulta que não são suportadas pelo Azure Cosmos DB tabela API de:
 | Método de REST | Opção de consulta/ponto final de REST | URLs do documento | Explicação |

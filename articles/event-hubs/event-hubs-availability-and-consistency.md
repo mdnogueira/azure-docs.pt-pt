@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/15/2017
+ms.date: 11/28/2017
 ms.author: sethm
-ms.openlocfilehash: 681a9d1636d547492f6f827461c6b2494b918778
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: be1398e9b0a10efcd694e46d6322d5d7b9e7a843
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Disponibilidade e a consistência no Event Hubs
 
@@ -36,7 +36,7 @@ Theorem do Brewer define consistência e a disponibilidade da seguinte forma:
 Os Event Hubs é desenvolvida com um modelo de dados particionada. Pode configurar o número de partições do seu hub de eventos durante a configuração, mas não é possível alterar este valor mais tarde. Uma vez que tem de utilizar partições com os Event Hubs, terá de tomar uma decisão sobre a disponibilidade e consistência para a sua aplicação.
 
 ## <a name="availability"></a>Disponibilidade
-A forma mais simples para começar a utilizar com os Event Hubs é utilizar o comportamento predefinido. Se criar um novo `EventHubClient` de objeto e utilizar o `Send` método, os eventos são distribuídos automaticamente por entre as partições do seu hub de eventos. Este comportamento permite que a maior quantidade de tempo.
+A forma mais simples para começar a utilizar com os Event Hubs é utilizar o comportamento predefinido. Se criar um novo  **[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient)**  de objeto e utilizar o  **[enviar](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync?view=azure-dotnet#Microsoft_Azure_EventHubs_EventHubClient_SendAsync_Microsoft_Azure_EventHubs_EventData_)**  método, os eventos são distribuídos automaticamente por entre partições do seu hub de eventos. Este comportamento permite que a maior quantidade de tempo.
 
 Casos de utilização que requerem o máximo tempo, este modelo é preferencial.
 

@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 05/02/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: b994cfd09156ae8e1662f4947241aa1a4672df98
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: 956f44068db8fe9c8c7a839a0ce80c19e2b2f11c
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="manage-azure-disks-with-powershell"></a>Gerir discos do Azure com o PowerShell
 
@@ -28,7 +28,7 @@ Máquinas virtuais do Azure utilizar discos para armazenar as VMs do sistema ope
 
 > [!div class="checklist"]
 > * Discos de SO e discos temporários
-> * discos de dados
+> * Discos de dados
 > * Standard e discos Premium
 > * Desempenho de disco
 > * Anexar e preparar os discos de dados
@@ -41,7 +41,7 @@ Se optar por instalar e utilizar o PowerShell localmente, este tutorial requer o
 
 Quando é criada uma máquina virtual do Azure, dois discos são automaticamente anexados à máquina virtual. 
 
-**Disco do sistema operativo** -discos de sistema de operativo podem ser dimensionados de forma até 1 terabyte e aloja o sistema de operativo VMs.  O disco do SO está atribuído uma letra de unidade de *c:* por predefinição. O disco de configuração do disco de SO a colocação em cache está otimizado para desempenho do SO. O disco de SO **não devem** alojar aplicações ou dados. Para aplicações e dados, utilize um disco de dados, que está detalhado neste artigo.
+**Disco do sistema operativo** -discos de sistema de operativo podem ser dimensionados de forma até 4 terabyte e aloja o sistema de operativo VMs.  O disco do SO está atribuído uma letra de unidade de *c:* por predefinição. O disco de configuração do disco de SO a colocação em cache está otimizado para desempenho do SO. O disco de SO **não devem** alojar aplicações ou dados. Para aplicações e dados, utilize um disco de dados, que está detalhado neste artigo.
 
 **Disco temporário** -temporários discos utilizam uma unidade de estado sólido que está localizada no mesmo anfitrião da VM do Azure. Discos temporários são altamente performant e podem ser utilizados para operações, tais como o processamento de dados temporária. No entanto, se a VM for movida para um novo anfitrião, todos os dados armazenados num disco temporário são removidos. O tamanho do disco temporário é determinado pelo tamanho da VM. Discos temporários estão atribuídos uma letra de unidade de *d:* por predefinição.
 
@@ -81,7 +81,7 @@ O Armazenamento Standard está protegido por HDDs e fornece armazenamento econó
 
 ### <a name="premium-disk"></a>Disco Premium
 
-Os discos Premium são apoiados por disco de elevado desempenho, baixa latência baseadas em SSD. Perfeita para as VMs com a carga de trabalho de produção. Armazenamento Premium suporta-série DS, série DSv2-série, série GS e série FS VMs. Os discos Premium são fornecidos em três tipos (P10, P20, P30), o tamanho do disco determina o tipo de disco. Quando selecionar, um tamanho de disco, o valor é arredondado para o tipo de próximo. Por exemplo, se o tamanho for inferior a 128 GB o tipo de disco será P10, entre 129 e 512 P20 e superior a 512 P30. 
+Os discos Premium são apoiados por disco de elevado desempenho, baixa latência baseadas em SSD. Perfeita para as VMs com a carga de trabalho de produção. Armazenamento Premium suporta-série DS, série DSv2-série, série GS e série FS VMs. Os discos Premium são fornecidos em três tipos (P10 P20, P30, P40, P50), o tamanho do disco determina o tipo de disco. Quando selecionar, um tamanho de disco, o valor é arredondado para o tipo de próximo. Por exemplo, se o tamanho é inferior a 128 GB o tipo de disco será P10, entre 129 e 512 P20, 512 P30, P40 para 2TB e P50 4TB. 
 
 ### <a name="premium-disk-performance"></a>Desempenho do disco Premium
 
@@ -148,7 +148,7 @@ Neste tutorial, aprendeu sobre os tópicos de discos VM, tais como:
 
 > [!div class="checklist"]
 > * Discos de SO e discos temporários
-> * discos de dados
+> * Discos de dados
 > * Standard e discos Premium
 > * Desempenho de disco
 > * Anexar e preparar os discos de dados

@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/22/2017
+ms.date: 11/28/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 9de535b2fb70181c68fb698e847dd8361bf54385
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.openlocfilehash: 899ca9f7a82ce526eba04b88420ab01e208fe784
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="whats-new-in-azure-active-directory"></a>O que é novo no Azure Active Directory?
 
@@ -43,18 +43,20 @@ Revê esta página regularmente, tal como estamos a são atualizar mensalmente.
 
 ## <a name="november-2017"></a>Novembro de 2017
  
+### <a name="retiring-acs"></a>Extinguir dos ACS
+
 
 
 **Tipo:** plano de alteração  
 **Categoria de serviço:** dos ACS  
 **Capacidade de produto:** serviço de controlo de acesso 
 
-**Extinguir dos ACS**
 
 Microsoft Azure Active Directory controlo de acesso (também conhecido como o serviço de controlo de acesso ou ACS) será descontinuado dentro de enlace tardio 2018.  Informações adicionais, incluindo uma agenda de detalhado & orientações de migração de elevado nível, irão ser fornecidas de algumas semanas seguintes. Entretanto, deixe comentários nesta página com quaisquer perguntas sobre ACS e um membro da nossa equipa irá ajudar a responder.
 
 ---
 
+### <a name="restrict-browser-access-to-the-intune-managed-browser"></a>Restringir o acesso ao browser para o browser gerido do Intune 
 
 
 **Tipo:** plano de alteração  
@@ -62,7 +64,6 @@ Microsoft Azure Active Directory controlo de acesso (também conhecido como o se
 **Capacidade de produto:** segurança de identidade e de proteção
 
 
-**Restringir o acesso ao browser para o browser gerido do Intune** 
 
 
 Com este comportamento, conseguirá restringir o acesso ao browser do Office 365 e outras aplicações de nuvem do Azure AD ligados utilizando o Browser gerido do Intune como uma aplicação aprovada. 
@@ -82,6 +83,7 @@ Para obter mais informações, consulte [de acesso condicional no Azure Active D
  
 ---
 
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novas aplicações de cliente aprovada para acesso condicional de baseado em aplicações do Azure AD
 
  
 **Tipo:** plano de alteração  
@@ -89,7 +91,6 @@ Para obter mais informações, consulte [de acesso condicional no Azure Active D
 **Capacidade de produto:** segurança de identidade e de proteção
 
 
-**Novas aplicações de cliente aprovada para acesso condicional de baseado em aplicações do Azure AD**
 
 
 As seguintes aplicações estão a ser planeadas a adicionar à lista de [aprovados aplicações de cliente](active-directory-conditional-access-technical-reference.md#approved-client-app-requirement):
@@ -108,6 +109,9 @@ Para obter mais informações, consulte:
 
 ---
 
+### <a name="terms-of-use-support-for-multiple-languages"></a>Termos de utilização suporte para vários idiomas
+
+
 
 **Tipo:** nova funcionalidade    
 **Categoria de serviço:** termos de utilização  
@@ -115,7 +119,6 @@ Para obter mais informações, consulte:
 
 
 
-**Termos de utilização suporte para vários idiomas**
 
 
 Os administradores podem agora criar novos termos de utilização (TOU) que contém vários documentos PDF. Pode marcar estes documentos PDF com um idioma correspondente. Os utilizadores que se inserem no âmbito são apresentados o PDF com o com base nas respetivas preferências de idioma correspondente. Se não houver nenhuma correspondência, é apresentado o idioma predefinido.
@@ -124,13 +127,15 @@ Os administradores podem agora criar novos termos de utilização (TOU) que cont
 ---
  
 
+### <a name="realtime-password-writeback-client-status"></a>Estado de cliente de repetição de escrita de palavras-passe em tempo real
+
+
 
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** SSPR  
 **Capacidade de produto:** autenticação de utilizador
 
 
-**Estado de cliente de repetição de escrita de palavras-passe em tempo real**
  
 
 Agora pode rever o estado do seu cliente de repetição de escrita de palavras-passe no local. Esta opção está disponível no **integração no local** secção o  **[reposição de palavra-passe](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset)**  página. 
@@ -145,6 +150,12 @@ Para obter mais informações, consulte [integração no local](active-directory
 
  
 ---
+
+
+### <a name="azure-ad-app-based-conditional-access"></a>Azure AD com base na aplicação acesso condicional 
+
+
+
  
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** do Azure AD  
@@ -152,7 +163,6 @@ Para obter mais informações, consulte [integração no local](active-directory
 
 
 
-**Azure AD com base na aplicação acesso condicional** 
 
 
 Agora pode restringir o acesso ao Office 365 e outras aplicações de nuvem do Azure AD ligados para [aprovados aplicações de cliente](active-directory-conditional-access-technical-reference.md#approved-client-app-requirement) que suportam as políticas de proteção de aplicação do Intune utilizando [acesso condicional de baseado em aplicações do Azure AD](active-directory-conditional-access-mam.md). Políticas de proteção de aplicações do Intune são utilizadas para configurar e proteger dados da empresa nestas aplicações de cliente.
@@ -180,6 +190,8 @@ Para obter mais informações, consulte [acesso condicional de baseado em aplica
  
 ---
 
+### <a name="managing-azure-ad-devices-in-the-azure-portal"></a>Gestão de dispositivos do Azure AD no portal do Azure
+
 
 
 **Tipo:** nova funcionalidade  
@@ -188,7 +200,6 @@ Para obter mais informações, consulte [acesso condicional de baseado em aplica
 
  
 
-**Gestão de dispositivos do Azure AD no portal do Azure**
 
 
 Agora pode encontrar todos os dispositivos ligados ao Azure AD e as atividades relacionadas com o dispositivo num único local. Há uma nova experiência de administração para gerir identidades de dispositivo e definições no portal do Azure. Nesta versão, pode:
@@ -209,14 +220,13 @@ Para obter mais informações, consulte [gerir dispositivos através do portal d
  
 ---
 
+### <a name="support-for-macos-as-device-platform-for-azure-ad-conditional-access"></a>Suporte para macOS como plataforma de dispositivo para o acesso condicional do Azure AD 
+
+
 
 **Tipo:** nova funcionalidade    
 **Categoria de serviço:** acesso condicional  
 **Capacidade de produto:** segurança de identidade e de proteção 
-
-
-
-**Suporte para macOS como plataforma de dispositivo para o acesso condicional do Azure AD** 
  
 
 Pode agora incluir (ou excluir) macOS como condição de plataforma do dispositivo na sua política de acesso condicional do Azure AD. Com a adição de macOS para as plataformas de dispositivos suportados, pode:
@@ -236,13 +246,14 @@ Para obter mais informações, consulte:
  
 ---
 
+### <a name="nps-extension-for-azure-mfa"></a>Extensão NPS para o MFA do Azure 
+
 
 **Tipo:** nova funcionalidade    
 **Categoria de serviço:** MFA  
 **Capacidade de produto:** autenticação de utilizador
 
 
-**Extensão NPS para o MFA do Azure** 
 
 
 A extensão de servidor de políticas de rede (NPS) para o Azure MFA adiciona funcionalidades MFA baseado na nuvem à sua infraestrutura de autenticação utilizando os servidores existentes. Com a extensão NPS, pode adicionar chamada telefónica, mensagem de texto ou verificação de aplicação de telefone para o fluxo de autenticação existente sem ter de instalar, configurar e manter novos servidores. 
@@ -281,21 +292,19 @@ No Centro de administração do Azure AD, pode agora:
  
 ---
 
-
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novas aplicações de cliente aprovada para acesso condicional de baseado em aplicações do Azure AD
 
  
 **Tipo:** funcionalidade foi alterado  
 **Categoria de serviço:** acesso condicional  
 **Capacidade de produto:** segurança de identidade e de proteção
 
-**Novas aplicações de cliente aprovada para acesso condicional de baseado em aplicações do Azure AD**
-
 
 Foram adicionadas as seguintes aplicações à lista de [aprovados aplicações de cliente](active-directory-conditional-access-technical-reference.md#approved-client-app-requirement):
 
 - Microsoft Planner
 
-- Microsoft Azure Information Protection 
+- Proteção de informações do Microsoft Azure 
 
 
 Para obter mais informações, consulte:
@@ -307,14 +316,13 @@ Para obter mais informações, consulte:
 
 ---
 
+### <a name="ability-to-or-between-controls-in-a-conditional-access-policy"></a>Capacidade para 'ou' entre controlos numa política de acesso condicional 
 
 
 **Tipo:** funcionalidade foi alterado    
 **Categoria de serviço:** acesso condicional  
 **Capacidade de produto:** segurança de identidade e de proteção
 
-
-**Capacidade para 'ou' entre controlos numa política de acesso condicional** 
  
 A capacidade de 'Ou' (exigir um dos controlos selecionados) foi lançado controlos de acesso condicional. Esta funcionalidade permite-lhe criar políticas com um **ou** entre controlos de acesso. Por exemplo, pode utilizar esta funcionalidade para criar uma política que requer que um utilizador iniciar sessão com a autenticação multifator **ou** ser num dispositivo em conformidade.
 
@@ -323,13 +331,13 @@ Para obter mais informações, consulte [controlos de acesso condicional do Azur
  
 ---
 
+### <a name="aggregation-of-realtime-risk-events"></a>Agregação de eventos de risco em tempo real
 
 
 **Tipo:** funcionalidade foi alterado    
 **Categoria de serviço:** Identity Protection  
 **Capacidade de produto:** segurança de identidade e de proteção
 
-**Agregação de eventos de risco em tempo real**
 
 Para melhorar a sua experiência de administração, no Azure AD Identity Protection, todos os eventos de risco em tempo real que foram teve o mesmo endereço IP num determinado dia agora são agregados para cada tipo de eventos de risco. Esta alteração limita o volume de eventos de risco apresentados sem qualquer alteração na segurança do utilizador.
 
@@ -344,12 +352,15 @@ A deteção em tempo real subjacente funciona sempre que o utilizador iniciar se
 
 ## <a name="october-2017"></a>Outubro de 2017
 
+
+### <a name="deprecating-azure-ad-reports"></a>A descontinuar a relatórios do Azure AD
+
+
 **Tipo:** plano de alteração  
 **Categoria de serviço:** Reporting Services  
 **Capacidade de produto:** gestão de ciclo de vida de identidade  
 
 
-**A descontinuar a relatórios do Azure AD**
 
 O portal do Azure fornece-lhe:
 
@@ -360,12 +371,13 @@ Devido a estas novas funcionalidades, o relatório APIs sob o **/relatórios** e
 
 ---
 
+### <a name="automatic-sign-in-field-detection"></a>Deteção de campo de início de sessão automático
+
+
 **Tipo:** fixo   
 **Categoria de serviço:** as minhas aplicações  
 **Capacidade de produto:** SSO  
 
-
-**Deteção de campo de início de sessão automático**
 
 
 Azure Active Directory suporta deteção de campo de início de sessão automático para as aplicações que compor um campo de nome de utilizador e palavra-passe HTML.  Estes passos documentados em [como capturar automaticamente os campos de início de sessão para uma aplicação](application-config-sso-problem-configure-password-sso-non-gallery.md#how-to-manually-capture-sign-in-fields-for-an-application). Pode encontrar esta capacidade adicionando um *não galeria* aplicação no **aplicações empresariais** página no [portal do Azure](http://aad.portal.azure.com). Além disso, pode configurar o **Single Sign-on** modo nesta aplicação nova para **baseada em palavra-passe Single Sign-on**, introduzir um URL de web e, em seguida, ao guardar a página.
@@ -374,12 +386,14 @@ Devido a um problema do serviço, esta funcionalidade foi temporariamente desati
 
 ---
 
+### <a name="new-mfa-features"></a>Novas funcionalidades MFA
+
+
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** MFA  
 **Capacidade de produto:** segurança de identidade e de proteção  
 
 
-**Novas funcionalidades MFA**
 
 Autenticação Multifator (MFA) é uma parte essencial dos proteger a sua organização. Para tornar as credenciais mais adaptável e a experiência mais integrada, foram adicionadas as seguintes funcionalidades: 
 
@@ -393,12 +407,16 @@ Para obter mais informações, consulte [referência para a autenticação multi
 
 
 ---
+
+### <a name="introducing-terms-of-use"></a>Introduzir termos de utilização
+
+
+
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** termos de utilização  
 **Capacidade de produto:** governação  
 
 
-**Introduzir termos de utilização**
 
 Azure AD os termos de utilização fornecem-lhe um método simple para apresentar informações aos utilizadores finais. Isto garante que os utilizadores verão exclusões de responsabilidade relevantes para os requisitos legais ou conformidade.
 
@@ -414,11 +432,14 @@ Para obter mais informações, consulte [do Azure Active Directory os termos de 
 
 
 ---
+
+### <a name="enhancements-to-privileged-identity-management"></a>Melhoramentos no privileged identity management
+
+
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** PIM  
 **Capacidade de produto:** Privileged Identity Management  
 
-**Melhoramentos no privileged identity management**
 
 Do Azure Active Directory Privileged Identity gestão (PIM), já pode gerir, controlar e monitorizar o acesso a recursos do Azure (pré-visualização) na sua organização para:
 
@@ -432,11 +453,14 @@ Para obter mais informações, consulte [PIM para recursos do Azure](privileged-
 
 
 ---
+
+### <a name="introducing-access-reviews"></a>Introdução ao acesso revê
+
+
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** revisões de acesso  
 **Capacidade de produto:** governação  
 
-**Introdução ao acesso revê**
 
 
 Revisões de acesso (pré-visualização) permitem às organizações gerir membros do grupo de forma eficiente e acesso a aplicações da empresa: 
@@ -451,12 +475,16 @@ Para obter mais informações, consulte [acesso do Azure AD revê](active-direct
 
 
 ---
+
+### <a name="hiding-third-party-applications-from-my-apps-and-the-office-365-launcher"></a>Ocultar a minha aplicações e o Iniciador do Office 365 de aplicações de terceiros
+
+
+
 **Tipo:** nova funcionalidade  
 **Categoria de serviço:** as minhas aplicações  
 **Capacidade de produto:** SSO  
 
 
-**Ocultar a minha aplicações e o Iniciador do Office 365 de aplicações de terceiros**
 
 Agora pode gerir melhor aplicações apresentados nos portais do utilizador através de um novo **ocultar aplicação** propriedade. Ocultar aplicações ajuda-o com casos em que os mosaicos da aplicação são ser apresentado para serviços de back-end ou mosaicos duplicados e acaba por ficar cluttering launchers de aplicação do utilizador. O botão de alternar está localizado na secção de propriedades da aplicação de terceiros e assinalada como **Visible ao utilizador?** Também pode ocultar uma aplicação através de programação através do PowerShell. 
 
@@ -470,12 +498,14 @@ Para obter mais informações, consulte [ocultar uma aplicação de terceiros da
 
 ## <a name="september-2017"></a>Setembro de 2017
 
+### <a name="hotfix-for-microsoft-identity-manager"></a>Correção do Microsoft Identity Manager
+
+
 **Tipo:** funcionalidade foi alterado  
 **Categoria de serviço:** do Microsoft Identity Manager  
 **Capacidade de produto:** gestão de ciclo de vida de identidade  
 
 
-**Correção do Microsoft Identity Manager**
 
 Um pacote de rollup de correção (compilação 4.4.1642.0) está disponível a partir 25 de Setembro de 2017, do Microsoft Identity Manager (MIM) 2016 2016 Service Pack 1 (SP1). Este pacote de rollup:
 

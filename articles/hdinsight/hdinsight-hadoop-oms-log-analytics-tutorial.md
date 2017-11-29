@@ -13,13 +13,13 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/17/2017
+ms.date: 11/27/2017
 ms.author: nitinme
-ms.openlocfilehash: 6677b0b3ed047ce011bfbb72c25e45195859830a
-ms.sourcegitcommit: 933af6219266cc685d0c9009f533ca1be03aa5e9
+ms.openlocfilehash: ca2cf642cfff2961dcb0dd18f0e712f61d6915c2
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="use-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Utilizar Log Analytics do Azure para monitorizar clusters do HDInsight
 
@@ -44,7 +44,7 @@ Saiba como utilizar Log Analytics do Azure para monitorizar as operações de cl
 
 * **Uma área de trabalho de análise de registos**. Pode considerar esta área de trabalho como um ambiente de análise de registos exclusivo com as suas próprias repositório de dados, as origens de dados e soluções. Tem de ter uma essa área de trabalho já criada que pode associar os clusters do HDInsight do Azure. Para obter instruções, consulte [criar uma área de trabalho de análise de registos](../log-analytics/log-analytics-quick-collect-azurevm.md#create-a-workspace).
 
-## <a name="configure-hdinsight-cluster-to-use-log-analytics"></a>Configurar o cluster do HDInsight ao utilizar a análise de registos
+## <a name="enable-log-analytics-by-using-the-portal"></a>Ativar análise de registos com o portal
 
 Nesta secção, configurar um cluster de Hadoop do HDInsight existente para utilizar uma área de trabalho do Log Analytics do Azure para monitorizar tarefas, registos de depuração, etc.
 
@@ -62,6 +62,25 @@ Nesta secção, configurar um cluster de Hadoop do HDInsight existente para util
 6. Se lhe for solicitado, introduza as suas credenciais do Azure.
 
     ![Portal do Operations Management Suite](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring-oms-portal.png "portal Operations Management Suite")
+
+## <a name="enable-log-analytics-by-using-azure-powershell"></a>Ativar a análise de registos ao utilizar o Azure PowerShell
+
+Pode ativar a análise de registos com o Azure PowerShell. O cmdlet é:
+
+```powershell
+Enable-AzureRmHDInsightOperationsManagementSuite
+```
+
+Consulte [ativar AzureRmHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/Enable-AzureRmHDInsightOperationsManagementSuite?view=azurermps-5.0.0).
+
+Para desativar, o cmdlet é 
+
+```powershell
+Disable-AzureRmHDInsightOperationsManagementSuite
+```
+
+Consulte [desativar AzureRmHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/disable-azurermhdinsightoperationsmanagementsuite?view=azurermps-5.0.0).
+
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Adicione as soluções de gestão de cluster do HDInsight ao Log Analytics](hdinsight-hadoop-oms-log-analytics-management-solutions.md)

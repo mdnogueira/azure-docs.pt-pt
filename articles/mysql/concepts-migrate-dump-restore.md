@@ -8,12 +8,12 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 09/15/2017
-ms.openlocfilehash: ce6edbdffe9704383676e990865cd4e2958f30fe
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/27/2017
+ms.openlocfilehash: e962fd65244ceebfc7544dc5a1d1956dad811fea
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="migrate-your-mysql-database-to-azure-database-for-mysql-using-dump-and-restore"></a>Migrar a base de dados MySQL à base de dados do Azure para utilizar a captura e restauro de MySQL
 Este artigo explica duas formas comuns de cópia de segurança e restaurar bases de dados na base de dados do Azure para MySQL
@@ -80,7 +80,7 @@ Para fazer uma cópia de segurança mais do que uma base de dados em simultâneo
 $ mysqldump -u root -p --databases testdb1 testdb3 testdb5 > testdb135_backup.sql 
 ```
 Para fazer uma cópia de segurança de todas as bases de dados no servidor em simultâneo, deverá utilizar o - opção de bases de dados de todos os.
-```
+```bash
 $ mysqldump -u root -p --all-databases > alldb_backup.sql 
 ```
 

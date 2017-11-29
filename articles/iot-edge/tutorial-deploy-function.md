@@ -9,11 +9,11 @@ ms.author: v-jamebr
 ms.date: 11/15/2017
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: bfb37ae51400210ef80a0f267b294d1e2e465b76
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.openlocfilehash: cba901e8929d3626dc06e4600437b6d364e9bc44
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="deploy-azure-function-as-an-iot-edge-module---preview"></a>Implementar a função do Azure como um módulo de limite de IoT – pré-visualização
 Pode utilizar as funções do Azure para implementar o código que implementa a lógica de negócio diretamente nos seus dispositivos de limite de IoT. Este tutorial explica-lhe como criar e implementar uma função do Azure, que filtra os dados de sensores no dispositivo simulado contorno de IoT que criou na implementação do Azure IoT limite num dispositivo simulado no [Windows] [ lnk-tutorial1-win]ou [Linux] [ lnk-tutorial1-lin] tutoriais. Neste tutorial, ficará a saber como:     
@@ -225,7 +225,7 @@ Para monitorizar as mensagens da nuvem enviados a partir do seu dispositivo de l
 Neste tutorial, vai criar uma função do Azure que contém o código para filtrar dados não processados gerados pelo seu dispositivo de limite de IoT. Para manter explorar o Azure IoT Edge, saiba como utilizar um dispositivo de limite de IoT como um gateway. 
 
 > [!div class="nextstepaction"]
-> [Criar um dispositivo de gateway do limite de IoT](how-to-create-gateway-device.md)
+> [Criar um dispositivo de gateway do limite de IoT](how-to-create-transparent-gateway.md)
 
 <!--Links-->
 [lnk-tutorial1-win]: tutorial-simulate-device-windows.md

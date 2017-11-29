@@ -9,19 +9,19 @@ ms.date: 10/31/2017
 ms.topic: article
 ms.service: azure-policy
 ms.custom: 
-ms.openlocfilehash: 8ff85f842356eff3f12ccd04e337d71c52d0efcd
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 1b8fd12e071bfbd01567803370e510e7e07ccb99
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="azure-policy-definition-structure"></a>Estrutura de definição de política do Azure
+# <a name="azure-policy-definition-structure"></a>Estrutura de definição do Azure Policy
 
 Definição de política de recurso utilizada pela política do Azure permite-lhe estabelecer as convenções de recursos na sua organização ao descrever quando a política é imposta e a ação a tomar. Se definir convenções, pode controlar os custos e gerir mais facilmente os seus recursos. Por exemplo, pode especificar que apenas determinados tipos de máquinas virtuais são permitidos. Em alternativa, pode exigir que todos os recursos tem uma tag específica. As políticas são herdadas por todos os recursos subordinados. Por isso, se uma política é aplicada a um grupo de recursos, é aplicável a todos os recursos nesse grupo de recursos.
 
 Utilize o JSON para criar uma definição de política. A definição de política contém elementos para:
 
-* Modo
+* mode
 * parâmetros
 * Nome a apresentar
 * descrição
@@ -88,13 +88,21 @@ Por exemplo, pode definir uma política para uma propriedade de recurso limitar 
     "type": "array",
     "metadata": {
       "description": "The list of allowed locations for resources.",
-      "displayName": "Allowed locations"
+      "displayName": "Allowed locations",
+      "strongType": "location"
     }
   }
 }
 ```
 
 O tipo de um parâmetro pode ser a cadeia ou matriz. A propriedade de metadados é utilizada para ferramentas como o portal do Azure para apresentar informações amigável de utilizador.
+
+Dentro da propriedade de metadados pode utilizar **strongType** para fornecer uma lista selecionar vários das opções no portal do Azure.  Valores para permitidos **strongType** atualmente incluem:
+
+* `"location"`
+* `"resourceTypes"`
+* `"storageSkus"`
+* `"vmSKUs"`
 
 A regra de política, referenciar parâmetros com a seguinte sintaxe:
 

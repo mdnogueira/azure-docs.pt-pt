@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/19/2017
+ms.date: 11/28/2017
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: c9e44a696010541ab153597bb1ab5d556c2e7b65
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 243c42b8637b7887047c85a60e5dfedfd7f6904a
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="azure-active-directory-conditional-access-technical-reference"></a>Referência técnica do Azure Active Directory acesso condicional
 
@@ -147,25 +147,24 @@ Controlar o acesso de aplicação e o cliente utilizando o **clientes de ambient
 Os clientes de ambiente de trabalho e as seguintes aplicações móveis suportam o acesso condicional para o Office 365 e outras aplicações de serviço ligado do AD do Azure:
 
 
-| Aplicações de cliente| Serviço de destino| Plataforma |
-| --- | --- | --- |
-| Aplicação remota do Azure| Remoto App service do Azure| Windows 10, Windows 8.1, Windows 7, iOS, Android e Mac OS X|
-| Aplicação do Dynamics CRM| Dynamics CRM| Windows 10, Windows 8.1, Windows 7, iOS e Android|
-| Aplicação de correio/calendário/pessoas, Outlook 2016, Outlook 2013 (com a autenticação moderna)| Office 365 Exchange Online| Windows 10|
-| Política de MFA e a localização para aplicações. Não são suportadas políticas de dispositivo baseada-se.| Qualquer serviço de aplicações de aplicações My| Android e iOS|
-| Serviços de equipas da Microsoft - Isto controla todos os serviços que suportam Teams da Microsoft e todas as respetivas aplicações de cliente - ambiente de trabalho do Windows, iOS, Android, WP e cliente web| Microsoft Teams| Windows 10, Windows 8.1, Windows 7, iOS, Android e macOS|
-| Cliente de sincronização de aplicações do Office 2016, Office 2013 (com a autenticação moderna), no OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))| Office 365 SharePoint Online| Windows 8.1, Windows 7|
-| Aplicações do Office 2016, Universal Office aplicações, Office 2013 (com a autenticação moderna), cliente de sincronização do OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)), o suporte de grupos do Office é planeado para o futuro, suporte para aplicações do SharePoint é planeada para o futuro| Office 365 SharePoint Online| Windows 10|
-| Office 2016 para macOS (Word, Excel, PowerPoint, OneNote apenas). OneDrive para empresas o suporte para o futuro| Office 365 SharePoint Online| Mac OS X|
-| Aplicações móveis do Office| Office 365 SharePoint Online| iOS, Android|
-| Aplicação do Office Yammer| Yammer do Office 365| Windows 10, iOS, Android|
-| Outlook 2016 (Office para macOS)| Office 365 Exchange Online| Mac OS X|
-| Outlook 2016, o Outlook 2013 (com a autenticação moderna), o Skype para empresas (com a autenticação moderna)| Office 365 Exchange Online| Windows 8.1, Windows 7|
-| Aplicação móvel do Outlook| Office 365 Exchange Online| iOS|
-| Aplicação do Power BI. A aplicação Power BI para Android não suporta acesso condicional baseado no dispositivo.| Serviço do Power BI| Windows 10, Windows 8.1, Windows 7 e iOS|
-| Skype para empresas| Office 365 Exchange Online| Android, IOS|
-| Visual Studio Team Services aplicação| Visual Studio Team Services| Windows 10, Windows 8.1, Windows 7, iOS e Android|
-
+|Aplicações de cliente|Serviço de destino|Plataforma|
+|---|---|---|
+|Aplicação remota do Azure|Remoto App service do Azure|Windows 10, Windows 8.1, Windows 7, iOS, Android e Mac OS X|
+|Aplicação do Dynamics CRM|Dynamics CRM|Windows 10, Windows 8.1, Windows 7, iOS e Android|
+|Aplicação de correio/calendário/pessoas, Outlook 2016, Outlook 2013 (com a autenticação moderna)|Office 365 Exchange Online|Windows 10|
+|Política de MFA e a localização para aplicações. Não são suportadas políticas de dispositivo baseada-se. |Qualquer serviço de aplicações de aplicações My|Android e iOS|
+|Serviços de equipas da Microsoft - Isto controla todos os serviços que suportam Teams da Microsoft e todas as respetivas aplicações de cliente - ambiente de trabalho do Windows, iOS, Android, WP e cliente web|Microsoft Teams|Windows 10, Windows 8.1, Windows 7, iOS, Android e macOS |
+|Cliente de sincronização de aplicações do Office 2016, Office 2013 (com a autenticação moderna), no OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))|Office 365 SharePoint Online|Windows 8.1, Windows 7|
+|Aplicações do Office 2016, Universal Office aplicações, Office 2013 (com a autenticação moderna), cliente de sincronização do OneDrive (consulte [notas](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)), o suporte de grupos do Office é planeado para o futuro, suporte para aplicações do SharePoint é planeada para o futuro|Office 365 SharePoint Online|Windows 10|
+|Office 2016 para macOS (Word, Excel, PowerPoint, OneNote apenas). OneDrive para empresas o suporte para o futuro|Office 365 SharePoint Online|Mac OS X|
+|Aplicações móveis do Office|Office 365 SharePoint Online|Android, iOS|
+|Aplicação do Office Yammer|Yammer do Office 365|Windows 10, iOS, Android|
+|Outlook 2016 (Office para macOS)|Office 365 Exchange Online|Mac OS X|
+|Outlook 2016, o Outlook 2013 (com a autenticação moderna), o Skype para empresas (com a autenticação moderna)|Office 365 Exchange Online|Windows 8.1, Windows 7|
+|Aplicação móvel do Outlook|Office 365 Exchange Online|Android, iOS|
+|Aplicação do Power BI. A aplicação Power BI para Android não suporta acesso condicional baseado no dispositivo.|Serviço do Power BI|Windows 10, Windows 8.1, Windows 7 e iOS|
+|Skype para empresas|Office 365 Exchange Online|Android, IOS |
+|Visual Studio Team Services aplicação|Visual Studio Team Services|Windows 10, Windows 8.1, Windows 7, iOS e Android|
 
 
 
@@ -178,7 +177,7 @@ Controlar as ligações de cliente utilizando o **requerem a aplicação de clie
 As seguintes aplicações de cliente podem ser utilizadas com o requisito da aplicação cliente aprovada:
 
 
-- Microsoft Azure Information Protection
+- Proteção de informações do Microsoft Azure
 - Microsoft Excel
 - Microsoft OneDrive
 - Microsoft OneNote

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/22/2017
 ms.author: chackdan
-ms.openlocfilehash: d26a97ee0e5416fb1fe38ef0fb18fa4eb0e2963d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 249fb4903c7b2de3ce290850a7759a4793f10aa7
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="scale-a-service-fabric-cluster-in-or-out-using-auto-scale-rules"></a>Um cluster do Service Fabric no ou utilizando regras de dimensionamento automático de escala
 Conjuntos de dimensionamento de máquina virtual são um recurso de computação do Azure que pode utilizar para implementar e gerir uma coleção de máquinas virtuais como um conjunto. Cada tipo de nó que está definido num cluster de Service Fabric está configurado como um conjunto de dimensionamento de Máquina Virtual separado. Cada tipo de nó, em seguida, pode ser ampliado na ou saída de forma independente, têm conjuntos diferentes de portas abertas e pode ter as métricas de capacidade diferentes. Saiba mais sobre-na [nodetypes de Service Fabric](service-fabric-cluster-nodetypes.md) documento. Uma vez que os tipos de nó de Service Fabric no seu cluster são constituídos por conjuntos de dimensionamento de Máquina Virtual no back-end, terá de configurar regras de dimensionamento automático para cada conjunto de dimensionamento da Máquina Virtual/tipo nó.
@@ -72,8 +72,8 @@ Siga as instruções/exemplo no [Galeria de modelo de início rápido](https://g
 
 Terá de executar a seguinte passos uma instância de VM a uma hora. Este procedimento permite que os serviços do sistema (e os serviços com monitorização de estado) ser encerrado corretamente na instância VM que está a remover e réplicas novo criadas nos outros nós.
 
-1. Executar [desativar ServiceFabricNode](https://msdn.microsoft.com/library/mt125852.aspx) com o objetivo 'RemoveNode' para desativar o nó que vai remover (a instância desse tipo de nó mais alta).
-2. Executar [Get-ServiceFabricNode](https://msdn.microsoft.com/library/mt125856.aspx) para se certificar de que o nó realmente transitou para desativado. Caso contrário, aguarde até que o nó está desativado. Não é possível hurry este passo.
+1. Executar [desativar ServiceFabricNode](https://docs.microsoft.com/powershell/module/servicefabric/disable-servicefabricnode?view=azureservicefabricps) com o objetivo 'RemoveNode' para desativar o nó que vai remover (a instância desse tipo de nó mais alta).
+2. Executar [Get-ServiceFabricNode](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps) para se certificar de que o nó realmente transitou para desativado. Caso contrário, aguarde até que o nó está desativado. Não é possível hurry este passo.
 3. Siga as instruções/exemplo no [Galeria de modelo de início rápido](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing) para alterar o número de VMs por um em que Nodetype. A instância removida é a instância VM mais elevada. 
 4. Repita os passos 1 a 3 conforme necessário, mas nunca reduzir verticalmente o número de instâncias nos tipos de nó principal inferior ao que warrants o escalão de fiabilidade. Consulte [os detalhes sobre camadas de fiabilidade aqui](service-fabric-cluster-capacity.md). 
 
@@ -85,8 +85,8 @@ Terá de executar a seguinte passos uma instância de VM a uma hora. Este proced
 
 Tem a executar a seguinte passos uma instância de VM de cada vez. Este procedimento permite que os serviços do sistema (e os serviços com monitorização de estado) ser encerrado corretamente na instância de VM que está a remover e réplicas nova criada onde pessoa.
 
-1. Executar [desativar ServiceFabricNode](https://msdn.microsoft.com/library/mt125852.aspx) com o objetivo 'RemoveNode' para desativar o nó que vai remover (a instância desse tipo de nó mais alta).
-2. Executar [Get-ServiceFabricNode](https://msdn.microsoft.com/library/mt125856.aspx) para se certificar de que o nó realmente transitou para desativado. Se não for Aguarde até o nó está desativado. Não é possível hurry este passo.
+1. Executar [desativar ServiceFabricNode](https://docs.microsoft.com/powershell/module/servicefabric/disable-servicefabricnode?view=azureservicefabricps) com o objetivo 'RemoveNode' para desativar o nó que vai remover (a instância desse tipo de nó mais alta).
+2. Executar [Get-ServiceFabricNode](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps) para se certificar de que o nó realmente transitou para desativado. Se não for Aguarde até o nó está desativado. Não é possível hurry este passo.
 3. Siga as instruções/exemplo no [Galeria de modelo de início rápido](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing) para alterar o número de VMs por um em que Nodetype. Agora, esta ação irá remover a instância VM mais elevada. 
 4. Repita os passos 1 a 3 conforme necessário, mas nunca reduzir verticalmente o número de instâncias nos tipos de nó principal inferior ao que warrants o escalão de fiabilidade. Consulte [os detalhes sobre camadas de fiabilidade aqui](service-fabric-cluster-capacity.md).
 

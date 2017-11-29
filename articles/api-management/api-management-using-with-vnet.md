@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 9970452b62b31f28f8277580dd1075c306767d8b
-ms.sourcegitcommit: 1131386137462a8a959abb0f8822d1b329a4e474
+ms.openlocfilehash: 7fad1b662c587fed6cd7dd6a1792d8598f0e4f85
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Como utilizar a API Management do Azure com redes virtuais
 Redes virtuais do Azure (VNETs) permitem-lhe colocar qualquer um dos seus recursos do Azure numa rede routeable não internet que controla o acesso a. Estas redes, em seguida, podem ser ligadas a suas redes no local utilizando várias tecnologias VPN. Para saber mais sobre redes virtuais do Azure começar a utilizar as informações aqui: [descrição geral de rede Virtual do Azure](../virtual-network/virtual-networks-overview.md).
@@ -45,7 +45,7 @@ Para efetuar os passos descritos neste artigo, tem de ter:
 ### <a name="enable-vnet-connectivity-using-the-azure-portal"></a>Ativar a conetividade VNET no portal do Azure
 
 1. Navegue até à sua instância APIM no [portal do Azure](https://portal.azure.com/).
-2. Selecione **domínios personalizados e SSL**.
+2. Selecione **rede Virtual**.
 3. Configure a instância de API Management para ser implementada no interior de uma rede Virtual.
 
     ![Menu de rede virtual de gestão de API][api-management-using-vnet-menu]
@@ -116,6 +116,7 @@ Quando uma instância de serviço de API Management está alojada numa VNET, as 
 | * / 14000 - 14999 |Saída |TCP |VIRTUAL_NETWORK / INTERNET|**Acesso ao Azure SQL V12 mais recente** |Externo & interno |
 | * / 5671 |Saída |AMQP |VIRTUAL_NETWORK / INTERNET|Dependência de registo para a política de Hub de eventos e o agente de monitorização |Externo & interno |
 | * / 445 |Saída |TCP |VIRTUAL_NETWORK / INTERNET|Dependência de partilha de ficheiros do Azure de GIT |Externo & interno |
+| * / 25028 |Saída |TCP |VIRTUAL_NETWORK / INTERNET|Ligar para o reencaminhamento de SMTP para enviar E-mails |Externo & interno |
 | * / 6381 - 6383 |Entrada e saída |TCP |VIRTUAL_NETWORK / VIRTUAL_NETWORK|Instâncias de Cache de Redis acesso entre RoleInstances |Externo & interno |
 | * / * | Entrada |TCP |AZURE_LOAD_BALANCER / VIRTUAL_NETWORK| Balanceador de carga da infraestrutura do Azure |Externo & interno |
 

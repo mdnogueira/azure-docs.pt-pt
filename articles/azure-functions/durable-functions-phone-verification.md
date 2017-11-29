@@ -14,11 +14,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: cfb6758703ebf3ce0458a4e1ad74324a4ccc2ece
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: 822abf5cd09a0cd0d66441acfe4ae114c6ba73eb
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Interação humana nas funções durável - exemplo de verificação do telefone
 
@@ -33,7 +33,7 @@ Este exemplo implementa um sistema de verificação do telefone baseados no SMS.
 
 ## <a name="scenario-overview"></a>Descrição geral do cenário
 
-Verificação do telefone é utilizado para verificar que os utilizadores finais da sua aplicação não são spammers e sejam que diga a estão. Autenticação multifator é um caso de utilização comuns para proteger contas de utilizador contra hackers. O desafio com implementar a seus próprios verificação do telefone é que requer um **interação com monitorização de estado** com uma ser humanos. Um utilizador final é, geralmente, fornecido algum código (por exemplo, um número de 4 dígitos) e tem de responder **dentro de um período de tempo razoável**.
+Verificação do telefone é utilizada para verificar que os utilizadores finais da sua aplicação não são spammers e sejam que diga a estão. Autenticação multifator é um caso de utilização comuns para proteger contas de utilizador contra hackers. O desafio com implementar a seus próprios verificação do telefone é que requer um **interação com monitorização de estado** com uma ser humanos. Um utilizador final é, geralmente, fornecido algum código (por exemplo, um número de 4 dígitos) e tem de responder **dentro de um período de tempo razoável**.
 
 Comum das funções do Azure sem monitorização de estado (uma vez que são muitos outros pontos finais na nuvem em outras plataformas), pelo que estes tipos de interações irão implicar explicitamente gerir externamente na base de dados ou alguns outros persistente armazenamento de Estados. Além disso, a interação tem de ser dividida cópias de segurança em várias funções que podem ser coordenadas em conjunto. Por exemplo, precisa de, pelo menos, uma função para decidir sobre um código, algures a persistência e enviar para o telefone do utilizador. Além disso, é necessário pelo menos uma outra função para receber uma resposta do utilizador e examinar mapeá-lo novamente para a chamada de função original para o efeito de validação do código. Limite de tempo também é um aspeto importante para garantir a segurança. Isto pode obter relativamente complexo pretty rapidamente.
 
@@ -43,7 +43,7 @@ A complexidade deste cenário é significativamente reduzida ao utilizar as fun�
 
 Este exemplo envolve a utilização de [Twilio](https://www.twilio.com/) serviço para enviar mensagens SMS para um telemóvel. As funções do Azure já tem suporte para Twilio através de [Twilio enlace](https://docs.microsoft.com/azure/azure-functions/functions-bindings-twilio), e este exemplo utiliza essa funcionalidade.
 
-O primeiro thing que precisa é uma conta do Twilio. Pode criar um livre no https://www.twilio.com/try-twilio. Assim que tiver uma conta, adicione os seguintes três **as definições de aplicação** ao seu projeto.
+A primeira coisa que precisa é uma conta do Twilio. Pode criar um livre no https://www.twilio.com/try-twilio. Assim que tiver uma conta, adicione os seguintes três **as definições de aplicação** à sua aplicação de função.
 
 | Nome da definição de aplicação | Descrição de valor |
 | - | - |

@@ -1,5 +1,5 @@
 ---
-title: Criar e gerir a base de dados do Azure MySQL das regras de firewall com o portal do Azure | Microsoft Docs
+title: Criar e gerir regras de firewall de MySQL na base de dados do Azure para MySQL | Microsoft Docs
 description: Criar e gerir a base de dados do Azure MySQL das regras de firewall com o portal do Azure
 services: mysql
 author: v-chenyh
@@ -8,19 +8,19 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: mysql-database
 ms.topic: article
-ms.date: 09/15/2017
-ms.openlocfilehash: 0604b29fcd9849545886a783ae5bbb2cbb72f2ce
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/27/2017
+ms.openlocfilehash: 63ea6337b35193420924096690ed15cc1d5ede25
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-portal"></a>Criar e gerir o Azure base de dados MySQL das regras de firewall com o portal do Azure
 Regras de firewall ao nível do servidor permitem que os administradores aceder a uma base de dados do Azure para o servidor de MySQL de um endereço IP especificado ou um intervalo de endereços IP. 
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Criar uma regra de firewall ao nível do servidor no portal do Azure
 
-1. No painel de servidor MySQL, em definições, clique em **ligação segurança** para abrir o painel de segurança de ligação da base de dados do Azure para MySQL.
+1. Na página de servidor MySQL, em definições, clique em **ligação segurança** para abrir a página de segurança de ligação da base de dados do Azure para MySQL.
 
    ![Portal do Azure – clique em segurança de ligação](./media/howto-manage-firewall-using-portal/1-connection-security.png)
 
@@ -52,4 +52,4 @@ Repita os passos para gerir as regras de firewall.
 * Clique em **Guardar** para guardar as alterações.
 
 ## <a name="next-steps"></a>Passos seguintes
-- Para obter ajuda na ligação para uma base de dados do Azure para o servidor de MySQL, consulte [bibliotecas de ligação para base de dados do Azure para MySQL](./concepts-connection-libraries.md)
+Para obter ajuda na ligação para uma base de dados do Azure para o servidor de MySQL, consulte [bibliotecas de ligação para base de dados do Azure para MySQL](./concepts-connection-libraries.md)

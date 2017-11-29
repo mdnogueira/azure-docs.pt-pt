@@ -14,8 +14,8 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 11/22/2017
 ms.author: raynew
-ms.openlocfilehash: fd9513cda899a7ac2a51c4e1ab03a80ce0adf2fd
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.openlocfilehash: 1c21364c3ff5cfb61866c912a699b722f2668607
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/28/2017
@@ -76,12 +76,20 @@ Verifique se o. Ficheiro OVA é seguro, antes de implementá-lo.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Exemplo de utilização:```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
 3. O hash gerado deve corresponder a estas definições.
-
+    
+    Para a versão de OVA 1.0.8.38
     **Algoritmo** | **Valor de hash**
     --- | ---
     MD5 | dd27dd6ace28f9195a2b5d52a4003067 
     SHA1 | d2349e06a5d4693fc2a1c0619591b9e45c36d695
     SHA256 | 1492a0c6d6ef76e79269d5cd6f6a22f336341e1accbc9e3dfa5dad3049be6798
+
+    Para a versão de OVA 1.0.8.40
+    **Algoritmo** | **Valor de hash**
+    --- | ---
+    MD5 | afbae5a2e7142829659c21fd8a9def3f
+    SHA1 | 1751849c1d709cdaef0b02a7350834a754b0e71d
+    SHA256 | d093a940aebf6afdc6f616626049e97b1f9f70742a094511277c5f59eacc41ad
 
 ## <a name="create-the-collector-vm"></a>Criar o recoletor de VM
 
@@ -98,7 +106,6 @@ Importe o ficheiro transferido para o servidor vCenter.
 8. No **formato de disco**, especifique o tipo de disco e o tamanho.
 9. No **mapeamento da rede**, especifique a rede à qual se ligará o recoletor de VM. A rede necessita de conectividade de internet, para enviar metadados para o Azure. 
 10. Reveja e confirme as definições, em seguida, clique em **concluir**.
-
 
 ## <a name="run-the-collector-to-discover-vms"></a>Execute o recoletor para detetar VMs
 
@@ -118,6 +125,9 @@ Importe o ficheiro transferido para o servidor vCenter.
     - No **categoria de Tag para agrupamento**, selecione **nenhum**.
 1. No **selecione projeto**, especifique o ID de projeto do Azure migrar e da chave que copiou do portal. Se não tiver copiá-los, abra o portal do Azure do recoletor VM. No projeto **descrição geral** página, clique em **detetar máquinas**e copie os valores.  
 2. No **deteção concluída**, monitorizar a deteção e verificar esses metadados recolhidos a partir de VMs se encontra no âmbito. O recoletor fornece um período de tempo aproximado de deteção.
+
+> [!NOTE]
+> O recoletor só suporta "Inglês (Estados Unidos)" como o idioma do sistema operativo e o idioma de interface do recoletor. Suporte para idiomas mais estará disponível brevemente.
 
 
 ### <a name="verify-vms-in-the-portal"></a>Certifique-se as VMs no portal

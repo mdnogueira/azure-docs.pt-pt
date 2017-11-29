@@ -12,18 +12,18 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 10/15/2017
-ms.author: markgal;arunak
-ms.openlocfilehash: a3d50d0066f1d0fe38bd7c5474386f54df81bec5
-ms.sourcegitcommit: d6ad3203ecc54ab267f40649d3903584ac4db60b
+ms.author: markgal;arunak;sogup
+ms.openlocfilehash: ad685744595ab86def8d226d7c2fb5455af98da4
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="recovery-services-vaults-overview"></a>Descrição geral de cofres de serviços de recuperação
 
 Este artigo descreve as funcionalidades de um cofre dos serviços de recuperação. Um cofre dos serviços de recuperação é uma entidade de armazenamento no Azure que aloja os dados. Os dados são normalmente cópias dos dados ou informações de configuração para máquinas virtuais (VMs), cargas de trabalho, servidores ou estações de trabalho. Pode utilizar os cofres dos serviços de recuperação para armazenar dados de cópia de segurança para vários serviços do Azure, tais como VMs do IaaS (Linux ou Windows) e bases de dados SQL do Azure. Sistema de suporte de cofres de serviços de recuperação System Center DPM, Windows Server, servidor de cópia de segurança do Azure e muito mais. Os cofres dos Serviços de Recuperação facilitam a organização dos dados de cópia de segurança ao minimizar os custos de gestão. 
 
-Dentro de uma subscrição do Azure, pode criar até 25 cofres de serviços de recuperação.
+Dentro de uma subscrição do Azure, pode criar até 25 cofres dos serviços de recuperação por região.
 
 ## <a name="comparing-recovery-services-vaults-and-backup-vaults"></a>Cofres dos serviços de recuperação compara e cofres de cópia de segurança dos
 

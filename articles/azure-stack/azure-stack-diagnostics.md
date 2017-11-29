@@ -7,14 +7,14 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 11/22/2017
+ms.date: 11/28/2017
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: 8afde912ca48297ae60eb7d05aa624a1d72c1637
-ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
+ms.openlocfilehash: 16b56c71e2c81bead7c578a973840391996e845b
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Ferramentas de diagnóstico de pilha do Azure
 
@@ -29,43 +29,11 @@ A nossa ferramentas de diagnóstico garantir que o mecanismo de coleção de reg
  
 ## <a name="trace-collector"></a>Recoletor de rastreio
  
-O Recoletor do rastreio está ativado por predefinição. -Continuamente é executado em segundo plano e recolhe todos os registos de rastreio de eventos para o Windows (ETW) a partir de serviços de componentes na pilha do Azure e armazena-os numa partilha local comum. 
+O Recoletor do rastreio está ativado por predefinição e é executada continuamente em segundo plano para recolher todos os registos de rastreio de eventos para o Windows (ETW) de serviços de componentes de pilha do Azure. Os registos de ETW são armazenados numa partilha local comuns com um limite de antiguidade de cinco dias. Assim que este limite for atingido, os ficheiros mais antigos são eliminados como são criados novos. O predefinição o tamanho máximo permitido para cada ficheiro é 200MB. Uma verificação de tamanho ocorre periodicamente (a cada dois minutos) e se o ficheiro atual é > = 200 MB, é guardado e é gerado um novo ficheiro. Há também um limite de 8GB no tamanho total do ficheiro gerado por sessão do evento. 
 
-Seguem-se importa saber sobre o Recoletor do rastreio:
- 
-* O Recoletor do rastreio é executada continuamente com limites de tamanho predefinido. A predefinição de tamanho máximo permitido para cada ficheiro (200 MB) é **não** um tamanho de serem. Uma verificação de tamanho ocorre periodicamente (atualmente a cada dois minutos) e se o ficheiro atual é > = 200 MB, é guardado e é gerado um novo ficheiro. Há também um limite de (configurável) de 8 GB no tamanho total do ficheiro gerado por sessão do evento. Assim que este limite for atingido, os ficheiros mais antigos são eliminados como são criados novos.
-* Não há um limite de antiguidade de 5 dias os registos. Este limite também é configurável. 
-* Cada componente define as propriedades de configuração de rastreio através de um ficheiro JSON. Os ficheiros JSON são armazenados no **C:\TraceCollector\Configuration**. Se necessário, estes ficheiros podem ser editados para alterar os limites de idade e tamanho dos registos recolhidos. As alterações a estes ficheiros necessitam reiniciar o *Recoletor de rastreio de pilha do Microsoft Azure* serviço para que as alterações entrem em vigor.
-
-O exemplo seguinte é um ficheiro de JSON de configuração de rastreio para operações de FabricRingServices da XRP VM: 
-
-```json
-{
-    "LogFile": 
-    {
-        "SessionName": "FabricRingServicesOperationsLogSession",
-        "FileName": "\\\\SU1FileServer\\SU1_ManagementLibrary_1\\Diagnostics\\FabricRingServices\\Operations\\AzureStack.Common.Infrastructure.Operations.etl",
-        "RollTimeStamp": "00:00:00",
-        "MaxDaysOfFiles": "5",
-        "MaxSizeInMB": "200",
-        "TotalSizeInMB": "5120"
-    },
-    "EventSources":
-    [
-        {"Name": "Microsoft-AzureStack-Common-Infrastructure-ResourceManager" },
-        {"Name": "Microsoft-OperationManager-EventSource" },
-        {"Name": "Microsoft-Operation-EventSource" }
-    ]
-}
-```
-
-* **MaxDaysOfFiles**. Este parâmetro controla a idade dos ficheiros a manter. Ficheiros de registo mais antigos são eliminados.
-* **MaxSizeInMB**. Este parâmetro controla o limiar de tamanho para um único ficheiro. Se o tamanho for atingido, é criado um novo ficheiro. etl.
-* **TotalSizeInMB**. Este parâmetro controla o tamanho total dos ficheiros. etl gerado a partir de uma sessão do evento. Se o tamanho total do ficheiro é maior do que este valor de parâmetro, são eliminados os ficheiros mais antigos.
-  
 ## <a name="log-collection-tool"></a>Ferramenta de registo de coleção
  
-O comando do PowerShell **Get-AzureStackLog** pode ser utilizado para recolher registos de todos os componentes de um ambiente de pilha do Azure. Guarda-las nos ficheiros zip numa localização definida pelo utilizador. Se a nossa equipa de suporte técnico tem os seus registos para ajudar a resolver um problema, estes poderão pedir-lhe para executar esta ferramenta.
+O cmdlet do PowerShell **Get-AzureStackLog** pode ser utilizado para recolher registos de todos os componentes de um ambiente de pilha do Azure. Guarda-las nos ficheiros zip numa localização definida pelo utilizador. Se a nossa equipa de suporte técnico tem os seus registos para ajudar a resolver um problema, estes poderão pedir-lhe para executar esta ferramenta.
 
 > [!CAUTION]
 > Estes ficheiros de registo podem conter informações de identificação pessoal (PII). Ter isto em consideração antes de a publica publicamente quaisquer ficheiros de registo.
@@ -78,38 +46,38 @@ Seguem-se alguns tipos de registo de exemplo que são recolhidos:
 *   **Registos de diagnóstico de armazenamento**
 *   **Registos ETW**
 
-Estes ficheiros são recolhidos pelo Recoletor do rastreio e armazenados numa partilha a partir de onde **Get-AzureStackLog** obtém-los.
+Estes ficheiros são recolhidos e guardados numa partilha pelo Recoletor do rastreio. O **Get-AzureStackLog** cmdlet do PowerShell, em seguida, pode ser utilizado para recolhê-las quando for necessário.
  
 ### <a name="to-run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system"></a>Para executar Get-AzureStackLog num sistema Kit de desenvolvimento de pilha do Azure (ASDK)
 1. Inicie sessão como **AzureStack\CloudAdmin** no anfitrião.
 2. Abra uma janela do PowerShell como administrador.
 3. Execute o **Get-AzureStackLog** cmdlet do PowerShell.
 
-   **Exemplos**
+**Exemplos:**
 
-    Recolha todos os registos para todas as funções:
+  Recolha todos os registos para todas as funções:
 
-    ```powershell
-    Get-AzureStackLog -OutputPath C:\AzureStackLogs
-    ```
+  ```powershell
+  Get-AzureStackLog -OutputPath C:\AzureStackLogs
+  ```
 
-    Recolha registos de funções VirtualMachines e BareMetal:
+  Recolha registos de funções VirtualMachines e BareMetal:
 
-    ```powershell
-    Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal
-    ```
+  ```powershell
+  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal
+  ```
 
-    Recolha registos de funções VirtualMachines e BareMetal, com data de filtragem de ficheiros de registo para as últimos 8 horas:
+  Recolha registos de funções VirtualMachines e BareMetal, com data de filtragem de ficheiros de registo para as últimos 8 horas:
     
-    ```powershell
-    Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
-    ```
+  ```powershell
+  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8)
+  ```
 
-    Recolha registos de funções VirtualMachines e BareMetal, com data de filtragem de ficheiros de registo para o período de tempo entre 8 horas e há a 2 horas:
+  Recolha registos de funções VirtualMachines e BareMetal, com data de filtragem de ficheiros de registo para o período de tempo entre 8 horas e há a 2 horas:
 
-    ```powershell
-    Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
-    ```
+  ```powershell
+  Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
+  ```
 
 ### <a name="to-run-get-azurestacklog-on-an-azure-stack-integrated-system"></a>Para executar Get-AzureStackLog uma pilha do Azure integrado no sistema
 
@@ -158,7 +126,7 @@ if($s)
    | Domínio                  | ECE                    | ECESeedRing        | 
    | FabricRing              | FabricRingServices     | FRP                |
    | Gateway                 | HealthMonitoring       | HRP                |   
-   | IBC                     | InfraServiceController |KeyVaultAdminResourceProvider|
+   | IBC                     | InfraServiceController | KeyVaultAdminResourceProvider|
    | KeyVaultControlPlane    | KeyVaultDataPlane      | NC                 |   
    | NonPrivilegedAppGateway | NRP                    | SeedRing           |
    | SeedRingServices        | SLB                    | SQL                |   
@@ -166,6 +134,13 @@ if($s)
    | URP                     | UsageBridge            | virtualMachines    |  
    | FOI                     | WASPUBLIC              | WDS                |
 
+
+### <a name="collect-logs-using-a-graphical-user-interface"></a>Recolher registos utilizando uma interface gráfica do utilizador
+Em vez de fornecer os parâmetros necessários para o cmdlet Get-AzureStackLog obter registos de pilha do Azure, também pode tirar partido das ferramentas de pilha do Azure disponíveis open source para localizado no principal do Azure pilha ferramentas repositório do GitHub em http://aka.ms/AzureStackTools.
+
+O **ERCS_AzureStackLogs.ps1** é armazenado no repositório GitHub ferramentas de script do PowerShell e é atualizado regularmente. O script iniciada a partir de uma sessão do PowerShell administrativa, liga ao ponto final com privilégios e executa o Get-AzureStackLog com parâmetros fornecidos. Se não existem parâmetros são fornecidos, o script será predefinido para pedir para os parâmetros através de uma interface gráfica do utilizador.
+
+Para saber mais sobre o PowerShell ERCS_AzureStackLogs.ps1 script pode ver [um breve vídeo](https://www.youtube.com/watch?v=Utt7pLsXEBc) ou ver o script [ficheiro Leia-me](https://github.com/Azure/AzureStack-Tools/blob/master/Support/ERCS_Logs/ReadMe.md) localizado no repositório do GitHub de ferramentas de pilha do Azure. 
 
 ### <a name="additional-considerations"></a>Considerações adicionais
 

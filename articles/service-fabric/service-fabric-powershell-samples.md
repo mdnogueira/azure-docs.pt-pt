@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: service-fabric
-ms.date: 11/15/2017
+ms.date: 11/28/2017
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: e255382b1263c162bfc80cf41f9e8d362be55a8e
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: ae132dbb650e08c3a25a9366563e70c6d56e089d
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-powershell-samples"></a>Exemplos do Azure PowerShell
 
@@ -32,8 +32,10 @@ A tabela seguinte inclui ligações para exemplos de scripts do PowerShell que c
 |-|-|
 | **Criar cluster** ||
 | [Criar um cluster (Azure)](./scripts/service-fabric-powershell-create-secure-cluster-cert.md)| Cria um cluster do Service Fabric do Azure. |
-| **Gerir o cluster** ||
+| **Gerir clusters e nós** ||
 | [Adicionar um certificado de aplicação](./scripts/service-fabric-powershell-add-application-certificate.md)| Adiciona um certificado x. 509 de aplicação para todos os nós num cluster. |
+|[Alterar o intervalo de portas RDP no nó de cluster VMs](./scripts/service-fabric-powershell-change-rdp-port-range.md)|Altera o intervalo de portas RDP no nó de cluster VMs num cluster implementado.|
+| [Atualizar o utilizador de admin e a palavra-passe para as VMs do nó de cluster](./scripts/service-fabric-powershell-change-rdp-user-and-pw.md) | Atualiza o nome de utilizador de administrador e a palavra-passe para o nó de cluster VMs. |
 | **Gerir aplicações** ||
 | [Implementar uma aplicação](./scripts/service-fabric-powershell-deploy-application.md)| Implemente uma aplicação para um cluster.|
 | [Atualizar uma aplicação](./scripts/service-fabric-powershell-upgrade-application.md)| Atualizar uma aplicação |

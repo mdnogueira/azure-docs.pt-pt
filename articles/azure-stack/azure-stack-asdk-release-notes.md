@@ -3,8 +3,8 @@ title: "Notas de versão do Kit de desenvolvimento de pilha do Microsoft Azure |
 description: "Melhoramentos, correções e problemas conhecidos do Kit de desenvolvimento de pilha do Azure."
 services: azure-stack
 documentationcenter: 
-author: twooley
-manager: byronr
+author: andredm7
+manager: femila
 editor: 
 ms.assetid: a7e61ea4-be2f-4e55-9beb-7a079f348e05
 ms.service: azure-stack
@@ -12,19 +12,88 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/02/2017
-ms.author: twooley
-ms.openlocfilehash: 95f63bc65491e56832b2c473d539cc702c38e584
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.date: 11/28/2017
+ms.author: andredm
+ms.openlocfilehash: 56d8ad4fecf14dfa69ade43438672c31a4954209
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-stack-development-kit-release-notes"></a>Notas de versão do Kit de desenvolvimento de pilha do Azure
 
 *Aplica-se a: Azure da pilha Kit de desenvolvimento*
 
 Estas notas de versão fornecem informações sobre os melhoramentos, correções e problemas conhecidos no Kit de desenvolvimento de pilha do Azure. Se não tiver a certeza de qual é a versão que está a executar, pode [utilizar o portal para verificar](azure-stack-updates.md#determine-the-current-version).
+
+## <a name="build-201711221"></a>Compilação 20171122.1
+
+### <a name="new-features-and-fixes"></a>Novas funcionalidades e correções
+
+- Consulte o [novas funcionalidades e correções](azure-stack-update-1711.md#new-features-and-fixes) secção as notas de versão de atualização de 1711 de pilha do Azure para a pilha do Azure integrado sistemas.
+
+    > [!IMPORTANT]
+    > Alguns dos itens listados no **novas funcionalidades e correções** secção são relevantes apenas para os sistemas de pilha do Azure integrado.
+
+### <a name="known-issues"></a>Problemas conhecidos
+ 
+#### <a name="deployment"></a>Implementação
+- Tem de especificar um servidor de tempo por endereço IP durante a implementação.
+
+#### <a name="infrastructure-management"></a>Gestão de infraestrutura
+- Não ative a cópia de segurança de infraestrutura no **cópia de segurança da infraestrutura** painel.
+- O endereço IP do bmc gestão controlador BMC e o modelo não são apresentadas as informações essenciais de um nó de unidade de escala. Este comportamento é esperado no Kit de desenvolvimento de pilha do Azure.
+
+#### <a name="portal"></a>Portal
+- Poderá ver um dashboard em branco no portal. Para recuperar o dashboard, selecione o ícone de equipamento no canto superior direito do portal e, em seguida, selecione **restaurar predefinições**.
+- Ao visualizar as propriedades de um grupo de recursos, o **mover** botão está desativado. Este comportamento é esperado. Mover grupos de recursos entre subscrições não é atualmente suportado.
+-  Para qualquer fluxo de trabalho onde selecionou uma subscrição, o grupo de recursos ou a localização numa lista pendente, pode deparar-se um ou mais dos seguintes problemas:
+
+   - Poderá ver uma linha em branco no topo da lista. Deve ainda poderá selecionar um item conforme esperado.
+   - Se a lista de itens na lista pendente é pequeno, poderá não conseguir ver algum dos nomes de item.
+   - Se tiver várias subscrições do utilizador, a lista de lista pendente do grupo de recursos pode estar vazia. 
+
+   Para contornar os dois últimos problemas, pode escrever o nome da subscrição ou grupo de recursos (se sabe que este) ou pode utilizar em vez disso, o PowerShell.
+
+- Verá uma **ativação necessária** alerta de aviso que indica a registar o Kit de desenvolvimento de pilha do Azure. Este comportamento é esperado.
+- No **ativação necessária** detalhes do alerta de aviso, não clique na ligação para o **AzureBridge** componente. Se o fizer, o **descrição geral** painel irá tentar carregar, sem êxito e não o tempo limite.
+- A eliminar os resultados de subscrições do utilizador em recursos órfãos. Como solução, primeiro eliminar recursos de utilizador ou grupo de recursos completo e, em seguida, eliminar subscrições de utilizador.
+- Não é possível ver permissões à sua subscrição através da utilização de portais de pilha do Azure. Como solução, pode verificar as permissões com o PowerShell.
+ 
+#### <a name="marketplace"></a>Marketplace
+- Quando tentar adicionar itens para o mercado de pilha do Azure utilizando o **adicionar a partir do Azure** opção, nem todos os itens podem ser visíveis para transferência.
+- Os utilizadores podem procurar o mercado completo sem uma subscrição e podem ver itens administrativos como planos e ofertas. Estes itens estão não funcional para os utilizadores.
+ 
+#### <a name="compute"></a>Computação
+- Os utilizadores recebem a opção para criar uma máquina virtual com armazenamento georredundante. Esta configuração provoca a falha da criação máquina virtual. 
+- Pode configurar uma conjunto apenas com um domínio de falhas de um e um domínio de atualização de um de disponibilidade de máquina virtual.
+- Não há nenhum experiência marketplace para criar conjuntos de dimensionamento de máquina virtual. Pode criar um conjunto, utilizando um modelo de dimensionamento.
+- Definições de dimensionamento para conjuntos de dimensionamento de máquina virtual não estão disponíveis no portal. Como solução, pode utilizar [Azure PowerShell](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-manage-powershell#change-the-capacity-of-a-scale-set). Devido às diferenças de versão do PowerShell, tem de utilizar o `-Name` parâmetro em vez de `-VMScaleSetName`.
+
+#### <a name="networking"></a>Redes
+- Não é possível criar um balanceador de carga com um endereço IP público utilizando o portal. Como solução, pode utilizar o PowerShell para criar o Balanceador de carga.
+- Tem de criar uma regra de tradução (NAT) de endereço de rede quando cria um balanceador de carga de rede. Caso contrário, receberá um erro ao tentar adicionar uma regra NAT após a criação do Balanceador de carga.
+- Em **redes**, se clicar em **ligação** para configurar uma ligação VPN, **VNet a VNet** está listado como um tipo de ligação possíveis. Não selecione esta opção. Atualmente, apenas o **Site a site (IPsec)** opção é suportada.
+- Não é possível desassociar um endereço IP público de uma máquina virtual (VM) depois da VM foi criada e associada a esse endereço IP. Desassociação irá aparecer funcionar, mas o endereço IP público anteriormente atribuído permanece associado a VM original. Este comportamento ocorre mesmo reatribuir o endereço IP para uma nova VM (normalmente denominado como um *alternância de VIP*). Todas as futuras tenta estabelecer ligação através deste resultado de endereço IP numa ligação para a VM originalmente associada e não para a nova. Atualmente, tem de utilizar os novos endereços IP públicos apenas para a criação de nova VM.
+- Os operadores do Azure da pilha poderão não ser possível implementar, eliminar, modificar VNETs ou grupos de segurança de rede. Este problema é principalmente utilizado em tentativas de atualização subsequentes do mesmo pacote. Isto é causado por um problema de empacotamento com uma atualização que está atualmente a ser investigação.
+ 
+#### <a name="sqlmysql"></a>SQL Server/MySQL 
+- Pode demorar até uma hora até os inquilinos podem criar bases de dados num novo SQL Server ou MySQL SKU. 
+- Criação de itens diretamente no SQL Server e o MySQL servidores que não são executadas pelo fornecedor de recursos de alojamento não é suportada e pode resultar num Estado não correspondentes.
+
+#### <a name="app-service"></a>Serviço de Aplicações
+- Um utilizador tem de registar o fornecedor de recursos de armazenamento antes de poderem criarem a sua primeira função do Azure na subscrição.
+ 
+#### <a name="usage-and-billing"></a>Utilização e faturação
+- Públicos dados de medição de utilização a endereços IP mostram o mesmo *EventDateTime* valor para cada registo em vez do *TimeDate* carimbo que mostra que o registo foi criado. Atualmente, não é possível utilizar estes dados para efetuar exata contabilização da utilização de endereços IP pública.
+
+#### <a name="identity"></a>Identidade
+
+No Azure Active Directory serviços de Federação (ADFS) implementar ambientes, o **azurestack\azurestackadmin** conta já não é o proprietário da subscrição de fornecedor predefinido. Em vez de iniciar sessão no **portal de administração / adminmanagement endpoint** com o **azurestack\azurestackadmin**, pode utilizar o **azurestack\cloudadmin** conta, por isso que pode gerir e utilizar a subscrição do fornecedor predefinido.
+
+> [!IMPORTANT]
+> Mesmo as **azurestack\cloudadmin** conta é o proprietário da subscrição de fornecedor predefinido em ambientes de ADFS implementada, não tem permissões para RDP num anfitrião. Continuar a utilizar o **azurestack\azurestackadmin** conta ou a conta de administrador local para iniciar sessão, aceder e gerir o anfitrião, conforme necessário.
+
 
 ## <a name="build-201710201"></a>Compilação 20171020.1
 
@@ -128,7 +197,6 @@ Além disso, foram efetuadas as correções seguintes:
 - Tem de criar uma regra de tradução (NAT) de endereço de rede quando cria um balanceador de carga de rede. Caso contrário, receberá um erro ao tentar adicionar uma regra NAT após a criação do Balanceador de carga.
 - Em **redes**, se clicar em **ligação** para configurar uma ligação VPN, **VNet a VNet** está listado como um tipo de ligação possíveis. Não selecione esta opção. Atualmente, apenas o **Site a site (IPsec)** opção é suportada.
 - Não é possível desassociar um endereço IP público de uma máquina virtual (VM) depois da VM foi criada e associada a esse endereço IP. Desassociação irá aparecer funcionar, mas o endereço IP público anteriormente atribuído permanece associado a VM original. Este comportamento ocorre mesmo reatribuir o endereço IP para uma nova VM (por vezes referido como um *alternância de VIP*). Todas as futuras tenta estabelecer ligação através deste resultado de endereço IP numa ligação para a VM originalmente associada e não para a nova. Atualmente, tem de utilizar os novos endereços IP públicos apenas para a criação de nova VM.
-
 
 #### <a name="sqlmysql"></a>SQL Server/MySQL
 - Pode demorar até uma hora até os inquilinos podem criar bases de dados num novo SQL Server ou MySQL SKU. 

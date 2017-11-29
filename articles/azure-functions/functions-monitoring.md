@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/15/2017
 ms.author: tdykstra
-ms.openlocfilehash: 355cb2cef52b5dfecddae228d0cc24a069d3b695
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 33d4a193cc3152bfab1f03dde32ad4f1bcb0afe1
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="monitor-azure-functions"></a>Monitorizar as funções do Azure
 
@@ -50,7 +50,7 @@ Ativar o Application Insights na aplicação de função **criar** página:
 
 ### <a name="existing-function-app"></a>Aplicação de função existente
 
-Obter uma chave de instrumentação e guardá-lo na aplicação de função:
+Obter a chave de instrumentação e guardá-lo na aplicação de função:
 
 1. Crie a instância do Application Insights. Definir o tipo de aplicação **geral**.
 
@@ -60,7 +60,7 @@ Obter uma chave de instrumentação e guardá-lo na aplicação de função:
 
    ![Copie a chave de instrumentação do Application Insights](media/functions-monitoring/copy-ai-key.png)
 
-1. A aplicação de função **definições da aplicação** página, [adicionar uma definição de aplicação](functions-how-to-use-azure-function-app-settings.md#settings) denominado APPINSIGHTS_INSTRUMENTATIONKEY e cole a chave de instrumentação.
+1. A aplicação de função **definições da aplicação** página, [adicionar uma definição de aplicação](functions-how-to-use-azure-function-app-settings.md#settings) clicando **Adicionar nova definição**. Nome da nova definição APPINSIGHTS_INSTRUMENTATIONKEY e cole a chave de instrumentação copiado.
 
    ![Adicionar a chave de instrumentação definições de aplicação](media/functions-monitoring/add-ai-key.png)
 
@@ -68,7 +68,7 @@ Obter uma chave de instrumentação e guardá-lo na aplicação de função:
 
 ## <a name="view-telemetry-data"></a>Ver dados de telemetria
 
-Para navegar para o Application Insights a partir de uma aplicação de função no portal, selecione o **Application Insights** ligação da aplicação de função **descrição geral** página.
+Para navegar para a instância ligada do Application Insights a partir de uma aplicação de função no portal, selecione o **Application Insights** ligação da aplicação de função **descrição geral** página.
 
 Para obter informações sobre como utilizar o Application Insights, consulte o [documentação do Application Insights](https://docs.microsoft.com/azure/application-insights/). Esta secção mostra alguns exemplos de como ver dados no Application Insights. Se já estiver familiarizado com o Application Insights, pode ir diretamente para [secções sobre como configurar e personalizar os dados de telemetria](#configure-categories-and-log-levels).
 
@@ -84,7 +84,7 @@ No [desempenho](../application-insights/app-insights-performance-counters.md) se
 
 ![Desempenho](media/functions-monitoring/performance.png)
 
-O **servidores** separador mostra a utilização de recursos e débito por servidor. Estes dados podem ser úteis para cenários em que as funções são bogging para baixo do seu recursos subjacentes de depuração. Servidores são denominados *instâncias de função da nuvem*. 
+O **servidores** separador mostra a utilização de recursos e débito por servidor. Estes dados podem ser úteis para cenários em que as funções são bogging para baixo do seu recursos subjacentes de depuração. Servidores são denominados **instâncias de função da nuvem**.
 
 ![Servidores](media/functions-monitoring/servers.png)
 
@@ -94,7 +94,7 @@ O [métricas em fluxo em direto](../application-insights/app-insights-live-strea
 
 ## <a name="query-telemetry-data"></a>Dados de telemetria de consulta
 
-[Application Insights Analytics](../application-insights/app-insights-analytics.md) dá-lhe acesso a todos os dados de telemetria sob a forma de tabelas numa base de dados. Análise de fornece um idioma de consulta para extrair e manipular os dados.
+[Application Insights Analytics](../application-insights/app-insights-analytics.md) dá-lhe acesso a todos os dados de telemetria sob a forma de tabelas numa base de dados. Análise de fornece uma linguagem de consulta para extrair, a manipulação e a visualizar os dados.
 
 ![Selecione a análise](media/functions-monitoring/select-analytics.png)
 
@@ -131,7 +131,7 @@ O tempo de execução fornece `customDimensions.LogLevel` e `customDimensions.Ca
 
 ## <a name="configure-categories-and-log-levels"></a>Configurar as categorias e níveis de registo
 
-Pode utilizar o Application Insights sem qualquer configuração personalizada, mas a configuração predefinida que pode resultar num elevado volumes de dados. Se estiver a utilizar uma subscrição do Azure do Visual Studio, poderá atingiu o seu limite de dados para Insights da aplicação. O resto deste artigo mostra como configurar e personalizar os dados que as suas funções enviam para o Application Insights.
+Pode utilizar o Application Insights sem qualquer configuração personalizada, mas a configuração predefinida que pode resultar num elevado volumes de dados. Se estiver a utilizar uma subscrição do Azure do Visual Studio, poderá atingiu o limite de dados para o Application Insights. O resto deste artigo mostra como configurar e personalizar os dados que as suas funções enviam para o Application Insights.
 
 ### <a name="categories"></a>Categorias
 
@@ -178,7 +178,7 @@ O *host.json* ficheiro configura quanto registo envia uma aplicação de funçã
 
 Este exemplo configura as seguintes regras:
 
-1. Registos com a categoria "Host.Results" ou "Função", enviar apenas `Error` nível e superior para o Application Insights. Os registos para `Information` nível e abaixo são ignorados.
+1. Registos com a categoria "Host.Results" ou "Função", enviar apenas `Error` nível e superior para o Application Insights. Os registos para `Warning` nível e abaixo são ignorados.
 2. Registos com a categoria de anfitrião. O agregador, enviar apenas `Information` nível e superior para o Application Insights. Os registos para `Debug` nível e abaixo são ignorados.
 3. Para todos os outros registos, enviar apenas `Information` nível e superior para o Application Insights.
 
@@ -217,7 +217,7 @@ Todos estes registos são escritos no `Information` nível, por isso, se a filtr
 
 Estes registos fornecem contagens e médias de invocações de função através de um [configuráveis](#configure-the-aggregator) período de tempo. O período predefinido é 30 segundos ou 1000 resultados, o que ocorrer primeiro. 
 
-Os registos mostram como "customMetrics" no Application Insights. Os exemplos são número de execuções, a taxa de êxito e a duração.
+Os registos estão disponíveis no **customMetrics** tabela no Application Insights. Os exemplos são número de execuções, a taxa de êxito e a duração.
 
 ![consulta de customMetrics](media/functions-monitoring/custom-metrics-query.png)
 
@@ -225,7 +225,7 @@ Todos estes registos são escritos no `Information` nível, por isso, se a filtr
 
 ### <a name="other-categories"></a>Outras categorias
 
-Apresentados todos os registos para categorias sem ser aqueles já mostrar como "rastreios" no Application Insights.
+Todos os registos de categorias sem ser aqueles já listados estão disponíveis no **rastreios** tabela no Application Insights.
 
 ![consulta de rastreios](media/functions-monitoring/analytics-traces.png)
 
@@ -291,7 +291,7 @@ Se manter a mesma cadeia de mensagem e inverter a ordem dos parâmetros, o texto
 
 Marcadores de posição são processadas desta forma, para que pode efetuar o registo structured. Application Insights armazena os pares de valor de nome de parâmetro para além da cadeia de mensagem. O resultado é que os argumentos de mensagem campos que pode consultar no.
 
-Por exemplo, se a chamada de método de registo aspeto do exemplo anterior, foi possível consultar o campo `customDimensions.prop__rowKey`. O prefixo é adicionado à Certifique-se de que não existem nenhum colisões entre os campos que adiciona o tempo de execução e campos que adiciona o seu código de função.
+Por exemplo, se a chamada de método de registo aspeto do exemplo anterior, foi possível consultar o campo `customDimensions.prop__rowKey`. O `prop__` prefixo é adicionado para se certificar de que não existem nenhum colisões entre campos o tempo de execução adiciona e campos o código de função adiciona.
 
 Também pode consultar da cadeia original da mensagem ao consultar o campo `customDimensions.prop__{OriginalFormat}`.  
 
@@ -454,7 +454,7 @@ O `tagOverrides` conjuntos de parâmetros `operation_Id` para ID de invocação.
 
 ### <a name="dependencies"></a>Dependências
 
-Dependências não apareçam automaticamente, mas pode escrever código personalizado para mostrar dependências. Código de exemplo a [secção de telemetria personalizada c#](#custom-telemetry-in-c-functions) mostra como. O código de exemplo resulta num *o mapeamento de aplicações* no Application Insights que se parece com isto:
+Dependências que a função tem de outros serviços não apareçam automaticamente, mas pode escrever código personalizado para mostrar as dependências. Código de exemplo a [secção de telemetria personalizada c#](#custom-telemetry-in-c-functions) mostra como. O código de exemplo resulta num *o mapeamento de aplicações* no Application Insights que se parece com isto:
 
 ![Mapeamento de aplicações](media/functions-monitoring/app-map.png)
 
@@ -473,7 +473,7 @@ Selecione o **Monitor** separador para uma função e obter uma lista de execuç
 
 ### <a name="real-time-monitoring"></a>A monitorização em tempo real
 
-A monitorização em tempo real está disponível clicando **fluxo de eventos em direto** da função de **Monitor** separador. O fluxo de eventos em direto é apresentado no gráfico de num novo separador no browser
+A monitorização em tempo real está disponível clicando **fluxo de eventos em direto** da função de **Monitor** separador. O fluxo de eventos em direto é apresentado no gráfico de num novo separador do browser.
 
 > [!NOTE]
 > Não há um problema conhecido que pode fazer com que os dados conseguir ser preenchido. Poderá ter de fechar o separador do browser que contém o fluxo de eventos em direto e, em seguida, clique em **fluxo de eventos em direto** novamente para permitir que seja corretamente preencher os dados de fluxo de eventos. 

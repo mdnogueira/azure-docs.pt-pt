@@ -3,8 +3,8 @@ title: "Depurar tarefas do Apache Spark em execução no Azure HDInsight | Micro
 description: "Utilize a IU do YARN, a IU do Spark e o servidor de histórico de Spark para controlar e depurar tarefas em execução num cluster do Spark no Azure HDInsight"
 services: hdinsight
 documentationcenter: 
-author: nitinme
-manager: jhubbard
+author: mumian
+manager: cgronlun
 editor: cgronlun
 tags: azure-portal
 ms.assetid: 59af05a7-2bd9-44b0-b55f-2438d294198b
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/21/2017
-ms.author: nitinme
-ms.openlocfilehash: b04d03271fc9fa39d9f54e5ecdae6789e156aef5
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.author: jgao
+ms.openlocfilehash: 1eaa5982703c31485c7b73eae780a62a0c5d672a
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Depurar tarefas do Apache Spark em execução no Azure HDInsight
 

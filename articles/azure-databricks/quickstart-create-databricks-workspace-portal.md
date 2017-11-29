@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: nitinme
-ms.openlocfilehash: b5f80427234549b13a1aca94cd04e4f7e6f94ccf
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: cffc78c06de6be252704c2a116d7ded2c7e8567f
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Início rápido: Executar uma tarefa do Spark no Azure Databricks no portal do Azure
 
@@ -97,7 +97,7 @@ Execute os seguintes passos para criar um bloco de notas no Databricks, configur
     Para obter instruções sobre como obter a chave de conta do storage, consulte [gerir as chaves de acesso de armazenamento](../storage/common/storage-create-storage-account.md#manage-your-storage-account)
 
     > [!NOTE]
-    > Também pode utilizar o Azure Data Lake Store com um cluster do Spark no Azure Databricks. Para obter instruções, consulte [utilize Data Lake Store com o Azure Databricks](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html#azure-data-lake-store).
+    > Também pode utilizar o Azure Data Lake Store com um cluster do Spark no Azure Databricks. Para obter instruções, consulte [utilize Data Lake Store com o Azure Databricks](https://go.microsoft.com/fwlink/?linkid=864084).
 
 4. Executar uma instrução SQL para criar uma tabela temporária, utilizando os dados do ficheiro de dados JSON de exemplo, **small_radio_json.json**. No seguinte fragmento, substitua os valores de marcador de posição do nome do contentor e o nome da conta de armazenamento. Cole o fragmento numa célula código no bloco de notas e, em seguida, prima SHIFT + ENTER. No fragmento, `path` indica a localização do ficheiro JSON de exemplo que carregou para a sua conta do Storage do Azure.
 
@@ -159,4 +159,4 @@ Se não selecionou a caixa de verificação, tem de terminar manualmente o clust
 Neste artigo, criou um cluster do Spark no Azure Databricks e foi executada uma tarefa de Spark utilizando os dados no armazenamento do Azure. Também pode ver [origens de dados de Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html) para saber como importar dados a partir de outras origens de dados para o Azure Databricks. Avançar para o artigo seguinte para saber como utilizar o Azure Data Lake Store com Databricks do Azure.
 
 > [!div class="nextstepaction"]
->[Utilizar o Data Lake Store com Databricks do Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html#azure-data-lake-store)
+>[Utilizar o Data Lake Store com Databricks do Azure](https://go.microsoft.com/fwlink/?linkid=864084)

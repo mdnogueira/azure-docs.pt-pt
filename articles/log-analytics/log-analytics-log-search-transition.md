@@ -11,22 +11,29 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/06/2017
+ms.date: 11/28/2017
 ms.author: bwren
-ms.openlocfilehash: 38cb11befe844178572981abb29fe5439286dbc1
-ms.sourcegitcommit: 5735491874429ba19607f5f81cd4823e4d8c8206
+ms.openlocfilehash: 9c487ab33859ae453a0074ef0344f61de19c7b4d
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="transitioning-to-azure-log-analytics-new-query-language"></a>Transição para o novo idioma de consulta de análise de registos do Azure
 Análise de registos recentemente implementado um novo idioma de consulta.  Este artigo fornece assistência sobre a transição neste idioma para análise de registos, se já estiver familiarizado com o idioma de legado e ainda precisa de algumas assistência.
+
+## <a name="resources"></a>Recursos
+
 
 ## <a name="language-converter"></a>Conversor de idioma
 
 Se estiver familiarizado com o idioma de consulta de análise de registos legado, é a forma mais fácil para criar a mesma consulta num novo idioma a utilizar o conversor de idioma instalado no portal de registo de pesquisa para a sua área de trabalho é convertida.  Utilizar o conversor é tão simple como escrever uma consulta legada na caixa de texto superior e, em seguida, clicando em **converter**.  Ou pode clicar no botão de procura para executar a consulta ou copiar e colar para utilizá-lo algures pessoa.
 
 ![Conversor de idioma](media/log-analytics-log-search-upgrade/language-converter.png)
+
+
+## <a name="resources"></a>Recursos
+O [site de documentação para o idioma de consulta de análise do registo](https://docs.loganalytics.io) tem todos os recursos tem de ficar previsto num novo idioma.  Isto inclui tutoriais, exemplos e uma referência de linguagem concluída.
 
 
 ## <a name="cheat-sheet"></a>Nota
