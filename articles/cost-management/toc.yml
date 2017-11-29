@@ -23,6 +23,10 @@
       href: tutorial-forecast-spending.md
     - name: 4 - Gerir os custos
       href: tutorial-manage-costs.md
+- name: Conceitos
+  items:
+    - name: Compreender os relatórios de custos
+      href: understading-cost-reports.md
 - name: Recursos
   items:
     - name: Vídeos sobre Gestão de Custos
