@@ -133,6 +133,8 @@
       href: distribute-data-globally.md
     - name: Criação de partições
       href: partition-data.md
+    - name: Chaves exclusivas
+      href: unique-keys.md
     - name: Consistência
       href: consistency-levels.md
     - name: Débito

@@ -6,16 +6,16 @@
       href: how-iot-edge-works.md
 - name: Inícios rápidos
   items:
-    - name: Implementar no Edge - Windows
-      href: quickstart.md
     - name: Implementar no Edge - Linux
       href: quickstart-linux.md
+    - name: Implementar no Edge - Windows
+      href: quickstart.md
 - name: Tutoriais
   items:
-    - name: Simular um dispositivo do Edge - Windows
-      href: tutorial-simulate-device-windows.md
     - name: Simular um dispositivo do Edge - Linux
       href: tutorial-simulate-device-linux.md
+    - name: Simular um dispositivo do Edge - Windows
+      href: tutorial-simulate-device-windows.md
     - name: 'Desenvolver um módulo C#'
       href: tutorial-csharp-module.md
     - name: Implementar o Azure Stream Analytics
@@ -26,8 +26,8 @@
       href: tutorial-deploy-function.md
 - name: Guias de procedimentos
   items:
-    - name: Gira um dispositivo de gateway
-      href: how-to-create-gateway-device.md
+    - name: Criar um gateway transparente
+      href: how-to-create-transparent-gateway.md
     - name: Implementar e monitorizar à escala
       href: how-to-deploy-monitor.md
     - name: Aprovisionar um dispositivo IoT Core
@@ -45,6 +45,8 @@
       href: iot-edge-runtime.md
     - name: Implementações
       href: module-deployment-monitoring.md
+    - name: Dispositivo IoT Edge como gateway
+      href: iot-edge-as-gateway.md
     - name: Segurança
       href: security.md
 - name: Recursos

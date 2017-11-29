@@ -20,7 +20,7 @@
 
 ## Criar tarefas
 ### [Criar entradas](stream-analytics-define-inputs.md)
-### [Dados de entrada de exemplo](stream-analytics-sample-data-input.md)
+### [Testar consultas e dados de entrada de exemplo](stream-analytics-sample-data-input.md)
 ### [Padrões de consulta comuns](stream-analytics-stream-analytics-query-patterns.md)
 ### [Funções do Windows](stream-analytics-window-functions.md)
 
