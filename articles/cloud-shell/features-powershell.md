@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: damaerte
-ms.openlocfilehash: e45d66eff4be4918ffd6e7940bbfb5adb4c88c00
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 9c2eeef9c20f25d2af97e6c754f005b698222385
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="features--tools-for-powershell-in-azure-cloud-shell-preview"></a>Funcionalidades e ferramentas para o PowerShell na Shell de nuvem do Azure (pré-visualização)
 
@@ -37,7 +37,7 @@ PowerShell na Shell de nuvem (pré-visualização) automaticamente e em seguran�
 
 ### <a name="files-persistence-across-sessions"></a>Ficheiros persistência entre sessões
 
-Para manter os ficheiros entre sessões, Shell da nuvem explica como anexar uma partilha de ficheiros do Azure na primeira execução.
+Para manter os ficheiros entre sessões, Shell da nuvem explica como anexar uma partilha de ficheiros do Microsoft Azure na primeira execução.
 Depois de concluída, Shell da nuvem ligará automaticamente o armazenamento (montado como `$home\clouddrive`) para sessões de todas as futuras.
 Uma vez que cada pedido para a nuvem Shell é alocar uma máquina temporária, ficheiros fora do seu `$home\clouddrive` e o estado da máquina não são mantidas entre sessões.
 

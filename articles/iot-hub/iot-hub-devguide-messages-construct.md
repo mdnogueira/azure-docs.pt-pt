@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/25/2017
 ms.author: dobett
-ms.openlocfilehash: 793a2cdd55c4e9213e5097f4e318c0790960a64d
-ms.sourcegitcommit: 51ea178c8205726e8772f8c6f53637b0d43259c6
+ms.openlocfilehash: 1a20b9c6981125895ecd6952135ec4f365bb8d45
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="create-and-read-iot-hub-messages"></a>Criar e ler as mensagens de IoT Hub
 
@@ -28,7 +28,7 @@ Para suportar a interoperabilidade totalmente integrada nos protocolos, o IoT Hu
 * Um conjunto de *propriedades da aplicação*. Um dicionário de propriedades de cadeia que pode definir a aplicação e o acesso, sem necessidade de anular a serialização do corpo da mensagem. IoT Hub nunca modifica estas propriedades.
 * Um corpo de binário opaco.
 
-Valores e nomes de propriedade só podem conter carateres alfanuméricos ASCII, plus ``{'!', '#', '$', '%, '&', "'", '*', '*', '+', '-', '.', '^', '_', '`', '|', '~'}`` quando tiver:
+Valores e nomes de propriedade só podem conter carateres alfanuméricos ASCII, plus ``{'!', '#', '$', '%, '&', "'", '*', '+', '-', '.', '^', '_', '`', '|', '~'}`` quando tiver:
 
 * Envie mensagens dispositivo-nuvem utilizando o protocolo HTTPS.
 * Envie mensagens da nuvem para o dispositivo.
@@ -45,7 +45,7 @@ A tabela seguinte lista o conjunto de propriedades do sistema nas mensagens do I
 | ExpiryTimeUtc |Data e hora de expiração de mensagem. |
 | EnqueuedTime |Data e hora de [nuvem para o dispositivo] [ lnk-c2d] foi recebida uma mensagem pelo IoT Hub. |
 | CorrelationId |Uma propriedade de cadeia de uma mensagem de resposta que normalmente contém MessageId do pedido, em padrões de pedido-resposta. |
-| ID de utilizador |Um ID utilizado para especificar a origem de mensagens em fila. Quando as mensagens são geradas pelo IoT Hub, está definida como `{iot hub name}`. |
+| UserId |Um ID utilizado para especificar a origem de mensagens em fila. Quando as mensagens são geradas pelo IoT Hub, está definida como `{iot hub name}`. |
 | Confirmação |Um gerador de mensagem de comentários. Esta propriedade é utilizada em mensagens da nuvem para o dispositivo ao IoT Hub para gerar mensagens de comentários como resultado o consumo da mensagem de pedido pelo dispositivo. Os valores possíveis: **nenhum** (predefinição): nenhuma mensagem de comentários é gerada, **positivo**: receber uma mensagem de comentários, se a mensagem foi concluída, **negativo**: receber um mensagem de comentários, se a mensagem expirou (ou foi atingido o número máximo de entrega) sem que está a ser concluída por dispositivo, ou **completa**: positivos e negativos. Para obter mais informações, consulte [comentários da mensagem][lnk-feedback]. |
 | ConnectionDeviceId |Um ID definido pelo IoT Hub nas mensagens do dispositivo para a nuvem. Contém o **deviceId** do dispositivo que enviou a mensagem. |
 | ConnectionDeviceGenerationId |Um ID definido pelo IoT Hub nas mensagens do dispositivo para a nuvem. Contém o **generationId** (como por [propriedades de identidade de dispositivo][lnk-device-properties]) do dispositivo que enviou a mensagem. |

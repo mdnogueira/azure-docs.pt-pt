@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/24/2017
 ms.author: mbullwin
-ms.openlocfilehash: bf5f12e4a20d9692e311550fc7a02f14f0b4aaad
-ms.sourcegitcommit: c25cf136aab5f082caaf93d598df78dc23e327b9
+ms.openlocfilehash: 3ae7df7939431e3bd13c070d65876145706e06b5
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="sampling-in-application-insights"></a>Amostragem no Application Insights
 
@@ -309,7 +309,9 @@ Quando a apresentação de telemetria para o serviço do Application Insights aj
 
 A precisão da aproximação do seu depende em grande medida a percentagem de amostragem configurado. Além disso, a precisão aumenta para aplicações que processam um grande volume de pedidos, geralmente, semelhantes de muitos utilizadores. Por outro lado, para aplicações que não funcionam com uma significativa de carga, amostragem não é necessária como estas aplicações, normalmente, podem enviar os respetivos telemetria permanecendo dentro da quota, sem causar a perda de dados de limitação. 
 
-Note que o Application Insights não de exemplo tipos de telemetria de métricas e sessões, desde para estes tipos, redução da precisão pode ser altamente indesejável. 
+> [!WARNING]
+> Application Insights não métricas e sessões tipos de telemetria de exemplo. Redução da precisão pode estar altamente indesejável para estes tipos de telemetria.
+> 
 
 ### <a name="adaptive-sampling"></a>Amostragem adaptável
 Amostragem adaptável adiciona um componente que monitoriza a taxa actual de transmissão do SDK e ajusta a percentagem de amostragem para tentar permanecer na velocidade máxima de destino. O ajuste efetuado é recalculado a intervalos regulares e baseia-se uma média móvel de taxa de transmissão de saída.

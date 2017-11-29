@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 11/28/2017
 ms.author: mimig
-ms.openlocfilehash: fd0454252080679fa880eecb677d609ea0734f09
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.openlocfilehash: 5163d20aece01addddeae93cb07355bde928a440
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="import-data-for-use-with-the-azure-cosmos-db-table-api"></a>Importar dados para utilização com a API de tabela de base de dados do Azure Cosmos
 
@@ -32,11 +32,11 @@ Este tutorial abrange as seguintes tarefas:
 
 ## <a name="data-migration-tool"></a>Ferramenta de migração de dados
 
-A ferramenta de migração de dados do Azure Cosmos DB da linha de comandos (dt.exe) pode ser utilizada para importar os dados de armazenamento de tabelas do Azure existentes para uma conta de API de tabela GA ou migra os dados de uma conta de API de tabela (pré-visualização) para uma conta de API de tabela GA. Outras origens não são atualmente suportadas.
+A ferramenta de migração de dados do Azure Cosmos DB da linha de comandos (dt.exe) pode ser utilizada para importar os dados de armazenamento de tabelas do Azure existentes para uma conta de API de tabela GA ou migra os dados de uma conta de API de tabela (pré-visualização) para uma conta de API de tabela GA. Outras origens não são atualmente suportadas. A IU com base em dados de migração ferramenta (dtui.exe) não é atualmente suportada para contas de API de tabela. 
 
 Para efetuar uma migração de dados de tabela, conclua as seguintes tarefas:
 
-1. Transferir a ferramenta de migração do [Microsoft Download Center](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) ou a partir de [GitHub](https://github.com/azure/azure-documentdb-datamigrationtool).
+1. Transferir a ferramenta de migração de [GitHub](https://github.com/azure/azure-documentdb-datamigrationtool).
 2. Executar `dt.exe` utilizando os argumentos da linha de comandos para o seu cenário.
 
 DT.exe executa um comando no seguinte formato:

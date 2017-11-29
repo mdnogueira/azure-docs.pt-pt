@@ -15,11 +15,11 @@ ms.workload: data-services
 ms.custom: manage
 ms.date: 03/30/2017
 ms.author: kevin;barbkess
-ms.openlocfilehash: d269e62b8d49a6c96ce40c2e31c4096e16e07793
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c49b49cf832097bd5fbc423a36432a3eaff9bf14
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Resolução de problemas do armazém de dados SQL do Azure
 Este tópico apresenta alguns das perguntas de resolução de problemas mais comuns que recebemos dos nossos clientes.
@@ -28,7 +28,7 @@ Este tópico apresenta alguns das perguntas de resolução de problemas mais com
 | Problema | Resolução |
 |:--- |:--- |
 | Falha ao iniciar sessão para o utilizador 'Início de sessão do NT AUTHORITY\ANONYMOUS'. (Microsoft SQL Server, erro: 18456) |Este erro ocorre quando um utilizador do AAD tenta ligar à base de dados mestra, mas não tem um utilizador no mestre.  Para corrigir este problema é especificar o armazém de dados do SQL Server que pretende ligar ao tempo de ligação ou adicione o utilizador para a base de dados mestra.  Consulte [descrição geral de segurança] [ Security overview] artigo para obter mais detalhes. |
-| O servidor principal "MyUserName" não é capaz de aceder a base de dados "master" no contexto de segurança atual. Não é possível abrir a base de dados do utilizador predefinida. Falha ao iniciar sessão. Falha ao iniciar sessão para o utilizador 'MyUserName'. (Microsoft SQL Server, erro: 916) |Este erro ocorre quando um utilizador do AAD tenta ligar à base de dados mestra, mas não tem um utilizador no mestre.  Para corrigir este problema é especificar o armazém de dados do SQL Server que pretende ligar ao tempo de ligação ou adicione o utilizador para a base de dados mestra.  Consulte [descrição geral de segurança] [ Security overview] artigo para obter mais detalhes. |
+| O servidor principal "MyUserName" não é capaz de aceder a base de dados "master" no contexto de segurança atual. Não é possível abrir a base de dados do utilizador predefinida. O início de sessão falhou. Falha ao iniciar sessão para o utilizador 'MyUserName'. (Microsoft SQL Server, erro: 916) |Este erro ocorre quando um utilizador do AAD tenta ligar à base de dados mestra, mas não tem um utilizador no mestre.  Para corrigir este problema é especificar o armazém de dados do SQL Server que pretende ligar ao tempo de ligação ou adicione o utilizador para a base de dados mestra.  Consulte [descrição geral de segurança] [ Security overview] artigo para obter mais detalhes. |
 | Erro CTAIP |Este erro pode ocorrer quando tiver sido criado um início de sessão no SQL server base de dados mestra, mas não se encontra na base de dados do armazém de dados do SQL Server.  Se ocorrer este erro, observe o [descrição geral de segurança] [ Security overview] artigo.  Este artigo explica como criar criar um início de sessão e o utilizador principal e, em seguida, como criar um utilizador na base de dados do armazém de dados do SQL Server. |
 | Bloqueado pela Firewall |Bases de dados SQL do Azure estão protegidos por firewalls nível servidor e base de dados para garantir conhecido apenas endereços IP têm acesso a uma base de dados. As firewalls são seguras por predefinição, o que significa que, tem de ativar explicitamente e endereço IP ou intervalo de endereços antes de poder ligar.  Para configurar a firewall para acesso, siga os passos no [configurar o acesso ao servidor de firewall para o IP de cliente] [ Configure server firewall access for your client IP] no [aprovisionamento instruções] [Provisioning instructions]. |
 | Não é possível estabelecer ligação com a ferramenta ou controladores |O SQL Data Warehouse recomenda a utilização [SSMS][SSMS], [SSDT para Visual Studio][SSDT for Visual Studio], ou [sqlcmd] [ sqlcmd] para consultar os dados. Para obter mais detalhes sobre controladores e a ligação ao SQL Data Warehouse, consulte [controladores para o Azure SQL Data Warehouse] [ Drivers for Azure SQL Data Warehouse] e [ligar ao Azure SQL Data Warehouse] [ Connect to Azure SQL Data Warehouse] artigos. |
@@ -99,7 +99,7 @@ Se estiver foram não é possível encontrar uma solução para o seu problema a
 [request a quota increase]: ./sql-data-warehouse-get-started-create-support-ticket.md#request-quota-change
 [Learning how to monitor your queries]: ./sql-data-warehouse-manage-monitor.md
 [Provisioning instructions]: ./sql-data-warehouse-get-started-provision.md
-[Configure server firewall access for your client IP]: ./sql-data-warehouse-get-started-provision.md#create-a-server-level-firewall-rule-in-the-azure-portal
+[Configure server firewall access for your client IP]: ./sql-data-warehouse-get-started-provision.md
 [SQL Data Warehouse best practices]: ./sql-data-warehouse-best-practices.md
 [Table sizes]: ./sql-data-warehouse-tables-overview.md#table-size-queries
 [Unsupported table features]: ./sql-data-warehouse-tables-overview.md#unsupported-table-features

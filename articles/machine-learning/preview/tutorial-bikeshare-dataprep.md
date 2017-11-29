@@ -11,11 +11,11 @@ ms.workload: data-services
 ms.custom: mvc, tutorial, azure
 ms.topic: article
 ms.date: 09/21/2017
-ms.openlocfilehash: acd61e9980b143ebbb81d2d144bdac9134e20a11
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: 9e20c606973447e0b01eaf9716fabf47eefd228b
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="bike-share-tutorial-advanced-data-preparation-with-azure-machine-learning-workbench"></a>Tutorial de partilha de bicicleta: avançadas preparação de dados com o Azure Machine Learning Workbench
 Serviços de Machine Learning do Azure (pré-visualização) é um ciência de dados ponto-a-ponto integrada e a solução de análise avançadas para cientistas de dados professional preparar os dados, experimentações de desenvolver e implementar modelos na escala da nuvem.
@@ -261,10 +261,7 @@ Para utilizar os dados numa predição de blocos de tempo de duas horas, tem de 
 
    > [!NOTE]
    > Azure ML Workbench synthesizes um programa com base nos exemplos fornecidos por si e aplica o mesmo programa em linhas restantes. Todas as outras linhas serão preenchidas automaticamente com base no exemplo que forneceu. Além disso, o Workbench analisa os dados e tenta identificar casos de limite. 
-
-   > [!IMPORTANT]
-   > Identificação de cenários de limite pode não funcionar no Mac na versão atual do Workbench. Ignorar o __passo 3__ e __passo 4__ abaixo no Mac. Em vez disso, prima __OK__ depois de todas as linhas obterem preenchidas com os valores derivados.
-   
+  
 3. O texto **analisar dados** acima grelha indica que Workbench está a tentar detetar casos de limite. Quando terminar, o estado muda para **linha sugerida seguinte de revisão** ou **sem sugestões**. Neste exemplo, **linha sugerida seguinte de revisão** é devolvido.
 
 4. Para rever as alterações sugeridas, selecione **linha sugerida seguinte de revisão**. A célula que deve rever e corrigir (se necessário) é realçada no ecrã do.
@@ -294,11 +291,6 @@ Para utilizar os dados numa predição de blocos de tempo de duas horas, tem de 
 
    ![Imagem do exemplo ' 01 de Janeiro de 2015 12: 00 - 2 AM](media/tutorial-bikeshare-dataprep/wetherdatehourrangeexample.png)
 
-   > [!IMPORTANT]
-   > No Mac, siga o passo seguinte, em vez de __passo 8__ abaixo.
-   >
-   > * Aceda a primeira célula que contém `Feb 01, 2015 12AM-2AM`. Deve ser o __linha 15__. Corrija o valor para `Jan 02, 2015 12AM-2AM`e prima __Enter__. 
-   
 
 8. Aguarde que o estado de alterar do **analisar dados** para **linha sugerida seguinte de revisão**. Esta operação pode demorar vários segundos. Selecione a ligação de estado para navegar para a linha sugerida. 
 
@@ -513,12 +505,7 @@ Para resumir bicicleta a pedido para um período de 2 horas, utilize colunas der
     > Pode dar um exemplo em relação a qualquer uma das linhas. Neste exemplo, o valor de `Jan 01, 2017 12AM-2AM` é válido para a primeira linha dos dados.
 
     ![Imagem dos dados de exemplo](media/tutorial-bikeshare-dataprep/tripdataderivebyexamplefirstexample.png)
-
-   > [!IMPORTANT]
-   > No Mac, siga o passo seguinte, em vez de __passo 3__ abaixo.
-   >
-   > * Aceda a primeira célula que contém `Jan 01, 2017 1AM-2AM`. Deve ser o __linha 14__. Corrija o valor para `Jan 01, 2017 12AM-2AM`e prima __Enter__. 
-
+   
 3. Aguarde até que a aplicação calcula os valores de todas as linhas. Poderá demorar vários segundos. Depois de concluída a análise, utilize o __linha sugerida seguinte de revisão__ ligação para verificar os dados.
 
    ![Imagem da análise foi concluída com ligação de revisão](media/tutorial-bikeshare-dataprep/tripdatabyexanalysiscomplete.png)

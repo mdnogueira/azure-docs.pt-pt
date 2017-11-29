@@ -8,12 +8,12 @@ manager: jhubbard
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 11/08/2017
-ms.openlocfilehash: 46e109c25f8cbdba9b3769db7563259f7c6705d4
-ms.sourcegitcommit: 93902ffcb7c8550dcb65a2a5e711919bd1d09df9
+ms.date: 11/27/2017
+ms.openlocfilehash: a1008936c053316630360403be688e4eedc8b2c0
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="azure-database-for-postgresql-servers"></a>Base de dados do Azure para servidores de PostgreSQL
 Este artigo fornece considerações e diretrizes para trabalhar com a base de dados do Azure para servidores de PostgreSQL.
@@ -38,13 +38,7 @@ Dentro de uma base de dados do Azure para o servidor de PostgreSQL, pode criar u
 ## <a name="how-do-i-connect-and-authenticate-to-an-azure-database-for-postgresql-server"></a>Como ligar e autenticar para uma base de dados do Azure para o servidor de PostgreSQL?
 Os elementos seguintes ajudam a garantir o acesso seguro à sua base de dados.
 
-|||
-| :-- | :-- |
-| **Autenticação e autorização** | Base de dados do Azure para o servidor de PostgreSQL suporta a autenticação de PostgreSQL nativa. Pode estabelecer ligação e autenticar para o servidor com início de sessão de administrador do servidor. |
-| **Protocolo** | O serviço suporta um protocolo baseado em mensagem utilizado pelo PostgreSQL. |
-| **TCP/IP** | O protocolo é suportado o TCP/IP e através de sockets de domínio do Unix. |
-| **Firewall** | Para ajudar a proteger os seus dados, uma regra de firewall impede a todos os acessos ao seu servidor e respetivas bases de dados, até que especifique os computadores que têm permissão. Consulte [base de dados do Azure para as regras de firewall do servidor de PostgreSQL](concepts-firewall-rules.md). |
-|||
+| :-- | :-- | | **Autenticação e autorização** | Base de dados do Azure para o servidor de PostgreSQL suporta a autenticação de PostgreSQL nativa. Pode estabelecer ligação e autenticar para o servidor com início de sessão de administrador do servidor. | | **Protocolo** | O serviço suporta um protocolo baseado em mensagem utilizado pelo PostgreSQL. | | **TCP/IP** | O protocolo é suportado o TCP/IP e através de sockets de domínio do Unix. | | **Firewall** | Para ajudar a proteger os seus dados, uma regra de firewall impede a todos os acessos ao seu servidor e respetivas bases de dados, até que especifique os computadores que têm permissão. Consulte [base de dados do Azure para as regras de firewall do servidor de PostgreSQL](concepts-firewall-rules.md). |
 
 ## <a name="how-do-i-manage-a-server"></a>Como gerir a um servidor?
 Pode gerir a base de dados do Azure para PostgreSQL servidores utilizando o [portal do Azure](https://portal.azure.com) ou [CLI do Azure](/cli/azure/postgres).

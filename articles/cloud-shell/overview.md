@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: juluk
-ms.openlocfilehash: 08ab3b38e4c1fbeb1fac67c5d1b6f6749f7a0a3e
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 05c4d419f6d7b42a14b9bb13570daaa666d52db3
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Descrição geral da Shell de nuvem do Azure
 Shell de nuvem do Azure é uma shell interativa e acessíveis para o browser para a gestão de recursos do Azure.
@@ -55,9 +55,9 @@ Para além da Shell de nuvem a ser disponível a partir do portal do Azure, pode
 * [Aplicação móvel do Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/)
 * [Extensão de código do Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
 
-### <a name="connect-your-azure-files-storage"></a>Ligar o armazenamento de ficheiros do Azure
+### <a name="connect-your-microsoft-azure-files-storage"></a>Ligar o armazenamento de ficheiros do Microsoft Azure
 Nuvem Shell máquinas são temporárias e como consequência necessitam de uma partilha de ficheiros do Azure para possível montá-la como `clouddrive` para manter o seu diretório $Home.
-Na primeira execução que nuvem Shell pede-lhe criar um recurso de grupo, a conta de armazenamento e o ficheiro partilham em seu nome. Este é um passo única e será anexado automaticamente todas as sessões. Uma partilha de ficheiros única pode ser mapeada e será utilizada pelo Bash e do PowerShell na Shell de nuvem (pré-visualização).
+No primeiro lançamento que nuvem Shell pede-lhe criar um grupo de recursos, conta de armazenamento e um ficheiro do Azure partilham em seu nome. Este é um passo única e será anexado automaticamente todas as sessões. Uma partilha de ficheiros do Azure única pode ser mapeada e será utilizada pelo Bash e do PowerShell na Shell de nuvem (pré-visualização).
 
 #### <a name="create-new-storage"></a>Criar o novo armazenamento
 ![](media/overview/basic-storage.png)
@@ -70,7 +70,7 @@ Três recursos serão criados em seu nome:
 3. Partilha de ficheiros com o nome:`cs-<user>-<domain>-com-<uniqueGuid>`
 
 > [!Note]
-> Bash na Shell de nuvem também cria uma imagem de disco de 5 GB predefinido para manter `$Home`. Todos os ficheiros no seu diretório $Home tal como chaves SSH são mantidos da imagem de disco do utilizador armazenada numa partilha de ficheiro instalado. Aplique as melhores práticas ao guardar os ficheiros no seu diretório $Home e a partilha de ficheiros montada.
+> Bash na Shell de nuvem também cria uma imagem de disco de 5 GB predefinido para manter `$Home`. Todos os ficheiros no seu diretório $Home tal como chaves SSH são mantidos da imagem de disco do utilizador armazenada numa partilha de ficheiros do Azure montados de. Aplique as melhores práticas ao guardar os ficheiros no diretório $Home e partilha de ficheiros do Azure montada.
 
 #### <a name="use-existing-resources"></a>Utilizar recursos existentes
 ![](media/overview/advanced-storage.png)
@@ -79,13 +79,13 @@ Três recursos serão criados em seu nome:
 Na linha de comandos do programa de configuração da armazenamento, clique em "Definições avançadas de mostrar" para mostrar as opções adicionais.
 As DropDowns são filtradas para a sua região de nuvem Shell atribuído e contas/global-armazenamento localmente redundante.
 
-[Saiba mais sobre armazenamento de nuvem Shell, ao atualizar as partilhas de ficheiros e a carregar/transferência de ficheiros.](persisting-shell-storage.md)
+[Saiba mais sobre armazenamento de nuvem Shell, ao atualizar as partilhas de ficheiros do Azure e a carregar/transferência de ficheiros.](persisting-shell-storage.md)
 
 ## <a name="concepts"></a>Conceitos
 * Nuvem Shell é executada num anfitrião temporário fornecido por-sessão, por utilizador
 * Shell de nuvem exceder o tempo limite após 20 minutos sem atividade interativa
-* Shell de nuvem requer possível montar uma partilha de ficheiros
-* Shell de nuvem utiliza a mesma partilha de ficheiros para Bash e PowerShell
+* Shell de nuvem requer uma partilha de ficheiros do Azure para ser montados
+* Shell de nuvem utiliza a mesma partilha de ficheiros do Azure para Bash e PowerShell
 * Shell de nuvem é atribuído uma máquina por conta de utilizador
 * As permissões estão definidas como um utilizador de Linux normal no Bash
 

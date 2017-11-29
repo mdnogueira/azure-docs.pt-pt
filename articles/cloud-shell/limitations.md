@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/06/2017
 ms.author: juluk
-ms.openlocfilehash: bd947af4cca0ed240ba5811d6a5cd06ff7fffc82
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 65a5c40ce0a4d0cfdc0a325476bea6e8ccebe8c6
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="limitations-of-azure-cloud-shell"></a>Limitações da Shell de nuvem do Azure
 
@@ -28,10 +28,10 @@ Shell de nuvem do Azure tem as seguintes limitações conhecidas:
 
 ### <a name="system-state-and-persistence"></a>Estado do sistema e persistência
 
-A máquina que fornece a sua sessão de Shell de nuvem é temporária e é reciclado depois da sessão está inativa durante 20 minutos. Shell de nuvem necessita de uma partilha de ficheiros para possível montá-la. Como resultado, a subscrição tem de poder configurar recursos de armazenamento para aceder à Shell de nuvem. Outras considerações incluem:
+A máquina que fornece a sua sessão de Shell de nuvem é temporária e é reciclado depois da sessão está inativa durante 20 minutos. Shell de nuvem necessita de uma partilha de ficheiros do Azure para possível montá-la. Como resultado, a subscrição tem de poder configurar recursos de armazenamento para aceder à Shell de nuvem. Outras considerações incluem:
 
 * Com o armazenamento montado, apenas as modificações dentro de `clouddrive` diretório são mantidas. No Bash, o `$Home` diretório também é persistente.
-* Partilhas de ficheiros podem ser montadas apenas a partir do seu [atribuído região](persisting-shell-storage.md#mount-a-new-clouddrive).
+* Partilhas de ficheiros do Azure podem ser montadas apenas a partir do seu [atribuído região](persisting-shell-storage.md#mount-a-new-clouddrive).
   * Na Bash, execute `env` para localizar a sua região definida como `ACC_LOCATION`.
 * Ficheiros do Azure suporta armazenamento apenas localmente redundante e contas de armazenamento georredundante.
 
@@ -77,10 +77,15 @@ PowerShell na Shell de nuvem do Azure (pré-visualização) pode demorar até 60
 Os dados escritos `$Home` por qualquer aplicação (tais como: git, vim e outros) não sejam mantidas entre sessões do PowerShell. Para obter uma solução, [apresentada aqui](troubleshooting.md#powershell-resolutions).
 
 ### <a name="default-file-location-when-created-from-azure-drive"></a>Localização do ficheiro predefinido quando a criação do disco do Azure:
+
 Utilizar cmdlets do PowerShell, os utilizadores não é podem criar os ficheiros na unidade do Azure. Quando os utilizadores criam novos ficheiros utilizando outras ferramentas, tal como vim ou nano for apresentado, os ficheiros são guardados para a pasta de C:\Users por predefinição. 
+
+### <a name="gui-applications-are-not-supported"></a>Não são suportadas aplicações de GUI
+
+Se o utilizador executa um comando que iria criar uma caixa de diálogo do Windows, tais como `Connect-AzureAD` ou `Login-AzureRMAccount`, um vê uma mensagem de erro, tais como: `Unable to load DLL 'IEFRAME.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)`.
 
 ## <a name="next-steps"></a>Passos seguintes
 
 [Resolução de problemas de nuvem de Shell](troubleshooting.md) <br>
-[Início rápido para Bash](quickstart.md) <br>
+[Início Rápido para o Bash](quickstart.md) <br>
 [Início rápido para o PowerShell](quickstart-powershell.md)

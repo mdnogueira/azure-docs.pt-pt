@@ -3,7 +3,7 @@ title: "Como Reproteção de efetuar a ativação pós-falha de máquinas virtua
 description: "Após a ativação pós-falha de VMs de uma região do Azure para outro, pode utilizar o Azure Site Recovery para proteger as máquinas na direção inversa. Aprenda os passos fazer uma reproteção antes de uma ativação pós-falha novamente."
 services: site-recovery
 documentationcenter: 
-author: ruturaj
+author: rajani-janaki-ram
 manager: gauravd
 editor: 
 ms.assetid: 44813a48-c680-4581-a92e-cecc57cc3b1e
@@ -12,10 +12,10 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 11/28/2017
-ms.author: ruturajd
-ms.openlocfilehash: 5822ed90f3ab13bdaf1afef62cf32978101c6609
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.date: 11/22/2017
+ms.author: rajanaki
+ms.openlocfilehash: 3e614b6c3c8358585f3b502f301cc659d2088e2f
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/28/2017
@@ -58,7 +58,7 @@ Seguem-se os passos para voltar a proteger uma máquina virtual utilizando as pr
 
 3. Reveja o **grupo de recursos, conjuntos de disponibilidade, armazenamento e rede** informações e clique em OK. Se existirem quaisquer recursos marcados (novo), serão criadas como parte de reproteção.
 
-Isto irá acionar uma tarefa Proteja novamente a tarefa que será o seeding primeiro site de destino (SEA neste caso) com os dados mais recentes e, assim que estiver concluída, irá replicar as diferenças antes a ativação pós-falha novamente Sudeste asiático.
+A tarefa de reproteção será o seeding primeiro site de destino (SEA neste caso) com os dados mais recentes e depois de concluído, irá replicar as diferenças antes a ativação pós-falha para Sudeste asiático.
 
 ### <a name="reprotect-customization"></a>Proteja personalização
 Se pretender escolher a conta de armazenamento de extrair ou a rede durante reproteção, pode fazê-lo ao utilizar a opção de personalizar fornecida no painel de reproteção.

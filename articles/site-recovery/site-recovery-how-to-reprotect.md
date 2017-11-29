@@ -3,7 +3,7 @@ title: Voltar a proteger a partir do Azure para um site no local | Microsoft Doc
 description: "Após a ativação pós-falha de VMs para o Azure, pode iniciar uma reativação pós-falha para colocar as VMs no local. Saiba como voltar a proteger antes de uma reativação pós-falha."
 services: site-recovery
 documentationcenter: 
-author: ruturaj
+author: rajani-janaki-ram
 manager: gauravd
 editor: 
 ms.assetid: 44813a48-c680-4581-a92e-cecc57cc3b1e
@@ -12,10 +12,10 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 11/28/2017
-ms.author: ruturajd
-ms.openlocfilehash: ba68df3df33a357db4d97ff65c9cc5995cd51caa
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.date: 06/05/2017
+ms.author: rajanaki
+ms.openlocfilehash: 17a43de3faaa3a146fa9d8f43d36545d6d82b274
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/28/2017
@@ -62,16 +62,20 @@ Quando preparar para voltar a proteger máquinas virtuais, tomar ou considere as
   * **Servidor de destino mestre**: O servidor de destino mestre recebe dados de reativação pós-falha. O servidor de gestão no local que criou tem um servidor de destino mestre instalado por predefinição. No entanto, consoante o volume de tráfego de cópia falhou, poderá ter de criar um servidor de destino principal separado para reativação pós-falha.
     * [Uma máquina virtual Linux necessita de um servidor de destino principal do Linux](site-recovery-how-to-install-linux-master-target.md).
     * Máquina virtual do Windows precisa de um servidor de destino principal do Windows. Pode utilizar as máquinas no local processo servidor e o mestre de destino novamente.
+    * O destino principal tem outros pré-requisitos listados em [coisas comuns para verificar um destino principal antes de reproteção](site-recovery-how-to-reprotect.md#common-things-to-check-after-completing-installation-of-the-master-target-server).
 
 > [!NOTE]
 > Todas as máquinas virtuais de um grupo de replicação deve ser do mesmo tipo de sistema operativo (todos os Windows ou Linux todas as). Um grupo de replicação com sistemas de operativos mistos não é atualmente suportado para reproteção e a reativação pós-falha no local. Isto acontece porque o destino principal deve ser do mesmo sistema operativo que a máquina virtual e todas as máquinas virtuais de um grupo de replicação deve ter o mesmo destino mestre. 
 
-    The master target has other prerequisites that are listed in [Common things to check on a master target before reprotect](site-recovery-how-to-reprotect.md#common-things-to-check-after-completing-installation-of-the-master-target-server).
+    
 
 * Um servidor de configuração é necessário no local ao efetuar a cópia. Durante a reativação pós-falha, a máquina virtual tem de existir na base de dados de servidor de configuração. Caso contrário, a reativação pós-falha é bem-sucedida. 
 
 > [!IMPORTANT]
 > Certifique-se de que efetua cópias de segurança agendadas regularmente do seu servidor de configuração. Se ocorrer um desastre, restaure o servidor com o mesmo endereço IP, de modo a que funciona de reativação pós-falha.
+
+> [!WARNING]
+> Um grupo de replicação deve ter apenas VMs do Windows ou Linux VMs e não uma mistura de ambos porque todas as VMs num grupo replictaion utiliza o mesmo servidor de destino mestre e VM com Linux necessita de um servidor de destino principal do Linux e que aconselhado para a VM do Windows.
 
 * Definir o `disk.EnableUUID=true` definição os parâmetros de configuração da máquina virtual destino principal no VMware. Se esta linha não existir, adicioná-lo. Esta definição é necessário para fornecer um UUID consistente para o disco de máquina virtual (VMDK) para que o se monta corretamente.
 

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/07/2017
 ms.author: juliako
-ms.openlocfilehash: 5322b5f3231b067937b685c69b916ed74dfe9a6e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: da2dc87543fd8a0aa99e1de3018a310abe93fa3a
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-media-services-concepts"></a>Conceitos de Media Services do Azure
 Este tópico fornece uma descrição geral dos conceitos de Media Services mais importantes.
@@ -83,7 +83,7 @@ Os Media Services suportam dois tipos de Localizadores: localizadores OnDemandOr
 Todos os acessos ao Storage do Azure é feito através de uma conta de armazenamento. Pode associar uma conta de serviço de suporte de dados com uma ou mais contas de armazenamento. Uma conta pode conter um número ilimitado de contentores, desde que o tamanho total é em 500TB por conta de armazenamento.  Os Media Services fornecem ferramentas ao nível do SDK para que possa gerir várias contas de armazenamento e a distribuição dos seus ativos durante o carregamento para estas contas com base nas métricas ou distribuição aleatória de balanceamento de carga. Para obter mais informações, consulte como trabalhar com [Storage do Azure](https://msdn.microsoft.com/library/azure/dn767951.aspx). 
 
 ## <a name="jobs-and-tasks"></a>Trabalhos e tarefas
-A [tarefa](https://https://docs.microsoft.com/rest/api/media/operations/job) é normalmente utilizada para processar (por exemplo, índice ou codificar) uma apresentação de áudio/vídeo. Se estiver a processar vários vídeos, crie uma tarefa para cada vídeo para ser codificado.
+A [tarefa](https://docs.microsoft.com/en-us/rest/api/media/operations/job) é normalmente utilizada para processar (por exemplo, índice ou codificar) uma apresentação de áudio/vídeo. Se estiver a processar vários vídeos, crie uma tarefa para cada vídeo para ser codificado.
 
 Uma tarefa contém metadados sobre o processamento para ser executada. Cada tarefa contém um ou mais [tarefas](https://docs.microsoft.com/rest/api/media/operations/task)s que especificam uma tarefa de processamento de atómico, os recursos de entrada, saída ativos, um processador de multimédia e as respetivas definições associadas. Tarefas dentro de uma tarefa podem ser ligadas em cadeia, onde o elemento de saída de uma tarefa está indicado como o elemento de entrada para a próxima tarefa. Desta forma uma tarefa pode conter de processamento necessário para uma apresentação de suporte de dados.
 

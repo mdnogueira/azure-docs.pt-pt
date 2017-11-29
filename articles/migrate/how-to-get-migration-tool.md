@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 11/21/2017
 ms.author: raynew
-ms.openlocfilehash: d633f140635ba184642a2af999efcde845f3ec31
-ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
+ms.openlocfilehash: 730111411a080a3134ad69fee8bfceead4d27fa4
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="migrate-machines-after-assessment"></a>Migrar máquinas após a avaliação
 
@@ -27,11 +27,11 @@ ms.lasthandoff: 11/27/2017
 
 Este artigo descreve como obter sugestões para uma ferramenta de migração após executar uma avaliação de migração.
 
-## <a name="migration-methods"></a>Métodos de migração
+## <a name="migration-tool-suggestion"></a>Sugestão da ferramenta de migração
 
-Depois de uma avaliação utilizando a migração do Azure, é aqui que sugerimos:
+Para obter sugestões sobre as ferramentas de migração, tem de instalar agentes nos computadores no local.  
 
-1. Criar um projeto do Azure migrar, detetar máquinas no local e executar uma avaliação de migração. [Saiba mais](tutorial-assessment-vmware.md).
+1. Criar um projeto do Azure migrar, detetar máquinas no local e criar uma avaliação de migração. [Saiba mais](tutorial-assessment-vmware.md).
 2. Transfira e instale os agentes do Azure migrar em cada máquina no local para o qual pretende ver um método de migração recomendada. [Siga este procedimento](how-to-create-group-machine-dependencies.md#prepare-machines-for-dependency-mapping) para instalar os agentes.
 2. Identifica as máquinas no local que são adequadas para a migração de comparação de precisão e shift. Estas são as VMs que não requerem quaisquer alterações nas aplicações executadas nos mesmos e podem ser migradas conforme está.
 3. Para a migração de comparação de precisão e shift, sugerimos utilizando o Azure Site Recovery. [Saiba mais](../site-recovery/tutorial-migrate-on-premises-to-azure.md). Em alternativa, pode utilizar 3rd ferramentas de terceiros que suportam a migração para o Azure.

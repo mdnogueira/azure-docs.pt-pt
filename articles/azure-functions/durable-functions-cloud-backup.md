@@ -14,11 +14,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: ef6e649d2f5563ea066b70d5ef3f80c5af36ce23
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: 85484b79012243afd374a97e7f518e9a8b1043ea
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Cenário de fan-out/fan-em funções durável - exemplo de cópia de segurança de nuvem
 
@@ -67,13 +67,13 @@ Esta função do orchestrator, essencialmente, faz o seguinte:
 4. Aguarda para todos os carregamentos concluir.
 5. Devolve a soma total de bytes que foram carregados para o Blob Storage do Azure.
 
-Tenha em atenção o `await Task.WhenAll(tasks);` linha. Todas as chamadas para o `E2_CopyFileToBlob` função foram *não* aguardado. Isto é intencional para permitir que sejam executadas em paralelo. Quando é passar esta matriz de tarefas para `Task.WhenAll`, vamos voltar a uma tarefa que não concluir *até que concluíram todas as operações de cópia*. Se estiver familiarizado com a tarefa paralela biblioteca (TPL) no .NET, em seguida, este não é novidade para si. A diferença é que estas tarefas poderão estar em execução em várias VMs em simultâneo, e a extensão garante que a execução de ponto a ponto seja resistente a Reciclagem de processo.
+Tenha em atenção o `await Task.WhenAll(tasks);` linha. Todas as chamadas para o `E2_CopyFileToBlob` função foram *não* aguardado. Isto é intencional para permitir que sejam executadas em paralelo. Quando é passar esta matriz de tarefas para `Task.WhenAll`, vamos voltar a uma tarefa que não concluir *até que concluíram todas as operações de cópia*. Se estiver familiarizado com a tarefa paralela biblioteca (TPL) no .NET, em seguida, este não é novidade para si. A diferença é que estas tarefas poderão estar em execução em várias VMs em simultâneo, e a extensão de funções durável garante que a execução de ponto a ponto seja resistente a Reciclagem de processo.
 
 Depois de aguardar de `Task.WhenAll`, sabemos que todas as chamadas de função concluíram e de tem devolvido fazer uma cópia de valores para nós. Cada chamada para `E2_CopyFileToBlob` devolve o número de bytes carregado, pelo que a calcular a contagem de total de bytes de soma um fim de adição de todos os os valores de retorno em conjunto.
 
 ## <a name="helper-activity-functions"></a>Funções de atividade de programa auxiliar
 
-As funções de atividade de programa auxiliar, tal como com outros exemplos, são apenas regulares funções que utilizam o `activityTrigger` acionar o enlace. Por exemplo, *o function.json* de ficheiros para `E2_GetFileList` se parece com o seguinte:
+As funções de atividade de programa auxiliar, tal como acontece com outros exemplos, são apenas regulares funções que utilizam o `activityTrigger` acionar o enlace. Por exemplo, o *function.json* de ficheiros para `E2_GetFileList` se parece com o seguinte:
 
 [!code-json[Main](~/samples-durable-functions/samples/csx/E2_GetFileList/function.json)]
 
@@ -92,7 +92,7 @@ A implementação também é pretty simples. Ocorre utilizar algumas funcionalid
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/run.csx)]
 
-A implementação carrega o ficheiro de disco e no modo assíncrono as sequências de conteúdo para um blob com o mesmo nome. O valor de retorno é o número de bytes copiadas para o armazenamento, o que é utilizado pela função do orchestrator para a soma de agregação de computação.
+A implementação carrega o ficheiro de disco e no modo assíncrono as sequências de conteúdo para um blob com o mesmo nome no contentor "cópias de segurança". O valor de retorno é o número de bytes copiadas para o armazenamento, o que é utilizado pela função do orchestrator para a soma de agregação de computação.
 
 > [!NOTE]
 > Este é um exemplo perfeito de mover as operações de e/s para um `activityTrigger` função. Não só o trabalho pode ser distribuído por várias VMs diferentes, mas o utilizador também obtém as vantagens de pontos de verificação o progresso. Se o processo de anfitrião obtém terminado por qualquer motivo, sabe que carregamentos já tem concluído.

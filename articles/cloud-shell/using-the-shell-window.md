@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2017
 ms.author: juluk
-ms.openlocfilehash: 5d376ea0bce1088206aa369decf92b1b7523918a
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 4eb5680c618d78e0722e1eb4a0f551f26b4dc902
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="using-the-azure-cloud-shell-window"></a>Utilizando a janela da Shell de nuvem do Azure
 
@@ -32,7 +32,7 @@ Utilize o Seletor de ambiente na barra de ferramentas Shell da nuvem para trocar
 ## <a name="restart-cloud-shell"></a>Reiniciar o Shell de nuvem
 ![](media/using-the-shell-window/restart.png)
 > [!WARNING]
-> Reiniciar o Shell de nuvem irá repor o estado da máquina e todos os ficheiros não persistentes ao seu ficheiro partilha serão perdida.
+> Reiniciar o Shell de nuvem irá repor o estado da máquina e todos os ficheiros não persistentes pelo seu Azure partilha de ficheiros serão perdida.
 
 * Clique no ícone de reinício na barra de ferramentas Shell da nuvem para repor o estado da máquina.
 

@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.devlang: azure-cli
 ms.topic: article
-ms.date: 11/03/2017
-ms.openlocfilehash: 0cfce63b1523f939dc2d706dba771e56ce9ccd6c
-ms.sourcegitcommit: 38c9176c0c967dd641d3a87d1f9ae53636cf8260
+ms.date: 11/27/2017
+ms.openlocfilehash: 7027669597b8c1989f7baac5c5f9d997b218750a
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-postgresql-by-using-the-azure-cli"></a>Como criar cópias de segurança e restaurar um servidor na base de dados do Azure para PostgreSQL utilizando a CLI do Azure
 
@@ -41,7 +41,7 @@ Com esta funcionalidade de cópia de segurança automática, pode restaurar o se
 ## <a name="restore-a-database-to-a-previous-point-in-time-by-using-the-azure-cli"></a>Restaurar uma base de dados para um ponto anterior no tempo utilizando a CLI do Azure
 Utilize base de dados do Azure para PostgreSQL para restaurar o servidor para um ponto anterior no tempo. Os dados restaurados são copiados para um novo servidor e o servidor existente for deixado como está. Por exemplo, se uma tabela acidentalmente for removida, ao meio-dia hoje em dia, pode restaurar a hora imediatamente antes ao meio-dia. Em seguida, pode obter a tabela em falta e os dados da cópia de restaurada do servidor. 
 
-Para restaurar o servidor, utilizar a CLI do Azure [restauro do servidor az postgres](/cli/azure/postgres/server#restore) comando.
+Para restaurar o servidor, utilizar a CLI do Azure [restauro do servidor az postgres](/cli/azure/postgres/server#az_postgres_server_restore) comando.
 
 ### <a name="run-the-restore-command"></a>Execute o comando de restauro
 

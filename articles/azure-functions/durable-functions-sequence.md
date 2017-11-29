@@ -14,11 +14,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 913805901bf8131e4908be03e9213539a26205ed
-ms.sourcegitcommit: 5d772f6c5fd066b38396a7eb179751132c22b681
+ms.openlocfilehash: 0973f83ae839597f3b499814a4a04a8a640a1fb6
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Encadeamento nas funções durável - exemplo de sequência de Olá de função
 
@@ -46,7 +46,7 @@ Se utilizar o portal do Azure para desenvolvimento, eis o conteúdo a *function.
 O mais importante é o `orchestrationTrigger` tipo de enlace. Todas as funções do orchestrator tem de utilizar este tipo de Acionador.
 
 > [!WARNING]
-> Para cumprir a regra "nenhum e/s" das funções do orchestrator, não utilize qualquer entrada ou saída enlaces ao utilizar o `orchestrationTrigger` acionar o enlace.  Se outras de entrada ou saída enlaces são necessários, estes em vez disso, devem ser utilizadas no contexto de `activityTrigger` funções.
+> Para cumprir a regra "nenhum e/s" das funções do orchestrator, não utilize qualquer entrada ou saída enlaces ao utilizar o `orchestrationTrigger` acionar o enlace.  Se outras de entrada ou saída enlaces são necessários, estes em vez disso, devem ser utilizadas no contexto de `activityTrigger` funções, que são chamadas do orchestrator.
 
 ## <a name="c-script"></a>Script C#
 
@@ -54,7 +54,7 @@ Eis o código de origem:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E1_HelloSequence/run.csx)]
 
-Todas as funções de orquestração da c# tem de ter um `DurableOrchestrationContext` parâmetro, o que existe no `Microsoft.Azure.WebJobs.Extensions.DurableTask` assemblagem. Se estiver a utilizar o script do c#, a assemblagem pode ser referenciada através de `#r` notação. Este objeto de contexto permite-lhe chamar outros *atividade* funções e transmita os parâmetros de entrada com o respetivo [CallActivityAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallActivityAsync_) método.
+Todas as funções de orquestração da c# tem de ter um parâmetro do tipo `DurableOrchestrationContext`, qual existe a `Microsoft.Azure.WebJobs.Extensions.DurableTask` assemblagem. Se estiver a utilizar o script do c#, a assemblagem pode ser referenciada através de `#r` notação. Este objeto de contexto permite-lhe chamar outros *atividade* funções e transmita os parâmetros de entrada com o respetivo [CallActivityAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallActivityAsync_) método.
 
 As chamadas de código `E1_SayHello` três vezes numa sequência com valores de parâmetro diferentes. O valor de cada chamada de retorno é adicionado ao `outputs` lista, que é devolvida no final da função.
 
@@ -69,7 +69,7 @@ A implementação de `E1_SayHello` é uma cadeia relativamente trivial formataç
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E1_SayHello/run.csx)]
 
-Esta função tem um [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html)parâmetro, que utiliza para obter a entrada que foi transmitida para o mesmo por chamada da função do orchestrator para [CallActivityAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallActivityAsync_)>.
+Esta função tem um parâmetro do tipo [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html), que utiliza para obter a entrada que foi transmitida para o mesmo por chamada da função do orchestrator para [ `CallActivityAsync<T>` ](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallActivityAsync_).
 
 ## <a name="run-the-sample"></a>Executar o exemplo
 

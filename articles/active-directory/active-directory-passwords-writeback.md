@@ -6,21 +6,21 @@ keywords: "Gestão de palavras-passe do Active Directory, gestão de palavras-pa
 documentationcenter: 
 author: MicrosoftGuyJFlo
 manager: femila
-ms.reviewer: gahug
+ms.reviewer: sahenry
 ms.assetid: 
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/28/2017
+ms.date: 11/28/2017
 ms.author: joflore
 ms.custom: it-pro
-ms.openlocfilehash: ea2d910611f1935cadd8eaaf5760460f480f0c6c
-ms.sourcegitcommit: 1d8612a3c08dc633664ed4fb7c65807608a9ee20
+ms.openlocfilehash: 8ca760c3f144cda15920dd401c6a8726d3d53da0
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="password-writeback-overview"></a>Descrição geral de repetição de escrita de palavras-passe
 
@@ -108,8 +108,8 @@ Se não tiver a certeza de que a conta descrita de conta refere-se ao, abra a IU
 
 Se definir estas permissões, a conta de serviço MA para cada floresta pode gerir palavras-passe em nome as contas de utilizador nessa floresta. 
 
->[!IMPORTANT]
->Se não atribuir estas permissões, em seguida, apesar de repetição de escrita parece estar configurada corretamente, os utilizadores receberão erros quando tentarem que gerir as respetivas palavras-passe no local na nuvem.
+> [!IMPORTANT]
+> Se não atribuir estas permissões, em seguida, apesar de repetição de escrita parece estar configurada corretamente, os utilizadores receberão erros quando tentarem que gerir as respetivas palavras-passe no local na nuvem.
 >
 
 > [!NOTE]
@@ -125,7 +125,6 @@ Para configurar as permissões adequadas para a palavra-passe repetição de esc
 5. Escolha a conta que as permissões estão a ser aplicadas a (a partir do programa de configuração do Azure AD Connect).
 6. No **aplica-se a** na lista pendente, selecione **utilizadores descendentes** objetos.
 7. Em **permissões**, selecione as caixas para o seguinte:
-    * **Unexpire-palavra-passe**
     * **Repor palavra-passe**
     * **Alterar palavra-passe**
     * **Escrever lockoutTime**

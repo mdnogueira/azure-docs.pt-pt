@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 08/28/2017
+ms.date: 11/28/2017
 ms.author: nitinme
-ms.openlocfilehash: c48c0931ede6d17078c64cbb1e1dacd21098f792
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 6428c6d9fcb577f18221ee48a61456c460bd8176
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-azure-data-lake-store-for-big-data-requirements"></a>Utilizar o Azure Data Lake Store para requisitos de macrodados
 Existem quatro fases principais grande de processamento de dados:
@@ -38,7 +38,7 @@ Esta secção realça as diferentes origens de dados e as diferentes formas em q
 ### <a name="ad-hoc-data"></a>Dados ad hoc
 Representa os conjuntos de dados menores que são utilizados para fazer o protótipo uma aplicação de macrodados. Existem várias formas de dados ad hoc ingestão relacionadas, consoante a origem dos dados.
 
-| Origem de dados | -La através de inserção |
+| Origem de Dados | -La através de inserção |
 | --- | --- |
 | Computador local |<ul> <li>[Portal do Azure](/data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[CLI do Azure de várias plataformas 2.0](data-lake-store-get-started-cli-2.0.md)</li> <li>[Utilizando as ferramentas do Data Lake para Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
 | Blob de armazenamento do Azure |<ul> <li>[Azure Data Factory](../data-factory/connector-azure-data-lake-store.md)</li> <li>[Ferramenta de AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp em execução no cluster do HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |

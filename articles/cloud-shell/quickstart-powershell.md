@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: damaerte
-ms.openlocfilehash: 995a5bf0b28f6bfa0e501f5930b9efcad9041b8c
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 913bd917ae7c2b44df097ead9c3e35841338905c
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell-preview"></a>Início rápido para o PowerShell na Shell de nuvem do Azure (pré-visualização)
 
@@ -288,7 +288,7 @@ Para um comando específico, ainda pode fazer Get-Help seguido de um cmdlet.
 PS Azure:\> Get-Help Get-AzureRmVM
 ```
 
-## <a name="use-azure-file-storage-to-store-your-data"></a>Utilizar o File Storage do Azure para armazenar os dados
+## <a name="use-azure-files-to-store-your-data"></a>Utilize ficheiros do Azure para armazenar os dados
 
 Pode criar um script, diga `helloworld.ps1`e guardá-lo para o `CloudDrive` para utilizá-lo entre sessões de shell.
 

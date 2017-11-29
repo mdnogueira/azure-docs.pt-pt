@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 08/03/2017
+ms.date: 11/27/2017
 ms.author: danlep
-ms.openlocfilehash: 87d60ae51aaa33b709d272605419fd85eeb5d93d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c77cd0148a7e3e7b99e90e29bc1499dae8f95028
+ms.sourcegitcommit: 651a6fa44431814a42407ef0df49ca0159db5b02
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="install-a-lemp-web-server-on-an-azure-vm"></a>Instalar um servidor de web LEMP numa VM do Azure
 Este artigo explica como implementar um servidor web NGINX, o MySQL e o PHP (pilha LEMP) numa VM com Ubuntu no Azure. A pilha LEMP é uma alternativa ao populares [pilha LAMP](tutorial-lamp-stack.md), que também pode instalar no Azure. Para ver o servidor LEMP em ação, opcionalmente, pode instalar e configurar um site WordPress. Neste tutorial, ficará a saber como:
@@ -31,6 +31,8 @@ Este artigo explica como implementar um servidor web NGINX, o MySQL e o PHP (pil
 > * Certifique-se a instalação e configuração
 > * Instalar o WordPress no servidor LEMP
 
+
+Esta configuração é para testes rápidos ou prova de conceito.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -73,15 +75,16 @@ Verificar a versão do MySQL com o seguinte comando (tenha em atenção o capita
 mysql -V
 ```
 
-Recomendamos a executar o script seguinte para ajudar a proteger a instalação do MySQL:
+Para ajudar a proteger a instalação do MySQL, execute o `mysql_secure_installation` script. Se estiver apenas a configurar um servidor temporário, pode ignorar este passo. 
 
 ```bash
 mysql_secure_installation
 ```
 
-Introduza a palavra-passe de raiz do MySQL e configurar as definições de segurança para o seu ambiente.
+Introduza uma palavra-passe de raiz para MySQL e configurar as definições de segurança para o seu ambiente.
 
-Se pretender criar uma base de dados MySQL, adicionar utilizadores ou alterar as definições de configuração, no início de sessão MySQL:
+Se pretender experimentar funcionalidades MySQL (criar uma base de dados MySQL, adicionar utilizadores ou alterar as definições de configuração), no início de sessão MySQL. Este passo não é necessário para concluir este tutorial. 
+
 
 ```bash
 mysql -u root -p

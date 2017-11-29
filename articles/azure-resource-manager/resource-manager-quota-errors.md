@@ -11,13 +11,13 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: support-article
-ms.date: 09/13/2017
+ms.date: 11/27/2017
 ms.author: tomfitz
-ms.openlocfilehash: 6a8024a12c4a79e92e37df0a56b6e6bd0cb6a8d9
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3ed3da2d9730d8c30d8170ddf40fe4895dfa5dec
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Resolva os erros para quotas de recursos
 
@@ -93,9 +93,29 @@ Virtual Machines                             0 10000 Count
 
 ### <a name="solution-3"></a>Solução 3
 
-Se precisar de aumentar o limite de quota, vá para o portal de ficheiros e um problema de suporte para aumentar a quota para a região na qual pretende implementar.
+Para pedir um aumento de quota, aceda ao portal do e um problema de suporte de ficheiros. No problema suporte, pedir um aumento da sua quota para a região na qual pretende implementar.
 
 > [!NOTE]
 > Lembre-se de que para os grupos de recursos, a quota para cada região individuais, não para a subscrição completa. Se precisar de implementar 30 núcleos nos EUA oeste, terá de voltar a pedir 30 núcleos do Gestor de recursos em EUA oeste. Se precisar de implementar 30 núcleos em qualquer uma das regiões aos quais têm acesso, deverá solicitar ao para 30 núcleos do Gestor de recursos em todas as regiões.
 >
 >
+
+1. Selecione **subscrições**.
+
+   ![Subscrições](./media/resource-manager-quota-errors/subscriptions.png)
+
+2. Selecione a subscrição que tem uma quota maior.
+
+   ![Selecionar subscrição](./media/resource-manager-quota-errors/select-subscription.png)
+
+3. Selecione **utilização + quotas**
+
+   ![Selecione e quotas de utilização](./media/resource-manager-quota-errors/select-usage-quotas.png)
+
+4. No canto superior direito, selecione **pedir aumento**.
+
+   ![Aumento do pedido](./media/resource-manager-quota-errors/request-increase.png)
+
+5. Preencha os formulários para o tipo de quota que precisa de aumentar.
+
+   ![Preencha o formulário](./media/resource-manager-quota-errors/forms.png)

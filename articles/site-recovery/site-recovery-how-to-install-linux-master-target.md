@@ -3,7 +3,7 @@ title: "Como instalar um servidor de destino principal do Linux para ativação 
 description: "Antes de trocar uma máquina virtual Linux, precisa de um servidor de destino principal do Linux. Saiba como instalar um."
 services: site-recovery
 documentationcenter: 
-author: ruturaj
+author: rajani-janaki-ram
 manager: gauravd
 editor: 
 ms.assetid: 44813a48-c680-4581-a92e-cecc57cc3b1e
@@ -12,10 +12,10 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: 
-ms.date: 11/28/2017
-ms.author: ruturajd
-ms.openlocfilehash: 029e1b51c52e440666238f6177d15aea0a5e07a7
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.date: 11/22/2017
+ms.author: rajanaki
+ms.openlocfilehash: 7b2416617696e1df30b08f039ab39bfe7b57e093
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/28/2017
@@ -206,7 +206,7 @@ Para ativar este parâmetro, siga os passos seguintes:
 
 #### <a name="disable-kernel-upgrades"></a>Desativar as atualizações de kernel
 
-Servidor de destino principal do Azure Site Recovery requer uma versão muito específica do Ubuntu, certifique-se de que as atualizações de kernel estão desativadas para a máquina virtual.
+Servidor de destino principal do Azure Site Recovery requer uma versão específica do Ubuntu, certifique-se de que as atualizações de kernel estão desativadas para a máquina virtual.
 
 Se as atualizações de kernel estiverem ativadas, em seguida, quaisquer atualizações regulares fazer com que o servidor de destino mestre para avaria.
 
@@ -369,12 +369,12 @@ Após a conclusão da instalação, registe o servidor de configuração utiliza
     /usr/local/ASR/Vx/bin/UnifiedAgentConfigurator.sh -i 104.40.75.37 -P passphrase.txt
     ```
 
-   Aguarde pela conclusão do script. Se o destino principal for registado com êxito, o destino principal está listado no **infraestrutura de recuperação de Site** página do portal.
+   Aguarde pela conclusão do script. Se o destino principal está registado com êxito, o destino principal está listado no **infraestrutura de recuperação de Site** página do portal.
 
 
 ### <a name="upgrade-the-master-target"></a>Atualizar o destino principal
 
-Execute o instalador. Deteta automaticamente que o agente está instalado no destino principal. Para atualizar, selecione **Y**.  Depois do programa de configuração foi concluído, verifique a versão do destino mestre instalado utilizando o seguinte comando.
+Execute o instalador. Deteta automaticamente que o agente está instalado no destino principal. Para atualizar, selecione **Y**.  Depois do programa de configuração foi concluído, verifique a versão do destino principal instalado utilizando o seguinte comando:
 
     ```
     cat /usr/local/.vx_version
@@ -387,7 +387,7 @@ Pode ver que o **versão** campo indica o número de versão de destino principa
 Tem de instalar as ferramentas do VMware no destino principal para que possa detetar os arquivos de dados. Se as ferramentas não estiverem instaladas, o ecrã de reproteção não está listado nos arquivos de dados. Após a instalação das ferramentas VMware, terá de reiniciar.
 
 ## <a name="next-steps"></a>Passos seguintes
-Após a instalação e o registo do destino mestre tem finsihed, pode ver o destino principal que aparecem no **destino mestre** secção **infraestrutura de recuperação de Site**, sob a configuração Descrição geral do servidor.
+Depois de concluída a instalação e o registo do destino mestre, pode ver o destino principal que aparecem no **destino mestre** secção **infraestrutura de recuperação de Site**, sob a configuração Descrição geral do servidor.
 
 Agora pode continuar com [só](site-recovery-how-to-reprotect.md), seguido de reativação pós-falha.
 

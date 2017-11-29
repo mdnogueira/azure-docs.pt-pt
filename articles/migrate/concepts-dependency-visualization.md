@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
 ms.date: 11/22/2017
 ms.author: raynew
-ms.openlocfilehash: e787cd6746b53c28fc1495b9a3ac62f2aa08f639
-ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
+ms.openlocfilehash: a8a8cee327dac8adfb0ae53d101c382ef20599d2
+ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/27/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dependency-visualization"></a>Visualização de dependência
 
@@ -43,7 +43,7 @@ Para utilizar a visualização de dependência, terá de transferir e instalar a
 
 ## <a name="do-i-need-to-pay-for-it"></a>É necessário pagar para o mesmo?
 
-Sim. A área de trabalho de análise de registos é criada por predefinição, mas não é utilizada a menos que utilize a visualização de dependência no Azure migrar. Se utilizar a visualização de dependência (ou utilizar a área de trabalho fora do Azure migrar), são-lhe cobrados para utilização de área de trabalho.  [Saiba mais](https://www.microsoft.com/cloud-platform/operations-management-suite) sobre os preços da solução de mapa de serviço. 
+Sim. A área de trabalho de análise de registos é criada por predefinição, mas não é utilizada a menos que utilize a visualização de dependência no Azure migrar. Se utilizar a visualização de dependência (ou utilizar a área de trabalho fora do Azure migrar), são-lhe cobrados para utilização de área de trabalho.  [Saiba mais](https://azure.microsoft.com/pricing/details/insight-analytics/) sobre os preços da solução de mapa de serviço. 
 
 ## <a name="how-do-i-manage-the-workspace"></a>Como gerir a área de trabalho?
 

@@ -16,11 +16,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 10/12/2017
 ms.author: chrande
-ms.openlocfilehash: cf965170e0c645e77a9b8829a10a18b29889a061
-ms.sourcegitcommit: 9ae92168678610f97ed466206063ec658261b195
+ms.openlocfilehash: 76be085aa114b571f40603b4f182b13b9354b8b8
+ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-functions-developers-guide"></a>Guia para programadores as funções do Azure
 Nas funções do Azure, funções específicas partilham alguns conceitos técnicos núcleos e componentes, independentemente do idioma ou enlace que utiliza. Antes de ir para detalhes específicos de um determinado idioma ou enlace de aprendizagem, lembre-se de que leia esta descrição geral que se aplica a todos eles.
@@ -57,7 +57,7 @@ O `bindings` propriedade é onde configurou os acionadores e enlaces. Cada enlac
 | `direction` |'no', 'out' |Indica se o enlace é para receber dados para a função ou o envio de dados da função. |
 | `name` |Cadeia |O nome que é utilizado para os dados vinculados na função. Para c#, este é um nome de argumento; para JavaScript, é a chave de uma lista de chave/valor. |
 
-## <a name="function-app"></a>Aplicação de função
+## <a name="function-app"></a>Function App
 Uma aplicação de função é composta por uma ou mais funções individuais que são geridas em conjunto pelo App Service do Azure. Todas as funções de uma aplicação de função partilham o mesmo plano de preços, a implementação contínua e a versão de tempo de execução. As funções de escritas em várias linguagens podem partilhar a mesma aplicação de função. Considere uma aplicação de função como uma forma de organizar e coletivamente gerir as suas funções. 
 
 ## <a name="runtime-script-host-and-web-host"></a>Tempo de execução (anfitrião de script e anfitrião web)
@@ -81,11 +81,8 @@ O editor de função incorporado no portal do Azure permite-lhe atualizar o *fun
 Aplicações de função são criadas no App Service, por isso, todas as [as opções de implementação disponíveis para aplicações web padrão](../app-service/app-service-deploy-local-git.md) também estão disponíveis para aplicações de função. Seguem-se alguns métodos que pode utilizar para carregar ou atualizar os ficheiros de aplicação de função. 
 
 #### <a name="to-use-app-service-editor"></a>Para utilizar o Editor de serviço de aplicações
-1. No portal das funções do Azure, clique em **as definições de aplicação de função**.
-2. No **definições avançadas** secção, clique em **aceda às definições do serviço de aplicações**.
-3. Clique em **Editor do serviço de aplicações** no Menu aplicação Nav em **ferramentas de desenvolvimento**.
-4. Clique em **aceda**.
-   
+1. No portal das funções do Azure, clique em **funcionalidades da plataforma**.
+2. No **ferramentas de desenvolvimento** secção, clique em **Editor do serviço de aplicações**.   
    Depois de o carregamento do Editor de serviço de aplicações, verá o *host.json* função de ficheiros e pastas sob *wwwroot*. 
 5. Abrir ficheiros para editá-los, ou arraste e largue a partir do seu computador de desenvolvimento para carregar ficheiros.
 
