@@ -16,11 +16,11 @@ ms.date: 10/17/2017
 ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: abf207a3ceec708a828170936f7dc7948ccf34a9
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 67df6d893c0770b9210fc73e96865d5c6396796c
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="how-to-add-an-azure-subscription-to-azure-active-directory"></a>Como adicionar uma subscrição do Azure ao Azure Active Directory
 Este artigo inclui informações sobre a relação entre a subscrição do Azure e o Azure Active Directory (Azure AD) e como adicionar uma subscrição existente ao diretório do Azure AD. A sua subscrição do Azure tem uma relação de confiança com o Azure AD, o que significa que confia no diretório para autenticar utilizadores, serviços e dispositivos. Várias subscrições podem confiar no mesmo diretório, mas cada subscrição apenas pode confiar num diretório. 
@@ -39,7 +39,6 @@ Tem de iniciar sessão com uma conta que existe no diretório atual que está as
 5. O destinatário clica na ligação e segue as instruções, o que inclui a introdução das respetivas informações de pagamento. Quando o destinatário concluir o processo com êxito, a subscrição é transferida. 
 6. O diretório predefinido da subscrição é alterado para o diretório em que o utilizador se encontra.
 
-Para obter mais informações, veja [Transferir a propriedade da subscrição do Azure para outra conta](../billing/billing-subscription-transfer.md).
 
 ## <a name="next-steps"></a>Passos seguintes
 * Para obter mais informações sobre como alterar os administradores de uma subscrição do Azure, veja [Transferir a propriedade de uma subscrição do Azure para outra conta](../billing/billing-subscription-transfer.md)
