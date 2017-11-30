@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/05/2017
 ms.author: ryanwi
-ms.openlocfilehash: 0a0ab748dcf722358633c7be350c6addcd61352d
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.openlocfilehash: 308de5c90f1c06ed1dfe2981960a24beee066cf3
+ms.sourcegitcommit: 5bced5b36f6172a3c20dbfdf311b1ad38de6176a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="deploy-an-azure-service-fabric-linux-container-application-on-azure"></a>Implementar uma aplicação de contentor do Linux do Azure Service Fabric no Azure
 O Azure Service Fabric é uma plataforma de sistemas distribuídos par implementar e gerir microsserviços e contentores dimensionáveis e fiáveis. 
@@ -33,11 +33,11 @@ Neste início rápido, vai aprender a:
 > * Dimensionar e efetuar a ativação pós-falha de contentores no Service Fabric
 
 ## <a name="prerequisite"></a>Pré-requisito
-Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/en-us/free/) antes de começar.
+Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
   
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e utilizar a interface de linha de comandos (CLI) localmente, certifique-se de que está a executar a versão 2.0.4 ou posterior da CLI do Azure. Para localizar a versão, execute az - versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+Se optar por instalar e utilizar a interface de linha de comandos (CLI) localmente, certifique-se de que está a executar a versão 2.0.4 ou posterior da CLI do Azure. Para localizar a versão, execute az - versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="get-application-package"></a>Obter o pacote de aplicação
 Para implementar contentores no Service Fabric, precisa de um conjunto de ficheiros de manifesto (a definição da aplicação), que descrevem os contentores individuais e a aplicação.
