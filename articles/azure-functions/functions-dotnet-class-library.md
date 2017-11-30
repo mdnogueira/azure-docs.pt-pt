@@ -16,11 +16,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 10/10/2017
 ms.author: glenga
-ms.openlocfilehash: a856c3b04dc458c0f1e0017066c35edd743565fd
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 6f6f89d62f1442198f80247cc5c433aa0c54030b
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="using-net-class-libraries-with-azure-functions"></a>Bibliotecas de classe do .NET a utilizar com as funções do Azure
 
@@ -429,10 +429,8 @@ public static SMSMessage Run([QueueTrigger("myqueue-items", Connection = "AzureW
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Para obter mais informações sobre como utilizar as funções do Azure em c# scripting, consulte [C de funções do Azure\# referência para programadores de scripts](functions-reference-csharp.md).
-
-[!INCLUDE [next steps](../../includes/functions-bindings-next-steps.md)]
-
+> [!div class="nextstepaction"]
+> [Saiba mais sobre as funções do Azure acionadores e enlaces](functions-triggers-bindings.md)
 
 <!-- NuGet packages --> 
 [Microsoft.Azure.WebJobs]: http://www.nuget.org/packages/Microsoft.Azure.WebJobs/2.1.0-beta1

@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 07/17/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 4e3ad8a5c08b739d8b2c6e224db0c8f88c1893ba
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d2d6a0b00704e1d97be9a4c5bd00ba37374419e5
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="secure-a-web-server-with-ssl-certificates-on-a-linux-virtual-machine-in-azure"></a>Proteger um servidor web com certificados SSL numa máquina virtual com Linux no Azure
 Para proteger servidores web, um certificado Secure Sockets mais tarde (SSL) pode ser utilizado para encriptar o tráfego da web. Estes certificados SSL podem ser armazenados no Cofre de chaves do Azure e permitem implementações seguras de certificados para máquinas de virtuais (VMs) do Linux no Azure. Neste tutorial, ficará a saber como:
@@ -60,7 +60,7 @@ az keyvault create \
 ```
 
 ## <a name="generate-a-certificate-and-store-in-key-vault"></a>Gerar um certificado e armazenar no Cofre de chaves
-Para utilização em produção, deve importar um certificado válido assinado por um fornecedor fidedigno com [importação de certificados de keyvault az](/cli/azure/certificate#import). Para este tutorial, o exemplo seguinte mostra como pode gerar um certificado autoassinado com [Criar certificado de keyvault az](/cli/azure/certificate#create) que utiliza a política de certificado predefinido:
+Para utilização em produção, deve importar um certificado válido assinado por um fornecedor fidedigno com [importação de certificados de keyvault az](/cli/azure/keyvault/certificate#az_keyvault_certificate_import). Para este tutorial, o exemplo seguinte mostra como pode gerar um certificado autoassinado com [Criar certificado de keyvault az](/cli/azure/keyvault/certificate#az_keyvault_certificate_create) que utiliza a política de certificado predefinido:
 
 ```azurecli-interactive 
 az keyvault certificate create \

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: 
 ms.date: 11/15/2017
 ms.author: govindk
-ms.openlocfilehash: cbb752692fbd618d9e7e14c8a80b582aad657b38
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: d1b2645580c12777ea39816bdcc62cfabc172d16
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-cosmos-db-how-to-query-table-data-by-using-the-table-api"></a>Azure Cosmos DB: Como consultar dados da tabela, utilizando a API de tabela
 
@@ -38,7 +38,7 @@ As consultas neste artigo, utilize o seguinte exemplo `People` tabela:
 | Santos | Bernardo | Ben@contoso.com| 425-555-0102 |
 | Santos | Jorge | Jeff@contoso.com| 425-555-0104 | 
 
-Consulte [consultar tabelas e entidades] (https://docs.microsoft.com/rest/api/storageservices/fileservices/querying-tables-and-entities) para obter detalhes sobre a consulta utilizando a API de tabela. 
+Consulte [consultar tabelas e entidades](https://docs.microsoft.com/rest/api/storageservices/fileservices/querying-tables-and-entities) para obter detalhes sobre a consulta utilizando a API de tabela. 
 
 Para obter mais informações sobre as capacidades de premium oferece de BD do Cosmos do Azure, consulte [API de tabela de base de dados do Azure Cosmos](table-introduction.md) e [desenvolver com a API de tabela no .NET](tutorial-develop-table-dotnet.md). 
 

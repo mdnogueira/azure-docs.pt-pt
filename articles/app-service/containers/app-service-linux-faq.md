@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: aelnably;wesmc
-ms.openlocfilehash: 265538a7e31d58a7d58c9e30870510eb66954f44
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: d262d9c2bd23a09c2efdb5fd6695bb2ed29cae54
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-app-service-on-linux-faq"></a>App Service do Azure no Linux FAQ
 
@@ -64,6 +64,20 @@ Sim.
 **Pode utilizar *do web deploy* para implementar a minha aplicação web?**
 
 Sim, tem de definir uma aplicação definição chamado `WEBSITE_WEBDEPLOY_USE_SCM` para *falso*.
+
+**Falha na implementação do Git da minha aplicação ao utilizar a aplicação web de Linux. Como posso solução o problema?**
+
+Se falhar a implementação de Git para a sua aplicação web do Linux, pode escolher as seguintes opções alternativas para implementar o código de aplicação:
+
+- Utilizar a funcionalidade de entrega contínua (pré-visualização): pode armazenar o código fonte da aplicação num repositório de Git de serviços da equipa ou repositório do GitHub para utilizar a distribuição contínua do Azure. Para obter mais detalhes, consulte [como configurar a entrega contínua da aplicação web de Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/).
+
+- Utilize o [ZIP implementar API](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file): para utilizar esta API, [SSH para a aplicação web](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-ssh-support#making-a-client-connection) e aceda à pasta onde pretende implementar o seu código. Execute o seguinte:
+
+   ```
+   curl -X POST -u <user> --data-binary @<zipfile> https://{your-sitename}.scm.azurewebsites.net/api/zipdeploy
+   ```
+
+   Se obtiver um erro que o `curl` comando não foi encontrado, certifique-se instalar o curl utilizando `apt-get install curl` antes de executar o anterior `curl` comando.
 
 ## <a name="language-support"></a>Suporte de idiomas
 

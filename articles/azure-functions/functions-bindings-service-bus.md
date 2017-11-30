@@ -1,9 +1,9 @@
 ---
-title: "Acionadores de funções Service Bus do Azure e os enlaces"
+title: "Enlaces de Service Bus do Azure para as funções do Azure"
 description: "Compreenda como utilizar o Service Bus do Azure acionadores e enlaces das funções do Azure."
 services: functions
 documentationcenter: na
-author: christopheranderson
+author: tdykstra
 manager: cfowler
 editor: 
 tags: 
@@ -15,20 +15,20 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/01/2017
-ms.author: glenga
-ms.openlocfilehash: 5ef558f19bb88d208b0d224e30137ac237ab64bc
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.author: tdykstra
+ms.openlocfilehash: 6d59b26fa4ab17c17827a8e3450e808e40e5c2dd
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="azure-functions-service-bus-bindings"></a>Enlaces de funções Service Bus do Azure
+# <a name="azure-service-bus-bindings-for-azure-functions"></a>Enlaces de Service Bus do Azure para as funções do Azure
 
 Este artigo explica como trabalhar com os enlaces de Service Bus do Azure das funções do Azure. Funções do Azure suporta acionam e de saída enlaces para tópicos e filas do Service Bus.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="service-bus-trigger"></a>Acionador de Service Bus
+## <a name="trigger"></a>Acionador
 
 Utilize o acionador de Service Bus para responder a mensagens a partir de uma fila do Service Bus ou tópico. 
 
@@ -144,7 +144,7 @@ module.exports = function(context, myQueueItem) {
 };
 ```
 
-## <a name="trigger---attributes-for-precompiled-c"></a>Acionador - atributos para pré-compilada c#
+## <a name="trigger---attributes"></a>Acionador - atributos
 
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize os seguintes atributos para configurar um acionador de barramento de serviço:
 
@@ -156,6 +156,9 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
   [FunctionName("ServiceBusQueueTriggerCSharp")]                    
   public static void Run(
       [ServiceBusTrigger("myqueue")] string myQueueItem, TraceWriter log)
+  {
+      ...
+  }
   ```
 
   Pode definir o `Connection` propriedade para especificar a conta de barramento de serviço a utilizar, conforme mostrado no exemplo seguinte:
@@ -165,7 +168,12 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
   public static void Run(
       [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] 
       string myQueueItem, TraceWriter log)
+  {
+      ...
+  }
   ```
+
+  Para obter um exemplo completado, consulte [acionador - pré-compilada c# exemplo](#trigger---c-example).
 
 * [ServiceBusAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs), definida no pacote NuGet [Microsoft.Azure.WebJobs.ServiceBus](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus)
 
@@ -180,6 +188,9 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
       public static void Run(
           [ServiceBusTrigger("myqueue", AccessRights.Manage)] 
           string myQueueItem, TraceWriter log)
+  {
+      ...
+  }
   ```
 
 A conta de barramento de serviço a utilizar é determinada pela seguinte ordem:
@@ -202,8 +213,10 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**queueName**|**QueueName**|Nome da fila para monitorizar.  Defina apenas se uma fila, não para um tópico de monitorização.
 |**topicName**|**TopicName**|Nome do tópico para monitorizar. Defina apenas se a monitorização um tópico, não para uma fila.|
 |**subscriptionName**|**SubscriptionName**|Nome da subscrição para monitorizar. Defina apenas se a monitorização um tópico, não para uma fila.|
-|**ligação**|**Ligação**|O nome de uma definição de aplicação que contém a cadeia de ligação de barramento de serviço a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome. Por exemplo, se definir `connection` para "MyServiceBus", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyServiceBus." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação do Service Bus predefinida na definição de aplicação com o nome "AzureWebJobsServiceBus".<br><br>Para obter uma cadeia de ligação, siga os passos apresentados em [obter as credenciais de gestão](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md#obtain-the-management-credentials). A cadeia de ligação tem de ser para um espaço de nomes do Service Bus, que não se limitando a uma fila específica ou um tópico. <br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação**|**Ligação**|O nome de uma definição de aplicação que contém a cadeia de ligação de barramento de serviço a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome. Por exemplo, se definir `connection` para "MyServiceBus", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyServiceBus." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação do Service Bus predefinida na definição de aplicação com o nome "AzureWebJobsServiceBus".<br><br>Para obter uma cadeia de ligação, siga os passos apresentados em [obter as credenciais de gestão](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md#obtain-the-management-credentials). A cadeia de ligação tem de ser para um espaço de nomes do Service Bus, que não se limitando a uma fila específica ou um tópico. |
 |**accessRights**|**Acesso**|Direitos de acesso para a cadeia de ligação. Os valores disponíveis são `manage` e `listen`. A predefinição é `manage`, que indica que o `connection` tem o **gerir** permissão. Se utilizar uma cadeia de ligação que não tenha o **gerir** conjunto de permissões, `accessRights` "escutar". Caso contrário, as funções de tempo de execução poderá falhar a tentar efetuar operações que exigem gerirem direitos.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="trigger---usage"></a>Acionador - utilização
 
@@ -229,7 +242,7 @@ O [host.json](functions-host-json.md#servicebus) ficheiro contém definições q
 
 [!INCLUDE [functions-host-json-event-hubs](../../includes/functions-host-json-service-bus.md)]
 
-## <a name="service-bus-output-binding"></a>Enlace de saída do Service Bus
+## <a name="output"></a>Saída
 
 Utilize o enlace de saída do Service Bus do Azure para enviar mensagens de fila ou um tópico.
 
@@ -396,27 +409,35 @@ module.exports = function (context, myTimer) {
 };
 ```
 
-## <a name="output---attributes-for-precompiled-c"></a>Saída - atributos para pré-compilada c#
+## <a name="output---attributes"></a>Saída - atributos
 
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [ServiceBusAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAttribute.cs), que está definido no pacote NuGet [Microsoft.Azure.WebJobs.ServiceBus](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus).
 
-  O construtor do atributo tem o nome da fila ou tópico e a subscrição. Também pode especificar os direitos de acesso da ligação. Como escolher os definição de direitos de acesso é explicado no [de saída - configuração](#output---configuration) secção. Eis um exemplo que mostra o atributo aplicado ao valor de retorno da função:
+O construtor do atributo tem o nome da fila ou tópico e a subscrição. Também pode especificar os direitos de acesso da ligação. Como escolher os definição de direitos de acesso é explicado no [de saída - configuração](#output---configuration) secção. Eis um exemplo que mostra o atributo aplicado ao valor de retorno da função:
 
-  ```csharp
-  [FunctionName("ServiceBusOutput")]
-  [return: ServiceBus("myqueue")]
-  public static string Run([HttpTrigger] dynamic input, TraceWriter log)
-  ```
+```csharp
+[FunctionName("ServiceBusOutput")]
+[return: ServiceBus("myqueue")]
+public static string Run([HttpTrigger] dynamic input, TraceWriter log)
+{
+    ...
+}
+```
 
-  Pode definir o `Connection` propriedade para especificar a conta de barramento de serviço a utilizar, conforme mostrado no exemplo seguinte:
+Pode definir o `Connection` propriedade para especificar a conta de barramento de serviço a utilizar, conforme mostrado no exemplo seguinte:
 
-  ```csharp
-  [FunctionName("ServiceBusOutput")]
-  [return: ServiceBus("myqueue", Connection = "ServiceBusConnection")]
-  public static string Run([HttpTrigger] dynamic input, TraceWriter log)
-  ```
+```csharp
+[FunctionName("ServiceBusOutput")]
+[return: ServiceBus("myqueue", Connection = "ServiceBusConnection")]
+public static string Run([HttpTrigger] dynamic input, TraceWriter log)
+{
+    ...
+}
+```
 
-Pode utilizar o `ServiceBusAccount` atributo para especificar a conta de barramento de serviço a utilizar ao nível de classe, método ou parâmetro.  Para obter mais informações, consulte [acionador - atributos para pré-compilada c#](#trigger---attributes-for-precompiled-c).
+Para obter um exemplo completado, consulte [resultado - pré-compilada c# exemplo](#output---c-example).
+
+Pode utilizar o `ServiceBusAccount` atributo para especificar a conta de barramento de serviço a utilizar ao nível de classe, método ou parâmetro.  Para obter mais informações, consulte [acionador - atributos](#trigger---attributes-for-precompiled-c).
 
 ## <a name="output---configuration"></a>De saída - configuração
 
@@ -430,8 +451,10 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**queueName**|**QueueName**|Nome da fila.  Defina apenas se o envio de mensagens da fila, não para um tópico.
 |**topicName**|**TopicName**|Nome do tópico para monitorizar. Defina apenas se o envio de mensagens de tópico, não para uma fila.|
 |**subscriptionName**|**SubscriptionName**|Nome da subscrição para monitorizar. Defina apenas se o envio de mensagens de tópico, não para uma fila.|
-|**ligação**|**Ligação**|O nome de uma definição de aplicação que contém a cadeia de ligação de barramento de serviço a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome. Por exemplo, se definir `connection` para "MyServiceBus", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyServiceBus." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação do Service Bus predefinida na definição de aplicação com o nome "AzureWebJobsServiceBus".<br><br>Para obter uma cadeia de ligação, siga os passos apresentados em [obter as credenciais de gestão](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md#obtain-the-management-credentials). A cadeia de ligação tem de ser para um espaço de nomes do Service Bus, que não se limitando a uma fila específica ou um tópico. <br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação**|**Ligação**|O nome de uma definição de aplicação que contém a cadeia de ligação de barramento de serviço a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome. Por exemplo, se definir `connection` para "MyServiceBus", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyServiceBus." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação do Service Bus predefinida na definição de aplicação com o nome "AzureWebJobsServiceBus".<br><br>Para obter uma cadeia de ligação, siga os passos apresentados em [obter as credenciais de gestão](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md#obtain-the-management-credentials). A cadeia de ligação tem de ser para um espaço de nomes do Service Bus, que não se limitando a uma fila específica ou um tópico.|
 |**accessRights**|**Acesso** |Direitos de acesso para a cadeia de ligação. Os valores disponíveis são "Gerir" e "escutar". A predefinição é "Gerir", que indica que a ligação tem **gerir** permissões. Se utilizar uma cadeia de ligação que não tenha **gerir** definir as permissões, `accessRights` "escutar". Caso contrário, as funções de tempo de execução poderá falhar a tentar efetuar operações que exigem gerirem direitos.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="output---usage"></a>Saída - utilização
 

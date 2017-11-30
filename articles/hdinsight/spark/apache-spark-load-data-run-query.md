@@ -4,8 +4,8 @@ description: "Início rápido do HDInsight Spark sobre como criar um cluster do 
 keywords: spark quickstart,interactive spark,interactive query,hdinsight spark,azure spark
 services: hdinsight
 documentationcenter: 
-author: nitinme
-manager: jhubbard
+author: mumian
+manager: cgronlun
 editor: cgronlun
 tags: azure-portal
 ms.service: hdinsight
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/22/2017
-ms.author: nitinme
-ms.openlocfilehash: 0d93e261121f11d2a1082b9672e6d979955d3bee
-ms.sourcegitcommit: 6a6e14fdd9388333d3ededc02b1fb2fb3f8d56e5
+ms.author: jgao
+ms.openlocfilehash: db8f0056fa3813e95c2c5bea583d7b66ac64260f
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="run-interactive-queries-on-an-hdinsight-spark-cluster"></a>Executar consultas interativas num cluster do Spark do HDInsight
 

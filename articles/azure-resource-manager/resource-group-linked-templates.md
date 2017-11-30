@@ -12,117 +12,131 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/31/2017
+ms.date: 11/28/2017
 ms.author: tomfitz
-ms.openlocfilehash: 8b58a83ffd473500dd3f76c09e251f9208527d4f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a86d4d8705c7093e3900a9738ddbd364db8bd3b8
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="using-linked-templates-when-deploying-azure-resources"></a>Utilizar modelos ligados ao implementar os recursos do Azure
-De dentro de um modelo Azure Resource Manager, pode ligar a outro modelo permite-lhe decompor a implementação para um conjunto de destino, modelos de finalidade específica. Tal como acontece com decomposing uma aplicação em várias classes de código, decomposição proporciona vantagens em termos de teste, reutilização e facilitar a leitura.  
 
-Pode passar os parâmetros a partir de um modelo principal para um modelo ligado e esses parâmetros diretamente podem mapear para parâmetros ou variáveis expostas pelo modelo de chamada. O modelo ligado também pode passar de uma variável de saída para o modelo de origem, ativar uma troca de dados bidirecional entre os modelos.
+Para implementar a sua solução, pode utilizar um único modelo ou um modelo de principal com vários modelos ligados. Para pequenas e médias soluções, é mais fácil de compreender e manter um único modelo. Conseguir ver todos os recursos e os valores num único ficheiro. Para cenários avançados, modelos ligados permitem-lhe dividir a solução para componentes de destino e reutilizar modelos.
 
-## <a name="linking-to-a-template"></a>Ligar a um modelo
-Criar uma ligação entre dois modelos através da adição de um recurso de implementação no modelo principal que aponta para o modelo ligado. Definir o **templateLink** propriedade para o URI do modelo ligado. Pode fornecer valores de parâmetros para o modelo ligado diretamente no seu modelo ou um ficheiro de parâmetros. O exemplo seguinte utiliza o **parâmetros** propriedade para especificar um valor de parâmetro diretamente.
+Ao utilizar o modelo ligado, criar um modelo de principal que recebe os valores de parâmetros durante a implementação. O modelo de principal contém todos os modelos ligados e transmite os valores para esses modelos conforme necessário.
 
-```json
-"resources": [ 
-  { 
-      "apiVersion": "2017-05-10", 
-      "name": "linkedTemplate", 
-      "type": "Microsoft.Resources/deployments", 
-      "properties": { 
-        "mode": "incremental", 
-        "templateLink": {
-          "uri": "https://www.contoso.com/AzureTemplates/newStorageAccount.json",
-          "contentVersion": "1.0.0.0"
-        }, 
-        "parameters": { 
-          "StorageAccountName":{"value": "[parameters('StorageAccountName')]"} 
-        } 
-      } 
-  } 
-] 
-```
+![modelos ligados](./media/resource-group-linked-templates/nestedTemplateDesign.png)
 
-Como outros tipos de recursos, pode definir as dependências entre o modelo ligado e outros recursos. Por conseguinte, quando a outros recursos necessitam de um valor de saída do modelo ligado, pode certificar-se que o modelo ligado é implementado antes de lhes. Em alternativa, quando o modelo ligado depende de outros recursos, pode certificar-se a que outros recursos são implementados antes do modelo ligado. Pode obter um valor a partir de um modelo ligado com a seguinte sintaxe:
+## <a name="link-to-a-template"></a>Ligar a um modelo
+
+Para ligar a outro modelo, adicione um **implementações** recursos ao seu modelo principal.
 
 ```json
-"[reference('linkedTemplate').outputs.exampleProperty.value]"
-```
-
-O serviço do Gestor de recursos tem de ser capaz de aceder ao modelo ligado. Não é possível especificar um ficheiro local ou um ficheiro que só está disponível na sua rede local para o modelo ligado. Apenas pode fornecer um valor URI que inclui um **http** ou **https**. Uma opção é colocar o seu modelo ligado numa conta do storage e utilize o URI para que o item, tal como mostrado no exemplo seguinte:
-
-```json
-"templateLink": {
-    "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json",
-    "contentVersion": "1.0.0.0",
-}
-```
-
-Embora o modelo ligado tem de estar disponível externamente, não é necessário ser geralmente disponível para o público. Pode adicionar o seu modelo para uma conta de armazenamento privada que seja acessível para apenas o proprietário da conta de armazenamento. Em seguida, crie um token de assinatura (SAS) de acesso partilhado para ativar o acesso durante a implementação. Adicionar esse token SAS para o URI para o modelo ligado. Para obter passos sobre como configurar um modelo de uma conta de armazenamento e de gerar um token SAS, consulte [implementar recursos com modelos do Resource Manager e o Azure PowerShell](resource-group-template-deploy.md) ou [implementar recursos com modelos do Resource Manager e CLI do Azure](resource-group-template-deploy-cli.md). 
-
-O exemplo seguinte mostra um modelo de principal que liga a outro modelo. O modelo ligado é acedido com um token SAS, que é transmitido como um parâmetro.
-
-```json
-"parameters": {
-    "sasToken": { "type": "securestring" }
-},
 "resources": [
-    {
-        "apiVersion": "2017-05-10",
-        "name": "linkedTemplate",
-        "type": "Microsoft.Resources/deployments",
-        "properties": {
-          "mode": "incremental",
-          "templateLink": {
-            "uri": "[concat('https://storagecontosotemplates.blob.core.windows.net/templates/helloworld.json', parameters('sasToken'))]",
-            "contentVersion": "1.0.0.0"
-          }
-        }
-    }
-],
+  {
+      "apiVersion": "2017-05-10",
+      "name": "linkedTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+          "mode": "Incremental",
+          <inline-template-or-external-template>
+      }
+  }
+]
 ```
 
-Apesar do token é transmitido como uma cadeia segura, o URI do modelo ligado, incluindo o token SAS, é registado nas operações de implementação. Para limitar a exposição, defina uma expiração para o token.
+As propriedades de que fornecer para o recurso de implementação variam com base em se estiver a ligar a um modelo externo ou incorporar um modelo de inline no modelo principal.
 
-O Resource Manager processa cada modelo ligado como uma implementação separada. O histórico de implementação para o grupo de recursos, é apresentado o implementações separadas para o principal e modelos aninhados.
+### <a name="inline-template"></a>Modelo de inline
 
-![histórico de implementações](./media/resource-group-linked-templates/linked-deployment-history.png)
-
-## <a name="linking-to-a-parameter-file"></a>Ligar a um ficheiro de parâmetros
-O exemplo seguinte utiliza o **parametersLink** propriedade para ligar a um ficheiro de parâmetros.
+Para incorporar o modelo ligado, utilize o **modelo** propriedade e incluir o modelo.
 
 ```json
-"resources": [ 
-  { 
-     "apiVersion": "2017-05-10", 
-     "name": "linkedTemplate", 
-     "type": "Microsoft.Resources/deployments", 
-     "properties": { 
-       "mode": "incremental", 
-       "templateLink": {
-          "uri":"https://www.contoso.com/AzureTemplates/newStorageAccount.json",
-          "contentVersion":"1.0.0.0"
-       }, 
-       "parametersLink": { 
-          "uri":"https://www.contoso.com/AzureTemplates/parameters.json",
-          "contentVersion":"1.0.0.0"
-       } 
-     } 
-  } 
-] 
+"resources": [
+  {
+    "apiVersion": "2017-05-10",
+    "name": "nestedTemplate",
+    "type": "Microsoft.Resources/deployments",
+    "properties": {
+      "mode": "Incremental",
+      "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {},
+        "variables": {},
+        "resources": [
+          {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('storageName')]",
+            "apiVersion": "2015-06-15",
+            "location": "West US",
+            "properties": {
+              "accountType": "Standard_LRS"
+            }
+          }
+        ]
+      },
+      "parameters": {}
+    }
+  }
+]
 ```
 
-O valor URI para o ficheiro de parâmetros ligado não pode ser um ficheiro local e tem de incluir um **http** ou **https**. O ficheiro de parâmetros também pode ser limitado para acesso através de um token SAS.
+### <a name="external-template-and-external-parameters"></a>Modelo externo e parâmetros externos
+
+Para ligar a um modelo externo e o ficheiro de parâmetros, utilize **templateLink** e **parametersLink**. Quando ligar a um modelo, o serviço do Gestor de recursos tem de ser capaz de aceder ao mesmo. Não é possível especificar um ficheiro local ou um ficheiro que só está disponível na sua rede local. Apenas pode fornecer um valor URI que inclui um **http** ou **https**. Uma opção é colocar o seu modelo ligado numa conta de armazenamento e utilizar o URI para que o item.
+
+```json
+"resources": [
+  {
+     "apiVersion": "2017-05-10",
+     "name": "linkedTemplate",
+     "type": "Microsoft.Resources/deployments",
+     "properties": {
+       "mode": "incremental",
+       "templateLink": {
+          "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
+          "contentVersion":"1.0.0.0"
+       },
+       "parametersLink": {
+          "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.parameters.json",
+          "contentVersion":"1.0.0.0"
+       }
+     }
+  }
+]
+```
+
+### <a name="external-template-and-inline-parameters"></a>Parâmetros de modelo e inline externos
+
+Em alternativa, pode fornecer o parâmetro inline. Para transferir um valor do modelo de principal para o modelo ligado, utilize **parâmetros**.
+
+```json
+"resources": [
+  {
+     "apiVersion": "2017-05-10",
+     "name": "linkedTemplate",
+     "type": "Microsoft.Resources/deployments",
+     "properties": {
+       "mode": "incremental",
+       "templateLink": {
+          "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
+          "contentVersion":"1.0.0.0"
+       },
+       "parameters": {
+          "StorageAccountName":{"value": "[parameters('StorageAccountName')]"}
+        }
+     }
+  }
+]
+```
 
 ## <a name="using-variables-to-link-templates"></a>Utilizar variáveis para ligar os modelos
+
 Os exemplos anteriores mostrou valores codificados de URL para as ligações de modelo. Esta abordagem poderá funcionar para um modelo simples, mas não funciona bem quando trabalhar com um grande conjunto de modelos modulares. Em vez disso, pode criar uma variável estática que armazena um URL de base para o modelo de principal e, em seguida, criar dinamicamente os URLs para os modelos ligados desse URL base. A vantagem desta abordagem é facilmente pode mover ou copiar o modelo porque apenas precisar de alterar a variável estática no modelo principal. O modelo de principal transmite os URIs em todo o modelo decomposed correto.
 
-O exemplo seguinte mostra como utilizar um URL de base para criar dois URLs para modelos ligados (**sharedTemplateUrl** e **vmTemplate**). 
+O exemplo seguinte mostra como utilizar um URL de base para criar dois URLs para modelos ligados (**sharedTemplateUrl** e **vmTemplate**).
 
 ```json
 "variables": {
@@ -132,7 +146,7 @@ O exemplo seguinte mostra como utilizar um URL de base para criar dois URLs para
 }
 ```
 
-Também pode utilizar [deployment()](resource-group-template-functions-deployment.md#deployment) para obter o URL de base para o modelo atual e utilize-a para obter o URL para outros modelos na mesma localização. Esta abordagem é útil se a localização do modelo é alterado (talvez devido ao controlo de versões) ou se quiser evitar rígido codificação URLs no ficheiro de modelo. 
+Também pode utilizar [deployment()](resource-group-template-functions-deployment.md#deployment) para obter o URL de base para o modelo atual e utilize-a para obter o URL para outros modelos na mesma localização. Esta abordagem é útil se a localização do modelo é alterado (talvez devido ao controlo de versões) ou se quiser evitar rígido codificação URLs no ficheiro de modelo.
 
 ```json
 "variables": {
@@ -140,10 +154,269 @@ Também pode utilizar [deployment()](resource-group-template-functions-deploymen
 }
 ```
 
-## <a name="complete-example"></a>Exemplo completo
-Os modelos de exemplo seguintes mostram uma disposição simplificada de modelos ligados para ilustrar muitos outros dos conceitos neste artigo. Pressupõe que os modelos foram adicionados ao mesmo contentor numa conta do storage com acesso de público desativado. O modelo ligado transmite um valor para o modelo no principal de **produz** secção.
+## <a name="get-values-from-linked-template"></a>Obter os valores a partir do modelo ligado
 
-O **parent.json** ficheiro é composta por:
+Para obter um valor de saída a partir de um modelo ligado, obter o valor da propriedade com sintaxe como: `"[reference('<name-of-deployment>').outputs.<property-name>.value]"`.
+
+Os exemplos seguintes demonstram como fazer referência a um modelo ligado e obter um valor de saída. O modelo ligado devolve uma mensagem simple.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [],
+    "outputs": {
+        "greetingMessage": {
+            "value": "Hello World",
+            "type" : "string"
+        }
+    }
+}
+```
+
+O modelo de principal implementa o modelo ligado e obtém o valor devolvido. Tenha em atenção que referencia o recurso de implementação por nome e utiliza o nome da propriedade devolvido pelo modelo de ligado.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, 'helloworld.json')]",
+                    "contentVersion": "1.0.0.0"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "messageFromLinkedTemplate": {
+            "type": "string",
+            "value": "[reference('linkedTemplate').outputs.greetingMessage.value]"
+        }
+    }
+}
+```
+
+Como outros tipos de recursos, pode definir as dependências entre o modelo ligado e outros recursos. Por conseguinte, quando a outros recursos necessitam de um valor de saída do modelo ligado, pode certificar-se que o modelo ligado é implementado antes de lhes. Em alternativa, quando o modelo ligado depende de outros recursos, pode certificar-se a que outros recursos são implementados antes do modelo ligado.
+
+O exemplo seguinte mostra um modelo que implementa um endereço IP público e devolve o ID de recurso:
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "publicIPAddresses_name": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        }
+    ],
+    "outputs": {
+        "resourceID": {
+            "type": "string",
+            "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_name'))]"
+        }
+    }
+}
+```
+
+Para utilizar o endereço IP público do modelo anterior, quando implementar um balanceador de carga, ligue para o modelo e adicionar uma dependência no recurso de implementação. O endereço IP público no balanceador de carga está definido para o valor de saída do modelo ligado.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "loadBalancers_name": {
+            "defaultValue": "mylb",
+            "type": "string"
+        },
+        "publicIPAddresses_name": {
+            "defaultValue": "myip",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/loadBalancers",
+            "name": "[parameters('loadBalancers_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "properties": {
+                "frontendIPConfigurations": [
+                    {
+                        "name": "LoadBalancerFrontEnd",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[reference('linkedTemplate').outputs.resourceID.value]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [],
+                "loadBalancingRules": [],
+                "probes": [],
+                "inboundNatRules": [],
+                "outboundNatRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "linkedTemplate"
+            ]
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "linkedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[uri(deployment().properties.templateLink.uri, 'publicip.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters":{
+                    "publicIPAddresses_name":{"value": "[parameters('publicIPAddresses_name')]"}
+                }
+            }
+        }
+    ]
+}
+```
+
+## <a name="linked-templates-in-deployment-history"></a>Modelos ligados no histórico de implementação
+
+O Resource Manager processa cada modelo ligado como uma implementação separada no histórico de implementação. Por conseguinte, um modelo de principal com três modelos ligados é apresentado no histórico de implementação, como:
+
+![Histórico de implementações](./media/resource-group-linked-templates/deployment-history.png)
+
+Pode utilizar estas entradas separadas no histórico para obter valores de saída após a implementação. O modelo seguinte cria um endereço IP público e produz o endereço IP:
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "publicIPAddresses_name": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "southcentralus",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[concat(parameters('publicIPAddresses_name'), uniqueString(resourceGroup().id))]"
+                }
+            },
+            "dependsOn": []
+        }
+    ],
+    "outputs": {
+        "returnedIPAddress": {
+            "type": "string",
+            "value": "[reference(parameters('publicIPAddresses_name')).ipAddress]"
+        }
+    }
+}
+```
+
+As seguintes ligações de modelo para o modelo anterior. Cria três endereços IP públicos.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "[concat('linkedTemplate', copyIndex())]",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+              "mode": "Incremental",
+              "templateLink": {
+                "uri": "[uri(deployment().properties.templateLink.uri, 'static-public-ip.json')]",
+                "contentVersion": "1.0.0.0"
+              },
+              "parameters":{
+                  "publicIPAddresses_name":{"value": "[concat('myip-', copyIndex())]"}
+              }
+            },
+            "copy": {
+                "count": 3,
+                "name": "ip-loop"
+            }
+        }
+    ]
+}
+```
+
+Após a implementação, pode obter os valores de saída com o seguinte script do PowerShell:
+
+```powershell
+$loopCount = 3
+for ($i = 0; $i -lt $loopCount; $i++)
+{
+    $name = 'linkedTemplate' + $i;
+    $deployment = Get-AzureRmResourceGroupDeployment -ResourceGroupName examplegroup -Name $name
+    Write-Output "deployment $($deployment.DeploymentName) returned $($deployment.Outputs.returnedIPAddress.value)"
+}
+```
+
+Em alternativa, o script de CLI do Azure:
+
+```azurecli
+for i in 0 1 2;
+do
+    name="linkedTemplate$i";
+    deployment=$(az group deployment show -g examplegroup -n $name);
+    ip=$(echo $deployment | jq .properties.outputs.returnedIPAddress.value);
+    echo "deployment $name returned $ip";
+done
+```
+
+## <a name="securing-an-external-template"></a>Proteger um modelo externo
+
+Embora o modelo ligado tem de estar disponível externamente, não é necessário ser geralmente disponível para o público. Pode adicionar o seu modelo para uma conta de armazenamento privada que seja acessível para apenas o proprietário da conta de armazenamento. Em seguida, crie um token de assinatura (SAS) de acesso partilhado para ativar o acesso durante a implementação. Adicionar esse token SAS para o URI para o modelo ligado. Apesar do token é transmitido como uma cadeia segura, o URI do modelo ligado, incluindo o token SAS, é registado nas operações de implementação. Para limitar a exposição, defina uma expiração para o token.
+
+O ficheiro de parâmetros também pode ser limitado para acesso através de um token SAS.
+
+O exemplo seguinte mostra como transmitir um token SAS aquando da associação a um modelo de incidente:
 
 ```json
 {
@@ -167,28 +440,6 @@ O **parent.json** ficheiro é composta por:
     }
   ],
   "outputs": {
-    "result": {
-      "type": "string",
-      "value": "[reference('linkedTemplate').outputs.result.value]"
-    }
-  }
-}
-```
-
-O **helloworld.json** ficheiro é composta por:
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "variables": {},
-  "resources": [],
-  "outputs": {
-    "result": {
-        "value": "Hello World",
-        "type" : "string"
-    }
   }
 }
 ```
@@ -202,7 +453,7 @@ $url = (Get-AzureStorageBlob -Container templates -Blob parent.json).ICloudBlob.
 New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateUri ($url + $token) -containerSasToken $token
 ```
 
-No Azure CLI 2.0, obter um token para o contentor e implementar modelos com o seguinte código:
+Da CLI do Azure, pode obter um token para o contentor e implementar modelos com o seguinte código:
 
 ```azurecli
 expiretime=$(date -u -d '30 minutes' +%Y-%m-%dT%H:%MZ)
@@ -225,7 +476,64 @@ parameter='{"containerSasToken":{"value":"?'$token'"}}'
 az group deployment create --resource-group ExampleGroup --template-uri $url?$token --parameters $parameter
 ```
 
-## <a name="next-steps"></a>Passos seguintes
-* Para saber mais sobre a definir a ordem de implementação para os seus recursos, consulte [definir dependências nos modelos Azure Resource Manager](resource-group-define-dependencies.md)
-* Para saber como definir um recurso mas criar várias instâncias do mesmo, consulte o artigo [criar várias instâncias de recursos no Gestor de recursos do Azure](resource-group-create-multiple.md)
+## <a name="example-templates"></a>Modelos de exemplo
 
+### <a name="hello-world-from-linked-template"></a>Olá, mundo a partir do modelo ligado
+
+Para implementar o [modelo principal](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) e [modelo ligado](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json), utilizar o PowerShell:
+
+```powershell
+New-AzureRmResourceGroupDeployment `
+  -ResourceGroupName examplegroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/helloworldparent.json
+```
+
+Em alternativa, CLI do Azure:
+
+```azurecli-interactive
+az group deployment create \
+  -g examplegroup \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/helloworldparent.json
+```
+
+### <a name="load-balancer-with-public-ip-address-in-linked-template"></a>O Balanceador de carga com o endereço IP público do modelo ligado
+
+Para implementar o [modelo principal](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) e [modelo ligado](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json), utilizar o PowerShell:
+
+```powershell
+New-AzureRmResourceGroupDeployment `
+  -ResourceGroupName examplegroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json
+```
+
+Em alternativa, CLI do Azure:
+
+```azurecli-interactive
+az group deployment create \
+  -g examplegroup \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json
+```
+
+### <a name="multiple-public-ip-addresses-in-linked-template"></a>Vários endereços IP públicos no modelo ligado
+
+Para implementar o [modelo principal](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json) e [modelo ligado](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip.json), utilizar o PowerShell:
+
+```powershell
+New-AzureRmResourceGroupDeployment `
+  -ResourceGroupName examplegroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json
+```
+
+Em alternativa, CLI do Azure:
+
+```azurecli-interactive
+az group deployment create \
+  -g examplegroup \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json
+```
+
+## <a name="next-steps"></a>Passos seguintes
+
+* Para saber mais sobre a definir a ordem de implementação para os seus recursos, consulte [definir dependências nos modelos Azure Resource Manager](resource-group-define-dependencies.md).
+* Para saber como definir um recurso mas criar várias instâncias do mesmo, consulte o artigo [criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md).
+* Para obter passos sobre como configurar um modelo de uma conta de armazenamento e de gerar um token SAS, consulte [implementar recursos com modelos do Resource Manager e o Azure PowerShell](resource-group-template-deploy.md) ou [implementar recursos com modelos do Resource Manager e CLI do Azure](resource-group-template-deploy-cli.md).

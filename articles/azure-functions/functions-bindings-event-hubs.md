@@ -1,5 +1,5 @@
 ---
-title: "Enlaces de funções Event Hubs do Azure"
+title: "Enlaces de Event Hubs do Azure para as funções do Azure"
 description: "Compreenda como utilizar os enlaces de Event Hubs do Azure das funções do Azure."
 services: functions
 documentationcenter: na
@@ -16,19 +16,19 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/08/2017
 ms.author: wesmc
-ms.openlocfilehash: c2660a3ca8ee7569d49a6998d0dfd5a98a97d294
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 70219ada2f4886f40d088486063afda2bc489611
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="azure-functions-event-hubs-bindings"></a>Enlaces de funções Event Hubs do Azure
+# <a name="azure-event-hubs-bindings-for-azure-functions"></a>Enlaces de Event Hubs do Azure para as funções do Azure
 
 Este artigo explica como trabalhar com [Event Hubs do Azure](../event-hubs/event-hubs-what-is-event-hubs.md) enlaces para as funções do Azure. Funções do Azure suporta acionam e de saída vínculos para os Event Hubs.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="event-hubs-trigger"></a>Os Event Hubs acionar
+## <a name="trigger"></a>Acionador
 
 Utilize o acionador de Event Hubs para responder a um evento enviado para um fluxo de eventos de hub de eventos. Tem de ter acesso de leitura para o hub de eventos para configurar o acionador.
 
@@ -176,7 +176,7 @@ module.exports = function (context, myEventHubMessage) {
 };
 ```
 
-## <a name="trigger---attributes-for-precompiled-c"></a>Acionador - atributos para pré-compilada c#
+## <a name="trigger---attributes"></a>Acionador - atributos
 
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [EventHubTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubTriggerAttribute.cs) atributo, que está definido no pacote NuGet [Microsoft.Azure.WebJobs.ServiceBus](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus).
 
@@ -185,7 +185,12 @@ O construtor do atributo tem o nome do hub de eventos, o nome do grupo de consum
 ```csharp
 [FunctionName("EventHubTriggerCSharp")]
 public static void Run([EventHubTrigger("samples-workitems", Connection = "EventHubConnection")] string myEventHubMessage, TraceWriter log)
+{
+    ...
+}
 ```
+
+Para obter um exemplo completado, consulte [acionador - pré-compilada c# exemplo](#trigger---c-example).
 
 ## <a name="trigger---configuration"></a>Acionador - configuração
 
@@ -198,7 +203,9 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**nome** | n/d | O nome da variável que representa o item de eventos no código da função. | 
 |**caminho** |**EventHubName** | O nome do hub de eventos. | 
 |**consumerGroup** |**ConsumerGroup** | Uma propriedade opcional que define o [grupo de consumidores](../event-hubs/event-hubs-features.md#event-consumers) utilizado para subscrever o hub de eventos. Se for omitido, o `$Default` é utilizado o grupo de consumidores. | 
-|**ligação** |**Ligação** | O nome de uma definição de aplicação que contenha a cadeia de ligação ao espaço de nomes o hub de eventos. Copie esta cadeia de ligação ao clicar no **informações de ligação** botão para o *espaço de nomes*, não o hub de eventos em si. Esta cadeia de ligação tem de ter, pelo menos, permissões de leitura para ativar o acionador.<br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação** |**Ligação** | O nome de uma definição de aplicação que contenha a cadeia de ligação ao espaço de nomes o hub de eventos. Copie esta cadeia de ligação ao clicar no **informações de ligação** botão para o *espaço de nomes*, não o hub de eventos em si. Esta cadeia de ligação tem de ter, pelo menos, permissões de leitura para ativar o acionador.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="trigger---hostjson-properties"></a>Acionador - host.json propriedades
 
@@ -206,7 +213,7 @@ O [host.json](functions-host-json.md#eventhub) ficheiro contém definições que
 
 [!INCLUDE [functions-host-json-event-hubs](../../includes/functions-host-json-event-hubs.md)]
 
-## <a name="event-hubs-output-binding"></a>Os Event Hubs vínculo de saída
+## <a name="output"></a>Saída
 
 Utilize a saída de Event Hubs enlace escrever eventos no registo para uma transmissão de eventos. Tem de ter permissão de envio para um hub de eventos para escrever eventos no mesmo.
 
@@ -341,7 +348,7 @@ module.exports = function(context) {
 };
 ```
 
-## <a name="output---attributes-for-precompiled-c"></a>Saída - atributos para pré-compilada c#
+## <a name="output---attributes"></a>Saída - atributos
 
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [EventHubAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs) atributo, que está definido no pacote NuGet [Microsoft.Azure.WebJobs.ServiceBus](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus).
 
@@ -351,7 +358,12 @@ O construtor do atributo tem o nome do hub de eventos e o nome de uma definiçã
 [FunctionName("EventHubOutput")]
 [return: EventHub("outputEventHubMessage", Connection = "EventHubConnection")]
 public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, TraceWriter log)
+{
+    ...
+}
 ```
+
+Para obter um exemplo completado, consulte [resultado - pré-compilada c# exemplo](#output---c-example).
 
 ## <a name="output---configuration"></a>De saída - configuração
 
@@ -363,7 +375,9 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**direção** | n/d | Tem de ser definida para "out". Este parâmetro é definido automaticamente quando criar o enlace no portal do Azure. |
 |**nome** | n/d | O nome da variável utilizado no código de função que representa o evento. | 
 |**caminho** |**EventHubName** | O nome do hub de eventos. | 
-|**ligação** |**Ligação** | O nome de uma definição de aplicação que contenha a cadeia de ligação ao espaço de nomes o hub de eventos. Copie esta cadeia de ligação ao clicar no **informações de ligação** botão para o *espaço de nomes*, não o hub de eventos em si. Esta cadeia de ligação tem de ter permissões de envio para enviar a mensagem para o fluxo de eventos.<br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação** |**Ligação** | O nome de uma definição de aplicação que contenha a cadeia de ligação ao espaço de nomes o hub de eventos. Copie esta cadeia de ligação ao clicar no **informações de ligação** botão para o *espaço de nomes*, não o hub de eventos em si. Esta cadeia de ligação tem de ter permissões de envio para enviar a mensagem para o fluxo de eventos.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="output---usage"></a>Saída - utilização
 

@@ -15,14 +15,16 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/22/2017
 ms.author: glenga
-ms.openlocfilehash: ac0399867e0cdab1825022c4ed73ce003cc8c7e6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 9d8261a22f5ea9ce61bcdc79d24a6c054597039b
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Utilizar as funções do Azure para ligar a uma base de dados do SQL do Azure
-Este tópico mostra como utilizar as funções do Azure para criar uma tarefa agendada que limpa linhas numa tabela numa base de dados SQL do Azure. A nova função de c# é criada com base num modelo de Acionador de temporizador predefinidos no portal do Azure. Para suportar este cenário, também tem de definir uma cadeia de ligação de base de dados como uma definição de aplicação de função. Este cenário utiliza uma operação em massa na base de dados. Para que a sua função processar operações CRUD individuais numa tabela Mobile Apps, em vez disso, deve utilizar [enlaces de Mobile Apps](functions-bindings-mobile-apps.md).
+Este tópico mostra como utilizar as funções do Azure para criar uma tarefa agendada que limpa linhas numa tabela numa base de dados SQL do Azure. A nova função de c# é criada com base num modelo de Acionador de temporizador predefinidos no portal do Azure. Para suportar este cenário, também tem de definir uma cadeia de ligação de base de dados como uma definição de aplicação na aplicação de função. Este cenário utiliza uma operação em massa na base de dados. 
+
+Para que o indivíduo do processo de função criar, ler, atualização e eliminar (CRUD) operações numa tabela Mobile Apps, em vez disso, deverá utilizar [enlaces de Mobile Apps](functions-bindings-mobile-apps.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -59,7 +61,7 @@ Uma aplicação de função aloja a execução das suas funções no Azure. É u
     | Definição       | Valor sugerido | Descrição             | 
     | ------------ | ------------------ | --------------------- | 
     | **Nome**  |  sqldb_connection  | Utilizado para aceder a cadeia de ligação armazenadas no seu código de função.    |
-    | **Valor** | Cadeia copiada  | Após a cadeia de ligação que copiou na secção anterior. |
+    | **Valor** | Cadeia copiada  | Cole a cadeia de ligação que copiou na secção anterior e substitua `{your_username}` e `{your_password}` marcadores de posição com os valores reais. |
     | **Tipo** | Base de Dados SQL | Utilize a ligação de base de dados SQL predefinido. |   
 
 3. Clique em **Guardar**.
@@ -84,7 +86,7 @@ Agora, pode adicionar o função código c# que liga à sua base de dados do SQL
     using System.Threading.Tasks;
     ```
 
-4. Substituir a existente **executar** função com o seguinte código:
+4. Substituir a existente `Run` função com o seguinte código:
     ```cs
     public static async Task Run(TimerInfo myTimer, TraceWriter log)
     {
@@ -105,7 +107,7 @@ Agora, pode adicionar o função código c# que liga à sua base de dados do SQL
     }
     ```
 
-    Este comando de exemplo de atualizações a **estado** coluna baseia-se a data de incorporadas. Deve atualizar o 32 linhas de dados.
+    Este comando de exemplo de atualizações a `Status` coluna baseia-se a data de incorporadas. Deve atualizar o 32 linhas de dados.
 
 5. Clique em **guardar**, veja o **registos** windows para a próxima execução de função, em seguida, tenha em atenção o número de linhas atualizadas no **SalesOrderHeader** tabela.
 

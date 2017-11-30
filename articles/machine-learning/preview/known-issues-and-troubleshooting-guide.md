@@ -10,11 +10,11 @@ ms.service: machine-learning
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: a03fb4f202bddb6454f703c998e95abf13d14fff
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 5c7c15eacdf43d3623000ed228adfaeb55803c8f
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-machine-learning-workbench---known-issues-and-troubleshooting-guide"></a>Azure Machine Learning Workbench - problemas conhecidos e guia de resolução de problemas 
 Este artigo ajuda-o a encontrar e corrija erros ou falhas encontradas como parte da utilização da aplicação do Azure Machine Learning Workbench. 
@@ -39,6 +39,17 @@ Caso se depare com problema durante a instalação, os ficheiros de registo do i
 /tmp/amlinstaller/logs/*
 ```
 Pode zip se os conteúdos de diretórios e envia-as à-nos para obter um diagnóstico.
+
+### <a name="app-update"></a>Atualização da aplicação 
+#### <a name="no-update-notification-on-windows-desktop"></a>Nenhuma notificação de atualização no ambiente de trabalho do Windows 
+Este problema será resolvido numa atualização futura. Entretanto, a solução é para evitar a iniciar a aplicação do atalho afixado na barra de tarefas. Em vez disso, para iniciar a aplicação utilizando o menu Iniciar ou barra de pesquisa de início ou o atalho no ambiente de trabalho (se tiver uma). 
+
+#### <a name="no-update-notification-on-an-ubuntu-data-sciece-virtual-machine-dsvm"></a>Nenhuma notificação de atualização numa Ubuntu dados Sciece Máquina Virtual (DSVM)
+Execute os seguintes passos para transferir a aplicação mais recente:   
+   - remover a pasta \Users\AppData\Local\amlworkbench
+   - Remova o script`c:\dsvm\tools\setup\InstallAMLFromLocal.ps1`
+   - remover o atalho de ambiente de trabalho que inicia o script acima
+   - instalar utilizando corretamente [https://aka.ms/azureml-wb-msi](https://aka.ms/azureml-wb-msi)
 
 ### <a name="workbench-desktop-app"></a>Aplicação de ambiente de trabalho do Workbench
 Se tiver problemas em iniciar sessão, ou se o ambiente de trabalho do Workbench falhar, pode encontrar os ficheiros de registo aqui:

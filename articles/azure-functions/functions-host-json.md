@@ -14,11 +14,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/09/2017
 ms.author: tdykstra
-ms.openlocfilehash: 63e63f69cb6463adcca480eccf1cc485574d9eff
-ms.sourcegitcommit: 7d107bb9768b7f32ec5d93ae6ede40899cbaa894
+ms.openlocfilehash: 522d0590595b0fc0fef503599f1677658f223bd8
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="hostjson-reference-for-azure-functions"></a>referência de Host.JSON para as funções do Azure
 
@@ -141,7 +141,7 @@ Definições de configuração para [Hub de eventos de acionadores e enlaces](fu
 
 [!INCLUDE [functions-host-json-event-hubs](../../includes/functions-host-json-event-hubs.md)]
 
-## <a name="functions"></a>Funções
+## <a name="functions"></a>funções
 
 Uma lista de funções que o anfitrião de tarefa será executada.  Uma matriz vazia significa executar todas as funções.  Concebidos para utilização apenas quando [executar localmente](functions-run-local.md). Nas aplicações de função, utilize o *function.json* `disabled` propriedade em vez desta propriedade no *host.json*.
 
@@ -165,23 +165,7 @@ Indica a duração de tempo limite para todas as funções. Planos de consumo, o
 
 Definições de configuração para [http acionadores e enlaces](functions-bindings-http-webhook.md).
 
-```json
-{
-    "http": {
-        "routePrefix": "api",
-        "maxOutstandingRequests": 20,
-        "maxConcurrentRequests": 
-        "dynamicThrottlesEnabled": false
-    }
-}
-```
-
-|Propriedade  |Predefinição | Descrição |
-|---------|---------|---------| 
-|routePrefix|api|O prefixo de rota que aplica-se a todas as rotas. Utilize uma cadeia vazia para remover o prefixo de predefinição. |
-|maxOutstandingRequests|-1|O número máximo de pedidos pendentes que será retida em qualquer momento (-1 significa que unbounded). O limite inclui pedidos que são colocados em fila, mas não iniciaram a executar, bem como quaisquer execuções de em curso. Quaisquer pedidos recebidos este limite são rejeitados com uma resposta "Demasiado ocupado" 429. Os chamadores podem utilizar essa resposta recorrer estratégias de repetição baseados no tempo. Controlos esta definição apenas colocação em fila que ocorre no caminho de execução do anfitrião de tarefa. Outras filas, por exemplo, a fila de pedidos do ASP.NET, não são afetadas por esta definição. |
-|maxConcurrentRequests|-1|O número máximo de funções HTTP que será executado em paralelo (-1 significa que unbounded). Por exemplo, pode definir um limite, se as suas funções HTTP utilizam demasiados recursos do sistema quando a simultaneidade é elevada. Ou, se as suas funções efetuam pedidos de saída para um serviço de terceiros, essas chamadas poderão ter de ser limitado de taxa.|
-|dynamicThrottlesEnabled|False|Faz com que o pipeline de processamento de pedidos verificar periodicamente os contadores de desempenho do sistema. Contadores incluem ligações, threads, processos, memória e cpu. Se qualquer um dos contadores através de um limiar incorporado (80%), os pedidos são rejeitados com uma resposta "Demasiado ocupado" 429 até o counter(s) regressar à níveis normais.|
+[!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
 ## <a name="id"></a>ID
 

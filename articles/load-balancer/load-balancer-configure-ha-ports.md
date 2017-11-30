@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/02/2017
 ms.author: kumud
-ms.openlocfilehash: 4cd65c01d75af8539f5fa13dbbd2aaec548aea0b
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 646ade828e96810bdc3b07d4dc5c0276a1621969
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="how-to-configure-high-availability-ports-for-internal-load-balancer"></a>Como configurar portas de elevada disponibilidade para o Balanceador de carga interno
 
@@ -41,13 +41,10 @@ Figura 1 - aparelhos de rede Virtual implementado por trás de um balanceador de
 
 ## <a name="preview-sign-up"></a>Pré-visualização inscrição
 
-Participar na pré-visualização da funcionalidade de portas HA no padrão de Balanceador de carga, registe a sua subscrição para obter acesso utilizando 2.0 do Azure CLI ou PowerShell.  Registe a sua subscrição do
-
-1. [Pré-visualização padrão do Balanceador de carga](https://aka.ms/lbpreview#preview-sign-up) e 
-2. [HA portas pré-visualizar](https://aka.ms/haports#preview-sign-up).
+Participar na pré-visualização da funcionalidade de portas HA no padrão de Balanceador de carga, registe a sua subscrição para obter acesso utilizando 2.0 do Azure CLI ou PowerShell. Registar a sua subscrição para [pré-visualização do padrão de Balanceador de carga](https://aka.ms/lbpreview#preview-sign-up).
 
 >[!NOTE]
->Para utilizar esta funcionalidade, tem também de inscrição para o Balanceador de carga [pré-visualização padrão](https://aka.ms/lbpreview#preview-sign-up) para além das portas HA. Registo de pré-visualizações de portas HA ou padrão de Balanceador de carga pode demorar uma hora.
+>Registo de pré-visualizações do padrão de Balanceador de carga pode demorar até uma hora.
 
 ## <a name="configuring-ha-ports"></a>Configurar as portas HA
 

@@ -14,16 +14,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/07/2017
 ms.author: parakhj
-ms.openlocfilehash: ccd8bf902f707390f80e3c377e60dd35d535b4b5
-ms.sourcegitcommit: 804db51744e24dca10f06a89fe950ddad8b6a22d
+ms.openlocfilehash: cce30360145fe430141ceaf2efc91a6b87938601
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>O Azure AD B2C: Utilizar o Azure AD Graph API
 
 >[!NOTE]
->Atualmente, tem de utilizar o [AD Graph API do Azure](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-operations-overview?f=255&MSPPError=-2147217396) para gerir os utilizadores um diretório do Azure AD B2C.
+> Tem de utilizar o [AD Graph API do Azure](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-operations-overview?f=255&MSPPError=-2147217396) para gerir os utilizadores um diretório do Azure AD B2C. Isto é diferente da Graph API do Microsoft. Sabia mais [aqui](https://blogs.msdn.microsoft.com/aadgraphteam/2016/07/08/microsoft-graph-or-azure-ad-graph/).
 
 Inquilinos do Azure Active Directory (Azure AD) B2C tendem a ser muito grande. Isto significa que muitas tarefas de gestão comuns do inquilino tem de ser efetuada através de programação. Um exemplo primário é a gestão de utilizadores. Poderá ter de migrar um arquivo de utilizador existente para um inquilino do B2C. Poderá querer alojar o registo de utilizador na sua própria página e criar contas de utilizador no diretório do Azure AD B2C em segundo plano. Estes tipos de tarefas necessitam da capacidade de criar, ler, atualizar e eliminar as contas de utilizador. Pode efetuar estas tarefas, utilizando a Azure AD Graph API.
 

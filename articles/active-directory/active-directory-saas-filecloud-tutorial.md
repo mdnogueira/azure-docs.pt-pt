@@ -6,19 +6,19 @@ documentationCenter: na
 author: jeevansd
 manager: femila
 ms.reviewer: joflore
-ms.assetid: f39f0ddd-b504-4562-971f-77b88d1e75fb
+ms.assetid: 2263e583-3eb2-4a06-982d-33f5f54858f4
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2017
+ms.date: 11/27/2017
 ms.author: jeedes
-ms.openlocfilehash: ad03516f684acc59912ffc57f6e0712828bd03f2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: f1f16865a3adb55fc63c09c1dbdc9720b02f9c33
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="tutorial-azure-active-directory-integration-with-filecloud"></a>Tutorial: Integração do Azure Active Directory com FileCloud
 
@@ -108,12 +108,12 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
     ![Domínio FileCloud e os URLs únicos de informações de início de sessão](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_url.png)
 
-    a. No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<subdomain>.filecloudhosted.com`
+    a. No **URL de início de sessão** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<subdomain>.filecloudonline.com`
 
-    b. No **identificador** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<subdomain>.filecloudhosted.com/simplesaml/module.php/saml/sp/metadata.php/default-sp`
+    b. No **identificador** caixa de texto, escreva um URL a utilizar o padrão do seguinte:`https://<subdomain>.filecloudonline.com/simplesaml/module.php/saml/sp/metadata.php/default-sp`
 
     > [!NOTE] 
-    > Estes valores não estiverem reais. Atualize estes valores com o URL de início de sessão e o identificador real. Contacte [equipa de suporte de cliente FileCloud](mailto:support@codelathe.com) para obter estes valores.
+    > Estes valores não estiverem reais. Atualize estes valores com o URL de início de sessão e o identificador real. Contacte [equipa de suporte de cliente FileCloud](mailto:support@codelathe.com) para obter estes valores. 
 
 4. No **certificado de assinatura de SAML** secção, clique em **XML de metadados** e, em seguida, guarde o ficheiro de metadados no seu computador.
 
@@ -131,23 +131,23 @@ Nesta secção, pode ativar do Azure AD início de sessão no portal do Azure e 
 
 8. No painel de navegação esquerdo, clique em **definições**. 
    
-    ![Secção de definições do lado de na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_000.png)
+    ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_000.png)
 
 9. Clique em **SSO** separador na secção de definições. 
    
-    ![Único lado de início de sessão num separador na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_001.png)
+    ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_001.png)
 
 10. Selecione **SAML** como **tipo predefinido de SSO** no **único início de sessão (SSO) definições** painel.
    
-    ![Lado de início de sessão definições na aplicação do painel único](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_002.png)
+    ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_002.png)
 
-11. Colar **ID de entidade de SAML**, que copiou do portal do Azure para o **URL de ponto final do IdP** caixa de texto.
+11. No **URL de ponto final do IdP** caixa de texto, colar o valor de **ID de entidade de SAML** que copiou do portal do Azure.
 
-    ![Caixa de texto do URL de ponto final IDP](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_003.png)
+    ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_003.png)
 
 12. Abra o ficheiro de metadados transferido no bloco de notas, copie o conteúdo do mesmo para a sua área de transferência e, em seguida, cole-os para o **IdP Meta dados** caixa de texto no **SAML definições** painel.
 
-    ![Secção de dados de metadados IDP no lado de aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_004.png)
+    ![Configurar lado único início de sessão na aplicação](./media/active-directory-saas-filecloud-tutorial/tutorial_filecloud_004.png)
 
 13. Clique em **guardar** botão.
 
@@ -192,7 +192,7 @@ O objetivo desta secção consiste em criar um utilizador de teste no portal do 
 O objetivo desta secção consiste em criar um utilizador chamado Britta Simon FileCloud. FileCloud suporta o aprovisionamento de just-in-time, que está por predefinição, ativada. Não há nenhum item de ação para si nesta secção. Um novo utilizador é criado durante a tentativa de aceder FileCloud se não existir ainda.
 
 >[!NOTE]
->Se precisar de criar manualmente um utilizador, terá de contactar o [equipa de suporte de cliente FileCloud](mailto:support@codelathe.com). 
+>Se precisar de criar manualmente um utilizador, terá de contactar o [equipa de suporte de cliente FileCloud](mailto:support@codelathe.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribua o utilizador de teste do Azure AD
 
@@ -226,9 +226,10 @@ Nesta secção, vai ativar Britta Simon utilizar o Azure-início de sessão úni
     
 ### <a name="test-single-sign-on"></a>Teste o início de sessão único
 
-O objetivo desta secção consiste em testar a configuração de SSO do Azure AD através do painel de acesso.
+Nesta secção, testar a configuração do Azure AD único início de sessão através do painel de acesso.
 
 Quando clica no mosaico FileCloud no painel de acesso, deve obter automaticamente com sessão iniciada para a aplicação de FileCloud.
+Para mais informações sobre o painel de acesso, consulte [introdução ao painel de acesso](active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

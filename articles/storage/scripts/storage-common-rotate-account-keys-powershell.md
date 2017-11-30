@@ -3,7 +3,7 @@ title: Exemplo de Script do PowerShell do Azure - chave de acesso de conta do st
 description: Criar uma conta de armazenamento do Azure, em seguida, obter e rodar uma das chaves de acesso de conta.
 services: storage
 documentationcenter: na
-author: robinsh
+author: tamram
 manager: timlt
 editor: tysonn
 ms.assetid: 
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 06/13/2017
-ms.author: robinsh
-ms.openlocfilehash: fe7e12991cb59eb32e173b0552eb155bf66c6c76
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: tamram
+ms.openlocfilehash: a7aaacf316799540a6a72b699ba8ea8bb389c8a8
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="create-a-storage-account-and-rotate-its-account-access-keys"></a>Criar uma conta de armazenamento e Rodar chaves de acesso de conta
 

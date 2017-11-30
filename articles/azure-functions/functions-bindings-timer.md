@@ -1,9 +1,9 @@
 ---
-title: "Acionador de temporizador de funções do Azure"
+title: "Acionador de temporizador para as funções do Azure"
 description: "Compreenda como utilizar os acionadores de temporizador nas funções do Azure."
 services: functions
 documentationcenter: na
-author: christopheranderson
+author: tdykstra
 manager: cfowler
 editor: 
 tags: 
@@ -15,15 +15,15 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 02/27/2017
-ms.author: glenga
+ms.author: tdykstra
 ms.custom: 
-ms.openlocfilehash: cc59d97fe4f3bb4e53432332556991d81b208167
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.openlocfilehash: fd9c1d40ba1398c7ca3f48f0423457482da9a483
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="azure-functions-timer-trigger"></a>Acionador de temporizador de funções do Azure
+# <a name="timer-trigger-for-azure-functions"></a>Acionador de temporizador para as funções do Azure 
 
 Este artigo explica como trabalhar com os acionadores de temporizador nas funções do Azure. Um acionador de temporizador permite-lhe executar uma função com base numa agenda. 
 
@@ -134,7 +134,7 @@ module.exports = function (context, myTimer) {
 };
 ```
 
-## <a name="attributes-for-precompiled-c"></a>Atributos de pré-compilada c#
+## <a name="attributes"></a>Atributos
 
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [TimerTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerTriggerAttribute.cs), definida no pacote NuGet [Microsoft.Azure.WebJobs.Extensions](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions).
 
@@ -143,9 +143,14 @@ O construtor do atributo aceita uma expressão de CRON, conforme mostrado no exe
 ```csharp
 [FunctionName("TimerTriggerCSharp")]
 public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, TraceWriter log)
+{
+   ...
+}
  ```
 
 Pode especificar um `TimeSpan` em vez de uma expressão de CRON se a sua aplicação de função é executada num plano de serviço de aplicações (não um plano de consumo).
+
+Para obter um exemplo completado, consulte [PRÉ-COMPILADA c# exemplo](#c-example).
 
 ## <a name="configuration"></a>Configuração
 
@@ -156,7 +161,9 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**tipo** | n/d | Tem de ser definida para "timerTrigger". Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure.|
 |**direção** | n/d | Tem de ser definida para "em". Esta propriedade é definida automaticamente quando criar o acionador no portal do Azure. |
 |**nome** | n/d | O nome da variável que representa o objeto temporizador no código da função. | 
-|**agenda**|**ScheduleExpression**|No plano de consumo, pode definir agendas com uma expressão de CRON. Se estiver a utilizar um plano do App Service, também pode utilizar um `TimeSpan` cadeia. As secções seguintes explicam as expressões de CRON. Pode colocar a expressão de agenda uma definição de aplicação e definir esta propriedade para um valor moldado numa  **%**  inicia, tal como neste exemplo: "% NameOfAppSettingWithCRONExpression %". Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**agenda**|**ScheduleExpression**|No plano de consumo, pode definir agendas com uma expressão de CRON. Se estiver a utilizar um plano do App Service, também pode utilizar um `TimeSpan` cadeia. As secções seguintes explicam as expressões de CRON. Pode colocar a expressão de agenda uma definição de aplicação e definir esta propriedade para um valor moldado numa  **%**  inicia, tal como neste exemplo: "% NameOfAppSettingWithCRONExpression %". |
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ### <a name="cron-format"></a>Formato CRON 
 

@@ -7,17 +7,16 @@ author: cephalin
 manager: erikre
 ms.service: app-service-web
 ms.workload: web
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 07/21/2017
+ms.date: 11/28/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 86ee5b02fe2a9f34db651f6446398d366b24b5d2
-ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
+ms.openlocfilehash: 3496b00960ad1fe1213f2005d2173543988b4ff9
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="build-a-php-and-mysql-web-app-in-azure"></a>Criar uma aplicação web PHP e o MySQL no Azure
 
@@ -156,7 +155,7 @@ Neste passo, vai criar uma base de dados MySQL no [MySQL (pré-visualização) n
 
 ### <a name="create-a-mysql-server"></a>Criar um servidor de MySQL
 
-Criar um servidor na base de dados do Azure para MySQL (pré-visualização) com o [az mysql servidor criar](/cli/azure/mysql/server#create) comando.
+Criar um servidor na base de dados do Azure para MySQL (pré-visualização) com o [az mysql servidor criar](/cli/azure/mysql/server#az_mysql_server_create) comando.
 
 O seguinte comando, substitua o nome do servidor MySQL onde vir o  _&lt;mysql_server_name >_ marcador de posição (carateres válidos são `a-z`, `0-9`, e `-`). Este nome é parte do nome de anfitrião do servidor MySQL (`<mysql_server_name>.database.windows.net`), tem de ser globalmente exclusivo.
 
@@ -181,7 +180,7 @@ Quando o servidor de MySQL é criado, a CLI do Azure mostra as informações sem
 
 ### <a name="configure-server-firewall"></a>Configurar a firewall do servidor
 
-Criar uma regra de firewall para o servidor de MySQL permitir ligações de cliente utilizando o [az mysql servidor-regra de firewall criar](/cli/azure/mysql/server/firewall-rule#create) comando.
+Criar uma regra de firewall para o servidor de MySQL permitir ligações de cliente utilizando o [az mysql servidor-regra de firewall criar](/cli/azure/mysql/server/firewall-rule#az_mysql_server_firewall_rule_create) comando.
 
 ```azurecli-interactive
 az mysql server firewall-rule create --name allIPs --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
@@ -332,7 +331,7 @@ Neste passo, a aplicação é implementada ligados MySQL PHP App Service do Azur
 
 ### <a name="configure-database-settings"></a>Configurar definições de base de dados
 
-No App Service, definir variáveis de ambiente como _as definições de aplicação_ utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#set) comando.
+No App Service, definir variáveis de ambiente como _as definições de aplicação_ utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) comando.
 
 O seguinte comando configura as definições de aplicação `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, e `DB_PASSWORD`. Substitua os marcadores de posição  _&lt;appname >_ e  _&lt;mysql_server_name >_.
 
@@ -364,7 +363,7 @@ Utilize `php artisan` para gerar uma nova chave de aplicação sem a guardar a _
 php artisan key:generate --show
 ```
 
-Defina a chave de aplicação no App Service aplicação web utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#set) comando. Substitua os marcadores de posição  _&lt;appname >_ e  _&lt;outputofphpartisankey: gerar >_.
+Defina a chave de aplicação no App Service aplicação web utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) comando. Substitua os marcadores de posição  _&lt;appname >_ e  _&lt;outputofphpartisankey: gerar >_.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"
@@ -376,7 +375,7 @@ az webapp config appsettings set --name <app_name> --resource-group myResourceGr
 
 Defina o caminho de aplicação virtual da aplicação web. Este passo é necessário porque o [ciclo de vida de aplicação de Laravel](https://laravel.com/docs/5.4/lifecycle) começa no _pública_ diretório em vez de diretório de raiz da aplicação. Outras estruturas PHP cujo ciclo de vida iniciar no diretório de raiz pode trabalhar sem configuração manual do caminho da aplicação virtual.
 
-Definir o caminho de aplicação virtual utilizando o [atualização de recurso az](/cli/azure/resource#update) comando. Substitua o  _&lt;appname >_ marcador de posição.
+Definir o caminho de aplicação virtual utilizando o [atualização de recurso az](/cli/azure/resource#az_resource_update) comando. Substitua o  _&lt;appname >_ marcador de posição.
 
 ```azurecli-interactive
 az resource update --name web --resource-group myResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<app_name> --set properties.virtualApplications[0].physicalPath="site\wwwroot\public" --api-version 2015-06-01

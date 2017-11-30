@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2017
 ms.author: kumud
-ms.openlocfilehash: eac9c3c2b7fde4ac225e17cc3b98ca5ee926c3b3
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 5b0a7d423bc0d8d9f9f7cad56838bd006e944050
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Gestor de tráfego perguntas mais frequentes (FAQ)
 
@@ -277,7 +277,7 @@ O Azure Resource Manager requer que todos os grupos de recurso especificar uma l
 
 O estado atual de monitorização de cada ponto final, para além do perfil de geral, é apresentado no portal do Azure. Estas informações também estão disponíveis através do Monitor de tráfego [REST API](https://msdn.microsoft.com/library/azure/mt163667.aspx), [cmdlets do PowerShell](https://msdn.microsoft.com/library/mt125941.aspx), e [CLI do Azure de várias plataformas](../cli-install-nodejs.md).
 
-Azure não fornece informações de histórico sobre o último Estado de funcionamento do ponto final ou da capacidade de emitir alertas sobre alterações ao estado de funcionamento do ponto final.
+Também pode utilizar o Monitor do Azure para controlar o estado de funcionamento dos seus pontos finais e ver uma representação visual de-los. Para obter mais informações sobre como utilizar o Monitor do Azure, consulte o [documentação de monitorização do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics).
 
 ### <a name="can-i-monitor-https-endpoints"></a>Pode monitorizar os pontos finais HTTPS?
 
@@ -288,6 +288,10 @@ Gestor de tráfego não é possível fornecer a validação de certificado, incl
 * Não são validados certificados do lado do servidor
 * Não são suportados certificados do lado do servidor SNI
 * Não são suportados certificados de cliente
+
+### <a name="i-stopped-an-azure-cloud-service--web-application-endpoint-in-my-traffic-manager-profile-but-i-am-not-receiving-any-traffic-even-after-i-restarted-it-how-can-i-fix-this"></a>Posso parar um serviço em nuvem do Azure / web ponto final da aplicação no meu perfil do Traffic Manager, mas não posso estou receber qualquer tráfego, mesmo depois de reiniciado posso-lo. Como posso corrigir esta situação?
+
+Quando um Azure serviço em nuvem / web ponto final da aplicação é parada paragem do Gestor de tráfego a verificar o seu estado de funcionamento e reinicia as verificações de estado de funcionamento apenas depois de detetar que o ponto final foi reiniciado. Para evitar este atraso, desativar e, em seguida, reativar esse ponto final do perfil do Traffic Manager depois de reiniciar o ponto final.   
 
 ### <a name="can-i-use-traffic-manager-even-if-my-application-does-not-have-support-for-http-or-https"></a>Posso utilizar o Gestor de tráfego, mesmo se a minha aplicação não tiver suporte para HTTP ou HTTPS?
 

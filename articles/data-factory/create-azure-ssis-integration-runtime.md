@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2017
 ms.author: spelluru
-ms.openlocfilehash: 8cc4d44bff6284f2c52423f04e463e324a932abd
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: fcd2547112eb966420f33cec4939c83606029444
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Criar um tempo de execução de integração do Azure-SSIS no Azure Data Factory
 Este artigo fornece os passos para o aprovisionamento de um tempo de execução de integração do Azure-SSIS no Azure Data Factory. Em seguida, pode utilizar o SQL Server Data Tools (SSDT) ou o SQL Server Management Studio (SSMS) para implementar pacotes de SQL Server Integration Services (SSIS) neste runtime no Azure.
 
 > [!NOTE]
-> Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço do Data Factory, o que é geralmente disponível (DG), consulte [documentação do Data Factory versão 1](v1/data-factory-introduction.md).
+> Este artigo aplica-se à versão 2 do Data Factory, que está atualmente em pré-visualização. Se estiver a utilizar a versão 1 do serviço Data Factory, que está disponível em geral (GA), veja a [documentação da versão 1 do Data Factory](v1/data-factory-introduction.md).
 
 Tutorial: [Tutorial: implementar pacotes de SQL Server Integration Services (SSIS) para o Azure](tutorial-deploy-ssis-packages-azure.md) mostra-lhe como criar um tempo de execução de integração do Azure SSIS (IR) ao utilizar a SQL Database do Azure como o arquivo para o catálogo SSIS. Este artigo expande o tutorial e mostra como fazer o seguinte: 
 
@@ -42,14 +42,15 @@ Para obter informações concetuais sobre associar uma resposta a incidentes SSI
 - **Azure PowerShell**. Siga as instruções em [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/install-azurerm-ps). Vai utilizar o PowerShell para executar um script para aprovisionar um integration runtime do Azure-SSIS que executa pacotes de SSIS na cloud. 
 
 > [!NOTE]
-> Para obter uma lista de regiões suportadas pelo Azure Data Factory V2 e tempo de execução de integração de SSIS do Azure, consulte [produtos disponíveis por região](https://azure.microsoft.com/regions/services/). Expanda **dados + análise** para ver **V2 da fábrica de dados** e **SSIS integração Runtime**.
+> Para obter uma lista das regiões suportadas pelo Azure Data Factory V2 e o Integration Runtime Azure-SSIS, veja [Products available by region](https://azure.microsoft.com/regions/services/) (Produtos disponíveis por região). Expanda **Dados + Análise** para ver **Data Factory V2** e **Integration Runtime do SSIS**.
 
 
 ## <a name="create-variables"></a>Criar variáveis
 Defina variáveis para utilizar nos scripts neste tutorial:
 
 ```powershell
-# Azure Data Factory version 2 information
+# Azure Data Factory version 2 information 
+# If your input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$".
 $SubscriptionName = "[your Azure subscription name]"
 $ResourceGroupName = "[your Azure resource group name]"
 $DataFactoryName = "[your data factory name]"

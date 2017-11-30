@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/28/2017
+ms.date: 11/29/2017
 ms.author: mimig
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a0567df53dff15d7fbacf4850f6eae07c8985598
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 62767163213383c577e74e0aa8fbd07f891cb694
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="retiring-the-s1-s2-and-s3-performance-levels"></a>Extinguir os níveis de desempenho S1, S2 e S3
 
@@ -93,7 +93,7 @@ Partindo do princípio de tem 10 S1 coleções, 1 GB de armazenamento para cada 
 
 ## <a name="what-if-i-need-more-than-10-gb-of-storage"></a>E se for necessário mais de 10 GB de armazenamento?
 
-Se tem uma coleção com um nível de desempenho S1, S2 ou S3 ou tem uma coleção de partições únicas, dos quais têm 10 GB de armazenamento disponível, pode utilizar a ferramenta de migração de dados de base de dados do Cosmos para migrar os dados para uma coleção particionada com armazenamento virtualmente ilimitados. Para obter informações sobre as vantagens de uma coleção particionada, consulte [divisão em partições e o dimensionamento do BD Azure Cosmos](documentdb-partition-data.md). Para obter informações sobre como migrar a sua S1, S2, S3 ou coleção de partições únicas para uma coleção particionada, consulte [migrar de partição única para coleções particionadas](documentdb-partition-data.md#migrating-from-single-partition). 
+Se tem uma coleção com um nível de desempenho S1, S2 ou S3 ou tem uma coleção de partições únicas, dos quais têm 10 GB de armazenamento disponível, pode utilizar a ferramenta de migração de dados de base de dados do Cosmos para migrar os dados para uma coleção particionada com armazenamento virtualmente ilimitados. Para obter informações sobre as vantagens de uma coleção particionada, consulte [divisão em partições e o dimensionamento do BD Azure Cosmos](documentdb-partition-data.md). 
 
 <a name="change-before"></a>
 

@@ -3,7 +3,7 @@ title: "Criar uma função do Azure que se liga a um Storage do Azure | Microsof
 description: "Script CLI do Azure de exemplo - criar uma função do Azure que se liga a um Storage do Azure"
 services: functions
 documentationcenter: functions
-author: rachelappel
+author: ggailey777
 manager: cfowler
 editor: 
 tags: functions
@@ -14,13 +14,13 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: 
 ms.date: 04/20/2017
-ms.author: rachelap
+ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: af90702601d1bd05836dbf2b20cd3e318832b07c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 363a3fd1c80538495658720274840b921baa8675
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="integrate-function-app-into-azure-storage-account"></a>Integrar a aplicação de função na conta do Storage do Azure
 
@@ -30,7 +30,7 @@ Este script de exemplo cria uma aplicação de função e a conta de armazenamen
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e usar a CLI localmente, este tópico requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se utilizar a CLI localmente, certifique-se de que está a executar a CLI do Azure versão 2.0 ou posterior. Para localizar a versão, execute `az --version`. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0](/cli/azure/install-azure-cli). 
 
 ## <a name="sample-script"></a>Script de exemplo
 
@@ -41,7 +41,7 @@ Este exemplo cria uma aplicação de função do Azure e adiciona a cadeia de li
 
 ## <a name="clean-up-deployment"></a>Limpar a implementação
 
-Depois de executar o script de exemplo, pode ser utilizado o seguinte comando para remover o grupo de recursos, a aplicação do app Service e todos os recursos relacionados:
+Depois de executar o script de exemplo, execute o seguinte comando para remover o grupo de recursos e todos os recursos relacionados:
 
 [!INCLUDE [cli-script-clean-up](../../../includes/cli-script-clean-up.md)]
 

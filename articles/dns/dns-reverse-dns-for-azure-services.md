@@ -3,7 +3,7 @@ title: "Inversa de DNS para serviços do Azure | Microsoft Docs"
 description: "Saiba como configurar pesquisas inversas de DNS para serviços alojados no Azure"
 services: dns
 documentationcenter: na
-author: jtuliani
+author: KumudD
 manager: timlt
 ms.service: dns
 ms.devlang: na
@@ -11,12 +11,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
-ms.author: jonatul
-ms.openlocfilehash: 63701e1ce0c1c6dcf2ce02ebce272b8280395e7f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: kumud
+ms.openlocfilehash: 0c5d12e9d6b5ddbee2a930e4e537b8180b7a9c7b
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Configurar o DNS inversa para serviços alojados no Azure
 
@@ -28,9 +28,8 @@ Este cenário não deve ser confundido com a capacidade de [alojar as zonas de p
 
 Antes de ler este artigo, deve estar familiarizado com esta [descrição geral do DNS inversa e de suporte no Azure](dns-reverse-dns-overview.md).
 
-O Azure tem dois modelos de implementação diferentes para criar e trabalhar com recursos: [Resource Manager e clássico](../azure-resource-manager/resource-manager-deployment-model.md).
-* No modelo de implementação Resource Manager, os recursos de computação (por exemplo, as máquinas virtuais, conjuntos de dimensionamento de máquina virtual ou clusters de Service Fabric) são expostos através de um recurso de PublicIpAddress. Pesquisas inversas de DNS estão configuradas ao utilizar a propriedade 'ReverseFqdn' o PublicIpAddress.
-* No modelo de implementação clássica, recursos de computação são expostos utilizar serviços em nuvem. Pesquisas inversas de DNS estão configuradas ao utilizar a propriedade 'ReverseDnsFqdn' do serviço de nuvem.
+No DNS do Azure, os recursos de computação (por exemplo, as máquinas virtuais, conjuntos de dimensionamento de máquina virtual ou clusters de Service Fabric) são expostos através de um recurso de PublicIpAddress. Pesquisas inversas de DNS estão configuradas ao utilizar a propriedade 'ReverseFqdn' o PublicIpAddress.
+
 
 DNS inversa não é atualmente suportado para o App Service do Azure.
 

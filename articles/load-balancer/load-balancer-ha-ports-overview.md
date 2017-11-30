@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/26/2017
 ms.author: kumud
-ms.openlocfilehash: 7a77e6ecbf59944c62aa4ae014bf5b8a5a7f7f1f
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: f72f4a3a81fc3a03c86805787caeeacbe6135c5e
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="high-availability-ports-overview"></a>Descrição geral de portas de elevada disponibilidade
 
@@ -65,69 +65,10 @@ A funcionalidade de portas do HA está disponível no [mesmas regiões como padr
 
 ## <a name="preview-sign-up"></a>Pré-visualização inscrição
 
-Participar na pré-visualização da funcionalidade de portas HA no padrão de Balanceador de carga, registe a sua subscrição para obter acesso. Pode utilizar o Azure CLI 2.0 ou o PowerShell.
+Participar na pré-visualização da funcionalidade de portas HA no padrão de Balanceador de carga, registar a sua subscrição do Balanceador de carga [pré-visualização padrão](https://aka.ms/lbpreview#preview-sign-up). Pode registar utilizando o Azure CLI 2.0 ou o PowerShell.
 
 >[!NOTE]
->Para utilizar esta funcionalidade, tem também inscreva Balanceador de carga [pré-visualização padrão](https://aka.ms/lbpreview#preview-sign-up), além da funcionalidade de portas do HA. Registo pode demorar até uma hora.
-
-### <a name="sign-up-by-using-azure-cli-20"></a>Inscrever-se utilizando o Azure CLI 2.0
-
-1. A funcionalidade com o fornecedor do registo:
-    ```cli
-    az feature register --name AllowILBAllPortsRule --namespace Microsoft.Network
-    ```
-    
-2. A operação anterior pode demorar até 10 minutos a concluir. Pode verificar o estado da operação com o seguinte comando:
-
-    ```cli
-    az feature show --name AllowILBAllPortsRule --namespace Microsoft.Network
-    ```
-    
-    A operação for concluída com êxito quando o estado de registo de funcionalidade devolve **registada**, conforme mostrado aqui:
-   
-    ```json
-    {
-       "id": "/subscriptions/foo/providers/Microsoft.Features/providers/Microsoft.Network/features/AllowLBPreview",
-       "name": "Microsoft.Network/AllowILBAllPortsRule",
-       "properties": {
-          "state": "Registered"
-       },
-       "type": "Microsoft.Features/providers/features"
-    }
-    ```
-    
-3. Conclua a inscrição de pré-visualização ao registar novamente a sua subscrição com o fornecedor de recursos:
-
-    ```cli
-    az provider register --namespace Microsoft.Network
-    ```
-    
-### <a name="sign-up-by-using-powershell"></a>Inscrever-se utilizando o PowerShell
-
-1. A funcionalidade com o fornecedor do registo:
-    ```powershell
-    Register-AzureRmProviderFeature -FeatureName AllowILBAllPortsRule -ProviderNamespace Microsoft.Network
-    ```
-    
-2. A operação anterior pode demorar até 10 minutos a concluir. Pode verificar o estado da operação com o seguinte comando:
-
-    ```powershell
-    Get-AzureRmProviderFeature -FeatureName AllowILBAllPortsRule -ProviderNamespace Microsoft.Network
-    ```
-    A operação for concluída com êxito quando o estado de registo de funcionalidade devolve **registada**, conforme mostrado aqui:
-   
-    ```
-    FeatureName          ProviderName      RegistrationState
-    -----------          ------------      -----------------
-    AllowILBAllPortsRule Microsoft.Network Registered
-    ```
-    
-3. Conclua a inscrição de pré-visualização ao registar novamente a sua subscrição com o fornecedor de recursos:
-
-    ```powershell
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
-    ```
-
+>Registo pode demorar até uma hora.
 
 ## <a name="limitations"></a>Limitações
 

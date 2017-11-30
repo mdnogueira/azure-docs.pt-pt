@@ -14,29 +14,29 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: ancav
-ms.openlocfilehash: d85281c02b792921f12cc62e6d60bef3e7c13b3f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: efdd42d244710b27fc33154b708cfbe40312e3b0
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="service-health-notifications"></a>Notificações do Estado de funcionamento do serviço
 ## <a name="overview"></a>Descrição geral
 
 Este artigo mostra como ver notificações de estado de funcionamento de serviço com o portal do Azure.
 
-Notificações do Estado de funcionamento do serviço permitem-lhe ver mensagens de estado de funcionamento de serviço publicadas pela equipa do Azure que possam estar a afetar os recursos na sua subscrição. Estas notificações são uma classe secundárias da atividade de registo de eventos e também podem ser encontradas no painel de registo de atividade. Notificações do Estado de funcionamento do serviço podem ser informativa ou acionável consoante a classe.
+Notificações do Estado de funcionamento do serviço permitem-lhe ver mensagens de estado de funcionamento de serviço publicadas pela equipa do Azure que possam estar a afetar os recursos na sua subscrição. Estas notificações são uma classe secundárias da atividade de registo de eventos e também podem ser encontradas no registo de atividade. Notificações do Estado de funcionamento do serviço podem ser informativa ou acionável consoante a classe.
 
 Existem cinco classes de notificações do Estado de funcionamento do serviço:  
 
-- **Ação necessária:** ocasionalmente, poderá reparar algo invulgar acontecer na sua conta. Precisamos de trabalhar para resolver isto. Será enviada uma notificação quer com detalhes sobre as ações, terá de tomar ou com detalhes sobre como contactar o suporte ou de engenharia do Azure.  
-- **Recuperação assistida:** tiver ocorrido um evento e engenheiros tem confirmado que ainda estão a experienciar impacto. Engenharia terá de trabalhar consigo diretamente para colocar os serviços de restauro.  
+- **Ação necessária:** de hora a hora Azure poderá reparar algo invulgar acontecer na sua conta. Azure poderá ter de trabalhar para resolver isto. Azure lhe-á enviada uma notificação quer com detalhes sobre as ações precisa de tomar ou com detalhes sobre como contactar o suporte ou de engenharia do Azure.  
+- **Recuperação assistida:** tiver ocorrido um evento e engenheiros tem confirmado que ainda estão a experienciar impacto. Tem de engenharia do Azure trabalhar consigo diretamente para restaurar os serviços de estado de funcionamento completo.  
 - **Incidente:** um serviço afetar evento está atualmente a afetar um ou mais recursos na sua subscrição.  
 - **Manutenção:** trata de uma notificação a informar que uma atividade de manutenção planeada que possam afetar um ou mais dos recursos na sua subscrição.  
-- **Informações:** de tempo para o tempo pode enviar-lhe-notificações que um communicate ao utilizador sobre potenciais otimizações que podem ajudar a melhorar a sua utilização de recursos.  
+- **Informações:** ocasionalmente, Azure pode enviar notificações informam sobre potenciais otimizações que podem ajudar a melhorar a sua utilização de recursos.  
 - **Segurança:** segurança urgente relacionadas com as informações relativas a sua solution(s) em execução no Azure.
 
-Cada notificação de estado de funcionamento do serviço irá transportar detalhes sobre o âmbito e o impacto para os recursos. Irão incluir detalhes:
+Cada notificação de estado de funcionamento do serviço inclui detalhes sobre o âmbito e o impacto para os recursos. Detalhes incluem:
 
 Nome da propriedade | Descrição
 -------- | -----------
@@ -54,7 +54,7 @@ subscriptionId | A subscrição do Azure em que este evento foi registado
 status | Cadeia que descrevem o estado da operação. Alguns valores comuns são: foi iniciado em curso, com êxito, falha, Active Directory, a resolvido.
 operationName | Nome da operação.
 categoria | "ServiceHealth"
-resourceId | Id de recurso do recurso afetado.
+resourceId | ID de recurso do recurso afetado.
 Properties.title | O título localizado para esta comunicação. Inglês é o idioma predefinido.
 Properties.Communication | Os detalhes localizados da comunicação com o markup HTML. Inglês é o predefinido.
 Properties.incidentType | Os valores possíveis: AssistedRecovery ActionRequired, informações, incidentes, manutenção, a segurança
@@ -70,14 +70,12 @@ Properties.communicationId | A comunicação este evento está associado.
 1.  No [portal](https://portal.azure.com), navegue para o **Monitor** serviço
 
     ![Monitorizar](./media/monitoring-service-notifications/home-monitor.png)
-2.  Clique em de **Monitor** opção para abrir o painel do Monitor. Este painel reúne todas as suas definições e dados de monitorização numa vista consolidada. É aberto pela primeira vez para a secção **Registo de atividade**.
+2.  Clique em de **Monitor** opção para abrir a experiência de monitorização. Monitor do Azure reúne todas as suas monitorização definições e dados para uma vista consolidada. É aberto pela primeira vez para a secção **Registo de atividade**.
 
-3.  Agora, clique em **notificações de serviço** secção
+3.  Agora, clique em **alertas** secção
 
     ![Monitorizar](./media/monitoring-service-notifications/service-health-summary.png)
-4.  Clique em qualquer um dos itens de linha para ver mais detalhes
-
-5. Clique em de **+ Adicionar alerta de registo de atividade** operação para receber notificações para garantir que são notificados para notificações de serviço futura deste tipo. Para obter mais informações sobre como configurar alertas sobre as notificações de serviço [clique aqui](monitoring-activity-log-alerts-on-service-notifications.md)
+4. Clique em de **+ adicionar o alerta de registo de atividade** e configurar um alerta para garantir que são notificados para notificações de serviço futuras. Para obter mais informações sobre como configurar alertas sobre as notificações de serviço [visitar a página de alertas de registo de atividade e notificações de serviço](monitoring-activity-log-alerts-on-service-notifications.md).
 
 ## <a name="next-steps"></a>Passos Seguintes:
 Receber [sempre que uma notificação de estado de funcionamento do serviço de notificações de alertas](monitoring-activity-log-alerts-on-service-notifications.md) é publicada  

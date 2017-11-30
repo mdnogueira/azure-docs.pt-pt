@@ -1,9 +1,9 @@
 ---
-title: "Enlaces de armazenamento de tabela de funções do Azure"
+title: "Enlaces de armazenamento de tabela do Azure para as funções do Azure"
 description: "Compreenda como utilizar os enlaces de armazenamento de tabelas do Azure das funções do Azure."
 services: functions
 documentationcenter: na
-author: christopheranderson
+author: tdykstra
 manager: cfowler
 editor: 
 tags: 
@@ -14,20 +14,20 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/08/2017
-ms.author: chrande
-ms.openlocfilehash: 2f54df931d03318a50e9397211e3c50d0898556d
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.author: tdykstra
+ms.openlocfilehash: a1305432d98c2e9f9f8bc30cacc62d49b1a8ba36
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="azure-functions-table-storage-bindings"></a>Enlaces de armazenamento de tabela de funções do Azure
+# <a name="azure-table-storage-bindings-for-azure-functions"></a>Enlaces de armazenamento de tabela do Azure para as funções do Azure
 
 Este artigo explica como trabalhar com enlaces de armazenamento de tabelas do Azure das funções do Azure. Funções do Azure suporta entrada e saída os enlaces do Table storage do Azure.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="table-storage-input-binding"></a>Enlace de entrada do Table storage
+## <a name="input"></a>Input
 
 Utilize o enlace de entrada de armazenamento de tabelas do Azure para ler uma tabela de uma conta de armazenamento do Azure.
 
@@ -284,7 +284,7 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
-## <a name="input---attributes-for-precompiled-c"></a>Entrada - atributos para pré-compilada c#
+## <a name="input---attributes"></a>Entrada - atributos
  
 Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize os seguintes atributos para configurar um enlace de entrada de tabela:
 
@@ -298,6 +298,9 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
       [QueueTrigger("table-items")] string input, 
       [Table("MyTable", "Http", "{queueTrigger}")] MyPoco poco, 
       TraceWriter log)
+  {
+      ...
+  }
   ```
 
   Pode definir o `Connection` propriedade para especificar a conta de armazenamento a utilizar, conforme mostrado no exemplo seguinte:
@@ -308,7 +311,12 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
       [QueueTrigger("table-items")] string input, 
       [Table("MyTable", "Http", "{queueTrigger}", Connection = "StorageConnectionAppSetting")] MyPoco poco, 
       TraceWriter log)
+  {
+      ...
+  }
   ```
+
+  Para obter um exemplo completado, consulte [entrada - pré-compilada c# exemplo](#input---c-example).
 
 * [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs), definida no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs)
 
@@ -321,6 +329,9 @@ Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o
       [FunctionName("TableInput")]
       [StorageAccount("FunctionLevelStorageAppSetting")]
       public static void Run( //...
+  {
+      ...
+  }
   ```
 
 A conta de armazenamento a utilizar é determinada pela seguinte ordem:
@@ -345,7 +356,9 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**rowKey** |**RowKey** | Opcional. A chave de linha da entidade de tabela para leitura. Consulte o [utilização](#input---usage) secção para obter orientações sobre como utilizar esta propriedade.| 
 |**tirar** |**Tirar** | Opcional. O número máximo de entidades para ler em JavaScript. Consulte o [utilização](#input---usage) secção para obter orientações sobre como utilizar esta propriedade.| 
 |**filtro** |**Filtro** | Opcional. Uma expressão de filtro de OData para a tabela de entrada em JavaScript. Consulte o [utilização](#input---usage) secção para obter orientações sobre como utilizar esta propriedade.| 
-|**ligação** |**Ligação** | O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.<br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação** |**Ligação** | O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="input---usage"></a>Entrada - utilização
 
@@ -368,7 +381,7 @@ O enlace de entrada do Table storage suporta os seguintes cenários:
 
   Definir o `filter` e `take` propriedades. Não defina `partitionKey` ou `rowKey`. Aceder à entrada tabela entidade (ou entidades) utilizando `context.bindings.<name>`. Os objetos de serialização anulados tem `RowKey` e `PartitionKey` propriedades.
 
-## <a name="table-storage-output-binding"></a>O Table storage vínculo de saída
+## <a name="output"></a>Saída
 
 Utilize uma saída de armazenamento de Azure Table enlace escrever entidades a uma tabela de uma conta de armazenamento do Azure.
 
@@ -554,9 +567,9 @@ module.exports = function (context) {
 };
 ```
 
-## <a name="output---attributes-for-precompiled-c"></a>Saída - atributos para pré-compilada c#
+## <a name="output---attributes"></a>Saída - atributos
 
- Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [TableAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/TableAttribute.cs), que está definido no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs).
+Para [pré-compilada c#](functions-dotnet-class-library.md) funções, utilize o [TableAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/TableAttribute.cs), que está definido no pacote NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs).
 
 O construtor do atributo tem o nome da tabela. Pode ser utilizado num `out` parâmetro ou no valor de retorno da função, conforme mostrado no exemplo seguinte:
 
@@ -566,6 +579,9 @@ O construtor do atributo tem o nome da tabela. Pode ser utilizado num `out` par�
 public static MyPoco TableOutput(
     [HttpTrigger] dynamic input, 
     TraceWriter log)
+{
+    ...
+}
 ```
 
 Pode definir o `Connection` propriedade para especificar a conta de armazenamento a utilizar, conforme mostrado no exemplo seguinte:
@@ -576,9 +592,14 @@ Pode definir o `Connection` propriedade para especificar a conta de armazenament
 public static MyPoco TableOutput(
     [HttpTrigger] dynamic input, 
     TraceWriter log)
+{
+    ...
+}
 ```
 
-Pode utilizar o `StorageAccount` atributo para especificar a conta de armazenamento ao nível de classe, método ou parâmetro. Para obter mais informações, consulte [os atributos de entrada - pré-compilada c#](#input---attributes-for-precompiled-c).
+Para obter um exemplo completado, consulte [resultado - pré-compilada c# exemplo](#output---c-example).
+
+Pode utilizar o `StorageAccount` atributo para especificar a conta de armazenamento ao nível de classe, método ou parâmetro. Para obter mais informações, consulte [entrada - atributos](#input---attributes-for-precompiled-c).
 
 ## <a name="output---configuration"></a>De saída - configuração
 
@@ -592,7 +613,9 @@ A tabela seguinte explica as propriedades de configuração de enlace que defini
 |**tableName** |**TableName** | O nome da tabela.| 
 |**partitionKey** |**PartitionKey** | A chave de partição da entidade de tabela para escrita. Consulte o [secção utilização](#output---usage) para obter orientações sobre como utilizar esta propriedade.| 
 |**rowKey** |**RowKey** | A chave de linha da entidade de tabela para escrita. Consulte o [secção utilização](#output---usage) para obter orientações sobre como utilizar esta propriedade.| 
-|**ligação** |**Ligação** | O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.<br/>Quando estiver a desenvolver localmente, as definições de aplicação enviadas para os valores de [local.settings.json ficheiro](functions-run-local.md#local-settings-file).|
+|**ligação** |**Ligação** | O nome de uma definição de aplicação que contém a cadeia de ligação de armazenamento a utilizar para este enlace. Se o nome da definição de aplicação começa com "AzureWebJobs", pode especificar apenas o resto do nome aqui. Por exemplo, se definir `connection` para "MyStorage", o tempo de execução de funções procura uma definição de aplicação com o nome "AzureWebJobsMyStorage." Se deixar `connection` vazio, o tempo de execução de funções utiliza a cadeia de ligação de armazenamento predefinida na definição de aplicação com o nome `AzureWebJobsStorage`.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="output---usage"></a>Saída - utilização
 

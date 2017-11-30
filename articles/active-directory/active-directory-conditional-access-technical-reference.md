@@ -11,20 +11,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/28/2017
+ms.date: 11/29/2017
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 243c42b8637b7887047c85a60e5dfedfd7f6904a
-ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
+ms.openlocfilehash: cfb3a309208c78dc7896d61891da9825cf36dbd9
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-active-directory-conditional-access-technical-reference"></a>Referência técnica do Azure Active Directory acesso condicional
 
-Pode utilizar [acesso condicional do Azure Active Directory (Azure AD)](active-directory-conditional-access-azure-portal.md) para otimizar a forma como os utilizadores autorizados podem aceder aos seus recursos.  
+Pode utilizar [acesso condicional do Azure Active Directory (Azure AD)](active-directory-conditional-access-azure-portal.md) para otimizar a forma como os utilizadores autorizados podem aceder aos seus recursos.   
 
-Este tópico fornece informações de suporte para as seguintes opções de configuração para uma política de acesso condicional: 
+Este artigo fornece informações de suporte para as seguintes opções de configuração para uma política de acesso condicional: 
 
 - Atribuições de aplicações em nuvem
 
@@ -38,7 +38,7 @@ Este tópico fornece informações de suporte para as seguintes opções de conf
 
 ## <a name="cloud-apps-assignments"></a>Atribuições de aplicações em nuvem
 
-Quando configura uma política de acesso condicional, terá de [Selecione as aplicações em nuvem que utilizam a política](active-directory-conditional-access-azure-portal.md#who). 
+Com as políticas de acesso condicional, controlar a forma como os utilizadores aceder aos seus [aplicações em nuvem](active-directory-conditional-access-azure-portal.md#who). Quando configura uma política de acesso condicional, tem de selecionar pelo menos uma aplicação de nuvem. 
 
 ![Selecione as aplicações em nuvem para a sua política](./media/active-directory-conditional-access-technical-reference/09.png)
 
@@ -48,6 +48,7 @@ Quando configura uma política de acesso condicional, terá de [Selecione as apl
 Pode atribuir uma política de acesso condicional para as seguintes aplicações em nuvem da Microsoft:
 
 - O Azure Information Protection - [Saiba mais](https://docs.microsoft.com/information-protection/get-started/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
+
 - Azure RemoteApp
 
 - Microsoft Dynamics 365
@@ -103,7 +104,7 @@ Uma política de acesso condicional, pode configurar a condição de plataforma 
 
 ## <a name="client-apps-condition"></a>Condição de aplicações de cliente 
 
-Quando configurar uma política de acesso condicional, pode [Selecione as aplicações cliente](active-directory-conditional-access-azure-portal.md#client-apps) para a condição de aplicação de cliente. Defina a condição de aplicações para conceder ou bloquear o acesso quando é efetuada uma tentativa de acesso a partir os seguintes tipos de aplicações de cliente:
+Na sua política de acesso condicional, pode configurar o [aplicações de cliente](active-directory-conditional-access-azure-portal.md#client-apps) condição associar a política para a aplicação de cliente que iniciou uma tentativa de acesso. Defina a condição de aplicações para conceder ou bloquear o acesso quando é efetuada uma tentativa de acesso a partir os seguintes tipos de aplicações de cliente:
 
 - Browser
 - Aplicações móveis e aplicações de ambiente de trabalho
@@ -112,11 +113,11 @@ Quando configurar uma política de acesso condicional, pode [Selecione as aplica
 
 ### <a name="supported-browsers"></a>Browsers suportados 
 
-Controlar o acesso ao browser utilizando o **Browser** opção na sua política de acesso condicional. É concedido o acesso apenas se a tentativa de acesso for feita por um browser suportado. Quando é efetuada uma tentativa de acesso por um browser suportado, a tentativa de está bloqueada.
+Na sua política de acesso condicional, pode selecionar **Browsers** como aplicação de cliente.
 
 ![Controlo de acesso para browsers suportados](./media/active-directory-conditional-access-technical-reference/05.png)
 
-Na sua política de acesso condicional, os seguintes browsers são suportados: 
+Esta definição não tem um impacto em tentativas de acesso de browsers seguintes: 
 
 
 | SO                     | Browsers                            | Suporte     |
@@ -140,14 +141,16 @@ Na sua política de acesso condicional, os seguintes browsers são suportados:
 
 ### <a name="supported-mobile-applications-and-desktop-clients"></a>Clientes de ambiente de trabalho e aplicações móveis suportadas
 
-Controlar o acesso de aplicação e o cliente utilizando o **clientes de ambiente de trabalho e aplicações móveis** opção na sua política de acesso condicional. É concedido o acesso apenas se a tentativa de acesso for feita por um cliente de ambiente de trabalho ou aplicação móvel suportado. Quando é efetuada uma tentativa de acesso por uma aplicação não suportada ou um cliente, a tentativa de está bloqueada.
+Na sua política de acesso condicional, pode selecionar **clientes de ambiente de trabalho e aplicações móveis** como aplicação de cliente.
+
 
 ![Controlo de acesso para aplicações móveis suportadas ou clientes de ambiente de trabalho](./media/active-directory-conditional-access-technical-reference/06.png)
 
-Os clientes de ambiente de trabalho e as seguintes aplicações móveis suportam o acesso condicional para o Office 365 e outras aplicações de serviço ligado do AD do Azure:
+
+Esta definição não tem um impacto em tentativas de acesso dos clientes de ambiente de trabalho e as seguintes aplicações móveis: 
 
 
-|Aplicações de cliente|Serviço de destino|Plataforma|
+|Aplicações do cliente|Serviço de destino|Plataforma|
 |---|---|---|
 |Aplicação remota do Azure|Remoto App service do Azure|Windows 10, Windows 8.1, Windows 7, iOS, Android e Mac OS X|
 |Aplicação do Dynamics CRM|Dynamics CRM|Windows 10, Windows 8.1, Windows 7, iOS e Android|
@@ -170,14 +173,14 @@ Os clientes de ambiente de trabalho e as seguintes aplicações móveis suportam
 
 ## <a name="approved-client-app-requirement"></a>Requisito da aplicação de cliente aprovada 
 
-Controlar as ligações de cliente utilizando o **requerem a aplicação de cliente aprovada** opção na sua política de acesso condicional. É concedido o acesso apenas quando é efetuada uma tentativa de ligação por uma aplicação de cliente aprovada.
+Na sua política de acesso condicional, pode exigir que um acesso tentar as aplicações em nuvem selecionado tem de ser efetuada a partir de uma aplicação de cliente aprovada. 
 
 ![Controlo de acesso para aplicações de cliente aprovada](./media/active-directory-conditional-access-technical-reference/21.png)
 
-As seguintes aplicações de cliente podem ser utilizadas com o requisito da aplicação cliente aprovada:
+Esta definição aplica-se para as seguintes aplicações de cliente:
 
 
-- Proteção de informações do Microsoft Azure
+- Microsoft Azure Information Protection
 - Microsoft Excel
 - Microsoft OneDrive
 - Microsoft OneNote
