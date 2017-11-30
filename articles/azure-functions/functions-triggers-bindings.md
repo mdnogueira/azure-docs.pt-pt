@@ -1,5 +1,5 @@
 ---
-title: "Trabalhar com acionadores e enlaces de funções do Azure | Microsoft Docs"
+title: "Trabalhar com acionadores e enlaces de funções do Azure"
 description: "Saiba como utilizar acionadores e enlaces das funções do Azure para ligar a execução do código para serviços baseados na nuvem e eventos online."
 services: functions
 documentationcenter: na
@@ -8,26 +8,25 @@ manager: cfowler
 editor: 
 tags: 
 keywords: "funções do azure, funções, processamento de eventos, webhooks, computação dinâmica, arquitetura sem servidor"
-ms.assetid: cbc7460a-4d8a-423f-a63e-1cd33fef7252
 ms.service: functions
 ms.devlang: multiple
 ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/30/2017
+ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: 7d22a6749216486de6132a6d39e2dcf683d0e678
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: e3413c9e1055ca9198dae4a467bcf47372ad4ecb
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Conceitos de enlaces e acionadores de funções do Azure
 As funções do Azure permite-lhe escrever código em resposta a eventos no Azure e outros serviços, através de *acionadores* e *enlaces*. Este artigo é uma descrição geral conceptual dos acionadores e enlaces para todos os suportados linguagens de programação. As funcionalidades que são comuns a todos os enlaces são descritas aqui.
 
 ## <a name="overview"></a>Descrição geral
 
-Acionadores e enlaces são uma forma declarativa de definir a forma como uma função é invocada e o que funciona com dados. A *acionador* define a forma como uma função é invocada. Uma função tem de ter exatamente um acionador. Acionadores associou dados, o que é normalmente o payload que acionou a função. 
+Acionadores e enlaces são uma forma declarativa de definir a forma como uma função é invocada e o que funciona com dados. A *acionador* define a forma como uma função é invocada. Uma função tem de ter exatamente um acionador. Acionadores associou dados, o que é normalmente o payload que acionou a função.
 
 Entrada e saída *enlaces* proporcionam uma forma declarativa para ligar a dados a partir de dentro do seu código. Semelhante ao acionadores, especificar as cadeias de ligação e outras propriedades na configuração da função. Enlaces são opcionais e uma função pode ter vários de entrada e saída enlaces. 
 
@@ -35,11 +34,13 @@ Utilizar acionadores e enlaces, pode escrever código que é mais genérico e n�
 
 Pode configurar acionadores e enlaces no **integrar** separador no portal das funções do Azure. Nos bastidores, a IU modifica um ficheiro chamado *function.json* ficheiro no diretório de função. Pode editar este ficheiro pela alteração para o **editor avançada**.
 
-A tabela seguinte mostra os acionadores e enlaces que são suportadas as funções do Azure. 
+## <a name="supported-bindings"></a>Enlaces suportados
 
 [!INCLUDE [Full bindings table](../../includes/functions-bindings.md)]
 
-### <a name="example-queue-trigger-and-table-output-binding"></a>Exemplo: acionador de filas e tabela de saída do enlace
+Para obter informações sobre os quais os enlaces estão na pré-visualização ou estão aprovados para utilização em produção, consulte [idiomas suportados](supported-languages.md).
+
+## <a name="example-queue-trigger-and-table-output-binding"></a>Exemplo: acionador de filas e tabela de saída do enlace
 
 Suponha que pretende escrever uma nova linha no Table Storage do Azure, sempre que uma nova mensagem é apresentada no armazenamento de filas do Azure. Este cenário pode ser implementado através de uma fila do Azure acionador e um Table Storage do Azure de saída do enlace. 
 
@@ -126,9 +127,9 @@ Para ver e editar o conteúdo do *function.json* no portal do Azure, clique em d
 
 Para obter mais exemplos de código e detalhes sobre a integração com o Storage do Azure, consulte [acionadores de funções do Azure e vínculos para armazenamento do Azure](functions-bindings-storage.md).
 
-### <a name="binding-direction"></a>Direção de enlace
+## <a name="binding-direction"></a>Direção de enlace
 
-Todos os acionadores e enlaces de tem um `direction` propriedade:
+Todos os acionadores e enlaces de tem um `direction` propriedade no *function.json* ficheiro:
 
 - Para acionadores, a direção é sempre`in`
 - Utilizam enlaces de entrada e de saída `in` e`out`
@@ -243,7 +244,7 @@ Por exemplo, um acionador de fila de armazenamento do Azure suporta as seguintes
 
 Detalhes das propriedades de metadados para cada acionador são descritos no tópico de referência correspondente. Também está disponível na documentação sobre o **integrar** separador do portal, no **documentação** secção abaixo da área de configuração do enlace.  
 
-Por exemplo, uma vez que os acionadores de blob têm alguns atrasos, pode utilizar um acionador de fila para executar a função (consulte [acionador de armazenamento de BLOBs](functions-bindings-storage-blob.md#blob-storage-trigger)). A mensagem da fila iria conter o nome de ficheiro do blob para acionar. Utilizar o `queueTrigger` propriedade de metadados, pode especificar este comportamento todos na sua configuração, em vez de código.
+Por exemplo, uma vez que os acionadores de blob têm alguns atrasos, pode utilizar um acionador de fila para executar a função (consulte [acionador de armazenamento de BLOBs](functions-bindings-storage-blob.md#trigger)). A mensagem da fila iria conter o nome de ficheiro do blob para acionar. Utilizar o `queueTrigger` propriedade de metadados, pode especificar este comportamento todos na sua configuração, em vez de código.
 
 ```json
   "bindings": [

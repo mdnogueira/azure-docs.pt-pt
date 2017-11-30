@@ -14,11 +14,11 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 01016294c3ef6fd904a7582e4f9c16ef19330a20
-ms.sourcegitcommit: 6acb46cfc07f8fade42aff1e3f1c578aa9150c73
+ms.openlocfilehash: 02c3e0e919b556bc6d4bb41d9c66b4a6d29bdd68
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Enlaces de funções duráveis (funções do Azure)
 
@@ -55,7 +55,7 @@ Internamente este enlace de Acionador consulta uma série de filas na conta de a
 Seguem-se algumas notas sobre o acionador orchestration:
 
 * **Single-threading** -um thread dispatcher único é utilizado para a execução de função do orchestrator todos os numa instância de anfitrião único. Por este motivo, é importante certificar-se de que o código de função do orchestrator é eficiente e não efetuar qualquer e/s. Também é importante certificar-se de que este thread não qualquer trabalho async, exceto quando a aguardar em tipos de tarefas específicas de funções durável.
-* **Processamento de mensagens poising** -não são suportadas mensagens nocivas em acionadores de orquestração.
+* **Processamento de mensagens poison** -não são suportadas mensagens nocivas em acionadores de orquestração.
 * **Mensagem de visibilidade** -as mensagens de Acionador de orquestração são removidas e mantidas invisíveis durante um período de tempo configurável. A visibilidade destas mensagens é renovar automaticamente, desde que a aplicação de função está em execução e bom estado de funcionamento.
 * **Valores de retorno** -devolver valores são serializados para JSON e persistente para a tabela de histórico de orquestração do Table storage do Azure. Estes valores de retorno podem ser consultados pelo cliente de orquestração de enlace, descrito mais à frente.
 

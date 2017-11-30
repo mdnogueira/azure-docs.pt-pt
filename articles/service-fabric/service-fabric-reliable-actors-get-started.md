@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/20/2017
 ms.author: vturecek
-ms.openlocfilehash: eb076c30eda63c37a8b555d40d5903cbbf0d426a
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: ea17cf744779f390fe4b3f4049deb0c1ad985024
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="getting-started-with-reliable-actors"></a>Introdução a Reliable Actors
 > [!div class="op_single_selector"]
@@ -101,7 +101,7 @@ Crie uma aplicação de consola simples para chamar o serviço de atores.
     ![Adicionar caixa de diálogo novo projeto][6]    
     
     > [!NOTE]
-    > Uma aplicação de consola não é do tipo de aplicação que normalmente utilizaria como um cliente no Service Fabric, mas permite um exemplo de depuração e teste utilizando o emulador do Service Fabric local conveniente.
+    > Uma aplicação de consola não é do tipo de aplicação que normalmente utilizaria como um cliente no Service Fabric, mas permite um exemplo de depuração e teste utilizando o cluster do Service Fabric local conveniente.
 
 3. A aplicação de consola tem de ser uma aplicação de 64 bits para manter a compatibilidade com o projeto de interface e outras dependências.  No Explorador de soluções, clique com botão direito do **ActorClient** projeto e, em seguida, clique em **propriedades**.  No **criar** separador, defina **destino plataforma** para **x64**.
     

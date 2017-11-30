@@ -10,18 +10,18 @@ ms.assetid: 5d71886b-463a-43ae-b61f-35c6fc9bae25
 ms.service: virtual-machines-windows
 ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/15/2017
+ms.date: 011/28/2017
 ms.author: rclaus
-ms.openlocfilehash: 9174f7c8d16ff311312980fbe4d35996ec7ac832
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e903495e08001069fc33ddff5a343864fb7f7084
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="oracle-solutions-and-their-deployment-on-microsoft-azure"></a>Soluções de Oracle e a respetiva implementação no Microsoft Azure
-Estas informações de bastidores artigo necessárias para com êxito implementar várias soluções de Oracle no Microsoft Azure. Estas soluções são baseadas em imagens da Máquina Virtual publicadas pela Oracle no Azure Marketplace. Para obter uma lista de imagens atualmente disponíveis, execute o seguinte comando:
+Este artigo aborda as informações necessárias para implementar com sucesso várias soluções de Oracle no Microsoft Azure. Estas soluções são baseadas em imagens da Máquina Virtual publicadas pela Oracle no Azure Marketplace. Para obter uma lista de imagens atualmente disponíveis, execute o seguinte comando:
 ```azurecli-interactive
 az vm image list --publisher oracle -o table --all
 ```
@@ -43,10 +43,10 @@ Oracle-WebLogic-Server  Oracle       Oracle-WebLogic-Server  Oracle:Oracle-WebLo
 
 Estas imagens são consideradas "Traga a sua própria licença" e como tal será apenas cobrada para computação, armazenamento e os custos de funcionamento em rede tarifas executando uma VM.  Presume-se que estão devidamente licenciados para utilizar o Oracle software e de que tem um contrato de suporte atual no local com o Oracle. Oracle tem garantida mobilidade de licenças no local para o Azure. Consulte o artigo publicado [Oracle e Microsoft](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html) nota para obter detalhes sobre mobilidade de licenças. 
 
-Indivíduos também podem optar por base as soluções nas imagens personalizadas que criar a partir do zero no Azure ou carregar um imagens personalizadas dos respetivos ambientes no local no.
+Indivíduos também podem optar por base as soluções numa imagem personalizada que criar a partir do zero no Azure ou carregar uma imagem personalizada do respetivo ambiente no local no.
 
 ## <a name="support-for-jd-edwards"></a>Suporte para JD Edwards
-De acordo com nota de suporte de Oracle [2178595.1 de ID do documento](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=573435677515785&id=2178595.1&_afrWindowMode=0&_adf.ctrl-state=o852dw7d_4) , JD Edwards EnterpriseOne verions 9.2 e superior, são suportadas em **qualquer público na nuvem oferta** que satisfaz as respetivas específicos `Minimum Technical Requirements` (MTR).  Terá de criar imagens personalizadas que cumprem as respetivas especificações MTR para compatibilidade de aplicações do SO e software. 
+De acordo com nota de suporte de Oracle [2178595.1 de ID do documento](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=573435677515785&id=2178595.1&_afrWindowMode=0&_adf.ctrl-state=o852dw7d_4) , JD Edwards EnterpriseOne versões 9.2 e superior, são suportadas em **qualquer público na nuvem oferta** que satisfaz as respetivas específicos `Minimum Technical Requirements` (MTR).  Terá de criar imagens personalizadas que cumprem as respetivas especificações MTR para compatibilidade de aplicações do SO e software. 
 
 ## <a name="oracle-database-virtual-machine-images"></a>Imagens de máquina virtual de base de dados Oracle
 Oracle suporta edições Oracle DB 12.1 Standard e Enterprise em execução no Azure em imagens da máquina virtual com base no Oracle Linux.  Para obter o melhor desempenho para cargas de trabalho de produção de Oracle DB no Azure, lembre-se de que corretamente o tamanho da imagem VM e utilizar discos geridos que sejam copiados pelo armazenamento Premium. Para obter instruções sobre como obter rapidamente uma base de dados Oracle e em execução no Azure com o Oracle publicado a imagem de VM, [tente as instruções do guia de introdução do Oracle DB](oracle-database-quick-create.md).
@@ -55,21 +55,21 @@ Oracle suporta edições Oracle DB 12.1 Standard e Enterprise em execução no A
 
 Discos ligados baseiam-se no serviço de armazenamento de Blobs do Azure. Cada disco padrão é capaz de um máximo de teórico de aproximadamente 500 operações de entrada/saída por segundo (IOPS). A nossa oferta do disco premium preferido para cargas de trabalho de base de dados de elevado desempenho e pode conseguir até 5000 IOps por disco. Enquanto pode utilizar um único disco se de que satisfaz as necessidades de desempenho, pode melhorar o desempenho de IOPS Efetivo se utilizar vários discos ligados, distribuídos a base de dados por-los e, em seguida, utilize a gestão de armazenamento automática da Oracle (ASM). Consulte [descrição geral de armazenamento automática Oracle](http://www.oracle.com/technetwork/database/index-100339.html) para obter mais informações específicas de ASM do Oracle. Para obter um exemplo de como instalar e configurar Oracle ASM numa VM do Azure Linux - pode experimentar o [instalar e configurar Oracle automatizada gestão de armazenamento](configure-oracle-asm.md) tutorial.
 
-### <a name="oracle-realtime-application-cluster-rac"></a>Cluster de aplicação do Oracle em tempo real (RAC)
-Oracle RAC foi concebido para mitigar a falha de um único nó uma configuração de cluster de vários nós no local.  Baseia-se em duas tecnologias no local que não são nativas para ambientes de nuvem pública de hiper escala: multicast rede e de disco partilhado. Existem soluções de terceiros criadas pelas empresas [como FlashGrid](https://www.flashgrid.io/oracle-rac-in-azure/) que emulam estas tecnologias se precisar de implementar RAC Oracle no Azure. 
+## <a name="oracle-real-application-cluster-oracle-rac"></a>Oracle Real da aplicação Cluster (Oracle RAC)
+Oracle RAC foi concebido para mitigar a falha de um único nó uma configuração de cluster de vários nós no local. Baseia-se em duas tecnologias no local que não são nativas para ambientes de nuvem pública de hiper escala: multicast rede e de disco partilhado. Se a sua solução de base de dados requer RAC Oracle no Azure, terá de 3rd software de terceiros para permitir estas tecnologias.  A **certificadas do Microsoft Azure** oferta chamada [FlashGrid nós para Oracle RAC](https://azuremarketplace.microsoft.com/marketplace/apps/flashgrid-inc.flashgrid-racnode?tab=Overview) está disponível no Azure Marketplace, publicados pelo FlashGrid Inc. Para obter mais informações sobre esta solução e como funciona no Azure, consulte o [página de solução FlashGrid](https://www.flashgrid.io/oracle-rac-in-azure/).
 
-### <a name="high-availability-and-disaster-recovery-considerations"></a>Considerações de recuperação após desastre e disponibilidade elevada
+## <a name="high-availability-and-disaster-recovery-considerations"></a>Considerações de recuperação após desastre e disponibilidade elevada
 Quando utilizar bases de dados Oracle no Azure, é responsável por implementar uma solução de recuperação de disponibilidade e após desastre elevada para evitar qualquer período de inatividade. 
 
-Elevada disponibilidade e recuperação após desastre para Oracle da base de dados Enterprise Edition (sem RAC) no Azure pode ser conseguida utilizando [Data Guard, Active Directory Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), ou [Oracle Golden porta](http://www.oracle.com/technetwork/middleware/goldengate), com duas bases de dados duas máquinas virtuais separadas. Ambas as máquinas virtuais deve estar no mesmo [rede virtual](https://azure.microsoft.com/documentation/services/virtual-network/) para garantir que estes possam aceder aos entre si através do endereço IP privado persistente.  Além disso, recomendamos que colocar as máquinas virtuais no mesmo conjunto para permitir que o Azure para colocá-los em domínios de falhas separada e domínios de atualização de disponibilidade.  Se pretender que tenham georredundância - podem ter estas duas bases de dados são replicados entre duas regiões diferentes e ligar duas instâncias com um Gateway de VPN.
+Elevada disponibilidade e recuperação após desastre para Oracle da base de dados Enterprise Edition (sem depender Oracle RAC) pode ser conseguida utilizando Azure [Data Guard, Active Directory Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), ou [Oracle Golden porta](http://www.oracle.com/technetwork/middleware/goldengate), com duas bases de dados em duas máquinas virtuais separadas. Ambas as máquinas virtuais deve estar no mesmo [rede virtual](https://azure.microsoft.com/documentation/services/virtual-network/) para garantir que estes possam aceder aos entre si através do endereço IP privado persistente.  Além disso, recomendamos que colocar as máquinas virtuais no mesmo conjunto para permitir que o Azure para colocá-los em domínios de falhas separada e domínios de atualização de disponibilidade.  Se pretender que tenham georredundância - podem ter estas duas bases de dados são replicados entre duas regiões diferentes e ligar duas instâncias com um Gateway de VPN.
 
-Temos um tutorial "[DataGuard Oracle de implementar no Azure](configure-oracle-dataguard.md)" que orienta-o procedimento de configuração básica para a versão de avaliação isto no Azure.  
+Temos um tutorial "[DataGuard Oracle de implementar no Azure](configure-oracle-dataguard.md)", que explica o procedimento de configuração básica para a versão de avaliação isto no Azure.  
 
 Com o Oracle Data Guard, elevada disponibilidade pode ser conseguida com uma base de dados primária em máquinas virtuais, uma base de dados (modo de espera) secundário na outra máquina virtual e replicação unidirecional configurar entre eles. O resultado é acesso de leitura para a cópia da base de dados. Com o Oracle GoldenGate, pode configurar a replicação bidirecional entre as duas bases de dados. Para saber como configurar uma solução de elevada disponibilidade para as bases de dados a utilizar estas ferramentas, consulte [Active Directory Data Guard](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html) e [GoldenGate](http://docs.oracle.com/goldengate/1212/gg-winux/index.html) documentação no Web site da Oracle. Se o precisa de leitura e escrita acesso para a cópia da base de dados, pode utilizar [Active Directory Oracle Data Guard](http://www.oracle.com/uk/products/database/options/active-data-guard/overview/index.html).
 
-Temos um tutorial "[GoldenGate Oracle de implementar no Azure](configure-oracle-golden-gate.md)" que orienta-o procedimento seup básica para a versão de avaliação isto no Azure.
+Temos um tutorial "[GoldenGate Oracle de implementar no Azure](configure-oracle-golden-gate.md)", que explica o procedimento de configuração básica para a versão de avaliação isto no Azure.
 
-Apesar de ter uma solução HA e DR criada no Azure, irá querer Certifique-se de que tem uma estratégia de cópia de segurança para restaurar a base de dados.  Temos um tutorial [cópia de segurança e recuperar uma base de dados Oracle](oracle-backup-recovery.md) que orienta-o procedimento para estabelecer uma cópia de segurança consistant básico.
+Apesar de ter uma solução HA e DR criada no Azure, pretender certificar-se de que tem uma estratégia de cópia de segurança para restaurar a base de dados.  Temos um tutorial [cópia de segurança e recuperar uma base de dados Oracle](oracle-backup-recovery.md) que orienta-o procedimento básico para estabelecer uma cópia de segurança consistente.
 
 ## <a name="oracle-weblogic-server-virtual-machine-images"></a>Imagens da máquina virtual Oracle WebLogic Server
 * **Clustering só é suportado na edição Enterprise.** Está licenciado para utilizar o clustering de WebLogic apenas quando utilizar a Enterprise Edition do WebLogic Server. Não utilize o clustering com WebLogic Server Standard Edition.
@@ -80,7 +80,7 @@ Apesar de ter uma solução HA e DR criada no Azure, irá querer Certifique-se d
 
        Bootstrap to: example.cloudapp.net/138.91.142.178:7006' over: 't3' got an error or timed out]
 
-   Isto acontece porque para qualquer T3 o acesso remoto, WebLogic Server espera que a porta de Balanceador de carga e a porta do servidor WebLogic gerido para ser o mesmo. No caso de acima, o cliente está a aceder a porta 7006 (a porta do Balanceador de carga) e o servidor gerido está a escutar 7008 (a porta privada). Esta restrição se aplica apenas T3 acesso, não HTTP.
+   Isto acontece porque para qualquer T3 o acesso remoto, WebLogic Server espera que a porta de Balanceador de carga e a porta do servidor WebLogic gerido para ser o mesmo. No caso de anterior, o cliente está a aceder a porta 7006 (a porta do Balanceador de carga) e o servidor gerido está a escutar 7008 (a porta privada). Esta restrição se aplica apenas T3 acesso, não HTTP.
 
    Para evitar este problema, utilize uma das seguintes soluções:
 
@@ -91,9 +91,9 @@ Apesar de ter uma solução HA e DR criada no Azure, irá querer Certifique-se d
 
 Para informações relacionadas, consulte o artigo BDC **860340.1** em <http://support.oracle.com>.
 
-* **Dinâmica clustering e limitações de balanceamento de carga.** Suponha que pretende utilizar um cluster dinâmico no servidor de WebLogic e expô-la através de um único e público com balanceamento de carga ponto final no Azure. Isto pode ser efetuado desde que utilizar um número de porta fixo para cada um dos servidores geridos (não dinamicamente atribuídos de um intervalo) e não se iniciam mais servidores geridos que existem máquinas que o administrador está a controlar (ou seja, não mais do que um gerido servidor por virtual m achine). Se a configuração resulta em mais servidores de WebLogic sejam iniciados que existem máquinas virtuais (ou seja, em que várias instâncias do servidor de WebLogic partilham a mesma máquina virtual), então, não é possível mais do que um essas instâncias de servidor WebLogic servidores para vincular a um número de porta especificado – outros nessa máquina virtual irão falhar.
+* **Dinâmica clustering e limitações de balanceamento de carga.** Suponha que pretende utilizar um cluster dinâmico no servidor de WebLogic e expô-la através de um único e público com balanceamento de carga ponto final no Azure. Isto pode ser efetuado desde que utilizar um número de porta fixo para cada um dos servidores geridos (não dinamicamente atribuídos de um intervalo) e não se iniciam mais servidores geridos que existem máquinas que o administrador está a controlar (ou seja, não mais do que um gerido servidor por virtual m achine). Se a configuração resulta em mais servidores de WebLogic sejam iniciados que existem máquinas virtuais (ou seja, em que várias instâncias do servidor de WebLogic partilham a mesma máquina virtual), então, não é possível mais do que um essas instâncias de servidores de WebLogic Para vincular a um número de porta especificado – outros nessa máquina virtual falharem.
 
-   Por outro lado, se configurar o servidor de admin para atribuir automaticamente os números de porta exclusivo para os respetivos servidores geridos, em seguida, o balanceamento de carga não é possível porque o Azure não suporta o mapeamento de uma única porta pública para várias portas privados, como seria necessário para esta configuração.
+   Se configurar o servidor de admin para atribuir automaticamente os números de porta exclusivo para os respetivos servidores geridos, em seguida, o balanceamento de carga não é possível porque o Azure não suporta o mapeamento de uma única porta pública para várias portas privados, como seriam necessários para este configuração.
 * **Várias instâncias do Weblogic Server numa máquina virtual.** Dependendo dos requisitos da sua implementação, pode considerar a opção de executar várias instâncias do servidor de WebLogic na mesma máquina virtual, se a máquina virtual é suficientemente grande. Por exemplo, uma máquina virtual de tamanho médio, que contém dois núcleos, pode optar por executar duas instâncias do WebLogic Server. Tenha em atenção contudo que recomendamos que evite pontos únicos de falha a introduzir na sua arquitetura que seria caso se tiver utilizado apenas uma máquina virtual que está a executar várias instâncias do WebLogic Server. Utilizar, pelo menos, duas máquinas virtuais pode ser uma abordagem melhor e cada uma dessas máquinas virtuais, em seguida, pode executar várias instâncias do WebLogic Server. Cada um destes instâncias de servidor WebLogic ainda pode ser parte do mesmo cluster. Tenha em atenção, no entanto, atualmente não é possível utilizar o Azure para pontos finais de balanceamento de carga que sejam expostos pelo implementações deste tipo WebLogic Server dentro da mesma máquina virtual, porque o Balanceador de carga do Azure requer os servidores com balanceamento de carga para ser distribuída entre exclusivo máquinas virtuais.
 
 ## <a name="oracle-jdk-virtual-machine-images"></a>Imagens da máquina virtual JDK Oracle
@@ -103,5 +103,5 @@ Para informações relacionadas, consulte o artigo BDC **860340.1** em <http://s
 * **JDK de 64 bits.** As imagens de máquina virtual Oracle WebLogic Server e as imagens de máquina virtual de Oracle JDK fornecidas pelo Azure contêm as versões de 64 bits do Windows Server e o JDK.
 
 ## <a name="next-steps"></a>Passos seguintes
-Tem agora uma descrição geral das soluções de Oracle atual no Microsoft Azure. O próximo passo é aceda e implementar a sua primeira base de dados Oracle no Azure.
+Tem agora uma descrição geral das soluções de Oracle atual no Microsoft Azure. O próximo passo é implementar a sua primeira base de dados Oracle no Azure.
 - Repita o [criar uma base de dados Oracle no Azure](oracle-database-quick-create.md) tutorial para começar.

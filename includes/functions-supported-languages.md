@@ -1,5 +1,5 @@
-|Idioma                                 |V1          |v2|
-|-----------------------------------------|------------|--|
+|Idioma                                 |1. x         |2. x|
+|-----------------------------------------|------------|---|
 |[C#](../articles/azure-functions/functions-reference-csharp.md)|GA|Pré-visualização|
 |[JavaScript](../articles/azure-functions/functions-reference-node.md)|GA|Pré-visualização|
 |[F#](../articles/azure-functions/functions-reference-fsharp.md)|GA||

@@ -11,13 +11,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/19/2017
+ms.date: 11/29/2017
 ms.author: dobett
-ms.openlocfilehash: a499783fc02e1371562edd41b827758e19fbd823
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d1e22a4378caf69d2077d79f78682c4d438dbcd2
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="use-message-routes-and-custom-endpoints-for-device-to-cloud-messages"></a>Utilizar rotas de mensagem e os pontos finais personalizados para mensagens do dispositivo-nuvem
 
@@ -33,6 +33,8 @@ IoT Hub permite-lhe encaminhar [mensagens do dispositivo para nuvem] [ lnk-devic
 Uma única mensagem pode correspondem à condição em várias regras de encaminhamento, na qual caso IoT Hub disponibiliza a mensagem para o ponto final associado a cada regra de correspondência. IoT Hub deduplicates também automaticamente a entrega de mensagens, pelo que o se corresponder a uma mensagem de várias regras que têm o mesmo destino, que é apenas escrito para esse destino uma vez.
 
 Um IoT hub tem uma predefinição [ponto final incorporado][lnk-built-in]. Pode criar os pontos finais personalizados para encaminhar mensagens ao ligar a outros serviços na sua subscrição ao hub. IoT Hub suporta atualmente os contentores de armazenamento do Azure, Event Hubs, as filas do Service Bus e tópicos do Service Bus como pontos finais personalizados.
+
+Quando utiliza pontos finais de encaminhamento e personalizados, entregues as mensagens são apenas para o ponto final incorporado se estes não correspondem às regras. Para entregar mensagens para o ponto final incorporado, bem como relativamente a um ponto de final personalizado, adicione uma rota que envia mensagens para o **eventos** ponto final.
 
 > [!NOTE]
 > IoT Hub apenas suporta a escrita de dados para contentores de armazenamento do Azure como blobs.

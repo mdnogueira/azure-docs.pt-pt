@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2017
+ms.date: 11/21/2017
 ms.author: bradsev;BuckWoody
-ms.openlocfilehash: d572fe3ad01d75b76ac87b441a5397d1c1841547
-ms.sourcegitcommit: dfd49613fce4ce917e844d205c85359ff093bb9c
+ms.openlocfilehash: 52d6fe0757043a0a298c3fdee0478fb364074537
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="team-data-science-process-for-data-scientists"></a>Processo de ciência de dados de equipa do cientistas de dados
 
@@ -30,6 +30,8 @@ Este artigo fornece orientação para um conjunto de objetivos que normalmente s
 - fundações de transferência de dados e armazenamento
 - fornecer documentação de origem de dados
 - utilizando as ferramentas para processamento de análise
+
+Estes materiais de formação relacionados com o processo de ciência de dados de equipa (TDSP) e Microsoft e software open source e toolkits, que são úteis para antevisão, executar e entrega de soluções de ciência de dados.
 
 ## <a name="lesson-path"></a>Caminho de Lesson
 Pode utilizar os itens na tabela seguinte para orientar a seus próprios auto-aprendizagem. Leitura o *Descrição* coluna siga o caminho, clique no *tópico* ligações para estudar a referências e verifique as suas competências utilizando o *conhecimento verifique* coluna.

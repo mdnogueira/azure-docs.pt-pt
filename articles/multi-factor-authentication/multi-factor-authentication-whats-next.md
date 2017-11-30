@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2017
+ms.date: 11/29/2017
 ms.author: joflore
 ms.reviewer: richagi
-ms.openlocfilehash: 585e0ab016dcf489ab99f30a9db43b879a8d3070
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 11f3a3fdc5caf96ce672976067e47680822315d4
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="configure-azure-multi-factor-authentication-settings---public-preview"></a>Configurar definições de multi-factor Authentication do Azure - pré-visualização pública
 
@@ -170,21 +170,40 @@ Quando IPs fidedignos estiver ativada, a verificação de dois passos é *não* 
 
 Se IPs fidedignos está ativada ou não, a verificação é necessária para fluxos de browser, e as palavras-passe de aplicação são necessárias para aplicações de cliente avançado mais antigas. 
 
-### <a name="to-enable-trusted-ips"></a>Para ativar os IPs fidedignos
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).
-2. No lado esquerdo, selecione **Active Directory**.
-3. Selecione o diretório que pretende gerir. 
-4. Selecione **configurar**
-5. Em multi-factor Authentication, selecione **gerir definições do serviço**.
-6. Na página de definições de serviço, em IPs fidedignos, tem duas opções:
+### <a name="enable-named-locations-using-conditional-access"></a>Ativar localizações com nome a utilizar o acesso condicional
+
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **acesso condicional** > **denominado localizações**
+3. Selecione **nova localização**
+4. Forneça um nome para a localização
+5. Selecione **marcar como localização fidedigna**
+6. Especifique o intervalo de IP na notação CIDR (exemplo 192.168.1.1/24)
+7. Selecione **criar**
+
+### <a name="enable-trusted-ips-using-conditional-access"></a>Ativar IPs fidedignos através de acesso condicional
+
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **acesso condicional** > **denominado localizações**
+3. Selecione **MFA configurar IPs fidedignos**
+4. Na página de definições de serviço, em IPs fidedignos, tem duas opções:
    
    * **Para pedidos de utilizadores federados com origem na minha intranet** – a caixa de verificação. Todos os utilizadores federados que estão a iniciar sessão na rede da empresa irão ignorar a verificação de dois passos utilizando uma afirmação emitida pelo AD FS. Certifique-se de que o AD FS tem uma regra para adicionar a afirmação de intranet para o tráfego adequado. Se a regra não existir, crie a seguinte regra no AD FS: "c: [tipo = ="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"] = > issue(claim = c);"
 
+   * **Para pedidos de um intervalo específico de IPs públicos** – introduza os endereços IP na caixa de texto fornecida utilizando a notação CIDR. Por exemplo: xxx.xxx.xxx.0/24 para endereços IP na xxx.xxx.xxx.1 intervalo – xxx.xxx.xxx.254 ou xxx.xxx.xxx.xxx/32 para um único endereço IP. Pode introduzir até 50 intervalos de endereços IP. Os utilizadores que iniciar sessão a partir destes endereços IP ignorar a verificação de dois passos.
+5. Selecione **Guardar**.
 
+### <a name="enable-trusted-ips-using-service-settings"></a>Ativar IPs fidedignos utilizando as definições de serviço
+
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **utilizadores e grupos** > **todos os utilizadores**
+3. Selecionar **Multi-Factor Authentication**
+4. Em multi-factor Authentication, selecione **definições do serviço**.
+5. Na página de definições de serviço, em IPs fidedignos, tem duas opções:
+   
+   * **Para pedidos de utilizadores federados com origem na minha intranet** – a caixa de verificação. Todos os utilizadores federados que estão a iniciar sessão na rede da empresa irão ignorar a verificação de dois passos utilizando uma afirmação emitida pelo AD FS. Certifique-se de que o AD FS tem uma regra para adicionar a afirmação de intranet para o tráfego adequado. Se a regra não existir, crie a seguinte regra no AD FS: "c: [tipo = ="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"] = > issue(claim = c);"
 
    * **Para pedidos de um intervalo específico de IPs públicos** – introduza os endereços IP na caixa de texto fornecida utilizando a notação CIDR. Por exemplo: xxx.xxx.xxx.0/24 para endereços IP na xxx.xxx.xxx.1 intervalo – xxx.xxx.xxx.254 ou xxx.xxx.xxx.xxx/32 para um único endereço IP. Pode introduzir até 50 intervalos de endereços IP. Os utilizadores que iniciar sessão a partir destes endereços IP ignorar a verificação de dois passos.
-7. Clique em **Guardar**.
-8. Depois de tem sido aplicadas as atualizações, clique em **fechar**.
+6. Selecione **Guardar**.
 
 ![IPs Fidedignos](./media/multi-factor-authentication-whats-next/trustedips3.png)
 
@@ -239,11 +258,10 @@ AD do Azure suporta a Federação (início de sessão) com o local no Windows Se
 ### <a name="allow-app-password-creation"></a>Permitir a criação de palavra-passe de aplicação
 Por predefinição, os utilizadores não é possível criar palavras-passe de aplicação. Esta funcionalidade tem de estar ativada. Para permitir que os utilizadores a capacidade de criar palavras-passe de aplicação, utilize o seguinte procedimento:
 
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).
-2. No lado esquerdo, selecione **Active Directory**.
-3. Selecione o diretório que pretende gerir. 
-4. Selecione **configurar**
-5. Em multi-factor Authentication, selecione **gerir definições do serviço**.
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **utilizadores e grupos** > **todos os utilizadores**
+3. Selecionar **Multi-Factor Authentication**
+4. Em multi-factor Authentication, selecione **definições do serviço**.
 6. Selecione o botão de opção junto a **permitir aos utilizadores criar palavras-passe de aplicação para iniciar sessão em aplicações não baseadas no browser**.
 
 ![Criar palavras-passe de aplicação](./media/multi-factor-authentication-whats-next/trustedips3.png)
@@ -270,16 +288,16 @@ Por conseguinte, memorizar MFA em dispositivos fidedignos reduz o número de aut
 >Esta funcionalidade não é compatível com a funcionalidade "Manter a minha sessão iniciada" do AD FS quando os utilizadores executar verificação de dois passos para o AD FS através do servidor MFA do Azure ou uma solução MFA de terceiros. Se os utilizadores podem selecionar a opção "Manter a minha sessão iniciada" no AD FS e também marcar o respetivo dispositivo como fidedigna para a MFA, não poderá verificar depois do número de "Memorizar MFA" de dias expira. Azure AD solicita uma verificação de dois passos raiz, mas do AD FS devolve um token com a afirmação MFA original e a data em vez de efetuar novamente a verificação de dois passos. Isto define desativar um ciclo de verificação entre o Azure AD e AD FS. 
 
 ### <a name="enable-remember-multi-factor-authentication"></a>Ativar Lembre-se de multi-factor authentication
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).
-2. No lado esquerdo, selecione **Active Directory**.
-3. Selecione o diretório que pretende gerir. 
-4. Selecione **configurar**
-5. Em multi-factor Authentication, selecione **gerir definições do serviço**.
-6. Na página de definições de serviço, na opção para gerir as definições de dispositivo do utilizador, verifique o **permitir que os utilizadores memorizem a autenticação multifator em dispositivos que eles confiam** caixa.
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **utilizadores e grupos** > **todos os utilizadores**
+3. Selecionar **Multi-Factor Authentication**
+4. Em multi-factor Authentication, selecione **definições do serviço**.
+5. Na página de definições de serviço, em **gerir Lembre-se a autenticação multifator**, verifique o **permitir que os utilizadores memorizem a autenticação multifator em dispositivos que eles confiam** caixa.
+
    ![Lembre-se de dispositivos](./media/multi-factor-authentication-whats-next/remember.png)
-7. Defina o número de dias que pretende permitir que os dispositivos fidedignos ignorar a verificação de dois passos. A predefinição é 14 dias.
-8. Clique em **Guardar**.
-9. Clique em **Fechar**.
+
+6. Defina o número de dias que pretende permitir que os dispositivos fidedignos ignorar a verificação de dois passos. A predefinição é 14 dias.
+7. Selecione **Guardar**.
 
 ### <a name="mark-a-device-as-trusted"></a>Marcar um dispositivo como fidedigna
 
@@ -300,13 +318,12 @@ Quando das respetivas contas de inscrever os seus utilizadores para a MFA, se es
 | Código de verificação da aplicação móvel |A aplicação Microsoft Authenticator gera um novo código de verificação de OATH cada 30 segundos. O utilizador introduz este código de verificação para a interface de início de sessão.<br>A aplicação Authenticator da Microsoft está disponível para [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072), e [IOS](http://go.microsoft.com/fwlink/?Linkid=825073). |
 
 ### <a name="how-to-enabledisable-authentication-methods"></a>Como ativar/desativar os métodos de autenticação
-1. Inicie sessão no [Portal Clássico do Azure](https://manage.windowsazure.com).
-2. No lado esquerdo, selecione **Active Directory**.
-3. Selecione o diretório que pretende gerir. 
-4. Selecione **configurar**
-5. Em multi-factor Authentication, selecione **gerir definições do serviço**.
-6. Na página de definições de serviço, em Opções de verificação, selecionar/anular a seleção de opções que pretende utilizar.
-   ![Opções de verificação](./media/multi-factor-authentication-whats-next/authmethods.png)
-7. Clique em **Guardar**.
-8. Clique em **Fechar**.
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2. No lado esquerdo, selecione **do Azure Active Directory** > **utilizadores e grupos** > **todos os utilizadores**
+3. Selecionar **Multi-Factor Authentication**
+4. Em multi-factor Authentication, selecione **definições do serviço**.
+5. Na página de definições de serviço, em **opções de verificação**, selecionar/anular a seleção de opções que pretende utilizar.
 
+   ![Opções de verificação](./media/multi-factor-authentication-whats-next/authmethods.png)
+
+6. Clique em **Guardar**.

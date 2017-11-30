@@ -14,11 +14,11 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/12/2017
 ms.author: alkarche
-ms.openlocfilehash: e6aa6913bdb2cf8e581b76b7680d0a96c9858bd1
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 7b226aa4ec71535aa0222389aacd74764a80021a
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-functions-external-table-binding-preview"></a>Enlace de tabela externa de funções do Azure (pré-visualização)
 Este artigo mostra como manipular dados de tabela em fornecedores de SaaS (por exemplo, o Sharepoint, o Dynamics) dentro da função com enlaces incorporadas. As funções do Azure suporta os enlaces de entrada e de saída para as tabelas externas.
@@ -33,7 +33,7 @@ Ao atribuir um enlace pode criar uma nova ligação de API ou utilizar uma liga�
 
 ### <a name="supported-api-connections-tables"></a>Ligações de API suportados (tabela) s
 
-|conector|Acionador|Input|Saída|
+|Conector|Acionador|Input|Saída|
 |:-----|:---:|:---:|:---:|
 |[DB2](https://docs.microsoft.com/azure/connectors/connectors-create-api-db2)||x|x
 |[Dynamics 365 para operações](https://ax.help.dynamics.com/wiki/install-and-configure-dynamics-365-for-operations-warehousing/)||x|x
@@ -99,11 +99,11 @@ Neste exemplo estabelece ligação a uma tabela com o nome "Contacte" com o Id, 
 
 Um conector tabela fornece conjuntos de dados e cada conjunto de dados contém tabelas. O nome do conjunto de dados predefinido é "predefinida". Os títulos de para um conjunto de dados e uma tabela de vários fornecedores de SaaS são listados abaixo:
 
-|conector|Conjunto de dados|Tabela|
+|Conector|Conjunto de dados|Tabela|
 |:-----|:---|:---| 
-|**SharePoint**|site|Lista do SharePoint
+|**SharePoint**|Site|Lista do SharePoint
 |**SQL**|Base de Dados|Tabela 
-|**Folha do Google**|Folha de cálculo|Folha de cálculo 
+|**Folha do Google**|Folha de cálculo|Folha de Cálculo 
 |**Excel**|Ficheiro do Excel|Folha 
 
 <!--
@@ -198,4 +198,6 @@ No Google Docs, crie uma folha de cálculo com uma folha de cálculo denominada 
 dataSetName é "predefinida".
 
 ## <a name="next-steps"></a>Passos seguintes
-[!INCLUDE [next steps](../../includes/functions-bindings-next-steps.md)]
+
+> [!div class="nextstepaction"]
+> [Saiba mais sobre as funções do Azure acionadores e enlaces](functions-triggers-bindings.md)

@@ -12,17 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/07/2016
+ms.date: 11/28/2017
 ms.author: byvinyal
-ms.openlocfilehash: 283428c603cc73d23f0afa94670a23dbb45068d5
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 58ccdba6f01cfb7de72f28f185102bf7f618eab4
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="how-to-monitor-apps-in-azure-app-service"></a>Como: monitorizar aplicações no App Service do Azure
 [Serviço de aplicações](http://go.microsoft.com/fwlink/?LinkId=529714) fornece a funcionalidade de monitorização incorporada no [portal do Azure](https://portal.azure.com).
-Isto inclui a capacidade para rever **quotas** e **métricas** para uma aplicação, bem como o plano de serviço de aplicações, como configurar **alertas** e até mesmo **dimensionamento**automaticamente com base nestas métricas.
+O portal do Azure inclui a capacidade para rever **quotas** e **métricas** para uma aplicação, bem como o plano de serviço de aplicações, como configurar **alertas** e até mesmo **dimensionamento**  automaticamente com base nestas métricas.
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -37,7 +37,7 @@ Se a aplicação estiver alojada num **básico**, **padrão** ou **Premium** pla
 **Quotas** para **livres** ou **partilhados** as aplicações são:
 
 * **CPU(short)**
-  * Quantidade de CPU permitida para esta aplicação num intervalo de 5 minutos. Esta quota repõe a cada 5 minutos.
+  * Quantidade de CPU permitida para esta aplicação num intervalo de 5 minutos. Esta quota repõe a cada cinco minutos.
 * **CPU(Day)**
   * Quantidade total de CPU permitida para esta aplicação num dia. Esta quota repõe a cada 24 horas à meia-noite UTC.
 * **Memória**
@@ -48,12 +48,12 @@ Se a aplicação estiver alojada num **básico**, **padrão** ou **Premium** pla
 * **Sistema de ficheiros**
   * Quantidade total de armazenamento permitido.
 
-A quota apenas aplicável a aplicações alojadas no **básico**, **padrão** e **Premium** planos é **Filesystem**.
+A quota apenas aplicável a aplicações alojadas no **básico**, **padrão**, e **Premium** planos é **Filesystem**.
 
 Obter mais informações sobre as quotas específicas, os limites e funcionalidades disponíveis para os SKUs de serviço de aplicação diferente podem ser encontradas aqui: [limites de serviço de subscrição do Azure](../azure-subscription-service-limits.md#app-service-limits)
 
 #### <a name="quota-enforcement"></a>Imposição de quota
-Se uma aplicação na sua utilização exceder o **CPU (abreviado)**, **CPU (dia)**, ou **largura de banda** quota, em seguida, a aplicação está parado até que repõe a quota. Durante este período, todos os pedidos recebidos originar uma **HTTP 403**.
+Se uma aplicação excede o **CPU (abreviado)**, **CPU (dia)**, ou **largura de banda** quota, em seguida, a aplicação está parado até que repõe a quota. Durante este período, todos os pedidos recebidos originar uma **HTTP 403**.
 ![][http403]
 
 Se a aplicação **memória** é excedida a quota, em seguida, a aplicação for reiniciada.
@@ -125,14 +125,14 @@ Existem duas métricas que refletem a utilização da CPU. **Tempo de CPU** e **
 
 **Tempo de CPU** é útil para aplicações alojadas no **livres** ou **partilhados** planos de uma vez que um dos respetivos quotas está definido em minutos de CPU utilizados pela aplicação.
 
-**Percentagem de CPU** é útil para aplicações alojadas no **básico**, **padrão** e **premium** planos de uma vez que podem ser aumentados horizontalmente e esta métrica é um bom indicador de utilização geral em todas as instâncias.
+**Percentagem de CPU** é útil para aplicações alojadas no **básico**, **padrão**, e **premium** planos de uma vez que podem ser aumentados horizontalmente. Percentagem de CPU é um bom indicador de que a utilização geral em todas as instâncias.
 
 ## <a name="metrics-granularity-and-retention-policy"></a>Granularidade de métricas e política de retenção
 Métricas para uma aplicação e o plano do app service são registadas e agregadas pelo serviço com as políticas de retenção e granularidades seguintes:
 
-* **Minuto** métricas de granularidade são retidas por **48 horas**
+* **Minuto** métricas de granularidade são retidas por **30 horas**
 * **Hora** métricas de granularidade são retidas por **30 dias**
-* **Dia** métricas de granularidade são retidas por **90 dias**
+* **Dia** métricas de granularidade são retidas por **30 dias**
 
 ## <a name="monitoring-quotas-and-metrics-in-the-azure-portal"></a>Monitorização de Quotas e métricas no portal do Azure.
 Pode rever o estado dos diferentes **quotas** e **métricas** que afetam uma aplicação no [portal do Azure](https://portal.azure.com).
@@ -149,7 +149,7 @@ Pode saber mais sobre as métricas aqui: [monitorizar métricas de serviço](../
 ## <a name="alerts-and-autoscale"></a>Alertas e o dimensionamento automático
 As métricas para um plano de aplicação ou serviço de aplicações podem ser estabelecer ligação com ele cópias de segurança para alertas. Para saber mais sobre o assunto, consulte [receber notificações de alerta](../monitoring-and-diagnostics/insights-alerts-portal.md).
 
-Aplicações de serviço de aplicações alojadas nos básica, standard ou premium do serviço de aplicações planos suporte **dimensionamento automático**. Isto permite-lhe configurar regras que monitorizar as métricas do plano de serviço de aplicações e podem aumentar ou diminuir a contagem de instâncias que fornece recursos adicionais, conforme necessário ou guardar dinheiro quando a aplicação é superior aprovisionar. Pode saber mais sobre aqui a escala automática: [como escala](../monitoring-and-diagnostics/insights-how-to-scale.md) e aqui [melhores práticas para o dimensionamento automático de Monitor do Azure](../monitoring-and-diagnostics/insights-autoscale-best-practices.md)
+Aplicações de serviço de aplicações alojadas nos básica, standard ou premium do serviço de aplicações planos suporte **dimensionamento automático**. Dimensionamento automático permite-lhe configurar regras de monitorizar as métricas do plano de serviço de aplicações. As regras podem aumentar ou diminuir a contagem de instâncias que fornece recursos adicionais, conforme necessário. As regras também podem ajudar a poupar dinheiro quando a aplicação é aprovisionada excessiva. Pode saber mais sobre aqui a escala automática: [como escala](../monitoring-and-diagnostics/insights-how-to-scale.md) e aqui [melhores práticas para o dimensionamento automático de Monitor do Azure](../monitoring-and-diagnostics/insights-autoscale-best-practices.md)
 
 > [!NOTE]
 > Se pretender começar a utilizar o App Service do Azure antes de se inscrever numa conta do Azure, aceda a [Experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde pode criar de imediato uma aplicação Web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.

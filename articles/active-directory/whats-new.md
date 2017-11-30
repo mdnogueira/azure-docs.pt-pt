@@ -16,8 +16,8 @@ ms.topic: article
 ms.date: 11/28/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 899ca9f7a82ce526eba04b88420ab01e208fe784
-ms.sourcegitcommit: cf42a5fc01e19c46d24b3206c09ba3b01348966f
+ms.openlocfilehash: f1538e1c26cfe658c7f42ccdd57d8bf5aca0b1fb
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/29/2017
@@ -178,7 +178,7 @@ As seguintes condições e os controlos estão agora disponíveis para utilizaç
 
 **Condição de aplicações de cliente**
 
-- Clientes de ambiente de trabalho e aplicações móveis
+- Aplicações móveis e clientes de ambiente de trabalho
 
 **Controlo de acesso**
 
@@ -266,13 +266,13 @@ Para obter mais informações, consulte [integrar a sua infraestrutura existente
  
 ---
 
+### <a name="restore-or-permanently-remove-deleted-users"></a>Restaure ou remover utilizadores eliminados permanentemente
+
 
 **Tipo:** nova funcionalidade    
 **Categoria de serviço:** gestão de utilizadores  
 **Capacidade de produto:** diretório 
 
-
-**Restaure ou remover utilizadores eliminados permanentemente**
 
 
 No Centro de administração do Azure AD, pode agora:
@@ -304,7 +304,7 @@ Foram adicionadas as seguintes aplicações à lista de [aprovados aplicações 
 
 - Microsoft Planner
 
-- Proteção de informações do Microsoft Azure 
+- Microsoft Azure Information Protection 
 
 
 Para obter mais informações, consulte:

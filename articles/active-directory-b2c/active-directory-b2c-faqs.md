@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: saeeda
-ms.openlocfilehash: 45ae4ab4c832e7537e6ee78c32603734fa64ad86
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: 397c0c610c05e65d06a6319672446a6e4c9c445a
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>O Azure AD B2C: Perguntas mais frequentes (FAQ) 
 Esta página respostas a perguntas mais frequentes sobre o Azure Active Directory (Azure AD) B2C. Manter a verificação de volta para atualizações.
@@ -75,13 +75,13 @@ A assinatura de e-mail contém o nome do inquilino do B2C que forneceu quando cr
 Atualmente não é possível alterar o "de:" campo na mensagem de correio eletrónico. Votar em [feedback.azure.com](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/15334335-fully-customizable-verification-emails) estiver interessado em Personalizar o corpo da mensagem de e-mail de verificação.
 
 ### <a name="how-can-i-migrate-my-existing-user-names-passwords-and-profiles-from-my-database-to-azure-ad-b2c"></a>Como posso migrar os meus os nomes de utilizador existente, as palavras-passe e perfis da minha base de dados para o Azure AD B2C?
-Pode utilizar a Azure AD Graph API ao escrever a sua ferramenta de migração. Consulte o [exemplo Graph API](active-directory-b2c-devquickstarts-graph-dotnet.md) para obter mais detalhes.
+Pode utilizar a Azure AD Graph API ao escrever a sua ferramenta de migração. Consulte o [guia de migração de utilizador](active-directory-b2c-user-migration.md) para obter mais detalhes.
 
 ### <a name="what-password-policy-is-used-for-local-accounts-in-azure-ad-b2c"></a>Que política de palavras-passe é utilizada para contas locais no Azure AD B2C?
 A política de palavra-passe do Azure AD B2C para contas locais baseia-se na política para o Azure AD. O Azure AD B2C da inscrição, a inscrição ou início de sessão e palavra-passe repor políticas utiliza a força da palavra-passe "segura" e não expirarem as palavras-passe. Leia o [política de palavras-passe do Azure AD](https://msdn.microsoft.com/library/azure/jj943764.aspx) para obter mais detalhes.
 
 ### <a name="can-i-use-azure-ad-connect-to-migrate-consumer-identities-that-are-stored-on-my-on-premises-active-directory-to-azure-ad-b2c"></a>Pode utilizar o Azure AD Connect para migrar as identidades de consumidor que estão armazenadas no meu diretório Active Directory no local ao Azure AD B2C?
-Não, do Azure AD Connect não foi concebida para funcionar com o Azure AD B2C. Considere utilizar o [Graph API](active-directory-b2c-devquickstarts-graph-dotnet.md) para a migração de utilizador.
+Não, do Azure AD Connect não foi concebida para funcionar com o Azure AD B2C. Considere utilizar o [Graph API](active-directory-b2c-devquickstarts-graph-dotnet.md) para a migração de utilizador.  Consulte o [guia de migração de utilizador](active-directory-b2c-user-migration.md) para obter mais detalhes.
 
 ### <a name="can-my-app-open-up-azure-ad-b2c-pages-within-an-iframe"></a>Pode abrir a minha aplicação da cópia de segurança do Azure AD B2C páginas numa iFrame?
 Não, por motivos de segurança, não não possível abrir as páginas do Azure AD B2C numa iFrame.  O nosso serviço comunica com o browser de modo a proibir iFrames.  A Comunidade de segurança em geral e a especificação do OAUTH2, recomenda-se contra a utilização de iFrames para experiências de identidade devido ao risco de jacking de clique.

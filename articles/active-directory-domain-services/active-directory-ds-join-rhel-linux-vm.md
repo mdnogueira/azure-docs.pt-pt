@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2017
 ms.author: maheshu
-ms.openlocfilehash: 03f0b07e9f4994c616a39692f7a5ba52a154aa0f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 20cecf0b3e38e8f2241f3589b9548c93730c7783
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="join-a-red-hat-enterprise-linux-7-virtual-machine-to-a-managed-domain"></a>Associar uma máquina virtual do Red Hat Enterprise Linux 7 a um domínio gerido
 Este artigo mostra como associar uma máquina virtual do Red Hat Enterprise Linux (RHEL) 7 a um domínio gerido dos serviços de domínio do Azure AD.
@@ -82,12 +82,12 @@ Agora que os pacotes necessários são instalados na máquina virtual Linux, a p
     sudo realm discover CONTOSO100.COM
     ```
 
-      > [!NOTE] 
-      > **Resolução de problemas:** se *realm detetar* não conseguiu encontrar o seu domínio gerido:
-        * Ensure that the domain is reachable from the virtual machine (try ping).
-        * Check that the virtual machine has indeed been deployed to the same virtual network in which the managed domain is available.
-        * Check to see if you have updated the DNS server settings for the virtual network to point to the domain controllers of the managed domain.
-      >
+     > [!NOTE] 
+     > **Resolução de problemas:** se *realm detetar* não conseguiu encontrar o seu domínio gerido:
+     * Certifique-se de que o domínio é acessível a partir da máquina virtual (ping tente).
+     * Certifique-se de que a máquina virtual, de facto, implementada da mesma rede virtual em que o domínio gerido está disponível.
+     * Verifique se foi atualizado com as definições do servidor DNS para a rede virtual para que apontem para os controladores de domínio do domínio gerido.
+     >
 
 2. Inicializar o Kerberos. No seu terminal SSH, escreva o seguinte comando: 
 

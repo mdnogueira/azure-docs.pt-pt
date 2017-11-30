@@ -17,11 +17,11 @@ ms.devlang:
 ms.topic: article
 ms.date: 11/25/2017
 ms.author: jejiang
-ms.openlocfilehash: 6f9259ae5e8f382c6714d468004624c2cbcbbc33
-ms.sourcegitcommit: a036a565bca3e47187eefcaf3cc54e3b5af5b369
+ms.openlocfilehash: 87cda776195dc93a35c6e978b18e823bf54c9ffb
+ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="debug-spark-applications-locally-or-remotely-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Depurar aplicações do Spark localmente ou remotamente num cluster do HDInsight com o Toolkit do Azure para o IntelliJ através de SSH
 
@@ -121,7 +121,7 @@ Para resolver este erro, [transferir o ficheiro executável](http://public-repo-
    
    ![Botão de execução remoto](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/perform-remote-run.png)
 
-7. Se não pretender ver o registo em execução no painel à direita, pode clicar no **desligar** botão. No entanto, ainda está em execução no back-end e o resultado será apresentado no painel esquerdo.
+7. Clique em de **desligar** botão que os registos de submissão não são apresentados no painel esquerdo. No entanto, se ainda está em execução no back-end.
 
    ![Botão de execução remoto](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/remote-run-result.png)
 

@@ -11,14 +11,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: mahender
-ms.openlocfilehash: 8cf2e4e9e9007549dbdc931b4485c4230c536479
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: dd7bcd57260b9763eabb9b4c915d9ff46e79e931
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-functions-microsoft-graph-bindings"></a>Enlaces de funções Microsoft Graph do Azure
-[!INCLUDE [functions-selector-bindings](../../includes/functions-selector-bindings.md)]
 
 Este artigo explica como configurar e trabalhar com o Microsoft Graph acionadores e enlaces de funções do Azure.
 Com estas, pode utilizar as funções do Azure para trabalhar com dados, insights e eventos a partir de [Microsoft Graph](https://graph.microsoft.io).
@@ -192,7 +191,7 @@ Este enlace lê os conteúdos de uma tabela de Excel armazenados no OneDrive.
 Este enlace requer as seguintes permissões do AAD:
 |Recurso|Permissão|
 |--------|--------|
-|Microsoft Graph|Ler ficheiros de utilizador|
+|Microsoft Graph|Ler ficheiros do utilizador|
 
 O enlace suporta as seguintes propriedades:
 
@@ -384,7 +383,7 @@ Este enlace lê os conteúdos de um ficheiro armazenados no OneDrive.
 Este enlace requer as seguintes permissões do AAD:
 |Recurso|Permissão|
 |--------|--------|
-|Microsoft Graph|Ler ficheiros de utilizador|
+|Microsoft Graph|Ler ficheiros do utilizador|
 
 O enlace suporta as seguintes propriedades:
 
@@ -403,7 +402,7 @@ O enlace suporta as seguintes propriedades:
 
 O enlace expõe os seguintes tipos de funções de .NET:
 - Byte]
-- Fluxo
+- Stream
 - Cadeia
 - Microsoft.Graph.DriveItem
 
@@ -489,7 +488,7 @@ O enlace suporta as seguintes propriedades:
 
 O enlace expõe os seguintes tipos de funções de .NET:
 - Byte]
-- Fluxo
+- Stream
 - Cadeia
 - Microsoft.Graph.DriveItem
 
@@ -1062,3 +1061,8 @@ public class UserSubscription {
 
 [acionador HTTP]: functions-bindings-http-webhook.md
 [trabalhar com webhooks no Microsoft Graph]: https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/webhooks
+
+## <a name="next-steps"></a>Passos seguintes
+
+> [!div class="nextstepaction"]
+> [Saiba mais sobre as funções do Azure acionadores e enlaces](functions-triggers-bindings.md)

@@ -13,13 +13,13 @@ ms.workload: On Demand
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/05/2017
+ms.date: 11/29/2017
 ms.author: genemi
-ms.openlocfilehash: bdf83fac9bd0ac6790062f802748a18045c7a171
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 44c4491e7c198eec43a31480ef3df748626b7b75
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="connectivity-libraries-and-frameworks-for-microsoft-sql-server"></a>Bibliotecas de conectividade e estruturas para Microsoft SQL Server
 
@@ -47,12 +47,25 @@ A tabela abaixo lista alguns exemplos de estruturas de mapeamento relacional obj
 | Node.js | Windows, Linux, macOS | [Sequelize ORM](http://docs.sequelizejs.com) |
 | Python | Windows, Linux, macOS |[Django](https://www.djangoproject.com/) |
 | Ruby | Windows, Linux, macOS | [Ruby no Rails](http://rubyonrails.org/) |
+||||
 
 ## <a name="related-links"></a>Ligações relacionadas
 - [SQL Server controladores](http://msdn.microsoft.com/library/mt654049.aspx) para ligar a partir de aplicações de cliente
-- [Ligar à Base de Dados SQL com o .NET (C#)](sql-database-connect-query-dotnet.md)
-- [Ligar à Base de Dados SQL com PHP](sql-database-connect-query-php.md)
-- [Ligar à Base de Dados SQL com o Node.js](sql-database-connect-query-nodejs.md)
-- [Ligar à Base de Dados SQL com Java](sql-database-connect-query-java.md)
-- [Ligar à Base de Dados SQL com o Python](sql-database-connect-query-python.md)
-- [Ligar à Base de Dados SQL com Ruby](sql-database-connect-query-ruby.md)
+- Ligar à base de dados do SQL Server:
+    - [Ligar à Base de Dados SQL com o .NET (C#)](sql-database-connect-query-dotnet.md)
+    - [Ligar à Base de Dados SQL com PHP](sql-database-connect-query-php.md)
+    - [Ligar à Base de Dados SQL com o Node.js](sql-database-connect-query-nodejs.md)
+    - [Ligar à Base de Dados SQL com Java](sql-database-connect-query-java.md)
+    - [Ligar à Base de Dados SQL com o Python](sql-database-connect-query-python.md)
+    - [Ligar à Base de Dados SQL com Ruby](sql-database-connect-query-ruby.md)
+- Repita os exemplos de código lógica:
+    - [Resiliently se ligar ao SQL Server com ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+    - [Resiliently se ligar ao SQL Server com o PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
+
+
+<!-- Link references. -->
+
+[step-4-connect-resiliently-to-sql-with-ado-net-a78n]: https://docs.microsoft.com/sql/connect/ado-net/step-4-connect-resiliently-to-sql-with-ado-net
+
+[step-4-connect-resiliently-to-sql-with-php-p42h]: https://docs.microsoft.com/sql/connect/php/step-4-connect-resiliently-to-sql-with-php
+

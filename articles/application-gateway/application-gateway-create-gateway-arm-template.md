@@ -13,11 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: davidmu
-ms.openlocfilehash: 305a0529b6f6ad8bd96ac10da5f7ebc48317df45
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 0aa16e9d7472d2d8c3c251e60a506a7f4223ac1d
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Criar um gateway de aplicação com o modelo Azure Resource Manager
 
@@ -30,9 +30,9 @@ ms.lasthandoff: 10/11/2017
 
 O Application Gateway do Azure é um balanceador de carga de 7 camadas. Fornece ativação pós-falha e pedidos HTTP de encaminhamento de desempenho entre diversos servidores, quer estejam na cloud ou no local. O Gateway de Aplicação proporciona muitas funcionalidades de controlador de entrega de aplicação (ADC), incluindo o balanceamento de carga HTTP, afinidade por sessões com base em cookies, descarga do SSL (Secure Sockets Layer), sondas de estado de funcionamento personalizadas, suporte multilocal e muitas outras. Para obter uma lista completa das funcionalidades suportadas, consulte o artigo [descrição geral do Gateway de aplicação](application-gateway-introduction.md)
 
-Este artigo explica-lhe como transferir e modificar um modelo Azure Resource Manager existente a partir do GitHub e implementar o modelo a partir do GitHub, PowerShell e a CLI do Azure.
+Este artigo explica-lhe como transferir e modificar um existente [modelo Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) partir do GitHub e implementar o modelo a partir do GitHub, PowerShell e a CLI do Azure.
 
-Se estiver a implementar o modelo Azure Resource Manager diretamente do GitHub sem quaisquer alterações, avance para implementar um modelo a partir do GitHub.
+Se estiver a implementar o modelo diretamente a partir do GitHub sem quaisquer alterações, avance para implementar um modelo a partir do GitHub.
 
 ## <a name="scenario"></a>Cenário
 
@@ -75,9 +75,6 @@ Pode transferir o modelo Azure Resource Manager existente para criar uma rede vi
    * **tipo**. Tipo de recurso a ser criado pelo modelo. Neste caso, o tipo é `Microsoft.Network/applicationGateways`, que representa um gateway de aplicação.
    * **nome**. Nome do recurso. Tenha em atenção a utilização de `[parameters('applicationGatewayName')]`, que significa que o nome é fornecido como entrada por si ou por um ficheiro de parâmetros durante a implementação.
    * **propriedades**. Lista de propriedades do recurso. Este modelo utiliza a rede virtual e o endereço IP público durante a criação do gateway de aplicação.
-
-   > [!NOTE]
-   > Para mais informações sobre modelos, visite: [referência de modelos do Resource Manager](/templates/)
 
 1. Navegue de volta para [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf).
 1. Clique em **azuredeploy-Parameters. JSON**e, em seguida, clique em **RAW**.

@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/12/2017
+ms.date: 11/27/2017
 ms.author: alkarche
-ms.openlocfilehash: 7e3b396d290212d3875385521bd7ae92da196b95
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: c7a1ff4d4488b37b1969edfbb6f935eccd63413c
+ms.sourcegitcommit: cfd1ea99922329b3d5fab26b71ca2882df33f6c2
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 11/30/2017
 ---
 # <a name="azure-functions-external-file-bindings-preview"></a>Enlaces de ficheiro externo funções do Azure (pré-visualização)
 Este artigo mostra como manipular ficheiros a partir de fornecedores de SaaS diferentes (por exemplo, o OneDrive, o Dropbox) dentro da função de utilização de enlaces incorporadas. Suporta as funções do Azure aciona, de entrada e saída enlaces para o ficheiro externo.
@@ -29,7 +29,7 @@ Este enlace cria API ligações a fornecedores de SaaS ou utiliza ligações API
 
 ## <a name="supported-file-connections"></a>Ligações de ficheiro suportadas
 
-|conector|Acionador|Input|Saída|
+|Conector|Acionador|Input|Saída|
 |:-----|:---:|:---:|:---:|
 |[Caixa](https://www.box.com)|x|x|x
 |[Dropbox](https://www.dropbox.com)|x|x|x
@@ -362,4 +362,6 @@ module.exports = function(context) {
 ```
 
 ## <a name="next-steps"></a>Passos seguintes
-[!INCLUDE [next steps](../../includes/functions-bindings-next-steps.md)]
+
+> [!div class="nextstepaction"]
+> [Saiba mais sobre as funções do Azure acionadores e enlaces](functions-triggers-bindings.md)
