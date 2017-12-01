@@ -11,18 +11,18 @@ ms.devlang: azure-cli
 ms.custom: mvc
 ms.topic: sample
 ms.date: 11/02/2017
-ms.openlocfilehash: 50893a2265fcb9a610564748ba316a70c5205b4a
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: ee0d7e1d060492cabc78eeff098057bf9c09c6d1
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/04/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="create-a-mysql-server-and-configure-a-firewall-rule-using-the-azure-cli"></a>Criar um servidor de MySQL e configurar uma regra de firewall utilizando a CLI do Azure
 Este script de exemplo do CLI cria uma base de dados do Azure para o servidor de MySQL e configura uma regra de firewall ao nível do servidor. Assim que o script é executado com êxito, o servidor de MySQL é acedido por todos os serviços do Azure e o endereço IP configurado.
 
 [!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
 
-Se optar por instalar e utilizar a CLI localmente, este artigo requer que está a executar a CLI do Azure versão 2.0 ou posterior. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Se optar por instalar e utilizar a CLI localmente, este artigo requer a execução da versão 2.0 ou posterior da CLI do Azure. Executar `az --version` para localizar a versão. Se precisar de instalar ou atualizar, veja [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 ## <a name="sample-script"></a>Script de exemplo
 Este script de exemplo, edite as linhas realçadas para personalizar o nome de utilizador de administrador e a palavra-passe.
@@ -37,10 +37,10 @@ Este script utiliza os seguintes comandos. Cada comando nas ligações de tabela
 
 | **Comando** | **Notas** |
 |---|---|
-| [Criar grupo AZ](/cli/azure/group#create) | Cria um grupo de recursos na qual todos os recursos são armazenados. |
-| [Criar servidor do AZ mysql](/cli/azure/mysql/server#create) | Cria um servidor de MySQL que aloja as bases de dados. |
-| [criar a firewall do servidor AZ mysql](/cli/azure/mysql/server/firewall-rule#create) | Cria uma regra de firewall para permitir o acesso ao servidor e bases de dados-lo do intervalo de endereços IP introduzido. |
-| [eliminação do grupo de AZ](/cli/azure/group#delete) | Elimina um grupo de recursos, incluindo todos os recursos aninhados. |
+| [Criar grupo AZ](/cli/azure/group#az_group_create) | Cria um grupo de recursos na qual todos os recursos são armazenados. |
+| [Criar servidor do AZ mysql](/cli/azure/mysql/server#az_msql_server_create) | Cria um servidor de MySQL que aloja as bases de dados. |
+| [criar a firewall do servidor AZ mysql](/cli/azure/mysql/server/firewall-rule#az_mysql_server_firewall_rule_create) | Cria uma regra de firewall para permitir o acesso ao servidor e bases de dados-lo do intervalo de endereços IP introduzido. |
+| [eliminação do grupo de AZ](/cli/azure/group#az_group_delete) | Elimina um grupo de recursos, incluindo todos os recursos aninhados. |
 
 ## <a name="next-steps"></a>Passos seguintes
 - Leia mais informações sobre a CLI do Azure: [documentação da CLI do Azure](/cli/azure/overview).

@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/24/2017
 ms.author: adegeo
-ms.openlocfilehash: d203580f676d55acbad4936160982a40592af1d0
-ms.sourcegitcommit: dcf5f175454a5a6a26965482965ae1f2bf6dca0a
+ms.openlocfilehash: baed3e290ed29d1459455441e7cac7c5b1b1ebd9
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="scale-a-service-fabric-cluster"></a>Dimensionar um cluster do Service Fabric
 
@@ -30,6 +30,13 @@ Neste tutorial, ficará a saber como:
 > * Ler a contagem de nós de cluster
 > * Adicionar nós de cluster (de escalamento horizontal)
 > * Remover nós de cluster (escala em)
+
+Este tutorial série, a saber como:
+> [!div class="checklist"]
+> * Criar segura [cluster do Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) ou [Linux cluster](service-fabric-tutorial-create-vnet-and-linux-cluster.md) no Azure através de um modelo
+> * Um cluster de entrada ou saída de escala
+> * [Atualize o tempo de execução de um cluster](service-fabric-tutorial-upgrade-cluster.md)
+> * [Implementar a gestão de API com o Service Fabric](service-fabric-tutorial-deploy-api-management.md)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Antes de começar este tutorial:
@@ -250,8 +257,8 @@ Neste tutorial, ficou a saber como:
 > * Remover nós de cluster (escala em)
 
 
-Em seguida, avançar para o tutorial seguinte para saber como implementar uma aplicação e utilizar a API management.
+Em seguida, avançar para o tutorial seguinte para saber como atualizar o tempo de execução de um cluster.
 > [!div class="nextstepaction"]
-> [Implementar a gestão de API](service-fabric-tutorial-deploy-api-management.md)
+> [Atualize o tempo de execução de um cluster](service-fabric-tutorial-upgrade-cluster.md)
 
 [durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster

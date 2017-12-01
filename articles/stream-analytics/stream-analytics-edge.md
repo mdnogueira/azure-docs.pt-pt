@@ -14,11 +14,11 @@ ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 11/16/2017
 ms.author: jeanb
-ms.openlocfilehash: ad2a5891e207f6e8320c3e54ae7c817b49db4672
-ms.sourcegitcommit: f847fcbf7f89405c1e2d327702cbd3f2399c4bc2
+ms.openlocfilehash: 916aefb7916ab374c882efb95417babfc5b06a50
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-stream-analytics-on-iot-edge-preview"></a>O Azure Stream Analytics no limite de IoT (pré-visualização)
 
@@ -35,7 +35,7 @@ Esta funcionalidade está em pré-visualização, se tiver qualquer pergunta ou 
 * **Comando de latência baixa e controlo**: por exemplo, os sistemas de segurança de fabrico deve responder para dados operacionais com ultra-baixa latência. Com ASA no limite do IoT, pode analisar sensor, dados quase em tempo real e emitem comandos quando detetar anomalias para parar uma máquina ou acionar alertas.
 *   **Limitada a conectividade à nuvem**: missão sistemas críticos, como equipamento de extração remoto, vessels ligados ou desagregação offshore, tem de analisar e reagir aos dados, mesmo quando a conectividade de nuvem é intermitente. Com ASA, a lógica de transmissão em fluxo é executado independentemente a conectividade de rede e pode escolher que enviar para a nuvem para processamento adicional ou o armazenamento.
 * **Largura de banda limitada**: O volume de dados produzidos por motores de jet ou carros ligados podem ser tão grandes que dados tem de ser filtrados ou pré-processados antes de a enviar para a nuvem. Utilizar ASA, pode filtrar ou agregar os dados que têm de ser enviadas para a nuvem.
-* **Conformidade**: a conformidade regulamentar pode necessitar de alguns dados localmente anónimas ou agregado antes de a ser enviados para a nuvem. Com ASA, 
+* **Conformidade**: a conformidade regulamentar pode necessitar de alguns dados localmente anónimas ou agregado antes de a ser enviados para a nuvem.
 
 ## <a name="edge-jobs-in-azure-stream-analytics"></a>Limite as tarefas do Azure Stream Analytics
 ### <a name="what-is-an-edge-job"></a>O que é uma tarefa "edge"?
@@ -55,7 +55,7 @@ Os passos de alto nível são descritos na seguinte tabela. São fornecidos mais
 | ---   | ---   | ---       |  ---      |
 | 1   | **Criar uma tarefa de limite do ASA**   | Portal do Azure      |  Criar uma nova tarefa, selecione **Edge** como **ambiente de alojamento**. <br> Estas tarefas são criado/geridos a partir da nuvem e execute os seus próprios dispositivos de limite de IoT.     |
 | 2   | **Criar um contentor de armazenamento**   | Portal do Azure       | Os contentores de armazenamento são utilizados para guardar a definição de tarefa onde possam ser acedidos pelos seus dispositivos de IoT. <br>  Pode reutilizar qualquer contentor de armazenamento existente.     |
-| 3   | **Configurar o ambiente de limite de IoT no seu dispositivo (s)**   | Dispositivos      | Instruções para [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) ou [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).          |
+| 3   | **Configurar o ambiente de limite de IoT no seu dispositivo (s)**   | Dispositivo(s)      | Instruções para [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) ou [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).          |
 | 4   | **Implementar ASA nos seus dispositivos de IoT Edge**   | Portal do Azure      |  Definição de tarefa do ASA é exportada para o contentor de armazenamento que criou anteriormente.       |
 Pode seguir [neste tutorial passo a passo](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) para implementar o seu primeiro emprego ASA no limite de IoT.
 

@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/10/2017
 ms.author: ryanwi
-ms.openlocfilehash: b3bf91a7ae5ed70456352ecdba9c0324f20f3555
-ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
+ms.openlocfilehash: da1f2c3170aba9dc13d77a8729a98e7b655edea8
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="deploy-api-management-with-service-fabric"></a>Implementar a gestão de API com o Service Fabric
-Este tutorial é parte três de uma série.  Implementar a gestão de API do Azure com o Service Fabric é um cenário avançado.  Gestão de API é útil quando tem de publicar APIs com um vasto conjunto de regras de encaminhamento para os serviços de recursos de infraestrutura do serviço de back-end. Aplicações em nuvem, normalmente, precisam de um gateway de front-end para fornecer um único ponto de entrada para os utilizadores, dispositivos ou outras aplicações. No Service Fabric, um gateway pode ser qualquer serviço sem estado concebido para a entrada de tráfego, como uma aplicação APP.NET núcleos, os Event Hubs, IoT Hub ou API Management do Azure. 
+Este tutorial é parte quatro de uma série.  Implementar a gestão de API do Azure com o Service Fabric é um cenário avançado.  Gestão de API é útil quando tem de publicar APIs com um vasto conjunto de regras de encaminhamento para os serviços de recursos de infraestrutura do serviço de back-end. Aplicações em nuvem, normalmente, precisam de um gateway de front-end para fornecer um único ponto de entrada para os utilizadores, dispositivos ou outras aplicações. No Service Fabric, um gateway pode ser qualquer serviço sem estado concebido para a entrada de tráfego, como uma aplicação APP.NET núcleos, os Event Hubs, IoT Hub ou API Management do Azure. 
 
 Este tutorial mostra como configurar [API Management do Azure](../api-management/api-management-key-concepts.md) com o Service Fabric para encaminhar o tráfego para um serviço de back-end no Service Fabric.  Quando tiver terminado, ter implementado a API Management para uma VNET, configurada uma operação de API para enviar o tráfego para serviços sem monitorização de estado de back-end. Para saber mais sobre os cenários de API Management do Azure com o Service Fabric, consulte o [descrição geral](service-fabric-api-management-overview.md) artigo.
 
@@ -38,6 +38,7 @@ Este tutorial série, a saber como:
 > [!div class="checklist"]
 > * Criar segura [cluster do Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) ou [Linux cluster](service-fabric-tutorial-create-vnet-and-linux-cluster.md) no Azure através de um modelo
 > * [Um cluster de entrada ou saída de escala](/service-fabric-tutorial-scale-cluster.md)
+> * [Atualize o tempo de execução de um cluster](service-fabric-tutorial-upgrade-cluster.md)
 > * Implementar a gestão de API com o Service Fabric
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -335,10 +336,6 @@ Neste tutorial, ficou a saber como:
 > * Criar uma operação de API
 > * Configure uma política de back-end
 > * Adicionar a API para um produto
-
-Em seguida, avançar para o tutorial seguinte para saber como atualizar o tempo de execução do cluster.
-> [!div class="nextstepaction"]
-> [Atualize o tempo de execução do cluster do Service Fabric do Azure](service-fabric-tutorial-upgrade-cluster.md)
 
 [azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
 

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: neerajkh
-ms.openlocfilehash: eea085308a5ca755cbf570465b97019de800768e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2b4fcef51b2704f07f5d1d08a4bd16970864b0fd
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="scaling-an-azure-machine-learning-web-service-by-adding-additional-endpoints"></a>Dimensionar um serviço web Azure Machine Learning adicionando os pontos finais adicionais
 > [!NOTE]
@@ -27,11 +27,11 @@ ms.lasthandoff: 10/11/2017
 > 
 > 
 
-Por predefinição, cada serviço Web publicado está configurado para suportar 20 pedidos em simultâneo e pode ser tão elevado como 200 pedidos em simultâneo. Enquanto o portal clássico do Azure fornece uma forma de definir este valor, do Azure Machine Learning automaticamente otimiza a definição para proporcionar o melhor desempenho para o seu serviço web e o portal valor é ignorado. 
+Por predefinição, cada serviço Web publicado está configurado para suportar 20 pedidos em simultâneo e pode ser tão elevado como 200 pedidos em simultâneo. O Azure Machine Learning automaticamente otimiza a definição para proporcionar o melhor desempenho para o seu serviço web e o portal valor é ignorado. 
 
 Se o plano para chamar a API com uma carga superior ao valor máx. de chamadas em simultâneo 200 irá suportar, deve criar vários pontos finais no mesmo serviço Web. Em seguida, pode distribuir aleatoriamente a carga em todos eles.
 
-O dimensionamento de um serviço Web é uma tarefa comuns. Algumas razões para dimensionar são suportar mais de 200 pedidos em simultâneo, aumentar a disponibilidade através de vários pontos finais ou forneça pontos finais separados para o serviço web. Pode aumentar a escala adicionando os pontos finais adicionais para o mesmo serviço Web através de [portal clássico do Azure](https://manage.windowsazure.com/) ou [serviço Web do Azure Machine Learning](https://services.azureml.net/) portal.
+O dimensionamento de um serviço Web é uma tarefa comuns. Algumas razões para dimensionar são suportar mais de 200 pedidos em simultâneo, aumentar a disponibilidade através de vários pontos finais ou forneça pontos finais separados para o serviço web. Pode aumentar a escala adicionando os pontos finais adicionais para o mesmo serviço Web através de [serviço Web do Azure Machine Learning](https://services.azureml.net/) portal.
 
 Para obter mais informações sobre como adicionar novos pontos finais, consulte [criação de pontos finais](create-endpoint.md).
 

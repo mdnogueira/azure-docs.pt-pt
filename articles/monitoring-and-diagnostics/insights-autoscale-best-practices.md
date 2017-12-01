@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/07/2017
 ms.author: ancav
-ms.openlocfilehash: df5059b5509ca4989369cf3bcba8cb89f1c25db4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 4b0232db1cfe2d6a7cefd07a8194a88a84a4ffb4
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="best-practices-for-autoscale"></a>Melhores práticas do Dimensionamento Automático
 Este artigo informa melhores práticas para dimensionar automaticamente no Azure. Dimensionamento automático de Monitor do Azure aplicam-se apenas ao [conjuntos de dimensionamento de Máquina Virtual](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [serviços em nuvem](https://azure.microsoft.com/services/cloud-services/), e [Web Apps do App Service -](https://azure.microsoft.com/services/app-service/web/). Outros serviços do Azure utilizam diferentes métodos de dimensionamento.
@@ -113,7 +113,7 @@ Vamos rever este utilizando um exemplo:
 
 A imagem abaixo mostra uma definição de dimensionamento automático com um perfil predefinido de instâncias mínimas de instâncias de 2 e máximas = = 10. Neste exemplo, as regras são configuradas para aumentar horizontalmente quando a contagem de mensagens na fila é maior que 10 e escala-in quando a contagem de mensagens na fila é inferior a 3. Por isso, agora pode dimensionar o recurso entre instâncias de 2 e 10.
 
-Além disso, é um perfil recorrente, definido para a segunda. Está definido para instâncias mínimo = 2 e o máximas de instâncias = 12. Isto significa na segunda-feira, verifica a primeira hora de dimensionamento automático para esta condição, se a contagem de instâncias é 2, dimensiona novo mínimo de 3. Desde que o dimensionamento automático continua a encontrar esta condição de perfil correspondência (segunda-feira), só processa as CPU regras baseadas em escala-out/in configuradas para este perfil. Neste momento, esta não verificar o comprimento da fila. No entanto, se pretender também a condição de comprimento de fila para ser verificado, deve incluir essas regras do perfil predefinido, bem como no seu perfil segunda-feira.
+Além disso, é um perfil recorrente, definido para a segunda. Está definido para instâncias mínimo = 3 e o máximas de instâncias = 10. Isto significa na segunda-feira, verifica a primeira hora de dimensionamento automático para esta condição, se a contagem de instâncias é 2, dimensiona novo mínimo de 3. Desde que o dimensionamento automático continua a encontrar esta condição de perfil correspondência (segunda-feira), só processa as CPU regras baseadas em escala-out/in configuradas para este perfil. Neste momento, esta não verificar o comprimento da fila. No entanto, se pretender também a condição de comprimento de fila para ser verificado, deve incluir essas regras do perfil predefinido, bem como no seu perfil segunda-feira.
 
 Da mesma forma, quando o dimensionamento automático muda para o perfil predefinido, este verifica primeiro se forem satisfeitas as condições mínimas e máxima. Se o número de instâncias no momento 12, esta reduz horizontalmente para 10, o máximo permitido para o perfil predefinido.
 

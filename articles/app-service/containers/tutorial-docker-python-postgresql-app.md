@@ -9,14 +9,14 @@ ms.service: app-service-web
 ms.workload: web
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/28/2017
+ms.date: 11/29/2017
 ms.author: beverst
 ms.custom: mvc
-ms.openlocfilehash: 89e2192b3b5c978da4a41dea51d0ab70181b500d
-ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
+ms.openlocfilehash: 161d9fda75caa7836e012e6e1ff79df576281137
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="build-a-docker-python-and-postgresql-web-app-in-azure"></a>Criar uma aplicação web Docker Python e PostgreSQL no Azure
 
@@ -445,7 +445,7 @@ Quando a aplicação Web tiver sido criada, a CLI do Azure mostra informações 
 
 Anteriormente no tutorial, definiu as variáveis de ambiente para ligar à base de dados PostgreSQL.
 
-No App Service, definir variáveis de ambiente como _as definições de aplicação_ utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config#az_webapp_config_appsettings_set) comando.
+No App Service, definir variáveis de ambiente como _as definições de aplicação_ utilizando o [az webapp configuração appsettings conjunto](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set) comando.
 
 O exemplo seguinte especifica os detalhes de ligação de base de dados como as definições de aplicação. Também utiliza o *porta* variável com o mapa de 5000 de porta do contentor de Docker para receber o tráfego HTTP na porta 80.
 

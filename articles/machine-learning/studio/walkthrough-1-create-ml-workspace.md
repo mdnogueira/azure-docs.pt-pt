@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
 ms.author: garye
-ms.openlocfilehash: ff857e83a37b95bceb751539bb34e9fb7f202931
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 58b37cf8927926cb128928e4d0e438945074f6e5
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="walkthrough-step-1-create-a-machine-learning-workspace"></a>Passo 1 das Instruções: Criar uma área de trabalho do Machine Learning
 Este é o primeiro passo de instruções, [desenvolver uma solução de Análise Preditiva no Azure Machine Learning](walkthrough-develop-predictive-solution.md).
@@ -34,15 +34,6 @@ Este é o primeiro passo de instruções, [desenvolver uma solução de Análise
 <!-- This needs to be updated to refer to the new way of creating workspaces in the Ibiza portal -->
 
 Para utilizar o Machine Learning Studio, tem de ter uma área de trabalho do Microsoft Azure Machine Learning. Esta área de trabalho contém as ferramentas que necessárias para criar, gerir e publicar experimentações.  
-
-<!--
-## To create a workspace
-1. Sign in to the [Azure classic portal](https://manage.windowsazure.com).
-2. In the  Azure services panel, click **MACHINE LEARNING**.  
-   ![Create workspace][1]
-3. Click **CREATE AN ML WORKSPACE**.
-4. On the **QUICK CREATE** page, enter your workspace information and then click **CREATE AN ML WORKSPACE**.
--->
 
 O administrador da sua subscrição do Azure tem de criar a área de trabalho e, em seguida, adicioná-o como um proprietário ou contribuinte. Para obter mais informações, consulte [criar e a partilha de uma área de trabalho do Azure Machine Learning](create-workspace.md).
 

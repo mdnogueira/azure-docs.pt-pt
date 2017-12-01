@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/16/2017
 ms.author: vvasic
-ms.openlocfilehash: 6d5fc10b5186f2830f724325846a485e4064d12b
-ms.sourcegitcommit: e5355615d11d69fc8d3101ca97067b3ebb3a45ef
+ms.openlocfilehash: 9f201454d58dbc646923d0155ff41761d593ab7e
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Métricas de base de dados SQL do Azure e o registo de diagnóstico 
 Base de dados SQL do Azure pode emitir métricas e diagnóstico registos para a monitorização mais fácil. Pode configurar a Base de Dados SQL para armazenar a utilização de recursos, funções de trabalho e sessões e a conectividade a um dos recursos do Azure seguintes:
@@ -48,7 +48,7 @@ Quando ativar métricas e registo de diagnóstico, terá de especificar o recurs
 
 Pode aprovisionar um novo recurso do Azure ou selecione um recurso existente. Depois de selecionar o recurso de armazenamento, tem de especificar os dados a recolher. As opções disponíveis incluem:
 
-- [métricas de 1 minuto](sql-database-metrics-diag-logging.md#1-minute-metrics): percentagem de DTU contém, limite DTU, percentagem de CPU, percentagem de leitura de dados físicos, escrever o registo de percentagem, Successful/falhado/bloqueado por ligações de firewall, percentagem de sessões, percentagem workers, armazenamento, de armazenamento percentagem e percentagem de armazenamento XTP.
+- [Todas as métricas](sql-database-metrics-diag-logging.md#all-metrics): percentagem de DTU contém, limite DTU, percentagem de CPU, percentagem de leitura de dados físicos, escrever o registo de percentagem, Successful/falhado/bloqueado por ligações de firewall, percentagem de sessões, percentagem workers, armazenamento, a percentagem de armazenamento e a percentagem de armazenamento XTP.
 - [QueryStoreRuntimeStatistics](sql-database-metrics-diag-logging.md#query-store-runtime-statistics): contém informações sobre as estatísticas de tempo de execução de consulta, por exemplo, a duração de consulta e de utilização da CPU.
 - [QueryStoreWaitStatistics](sql-database-metrics-diag-logging.md#query-store-wait-statistics): contém informações sobre as estatísticas de espera de consulta, que indica que as suas consultas aguardaram, tais como CPU, o registo e o bloqueio.
 - [Erros](sql-database-metrics-diag-logging.md#errors-dataset): contém informações sobre erros do SQL Server que tenham acontecido nesta base de dados.
@@ -243,7 +243,7 @@ Ou, mais simples:
 insights-{metrics|logs}-{category name}/resourceId=/{resource Id}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
 
-Por exemplo, poderá ser um nome de blob para 1 minuto métricas:
+Por exemplo, poderá ser um nome de blob para todas as métricas:
 
 ```powershell
 insights-metrics-minute/resourceId=/SUBSCRIPTIONS/s1id1234-5679-0123-4567-890123456789/RESOURCEGROUPS/TESTRESOURCEGROUP/PROVIDERS/MICROSOFT.SQL/ servers/Server1/databases/database1/y=2016/m=08/d=22/h=18/m=00/PT1H.json
@@ -261,12 +261,12 @@ Saiba como [transferir os registos de métricas e diagnóstico do armazenamento]
 
 ## <a name="metrics-and-logs-available"></a>Métricas e registos disponíveis
 
-### <a name="1-minute-metrics"></a>métricas de 1 minuto
+### <a name="all-metrics"></a>Todas as métricas
 
 |**Recurso**|**Métricas**|
 |---|---|
 |Base de Dados|Percentagem DTU, DTU utilizado, o limite DTU, percentagem de CPU, percentagem de leitura de dados físicos, escrever o registo de percentagem, Successful/falhado/bloqueado por ligações de firewall, percentagem de sessões, percentagem workers, armazenamento, percentagem de armazenamento, a percentagem de armazenamento XTP, e impasses |
-|Agrupamento elástico|percentagem de eDTU, eDTU utilizado, o limite de eDTU, percentagem de CPU, percentagem de leitura de dados físicos, registo escrever percentagem, percentagem de sessões, percentagem workers, armazenamento, a percentagem de armazenamento, limite de armazenamento, percentagem de armazenamento XTP |
+|Conjunto elástico|percentagem de eDTU, eDTU utilizado, o limite de eDTU, percentagem de CPU, percentagem de leitura de dados físicos, registo escrever percentagem, percentagem de sessões, percentagem workers, armazenamento, a percentagem de armazenamento, limite de armazenamento, percentagem de armazenamento XTP |
 |||
 
 ### <a name="query-store-runtime-statistics"></a>Estatísticas de tempo de execução do arquivo de consultas

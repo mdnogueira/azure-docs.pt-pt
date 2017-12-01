@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: support-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/08/2017
+ms.date: 11/29/2017
 ms.author: tomfitz
-ms.openlocfilehash: 2ebb469289afc36b08c90ae9839f5bdba41cd90b
-ms.sourcegitcommit: adf6a4c89364394931c1d29e4057a50799c90fc0
+ms.openlocfilehash: db7561c31c0748ae5c1500ba8c39dfa79274901e
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Resolver erros comuns de implementação do Azure com o Azure Resource Manager
 
@@ -31,6 +31,7 @@ Este artigo descreve alguns erros de implementação do Azure comuns que poderá
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Siga as restrições de nomenclatura para contas de armazenamento. | [Resolver o nome de conta de armazenamento](resource-manager-storage-account-name-errors.md) |
 | AccountPropertyCannotBeSet | Verifique as propriedades da conta de armazenamento disponível. | [storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
+| AllocationFailed | O cluster ou a região não dispõe de recursos disponíveis ou não suporta o tamanho da VM pedido. Repetir o pedido num momento posterior, ou peça um tamanho VM diferente. | [Problemas de aprovisionamento e a atribuição de Linux](../virtual-machines/linux/troubleshoot-deployment-new-vm.md) e [problemas de aprovisionamento e a alocação para Windows](../virtual-machines/windows/troubleshoot-deployment-new-vm.md) |
 | AnotherOperationInProgress | Aguarde pela conclusão da operação em simultâneo. | |
 | AuthorizationFailed | A conta ou principal de serviço não tem acesso suficiente para concluir a implementação. Verifique a sua conta pertencer a função e o acesso para o âmbito da implementação. | [Controlo de acesso baseado em funções do Azure](../active-directory/role-based-access-control-configure.md) |
 | BadRequest | Enviado valores de implementação que não corresponde ao que é esperado pelo Gestor de recursos. Consulte a mensagem de estado interna para obter ajuda na resolução de problemas. | [Referência de modelo](/azure/templates/) e [suportado localizações](resource-manager-template-location.md) |
@@ -54,7 +55,7 @@ Este artigo descreve alguns erros de implementação do Azure comuns que poderá
 | MissingRegistrationForLocation | Verifique o estado de registo do fornecedor de recursos e localizações suportadas. | [Resolver o registo](resource-manager-register-provider-errors.md) |
 | MissingSubscriptionRegistration | Registe a sua subscrição com o fornecedor de recursos. | [Resolver o registo](resource-manager-register-provider-errors.md) |
 | NoRegisteredProviderFound | Verifique o estado de registo do fornecedor de recursos. | [Resolver o registo](resource-manager-register-provider-errors.md) |
-| notFound | Poderá estar a tentar implementar um recurso dependente em paralelo com um recurso principal. Verifique se tem de adicionar uma dependência. | [Resolver dependências do](resource-manager-not-found-errors.md) |
+| NãoLocalizado | Poderá estar a tentar implementar um recurso dependente em paralelo com um recurso principal. Verifique se tem de adicionar uma dependência. | [Resolver dependências do](resource-manager-not-found-errors.md) |
 | OperationNotAllowed | A implementação está a tentar uma operação que exceda a quota para a subscrição, o grupo de recursos ou a região. Se for possível, de rever a implementação para se manter nas quotas. Caso contrário, considere solicitar uma alteração à sua quotas. | [Resolver quotas](resource-manager-quota-errors.md) |
 | ParentResourceNotFound | Certifique-se de que existe um recurso de principal antes de criar o elemento subordinado recursos. | [Resolver o recurso principal](resource-manager-parent-resource-errors.md) |
 | PrivateIPAddressInReservedRange | O endereço IP especificado inclui um intervalo de endereços necessário pelo Azure. Alterar o endereço IP para evitar o intervalo reservado. | [Endereços IP](../virtual-network/virtual-network-ip-addresses-overview-arm.md) |

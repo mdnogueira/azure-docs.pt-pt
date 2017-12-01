@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/09/2017
 ms.author: mazha
-ms.openlocfilehash: 98d4900e28f1850050dc4fbe1f97435e52afaf08
-ms.sourcegitcommit: 3e3a5e01a5629e017de2289a6abebbb798cec736
+ms.openlocfilehash: fd36b94c64ad31064dbb2e0badceaee5e5bc400f
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="add-a-custom-domain-to-your-cdn-endpoint"></a>Adicionar um domínio personalizado para o ponto final de CDN
 Depois de criar um perfil, normalmente, também cria um ou mais CDN [pontos finais](cdn-create-new-endpoint.md#create-a-new-cdn-endpoint) (um subdomínio `azureedge.net`) para entregar o conteúdo utilizando HTTP e HTTPS. Por predefinição, este ponto final está incluído em todas as suas URLs (por exemplo, `https://contoso.azureedge.net/photo.png`). Para sua comodidade, o CDN do Azure permite-lhe associar um domínio personalizado (por exemplo, `www.contoso.com`) com o ponto final. Com esta opção, utilize um domínio personalizado para entregar o conteúdo em vez do ponto final. Esta opção é útil se, por exemplo, pretende que o seu próprio nome de domínio seja visível para os seus clientes para fins de imagem corporativa.
@@ -54,7 +54,7 @@ Utilize uma das seguintes opções para mapear o domínio personalizado para um 
  
   | NOME             | TIPO  | VALOR                  |
   |------------------|-------|------------------------|
-  | www\.consoto.com | CNAME | consoto\.azureedge.net |
+  | www\.contoso.com | CNAME | Contoso\.azureedge.net |
 
 
 - Opção 2: Mapeamento com o **cdnverify** subdomínio. Se o domínio personalizado o tráfego de produção que não pode ser interrompido, pode criar um mapeamento CNAME temporário para o ponto final de CDN. Com esta opção, pode utiliza o Azure **cdnverify** ocorre subdomínio para fornecer um passo intermédio de registo para que os utilizadores podem aceder ao seu domínio sem interrupção durante o mapeamento de DNS.
@@ -64,7 +64,7 @@ Utilize uma das seguintes opções para mapear o domínio personalizado para um 
 
    | NOME                       | TIPO  | VALOR                            |
    |----------------------------|-------|----------------------------------|
-   | cdnverify.www\.consoto.com | CNAME | cdnverify.consoto\.azureedge.net | 
+   | cdnverify.www\.contoso.com | CNAME | cdnverify.contoso\.azureedge.net | 
 
 
 ## <a name="step-3-enable-the-cname-record-mapping-in-azure"></a>Passo 3: Ativar o mapeamento de registo CNAME no Azure
@@ -103,7 +103,7 @@ Este passo é dependente do passo 2, a opção 2 (mapeamento com o **cdnverify**
  
    | NOME             | TIPO  | VALOR                  |
    |------------------|-------|------------------------|
-   | www\.consoto.com | CNAME | consoto\.azureedge.net |
+   | www\.contoso.com | CNAME | Contoso\.azureedge.net |
 2. Elimine o registo CNAME com o **cdnverify** subdomínio que criou anteriormente.
 
 ## <a name="see-also"></a>Veja Também

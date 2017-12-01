@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: iainfou
-ms.openlocfilehash: 3714a4feb14bc47132e501629fc339bc7d0e40a1
-ms.sourcegitcommit: 8aa014454fc7947f1ed54d380c63423500123b4a
+ms.openlocfilehash: 141ae5f004ec1c85c506955873c69c03a89cd08c
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-in-the-azure-portal"></a>Dimensionar automaticamente um conjunto no portal do Azure de dimensionamento de máquina virtual
 Quando cria um conjunto de dimensionamento, é possível definir o número de instâncias VM que pretende executar. Como muda o seu pedido de aplicação, pode automaticamente aumentar ou reduzir o número de instâncias de VM. A capacidade de dimensionamento automático permite-lhe manter-se a pedido do cliente ou responder a alterações de desempenho da aplicação durante todo o ciclo de vida da sua aplicação.
@@ -54,7 +54,7 @@ Se aumentar o seu pedido de aplicação, a carga sobre as instâncias de VM no s
     | *Operador*             | Operador utilizado para comparar os dados métricos contra o limiar.                                                     | Mais do que   |
     | *Limiar*            | A percentagem que faz com que a regra de dimensionamento automático acionar uma ação.                                                 | 70             |
     | *Duração*             | A quantidade de tempo monitorizado antes em comparação com os valores da métrica e de limiar.                                   | 10 minutos     |
-    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                        | Aumentar percentagem em |
+    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                        | Percentagem de aumento por |
     | *Contagem de instâncias*       | A percentagem de instâncias de VM deve ser alterada quando a regra é acionado.                                            | 20             |
     | *Esporádico para baixo (minutos)*  | A quantidade de tempo de espera antes da regra é aplicada novamente para que as ações de dimensionamento automático de ter a hora entre em vigor. | 5 minutos      |
 
@@ -77,7 +77,7 @@ Num evening ou fim de semana, pode diminuir o seu pedido de aplicação. Se este
     |------------------------|----------------------------------------------------------------------------------------------------------------------|----------------|
     | *Operador*             | Operador utilizado para comparar os dados métricos contra o limiar.                                                      | Menos do que   |
     | *Limiar*            | A percentagem que faz com que a regra de dimensionamento automático acionar uma ação.                                                 | 30             |
-    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                         | Diminuir percentagem em |
+    | *Operação*            | Define se o conjunto de dimensionamento deve Dimensionar cópias de segurança ou para baixo quando se aplica a regra e que incremento                         | Diminuir por cento por |
     | *Contagem de instâncias*       | A percentagem de instâncias de VM deve ser alterada quando a regra é acionado.                                             | 20             |
 
 3. Para criar a regra, selecione **adicionar**
@@ -122,7 +122,7 @@ Os exemplos anteriores ampliada automaticamente uma escala definida no ou termin
 
     ![Criar regras de dimensionamento automático que dimensionadas com base numa agenda](media/virtual-machine-scale-sets-autoscale-portal/schedule-autoscale.PNG)
 
-Para ver como são aplicadas as regras de dimensionamento automático, selecione **histórico de execução** na parte superior do **dimensionamento** janela. O gráfico e os eventos listam mostra ao acionam as regras de dimensionamento automático e o número de instâncias VM no seu dimensionamento aumenta ou diminui.
+Para ver como são aplicadas as regras de dimensionamento automático, selecione **histórico de execução** na parte superior do **dimensionamento** janela. O gráfico e os eventos listam mostra quando o acionador de regras de dimensionamento automático e o número de instâncias de VM no seu dimensionamento definida aumentos ou as diminuições.
 
 
 ## <a name="next-steps"></a>Passos seguintes

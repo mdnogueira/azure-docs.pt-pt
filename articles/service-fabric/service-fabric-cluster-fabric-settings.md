@@ -14,11 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/15/2017
 ms.author: chackdan
-ms.openlocfilehash: 19caa05f0de7b4ff4ed7f4eafe50839d04f4ab50
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.openlocfilehash: 076d4d95db21f0a1c1500ae7766392547a441d1b
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Personalizar as definições de cluster do Service Fabric e política de atualização do Fabric
 Este documento indica como personalizar as várias definições de recursos de infraestrutura e os recursos de infraestrutura atualizar a política para o cluster do Service Fabric. Pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou através de um modelo Azure Resource Manager.
@@ -678,7 +678,7 @@ PropertyGroup|X509NameMap, a predefinição é nenhum|Dinâmica| |
 |GetCodePackageActivationContextTimeout|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(120)|Dinâmica|Especifique timespan em segundos. O valor de tempo limite para as chamadas de CodePackageActivationContext. Não é aplicável aos serviços do ad-hoc. |
 |IPProviderEnabled|booleana, a predefinição é FALSE|Estático|Ativa a gestão de endereços IP. |
 |NTLMAuthenticationEnabled|booleana, a predefinição é FALSE|Estático| Ativa o suporte para a utilização de NTLM, os pacotes de código que estão em execução com outros utilizadores para que os processos em máquinas podem comunicar de forma segura. |
-|NTLMAuthenticationPasswordSecret|SecureString, a predefinição é Common::SecureString(L"")|Estático|É que tem um encriptada que é utilizado para gerar a palavra-passe para os utilizadores NTLM. Tem de ser definida se NTLMAuthenticationEnabled for VERDADEIRO. Validadas pelo implementador. |
+|NTLMAuthenticationPasswordSecret|SecureString, a predefinição é Common::SecureString(L"")|Estático|É um hash encriptado que é utilizado para gerar a palavra-passe para os utilizadores NTLM. Tem de ser definida se NTLMAuthenticationEnabled for VERDADEIRO. Validadas pelo implementador. |
 |NTLMSecurityUsersByX509CommonNamesRefreshInterval|TimeSpan, a predefinição é Common::TimeSpan::FromMinutes(3)|Dinâmica|Especifique timespan em segundos. Definições de específico do ambiente, o intervalo periódico que alojamento verifica a existência de novos certificados a utilizar para a configuração de FileStoreService NTLM. |
 |NTLMSecurityUsersByX509CommonNamesRefreshTimeout|TimeSpan, a predefinição é Common::TimeSpan::FromMinutes(4)|Dinâmica| Especifique timespan em segundos. O tempo limite para a configuração de utilizadores NTLM, utilizando nomes comum do certificado. Os utilizadores NTLM são necessárias para partilhas de FileStoreService. |
 |RegisterCodePackageHostTimeout|TimeSpan, a predefinição é Common::TimeSpan::FromSeconds(120)|Dinâmica| Especifique timespan em segundos. O valor de tempo limite para a chamada de sincronização FabricRegisterCodePackageHost. Isto é aplicável apenas várias código pacote anfitriões de aplicações como FWP |

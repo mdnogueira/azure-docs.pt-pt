@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2017
 ms.author: maheshu
-ms.openlocfilehash: 8946166c04ce778d751ad79f7a010c9a5e71a05c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: b41cebcc8592468fcabb157b1aee830dfe954229
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Associar uma máquina virtual do Ubuntu no Azure a um domínio gerido
 Este artigo mostra como associar uma máquina virtual do Ubuntu Linux a um domínio gerido dos serviços de domínio do Azure AD.
@@ -120,12 +120,12 @@ Agora que os pacotes necessários são instalados na máquina virtual Linux, a p
     sudo realm discover CONTOSO100.COM
     ```
 
-      > [!NOTE] 
-      > **Resolução de problemas:** se *realm detetar* não conseguiu encontrar o seu domínio gerido:
-        * Ensure that the domain is reachable from the virtual machine (try ping).
-        * Check that the virtual machine has indeed been deployed to the same virtual network in which the managed domain is available.
-        * Check to see if you have updated the DNS server settings for the virtual network to point to the domain controllers of the managed domain.
-      >
+   > [!NOTE] 
+   > **Resolução de problemas:** se *realm detetar* não conseguiu encontrar o seu domínio gerido:
+     * Certifique-se de que o domínio é acessível a partir da máquina virtual (ping tente).
+     * Certifique-se de que a máquina virtual, de facto, implementada da mesma rede virtual em que o domínio gerido está disponível.
+     * Verifique se foi atualizado com as definições do servidor DNS para a rede virtual para que apontem para os controladores de domínio do domínio gerido.
+   >
 
 2. Inicializar o Kerberos. No seu terminal SSH, escreva o seguinte comando: 
 

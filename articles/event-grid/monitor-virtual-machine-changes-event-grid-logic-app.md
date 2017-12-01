@@ -9,13 +9,13 @@ ms.assetid:
 ms.workload: logic-apps
 ms.service: logic-apps
 ms.topic: article
-ms.date: 08/16/2017
+ms.date: 11/30/2017
 ms.author: LADocs; estfan
-ms.openlocfilehash: 8b9c7c9502be1a9d8681a304a6663c23c02c0298
-ms.sourcegitcommit: cf4c0ad6a628dfcbf5b841896ab3c78b97d4eafd
+ms.openlocfilehash: df1e19b772b41064aff1f345dee93813f0c21c73
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="monitor-virtual-machine-changes-with-azure-event-grid-and-logic-apps"></a>Monitorizar alterações de máquina virtual com a grelha de eventos do Azure e Logic Apps
 
@@ -91,7 +91,7 @@ Em primeiro lugar, crie uma aplicação lógica e adicionar um acionador de grel
    ![Inicie sessão com as suas credenciais do Azure](./media/monitor-virtual-machine-changes-event-grid-logic-app/sign-in-event-grid.png)
 
    > [!NOTE]
-   > Se iniciou sessão com uma conta Microsoft pessoal, tal como @outlook.com ou @hotmail.com, o acionador de grelha de evento pode não aparecer corretamente. Como solução, escolha [ligar com o Principal de serviço](/azure-resource-manager/resource-group-create-service-principal-portal.md), ou autenticar como um membro do Azure Active Directory que está associada a sua subscrição do Azure, por exemplo, *nome de utilizador*@emailoutlook.onmicrosoft.com.
+   > Se iniciou sessão com uma conta Microsoft pessoal, tal como @outlook.com ou @hotmail.com, o acionador de grelha de evento pode não aparecer corretamente. Como solução, escolha [ligar com o Principal de serviço](../azure-resource-manager/resource-group-create-service-principal-portal.md), ou autenticar como um membro do Azure Active Directory que está associada a sua subscrição do Azure, por exemplo, *nome de utilizador*@emailoutlook.onmicrosoft.com.
 
 8. Subscreve agora a sua aplicação lógica para eventos de publicador. Forneça os detalhes para a sua subscrição de evento conforme especificado na tabela seguinte:
 

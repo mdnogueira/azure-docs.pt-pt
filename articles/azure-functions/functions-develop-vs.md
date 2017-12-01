@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/06/2017
 ms.author: glenga
-ms.openlocfilehash: 1f0d50331aa3986e80542902fd528f98e1c91bc2
-ms.sourcegitcommit: 0930aabc3ede63240f60c2c61baa88ac6576c508
+ms.openlocfilehash: 099ff4c9748244ddaf9c12f5eb39657bf59c063b
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-functions-tools-for-visual-studio"></a>Ferramentas de funções do Azure para Visual Studio  
 
@@ -32,6 +32,9 @@ As ferramentas de funções do Azure fornece as seguintes vantagens:
 * O código das suas funções em c# ao ter todas as vantagens de desenvolvimento de Visual Studio. 
 
 Este tópico mostra como utilizar as ferramentas de funções do Azure para Visual Studio 2017 para desenvolver as suas funções em c#. Também irá aprender a publicar o projeto no Azure como uma assemblagem .NET.
+
+> [!IMPORTANT]
+> Não misture desenvolvimento local com o desenvolvimento portal na mesma aplicação de função. Quando publicar a partir de um projeto local para uma aplicação de função, o processo de implementação irá substituir quaisquer funções que desenvolvidos no portal.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

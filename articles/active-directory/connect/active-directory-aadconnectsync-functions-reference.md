@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: billmath
-ms.openlocfilehash: 591fa6048553db4c347449a68ea4e39f3772d643
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.openlocfilehash: 4ff0556ba79c7104fa0e1cd84ece7fe27521ebbb
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Sincronização do Azure AD Connect: referência de funções
 No Azure AD Connect, as funções são utilizadas para manipular um valor de atributo durante a sincronização.  
@@ -828,7 +828,7 @@ A função Item é útil em conjunto com a função de contém desde a última f
 Emitir um erro se o índice está fora dos limites.
 
 **Exemplo:**  
-`Mid(Item([proxyAddress],Contains([proxyAddress], "SMTP:")),6)`  
+`Mid(Item([proxyAddresses],Contains([proxyAddresses], "SMTP:")),6)`  
 Devolve o endereço de correio eletrónico principal.
 
 - - -
@@ -879,7 +879,7 @@ A função de LCase converte todos os carateres existentes numa cadeia caso infe
 Devolve "teste".
 
 - - -
-### <a name="left"></a>À esquerda
+### <a name="left"></a>Esquerda
 **Descrição:**  
 A função à esquerda devolve um número especificado de carateres do lado esquerdo de uma cadeia.
 
@@ -1130,7 +1130,7 @@ Devolve Raksmorgas
 Devolve "ONeil", a único marcas de escala não está definida para ser removido.
 
 - - -
-### <a name="right"></a>À direita
+### <a name="right"></a>Direita
 **Descrição:**  
 A função à direita devolve um número especificado de carateres à direita (fim) de uma cadeia.
 
@@ -1186,7 +1186,7 @@ Processo de todos os valores de um atributo com múltiplos valores (ou saída de
 Devolva todos os valores otherPhone o atributo com múltiplos valores depois de ter sido removido hífenes (-).
 
 - - -
-### <a name="split"></a>Divisão
+### <a name="split"></a>Dividir
 **Descrição:**  
 A função de divisão demora uma cadeia separada por com um delimitador e torna uma cadeia com múltiplos valor.
 
@@ -1293,7 +1293,7 @@ Devolve um subconjunto dos valores de um atributo com múltiplos valores (ou sa�
 Devolva os valores de certificado userCertificate o atributo com múltiplos valores que não estão expirados.
 
 - - -
-### <a name="with"></a>com o
+### <a name="with"></a>Com
 **Descrição:**  
 A função de With fornece uma forma para simplificar a uma expressão complexa, utilizando uma variável para representar um subexpression que aparece um ou mais vezes na expressão complexa.
 
