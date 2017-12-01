@@ -11,13 +11,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/10/2017
+ms.date: 11/29/2017
 ms.author: JeffGo
-ms.openlocfilehash: 31ffd31b5d540617c4a7a1224e6cf0ee656c9678
-ms.sourcegitcommit: 4ea06f52af0a8799561125497f2c2d28db7818e7
+ms.openlocfilehash: 6c74071cedb1da9a59f47b10eaf538d24cb9ab01
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="use-sql-databases-on-microsoft-azure-stack"></a>Utilizar bases de dados do SQL Server na pilha do Microsoft Azure
 
@@ -49,10 +49,17 @@ Deve criar (ou mais) servidores SQL e/ou fornecer acesso a instâncias externas 
 
     b. Em sistemas com vários nós, o anfitrião tem de ser um sistema que pode aceder ao ponto de final com privilégios.
 
-3. [Transfira o ficheiro de binários do fornecedor de recursos SQL](https://aka.ms/azurestacksqlrp) e executar o Self-extractor para extrair os conteúdos num diretório temporário.
+3. Transferir o fornecedor de recursos SQL binário e executar o Self-extractor para extrair os conteúdos num diretório temporário.
 
-    > [!NOTE]
-    > Se em execução numa pilha de Azure criar 20170928.3 ou anterior, [transferir esta versão](https://aka.ms/azurestacksqlrp1709).
+    >[!NOTE] 
+    > Corresponde a compilação de fornecedor de recursos para compilações de pilha do Azure. Tem de transferir o binário correto para a versão da pilha do Azure que está em execução.
+
+    | Compilação de pilha do Azure | Instalador do SQL Server RP |
+    | --- | --- |
+    | 1.0.171122.1 | [SQL Server RP versão 1.1.10.0](https://aka.ms/azurestacksqlrp) |
+    | 1.0.171028.1 | [SQL Server RP versão 1.1.8.0](https://aka.ms/azurestacksqlrp1710) |
+    | 1.0.170928.3 | [SQL Server RP versão 1.1.3.0](https://aka.ms/azurestacksqlrp1709) |
+   
 
 4. O certificado de raiz de pilha do Azure é obtido a partir do ponto final com privilégios. Para ASDK, é criado um certificado autoassinado como parte deste processo. Em vários nós, tem de fornecer um certificado adequado.
 
@@ -102,7 +109,7 @@ $serviceAdmin = "admin@mydomain.onmicrosoft.com"
 $AdminPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 $AdminCreds = New-Object System.Management.Automation.PSCredential ($serviceAdmin, $AdminPass)
 
-# Set the credentials for the Resource Provider VM
+# Set credentials for the new Resource Provider VM
 $vmLocalAdminPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 $vmLocalAdminCreds = New-Object System.Management.Automation.PSCredential ("sqlrpadmin", $vmLocalAdminPass)
 

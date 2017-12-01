@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/28/2017
 ms.author: v-donglo
-ms.openlocfilehash: 2fc71d3a03ff978485104bcd1cd9391c1d5ee392
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ed9b4e2fc2dd7c795861dc8f1c0f2c6d61d26439
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-web-services-portal"></a>Gerir um serviço Web utilizando o portal de serviços Web do Azure Machine Learning
 Pode gerir o Machine Learning novo e serviços Web clássicos através do portal de serviços Web do Microsoft Azure Machine Learning. Uma vez que os serviços Web clássicos e serviços Web novo são baseados em diferentes tecnologias subjacentes, tem capacidades de gestão ligeiramente diferente para cada um deles.
@@ -155,36 +155,4 @@ Pode atualizar as seguintes propriedades:
 * **Registo** permite-lhe ativar ou desativar o registo no ponto final de erro. Para obter mais informações sobre o registo, consulte ativar [registo para serviços web do Machine Learning](web-services-logging.md).
 * **Ativar dados de exemplo** permite-lhe fornecer os dados de exemplo que pode utilizar para testar o serviço de resposta-pedido. Se o serviço web que criou no Machine Learning Studio, os dados de exemplo são obtidos a partir de dados os utilizados para preparar o seu modelo. Se tiver criado o serviço através de programação, os dados são obtidos a partir de dados de exemplo fornecido como parte do pacote do JSON.
 
-## <a name="grant-or-suspend-access-to-web-services-for-users-in-the-portal"></a>Conceder ou suspender o acesso a serviços Web para os utilizadores no portal
-Utilizar o portal clássico do Azure, pode permitir ou negar o acesso a utilizadores específicos.
-
-### <a name="access-for-users-of-new-web-services"></a>Acesso de utilizadores dos serviços Web de novo
-Para ativar a outros utilizadores funcionar com os serviços Web no portal de serviços Web do Azure Machine Learning, tem de adicioná-los como co adminstrators na sua subscrição do Azure.
-
-Iniciar sessão para o [portal clássico do Azure](https://manage.windowsazure.com/) utilizando o Microsoft Azure conta – utilizar a conta que está associada a subscrição do Azure.
-
-1. No painel de navegação, clique em **definições**, em seguida, clique em **administradores**.
-2. Na parte inferior da janela, clique em **adicionar**. 
-3. Na caixa de diálogo Adicionar um COADMINISTRADOR, escreva o endereço de e-mail da pessoa que pretende adicionar como coadministrador e, em seguida, selecione a subscrição que pretende que o coadministrador para aceder.
-4. Clique em **Guardar**.
-
-### <a name="access-for-users-of-classic-web-services"></a>Acesso de utilizadores dos serviços Web clássico
-Para gerir uma área de trabalho:
-
-Iniciar sessão para o [portal clássico do Azure](https://manage.windowsazure.com/) utilizando o Microsoft Azure conta – utilizar a conta que está associada a subscrição do Azure.
-
-1. No painel de serviços do Microsoft Azure, clique em **MACHINE LEARNING**.
-2. Clique em da área de trabalho que pretende gerir.
-3. Clique em de **configurar** separador.
-
-No separador Configuração, pode suspender o acesso à área de trabalho do Machine Learning ao clicar em **NEGAR**. Os utilizadores já não será capazes de abrir a área de trabalho no Machine Learning Studio. Para restaurar o acesso, clique em **permitir**.
-
-Para utilizadores específicos:
-
-Para gerir contas adicionais que têm acesso à área de trabalho no Machine Learning Studio, clique em **início de sessão para ML Studio** no **DASHBOARD** separador. Esta ação abre a área de trabalho no Machine Learning Studio. Aqui, clique em de **definições** separador e, em seguida, **utilizadores**. Pode clicar em **CONVIDAR utilizadores mais** conceder aos utilizadores acesso à área de trabalho, ou selecione um utilizador e clique em **remover**.
-
-> [!NOTE]
-> O **início de sessão para ML Studio** ligação abre utilizando Account Microsoft tem atualmente sessão iniciada para o Machine Learning Studio. A Microsoft Account que utilizou para iniciar sessão no portal clássico do Azure para criar uma área de trabalho não tem permissão para abrir a área de trabalho automaticamente. Para abrir uma área de trabalho, têm de ser assinados para a Microsoft Account que foi definido como o proprietário da área de trabalho ou terá de receber um convite do proprietário para associar área de trabalho.
-> 
-> 
 

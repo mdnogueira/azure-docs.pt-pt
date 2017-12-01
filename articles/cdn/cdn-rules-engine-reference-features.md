@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: rli
-ms.openlocfilehash: ec2555df27f4b709d06b660bf161f741e5b86ea6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 107601fcc53e5f5b6f809bb3c7fceaf5e5c03d36
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-cdn-rules-engine-features"></a>Funcionalidades do motor de regras CDN do Azure
 Este tópico apresenta uma lista de descrições detalhadas das funcionalidades disponíveis para a rede de entrega de conteúdos (CDN) do Azure [motor de regras](cdn-rules-engine.md).
@@ -41,7 +41,7 @@ Parâmetro de autenticação de token | Determina se o parâmetro de cadeia de c
 ### <a name="deny-access"></a>Negar o acesso
 **Objetivo**: determina se a todos os pedidos são rejeitados com resposta 403 Proibido.
 
-Valor | resultado
+Valor | Resultado
 ------|-------
 Ativado| Faz com que todos os pedidos que satisfaçam os critérios de correspondência para ser rejeitada com resposta 403 Proibido.
 Desativado| Restaura o comportamento predefinido. O comportamento predefinido é permitir que o servidor de origem para determinar o tipo de resposta que vai ser devolvido.
@@ -58,7 +58,7 @@ Se a autenticação baseada em tokens está ativada, apenas pedidos que fornecem
 
 A chave de encriptação que será utilizada para encriptar e desencriptar valores token é determinada pela chave primária e as opções de chave de cópia de segurança na página de autenticação de Token. Tenha em atenção que as chaves de encriptação são específicas da plataforma.
 
-Valor | resultado
+Valor | Resultado
 ------|---------
 Ativado | Protege os conteúdos solicitados com a autenticação baseada em tokens. Apenas os pedidos de clientes que fornecem um token válido e cumpram os requisitos serão cumpridos. Transações de FTP são excluídas da autenticação baseada em tokens.
 Desativado| Restaura o comportamento predefinido. O comportamento predefinido é permitir que a configuração da autenticação baseada em tokens para determinar se um pedido esteja protegido.
@@ -73,11 +73,11 @@ Os códigos de resposta disponíveis são listados abaixo.
 Código de Resposta|Nome de resposta|Descrição
 ----------------|-----------|--------
 301|Movida permanentemente|Este código de estado redireciona os utilizadores não autorizados para o URL especificado no cabeçalho de localização.
-302|Foi encontrado|Este código de estado redireciona os utilizadores não autorizados para o URL especificado no cabeçalho de localização. Este código de estado é o método de padrão da indústria da execução de um redirecionamento.
+302|Encontrado|Este código de estado redireciona os utilizadores não autorizados para o URL especificado no cabeçalho de localização. Este código de estado é o método de padrão da indústria da execução de um redirecionamento.
 307|Redirecionamento temporário|Este código de estado redireciona os utilizadores não autorizados para o URL especificado no cabeçalho de localização.
 401|Não autorizado|Combinar este código de estado com o cabeçalho de resposta WWW-Authenticate permite-lhe solicitar um utilizador para autenticação.
 403|Proibido|Esta é a mensagem de estado de proibido de 403 padrão que um utilizador não autorizado ao tentar aceder a conteúdo protegido.
-404|Ficheiro não encontrado|Este código de estado indica que o cliente HTTP foi capaz de comunicar com o servidor, mas o conteúdo solicitado não foi encontrado.
+404|Ficheiro Não Encontrado|Este código de estado indica que o cliente HTTP foi capaz de comunicar com o servidor, mas o conteúdo solicitado não foi encontrado.
 
 #### <a name="url-redirection"></a>URL de redirecionamento
 
@@ -116,7 +116,7 @@ Os parâmetros afetados por esta funcionalidade são:
 
 Os valores válidos são:
 
-Valor|resultado
+Valor|Resultado
 ---|----
 Ativado|Faz com que o nosso servidor edge Ignorar maiúsculas / minúsculas ao comparar os URLs para os parâmetros de autenticação baseada em tokens.
 Desativado|Restaura o comportamento predefinido. O comportamento predefinido é de comparações de URL para a autenticação de Token estar maiúsculas e minúsculas.
@@ -132,7 +132,7 @@ Informações da chave:
 - A opção de valor não pode ser definida como "ec_token."
 - Certifique-se de que o nome definido na opção valor contém apenas caracteres válidos de URL.
 
-Valor|resultado
+Valor|Resultado
 ----|----
 Ativado|A opção de valor define o nome de parâmetro de cadeia de consulta através do qual os tokens devem ser definidos.
 Desativado|Um token pode ser especificado como um parâmetro de cadeia de consulta não definido no URL do pedido.
@@ -168,14 +168,14 @@ Atualizar os ficheiros de Cache de Zero bytes | Determina o modo como os pedidos
 Códigos de estado colocáveis de conjunto | Define o conjunto de códigos de estado que podem resultar num conteúdos em cache.
 Entrega de conteúdos obsoleta com o erro | Determina se expirado os conteúdos em cache serão entregues quando ocorre um erro durante a revalidação de cache ou ao obter os conteúdos solicitados a partir do servidor de origem do cliente.
 Obsoleta ao Revalidate | Melhora o desempenho ao permitir que os nossos servidores edge servir de cliente obsoleto para o autor do pedido, enquanto a revalidação ocorre.
-Comentário | A funcionalidade de comentário permite uma nota a adicionar dentro de uma regra.
+Comentar | A funcionalidade de comentário permite uma nota a adicionar dentro de uma regra.
 
 ###<a name="bandwidth-parameters"></a>Parâmetros de largura de banda
 **Objetivo:** determina se os parâmetros (por exemplo, ec_rate e ec_prebuf) de limitação de largura de banda estará ativa.
 
 Parâmetros de limitação de largura de banda determinam se a velocidade de transferência de dados para o pedido do cliente será limitada a uma taxa personalizada.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado|Permite que os nossos servidores edge honrar pedidos de limitação de largura de banda.
 Desativado|Faz com que o nosso servidores edge ignorar os parâmetros de limitação de largura de banda. Os conteúdos solicitados serão servido normalmente (ou seja, sem limitação de largura de banda).
@@ -197,7 +197,7 @@ Segundos de Prebuf|Defina esta opção para o número de segundos que os nossos 
 ###<a name="bypass-cache"></a>Ignorar a Cache
 **Objetivo:** determina se o pedido pode tirar partido da tecnologia colocação em cache.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado|Faz com que todos os pedidos para passar para o servidor de origem, mesmo que o conteúdo foi colocado em cache anteriormente no servidores edge.
 Desativado|Faz com que servidores edge aos recursos da cache, de acordo com a política de cache definido no respetivos cabeçalhos de resposta.
@@ -215,10 +215,10 @@ Desativado|Faz com que servidores edge aos recursos da cache, de acordo com a po
 
 A forma mais fácil para alcançar este tipo de configuração é colocar a idade máxima externos e as funcionalidades de Cache-Control de tratamento de cabeçalho na mesma instrução.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Substituir|Garante que as seguintes ações irão ocorrer:<br/> -Substitui o cabeçalho de Cache-Control gerado pelo servidor de origem. <br/>-Adiciona o cabeçalho de Cache-Control produzido pela funcionalidade de idade de máxima externo para a resposta.
-Pass-Through|Garante que o cabeçalho de Cache-Control produzido pela funcionalidade de idade de máxima externo nunca é adicionado à resposta. <br/> Se o servidor de origem produz um cabeçalho de Cache-Control, este irá percorrer para o utilizador final. <br/> Se o servidor de origem não produz um cabeçalho de Cache-Control, em seguida, esta opção pode fazer com que o cabeçalho de resposta que não contém um cabeçalho de Cache-Control.
+Pass Through|Garante que o cabeçalho de Cache-Control produzido pela funcionalidade de idade de máxima externo nunca é adicionado à resposta. <br/> Se o servidor de origem produz um cabeçalho de Cache-Control, este irá percorrer para o utilizador final. <br/> Se o servidor de origem não produz um cabeçalho de Cache-Control, em seguida, esta opção pode fazer com que o cabeçalho de resposta que não contém um cabeçalho de Cache-Control.
 Adicionar se estiverem em falta|Se o servidor de origem não foi recebido um cabeçalho de Cache-Control, esta opção adiciona o cabeçalho de Cache-Control produzido pela funcionalidade de idade de máxima externo. Esta opção é útil para assegurar que todos os elementos serão atribuídos um cabeçalho de Cache-Control.
 Remover| Esta opção garante que um cabeçalho de Cache-Control não está incluído com a resposta de cabeçalho. Se já tiver sido atribuído um cabeçalho de Cache-Control, em seguida, irá ser eliminado da resposta de cabeçalho.
 
@@ -318,7 +318,7 @@ Recomenda-se para deixar a configuração predefinida para a plataforma de HTTP 
 
 Devido da forma na cache de que as definições são registadas, esta funcionalidade não pode ser associada com as seguintes condições de correspondência: Edge Cname, Literal de cabeçalho de pedido, universal do cabeçalho de pedido, o Literal de consulta do URL e consulta de URL com carateres universais.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado|Restaura o comportamento predefinido. É o comportamento predefinido para forçar o servidor edge para iniciar a obtenção um fundo do elemento do servidor de origem. Após o qual, o elemento estarão disponíveis na cache local do servidor edge.
 Desativado|Impede que um servidor edge efetuar uma obtenção de fundo para o elemento. Isto significa que o pedido seguinte para esse recurso a que região fará com que um servidor edge para solicitá-la a partir do servidor de origem do cliente.
@@ -375,10 +375,10 @@ Informações da chave:
 
 A forma mais fácil para alcançar este tipo de configuração é colocar a idade máxima externos e as funcionalidades de expira tratamento de cabeçalho na mesma instrução.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Substituir|Garante que as seguintes ações irão ocorrer:<br/>-Substitui o cabeçalho de expira gerado pelo servidor de origem.<br/>-Adiciona o cabeçalho de expira produzido pela funcionalidade de idade de máxima externo para a resposta.
-Pass-Through|Garante que o cabeçalho de expira produzido pela funcionalidade de idade de máxima externo nunca é adicionado à resposta. <br/> Se o servidor de origem produz um cabeçalho de expira, este irá percorrer para o utilizador final. <br/>Se o servidor de origem não produz um cabeçalho de expira, em seguida, esta opção pode fazer com que o cabeçalho de resposta que não contém um cabeçalho de expira.
+Pass Through|Garante que o cabeçalho de expira produzido pela funcionalidade de idade de máxima externo nunca é adicionado à resposta. <br/> Se o servidor de origem produz um cabeçalho de expira, este irá percorrer para o utilizador final. <br/>Se o servidor de origem não produz um cabeçalho de expira, em seguida, esta opção pode fazer com que o cabeçalho de resposta que não contém um cabeçalho de expira.
 Adicionar se estiverem em falta| Se o servidor de origem não foi recebido um cabeçalho de expira, esta opção adiciona o cabeçalho de expira produzido pela funcionalidade de idade de máxima externo. Esta opção é útil para assegurar que todos os elementos serão atribuídos um cabeçalho de expira.
 Remover| Garante que um cabeçalho de expira não está incluído com a resposta de cabeçalho. Se já tiver sido atribuído um cabeçalho de expira, em seguida, este irá ser eliminado da resposta de cabeçalho.
 
@@ -437,7 +437,7 @@ Informações da chave:
 
 Um pedido de cache não ocorre quando o cliente HTTP envia uma Cache-controlo: não-cache e/ou Pragma:no-cabeçalho de cache do pedido de HTTP.
 
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado|Permite que os pedidos de cache não de um cliente HTTP para ser reencaminhado para o servidor de origem e o servidor de origem irá devolver os cabeçalhos de resposta e o corpo através do servidor edge novamente para o cliente HTTP.
 Desativado|Restaura o comportamento predefinido. O comportamento predefinido é para impedir que pedidos na cache não reencaminhados para o servidor de origem.
@@ -477,7 +477,7 @@ Informações da chave:
 
 Por predefinição, este código de estado é devolvido quando não é possível satisfazer o pedido de intervalo de bytes especificada por um servidor edge e um campo de cabeçalho de pedido de intervalo se não foi especificado.
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Impede que o nosso servidores edge responder a um pedido de intervalo de byte inválido com um código de estado 416 pedido intervalo não satisfatório. Em vez disso nossos servidores irão fornecer o recurso pedido e devolver um 200 OK para o cliente.
 Desativado|Restaura o comportamento predefinido. O comportamento predefinido é que respeite o código de estado 416 pedido intervalo não satisfatório.
@@ -518,7 +518,7 @@ Informações da chave:
 
 Esta cache parcial, em seguida, pode ser utilizado para satisfazer os pedidos de novo para esse conteúdo até que os conteúdos solicitados totalmente é colocado em cache.
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Pedidos podem gerar o conteúdo parcialmente em cache.
 Desativado|Pedidos só é possível gerar uma versão totalmente em cache do conteúdo pedido.
@@ -541,7 +541,7 @@ Informações da chave:
 
 Os valores válidos são:
 
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado|Faz com que o nosso servidor edge refetch o elemento a partir do servidor de origem.
 Desativado|Restaura o comportamento predefinido. É o comportamento predefinido para servir a recursos de cache válido após pedido.
@@ -570,7 +570,7 @@ Informações da chave:
 
 Determina se expirado os conteúdos em cache serão entregues quando ocorre um erro durante a revalidação de cache ou ao obter os conteúdos solicitados a partir do servidor de origem do cliente.
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Conteúdo obsoleto será servido para o autor do pedido quando ocorre um erro durante uma ligação a um servidor de origem.
 Desativado|Erro do servidor de origem será reencaminhado para o autor do pedido.
@@ -589,7 +589,7 @@ Informações da chave:
 
 **Comportamento predefinido:** desativado. Revalidação tem ocorrer antes dos conteúdos solicitados podem ser fornecidos.
 
-###<a name="comment"></a>Comentário
+###<a name="comment"></a>Comentar
 **Objetivo:** permite uma nota a adicionar dentro de uma regra.
 
 Uma utilização para esta funcionalidade é fornecer informações adicionais sobre o objetivo geral de uma regra ou o motivo pelo qual um determinado correspondem à condição funcionalidade foi adicionada à regra.
@@ -614,7 +614,7 @@ Cabeçalho IP do conjunto de cliente personalizado | Permite que o endereço IP 
 
 ###<a name="age-response-header"></a>Cabeçalho de resposta de antiguidade
 **Objetivo**: determina se um cabeçalho de resposta de idade será incluído na resposta enviada para o autor do pedido.
-Valor|resultado
+Valor|Resultado
 --|--
 Ativado | O cabeçalho de resposta de idade será incluído na resposta enviada para o autor do pedido.
 Desativado | O cabeçalho de resposta de idade será excluído da resposta enviada para o autor do pedido.
@@ -637,14 +637,14 @@ X-EC-Debug: _Directive1_,_Directive2_,_DirectiveN_
 
 EC-X-Debug: x-ec-cache,x-ec-check-cacheable,x-ec-cache-key,x-ec-cache-state
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Pedidos de cabeçalhos de resposta de cache de depuração irão devolver uma resposta que inclui o cabeçalho X-EC-Debug.
 Desativado|O cabeçalho de resposta EC-X-Debug será excluído da resposta.
 
 **Comportamento predefinido:** desativado.
 
-###<a name="modify-client-response-header"></a>Modificar o cabeçalho de resposta do cliente
+###<a name="modify-client-request-header"></a>Modificar o cabeçalho de pedido de cliente
 **Objetivo:** cada pedido contém um conjunto de [cabeçalhos de pedido]() que descrevem-lo. Esta funcionalidade pode optar por:
 
 - Acrescentar ou substituir o valor atribuído a um cabeçalho de pedido. Se o cabeçalho de pedido especificado não existir, em seguida, esta funcionalidade irá adicioná-la para o pedido.
@@ -680,7 +680,7 @@ Informações da chave:
 ###<a name="modify-client-response-header"></a>Modificar o cabeçalho de resposta do cliente
 Cada resposta contém um conjunto de [cabeçalhos de resposta]() que descrevem-lo. Esta funcionalidade pode optar por:
 
-- Acrescentar ou substituir o valor atribuído a um cabeçalho de resposta. Se o cabeçalho de pedido especificado não existir, em seguida, esta funcionalidade irá adicioná-la para a resposta.
+- Acrescentar ou substituir o valor atribuído a um cabeçalho de resposta. Se o cabeçalho de resposta especificado não existir, em seguida, esta funcionalidade irá adicioná-la para a resposta.
 - Elimine um cabeçalho de resposta da resposta.
 
 Por predefinição, os valores de cabeçalho de resposta são definidos por um servidor de origem e pelos nossos servidores edge.
@@ -689,9 +689,9 @@ Uma das seguintes ações pode ser efetuada num cabeçalho de resposta:
 
 Opção|Descrição|Exemplo
 -|-|-
-Acrescentar|O valor especificado será adicionado ao fim do valor de cabeçalho de pedido existente.|**O valor de cabeçalho de resposta (cliente):**Value1 <br/> **O valor de cabeçalho de resposta (motor de regras de HTTP):** Value2 <br/>**Novo valor de cabeçalho de resposta:** Value1Value2
-Substituir|O valor do cabeçalho de pedido será definido para o valor especificado.|**O valor de cabeçalho de resposta (cliente):**Value1 <br/>**O valor de cabeçalho de resposta (motor de regras de HTTP):** Value2 <br/>**Novo valor de cabeçalho de resposta:** Value2 <br/>
-Eliminar|Elimina o cabeçalho de pedido especificado.|**O valor do cabeçalho (cliente) do pedido:** Value1 <br/> **Modificar configuração de cabeçalho de pedido de cliente:** eliminar o cabeçalho de resposta em questão. <br/>**Resultado:** o cabeçalho de resposta especificado não será reencaminhado para o autor do pedido.
+Acrescentar|O valor especificado será adicionado ao fim do valor de cabeçalho de resposta existente.|**O valor de cabeçalho de resposta (cliente):**Value1 <br/> **O valor de cabeçalho de resposta (motor de regras de HTTP):** Value2 <br/>**Novo valor de cabeçalho de resposta:** Value1Value2
+Substituir|O valor do cabeçalho de resposta será definido para o valor especificado.|**O valor de cabeçalho de resposta (cliente):**Value1 <br/>**O valor de cabeçalho de resposta (motor de regras de HTTP):** Value2 <br/>**Novo valor de cabeçalho de resposta:** Value2 <br/>
+Eliminar|Elimina o cabeçalho de resposta especificado.|**O valor de cabeçalho de resposta (cliente):** Value1 <br/> **Modificar configuração de cabeçalho de resposta do cliente:** eliminar o cabeçalho de resposta em questão. <br/>**Resultado:** o cabeçalho de resposta especificado não será reencaminhado para o autor do pedido.
 
 Informações da chave:
 
@@ -708,7 +708,7 @@ Informações da chave:
     - codificação de conteúdo
     - comprimento do conteúdo
     - intervalo de conteúdo
-    - Data
+    - data
     - servidor
     - trailer
     - codificação de transferência
@@ -755,7 +755,7 @@ Por predefinição, o campo de registo personalizado é designado por "x-ec_cust
 
 A formatação que deve utilizar para especificar os cabeçalhos de pedido e resposta está definida abaixo.
 
-Tipo de cabeçalho|formato|Exemplos
+Tipo de cabeçalho|Formato|Exemplos
 -|-|-
 Cabeçalho de pedido|%{[RequestHeader]()}[i]() | % {Aceitar codificação} i <br/> {Referenciador} i <br/> % {Autorização} i
 Cabeçalho de Resposta|%{[ResponseHeader]()}[Nã]()| O % {idade} <br/> O % {content-Type} <br/> O % {cookie}
@@ -773,7 +773,7 @@ Informações da chave:
 ###<a name="log-query-string"></a>Cadeia de consulta de registo
 **Objetivo:** determina se uma cadeia de consulta será armazenada juntamente com o URL nos registos de acesso.
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Permite que o armazenamento de cadeias de consulta ao gravar os URLs no registo de acesso. Se um URL contém uma cadeia de consulta, em seguida, esta opção só terá um efeito.
 Desativado|Restaura o comportamento predefinido. É o comportamento predefinido para ignorar as cadeias de consulta aquando a gravar URLs no registo de acesso.
@@ -911,7 +911,7 @@ Informações da chave:
 
 - Pedidos só podem ser redirecionados para o limite CNAMEs que correspondem a mesma plataforma.
 
-Valor|resultado
+Valor|Resultado
 -|-
 Ativado|Os pedidos podem ser redirecionados.
 Desativado|Pedidos não serão redirecionados.
@@ -995,7 +995,7 @@ Esta funcionalidade inclui correspondentes aos critérios que devem ser satisfei
 
 - COMO número
 - Origem da CDN
-- Endereço IP do cliente
+- Endereço IP do Cliente
 - Origem de cliente
 - Esquema de pedido
 - Diretório de caminho de URL

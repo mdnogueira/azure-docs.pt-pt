@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: v-semcev
-ms.openlocfilehash: 98941c49b057380b3ef9164515bcc2a63ccb56ce
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 3544112b025f5df10e6f67c8e2e02f4bb587b4e0
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="optimize-azure-content-delivery-for-your-scenario"></a>Otimizar a entrega de conteúdos do Azure para o seu cenário
 
@@ -35,15 +35,15 @@ Este artigo fornece uma descrição geral de diversas funcionalidades de Otimiza
 
 A rede de entrega de conteúdos do Azure da Akamai suporta:
 
-* Entrega de web geral 
+* Entrega geral Web 
 
-* Suporte de dados gerais de transmissão em fluxo
+* Transmissão geral de multimédia
 
 * Suporte de dados de vídeo a pedido de transmissão em fluxo
 
-* Transferência de ficheiros grandes
+* Transferência de ficheiro grande
 
-* Aceleração dinâmicas do site 
+* Aceleração de sites dinâmicos 
 
 A rede de entrega de conteúdos do Azure da Verizon suporta apenas a entrega web geral. Pode ser utilizado para as vídeo a pedido e transferências de ficheiros grandes. Não tem de selecionar um tipo de otimização.
 
@@ -65,7 +65,7 @@ Para criar um novo ponto final, selecione um tipo de otimização que descreva o
 
 Pode otimizar o ponto final da CDN para um dos seguintes cenários. 
 
-### <a name="general-web-delivery"></a>Entrega de web geral
+### <a name="general-web-delivery"></a>Entrega geral Web
 
 Entrega de web geral é a opção de otimização mais comuns. Foi concebido para a otimização de conteúdo web gerais, tais como páginas Web e aplicações web. Esta otimização também pode ser utilizada para o ficheiro e transferências de vídeo.
 
@@ -74,7 +74,7 @@ Um Web site típico contém conteúdo estático e dinâmico. Conteúdo estático
 > [!NOTE]
 > Se utilizar a rede de entrega de conteúdos do Azure da Akamai, pode querer utilizar esta otimização se o tamanho de ficheiro médio for inferior a 10 MB. Se o tamanho de ficheiro médio for superior a 10 MB, selecione **transferências de ficheiros grandes** do **otimizado para** na lista pendente.
 
-### <a name="general-media-streaming"></a>Suporte de dados gerais de transmissão em fluxo
+### <a name="general-media-streaming"></a>Transmissão geral de multimédia
 
 Se precisar de utilizar o ponto final de transmissão em fluxo em direto e vídeo a pedido de transmissão em fluxo, recomendamos que suporte de dados gerais de otimização de transmissão em fluxo.
 
@@ -97,17 +97,17 @@ Para saber mais sobre a otimização de transmissão em fluxo de suporte de dado
 > [!NOTE]
 > Se o ponto final serve principalmente conteúdo de vídeo a pedido, utilize este tipo de otimização. A principal diferença entre esta Otimização e o suporte de dados gerais otimização de transmissão em fluxo é o limite de tentativas de ligação. O limite de tempo é muito mais curto para trabalhar com cenários de transmissão em fluxo em direto.
 
-### <a name="large-file-download"></a>Transferência de ficheiros grandes
+### <a name="large-file-download"></a>Transferência de ficheiro grande
 
 Se utilizar a rede de entrega de conteúdos do Azure da Akamai, tem de utilizar a transferência de ficheiros grandes para fornecer ficheiros maiores do que 1.8 GB. A rede de entrega de conteúdos do Azure da Verizon não tem uma limitação no ficheiro de tamanho na otimização de entrega web geral de transferir.
 
 Se utilizar a rede de entrega de conteúdo do Azure da Akamai, transferências de ficheiros grandes estão otimizadas para o conteúdo com mais de 10 MB. Se o tamanho de ficheiro médio for inferior a 10 MB, pode querer utilizar entrega web geral. Se os tamanhos de média ficheiros forem consistentemente superiores a 10 MB, poderá ser mais eficiente para criar um ponto de final separado para ficheiros grandes. Por exemplo, atualizações de software ou firmware normalmente são ficheiros grandes.
 
-Rede de entrega de conteúdo do Azure da Verizon utiliza o tipo de otimização de entrega web geral para fornecer conteúdo de multimédia de transmissão em fluxo.
+Rede de entrega de conteúdo do Azure da Verizon utiliza o tipo de otimização de entrega de web geral para fornecer conteúdo de transferência de ficheiros grandes.
 
 Para saber mais sobre a otimização de ficheiros grandes, consulte [otimização de ficheiros grandes](cdn-large-file-optimization.md).
 
-### <a name="dynamic-site-acceleration"></a>Aceleração dinâmicas do site
+### <a name="dynamic-site-acceleration"></a>Aceleração de sites dinâmicos
 
  Aceleração dinâmicas do site está disponível a partir da Akamai e rede de entrega de conteúdos da Verizon perfis. Esta otimização envolve uma taxa adicional a utilizar. Para obter mais informações, consulte a página de preços.
 

@@ -15,11 +15,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: mimig
-ms.openlocfilehash: 0f45468616884a6866bd95ef53acab71b4fed06c
-ms.sourcegitcommit: 310748b6d66dc0445e682c8c904ae4c71352fef2
+ms.openlocfilehash: f32d23caa0a89b7f9336628280d726a351fb0603
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-cosmos-db-faq"></a>FAQ do Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Noções básicas do Cosmos BD do Azure
@@ -195,7 +195,6 @@ Existem algumas diferenças de comportamento utilizadores provenientes da Table 
 * Resultados devolvidos pela API de tabela não são ordenados por ordem de chave de linha/chave de partição conforme forem no Table storage do Azure.
 * Chaves de linha só podem ser até 255 bytes
 * Lotes só podem conter até 2 MB
-* Chamadas de CreateIfNotExists estão limitadas por uma limitação de gestão que seja fixo e separada das outras operações de tabela que estão abrangidas pelos RUs. Isto significa que os efetuar grandes quantidades de CreateIfNotExists obterem limitados e irão não será capazes de fazer nada sobre o assunto, porque o limite não provém do respetivos RUs.
 * Não é atualmente suportado CORS
 * Os nomes de tabela no armazenamento de Azure Table não são maiúsculas e minúsculas, mas estão na API de tabela de base de dados do Azure Cosmos
 * Alguns dos formatos de internos da BD do Cosmos do Azure para obter informações de codificação, como binários campos, atualmente não estão como eficientes como um poderá gostar. Por conseguinte, isto pode provocar limitações inesperadas no tamanho dos dados. Por exemplo, atualmente um não foi possível utilizar a completa 1 Meg de uma entidade de tabela para armazenar dados binários porque a codificação aumenta o tamanho dos dados.
@@ -205,7 +204,7 @@ Em termos da API REST, existem várias opções de pontos finais/consulta que n�
 | ------------| ------------- | ---------- | ----------- |
 | OBTER, COLOCAR | /? restype =service@comp= propriedades| [Definir as propriedades do serviço tabela](https://docs.microsoft.com/rest/api/storageservices/set-table-service-properties) e [obter propriedades de serviço tabela](https://docs.microsoft.com/rest/api/storageservices/get-table-service-properties) | Este ponto final é utilizado para definir as regras CORS, configuração de armazenamento da análise e as definições de registo. CORS não é atualmente suportada e registo e análise são processadas forma diferente na base de dados do Azure Cosmos que tabelas de armazenamento do Azure |
 | OPÇÕES | / < nome de recurso de tabela > | [Pré-voo CORS tabela pedido](https://docs.microsoft.com/rest/api/storageservices/preflight-table-request) | Isto faz parte de CORS que BD do Cosmos Azure não suporta atualmente. |
-| INTRODUÇÃO | /? restype =service@comp= estatísticas | [Obter estatísticas de serviço tabela](https://docs.microsoft.com/rest/api/storageservices/get-table-service-stats) | Fornece informações como rapidamente dados está a replicar entre principais e secundárias. Isto não é necessário na base de dados do Cosmos como a replicação faz parte das escritas. |
+| GET | /? restype =service@comp= estatísticas | [Obter estatísticas de serviço tabela](https://docs.microsoft.com/rest/api/storageservices/get-table-service-stats) | Fornece informações como rapidamente dados está a replicar entre principais e secundárias. Isto não é necessário na base de dados do Cosmos como a replicação faz parte das escritas. |
 | OBTER, COLOCAR | /MyTable? concluída = acl | [Obter tabela ACL](https://docs.microsoft.com/rest/api/storageservices/get-table-acl) e [Definir tabela ACL](https://docs.microsoft.com/rest/api/storageservices/set-table-acl) | Este obtém e define as políticas de acesso armazenada utilizadas para gerir assinaturas de acesso partilhado (SAS). Embora seja suportado SAS, estão definidas e geridos de forma diferente. |
 
 Além disso API de tabela de base de dados do Azure Cosmos só suporta o formato JSON, não ATOM.
@@ -504,7 +503,7 @@ Utilize [métricas](use-metrics.md) utilize [registos de diagnóstico](logging.m
 ### <a name="which-client-sdks-can-work-with-apache-cassandra-api-of-azure-cosmos-db"></a>Os SDKs do cliente podem trabalhar com Apache Cassandra API do Cosmos BD do Azure?
 Cliente do SDK de pré-visualização privada, o Apache Cassandra controladores que utilizam CQLv3 foram utilizadas para programas de cliente. Se tiver outros controladores que pode utilizar ou se estão a enfrentar problemas, envie um e-mail para [ askcosmosdbcassandra@microsoft.com ](mailto:askcosmosdbcassandra@microsoft.com). 
 
-### <a name="is-composite-primary-key-supported"></a>Chave primária composta é suportada?
+### <a name="is-composite-partition-key-supported"></a>Chave de partição composto é suportado?
 Sim, pode utilizar a sintaxe regular para criar a chave de partição composto. 
 
 ### <a name="can-i-use-sstable-loader-for-data-loading"></a>Pode utilizar sstable carregador para carregamento de dados?

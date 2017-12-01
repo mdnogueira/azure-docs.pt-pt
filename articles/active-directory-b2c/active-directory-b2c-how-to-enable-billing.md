@@ -3,75 +3,96 @@ title: "Como ligar uma subscrição do Azure para o Azure AD B2C | Microsoft Doc
 description: "Guia passo a passo para ativar a faturação de inquilino do Azure AD B2C para uma subscrição do Azure."
 services: active-directory-b2c
 documentationcenter: dev-center-name
-author: rojasja
-manager: mbaldwin
+author: parakhj
+manager: krassk
 ms.service: active-directory-b2c
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/05/2016
-ms.author: joroja
-ms.openlocfilehash: 5b9955b2af7f20a79981315fa33a0eb5380a5465
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 12/05/2017
+ms.author: parja
+ms.openlocfilehash: 35fab74abf2c2ba27a8bf99eb93eb53f39b26227
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="linking-an-azure-subscription-to-an-azure-b2c-tenant-to-pay-for-usage-charges"></a>Ligar uma subscrição do Azure para um inquilino do Azure B2C pagar para custos de utilização
-
-Custos de utilização em curso para o Azure Active Directory B2C (ou Azure AD B2C) são cobrados para uma subscrição do Azure. É necessário para o administrador de inquilino ligar explicitamente o inquilino do Azure AD B2C a uma subscrição do Azure depois de criar o inquilino do B2C.  Esta ligação é conseguida através da criação de um Azure AD "Inquilino B2C" recursos no destino da subscrição do Azure. Muitos inquilinos de B2C, podem ser associados a uma única subscrição do Azure, juntamente com outros recursos do Azure (por exemplo, VMs, armazenamento de dados, LogicApps)
-
+# <a name="linking-an-azure-subscription-to-an-azure-ad-b2c-tenant"></a>Ligar uma subscrição do Azure para um inquilino do Azure AD B2C
 
 > [!IMPORTANT]
-> As informações mais recentes na utilização de faturação e preços para B2C é a seguinte página: [preços do Azure AD B2C](
-https://azure.microsoft.com/pricing/details/active-directory-b2c/)
+> As informações mais recentes na utilização de faturação e preços para o Azure AD B2C é a seguinte página: [preços do Azure AD B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
 
-## <a name="step-1---create-an-azure-ad-b2c-tenant"></a>Passo 1 – criar um inquilino do Azure AD B2C
-A criação de inquilino do B2C tem de ser concluída primeiro. Ignore este passo se já tiver criado o seu inquilino do B2C de destino. [Introdução ao Azure AD B2C](active-directory-b2c-get-started.md)
+Custos de utilização para o Azure AD B2C são cobrados para uma subscrição do Azure. Quando é criado um inquilino do Azure AD B2C, o administrador de inquilino tem de ligar explicitamente o inquilino do Azure AD B2C a uma subscrição do Azure. Este artigo mostra-lhe como.
 
-## <a name="step-2---open-azure-portal-in-the-azure-ad-tenant-that-shows-your-azure-subscription"></a>Passo 2 - abra portal do Azure no inquilino do Azure AD que mostra a sua subscrição do Azure
-Navegue para o [portal do Azure](https://portal.azure.com). Mudar para o inquilino do Azure AD que mostra a subscrição do Azure que pretende utilizar. Este inquilino do Azure AD é diferente do inquilino do B2C. No portal do Azure, clique no nome de conta no canto superior direito do dashboard para selecionar o inquilino do Azure AD. É necessária uma subscrição do Azure para continuar. [Obter uma subscrição do Azure](https://account.windowsazure.com/signup?showCatalog=True)
+> [!NOTE]
+> Uma subscrição associada a um inquilino do Azure AD B2C só pode ser utilizada para a faturação da utilização do Azure AD B2C. A subscrição não pode ser utilizada para adicionar outros serviços do Azure ou do Office 365 licenças *no inquilino do Azure AD B2C*.
+
+ A ligação de subscrição é conseguida através da criação de um Azure AD B2C "recurso" dentro do subscrição do Azure de destino. Azure AD B2C muitos "recursos" podem ser criados dentro de uma única subscrição do Azure, juntamente com outros recursos do Azure (por exemplo, VMs, o armazenamento de dados, LogicApps). Pode ver todos os recursos dentro da subscrição acedendo ao inquilino do Azure AD que a subscrição está associada.
+
+É necessária uma subscrição do Azure válida para continuar.
+
+## <a name="create-an-azure-ad-b2c-tenant"></a>Criar um inquilino do Azure AD B2C
+
+Deve primeiro [criar um inquilino do Azure AD B2C](active-directory-b2c-get-started.md) que gostaria de ligar uma subscrição. Ignore este passo se já tiver criado um inquilino do Azure AD B2C.
+
+## <a name="open-azure-portal-in-the-azure-ad-tenant-that-shows-your-azure-subscription"></a>Portal do Azure aberto no inquilino do Azure AD que mostra a sua subscrição do Azure
+
+Navegue para o inquilino do Azure AD que mostra a sua subscrição do Azure. Abra o [portal do Azure](https://portal.azure.com)e mude para o inquilino do Azure AD que mostra a subscrição do Azure que pretende utilizar.
 
 ![Mudar para o inquilino do Azure AD](./media/active-directory-b2c-how-to-enable-billing/SelectAzureADTenant.png)
 
-## <a name="step-3---create-a-b2c-tenant-resource-in-azure-marketplace"></a>Passo 3 – criar um recurso de inquilino do B2C no Azure Marketplace
-Abra o Marketplace clicando no ícone de Marketplace ou selecionar a verde "+" no canto superior esquerdo do dashboard.  Procure e selecione o Azure Active Directory B2C. Selecione criar.
+## <a name="find-azure-ad-b2c-in-the-azure-marketplace"></a>Localizar o Azure AD B2C no Azure Marketplace
 
-![Selecione o Marketplace](./media/active-directory-b2c-how-to-enable-billing/marketplace.png)
+Clique no botão **Novo**. No campo **Procurar no Marketplace**, escreva `B2C`.
 
-![Pesquisa AD B2C](./media/active-directory-b2c-how-to-enable-billing/searchb2c.png)
+![Adicionar o texto do Azure AD B2C e botão realçado na pesquisa o campo do marketplace](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
 
-O recurso do Azure AD B2C criar caixa de diálogo abrange os seguintes parâmetros:
+Na lista de resultados, selecione **do Azure AD B2C**.
 
-1. Azure AD B2C inquilino – selecione um inquilino do Azure AD B2C, na lista pendente.  Mostram apenas de elegíveis inquilinos do Azure AD B2C.  Elegíveis B2C inquilinos cumprirem seguintes condições: é o administrador global do inquilino B2C e o inquilino do B2C não está atualmente associado a uma subscrição do Azure
+![O Azure AD B2C selecionado na lista de resultados](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c-result.png)
 
-2. Nome de recurso de AD B2C do Azure - está pré-selecionada corresponder ao nome do domínio de inquilino do B2C
+São apresentados detalhes sobre o Azure AD B2C. Para começar a configurar o seu novo inquilino do Azure Active Directory B2C, clique no botão **Criar**.
 
-3. Subscrição - uma subscrição do Azure Active Directory em que é um administrador ou coadministrador.  Vários inquilinos do Azure AD B2C podem ser adicionados a uma subscrição do Azure
+No ecrã de criação de recursos, selecione **inquilino de ligação do Azure AD B2C existente, a minha subscrição do Azure**.
 
-4. Localização do grupo de recursos e o grupo de recursos - este artefactos ajudam a organizar os vários recursos do Azure.  Esta opção não tem impacto na sua localização de inquilino do B2C, o desempenho ou o estado de faturação
+## <a name="create-an-azure-ad-b2c-resource-within-the-azure-subscription"></a>Crie um recurso do Azure AD B2C dentro da subscrição do Azure
 
-5. Afixar ao dashboard para mais fácil acesso às suas informações de faturação de inquilino B2C e as definições de inquilino do B2C ![criar recursos do B2C](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
+Na caixa de diálogo de criação de recursos, selecione um inquilino do Azure AD B2C na lista pendente. Irá ver todos os inquilinos que é o administrador global e aqueles que já não estiverem ligados a uma subscrição.
 
-## <a name="step-4---manage-your-b2c-tenant-resources-optional"></a>Passo 4 – gerir os recursos de inquilino do B2C (opcionais)
-Após a conclusão da implementação, um novo recurso de "Inquilino B2C" é criado no grupo de recursos de destino e relacionadas com subscrição do Azure.  Deverá ver um novo recurso do tipo "Inquilino B2C" adicionado juntamente com os outros recursos do Azure.
+O nome de recurso do Azure AD B2C será pré-selecionada corresponder ao nome do domínio do inquilino do Azure AD B2C.
 
-![Criar o recurso do B2C](./media/active-directory-b2c-how-to-enable-billing/b2cresourcedashboard.png)
+Para a subscrição, selecione uma subscrição do Azure Active Directory que é o administrador.
 
-Ao clicar em recursos de inquilino do B2C, conseguir
-- Clique no nome de subscrição para rever as informações de faturação. Consulte a faturação e de utilização.
-- Clique em definições do Azure AD B2C para abrir um novo separador do browser diretamente no seu inquilino do B2C painel Definições
+Selecione um grupo de recursos e localização do grupo de recursos. A seleção aqui não tem impacto na sua localização de inquilino do Azure AD B2C, o desempenho ou o estado de faturação.
+
+![Criar o recurso do B2C](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
+
+## <a name="manage-your-azure-ad-b2c-tenent-resources"></a>Gerir os recursos de inquilino do Azure AD B2C
+
+Depois de um recurso do Azure AD B2C foi criado com êxito dentro da subscrição do Azure, verá um novo recurso do tipo "Inquilino B2C" adicionado juntamente com os outros recursos do Azure.
+
+Pode utilizar este recurso:
+
+- Navegue para a subscrição para rever as informações de faturação.
+- Aceda ao seu inquilino do Azure AD B2C
 - Submeter pedidos de suporte
-- Mova os recursos de inquilino do B2C para outra subscrição do Azure ou para outro grupo de recursos.  Este alterações à escolha a subscrição do Azure recebe custos de utilização.
+- Mova os recursos de inquilino do Azure AD B2C para outra subscrição do Azure ou para outro grupo de recursos.
 
 ![Definições de recursos do B2C](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.png)
 
 ## <a name="known-issues"></a>Problemas conhecidos
-- Eliminação de inquilino do B2C. Se for criado um inquilino do B2C, eliminado e recriado com o mesmo nome de domínio, também elimine e recrie o recurso "Linking" com o mesmo nome de domínio.  Irá encontrar este recurso de "Linking" em "Todos os recursos" no inquilino da subscrição através do portal do Azure.
-- Restrições de Self-impostas na localização de recursos regional.  Em casos raros, um utilizador pode estabelecer uma restrição regional para a criação de recursos do Azure.  Esta restrição poderá impedir a criação da ligação entre uma subscrição do Azure e um inquilino do B2C. Para atenuar, reduzir esta restrição.
+
+### <a name="csp-subscriptions"></a>Subscrições de CSP
+
+Atualmente, um inquilino do Azure AD B2C **não é possível** ligação a subscrições do CSP.
+
+### <a name="self-imposed-restrictions"></a>Restrições de Self-impostas
+
+Um utilizador pode estabelecer uma restrição regional para a criação de recursos do Azure. Esta restrição poderá impedir a criação de recursos do Azure AD B2C. Para atenuar, reduzir esta restrição.
 
 ## <a name="next-steps"></a>Passos seguintes
-Assim que estes passos estiverem concluídos para cada um dos seus inquilinos de B2C, a sua subscrição do Azure é faturada de acordo com os detalhes da sua direta do Azure ou contrato Enterprise.
-- Reveja a utilização e faturação na sua subscrição do Azure selecionada
-- Reveja os relatórios de utilização por dia detalhada utilizando o [API de relatórios de utilização](active-directory-b2c-reference-usage-reporting-api.md)
+
+Assim que estes passos estiverem concluídos para cada um dos seus inquilinos do Azure AD B2C, a sua subscrição do Azure é faturada de acordo com os detalhes da sua direta do Azure ou contrato Enterprise.
+
+Pode rever os detalhes de faturação e de utilização na sua subscrição do Azure selecionada. Também pode rever os relatórios de utilização por dia detalhada utilizando o [API do relatório de utilização](active-directory-b2c-reference-usage-reporting-api.md).

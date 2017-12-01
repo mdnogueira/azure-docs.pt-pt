@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: v-donglo
-ms.openlocfilehash: 04e019501be6880fcc7e92de690a9f31195282e4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ab3c0b5776f9a32ab2703f462d58071f7bfd52ff
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="retrain-a-classic-web-service"></a>Voltar a preparar um Serviço Web Clássico
 O serviço Web preditiva implementou é a predefinição da classificação de ponto final. Pontos finais predefinidos são mantidos sincronizados com a formação original e a classificação de experimentações, e, por conseguinte, não é possível substituir o modelo treinado para o ponto final predefinido. Para a reparametrização do serviço web, tem de adicionar um novo ponto final para o serviço web. 
@@ -43,11 +43,10 @@ Para criar um novo ponto de final classificação, o serviço Web preditiva que 
 > 
 > 
 
-Existem três formas na qual pode adicionar um novo ponto final para um serviço web:
+Existem duas formas na qual pode adicionar um novo ponto final para um serviço web:
 
 1. Através de Programação
 2. Utilizar o portal de serviços Web do Microsoft Azure
-3. Utilizar o portal clássico do Azure
 
 ### <a name="programmatically-add-an-endpoint"></a>Através de programação adicionar um ponto final
 Pode adicionar pontos finais de classificação com o código de exemplo fornecido neste [repositório do github](https://github.com/raymondlaghaeian/AML_EndpointMgmt/blob/master/Program.cs).
@@ -58,18 +57,10 @@ Pode adicionar pontos finais de classificação com o código de exemplo forneci
 3. Clique em **Adicionar**.
 4. Escreva um nome e descrição para o novo ponto final. Selecione o nível de registo e se os dados de exemplo estão ativados. Para obter mais informações sobre o registo, consulte [ativar o registo de serviços web do Machine Learning](web-services-logging.md).
 
-### <a name="use-the-azure-classic-portal-to-add-an-endpoint"></a>Utilize o portal clássico do Azure para adicionar um ponto final
-1. Iniciar sessão para o [portal clássico do Azure](https://manage.windowsazure.com).
-2. No menu à esquerda, clique em **Machine Learning**.
-3. No nome, clique em sua área de trabalho e, em seguida, clique em **serviços Web**.
-4. No nome, clique em **Census modelo [preditiva exp].** .
-5. Na parte inferior da página, clique em **adicionar ponto final**. Para obter mais informações sobre como adicionar pontos finais, consulte [criação de pontos finais](create-endpoint.md). 
-
 ## <a name="update-the-added-endpoints-trained-model"></a>Atualizar o modelo treinado do ponto final adicionado
 Para concluir o processo reparametrização, tem de atualizar o modelo treinado do novo ponto final que adicionou.
 
-* Se tiver adicionado o novo ponto final utilizando o portal clássico do Azure, pode clicar em nome do novo ponto final no portal, em seguida, a **UpdateResource** ligação para obter o URL terá de atualizar o modelo do ponto final.
-* Se tiver adicionado o ponto final com o código de exemplo, isto inclui a localização do URL de ajuda identificado pelo *HelpLocationURL* valor no resultado.
+Se tiver adicionado o ponto final com o código de exemplo, isto inclui a localização do URL de ajuda identificado pelo *HelpLocationURL* valor no resultado.
 
 Para obter o URL de caminho:
 

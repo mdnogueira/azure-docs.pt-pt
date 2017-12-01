@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2017
 ms.author: garye
-ms.openlocfilehash: bdf0bd54130521a7178af3a28731f4c0e21e3e0b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 75577ad318f2ff23a7b7d10cf551f3bced56fb62
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="deploy-an-azure-machine-learning-web-service"></a>Implementar um serviço Web do Azure Machine Learning
 O Azure Machine Learning permite-lhe criar, testar e implementar soluções de Análise Preditiva.
@@ -108,7 +108,7 @@ No **configuração** página, pode alterar a descrição, o título, atualizar 
 Depois de implementar o serviço web, pode:
 
 * **Acesso** -lo através da API do serviço web.
-* **Gerir** -lo através do portal de serviços web do Azure Machine Learning ou portal clássico do Azure.
+* **Gerir** -lo através do portal de serviços web do Azure Machine Learning.
 * **Atualização** -lo se o seu modelo for alterada.
 
 #### <a name="access-your-new-web-service"></a>Aceder ao seu novo serviço web
@@ -141,7 +141,7 @@ Para testar o serviço de execução do Batch, clique em **testar** ligação de
 
 ![Testar o serviço web](./media/publish-a-machine-learning-web-service/figure-3.png)
 
-No **configuração** página, pode alterar o nome a apresentar do serviço e atribua-lhe uma descrição. O nome e descrição é apresentada no [portal clássico do Azure](http://manage.windowsazure.com/) onde irá gerir os seus serviços web.
+No **configuração** página, pode alterar o nome a apresentar do serviço e atribua-lhe uma descrição. O nome e descrição é apresentada no [portal do Azure](https://portal.azure.com/) onde irá gerir os seus serviços web.
 
 Pode fornecer uma descrição para os dados de entrada, dados de saída e web parâmetros de serviço ao introduzir uma cadeia para cada coluna em **esquema da entrada**, **esquema de saída**, e **parâmetro de serviço Web**. Estas descrições são utilizadas na documentação do código de exemplo fornecida para o serviço web.
 

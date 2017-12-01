@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: mysql-database
 ms.devlang: azure-cli
 ms.topic: article
-ms.date: 11/28/2017
-ms.openlocfilehash: 6a0d218a9b9cb41a87264cfd5f653bb631b0bce9
-ms.sourcegitcommit: 29bac59f1d62f38740b60274cb4912816ee775ea
+ms.date: 11/29/2017
+ms.openlocfilehash: 5983bbf6fac9c3cddda19f6a11d2fe2b18177160
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Personalizar parâmetros de configuração de servidor utilizando a CLI do Azure
 Pode listar, mostrar e atualizar os parâmetros de configuração para uma base de dados do Azure para o servidor de MySQL, utilizando a CLI do Azure, o utilitário da linha de comandos do Azure. Um subconjunto das configurações de motor está exposto ao nível do servidor e pode ser modificado. 
@@ -34,7 +34,7 @@ az mysql server configuration list --resource-group myresourcegroup --server mys
 Para a definição de cada um dos parâmetros listados, consulte a secção de referência de MySQL no [variáveis de servidor do sistema](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html).
 
 ## <a name="show-server-configuration-parameter-details"></a>Mostrar detalhes de parâmetro de configuração do servidor
-Para mostrar os detalhes sobre um parâmetro de configuração específica para um servidor, execute o [mostrar de configuração de servidor de mysql az](/cli/azure/mysql/server/configuration#show) comando.
+Para mostrar os detalhes sobre um parâmetro de configuração específica para um servidor, execute o [mostrar de configuração de servidor de mysql az](/cli/azure/mysql/server/configuration#az_mysql_server_configuration_show) comando.
 
 Este exemplo mostra detalhes sobre o **lenta\_consulta\_registo** parâmetro de configuração de servidor para servidor **myserver4demo.mysql.database.azure.com** sob o grupo de recursos **myresourcegroup.**
 ```azurecli-interactive

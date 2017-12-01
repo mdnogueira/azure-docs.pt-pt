@@ -4,7 +4,7 @@ description: "Início rápido para a criação dos módulos R personalizados no 
 services: machine-learning
 documentationcenter: 
 author: bradsev
-manager: jhubbard
+manager: cgronlun
 editor: cgronlun
 ms.assetid: 6cbc628a-7e60-42ce-9f90-20aaea7ba630
 ms.service: machine-learning
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 03/24/2017
-ms.author: bradsev;ankarlof
-ms.openlocfilehash: cf3f0e79a9f873a57ef6b7f5233d324faee3e017
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.date: 11/29/2017
+ms.author: bradsev;ankarlof;garye
+ms.openlocfilehash: 1cd2bbb6adecaba908252bd42fce292654a5cf5a
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="author-custom-r-modules-in-azure-machine-learning"></a>Criar módulos R personalizados no Azure Machine Learning
 Este tópico descreve como criar e implementar um módulo R personalizado no Azure Machine Learning. Explica o que são dos módulos R personalizados e que os ficheiros que são utilizados para defini-las. Ilustra como construir os ficheiros que definem um módulo e como registar o módulo para a implementação numa área de trabalho do Machine Learning. Os elementos e atributos utilizados na definição do módulo personalizado, em seguida, são descritos em mais detalhe. Como utilizar a funcionalidade auxiliar e de ficheiros e de várias saídas também é abordado. 
@@ -285,8 +285,8 @@ Um parâmetro do módulo é definido utilizando o **Arg** elemento subordinado d
   
   * **allowedTypes** -filtros a coluna tipos a partir da qual pode escolher. Os valores válidos incluem: 
     
-    * um valor numérico
-    * Valor booleano
+    * Numérico
+    * Booleano
     * Categórico
     * Cadeia
     * Etiqueta

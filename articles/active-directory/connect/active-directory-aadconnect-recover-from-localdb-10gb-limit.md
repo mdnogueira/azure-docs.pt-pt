@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: billmath
-ms.openlocfilehash: 08e682c51b12d4506019d2f6b68e1eae0798b990
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: ab2aed2b9e86dc9b3111dc1fdf9deea2e2930c7c
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>O Azure AD Connect: Como recuperar a partir de limite de 10 GB LocalDB
 O Azure AD Connect necessita de uma base de dados do SQL Server para armazenar dados de identidade. Pode utilizar a predefinição da LocalDB do SQL Server 2012 Express instalada com o Azure AD Connect ou utilizar o seu SQL completo. O SQL Server Express impõe um limite de tamanho de 10 GB. Ao utilizar a LocalDB e este limite ser atingido, o Serviço de Sincronização do Azure AD Connect já não pode iniciar ou sincronizar corretamente. Este artigo fornece os passos de recuperação.
@@ -63,11 +63,11 @@ O nome da base de dados criada para o Azure AD Connect é **ADSync**. Para efetu
 * A conta de serviço de sincronização que é utilizada como o contexto de funcionamento do serviço de sincronização ligar do Azure AD.
 * O grupo local ADSyncAdmins que foi criada durante a instalação.
 
-1. Cópia de segurança da base de dados ao copiar **ADSync.mdf** e **ADSync_log.ldf** ficheiros localizados em `%ProgramFiles%\program files\Microsoft Azure AD Sync\Data` numa localização segura.
+1. Cópia de segurança da base de dados ao copiar **ADSync.mdf** e **ADSync_log.ldf** ficheiros localizados em `%ProgramFiles%\Microsoft Azure AD Sync\Data` numa localização segura.
 
 2. Inicie uma nova sessão do PowerShell.
 
-3. Navegue até à pasta `%ProgramFiles%\Program Files\Microsoft SQL Server\110\Tools\Binn`.
+3. Navegue até à pasta `%ProgramFiles%\Microsoft SQL Server\110\Tools\Binn`.
 
 4. Iniciar **sqlcmd** utilitário executando o comando `./SQLCMD.EXE -S “(localdb)\.\ADSync” -U <Username> -P <Password>`, utilizando as credenciais de um sysadmin ou a base de dados DBO.
 

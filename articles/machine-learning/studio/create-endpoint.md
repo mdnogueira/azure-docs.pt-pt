@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 10/04/2016
 ms.author: himad
-ms.openlocfilehash: 821ad87fc10b2380e5ed89c037c335bc7747009e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6de83042779a1a4edae57499f108dcddc9d68309
+ms.sourcegitcommit: 5a6e943718a8d2bc5babea3cd624c0557ab67bd5
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="creating-endpoints"></a>Criar Pontos Finais
+# <a name="creating-endpoints"></a>Criação de pontos finais
 > [!NOTE]
 >  Este tópico descreve as técnicas aplicáveis a um **clássico** serviço Web do Machine Learning.
 > 
@@ -33,11 +33,10 @@ Para tal, o Azure Machine Learning permite-lhe criar vários pontos finais para 
 [!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
 
 ## <a name="adding-endpoints-to-a-web-service"></a>Adicionar pontos finais para um serviço Web
-Existem três maneiras de adicionar um ponto final para um serviço Web.
+Existem duas formas de adicionar um ponto final para um serviço Web.
 
 * Através de Programação
 * Através do portal de serviços Web do Azure Machine Learning
-* Apesar do portal clássico do Azure
 
 Quando o ponto final for criado, pode consumi-lo através de APIs síncronas, batch APIs e folhas de cálculo do excel. Para além de adicionar pontos finais através deste IU, também pode utilizar as APIs de gestão do ponto final para programaticamente adicionar pontos finais.
 
@@ -55,20 +54,6 @@ Pode adicionar um ponto final ao seu serviço Web através de programação util
 3. Clique em **Novo**.
 4. Escreva um nome e descrição para o novo ponto final. Os nomes de ponto final tem de ser 24 caráter ou menos de comprimento e devem ser constituídos por europeus minúsculas ou números. Selecione o nível de registo e se os dados de exemplo estão ativados. Para obter mais informações sobre o registo, consulte [ativar o registo de serviços Web do Machine Learning](web-services-logging.md).
 
-## <a name="adding-an-endpoint-using-the-azure-classic-portal"></a>Adicionar um ponto final utilizando o portal clássico do Azure
-1. Iniciar sessão para o [portal clássico do Azure](http://manage.windowsazure.com), clique em **Machine Learning** na coluna esquerda. Clique em da área de trabalho que contém o serviço Web na qual está interessado.
-   
-    ![Navegue até à área de trabalho](./media/create-endpoint/figure-1.png)
-2. Clique em **serviços Web**.
-   
-    ![Navegue para serviços Web](./media/create-endpoint/figure-2.png)
-3. Clique no serviço de Web que está interessado para ver a lista de pontos finais disponíveis.
-   
-    ![Navegue até ao ponto final](./media/create-endpoint/figure-3.png)
-4. Na parte inferior da página, clique em **adicionar ponto final**. Escreva um nome e uma descrição, certifique-se de que existem não existem pontos finais com o mesmo nome neste serviço Web. Deixe o nível de limitação com o respetivo valor predefinido, a menos que tenha requisitos especiais. Para obter mais informações sobre limitação, consulte [Dimensionar pontos finais da API](scaling-webservice.md).
-   
-    ![Criar o ponto final](./media/create-endpoint/figure-4.png)
-
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 [Como consumir um serviço Web do Azure Machine Learning](consume-web-services.md).
 
